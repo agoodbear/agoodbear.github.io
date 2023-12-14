@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 急診熊醫師</title>
+    <link>https://agoodbear.github.io/tags/</link>
+    <description>Recent content in Tags on 急診熊醫師</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 29 Oct 2019 10:07:47 +0600</lastBuildDate>
+    <atom:link href="https://agoodbear.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Game</title>
+      <link>https://agoodbear.github.io/tags/game/</link>
+      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
+      <guid>https://agoodbear.github.io/tags/game/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTML</title>
+      <link>https://agoodbear.github.io/tags/html/</link>
+      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
+      <guid>https://agoodbear.github.io/tags/html/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>New</title>
+      <link>https://agoodbear.github.io/tags/new/</link>
+      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
+      <guid>https://agoodbear.github.io/tags/new/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Photos</title>
+      <link>https://agoodbear.github.io/tags/photos/</link>
+      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
+      <guid>https://agoodbear.github.io/tags/photos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://agoodbear.github.io/tags/python/</link>
+      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
+      <guid>https://agoodbear.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Access Map</title>
+      <link>https://agoodbear.github.io/tags/access-map/</link>
+      <pubDate>Sat, 09 May 2015 00:05:19 +0000</pubDate>
+      <guid>https://agoodbear.github.io/tags/access-map/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Address</title>
+      <link>https://agoodbear.github.io/tags/address/</link>
+      <pubDate>Sat, 09 May 2015 00:05:19 +0000</pubDate>
+      <guid>https://agoodbear.github.io/tags/address/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Business Lines</title>
+      <link>https://agoodbear.github.io/tags/business-lines/</link>
+      <pubDate>Sat, 09 May 2015 00:05:19 +0000</pubDate>
+      <guid>https://agoodbear.github.io/tags/business-lines/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>eSolia</title>
+      <link>https://agoodbear.github.io/tags/esolia/</link>
+      <pubDate>Sat, 09 May 2015 00:05:19 +0000</pubDate>
+      <guid>https://agoodbear.github.io/tags/esolia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Information</title>
+      <link>https://agoodbear.github.io/tags/information/</link>
+      <pubDate>Sat, 09 May 2015 00:05:19 +0000</pubDate>
+      <guid>https://agoodbear.github.io/tags/information/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on 急診熊醫師</title>
+    <link>https://agoodbear.github.io/blog/</link>
+    <description>Recent content in Blogs on 急診熊醫師</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 29 Oct 2019 10:07:47 +0600</lastBuildDate>
+    <atom:link href="https://agoodbear.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About eSolia Inc.</title>
+      <link>https://agoodbear.github.io/blog/about/</link>
+      <pubDate>Sat, 09 May 2015 00:05:19 +0000</pubDate>
+      <guid>https://agoodbear.github.io/blog/about/</guid>
+      <description>Company Information About eSolia: Our Vision As a leader in our market for outsourced IT services, eSolia&amp;rsquo;s vision is to consistently provide our clients with comprehensive, exemplary IT services unbiased by maker affiliation, designed and delivered with a keen awareness of business and culture.</description>
+    </item>
+    <item>
+      <title>How To Use Checklists To Improve Your UX</title>
+      <link>https://agoodbear.github.io/blog/post-13/</link>
+      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
+      <guid>https://agoodbear.github.io/blog/post-13/</guid>
+      <description>Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Emphasis Emphasis, aka italics, with asterisks or underscores.</description>
+    </item>
+    <item>
+      <title>第一篇測試文章</title>
+      <link>https://agoodbear.github.io/blog/test/</link>
+      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
+      <guid>https://agoodbear.github.io/blog/test/</guid>
+      <description>test Xmind </description>
+    </item>
+  </channel>
+</rss>
