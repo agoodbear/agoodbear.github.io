@@ -2,73 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://agoodbear.github.io/blog/about/</loc>
-    <lastmod>2015-05-09T00:05:19+00:00</lastmod>
-  </url><url>
-    <loc>https://agoodbear.github.io/blog/</loc>
-    <lastmod>2023-10-29T10:07:47+06:00</lastmod>
+    <loc>https://agoodbear.github.io/</loc>
+    <lastmod>2022-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://agoodbear.github.io/categories/</loc>
-    <lastmod>2023-10-29T10:07:47+06:00</lastmod>
+    <lastmod>2022-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://agoodbear.github.io/tags/game/</loc>
-    <lastmod>2023-10-29T10:07:47+06:00</lastmod>
+    <loc>https://agoodbear.github.io/tags/hugo/</loc>
+    <lastmod>2022-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://agoodbear.github.io/categories/go-language/</loc>
-    <lastmod>2023-10-29T10:07:47+06:00</lastmod>
+    <loc>https://agoodbear.github.io/post/</loc>
+    <lastmod>2022-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://agoodbear.github.io/tags/html/</loc>
-    <lastmod>2023-10-29T10:07:47+06:00</lastmod>
+    <loc>https://agoodbear.github.io/series/</loc>
+    <lastmod>2022-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://agoodbear.github.io/tags/new/</loc>
-    <lastmod>2023-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://agoodbear.github.io/tags/photos/</loc>
-    <lastmod>2023-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://agoodbear.github.io/tags/python/</loc>
-    <lastmod>2023-10-29T10:07:47+06:00</lastmod>
+    <loc>https://agoodbear.github.io/categories/syntax/</loc>
+    <lastmod>2022-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://agoodbear.github.io/tags/</loc>
-    <lastmod>2023-10-29T10:07:47+06:00</lastmod>
+    <lastmod>2022-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://agoodbear.github.io/</loc>
-    <lastmod>2023-10-29T10:07:47+06:00</lastmod>
+    <loc>https://agoodbear.github.io/series/themes-guide/</loc>
+    <lastmod>2022-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://agoodbear.github.io/blog/test-2/</loc>
-    <lastmod>2023-10-29T10:07:47+06:00</lastmod>
+    <loc>https://agoodbear.github.io/post/bundle/</loc>
+    <lastmod>2022-03-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/post/map/</loc>
+    <lastmod>2022-02-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/post/notices/</loc>
+    <lastmod>2021-08-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/css/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/destacado/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/featured/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/post/markdown-syntax.pt/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/series/guia-de-temas/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/html/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/markdown/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/post/markdown-syntax/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/categories/sintaxe/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/temas/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/categories/temas/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/themes/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/categories/themes/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/privacy/</loc>
+    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/post/rich-content/</loc>
+    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/shortcodes/</loc>
+    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/post/placeholder-text/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/text/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/post/math-typesetting/</loc>
+    <lastmod>2019-03-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/emoji/</loc>
+    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/post/emoji-support/</loc>
+    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://agoodbear.github.io/about/</loc>
-    <lastmod>2019-10-29T13:49:23+06:00</lastmod>
+    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://agoodbear.github.io/contact/</loc>
-    <lastmod>2019-10-29T13:49:23+06:00</lastmod>
+    <loc>https://agoodbear.github.io/tags/index/</loc>
   </url><url>
     <loc>https://agoodbear.github.io/search/</loc>
-    <lastmod>2019-10-29T13:49:23+06:00</lastmod>
-  </url><url>
-    <loc>https://agoodbear.github.io/blog/post-13/</loc>
-    <lastmod>2019-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://agoodbear.github.io/categories/%E5%BF%83%E9%9B%BB%E5%9C%96/</loc>
-    <lastmod>2019-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://agoodbear.github.io/blog/test/</loc>
-    <lastmod>2019-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://agoodbear.github.io/tags/access-map/</loc>
-    <lastmod>2015-05-09T00:05:19+00:00</lastmod>
-  </url><url>
-    <loc>https://agoodbear.github.io/tags/address/</loc>
-    <lastmod>2015-05-09T00:05:19+00:00</lastmod>
-  </url><url>
-    <loc>https://agoodbear.github.io/tags/business-lines/</loc>
-    <lastmod>2015-05-09T00:05:19+00:00</lastmod>
-  </url><url>
-    <loc>https://agoodbear.github.io/tags/esolia/</loc>
-    <lastmod>2015-05-09T00:05:19+00:00</lastmod>
-  </url><url>
-    <loc>https://agoodbear.github.io/tags/information/</loc>
-    <lastmod>2015-05-09T00:05:19+00:00</lastmod>
   </url>
 </urlset>
