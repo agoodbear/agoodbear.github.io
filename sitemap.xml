@@ -3,24 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://agoodbear.github.io/</loc>
-    <lastmod>2022-03-24T00:00:00+00:00</lastmod>
+    <lastmod>2024-01-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://agoodbear.github.io/categories/</loc>
-    <lastmod>2022-03-24T00:00:00+00:00</lastmod>
+    <lastmod>2024-01-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://agoodbear.github.io/tags/hugo/</loc>
-    <lastmod>2022-03-24T00:00:00+00:00</lastmod>
+    <loc>https://agoodbear.github.io/tags/hugo-tips/</loc>
+    <lastmod>2024-01-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/hugo%E6%9E%B6%E7%AB%99/</loc>
+    <lastmod>2024-01-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://agoodbear.github.io/post/</loc>
+    <lastmod>2024-01-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/</loc>
+    <lastmod>2024-01-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/post/1-post/</loc>
+    <lastmod>2024-01-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/categories/%E7%A7%91%E6%8A%80/</loc>
+    <lastmod>2024-01-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/%E7%A8%8B%E5%BC%8F%E5%AF%AB%E4%BD%9C/</loc>
+    <lastmod>2024-01-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/about/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/hugo/</loc>
     <lastmod>2022-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://agoodbear.github.io/series/</loc>
     <lastmod>2022-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://agoodbear.github.io/categories/syntax/</loc>
-    <lastmod>2022-03-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://agoodbear.github.io/tags/</loc>
     <lastmod>2022-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://agoodbear.github.io/series/themes-guide/</loc>
@@ -100,9 +118,6 @@
   </url><url>
     <loc>https://agoodbear.github.io/post/emoji-support/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://agoodbear.github.io/about/</loc>
-    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://agoodbear.github.io/tags/index/</loc>
   </url><url>
