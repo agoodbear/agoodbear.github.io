@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 急診熊心聲部落格</title>
-    <link>https://agoodbear.github.io/post/</link>
-    <description>Recent content in Posts on 急診熊心聲部落格</description>
+    <title>自我成長 on 急診熊心聲部落格</title>
+    <link>https://agoodbear.github.io/series/%E8%87%AA%E6%88%91%E6%88%90%E9%95%B7/</link>
+    <description>Recent content in 自我成長 on 急診熊心聲部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>Copyright © 2022-2024, Modified by ER Bear</copyright>
-    <lastBuildDate>Fri, 12 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/series/%E8%87%AA%E6%88%91%E6%88%90%E9%95%B7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用Hugo架站相關語法</title>
       <link>https://agoodbear.github.io/post/1-post/</link>

@@ -63,7 +63,7 @@
   </head>
   <body
     data-code="10"
-    data-lines="true"
+    data-lines="false"
     id="documentTop"
     data-lang="zh-tw"
   >
@@ -98,9 +98,6 @@
   </div>
   <div class="nav_parent">
     <a href="https://agoodbear.github.io/about/" class="nav_item" title="關於">關於 </a>
-  </div>
-  <div class="nav_parent nav_active">
-    <a href="https://agoodbear.github.io/post/1-post/" class="nav_item" title="使用Hugo架站相關語法">使用Hugo架站相關語法 </a>
   </div>
       
 <div class='follow'>
@@ -156,7 +153,7 @@
 </span>
     <span class="post_date">
       Jan 12, 2024</span>
-    <span class="post_time"> · 1 分鐘長</span><span>&nbsp;· <a href='https://agoodbear.github.io/tags/hugo-tips/' title="Hugo Tips" class="post_tag button button_translucent">Hugo Tips
+    <span class="post_time"> · 2 分鐘長</span><span>&nbsp;· <a href='https://agoodbear.github.io/tags/hugo-tips/' title="Hugo Tips" class="post_tag button button_translucent">Hugo Tips
         </a><a href='https://agoodbear.github.io/tags/%E7%A8%8B%E5%BC%8F%E5%AF%AB%E4%BD%9C/' title="程式寫作" class="post_tag button button_translucent">程式寫作
         </a><a href='https://agoodbear.github.io/tags/hugo%E6%9E%B6%E7%AB%99/' title="Hugo架站" class="post_tag button button_translucent">Hugo架站
         </a>
@@ -228,7 +225,7 @@
     <li><a href="#前置作業">前置作業</a></li>
     <li><a href="#文章基本markdown格式須知">文章基本markdown格式須知</a>
       <ul>
-        <li><a href="#每篇文章必須輸入的格式">每篇文章必須輸入的格式:</a></li>
+        <li><a href="#每篇文章必須輸入的markdown語法">每篇文章必須輸入的markdown語法:</a></li>
       </ul>
     </li>
     <li><a href="#支援的shortcodes有哪些">支援的Shortcodes有哪些?</a>
@@ -238,6 +235,16 @@
         <li><a href="#ugoogle-mapsu分享按入崁入地圖"><u>Google Maps</u>:分享，按入崁入地圖</a></li>
         <li><a href="#uxmind-prou-按下分享可得到embed-code"><u>Xmind Pro</u>: 按下分享，可得到embed code</a></li>
         <li><a href="#upodcastu在apple-podcast拷貝連結放到網頁上搜尋可以導到單集的網頁接著按下分享見到崁入連結"><u>Podcast</u>:在Apple Podcast拷貝連結，放到網頁上搜尋，可以導到單集的網頁，接著按下分享，見到崁入連結</a></li>
+      </ul>
+    </li>
+    <li><a href="#markdown文字格式有哪些">Markdown文字格式有哪些?</a>
+      <ul>
+        <li><a href="#字體顏色變更">字體顏色變更</a></li>
+        <li><a href="#表格化背景塗滿顏色">表格化(背景塗滿顏色)</a></li>
+        <li><a href="#可以cite文章舉例來看看效果如何"><strong>可以cite文章</strong>➔舉例來看看效果如何</a></li>
+        <li><a href="#有序清單1按下去後要空格可內縮">有序清單(<strong>1.按下去後要空格</strong>)➔<code>可內縮</code></a></li>
+        <li><a href="#無序清單-按下去後空格可內縮">無序清單(<strong>-按下去後空格</strong>)➔<code>可內縮</code></a></li>
+        <li><a href="#其他上標下標">其他:上標、下標</a></li>
       </ul>
     </li>
   </ul>
@@ -253,8 +260,8 @@
 <li>已經在<a href="https://github.com/">GitHub</a>申請好帳號</li>
 <li>安裝好VS code與typora
 <ul>
-<li><a href="https://code.visualstudio.com/">VS code</a>會</li>
-<li><a href="https://typora.io/#feature">Typora</a>會直接將文章轉成markdown格式(<strong>有點所見即所得概念</strong>)</li>
+<li><a href="https://code.visualstudio.com/">VS code</a> 可以直接寫markdown code</li>
+<li><a href="https://typora.io/#feature">Typora</a> 會直接將文章轉成markdown格式(<strong>有點所見即所得概念</strong>)➔用這個寫文章比用VS code寫舒服多了😌</li>
 </ul>
 </li>
 <li>已經在<a href="https://themes.gohugo.io/">Hugo theme</a>裡面選好，想要搭配的theme來做修改
@@ -300,7 +307,7 @@
 </ul>
 <p>在exampleSite/content/post自行建立一個markdown檔案(*.md)</p>
 <p>一般文章需要加入的格式(至於<strong>每篇Blog markdown文章的最上方，分別用---與---當最上層和最下層</strong>)</p>
-<h3 id="每篇文章必須輸入的格式">每篇文章必須輸入的格式:</h3>
+<h3 id="每篇文章必須輸入的markdown語法">每篇文章必須輸入的markdown語法:</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="ln"> 1</span><span class="cl">---
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">title: &#34;使用Hugo架站相關語法&#34; <span class="ni">#輸入這篇的title</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl">date: &#34;2024-01-12&#34; <span class="ni">#輸入時間</span>
@@ -322,7 +329,7 @@
 </span></span><span class="line"><span class="ln">19</span><span class="cl">---
 </span></span></code></pre></div><p>之後就在下方進行書寫文章內容。</p>
 <h2 id="支援的shortcodes有哪些">支援的Shortcodes有哪些?</h2>
-<p>我把常用的都列出來~~~~</p>
+<p>我把自己常用的都列出來~~~~</p>
 <p>Youtube</p>
 <p>Twitter(X)</p>
 <p>Google Maps</p>
@@ -379,8 +386,112 @@
 </p>
 <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/tw/podcast/episode-92-marine-ingested-poisons-and-infections/id1514052567?i=1000641060189"></iframe>
 <hr>
+<h2 id="markdown文字格式有哪些">Markdown文字格式有哪些?</h2>
+<h3 id="字體顏色變更">字體顏色變更</h3>
+<p><code>Red text</code></p>
+<p><strong>Bold text</strong></p>
+<p><u>Underline text</u></p>
+<p><em>italics</em></p>
+<p><a href="https://agoodbear.github.io/">Hyperlink</a></p>
+<p><del>刪除線</del></p>
+<p><mark>塗鴉顏色</mark></p>
+<blockquote>
+<p>引言</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">記得把codeLineNumbers: false，就會顯示全黑background
+</span></span></code></pre></div><h3 id="表格化背景塗滿顏色">表格化(背景塗滿顏色)</h3>
+
+<div class="notices note">
+    <div class="label">Ｎote</div>
+    <p>這裡可以寫一些重點</p>
+
+  </div>
+
+
+<div class="notices info">
+    <div class="label">Info</div>
+    <p>這裡可以寫一些重點</p>
+
+  </div>
+
+
+<div class="notices tip">
+    <div class="label">Tip</div>
+    <p>這裡可以寫一些重點</p>
+
+  </div>
+
+
+<div class="notices warning">
+    <div class="label">Warning</div>
+    <p>這裡可以寫一些重點</p>
+
+  </div>
+
+
+<div class="notices tip">
+    <div class="label">Mix示範</div>
+    <ul>
+<li>這裡可以寫一些重點
+<ul>
+<li>這裡可以寫一些重點</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">這裡可以寫一些重點
+</span></span></code></pre></div>
+  </div>
+
+<p><strong>可以直接輸入表格</strong></p>
+<table>
+<thead>
+<tr>
+<th>空格一</th>
+<th>空格二</th>
+<th>空格三</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="可以cite文章舉例來看看效果如何"><strong>可以cite文章</strong>➔舉例來看看效果如何</h3>
+<p>Dr.Smith表示4 variable formula可以應用在Subtle Ant.STEMI與early repolarization的DDx <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<h3 id="有序清單1按下去後要空格可內縮">有序清單(<strong>1.按下去後要空格</strong>)➔<code>可內縮</code></h3>
+<ol>
+<li>Test</li>
+<li>Test</li>
+<li>Test</li>
+</ol>
+<h3 id="無序清單-按下去後空格可內縮">無序清單(<strong>-按下去後空格</strong>)➔<code>可內縮</code></h3>
+<ul>
+<li>Test</li>
+<li>Test</li>
+<li>Test</li>
+</ul>
+<h3 id="其他上標下標">其他:上標、下標</h3>
+<p>H<sub>2</sub>O</p>
+<p>X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Dr. Smith's ECG Blog: 12 Example Cases of Use of 3- and 4-variable formulas, plus Simplified Formula, to differentiate normal STE from subtle LAD occlusion - <a href="https://hqmeded-ecg.blogspot.com/2017/11/12-cases-of-use-of-3-and-4-variable.html">link</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
     </div>
+
+	<h2 class="post_related">Posts in this Series</h2>
+	<ul>
+	  
+	</ul>
+
 <div class="post_comments">
   
     <div id="disqus_thread"></div>
@@ -440,65 +551,24 @@
 
     
     
+      
+	    <h2 class="mt-4">此系列文章</h2>
+      <ul>
+        
+      </ul>
+    
     <h2 class="mt-4">精選文章</h2>
     <ul>
       <li>
         <a href="https://agoodbear.github.io/post/1-post/" class="nav-link" title="使用Hugo架站相關語法">使用Hugo架站相關語法</a>
       </li>
-      <li>
-        <a href="https://agoodbear.github.io/post/markdown-syntax.pt/" class="nav-link" title="Guia de Sintaxe Markdown">Guia de Sintaxe Markdown</a>
-      </li>
-      <li>
-        <a href="https://agoodbear.github.io/post/markdown-syntax/" class="nav-link" title="Markdown Syntax Guide">Markdown Syntax Guide</a>
-      </li>
     </ul>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
-      <li>
-        <a href="https://agoodbear.github.io/post/bundle/" class="nav-link" title="Using Hugo page bundles">Using Hugo page bundles</a>
-      </li>
-      <li>
-        <a href="https://agoodbear.github.io/post/map/" class="nav-link" title="Using OpenStreetMap">Using OpenStreetMap</a>
-      </li>
-      <li>
-        <a href="https://agoodbear.github.io/post/notices/" class="nav-link" title="Using Notices">Using Notices</a>
-      </li>
-      <li>
-        <a href="https://agoodbear.github.io/post/rich-content/" class="nav-link" title="Rich Content">Rich Content</a>
-      </li>
-      <li>
-        <a href="https://agoodbear.github.io/post/placeholder-text/" class="nav-link" title="Placeholder Text">Placeholder Text</a>
-      </li>
-      <li>
-        <a href="https://agoodbear.github.io/post/math-typesetting/" class="nav-link" title="Math Typesetting">Math Typesetting</a>
-      </li>
-      <li>
-        <a href="https://agoodbear.github.io/post/emoji-support/" class="nav-link" title="Emoji Support">Emoji Support</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分類</h2>
       <nav class="tags_nav">
-        <a href='https://agoodbear.github.io/categories/syntax/' class="post_tag button button_translucent" title="syntax">
-          SYNTAX
-          <span class="button_tally">2</span>
-        </a>
-        
-        <a href='https://agoodbear.github.io/categories/sintaxe/' class="post_tag button button_translucent" title="sintaxe">
-          SINTAXE
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='https://agoodbear.github.io/categories/temas/' class="post_tag button button_translucent" title="temas">
-          TEMAS
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='https://agoodbear.github.io/categories/themes/' class="post_tag button button_translucent" title="themes">
-          THEMES
-          <span class="button_tally">1</span>
-        </a>
-        
         <a href='https://agoodbear.github.io/categories/%E7%A7%91%E6%8A%80/' class="post_tag button button_translucent" title="科技">
           科技
           <span class="button_tally">1</span>
@@ -510,13 +580,8 @@
     <div>
       <h2 class="mt-4 taxonomy" id="series-section">專欄</h2>
       <nav class="tags_nav">
-        <a href='https://agoodbear.github.io/series/themes-guide/' class="post_tag button button_translucent" title="themes-guide">
-          THEMES-GUIDE
-          <span class="button_tally">2</span>
-        </a>
-        
-        <a href='https://agoodbear.github.io/series/guia-de-temas/' class="post_tag button button_translucent" title="guia-de-temas">
-          GUIA-DE-TEMAS
+        <a href='https://agoodbear.github.io/series/%E8%87%AA%E6%88%91%E6%88%90%E9%95%B7/' class="post_tag button button_translucent" title="自我成長">
+          自我成長
           <span class="button_tally">1</span>
         </a>
         
@@ -526,41 +591,6 @@
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">標籤</h2>
       <nav class="tags_nav">
-        <a href='https://agoodbear.github.io/tags/markdown/' class="post_tag button button_translucent" title="markdown">
-          MARKDOWN
-          <span class="button_tally">3</span>
-        </a>
-        
-        <a href='https://agoodbear.github.io/tags/css/' class="post_tag button button_translucent" title="css">
-          CSS
-          <span class="button_tally">2</span>
-        </a>
-        
-        <a href='https://agoodbear.github.io/tags/html/' class="post_tag button button_translucent" title="html">
-          HTML
-          <span class="button_tally">2</span>
-        </a>
-        
-        <a href='https://agoodbear.github.io/tags/destacado/' class="post_tag button button_translucent" title="destacado">
-          DESTACADO
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='https://agoodbear.github.io/tags/emoji/' class="post_tag button button_translucent" title="emoji">
-          EMOJI
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='https://agoodbear.github.io/tags/featured/' class="post_tag button button_translucent" title="featured">
-          FEATURED
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='https://agoodbear.github.io/tags/hugo/' class="post_tag button button_translucent" title="hugo">
-          HUGO
-          <span class="button_tally">1</span>
-        </a>
-        
         <a href='https://agoodbear.github.io/tags/hugo-tips/' class="post_tag button button_translucent" title="hugo-tips">
           HUGO-TIPS
           <span class="button_tally">1</span>
@@ -576,102 +606,12 @@
           <span class="button_tally">1</span>
         </a>
         
-        <a href='https://agoodbear.github.io/tags/privacy/' class="post_tag button button_translucent" title="privacy">
-          PRIVACY
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='https://agoodbear.github.io/tags/shortcodes/' class="post_tag button button_translucent" title="shortcodes">
-          SHORTCODES
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='https://agoodbear.github.io/tags/temas/' class="post_tag button button_translucent" title="temas">
-          TEMAS
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='https://agoodbear.github.io/tags/text/' class="post_tag button button_translucent" title="text">
-          TEXT
+        <a href='https://agoodbear.github.io/tags/%E7%A8%8B%E5%BC%8F%E5%AF%AB%E4%BD%9C/' class="post_tag button button_translucent" title="程式寫作">
+          程式寫作
           <span class="button_tally">1</span>
         </a>
         
         
-        <br>
-        <div class="post_tags_toggle button">所有標籤</div>
-        <div class="post_tags">
-          <div class="tags_list">
-            
-            <a href='https://agoodbear.github.io/tags/css/' class=" post_tag button button_translucent" data-position=2 title="css">CSS<span class="button_tally">2</span>
-            </a>
-            
-            
-            <a href='https://agoodbear.github.io/tags/destacado/' class=" post_tag button button_translucent" data-position=1 title="destacado">DESTACADO<span class="button_tally">1</span>
-            </a>
-            
-            
-            <a href='https://agoodbear.github.io/tags/emoji/' class=" post_tag button button_translucent" data-position=1 title="emoji">EMOJI<span class="button_tally">1</span>
-            </a>
-            
-            
-            <a href='https://agoodbear.github.io/tags/featured/' class=" post_tag button button_translucent" data-position=1 title="featured">FEATURED<span class="button_tally">1</span>
-            </a>
-            
-            
-            <a href='https://agoodbear.github.io/tags/html/' class=" post_tag button button_translucent" data-position=2 title="html">HTML<span class="button_tally">2</span>
-            </a>
-            
-            
-            <a href='https://agoodbear.github.io/tags/hugo/' class=" post_tag button button_translucent" data-position=1 title="hugo">HUGO<span class="button_tally">1</span>
-            </a>
-            
-            
-            <a href='https://agoodbear.github.io/tags/hugo-tips/' class=" post_tag button button_translucent" data-position=1 title="hugo-tips">HUGO-TIPS<span class="button_tally">1</span>
-            </a>
-            
-            
-            <a href='https://agoodbear.github.io/tags/hugo%E6%9E%B6%E7%AB%99/' class=" post_tag button button_translucent" data-position=1 title="hugo架站">HUGO架站<span class="button_tally">1</span>
-            </a>
-            
-            
-            <a href='https://agoodbear.github.io/tags/index/' class=" post_tag button button_translucent" data-position=1 title="index">INDEX<span class="button_tally">1</span>
-            </a>
-            
-            
-            <a href='https://agoodbear.github.io/tags/markdown/' class=" post_tag button button_translucent" data-position=3 title="markdown">MARKDOWN<span class="button_tally">3</span>
-            </a>
-            
-            
-            <a href='https://agoodbear.github.io/tags/privacy/' class=" post_tag button button_translucent" data-position=1 title="privacy">PRIVACY<span class="button_tally">1</span>
-            </a>
-            
-            
-            <a href='https://agoodbear.github.io/tags/shortcodes/' class=" post_tag button button_translucent" data-position=1 title="shortcodes">SHORTCODES<span class="button_tally">1</span>
-            </a>
-            
-            
-            <a href='https://agoodbear.github.io/tags/temas/' class=" post_tag button button_translucent" data-position=1 title="temas">TEMAS<span class="button_tally">1</span>
-            </a>
-            
-            
-            <a href='https://agoodbear.github.io/tags/text/' class=" post_tag button button_translucent" data-position=1 title="text">TEXT<span class="button_tally">1</span>
-            </a>
-            
-            
-            <a href='https://agoodbear.github.io/tags/themes/' class=" post_tag button button_translucent" data-position=1 title="themes">THEMES<span class="button_tally">1</span>
-            </a>
-            
-            
-            <a href='https://agoodbear.github.io/tags/%E7%A8%8B%E5%BC%8F%E5%AF%AB%E4%BD%9C/' class=" post_tag button button_translucent" data-position=1 title="程式寫作">程式寫作<span class="button_tally">1</span>
-            </a>
-            
-            <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
-            </div>
-            <span class="tags_hide"><svg class="icon">
-            <use xlink:href="#closeme"></use>
-          </svg></span>
-          </div>
-        </div>
       </nav>
     </div>
   </section>
