@@ -7,23 +7,43 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>Copyright © 2022-2024, Modified by ER Bear</copyright>
-    <lastBuildDate>Fri, 12 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>使用Hugo架站相關語法</title>
-      <link>https://agoodbear.github.io/post/1-post/</link>
-      <pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate>
+      <title>資料庫的應用與靈感筆記如何建立?</title>
+      <link>https://agoodbear.github.io/post/study-post-2/</link>
+      <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://agoodbear.github.io/post/1-post/</guid>
+      <guid>https://agoodbear.github.io/post/study-post-2/</guid>
       <description>
         
           
-            要如何利用Hugo建立靜態網站文章 前置作業 首先要確立幾件事情:
-在Mac中安裝好Xcode (Win應該不用安裝吧?這我不知道) 使用Homebrew在Mac的終端機安裝Hugo 已經在GitHub申請好帳號 安裝好VS code與typora VS code 可以直接寫markdown code Typora 會直接將文章轉成markdown格式(有點所見即所得概念)➔用這個寫文章比用VS code寫舒服多了😌 已經在Hugo theme裡面選好，想要搭配的theme來做修改 下載theme，可以在自己的電腦上打開運作 完成上列，就算完成大部分了～～～
-接著就是根據每個不同的theme，看自己的需求來做客製化的動作!!!!(不是必須的，但像我這種強迫症患者，肯定要改)
-這邊就一定要強烈推薦古君葳老師的Github 免費架站術！輕鬆打造個人品牌
-文章基本markdown格式須知 我這一個theme是來自於這裡 (以下的變更都根據這一個theme為主) 在exampleSite/content/post自行建立一個markdown檔案(*.md)
-一般文章需要加入的格式(至於每篇Blog markdown文章的最上方，分別用---與---當最上層和最下層)
-每篇文章必須輸入的markdown語法: 1--- 2title: &amp;#34;使用Hugo架站相關語法&amp;#34; #輸入這篇的title 3date: &amp;#34;2024-01-12&amp;#34; #輸入時間 4description: &amp;#34;Hugo&amp;#34; #根本不知道什麼時候會出現 5featured: true #若設定為true，會設定為精選文章 6draft: false #若為false就會直接刊出，不會以草稿模式運作 7toc: true #自動產生TOC 8featureImage: &amp;#34;/images/HUGO.png&amp;#34; #設定這篇文章首頁的圖片 9thumbnail: &amp;#34;/images/HUGO.png&amp;#34; #每篇文章的縮圖位置在這裡(static/images/)-變更 10codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
+            我的筆記知識庫(第二大腦) 很久以前是使用Evernote當做第二大腦。後來發現，我用Evernote Clip來擷取網頁，存成read it later的形式。
+但是這樣的動作，只是把比較大的垃圾堆(Big data)，整理成比較小的垃圾堆(Small Big data)😅。總歸一句，都還是垃圾。
+為什麼這些自認為是重要知識的文章，我最終還是會認為是垃圾呢?因為多到，不去整理，不用自己理解過後的語言再去描述這篇文章，那麼這篇文章，對我而言，就是沒有任何價值。
+資料庫裡面的知識，我們通常會先用primary selection先篩過一輪，存進資料庫。
+什麼叫做primary selection，也就是先將我們認可的資訊，抓進資料庫內。
+認可的資訊，取決於我們想站在哪位巨人的肩膀上!!!!
+比如，我對ECG的辨識特別有興趣，那麼我收集的文章，就要從世界認可的大師來收集。
+比如Smith ECG&#39;s Blog、Amal mattu&#39;s ECG Weekly等等。
+當我們從這些認可的網站、影片、推文(tweet)把這些內容存進我們的資料庫內(read it later)。這就是進行了primary selection的動作。
+接著把這些文章精讀，提取出重點，再透過自己的語言寫入資料庫內，這就是secondary selection，也是最重要的一步驟。
+當進行到secondary selection時，代表已經有自己消化過的資料存進資料庫。這時利用資料庫程式的搜尋，提出已經消化過的內容，應用出來。
+儲存是短期記憶，當我們不斷搜尋到之前消化過的內容時，就會加深印象，形成長期記憶。當我們把長期記憶應用在我們想處理的事情上面，比如用來寫Blog、在臨床上對病患的照護。如此就會形成正向循環。
+我大概從2020年開始，將我的資料庫從Evernote轉換成Roam research
+目前我幾乎所有primary selection的資料來源都可丟入Roam search。
+在primary selection時，有時會有突然的靈感。
+在瓦基的線上課程-卡片盒筆記實戰課，裡面有提到靈感筆記的觀念。
+靈感常常是一剎那間的想法，我的經驗是，沒有馬上記錄下來，再回頭看(可能10分鐘、可能1小時）......已經忘記當初在想什麼了。
+所以紀錄是一個很重要的動作。
+我自己針對靈感的紀錄是使用以下幾種方法: 使用Readwise手機App 使用Roam手機App 使用Speak to Roam Readwise手機App的好處是可以直接OCR看到的紙本書籍。拍照下來，把重要文字OCR出來，接著就可以Export到Roam裡面去了。
+Roam手機App最下方的功能，有一個是Quickcapture，也就是直接打字，直接傳到Roam指定的graph裡面。
+Speak to Roam是我覺得近期內，最讚的靈感擷取工具。這工具是由Roam開發商裡面的一位程式設計師所研發。
+檔案在這裡
+iOS限定，這工具是透過iOS的捷徑，只要在Mac or iPhone or Apple watch按下這個捷徑，就可以直接說話。接著會把我們說的話，產生語音轉文字效果，並且直接儲存在Roam裡面。
+我使用的情境是，我在重訓運動時，戴著AirPods，突然想到什麼樣的靈感，就直接在我的Apple watch按下捷徑，接著就直接說話。
+如果說話的內容超過50字以上，Speak to Roam會產生兩段文字到Roam。
+第一段是raw data，我完整語音的語音轉文字內容。
+第二段是Speak to roam針對長文，會去call ChatGPT，把我說的長文給予精準摘要(可以自行設定Prompt)
           
           
         
@@ -31,15 +51,49 @@
     </item>
     
     <item>
-      <title>測試文章</title>
-      <link>https://agoodbear.github.io/post/ecg/test/</link>
-      <pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate>
+      <title>測試ECG</title>
+      <link>https://agoodbear.github.io/post/post-3/</link>
+      <pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://agoodbear.github.io/post/ecg/test/</guid>
+      <guid>https://agoodbear.github.io/post/post-3/</guid>
       <description>
         
           
-            test
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>測試POCUS</title>
+      <link>https://agoodbear.github.io/post/post-2/</link>
+      <pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://agoodbear.github.io/post/post-2/</guid>
+      <description>
+        
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>使用Hugo架站相關語法</title>
+      <link>https://agoodbear.github.io/post/study-post-1/</link>
+      <pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://agoodbear.github.io/post/study-post-1/</guid>
+      <description>
+        
+          
+            要如何利用Hugo建立靜態網站文章 前置作業 首先要確立幾件事情:
+在Mac中安裝好Xcode (Win應該不用安裝吧?這我不知道) 使用Homebrew在Mac的終端機安裝Hugo 已經在GitHub申請好帳號 安裝好VS code與typora VS code 可以直接寫markdown code Typora 會直接將文章轉成markdown格式(有點所見即所得概念)➔用這個寫文章比用VS code寫舒服多了😌 在Typora引用圖，在圖上直接右鍵，就可更改大小 已經在Hugo theme裡面選好，想要搭配的theme來做修改 下載theme，可以在自己的電腦上打開運作 完成上列，就算完成大部分了～～～
+接著就是根據每個不同的theme，看自己的需求來做客製化的動作!!!!(不是必須的，但像我這種強迫症患者，肯定要改)
+這邊就一定要強烈推薦古君葳老師的Github 免費架站術！輕鬆打造個人品牌
+文章基本markdown格式須知 我這一個theme是來自於這裡 (以下的變更都根據這一個theme為主) 在exampleSite/content/post自行建立一個markdown檔案(*.md)
+一般文章需要加入的格式(至於每篇Blog markdown文章的最上方，分別用---與---當最上層和最下層)
+每篇文章必須輸入的markdown語法: 1--- 2title: &amp;#34;使用Hugo架站相關語法&amp;#34; #輸入這篇的title 3date: &amp;#34;2024-01-12&amp;#34; #輸入時間 4description: &amp;#34;Hugo&amp;#34; #根本不知道什麼時候會出現 5featured: true #若設定為true，會設定為精選文章 6draft: false #若為false就會直接刊出，不會以草稿模式運作 7toc: true #自動產生TOC 8featureImage: &amp;#34;/images/HUGO.png&amp;#34; #設定這篇文章首頁的圖片 9thumbnail: &amp;#34;/images/HUGO.png&amp;#34; #每篇文章的縮圖位置在這裡(static/images/)-變更 10codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
           
           
         

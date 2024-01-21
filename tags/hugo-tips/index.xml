@@ -10,15 +10,15 @@
     <lastBuildDate>Fri, 12 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/hugo-tips/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用Hugo架站相關語法</title>
-      <link>https://agoodbear.github.io/post/1-post/</link>
+      <link>https://agoodbear.github.io/post/study-post-1/</link>
       <pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://agoodbear.github.io/post/1-post/</guid>
+      <guid>https://agoodbear.github.io/post/study-post-1/</guid>
       <description>
         
           
             要如何利用Hugo建立靜態網站文章 前置作業 首先要確立幾件事情:
-在Mac中安裝好Xcode (Win應該不用安裝吧?這我不知道) 使用Homebrew在Mac的終端機安裝Hugo 已經在GitHub申請好帳號 安裝好VS code與typora VS code 可以直接寫markdown code Typora 會直接將文章轉成markdown格式(有點所見即所得概念)➔用這個寫文章比用VS code寫舒服多了😌 已經在Hugo theme裡面選好，想要搭配的theme來做修改 下載theme，可以在自己的電腦上打開運作 完成上列，就算完成大部分了～～～
+在Mac中安裝好Xcode (Win應該不用安裝吧?這我不知道) 使用Homebrew在Mac的終端機安裝Hugo 已經在GitHub申請好帳號 安裝好VS code與typora VS code 可以直接寫markdown code Typora 會直接將文章轉成markdown格式(有點所見即所得概念)➔用這個寫文章比用VS code寫舒服多了😌 在Typora引用圖，在圖上直接右鍵，就可更改大小 已經在Hugo theme裡面選好，想要搭配的theme來做修改 下載theme，可以在自己的電腦上打開運作 完成上列，就算完成大部分了～～～
 接著就是根據每個不同的theme，看自己的需求來做客製化的動作!!!!(不是必須的，但像我這種強迫症患者，肯定要改)
 這邊就一定要強烈推薦古君葳老師的Github 免費架站術！輕鬆打造個人品牌
 文章基本markdown格式須知 我這一個theme是來自於這裡 (以下的變更都根據這一個theme為主) 在exampleSite/content/post自行建立一個markdown檔案(*.md)
