@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OMI on 急診熊心聲部落格</title>
+    <link>https://agoodbear.github.io/tags/omi/</link>
+    <description>Recent content in OMI on 急診熊心聲部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>Copyright © 2022-2024, Modified by ER Bear</copyright>
+    <lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/omi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>73歲男性，胸痛持續。需要導管介入嗎?</title>
+      <link>https://agoodbear.github.io/post/ecg-post-1/</link>
+      <pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://agoodbear.github.io/post/ecg-post-1/</guid>
+      <description>
+        
+          
+            覺得這個Case非常有趣，也可以從中學到不少。特地把這個Case從眾多想寫的案例中，往前拉。
+73歲男性，半夜來就診。因為胸痛厲害，所以當班急診醫師也做了Chest CTA去排除主動脈剝離。
+早上我接班後，我自己的習慣會去把交班主述胸痛的病患，再去看一眼，前一班所做的心電圖。病患一開始的TnI為0.26 mg/mL，已經是&amp;gt;99th percentile of URL。預計之後會在抽第二次心臟酵素。
+Initial ECG如上圖，我看完後，就直接去看病患，看看目前病患的胸痛狀況目前如何?
+各位有看到什麼嗎?
+垂直藍線是畫在J point。J point是用來評估是否有STE or STD的點。J point是QRS的結尾到ST segment的開頭。若是在Baseline以上就是STE，baseline以下就是STD。
+我們要運用STEMI criteria就是要看根據J point的位置來判斷是否有STE，才能夠診斷STEMI。 在最近的2018年第四版的Universal Definition of Myocardial Infarction裡面就有清楚講明什麼是AMI。什麼可以叫做STEMI。
+AMI就是出現Myocardial injury的證據(Biomarker上升)+ Myocardial ischemia證據(症狀 or ECG or 影像出問題)。(Fig.2)
+而要診斷STEMI，則必須符合STEMI criteria。(Fig.3)
+必須要再三強調，V2/V3的STE與其他lead定義不一樣。看V2/V3要根據性別/年齡合併一起看。
+舉例來說，男性&amp;lt;40 y/o在V2/V3要≧2.5 mm才是有意義的高。其他以此類推。
+這延伸了幾個有趣的狀況: 這也代表著，隨便抓一個人來作12 lead ECG，很有可能會在V2/V3都看到有STE，只是有沒有意義的高，就需要根據上述的criteria了。 如果沒有看到STE在V2/V3(比如isoelectric baseline or minimal STD)，那麼就需要考慮是不是有什麼力量往下拉了。對~~~Post.OMI 承上面，怎樣程度的minimal STD都要考慮Post.OMI呢? 在這篇Smith ECG Blog有提到¹，在V2 or V3有任何程度的STD，都必須考慮posterior OMI，直到證明不是為止。特別是downsloping STD(符合前述，即使STD&amp;lt;0.5~1 mm都要特別小心)
+Ken Grauer與Smith大師，多次強調V2 or V3的ECG morphology。除了前述的任何程度的STD。如果出現downsloping STD or Shelf-like STD都要小心有Post.OMI.
+在這一篇之前寫的文章中，我有更詳盡的論述，要如何診斷Post.OMI²。簡短說一下:STDmaxV1–4(+) →直指Post.
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

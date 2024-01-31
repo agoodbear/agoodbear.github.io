@@ -162,7 +162,7 @@
 </span>
     <span class="post_date">
       Jan 17, 2024</span>
-    <span class="post_time"> · 0 分鐘長</span>
+    <span class="post_time"> · 1 分鐘長</span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     分享到:
@@ -221,7 +221,255 @@
         <nav id="TableOfContents"></nav>
       </div>
     
-    <div class="post_body">
+    <div class="post_body"><script type="text/javascript" src= '/js/pdf-js/build/pdf.js'></script>
+
+<style>
+  #embed-pdf-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 20vh;
+     
+  }
+  
+  .pdf-canvas {
+    border: 1px solid black;
+    direction: ltr;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+  
+  #the-canvas {
+    border: 1px solid black;
+    direction: ltr;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+  
+  
+  .pdf-loadingWrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+  }
+  
+  .pdf-loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #d2d0d0;;
+    border-radius: 50%;
+    border-top-color: #383838;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+  }
+  
+  
+  
+  
+  
+  #overlayText {
+    word-wrap: break-word;
+    display: grid;
+    justify-content: end;
+  }
+  
+  #overlayText a {
+    position: relative;
+    top: 10px;
+    right: 4px;
+    color: #000;
+    margin: auto;
+    background-color: #eeeeee;
+    padding: 0.3em 1em;
+    border: solid 2px;
+    border-radius: 12px;
+    border-color: #00000030;
+    text-decoration: none;
+  }
+  
+  #overlayText svg {
+    height: clamp(1em, 2vw, 1.4em);
+    width:  clamp(1em, 2vw, 1.4em);
+  }
+  
+  
+  
+  @keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  </style><div class="embed-pdf-container" id="embed-pdf-container-ca17e917">
+    <div class="pdf-loadingWrapper" id="pdf-loadingWrapper-ca17e917">
+        <div class="pdf-loading" id="pdf-loading-ca17e917"></div>
+    </div>
+    <div id="overlayText">
+      <a href="/pdfs/1.pdf" aria-label="Download" download>
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+            <path d="M9 13c.3 0 .5-.1.7-.3L15.4 7 14 5.6l-4 4V1H8v8.6l-4-4L2.6 7l5.7 5.7c.2.2.4.3.7.3zm-7 2h14v2H2z" />
+        </svg>
+      </a>
+    </div>
+    <canvas class="pdf-canvas" id="pdf-canvas-ca17e917"></canvas>
+</div>
+
+<div class="pdf-paginator" id="pdf-paginator-ca17e917">
+    <button id="pdf-prev-ca17e917">Previous</button>
+    <button id="pdf-next-ca17e917">Next</button> &nbsp; &nbsp;
+    <span>
+      <span class="pdf-pagenum" id="pdf-pagenum-ca17e917"></span> / <span class="pdf-pagecount" id="pdf-pagecount-ca17e917"></span>
+    </span>
+    <a class="pdf-source" id="pdf-source-ca17e917" href="/pdfs/1.pdf">[pdf]</a>
+</div>
+
+<noscript>
+View the PDF file <a class="pdf-source" id="pdf-source-noscript-ca17e917" href="/pdfs/1.pdf">here</a>.
+</noscript>
+
+<script type="text/javascript">
+    (function(){
+    var url = '\/pdfs\/1.pdf';
+
+    var hidePaginator = "" === "true";
+    var hideLoader = "" === "true";
+    var selectedPageNum = parseInt("") || 1;
+
+    
+    var pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+    
+    if (pdfjsLib.GlobalWorkerOptions.workerSrc == '')
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "https:\/\/agoodbear.github.io\/" + 'js/pdf-js/build/pdf.worker.js';
+
+    
+    var pdfDoc = null,
+        pageNum = selectedPageNum,
+        pageRendering = false,
+        pageNumPending = null,
+        scale = 3,
+        canvas = document.getElementById('pdf-canvas-ca17e917'),
+        ctx = canvas.getContext('2d'),
+        paginator = document.getElementById("pdf-paginator-ca17e917"),
+        loadingWrapper = document.getElementById('pdf-loadingWrapper-ca17e917');
+
+
+    
+    showPaginator();
+    showLoader();
+
+    
+
+    function renderPage(num) {
+      pageRendering = true;
+      
+      pdfDoc.getPage(num).then(function(page) {
+        var viewport = page.getViewport({scale: scale});
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        
+        var renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+        var renderTask = page.render(renderContext);
+
+        
+        renderTask.promise.then(function() {
+          pageRendering = false;
+          showContent();
+
+          if (pageNumPending !== null) {
+            
+            renderPage(pageNumPending);
+            pageNumPending = null;
+          }
+        });
+      });
+
+      
+      document.getElementById('pdf-pagenum-ca17e917').textContent = num;
+    }
+
+    
+
+    function showContent() {
+      loadingWrapper.style.display = 'none';
+      canvas.style.display = 'block';
+    }
+
+    
+
+    function showLoader() {
+      if(hideLoader) return
+      loadingWrapper.style.display = 'flex';
+      canvas.style.display = 'none';
+    }
+
+    
+
+    function showPaginator() {
+      if(hidePaginator) return
+      paginator.style.display = 'block';
+    }
+
+    
+
+    function queueRenderPage(num) {
+      if (pageRendering) {
+        pageNumPending = num;
+      } else {
+        renderPage(num);
+      }
+    }
+
+    
+
+    function onPrevPage() {
+      if (pageNum <= 1) {
+        return;
+      }
+      pageNum--;
+      queueRenderPage(pageNum);
+    }
+    document.getElementById('pdf-prev-ca17e917').addEventListener('click', onPrevPage);
+
+    
+
+    function onNextPage() {
+      if (pageNum >= pdfDoc.numPages) {
+        return;
+      }
+      pageNum++;
+      queueRenderPage(pageNum);
+    }
+    document.getElementById('pdf-next-ca17e917').addEventListener('click', onNextPage);
+
+    
+
+    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+      pdfDoc = pdfDoc_;
+      var numPages = pdfDoc.numPages;
+      document.getElementById('pdf-pagecount-ca17e917').textContent = numPages;
+
+      
+      if(pageNum > numPages) {
+        pageNum = numPages
+      }
+
+      
+      renderPage(pageNum);
+    });
+    })();
+</script>
+
+
     </div>
 <div class="post_comments">
   
@@ -291,6 +539,9 @@
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://agoodbear.github.io/post/ecg-post-1/" class="nav-link" title="73歲男性，胸痛持續。需要導管介入嗎?">73歲男性，胸痛持續。需要導管介入嗎?</a>
+      </li>
+      <li>
         <a href="https://agoodbear.github.io/post/study-post-2/" class="nav-link" title="資料庫的應用與靈感筆記如何建立?">資料庫的應用與靈感筆記如何建立?</a>
       </li>
       <li>
@@ -303,14 +554,14 @@
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分類</h2>
       <nav class="tags_nav">
-        <a href='https://agoodbear.github.io/categories/study/' class="post_tag button button_translucent" title="study">
-          STUDY
+        <a href='https://agoodbear.github.io/categories/ecg/' class="post_tag button button_translucent" title="ecg">
+          ECG
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://agoodbear.github.io/categories/ecg/' class="post_tag button button_translucent" title="ecg">
-          ECG
-          <span class="button_tally">1</span>
+        <a href='https://agoodbear.github.io/categories/study/' class="post_tag button button_translucent" title="study">
+          STUDY
+          <span class="button_tally">2</span>
         </a>
         
         <a href='https://agoodbear.github.io/categories/pocus/' class="post_tag button button_translucent" title="pocus">
@@ -355,8 +606,23 @@
           <span class="button_tally">1</span>
         </a>
         
+        <a href='https://agoodbear.github.io/tags/nste-acs/' class="post_tag button button_translucent" title="nste-acs">
+          NSTE-ACS
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://agoodbear.github.io/tags/omi/' class="post_tag button button_translucent" title="omi">
+          OMI
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='https://agoodbear.github.io/tags/roam-search/' class="post_tag button button_translucent" title="roam-search">
           ROAM-SEARCH
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://agoodbear.github.io/tags/stdmaxv1-4/' class="post_tag button button_translucent" title="stdmaxv1-4">
+          STDMAXV1-4
           <span class="button_tally">1</span>
         </a>
         
