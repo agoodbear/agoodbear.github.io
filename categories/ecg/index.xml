@@ -38,13 +38,43 @@ Ken Grauer與Smith大師，多次強調V2 or V3的ECG morphology。除了前述�
     </item>
     
     <item>
-      <title>測試ECG</title>
+      <title>How to detect OMI in 10 Steps?</title>
+      <link>https://agoodbear.github.io/post/ecg-post-2/</link>
+      <pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://agoodbear.github.io/post/ecg-post-2/</guid>
+      <description>
+        
+          
+            基本知識 OMI這個觀念是在2018年由Stephen W. Smith、 Pendell Meyers、Scott Weingart所提出。主要是考量目前STEMI criteria並不是一項可以讓病患從PCI獲益的良好評估工具。因此介紹了OMI更好去讓我們發現ACO(Acute coronary occlusion)
+新的OMI/NOMI paradigm並不拘限於ECG，然而ECG仍是此觀念的cornerstone，主要因為它可以快速做到、可重覆性、非侵襲性與目前廣泛使用。
+由於每種ECG signs都有其pretest probability，因此ECG應該要和病患臨床表徵前、後關係，胸痛存在與否和其特性。特別是ECG finding非常subtle，更要注意。(例如出現STE，但病患沒有任何胸口不適，可能要想想其他問題)
+到急診主述胸痛的病患，只有2~5%真正有OMI。而這些病患只有一半符合STEMI criteria。
+還記得STEMI criteria嗎?
+這篇文章透過10個步驟來分析，哪些狀況可能有OMI，哪些情況比較不像OMI⁹。透過這樣的分析評估ECG，讓我們能夠更快速找出OMI病患，如此可適當會診心內醫師，挽救殘存的心肌細胞。
+10 Steps to clarify the OMI
+當有明顯STE時 Step 1:排除artifact 先看有無Atrial Repolarization wave(ARW) or atrial flutter➡有可能會出現STE現象(常見於inf.leads)
+先看看Inf.lead是不是有Negative P wave，如果是的話代表不是sinus node傳導下來的，因為是low atrium發出的，所以可看下圖(Fig 1)¹: 圖片解釋:
+(左側)正常sinus rhythm在lead II的P wave為Upright，所以P wave的再極化波(Tp wave)會inverted(因為藏在QRS裡，所以看不到。 (右側)為ectopic rhythm，接近low atrium，所以此P wave會靠近QRS，且inverted，但其Tp wave會Upright，這會讓ST上升，看起來像STEMI，可參考下圖的Lead II/Lead III(有Inverted P wave)合併STE¹ Tips: 要小心Tp wave可能會引起pseudo-STE，一般來說比較輕微，當P wave的高度不高且PR不短➡那麼不要直接把STE歸咎於Tp wave引發起來(還是要先想MI)
+如果lead貼在arterial pulse上，也有可能會造成STE現象
+Tips: 通常不會所有leads都會影響到，比如Inf. leads(不會三個都影響到)
+Step 2:排除傳導異常導致的STE原因 看QRS是否有寬?
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>測試功能區</title>
       <link>https://agoodbear.github.io/post/post-3/</link>
       <pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://agoodbear.github.io/post/post-3/</guid>
       <description>
         
+          
+            &lt;!DOCTYPE html&gt; 測試1 測試2 測試3 測試4 
           
           
         
