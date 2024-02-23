@@ -30,10 +30,10 @@ baseline抖抖的、心跳很慢，似乎有STE，這是我在line裡面看到�
 首先我們要了解J point在哪裡?因為是否有STE or STD，取決於J point是在baseline以上還是以下。
 J point這個點的定義是QRS的結尾到ST segment的開頭
 下圖是我做電子筆記時常用的圖，讓我能快速複習J point &amp;amp; J wave &amp;amp; S wave
-**左2**可以看到J point比baseline高，所以是STE
-**右3**可以看到J point比baseline低，所以是STD
+左2可以看到J point比baseline高，所以是STE
+右3可以看到J point比baseline低，所以是STD
 那............ J wave是啥XD
-J wave是指在J point之前往上的反折(在aVR、V1會往下反折)稱之➔**右4**就是很明顯在J point之前出現J wave
+J wave是指在J point之前往上的反折(在aVR、V1會往下反折)稱之➔右4就是很明顯在J point之前出現J wave
 所以到底prehospital ECG有沒有STE? 首先一定要養成一個習慣，那就是看到STE，要先確認這是不是STE。確認的方法，就是我剛剛說的，先找J point在哪裡!!!!(Step 1)
 我們看看Fig 3裡面的12個lead，Lead I/II/aVL/aVF/V4/V5/V6都像是有STE，要找J point，或許不是那麼好找。那麼我們就從其他lead找。
 在V1其實很明顯J point在哪裡。當我們找到一個lead的J point時，接下來就是把QRS寬度量出來。(Step 2)
