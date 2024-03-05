@@ -169,7 +169,7 @@
 </span>
     <span class="post_date">
       Jan 17, 2024</span>
-    <span class="post_time"> · 1 分鐘長</span>
+    <span class="post_time"> · 0 分鐘長</span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     分享到:
@@ -228,254 +228,45 @@
         <nav id="TableOfContents"></nav>
       </div>
     
-    <div class="post_body"><script type="text/javascript" src= '/js/pdf-js/build/pdf.js'></script>
-
-<style>
-  #embed-pdf-container {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 20vh;
-     
-  }
-  
-  .pdf-canvas {
-    border: 1px solid black;
-    direction: ltr;
-    width: 100%;
-    height: auto;
-    display: none;
-  }
-  
-  #the-canvas {
-    border: 1px solid black;
-    direction: ltr;
-    width: 100%;
-    height: auto;
-    display: none;
-  }
-  
-  
-  .pdf-loadingWrapper {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 350px;
-  }
-  
-  .pdf-loading {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border: 3px solid #d2d0d0;;
-    border-radius: 50%;
-    border-top-color: #383838;
-    animation: spin 1s ease-in-out infinite;
-    -webkit-animation: spin 1s ease-in-out infinite;
-  }
-  
-  
-  
-  
-  
-  #overlayText {
-    word-wrap: break-word;
-    display: grid;
-    justify-content: end;
-  }
-  
-  #overlayText a {
-    position: relative;
-    top: 10px;
-    right: 4px;
-    color: #000;
-    margin: auto;
-    background-color: #eeeeee;
-    padding: 0.3em 1em;
-    border: solid 2px;
-    border-radius: 12px;
-    border-color: #00000030;
-    text-decoration: none;
-  }
-  
-  #overlayText svg {
-    height: clamp(1em, 2vw, 1.4em);
-    width:  clamp(1em, 2vw, 1.4em);
-  }
-  
-  
-  
-  @keyframes spin {
-    to { -webkit-transform: rotate(360deg); }
-  }
-  @-webkit-keyframes spin {
-    to { -webkit-transform: rotate(360deg); }
-  }
-  </style><div class="embed-pdf-container" id="embed-pdf-container-ca17e917">
-    <div class="pdf-loadingWrapper" id="pdf-loadingWrapper-ca17e917">
-        <div class="pdf-loading" id="pdf-loading-ca17e917"></div>
-    </div>
-    <div id="overlayText">
-      <a href="/pdfs/1.pdf" aria-label="Download" download>
-        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-            <path d="M9 13c.3 0 .5-.1.7-.3L15.4 7 14 5.6l-4 4V1H8v8.6l-4-4L2.6 7l5.7 5.7c.2.2.4.3.7.3zm-7 2h14v2H2z" />
-        </svg>
-      </a>
-    </div>
-    <canvas class="pdf-canvas" id="pdf-canvas-ca17e917"></canvas>
-</div>
-
-<div class="pdf-paginator" id="pdf-paginator-ca17e917">
-    <button id="pdf-prev-ca17e917">Previous</button>
-    <button id="pdf-next-ca17e917">Next</button> &nbsp; &nbsp;
-    <span>
-      <span class="pdf-pagenum" id="pdf-pagenum-ca17e917"></span> / <span class="pdf-pagecount" id="pdf-pagecount-ca17e917"></span>
-    </span>
-    <a class="pdf-source" id="pdf-source-ca17e917" href="/pdfs/1.pdf">[pdf]</a>
-</div>
-
-<noscript>
-View the PDF file <a class="pdf-source" id="pdf-source-noscript-ca17e917" href="/pdfs/1.pdf">here</a>.
-</noscript>
-
-<script type="text/javascript">
-    (function(){
-    var url = '\/pdfs\/1.pdf';
-
-    var hidePaginator = "" === "true";
-    var hideLoader = "" === "true";
-    var selectedPageNum = parseInt("5") || 1;
-
-    
-    var pdfjsLib = window['pdfjs-dist/build/pdf'];
-
-    
-    if (pdfjsLib.GlobalWorkerOptions.workerSrc == '')
-      pdfjsLib.GlobalWorkerOptions.workerSrc = "https:\/\/agoodbear.github.io\/" + 'js/pdf-js/build/pdf.worker.js';
-
-    
-    var pdfDoc = null,
-        pageNum = selectedPageNum,
-        pageRendering = false,
-        pageNumPending = null,
-        scale = 3,
-        canvas = document.getElementById('pdf-canvas-ca17e917'),
-        ctx = canvas.getContext('2d'),
-        paginator = document.getElementById("pdf-paginator-ca17e917"),
-        loadingWrapper = document.getElementById('pdf-loadingWrapper-ca17e917');
-
-
-    
-    showPaginator();
-    showLoader();
-
-    
-
-    function renderPage(num) {
-      pageRendering = true;
-      
-      pdfDoc.getPage(num).then(function(page) {
-        var viewport = page.getViewport({scale: scale});
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-
-        
-        var renderContext = {
-          canvasContext: ctx,
-          viewport: viewport
-        };
-        var renderTask = page.render(renderContext);
-
-        
-        renderTask.promise.then(function() {
-          pageRendering = false;
-          showContent();
-
-          if (pageNumPending !== null) {
-            
-            renderPage(pageNumPending);
-            pageNumPending = null;
-          }
-        });
-      });
-
-      
-      document.getElementById('pdf-pagenum-ca17e917').textContent = num;
-    }
-
-    
-
-    function showContent() {
-      loadingWrapper.style.display = 'none';
-      canvas.style.display = 'block';
-    }
-
-    
-
-    function showLoader() {
-      if(hideLoader) return
-      loadingWrapper.style.display = 'flex';
-      canvas.style.display = 'none';
-    }
-
-    
-
-    function showPaginator() {
-      if(hidePaginator) return
-      paginator.style.display = 'block';
-    }
-
-    
-
-    function queueRenderPage(num) {
-      if (pageRendering) {
-        pageNumPending = num;
-      } else {
-        renderPage(num);
-      }
-    }
-
-    
-
-    function onPrevPage() {
-      if (pageNum <= 1) {
-        return;
-      }
-      pageNum--;
-      queueRenderPage(pageNum);
-    }
-    document.getElementById('pdf-prev-ca17e917').addEventListener('click', onPrevPage);
-
-    
-
-    function onNextPage() {
-      if (pageNum >= pdfDoc.numPages) {
-        return;
-      }
-      pageNum++;
-      queueRenderPage(pageNum);
-    }
-    document.getElementById('pdf-next-ca17e917').addEventListener('click', onNextPage);
-
-    
-
-    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-      pdfDoc = pdfDoc_;
-      var numPages = pdfDoc.numPages;
-      document.getElementById('pdf-pagecount-ca17e917').textContent = numPages;
-
-      
-      if(pageNum > numPages) {
-        pageNum = numPages
-      }
-
-      
-      renderPage(pageNum);
-    });
-    })();
+    <div class="post_body"><link href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css"></link>
+<script  type="text/javascript" src="https://unpkg.com/nanogallery2@3.0.5/dist/jquery.nanogallery2.min.js"></script>
+<div id="nanogallery2"></div>
+<script>
+$("#nanogallery2").nanogallery2({
+itemsBaseURL: "https://i.imgur.com/", // 圖片網址前綴
+thumbnailWidth: "auto", // 縮圖寬度
+thumbnailHeight: 150, // 縮圖高度
+galleryDisplayMode: "moreButton", // 圖片多於一定數量就顯示More按鈕
+galleryDisplayMoreStep: 3, // 最多顯示幾行
+viewerGallery: "none", //不在燈箱顯示縮圖,
+imageTransition: "swipe",
+gallerySorting: "random", // 是否開啟圖片隨機排序
+thumbnailLabel: {"position": "onBottom", "displayDescription": false, "titleMultiLine": true},
+galleryFilterTags: 'description',
+viewerToolbar:{ // 顯示在燈箱檢視畫面工具列的按鈕
+display:false,
+standard:'minimizeButton, label',
+minimized:  'minimizeButton, label, fullscreenButton, downloadButton, infoButton'
+},
+viewerTools:{ // 顯示在燈箱檢視畫面的按鈕
+topLeft:'infoButton, label',
+topRight:'pageCounter, playPauseButton, zoomButton, fullscreenButton, downloadButton, closeButton'
+},
+items: [ // 圖片
+{src: 'kttm8p2.png', srct: 'kttm8p2.png',title: '', 'description': '雪風'},
+{src: '79anHDY.png', srct: '79anHDY.png',title: '', 'description': '時雨'},
+{src: 'Mjml2zs.png', srct: 'Mjml2zs.png',title: '', 'description': '時雨 雪風 #Shigure #Yukikaze'},
+{src: 'fCQadJi.png', srct: 'fCQadJi.png',title: '', 'description': '雪風'},
+{src: 'dlhNnEL.png', srct: 'dlhNnEL.png',title: '', 'description': '扶桑 山城 #Fusou #Yamashiro'},
+{src: 'JCMZDQT.png', srct: 'JCMZDQT.png',title: '', 'description': '最上'},
+{src: 'sRxPU0m.jpg', srct: 'sRxPU0m.jpg',title: '', 'description': '時雨'},
+{src: 'zZ0vNvR.png', srct: 'zZ0vNvR.png',title: '', 'description': '山雲 朝雲 #Kazagumo #Asagumo'},
+{src: 'd5OXGbJ.jpg', srct: 'd5OXGbJ.jpg',title: '', 'description': '時雨 雪風 #Shigure #Yukikaze'},
+{src: 'jV4uhwi.png', srct: 'jV4uhwi.png',title: '', 'description': '扶桑 山城 #Fusou #Yamashiro'},
+{src: 'i3Yfo9V.png', srct: 'i3Yfo9V.png',title: '', 'description': '山城'}
+]
+});
 </script>
-
 
     </div>
 <div class="post_comments">
