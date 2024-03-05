@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SCAD on 急診熊心聲部落格</title>
+    <link>https://agoodbear.github.io/tags/scad/</link>
+    <description>Recent content in SCAD on 急診熊心聲部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>Copyright © 2022-2024, Modified by ER Bear</copyright>
+    <lastBuildDate>Mon, 04 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/scad/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>和死神擦身而過的年輕產婦</title>
+      <link>https://agoodbear.github.io/post/ecg-post-5/</link>
+      <pubDate>Mon, 04 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://agoodbear.github.io/post/ecg-post-5/</guid>
+      <description>
+        
+          
+            30多歲年輕產婦，G3P0A2，這是目前唯一一次的成功生產，也差點成為最後一次。
+因為出生前胎兒是臀位。所以最終生產採取了剖腹產。
+產後第五天的中午，病患突然開始胸痛。約莫10分鐘後開始意識不清，一陣類似癲癇的動作產生。隨即沒了呼吸、心跳。
+在急重症環境下工作的同仁，應該會了解，這種類似癲癇的動作，並不是真正腦部問題產生，而更上層的原因常常是因為心臟跳了心室性心律不整比如心室顫動或心室性心搏過速，沒有足夠的心輸出量，進而產生腦部缺血而誘發類似癲癇的動作出現(見Fig.1)。
+Case繼續~~ ECG monitor裝上去後，仍有波形，但沒有摸到脈搏。
+PEA(無脈搏性心臟電氣活動)
+醫護人員開始了CPR.........準備給Epinephrine、插管
+我設身處地想像當下的狀況。好不容易，第一次生產成功的產婦，現在卻什麼都沒有了，新生兒室還躺著自己努力生下來的嬰兒，正在哭著。而產婦卻連哭都不能哭，因為現在這個時刻連命都沒了。
+之後很快出現pulseless VT，電擊了一次200J，給了一劑的epinephrine，之後就ROSC。
+病患因為疑似羊水栓塞(amniotic fluid embolism)，轉入了外科加護病房，進一步檢查。
+來點小小知識補充包: 羊水栓塞的可能原因? 羊水栓塞風險因子有哪些? 有哪些症狀? 有沒有什麼診斷檢查是golden standard? 發生率如何? **羊水栓塞是指在分娩過程中，羊水或其成分進入母體血液循環，觸發強烈的免疫反應。這種免疫反應會釋放大量的細胞因子，稱為細胞因子風暴，這可能導致嚴重的心血管衰竭和凝血異常。**羊水栓塞的確切原因尚不清楚，但研究認為它可能與羊水中特定成分的免疫反應有關。
+這張圖來自於這裡
+講簡單一點就是，我們每個人的身體，都不喜歡外來物(foreign body)。
+當產婦懷孕時，正常狀況下在母體循環(maternal circulation)裡不會出現胎兒細胞與羊水。但是當運氣不好時，子宮靜脈(uterine vein)或是胎盤(placenta)出現撕裂傷(tear)時，這些胎兒細胞與羊水就有可能鑽進母體循環內。當這些非母體本身的外來物在母體循環內就會當作foreign body而被擋了下來。因此後續產生了一連串的免疫/過敏反應。1
+以下是可能的風險因子列表:
+風險因素 說明 來源 年齡大於35歲 與AFE相關的風險增加 2 胎盤前置（Placenta Previa） 胎盤前置的風險增加30.4倍 2 剖腹產（Cesarean Delivery） 剖腹產的風險增加5.7倍 2 高齡和少數族裔女性 在高齡和少數族裔女性中，AFE的風險顯著增加 3 分娩方式 剖腹產和儀器輔助陰道分娩與AFE風險增加相關 4 妊娠相關風險因素 包括胎盤異常、子癇前症、羊水過多等 4 引產（Induced Labor） 使用某些方法引產可能增加AFE的風險，但研究仍有限 5 多胞胎妊娠（Multiple Pregnancy） 多胞胎妊娠與AFE風險增加相關 3 胎盤剝離（Placental Abruption） 胎盤剝離與AFE風險增加相關 4 電解質異常（Electrolyte Abnormalities） 電解質異常與發展AFE的風險有顯著關聯 6 那麼要如何診斷呢?
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
