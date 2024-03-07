@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vf on 急診熊心聲部落格</title>
+    <link>https://agoodbear.github.io/tags/vf/</link>
+    <description>Recent content in Vf on 急診熊心聲部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>Copyright © 2022-2024, Modified by ER Bear</copyright>
+    <lastBuildDate>Tue, 05 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/vf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>讓心臟亂跳的外傷</title>
+      <link>https://agoodbear.github.io/post/ecg-post-6/</link>
+      <pubDate>Tue, 05 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://agoodbear.github.io/post/ecg-post-6/</guid>
+      <description>
+        
+          
+            48歲女性，下樓時，不小心，腳踩空，從樓上滾了下來。 簡單的一句話，卻是她悲慘人生的開端。 因為意識不清楚，又是外傷。病患推入了急救室。
+接上了ECG monitor，發現心臟跳得很快，隨即做了一張12 lead ECG
+嗯，這張的rate，很有問題。
+怎麼說?
+肯定不是156下。這張ECG的rate，應該是Double，快要300下才對。
+主要是ECG機器把其中一個R wave誤認為T wave，導致本來應該要300下的心跳，機器自己算，攔腰砍一半。
+判讀心電圖要有一個自己的原則，機器寫的東西，參考看看就好。可以當輔助，但絕對不能拿來當答案。 這種會Double H.R的狀況，比較常出現在T wave明顯的情況(如Hyper-K、或AMI先出現hyperacute T wave時)。
+舉個同事其他例子(Fig.2)。同事上班時發現ECG monitor一直在叫，會叫是因為機器認為心跳過快了。
+真的有過快嗎?
+No~~是因為T wave太明顯，機器認錯了，經過處理後，就變下圖了。T wave降下來，機器也辨識正確了。
+我倒還是第一次遇到把R wave當成T wave，H.R攔腰砍半的狀況。
+Tips:當目測H.R和機器有差距，請看看是否機器誤認，錯把T wave當成R wave(較常見)
+Case繼續~~ 不過這次的個案，非常快的，還沒電擊，心跳就自己降下來了
+Fig.3的最上的心跳和12 lead ECG相仿，很快就降到一半(RR interval從一大格，變成約二大格)，最下圖大約要三大格，剩100下左右。
+這邊有一些算H.R的小技巧:
+應用rule of 300 long lead II計算法 看ECG機器數值😆 應用rule of 300，就是先算RR interval有幾大格，算好後，直接300/幾大格(Fig.4)。不過有一個前提，那就是12 lead ECG的Speed要設在 25 mm/sec。理論上，一般都是設25 mm/sec，沒事不會去做變更啦。
+另外還有long lead II的算法，也就是將12 lead ECG最下方的long lead II，先算有幾個QRS，然後x6就是一分鐘心跳多少。主要是一張12 lead ECG，是10秒鐘，所以x6就可以得到一分鐘跳多少下。
+Case繼續~~ 病患因為有明顯外傷且意識不清，後續做了Brain CT and Whole body CT。
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
