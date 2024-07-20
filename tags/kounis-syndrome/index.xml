@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kounis Syndrome on 急診熊心聲部落格</title>
+    <link>https://agoodbear.github.io/tags/kounis-syndrome/</link>
+    <description>Recent content in Kounis Syndrome on 急診熊心聲部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>Copyright © 2022-2024, Modified by ER Bear</copyright>
+    <lastBuildDate>Thu, 18 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/kounis-syndrome/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>蜂螫的隱藏威脅！</title>
+      <link>https://agoodbear.github.io/post/ecg-post-9/</link>
+      <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://agoodbear.github.io/post/ecg-post-9/</guid>
+      <description>
+        
+          
+            寫完上一篇因為influenza myocarditis導致electrical storm，後來電了DSD，ROSC的個案。
+讓我回想到，我還有一個個案，也有類似的經驗。我後來拿到了東部急診聯合病例討論季會分享。
+這個Case的大約發生在5年前。
+74歲女性，救護車喔咿喔咿~~送入病患，直接推進去急救室。
+到院時間，16:39 血壓只能往地下找，60/44 mmHg，SaO2:67%
+Air hunger的呼吸pattern、意識不清楚
+一隻腳已經踏進去閻王殿
+家人跟進來急救室，說明他媽媽剛剛在曬衣服，結果曬衣架裡面飛出一隻蜜蜂，叮了她一下，過沒多久，媽媽就倒了下來。
+立刻給予epinephrine 0.3 c.c IM、Hydorcortisone 200 mg、Anti-histamine
+時間:16:40 到院不到一分鐘
+摸不到脈搏了➔PEA
+開始CPR
+時間:16:40 不到一分鐘的時間裡，rhythm轉換成Vf
+我大喊著，準備電擊。幫我轉到200J
+在充電到200J的短暫時間裡，我思考著，接下來該怎麼辦。
+⚡️很快充完電，按下paddle的電擊按鈕。繼續CPR
+病患因為電擊，身體彈了一下。
+時間:16:42 CPR兩分鐘後，看了一下ECG monitor的rhythm
+嗯......有點像TdP?還是Vf?
+⚡️不管如何病患還是不穩定的狀態，繼續電擊200J，然後CPR、給藥
+時間:16:44 又過了2分鐘，依舊是Vf
+⚡️再次電擊200J
+時間:16:46 暈倒~~還是Vf
+我請另一位同事幫我把另一台電擊器推過來，幫我貼上TCP的貼片，同樣轉到200J
+我印象中，這個個案的貼法是下圖右，而另一個個案的貼法是下圖左
+⚡️DSD電擊完後，有ROSC
+但過沒多久再次Vf
+⚡️一樣再次使用DSD電擊
+後續PEA
+時間:17:01 一直急救到了17:01
+再次ROSC，血壓不再往下找，105/87 mmHg
+整個ACLS過程中，使用過兩次DSD電擊
+在17:01之後的狀態就沒有再出現過Vf
+Rate:102 bpm
+Rhythm:看不到哪裡有明顯P wave
+Axis:RAD
+Interval:QTc算起來469 ms
+Ischemia:看起來是aVR STE with multiple leads STD的subendocardial ischemia pattern
+這在剛剛急救然後ROSC的病患，並不少見。因為整體coronary a.處於hypoperfusion狀況，另外也打了不少的epinephrine，這也會讓coronary a.血管收縮。
+這種ECG pattern可能呈現的原因是因為diffuse subendocardial ischemia or oxygen supply/demand mismatch➡此ECG並不具有specific for AMI，只能簡單表示目前心臟目前正處於嚴重廣泛整體供需不平衡，但原因不明
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
