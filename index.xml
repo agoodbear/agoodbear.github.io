@@ -7,7 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>Copyright © 2022-2024, Modified by ER Bear</copyright>
-    <lastBuildDate>Thu, 18 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>67歲暈厥的阿姨</title>
+      <link>https://agoodbear.github.io/post/ecg-post-10/</link>
+      <pubDate>Wed, 24 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://agoodbear.github.io/post/ecg-post-10/</guid>
+      <description>
+        
+          
+            67歲女性主述剛剛在運動時，突然暈了過去。 造成syncope的原因有很多，但最後的共同路徑(common pathway)是大腦血流中斷約10秒鐘 1 。
+以上表格來自於丁阿姨的枕頭 1 。
+Syncope的最常見原因是vasovagal（21%）、cardiac（10%）、orthostatic（9%）、medication related（7%）、neurologic（4%）和不明原因（37%）。
+診斷很重要，因為每個診斷分類都帶有預後風險。例如，caridac syncope會使死亡風險加倍，neurologic syncope會使死亡風險增加 50%，而不明原因的syncope會使死亡風險增加 30% 1 。
+syncope的治療取決於診斷。 例如，對於懷疑由藥物引起的患者，應停用相關藥物。
+丁阿姨寫的:最後的共同路徑(common pathway)是大腦血流中斷約10秒鐘 可是有些心律不整也沒有讓心臟停止10秒啊?那為何會syncope?
+這是因為在心律不整的情況下，心臟的功能可能會顯著受損，導致瞬間的心輸出量（cardiac output）劇烈減少，進而影響大腦的血液供應。一顆心臟打出的血液，要支配全身那麼多重要器官，當整體cardiac output少很多，當然到達腦部的血液就也會少很多，也幾乎接近中斷腦部血流了。
+另外seizure發作與syncope這兩者容易搞混。有時syncope常被誤認為是seizure attack，但這是兩種不同的疾病，雖然這兩種狀況都可能出現身體抽搐，但它們的起因不同。
+要區分兩者，可以參考病史、發作前後的症狀以及目擊者描述。例如，如果患者有癲癇病史、出現先兆（如幻覺）、發作後出現意識模糊或肌肉痠痛，則更有可能是癲癇發作。相反，如果患者在發作前感到噁心、冒冷汗，則更有可能是vasovagal （最常見的昏厥類型）。目擊者的描述，例如患者是否出現頭部轉動或異常姿勢，以及發作後意識恢復的時間長短，也有助於判斷。
+在seizure attack後，患者通常會經歷一段意識模糊的發作後狀態 (postictal state)，持續時間可能從幾分鐘到幾小時不等。相反地，syncope後的意識恢復通常較快，通常在幾秒鐘到幾分鐘內就會完全清醒。
+另外這ACEP的這篇文章裡面，也有提到在評估syncope時，Step 1就是去區別Syncope from seizure 2
+這邊要提到文章中描述，可能是一個常見的臨床pitfall，那就是尿失禁，根據一個review雖然針對siezure其specificity達到96%，但後續的研究發現並不可靠 2!!!
+拉回正題～～ 不管是syncope還是seizure attack，ECG都是快速評估的一個很重要工具。
+Amal mattu在ECG Weekly裡面上課，也常講上述兩種狀況都要做ECG。
+在2017 ACC/AHA Guideline for the Evaluation and Management of Patients with Syncope這篇文章中就有說明，對於syncope一開始的病史詢問、理學檢查和ECG都是屬於Class I建議要做的(見下表) 3。
+這位67歲的病患到院時的ECG如下: Rate: 42 bpm
+Rhythm: SR，但是出現多個P wave➔可以見到T wave後面又多一個P wave，這個P後面沒有立馬接個QRS，代表atrium放電往下傳，傳不到ventricle就斷電了
+PP interval都是regular、這是一張典型的2:1 AVB Axis: normal axis
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>蜂螫的隱藏威脅！</title>
       <link>https://agoodbear.github.io/post/ecg-post-9/</link>
