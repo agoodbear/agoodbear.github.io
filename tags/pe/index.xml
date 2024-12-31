@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PE on 急診熊心聲部落格</title>
+    <link>https://agoodbear.github.io/tags/pe/</link>
+    <description>Recent content in PE on 急診熊心聲部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>Copyright © 2022-2024, Modified by ER Bear</copyright>
+    <lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/pe/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>41歲女性，到院30分鐘內，IHCA</title>
+      <link>https://agoodbear.github.io/post/ecg-post-12/</link>
+      <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://agoodbear.github.io/post/ecg-post-12/</guid>
+      <description>
+        
+          
+            來分享一個前天同事的Case。我覺得有趣的點，不是在於診斷出來是什麼問題，而是處理過程，再次考驗急診醫師是踩在薄冰上的一個科別。
+41歲女性，到院時臉色蒼白、呼吸喘、心跳快。全身冒冷汗。自述一週前在他院進行子宮肌腺症手術。手術後陰道流血已經停止。也因為曾經貧血到Hgb 4.0，在他院輸血。
+病患從入院到collapse，不到30分鐘。
+病患說喘不過氣來......血氧一直掉。之後就沒了生命徵象。
+緊急推入急救室急救。
+開始CPR.....給予強心針.....插管。全套都一起來。
+41歲，剛來急診不到30分鐘。說怎樣都要從鬼門關拉回來。 線上的四位急診醫師，全部都擠進了急救室。
+過了一小段時間，ROSC
+Call了CVS，希望先放ECMO，爭取一些檢查的時間。
+CVS希望先做完CT，看看發生什麼事。
+有同事掃了心超，沒有PEF。
+病患的生命徵象還是不穩定
+先再Call CVS把ECMO放上，再去CT?還是先CT後再說? 但是病患的狀況不夠穩定到，可以讓我們有後面的選擇。
+先去CT，看看發生什麼事，我想病患從CT回來就只能走CPR這條路了。
+血氧還是拉不起來，看起來病患又準備要飛走了。
+我也看了一下心超，的確沒有水。但是RV dilate、LV動得不錯。
+我們幾個人討論後，先把Chest CTA看aortic dissection改成看pulmonary embolism。
+ROSC後的ECG如下
+⭐️Rate:120 bpm
+⭐️Rhythm:Sinus rhythm?有點存疑，因為Lead II的P wave似乎比Lead I還小。
+真正的sinus rhythm:
+Lead I/II/aVF有upright P wave Lead II的P wave其amplitude要大於Lead I 真正的true sinus P wave在V1的P wave會是biphasic pattern(上下)，而不是upright。 這邊要注意一個重點。
+如果我們發現Lead I的P wave&amp;gt;Lead II的P wave，除了要想到不是來自sinus放電以外。還要想到可能是LA/LL reversal
+如果真的是LA/LL reversal會有下列的ECG findings:(反過來想，當看到下列1與2就要想到LA/LL reversal的DDx)
+Lead III完全inverted(P、QRS、T都是negative)➔這邊要注意可能會造成pseudo S1Q3T3的誤判喔!! P wave在Lead I&amp;gt;Lead II 根據Fig.2來看➔當LA/LL reversal時，要怎麼看待limb lead呢?
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
