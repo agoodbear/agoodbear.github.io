@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HATW on 急診熊心聲部落格</title>
+    <link>https://agoodbear.github.io/tags/hatw/</link>
+    <description>Recent content in HATW on 急診熊心聲部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>Copyright © 2022-2024, Modified by ER Bear</copyright>
+    <lastBuildDate>Thu, 30 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/hatw/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>生氣的50歲男性</title>
+      <link>https://agoodbear.github.io/post/ecg-post-13/</link>
+      <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://agoodbear.github.io/post/ecg-post-13/</guid>
+      <description>
+        
+          
+            我依稀記得我在當R3住院醫師守急救室的某一天。那天來了個OHCA病患。
+急救室滿滿人潮不打緊。一級病患再怎樣都要挪個位置。
+救到一半，家屬到了.....在床尾開始哭喊著病患名字。
+接著.....
+家屬倒在床尾，右半邊沒有力氣........
+我傻眼喵咪，除了WTF以外，急救室真的沒有床可以躺。還瞬間又多了個一級病患。😭
+今天的病患有點異曲同工。
+50歲男性，因為姪子有自閉症，除夕在家裡面衝來衝去。搞得大家都很心煩。
+他出面去制止自閉症的姪子。
+大聲制止，讓這位中年大叔情緒波動也開始變大。
+過不到半小時，他開始胸悶.......接著就被一群人送到我們醫院。
+病患到院約在交班前半小時
+交班時，前一位醫師和我說心電圖怪怪的，他覺得在inf.leads有mild STD、此外V3的T wave高了一點
+他打開心電圖給我看(Fig.1)。
+我和他說這絕對是心肌梗塞，血管塞住了。 迅速交完班後。
+不管今年這不講武德的年獸(以往年獸大致都講武德啊~~除夕夜1800-2100應該要急診室清零才對啊)。桌上未看病患一本一本擺上去。
+我先處理我心中這一級病患。
+我先請專師，把心電圖傳給值班CV man看。
+隨後先去bedside看了病患...看起來不舒服(面有難色)。
+旁邊家屬想逗他笑，覺得他是太生氣了，所以才會胸口不舒服。過一下就會好了。
+他說剛剛生氣後，沒多久就開始胸口悶。且radiate to L&#39;t arm。
+我和他說，心電圖看起來像心肌梗塞，可能要做心導管。
+病患:不用吧~~休息一下就會好了。應該沒有那麼嚴重吧 我接著走去專師那，去詢問值班CV的回應。
+專師說，CV回應說這應該是舊的心電圖變化
+嗯，我聽到這回應。我再次傻眼喵咪。
+我心想，不會吧~~不應該是這種回應啊
+應該是要回，好，啟動心導管才對啊!!! 我心中知道CV所說『舊的心電圖變化』意思是什麼。
+這病患之前有放過stent。
+舊的心電圖變化應該是指出現PRWP，V1-V3都是Q wave
+但是心電圖充滿了『急性』的心電圖變化啊。
+我們來分析一下這ECG Rate:78 bpm
+Rhythm: sinus rhythm
+Axis: normal asix
+Interval: QTc(420 ms)
+Ischemia:
+我們先來看看Limb leads部分 綠線是J point位置，水平藍線是basline
+可以看到在II與aVF都是minimal STD、III的J point和baseline幾乎重疊。
+III/aVF有明顯的TWI。
+aVL的ST segment是straight，一般而言ST segment如果屬於convex或是straight會比較偏向ischemic change。如果是Concave會比較偏向正常變化(當然，這不是絕對)
+這邊要再次提到ECG大師Dr. Jerry Jones針對reciprocal STD的兩大重點： Reciprocal STD change有可能隨著時間會變得比STE更明顯的STD ACO(acute coronary occlusion)引起的Reciprocal STD change可能會比對側的STE出現之前，就看到有了(更早出現的意思) 在limb lead這個frontal plane裡面，在aVL的對側導極就數III是最接近對側(還差30°就在正對面)的導極。因此當aVL有ischemic change出現，最會出現reciprocal STD change就以III會是最明顯的導極。
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,15 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://agoodbear.github.io/</loc>
-    <lastmod>2024-12-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://agoodbear.github.io/post/ecg-post-12/</loc>
-    <lastmod>2024-12-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://agoodbear.github.io/categories/</loc>
-    <lastmod>2024-12-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/dewinter/</loc>
+    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://agoodbear.github.io/categories/ecg/</loc>
+    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/hatw/</loc>
+    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/isr/</loc>
+    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/omi/</loc>
+    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/post/</loc>
+    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/</loc>
+    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/post/ecg-post-13/</loc>
+    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://agoodbear.github.io/post/ecg-post-12/</loc>
     <lastmod>2024-12-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://agoodbear.github.io/tags/ecmo/</loc>
@@ -23,9 +44,6 @@
     <loc>https://agoodbear.github.io/tags/pe/</loc>
     <lastmod>2024-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://agoodbear.github.io/post/</loc>
-    <lastmod>2024-12-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://agoodbear.github.io/tags/qr-in-v1/</loc>
     <lastmod>2024-12-30T00:00:00+00:00</lastmod>
   </url><url>
@@ -33,9 +51,6 @@
     <lastmod>2024-12-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://agoodbear.github.io/tags/rv-strain/</loc>
-    <lastmod>2024-12-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://agoodbear.github.io/tags/</loc>
     <lastmod>2024-12-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://agoodbear.github.io/tags/21-avb/</loc>
@@ -155,9 +170,6 @@
     <loc>https://agoodbear.github.io/tags/amniotic-fluid-embolism/</loc>
     <lastmod>2024-03-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://agoodbear.github.io/tags/omi/</loc>
-    <lastmod>2024-03-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://agoodbear.github.io/tags/pregnant/</loc>
     <lastmod>2024-03-04T00:00:00+00:00</lastmod>
   </url><url>
@@ -252,5 +264,7 @@
     <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://agoodbear.github.io/search/</loc>
+  </url><url>
+    <loc>https://agoodbear.github.io/tags/stemi-/omi&#43;/</loc>
   </url>
 </urlset>
