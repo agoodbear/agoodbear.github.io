@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RBBB&#43;STEMI on 急診熊心聲部落格</title>
+    <link>https://agoodbear.github.io/tags/rbbb&#43;stemi/</link>
+    <description>Recent content in RBBB&#43;STEMI on 急診熊心聲部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>Copyright © 2022-2024, Modified by ER Bear</copyright>
+    <lastBuildDate>Wed, 19 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/rbbb+stemi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>82歲胸痛的阿公</title>
+      <link>https://agoodbear.github.io/post/ecg-post-14/</link>
+      <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://agoodbear.github.io/post/ecg-post-14/</guid>
+      <description>
+        
+          
+            來分享一個有趣的ECG。
+82歲男性，主述早上開始胸痛、cold sweating，微喘
+昨天同事傳給我看，問我是不是STEMI。
+我回答是。
+不過更精確一點應該要說，這個病患並沒有符合STEMI criteria，但是有OMI(Occlusion MI)➔血管阻塞了。
+可是明明沒有符合STEMI criteria啊~~為何血管阻塞了?
+如果從原本的ACS分類來看 光是病患沒有符合STEMI criteria，但如果是NSTEMI，就代表病患的血管還是有阻塞導致NSTE『MI』
+所以沒有STE，真的不代表病患沒有心肌梗塞。
+那麼使用STEMI criteria的準則來抓MI病患，其sensitivity有多少? 在這篇文章中 1 描述到，如果利用STEMI criteria針對initial ED ECG來做任何occlusion(指發生OMI)診斷，則只有21%的sensitivity。
+這是什麼意思?也就是可能有高達8成的AMI病患，無法透過STEMI criteria做出AMI的診斷。
+那麼該怎麼辦?可能得透過後續的echo、serial ECG、troponin數值、病患的臨床症狀互相配合，才能做出AMI的診斷。
+好的讓我來判讀一下，今天的ECG Rate:84 bpm
+Rhythm:irregular、RBBB(qR wave in V1-4) pattern、LAFB
+Axis:Extreme axis deviation
+Interval:No QT prolong
+Ischemia:
+讓我們來仔細看看，12 lead ECG，有沒有哪裡有ischemic change。先來看看Chest leads
+深綠色為baseline、深紅色垂直線是QRS的結尾。
+可以見到V1/V2的STE勉強可接近1格、V3的STE不足一格。V4應該小於0.5格、V5/V6約都在baseline上面
+這邊的V1-V3是有問題的。讓我來解釋。
+ECG在有BBB(bundle branch block)的狀況下，著實不好評估是否AMI。
+幸好如果ECG是LBBB的話，有Sgarbossa criteria與**Dr.Smith所modified的Sgarbossa criteria C(MSC)**來強力支援診斷。
+那麼RBBB如果出現MI，該怎麼判斷呢? 首先我們必須要有一些基本背景知識 2
+在BBB的狀況下，因為有束支傳導阻斷，所以去極化異常，那當然爾再極化(repolarization)的ECG也會有異常變化。此異常變化分成兩類:
+Primary repolarization:指在心肌細胞出現病理方面問題，比如缺血、缺氧、酸血症、藥物中毒，電解質異常等 Secondary repolarization:指正常的異常變化(中文真是博大精深，外國人肯定不懂我寫什麼鬼XD) Fig.4是一個典型的RBBB在V1的ECG形狀，有幾個基本知識(典型正常變化)我們要了解 2 repolarization始於J point這個點開始，不是J point之後 J point通常位於baseline或低於baseline(不超過1 mm的STD都可接受)。任何超過1 mm的STD都必須考慮出現primary repolarization的缺血變化 從J point開始，baseline會立刻向下傾斜，形成inverted T wave 在J point與T wave的最低點之間，會出現subtle的upward convexity。這是很重要的secondary repolarization異常變化特徵。通常都很微小，且出現頻率非常高。 以上這些secondary repolarization findings在RBBB常見於V1/aVR，偶爾在III會見到。另外在LBBB則會在I/aVL/V5/V6見到這樣的變化，但V1不會見到，反而是在V1見到像V5、V6的secondary repolarization的誇大鏡像反應(exaggerated reciprocal of this secondary repolarization abnormality)，並且包括J point的上升。
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
