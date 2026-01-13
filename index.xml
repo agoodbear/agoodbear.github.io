@@ -7,7 +7,42 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>Copyright © 2022-2024, Modified by ER Bear</copyright>
-    <lastBuildDate>Tue, 06 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>心肌梗塞，跳這心律，發生什麼事了?該怎麼辦?</title>
+      <link>https://agoodbear.github.io/post/ecg-post-15/</link>
+      <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://agoodbear.github.io/post/ecg-post-15/</guid>
+      <description>
+        
+          
+            今天我們來透過這個案例。來看看當病患發生心肌梗塞時，出現今天的心律時。該怎麼辦？
+86歲女性，被救護車送來醫院。路倒在旁，主述胸痛。
+這一張可以清楚看到在inf.leads有STE合併aVL/I的reciprocal STD。配合病患的臨床症狀，高度可能是inf.wall STEMI (Fig.1)。
+看到inf.wall STEMI，反射動作就是做R&#39;t side ECG (Fig.2)
+Fig.1的時間為07:46，Fig.2的時間為08:02中間隔了大約6分鐘。
+可以看到做R&#39;t side ECG時，inf.leads的STE更明顯，對側面的aVL/I的reciprocal STD也更明顯。(Dynamic STTC+)
+❤️第一個問題，為何inf.wall STEMI時，也要看R&#39;t side ECG，另外要看哪個leads? 直接切入重點，在inf.wall STEMI，合併去看R&#39;t side ECG，就是去看有無RVMI。
+心電圖有趣的地方就是，如果心肌受傷時的Current of injury朝著偵測的方向前進。那麼在那個方向的lead，應該會看到STE出現。
+所以我們看看，V4R幾乎就是貼著RV，在看RV到底有沒有involved到，也就是看有沒有RVMI (Fig.3右側)。
+如果有RVMI的話，治療方面就會有所不一樣。
+那麼在標準的12 leads ECG裡面，到底有沒有lead是可以直接看RV的呢?
+基本上沒有，但是V1算是接近看的。
+這也意味著，我們無法透過12 leads ECG來排除RVMI➜由於V1是最接近RV的lead (Fig.3右側)，所以當V1 STE但是其他ant.leads沒出現，又合併chest pain with Inf.wall STEMI➜這種情境就要高度懷疑有RVMI
+Fig.4 這張是Uptodate上面老掉牙，但是又很能夠讓人理解的一張圖。
+當RVMI時，RV會dilate，水分就會累積在RV裡面。這時候septum就會往左邊壓過去，導致LV打出的cariac output變少。因此容易血壓變低。 處理的方法就是先灌水。先不要使用會降低preload的藥物如NTG。
+因為NTG使用會讓靜脈擴張➜靜脈儲血增加➜回心血量⬇︎，這樣到達LV的血流就更少，更容易hypotension出現。
+灌水就是強迫讓多一點血回到LV，可以打出去。
+那麼R&#39;t side ECG中，V3R-V6R，哪個lead用來評估RVMI是最適合的呢? 在R&#39;t side ECG中最佳單一lead用來評估RVMI是V4R➜當STE≧1 mm:可以達到100% sensitivity與超過90%的predictive accuracy for RVMI 1
+V3R、V5R、V6R的診斷表現普遍都比 V4R差，或只被當成輔助使用。
+另外有一件ECG小知識，那就是在ACS S/S的12小時內，有50%的RV involved的R&#39;t side ECG，其STE的變化會消失 2 。
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>法院奇幻之旅-被告重傷害</title>
       <link>https://agoodbear.github.io/post/erlife-post-3/</link>
