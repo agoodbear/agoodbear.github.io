@@ -1,0 +1,9 @@
+[zh-tw]
+#變更可以更改title
+  title = "急診熊心聲部落格"
+  LanguageName = "zh-tw"
+  weight = 1
+
+
+
+  # tip: assign the default language the lowest Weight

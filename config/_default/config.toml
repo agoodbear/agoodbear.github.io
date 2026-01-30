@@ -1,0 +1,31 @@
+# set `baseurl` to your root domain
+# if you set it to "/" share icons won't work properly on production
+#這邊要輸入我的github網址
+baseurl = "https://agoodbear.github.io/"  # Include trailing slash
+# title = "Clarity"  # Edit directly from config/_default/languages.toml # alternatively, uncomment this and remove `title` entry from the aforemention file.
+#這邊下面這行的copyright文字可以變更(主畫面最下面)
+copyright = "Copyright © 2022-2024, Modified by ER Bear"
+# canonifyurls = true
+paginate = 10
+theme = ["hugo-clarity", "hugo-embed-pdf-shortcode"]
+disqusShortname = "agoodbear"
+#變更語系(也要修改config/_default/languages.toml):修改的話，右上角連結都會不見。這themes應該是把eng/和其他語言都有不同的頁面呈現(把menu.en.toml改成menu.zh-tw.toml就可)-變更
+DefaultContentLanguage = "zh-tw"
+# [languages]
+# config/_default/languages.toml
+
+#[menus]
+#config/_default/menus/menu.zh-tw.toml
+
+unsafe = true
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[params]
+customCSS = ["custom-css/timeline.css"] # Include custom CSS files

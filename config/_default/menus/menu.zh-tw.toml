@@ -1,0 +1,76 @@
+
+[[main]]
+  name = "心電圖"
+  url = "categories/ecg"
+  weight = -109
+
+[[main]]
+  name = "超音波"
+  url = "categories/pocus"
+  weight = -108
+
+[[main]]
+  name = "急診人生"
+  url = "categories/erlife"
+  weight = -107
+
+[[main]]
+  name = "醫生Gym"
+  url = "categories/workout"
+  weight = -106
+
+[[main]]
+  name = "自我進修"
+  url = "categories/study"
+  weight = -105
+
+[[main]]
+  name = "旅遊"
+  url = "categories/travel"
+  weight = -104
+
+# Submenus are done this way: parent -> identifier
+
+
+[[main]]
+  name = "關於我"
+  url = "about/"
+  weight = -104
+
+# social menu links
+
+[[social]]
+  name = "facebook"
+  type = "social"
+  weight = 1
+  url = "https://www.facebook.com/agoodbear"
+[[social]]
+  name = "twitter"
+  weight = 2
+  url = "https://twitter.com/ED_Ultrasounder"
+[[social]]
+  name = "instagram"
+  weight = 3
+  url = "https://www.instagram.com/ecg_bear/"
+[[social]]
+  name = "Threads"
+  weight = 4
+  url = "https://www.threads.net/@ecg_bear"
+[[social]]
+  name = "rss"
+  weight = 5
+  url = "index.xml"
+
+# other supported social links
+# name = "youtube"
+# url = "https://www.youtube.com/#"
+# name = "facebook"
+# url = "https://facebook.com/#"
+# name = "instagram"
+# url = "https://instagram.com/#"
+# name = "stackoverflow"
+# url = "https://stackoverflow.com/#"
+# name = "gitlab"
+# url = "https://gitlab.com/#"
+# name = "discord"
+# url = "https://discord.gg/#"
