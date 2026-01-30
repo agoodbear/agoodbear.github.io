@@ -1,0 +1,52 @@
+{{- $s := site.Params }}
+{{- $p := .Params }}
+{{- $codeBlockConfig := partial "func/getCodeBlockSettings" . }}
+<!DOCTYPE html>
+<html
+  lang="{{ .Lang }}"
+  data-figures="{{ $p.figurePositionShow }}"
+  {{ if .IsPage }}
+    class="page"
+  {{ else if .IsHome }}
+    class="home"
+  {{ end }}
+  {{ with $s.enforceLightMode }}
+    data-mode="lit"
+  {{ end }}
+  {{ with $s.enforceDarkMode }}
+    data-mode="dim"
+  {{ end -}}
+>
+  <head>
+    {{- partial "head" . }}
+    {{- partial "hooks/head-end" . }}
+       
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4S11VQPNGX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4S11VQPNGX');
+</script>
+
+  </head>
+  <body
+    data-code="{{ $codeBlockConfig.max }}"
+    data-lines="{{ $codeBlockConfig.lines }}"
+    id="documentTop"
+    data-lang="{{ .Lang }}"
+  >
+    {{- partialCached "scripts/google/tag-manager" (dict "noscript" true) }}
+    {{- partial "header" . }}
+    <main>
+      {{- block "main" . }}{{ end }}
+    </main>
+
+    {{- partialCached "icons" . }}
+    {{- partialCached "footer" . }}
+    {{- partialCached "scripts/index" . }}
+    {{- partialCached "hooks/body-end" . }}
+  </body>
+</html>
