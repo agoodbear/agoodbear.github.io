@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>急診熊心聲部落格</title><link>https://agoodbear.github.io/</link><description>Recent content on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>心肌梗塞，跳這心律，發生什麼事了?該怎麼辦?</title><link>https://agoodbear.github.io/post/ecg-post-15/</link><pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-15/</guid><description>
+今天我們來透過這個案例。來看看當病患發生心肌梗塞時，出現今天的心律時。該怎麼辦？
+86歲女性，被救護車送來醫院。路倒在旁，主述胸痛。
+這一張可以清楚看到在inf.leads有STE合併aVL/I的reciprocal STD。配合病患的臨床症狀，高度可能是inf.wall STEMI (Fig.1)。
+看到inf.wall STEMI，反射動作就是做R't side ECG (Fig.2)
+Fig.1的時間為07:46，Fig.2的時間為08:02中間隔了大約6分鐘。
+可以看到做R't side ECG時，inf.leads的STE更明顯，對側面的aVL/I的reciprocal STD也更明顯。(Dynamic STTC+)
+❤️第一個問題，為何inf.wall STEMI時，也要看R't side ECG，另外要看哪個leads? 直接切入重點，在inf.wall STEMI，合併去看R't side ECG，就是去看有無RVMI。
+心電圖有趣的地方就是，如果心肌受傷時的Current of injury朝著偵測的方向前進。那麼在那個方向的lead，應該會看到STE出現。
+所以我們看看，V4R幾乎就是貼著RV，在看RV到底有沒有involved到，也就是看有沒有RVMI (Fig.3右側)。
+如果有RVMI的話，治療方面就會有所不一樣。
+那麼在標準的12 leads ECG裡面，到底有沒有lead是可以直接看RV的呢?
+基本上沒有，但是V1算是接近看的。
+這也意味著，我們無法透過12 leads ECG來排除RVMI➜由於V1是最接近RV的lead (Fig.3右側)，所以當V1 STE但是其他ant.leads沒出現，又合併chest pain with Inf.wall STEMI➜這種情境就要高度懷疑有RVMI
+Fig.4 這張是Uptodate上面老掉牙，但是又很能夠讓人理解的一張圖。
+當RVMI時，RV會dilate，水分就會累積在RV裡面。這時候septum就會往左邊壓過去，導致LV打出的cariac output變少。因此容易血壓變低。 處理的方法就是先灌水。先不要使用會降低preload的藥物如NTG。
+因為NTG使用會讓靜脈擴張➜靜脈儲血增加➜回心血量⬇︎，這樣到達LV的血流就更少，更容易hypotension出現。
+灌水就是強迫讓多一點血回到LV，可以打出去。
+那麼R't side ECG中，V3R-V6R，哪個lead用來評估RVMI是最適合的呢? 在R't side ECG中最佳單一lead用來評估RVMI是V4R➜當STE≧1 mm:可以達到100% sensitivity與超過90%的predictive accuracy for RVMI 1
+V3R、V5R、V6R的診斷表現普遍都比 V4R差，或只被當成輔助使用。
+另外有一件ECG小知識，那就是在ACS S/S的12小時內，有50%的RV involved的R't side ECG，其STE的變化會消失 2 。</description></item><item><title>法院奇幻之旅-被告重傷害</title><link>https://agoodbear.github.io/post/erlife-post-3/</link><pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/erlife-post-3/</guid><description>
+俗話說想要進廚房就不要怕廚房熱。
+從2005年10月份開始了自己的急診生涯，就一直覺得急診是一個踩在薄冰上的科別。
+你不知道也很難預測，自己的下一腳是否會踩破結冰而陷入河裡。
+事情是這樣的~~ 112年的某天，一位30多歲病患來就診，手指頭痛了2-3週。指甲下明顯異物卡住。我們給予局部麻醉將部分指甲移除，清除異物後，開了口服抗生素，讓病患返家。
+三天後，病患手指頭發紫，再度前來急診就診，控告我們因為施行局部麻醉導致他的傷口惡化變紫。之後去了醫學中心，過了約莫5-6天後，指頭截肢。
+於是我就被控告重傷害。
+傳票上面沒有寫是誰要告我，我清楚知道是哪一位。 因為這一位先生第二次來急診就醫時的態度，與之後去了醫學中心治療後，回來急診開立診斷書對我們同事的不友善行為。
+所以當我收到傳票，上面寫重傷害案件，我就知道是誰要告我了。
+我聯繫了我們家專門處理法律相關案件的社服室。
+社服主任和我約了一天去見醫院的法扶，楊律師。
+當天下夜班，社服主任在下夜班的兩個小時後，打電話給我..
+曹醫師，你10點有空嗎?
+我醒了，好..就約10點
+到了法扶律師的辦公室樓下，我往上看。我以為法扶律師辦公室會是又大、又新的地方。
+但是似乎舊舊的，上了電梯。進了辦公室。
+聽到爽朗的聲音喊著，曹醫師好，請坐。
+接著社服主任也隨之趕到。
+將事情經過說了一遍讓法扶律師先了解發生了什麼事。
+結束後，我開車載著社服主任回到醫院。
+社服主任說著一大堆，真的是亂告的案例。我聽了瞠目結舌～～
+車開到急診門口，我準備放社服主任下車回到醫院。
+我很感謝她陪伴著。
+社服主任說，我們做的就是讓你們醫生不要因為這些小事而受到折損 我們希望能夠保護你們
+內心除了感謝，還是感謝。
+我請醫院的法扶律師擔任我的選任辯護人。
+我將當天事情發生經過，以及對方告我的點，都加以闡述與提出證據來佐證我的清白。
+我記得當天寫完後，我實在有夠氣，怎麼會有這種濫訴的人。
+來吧，為自己出征!!! 我非常詳盡的和律師解釋，對於臨床上這種個案，我們的臆斷可能是什麼。
+年輕人、有煙癮，指頭會嚴重變紫到臨床需要截肢。絕對不是感染。病患第二次就醫時，根據看診醫師描述，除了原本指頭外，連隔壁兩根指頭的溫度都變冷。第一個會浮現的就是Buerger disease。
+可是律師後來和我分析。就算我在法庭上講了一堆他可能是Buerger disease，可能檢察官他們還是聽不懂。
+楊律師說醫療法第82條於107年1月24日修正增訂第4項：「醫事人員因執行醫療業務致生損害於病人，以故意或違反醫療上必要之注意義務且逾越合理臨床專業裁量所致者為限，負損害賠償責任。」
+我們應該是要聚焦在整個醫療過程中，有沒有應注意、能注意而未注意的疏失。 ✔︎病患指頭指甲下有明顯異物
+✔︎我們操作指甲下異物移除，打lidocaine(不含e)做digital block，來進行異物移除
+✔︎操作前有異物移除操作同意書、也有手術同意書
+✔︎操作完，給予口服抗生素，並在病歷上記載，若有和病情變化，需要立刻返回急診
+楊律師和我分析，我們做到醫療上該做的事情了，病患後續變化不是醫師可以掌控的。
+無論病患是Buerger disease，還是不是Buerger disease都不關我們急診的事。請我不用特別和檢察官強調，病患是或不是Buerger disease。我只要說明，我們做了什麼事就好。
+因為10個醫師處置這樣的病患，有9.9個應該都會做我們在急診做的這些處置流程。
+之後又找了一天，我和楊律師再次相見討論在偵查庭上說些什麼。會議中，楊律師請了另一位律師幫忙打字，並且提問一些問題。
+過了兩天，律師把刑事辯護狀寫好，準備先遞給地檢署讓檢察官先過目。
+出庭當天我原本被排上班。我和同事說，因為當天我要出庭，可否和我換個班。
+他說好。出庭前某天下班，他給了我一件東西。
+同事: 學長，希望你沒有事，這尊佛像送給你，祂可以保護你。
+再講一次
+告我的這位仁兄，姑且不論濫告這件事。他的態度，實在令人不敢恭維。
+第二次回診時，批頭就和看診的醫師說，是我們第一次看診時打了局部麻醉藥幫他異物清除，才害他手指頭發紫。
+之後於醫學中心處理完後，回來急診開立診斷書。據同事說，態度實在很差，不給看傷口外，也一直說是我們害他手指頭變這樣。甚至在檢傷，把病患手圈直接丟到檢傷桌上。
+老天爺啊，為什麼我們醫療人員要承受這樣的污辱!!!!!!
+我知道把自己本身的疾病惡化產生的結果，要直接說是自己的問題很困難，把治療過程中的最後一位醫師抓出來鞭屍，非常簡單。
+而我就是那最後一位醫師。
+我不怨他人，我知道我自己有強大的信心可以打贏這場官司。因為，我沒有做對不起這位病患的任何事。
+我只能說，醫師都是病患在生病中的過客。有時疾病到了最後，醫師無法攔阻疾病的惡化，病患自然而然會想著是不是醫師的處置，才導致才讓我變成這樣的結果。
+我用一個舉例，大家就可以知道我的心境。 假設病患是COVID無症狀帶原者，某天他去一家餐館吃飯，吃完飯後，過了兩天，他開始發燒了。
+後來他控告餐廳老闆害他得了COVID，因為他去餐廳吃了飯後才開始發燒的。
+而我就是那位餐廳老闆。
+再次強調，要把過錯(得病/疾病惡化)推到自己身上，就理性上的確很困難，把過程中即使是幫助他的人抓出來鞭屍比較簡單。
+我相信法律一定會還我清白。</description></item><item><title>82歲胸痛的阿公</title><link>https://agoodbear.github.io/post/ecg-post-14/</link><pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-14/</guid><description>
+來分享一個有趣的ECG。
+82歲男性，主述早上開始胸痛、cold sweating，微喘
+昨天同事傳給我看，問我是不是STEMI。
+我回答是。
+不過更精確一點應該要說，這個病患並沒有符合STEMI criteria，但是有OMI(Occlusion MI)➔血管阻塞了。
+可是明明沒有符合STEMI criteria啊~~為何血管阻塞了?
+如果從原本的ACS分類來看 光是病患沒有符合STEMI criteria，但如果是NSTEMI，就代表病患的血管還是有阻塞導致NSTE『MI』
+所以沒有STE，真的不代表病患沒有心肌梗塞。
+那麼使用STEMI criteria的準則來抓MI病患，其sensitivity有多少? 在這篇文章中 1 描述到，如果利用STEMI criteria針對initial ED ECG來做任何occlusion(指發生OMI)診斷，則只有21%的sensitivity。
+這是什麼意思?也就是可能有高達8成的AMI病患，無法透過STEMI criteria做出AMI的診斷。
+那麼該怎麼辦?可能得透過後續的echo、serial ECG、troponin數值、病患的臨床症狀互相配合，才能做出AMI的診斷。
+好的讓我來判讀一下，今天的ECG Rate:84 bpm
+Rhythm:irregular、RBBB(qR wave in V1-4) pattern、LAFB
+Axis:Extreme axis deviation
+Interval:No QT prolong
+Ischemia:
+讓我們來仔細看看，12 lead ECG，有沒有哪裡有ischemic change。先來看看Chest leads
+深綠色為baseline、深紅色垂直線是QRS的結尾。
+可以見到V1/V2的STE勉強可接近1格、V3的STE不足一格。V4應該小於0.5格、V5/V6約都在baseline上面
+這邊的V1-V3是有問題的。讓我來解釋。
+ECG在有BBB(bundle branch block)的狀況下，著實不好評估是否AMI。
+幸好如果ECG是LBBB的話，有Sgarbossa criteria與**Dr.Smith所modified的Sgarbossa criteria C(MSC)**來強力支援診斷。
+那麼RBBB如果出現MI，該怎麼判斷呢? 首先我們必須要有一些基本背景知識 2
+在BBB的狀況下，因為有束支傳導阻斷，所以去極化異常，那當然爾再極化(repolarization)的ECG也會有異常變化。此異常變化分成兩類:
+Primary repolarization:指在心肌細胞出現病理方面問題，比如缺血、缺氧、酸血症、藥物中毒，電解質異常等 Secondary repolarization:指正常的異常變化(中文真是博大精深，外國人肯定不懂我寫什麼鬼XD) Fig.4是一個典型的RBBB在V1的ECG形狀，有幾個基本知識(典型正常變化)我們要了解 2 repolarization始於J point這個點開始，不是J point之後 J point通常位於baseline或低於baseline(不超過1 mm的STD都可接受)。任何超過1 mm的STD都必須考慮出現primary repolarization的缺血變化 從J point開始，baseline會立刻向下傾斜，形成inverted T wave 在J point與T wave的最低點之間，會出現subtle的upward convexity。這是很重要的secondary repolarization異常變化特徵。通常都很微小，且出現頻率非常高。 以上這些secondary repolarization findings在RBBB常見於V1/aVR，偶爾在III會見到。另外在LBBB則會在I/aVL/V5/V6見到這樣的變化，但V1不會見到，反而是在V1見到像V5、V6的secondary repolarization的誇大鏡像反應(exaggerated reciprocal of this secondary repolarization abnormality)，並且包括J point的上升。</description></item><item><title>生氣的50歲男性</title><link>https://agoodbear.github.io/post/ecg-post-13/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-13/</guid><description>
+我依稀記得我在當R3住院醫師守急救室的某一天。那天來了個OHCA病患。
+急救室滿滿人潮不打緊。一級病患再怎樣都要挪個位置。
+救到一半，家屬到了.....在床尾開始哭喊著病患名字。
+接著.....
+家屬倒在床尾，右半邊沒有力氣........
+我傻眼喵咪，除了WTF以外，急救室真的沒有床可以躺。還瞬間又多了個一級病患。😭
+今天的病患有點異曲同工。
+50歲男性，因為姪子有自閉症，除夕在家裡面衝來衝去。搞得大家都很心煩。
+他出面去制止自閉症的姪子。
+大聲制止，讓這位中年大叔情緒波動也開始變大。
+過不到半小時，他開始胸悶.......接著就被一群人送到我們醫院。
+病患到院約在交班前半小時
+交班時，前一位醫師和我說心電圖怪怪的，他覺得在inf.leads有mild STD、此外V3的T wave高了一點
+他打開心電圖給我看(Fig.1)。
+我和他說這絕對是心肌梗塞，血管塞住了。 迅速交完班後。
+不管今年這不講武德的年獸(以往年獸大致都講武德啊~~除夕夜1800-2100應該要急診室清零才對啊)。桌上未看病患一本一本擺上去。
+我先處理我心中這一級病患。
+我先請專師，把心電圖傳給值班CV man看。
+隨後先去bedside看了病患...看起來不舒服(面有難色)。
+旁邊家屬想逗他笑，覺得他是太生氣了，所以才會胸口不舒服。過一下就會好了。
+他說剛剛生氣後，沒多久就開始胸口悶。且radiate to L't arm。
+我和他說，心電圖看起來像心肌梗塞，可能要做心導管。
+病患:不用吧~~休息一下就會好了。應該沒有那麼嚴重吧 我接著走去專師那，去詢問值班CV的回應。
+專師說，CV回應說這應該是舊的心電圖變化
+嗯，我聽到這回應。我再次傻眼喵咪。
+我心想，不會吧~~不應該是這種回應啊
+應該是要回，好，啟動心導管才對啊!!! 我心中知道CV所說『舊的心電圖變化』意思是什麼。
+這病患之前有放過stent。
+舊的心電圖變化應該是指出現PRWP，V1-V3都是Q wave
+但是心電圖充滿了『急性』的心電圖變化啊。
+我們來分析一下這ECG Rate:78 bpm
+Rhythm: sinus rhythm
+Axis: normal asix
+Interval: QTc(420 ms)
+Ischemia:
+我們先來看看Limb leads部分 綠線是J point位置，水平藍線是basline
+可以看到在II與aVF都是minimal STD、III的J point和baseline幾乎重疊。
+III/aVF有明顯的TWI。
+aVL的ST segment是straight，一般而言ST segment如果屬於convex或是straight會比較偏向ischemic change。如果是Concave會比較偏向正常變化(當然，這不是絕對)
+這邊要再次提到ECG大師Dr. Jerry Jones針對reciprocal STD的兩大重點： Reciprocal STD change有可能隨著時間會變得比STE更明顯的STD ACO(acute coronary occlusion)引起的Reciprocal STD change可能會比對側的STE出現之前，就看到有了(更早出現的意思) 在limb lead這個frontal plane裡面，在aVL的對側導極就數III是最接近對側(還差30°就在正對面)的導極。因此當aVL有ischemic change出現，最會出現reciprocal STD change就以III會是最明顯的導極。</description></item><item><title>41歲女性，到院30分鐘內，IHCA</title><link>https://agoodbear.github.io/post/ecg-post-12/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-12/</guid><description>
+來分享一個前天同事的Case。我覺得有趣的點，不是在於診斷出來是什麼問題，而是處理過程，再次考驗急診醫師是踩在薄冰上的一個科別。
+41歲女性，到院時臉色蒼白、呼吸喘、心跳快。全身冒冷汗。自述一週前在他院進行子宮肌腺症手術。手術後陰道流血已經停止。也因為曾經貧血到Hgb 4.0，在他院輸血。
+病患從入院到collapse，不到30分鐘。
+病患說喘不過氣來......血氧一直掉。之後就沒了生命徵象。
+緊急推入急救室急救。
+開始CPR.....給予強心針.....插管。全套都一起來。
+41歲，剛來急診不到30分鐘。說怎樣都要從鬼門關拉回來。 線上的四位急診醫師，全部都擠進了急救室。
+過了一小段時間，ROSC
+Call了CVS，希望先放ECMO，爭取一些檢查的時間。
+CVS希望先做完CT，看看發生什麼事。
+有同事掃了心超，沒有PEF。
+病患的生命徵象還是不穩定
+先再Call CVS把ECMO放上，再去CT?還是先CT後再說? 但是病患的狀況不夠穩定到，可以讓我們有後面的選擇。
+先去CT，看看發生什麼事，我想病患從CT回來就只能走CPR這條路了。
+血氧還是拉不起來，看起來病患又準備要飛走了。
+我也看了一下心超，的確沒有水。但是RV dilate、LV動得不錯。
+我們幾個人討論後，先把Chest CTA看aortic dissection改成看pulmonary embolism。
+ROSC後的ECG如下
+⭐️Rate:120 bpm
+⭐️Rhythm:Sinus rhythm?有點存疑，因為Lead II的P wave似乎比Lead I還小。
+真正的sinus rhythm:
+Lead I/II/aVF有upright P wave Lead II的P wave其amplitude要大於Lead I 真正的true sinus P wave在V1的P wave會是biphasic pattern(上下)，而不是upright。 這邊要注意一個重點。
+如果我們發現Lead I的P wave&amp;gt;Lead II的P wave，除了要想到不是來自sinus放電以外。還要想到可能是LA/LL reversal
+如果真的是LA/LL reversal會有下列的ECG findings:(反過來想，當看到下列1與2就要想到LA/LL reversal的DDx)
+Lead III完全inverted(P、QRS、T都是negative)➔這邊要注意可能會造成pseudo S1Q3T3的誤判喔!! P wave在Lead I&amp;gt;Lead II 根據Fig.2來看➔當LA/LL reversal時，要怎麼看待limb lead呢?</description></item><item><title>67歲暈厥的阿姨</title><link>https://agoodbear.github.io/post/ecg-post-10/</link><pubDate>Wed, 24 Jul 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-10/</guid><description>
+67歲女性主述剛剛在運動時，突然暈了過去。 造成syncope的原因有很多，但最後的共同路徑(common pathway)是大腦血流中斷約10秒鐘 1 。
+以上表格來自於丁阿姨的枕頭 1 。
+Syncope的最常見原因是vasovagal（21%）、cardiac（10%）、orthostatic（9%）、medication related（7%）、neurologic（4%）和不明原因（37%）。
+診斷很重要，因為每個診斷分類都帶有預後風險。例如，caridac syncope會使死亡風險加倍，neurologic syncope會使死亡風險增加 50%，而不明原因的syncope會使死亡風險增加 30% 1 。
+syncope的治療取決於診斷。 例如，對於懷疑由藥物引起的患者，應停用相關藥物。
+丁阿姨寫的:最後的共同路徑(common pathway)是大腦血流中斷約10秒鐘 可是有些心律不整也沒有讓心臟停止10秒啊?那為何會syncope?
+這是因為在心律不整的情況下，心臟的功能可能會顯著受損，導致瞬間的心輸出量（cardiac output）劇烈減少，進而影響大腦的血液供應。一顆心臟打出的血液，要支配全身那麼多重要器官，當整體cardiac output少很多，當然到達腦部的血液就也會少很多，也幾乎接近中斷腦部血流了。
+另外seizure發作與syncope這兩者容易搞混。有時syncope常被誤認為是seizure attack，但這是兩種不同的疾病，雖然這兩種狀況都可能出現身體抽搐，但它們的起因不同。
+要區分兩者，可以參考病史、發作前後的症狀以及目擊者描述。例如，如果患者有癲癇病史、出現先兆（如幻覺）、發作後出現意識模糊或肌肉痠痛，則更有可能是癲癇發作。相反，如果患者在發作前感到噁心、冒冷汗，則更有可能是vasovagal （最常見的昏厥類型）。目擊者的描述，例如患者是否出現頭部轉動或異常姿勢，以及發作後意識恢復的時間長短，也有助於判斷。
+在seizure attack後，患者通常會經歷一段意識模糊的發作後狀態 (postictal state)，持續時間可能從幾分鐘到幾小時不等。相反地，syncope後的意識恢復通常較快，通常在幾秒鐘到幾分鐘內就會完全清醒。
+另外這ACEP的這篇文章裡面，也有提到在評估syncope時，Step 1就是去區別Syncope from seizure 2
+這邊要提到文章中描述，可能是一個常見的臨床pitfall，那就是尿失禁，根據一個review雖然針對siezure其specificity達到96%，但後續的研究發現並不可靠 2!!!
+拉回正題～～ 不管是syncope還是seizure attack，ECG都是快速評估的一個很重要工具。
+Amal mattu在ECG Weekly裡面上課，也常講上述兩種狀況都要做ECG。
+在2017 ACC/AHA Guideline for the Evaluation and Management of Patients with Syncope這篇文章中就有說明，對於syncope一開始的病史詢問、理學檢查和ECG都是屬於Class I建議要做的(見下表) 3。
+這位67歲的病患到院時的ECG如下: Rate: 42 bpm
+Rhythm: SR，但是出現多個P wave➔可以見到T wave後面又多一個P wave，這個P後面沒有立馬接個QRS，代表atrium放電往下傳，傳不到ventricle就斷電了
+PP interval都是regular、這是一張典型的2:1 AVB Axis: normal axis</description></item><item><title>蜂螫的隱藏威脅！</title><link>https://agoodbear.github.io/post/ecg-post-9/</link><pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-9/</guid><description>
+寫完上一篇因為influenza myocarditis導致electrical storm，後來電了DSD，ROSC的個案。(搭配一起服用傳送門)
+讓我回想到，我還有一個個案，也有類似的經驗。我後來拿到了東部急診聯合病例討論季會分享。
+這個Case的大約發生在5年前。
+74歲女性，救護車喔咿喔咿~~送入病患，直接推進去急救室。
+到院時間，16:39 血壓只能往地下找，60/44 mmHg，SaO2:67%
+Air hunger的呼吸pattern、意識不清楚
+一隻腳已經踏進去閻王殿
+家人跟進來急救室，說明他媽媽剛剛在曬衣服，結果曬衣架裡面飛出一隻蜜蜂，叮了她一下，過沒多久，媽媽就倒了下來。
+立刻給予epinephrine 0.3 c.c IM、Hydorcortisone 200 mg、Anti-histamine
+時間:16:40 到院不到一分鐘
+摸不到脈搏了➔PEA
+開始CPR
+時間:16:40 不到一分鐘的時間裡，rhythm轉換成Vf
+我大喊著，準備電擊。幫我轉到200J
+在充電到200J的短暫時間裡，我思考著，接下來該怎麼辦。
+⚡️很快充完電，按下paddle的電擊按鈕。繼續CPR
+病患因為電擊，身體彈了一下。
+時間:16:42 CPR兩分鐘後，看了一下ECG monitor的rhythm
+嗯......有點像TdP?還是Vf?
+⚡️不管如何病患還是不穩定的狀態，繼續電擊200J，然後CPR、給藥
+時間:16:44 又過了2分鐘，依舊是Vf
+⚡️再次電擊200J
+時間:16:46 暈倒~~還是Vf
+我請另一位同事幫我把另一台電擊器推過來，幫我貼上TCP的貼片，同樣轉到200J
+我印象中，這個個案的貼法是下圖右，而另一個個案的貼法是下圖左
+⚡️DSD電擊完後，有ROSC
+但過沒多久再次Vf
+⚡️一樣再次使用DSD電擊
+後續PEA
+時間:17:01 一直急救到了17:01
+再次ROSC，血壓不再往下找，105/87 mmHg
+整個ACLS過程中，使用過兩次DSD電擊
+在17:01之後的狀態就沒有再出現過Vf
+Rate:102 bpm
+Rhythm:看不到哪裡有明顯P wave
+Axis:RAD
+Interval:QTc算起來469 ms
+Ischemia:看起來是aVR STE with multiple leads STD的subendocardial ischemia pattern
+這在剛剛急救然後ROSC的病患，並不少見。因為整體coronary a.處於hypoperfusion狀況，另外也打了不少的epinephrine，這也會讓coronary a.血管收縮。
+這種ECG pattern可能呈現的原因是因為diffuse subendocardial ischemia or oxygen supply/demand mismatch➡此ECG並不具有specific for AMI，只能簡單表示目前心臟目前正處於嚴重廣泛整體供需不平衡，但原因不明</description></item><item><title>反覆Vf，只能禱告了嗎?</title><link>https://agoodbear.github.io/post/ecg-post-8/</link><pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-8/</guid><description>
+晚上六點多來了一位到院前呼吸、心跳停止的病患。
+快速詢問了家屬，發生了什麼事?兒子說爸爸在餐桌上吃著飯，突然就倒了下來。
+EMT很快送來我們醫院，由我們團隊接收。
+初始心律Vf.......是急診室打掃阿姨都會看得心律(ACLS老梗)
+團隊其他成員，很快完成插管、架設thumper、打上點滴，開始給強心針。 CPR後心律還是心室顫動，再次電擊⚡️，繼續CPR 開始給抗心律不整藥物 還是心室顫動，再次電擊⚡️ 我請護理師拿另一台電擊器幫病患前胸、後背貼上電擊貼片。我要做DSD。 我手拿一組電擊器、護理師用手按另一組電擊器，我喊1-2-3兩組電擊器同時放電。
+雖然我常常欺負leader，但我真心希望，不要我喊2時，她那組就先放電了😅
+DSD總共又電了三次，終於ROSC。
+沒有辦法看到明顯P wave，分不清QRS的結尾在哪裡。所以QRS是寬還是窄?
+還是沒有看到明顯P wave，但QRS很明顯是窄的。紅色的或許是JPC(junctional premature complex)。整體的rhythm應是AJR(Accelerated junctional rhythm)。
+但是綠色箭頭就有意思了，因為我們知道QRS不寬，所以比對過來Lead I/aVL都是STE，且Lead II/III/aVF都是STD。但起來是High lateral MI呢!!!!!!!!
+雖然我不是心臟科專科醫師，但心肌梗塞病患，還是不免會想看一下病患的心臟超音波是否有符合ECG ischemia territory的RWMA出現。上圖的Heart POCUS，本來我預期會看到LAD or LCX支配的territory會出現一些RWMA，但是看起來沒有明顯的RWMA出現。
+有時想想我們做Heart POCUS，把重點放在病患是否有無RWMA與利用eye balling看大約的LV systolic function。到底和CV man看的結果會不會相去甚遠? 這篇是刊登在Western Journal of Emergency Medicine的一篇文章。
+這篇研究探討了急診醫師在接受簡短培訓後，使用Bedside echo對LVEF進行eyeballing估計，並將結果與心臟科醫師使用Simpson方法測量的結果進行比較。研究結果顯示，經過專門培訓的急診醫師在急診室中能夠準確地視覺估計左心室收縮功能。
+✏在我們來說後來病患怎麼了之前，我們先來看看以下幾個問題: DSD(Double Sequential Defibrillation)是什麼東東? 什麼是electrical storm? 什麼時候介入DSD比較適當？ 首先DSD是拿兩台電擊器，用在病患身上，以近乎同時間放電，以其能夠中斷refractory VT/Vf。1
+而refractory VT/Vf也就是 electrical storm，其定義是在24小時內，發生3次或以上VT、Vf或ICD電擊的情況 2
+那麼DSD的原理主要是基於以下幾個方面 3 :
+改善電向量方向：DSD通過使用兩台去顫器並改變電擊片的放置位置，來改變或增加不同的電向量。這樣可以使更多不同向量的心肌細胞得到去顫，並影響更多的心肌表面積，從而提高去顫效果。 增加電流功率：研究證明，除顫時使用的焦耳數（即電流的能量大小）顯著影響了心室顫動（Vf）的電擊成功機率。使用DSD增加去顫的焦耳數，可能有助於提升成功去顫的機會 降低去顫成功閾值：有研究指出，第一組電擊可能先降低去顫電擊的閾值，如果第二組電擊能在第一組電擊後100毫秒內進行，則成功去顫所需的能量可明顯降低。這顯示在DSD中，因為相對延長了電擊時間，可以幫助心肌細胞去顫的效果 在這邊要提到NEJM的一篇文章 4 ，說明去顫的方式分成三種:AP position所謂的vector change(VC)、或者標準位置(anterior-lateral position)、與AP+標準位置的DSD</description></item><item><title>和偶像拍自拍~~</title><link>https://agoodbear.github.io/post/study-post-4/</link><pubDate>Wed, 19 Jun 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-4/</guid><description>
+2024/6/19一早就搭著醫院對面的葛瑪蘭客運去台北國際會議中心來上課
+豔陽高照的日子~好熱啊
+一進到國際會議中心，一整個舒暢~涼爽啊!!
+在ICEM2024正式開始前，先來參加pre-conference workshop，特別是針對Emergency Cardiology。
+會議中請到了仰慕已久的心電圖大師: Amal mattu
+主持與開場都是由Amal大師來操刀~~
+會議前Amal和William Brady一起聊天
+上完上半場前半段課程，趨前來和我的大偶像拍個自拍❤️❤️❤️
+順便從我的書架上拿了兩本Amal的書給他簽名
+下屆的ICEM2026在哪裡呢? 另外這邊也有Amal mattu參加ICEM2024的採訪影片內容:
+熊攝影集 和Amal合照 課程表 講師:Bobbi Amal和William Brady 101天空 遠觀101 簽名書</description></item><item><title>第一次引體向上拉那麼多次</title><link>https://agoodbear.github.io/post/workout-post-1/</link><pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/workout-post-1/</guid><description>
+由 @agoodbear 發佈 在 Threads 查看</description></item><item><title>測試Travel</title><link>https://agoodbear.github.io/post/travel-test/</link><pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/travel-test/</guid><description/></item><item><title>躺的輪椅</title><link>https://agoodbear.github.io/post/erlife-post-2/</link><pubDate>Tue, 05 Mar 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/erlife-post-2/</guid><description>
+近二個多月，醫院樓上人力不足，所以每天樓下急診待床人數都爆炸多，無法住到病房。急診等床住院都要兩天起跳。急診床都被用光。所以常常會有8、90歲以上老人家坐著輪椅打點滴，而且一坐就是5、6小時開始計算。不能躺，年輕人還好，老人家常常苦不堪言。
+於是……..醫院幫我們急診準備了，可以躺的輪椅。
+是不是只有我覺得哪裡怪怪的🤨 #先聲明還是很感謝醫院高層提供可以躺的輪椅😵‍💫</description></item><item><title>讓心臟亂跳的外傷</title><link>https://agoodbear.github.io/post/ecg-post-6/</link><pubDate>Tue, 05 Mar 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-6/</guid><description>
+48歲女性，下樓時，不小心，腳踩空，從樓上滾了下來。 簡單的一句話，卻是她悲慘人生的開端。 因為意識不清楚，又是外傷。病患推入了急救室。
+接上了ECG monitor，發現心臟跳得很快，隨即做了一張12 lead ECG
+嗯，這張的rate，很有問題。
+怎麼說?
+肯定不是156下。這張ECG的rate，應該是Double，快要300下才對。
+主要是ECG機器把其中一個R wave誤認為T wave，導致本來應該要300下的心跳，機器自己算，攔腰砍一半。
+判讀心電圖要有一個自己的原則，機器寫的東西，參考看看就好。可以當輔助，但絕對不能拿來當答案。 這種會Double H.R的狀況，比較常出現在T wave明顯的情況(如Hyper-K、或AMI先出現hyperacute T wave時)。
+舉個同事其他例子(Fig.2)。同事上班時發現ECG monitor一直在叫，會叫是因為機器認為心跳過快了。
+真的有過快嗎?
+No~~是因為T wave太明顯，機器認錯了，經過處理後，就變下圖了。T wave降下來，機器也辨識正確了。
+我倒還是第一次遇到把R wave當成T wave，H.R攔腰砍半的狀況。
+Tips:當目測H.R和機器有差距，請看看是否機器誤認，錯把T wave當成R wave(較常見)
+Case繼續~~ 不過這次的個案，非常快的，還沒電擊，心跳就自己降下來了
+Fig.3的最上的心跳和12 lead ECG相仿，很快就降到一半(RR interval從一大格，變成約二大格)，最下圖大約要三大格，剩100下左右。
+這邊有一些算H.R的小技巧:
+應用rule of 300 long lead II計算法 看ECG機器數值😆 應用rule of 300，就是先算RR interval有幾大格，算好後，直接300/幾大格(Fig.4)。不過有一個前提，那就是12 lead ECG的Speed要設在 25 mm/sec。理論上，一般都是設25 mm/sec，沒事不會去做變更啦。
+另外還有long lead II的算法，也就是將12 lead ECG最下方的long lead II，先算有幾個QRS，然後x6就是一分鐘心跳多少。主要是一張12 lead ECG，是10秒鐘，所以x6就可以得到一分鐘跳多少下。
+Case繼續~~ 病患因為有明顯外傷且意識不清，後續做了Brain CT and Whole body CT。</description></item><item><title>和死神擦身而過的年輕產婦</title><link>https://agoodbear.github.io/post/ecg-post-5/</link><pubDate>Mon, 04 Mar 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-5/</guid><description>
+30多歲年輕產婦，G3P0A2，這是目前唯一一次的成功生產，也差點成為最後一次。
+因為出生前胎兒是臀位。所以最終生產採取了剖腹產。
+產後第五天的中午，病患突然開始胸痛。約莫10分鐘後開始意識不清，一陣類似癲癇的動作產生。隨即沒了呼吸、心跳。
+在急重症環境下工作的同仁，應該會了解，這種類似癲癇的動作，並不是真正腦部問題產生，而更上層的原因常常是因為心臟跳了心室性心律不整比如心室顫動或心室性心搏過速，沒有足夠的心輸出量，進而產生腦部缺血而誘發類似癲癇的動作出現(見Fig.1)。
+Case繼續~~ ECG monitor裝上去後，仍有波形，但沒有摸到脈搏。
+PEA(無脈搏性心臟電氣活動)
+醫護人員開始了CPR.........準備給Epinephrine、插管
+我設身處地想像當下的狀況。好不容易，第一次生產成功的產婦，現在卻什麼都沒有了，新生兒室還躺著自己努力生下來的嬰兒，正在哭著。而產婦卻連哭都不能哭，因為現在這個時刻連命都沒了。
+之後很快出現pulseless VT，電擊了一次200J，給了一劑的epinephrine，之後就ROSC。
+病患因為疑似羊水栓塞(amniotic fluid embolism)，轉入了外科加護病房，進一步檢查。
+來點小小知識補充包: 羊水栓塞的可能原因? 羊水栓塞風險因子有哪些? 有哪些症狀? 有沒有什麼診斷檢查是golden standard? 發生率如何? 羊水栓塞是指在分娩過程中，羊水或其成分進入母體血液循環，觸發強烈的免疫反應。這種免疫反應會釋放大量的細胞因子，稱為細胞因子風暴，這可能導致嚴重的心血管衰竭和凝血異常。羊水栓塞的確切原因尚不清楚，但研究認為它可能與羊水中特定成分的免疫反應有關。
+這張圖來自於這裡
+講簡單一點就是，我們每個人的身體，都不喜歡外來物(foreign body)。
+當產婦懷孕時，正常狀況下在母體循環(maternal circulation)裡不會出現胎兒細胞與羊水。但是當運氣不好時，子宮靜脈(uterine vein)或是胎盤(placenta)出現撕裂傷(tear)時，這些胎兒細胞與羊水就有可能鑽進母體循環內。當這些非母體本身的外來物在母體循環內就會當作foreign body而被擋了下來。因此後續產生了一連串的免疫/過敏反應。1
+以下是可能的風險因子列表:
+風險因素 說明 來源 年齡大於35歲 與AFE相關的風險增加 2 胎盤前置（Placenta Previa） 胎盤前置的風險增加30.4倍 2 剖腹產（Cesarean Delivery） 剖腹產的風險增加5.7倍 2 高齡和少數族裔女性 在高齡和少數族裔女性中，AFE的風險顯著增加 3 分娩方式 剖腹產和儀器輔助陰道分娩與AFE風險增加相關 4 妊娠相關風險因素 包括胎盤異常、子癇前症、羊水過多等 4 引產（Induced Labor） 使用某些方法引產可能增加AFE的風險，但研究仍有限 5 多胞胎妊娠（Multiple Pregnancy） 多胞胎妊娠與AFE風險增加相關 3 胎盤剝離（Placental Abruption） 胎盤剝離與AFE風險增加相關 4 電解質異常（Electrolyte Abnormalities） 電解質異常與發展AFE的風險有顯著關聯 6 那麼要如何診斷呢?</description></item><item><title>意識不清的中年婦女</title><link>https://agoodbear.github.io/post/ecg-post-4/</link><pubDate>Tue, 20 Feb 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-4/</guid><description>
+今天這個個案很有趣~~
+這個是先從我們宜蘭縣消防局prehospital ECG的line群組看到的。
+xx91.....送陽大
+先來看看這張prehospital ECG
+baseline抖抖的、心跳很慢，似乎有STE，這是我在line裡面看到救護弟兄上傳這張ECG的那瞬間印象。
+我覺得很有意思，因為這張是姜太公釣魚，願者上鉤 後來我追蹤這個案後續狀況，聽我慢慢說來。
+這張是到院時ECG
+其實和prehospital ECG相差不遠。
+我們用prehospital ECG來看好了。首先有幾個問題要問。
+有STE嗎? 為何Baseline抖成這樣? 為何那麼慢? 有STE嗎?因為這關乎我們是否等等就要直接call CV man。
+首先我們要了解J point在哪裡?因為是否有STE or STD，取決於J point是在baseline以上還是以下。
+J point這個點的定義是QRS的結尾到ST segment的開頭
+下圖是我做電子筆記時常用的圖，讓我能快速複習J point &amp;amp; J wave &amp;amp; S wave
+左2可以看到J point比baseline高，所以是STE
+右3可以看到J point比baseline低，所以是STD
+那............ J wave是啥XD
+J wave是指在J point之前往上的反折(在aVR、V1會往下反折)稱之➔右4就是很明顯在J point之前出現J wave
+所以到底prehospital ECG有沒有STE? 首先一定要養成一個習慣，那就是看到STE，要先確認這是不是STE。確認的方法，就是我剛剛說的，先找J point在哪裡!!!!(Step 1)
+我們看看Fig 3裡面的12個lead，Lead I/II/aVL/aVF/V4/V5/V6都像是有STE，要找J point，或許不是那麼好找。那麼我們就從其他lead找。
+在V1其實很明顯J point在哪裡。當我們找到一個lead的J point時，接下來就是把QRS寬度量出來。(Step 2)
+接著就是把剛剛量到的QRS距離放到我們認為有STE的lead那邊去看，就可以發現，這些我們認為的STE，其實都落在QRS寬度內。
+那麼，這些我們懷疑有STE的lead根本就沒有STE Tip:分辨是否有STE Step 1➔找出J point
+Step 2➔找出QRS寬度
+Step 3➔將QRS寬度，對應到我們認為有STE的lead。</description></item><item><title>眼鏡蛇來我家，這是真的!!!</title><link>https://agoodbear.github.io/post/erlife-post-1/</link><pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/erlife-post-1/</guid><description>
+下鄉第一年在竹東榮民醫院，發生了一件非常可怕的事。
+那就是眼鏡蛇來我家XD 為此，太座來剪了一支影片以此紀念😅😅😅
+最後被EMT的弟兄給擒拿，驅之別院了🥰</description></item><item><title>73歲男性，胸痛持續。需要導管介入嗎?</title><link>https://agoodbear.github.io/post/ecg-post-1/</link><pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-1/</guid><description>
+覺得這個Case非常有趣，也可以從中學到不少。特地把這個Case從眾多想寫的案例中，往前拉。
+73歲男性，半夜來就診。因為胸痛厲害，所以當班急診醫師也做了Chest CTA去排除主動脈剝離。
+早上我接班後，我自己的習慣會去把交班主述胸痛的病患，再去看一眼，前一班所做的心電圖。病患一開始的TnI為0.26 mg/mL，已經是&amp;gt;99th percentile of URL。預計之後會在抽第二次心臟酵素。
+Initial ECG如上圖，我看完後，就直接去看病患，看看目前病患的胸痛狀況目前如何?
+各位有看到什麼嗎?
+垂直藍線是畫在J point。J point是用來評估是否有STE or STD的點。J point是QRS的結尾到ST segment的開頭。若是在Baseline以上就是STE，baseline以下就是STD。
+我們要運用STEMI criteria就是要看根據J point的位置來判斷是否有STE，才能夠診斷STEMI。 在最近的2018年第四版的Universal Definition of Myocardial Infarction裡面就有清楚講明什麼是AMI。什麼可以叫做STEMI。
+AMI就是出現Myocardial injury的證據(Biomarker上升)+ Myocardial ischemia證據(症狀 or ECG or 影像出問題)。(Fig.2)
+而要診斷STEMI，則必須符合STEMI criteria。(Fig.3)
+必須要再三強調，V2/V3的STE與其他lead定義不一樣。看V2/V3要根據性別/年齡合併一起看。
+舉例來說，男性&amp;lt;40 y/o在V2/V3要≧2.5 mm才是有意義的高。其他以此類推。
+這延伸了幾個有趣的狀況: 這也代表著，隨便抓一個人來作12 lead ECG，很有可能會在V2/V3都看到有STE，只是有沒有意義的高，就需要根據上述的criteria了。 如果沒有看到STE在V2/V3(比如isoelectric baseline or minimal STD)，那麼就需要考慮是不是有什麼力量往下拉了。對~~~Post.OMI 承上面，怎樣程度的minimal STD都要考慮Post.OMI呢? 在這篇Smith ECG Blog有提到¹，在V2 or V3有任何程度的STD，都必須考慮posterior OMI，直到證明不是為止。特別是downsloping STD(符合前述，即使STD&amp;lt;0.5~1 mm都要特別小心)
+Ken Grauer與Smith大師，多次強調V2 or V3的ECG morphology。除了前述的任何程度的STD。如果出現downsloping STD or Shelf-like STD都要小心有Post.OMI.
+在這一篇之前寫的文章中，我有更詳盡的論述，要如何診斷Post.OMI²。簡短說一下:STDmaxV1–4(+) →直指Post.</description></item><item><title>How to detect OMI in 10 Steps?</title><link>https://agoodbear.github.io/post/ecg-post-2/</link><pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-2/</guid><description>
+基本知識 OMI這個觀念是在2018年由Stephen W. Smith、 Pendell Meyers、Scott Weingart所提出。主要是考量目前STEMI criteria並不是一項可以讓病患從PCI獲益的良好評估工具。因此介紹了OMI更好去讓我們發現ACO(Acute coronary occlusion)
+新的OMI/NOMI paradigm並不拘限於ECG，然而ECG仍是此觀念的cornerstone，主要因為它可以快速做到、可重覆性、非侵襲性與目前廣泛使用。
+由於每種ECG signs都有其pretest probability，因此ECG應該要和病患臨床表徵前、後關係，胸痛存在與否和其特性。特別是ECG finding非常subtle，更要注意。(例如出現STE，但病患沒有任何胸口不適，可能要想想其他問題)
+到急診主述胸痛的病患，只有2~5%真正有OMI。而這些病患只有一半符合STEMI criteria。
+還記得STEMI criteria嗎?
+這篇文章透過10個步驟來分析，哪些狀況可能有OMI，哪些情況比較不像OMI。1
+透過這樣的分析評估ECG，讓我們能夠更快速找出OMI病患，如此可適當會診心內醫師，挽救殘存的心肌細胞。
+10 Steps to clarify the OMI
+當有明顯STE時 Step 1:排除artifact 先看有無Atrial Repolarization wave(ARW) or atrial flutter➡有可能會出現STE現象(常見於inf.leads)
+先看看Inf.lead是不是有Negative P wave，如果是的話代表不是sinus node傳導下來的，因為是low atrium發出的，所以可看下圖(Fig 1) 2 : 圖片解釋:
+(左側)正常sinus rhythm在lead II的P wave為Upright，所以P wave的再極化波(Tp wave)會inverted(因為藏在QRS裡，所以看不到。 (右側)為ectopic rhythm，接近low atrium，所以此P wave會靠近QRS，且inverted，但其Tp wave會Upright，這會讓ST上升，看起來像STEMI，可參考下圖的Lead II/Lead III(有Inverted P wave)合併STE¹ Tips: 要小心Tp wave可能會引起pseudo-STE，一般來說比較輕微，當P wave的高度不高且PR不短➡那麼不要直接把STE歸咎於Tp wave引發起來(還是要先想MI)
+如果lead貼在arterial pulse上，也有可能會造成STE現象
+Tips: 通常不會所有leads都會影響到，比如Inf.</description></item><item><title>資料庫的應用與靈感筆記如何建立?</title><link>https://agoodbear.github.io/post/study-post-2/</link><pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-2/</guid><description>
+我的筆記知識庫(第二大腦) 很久以前是使用Evernote當做第二大腦。後來發現，我用Evernote Clip來擷取網頁，存成read it later的形式。
+但是這樣的動作，只是把比較大的垃圾堆(Big data)，整理成比較小的垃圾堆(Small Big data)😅。總歸一句，都還是垃圾。
+為什麼這些自認為是重要知識的文章，我最終還是會認為是垃圾呢?因為多到，不去整理，不用自己理解過後的語言再去描述這篇文章，那麼這篇文章，對我而言，就是沒有任何價值。
+資料庫裡面的知識，我們通常會先用primary selection先篩過一輪，存進資料庫。
+什麼叫做primary selection，也就是先將我們認可的資訊，抓進資料庫內。
+認可的資訊，取決於我們想站在哪位巨人的肩膀上!!!!
+比如，我對ECG的辨識特別有興趣，那麼我收集的文章，就要從世界認可的大師來收集。
+比如Smith ECG's Blog、Amal mattu's ECG Weekly等等。
+當我們從這些認可的網站、影片、推文(tweet)把這些內容存進我們的資料庫內(read it later)。這就是進行了primary selection的動作。
+接著把這些文章精讀，提取出重點，再透過自己的語言寫入資料庫內，這就是secondary selection，也是最重要的一步驟。
+當進行到secondary selection時，代表已經有自己消化過的資料存進資料庫。這時利用資料庫程式的搜尋，提出已經消化過的內容，應用出來。
+儲存是短期記憶，當我們不斷搜尋到之前消化過的內容時，就會加深印象，形成長期記憶。當我們把長期記憶應用在我們想處理的事情上面，比如用來寫Blog、在臨床上對病患的照護。如此就會形成正向循環。
+我大概從2020年開始，將我的資料庫從Evernote轉換成Roam research
+目前我幾乎所有primary selection的資料來源都可丟入Roam research。
+在primary selection時，有時會有突然的靈感。
+在瓦基的線上課程-卡片盒筆記實戰課，裡面有提到靈感筆記的觀念。
+靈感常常是一剎那間的想法，我的經驗是，沒有馬上記錄下來，再回頭看(可能10分鐘、可能1小時）......已經忘記當初在想什麼了。
+所以紀錄是一個很重要的動作。
+我自己針對靈感的紀錄是使用以下幾種方法: 使用Readwise手機App 使用Roam手機App 使用Speak to Roam Readwise手機App的好處是可以直接OCR看到的紙本書籍。拍照下來，把重要文字OCR出來，接著就可以Export到Roam裡面去了。
+Roam手機App最下方的功能，有一個是Quickcapture，也就是直接打字，直接傳到Roam指定的graph裡面。
+Speak to Roam是我覺得近期內，最讚的靈感擷取工具。這工具是由Roam開發商裡面的一位程式設計師所研發。
+檔案在這裡
+iOS限定，這工具是透過iOS的捷徑，只要在Mac or iPhone or Apple watch按下這個捷徑，就可以直接說話。接著會把我們說的話，產生語音轉文字效果，並且直接儲存在Roam裡面。
+我使用的情境是，我在重訓運動時，戴著AirPods，突然想到什麼樣的靈感，就直接在我的Apple watch按下捷徑，接著就直接說話。
+如果說話的內容超過50字以上，Speak to Roam會產生兩段文字到Roam。
+第一段是raw data，我完整語音的語音轉文字內容。
+第二段是Speak to roam針對長文，會去call ChatGPT，把我說的長文給予精準摘要(可以自行設定Prompt)</description></item><item><title>測試POCUS</title><link>https://agoodbear.github.io/post/post-2/</link><pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/post-2/</guid><description/></item><item><title>使用Hugo架站相關語法</title><link>https://agoodbear.github.io/post/study-post-1/</link><pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-1/</guid><description>
+要如何利用Hugo建立靜態網站文章 前置作業 首先要確立幾件事情:
+在Mac中安裝好Xcode (Win應該不用安裝吧?這我不知道) 使用Homebrew在Mac的終端機安裝Hugo 已經在GitHub申請好帳號 安裝好VS code與typora VS code 可以直接寫markdown code Typora 會直接將文章轉成markdown格式(有點所見即所得概念)➔用這個寫文章比用VS code寫舒服多了😌 在Typora引用圖，在圖上直接右鍵，就可更改大小 已經在Hugo theme裡面選好，想要搭配的theme來做修改 下載theme，可以在自己的電腦上打開運作 完成上列，就算完成大部分了～～～
+接著就是根據每個不同的theme，看自己的需求來做客製化的動作!!!!(不是必須的，但像我這種強迫症患者，肯定要改)
+這邊就一定要強烈推薦古君葳老師的Github 免費架站術！輕鬆打造個人品牌
+文章基本markdown格式須知 我這一個theme是來自於這裡 (以下的變更都根據這一個theme為主) 在exampleSite/content/post自行建立一個markdown檔案(*.md)
+一般文章需要加入的格式(至於每篇Blog markdown文章的最上方，分別用---與---當最上層和最下層)
+每篇文章必須輸入的markdown語法: 1--- 2title: &amp;#34;使用Hugo架站相關語法&amp;#34; #輸入這篇的title 3date: &amp;#34;2024-01-12&amp;#34; #輸入時間 4description: &amp;#34;Hugo&amp;#34; #根本不知道什麼時候會出現 5featured: true #若設定為true，會設定為精選文章 6draft: false #若為false就會直接刊出，不會以草稿模式運作 7toc: true #自動產生TOC 8featureImage: &amp;#34;/images/HUGO.png&amp;#34; #設定這篇文章首頁的圖片 9thumbnail: &amp;#34;/images/HUGO.png&amp;#34; #每篇文章的縮圖位置在這裡(static/images/)-變更 10codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.</description></item><item><title>抓住審閱者的目光，你可能只有五分鐘！</title><link>https://agoodbear.github.io/post/study-post-3/</link><pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-3/</guid><description>
+這篇是我2019/9去參加新思惟國際的圖與圖說工作坊寫的心得，原Po於官網上。
+作者：陽大附醫 急診科 曹建雄 醫師
+由地雷製造者告訴你，如何閃開地雷。 不管在哪個行業，都有個突飛猛進的方法，那就是跟對老師，跟著強者走。強者能把他踩過的地雷直接和你說，地雷長得方的圓的，裡面的炸藥量有多少，可以把你炸多高，能一五一十全部說給你聽。
+強者之所以為強者，不但因爲曾經深受其害，現在也是地雷製造者（reviewer）。蔡校長是醫學影像方面的強者，也是國際期刊審稿的 reviewer。所以，所有可能碰到的眉眉角角，他以作為 reviewer 的第一人稱角度親身來剖析，哪些地方的不精準，可能導致 reviewer 的「不開心」，進而遭到 reject。
+以為審閱者是細細品嘗，其實是抽空翻閱。 在上工作坊之前，我真的以為 reviewer 會認真看投稿文章，一字一字慢慢品味。但事實並非如此，審閱量最大的主力 reviewer，幾乎都是用人生中「最沒用」的空閒時間，不小心從口袋拿出你的文章，利用時間品味 5 分鐘。
+投稿文章眾多，在這人生苦短的 5 分鐘內，除非真的有過人品味，文章能抓住 reviewer 的胃，不然就要運用圖表抓住目光，讓 reviewer 認可你的文章圖表是內行人做的。當他認可你是內行人後，文章才有機會生存而不被 reject。
+圖片及圖說的重要性 為何圖表格式如此重要，課程中也解釋，因為以 reviewer 的角度來說，圖片建議很難描述，而文字相對比較容易給意見。所以圖表不行，原則上，就直接晉級敗部俱樂部了。
+蔡校長針對類似 case report 文章產出順序，也給了一些方向，以往我們在寫的時候，總是先寫文字，然後將圖片疊上去。蔡校長建議，先把圖片做出來，自己先說看看是一個怎麼樣的故事，再把文字疊上去。
+由審閱者來告訴你重點 工作坊中最令人期待就是，蔡校長以身為 reviewer 的觀點，來提點如何讓醫學影像投稿符合學術規範要注意的重點。
+一開頭就說明了，不該做的事情不要做（欺騙、造假），不要把自身的學術生涯葬送在短視近利上面。這堂課中也示範了，怎麼樣的圖片修改是符合學術規範的，如調整亮度或對比，是可接受的，但如果是「局部」添加 / 消除，是不被允許的。
+這堂課教授了許多重點，包括一開始的選圖、滿版調整、重點優化，與根據標示開始說故事。缺一不可，四者都要做到，才是真正能吸引 reviewer 目光的圖片。
+跟著強者走，瞭解每一道關卡。 承接前一堂課，課程接著說明如何讓圖片讓人眼睛為之一亮的畫龍點睛方法，並且說明了箭頭、箭號、文字與標示在視覺上的意義為何。這些細節看似無關緊要，但確實是被 reviewer 拿來當 reject 關主的第一關。
+沒上過蔡校長的課，老實說，我想應該很少人會在臨床學術上主動被指導這一部份。之後，蔡校長給了我們他的萬用範本，也就是要我們跟著強者走的意思啦。
+各項細節一一琢磨 下午的課程進入了實作階段，蔡校長提供了兩個練習範本。照著工作坊提供的互動實作武功秘笈，開始練功。
+拿到圖片接著格放、等比例放大，比較圖要對齊。接著圖片校正。文字方塊字體選擇 Arial 粗體，適當的大小。圖片使用箭頭、箭號和星號，箭頭與箭號看起來要等大，箭號須調整寬度（箭號：箭頭約是 2：3），還有更多祕訣沒寫出來！
+這就是蔡校長在一成機率 accept 的 AJR 裡，擁有高達八成的 accept 的必勝公式，只能拿著武功秘笈，多膜拜與練習幾次了。課堂裡講授更多圖片重點，在這並沒有完全寫出來，我想，親身來體驗被 SCI 接受超過 500 張影像的蔡校長加持，一定比看我寫的重點過癮許多！</description></item></channel></rss>

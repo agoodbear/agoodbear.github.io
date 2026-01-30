@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arrhythmia on 急診熊心聲部落格</title><link>https://agoodbear.github.io/tags/arrhythmia/</link><description>Recent content in Arrhythmia on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Wed, 24 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/arrhythmia/index.xml" rel="self" type="application/rss+xml"/><item><title>67歲暈厥的阿姨</title><link>https://agoodbear.github.io/post/ecg-post-10/</link><pubDate>Wed, 24 Jul 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-10/</guid><description>
+67歲女性主述剛剛在運動時，突然暈了過去。 造成syncope的原因有很多，但最後的共同路徑(common pathway)是大腦血流中斷約10秒鐘 1 。
+以上表格來自於丁阿姨的枕頭 1 。
+Syncope的最常見原因是vasovagal（21%）、cardiac（10%）、orthostatic（9%）、medication related（7%）、neurologic（4%）和不明原因（37%）。
+診斷很重要，因為每個診斷分類都帶有預後風險。例如，caridac syncope會使死亡風險加倍，neurologic syncope會使死亡風險增加 50%，而不明原因的syncope會使死亡風險增加 30% 1 。
+syncope的治療取決於診斷。 例如，對於懷疑由藥物引起的患者，應停用相關藥物。
+丁阿姨寫的:最後的共同路徑(common pathway)是大腦血流中斷約10秒鐘 可是有些心律不整也沒有讓心臟停止10秒啊?那為何會syncope?
+這是因為在心律不整的情況下，心臟的功能可能會顯著受損，導致瞬間的心輸出量（cardiac output）劇烈減少，進而影響大腦的血液供應。一顆心臟打出的血液，要支配全身那麼多重要器官，當整體cardiac output少很多，當然到達腦部的血液就也會少很多，也幾乎接近中斷腦部血流了。
+另外seizure發作與syncope這兩者容易搞混。有時syncope常被誤認為是seizure attack，但這是兩種不同的疾病，雖然這兩種狀況都可能出現身體抽搐，但它們的起因不同。
+要區分兩者，可以參考病史、發作前後的症狀以及目擊者描述。例如，如果患者有癲癇病史、出現先兆（如幻覺）、發作後出現意識模糊或肌肉痠痛，則更有可能是癲癇發作。相反，如果患者在發作前感到噁心、冒冷汗，則更有可能是vasovagal （最常見的昏厥類型）。目擊者的描述，例如患者是否出現頭部轉動或異常姿勢，以及發作後意識恢復的時間長短，也有助於判斷。
+在seizure attack後，患者通常會經歷一段意識模糊的發作後狀態 (postictal state)，持續時間可能從幾分鐘到幾小時不等。相反地，syncope後的意識恢復通常較快，通常在幾秒鐘到幾分鐘內就會完全清醒。
+另外這ACEP的這篇文章裡面，也有提到在評估syncope時，Step 1就是去區別Syncope from seizure 2
+這邊要提到文章中描述，可能是一個常見的臨床pitfall，那就是尿失禁，根據一個review雖然針對siezure其specificity達到96%，但後續的研究發現並不可靠 2!!!
+拉回正題～～ 不管是syncope還是seizure attack，ECG都是快速評估的一個很重要工具。
+Amal mattu在ECG Weekly裡面上課，也常講上述兩種狀況都要做ECG。
+在2017 ACC/AHA Guideline for the Evaluation and Management of Patients with Syncope這篇文章中就有說明，對於syncope一開始的病史詢問、理學檢查和ECG都是屬於Class I建議要做的(見下表) 3。
+這位67歲的病患到院時的ECG如下: Rate: 42 bpm
+Rhythm: SR，但是出現多個P wave➔可以見到T wave後面又多一個P wave，這個P後面沒有立馬接個QRS，代表atrium放電往下傳，傳不到ventricle就斷電了
+PP interval都是regular、這是一張典型的2:1 AVB Axis: normal axis</description></item><item><title>讓心臟亂跳的外傷</title><link>https://agoodbear.github.io/post/ecg-post-6/</link><pubDate>Tue, 05 Mar 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-6/</guid><description>
+48歲女性，下樓時，不小心，腳踩空，從樓上滾了下來。 簡單的一句話，卻是她悲慘人生的開端。 因為意識不清楚，又是外傷。病患推入了急救室。
+接上了ECG monitor，發現心臟跳得很快，隨即做了一張12 lead ECG
+嗯，這張的rate，很有問題。
+怎麼說?
+肯定不是156下。這張ECG的rate，應該是Double，快要300下才對。
+主要是ECG機器把其中一個R wave誤認為T wave，導致本來應該要300下的心跳，機器自己算，攔腰砍一半。
+判讀心電圖要有一個自己的原則，機器寫的東西，參考看看就好。可以當輔助，但絕對不能拿來當答案。 這種會Double H.R的狀況，比較常出現在T wave明顯的情況(如Hyper-K、或AMI先出現hyperacute T wave時)。
+舉個同事其他例子(Fig.2)。同事上班時發現ECG monitor一直在叫，會叫是因為機器認為心跳過快了。
+真的有過快嗎?
+No~~是因為T wave太明顯，機器認錯了，經過處理後，就變下圖了。T wave降下來，機器也辨識正確了。
+我倒還是第一次遇到把R wave當成T wave，H.R攔腰砍半的狀況。
+Tips:當目測H.R和機器有差距，請看看是否機器誤認，錯把T wave當成R wave(較常見)
+Case繼續~~ 不過這次的個案，非常快的，還沒電擊，心跳就自己降下來了
+Fig.3的最上的心跳和12 lead ECG相仿，很快就降到一半(RR interval從一大格，變成約二大格)，最下圖大約要三大格，剩100下左右。
+這邊有一些算H.R的小技巧:
+應用rule of 300 long lead II計算法 看ECG機器數值😆 應用rule of 300，就是先算RR interval有幾大格，算好後，直接300/幾大格(Fig.4)。不過有一個前提，那就是12 lead ECG的Speed要設在 25 mm/sec。理論上，一般都是設25 mm/sec，沒事不會去做變更啦。
+另外還有long lead II的算法，也就是將12 lead ECG最下方的long lead II，先算有幾個QRS，然後x6就是一分鐘心跳多少。主要是一張12 lead ECG，是10秒鐘，所以x6就可以得到一分鐘跳多少下。
+Case繼續~~ 病患因為有明顯外傷且意識不清，後續做了Brain CT and Whole body CT。</description></item></channel></rss>
