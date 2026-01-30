@@ -1,0 +1,194 @@
+{{ define "main" }}
+<article class="page">
+    <header class="page_header">
+        <h1 class="page_title">{{ .Title }}</h1>
+        {{ with .Description }}
+        <p class="page_description">{{ . }}</p>
+        {{ end }}
+    </header>
+
+    <div class="page_content">
+        {{ .Content }}
+    </div>
+
+    <!-- AI Tools Cards Grid -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+        .ai-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 28px;
+            margin-top: 32px;
+            padding: 0 20px;
+        }
+
+        .ai-tool-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ai-tool-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .ai-tool-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: top;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ai-tool-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .ai-tool-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ai-tool-icon {
+            font-size: 1.8rem;
+        }
+
+        .ai-tool-title {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin: 0;
+        }
+
+        .ai-tool-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+            margin-top: 4px;
+        }
+
+        .ai-tool-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 12px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            align-self: flex-start;
+            transition: all 0.2s ease;
+        }
+
+        .ai-tool-link:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* No image fallback - gradient header */
+        .ai-tool-card.no-image .ai-tool-header-bg {
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ai-tool-card.no-image .ai-tool-header-bg .ai-tool-icon {
+            font-size: 3rem;
+        }
+
+        /* Empty state */
+        .ai-tools-empty {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--bg-code, #f8f9fa);
+            border-radius: 16px;
+            margin-top: 32px;
+        }
+
+        .ai-tools-empty-icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+
+        .ai-tools-empty-text {
+            font-size: 1.1rem;
+            color: var(--text-color, #666);
+        }
+
+        /* Dark mode */
+        @media (prefers-color-scheme: dark) {
+            .ai-tool-card {
+                background: #2a2a2a;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            .ai-tool-card:hover {
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            }
+
+            .ai-tool-title {
+                color: #fff;
+            }
+
+            .ai-tool-description {
+                color: #aaa;
+            }
+
+            .ai-tool-image {
+                border-bottom-color: #444;
+            }
+        }
+    </style>
+
+    <div class="ai-tools-grid" id="ai-tools-container">
+        {{ $tools := .Site.Data.ai_tools }}
+        {{ if $tools }}
+        {{ range $tools }}
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
+            class="ai-tool-card{{ if not .image }} no-image{{ end }}">
+            {{ if .image }}
+            <img src="{{ .image }}" alt="{{ .title }}" class="ai-tool-image">
+            {{ else }}
+            <div class="ai-tool-header-bg">
+                <div class="ai-tool-icon">{{ .icon | default "🤖" }}</div>
+            </div>
+            {{ end }}
+            <div class="ai-tool-content">
+                <div class="ai-tool-header">
+                    {{ if .image }}<div class="ai-tool-icon">{{ .icon | default "🤖" }}</div>{{ end }}
+                    <h3 class="ai-tool-title">{{ .title }}</h3>
+                </div>
+                <p class="ai-tool-description">{{ .description }}</p>
+                <span class="ai-tool-link">
+                    開啟工具 →
+                </span>
+            </div>
+        </a>
+        {{ end }}
+        {{ else }}
+        <div class="ai-tools-empty" style="grid-column: 1 / -1;">
+            <div class="ai-tools-empty-icon">🚀</div>
+            <div class="ai-tools-empty-text">尚未添加任何 AI 工具，敬請期待！</div>
+        </div>
+        {{ end }}
+    </div>
+
+</article>
+{{ end }}

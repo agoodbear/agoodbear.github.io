@@ -1,0 +1,14 @@
+# AI 工具列表
+# 每次新增工具時，只需要在這裡加入一個新的項目
+
+- title: "急診速記小幫手"
+  description: "常用急診工具"
+  url: "https://gemini.google.com/share/6438242c95e0"
+  icon: "🛠️"
+  image: "/images/ai-tools/er-helper.png"
+
+- title: "外傷紀錄/診斷書"
+  description: "常用急診工具"
+  url: "https://gemini.google.com/share/47cd5717aee5"
+  icon: "🛠️"
+  image: "/images/ai-tools/trauma-record.png"

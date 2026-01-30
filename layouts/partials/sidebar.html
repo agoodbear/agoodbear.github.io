@@ -121,26 +121,249 @@
     </div>
     {{- end }}
     {{- end }}
-    <!-- View Counter -->
-    <div style="margin-top: 4rem; border-top: 1px solid var(--color-border, #eee); padding-top: 1.5rem;">
-      <div
-        style="display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem; opacity: 0.8; background: var(--bg-code, #f2f2f2); padding: 10px; border-radius: 6px;">
-        <span style="display: flex; align-items: center;">
-          <svg style="width: 16px; height: 16px; margin-right: 8px;" fill="none" stroke="currentColor"
-            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-            </path>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-            </path>
-          </svg>
-          總瀏覽量
-        </span>
-        <span id="busuanzi_container_site_pv" style="font-weight: bold; font-family: monospace; font-size: 1.1em;">
-          <span id="busuanzi_value_site_pv">...</span>
-        </span>
+    <!-- Firebase Flip Counter -->
+    <style>
+      .flip-counter-wrapper {
+        margin-top: 4rem;
+        border-top: 1px solid var(--color-border, #eee);
+        padding-top: 1.5rem;
+      }
+
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap');
+
+      .flip-counter-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+        font-size: 1.2rem;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        color: var(--text-color, #333);
+      }
+
+      .flip-counter-header svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+
+      .flip-counter {
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+        perspective: 400px;
+      }
+
+      .flip-digit {
+        position: relative;
+        width: 36px;
+        height: 50px;
+        font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+        font-size: 1.8em;
+        font-weight: bold;
+        background: linear-gradient(180deg, #3a3a3a 0%, #2a2a2a 50%, #1a1a1a 50%, #0a0a0a 100%);
+        color: #fff;
+        border-radius: 6px;
+        box-shadow:
+          0 2px 4px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .flip-digit::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 2;
+      }
+
+      .flip-digit .current,
+      .flip-digit .next {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backface-visibility: hidden;
+      }
+
+      .flip-digit.flipping .current {
+        animation: flipTop 0.4s ease-in forwards;
+      }
+
+      .flip-digit.flipping .next {
+        animation: flipBottom 0.4s ease-out 0.2s forwards;
+        transform: rotateX(90deg);
+      }
+
+      @keyframes flipTop {
+        0% {
+          transform: rotateX(0deg);
+        }
+
+        100% {
+          transform: rotateX(-90deg);
+        }
+      }
+
+      @keyframes flipBottom {
+        0% {
+          transform: rotateX(90deg);
+        }
+
+        100% {
+          transform: rotateX(0deg);
+        }
+      }
+
+      .flip-digit-separator {
+        width: 8px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2em;
+        color: var(--text-color, #333);
+        opacity: 0.5;
+      }
+
+      /* Dark mode support */
+      @media (prefers-color-scheme: dark) {
+        .flip-digit {
+          background: linear-gradient(180deg, #4a4a4a 0%, #3a3a3a 50%, #2a2a2a 50%, #1a1a1a 100%);
+          box-shadow:
+            0 2px 4px rgba(0, 0, 0, 0.5),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      .flip-counter-loading {
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+      }
+
+      .flip-counter-loading .flip-digit {
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+
+        50% {
+          opacity: 1;
+        }
+      }
+    </style>
+
+    <div class="flip-counter-wrapper">
+      <div class="flip-counter-header">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
+          </path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+          </path>
+        </svg>
+        總瀏覽量
       </div>
-      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      <div id="flip-counter" class="flip-counter flip-counter-loading">
+        <div class="flip-digit"><span class="current">-</span></div>
+        <div class="flip-digit"><span class="current">-</span></div>
+        <div class="flip-digit"><span class="current">-</span></div>
+        <div class="flip-digit"><span class="current">-</span></div>
+        <div class="flip-digit"><span class="current">-</span></div>
+        <div class="flip-digit"><span class="current">-</span></div>
+      </div>
     </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import { getDatabase, ref, get, set, runTransaction } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDHGO0T7gomSortOftnubF8v4-ZkQ3FPks",
+        authDomain: "agoodbear-website.firebaseapp.com",
+        databaseURL: "https://agoodbear-website-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "agoodbear-website",
+        storageBucket: "agoodbear-website.firebasestorage.app",
+        messagingSenderId: "263335877825",
+        appId: "1:263335877825:web:10c1cf65b632e6e35fc840"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+
+      // Counter logic
+      const counterRef = ref(db, 'pageViews/total');
+      const counterEl = document.getElementById('flip-counter');
+
+      // Check if already counted in this session
+      const sessionKey = 'pv_counted';
+      const alreadyCounted = sessionStorage.getItem(sessionKey);
+
+      async function updateCounter() {
+        try {
+          if (!alreadyCounted) {
+            // Increment counter
+            await runTransaction(counterRef, (current) => {
+              return (current || 0) + 1;
+            });
+            sessionStorage.setItem(sessionKey, 'true');
+          }
+
+          // Get current value
+          const snapshot = await get(counterRef);
+          const count = snapshot.val() || 0;
+          displayCount(count);
+        } catch (error) {
+          console.error('Counter error:', error);
+          counterEl.innerHTML = '<span style="font-size: 0.8em; opacity: 0.6;">--</span>';
+        }
+      }
+
+      function displayCount(count) {
+        const countStr = count.toString().padStart(6, '0');
+        counterEl.classList.remove('flip-counter-loading');
+        counterEl.innerHTML = countStr.split('').map((digit, i) => {
+          // Add separator every 3 digits from right
+          const separator = (countStr.length - i) % 3 === 0 && i > 0
+            ? '<div class="flip-digit-separator">,</div>'
+            : '';
+          return `${separator}<div class="flip-digit" data-digit="${digit}"><span class="current">${digit}</span><span class="next">${digit}</span></div>`;
+        }).join('');
+
+        // Trigger flip animation after a short delay
+        setTimeout(() => {
+          document.querySelectorAll('.flip-digit').forEach((el, i) => {
+            setTimeout(() => {
+              el.classList.add('flipping');
+              setTimeout(() => el.classList.remove('flipping'), 600);
+            }, i * 80);
+          });
+        }, 100);
+      }
+
+      updateCounter();
+    </script>
   </section>
 </aside>
