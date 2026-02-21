@@ -6,7 +6,8 @@ baseurl = "https://agoodbear.github.io/"  # Include trailing slash
 #這邊下面這行的copyright文字可以變更(主畫面最下面)
 copyright = "Copyright © 2022-2024, Modified by ER Bear"
 # canonifyurls = true
-paginate = 10
+[pagination]
+pagerSize = 10
 
 # Timeout for fetching remote resources (in seconds)
 timeout = "30s"

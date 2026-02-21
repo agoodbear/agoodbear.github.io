@@ -28,11 +28,11 @@
 {{- $image := "" -}}
 {{- if strings.HasPrefix $file "http" -}}
   {{- $scratch.Add "classes" " image_external" -}}
-  {{- with resources.GetRemote $file -}}
+  {{- with try (resources.GetRemote $file) -}}
     {{- with .Err -}}
       {{- warnf "Unable to fetch remote image %q: %s" $file . -}}
       {{- $image = "" -}}
-    {{- else -}}
+    {{- else with .Value -}}
       {{- $image = . -}}
       {{- if eq $image.MediaType.MainType "image" -}}
         {{- if eq $image.MediaType.SubType "svg" -}}
@@ -46,8 +46,6 @@
         {{- $image = "" -}}
       {{- end -}}
     {{- end -}}
-  {{- else -}}
-    {{- warnf "Unable to get remote image resource %q" $file -}}
   {{- end -}}
 {{- else -}}
   {{- $scratch.Add "classes" " image_internal" -}}
