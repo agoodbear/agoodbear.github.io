@@ -133,7 +133,7 @@ https://x.com/smithECGBlog/status/1745156040159559767?s=20
 
 { {< tweet user="smithECGBlog" id="1745156040159559767" >} } ➔這樣才會出現twitter文章
 
-{{< tweet user="smithECGBlog" id="1745156040159559767" >}}
+{{< x user="smithECGBlog" id="1745156040159559767" >}}
 
 
 

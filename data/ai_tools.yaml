@@ -18,3 +18,9 @@
   url: "https://train-radar-web.pages.dev/"
   icon: "🚆"
   image: "/images/ai-tools/rail-radar.png"
+
+- title: "ER Tools Merge"
+  description: "整合版急診 AI 工具"
+  url: "https://er-tools-merge-agoodbear.pages.dev/"
+  icon: "🧰"
+  image: "/images/ai-tools/er-tools-merge.png"
