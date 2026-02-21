@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ECMO on 急診熊心聲部落格</title><link>https://agoodbear.github.io/tags/ecmo/</link><description>Recent content in ECMO on 急診熊心聲部落格</description><generator>Hugo</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/ecmo/index.xml" rel="self" type="application/rss+xml"/><item><title>41歲女性，到院30分鐘內，IHCA</title><link>https://agoodbear.github.io/post/ecg-post-12/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-12/</guid><description>&lt;p&gt;來分享一個前天同事的Case。我覺得有趣的點，不是在於診斷出來是什麼問題，而是處理過程，再次考驗急診醫師是踩在薄冰上的一個科別。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ECMO on 急診熊心聲部落格</title><link>https://agoodbear.github.io/tags/ecmo/</link><description>Recent content in ECMO on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/ecmo/index.xml" rel="self" type="application/rss+xml"/><item><title>41歲女性，到院30分鐘內，IHCA</title><link>https://agoodbear.github.io/post/ecg-post-12/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-12/</guid><description>
+&lt;p&gt;來分享一個前天同事的Case。我覺得有趣的點，不是在於診斷出來是什麼問題，而是處理過程，再次考驗急診醫師是踩在薄冰上的一個科別。&lt;/p&gt;
 &lt;p&gt;41歲女性，到院時臉色蒼白、呼吸喘、心跳快。全身冒冷汗。自述一週前在他院進行子宮肌腺症手術。手術後陰道流血已經停止。也因為曾經貧血到Hgb 4.0，在他院輸血。&lt;/p&gt;
 &lt;p&gt;病患從入院到collapse，不到30分鐘。&lt;/p&gt;
 &lt;p&gt;病患說喘不過氣來......血氧一直掉。之後就沒了生命徵象。&lt;/p&gt;
@@ -18,7 +19,20 @@
 &lt;p&gt;我也看了一下心超，的確沒有水。但是RV dilate、LV動得不錯。&lt;/p&gt;
 &lt;p&gt;我們幾個人討論後，先把Chest CTA看aortic dissection改成看pulmonary embolism。&lt;/p&gt;
 &lt;p&gt;ROSC後的ECG如下&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://p.ipic.vip/laqfx4.png" alt="ROSC後的ECG"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="ROSC後的ECG"
+class="image_figure image_external image_processed"
+width="3042"
+height="1470"
+src="https://agoodbear.github.io/images/laqfx4_2744048287731614219.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;⭐️Rate:120 bpm&lt;/p&gt;
 &lt;p&gt;⭐️Rhythm:Sinus rhythm?有點存疑，因為Lead II的P wave似乎比Lead I還小。&lt;/p&gt;
 &lt;p&gt;&lt;mark&gt;&lt;strong&gt;真正的sinus rhythm:&lt;/strong&gt;&lt;mark&gt;&lt;/p&gt;
@@ -34,7 +48,21 @@
 &lt;li&gt;Lead III完全inverted(P、QRS、T都是negative)➔&lt;strong&gt;這邊要注意可能會造成pseudo S1Q3T3的誤判喔!!&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;P wave在Lead I&amp;gt;Lead II&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src="https://p.ipic.vip/o589rf.png" alt="LA/LL reversal"&gt;&lt;/p&gt;</description></item><item><title>反覆Vf，只能禱告了嗎?</title><link>https://agoodbear.github.io/post/ecg-post-8/</link><pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-8/</guid><description>&lt;p&gt;晚上六點多來了一位到院前呼吸、心跳停止的病患。&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="LA/LL reversal"
+class="image_figure image_external image_processed"
+width="498"
+height="503"
+src="https://agoodbear.github.io/images/o589rf_12833765503598459909.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;</description></item><item><title>反覆Vf，只能禱告了嗎?</title><link>https://agoodbear.github.io/post/ecg-post-8/</link><pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-8/</guid><description>
+&lt;p&gt;晚上六點多來了一位到院前呼吸、心跳停止的病患。&lt;/p&gt;
 &lt;p&gt;快速詢問了家屬，發生了什麼事?兒子說爸爸在餐桌上吃著飯，突然就倒了下來。&lt;/p&gt;
 &lt;p&gt;EMT很快送來我們醫院，由我們團隊接收。&lt;/p&gt;
 &lt;p&gt;初始心律Vf.......是急診室打掃阿姨都會看得心律(&lt;strong&gt;ACLS老梗&lt;/strong&gt;)&lt;/p&gt;
@@ -46,15 +74,59 @@ CPR後心律還是心室顫動，再次電擊⚡️，繼續CPR
 我手拿一組電擊器、護理師用手按另一組電擊器，我喊1-2-3兩組電擊器同時放電。&lt;/p&gt;
 &lt;p&gt;雖然我常常欺負leader，但我真心希望，不要我喊2時，她那組就先放電了😅&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;DSD總共又電了三次，終於ROSC。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://p.ipic.vip/1leh54.png" alt="ROSC後的第一張ECG"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="ROSC後的第一張ECG"
+class="image_figure image_external image_unprocessed"
+src="https://p.ipic.vip/1leh54.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;沒有辦法看到明顯P wave，分不清QRS的結尾在哪裡。所以QRS是寬還是窄?&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://p.ipic.vip/5rgb2z.png" alt="ROSC&amp;#43;10 mins"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="ROSC&amp;#43;10 mins"
+class="image_figure image_external image_unprocessed"
+src="https://p.ipic.vip/5rgb2z.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;還是沒有看到明顯P wave，但QRS很明顯是窄的。紅色的或許是JPC(junctional premature complex)。整體的rhythm應是AJR(Accelerated junctional rhythm)。&lt;/p&gt;
 &lt;p&gt;但是綠色箭頭就有意思了，因為我們知道QRS不寬，所以比對過來Lead I/aVL都是STE，且Lead II/III/aVF都是STD。但起來是&lt;strong&gt;High lateral MI呢!!!!!!!!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://p.ipic.vip/j28zai.gif" alt="ER Bedside echo"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="ER Bedside echo"
+class="image_figure image_external image_unprocessed"
+src="https://p.ipic.vip/j28zai.gif"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;雖然我不是心臟科專科醫師，但心肌梗塞病患，還是不免會想看一下病患的心臟超音波是否有符合ECG ischemia territory的RWMA出現。上圖的Heart POCUS，&lt;strong&gt;本來我預期會看到LAD or LCX支配的territory會出現一些RWMA，但是看起來沒有明顯的RWMA出現&lt;/strong&gt;。&lt;/p&gt;
 &lt;h4 id="有時想想我們做heart-pocus把重點放在病患是否有無rwma與利用eye-balling看大約的lv-systolic-function到底和cv-man看的結果會不會相去甚遠"&gt;有時想想我們做Heart POCUS，把重點放在病患是否有無RWMA與利用eye balling看大約的LV systolic function。到底和CV man看的結果會不會相去甚遠?&lt;/h4&gt;
-&lt;p&gt;&lt;img src="https://p.ipic.vip/cajmao.png" alt="文獻absctract"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="文獻absctract"
+class="image_figure image_external image_unprocessed"
+src="https://p.ipic.vip/cajmao.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;這篇是刊登在&lt;strong&gt;Western Journal of Emergency Medicine&lt;/strong&gt;的一篇文章。&lt;/p&gt;
 &lt;p&gt;這篇研究探討了急診醫師在接受簡短培訓後，使用Bedside echo對LVEF進行eyeballing估計，並將結果與心臟科醫師使用Simpson方法測量的結果進行比較。研究結果顯示，&lt;strong&gt;經過專門培訓的急診醫師在急診室中能夠準確地視覺估計左心室收縮功能&lt;/strong&gt;。&lt;/p&gt;
 &lt;hr&gt;
@@ -64,12 +136,4 @@ CPR後心律還是心室顫動，再次電擊⚡️，繼續CPR
 &lt;li&gt;什麼是electrical storm?&lt;/li&gt;
 &lt;li&gt;什麼時候介入DSD比較適當？&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;首先DSD是拿兩台電擊器，用在病患身上，以近乎同時間放電，以其能夠中斷refractory VT/Vf。&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;而&lt;strong&gt;refractory VT/Vf也就是 electrical storm，其定義是在24小時內，發生3次或以上VT、Vf或ICD電擊的情況&lt;/strong&gt; &lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;那麼&lt;strong&gt;DSD的原理&lt;/strong&gt;主要是基於以下幾個方面 &lt;sup id="fnref:3"&gt;&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref"&gt;3&lt;/a&gt;&lt;/sup&gt; :&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;改善電向量方向&lt;/strong&gt;：DSD通過使用兩台去顫器並改變電擊片的放置位置，來改變或增加不同的電向量。這樣可以使更多不同向量的心肌細胞得到去顫，並影響更多的心肌表面積，從而提高去顫效果。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;增加電流功率&lt;/strong&gt;：研究證明，除顫時使用的焦耳數（即電流的能量大小）顯著影響了心室顫動（Vf）的電擊成功機率。使用DSD增加去顫的焦耳數，可能有助於提升成功去顫的機會&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;降低去顫成功閾值&lt;/strong&gt;：有研究指出，第一組電擊可能先降低去顫電擊的閾值，如果第二組電擊能在第一組電擊後100毫秒內進行，則成功去顫所需的能量可明顯降低。這顯示在DSD中，因為相對延長了電擊時間，可以幫助心肌細胞去顫的效果&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;在這邊要提到NEJM的一篇文章 &lt;sup id="fnref:4"&gt;&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref"&gt;4&lt;/a&gt;&lt;/sup&gt; ，說明去顫的方式分成三種:&lt;strong&gt;AP position&lt;/strong&gt;所謂的vector change(VC)、或者&lt;strong&gt;標準位置&lt;/strong&gt;(anterior-lateral position)、與&lt;strong&gt;AP+標準位置&lt;/strong&gt;的DSD&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;首先DSD是拿兩台電擊器，用在病患身上，以近乎同時間放電，以其能夠中斷refractory VT/Vf。&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description></item></channel></rss>
