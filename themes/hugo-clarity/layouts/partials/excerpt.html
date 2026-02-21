@@ -15,17 +15,13 @@
       <div class="excerpt_footer">
         {{- end }}
         <div class="pale">
-          {{- $summary := truncate 320 .Summary }}
           {{- if .Params.summary }}
-            {{- $summary = .Params.summary }}
+            {{ .Params.summary | markdownify }}
           {{- else if .Params.abstract }}
-            {{ $summary = .Params.abstract }}
+            {{ .Params.abstract | markdownify }}
+          {{- else }}
+            <p>{{ .Plain | truncate 320 }}</p>
           {{- end }}
-          {{ if not ( strings.Contains $summary "<p>" ) }}
-            <p>{{ $summary | markdownify }}</p>
-          {{ else }}
-            {{ $summary | markdownify }}
-          {{ end }}
           <br>
           {{- $r := T "read_more" }}
           <a href="{{ .Permalink }}" title="{{ $r }}" class="excerpt_more button">{{ $r }}</a>
