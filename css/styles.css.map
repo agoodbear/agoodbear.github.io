@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "styles.css",
-	"sourceRoot": "/Users/tsaojian-hsiung/Desktop/Google antigravity檔案夾/exampleSite",
+	"sourceRoot": "/home/runner/work/agoodbear.github.io/agoodbear.github.io",
 	"sources": [
 		"themes/hugo-clarity/assets/sass/main.sass",
 		"themes/hugo-clarity/assets/sass/_variables.sass",

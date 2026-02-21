@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Write Studio | Markdown Writer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+  <link rel="stylesheet" href="/write-studio/styles.css" />
+</head>
+
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-dot"></div>
+        <h1>Write Studio</h1>
+        <span>Markdown Composer</span>
+      </div>
+
+      <div class="toolbar" role="toolbar" aria-label="Editor controls">
+        <button id="newPostBtn" class="btn btn-primary">新文章</button>
+        <button id="openFolderBtn" class="btn">開資料夾</button>
+        <button id="openBtn" class="btn">開啟 .md</button>
+        <button id="saveBtn" class="btn">儲存</button>
+        <button id="cloudSaveBtn" class="btn">雲端儲存</button>
+        <details class="toolbar-more">
+          <summary class="btn">更多</summary>
+          <div class="toolbar-more-menu">
+            <button id="cloudConfigBtn" class="btn">雲端設定</button>
+            <button id="cloudOpenBtn" class="btn">雲端開啟</button>
+            <button id="openShortcutsBtn" class="btn">快捷鍵設定</button>
+            <button id="saveAsBtn" class="btn">另存新檔</button>
+            <button id="toggleWrapBtn" class="btn">自動換行：關</button>
+            <span id="cloudState" class="toolbar-status">雲端：未連線</span>
+          </div>
+        </details>
+        <input id="folderInput" class="visually-hidden-input" type="file" webkitdirectory directory multiple />
+        <input id="fileInput" class="visually-hidden-input" type="file"
+          accept=".md,.markdown,text/markdown,text/plain" />
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="panel panel-editor" aria-label="Markdown editor panel">
+        <div class="panel-header">
+          <strong>Markdown</strong>
+          <span class="subtle">VS Code style</span>
+        </div>
+        <div class="editor-layout">
+          <aside class="explorer-pane" id="explorerPane" aria-label="File explorer">
+            <div class="explorer-header">
+              <strong>EXPLORER</strong>
+              <button id="refreshTreeBtn" class="icon-btn" type="button" title="Refresh">↻</button>
+            </div>
+            <div id="folderName" class="folder-name">尚未選擇資料夾</div>
+            <p id="explorerHint" class="explorer-hint">
+              按「開資料夾」選擇專案資料夾後，這裡會顯示檔案樹狀清單。
+            </p>
+            <ul id="fileTree" class="file-tree" aria-label="Project files"></ul>
+          </aside>
+
+          <section class="editor-main">
+            <div class="editor-meta">
+              <span id="editorPath">untitled.md</span>
+              <button id="sampleMdBtn" class="sample-meta-btn" type="button" disabled>Sample: 未設定</button>
+            </div>
+            <div class="editor-wrap">
+              <pre id="lineNumbers" class="line-numbers" aria-hidden="true">1</pre>
+              <textarea id="editor" spellcheck="false" aria-label="Markdown editor"></textarea>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <div id="divider" class="divider" role="separator" aria-orientation="vertical" aria-label="Resize panels"></div>
+
+      <section class="panel panel-preview" aria-label="Preview panel">
+        <div class="panel-header">
+          <strong>Preview</strong>
+          <div class="preview-header-actions">
+            <button id="previewEditBtn" class="preview-edit-btn" type="button">Edit: On</button>
+            <span id="previewApplyHint" class="preview-apply-hint">Cmd+Enter 套用</span>
+            <span class="subtle">Typora style</span>
+          </div>
+        </div>
+        <article id="preview" class="preview-body"></article>
+        <div id="inlineComposer" class="inline-composer hidden" aria-label="Block insert menu">
+          <button id="inlineInsertToggleBtn" class="inline-insert-toggle" type="button" title="Insert block">+</button>
+          <div id="inlineInsertMenu" class="inline-insert-menu">
+            <button id="insertLocalImageBtn" class="inline-insert-btn" type="button" title="Upload image">🖼</button>
+            <button id="insertImageRowBtn" class="inline-insert-btn" type="button" title="並排模板">▦</button>
+            <button id="insertImageUrlBtn" class="inline-insert-btn" type="button" title="Image URL">🔗</button>
+            <button id="insertYoutubeBtn" class="inline-insert-btn" type="button" title="YouTube link">▶</button>
+            <button id="openUnsplashBtn" class="inline-insert-btn" type="button" title="Search Unsplash">📷</button>
+            <button id="insertEmbedBtn" class="inline-insert-btn" type="button" title="Embed link">&lt;/&gt;</button>
+            <button id="insertDividerBtn" class="inline-insert-btn" type="button" title="Divider">―</button>
+          </div>
+          <input id="inlineImageInput" class="visually-hidden-input" type="file" accept="image/*" multiple />
+        </div>
+        <div id="unsplashPanel" class="unsplash-panel hidden" role="dialog" aria-modal="false">
+          <div class="unsplash-panel-head">
+            <strong>Unsplash</strong>
+            <button id="closeUnsplashBtn" class="icon-btn" type="button" title="Close">×</button>
+          </div>
+          <div class="unsplash-panel-search">
+            <input id="unsplashQueryInput" type="text" placeholder="Search photos..." />
+            <button id="unsplashSearchBtn" class="btn btn-primary" type="button">Search</button>
+          </div>
+          <div id="unsplashResults" class="unsplash-results"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="statusbar">
+      <div class="status-left">
+        <span id="fileName">untitled.md</span>
+        <span id="saveState" class="dirty">Unsaved changes</span>
+      </div>
+      <div class="status-right">
+        <span id="wordCount">Words 0</span>
+        <span id="charCount">Chars 0</span>
+        <span id="readTime">Read 0 min</span>
+      </div>
+    </footer>
+  </div>
+
+  <div id="sampleModal" class="sample-modal hidden" role="dialog" aria-modal="true" aria-labelledby="sampleModalTitle">
+    <div class="sample-modal-card">
+      <div class="sample-modal-head">
+        <h2 id="sampleModalTitle">Sample Markdown</h2>
+        <button id="closeSampleModalBtn" class="icon-btn" type="button" title="Close">×</button>
+      </div>
+      <div class="sample-modal-body">
+        <section class="sample-pane">
+          <h3>Raw</h3>
+          <pre id="sampleRaw"></pre>
+        </section>
+        <section class="sample-pane">
+          <h3>Preview</h3>
+          <article id="samplePreview"></article>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Configurable Shortcuts Modal -->
+  <div id="shortcutsModal" class="shortcuts-modal-overlay hidden">
+    <div class="shortcuts-modal-card" role="dialog" aria-modal="true" aria-labelledby="shortcutsModalTitle">
+      <header class="shortcuts-modal-head">
+        <h2 id="shortcutsModalTitle">快捷鍵設定</h2>
+        <button id="closeShortcutsModalBtn" class="icon-btn close-btn" aria-label="Close shortcuts modal"
+          title="關閉">×</button>
+      </header>
+      <div class="shortcuts-modal-body">
+        <p class="subtle" style="margin-top:0;margin-bottom:1rem;">點選任一快捷鍵進行修改。修改後會自動儲存。</p>
+        <div class="shortcuts-grid" id="shortcutsConfigList">
+          <!-- Will be populated by JS -->
+        </div>
+        <div style="margin-top: 1rem; text-align: right;">
+          <button id="resetShortcutsBtn" class="btn">還原預設值</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.3/dist/purify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.18.0/release/flowchart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/turndown@7.2.0/dist/turndown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/turndown-plugin-gfm@1.0.2/dist/turndown-plugin-gfm.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <script src="/write-studio/app.js"></script>
+</body>
+
+</html>
