@@ -34,5 +34,9 @@ series = "series"
 [outputs]
 home = ["HTML", "RSS", "JSON"]
 
+[services]
+  [services.disqus]
+  shortname = "agoodbear"
+
 [params]
 customCSS = ["custom-css/timeline.css"] # Include custom CSS files
