@@ -12,3 +12,8 @@
   url: "https://gemini.google.com/share/47cd5717aee5"
   icon: "🛠️"
   image: "/images/ai-tools/trauma-record.png"
+
+- title: "Rail-Radar"
+  description: "台鐵即時列車雷達地圖"
+  url: "https://train-radar-web.pages.dev/"
+  icon: "🚆"
