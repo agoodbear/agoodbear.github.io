@@ -1,62 +1,200 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>study on 急診熊心聲部落格</title><link>https://agoodbear.github.io/categories/study/</link><description>Recent content in study on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Wed, 19 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/categories/study/index.xml" rel="self" type="application/rss+xml"/><item><title>和偶像拍自拍~~</title><link>https://agoodbear.github.io/post/study-post-4/</link><pubDate>Wed, 19 Jun 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-4/</guid><description>
-2024/6/19一早就搭著醫院對面的葛瑪蘭客運去台北國際會議中心來上課
-豔陽高照的日子~好熱啊
-一進到國際會議中心，一整個舒暢~涼爽啊!!
-在ICEM2024正式開始前，先來參加pre-conference workshop，特別是針對Emergency Cardiology。
-會議中請到了仰慕已久的心電圖大師: Amal mattu
-主持與開場都是由Amal大師來操刀~~
-會議前Amal和William Brady一起聊天
-上完上半場前半段課程，趨前來和我的大偶像拍個自拍❤️❤️❤️
-順便從我的書架上拿了兩本Amal的書給他簽名
-下屆的ICEM2026在哪裡呢? 另外這邊也有Amal mattu參加ICEM2024的採訪影片內容:
-熊攝影集 和Amal合照 課程表 講師:Bobbi Amal和William Brady 101天空 遠觀101 簽名書</description></item><item><title>資料庫的應用與靈感筆記如何建立?</title><link>https://agoodbear.github.io/post/study-post-2/</link><pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-2/</guid><description>
-我的筆記知識庫(第二大腦) 很久以前是使用Evernote當做第二大腦。後來發現，我用Evernote Clip來擷取網頁，存成read it later的形式。
-但是這樣的動作，只是把比較大的垃圾堆(Big data)，整理成比較小的垃圾堆(Small Big data)😅。總歸一句，都還是垃圾。
-為什麼這些自認為是重要知識的文章，我最終還是會認為是垃圾呢?因為多到，不去整理，不用自己理解過後的語言再去描述這篇文章，那麼這篇文章，對我而言，就是沒有任何價值。
-資料庫裡面的知識，我們通常會先用primary selection先篩過一輪，存進資料庫。
-什麼叫做primary selection，也就是先將我們認可的資訊，抓進資料庫內。
-認可的資訊，取決於我們想站在哪位巨人的肩膀上!!!!
-比如，我對ECG的辨識特別有興趣，那麼我收集的文章，就要從世界認可的大師來收集。
-比如Smith ECG's Blog、Amal mattu's ECG Weekly等等。
-當我們從這些認可的網站、影片、推文(tweet)把這些內容存進我們的資料庫內(read it later)。這就是進行了primary selection的動作。
-接著把這些文章精讀，提取出重點，再透過自己的語言寫入資料庫內，這就是secondary selection，也是最重要的一步驟。
-當進行到secondary selection時，代表已經有自己消化過的資料存進資料庫。這時利用資料庫程式的搜尋，提出已經消化過的內容，應用出來。
-儲存是短期記憶，當我們不斷搜尋到之前消化過的內容時，就會加深印象，形成長期記憶。當我們把長期記憶應用在我們想處理的事情上面，比如用來寫Blog、在臨床上對病患的照護。如此就會形成正向循環。
-我大概從2020年開始，將我的資料庫從Evernote轉換成Roam research
-目前我幾乎所有primary selection的資料來源都可丟入Roam research。
-在primary selection時，有時會有突然的靈感。
-在瓦基的線上課程-卡片盒筆記實戰課，裡面有提到靈感筆記的觀念。
-靈感常常是一剎那間的想法，我的經驗是，沒有馬上記錄下來，再回頭看(可能10分鐘、可能1小時）......已經忘記當初在想什麼了。
-所以紀錄是一個很重要的動作。
-我自己針對靈感的紀錄是使用以下幾種方法: 使用Readwise手機App 使用Roam手機App 使用Speak to Roam Readwise手機App的好處是可以直接OCR看到的紙本書籍。拍照下來，把重要文字OCR出來，接著就可以Export到Roam裡面去了。
-Roam手機App最下方的功能，有一個是Quickcapture，也就是直接打字，直接傳到Roam指定的graph裡面。
-Speak to Roam是我覺得近期內，最讚的靈感擷取工具。這工具是由Roam開發商裡面的一位程式設計師所研發。
-檔案在這裡
-iOS限定，這工具是透過iOS的捷徑，只要在Mac or iPhone or Apple watch按下這個捷徑，就可以直接說話。接著會把我們說的話，產生語音轉文字效果，並且直接儲存在Roam裡面。
-我使用的情境是，我在重訓運動時，戴著AirPods，突然想到什麼樣的靈感，就直接在我的Apple watch按下捷徑，接著就直接說話。
-如果說話的內容超過50字以上，Speak to Roam會產生兩段文字到Roam。
-第一段是raw data，我完整語音的語音轉文字內容。
-第二段是Speak to roam針對長文，會去call ChatGPT，把我說的長文給予精準摘要(可以自行設定Prompt)</description></item><item><title>使用Hugo架站相關語法</title><link>https://agoodbear.github.io/post/study-post-1/</link><pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-1/</guid><description>
-要如何利用Hugo建立靜態網站文章 前置作業 首先要確立幾件事情:
-在Mac中安裝好Xcode (Win應該不用安裝吧?這我不知道) 使用Homebrew在Mac的終端機安裝Hugo 已經在GitHub申請好帳號 安裝好VS code與typora VS code 可以直接寫markdown code Typora 會直接將文章轉成markdown格式(有點所見即所得概念)➔用這個寫文章比用VS code寫舒服多了😌 在Typora引用圖，在圖上直接右鍵，就可更改大小 已經在Hugo theme裡面選好，想要搭配的theme來做修改 下載theme，可以在自己的電腦上打開運作 完成上列，就算完成大部分了～～～
-接著就是根據每個不同的theme，看自己的需求來做客製化的動作!!!!(不是必須的，但像我這種強迫症患者，肯定要改)
-這邊就一定要強烈推薦古君葳老師的Github 免費架站術！輕鬆打造個人品牌
-文章基本markdown格式須知 我這一個theme是來自於這裡 (以下的變更都根據這一個theme為主) 在exampleSite/content/post自行建立一個markdown檔案(*.md)
-一般文章需要加入的格式(至於每篇Blog markdown文章的最上方，分別用---與---當最上層和最下層)
-每篇文章必須輸入的markdown語法: 1--- 2title: &amp;#34;使用Hugo架站相關語法&amp;#34; #輸入這篇的title 3date: &amp;#34;2024-01-12&amp;#34; #輸入時間 4description: &amp;#34;Hugo&amp;#34; #根本不知道什麼時候會出現 5featured: true #若設定為true，會設定為精選文章 6draft: false #若為false就會直接刊出，不會以草稿模式運作 7toc: true #自動產生TOC 8featureImage: &amp;#34;/images/HUGO.png&amp;#34; #設定這篇文章首頁的圖片 9thumbnail: &amp;#34;/images/HUGO.png&amp;#34; #每篇文章的縮圖位置在這裡(static/images/)-變更 10codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.</description></item><item><title>抓住審閱者的目光，你可能只有五分鐘！</title><link>https://agoodbear.github.io/post/study-post-3/</link><pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-3/</guid><description>
-這篇是我2019/9去參加新思惟國際的圖與圖說工作坊寫的心得，原Po於官網上。
-作者：陽大附醫 急診科 曹建雄 醫師
-由地雷製造者告訴你，如何閃開地雷。 不管在哪個行業，都有個突飛猛進的方法，那就是跟對老師，跟著強者走。強者能把他踩過的地雷直接和你說，地雷長得方的圓的，裡面的炸藥量有多少，可以把你炸多高，能一五一十全部說給你聽。
-強者之所以為強者，不但因爲曾經深受其害，現在也是地雷製造者（reviewer）。蔡校長是醫學影像方面的強者，也是國際期刊審稿的 reviewer。所以，所有可能碰到的眉眉角角，他以作為 reviewer 的第一人稱角度親身來剖析，哪些地方的不精準，可能導致 reviewer 的「不開心」，進而遭到 reject。
-以為審閱者是細細品嘗，其實是抽空翻閱。 在上工作坊之前，我真的以為 reviewer 會認真看投稿文章，一字一字慢慢品味。但事實並非如此，審閱量最大的主力 reviewer，幾乎都是用人生中「最沒用」的空閒時間，不小心從口袋拿出你的文章，利用時間品味 5 分鐘。
-投稿文章眾多，在這人生苦短的 5 分鐘內，除非真的有過人品味，文章能抓住 reviewer 的胃，不然就要運用圖表抓住目光，讓 reviewer 認可你的文章圖表是內行人做的。當他認可你是內行人後，文章才有機會生存而不被 reject。
-圖片及圖說的重要性 為何圖表格式如此重要，課程中也解釋，因為以 reviewer 的角度來說，圖片建議很難描述，而文字相對比較容易給意見。所以圖表不行，原則上，就直接晉級敗部俱樂部了。
-蔡校長針對類似 case report 文章產出順序，也給了一些方向，以往我們在寫的時候，總是先寫文字，然後將圖片疊上去。蔡校長建議，先把圖片做出來，自己先說看看是一個怎麼樣的故事，再把文字疊上去。
-由審閱者來告訴你重點 工作坊中最令人期待就是，蔡校長以身為 reviewer 的觀點，來提點如何讓醫學影像投稿符合學術規範要注意的重點。
-一開頭就說明了，不該做的事情不要做（欺騙、造假），不要把自身的學術生涯葬送在短視近利上面。這堂課中也示範了，怎麼樣的圖片修改是符合學術規範的，如調整亮度或對比，是可接受的，但如果是「局部」添加 / 消除，是不被允許的。
-這堂課教授了許多重點，包括一開始的選圖、滿版調整、重點優化，與根據標示開始說故事。缺一不可，四者都要做到，才是真正能吸引 reviewer 目光的圖片。
-跟著強者走，瞭解每一道關卡。 承接前一堂課，課程接著說明如何讓圖片讓人眼睛為之一亮的畫龍點睛方法，並且說明了箭頭、箭號、文字與標示在視覺上的意義為何。這些細節看似無關緊要，但確實是被 reviewer 拿來當 reject 關主的第一關。
-沒上過蔡校長的課，老實說，我想應該很少人會在臨床學術上主動被指導這一部份。之後，蔡校長給了我們他的萬用範本，也就是要我們跟著強者走的意思啦。
-各項細節一一琢磨 下午的課程進入了實作階段，蔡校長提供了兩個練習範本。照著工作坊提供的互動實作武功秘笈，開始練功。
-拿到圖片接著格放、等比例放大，比較圖要對齊。接著圖片校正。文字方塊字體選擇 Arial 粗體，適當的大小。圖片使用箭頭、箭號和星號，箭頭與箭號看起來要等大，箭號須調整寬度（箭號：箭頭約是 2：3），還有更多祕訣沒寫出來！
-這就是蔡校長在一成機率 accept 的 AJR 裡，擁有高達八成的 accept 的必勝公式，只能拿著武功秘笈，多膜拜與練習幾次了。課堂裡講授更多圖片重點，在這並沒有完全寫出來，我想，親身來體驗被 SCI 接受超過 500 張影像的蔡校長加持，一定比看我寫的重點過癮許多！</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Study on 急診熊心聲部落格</title><link>https://agoodbear.github.io/categories/study/</link><description>Recent content in Study on 急診熊心聲部落格</description><generator>Hugo</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Wed, 19 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/categories/study/index.xml" rel="self" type="application/rss+xml"/><item><title>和偶像拍自拍~~</title><link>https://agoodbear.github.io/post/study-post-4/</link><pubDate>Wed, 19 Jun 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-4/</guid><description>&lt;p&gt;2024/6/19一早就搭著醫院對面的葛瑪蘭客運去台北國際會議中心來上課&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/2cyi5t.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/4suyq9.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;豔陽高照的日子~好熱啊&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/k6xza9.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;一進到國際會議中心，一整個舒暢~涼爽啊!!&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/esnxdq.jpg" alt="課程表"&gt;&lt;/p&gt;
+&lt;p&gt;在ICEM2024正式開始前，先來參加pre-conference workshop，特別是針對Emergency Cardiology。&lt;/p&gt;
+&lt;p&gt;會議中請到了仰慕已久的心電圖大師: &lt;strong&gt;Amal mattu&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;主持與開場都是由Amal大師來操刀~~&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/zdj57e.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;會議前Amal和William Brady一起聊天&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/1z6uid.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;上完上半場前半段課程，趨前來和我的大偶像拍個自拍❤️❤️❤️&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/aa3hlq.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;順便從我的書架上拿了兩本Amal的書給他簽名&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/2dg1rn.png" alt="簽名書"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="下屆的icem2026在哪裡呢"&gt;下屆的ICEM2026在哪裡呢?&lt;/h3&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/xl8wp8.png" alt="大俠愛吃漢堡包"&gt;&lt;/p&gt;
+&lt;p&gt;另外這邊也有Amal mattu參加ICEM2024的採訪影片內容:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/S9PBZAlU7P8?si=sueva1WwhUutt0og" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h3 id="熊攝影集"&gt;&lt;strong&gt;熊攝影集&lt;/strong&gt;&lt;/h3&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nanogallery2@3.0.5/dist/css/nanogallery2.min.css"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/nanogallery2@3.0.5/dist/jquery.nanogallery2.min.js"&gt;&lt;/script&gt; 
+&lt;div data-nanogallery2='{
+ "thumbnailDisplayTransition": "none",
+ "thumbnailDisplayTransitionDuration": 500,
+ "thumbnailDisplayInterval": 30,
+ "galleryDisplayTransition": "none",
+ "galleryDisplayTransitionDuration": 500,
+ "galleryDisplayMode": "rows",
+ "thumbnailDisplayOutsideScreen": "false",
+ "eventsDebounceDelay": 10,
+ "thumbnailL1BorderHorizontal": 0,
+ "thumbnailL1BorderVertical": 0,
+ "thumbnailLabel": {
+ "titleFontSize": "0.6em"
+ },
+ "thumbnailHoverEffect2": "image_scale_1.00_1.10|label_backgroundColor_rgba(0,0,0,0)_rgba(255,255,255,0)",
+ "galleryTheme": {
+ "thumbnail": {
+ "borderRadius": "5px"
+ }
+ },
+ "thumbnailToolbarImage": {
+ "topLeft": "",
+ "topRight": "",
+ "bottomLeft": "",
+ "bottomRight": ""
+ },
+ "viewerToolbar": {
+ "display": true,
+ "standard": "label"
+ },
+ "viewerTools": {
+ "topLeft": "pageCounter, playPauseButton",
+ "topRight": "downloadButton, rotateLeft, zoomButton, fullscreenButton, closeButton"
+ },
+ "viewerGalleryTWidth": 40,
+ "viewerGalleryTHeight": 40
+}'&gt;
+ 
+
+&lt;a href="https://agoodbear.github.io/bloggallery/9.jpeg" data-ngThumb="/bloggallery/9.jpeg"&gt;和Amal合照&lt;/a&gt;
+
+&lt;a href="https://agoodbear.github.io/bloggallery/10.jpeg" data-ngThumb="/bloggallery/10.jpeg"&gt;課程表&lt;/a&gt;
+
+&lt;a href="https://agoodbear.github.io/bloggallery/11.jpeg" data-ngThumb="/bloggallery/11.jpeg"&gt;講師:Bobbi&lt;/a&gt;
+
+&lt;a href="https://agoodbear.github.io/bloggallery/12.jpeg" data-ngThumb="/bloggallery/12.jpeg"&gt;Amal和William Brady&lt;/a&gt;
+
+&lt;a href="https://agoodbear.github.io/bloggallery/13.jpeg" data-ngThumb="/bloggallery/13.jpeg"&gt;101天空&lt;/a&gt;
+
+&lt;a href="https://agoodbear.github.io/bloggallery/14.jpeg" data-ngThumb="/bloggallery/14.jpeg"&gt;遠觀101&lt;/a&gt;
+
+&lt;a href="https://agoodbear.github.io/bloggallery/15.jpeg" data-ngThumb="/bloggallery/15.jpeg"&gt;簽名書&lt;/a&gt;
+
+
+&lt;/div&gt;</description></item><item><title>資料庫的應用與靈感筆記如何建立?</title><link>https://agoodbear.github.io/post/study-post-2/</link><pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-2/</guid><description>&lt;h2 id="我的筆記知識庫第二大腦"&gt;我的&lt;strong&gt;筆記知識庫(第二大腦)&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;很久以前是使用Evernote當做第二大腦。後來發現，我用Evernote Clip來擷取網頁，存成read it later的形式。&lt;/p&gt;
+&lt;p&gt;但是這樣的動作，只是把比較大的垃圾堆(Big data)，整理成比較小的垃圾堆(Small Big data)😅。總歸一句，都還是垃圾。&lt;/p&gt;
+&lt;p&gt;為什麼這些自認為是重要知識的文章，我最終還是會認為是垃圾呢?因為&lt;mark&gt;多到，不去整理，不用自己理解過後的語言再去描述這篇文章，那麼這篇文章，對我而言，就是沒有任何價值&lt;mark&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/8vwg0a.png" alt="資料庫"&gt;&lt;/p&gt;
+&lt;p&gt;資料庫裡面的知識，我們通常會先用primary selection先篩過一輪，存進資料庫。&lt;/p&gt;
+&lt;p&gt;什麼叫做primary selection，也就是先將我們認可的資訊，抓進資料庫內。&lt;/p&gt;
+&lt;p&gt;認可的資訊，取決於我們想站在哪位巨人的肩膀上!!!!&lt;/p&gt;
+&lt;p&gt;比如，我對ECG的辨識特別有興趣，那麼我收集的文章，就要從世界認可的大師來收集。&lt;/p&gt;
+&lt;p&gt;比如&lt;strong&gt;Smith ECG's Blog&lt;/strong&gt;、&lt;strong&gt;Amal mattu's ECG Weekly&lt;/strong&gt;等等。&lt;/p&gt;
+&lt;p&gt;當我們從這些認可的網站、影片、推文(tweet)把這些內容存進我們的資料庫內(read it later)。這就是進行了primary selection的動作。&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;接著把這些文章精讀，提取出重點，再透過自己的語言寫入資料庫內，這就是secondary selection，也是最重要的一步驟&lt;mark&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/bqpo96.png" alt="資料庫應用觀念"&gt;&lt;/p&gt;
+&lt;p&gt;當進行到secondary selection時，代表已經有自己消化過的資料存進資料庫。這時利用資料庫程式的搜尋，提出已經消化過的內容，應用出來。&lt;/p&gt;
+&lt;p&gt;儲存是短期記憶，當我們不斷搜尋到之前消化過的內容時，就會加深印象，形成長期記憶。當我們把長期記憶應用在我們想處理的事情上面，比如用來寫Blog、在臨床上對病患的照護。如此就會形成正向循環。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/0k43pg.png" alt="Evernote to Roam"&gt;&lt;/p&gt;
+&lt;p&gt;我大概從2020年開始，將我的資料庫從Evernote轉換成&lt;a href="https://roamresearch.com/"&gt;Roam research&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;目前我幾乎所有primary selection的資料來源都可丟入Roam research。&lt;/p&gt;
+&lt;p&gt;在primary selection時，有時會有突然的靈感。&lt;/p&gt;
+&lt;p&gt;在瓦基的線上課程-&lt;a href="https://www.pressplay.cc/project/148B74E70523C7A7E260484F9B6825CB/about#act=auto-follow"&gt;卡片盒筆記實戰課&lt;/a&gt;，裡面有提到靈感筆記的觀念。&lt;/p&gt;
+&lt;p&gt;靈感常常是一剎那間的想法，我的經驗是，沒有馬上記錄下來，再回頭看(可能10分鐘、可能1小時）......已經忘記當初在想什麼了。&lt;/p&gt;
+&lt;p&gt;所以&lt;mark&gt;紀錄是一個很重要的動作&lt;mark&gt;。&lt;/p&gt;
+&lt;h2 id="我自己針對靈感的紀錄是使用以下幾種方法"&gt;&lt;strong&gt;我自己針對靈感的紀錄是使用以下幾種方法:&lt;/strong&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;使用Readwise手機App&lt;/li&gt;
+&lt;li&gt;使用Roam手機App&lt;/li&gt;
+&lt;li&gt;使用Speak to Roam&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/jvb083.gif" alt="Readwise手機App"&gt;&lt;/p&gt;
+&lt;p&gt;Readwise手機App的好處是可以直接OCR看到的紙本書籍。拍照下來，把重要文字OCR出來，接著就可以Export到Roam裡面去了。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/i44dqg.gif" alt="Roam手機App"&gt;&lt;/p&gt;
+&lt;p&gt;Roam手機App最下方的功能，有一個是Quickcapture，也就是直接打字，直接傳到Roam指定的graph裡面。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/cps50r.gif" alt="Speak to Roam"&gt;&lt;/p&gt;
+&lt;p&gt;Speak to Roam是我覺得近期內，最讚的靈感擷取工具。這工具是由Roam開發商裡面的一位程式設計師所研發。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.icloud.com/shortcuts/9280597747c543eab39dd65d4aebd992"&gt;檔案在這裡&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS限定&lt;/strong&gt;，這工具是透過iOS的捷徑，只要在Mac or iPhone or Apple watch按下這個捷徑，就可以直接說話。接著會把我們說的話，產生語音轉文字效果，並且直接儲存在Roam裡面。&lt;/p&gt;
+&lt;p&gt;我使用的情境是，我在重訓運動時，戴著AirPods，突然想到什麼樣的靈感，就直接在我的Apple watch按下捷徑，接著就直接說話。&lt;/p&gt;</description></item><item><title>使用Hugo架站相關語法</title><link>https://agoodbear.github.io/post/study-post-1/</link><pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-1/</guid><description>&lt;h1 id="要如何利用hugo建立靜態網站文章"&gt;要如何利用Hugo建立靜態網站文章&lt;/h1&gt;
+&lt;h2 id="前置作業"&gt;前置作業&lt;/h2&gt;
+&lt;p&gt;首先要確立幾件事情:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在Mac中安裝好&lt;a href="https://apps.apple.com/tw/app/xcode/id497799835?mt=12"&gt;Xcode&lt;/a&gt; (&lt;strong&gt;Win應該不用安裝吧?這我不知道&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;使用Homebrew在Mac的終端機安裝Hugo&lt;/li&gt;
+&lt;li&gt;已經在&lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt;申請好帳號&lt;/li&gt;
+&lt;li&gt;安裝好VS code與typora
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://code.visualstudio.com/"&gt;VS code&lt;/a&gt; 可以直接寫markdown code&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://typora.io/#feature"&gt;Typora&lt;/a&gt; 會直接將文章轉成markdown格式(&lt;strong&gt;有點所見即所得概念&lt;/strong&gt;)➔用這個寫文章比用VS code寫舒服多了😌
+&lt;ul&gt;
+&lt;li&gt;在Typora引用圖，在&lt;strong&gt;圖上直接右鍵，就可更改大小&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;已經在&lt;a href="https://themes.gohugo.io/"&gt;Hugo theme&lt;/a&gt;裡面選好，想要搭配的theme來做修改
+&lt;ul&gt;
+&lt;li&gt;下載theme，可以在自己的電腦上打開運作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;完成上列，就算完成大部分了～～～&lt;/p&gt;
+&lt;p&gt;接著就是根據每個不同的theme，看自己的需求來做客製化的動作!!!!(&lt;strong&gt;不是必須的，但像我這種強迫症患者，肯定要改&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;這邊就一定要強烈推薦古君葳老師的&lt;a href="https://hahow.in/courses/5de8fec16117240026540b9c/discussions?item=5e6edc23024d690024e4086b"&gt;Github 免費架站術！輕鬆打造個人品牌&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/8j6o61.png" alt="hahow學院網站課程"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="文章基本markdown格式須知"&gt;文章基本markdown格式須知&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;我這一個theme是來自於&lt;a href="https://themes.gohugo.io/themes/hugo-clarity/"&gt;這裡&lt;/a&gt; (&lt;strong&gt;以下的變更都根據這一個theme為主&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在exampleSite/content/post自行建立一個markdown檔案(*.md)&lt;/p&gt;
+&lt;p&gt;一般文章需要加入的格式(至於&lt;strong&gt;每篇Blog markdown文章的最上方，分別用---與---當最上層和最下層&lt;/strong&gt;)&lt;/p&gt;
+&lt;h3 id="每篇文章必須輸入的markdown語法"&gt;每篇文章必須輸入的markdown語法:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;title: &amp;#34;使用Hugo架站相關語法&amp;#34; &lt;span class="ni"&gt;#輸入這篇的title&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;date: &amp;#34;2024-01-12&amp;#34; &lt;span class="ni"&gt;#輸入時間&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;description: &amp;#34;Hugo&amp;#34; &lt;span class="ni"&gt;#根本不知道什麼時候會出現&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;featured: true &lt;span class="ni"&gt;#若設定為true&lt;/span&gt;，會設定為精選文章
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;draft: false &lt;span class="ni"&gt;#若為false就會直接刊出&lt;/span&gt;，不會以草稿模式運作
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;toc: true &lt;span class="ni"&gt;#自動產生TOC&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;featureImage: &amp;#34;/images/HUGO.png&amp;#34; &lt;span class="ni"&gt;#設定這篇文章首頁的圖片&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;thumbnail: &amp;#34;/images/HUGO.png&amp;#34; &lt;span class="ni"&gt;#每篇文章的縮圖位置在這裡&lt;/span&gt;(static/images/)-變更
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;codeLineNumbers: true # Override global value for showing of line numbers within code block.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;figurePositionShow: true # Override global value for showing the figure label.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;categories:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; 心電圖
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; 超音波
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; 急診人生
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; 重訓
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; 自我進修
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;tags:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; Hugo Tips
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; 程式寫作
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;22&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; Hugo架站
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;23&lt;/span&gt;&lt;span class="cl"&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之後就在下方進行書寫文章內容。&lt;/p&gt;</description></item><item><title>抓住審閱者的目光，你可能只有五分鐘！</title><link>https://agoodbear.github.io/post/study-post-3/</link><pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-3/</guid><description>&lt;p&gt;&lt;img src="https://p.ipic.vip/v4ydr0.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;這篇是我2019/9去參加新思惟國際的圖與圖說工作坊寫的心得，&lt;a href="https://figure.innovarad.tw/jhtsao/"&gt;原Po於官網上&lt;/a&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;&lt;u&gt;作者：陽大附醫 急診科 曹建雄 醫師&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id="由地雷製造者告訴你如何閃開地雷"&gt;&lt;strong&gt;由地雷製造者告訴你，如何閃開地雷。&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;不管在哪個行業，都有個突飛猛進的方法，那就是跟對老師，跟著強者走。強者能把他踩過的地雷直接和你說，地雷長得方的圓的，裡面的炸藥量有多少，可以把你炸多高，能一五一十全部說給你聽。&lt;/p&gt;
+&lt;p&gt;強者之所以為強者，不但因爲曾經深受其害，現在也是地雷製造者（reviewer）。蔡校長是醫學影像方面的強者，也是國際期刊審稿的 reviewer。所以，所有可能碰到的眉眉角角，他以作為 reviewer 的第一人稱角度親身來剖析，哪些地方的不精準，可能導致 reviewer 的「不開心」，進而遭到 reject。&lt;/p&gt;
+&lt;h1 id="以為審閱者是細細品嘗其實是抽空翻閱"&gt;&lt;strong&gt;以為審閱者是細細品嘗，其實是抽空翻閱。&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;在上工作坊之前，我真的以為 reviewer 會認真看投稿文章，一字一字慢慢品味。但事實並非如此，審閱量最大的主力 reviewer，幾乎都是用人生中「最沒用」的空閒時間，不小心從口袋拿出你的文章，利用時間品味 5 分鐘。&lt;/p&gt;
+&lt;p&gt;投稿文章眾多，在這人生苦短的 5 分鐘內，除非真的有過人品味，文章能抓住 reviewer 的胃，不然就要運用圖表抓住目光，讓 reviewer 認可你的文章圖表是內行人做的。當他認可你是內行人後，文章才有機會生存而不被 reject。&lt;/p&gt;
+&lt;h1 id="圖片及圖說的重要性"&gt;&lt;strong&gt;圖片及圖說的重要性&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;為何圖表格式如此重要，課程中也解釋，因為以 reviewer 的角度來說，圖片建議很難描述，而文字相對比較容易給意見。所以圖表不行，原則上，就直接晉級敗部俱樂部了。&lt;/p&gt;
+&lt;p&gt;蔡校長針對類似 case report 文章產出順序，也給了一些方向，以往我們在寫的時候，總是先寫文字，然後將圖片疊上去。蔡校長建議，先把圖片做出來，自己先說看看是一個怎麼樣的故事，再把文字疊上去。&lt;/p&gt;
+&lt;h1 id="由審閱者來告訴你重點"&gt;&lt;strong&gt;由審閱者來告訴你重點&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;工作坊中最令人期待就是，蔡校長以身為 reviewer 的觀點，來提點如何讓醫學影像投稿符合學術規範要注意的重點。&lt;/p&gt;
+&lt;p&gt;一開頭就說明了，不該做的事情不要做（欺騙、造假），不要把自身的學術生涯葬送在短視近利上面。這堂課中也示範了，怎麼樣的圖片修改是符合學術規範的，如調整亮度或對比，是可接受的，但如果是「局部」添加 / 消除，是不被允許的。&lt;/p&gt;
+&lt;p&gt;這堂課教授了許多重點，包括一開始的選圖、滿版調整、重點優化，與根據標示開始說故事。缺一不可，四者都要做到，才是真正能吸引 reviewer 目光的圖片。&lt;/p&gt;
+&lt;h1 id="跟著強者走瞭解每一道關卡"&gt;&lt;strong&gt;跟著強者走，瞭解每一道關卡。&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;承接前一堂課，課程接著說明如何讓圖片讓人眼睛為之一亮的畫龍點睛方法，並且說明了箭頭、箭號、文字與標示在視覺上的意義為何。這些細節看似無關緊要，但確實是被 reviewer 拿來當 reject 關主的第一關。&lt;/p&gt;
+&lt;p&gt;沒上過蔡校長的課，老實說，我想應該很少人會在臨床學術上主動被指導這一部份。之後，蔡校長給了我們他的萬用範本，也就是要我們跟著強者走的意思啦。&lt;/p&gt;
+&lt;h1 id="各項細節一一琢磨"&gt;各項細節一一琢磨&lt;/h1&gt;
+&lt;p&gt;下午的課程進入了實作階段，蔡校長提供了兩個練習範本。照著工作坊提供的互動實作武功秘笈，開始練功。&lt;/p&gt;
+&lt;p&gt;拿到圖片接著格放、等比例放大，比較圖要對齊。接著圖片校正。文字方塊字體選擇 Arial 粗體，適當的大小。圖片使用箭頭、箭號和星號，箭頭與箭號看起來要等大，箭號須調整寬度（箭號：箭頭約是 2：3），還有更多祕訣沒寫出來！&lt;/p&gt;
+&lt;p&gt;這就是蔡校長在一成機率 accept 的 &lt;em&gt;AJR&lt;/em&gt; 裡，擁有高達八成的 accept 的必勝公式，只能拿著武功秘笈，多膜拜與練習幾次了。課堂裡講授更多圖片重點，在這並沒有完全寫出來，我想，親身來體驗被 SCI 接受超過 500 張影像的蔡校長加持，一定比看我寫的重點過癮許多！&lt;/p&gt;</description></item></channel></rss>

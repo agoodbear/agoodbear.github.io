@@ -1,8 +1,59 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo Tips on 急診熊心聲部落格</title><link>https://agoodbear.github.io/tags/hugo-tips/</link><description>Recent content in Hugo Tips on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Fri, 12 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/hugo-tips/index.xml" rel="self" type="application/rss+xml"/><item><title>使用Hugo架站相關語法</title><link>https://agoodbear.github.io/post/study-post-1/</link><pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-1/</guid><description>
-要如何利用Hugo建立靜態網站文章 前置作業 首先要確立幾件事情:
-在Mac中安裝好Xcode (Win應該不用安裝吧?這我不知道) 使用Homebrew在Mac的終端機安裝Hugo 已經在GitHub申請好帳號 安裝好VS code與typora VS code 可以直接寫markdown code Typora 會直接將文章轉成markdown格式(有點所見即所得概念)➔用這個寫文章比用VS code寫舒服多了😌 在Typora引用圖，在圖上直接右鍵，就可更改大小 已經在Hugo theme裡面選好，想要搭配的theme來做修改 下載theme，可以在自己的電腦上打開運作 完成上列，就算完成大部分了～～～
-接著就是根據每個不同的theme，看自己的需求來做客製化的動作!!!!(不是必須的，但像我這種強迫症患者，肯定要改)
-這邊就一定要強烈推薦古君葳老師的Github 免費架站術！輕鬆打造個人品牌
-文章基本markdown格式須知 我這一個theme是來自於這裡 (以下的變更都根據這一個theme為主) 在exampleSite/content/post自行建立一個markdown檔案(*.md)
-一般文章需要加入的格式(至於每篇Blog markdown文章的最上方，分別用---與---當最上層和最下層)
-每篇文章必須輸入的markdown語法: 1--- 2title: &amp;#34;使用Hugo架站相關語法&amp;#34; #輸入這篇的title 3date: &amp;#34;2024-01-12&amp;#34; #輸入時間 4description: &amp;#34;Hugo&amp;#34; #根本不知道什麼時候會出現 5featured: true #若設定為true，會設定為精選文章 6draft: false #若為false就會直接刊出，不會以草稿模式運作 7toc: true #自動產生TOC 8featureImage: &amp;#34;/images/HUGO.png&amp;#34; #設定這篇文章首頁的圖片 9thumbnail: &amp;#34;/images/HUGO.png&amp;#34; #每篇文章的縮圖位置在這裡(static/images/)-變更 10codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo Tips on 急診熊心聲部落格</title><link>https://agoodbear.github.io/tags/hugo-tips/</link><description>Recent content in Hugo Tips on 急診熊心聲部落格</description><generator>Hugo</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Fri, 12 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/hugo-tips/index.xml" rel="self" type="application/rss+xml"/><item><title>使用Hugo架站相關語法</title><link>https://agoodbear.github.io/post/study-post-1/</link><pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-1/</guid><description>&lt;h1 id="要如何利用hugo建立靜態網站文章"&gt;要如何利用Hugo建立靜態網站文章&lt;/h1&gt;
+&lt;h2 id="前置作業"&gt;前置作業&lt;/h2&gt;
+&lt;p&gt;首先要確立幾件事情:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在Mac中安裝好&lt;a href="https://apps.apple.com/tw/app/xcode/id497799835?mt=12"&gt;Xcode&lt;/a&gt; (&lt;strong&gt;Win應該不用安裝吧?這我不知道&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;使用Homebrew在Mac的終端機安裝Hugo&lt;/li&gt;
+&lt;li&gt;已經在&lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt;申請好帳號&lt;/li&gt;
+&lt;li&gt;安裝好VS code與typora
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://code.visualstudio.com/"&gt;VS code&lt;/a&gt; 可以直接寫markdown code&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://typora.io/#feature"&gt;Typora&lt;/a&gt; 會直接將文章轉成markdown格式(&lt;strong&gt;有點所見即所得概念&lt;/strong&gt;)➔用這個寫文章比用VS code寫舒服多了😌
+&lt;ul&gt;
+&lt;li&gt;在Typora引用圖，在&lt;strong&gt;圖上直接右鍵，就可更改大小&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;已經在&lt;a href="https://themes.gohugo.io/"&gt;Hugo theme&lt;/a&gt;裡面選好，想要搭配的theme來做修改
+&lt;ul&gt;
+&lt;li&gt;下載theme，可以在自己的電腦上打開運作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;完成上列，就算完成大部分了～～～&lt;/p&gt;
+&lt;p&gt;接著就是根據每個不同的theme，看自己的需求來做客製化的動作!!!!(&lt;strong&gt;不是必須的，但像我這種強迫症患者，肯定要改&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;這邊就一定要強烈推薦古君葳老師的&lt;a href="https://hahow.in/courses/5de8fec16117240026540b9c/discussions?item=5e6edc23024d690024e4086b"&gt;Github 免費架站術！輕鬆打造個人品牌&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://p.ipic.vip/8j6o61.png" alt="hahow學院網站課程"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="文章基本markdown格式須知"&gt;文章基本markdown格式須知&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;我這一個theme是來自於&lt;a href="https://themes.gohugo.io/themes/hugo-clarity/"&gt;這裡&lt;/a&gt; (&lt;strong&gt;以下的變更都根據這一個theme為主&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在exampleSite/content/post自行建立一個markdown檔案(*.md)&lt;/p&gt;
+&lt;p&gt;一般文章需要加入的格式(至於&lt;strong&gt;每篇Blog markdown文章的最上方，分別用---與---當最上層和最下層&lt;/strong&gt;)&lt;/p&gt;
+&lt;h3 id="每篇文章必須輸入的markdown語法"&gt;每篇文章必須輸入的markdown語法:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;title: &amp;#34;使用Hugo架站相關語法&amp;#34; &lt;span class="ni"&gt;#輸入這篇的title&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;date: &amp;#34;2024-01-12&amp;#34; &lt;span class="ni"&gt;#輸入時間&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;description: &amp;#34;Hugo&amp;#34; &lt;span class="ni"&gt;#根本不知道什麼時候會出現&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;featured: true &lt;span class="ni"&gt;#若設定為true&lt;/span&gt;，會設定為精選文章
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;draft: false &lt;span class="ni"&gt;#若為false就會直接刊出&lt;/span&gt;，不會以草稿模式運作
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;toc: true &lt;span class="ni"&gt;#自動產生TOC&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;featureImage: &amp;#34;/images/HUGO.png&amp;#34; &lt;span class="ni"&gt;#設定這篇文章首頁的圖片&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;thumbnail: &amp;#34;/images/HUGO.png&amp;#34; &lt;span class="ni"&gt;#每篇文章的縮圖位置在這裡&lt;/span&gt;(static/images/)-變更
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;codeLineNumbers: true # Override global value for showing of line numbers within code block.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;figurePositionShow: true # Override global value for showing the figure label.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;categories:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; 心電圖
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; 超音波
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; 急診人生
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; 重訓
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; 自我進修
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;tags:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; Hugo Tips
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; 程式寫作
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;22&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; Hugo架站
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;23&lt;/span&gt;&lt;span class="cl"&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之後就在下方進行書寫文章內容。&lt;/p&gt;</description></item></channel></rss>
