@@ -20,7 +20,11 @@
           {{- else if .Params.abstract }}
             {{ .Params.abstract | markdownify }}
           {{- else }}
-            <p>{{ .Plain | truncate 320 }}</p>
+            {{- $summary := .RawContent -}}
+            {{- $summary = replaceRE `!\[[^\]]*\]\([^)]+\)` "" $summary -}}
+            {{- $summary = replaceRE `\{\{[%<][^}]*[%>]\}\}` "" $summary -}}
+            {{- $summary = $summary | plainify | replaceRE `\s+` " " | strings.TrimSpace -}}
+            <p>{{ $summary | truncate 320 }}</p>
           {{- end }}
           <br>
           {{- $r := T "read_more" }}
