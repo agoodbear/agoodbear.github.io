@@ -1473,7 +1473,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*Sp7uErs0kp0vKimzbzqcRQ.png"
 &lt;li&gt;如果沒有看到STE在V2/V3(比如isoelectric baseline or minimal STD)，那麼就需要考慮是不是有什麼力量往下拉了。&lt;strong&gt;對~~~Post.OMI&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;承上面，怎樣程度的minimal STD都要考慮Post.OMI呢?&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;在這篇Smith ECG Blog有提到[^1]，&lt;strong&gt;在V2 or V3有任何程度的STD，都必須考慮posterior OMI，直到證明不是為止&lt;/strong&gt;。特別是&lt;strong&gt;downsloping STD&lt;/strong&gt;(符合前述，即使STD&amp;lt;0.5~1 mm都要特別小心)&lt;/p&gt;</description></item><item><title>心臟警訊：Pericarditis vs. OMI— 再次入院</title><link>https://agoodbear.github.io/post/medium-30c24eb7e9ab/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-30c24eb7e9ab/</guid><description>
+&lt;p&gt;在這篇Smith ECG Blog有提到&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;，&lt;strong&gt;在V2 or V3有任何程度的STD，都必須考慮posterior OMI，直到證明不是為止&lt;/strong&gt;。特別是&lt;strong&gt;downsloping STD&lt;/strong&gt;(符合前述，即使STD&amp;lt;0.5~1 mm都要特別小心)&lt;/p&gt;</description></item><item><title>心臟警訊：Pericarditis vs. OMI— 再次入院</title><link>https://agoodbear.github.io/post/medium-30c24eb7e9ab/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-30c24eb7e9ab/</guid><description>
 &lt;h3 id="心臟警訊pericarditis-vs-omi-再次入院"&gt;心臟警訊：Pericarditis vs. OMI— 再次入院&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -1628,7 +1628,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*sYlmqMIy0HgpVWurLO1mew.png"
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;em&gt;&lt;strong&gt;Fig.2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;首先在2018年第四版心肌梗塞通用定義[^1]就已經清楚定義，要診斷STEMI，在V2/V3的定義和其他lead是不一樣的：&lt;/p&gt;
+&lt;p&gt;首先在2018年第四版心肌梗塞通用定義&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;就已經清楚定義，要診斷STEMI，在V2/V3的定義和其他lead是不一樣的：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;男性，&amp;lt;40 y/o要2.5 mm高&lt;/li&gt;
 &lt;li&gt;男性，&amp;gt;40 y/o要2 mm高&lt;/li&gt;
@@ -1721,8 +1721,8 @@ src="https://cdn-images-1.medium.com/max/1024/1*_GHxU3OoF6zKeTq7qtk_oQ@2x.png"
 &lt;p&gt;&lt;strong&gt;第一個是用STEMI criteria來診斷心肌梗塞，可靠嗎?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;第二個，除了用STEMI criteria可以來診斷心肌梗塞，還有哪些ECG pattern也可以協助診斷呢?&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="stemi-criteria可靠嗎診斷心肌梗塞可靠specificity夠高但是sensitivity太差了"&gt;STEMI criteria可靠嗎?診斷心肌梗塞可靠(specificity夠高)……但是sensitivity太差了。&lt;/h4&gt;
-&lt;p&gt;這篇文章[^1]說明了若應用STEMI criteria來判讀第一張ED ECG，只有35%的sensitivity。這是什麼概念？意思就是有65%的心肌梗塞無法透過STEMI criteria診斷出來。&lt;/p&gt;
-&lt;p&gt;真的只有35%嗎?另外有一篇[^2]有達到50%的sensitivity，但還是差強人意啊~~~&lt;/p&gt;
+&lt;p&gt;這篇文章&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;說明了若應用STEMI criteria來判讀第一張ED ECG，只有35%的sensitivity。這是什麼概念？意思就是有65%的心肌梗塞無法透過STEMI criteria診斷出來。&lt;/p&gt;
+&lt;p&gt;真的只有35%嗎?另外有一篇&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;有達到50%的sensitivity，但還是差強人意啊~~~&lt;/p&gt;
 &lt;p&gt;所以如果我們堅持心肌梗塞的病患一定要符合STEMI criteria才抓去做心導管，會出現的問題就是，我們在第一時間就會錯失很多的心肌梗塞。最後病患還是有可能會去做導管，但是Time is muscle。時間拖越久，病患心肌細胞死亡就越多，之後心衰竭、心臟復健的時間就會拉長。&lt;/p&gt;
 &lt;h4 id="除了用stemi-criteria可以來診斷心肌梗塞還有哪些ecg-pattern也可以協助診斷呢"&gt;&lt;strong&gt;除了用STEMI criteria可以來診斷心肌梗塞，還有哪些ECG pattern也可以協助診斷呢?&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;要回答這個問題之前，我們先來看看一些文獻怎麼說。&lt;/p&gt;
@@ -2096,7 +2096,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*47oUbjm5P6Du7jfSV7Pt-g.png"
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;Dr.Smith在其Blog中強調，在V1&lt;del&gt;V4有任何的Maximal STD，就必須考慮到Post.OMI(&lt;strong&gt;96% specificity for Post.OMI&lt;/strong&gt;)，直到證明不是。特別是downsloping STD in V2&lt;/del&gt;V3，Smith表示根據他的經驗，這就足以診斷Post.OMI[^1]。&lt;/p&gt;
+&lt;p&gt;Dr.Smith在其Blog中強調，在V1&lt;del&gt;V4有任何的Maximal STD，就必須考慮到Post.OMI(&lt;strong&gt;96% specificity for Post.OMI&lt;/strong&gt;)，直到證明不是。特別是downsloping STD in V2&lt;/del&gt;V3，Smith表示根據他的經驗，這就足以診斷Post.OMI&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
 &lt;h4 id="延伸話題std有三種型態fig2"&gt;&lt;strong&gt;延伸話題:STD有三種型態(Fig.2)&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -2167,8 +2167,8 @@ src="https://cdn-images-1.medium.com/max/1024/1*imoeW1K2zblX9E2-ff6Wrw@2x.png"
 &lt;em&gt;&lt;strong&gt;Fig.1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;首先，我們來看看&lt;strong&gt;Fig.1&lt;/strong&gt;。這張圖&lt;strong&gt;上方&lt;/strong&gt;講的是ACO(Acute coronary occlusion)會有哪些ECG變化。&lt;strong&gt;下方&lt;/strong&gt;講的是在infarction之前出現reperfusion，之後會有哪些典型的ECG變化。這個之後講。&lt;/p&gt;
 &lt;p&gt;那麼哪些狀況會導致reperfusion呢?包括spontaneous reperfusion(自己通了)、打了rTPA、或者做了PCI後通了。&lt;/p&gt;
-&lt;p&gt;在這篇文章描述了，STEMI病患在做PCI之前的spontaneous reperfusion比例大約20%左右[^1]。此外有一個觀念相當重要，那就是冠狀血管阻塞是『動態』的，在IRA(infarct related artery)是有可能因為內生性tPA與plasmin來溶解thrombi導致spontaneous reperfusion的產生。&lt;/p&gt;
-&lt;p&gt;在Smith ECG Blog的這篇文章，則表示在STEMI中有19%會出現spontaneous reperfusion with TIMI flow-3[^2]。&lt;/p&gt;</description></item><item><title>看得出來是心肌梗塞嗎?</title><link>https://agoodbear.github.io/post/medium-e27169e97461/</link><pubDate>Tue, 15 Feb 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-e27169e97461/</guid><description>
+&lt;p&gt;在這篇文章描述了，STEMI病患在做PCI之前的spontaneous reperfusion比例大約20%左右&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。此外有一個觀念相當重要，那就是冠狀血管阻塞是『動態』的，在IRA(infarct related artery)是有可能因為內生性tPA與plasmin來溶解thrombi導致spontaneous reperfusion的產生。&lt;/p&gt;
+&lt;p&gt;在Smith ECG Blog的這篇文章，則表示在STEMI中有19%會出現spontaneous reperfusion with TIMI flow-3&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;</description></item><item><title>看得出來是心肌梗塞嗎?</title><link>https://agoodbear.github.io/post/medium-e27169e97461/</link><pubDate>Tue, 15 Feb 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-e27169e97461/</guid><description>
 &lt;h3 id="看得出來是心肌梗塞嗎"&gt;看得出來是心肌梗塞嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -2375,7 +2375,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*fndHrAK4gl-z87cuA9ETdg@2x.png"
 &lt;/figure&gt;
 &lt;em&gt;&lt;strong&gt;Fig.1-ER+0 min ECG&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;74歲男性胸痛、痛到快昏倒了。到院時表示，這幾天常常如此但是一下就緩解了，今天特別難受。&lt;/p&gt;
-&lt;p&gt;通常ECG的interpretation不太可信，但是ECG machine對於偵測有pacemaker rhythm非常敏感[^1]。&lt;strong&gt;Fig.1&lt;/strong&gt;是病患入院10分鐘內做的ECG，可以看到最下排long lead II，有偵測到pacemaker rhythm的微小spike。&lt;/p&gt;
+&lt;p&gt;通常ECG的interpretation不太可信，但是ECG machine對於偵測有pacemaker rhythm非常敏感&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;strong&gt;Fig.1&lt;/strong&gt;是病患入院10分鐘內做的ECG，可以看到最下排long lead II，有偵測到pacemaker rhythm的微小spike。&lt;/p&gt;
 &lt;h4 id="所以問題回到了裝有ppm的病患是否可以透過ecg來診斷ami"&gt;所以問題回到了，裝有PPM的病患是否可以透過ECG來診斷AMI&lt;/h4&gt;
 &lt;p&gt;那我們來看看一篇今年6月份就已經在AEM以Article in press形式看到文章，直到10月份正式刊出的一篇文章。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
@@ -2390,7 +2390,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*zNv_cwDaapOJIBXksco37A.png"
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;這一篇文章利用Modified Sgarbossa criteria來協助診斷裝有pacemaker發生ACO(Acute coronary occlusion)的狀況[^2]。&lt;/p&gt;
+&lt;p&gt;這一篇文章利用Modified Sgarbossa criteria來協助診斷裝有pacemaker發生ACO(Acute coronary occlusion)的狀況&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -2428,7 +2428,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*rhTQQFkjeJ8RPgyxLGavPw@2x.png"
 &lt;p&gt;所以透過&lt;strong&gt;MSC A+B+modified C&lt;/strong&gt;➡可以抓出:31 + 17=48➡48/59=&lt;strong&gt;81%&lt;/strong&gt;(&lt;strong&gt;還有11位無法抓出&lt;/strong&gt;) →此為&lt;strong&gt;MSC對於OMI的sensitivity&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>VPC也可以小兵立大功嗎?</title><link>https://agoodbear.github.io/post/medium-6cdf5d600a1c/</link><pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-6cdf5d600a1c/</guid><description>
 &lt;h3 id="vpc也可以小兵立大功嗎"&gt;VPC也可以小兵立大功嗎?&lt;/h3&gt;
 &lt;h4 id="我們來看看為何vpc也可以小兵立大功"&gt;我們來看看為何VPC也可以小兵立大功&lt;/h4&gt;
-&lt;p&gt;VPC是由心室產生的。VPC就像LBBB一樣具有discordant ST segments，所以當excessive discordant STE或concordant STE時，就要小心。雖然沒有證據顯示MSC可以適用VPC就像LBBB一樣。但是根據Stephen Smith的經驗，這rule用在VPC和用在LBBB非常類似，雖然specific少一點[^3]。&lt;/p&gt;
+&lt;p&gt;VPC是由心室產生的。VPC就像LBBB一樣具有discordant ST segments，所以當excessive discordant STE或concordant STE時，就要小心。雖然沒有證據顯示MSC可以適用VPC就像LBBB一樣。但是根據Stephen Smith的經驗，這rule用在VPC和用在LBBB非常類似，雖然specific少一點&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://hqmeded-ecg.blogspot.com/2014/01/look-at-pvcs.html"&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -2527,7 +2527,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*Bf0nYFkHXhsipj1wc8kqXw@2x.png"
 &lt;em&gt;&lt;strong&gt;Fig.1: 50分鐘後&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;這張是50分鐘後的ECG**(Fig.1)**，幾乎沒有baseline不穩的干擾。&lt;/p&gt;
 &lt;p&gt;RAD、RBBB、STE over III、aVR、STD over V2&lt;del&gt;V6(Maximal at V3&lt;/del&gt;V4)、I/aVL。這邊可以很確定在precordial leads的Maximal lead在V3~V4，而且是&lt;strong&gt;excessive discordant&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;在RBBB pattern中，常見在V1~V3有TWI與mild STD**(如果有的話)**，但是STD不超過1 mm。所以超過了1 mm代表了，有某個力量把STD往下拉[^2]。&lt;/p&gt;
+&lt;p&gt;在RBBB pattern中，常見在V1~V3有TWI與mild STD**(如果有的話)**，但是STD不超過1 mm。所以超過了1 mm代表了，有某個力量把STD往下拉&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;➡️什麼力量?Post.wall OMI(後壁血管阻塞)。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;另外&lt;strong&gt;aVR STE + Diffuse leads STD&lt;/strong&gt;的DDx非常多。&lt;/p&gt;
 &lt;p&gt;有血管的問題，也有不是血管的問題。&lt;/p&gt;
@@ -2638,7 +2638,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*OLGXiSRF6AaSNzRRikDT1Q.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="(左圖:左-&amp;amp;amp;gt;不對稱TWI(strain pattern)，右-&amp;amp;amp;gt;對稱TWI(偏向ischemia)、右圖:在R’t precordial leads出現很深S wave，會有STE出現)"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*4BEz0kICAK4buzrKD8UQiA.png"
 /&gt;
