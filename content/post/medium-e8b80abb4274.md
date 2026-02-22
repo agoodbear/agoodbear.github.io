@@ -66,7 +66,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E7%9C%9F-%E5%BF%83-%E8%AA%A0%E6%84
 
 #### - aVR and/or V1 STE + Multiple leads STD
 
-![Fig 1 from ESC 2020 NonSTEMI Guideline](https://cdn-images-1.medium.com/max/1024/1*PJhve0r0hwAoJO1Arnxi7w.png)
+![](https://cdn-images-1.medium.com/max/1024/1*PJhve0r0hwAoJO1Arnxi7w.png)
 *Fig 1 from ESC 2020 NonSTEMI Guideline*
 
 8. 在持續胸痛的病患，沒有及早Call CV man，直到後來才做了延遲的PCI，這真的需要系統性去review哪個環節出了問題

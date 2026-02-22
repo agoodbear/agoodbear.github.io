@@ -19,7 +19,7 @@ canonicalURL: "https://medium.com/@agoodbear/narrow-qrs-tachycardia-962b3d4d3f0e
 
 50歲男性，過去Aortic valve開過刀。主述心悸(**ER ECG為blog最上圖**)。
 
-![Fig. 1](https://cdn-images-1.medium.com/max/1024/1*k_WjnewcbB8zt7dk2q9cCg.png)
+![](https://cdn-images-1.medium.com/max/1024/1*k_WjnewcbB8zt7dk2q9cCg.png)
 ***Fig. 1***
 
 簡單判讀：Rate約為150下、似乎有P，但是看起來不像典型P wave的形狀。RAD。Narrow QRS tachycardia，且有明顯的aVR STE with multiple leads STD
@@ -38,7 +38,7 @@ canonicalURL: "https://medium.com/@agoodbear/narrow-qrs-tachycardia-962b3d4d3f0e
 
 **第三個重點**，遇到如此的ECG pattern一定要和病患的臨床情境來配合。因為有更多的狀況(Non-ACS sick P’t)呈現如此的pattern。
 
-![Fig. 2](https://cdn-images-1.medium.com/max/1024/1*39AgqmVqJlA-H6mymxXL0Q@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*39AgqmVqJlA-H6mymxXL0Q@2x.png)
 ***Fig. 2***
 
 Narrow QRS tachycardia需要鑑別的DDx包括了以下:
@@ -53,7 +53,7 @@ Narrow QRS tachycardia需要鑑別的DDx包括了以下:
 
 **AFL →** 當我們臨床上遇到150 bpm ± 20的tachycardia。就必須把AFL 2:1 conduction列入考慮。這邊有一個觀念是，我們要稱2:1 conduction，不是2:1 block，Why?因為AVN(AV node)在這邊是做它份內的工作，他的工作內容是不會讓過多的atrial rate往下傳，所以是**『conduction』**，讓2個(2:1 conduction)、3個(3:1 conduction)P wave往下傳一個到心室。如果AVN當機了，傳不下去，導致很慢的ventricular rate出現**(一個P傳不下去、下一個P也傳不下去、下下一個P才傳下去)**，這種狀況叫做**『block』**，如3:1以上的block叫做High grade block(≥ 3:1 AVB)(**Fig.3**)，而不是稱3:1 conduction。當然更不是稱AFL with 3:1 block(Flutter wave不會那麼慢)。這個觀念，是以前我腦袋不知道怎麼打結了，寫信去問Amal mattu，他寫給我的觀念。
 
-![Fig.3](https://cdn-images-1.medium.com/max/1024/1*I4boUOGz1j1ZO2HQKPOoNA.png)
+![](https://cdn-images-1.medium.com/max/1024/1*I4boUOGz1j1ZO2HQKPOoNA.png)
 ***Fig.3***
 
 有點離題了。趕緊拉回來~~~
@@ -62,7 +62,7 @@ Narrow QRS tachycardia需要鑑別的DDx包括了以下:
 
 這邊有個例子是跳AFL with 1:1 conduction(Fig.4)，來自於[Smith ECG blog](http://hqmeded-ecg.blogspot.com/2021/09/narrow-complex-tachycardia-at-rate-of.html)，描述一位患者平常用藥Flecainide與diltiazem來控制心律不整。
 
-[![Fig.4 From Smith ECG Blog](https://cdn-images-1.medium.com/max/1024/1*mDW8rVBYIO2pdEPiNO4fEQ.png)](http://hqmeded-ecg.blogspot.com/2021/09/narrow-complex-tachycardia-at-rate-of.html)
+[![](https://cdn-images-1.medium.com/max/1024/1*mDW8rVBYIO2pdEPiNO4fEQ.png)](http://hqmeded-ecg.blogspot.com/2021/09/narrow-complex-tachycardia-at-rate-of.html)
 ***Fig.4 From Smith ECG Blog***
 
 這邊要注意一點事情，不少ECG blog都有提到過，當我們使用Class I抗心律不整藥物去控制AFL(維持sinus rhythm)，一定要加上AVN blocker。為何?因為使用Class I抗心律不整藥物讓flutter wave變慢，但慢到一定程度，AVN允許讓它1:1傳下去(此時還是非常快)，此時如果沒有AVN blocker強化AVN的功能，讓它能夠阻斷1:1的傳導，而造成完全1:1傳下來，就很容易Vf產生。

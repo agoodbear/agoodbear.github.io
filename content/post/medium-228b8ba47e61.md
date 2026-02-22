@@ -13,7 +13,7 @@ medium_id: "228b8ba47e61"
 medium_url: "https://medium.com/@agoodbear/%E5%88%B0%E9%99%A2%E5%89%8D%E6%AD%BB%E4%BA%A1%E6%A1%88%E4%BE%8B-%E5%8E%9F%E5%9B%A0%E7%82%BA%E4%BD%95%E5%91%A2-228b8ba47e61"
 canonicalURL: "https://medium.com/@agoodbear/%E5%88%B0%E9%99%A2%E5%89%8D%E6%AD%BB%E4%BA%A1%E6%A1%88%E4%BE%8B-%E5%8E%9F%E5%9B%A0%E7%82%BA%E4%BD%95%E5%91%A2-228b8ba47e61"
 ---
-![到院ECG (Fig 1)](https://cdn-images-1.medium.com/max/1024/1*658U47yADmFl43Vh8lxIhw@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*658U47yADmFl43Vh8lxIhw@2x.png)
 ***到院ECG (Fig 1)***
 
 ### 到院前死亡案例，原因為何呢?
@@ -22,7 +22,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E5%88%B0%E9%99%A2%E5%89%8D%E6%AD%B
 
 外院到院前死亡，急救復甦後，心跳回來。轉送來我們醫院，剛到急診的第一張心電圖如上***(這時應該就快不行了)***。很快心臟就停了。大約又CPR了約莫10分鐘，心跳回來。再次做了張12導程ECG **(Fig 2)**。
 
-![急救回來的第一張ECG (Fig 2)](https://cdn-images-1.medium.com/max/1024/1*TCibxgW2jlITY8MXP9cA0A@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*TCibxgW2jlITY8MXP9cA0A@2x.png)
 ***急救回來的第一張ECG (Fig 2)***
 
 ### 覺得像什麼原因導致的呢?
@@ -45,10 +45,10 @@ canonicalURL: "https://medium.com/@agoodbear/%E5%88%B0%E9%99%A2%E5%89%8D%E6%AD%B
 
 #### RBBB/ICRBBB出現 →因為RBB在septal wall靠著RV，RV wall不厚，所以RV strain時，會導致RV wall ischemia，進而產生RBBB/ICRBBB
 
-[![New Electrocardiographic Changes in Patients Diagnosed with Pulmonary Embolism](https://cdn-images-1.medium.com/max/1024/1*Emykvthp7Q5kwZpdqPh1yA.png)](https://pubmed.ncbi.nlm.nih.gov/27742402/)
+[![](https://cdn-images-1.medium.com/max/1024/1*Emykvthp7Q5kwZpdqPh1yA.png)](https://pubmed.ncbi.nlm.nih.gov/27742402/)
 *New Electrocardiographic Changes in Patients Diagnosed with Pulmonary Embolism*
 
-[![From Amal mattu](https://cdn-images-1.medium.com/max/1024/1*IOGE0l_IOO_9paPd0nZJvA.png)](https://www.amazon.com/Electrocardiography-Emergency-Acute-Critical-Care/dp/1732748608)
+[![](https://cdn-images-1.medium.com/max/1024/1*IOGE0l_IOO_9paPd0nZJvA.png)](https://www.amazon.com/Electrocardiography-Emergency-Acute-Critical-Care/dp/1732748608)
 *From Amal mattu*
 
 - 另外**Wellen’s syndrome**也要列入鑑別診斷。其定義是V2/V3有Biphasic T wave or Deeply TWI(有時可以extend to V1~V6)。 Wellen要注意他的定義，要注意什麼呢?下次有空講~
@@ -67,7 +67,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E5%88%B0%E9%99%A2%E5%89%8D%E6%AD%B
 
 - Tall R wave in V1(R/S >1) →只存在1%的normal variant，因此在急診不常見，所以下列表格要熟記!
 
-![DDx for Tall R wave in V1](https://cdn-images-1.medium.com/max/1024/1*8eNLSXiwE1oGomFrl8AwfQ@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*8eNLSXiwE1oGomFrl8AwfQ@2x.png)
 *DDx for Tall R wave in V1*
 
 - RAD
@@ -82,7 +82,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E5%88%B0%E9%99%A2%E5%89%8D%E6%AD%B
 2. ACS或者特別在reperfusion(Wellen)很少會tachycardia
 3. Wellen’s T wave和PE’s T wave長得不一樣**(很玄的樣子XD)**
 
-![PE’s T wave vs. Wellen’s T wave](https://cdn-images-1.medium.com/max/1024/1*XB-IPb_o4ivRO18ifc0XiQ.jpeg)
+![](https://cdn-images-1.medium.com/max/1024/1*XB-IPb_o4ivRO18ifc0XiQ.jpeg)
 *PE’s T wave vs. Wellen’s T wave*
 
 仔細看，上面一排都是PE不同case，下面一排都是Wellen不同case。有沒有注意到哪些不一樣的地方?

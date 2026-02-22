@@ -15,7 +15,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFpost-wellen-syndr
 ---
 ### 這是Post.Wellen syndrome還是De Winter?
 
-![From:https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html](https://cdn-images-1.medium.com/max/1024/1*G-3NxJGciSjISLUr0SbOOw.png)
+![](https://cdn-images-1.medium.com/max/1024/1*G-3NxJGciSjISLUr0SbOOw.png)
 *From:[https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html](https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html)*
 
 最新一期的[ECG blog](https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html)¹，Post了一張ECG。ECG看起來Inf.wall有STE，此外V2~V3有STD和large T wave。不過**Ken Grauer**覺得V2~V3像Post.wall MI之後有reperfusion，所以T wave高。

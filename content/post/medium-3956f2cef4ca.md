@@ -107,7 +107,7 @@ Precordial leads的**R wave有逐漸增加(至少不是逐漸減少)**
 
 我把上述的意思稍微簡化成下面流程圖(**Fig 1**)。
 
-![Fig. 1](https://cdn-images-1.medium.com/max/1024/1*sSEMHYh56d4Jb1bysGvKCQ.png)
+![](https://cdn-images-1.medium.com/max/1024/1*sSEMHYh56d4Jb1bysGvKCQ.png)
 ***Fig. 1***
 
 #### Case繼續吧!!!!
@@ -116,7 +116,7 @@ Precordial leads的**R wave有逐漸增加(至少不是逐漸減少)**
 
 但病患臨床症狀持續。20分鐘後，我再做了一次ECG(Fig.2)~~
 
-![Fig.2](https://cdn-images-1.medium.com/max/1024/1*xXRm6fffPMFLVozfrUPWaw@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*xXRm6fffPMFLVozfrUPWaw@2x.png)
 ***Fig.2***
 
 這張心電圖，導極放正確位置了。可以看到STD in aVL更明顯。而且原本STD in V1~V2更extend到V3。這肯定是有Post.wall involved。Lead III的Hyperacute T wave變明顯。當下可以直接診斷inf.STEMI with post.wall involved。

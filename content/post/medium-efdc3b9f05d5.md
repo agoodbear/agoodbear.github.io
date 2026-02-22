@@ -37,7 +37,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E8%A8%BA%E6%96%B7ami-in-lbbb%E6%88
 
 **就是這個變化，讓RBBB/LBBB的病患如果有AMI，就變得很難診斷!!!**
 
-![From ECG 2014 Pocket brain — Fig 1](https://cdn-images-1.medium.com/max/1024/1*tvhtDWiXrKOUyidkc5k-eA.png)
+![](https://cdn-images-1.medium.com/max/1024/1*tvhtDWiXrKOUyidkc5k-eA.png)
 *From ECG 2014 Pocket brain — Fig 1*
 
 **不好懂!!!**
@@ -74,7 +74,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E8%A8%BA%E6%96%B7ami-in-lbbb%E6%88
 
 也因為有這樣容易假陽性的finding，所以Smith在2012年於AEM發表了Modified Sgarbossa criteria(MSC)⁴。
 
-![Fig 2](https://cdn-images-1.medium.com/max/1024/1*dVpaH8s2EROWq6SOLMX0nA.jpeg)
+![](https://cdn-images-1.medium.com/max/1024/1*dVpaH8s2EROWq6SOLMX0nA.jpeg)
 ***Fig 2***
 
 Modified Sgarbossa criteria把不夠力的**Sgarbossa criteria C**換成上面Fig 2。為何換成上面?因為我們前面是不是有說，RBBB/LBBB會有**appropriate discordance**變化，但是當discordant過頭了，也不行。
@@ -87,14 +87,14 @@ Smith發現如果單純用discordant ST elevation上升**≥5 mm(單純量測數
 
 若是使用了MSC，取STE/S ratio抓0.2，可以將sensitivity提高到84%，但是specificity只降一點到94%。若ratio抓0.25，sensitivity降到80%，但是specificity可以提高到99%。如果ratio抓0.3，則可能會漏抓許多AMI病患。
 
-![Fig 3](https://cdn-images-1.medium.com/max/1024/1*UZjD5_vc1At7I1D7Tpagsg.png)
+![](https://cdn-images-1.medium.com/max/1024/1*UZjD5_vc1At7I1D7Tpagsg.png)
 ***Fig 3***
 
 #### **重點 →MSC rule C: STE/S ratio>0.25要想AMI(>0.2就要小心了)**
 
 去年在AHA有一篇文章提到了一個新的在LBBB病患上評估是否AMI的文章(BARCELONA criteria)⁶。
 
-![Fig 4](https://cdn-images-1.medium.com/max/1024/1*s47ly3MLBNTPi3tt6YJfcw.jpeg)
+![](https://cdn-images-1.medium.com/max/1024/1*s47ly3MLBNTPi3tt6YJfcw.jpeg)
 ***Fig 4***
 
 在BARCELONA criteria**(任何lead)**只要病患符合以下兩點之一，就認為可能有AMI
@@ -103,29 +103,29 @@ Smith發現如果單純用discordant ST elevation上升**≥5 mm(單純量測數
 
 #### **B. Discordant ST deviation(STE or STD) ≥ 1 mm with max (R|S)≤6 mm(也就是在R+S≤6 mm的狀況下，出現discordant ST deviation ≥ 1 mm就達標)**
 
-![MSC和BARCELONA criteria不同處](https://cdn-images-1.medium.com/max/1024/1*8F8EkohE4oC_hlgFkNokpQ.png)
+![](https://cdn-images-1.medium.com/max/1024/1*8F8EkohE4oC_hlgFkNokpQ.png)
 ***MSC和BARCELONA criteria不同處***
 
 在[Amal Mattu ECG weekly](https://ecgweekly.com/2021/02/amal-mattus-ecg-case-of-the-week-february-22-2021/)有一集講到這個**BARCELONA criteria**，授課中有一張表格(Fig 5)是這篇文章做的比較⁶。前一個數字是derivation cohort、後一個數字是validation corhort所做的數字。可以看到驗證Smith的MSC其sensitivity/specificity都下降了。Amal認為這些數字(BARCELONA criteria的sensitivity/specificity)看起來漂亮，但是仍需要external validation studty來佐證。
 
 當然Smith也不是省油的燈，看到自己的辛苦結晶，被貶了。當然也是要還擊的啊。想看怎麼還擊嗎?[**請看這裡**](https://hqmeded-ecg.blogspot.com/2020/11/barcelona-rule-on-left-bundle-branch.html)
 
-![Fig 5](https://cdn-images-1.medium.com/max/1024/1*CAlVVCvgqJPBEVJa01_pBA.jpeg)
+![](https://cdn-images-1.medium.com/max/1024/1*CAlVVCvgqJPBEVJa01_pBA.jpeg)
 ***Fig 5***
 
 ### 終於講到最後了。
 
 這個月，6/22日Smith團隊在AEM出了一篇文章。這是關於paced rhythm的病患是否可以應用MSC來診斷AMI⁷。這是因為paced rhythm的病患和RBBB/LBBB一樣，其放電傳導的路徑改變了，所以不好診斷AMI。但是有越來越多的case發現其實paced rhythm的病患，可以運用MSC，就像LBBB運用MSC診斷AMI一樣。
 
-![Fig 6](https://cdn-images-1.medium.com/max/1024/1*KIlLSnJMFq2cguBk4Q-QDg.png)
+![](https://cdn-images-1.medium.com/max/1024/1*KIlLSnJMFq2cguBk4Q-QDg.png)
 ***Fig 6***
 
 這篇文章運用原本MSC來評估paced rhythm病患是否有AMI，但是**將Criteria B的V1~V3擴展到V1~V6，發現可以提升sensitivity從81%到86%**(Fig 7)，但是specificity差不多。**經過此一研究發現，確實在有裝心臟調節器病患身上，也可以使用MSC(注意V1 to V3改成V1 to V6可以增加敏感度)來看是否有AMI。**
 
-![Fig 7](https://cdn-images-1.medium.com/max/1024/1*U7chQ2n-OdNSkF3zk7Ry8Q@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*U7chQ2n-OdNSkF3zk7Ry8Q@2x.png)
 ***Fig 7***
 
-![Fig 8](https://cdn-images-1.medium.com/max/1024/1*KjAStFrDbnyykSNKYKxXhg@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*KjAStFrDbnyykSNKYKxXhg@2x.png)
 ***Fig 8***
 
 最後用文章中⁷所附的一個流程圖(Fig 8)來當作結尾。

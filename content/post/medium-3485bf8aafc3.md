@@ -69,7 +69,7 @@ Post.wall MI佔所有STEMI的10~20%左右。而且通常會合併inf.wall MI、L
 
 **舉個例子，來解說上面這幾句話，會讓大家更了解。**
 
-[![Fig.1](https://cdn-images-1.medium.com/max/1024/0*nolKXEHS4FR8X6Cm.jpg)](https://litfl.com/inferior-stemi-ecg-library/)
+[![](https://cdn-images-1.medium.com/max/1024/0*nolKXEHS4FR8X6Cm.jpg)](https://litfl.com/inferior-stemi-ecg-library/)
 ***Fig.1***
 
 當臨床上病患有胸痛、盜汗，做了如Fig.1的ECG。這樣的ECG，我們絕對不會miss掉。Inf.leads高到像山一樣高的STE，肯定會讓我們有衝動去會診CV man。但是如果這個病患limb leads(Fig.1左側)完全沒有STE，只有precordial leads有如Fig.1的變化。你能第一時間，也說這病患有MI嗎?
@@ -102,7 +102,7 @@ ECG傳給CV man看過後，CV man請我們做一張Post.leads。
 
 所以如果要應用Post.leads來協助診斷Post.wall MI，有一個很重要的觀念是，如果看到有STE，則Post.wall MI的機率很高(Specificity很高)，但是如果V7~V9沒有看到STE，不代表沒有Post.wall MI，因為low voltage的關係，導致Post.leads會出現可看得出來的STE，不容易見到(Sensitivity不高)。
 
-![Fig.2(紅圈為Post.wall的地方)](https://cdn-images-1.medium.com/max/1024/1*66d79qCKR8782Ll71G8lIQ@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*66d79qCKR8782Ll71G8lIQ@2x.png)
 ***Fig.2(紅圈為Post.wall的地方)***
 
 #### 那麼可見的STE要多高才算有意義呢?
@@ -120,12 +120,12 @@ ECG傳給CV man看過後，CV man請我們做一張Post.leads。
 
 ### Case continue
 
-![Fig.3](https://cdn-images-1.medium.com/max/1024/1*rhX2dczQsW14Yw5HEkg5TA.png)
+![](https://cdn-images-1.medium.com/max/1024/1*rhX2dczQsW14Yw5HEkg5TA.png)
 ***Fig.3***
 
 Fig.3是在急診做的Post.leads，我們把V9拉大來看(Fig.4)
 
-![Fig.4](https://cdn-images-1.medium.com/max/1024/1*jJ2jLIrkfJqK6_aniqyjUQ.png)
+![](https://cdn-images-1.medium.com/max/1024/1*jJ2jLIrkfJqK6_aniqyjUQ.png)
 ***Fig.4***
 
 可以看到V9至少有0.5 mm的STE，可以確定這是Post.wall MI
@@ -150,7 +150,7 @@ Stephen Smith表示做Post.leads時，千萬不要把V1~V3改成V7~V9。因為co
 
 ![](https://cdn-images-1.medium.com/max/1024/1*UZYMEQQVbdc7EMj961_uTA.png)
 
-![Fig.5](https://cdn-images-1.medium.com/max/1024/1*AT1wRGIiTQefnliJeAFh0A.png)
+![](https://cdn-images-1.medium.com/max/1024/1*AT1wRGIiTQefnliJeAFh0A.png)
 ***Fig.5***
 
 首先我們來看Fig.5右側，可以清楚看到17 segment的分區位置。
@@ -181,7 +181,7 @@ POCUS finding is compatible with ECG finding.
 
 **CAG finding:LCx-P total occlsuion**
 
-![Fig.6](https://cdn-images-1.medium.com/max/1024/0*Amlc_FHo7kYoPHXj)
+![](https://cdn-images-1.medium.com/max/1024/0*Amlc_FHo7kYoPHXj)
 ***Fig.6***
 
 ### Learning Points:

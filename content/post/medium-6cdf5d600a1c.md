@@ -19,7 +19,7 @@ canonicalURL: "https://medium.com/@agoodbear/vpc%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%B
 
 VPC是由心室產生的。VPC就像LBBB一樣具有discordant ST segments，所以當excessive discordant STE或concordant STE時，就要小心。雖然沒有證據顯示MSC可以適用VPC就像LBBB一樣。但是根據Stephen Smith的經驗，這rule用在VPC和用在LBBB非常類似，雖然specific少一點\[^3\]。
 
-[![From Smith ECG Blog](https://cdn-images-1.medium.com/max/1024/0*QsTk0Pc3I5gPz8dc)](http://hqmeded-ecg.blogspot.com/2014/01/look-at-pvcs.html)
+[![](https://cdn-images-1.medium.com/max/1024/0*QsTk0Pc3I5gPz8dc)](http://hqmeded-ecg.blogspot.com/2014/01/look-at-pvcs.html)
 *From Smith ECG Blog*
 
 讓我們來複習一下。Modified Sgarbossa criteria(MSC)可以應用在LBBB/PPM的病患。**Criteria如下:**
@@ -36,10 +36,10 @@ MSC如果抓0.25這個數值，可以讓sensitivity到80%，specificity到99%。
 
 來看圖(**Fig.1 & 2**)比較清楚一點。
 
-![Fig.1 注意LBBB，只看到V1~V3、PPM看V1~V6](https://cdn-images-1.medium.com/max/1024/0*B2iJDLJNTOuty4q9)
+![](https://cdn-images-1.medium.com/max/1024/0*B2iJDLJNTOuty4q9)
 ***Fig.1 注意LBBB，只看到V1~V3、PPM看V1~V6***
 
-![Fig.2](https://cdn-images-1.medium.com/max/1024/0*TIEHVgbJaZgYTSjX)
+![](https://cdn-images-1.medium.com/max/1024/0*TIEHVgbJaZgYTSjX)
 ***Fig.2***
 
 #### 有點離題了
@@ -48,7 +48,7 @@ MSC如果抓0.25這個數值，可以讓sensitivity到80%，specificity到99%。
 
 **再來看幾個例子。**
 
-[![From Smith ECG Blog](https://cdn-images-1.medium.com/max/1024/0*zOHkUzVH7VNOw9G0)](http://hqmeded-ecg.blogspot.com/2018/10/hyperacute-t-waves-and-concordant-st.html)
+[![](https://cdn-images-1.medium.com/max/1024/0*zOHkUzVH7VNOw9G0)](http://hqmeded-ecg.blogspot.com/2018/10/hyperacute-t-waves-and-concordant-st.html)
 *From Smith ECG Blog*
 
 圖中可以看到，VPC有明顯hyperacute T wave出現。V2也在VPC有看到Concordant STE。這也是藉由VPC來看出有ischemic change。
@@ -57,7 +57,7 @@ MSC如果抓0.25這個數值，可以讓sensitivity到80%，specificity到99%。
 
 **再來看一張**
 
-[![From Smith ECG Blog](https://cdn-images-1.medium.com/max/1024/0*Xvg4qb7X7-_6X6Fg)](http://hqmeded-ecg.blogspot.com/2013/06/stemi-seen-best-in-pvc-diagnosed-by.html)
+[![](https://cdn-images-1.medium.com/max/1024/0*Xvg4qb7X7-_6X6Fg)](http://hqmeded-ecg.blogspot.com/2013/06/stemi-seen-best-in-pvc-diagnosed-by.html)
 *From Smith ECG Blog*
 
 這邊也是透過在V1~V3的**VPC有看到Concordant STE**，但是sinus node往下傳導的beat沒有明顯STE(或許有Large T wave →可以和之前的ECG比較，較為準確)。
@@ -66,7 +66,7 @@ MSC如果抓0.25這個數值，可以讓sensitivity到80%，specificity到99%。
 
 52歲男性，下午開始胸痛合併冒冷汗(**Fig.3**)
 
-![Fig.3](https://cdn-images-1.medium.com/max/1024/1*HE96TrHbZeejP5Y4BygTFQ.png)
+![](https://cdn-images-1.medium.com/max/1024/1*HE96TrHbZeejP5Y4BygTFQ.png)
 ***Fig.3***
 
 進一步解析此ECG，可以知道sinus tachycardia，約120 bpm。long lead II可見紅色框框的group beats。撇除這個group beats不看，可以看到STE over V2~V4，偏向concave STE，在lead II、aVF有minimal STD。
@@ -91,7 +91,7 @@ MSC如果抓0.25這個數值，可以讓sensitivity到80%，specificity到99%。
 
 Ps:使用此Smith 4 variable formula，有排除條款。其中之一就是沒有reciprocal STD change。其實這方程式在這不能用。Why?因為有reciprocal change代表是明顯MI了。所以不用使用，就可以說是MI了啊!
 
-![Fig.4](https://cdn-images-1.medium.com/max/1024/1*7teHIVQfLmaSjfpxDDTxEw.png)
+![](https://cdn-images-1.medium.com/max/1024/1*7teHIVQfLmaSjfpxDDTxEw.png)
 ***Fig.4***
 
 假設STEMI criteria無法讓你去Call CV man，而且Smith 4 variable formula你也不會使用。那麼我們來看看這個group beats發生什麼事了。
@@ -109,12 +109,12 @@ Group beats的第一跳看起來是有P wave(往V1~V2對過去)，偏向RBBB pat
 
 #### 接著我們再來看一個，可以透過VPC來預知可能會有fatal arrhythmia的產生。
 
-[![From Smith ECG Blog](https://cdn-images-1.medium.com/max/1024/1*vmWn0XYQgM7nFNAn1NKnSA.png)](https://hqmeded-ecg.blogspot.com/2021/11/what-are-these-bizarre-bigeminal-pvcs.html)
+[![](https://cdn-images-1.medium.com/max/1024/1*vmWn0XYQgM7nFNAn1NKnSA.png)](https://hqmeded-ecg.blogspot.com/2021/11/what-are-these-bizarre-bigeminal-pvcs.html)
 *From Smith ECG Blog*
 
 樓上的ECG可以見到bigeminy pattern ECG pattern。但是要注意到，可以看看VPC beat的QT interval大約560 ms
 
-![Fig.5](https://cdn-images-1.medium.com/max/1024/1*l5jt0R2_LRq1RtDUh3TmLw@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*l5jt0R2_LRq1RtDUh3TmLw@2x.png)
 ***Fig.5***
 
 Fig.5為QT interval nomogram\[^2\]，在H.R<60以下，只要QT interval > 485 ms，就有TdP的風險，H.R>60，隨著H.R上升，發生TdP risk的QT interval也隨之下降。**換句話說就是，在線以上，就要小心發生TdP**。
