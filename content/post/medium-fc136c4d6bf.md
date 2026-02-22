@@ -2,6 +2,7 @@
 title: "有推薦哪些實用的ECG網站或資源呢?"
 date: "2022-05-11"
 draft: false
+featured: true
 toc: false
 thumbnail: "https://cdn-images-1.medium.com/max/1024/1*SrTIfwjCtaRlYzolijoMMA.png"
 categories:
