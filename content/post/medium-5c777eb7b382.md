@@ -387,6 +387,8 @@ RBBB+LAFB不容易判斷出有STEMI。
 6. 出現RBBB+LAFB的重點 →可能是proximal LAD occlusion、此pattern是死亡率最高的OMI
 7. 哪些的ECG findings支持acute proximal LAD occlusion呢?
 
+參考資料補充：[^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8] [^9] [^10] [^11] [^12] [^13]
+
 [^1]: Thygesen, K., Alpert, J. S., Jaffe, A. S., Chaitman, B. R., Bax, J. J., Morrow, D. A., & White, H. D. (2018). Fourth Universal Definition of Myocardial Infarction (2018). Journal of the American College of Cardiology, 72(18), 2231–2264. [https://doi.org/10.1016/j.jacc.2018.08.1038](https://doi.org/10.1016/j.jacc.2018.08.1038)
 [^2]: Chest Pain, “Negative” Stress Tests, POCUS, & ECG Equations — REBEL EM — Emergency Medicine Blog — [link](https://rebelem.com/chest-pain-negative-stress-tests-pocus-ecg-equations/)
 [^3]: O’Gara, P. T., Kushner, F. G., Ascheim, D. D., Casey, D. E., Chung, M. K., de Lemos, J. A., Ettinger, S. M., Fang, J. C., Fesmire, F. M., Franklin, B. A., Granger, C. B., Krumholz, H. M., Linderbaum, J. A., Morrow, D. A., Newby, L. K., Ornato, J. P., Ou, N., Radford, M. J., Tamis-Holland, J. E., … Zhao, D. X. (2013). 2013 ACCF/AHA Guideline for the Management of ST-Elevation Myocardial Infarction. Journal of the American College of Cardiology, 61(4), e78–e140. [https://doi.org/10.1016/j.jacc.2012.11.019](https://doi.org/10.1016/j.jacc.2012.11.019)

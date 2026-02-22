@@ -179,6 +179,8 @@ CAD with SVD s/p PTCA+Stent
 4. 怎樣的TWI in aVL是有意義的?需要排除哪些normal variants?
 5. Wellens’ wave的意義為何?
 
+參考資料補充：[^1] [^2] [^3]
+
 [^1]: Department of Cardiology, Marmara University Pendik Training and Research Hospital, Istanbul, Turkey, Aslanger, E. K., Meyers, H. P., Department of Emergency Medicine, Carolinas Medical Center, Charlotte, North Carolina, USA, Smith, S. W., & Department of Emergency Medicine, University of Minnesota Hennepin Healthcare, Minneapolis, Minnesota, USA. (2021). Recognizing electrocardiographically subtle occlusion myocardial infarction and differentiating it from mimics: Ten steps to or away from cath lab. \_\_Turk Kardiyoloji Dernegi Arsivi-Archives of the Turkish Society of Cardiology\_\_, \_\_49\_\_(6), 488–500. [https://doi.org/10.5543/tkda.2021.21026](https://doi.org/10.5543/tkda.2021.21026)
 [^2]: Bischof, J. E., Worrall, C., Thompson, P., Marti, D., & Smith, S. W. (2016). ST depression in lead aVL differentiates inferior ST-elevation myocardial infarction from pericarditis. \_\_The American Journal of Emergency Medicine\_\_, \_\_34\_\_(2), 149–154. [https://doi.org/10.1016/j.ajem.2015.09.035](https://doi.org/10.1016/j.ajem.2015.09.035)
 [^3]: [You Diagnose Pericarditis at your Peril (at the Patient’s Peril!)](http://hqmeded-ecg.blogspot.com/2018/06/you-diagnose-pericarditis-at-your-peril.html)

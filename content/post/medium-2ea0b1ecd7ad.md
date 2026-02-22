@@ -182,6 +182,8 @@ Fig.10應該是我的心電圖Blog，出現最多次的一張圖吧XD
 7. 熟知NSTEMI有哪些狀況算是very high risk feature
 8. 如果心中擔憂病患有OMI，但是卻沒有符合STEMI criteria的ECG出現，尋找更多OMI的證據(Serial F/U ECG、TnI、Echo)。親自打電話告知CV man，我們的想法如何，或許可以幫助病患提早做到PCI，減少病患心臟細胞的失去。
 
+參考資料補充：[^1] [^2] [^3] [^4] [^5]
+
 [^1]: Dr. Smith’s ECG Blog: Any ST depression in V2 and V3 is posterior OMI until proven otherwise, especially if downsloping — [link](http://hqmeded-ecg.blogspot.com/2021/11/any-st-depression-in-v2-and-v3-is.html)
 [^2]: 這是STEMI，你相信嗎?. 來看看昨天夜班上班的一位個案。50歲男性，本來從事捕鰻苗的工作。 | by Tsao Jian-hsiung | Medium — [link](https://medium.com/@agoodbear/%E9%80%99%E6%98%AFstemi-%E4%BD%A0%E7%9B%B8%E4%BF%A1%E5%97%8E-3485bf8aafc3)
 [^3]: Yoshihara, S. (2022). Acute coronary syndrome on non-electrocardiogram-gated contrast-enhanced computed tomography. World Journal of Radiology, 14(2), 30–46. [https://doi.org/10.4329/wjr.v14.i2.30](https://doi.org/10.4329/wjr.v14.i2.30)

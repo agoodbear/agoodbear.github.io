@@ -190,6 +190,8 @@ Chest CTA看到雙側都有pulmonary vessel filling defect，RV也有filling def
 4. **ECG可以辨識出RV strain，但無法分辨出RV strain的原因**
 5. **我們是否可以透過ECG morphology來區分到底是ACS(Wellen)或是PE呢?**
 
+參考資料補充：[^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8] [^9]
+
 [^1]: Fefer, P., Hod, H., Hammerman, H., Boyko, V., Behar, S., Matetzky, S., & Acute Coronary Syndrome Israeli Survey (ACSIS) 2006 Study Group. (2009). Relation of clinically defined spontaneous reperfusion to outcome in ST-elevation myocardial infarction. \_\_The American Journal of Cardiology\_\_, \_\_103\_\_(2), 149–153. [https://doi.org/10.1016/j.amjcard.2008.08.050](https://doi.org/10.1016/j.amjcard.2008.08.050)
 [^2]: Dr. Smith’s ECG Blog: ST Depression Maximal in V1-V4 and Angio shows 3 Vessel Disease. Is it posterior? Which is the culprit? — [link](https://hqmeded-ecg.blogspot.com/2020/12/st-depression-maximal-in-v1-v4-and.html)
 [^3]: Dr. Smith’s ECG Blog: A man in his 30s with greater than 12 hours of chest pain — [link](http://hqmeded-ecg.blogspot.com/2021/05/a-man-in-his-30s-with-greater-than-12.html)
