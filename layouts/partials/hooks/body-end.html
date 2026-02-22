@@ -6,7 +6,7 @@
 
   .ecg-rp-shell {
     position: fixed;
-    top: 78px;
+    top: 72px;
     left: var(--ecg-rp-left);
     width: var(--ecg-rp-width);
     max-width: calc(100vw - 20px);
@@ -23,11 +23,21 @@
     display: none !important;
   }
 
+  .ecg-rp-shell[data-compact="true"] {
+    padding: 6px 7px;
+    border-radius: 8px;
+  }
+
   .ecg-rp-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 6px;
+  }
+
+  .ecg-rp-shell[data-compact="true"] .ecg-rp-meta {
+    margin-bottom: 4px;
+    justify-content: flex-end;
   }
 
   .ecg-rp-label {
@@ -37,9 +47,17 @@
     color: #456862;
   }
 
+  .ecg-rp-shell[data-compact="true"] .ecg-rp-label {
+    display: none;
+  }
+
   .ecg-rp-percent {
     font-size: 0.73rem;
     color: #183f3b;
+  }
+
+  .ecg-rp-shell[data-compact="true"] .ecg-rp-percent {
+    font-size: 0.68rem;
   }
 
   .ecg-rp-svg {
@@ -64,6 +82,14 @@
     stroke-linejoin: round;
     filter: drop-shadow(0 0 6px rgba(32, 163, 147, 0.26));
     transition: stroke 220ms ease, filter 220ms ease;
+  }
+
+  .ecg-rp-shell[data-compact="true"] .ecg-rp-base {
+    stroke-width: 3.6;
+  }
+
+  .ecg-rp-shell[data-compact="true"] .ecg-rp-active {
+    stroke-width: 2.8;
   }
 
   .ecg-rp-tip {
@@ -100,12 +126,22 @@
     transform: translateY(0);
   }
 
+  .ecg-rp-shell[data-compact="true"] .ecg-rp-tip {
+    display: none;
+  }
+
   .ecg-rp-shell:focus-within {
     outline: 2px solid rgba(17, 118, 107, 0.34);
     outline-offset: 2px;
   }
 
-  @media (max-width: 1100px) {
+  @media (min-width: 1200px) {
+    body.ecg-rp-lane .post_content {
+      padding-left: 124px;
+    }
+  }
+
+  @media (max-width: 900px) {
     .ecg-rp-shell {
       display: none !important;
     }
@@ -169,20 +205,32 @@
     const placeInLeftGutter = () => {
       const margin = 12;
       const articleRect = article.getBoundingClientRect();
-      const preferredWidth = 280;
-      const minWidth = 210;
-      let width = Math.max(minWidth, Math.min(preferredWidth, window.innerWidth * 0.24));
+      const preferredWidth = 220;
       const leftGutter = articleRect.left - margin;
-      const fits = leftGutter >= width + margin;
+      const available = leftGutter - margin;
 
-      if (!fits) {
+      if (available < 92) {
+        if (window.innerWidth >= 1200) {
+          const laneWidth = Math.round(Math.max(92, Math.min(124, window.innerWidth * 0.09)));
+          document.body.classList.add("ecg-rp-lane");
+          document.documentElement.style.setProperty("--ecg-rp-left", `${margin}px`);
+          document.documentElement.style.setProperty("--ecg-rp-width", `${laneWidth}px`);
+          shell.dataset.compact = laneWidth < 150 ? "true" : "false";
+          shell.hidden = false;
+          return true;
+        }
+
+        document.body.classList.remove("ecg-rp-lane");
         shell.hidden = true;
         return false;
       }
 
+      const width = Math.max(92, Math.min(preferredWidth, available));
       const left = Math.round(articleRect.left - width - margin);
+      document.body.classList.remove("ecg-rp-lane");
       document.documentElement.style.setProperty("--ecg-rp-left", `${left}px`);
       document.documentElement.style.setProperty("--ecg-rp-width", `${Math.round(width)}px`);
+      shell.dataset.compact = width < 150 ? "true" : "false";
       shell.hidden = false;
       return true;
     };
