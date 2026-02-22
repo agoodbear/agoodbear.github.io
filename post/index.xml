@@ -1430,7 +1430,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*WPqDirWKj_yqdGzdBAZqnw.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1 Initial ECG"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*T52E6q5yGpWZPMwfY9lqAw.png"
 /&gt;
@@ -1444,7 +1444,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*T52E6q5yGpWZPMwfY9lqAw.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.2 AMI Definition"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*8NJSL_CXDZJ7zDIbUOXGSw.png"
 /&gt;
@@ -1458,7 +1458,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*8NJSL_CXDZJ7zDIbUOXGSw.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.3 STEMI criteria"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*Sp7uErs0kp0vKimzbzqcRQ.png"
 /&gt;
@@ -1466,14 +1466,21 @@ src="https://cdn-images-1.medium.com/max/1024/1*Sp7uErs0kp0vKimzbzqcRQ.png"
 &lt;/figure&gt;
 &lt;em&gt;&lt;strong&gt;Fig.3 STEMI criteria&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;必須要再三強調，V2/V3的STE與其他lead定義不一樣。看V2/V3要根據性別/年齡合併一起看。&lt;/p&gt;
-&lt;p&gt;舉例來說，男性&amp;lt;40 y/o在V2/V3要≧2.5 mm才是有意義的高。其他以此類推。&lt;/p&gt;</description></item><item><title>心臟警訊：Pericarditis vs. OMI— 再次入院</title><link>https://agoodbear.github.io/post/medium-30c24eb7e9ab/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-30c24eb7e9ab/</guid><description>
+&lt;p&gt;舉例來說，男性&amp;lt;40 y/o在V2/V3要≧2.5 mm才是有意義的高。其他以此類推。&lt;/p&gt;
+&lt;h4 id="這延伸了幾個有趣的狀況"&gt;這延伸了幾個有趣的狀況:&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;這也代表著，隨便抓一個人來作12 lead ECG，很有可能會在V2/V3都看到有STE，只是有沒有意義的高，就需要根據上述的criteria了。&lt;/li&gt;
+&lt;li&gt;如果沒有看到STE在V2/V3(比如isoelectric baseline or minimal STD)，那麼就需要考慮是不是有什麼力量往下拉了。&lt;strong&gt;對~~~Post.OMI&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;承上面，怎樣程度的minimal STD都要考慮Post.OMI呢?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在這篇Smith ECG Blog有提到[^1]，&lt;strong&gt;在V2 or V3有任何程度的STD，都必須考慮posterior OMI，直到證明不是為止&lt;/strong&gt;。特別是&lt;strong&gt;downsloping STD&lt;/strong&gt;(符合前述，即使STD&amp;lt;0.5~1 mm都要特別小心)&lt;/p&gt;</description></item><item><title>心臟警訊：Pericarditis vs. OMI— 再次入院</title><link>https://agoodbear.github.io/post/medium-30c24eb7e9ab/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-30c24eb7e9ab/</guid><description>
 &lt;h3 id="心臟警訊pericarditis-vs-omi-再次入院"&gt;心臟警訊：Pericarditis vs. OMI— 再次入院&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1 第一次急診就醫的ECG"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*tprAYzfatLfq__U6OEglhw.png"
 /&gt;
@@ -1503,7 +1510,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*7uZfr7ftD9OVd3BKPzzkaQ.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.2"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*yll2nGUvdkL-QG8ulM664Q.jpeg"
 /&gt;
@@ -1567,6 +1574,18 @@ src="https://cdn-images-1.medium.com/max/1024/1*LhHja5QM_5Nw144hVZRwWg.png"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*2NSeEeAzOLBFJz_k3HAR9A.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
 &lt;/p&gt;</description></item><item><title>64歲男性，上腹痛、胸痛、上背痛</title><link>https://agoodbear.github.io/post/medium-5c777eb7b382/</link><pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-5c777eb7b382/</guid><description>
 &lt;h3 id="64歲男性上腹痛胸痛上背痛"&gt;64歲男性，上腹痛、胸痛、上背痛&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
@@ -1574,7 +1593,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*LhHja5QM_5Nw144hVZRwWg.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1:到院時間:10:02"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*LEbcLpGiMDrL-Xu6ZSo6nw@2x.png"
 /&gt;
@@ -1602,7 +1621,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*LEbcLpGiMDrL-Xu6ZSo6nw@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.2"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*sYlmqMIy0HgpVWurLO1mew.png"
 /&gt;
@@ -1623,7 +1642,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*sYlmqMIy0HgpVWurLO1mew.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1 到院時ECG(Revision by PMCardio)"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*DqTVLEhhjVNmKZEeycGr5w@2x.png"
 /&gt;
@@ -1658,14 +1677,15 @@ src="https://cdn-images-1.medium.com/max/1024/1*DqTVLEhhjVNmKZEeycGr5w@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.2 Axis"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*7ooVhVOb9EAgs0W7FUQIaA@2x.png"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;em&gt;&lt;strong&gt;Fig.2 Axis&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;在&lt;strong&gt;RAD的DDx list中&lt;/strong&gt;(Fig.2的左下角)，除了要注意我們急診科可能會比較在意的RV overload syndrome(意思是有可能pulmonary embolism)、Na channel blocker toxicity，與是否leads錯置了。此外就是也有可能出現lateral wall MI。另外在小朋友因為心臟發育一開始是RV比較厚，長大後才變成LV較厚。所以在小小朋友做ECG，也有可能看到RAD喔~~&lt;/p&gt;</description></item><item><title>除了STE以外，還有哪些ECG sign也有可能血管阻塞呢?(前言)</title><link>https://agoodbear.github.io/post/medium-c2fa94a9ab28/</link><pubDate>Fri, 18 Nov 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-c2fa94a9ab28/</guid><description>
+&lt;p&gt;在&lt;strong&gt;RAD的DDx list中&lt;/strong&gt;(Fig.2的左下角)，除了要注意我們急診科可能會比較在意的RV overload syndrome(意思是有可能pulmonary embolism)、Na channel blocker toxicity，與是否leads錯置了。此外就是也有可能出現lateral wall MI。另外在小朋友因為心臟發育一開始是RV比較厚，長大後才變成LV較厚。所以在小小朋友做ECG，也有可能看到RAD喔~~&lt;/p&gt;
+&lt;p&gt;我自己的記憶法是，lateral wall比較靠外側，所以當AMI後，心肌死去，所以axis會往右偏(&lt;strong&gt;Lead I的R wave會減小&lt;/strong&gt; →有點類似precordial leads因為AMI出現PRWP的概念)&lt;/p&gt;</description></item><item><title>除了STE以外，還有哪些ECG sign也有可能血管阻塞呢?(前言)</title><link>https://agoodbear.github.io/post/medium-c2fa94a9ab28/</link><pubDate>Fri, 18 Nov 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-c2fa94a9ab28/</guid><description>
 &lt;h3 id="除了ste以外還有哪些ecg-sign也有可能血管阻塞呢前言"&gt;除了STE以外，還有哪些ECG sign也有可能血管阻塞呢?(前言)&lt;/h3&gt;
 &lt;p&gt;讓我們來看看幾張ECG，之後再來回答上頭的問題~~&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
@@ -1673,7 +1693,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*7ooVhVOb9EAgs0W7FUQIaA@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1 60歲男性胸痛一小時"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*ab1PYAHkaEQSP9nEuhy-zA.png"
 /&gt;
@@ -1685,7 +1705,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*ab1PYAHkaEQSP9nEuhy-zA.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.2 46歲男性從早上開始胸痛不舒服"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*_GHxU3OoF6zKeTq7qtk_oQ@2x.png"
 /&gt;
@@ -1735,20 +1755,32 @@ src="https://cdn-images-1.medium.com/max/1024/1*M6JTCfILjk6-NRJvLpkZmg.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Table 1. 哪些ECG pattern可能有MI-Part I"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*aCqF5yFkYQVN0023sZAwkQ@2x.png"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Table 1. 哪些ECG pattern可能有MI-Part I&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description></item><item><title>低血壓、低血氧到院，心電圖有問題嗎?</title><link>https://agoodbear.github.io/post/medium-db499ddee6f9/</link><pubDate>Wed, 07 Sep 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-db499ddee6f9/</guid><description>
+&lt;em&gt;&lt;strong&gt;Table 1. 哪些ECG pattern可能有MI-Part I&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*P0EzOAkMZqd83rgJBXVKzA.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;</description></item><item><title>低血壓、低血氧到院，心電圖有問題嗎?</title><link>https://agoodbear.github.io/post/medium-db499ddee6f9/</link><pubDate>Wed, 07 Sep 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-db499ddee6f9/</guid><description>
 &lt;h3 id="低血壓低血氧到院心電圖有問題嗎"&gt;低血壓、低血氧到院，心電圖有問題嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1到院時ECG"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*NXKy7gSDorREfnBDMYGt6w@2x.png"
 /&gt;
@@ -1784,7 +1816,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*NXKy7gSDorREfnBDMYGt6w@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.2 Reverse Z shape"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/0*OrHTEsrACw43bk_D"
 /&gt;
@@ -1816,7 +1848,7 @@ src="https://cdn-images-1.medium.com/max/1024/0*xfVlrYpJj48KVejF.jpeg"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1 Left:原始心電圖、Right:網友問題"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*85WjOJ7-VX02DUqk8PX3RQ@2x.png"
 /&gt;
@@ -1848,14 +1880,15 @@ src="https://i.embed.ly/1/image?url=https%3A%2F%2Fabs.twimg.com%2Ferrors%2Flogo4
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;/p&gt;</description></item><item><title>43歲男性，胸痛、盜汗，這張ECG有問題嗎?</title><link>https://agoodbear.github.io/post/medium-3a0024bad29f/</link><pubDate>Wed, 17 Aug 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-3a0024bad29f/</guid><description>
+&lt;/p&gt;
+&lt;p&gt;在這張ECG可以在V1看到fibrillation wave(Af其atrial rate:350–600 bpm)。&lt;/p&gt;</description></item><item><title>43歲男性，胸痛、盜汗，這張ECG有問題嗎?</title><link>https://agoodbear.github.io/post/medium-3a0024bad29f/</link><pubDate>Wed, 17 Aug 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-3a0024bad29f/</guid><description>
 &lt;h3 id="43歲男性胸痛盜汗這張ecg有問題嗎"&gt;43歲男性，胸痛、盜汗，這張ECG有問題嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1 入院時ECG"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*j_dZY1RQ8S521jbC_KH1JA@2x.png"
 /&gt;
@@ -1914,7 +1947,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*xwV7M-H6W4tVFagTyPmi_A@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*7sfT-6ZdvaJFT_ZI_X_8Hg@2x.png"
 /&gt;
@@ -1938,7 +1971,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*7sfT-6ZdvaJFT_ZI_X_8Hg@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.2"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*h-7A7r5_DB39MPcazvXdGQ.jpeg"
 /&gt;
@@ -1959,7 +1992,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*h-7A7r5_DB39MPcazvXdGQ.jpeg"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1 到院時ECG"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*C2Xc3y--irZzyhUMxjSK1g@2x.png"
 /&gt;
@@ -2038,7 +2071,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*YXX-T6TkoVu2tdaJRii7Hg.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*0EzGXjZbZmoZf7NkvzP6nA.png"
 /&gt;
@@ -2070,7 +2103,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*47oUbjm5P6Du7jfSV7Pt-g.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.2"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/0*IW_KWoZiSRq3_VsZ"
 /&gt;
@@ -2083,7 +2116,7 @@ src="https://cdn-images-1.medium.com/max/1024/0*IW_KWoZiSRq3_VsZ"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="De Winter’s T wave"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*KVjyaxBdTy-dAT5PfuNIBw.png"
 /&gt;
@@ -2124,7 +2157,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*yRFGZRBFf8mrOR-6YJog9Q@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*imoeW1K2zblX9E2-ff6Wrw@2x.png"
 /&gt;
@@ -2160,7 +2193,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*z6OsqsAtbxD5e90FFqyCnQ@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*c8BhoRBUoDyqK1DNf44oDA.png"
 /&gt;
@@ -2252,7 +2285,7 @@ src="https://cdn-images-1.medium.com/max/1024/0*2yN5ESIMXzkJ0V-I"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/0*nolKXEHS4FR8X6Cm.jpg"
 /&gt;
@@ -2282,7 +2315,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*IYXFaAl0xjDKnMhNLZ3FPw@2x.jpeg"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig. 1"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*Xdo5DviB_he7pysws4tnZA.png"
 /&gt;
@@ -2304,7 +2337,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*Xdo5DviB_he7pysws4tnZA.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.2"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*Az_X28S9p_b1kE3xuhmyrg@2x.png"
 /&gt;
@@ -2334,7 +2367,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*Az_X28S9p_b1kE3xuhmyrg@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1-ER&amp;#43;0 min ECG"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*fndHrAK4gl-z87cuA9ETdg@2x.png"
 /&gt;
@@ -2363,7 +2396,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*zNv_cwDaapOJIBXksco37A.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.2"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*cR7DPsnfOdp6SH17B_ivOA@2x.png"
 /&gt;
@@ -2379,7 +2412,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*cR7DPsnfOdp6SH17B_ivOA@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Table 1"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*rhTQQFkjeJ8RPgyxLGavPw@2x.png"
 /&gt;
@@ -2401,7 +2434,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*rhTQQFkjeJ8RPgyxLGavPw@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="From Smith ECG Blog"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/0*QsTk0Pc3I5gPz8dc"
 /&gt;
@@ -2435,19 +2468,31 @@ src="https://cdn-images-1.medium.com/max/1024/0*dIPZ748EHjnWxIhT.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1 注意LBBB，只看到V1&amp;amp;lt;del&amp;amp;gt;V3、PPM看V1&amp;amp;lt;/del&amp;amp;gt;V6"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/0*B2iJDLJNTOuty4q9"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1 注意LBBB，只看到V1&lt;del&gt;V3、PPM看V1&lt;/del&gt;V6&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description></item><item><title>IHCA →肺栓塞還是其他問題?</title><link>https://agoodbear.github.io/post/medium-d266ed8a1693/</link><pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-d266ed8a1693/</guid><description>
+&lt;em&gt;&lt;strong&gt;Fig.1 注意LBBB，只看到V1&lt;del&gt;V3、PPM看V1&lt;/del&gt;V6&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
 loading="lazy"
 decoding="async"
-alt="ER arrival"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/0*TIEHVgbJaZgYTSjX"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;&lt;strong&gt;Fig.2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description></item><item><title>IHCA →肺栓塞還是其他問題?</title><link>https://agoodbear.github.io/post/medium-d266ed8a1693/</link><pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-d266ed8a1693/</guid><description>
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*f2GmaCa9hR-VLoQKEGX0vw@2x.png"
 /&gt;
@@ -2473,7 +2518,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*f2GmaCa9hR-VLoQKEGX0vw@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1: 50分鐘後"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*Bf0nYFkHXhsipj1wc8kqXw@2x.png"
 /&gt;
@@ -2484,7 +2529,20 @@ src="https://cdn-images-1.medium.com/max/1024/1*Bf0nYFkHXhsipj1wc8kqXw@2x.png"
 &lt;p&gt;RAD、RBBB、STE over III、aVR、STD over V2&lt;del&gt;V6(Maximal at V3&lt;/del&gt;V4)、I/aVL。這邊可以很確定在precordial leads的Maximal lead在V3~V4，而且是&lt;strong&gt;excessive discordant&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;在RBBB pattern中，常見在V1~V3有TWI與mild STD**(如果有的話)**，但是STD不超過1 mm。所以超過了1 mm代表了，有某個力量把STD往下拉[^2]。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;➡️什麼力量?Post.wall OMI(後壁血管阻塞)。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;另外&lt;strong&gt;aVR STE + Diffuse leads STD&lt;/strong&gt;的DDx非常多。&lt;/p&gt;</description></item><item><title>2小時前胸悶，有AMI嗎?</title><link>https://agoodbear.github.io/post/medium-3956f2cef4ca/</link><pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-3956f2cef4ca/</guid><description>
+&lt;p&gt;另外&lt;strong&gt;aVR STE + Diffuse leads STD&lt;/strong&gt;的DDx非常多。&lt;/p&gt;
+&lt;p&gt;有血管的問題，也有不是血管的問題。&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*zL-rA_XVZ8v3YJCxUmd3rQ@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;&lt;strong&gt;aVR STE的DDx&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description></item><item><title>2小時前胸悶，有AMI嗎?</title><link>https://agoodbear.github.io/post/medium-3956f2cef4ca/</link><pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-3956f2cef4ca/</guid><description>
 &lt;h3 id="2小時前胸悶有ami嗎"&gt;2小時前胸悶，有AMI嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -2547,7 +2605,7 @@ src="https://i.embed.ly/1/image?url=https%3A%2F%2Fabs.twimg.com%2Ferrors%2Flogo4
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Amal的亂中有序表格"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*NJZwxdxjBP0O_6-FItC9gw@2x.png"
 /&gt;
@@ -2606,7 +2664,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*-_JeNAGKVV67vXegvesyZA@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig. 1"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*k_WjnewcbB8zt7dk2q9cCg.png"
 /&gt;
@@ -2626,7 +2684,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*k_WjnewcbB8zt7dk2q9cCg.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig. 2"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*39AgqmVqJlA-H6mymxXL0Q@2x.png"
 /&gt;
@@ -2667,7 +2725,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*DImVcrqqnClukvho9mhMAA@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.1"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*lb7JibPdXW54B7THqRtXRw.png"
 /&gt;
@@ -2687,7 +2745,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*lb7JibPdXW54B7THqRtXRw.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig.2"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*ziHV3GUukSIgeynYFMP2uw@2x.png"
 /&gt;
@@ -2725,7 +2783,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*RiODz6_7wUuQe3rCyrTHEQ@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="From ECG 2014 Pocket brain — Fig 1"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*tvhtDWiXrKOUyidkc5k-eA.png"
 /&gt;
@@ -2785,7 +2843,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*tvhtDWiXrKOUyidkc5k-eA.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig 1 from ESC 2020 NonSTEMI Guideline"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*PJhve0r0hwAoJO1Arnxi7w.png"
 /&gt;
@@ -2797,7 +2855,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*PJhve0r0hwAoJO1Arnxi7w.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="到院ECG (Fig 1)"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*658U47yADmFl43Vh8lxIhw@2x.png"
 /&gt;
@@ -2812,7 +2870,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*658U47yADmFl43Vh8lxIhw@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="急救回來的第一張ECG (Fig 2)"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*TCibxgW2jlITY8MXP9cA0A@2x.png"
 /&gt;
@@ -2840,7 +2898,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*TCibxgW2jlITY8MXP9cA0A@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="New Electrocardiographic Changes in Patients Diagnosed with Pulmonary Embolism"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*Emykvthp7Q5kwZpdqPh1yA.png"
 /&gt;
@@ -2854,7 +2912,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*Emykvthp7Q5kwZpdqPh1yA.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="From:https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*G-3NxJGciSjISLUr0SbOOw.png"
 /&gt;
@@ -2936,7 +2994,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*iC0r-9zWy6lESpKNOUJaxw@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Previous ECG"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*jhZIIfIN__Rcb30dwecWAA@2x.png"
 /&gt;
@@ -2960,7 +3018,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Left sdie:K →6.1、Right side:K →7.4"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*pEVYam7Maa6UqptWqzpH2g@2x.png"
 /&gt;
@@ -2986,7 +3044,7 @@ src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi.ytimg.com%2Fvi%2F4-TeZrmGWSg%
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig 1: K:6.1"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png"
 /&gt;
@@ -3000,7 +3058,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig 2"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*pEVYam7Maa6UqptWqzpH2g@2x.png"
 /&gt;
@@ -3027,7 +3085,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*pEVYam7Maa6UqptWqzpH2g@2x.png"
 &lt;img
 loading="lazy"
 decoding="async"
-alt="Fig 3"
+alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*qMtmievwzzgbZ1RkxvAqag.png"
 /&gt;
