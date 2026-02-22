@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wellen on 急診熊心聲部落格</title><link>https://agoodbear.github.io/tags/wellen/</link><description>Recent content in Wellen on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Tue, 01 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/wellen/index.xml" rel="self" type="application/rss+xml"/><item><title>胸痛，是Wellen嗎?</title><link>https://agoodbear.github.io/post/medium-cec16f0ae2f8/</link><pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-cec16f0ae2f8/</guid><description>
+&lt;h3 id="胸痛是wellen嗎"&gt;胸痛，是Wellen嗎?&lt;/h3&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*yRFGZRBFf8mrOR-6YJog9Q@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;70歲男性，胸痛三天。晚上痛到睡不著覺。過去病史有HCC做過血管動脈栓塞，目前仍在治療中。&lt;/p&gt;
+&lt;p&gt;仔細詢問，上腹部也會不舒服，一點點微喘，主要還是胸痛為主。&lt;/p&gt;
+&lt;p&gt;進一步分析Rate約90下、Lead I/II/aVF的P wave為Upright，且aVR的P wave為inverted，所以是sinus rhythm。&lt;/p&gt;
+&lt;p&gt;Axis改變。Lead I的S wave&amp;gt;R wave →所以為RAD&lt;/p&gt;
+&lt;p&gt;PR interval正常，V1~V3都有rSR’ pattern，QRS &amp;lt; 3小格，為ICRBBB。&lt;/p&gt;
+&lt;p&gt;比較明顯異常的是在precordial leads有TWI(V1~V6)、此外inf.leads也有TWI。Q wave in III。&lt;/p&gt;
+&lt;h3 id="ecg解讀完畢讓我們來看看幾個問題"&gt;ECG解讀完畢。讓我們來看看幾個問題~~~&lt;/h3&gt;
+&lt;p&gt;1️⃣ ➡︎Precordial leads的TWI是Wellen’s wave嗎?&lt;/p&gt;
+&lt;p&gt;為什麼問這問題?因為我們膝蓋反射會直接想到的問題?&lt;/p&gt;
+&lt;p&gt;2️⃣➡︎如果不是Wellen’s wave?那麼還有什麼可能會有這樣的TWI呢?&lt;/p&gt;
+&lt;p&gt;V1~V6的TWI是不是Wellen’s wave?要先知道什麼是Wellen’s wave，我們才能下這個診斷。&lt;/p&gt;
+&lt;p&gt;一般我們說這個病患可能是Wellens’ syndrome。指的是看到V2~V3有Biphasic TWI or deeply TWI，而且是在ACS症狀的時候看到。&lt;/p&gt;
+&lt;p&gt;也就是病患一開始有ACS症狀，之後症狀緩解，在緩解期作的ECG有看到V2~V3有這兩種的TWI。我們就可以說是Wellens’ syndrome。&lt;/p&gt;
+&lt;p&gt;那麼Wellens’ syndrome的意義是什麼?&lt;/p&gt;
+&lt;p&gt;臨床上的意義是在未來幾天到幾個禮拜內有很高的風險會出現extensive ant.wall MI。&lt;/p&gt;
+&lt;p&gt;那麼為什麼會有這兩種TWI出現呢?&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://hqmeded-ecg.blogspot.com/p/teaching-images.html"&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*imoeW1K2zblX9E2-ff6Wrw@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/a&gt;
+&lt;em&gt;&lt;strong&gt;Fig.1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;首先，我們來看看&lt;strong&gt;Fig.1&lt;/strong&gt;。這張圖&lt;strong&gt;上方&lt;/strong&gt;講的是ACO(Acute coronary occlusion)會有哪些ECG變化。&lt;strong&gt;下方&lt;/strong&gt;講的是在infarction之前出現reperfusion，之後會有哪些典型的ECG變化。這個之後講。&lt;/p&gt;
+&lt;p&gt;那麼哪些狀況會導致reperfusion呢?包括spontaneous reperfusion(自己通了)、打了rTPA、或者做了PCI後通了。&lt;/p&gt;
+&lt;p&gt;在這篇文章描述了，STEMI病患在做PCI之前的spontaneous reperfusion比例大約20%左右&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。此外有一個觀念相當重要，那就是冠狀血管阻塞是『動態』的，在IRA(infarct related artery)是有可能因為內生性tPA與plasmin來溶解thrombi導致spontaneous reperfusion的產生。&lt;/p&gt;
+&lt;p&gt;在Smith ECG Blog的這篇文章，則表示在STEMI中有19%會出現spontaneous reperfusion with TIMI flow-3&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;</description></item><item><title>到院前死亡案例，原因為何呢?</title><link>https://agoodbear.github.io/post/medium-228b8ba47e61/</link><pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-228b8ba47e61/</guid><description>
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*658U47yADmFl43Vh8lxIhw@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;&lt;strong&gt;到院ECG (Fig 1)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id="到院前死亡案例原因為何呢"&gt;到院前死亡案例，原因為何呢?&lt;/h3&gt;
+&lt;p&gt;76歲女性。&lt;/p&gt;
+&lt;p&gt;外院到院前死亡，急救復甦後，心跳回來。轉送來我們醫院，剛到急診的第一張心電圖如上***(這時應該就快不行了)***。很快心臟就停了。大約又CPR了約莫10分鐘，心跳回來。再次做了張12導程ECG &lt;strong&gt;(Fig 2)&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*TCibxgW2jlITY8MXP9cA0A@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;&lt;strong&gt;急救回來的第一張ECG (Fig 2)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id="覺得像什麼原因導致的呢"&gt;覺得像什麼原因導致的呢?&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;先看到院前，快要停止心跳前的ECG&lt;/strong&gt;。Long pause、RAD、RBBB、TWI over V1~V6、II、III。&lt;/p&gt;
+&lt;p&gt;再來看Fig 2 →Rate:90 bpm、SR、RAD、RBBB、TWI over V2~V4、II、III、aVF。&lt;/p&gt;
+&lt;h3 id="這邊我們需要想想一些問題並且釐清"&gt;這邊我們需要想想一些問題，並且釐清!&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;當TWI在V1~V4時，需要考慮什麼?&lt;/li&gt;
+&lt;li&gt;這邊的Precordial lead TWI需要考慮Wellen’s syndrome嗎?&lt;/li&gt;
+&lt;li&gt;當診斷只剩下Wellen’s syndrome與PE時，要如何做鑑別診斷?怎麼樣的V2~V3 morphology偏向RV strain?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="當twi在v1v4時可以考慮有下列情況"&gt;當TWI在V1~V4時，可以考慮有下列情況:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Post.MI&lt;/strong&gt; →當有最大ST depression(可能伴隨TWI)在V1~V4出現，先考慮有Post.MI(反射性去看Inf.wall，有無STEMI)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RBBB&lt;/strong&gt;在正常狀況下在V1~V4會有STD與TWI，這個代表了appropriate discordance →意思是什麼?&lt;strong&gt;意思是ST segment與T wave會和異常傳導(因為BBB而產生異常傳導)的QRS不同方向&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;在R’t precordial lead出現TWI，需要把&lt;strong&gt;PE列入鑑別診斷&lt;/strong&gt;。PE最常見的ECG finding為T wave異常，包括變平、TWI(總約佔60%)。另外New onet RBBB/ICRBBB也是注意是否PE。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="rbbbicrbbb出現-因為rbb在septal-wall靠著rvrv-wall不厚所以rv-strain時會導致rv-wall-ischemia進而產生rbbbicrbbb"&gt;RBBB/ICRBBB出現 →因為RBB在septal wall靠著RV，RV wall不厚，所以RV strain時，會導致RV wall ischemia，進而產生RBBB/ICRBBB&lt;/h4&gt;
+&lt;p&gt;&lt;a href="https://pubmed.ncbi.nlm.nih.gov/27742402/"&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*Emykvthp7Q5kwZpdqPh1yA.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/a&gt;
+&lt;em&gt;New Electrocardiographic Changes in Patients Diagnosed with Pulmonary Embolism&lt;/em&gt;&lt;/p&gt;</description></item><item><title>這是Post.Wellen syndrome還是De Winter?</title><link>https://agoodbear.github.io/post/medium-391b08ca389f/</link><pubDate>Fri, 11 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-391b08ca389f/</guid><description>
+&lt;h3 id="這是postwellen-syndrome還是de-winter"&gt;這是Post.Wellen syndrome還是De Winter?&lt;/h3&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*G-3NxJGciSjISLUr0SbOOw.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;From:&lt;a href="https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html"&gt;https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;最新一期的&lt;a href="https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html"&gt;ECG blog&lt;/a&gt;¹，Post了一張ECG。ECG看起來Inf.wall有STE，此外V2&lt;del&gt;V3有STD和large T wave。不過&lt;strong&gt;Ken Grauer&lt;/strong&gt;覺得V2&lt;/del&gt;V3像Post.wall MI之後有reperfusion，所以T wave高。&lt;/p&gt;
+&lt;h4 id="以前學ecg要診斷postwall-mi要有幾個條件"&gt;以前學ECG要診斷Post.wall MI，要有幾個條件:&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;1.R/S&amp;gt;1 in V1 or V2(也就是Tall RV1)
+2.V1&lt;del&gt;V3有STD
+3.V1&lt;/del&gt;V3有Upright T wave&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id="其實第三點v1v3有upright-t-wave不是必要條件為何"&gt;其實第三點，V1~V3有Upright T wave不是必要條件，為何?&lt;/h4&gt;
+&lt;p&gt;因為如果有Upright T wave，代表Post.wall出現了reperfusion rhythm:Terminal T wave inversion，所以在V1~V3就會出現Upright T wave(和Post. wall對稱)。當然有沒有可能Post.wall還正在myocardial infarction。當然有!!!所以這時候，當然就沒有Upright T wave。&lt;/p&gt;
+&lt;p&gt;此外&lt;strong&gt;Ken Grauer&lt;/strong&gt;的這張ECG，V2~V3有沒有可能是&lt;strong&gt;De Winter’s T wave?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;所以其實這張圖是wraparound LAD，而不是RCA出問題引起的Inf.wall MI + Post.wall MI?&lt;/p&gt;
+&lt;p&gt;因此我寫了一封信去問&lt;strong&gt;Ken Grauer&lt;/strong&gt;，他說他覺得V2的STD是flat(平的)，他覺得還是比較像病患是Inf.wall MI + Post. wall MI，且Post.wall正在reperfusion。此外他也認為，如果是De Winter’s T wave，應該要影響更多precordial leads，比較不會只在V2~V3。&lt;/p&gt;
+&lt;h3 id="結論"&gt;結論:&lt;/h3&gt;
+&lt;h4 id="參考了過去smith-ecg-blog曾經有講到一篇de-winters-t-wave和postwall-mi的st-depression要如何區別加上ken-grauer給的回信"&gt;參考了過去&lt;a href="https://hqmeded-ecg.blogspot.com/2021/03/de-winters-t-waves-are-not-stable-ecg.html"&gt;&lt;strong&gt;Smith ECG blog曾經有講到一篇&lt;/strong&gt;&lt;/a&gt;，De Winter’s T wave和Post.Wall MI的ST depression要如何區別²加上Ken Grauer給的回信&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;1.要區別De winter's T waves和Post. Wellens' syndrome的方法➡De winter's T wave的T wave可能是從Hyperacute T wave變過來，所以T wave是broad、fat，但Post.wall MI的reperfusion rhythm產生的Tall T wave是Post.wall的Terminal TWI，所以比較窄
+2.如果是De winter's T wave，影響的Precordial lead較多&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>這是Wellen’s syndrome嗎?</title><link>https://agoodbear.github.io/post/medium-9871a13944d5/</link><pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-9871a13944d5/</guid><description>
+&lt;h3 id="這是wellens-syndrome嗎"&gt;這是Wellen’s syndrome嗎?&lt;/h3&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*r6nVkZZCDYnkOubWtFTt9w@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h4 id="70歲男性主訴全身無力無任何胸部不適"&gt;70歲男性，主訴&lt;strong&gt;全身無力&lt;/strong&gt;。無任何胸部不適。&lt;/h4&gt;</description></item></channel></rss>

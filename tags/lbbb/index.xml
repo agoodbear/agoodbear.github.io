@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LBBB on 急診熊心聲部落格</title><link>https://agoodbear.github.io/tags/lbbb/</link><description>Recent content in LBBB on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/lbbb/index.xml" rel="self" type="application/rss+xml"/><item><title>能夠看到ECG哪裡有問題嗎?</title><link>https://agoodbear.github.io/post/medium-43e54fb93302/</link><pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-43e54fb93302/</guid><description>
+&lt;h3 id="能夠看到ecg哪裡有問題嗎"&gt;能夠看到ECG哪裡有問題嗎?&lt;/h3&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*fndHrAK4gl-z87cuA9ETdg@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;&lt;strong&gt;Fig.1-ER+0 min ECG&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;74歲男性胸痛、痛到快昏倒了。到院時表示，這幾天常常如此但是一下就緩解了，今天特別難受。&lt;/p&gt;
+&lt;p&gt;通常ECG的interpretation不太可信，但是ECG machine對於偵測有pacemaker rhythm非常敏感&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;strong&gt;Fig.1&lt;/strong&gt;是病患入院10分鐘內做的ECG，可以看到最下排long lead II，有偵測到pacemaker rhythm的微小spike。&lt;/p&gt;
+&lt;h4 id="所以問題回到了裝有ppm的病患是否可以透過ecg來診斷ami"&gt;所以問題回到了，裝有PPM的病患是否可以透過ECG來診斷AMI&lt;/h4&gt;
+&lt;p&gt;那我們來看看一篇今年6月份就已經在AEM以Article in press形式看到文章，直到10月份正式刊出的一篇文章。&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*zNv_cwDaapOJIBXksco37A.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;這一篇文章利用Modified Sgarbossa criteria來協助診斷裝有pacemaker發生ACO(Acute coronary occlusion)的狀況&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*cR7DPsnfOdp6SH17B_ivOA@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;&lt;strong&gt;Fig.2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Fig.2看到了這個研究分成三組(&lt;strong&gt;數值請見Table 1&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;❶&lt;strong&gt;第一組&lt;/strong&gt;是OMI(&lt;strong&gt;59位病患&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;❷&lt;strong&gt;第二組&lt;/strong&gt;是NOMI &lt;strong&gt;control group&lt;/strong&gt;(&lt;strong&gt;90位病患&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;❸&lt;strong&gt;第三組&lt;/strong&gt;是No OMI &lt;strong&gt;control group&lt;/strong&gt;(&lt;strong&gt;102位病患&lt;/strong&gt;)-收集ED沒有OMI的pacemaker患者(&lt;strong&gt;於ED有ACS主述&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*rhTQQFkjeJ8RPgyxLGavPw@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;&lt;strong&gt;Table 1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id="omi組別符合timi-flow-01-or-timi-flow-23--high-peak-troponin"&gt;OMI組別:符合TIMI flow 0&lt;del&gt;1 or TIMI flow 2&lt;/del&gt;3 + High peak Troponin&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;31位病患是藉由Concordant STE or STD來診斷出來&lt;/li&gt;
+&lt;li&gt;2位病患是藉由Original Sgarbossa criteria的&amp;gt; 5 mm診斷出來&lt;/li&gt;
+&lt;li&gt;17位病患是藉由MSC C rule診斷出來&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以透過&lt;strong&gt;MSC A+B+modified C&lt;/strong&gt;➡可以抓出:31 + 17=48➡48/59=&lt;strong&gt;81%&lt;/strong&gt;(&lt;strong&gt;還有11位無法抓出&lt;/strong&gt;) →此為&lt;strong&gt;MSC對於OMI的sensitivity&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>診斷AMI in LBBB或paced rhythm補完了嗎?</title><link>https://agoodbear.github.io/post/medium-efdc3b9f05d5/</link><pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-efdc3b9f05d5/</guid><description>
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*RiODz6_7wUuQe3rCyrTHEQ@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id="診斷ami-in-lbbb或paced-rhythm補完了嗎"&gt;診斷AMI in LBBB或paced rhythm補完了嗎?&lt;/h3&gt;
+&lt;h3 id="先來問個問題"&gt;先來問個問題?&lt;/h3&gt;
+&lt;h4 id="lbbb能當作ami嗎"&gt;LBBB能當作AMI嗎?&lt;/h4&gt;
+&lt;p&gt;古早以前我們被教導，看到新的LBBB要當作STEMI一樣看待，趕快Call CV man衝導管!!!&lt;/p&gt;
+&lt;p&gt;但陸續的研究顯示並非如此。這些LBBB是真正的AMI的比率不高(導致高False positive rate)，不是真正的AMI反而被抓去做PCI或給rTPA，可能對病患弊大於利。&lt;/p&gt;
+&lt;p&gt;因此在2013年的JACC STEMI guideline¹認為，大多數的LBBB可能是舊的(無舊ECG比較是否為新的LBBB)，且就醫時新的LBBB或可能新的LBBB很少發生。因此不應當作有AMI。&lt;/p&gt;
+&lt;h4 id="重點-lbbbstemi"&gt;&lt;strong&gt;重點 →LBBB⧧STEMI&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id="為何lbbb或paced-rhythm都不好診斷ami"&gt;為何LBBB或paced rhythm都不好診斷AMI?&lt;/h4&gt;
+&lt;p&gt;在正常的狀況下LBBB/RBBB在&lt;strong&gt;3個重要的lead(I、V1、V6)&lt;strong&gt;都要符合ST segment與T wave應該要和QRS最後反折的方向相反(secondary (2°) ST-T wave change) ，這就叫做&lt;/strong&gt;ST Opposition Rule&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;因為LBBB/RBBB都改變了ventricular depolarization的順序，因此產生QRS morphology的改變➡這個conduction defect也改變了ventricular repolarization➡產生secondary (2°) ST-T wave change(為何稱作是secondary，主要是因為conduction defect產生的變化)²&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;就是這個變化，讓RBBB/LBBB的病患如果有AMI，就變得很難診斷!!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*tvhtDWiXrKOUyidkc5k-eA.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;From ECG 2014 Pocket brain — Fig 1&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不好懂!!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;總之記住，因為左/右束支阻斷，導致心室去極化順序改變了，所以RBBB/LBBB會特有&lt;strong&gt;正常appropriate discordance&lt;/strong&gt;變化(Fig 1)。&lt;/p&gt;
+&lt;h4 id="qrs若是-會有std與twi"&gt;&lt;strong&gt;QRS若是(+) →會有STD與TWI&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id="qrs若是--會有ste與upright-t-wave"&gt;&lt;strong&gt;QRS若是(-) →會有STE與Upright T wave&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;所以&lt;strong&gt;看到Concordant STE or STD就要小心&lt;/strong&gt;，是否有AMI把正常RBBB/LBBB應有的變化**(appropriate discordance)**變不見了!!!!&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>POCUS on 急診熊心聲部落格</title><link>https://agoodbear.github.io/tags/pocus/</link><description>Recent content in POCUS on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Mon, 08 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/pocus/index.xml" rel="self" type="application/rss+xml"/><item><title>73歲男性，胸痛持續。需要導管介入嗎?</title><link>https://agoodbear.github.io/post/medium-2ea0b1ecd7ad/</link><pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-2ea0b1ecd7ad/</guid><description>
+&lt;h3 id="73歲男性胸痛持續需要導管介入嗎"&gt;73歲男性，胸痛持續。需要導管介入嗎?&lt;/h3&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*WPqDirWKj_yqdGzdBAZqnw.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;覺得這個Case非常有趣，也可以從中學到不少。特地把這個Case從眾多想寫的案例中，往前拉。&lt;/p&gt;
+&lt;p&gt;73歲男性，半夜來就診。因為胸痛厲害，所以當班急診醫師也做了Chest CTA去排除主動脈剝離。&lt;/p&gt;
+&lt;p&gt;早上我接班後，我自己的習慣會去把交班主述胸痛的病患，再去看一眼，前一班所做的心電圖。病患一開始的TnI為0.26 mg/mL，已經是&amp;gt;99th percentile of URL。預計之後會在抽第二次心臟酵素。&lt;/p&gt;
+&lt;p&gt;Initial ECG如上圖，我看完後，就直接去看病患，看看目前病患的胸痛狀況目前如何?&lt;/p&gt;
+&lt;p&gt;各位有看到什麼嗎?&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*T52E6q5yGpWZPMwfY9lqAw.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;&lt;strong&gt;Fig.1 Initial ECG&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;垂直藍線是畫在J point。J point是用來評估是否有STE or STD的點。J point是QRS的結尾到ST segment的開頭。若是在Baseline以上就是STE，baseline以下就是STD。&lt;/p&gt;
+&lt;p&gt;我們要運用STEMI criteria就是要看根據J point的位置來判斷是否有STE，才能夠診斷STEMI。 在最近的2018年第四版的Universal Definition of Myocardial Infarction裡面就有清楚講明什麼是AMI。什麼可以叫做STEMI。&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*8NJSL_CXDZJ7zDIbUOXGSw.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;&lt;strong&gt;Fig.2 AMI Definition&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;AMI就是出現&lt;strong&gt;Myocardial injury的證據(Biomarker上升)+ Myocardial ischemia證據(症狀 or ECG or 影像出問題)。(Fig.2)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;而要診斷STEMI，則必須符合STEMI criteria。(&lt;strong&gt;Fig.3&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*Sp7uErs0kp0vKimzbzqcRQ.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;&lt;strong&gt;Fig.3 STEMI criteria&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;必須要再三強調，V2/V3的STE與其他lead定義不一樣。看V2/V3要根據性別/年齡合併一起看。&lt;/p&gt;
+&lt;p&gt;舉例來說，男性&amp;lt;40 y/o在V2/V3要≧2.5 mm才是有意義的高。其他以此類推。&lt;/p&gt;
+&lt;h4 id="這延伸了幾個有趣的狀況"&gt;這延伸了幾個有趣的狀況:&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;這也代表著，隨便抓一個人來作12 lead ECG，很有可能會在V2/V3都看到有STE，只是有沒有意義的高，就需要根據上述的criteria了。&lt;/li&gt;
+&lt;li&gt;如果沒有看到STE在V2/V3(比如isoelectric baseline or minimal STD)，那麼就需要考慮是不是有什麼力量往下拉了。&lt;strong&gt;對~~~Post.OMI&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;承上面，怎樣程度的minimal STD都要考慮Post.OMI呢?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在這篇Smith ECG Blog有提到&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;，&lt;strong&gt;在V2 or V3有任何程度的STD，都必須考慮posterior OMI，直到證明不是為止&lt;/strong&gt;。特別是&lt;strong&gt;downsloping STD&lt;/strong&gt;(符合前述，即使STD&amp;lt;0.5~1 mm都要特別小心)&lt;/p&gt;</description></item><item><title>64歲男性，上腹痛、胸痛、上背痛</title><link>https://agoodbear.github.io/post/medium-5c777eb7b382/</link><pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-5c777eb7b382/</guid><description>
+&lt;h3 id="64歲男性上腹痛胸痛上背痛"&gt;64歲男性，上腹痛、胸痛、上背痛&lt;/h3&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*LEbcLpGiMDrL-Xu6ZSo6nw@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;&lt;strong&gt;Fig.1:到院時間:10:02&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;這個Case，非常有印象主要是這病患的臨床表現。&lt;/p&gt;
+&lt;p&gt;64歲男性過去有糖尿病、高血脂，且因為CAD放過三根支架。但這幾年沒在追蹤了。&lt;/p&gt;
+&lt;p&gt;病患早上就開始不舒服了。一開始先痛上腹部之後痛到胸部與上背部和下巴。&lt;/p&gt;
+&lt;p&gt;痛到冒冷汗……噁心，想吐。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我們先來判讀到院時候的ECG(Fig.1)，看看我們能看出什麼端倪?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Rate →67 bpm&lt;/p&gt;
+&lt;p&gt;Rhythm →SR&lt;/p&gt;
+&lt;p&gt;Axis →Normal axis&lt;/p&gt;
+&lt;p&gt;Interval →No QT prolong(QTc:435 ms)&lt;/p&gt;
+&lt;p&gt;Ischemia:PRWP&lt;/p&gt;
+&lt;p&gt;Baseline不是很穩，不過可以看到也有low voltage(Sensitive criteria with I+II+III &amp;lt; 15 mm)。&lt;/p&gt;
+&lt;h4 id="先來幾個問題問問自己"&gt;先來幾個問題問問自己:&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Q1:這個Case可以使用Smith 4 variable formula嗎?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q2:這個Case可以使用T/QRS &amp;gt;0.36這個rule嗎?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q3:如果我們initial ECG屬於non-diagnostic ECG，接下來該怎麼辦?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;先來回答第一個問題，出現PRWP，有沒有可能LAD的問題呢?這個Case在V2、V3都有出現STE 1格的狀況(&lt;strong&gt;Fig.2&lt;/strong&gt;)，是否有可能subtle STEMI due to LAD occlusion呢?&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*sYlmqMIy0HgpVWurLO1mew.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;&lt;strong&gt;Fig.2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;首先在2018年第四版心肌梗塞通用定義&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;就已經清楚定義，要診斷STEMI，在V2/V3的定義和其他lead是不一樣的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;男性，&amp;lt;40 y/o要2.5 mm高&lt;/li&gt;
+&lt;li&gt;男性，&amp;gt;40 y/o要2 mm高&lt;/li&gt;
+&lt;li&gt;女性，不管年齡皆要&amp;gt;1.5 mm高&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以這個Case在V2/V3雖然皆有STE 1格，但都不符合STEMI criteria。&lt;/p&gt;
+&lt;p&gt;接下來是否可以使用&lt;strong&gt;Smith 4 variable formula&lt;/strong&gt;來看看是否有subtle LAD occlusion呢?&lt;/p&gt;</description></item><item><title>低血壓、低血氧到院，心電圖有問題嗎?</title><link>https://agoodbear.github.io/post/medium-db499ddee6f9/</link><pubDate>Wed, 07 Sep 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-db499ddee6f9/</guid><description>
+&lt;h3 id="低血壓低血氧到院心電圖有問題嗎"&gt;低血壓、低血氧到院，心電圖有問題嗎?&lt;/h3&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*NXKy7gSDorREfnBDMYGt6w@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;&lt;strong&gt;Fig.1到院時ECG&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;72歲女性，由救護車偶依～～～～偶依送到本院。&lt;/p&gt;
+&lt;p&gt;這天急診依舊是病患住不上去的待床地獄。早上07:30和夜班醫師交班後，手上就有一串病患在我手上。&lt;/p&gt;
+&lt;p&gt;上班約莫一個小時左右，外面檢傷推進來一位病患。&lt;/p&gt;
+&lt;p&gt;躺在我的看診桌面前。&lt;/p&gt;
+&lt;p&gt;2診熊醫師的病人，低血氧、低血壓。&lt;/p&gt;
+&lt;p&gt;聽到是我的病患，趕緊趨前看病患。&lt;/p&gt;
+&lt;p&gt;病患戴著EMT給的NRM 15 L/min，SaO2約96%。EMT表示在救護車上SaO2大約40–50%。&lt;/p&gt;
+&lt;p&gt;血壓SBP接近90、SaO2不好，呼吸快，意識不清。&lt;strong&gt;病患一副就是左腳已經踏入閻王店的樣子。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;立馬和家屬解釋病危，告知狀況很不好，隨時都會有生命危險的變化。&lt;/p&gt;
+&lt;h4 id="心電圖快速做好讓我們來判讀一下吧"&gt;心電圖快速做好。讓我們來判讀一下吧~~&lt;/h4&gt;
+&lt;p&gt;Rate:99 bpm&lt;/p&gt;
+&lt;p&gt;Rhythm:SR&lt;/p&gt;
+&lt;p&gt;Axis:Normal axis&lt;/p&gt;
+&lt;p&gt;Interval:No QT prolong&lt;/p&gt;
+&lt;p&gt;Ischemia:Q in III/aVF、TWI in V1–4、III&lt;/p&gt;
+&lt;h4 id="先問自己幾個問題"&gt;先問自己幾個問題:&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;哪些leads出現Q wave是正常的？何謂Pathologic Q wave?&lt;/li&gt;
+&lt;li&gt;Lead I的S wave是正常的嗎?&lt;/li&gt;
+&lt;li&gt;要怎麼看Fig.1的V1-V4是TWI?&lt;/li&gt;
+&lt;li&gt;V1-V4的TWI有可能是什麼狀況?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="哪些leads出現q-wave是正常的何謂pathologic-q-wave"&gt;哪些leads出現Q wave是正常的？何謂Pathologic Q wave?&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;先看看一張ECG大師Ken Grauer的圖片(Fig.2)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/0*OrHTEsrACw43bk_D"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;&lt;strong&gt;Fig.2 Reverse Z shape&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;這張圖代表著reverse Z shape的記憶法。也就是如果單獨在這五個leads(III/aVF/aVL/aVR/V1)發現&lt;strong&gt;Q wave and/or TWI&lt;/strong&gt;，很有可能是正常的。(&lt;strong&gt;前提:年輕人，沒有心臟問題&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;有些lead即使有large Q wave，也不一定是infarction →這些lead包括III/aVL/aVR/V1&lt;/li&gt;
+&lt;li&gt;septal q wave有可能出現在一個或多個lateral leads(I/aVL/V4/V5/V6) →這些q wave不應該和pathologic Q wave搞混&lt;/li&gt;
+&lt;li&gt;當Q wave較大且寬 →很有可能這個infarction已經有段時間了，特別是鄰近lead也有相同情況，更可表示時間已久&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;綜合以上reverse Z shape位置的leads + 可能septal q wave位置的leads →都有可能是正常的Q wave。&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>這是STEMI，你相信嗎?</title><link>https://agoodbear.github.io/post/medium-3485bf8aafc3/</link><pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-3485bf8aafc3/</guid><description>
+&lt;h3 id="這是stemi你相信嗎"&gt;這是STEMI，你相信嗎?&lt;/h3&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*BZYaEyrDghAJY-2Uxgz7cA@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;來看看昨天夜班上班的一位個案。50歲男性，本來從事捕鰻苗的工作。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://travel.ettoday.net/article/351035.htm"&gt;用生命換一晚賺20萬？花蓮「大港口」暗夜燈火捕鰻苗 | ETtoday旅遊雲 | ETtoday新聞雲&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;看了一些報導，原來捕鰻苗危險性那麼大。本來以爲就是比較冷而已(泡在海水裡)。&lt;/p&gt;
+&lt;p&gt;昨天非常冷，冷到透骨的那種冷。昨晚凌晨大半夜只看兩個病人，大家都寧願躲在被窩睡覺，你就可以想像昨天有多冷了。離題了~~~&lt;/p&gt;
+&lt;p&gt;這位病患在捕鰻苗的時候，突然覺得呼吸喘、胸口悶、雙手發麻。&lt;/p&gt;
+&lt;p&gt;看到檢傷主述，我真以為是過度換氣發作。那麼冷、下半身泡在海水裡，工作又那麼累，是還蠻符合過度換氣的誘發因子啦XD(&lt;strong&gt;我錯了&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;病患從檢傷在輪椅上推到診間，因為主述胸口悶、喘。我請護理師先幫我做一張ECG。在做的時候，因為病患呼吸較淺快，雙手發麻。我請病患呼吸放慢、因為可能真的有點過度換氣了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Tips:通常過度換氣是果，什麼是因需要詳查。腸胃炎、情緒起伏過大、疼痛等等都可能是誘發的因子。我還遇過主動脈剝離引起的過度換氣。當超音波掃到flap在主動脈裡面飄時，我和病患一樣在冒冷汗。(好險沒把病患當Psy發作XD)&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="case-continue"&gt;Case continue&lt;/h3&gt;
+&lt;p&gt;護理師做完ECG時，我的第一個反應是，&lt;strong&gt;這是STEMI&lt;/strong&gt;。快，動作快~~~~&lt;/p&gt;
+&lt;p&gt;我在ECG上面立刻寫下了，&lt;strong&gt;Post.MI&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*iCF76zQarG9ig0wCsx8sEw.jpeg"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;請專師趕快傳給，值班的CV man。&lt;/p&gt;
+&lt;p&gt;首先，我們先來判讀一下ECG。&lt;/p&gt;
+&lt;p&gt;Rate:65&lt;/p&gt;
+&lt;p&gt;Rhythm:Sinus rhythm(Lead I、II、aVF的P wave為Upright，aVR為Inverted)&lt;/p&gt;
+&lt;p&gt;Axis:Normal axis&lt;/p&gt;
+&lt;p&gt;PR稍長、Narrow QRS、No QT prolong&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在V1&lt;del&gt;V5有STD，Maximal STD在V3&lt;/del&gt;V4、沒有明顯的STE&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;WTF~~~沒有STE，你竟然說這是STEMI!!!!&lt;/p&gt;
+&lt;p&gt;對，這是後壁的STEMI，所以12 leads ECG完全看不到有STE。但確確實實是STEMI。&lt;/p&gt;
+&lt;p&gt;Post.wall MI佔所有STEMI的10~20%左右。而且通常會合併inf.wall MI、Lateral wall MI。&lt;/p&gt;
+&lt;p&gt;在所有involved Post.wall MI中，有90%會合併inf.wall、lateral wall&lt;/p&gt;
+&lt;p&gt;只有4~10%為isolated Post.wall MI。&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/0*2yN5ESIMXzkJ0V-I"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;舉個例子，來解說上面這幾句話，會讓大家更了解。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://litfl.com/inferior-stemi-ecg-library/"&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/0*nolKXEHS4FR8X6Cm.jpg"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/a&gt;
+&lt;em&gt;&lt;strong&gt;Fig.1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;當臨床上病患有胸痛、盜汗，做了如Fig.1的ECG。這樣的ECG，我們絕對不會miss掉。Inf.leads高到像山一樣高的STE，肯定會讓我們有衝動去會診CV man。但是如果這個病患limb leads(Fig.1左側)完全沒有STE，只有precordial leads有如Fig.1的變化。你能第一時間，也說這病患有MI嗎?&lt;/p&gt;</description></item></channel></rss>
