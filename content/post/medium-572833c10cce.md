@@ -32,7 +32,7 @@ Rate:77 bpm、sinus rhythm、Normal axis、1st degree AVB
 
 ![](https://cdn-images-1.medium.com/max/1024/1*47oUbjm5P6Du7jfSV7Pt-g.png)
 
-Dr.Smith在其Blog中強調，在V1~V4有任何的Maximal STD，就必須考慮到Post.OMI(**96% specificity for Post.OMI**)，直到證明不是。特別是downsloping STD in V2~V3，Smith表示根據他的經驗，這就足以診斷Post.OMI\[^1\]。
+Dr.Smith在其Blog中強調，在V1~V4有任何的Maximal STD，就必須考慮到Post.OMI(**96% specificity for Post.OMI**)，直到證明不是。特別是downsloping STD in V2~V3，Smith表示根據他的經驗，這就足以診斷Post.OMI[^1]。
 
 #### **延伸話題:STD有三種型態(Fig.2)**
 
@@ -97,9 +97,9 @@ RV血管的支配(**Fig.3**)，由RCA的RV branch支配(也稱作RV marginal bra
 - ***STE III >>> II(遠大於是Amal Mattu強調的)(⭐️)***
 - ***STE in V1 > V2(也可以說是“Flattened” V2)(因為RVMI的V1會升高，高過V2)(⭐️)***
 - ***STE in aVR under Inf.wall MI →應該也是提示可能是RVMI，所以作Right side ECG是個好主意，特別是每個Inf.wall MI***
-- ***STD and TWI in aVL →> 1 mm STD in aVL有87%的sensitivity與90% PPV for acute inferior OMI with RVMI\[^2\]***
+- ***STD and TWI in aVL →> 1 mm STD in aVL有87%的sensitivity與90% PPV for acute inferior OMI with RVMI[^2]***
 - ***STE in lead III>II，另外STE in aVF > STD in V2的程度***
-- ***STE in V2 > 50% of STD in aVF壓低的程度\[^3\]***
+- ***STE in V2 > 50% of STD in aVF壓低的程度[^3]***
 - ***出現RBBB、2nd or 3rd degree AV block***
 
 以上是透過標準12 leads ECG，看到inf.wall STEMI，第一眼，就可以來推估是否有RVMI。但是如果inf.wall STEMI不明顯，還是懷疑有RVMI，就作R’t side ECG，通常可以給予比較有價值的資訊。接著來**回答Q2**~~
@@ -110,9 +110,9 @@ RV血管的支配(**Fig.3**)，由RCA的RV branch支配(也稱作RV marginal bra
 
 如果V3R~V6R有**任何一個lead > 0.5 mm**，就算有RVMI。
 
-如果沒有時間做Full right side ECG →那麼就只做V4R(V4R被認為是診斷RVMI最好的lead)\[^4\]
+如果沒有時間做Full right side ECG →那麼就只做V4R(V4R被認為是診斷RVMI最好的lead)[^4]
 
-如果STE ≧ 1 mm in V4R有88% sensitivity、78% specificity for RVMI\[^5\]
+如果STE ≧ 1 mm in V4R有88% sensitivity、78% specificity for RVMI[^5]
 
 此外Right side ECG判讀和STEMI criteria的V2～V3一樣，需要注意性別/年齡。統一整理如下表格:(**Fig.5 →STEMI定義、Post.leads定義、R’t side ECG定義**)
 
@@ -127,9 +127,9 @@ RV血管的支配(**Fig.3**)，由RCA的RV branch支配(也稱作RV marginal bra
 
 此外R’t side ECG還有一個重要的點。那就是趁早做。
 
-為何?因為RVMI引起的R’t side ECG with STE是短暫出現的。在這篇研究中指出，50%的acute RVMI病患，他的right side leads STE會在ACS S/S出現後的12小時內緩解\[^6\]。
+為何?因為RVMI引起的R’t side ECG with STE是短暫出現的。在這篇研究中指出，50%的acute RVMI病患，他的right side leads STE會在ACS S/S出現後的12小時內緩解[^6]。
 
-**那麼影響V3R、V4R STE的因素有哪些呢?\[^8\]**
+**那麼影響V3R、V4R STE的因素有哪些呢?[^8]**
 
 1. 如果在inf.leads的STE不明顯，預期在Right side ECG也不會太明顯
 2. V3R與V4R是向右、向內的向量，如果case有合併lateral wall extension的MI，也會互相抵銷，而讓V3R/V4R的STE不明顯
@@ -139,11 +139,11 @@ RV血管的支配(**Fig.3**)，由RCA的RV branch支配(也稱作RV marginal bra
 
 Inf.wall MI大約有25%會合併RVMI。藉由**Fig.3**可以知道RV的血液支配是來至proximal RCA的RV branch分支(LCx不會支配RV)。所以當看到有RVMI時，就會猜測Culprit lesion在proximal RCA。
 
-診斷出RVMI會和臨床處置相關。因為臨床病程、預後、血行治療在acute RVMI與LVMI明顯不同(如低血壓、相對hypovolemia、對於NTG為hypersensitivity)\[^7\]
+診斷出RVMI會和臨床處置相關。因為臨床病程、預後、血行治療在acute RVMI與LVMI明顯不同(如低血壓、相對hypovolemia、對於NTG為hypersensitivity)[^7]
 
 這些合併RVMI的病患對於preload非常sensitive(因為RV contractility不好)，所以可能因為使用nitrate或其他降低preload藥物，進而導致血壓過低。
 
-此外辨識出RVMI很重要，因為**伴隨著較高短期morbidity和mortality\[^10\]**
+此外辨識出RVMI很重要，因為**伴隨著較高短期morbidity和mortality[^10]**
 
 - Inf.wall STEMI有/沒有RVMI involved➡有RVMI其嚴重併發症(45% vs. 19%)和死亡比率(22% vs. 6%)都較高
 
@@ -163,7 +163,7 @@ Inf.wall MI大約有25%會合併RVMI。藉由**Fig.3**可以知道RV的血液支
 
 但是….也就是這個但是……
 
-**只有少數的RVMI會有如此的血行不穩**，甚至更少的proximal RCA才有可能會如此，因為大部分都有LAD來的側枝循環保護著RV。所以不是看到RVMI就一定會RV dilate with failure，用了NTG會加重惡化此狀況的情形出現。除非側枝循環不給力\[^9\]。
+**只有少數的RVMI會有如此的血行不穩**，甚至更少的proximal RCA才有可能會如此，因為大部分都有LAD來的側枝循環保護著RV。所以不是看到RVMI就一定會RV dilate with failure，用了NTG會加重惡化此狀況的情形出現。除非側枝循環不給力[^9]。
 
 所以在有血行不穩定的狀況下，診斷RVMI，就會比較重要了。
 

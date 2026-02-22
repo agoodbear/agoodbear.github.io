@@ -75,13 +75,13 @@ Ischemia:Q in III/aVF、TWI in V1–4、III
 **那麼pathologic Q wave和septal q wave在定義上差在哪裡?(Fig.3)**
 
 - 書上寫pathologic Q wave一般較寬(>30 ms in duration)，Q wave振幅高度要> R wave of QRS的25%。
-- 一般pathologic Q wave的寬度我們會抓1 small box(0.04 s)。此外在LITFL的文章中，也提到如果> 2 mm深和在V1-V3見到，都要考慮這個Q wave是異常的(pathologic Q wave)\[^1\]
+- 一般pathologic Q wave的寬度我們會抓1 small box(0.04 s)。此外在LITFL的文章中，也提到如果> 2 mm深和在V1-V3見到，都要考慮這個Q wave是異常的(pathologic Q wave)[^1]
 
 這個Case很明顯的III/aVF的Q wave是異常的。
 
 #### 接下來我們來看Lead I的S wave是正常的嗎?
 
-一般正常的12 lead ECG在Lead I只會看到小的S wave，或是見不到S wave。但是如果出現big S wave(**注意 →這個就是不正常的ECG finding**)，就要考慮到有RV strain的可能\[^2\]。
+一般正常的12 lead ECG在Lead I只會看到小的S wave，或是見不到S wave。但是如果出現big S wave(**注意 →這個就是不正常的ECG finding**)，就要考慮到有RV strain的可能[^2]。
 
 在Axis deviation的DDx裡面(**Fig.4**)，我們會很習慣透過是否有RAD(Lead I的S wave > R wave)，來讓我們思考是否有肺栓塞的可能性
 
@@ -136,7 +136,7 @@ Fig.5的precordial leads的TWI不是非常明顯，例如V2–3。主因為basel
 
 首先我們要把問題再次轉換一下。這邊的意思是要問，在R’t precordial leads出現TWI，會有哪些狀況呢?
 
-Amal mattu的ECG教學中，在近期的4/11\[^4\]和6/27\[^3\]教學有提到如果在V1–3出現TWI，需要DDx哪一些情況。
+Amal mattu的ECG教學中，在近期的4/11[^4]和6/27[^3]教學有提到如果在V1–3出現TWI，需要DDx哪一些情況。
 
 **我直接整理DDx如下:(Precordial leads出現TWI的DDx)**
 
@@ -183,17 +183,17 @@ Pattern A)，T wave會先上後下。Reperfusion持續，接著會從terminal TW
 
 而PE引起的RV strain主要是因為肺部血管阻塞，導致RV hypertrophy or dilation引起的RV dysfunction，其本質的意思在於RV的心臟肌肉變形了，所以產生了dysfunction。
 
-至於為什麼會在precordial leads出現TWI?這被認為是因為在RV dilate和RV strain下引起low cardiac output導致的缺血現象，但真正的的病生理尚未完全理解。各位可以參考看看這篇文章\[^5\]。
+至於為什麼會在precordial leads出現TWI?這被認為是因為在RV dilate和RV strain下引起low cardiac output導致的缺血現象，但真正的的病生理尚未完全理解。各位可以參考看看這篇文章[^5]。
 
 #### 有哪些ECG features可能代表有acute pulmonary embolism?
 
-接下來這邊就是整篇文章的重點所在了\[^10\](我該不會打了整篇的廢文了吧XD)
+接下來這邊就是整篇文章的重點所在了[^10](我該不會打了整篇的廢文了吧XD)
 
 **➡️Sinus tachycardia** →這不是診斷PE的必要條件，但是相對較快的心跳是常見的findings( **通常抓>90 bpm**)，預期在明顯的PE，通常有此findings
 
 **➡️S1Q3T3** →並不sensitive or specific for PE，很少單獨出現S1Q3T3就診斷新的明顯PE。也就是說，這個ECG sign，在合併出現其他的ECG evidence for PE，就會很有幫助(更能輔助診斷為PE)
 
-- S1Q3T3的sensitivity到底有多低呢?(**表格資訊**\[^6\])
+- S1Q3T3的sensitivity到底有多低呢?(**表格資訊**[^6])
 
 ![](https://cdn-images-1.medium.com/max/1024/1*oweWf_uSp3Ti5KeNpzZhuw@2x.png)
 ***Fig.8 PE的常見ECG finding***
@@ -204,7 +204,7 @@ Pattern A)，T wave會先上後下。Reperfusion持續，接著會從terminal TW
 
 > **ECG Tips:PE的ECG finding中，T wave出現變化是最常見的，比S1Q3T3還更常出現**
 
-此外在LITFL的這篇文章中\[^7\]，也有提到一些關於S1Q3T3的說法，我寫下來讓大家參考一起看。
+此外在LITFL的這篇文章中[^7]，也有提到一些關於S1Q3T3的說法，我寫下來讓大家參考一起看。
 
 **在文章中提到→**S1Q3T3缺少支持的文獻，來顯示其sensitive與specific for PE，但是其個別的組成單位，可以提供一些資訊給我們來做PE的診斷
 
@@ -234,7 +234,7 @@ Pattern A)，T wave會先上後下。Reperfusion持續，接著會從terminal TW
 
 **➡️PRWP**
 
-- 在V5、V6出現deep S wave，暗示著有明顯的力量往右邊拉➡在這篇文章有寫到deep S wave in I and/or V6暗示可能存在影響肺循環或LV的疾病(有力量往右側拉)\[^9\]
+- 在V5、V6出現deep S wave，暗示著有明顯的力量往右邊拉➡在這篇文章有寫到deep S wave in I and/or V6暗示可能存在影響肺循環或LV的疾病(有力量往右側拉)[^9]
 
 **➡️aVR STE**
 
@@ -292,7 +292,7 @@ Chest CTA看到雙側肺血管塞好塞滿…..Orz
 
 ![](https://cdn-images-1.medium.com/max/1024/1*oUwlfuiKSUkx_eIXGL1WGw.png)
 
-#### 治療危急肺栓塞病患有哪些重點?(以下重點來自於這篇文章\[^11\])
+#### 治療危急肺栓塞病患有哪些重點?(以下重點來自於這篇文章[^11])
 
 要救PE的病患，就要先了解PE的死亡螺旋是什麼?講重點前，需要先看一張圖(Fig.11)
 

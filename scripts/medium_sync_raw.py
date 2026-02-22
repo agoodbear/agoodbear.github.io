@@ -496,6 +496,8 @@ def render_body(paragraphs: list[dict[str, Any]]) -> tuple[str, str | None]:
             blocks.append("\n".join(ref_lines))
 
     body = "\n\n".join(blocks).strip()
+    # Keep Hugo footnote refs unescaped (e.g. "[^1]" not "\\[^1\\]").
+    body = re.sub(r"\\\[\^(\d+)\\\]", r"[^\1]", body)
     return body, first_image
 
 

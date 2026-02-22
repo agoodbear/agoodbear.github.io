@@ -75,7 +75,7 @@ Precordial leads的**R wave有逐漸增加(至少不是逐漸減少)**
 
 #### 這邊RA/LA reversal為何容易誤導我們?
 
-因為**Inf.lead STEMI有接近99%會見到aVL的reciprocal STD change**(太早期MI時，還是有可能沒看到，可能只會看到TWI)\[^1\]，所以我們見到aVL有STD，我們可以更有信心說這是AMI。
+因為**Inf.lead STEMI有接近99%會見到aVL的reciprocal STD change**(太早期MI時，還是有可能沒看到，可能只會看到TWI)[^1]，所以我們見到aVL有STD，我們可以更有信心說這是AMI。
 
 > **Tips:**那麼ant.wall STEMI大約有幾成看不到reciprocal STD change?大約30~50%
 
@@ -85,15 +85,15 @@ Precordial leads的**R wave有逐漸增加(至少不是逐漸減少)**
 
 但是如果看到aVL有TWI，還是要非常小心，因為aVL出現TWI，有可能是inf.wall STEMI，非常early ischemia sign。不可不慎。
 
-一樣在這篇文章\[^1\]裡面提到，當出現isolated TWI in aVL有100% sensitive、86% specific for inf.wall STEMI →翻成白話文就是，**inf.wall STEMI幾乎100%會出現TWI in aVL，所以出現了要小心，但不一定是inf.wall STEMI，也有可能是LAD-m有問題\[^2\]**。
+一樣在這篇文章[^1]裡面提到，當出現isolated TWI in aVL有100% sensitive、86% specific for inf.wall STEMI →翻成白話文就是，**inf.wall STEMI幾乎100%會出現TWI in aVL，所以出現了要小心，但不一定是inf.wall STEMI，也有可能是LAD-m有問題[^2]**。
 
 #### TWI in aVL是否是正常變異或異常?
 
-所以當我們看到TWI in aVL，這時我們就要擔心接下來，會不會開始inf.leads會出現STE(**按照AHA NSTE-ACS guideline在前一小時每15~30分鐘就要做一張EGG**\[^3\])。
+所以當我們看到TWI in aVL，這時我們就要擔心接下來，會不會開始inf.leads會出現STE(**按照AHA NSTE-ACS guideline在前一小時每15~30分鐘就要做一張EGG**[^3])。
 
 此時我們要先想一個重要問題，這邊的TWI in aVL是否是正常的(也就是normal variant)還是真正異常的?
 
-可以運用QRS-T angle來進一步評估。QRS-T Angle可以協助區分primary repolarization and secondary repolarization abnormality(注意是再極化的異常)。在這一篇的Smith ECG blog，有很清楚地闡釋，與Ken Grauer在裡面針對QRS-T angle說明了一個簡單approach的方法\[^4\]。
+可以運用QRS-T angle來進一步評估。QRS-T Angle可以協助區分primary repolarization and secondary repolarization abnormality(注意是再極化的異常)。在這一篇的Smith ECG blog，有很清楚地闡釋，與Ken Grauer在裡面針對QRS-T angle說明了一個簡單approach的方法[^4]。
 
 ***把重點寫在這裡:***
 

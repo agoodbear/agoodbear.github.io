@@ -45,7 +45,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFpost-wellen-syndr
 
 ![](https://cdn-images-1.medium.com/max/1024/1*G-3NxJGciSjISLUr0SbOOw.png)
 
-![左圖:Ken Grauer的例子，右圖:Smith的例子，比較V2~V3(哪個是fat/board，哪個是narrow?)](https://cdn-images-1.medium.com/max/1024/1*KskSuTVyWBZvAE0KseYnCQ.png)
+![](https://cdn-images-1.medium.com/max/1024/1*KskSuTVyWBZvAE0KseYnCQ.png)
 *左圖:Ken Grauer的例子，右圖:Smith的例子，**比較V2~V3(哪個是fat/board，哪個是narrow?)***
 
 1. ECG Interpretation: ECG Blog #232 (47) — What is Bigeminy? — [link](https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html)

@@ -41,9 +41,9 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%99%A4%E4%BA%86ste%E4%BB%A5%E5%A
 
 #### STEMI criteria可靠嗎?診斷心肌梗塞可靠(specificity夠高)……但是sensitivity太差了。
 
-這篇文章\[^1\]說明了若應用STEMI criteria來判讀第一張ED ECG，只有35%的sensitivity。這是什麼概念？意思就是有65%的心肌梗塞無法透過STEMI criteria診斷出來。
+這篇文章[^1]說明了若應用STEMI criteria來判讀第一張ED ECG，只有35%的sensitivity。這是什麼概念？意思就是有65%的心肌梗塞無法透過STEMI criteria診斷出來。
 
-真的只有35%嗎?另外有一篇\[^2\]有達到50%的sensitivity，但還是差強人意啊~~~
+真的只有35%嗎?另外有一篇[^2]有達到50%的sensitivity，但還是差強人意啊~~~
 
 所以如果我們堅持心肌梗塞的病患一定要符合STEMI criteria才抓去做心導管，會出現的問題就是，我們在第一時間就會錯失很多的心肌梗塞。最後病患還是有可能會去做導管，但是Time is muscle。時間拖越久，病患心肌細胞死亡就越多，之後心衰竭、心臟復健的時間就會拉長。
 
@@ -65,13 +65,13 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%99%A4%E4%BA%86ste%E4%BB%A5%E5%A
 
 先來看看**Table 1左邊**，**ESC 2017 STEMI guideline**的Table，這個table描述著**有表列情況屬於心肌梗塞非典型ECG表現，應該要啟動心導管**
 
-**Table 1中間**是來自於這篇文章\[^3\]，裡面描述了表列的情況需要考慮ACO(Acute coronary occlusion)
+**Table 1中間**是來自於這篇文章[^3]，裡面描述了表列的情況需要考慮ACO(Acute coronary occlusion)
 
-**Table 1右邊**來自於這篇文章\[^4\]，裡面描述了哪些是OMI ECG finding
+**Table 1右邊**來自於這篇文章[^4]，裡面描述了哪些是OMI ECG finding
 
-**Table 2左邊**是來自於ACC於2022/10出版的急診急性胸痛專家共識裡面的表格\[^5\]。 裡面提到了STEMI equivalents與哪些ECG pattern可能伴隨著acute/subacute myocardial ischemia**(原始表格有幾個小錯誤，大家來找碴XD)**
+**Table 2左邊**是來自於ACC於2022/10出版的急診急性胸痛專家共識裡面的表格[^5]。 裡面提到了STEMI equivalents與哪些ECG pattern可能伴隨著acute/subacute myocardial ischemia**(原始表格有幾個小錯誤，大家來找碴XD)**
 
-**Table 2右邊**是出自Dr.Smith的最新文章\[^6\]，裡面寫著哪些ECG pattern具有高風險伴隨著ATO(acute total coronary occlusion)。
+**Table 2右邊**是出自Dr.Smith的最新文章[^6]，裡面寫著哪些ECG pattern具有高風險伴隨著ATO(acute total coronary occlusion)。
 
 #### 有點靠北…….邊多
 
@@ -122,14 +122,14 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%99%A4%E4%BA%86ste%E4%BB%A5%E5%A
 
 **有差~~~真的有差**。
 
-這篇文章\[^7\]將STEMI(+)/OMI(+)與STEMI(-)/OMI(+)兩組來比較，兩組皆具有相似的臨床表徵/實驗室報告與超音波發現。但是在STEMI(-)/OMI(+)這組明顯延遲了導管時間，且和STEMI(+)/OMI(+)組別相比較，其明顯增加mortality與morbidity(**請見Fig.8**)。
+這篇文章[^7]將STEMI(+)/OMI(+)與STEMI(-)/OMI(+)兩組來比較，兩組皆具有相似的臨床表徵/實驗室報告與超音波發現。但是在STEMI(-)/OMI(+)這組明顯延遲了導管時間，且和STEMI(+)/OMI(+)組別相比較，其明顯增加mortality與morbidity(**請見Fig.8**)。
 
 ![](https://cdn-images-1.medium.com/max/1024/1*cpLgUbdaMMR7ir7QpttqdQ@2x.png)
 
 ![](https://cdn-images-1.medium.com/max/1024/1*JpfhNjcM_T5vfR_83UJuEg@2x.png)
 ***Fig.8 STEMI(+)/OMI(+) vs. STEMI(-)/OMI(+)***
 
-另外這篇文章\[^8\]表示NSTEMI with ATO(acute total coronary occlusion)約34%。All-cause mortality、recurrent MI與cardiogenic shock在NSTEMI with ATO都明顯高於NSTEMI without ATO組別。
+另外這篇文章[^8]表示NSTEMI with ATO(acute total coronary occlusion)約34%。All-cause mortality、recurrent MI與cardiogenic shock在NSTEMI with ATO都明顯高於NSTEMI without ATO組別。
 
 我們可以想像一位NSTEMI with ATO病患，整個血管都塞住，但是……我們卻延遲了好幾天才去打通血管。光是用想的，就覺得心肌不知道死了多少。文獻研究也的確證明了NSTEMI with ATO這一個族群和沒有ATO組群相比較，明顯在CV outcome是有不良的影響。
 
