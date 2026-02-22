@@ -1,0 +1,256 @@
+{{- if and .IsPage (eq .Section "post") }}
+<style>
+  :root {
+    --ecg-rp-left: 12px;
+    --ecg-rp-width: 280px;
+  }
+
+  .ecg-rp-shell {
+    position: fixed;
+    top: 78px;
+    left: var(--ecg-rp-left);
+    width: var(--ecg-rp-width);
+    max-width: calc(100vw - 20px);
+    z-index: 60;
+    padding: 8px 10px 9px;
+    border-radius: 10px;
+    border: 1px solid rgba(17, 100, 90, 0.18);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(8, 49, 45, 0.08);
+  }
+
+  .ecg-rp-shell[hidden] {
+    display: none !important;
+  }
+
+  .ecg-rp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  .ecg-rp-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #456862;
+  }
+
+  .ecg-rp-percent {
+    font-size: 0.73rem;
+    color: #183f3b;
+  }
+
+  .ecg-rp-svg {
+    width: 100%;
+    display: block;
+  }
+
+  .ecg-rp-base {
+    fill: none;
+    stroke: #c2cfcc;
+    stroke-width: 4.2;
+    opacity: 0.48;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .ecg-rp-active {
+    fill: none;
+    stroke: rgb(15, 95, 87);
+    stroke-width: 3.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 6px rgba(32, 163, 147, 0.26));
+    transition: stroke 220ms ease, filter 220ms ease;
+  }
+
+  .ecg-rp-tip {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 10px;
+    max-width: 240px;
+    font-size: 0.72rem;
+    color: #f3fbf9;
+    background: rgba(10, 62, 57, 0.92);
+    padding: 6px 9px;
+    border-radius: 7px;
+    opacity: 0;
+    transform: translateY(-4px);
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease;
+    box-shadow: 0 8px 20px rgba(3, 24, 21, 0.22);
+  }
+
+  .ecg-rp-tip::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -5px;
+    left: 16px;
+    background: inherit;
+    transform: rotate(45deg);
+  }
+
+  .ecg-rp-shell:hover .ecg-rp-tip,
+  .ecg-rp-shell:focus-within .ecg-rp-tip {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ecg-rp-shell:focus-within {
+    outline: 2px solid rgba(17, 118, 107, 0.34);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 1100px) {
+    .ecg-rp-shell {
+      display: none !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ecg-rp-active,
+    .ecg-rp-tip {
+      transition: none;
+    }
+  }
+</style>
+
+<div class="ecg-rp-shell" id="ecgReadProgress" role="status" aria-label="Reading progress ECG" tabindex="0" hidden>
+  <div class="ecg-rp-meta">
+    <span class="ecg-rp-label">ECG Reading Progress</span>
+    <span class="ecg-rp-percent" id="ecgReadPercent">0%</span>
+  </div>
+  <svg class="ecg-rp-svg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <path
+      class="ecg-rp-base"
+      d="M20 60 L260 60 C278 60 289 44 304 44 C318 44 330 60 346 60 L394 60 L415 67 L438 22 L462 90 L490 60 L596 60 C624 60 650 34 688 34 C726 34 754 60 782 60 L980 60"
+    />
+    <path
+      class="ecg-rp-active"
+      id="ecgReadActivePath"
+      d="M20 60 L260 60 C278 60 289 44 304 44 C318 44 330 60 346 60 L394 60 L415 67 L438 22 L462 90 L490 60 L596 60 C624 60 650 34 688 34 C726 34 754 60 782 60 L980 60"
+    />
+  </svg>
+  <div class="ecg-rp-tip" id="ecgReadTip">Reading progress</div>
+</div>
+
+<script>
+  (function () {
+    const shell = document.getElementById("ecgReadProgress");
+    const article = document.querySelector(".post_content");
+    const articleBody = document.querySelector(".post_content .post_body");
+    const path = document.getElementById("ecgReadActivePath");
+    const percent = document.getElementById("ecgReadPercent");
+    const tip = document.getElementById("ecgReadTip");
+
+    if (!shell || !article || !articleBody || !path || !percent || !tip) return;
+
+    const readPhases = [
+      { readEnd: 0.2, pathEnd: 0.34, tip: "Reading progress" },
+      { readEnd: 0.35, pathEnd: 0.46, tip: "P wave shaping..." },
+      { readEnd: 0.62, pathEnd: 0.67, tip: "Clinical reasoning loading..." },
+      { readEnd: 0.81, pathEnd: 0.82, tip: "ST segment extending..." },
+      { readEnd: 1, pathEnd: 1, tip: "Reading progress" }
+    ];
+
+    const clamp01 = (n) => Math.max(0, Math.min(1, n));
+    const totalLength = path.getTotalLength();
+    path.style.strokeDasharray = `${totalLength}`;
+    path.style.strokeDashoffset = `${totalLength}`;
+
+    const placeInLeftGutter = () => {
+      const margin = 12;
+      const articleRect = article.getBoundingClientRect();
+      const preferredWidth = 280;
+      const minWidth = 210;
+      let width = Math.max(minWidth, Math.min(preferredWidth, window.innerWidth * 0.24));
+      const leftGutter = articleRect.left - margin;
+      const fits = leftGutter >= width + margin;
+
+      if (!fits) {
+        shell.hidden = true;
+        return false;
+      }
+
+      const left = Math.round(articleRect.left - width - margin);
+      document.documentElement.style.setProperty("--ecg-rp-left", `${left}px`);
+      document.documentElement.style.setProperty("--ecg-rp-width", `${Math.round(width)}px`);
+      shell.hidden = false;
+      return true;
+    };
+
+    const getReadProgress = () => {
+      const top = articleBody.offsetTop;
+      const bottom = top + articleBody.offsetHeight;
+      const viewportBottom = window.scrollY + window.innerHeight;
+      const scrollable = bottom - top;
+
+      if (scrollable <= 0) return 1;
+      return clamp01((viewportBottom - top) / scrollable);
+    };
+
+    const mapReadToPath = (readProgress) => {
+      let prevRead = 0;
+      let prevPath = 0;
+      let currentTip = readPhases[0].tip;
+
+      for (const phase of readPhases) {
+        if (readProgress <= phase.readEnd) {
+          const span = phase.readEnd - prevRead || 1;
+          const local = clamp01((readProgress - prevRead) / span);
+          return {
+            pathProgress: prevPath + local * (phase.pathEnd - prevPath),
+            currentTip: phase.tip
+          };
+        }
+        prevRead = phase.readEnd;
+        prevPath = phase.pathEnd;
+        currentTip = phase.tip;
+      }
+
+      return { pathProgress: 1, currentTip };
+    };
+
+    const toRgb = (start, end, p) => Math.round(start + (end - start) * p);
+
+    let ticking = false;
+    const update = () => {
+      const visible = placeInLeftGutter();
+      if (!visible) {
+        ticking = false;
+        return;
+      }
+
+      const readProgress = getReadProgress();
+      const { pathProgress, currentTip } = mapReadToPath(readProgress);
+      const drawLength = totalLength * clamp01(pathProgress);
+      const progressPct = Math.round(readProgress * 100);
+
+      const rgb = [toRgb(15, 15, readProgress), toRgb(95, 167, readProgress), toRgb(87, 154, readProgress)];
+      path.style.strokeDashoffset = `${totalLength - drawLength}`;
+      path.style.stroke = `rgb(${rgb.join(",")})`;
+      path.style.filter = `drop-shadow(0 0 6px rgba(${rgb.join(",")}, 0.26))`;
+      percent.textContent = `${progressPct}%`;
+      tip.textContent = readProgress >= 1 ? "Reading progress · 100% complete" : `${currentTip} ${progressPct}%`;
+      ticking = false;
+    };
+
+    const requestUpdate = () => {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    };
+
+    window.addEventListener("load", requestUpdate);
+    window.addEventListener("resize", requestUpdate);
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    requestUpdate();
+  })();
+</script>
+{{- end }}
