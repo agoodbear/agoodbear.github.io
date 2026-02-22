@@ -1,0 +1,29 @@
+{{- $params := site.Params }}
+{{- if site.Params.enableSearch }}
+  {{- $placeholder := T "search_field_placeholder" }}
+  {{- $section := $.Page.Section }}
+  {{- $simple := true }}
+  {{- if and (eq $section "support") (eq .CurrentSection .FirstSection) }}
+  {{- else }}
+    {{- $placeholder = T "blog_search_field_placeholder" }}
+    {{- $simple = false }}
+  {{- end }}
+
+  {{- if or (eq $placeholder "") (eq $placeholder "search_field_placeholder") (eq $placeholder "blog_search_field_placeholder") }}
+    {{- $placeholder = "搜尋文章…" }}
+  {{- end }}
+
+  {{- $searchBoxLabel := "搜尋框" }}
+  <div class="search_box_hint" style="margin:0.25rem 0 0.35rem 0.25rem;font-size:0.82rem;opacity:0.75;">{{ $searchBoxLabel }}</div>
+  <div class="search">
+    <input type="search" class="search_field form_field" placeholder='{{ $placeholder }}' id="find" autocomplete="off" data-scope='{{ .Section }}' aria-label="{{ $searchBoxLabel }}" title="{{ $searchBoxLabel }}">
+    <label for="find" class="search_label">
+      {{- partial "sprite" (dict "icon" "search") }}
+    </label>
+    {{ if $simple }}
+    {{ end }}
+    {{- if ne .Params.searchPage true }}
+    <div class="search_results results"></div>
+    {{- end }}
+  </div>
+{{- end }}
