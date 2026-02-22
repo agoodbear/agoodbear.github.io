@@ -15,7 +15,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E8%83%B8%E7%97%9B-%E6%98%AFwellen%
 ---
 ### 胸痛，是Wellen嗎?
 
-![img](https://cdn-images-1.medium.com/max/1024/1*yRFGZRBFf8mrOR-6YJog9Q@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*yRFGZRBFf8mrOR-6YJog9Q@2x.png)
 
 70歲男性，胸痛三天。晚上痛到睡不著覺。過去病史有HCC做過血管動脈栓塞，目前仍在治療中。
 
@@ -158,13 +158,13 @@ PE的這種TWI，Dr.Smith在其Blog描述，叫做Domed TWI(圓頂形態的TWI)\
 
 #### 來吧~~~醜媳婦總要見公婆~~~
 
-![img](https://cdn-images-1.medium.com/max/1024/1*d8u-_of3RPTLspg5OikCHQ.png)
+![](https://cdn-images-1.medium.com/max/1024/1*d8u-_of3RPTLspg5OikCHQ.png)
 
 看到ECG後，我直接寫下懷疑PE。也安排了Chest CTA。
 
-![img](https://cdn-images-1.medium.com/max/1024/1*53i8kxza3-NUet-dDOlXhw.gif)
+![](https://cdn-images-1.medium.com/max/1024/1*53i8kxza3-NUet-dDOlXhw.gif)
 
-![img](https://cdn-images-1.medium.com/max/1024/1*X2FsSQS5TSr_XLAo4V3K1A.gif)
+![](https://cdn-images-1.medium.com/max/1024/1*X2FsSQS5TSr_XLAo4V3K1A.gif)
 
 Chest CTA看到雙側都有pulmonary vessel filling defect，RV也有filling defect。雙側都有Pulmonary infarction~~~~
 

@@ -104,9 +104,9 @@ canonicalURL: "https://medium.com/@agoodbear/%E5%88%B0%E9%99%A2%E5%89%8D%E6%AD%B
 
 病患當天下午回到天家………
 
-![img](https://cdn-images-1.medium.com/max/1024/1*R_Ty12GIOLH3BxgbtsIs-Q.gif)
+![](https://cdn-images-1.medium.com/max/1024/1*R_Ty12GIOLH3BxgbtsIs-Q.gif)
 
-![img](https://cdn-images-1.medium.com/max/1024/1*Cw2vg4X6CZ0nQ_jPvne5Ww.gif)
+![](https://cdn-images-1.medium.com/max/1024/1*Cw2vg4X6CZ0nQ_jPvne5Ww.gif)
 
 1. Dr. Smith’s ECG Blog: A crashing patient with an abnormal ECG that you must recognize — [link](http://hqmeded-ecg.blogspot.com/2018/03/a-crashing-patient-with-abnormal-ecg.html)
 2. [Electrocardiographic differentiation between acute pulmonary embolism and acute coronary syndromes on the basis of negative T waves](https://pubmed.ncbi.nlm.nih.gov/17350373/)

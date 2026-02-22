@@ -13,7 +13,7 @@ medium_id: "efdc3b9f05d5"
 medium_url: "https://medium.com/@agoodbear/%E8%A8%BA%E6%96%B7ami-in-lbbb%E6%88%96paced-rhythm%E8%A3%9C%E5%AE%8C%E4%BA%86%E5%97%8E-efdc3b9f05d5"
 canonicalURL: "https://medium.com/@agoodbear/%E8%A8%BA%E6%96%B7ami-in-lbbb%E6%88%96paced-rhythm%E8%A3%9C%E5%AE%8C%E4%BA%86%E5%97%8E-efdc3b9f05d5"
 ---
-![img](https://cdn-images-1.medium.com/max/1024/1*RiODz6_7wUuQe3rCyrTHEQ@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*RiODz6_7wUuQe3rCyrTHEQ@2x.png)
 
 ### 診斷AMI in LBBB或paced rhythm補完了嗎?
 
@@ -54,7 +54,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E8%A8%BA%E6%96%B7ami-in-lbbb%E6%88
 
 因此在1996年Sgarbossa在NEJM提出了Sgarbossa criteria³
 
-![img](https://cdn-images-1.medium.com/max/1024/1*JKmTZTUCb8wU36AvhojU1Q.png)
+![](https://cdn-images-1.medium.com/max/1024/1*JKmTZTUCb8wU36AvhojU1Q.png)
 
 在A、B當中就是上述所說的concordant STE(A)、STD(B)
 
@@ -68,7 +68,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E8%A8%BA%E6%96%B7ami-in-lbbb%E6%88
 
 有鑑於Sgarbossa criteria的criteria C不夠力。為何?請看下圖
 
-[![img](https://cdn-images-1.medium.com/max/1024/1*SOX3NKPmduprb7-ydo-Kxg.png)](http://hqmeded-ecg.blogspot.com/2019/09/a-50-something-woman-with-chest-pain-bp.html)
+[![](https://cdn-images-1.medium.com/max/1024/1*SOX3NKPmduprb7-ydo-Kxg.png)](http://hqmeded-ecg.blogspot.com/2019/09/a-50-something-woman-with-chest-pain-bp.html)
 
 上面這張ECG為LBBB，沒有符合Sgarbossa criteria A or B，但是V2~4都符合criteria C →也就是**有discordant STE≥5 mm **，所以這有AMI嗎?很遺憾，最終結果並沒有血管阻塞。
 

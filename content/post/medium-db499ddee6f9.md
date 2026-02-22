@@ -249,9 +249,9 @@ Pattern A)，T wave會先上後下。Reperfusion持續，接著會從terminal TW
 
 如果是因為RV strain引起的ECG findings，病患又休克、呼吸喘。我們有什麼工具可以輔助鑑別診斷呢?病患看起來已經快被閻王拉走了~~~
 
-![img](https://cdn-images-1.medium.com/max/1024/1*vdnzaEPFTqkuz7TW8a4YaA.gif)
+![](https://cdn-images-1.medium.com/max/1024/1*vdnzaEPFTqkuz7TW8a4YaA.gif)
 
-![img](https://cdn-images-1.medium.com/max/1024/1*dB3marUPtCdOsPdcnq_tZA.gif)
+![](https://cdn-images-1.medium.com/max/1024/1*dB3marUPtCdOsPdcnq_tZA.gif)
 
 ![Fig.9 Heart POCUS](https://cdn-images-1.medium.com/max/1024/1*hs6gM2pZIw74AmTV5K3qUQ.gif)
 ***Fig.9 Heart POCUS***
@@ -260,7 +260,7 @@ Pattern A)，T wave會先上後下。Reperfusion持續，接著會從terminal TW
 
 X-ray也不用照了，直接把病患推到CT room作Chest CTA。
 
-![img](https://cdn-images-1.medium.com/max/1024/1*J1QXGkk6Jtk_oIAFqsYM6A.gif)
+![](https://cdn-images-1.medium.com/max/1024/1*J1QXGkk6Jtk_oIAFqsYM6A.gif)
 
 這邊可以看Chest CTA的[Coronal view](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2FTsao-Jian-hsiung%2FR7Xz5RZx3v.gif?alt=media&token=aefe99a4-f7a5-4194-a036-90127546d8c0)
 
@@ -290,7 +290,7 @@ Chest CTA看到雙側肺血管塞好塞滿…..Orz
 
 還記得rTPA可以用在哪些緊急狀況嗎?
 
-![img](https://cdn-images-1.medium.com/max/1024/1*oUwlfuiKSUkx_eIXGL1WGw.png)
+![](https://cdn-images-1.medium.com/max/1024/1*oUwlfuiKSUkx_eIXGL1WGw.png)
 
 #### 治療危急肺栓塞病患有哪些重點?(以下重點來自於這篇文章\[^11\])
 

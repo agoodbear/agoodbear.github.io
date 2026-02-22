@@ -13,7 +13,7 @@ medium_id: "962b3d4d3f0e"
 medium_url: "https://medium.com/@agoodbear/narrow-qrs-tachycardia-962b3d4d3f0e"
 canonicalURL: "https://medium.com/@agoodbear/narrow-qrs-tachycardia-962b3d4d3f0e"
 ---
-![img](https://cdn-images-1.medium.com/max/1024/1*-_JeNAGKVV67vXegvesyZA@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*-_JeNAGKVV67vXegvesyZA@2x.png)
 
 ### Narrow QRS tachycardia
 

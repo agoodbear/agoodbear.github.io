@@ -17,15 +17,15 @@ canonicalURL: "https://medium.com/@agoodbear/medium%E5%90%84%E7%A8%AE%E6%8E%92%E
 
 - 打入 \` 之後的文字就會灰底
 
-![img](https://cdn-images-1.medium.com/max/1024/1*xXb9LHTT0K9SsQizSxzYZg@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*xXb9LHTT0K9SsQizSxzYZg@2x.png)
 
 - 打入 : 之後輸入英文會出現[emoji符號](https://www.webfx.com/tools/emoji-cheat-sheet/)
 
-![img](https://cdn-images-1.medium.com/max/1024/1*WgW-LwzZwY03S8pq5NLycQ@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*WgW-LwzZwY03S8pq5NLycQ@2x.png)
 
 - 打入\`\`\`之後會有區塊灰底出現(要在一開始打入)
 
-![img](https://cdn-images-1.medium.com/max/1024/1*iC0r-9zWy6lESpKNOUJaxw@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*iC0r-9zWy6lESpKNOUJaxw@2x.png)
 
 - 圖片按下CMD+K，可以幫圖片添加Hyperlink
 - **按下\*空格、1. →可以進行內縮排版**
@@ -39,7 +39,7 @@ canonicalURL: "https://medium.com/@agoodbear/medium%E5%90%84%E7%A8%AE%E6%8E%92%E
 ![Previous ECG](https://cdn-images-1.medium.com/max/1024/1*jhZIIfIN__Rcb30dwecWAA@2x.png)
 *Previous ECG*
 
-![img](https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png)
 
 ![Left sdie:K →6.1、Right side:K →7.4](https://cdn-images-1.medium.com/max/1024/1*pEVYam7Maa6UqptWqzpH2g@2x.png)
 *Left sdie:K →6.1、Right side:K →7.4*

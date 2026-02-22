@@ -244,7 +244,7 @@ ROSC後過沒多久，病患跳了一次VT(Pulse VT)，給予電擊。Call了CV 
 
 CV man到達現場後，覺得ECG無法排除LM/TVD/Proximal LAD問題(ACS sick P’t)，建議要做心導管。但希望我們先安排個Brain CT。
 
-![img](https://cdn-images-1.medium.com/max/1024/1*-RbOgWwnh5oQm8mtoGO02A.gif)
+![](https://cdn-images-1.medium.com/max/1024/1*-RbOgWwnh5oQm8mtoGO02A.gif)
 
 #### 綜合檢討:
 

@@ -15,7 +15,7 @@ canonicalURL: "https://medium.com/@agoodbear/73%E6%AD%B2%E7%94%B7%E6%80%A7-%E8%8
 ---
 ### 73歲男性，胸痛持續。需要導管介入嗎?
 
-![img](https://cdn-images-1.medium.com/max/1024/1*WPqDirWKj_yqdGzdBAZqnw.png)
+![](https://cdn-images-1.medium.com/max/1024/1*WPqDirWKj_yqdGzdBAZqnw.png)
 
 覺得這個Case非常有趣，也可以從中學到不少。特地把這個Case從眾多想寫的案例中，往前拉。
 
@@ -167,7 +167,7 @@ Fig.10應該是我的心電圖Blog，出現最多次的一張圖吧XD
 
 我在電子病歷上打上最後的文字，緊接著病患就上去作導管了。
 
-![img](https://cdn-images-1.medium.com/max/1024/0*9gbBZMC0EcdSE4pi)
+![](https://cdn-images-1.medium.com/max/1024/0*9gbBZMC0EcdSE4pi)
 
 #### CAG報告: **LCx total occlusion**➡CAD with TVD s/p CAG, with LAD 50–60% occlusion, RCA: CTO, LCX total occlusion, DES\*1 over LCX
 
