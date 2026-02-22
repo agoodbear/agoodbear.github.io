@@ -4,6 +4,7 @@
 {{- $cap := .Title -}}
 {{- $scratch := newScratch -}}
 {{- $scratch.Set "classes" "image_figure" -}}
+{{- $fallback := absURL "/images/EDbear.jpg" -}}
 
 {{/* Determine if page bundles are set. */}}
 {{- $bundle := .Page.Site.Params.usePageBundles -}}
@@ -42,4 +43,5 @@
     "cap" $cap
     "classes" ($scratch.Get "classes")
     "bundle" $bundle
+    "fallback" $fallback
 ) -}}
