@@ -18,7 +18,7 @@ tags:
   - AI工具
 ---
 
-![第二大腦(Roam Research)](https://p.ipic.vip/c8y6kb.png)
+![第二大腦(Roam Research)](/images/ipic/c8y6kb.png)
 
 年初講到[資料庫的應用與靈感筆記如何建立?](https://agoodbear.github.io/post/study-post-2/)，有興趣可以點選回到這邊看看。
 
@@ -34,6 +34,6 @@ tags:
 
 目前我primary selection的資料庫為Readwise。
 
-![Extension](https://p.ipic.vip/2kzi7v.png)
+![Extension](/images/ipic/2kzi7v.png)
 
 可以在自己的Browser上安裝這個Extension。作為全文的抓取，也可以除去在頁面中出現的一堆廣告之類，讓整個抓取的頁面乾淨一點。

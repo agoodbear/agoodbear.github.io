@@ -40,23 +40,23 @@ CPR後心律還是心室顫動，再次電擊⚡️，繼續CPR
 
 **DSD總共又電了三次，終於ROSC。**
 
-![ROSC後的第一張ECG](https://p.ipic.vip/1leh54.png)
+![ROSC後的第一張ECG](/images/ipic/1leh54.png)
 
 沒有辦法看到明顯P wave，分不清QRS的結尾在哪裡。所以QRS是寬還是窄?
 
-![ROSC+10 mins](https://p.ipic.vip/5rgb2z.png)
+![ROSC+10 mins](/images/ipic/5rgb2z.png)
 
 還是沒有看到明顯P wave，但QRS很明顯是窄的。紅色的或許是JPC(junctional premature complex)。整體的rhythm應是AJR(Accelerated junctional rhythm)。
 
 但是綠色箭頭就有意思了，因為我們知道QRS不寬，所以比對過來Lead I/aVL都是STE，且Lead II/III/aVF都是STD。但起來是**High lateral MI呢!!!!!!!!**
 
-![ER Bedside echo](https://p.ipic.vip/j28zai.gif)
+![ER Bedside echo](/images/ipic/j28zai.gif)
 
 雖然我不是心臟科專科醫師，但心肌梗塞病患，還是不免會想看一下病患的心臟超音波是否有符合ECG ischemia territory的RWMA出現。上圖的Heart POCUS，**本來我預期會看到LAD or LCX支配的territory會出現一些RWMA，但是看起來沒有明顯的RWMA出現**。
 
 #### 有時想想我們做Heart POCUS，把重點放在病患是否有無RWMA與利用eye balling看大約的LV systolic function。到底和CV man看的結果會不會相去甚遠?
 
-![文獻absctract](https://p.ipic.vip/cajmao.png)
+![文獻absctract](/images/ipic/cajmao.png)
 
 這篇是刊登在**Western Journal of Emergency Medicine**的一篇文章。
 
@@ -84,7 +84,7 @@ CPR後心律還是心室顫動，再次電擊⚡️，繼續CPR
 
 - 這篇文章招募了**405位OHCA病患，而且這些病患是VT/Vf經過三次電擊仍處於refractory的狀態。這臨床試驗將病患隨機分配到這三組**
 
-![文章中的Primary and Secondary outcomes](https://p.ipic.vip/xzptqk.png)
+![文章中的Primary and Secondary outcomes](/images/ipic/xzptqk.png)
 
 - **Vector change和DSD組別對於survival to hospital discharge都有提高、另外Vf中止率與ROSC rate都高於anterior-lateral position(標準位置)組別**
 
@@ -98,7 +98,7 @@ CPR後心律還是心室顫動，再次電擊⚡️，繼續CPR
 
 這位作者Sheldon Cheskes，在更早之前2020年，也有在Resuscitation發表一篇針對refractory Vf，使用DSD的研究報告 [^7] 。
 
-![Vf終止/ROSC結果](https://p.ipic.vip/x98phl.png)
+![Vf終止/ROSC結果](/images/ipic/x98phl.png)
 
 上列圖表也顯示似乎和在NEJM一樣類似的結果，那就是VC組別/DSD組別和標準組別相比較，有較高的Vf終止率與ROSC比率。
 
@@ -128,7 +128,7 @@ CPR後心律還是心室顫動，再次電擊⚡️，繼續CPR
 
 病患ROSC後，就被大批人馬從急診送到心導管室，進行進一步心導管檢查。
 
-![心導管檢查](https://p.ipic.vip/ci9ppm.png)
+![心導管檢查](/images/ipic/ci9ppm.png)
 
 CAG檢查結果**懷疑是coronary a. spasm引起**。
 
@@ -140,11 +140,11 @@ Fig.8可以看到在急診的CXR，左側要whiteout。後續在ICU驗到是Flu 
 
 後續Troponin的最高值出現在到院後的隔一天。**最後被診斷influenza myocarditis**。
 
-![Serial TnI](https://p.ipic.vip/ve17o4.png)
+![Serial TnI](/images/ipic/ve17o4.png)
 
 病患在ICU的第三天有一張ECG，有趣。
 
-![Day 3 ECG](https://p.ipic.vip/0sk467.png)
+![Day 3 ECG](/images/ipic/0sk467.png)
 
 看起來是Shark fin sign~~
 
@@ -158,7 +158,7 @@ Fig.8可以看到在急診的CXR，左側要whiteout。後續在ICU驗到是Flu 
 
 Dr.Smith在這一篇文章中的一句話 [^8] ，我覺得非常讚，分享出來。
 
-![Dr.Smith](https://p.ipic.vip/d64oqc.png)
+![Dr.Smith](/images/ipic/d64oqc.png)
 
 #### **我翻譯白話一點：**
 

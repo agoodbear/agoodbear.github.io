@@ -22,7 +22,7 @@ tags:
 
 造成syncope的原因有很多，但**最後的共同路徑(common pathway)是大腦血流中斷約10秒鐘** [^1] 。
 
-![Syncope的原因](https://p.ipic.vip/5apyuf.png)
+![Syncope的原因](/images/ipic/5apyuf.png)
 
 以上表格來自於丁阿姨的枕頭 [^1] 。
 
@@ -44,11 +44,11 @@ syncope的治療取決於診斷。 例如，對於懷疑由藥物引起的患者
 
 在seizure attack後，患者通常會經歷一段意識模糊的**發作後狀態 (postictal state)**，持續時間可能從幾分鐘到幾小時不等。相反地，syncope後的意識恢復通常較快，通常在幾秒鐘到幾分鐘內就會完全清醒。
 
-![區分seizure/syncope發作](https://p.ipic.vip/nl69xf.png)
+![區分seizure/syncope發作](/images/ipic/nl69xf.png)
 
 另外這**ACEP的這篇文章裡面，也有提到在評估syncope時，Step 1就是去區別Syncope from seizure** [^2]
 
-![文章內容重點的表格](https://p.ipic.vip/iaajvm.png)
+![文章內容重點的表格](/images/ipic/iaajvm.png)
 
 這邊要提到文章中描述，可能是一個常見的臨床pitfall，那就是尿失禁，根據一個review雖然針對siezure其specificity達到96%，但後續的研究發現並不可靠 [^2]!!!
 
@@ -62,13 +62,13 @@ Amal mattu在ECG Weekly裡面上課，也常講上述兩種狀況都要做ECG。
 
 在2017 ACC/AHA Guideline for the Evaluation and Management of Patients with Syncope這篇文章中就有說明，**對於syncope一開始的病史詢問、理學檢查和ECG都是屬於Class I建議要做的**(見下表) [^3]。
 
-![Syncope評估與檢查建議](https://p.ipic.vip/fyiqjj.png)
+![Syncope評估與檢查建議](/images/ipic/fyiqjj.png)
 
-![ECG屬於Class I建議](https://p.ipic.vip/rdglkh.png)
+![ECG屬於Class I建議](/images/ipic/rdglkh.png)
 
 #### **這位67歲的病患到院時的ECG如下:**
 
-![ER arrival](https://p.ipic.vip/6xefxw.png)
+![ER arrival](/images/ipic/6xefxw.png)
 
 **Rate:** 42 bpm
 
@@ -117,11 +117,11 @@ Amal mattu在ECG Weekly裡面上課，也常講上述兩種狀況都要做ECG。
 
   首先先來看看有哪些記憶法，我們再來統整一下好了
 
-  ![Amal mattu的記憶法](https://p.ipic.vip/k8tgs6.png)
+  ![Amal mattu的記憶法](/images/ipic/k8tgs6.png)
 
-  ![Smith等多個Blog使用](https://p.ipic.vip/8re6dl.png)
+  ![Smith等多個Blog使用](/images/ipic/8re6dl.png)
 
-  ![Tannenbaum的記憶法](https://p.ipic.vip/15ra75.png)
+  ![Tannenbaum的記憶法](/images/ipic/15ra75.png)
 
   上面三個表格是常用的Syncope記憶法
 
@@ -147,7 +147,7 @@ Amal mattu在ECG Weekly裡面上課，也常講上述兩種狀況都要做ECG。
 
     - 在V1-V2出現如下圖的coved STE with TWI(**把這個ECG pattern印入大腦回**)
 
-    ![BS的診斷](https://p.ipic.vip/fcipv7.png)
+    ![BS的診斷](/images/ipic/fcipv7.png)
 
 #### <mark>**心➔我自己記憶方法是想可能和心臟有關係的疾病(Amal mattu常說這類是No brainer，也就是不用想也可以知道的類別)**</mark>
 
@@ -174,7 +174,7 @@ Amal mattu在ECG Weekly裡面上課，也常講上述兩種狀況都要做ECG。
   - **TWI in V1-3(具敏感性，80%會有)**
   - **Epsilon wave(下圖) in any of V1-3(具特異性，<1/3的人有)**
 
-![Epsilon wave](https://p.ipic.vip/ga3b9i.jpg)
+![Epsilon wave](/images/ipic/ga3b9i.jpg)
 
 {{% notice info "Epsilon wave的相關重點" %}}
 
@@ -196,7 +196,7 @@ Amal回答說，用thermometer(溫度計)。
 - **ASD**
   - 在inf.leads有**Crochetage sign**➔在inf.leads的R wave出現notch
 
-![Crochetage sign](https://p.ipic.vip/x1cqd3.png)
+![Crochetage sign](/images/ipic/x1cqd3.png)
 
 在這篇文章中 [^6] 描述到關於Crochetage sign的重點:
 
@@ -210,11 +210,11 @@ Amal回答說，用thermometer(溫度計)。
 
 總結一下這八大可能導致syncope的cardiac cause，都必須在做完Post-syncope ECG時，要努力去排除。
 
-![總結](https://p.ipic.vip/98jk4l.png)
+![總結](/images/ipic/98jk4l.png)
 
 ## **Case繼續**
 
-![](https://p.ipic.vip/yb3o38.png)
+![](/images/ipic/yb3o38.png)
 
 我把ER arrival的ECG其long lead II拉出來看。
 
@@ -250,7 +250,7 @@ Amal回答說，用thermometer(溫度計)。
 
 在ECG60這個YT link裡面，有一個表格可以參考如下
 
-![區別2:1 AVB](https://p.ipic.vip/fgpt7n.png)
+![區別2:1 AVB](/images/ipic/fgpt7n.png)
 
 **把第三、第四點再詳細解釋一下，會比較好懂與記憶** [^7] 。
 
@@ -270,7 +270,7 @@ Carotid sinus massage會增加SA node和AV node的迷走神經效應，並惡化
 
 四個小時後，又追蹤了一張ECG如下
 
-![4 hrs later](https://p.ipic.vip/qnnei7.png)
+![4 hrs later](/images/ipic/qnnei7.png)
 
 看起來2:1 AVB不見了
 
@@ -278,11 +278,11 @@ Carotid sinus massage會增加SA node和AV node的迷走神經效應，並惡化
 
 在ECG monitor看到下列ECG strip
 
-![ECG strip when S/S](https://p.ipic.vip/alwc6b.jpg)
+![ECG strip when S/S](/images/ipic/alwc6b.jpg)
 
 ### **Got you!!!!!!**
 
-![](https://p.ipic.vip/0981av.png)
+![](/images/ipic/0981av.png)
 
 終於有連續兩個QRS出來，比對P和QRS之間的關係，可以知道病患的2:1 AVB其實是Mobitz type 2 behavior
 

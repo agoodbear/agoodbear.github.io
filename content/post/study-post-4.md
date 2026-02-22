@@ -18,17 +18,17 @@ tags:
 
 2024/6/19一早就搭著醫院對面的葛瑪蘭客運去台北國際會議中心來上課
 
-![](https://p.ipic.vip/2cyi5t.jpg)
+![](/images/ipic/2cyi5t.jpg)
 
-![](https://p.ipic.vip/4suyq9.jpg)
+![](/images/ipic/4suyq9.jpg)
 
 豔陽高照的日子~好熱啊 
 
-![](https://p.ipic.vip/k6xza9.jpg)
+![](/images/ipic/k6xza9.jpg)
 
 一進到國際會議中心，一整個舒暢~涼爽啊!!
 
-![課程表](https://p.ipic.vip/esnxdq.jpg)
+![課程表](/images/ipic/esnxdq.jpeg)
 
 在ICEM2024正式開始前，先來參加pre-conference workshop，特別是針對Emergency Cardiology。
 
@@ -36,25 +36,25 @@ tags:
 
 主持與開場都是由Amal大師來操刀~~
 
-![](https://p.ipic.vip/zdj57e.jpg)
+![](/images/ipic/zdj57e.jpeg)
 
 會議前Amal和William Brady一起聊天
 
-![](https://p.ipic.vip/1z6uid.jpg)
+![](/images/ipic/1z6uid.jpeg)
 
 上完上半場前半段課程，趨前來和我的大偶像拍個自拍❤️❤️❤️
 
-![](https://p.ipic.vip/aa3hlq.jpg)
+![](/images/ipic/aa3hlq.jpeg)
 
 順便從我的書架上拿了兩本Amal的書給他簽名
 
-![簽名書](https://p.ipic.vip/2dg1rn.png)
+![簽名書](/images/ipic/2dg1rn.png)
 
 ---
 
 ### 下屆的ICEM2026在哪裡呢?
 
-![大俠愛吃漢堡包](https://p.ipic.vip/xl8wp8.png)
+![大俠愛吃漢堡包](/images/ipic/xl8wp8.png)
 
 另外這邊也有Amal mattu參加ICEM2024的採訪影片內容:
 

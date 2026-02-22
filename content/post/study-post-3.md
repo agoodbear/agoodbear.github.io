@@ -14,7 +14,7 @@ tags:
   - 自我進修
 ---
 
-![](https://p.ipic.vip/v4ydr0.jpg)
+![](/images/ipic/v4ydr0.jpg)
 
 這篇是我2019/9去參加新思惟國際的圖與圖說工作坊寫的心得，[原Po於官網上](https://figure.innovarad.tw/jhtsao/)。
 

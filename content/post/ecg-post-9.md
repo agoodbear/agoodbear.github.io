@@ -33,7 +33,7 @@ tags:
 
 ### **到院時間，16:39**
 
-![16:39➔急救室ECG strip](https://p.ipic.vip/t0hh4l.png)
+![16:39➔急救室ECG strip](/images/ipic/t0hh4l.png)
 
 血壓只能往地下找，**60/44 mmHg，SaO2:67%**
 
@@ -43,13 +43,13 @@ Air hunger的呼吸pattern、意識不清楚
 
 家人跟進來急救室，說明他媽媽剛剛在曬衣服，結果曬衣架裡面飛出一隻蜜蜂，叮了她一下，過沒多久，媽媽就倒了下來。
 
-![中指明顯蜂螫痕跡](https://p.ipic.vip/g8x3nk.png)
+![中指明顯蜂螫痕跡](/images/ipic/g8x3nk.png)
 
 立刻給予epinephrine 0.3 c.c IM、Hydorcortisone 200 mg、Anti-histamine
 
 ### **時間:16:40**
 
-![PEA](https://p.ipic.vip/7rmxbv.png)
+![PEA](/images/ipic/7rmxbv.png)
 
 到院不到一分鐘
 
@@ -59,7 +59,7 @@ Air hunger的呼吸pattern、意識不清楚
 
 ### **時間:16:40**
 
-![Vf](https://p.ipic.vip/4qzkae.png)
+![Vf](/images/ipic/4qzkae.png)
 
 不到一分鐘的時間裡，rhythm轉換成Vf
 
@@ -73,7 +73,7 @@ Air hunger的呼吸pattern、意識不清楚
 
 ### **時間:16:42**
 
-![Polymorphic VT or Vf?](https://p.ipic.vip/36xrsu.png)
+![Polymorphic VT or Vf?](/images/ipic/36xrsu.png)
 
 CPR兩分鐘後，看了一下ECG monitor的rhythm
 
@@ -83,7 +83,7 @@ CPR兩分鐘後，看了一下ECG monitor的rhythm
 
 ### **時間:16:44**
 
-![Vf](https://p.ipic.vip/8odr0x.png)
+![Vf](/images/ipic/8odr0x.png)
 
 又過了2分鐘，依舊是Vf
 
@@ -91,7 +91,7 @@ CPR兩分鐘後，看了一下ECG monitor的rhythm
 
 ### **時間:16:46**
 
-![Vf](https://p.ipic.vip/l7nyia.png)
+![Vf](/images/ipic/l7nyia.png)
 
 暈倒~~還是Vf
 
@@ -99,7 +99,7 @@ CPR兩分鐘後，看了一下ECG monitor的rhythm
 
 我印象中，這個個案的貼法是**下圖右**，而[另一個個案](https://agoodbear.github.io/post/ecg-post-8/)的貼法是**下圖左**
 
-![DSD貼法](https://p.ipic.vip/xkurqk.png)
+![DSD貼法](/images/ipic/xkurqk.png)
 
 ⚡️DSD電擊完後，有ROSC
 
@@ -111,19 +111,19 @@ CPR兩分鐘後，看了一下ECG monitor的rhythm
 
 ### **時間:17:01**
 
-![ROSC](https://p.ipic.vip/l10buc.png)
+![ROSC](/images/ipic/l10buc.png)
 
 一直急救到了17:01
 
 **再次ROSC，血壓不再往下找，105/87 mmHg**
 
-![CPR course](https://p.ipic.vip/osju2v.png)
+![CPR course](/images/ipic/osju2v.png)
 
 整個ACLS過程中，使用過**兩次DSD電擊**
 
 在17:01之後的狀態就沒有再出現過Vf
 
-![ROSC後的第一張ECG](https://p.ipic.vip/5youzx.png)
+![ROSC後的第一張ECG](/images/ipic/5youzx.png)
 
 Rate:102 bpm
 
@@ -146,7 +146,7 @@ Ischemia:看起來是aVR STE with multiple leads STD的subendocardial ischemia p
 
 以下表格是我自己常用的**aVR STE+multiple leads STD常見的DDx**
 
-![aVR STE的DDx](https://p.ipic.vip/o8wjnr.png)
+![aVR STE的DDx](/images/ipic/o8wjnr.png)
 
 當病患具有ACS S/S時，出現aVR STE+multiple leads STD，的確要考慮LM、proximal LAD、TVD。但是從這一個表格，我們也可以知道，**有更多其他的原因，只要會造成oxygen supply/demand mismatch，都會造成aVR STE + multiple leads STD**。不要看到黑影就開槍(不要看到aVR STE就call CV man😅)
 
@@ -158,7 +158,7 @@ Ischemia:看起來是aVR STE with multiple leads STD的subendocardial ischemia p
 
 ---
 
-![住院期間TnI](https://p.ipic.vip/k40yrh.png)
+![住院期間TnI](/images/ipic/k40yrh.png)
 
 上表顯示後續病患住院持續TnI上爬～～
 
@@ -180,13 +180,13 @@ Ischemia:看起來是aVR STE with multiple leads STD的subendocardial ischemia p
 
 **Kounis syndrome又稱作Allergic acute coronary syndrome**
 
-![Allergic ACS](https://p.ipic.vip/8xzhhy.png)
+![Allergic ACS](/images/ipic/8xzhhy.png)
 
 顧名思義是因為過敏導致coronary a. spasm，進而產生ischemia，而出現類似ACS症狀。
 
 #### **Kounis syndrome可以分為三種類型** [^5] :
 
-![KS分類](https://p.ipic.vip/vhaw60.png)
+![KS分類](/images/ipic/vhaw60.png)
 
 #### **此外在篇裡面也有提到幾個臨床重要性** [^5] :
 
@@ -197,7 +197,7 @@ Ischemia:看起來是aVR STE with multiple leads STD的subendocardial ischemia p
 
 #### **那麼什麼樣的狀況會導致Kounis syndrome呢?**
 
-![KS常見原因](https://p.ipic.vip/0wo9rv.png)
+![KS常見原因](/images/ipic/0wo9rv.png)
 
 **最常見**的已知**trigger是抗生素（28%）和昆蟲叮咬（23%）**[^5]
 
@@ -205,7 +205,7 @@ Ischemia:看起來是aVR STE with multiple leads STD的subendocardial ischemia p
 
 #### **此外Kounis syndrome其ECG features有什麼不一樣呢** [^6] ?
 
-![KS的臨床症狀和ECG features](https://p.ipic.vip/nxwtzf.png)
+![KS的臨床症狀和ECG features](/images/ipic/nxwtzf.png)
 
 **老實說.......看不出來有啥不一樣XD**(😅😅😅)
 
@@ -232,7 +232,7 @@ Ischemia:看起來是aVR STE with multiple leads STD的subendocardial ischemia p
 
 照了Portable CXR，病患被CPR壓胸壓到氣胸
 
-![Right PTX](https://p.ipic.vip/8sm3vy.png)
+![Right PTX](/images/ipic/8sm3vy.png)
 
 病患後來在急診室插了胸管、也插了CVC
 
