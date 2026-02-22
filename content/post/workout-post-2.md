@@ -1,5 +1,5 @@
 ---
-title: "醫生Gym Shorts 更新"
+title: "宜蘭友愛萵苣紀錄"
 date: "2026-02-22"
 description: "醫生Gym Shorts"
 featured: false
@@ -13,11 +13,6 @@ tags:
   - YouTube Shorts
   - 訓練紀錄
 ---
-
-這兩支 Shorts 已加入醫生Gym：
-
-1. [https://youtube.com/shorts/CyCvdPLEW8A](https://youtube.com/shorts/CyCvdPLEW8A)
-2. [https://youtube.com/shorts/F2epjayG9aM](https://youtube.com/shorts/F2epjayG9aM)
 
 <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:16px;">
   <iframe
