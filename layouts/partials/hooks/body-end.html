@@ -1,4 +1,3 @@
-{{- if and .IsPage (eq .Section "post") }}
 <style>
   :root {
     --ecg-rp-left: 12px;
@@ -141,6 +140,10 @@
 
 <script>
   (function () {
+    const isSinglePage = document.documentElement.classList.contains("page");
+    const isPostPath = window.location.pathname.includes("/post/");
+    if (!isSinglePage || !isPostPath) return;
+
     const shell = document.getElementById("ecgReadProgress");
     const article = document.querySelector(".post_content");
     const articleBody = document.querySelector(".post_content .post_body");
@@ -253,4 +256,3 @@
     requestUpdate();
   })();
 </script>
-{{- end }}
