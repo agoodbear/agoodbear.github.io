@@ -45,6 +45,40 @@ CATEGORY_OVERRIDES: dict[str, list[str]] = {
 DEFAULT_CATEGORY = "ecg"
 REQUIRED_CATEGORY = "medium"
 
+TAG_OVERRIDES: dict[str, list[str]] = {
+    "1afeaa016c60": ["medium-import", "程式寫作", "自我進修"],
+    "228b8ba47e61": ["medium-import", "PE", "Wellen", "IHCA"],
+    "2ea0b1ecd7ad": ["medium-import", "OMI", "STEMI(-)/OMI(+)", "POCUS"],
+    "30c24eb7e9ab": ["medium-import", "OMI", "STEMI mimics", "STEMI(-)/OMI(+)"],
+    "3485bf8aafc3": ["medium-import", "OMI", "POCUS"],
+    "391b08ca389f": ["medium-import", "OMI", "Wellen", "DeWinter"],
+    "3956f2cef4ca": ["medium-import", "OMI", "STEMI mimics"],
+    "3a0024bad29f": ["medium-import", "OMI", "STEMI(-)/OMI(+)"],
+    "3ec1599ca9bb": ["medium-import", "IHCA", "arrhythmia"],
+    "43e54fb93302": ["medium-import", "OMI", "LBBB"],
+    "572833c10cce": ["medium-import", "OMI"],
+    "5c777eb7b382": ["medium-import", "OMI", "STEMI(-)/OMI(+)", "POCUS"],
+    "6cdf5d600a1c": ["medium-import", "OMI", "arrhythmia"],
+    "6efa37de7325": ["medium-import", "Roam search", "自我進修"],
+    "7406e9f73e25": ["medium-import", "STEMI mimics", "OMI"],
+    "757469a98a86": ["medium-import", "arrhythmia"],
+    "7bca25391302": ["medium-import", "arrhythmia"],
+    "962b3d4d3f0e": ["medium-import", "arrhythmia"],
+    "9871a13944d5": ["medium-import", "Wellen", "OMI"],
+    "a435a4974882": ["medium-import", "OMI", "STEMI(-)/OMI(+)"],
+    "b4504530acc": ["medium-import", "OMI", "arrhythmia"],
+    "c2fa94a9ab28": ["medium-import", "OMI", "STEMI(-)/OMI(+)"],
+    "cec16f0ae2f8": ["medium-import", "Wellen", "PE", "STEMI mimics"],
+    "d266ed8a1693": ["medium-import", "IHCA", "PE", "hyperkalemia", "STEMI mimics"],
+    "db499ddee6f9": ["medium-import", "PE", "POCUS", "STEMI mimics"],
+    "e27169e97461": ["medium-import", "OMI", "STEMI(-)/OMI(+)"],
+    "e8b80abb4274": ["medium-import", "OMI", "STEMI(-)/OMI(+)"],
+    "ef858cdd6d2": ["medium-import", "hyperkalemia", "STEMI mimics"],
+    "efdc3b9f05d5": ["medium-import", "LBBB", "STEMI mimics"],
+    "f925150612af": ["medium-import", "OMI", "STEMI(-)/OMI(+)"],
+    "fc136c4d6bf": ["medium-import", "自我進修"],
+}
+
 REFERENCE_HEADING_TERMS = (
     "參考資料",
     "references",
@@ -74,6 +108,7 @@ class RawPost:
     medium_id: str
     pub_date: datetime
     categories: list[str]
+    tags: list[str]
     content_markdown: str
     first_image: str | None
 
@@ -122,6 +157,19 @@ def dedupe_keep_order(values: Iterable[str]) -> list[str]:
     return out
 
 
+def dedupe_keep_order_preserve(values: Iterable[str]) -> list[str]:
+    out: list[str] = []
+    seen: set[str] = set()
+    for value in values:
+        item = value.strip()
+        key = item.lower()
+        if not item or key in seen:
+            continue
+        seen.add(key)
+        out.append(item)
+    return out
+
+
 def extract_categories(post: dict[str, Any], medium_id: str) -> list[str]:
     if medium_id in CATEGORY_OVERRIDES:
         return dedupe_keep_order(CATEGORY_OVERRIDES[medium_id])
@@ -139,6 +187,49 @@ def extract_categories(post: dict[str, Any], medium_id: str) -> list[str]:
     categories.append(DEFAULT_CATEGORY)
     categories.append(REQUIRED_CATEGORY)
     return dedupe_keep_order(categories)
+
+
+def extract_tags(post: dict[str, Any], medium_id: str, content_markdown: str) -> list[str]:
+    if medium_id in TAG_OVERRIDES:
+        return dedupe_keep_order_preserve(TAG_OVERRIDES[medium_id])
+
+    tags: list[str] = ["medium-import"]
+    title = str(post.get("title") or "")
+    probe = f"{title}\n{content_markdown}"
+
+    def has(pattern: str) -> bool:
+        return re.search(pattern, probe, flags=re.IGNORECASE) is not None
+
+    if has(r"\bOMI\b|Occlusion MI"):
+        tags.append("OMI")
+    if has(r"Wellen"):
+        tags.append("Wellen")
+    if has(r"De\s*Winter|DeWinter"):
+        tags.append("DeWinter")
+    if has(r"\bLBBB\b|paced rhythm"):
+        tags.append("LBBB")
+    if has(r"高血鉀|hyperkalemia"):
+        tags.append("hyperkalemia")
+    if has(r"肺栓塞|pulmonary embol"):
+        tags.append("PE")
+    if has(r"IHCA|OHCA|cardiac arrest|心跳停止"):
+        tags.append("IHCA")
+    if has(r"tachycardia|arrhythmia|心律不整|WPW|AVRT|AVNRT|VT\b|VF\b|AIVR|VPC|PVC|AVB"):
+        tags.append("arrhythmia")
+    if has(r"POCUS|超音波|\becho\b"):
+        tags.append("POCUS")
+    if has(r"pericarditis|myocarditis|高血鉀|hyperkalemia|\bLVH\b|肺栓塞|pulmonary embol"):
+        tags.append("STEMI mimics")
+    if has(r"STEMI\(-\)|沒有符合STEMI criteria") and has(r"\bOMI\b"):
+        tags.append("STEMI(-)/OMI(+)")
+    if has(r"Roam"):
+        tags.append("Roam search")
+    if has(r"Medium各種排版功能|Hugo|程式寫作"):
+        tags.append("程式寫作")
+    if has(r"自我進修|教學|推薦網站|資源"):
+        tags.append("自我進修")
+
+    return dedupe_keep_order_preserve(tags)
 
 
 def escape_markdown_plain(text: str) -> str:
@@ -563,6 +654,7 @@ def parse_post(raw_post: dict[str, Any], fallback_id: str) -> RawPost | None:
         first_image = extract_first_image_from_preview(raw_post)
 
     categories = extract_categories(raw_post, medium_id)
+    tags = extract_tags(raw_post, medium_id, content_markdown)
 
     return RawPost(
         title=title,
@@ -570,6 +662,7 @@ def parse_post(raw_post: dict[str, Any], fallback_id: str) -> RawPost | None:
         medium_id=medium_id,
         pub_date=pub_date,
         categories=categories,
+        tags=tags,
         content_markdown=content_markdown,
         first_image=first_image,
     )
@@ -653,7 +746,13 @@ def build_front_matter(post: RawPost) -> str:
     lines.extend(
         [
             "tags:",
-            '  - "medium-import"',
+        ]
+    )
+    for tag in post.tags:
+        lines.append(f"  - {yaml_quote(tag)}")
+
+    lines.extend(
+        [
             f'medium_id: "{post.medium_id}"',
             f"medium_url: {yaml_quote(post.link)}",
             f"canonicalURL: {yaml_quote(post.link)}",

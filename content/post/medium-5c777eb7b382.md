@@ -9,6 +9,9 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "OMI"
+  - "STEMI(-)/OMI(+)"
+  - "POCUS"
 medium_id: "5c777eb7b382"
 medium_url: "https://medium.com/@agoodbear/64%E6%AD%B2%E7%94%B7%E6%80%A7-%E4%B8%8A%E8%85%B9%E7%97%9B-%E8%83%B8%E7%97%9B-%E4%B8%8A%E8%83%8C%E7%97%9B-5c777eb7b382"
 canonicalURL: "https://medium.com/@agoodbear/64%E6%AD%B2%E7%94%B7%E6%80%A7-%E4%B8%8A%E8%85%B9%E7%97%9B-%E8%83%B8%E7%97%9B-%E4%B8%8A%E8%83%8C%E7%97%9B-5c777eb7b382"

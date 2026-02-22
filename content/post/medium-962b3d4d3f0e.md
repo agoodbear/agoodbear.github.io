@@ -9,6 +9,7 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "arrhythmia"
 medium_id: "962b3d4d3f0e"
 medium_url: "https://medium.com/@agoodbear/narrow-qrs-tachycardia-962b3d4d3f0e"
 canonicalURL: "https://medium.com/@agoodbear/narrow-qrs-tachycardia-962b3d4d3f0e"

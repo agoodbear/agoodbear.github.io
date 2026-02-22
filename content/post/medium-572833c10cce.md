@@ -9,6 +9,7 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "OMI"
 medium_id: "572833c10cce"
 medium_url: "https://medium.com/@agoodbear/%E9%85%92%E5%BE%8C%E8%85%B9%E7%97%9B-%E8%83%B8%E6%82%B6-572833c10cce"
 canonicalURL: "https://medium.com/@agoodbear/%E9%85%92%E5%BE%8C%E8%85%B9%E7%97%9B-%E8%83%B8%E6%82%B6-572833c10cce"

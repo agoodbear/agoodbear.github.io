@@ -9,6 +9,9 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "OMI"
+  - "STEMI mimics"
+  - "STEMI(-)/OMI(+)"
 medium_id: "30c24eb7e9ab"
 medium_url: "https://medium.com/@agoodbear/%E5%BF%83%E8%87%9F%E8%AD%A6%E8%A8%8A-pericarditis-vs-omi-%E5%86%8D%E6%AC%A1%E5%85%A5%E9%99%A2-30c24eb7e9ab"
 canonicalURL: "https://medium.com/@agoodbear/%E5%BF%83%E8%87%9F%E8%AD%A6%E8%A8%8A-pericarditis-vs-omi-%E5%86%8D%E6%AC%A1%E5%85%A5%E9%99%A2-30c24eb7e9ab"

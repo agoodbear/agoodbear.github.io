@@ -9,6 +9,8 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "OMI"
+  - "STEMI(-)/OMI(+)"
 medium_id: "3a0024bad29f"
 medium_url: "https://medium.com/@agoodbear/43%E6%AD%B2%E7%94%B7%E6%80%A7-%E8%83%B8%E7%97%9B-%E7%9B%9C%E6%B1%97-%E9%80%99%E5%BC%B5ecg%E6%9C%89%E5%95%8F%E9%A1%8C%E5%97%8E-3a0024bad29f"
 canonicalURL: "https://medium.com/@agoodbear/43%E6%AD%B2%E7%94%B7%E6%80%A7-%E8%83%B8%E7%97%9B-%E7%9B%9C%E6%B1%97-%E9%80%99%E5%BC%B5ecg%E6%9C%89%E5%95%8F%E9%A1%8C%E5%97%8E-3a0024bad29f"

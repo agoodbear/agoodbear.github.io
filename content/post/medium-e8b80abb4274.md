@@ -9,6 +9,8 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "OMI"
+  - "STEMI(-)/OMI(+)"
 medium_id: "e8b80abb4274"
 medium_url: "https://medium.com/@agoodbear/%E7%9C%9F-%E5%BF%83-%E8%AA%A0%E6%84%8F-e8b80abb4274"
 canonicalURL: "https://medium.com/@agoodbear/%E7%9C%9F-%E5%BF%83-%E8%AA%A0%E6%84%8F-e8b80abb4274"

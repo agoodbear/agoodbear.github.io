@@ -9,6 +9,9 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "PE"
+  - "POCUS"
+  - "STEMI mimics"
 medium_id: "db499ddee6f9"
 medium_url: "https://medium.com/@agoodbear/%E4%BD%8E%E8%A1%80%E5%A3%93-%E4%BD%8E%E8%A1%80%E6%B0%A7%E5%88%B0%E9%99%A2-%E5%BF%83%E9%9B%BB%E5%9C%96%E6%9C%89%E5%95%8F%E9%A1%8C%E5%97%8E-db499ddee6f9"
 canonicalURL: "https://medium.com/@agoodbear/%E4%BD%8E%E8%A1%80%E5%A3%93-%E4%BD%8E%E8%A1%80%E6%B0%A7%E5%88%B0%E9%99%A2-%E5%BF%83%E9%9B%BB%E5%9C%96%E6%9C%89%E5%95%8F%E9%A1%8C%E5%97%8E-db499ddee6f9"

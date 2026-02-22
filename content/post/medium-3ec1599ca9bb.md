@@ -9,6 +9,8 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "IHCA"
+  - "arrhythmia"
 medium_id: "3ec1599ca9bb"
 medium_url: "https://medium.com/@agoodbear/ohca%E5%88%B0%E9%99%A2-%E5%95%9F%E5%8B%95%E5%BF%83%E5%B0%8E%E7%AE%A1%E5%97%8E-3ec1599ca9bb"
 canonicalURL: "https://medium.com/@agoodbear/ohca%E5%88%B0%E9%99%A2-%E5%95%9F%E5%8B%95%E5%BF%83%E5%B0%8E%E7%AE%A1%E5%97%8E-3ec1599ca9bb"

@@ -9,6 +9,10 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "IHCA"
+  - "PE"
+  - "hyperkalemia"
+  - "STEMI mimics"
 medium_id: "d266ed8a1693"
 medium_url: "https://medium.com/@agoodbear/ihca-%E8%82%BA%E6%A0%93%E5%A1%9E%E9%82%84%E6%98%AF%E5%85%B6%E4%BB%96%E5%95%8F%E9%A1%8C-d266ed8a1693"
 canonicalURL: "https://medium.com/@agoodbear/ihca-%E8%82%BA%E6%A0%93%E5%A1%9E%E9%82%84%E6%98%AF%E5%85%B6%E4%BB%96%E5%95%8F%E9%A1%8C-d266ed8a1693"
