@@ -14,7 +14,7 @@ tags:
   - 蛇
   - 竹榮
 ---
-![](https://p.ipic.vip/nmp534.jpg)
+![](/images/ipic/nmp534.jpg)
 
 下鄉第一年在竹東榮民醫院，發生了一件非常可怕的事。
 

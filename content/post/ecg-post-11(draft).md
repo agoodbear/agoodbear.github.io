@@ -49,7 +49,7 @@ Smith ECG Blog的作者之一Jesse McLaren在這一篇描述OMI [^5]，我覺得
 
 這是什麼意思?也就是**可能有高達8成的AMI病患，無法透過STEMI criteria做出AMI的診斷**。
 
-![](https://p.ipic.vip/7h4ptc.png)
+![](/images/ipic/7h4ptc.png)
 
 那麼該怎麼辦?可能得透過後續的echo、serial ECG、troponin數值、病患的臨床症狀互相配合，才能做出AMI的診斷。**(這一段文字，我在ecg-post-14有用到)**
 

@@ -15,7 +15,7 @@ categories:
 tags:
 ---
 
-![](https://p.ipic.vip/9zxy20.jpg)
+![](/images/ipic/9zxy20.jpg)
 
 <iframe width="1000" height="500" src="https://youtube.com/embed/CQu4uK_8I1E?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

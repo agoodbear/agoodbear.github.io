@@ -28,7 +28,7 @@ tags:
 
 在急重症環境下工作的同仁，應該會了解，這種類似癲癇的動作，並不是真正腦部問題產生，而更上層的原因常常是因為心臟跳了心室性心律不整比如心室顫動或心室性心搏過速，沒有足夠的心輸出量，進而產生腦部缺血而誘發類似癲癇的動作出現(**見Fig.1**)。
 
-![VT-Vf](https://p.ipic.vip/t7ki88.gif)
+![VT-Vf](/images/ipic/t7ki88.gif)
 
 ---
 
@@ -128,7 +128,7 @@ ECG monitor裝上去後，仍有波形，但沒有摸到脈搏。
 
 ECG如下:
 
-![Post CPR的ECG](https://p.ipic.vip/74ejk1.png)
+![Post CPR的ECG](/images/ipic/74ejk1.png)
 
 接著我們來判讀一下這有趣的心電圖~~
 
@@ -152,7 +152,7 @@ ECG如下:
 
 #### **我們來看看CAG，血管怎麼了?**
 
-![CAG報告](https://p.ipic.vip/8qr8xt.png)
+![CAG報告](/images/ipic/8qr8xt.png)
 
 三條血管都產生了spontaneous dissection，因而造成intramural hematoma，產生血管的壓迫而導致缺血。特別是RCA，被假腔的hematoma壓到幾乎要完全阻塞了。因此CV man在此處的冠狀動脈血管放了支架，把血流撐起來。
 
@@ -168,7 +168,7 @@ ECG如下:
 2. SCAD有分類嗎?
 3. SCAD和孕婦有啥關係呢?
 
-![其他案例圖片](https://p.ipic.vip/29a1mk.png)
+![其他案例圖片](/images/ipic/29a1mk.png)
 
 這案例來自於[這裡](https://www.researchgate.net/figure/Patient-presenting-with-ACS-A-Coronary-angiography-of-a-patient-with-SCAD-showing-a_fig3_326713504)。
 
@@ -176,7 +176,7 @@ ECG如下:
 
 **我們的這個案例(Fig.6)**，也可以見到在RCA有很長一段的血管突然變狹窄。
 
-![本院案例](https://p.ipic.vip/u2qwr4.png)
+![本院案例](/images/ipic/u2qwr4.png)
 
 紅色圈圈是很長一段血管突然狹窄區塊(intramural hematoma壓迫血管的地方)
 
@@ -184,7 +184,7 @@ ECG如下:
 
 #### **目前SCAD有分成四類:** [^10]
 
-![SCAD分類](https://p.ipic.vip/ea7gq5.png)
+![SCAD分類](/images/ipic/ea7gq5.png)
 
 | 類型   | 描述                                                         | 特點                                                         | 檢測方法      |
 | ------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------- |
@@ -201,7 +201,7 @@ ECG如下:
 
 #### **目前心血管影像檢查方法如下:** [^9]
 
-![心血管影像方法特性之比較](https://p.ipic.vip/0w6ec8.png)
+![心血管影像方法特性之比較](/images/ipic/0w6ec8.png)
 
 OCT 可以判斷識別出冠狀動脈血管壁內部的內膜 (intima) 邊界與中間層 (media)。 在 OCT 圖像中可以觀察到內膜是最接近血管腔的一個強信號層， 而中間層則以較弱的中間層信號呈現， 這在目前的血管內超音波技術中卻無法予以區分.[^9] 。
 
@@ -243,7 +243,7 @@ SCAD在**產後的前幾週最常發生**，但也可能在懷孕期間發生 [^
 
 下圖是Post PCI的ECG，可以見到在RCA-m幾乎完全阻塞的血管放了支架，也的的確確在Post PCI的ECG看到發作時，明顯的STE，都降下來了。只不過，我納悶的是，ECG findings直指proximal LAD是culprit lesion，但CAG卻不是這樣呈現。
 
-![Post PCI ECG](https://p.ipic.vip/cdb1oq.png)
+![Post PCI ECG](/images/ipic/cdb1oq.png)
 
 最後病患生個產，住院超過半個月以上，甚至還在鬼門關前和閻羅王打聲招呼。所幸閻王覺得她命不該絕，讓她重返人間~~
 

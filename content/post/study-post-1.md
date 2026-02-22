@@ -48,7 +48,7 @@ series:
 
 這邊就一定要強烈推薦古君葳老師的[Github 免費架站術！輕鬆打造個人品牌](https://hahow.in/courses/5de8fec16117240026540b9c/discussions?item=5e6edc23024d690024e4086b)
 
-![hahow學院網站課程](https://p.ipic.vip/8j6o61.png)
+![hahow學院網站課程](/images/ipic/8j6o61.png)
 
 ---
 
@@ -153,7 +153,7 @@ https://x.com/smithECGBlog/status/1745156040159559767?s=20
 
 ### <u>Podcast</u>:在Apple Podcast拷貝連結，放到網頁上搜尋，可以導到單集的網頁，接著按下分享，見到崁入連結
 
-![Apple Podcast的單集頁面](https://p.ipic.vip/6pfqsi.png)
+![Apple Podcast的單集頁面](/images/ipic/6pfqsi.png)
 
 <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/tw/podcast/episode-92-marine-ingested-poisons-and-infections/id1514052567?i=1000641060189"></iframe>
 
@@ -286,11 +286,11 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 
 ### Typora常用的快捷鍵
 
-![段落相關語法](https://p.ipic.vip/tvhqhc.png)
+![段落相關語法](/images/ipic/tvhqhc.png)
 
-![文字格式](https://p.ipic.vip/4ddh58.png)
+![文字格式](/images/ipic/4ddh58.png)
 
-![視野角度](https://p.ipic.vip/udydui.png)
+![視野角度](/images/ipic/udydui.png)
 
 
 
