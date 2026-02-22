@@ -9,6 +9,8 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "OMI"
+  - "STEMI mimics"
 medium_id: "3956f2cef4ca"
 medium_url: "https://medium.com/@agoodbear/2%E5%B0%8F%E6%99%82%E5%89%8D%E8%83%B8%E6%82%B6-%E6%9C%89ami%E5%97%8E-3956f2cef4ca"
 canonicalURL: "https://medium.com/@agoodbear/2%E5%B0%8F%E6%99%82%E5%89%8D%E8%83%B8%E6%82%B6-%E6%9C%89ami%E5%97%8E-3956f2cef4ca"

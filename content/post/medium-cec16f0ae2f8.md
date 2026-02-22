@@ -9,6 +9,9 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "Wellen"
+  - "PE"
+  - "STEMI mimics"
 medium_id: "cec16f0ae2f8"
 medium_url: "https://medium.com/@agoodbear/%E8%83%B8%E7%97%9B-%E6%98%AFwellen%E5%97%8E-cec16f0ae2f8"
 canonicalURL: "https://medium.com/@agoodbear/%E8%83%B8%E7%97%9B-%E6%98%AFwellen%E5%97%8E-cec16f0ae2f8"

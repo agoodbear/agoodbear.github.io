@@ -9,6 +9,9 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "PE"
+  - "Wellen"
+  - "IHCA"
 medium_id: "228b8ba47e61"
 medium_url: "https://medium.com/@agoodbear/%E5%88%B0%E9%99%A2%E5%89%8D%E6%AD%BB%E4%BA%A1%E6%A1%88%E4%BE%8B-%E5%8E%9F%E5%9B%A0%E7%82%BA%E4%BD%95%E5%91%A2-228b8ba47e61"
 canonicalURL: "https://medium.com/@agoodbear/%E5%88%B0%E9%99%A2%E5%89%8D%E6%AD%BB%E4%BA%A1%E6%A1%88%E4%BE%8B-%E5%8E%9F%E5%9B%A0%E7%82%BA%E4%BD%95%E5%91%A2-228b8ba47e61"

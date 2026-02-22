@@ -9,6 +9,8 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "程式寫作"
+  - "自我進修"
 medium_id: "1afeaa016c60"
 medium_url: "https://medium.com/@agoodbear/medium%E5%90%84%E7%A8%AE%E6%8E%92%E7%89%88%E5%8A%9F%E8%83%BD-1afeaa016c60"
 canonicalURL: "https://medium.com/@agoodbear/medium%E5%90%84%E7%A8%AE%E6%8E%92%E7%89%88%E5%8A%9F%E8%83%BD-1afeaa016c60"

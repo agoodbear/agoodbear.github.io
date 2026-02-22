@@ -9,6 +9,8 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "LBBB"
+  - "STEMI mimics"
 medium_id: "efdc3b9f05d5"
 medium_url: "https://medium.com/@agoodbear/%E8%A8%BA%E6%96%B7ami-in-lbbb%E6%88%96paced-rhythm%E8%A3%9C%E5%AE%8C%E4%BA%86%E5%97%8E-efdc3b9f05d5"
 canonicalURL: "https://medium.com/@agoodbear/%E8%A8%BA%E6%96%B7ami-in-lbbb%E6%88%96paced-rhythm%E8%A3%9C%E5%AE%8C%E4%BA%86%E5%97%8E-efdc3b9f05d5"

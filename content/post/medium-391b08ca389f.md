@@ -9,6 +9,9 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "OMI"
+  - "Wellen"
+  - "DeWinter"
 medium_id: "391b08ca389f"
 medium_url: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFpost-wellen-syndrome%E9%82%84%E6%98%AFde-winter-391b08ca389f"
 canonicalURL: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFpost-wellen-syndrome%E9%82%84%E6%98%AFde-winter-391b08ca389f"

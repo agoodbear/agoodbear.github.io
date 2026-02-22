@@ -9,6 +9,8 @@ categories:
   - "medium"
 tags:
   - "medium-import"
+  - "OMI"
+  - "arrhythmia"
 medium_id: "6cdf5d600a1c"
 medium_url: "https://medium.com/@agoodbear/vpc%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%B0%8F%E5%85%B5%E7%AB%8B%E5%A4%A7%E5%8A%9F%E5%97%8E-6cdf5d600a1c"
 canonicalURL: "https://medium.com/@agoodbear/vpc%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%B0%8F%E5%85%B5%E7%AB%8B%E5%A4%A7%E5%8A%9F%E5%97%8E-6cdf5d600a1c"
