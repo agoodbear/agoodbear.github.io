@@ -1,17 +1,8 @@
 {{- $params := site.Params }}
 {{- if site.Params.enableSearch }}
-  {{- $placeholder := T "search_field_placeholder" }}
+  {{- $placeholder := "搜尋文章…" }}
   {{- $section := $.Page.Section }}
-  {{- $simple := true }}
-  {{- if and (eq $section "support") (eq .CurrentSection .FirstSection) }}
-  {{- else }}
-    {{- $placeholder = T "blog_search_field_placeholder" }}
-    {{- $simple = false }}
-  {{- end }}
-
-  {{- if or (eq $placeholder "") (eq $placeholder "search_field_placeholder") (eq $placeholder "blog_search_field_placeholder") }}
-    {{- $placeholder = "搜尋文章…" }}
-  {{- end }}
+  {{- $simple := and (eq $section "support") (eq .CurrentSection .FirstSection) }}
 
   {{- $searchBoxLabel := "搜尋框" }}
   <div class="search">
@@ -25,4 +16,22 @@
     <div class="search_results results"></div>
     {{- end }}
   </div>
+  <script>
+    (function () {
+      var fallbackPlaceholder = "搜尋文章…";
+      var ensurePlaceholder = function () {
+        var searchField = document.getElementById("find");
+        if (!searchField) return;
+        if (!searchField.placeholder || !searchField.placeholder.trim()) {
+          searchField.placeholder = fallbackPlaceholder;
+        }
+      };
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", ensurePlaceholder, { once: true });
+      } else {
+        ensurePlaceholder();
+      }
+      window.addEventListener("pageshow", ensurePlaceholder);
+    })();
+  </script>
 {{- end }}
