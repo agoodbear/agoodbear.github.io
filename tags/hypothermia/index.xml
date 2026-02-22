@@ -11,6 +11,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2FER_Bear%2FBBXcvkPkLe.png?alt=media&amp;amp;token=b5759d74-3272-4224-855b-9ec9d50b4403"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -27,6 +29,8 @@ decoding="async"
 alt="到院時ECG"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/86dnuj.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -51,6 +55,8 @@ decoding="async"
 alt="分辨J point和J wave"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/ogirrn.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -68,8 +74,9 @@ decoding="async"
 alt="分析prehospital ECG"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/9y6g9s.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;首先一定要養成一個習慣，那就是看到STE，要先確認這是不是STE。確認的方法，就是我剛剛說的，先找J point在哪裡!!!!(Step 1)&lt;/p&gt;</description></item></channel></rss>
+&lt;/p&gt;</description></item></channel></rss>

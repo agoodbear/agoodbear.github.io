@@ -27,6 +27,8 @@ decoding="async"
 alt="ROSC後的ECG"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/laqfx4.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -54,6 +56,8 @@ decoding="async"
 alt="LA/LL reversal"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/o589rf.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -72,6 +76,8 @@ decoding="async"
 alt="16:39➔急救室ECG strip"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/t0hh4l.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -88,6 +94,8 @@ decoding="async"
 alt="中指明顯蜂螫痕跡"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/g8x3nk.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -102,6 +110,8 @@ decoding="async"
 alt="PEA"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/7rmxbv.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -118,6 +128,8 @@ decoding="async"
 alt="Vf"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/4qzkae.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -136,6 +148,8 @@ decoding="async"
 alt="Polymorphic VT or Vf?"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/36xrsu.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -152,25 +166,13 @@ decoding="async"
 alt="Vf"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/8odr0x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;又過了2分鐘，依舊是Vf&lt;/p&gt;
-&lt;p&gt;⚡️再次電擊200J&lt;/p&gt;
-&lt;h3 id="時間1646"&gt;&lt;strong&gt;時間:16:46&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt="Vf"
-class="image_figure image_external image_unprocessed"
-src="https://p.ipic.vip/l7nyia.png"
-/&gt;
-&lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;</description></item><item><title>OHCA到院，啟動心導管嗎?</title><link>https://agoodbear.github.io/post/medium-3ec1599ca9bb/</link><pubDate>Sat, 16 Jul 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-3ec1599ca9bb/</guid><description>
+&lt;p&gt;又過了2分鐘，依舊是Vf&lt;/p&gt;</description></item><item><title>OHCA到院，啟動心導管嗎?</title><link>https://agoodbear.github.io/post/medium-3ec1599ca9bb/</link><pubDate>Sat, 16 Jul 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-3ec1599ca9bb/</guid><description>
 &lt;h3 id="ohca到院啟動心導管嗎"&gt;OHCA到院，啟動心導管嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -180,6 +182,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*7sfT-6ZdvaJFT_ZI_X_8Hg@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -204,6 +208,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*h-7A7r5_DB39MPcazvXdGQ.jpeg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -214,8 +220,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*h-7A7r5_DB39MPcazvXdGQ.jpeg"
 &lt;h4 id="q3qtc這個數值有問題嗎"&gt;&lt;strong&gt;Q3:QTc這個數值有問題嗎?&lt;/strong&gt;&lt;/h4&gt;
 &lt;h4 id="q4ohca病患rosc之後要注意哪些重點"&gt;&lt;strong&gt;Q4:OHCA病患ROSC之後要注意哪些重點?&lt;/strong&gt;&lt;/h4&gt;
 &lt;h4 id="q5如果病患懷疑acs要衝導管嗎衝導管之前需要排除什麼問題呢"&gt;&lt;strong&gt;Q5:如果病患懷疑ACS要衝導管嗎?衝導管之前，需要排除什麼問題呢?&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;首先看到&lt;strong&gt;diffuse STD + aVR and/or V1 STE&lt;/strong&gt;最常見的問題是發生了，oxygen demand and supply mismatch造成了subendocardial ischemia。這種的STD有一個特點那就是沒辦法localized the ischemia territory。拿Fig.2來舉例，我們看到了II/III/aVF、V3~V6有STD，我們不能說病患的inf.wall、ant./lateral wall有ischemia，因為通常subendocardial ischemia並無法localize缺血位置。&lt;/p&gt;
-&lt;p&gt;反過來說，怎樣的STD可以localize缺血的位置呢?當STD發生在血管支配的相對位置，不是明顯的diffuse STD，那麼可以反應心臟缺血的位置。&lt;strong&gt;而且是反應STD出現的對側lead有缺血(這裡的STD指的是reciprocal change →這非常非常重要)。&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>IHCA →肺栓塞還是其他問題?</title><link>https://agoodbear.github.io/post/medium-d266ed8a1693/</link><pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-d266ed8a1693/</guid><description>
+&lt;p&gt;首先看到&lt;strong&gt;diffuse STD + aVR and/or V1 STE&lt;/strong&gt;最常見的問題是發生了，oxygen demand and supply mismatch造成了subendocardial ischemia。這種的STD有一個特點那就是沒辦法localized the ischemia territory。拿Fig.2來舉例，我們看到了II/III/aVF、V3~V6有STD，我們不能說病患的inf.wall、ant./lateral wall有ischemia，因為通常subendocardial ischemia並無法localize缺血位置。&lt;/p&gt;</description></item><item><title>IHCA →肺栓塞還是其他問題?</title><link>https://agoodbear.github.io/post/medium-d266ed8a1693/</link><pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-d266ed8a1693/</guid><description>
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -224,6 +229,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*f2GmaCa9hR-VLoQKEGX0vw@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -250,6 +257,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*Bf0nYFkHXhsipj1wc8kqXw@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -258,20 +267,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*Bf0nYFkHXhsipj1wc8kqXw@2x.png"
 &lt;p&gt;RAD、RBBB、STE over III、aVR、STD over V2&lt;del&gt;V6(Maximal at V3&lt;/del&gt;V4)、I/aVL。這邊可以很確定在precordial leads的Maximal lead在V3~V4，而且是&lt;strong&gt;excessive discordant&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;在RBBB pattern中，常見在V1~V3有TWI與mild STD**(如果有的話)**，但是STD不超過1 mm。所以超過了1 mm代表了，有某個力量把STD往下拉&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;➡️什麼力量?Post.wall OMI(後壁血管阻塞)。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;另外&lt;strong&gt;aVR STE + Diffuse leads STD&lt;/strong&gt;的DDx非常多。&lt;/p&gt;
-&lt;p&gt;有血管的問題，也有不是血管的問題。&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt=""
-class="image_figure image_external image_unprocessed"
-src="https://cdn-images-1.medium.com/max/1024/1*zL-rA_XVZ8v3YJCxUmd3rQ@2x.png"
-/&gt;
-&lt;/picture&gt;
-&lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;aVR STE的DDx&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description></item><item><title>到院前死亡案例，原因為何呢?</title><link>https://agoodbear.github.io/post/medium-228b8ba47e61/</link><pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-228b8ba47e61/</guid><description>
+&lt;p&gt;另外&lt;strong&gt;aVR STE + Diffuse leads STD&lt;/strong&gt;的DDx非常多。&lt;/p&gt;</description></item><item><title>到院前死亡案例，原因為何呢?</title><link>https://agoodbear.github.io/post/medium-228b8ba47e61/</link><pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-228b8ba47e61/</guid><description>
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -280,6 +276,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*658U47yADmFl43Vh8lxIhw@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -295,6 +293,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*TCibxgW2jlITY8MXP9cA0A@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -323,6 +323,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*Emykvthp7Q5kwZpdqPh1yA.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;

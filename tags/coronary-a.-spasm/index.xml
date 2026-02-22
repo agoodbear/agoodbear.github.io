@@ -19,6 +19,8 @@ decoding="async"
 alt="ROSC後的第一張ECG"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/1leh54.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -32,6 +34,8 @@ decoding="async"
 alt="ROSC&amp;#43;10 mins"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/5rgb2z.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -46,6 +50,8 @@ decoding="async"
 alt="ER Bedside echo"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/j28zai.gif"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -60,6 +66,8 @@ decoding="async"
 alt="文獻absctract"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/cajmao.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;

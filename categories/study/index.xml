@@ -8,6 +8,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/2cyi5t.jpg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -20,6 +22,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/4suyq9.jpg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -33,6 +37,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/k6xza9.jpg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -46,6 +52,8 @@ decoding="async"
 alt="課程表"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/esnxdq.jpg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -61,6 +69,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/zdj57e.jpg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -74,6 +84,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/1z6uid.jpg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -87,6 +99,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/aa3hlq.jpg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -100,6 +114,8 @@ decoding="async"
 alt="簽名書"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/2dg1rn.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -114,6 +130,8 @@ decoding="async"
 alt="大俠愛吃漢堡包"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/xl8wp8.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -181,6 +199,8 @@ decoding="async"
 alt="資料庫"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/8vwg0a.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -200,6 +220,8 @@ decoding="async"
 alt="資料庫應用觀念"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/bqpo96.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -215,6 +237,8 @@ decoding="async"
 alt="Evernote to Roam"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/0k43pg.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -240,23 +264,13 @@ decoding="async"
 alt="Readwise手機App"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/jvb083.gif"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;Readwise手機App的好處是可以直接OCR看到的紙本書籍。拍照下來，把重要文字OCR出來，接著就可以Export到Roam裡面去了。&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt="Roam手機App"
-class="image_figure image_external image_unprocessed"
-src="https://p.ipic.vip/i44dqg.gif"
-/&gt;
-&lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;</description></item><item><title>使用Hugo架站相關語法</title><link>https://agoodbear.github.io/post/study-post-1/</link><pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-1/</guid><description>
+&lt;p&gt;Readwise手機App的好處是可以直接OCR看到的紙本書籍。拍照下來，把重要文字OCR出來，接著就可以Export到Roam裡面去了。&lt;/p&gt;</description></item><item><title>使用Hugo架站相關語法</title><link>https://agoodbear.github.io/post/study-post-1/</link><pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-1/</guid><description>
 &lt;h1 id="要如何利用hugo建立靜態網站文章"&gt;要如何利用Hugo建立靜態網站文章&lt;/h1&gt;
 &lt;h2 id="前置作業"&gt;前置作業&lt;/h2&gt;
 &lt;p&gt;首先要確立幾件事情:&lt;/p&gt;
@@ -291,6 +305,8 @@ decoding="async"
 alt="hahow學院網站課程"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/8j6o61.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -339,6 +355,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*xXb9LHTT0K9SsQizSxzYZg@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -354,6 +372,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*WgW-LwzZwY03S8pq5NLycQ@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -369,6 +389,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*iC0r-9zWy6lESpKNOUJaxw@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -391,6 +413,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*jhZIIfIN__Rcb30dwecWAA@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -403,6 +427,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -415,6 +441,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*pEVYam7Maa6UqptWqzpH2g@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -428,6 +456,8 @@ decoding="async"
 alt="embed"
 class="image_figure image_external image_unprocessed"
 src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi.ytimg.com%2Fvi%2F4-TeZrmGWSg%2Fhqdefault.jpg&amp;amp;key=a19fcc184b9711e1b4764040d3dc5c07"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -440,6 +470,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/v4ydr0.jpg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;

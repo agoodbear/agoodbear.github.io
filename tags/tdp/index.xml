@@ -13,6 +13,8 @@ decoding="async"
 alt="16:39➔急救室ECG strip"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/t0hh4l.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -29,6 +31,8 @@ decoding="async"
 alt="中指明顯蜂螫痕跡"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/g8x3nk.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -43,6 +47,8 @@ decoding="async"
 alt="PEA"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/7rmxbv.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -59,6 +65,8 @@ decoding="async"
 alt="Vf"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/4qzkae.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -77,6 +85,8 @@ decoding="async"
 alt="Polymorphic VT or Vf?"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/36xrsu.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -93,25 +103,13 @@ decoding="async"
 alt="Vf"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/8odr0x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;又過了2分鐘，依舊是Vf&lt;/p&gt;
-&lt;p&gt;⚡️再次電擊200J&lt;/p&gt;
-&lt;h3 id="時間1646"&gt;&lt;strong&gt;時間:16:46&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt="Vf"
-class="image_figure image_external image_unprocessed"
-src="https://p.ipic.vip/l7nyia.png"
-/&gt;
-&lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;</description></item><item><title>讓心臟亂跳的外傷</title><link>https://agoodbear.github.io/post/ecg-post-6/</link><pubDate>Tue, 05 Mar 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-6/</guid><description>
+&lt;p&gt;又過了2分鐘，依舊是Vf&lt;/p&gt;</description></item><item><title>讓心臟亂跳的外傷</title><link>https://agoodbear.github.io/post/ecg-post-6/</link><pubDate>Tue, 05 Mar 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-6/</guid><description>
 &lt;h3 id="48歲女性下樓時不小心腳踩空從樓上滾了下來"&gt;&lt;code&gt;48歲女性，下樓時，不小心，腳踩空，從樓上滾了下來。&lt;/code&gt;&lt;/h3&gt;
 &lt;h4 id="簡單的一句話卻是她悲慘人生的開端"&gt;簡單的一句話，卻是她悲慘人生的開端。&lt;/h4&gt;
 &lt;hr&gt;
@@ -125,6 +123,8 @@ decoding="async"
 alt="到院後ECG"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/5ptepv.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -146,6 +146,8 @@ decoding="async"
 alt="同事其他個案"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/o3jjk4.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -165,6 +167,8 @@ decoding="async"
 alt="Serial dynamic ECG strips"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/uoc0dz.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -176,16 +180,4 @@ src="https://p.ipic.vip/uoc0dz.png"
 &lt;li&gt;long lead II計算法&lt;/li&gt;
 &lt;li&gt;看ECG機器數值😆&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;應用rule of 300，就是先算RR interval有幾大格，算好後，直接300/幾大格(&lt;strong&gt;Fig.4&lt;/strong&gt;)。不過有一個前提，那就是12 lead ECG的Speed要設在 &lt;strong&gt;25 mm/sec&lt;/strong&gt;。理論上，一般都是設25 mm/sec，沒事不會去做變更啦。&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt="Rule of 300規則"
-class="image_figure image_external image_unprocessed"
-src="https://p.ipic.vip/nrznvd.png"
-/&gt;
-&lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;應用rule of 300，就是先算RR interval有幾大格，算好後，直接300/幾大格(&lt;strong&gt;Fig.4&lt;/strong&gt;)。不過有一個前提，那就是12 lead ECG的Speed要設在 &lt;strong&gt;25 mm/sec&lt;/strong&gt;。理論上，一般都是設25 mm/sec，沒事不會去做變更啦。&lt;/p&gt;</description></item></channel></rss>

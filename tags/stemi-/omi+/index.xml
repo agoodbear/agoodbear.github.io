@@ -10,6 +10,8 @@ decoding="async"
 alt="ER arrival ECG"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/xgqpl7.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -27,6 +29,8 @@ decoding="async"
 alt="ACS分類"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/4t986q.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -44,6 +48,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/7h4ptc.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -65,14 +71,14 @@ decoding="async"
 alt="Chest leads"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/sxebeu.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;深綠色為baseline、深紅色垂直線是QRS的結尾。&lt;/p&gt;
-&lt;p&gt;可以見到V1/V2的STE勉強可接近1格、V3的STE不足一格。V4應該小於0.5格、V5/V6約都在baseline上面&lt;/p&gt;
-&lt;p&gt;這邊的V1-V3是有問題的。讓我來解釋。&lt;/p&gt;
-&lt;p&gt;ECG在有BBB(bundle branch block)的狀況下，著實不好評估是否AMI。&lt;/p&gt;</description></item><item><title>生氣的50歲男性</title><link>https://agoodbear.github.io/post/ecg-post-13/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-13/</guid><description>
+&lt;p&gt;可以見到V1/V2的STE勉強可接近1格、V3的STE不足一格。V4應該小於0.5格、V5/V6約都在baseline上面&lt;/p&gt;</description></item><item><title>生氣的50歲男性</title><link>https://agoodbear.github.io/post/ecg-post-13/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/ecg-post-13/</guid><description>
 &lt;p&gt;我依稀記得我在當R3住院醫師守急救室的某一天。那天來了個OHCA病患。&lt;/p&gt;
 &lt;p&gt;急救室滿滿人潮不打緊。一級病患再怎樣都要挪個位置。&lt;/p&gt;
 &lt;p&gt;救到一半，家屬到了.....在床尾開始哭喊著病患名字。&lt;/p&gt;
@@ -94,6 +100,8 @@ decoding="async"
 alt="到院ECG"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/qgljp6.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -135,12 +143,13 @@ decoding="async"
 alt="病患Limb leads ECG Change"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/7kthns.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;綠線&lt;/strong&gt;是J point位置，水平&lt;strong&gt;藍線&lt;/strong&gt;是basline&lt;/p&gt;
-&lt;p&gt;可以看到在II與aVF都是minimal STD、III的J point和baseline幾乎重疊。&lt;/p&gt;</description></item><item><title>73歲男性，胸痛持續。需要導管介入嗎?</title><link>https://agoodbear.github.io/post/medium-2ea0b1ecd7ad/</link><pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-2ea0b1ecd7ad/</guid><description>
+&lt;p&gt;&lt;strong&gt;綠線&lt;/strong&gt;是J point位置，水平&lt;strong&gt;藍線&lt;/strong&gt;是basline&lt;/p&gt;</description></item><item><title>73歲男性，胸痛持續。需要導管介入嗎?</title><link>https://agoodbear.github.io/post/medium-2ea0b1ecd7ad/</link><pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-2ea0b1ecd7ad/</guid><description>
 &lt;h3 id="73歲男性胸痛持續需要導管介入嗎"&gt;73歲男性，胸痛持續。需要導管介入嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -150,6 +159,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*WPqDirWKj_yqdGzdBAZqnw.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -167,6 +178,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*T52E6q5yGpWZPMwfY9lqAw.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -181,6 +194,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*8NJSL_CXDZJ7zDIbUOXGSw.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -195,19 +210,14 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*Sp7uErs0kp0vKimzbzqcRQ.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;em&gt;&lt;strong&gt;Fig.3 STEMI criteria&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;必須要再三強調，V2/V3的STE與其他lead定義不一樣。看V2/V3要根據性別/年齡合併一起看。&lt;/p&gt;
-&lt;p&gt;舉例來說，男性&amp;lt;40 y/o在V2/V3要≧2.5 mm才是有意義的高。其他以此類推。&lt;/p&gt;
-&lt;h4 id="這延伸了幾個有趣的狀況"&gt;這延伸了幾個有趣的狀況:&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;這也代表著，隨便抓一個人來作12 lead ECG，很有可能會在V2/V3都看到有STE，只是有沒有意義的高，就需要根據上述的criteria了。&lt;/li&gt;
-&lt;li&gt;如果沒有看到STE在V2/V3(比如isoelectric baseline or minimal STD)，那麼就需要考慮是不是有什麼力量往下拉了。&lt;strong&gt;對~~~Post.OMI&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;承上面，怎樣程度的minimal STD都要考慮Post.OMI呢?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;在這篇Smith ECG Blog有提到&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;，&lt;strong&gt;在V2 or V3有任何程度的STD，都必須考慮posterior OMI，直到證明不是為止&lt;/strong&gt;。特別是&lt;strong&gt;downsloping STD&lt;/strong&gt;(符合前述，即使STD&amp;lt;0.5~1 mm都要特別小心)&lt;/p&gt;</description></item><item><title>心臟警訊：Pericarditis vs. OMI— 再次入院</title><link>https://agoodbear.github.io/post/medium-30c24eb7e9ab/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-30c24eb7e9ab/</guid><description>
+&lt;p&gt;舉例來說，男性&amp;lt;40 y/o在V2/V3要≧2.5 mm才是有意義的高。其他以此類推。&lt;/p&gt;</description></item><item><title>心臟警訊：Pericarditis vs. OMI— 再次入院</title><link>https://agoodbear.github.io/post/medium-30c24eb7e9ab/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-30c24eb7e9ab/</guid><description>
 &lt;h3 id="心臟警訊pericarditis-vs-omi-再次入院"&gt;心臟警訊：Pericarditis vs. OMI— 再次入院&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -217,6 +227,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*tprAYzfatLfq__U6OEglhw.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -230,6 +242,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*7uZfr7ftD9OVd3BKPzzkaQ.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -247,6 +261,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*yll2nGUvdkL-QG8ulM664Q.jpeg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -269,6 +285,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*G2QwkE0DPnULRuC0psCX3A.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -281,6 +299,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*2gSPaVcRJw9P3SqzOPJJCw.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -293,30 +313,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*qkWpIWHGP_lVUNMz-42Iig.png"
-/&gt;
-&lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt=""
-class="image_figure image_external image_unprocessed"
-src="https://cdn-images-1.medium.com/max/1024/1*LhHja5QM_5Nw144hVZRwWg.png"
-/&gt;
-&lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt=""
-class="image_figure image_external image_unprocessed"
-src="https://cdn-images-1.medium.com/max/1024/1*2NSeEeAzOLBFJz_k3HAR9A.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -330,6 +328,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*LEbcLpGiMDrL-Xu6ZSo6nw@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -358,6 +358,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*sYlmqMIy0HgpVWurLO1mew.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -379,6 +381,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*DqTVLEhhjVNmKZEeycGr5w@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -414,12 +418,13 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*7ooVhVOb9EAgs0W7FUQIaA@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;em&gt;&lt;strong&gt;Fig.2 Axis&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;在&lt;strong&gt;RAD的DDx list中&lt;/strong&gt;(Fig.2的左下角)，除了要注意我們急診科可能會比較在意的RV overload syndrome(意思是有可能pulmonary embolism)、Na channel blocker toxicity，與是否leads錯置了。此外就是也有可能出現lateral wall MI。另外在小朋友因為心臟發育一開始是RV比較厚，長大後才變成LV較厚。所以在小小朋友做ECG，也有可能看到RAD喔~~&lt;/p&gt;
-&lt;p&gt;我自己的記憶法是，lateral wall比較靠外側，所以當AMI後，心肌死去，所以axis會往右偏(&lt;strong&gt;Lead I的R wave會減小&lt;/strong&gt; →有點類似precordial leads因為AMI出現PRWP的概念)&lt;/p&gt;</description></item><item><title>除了STE以外，還有哪些ECG sign也有可能血管阻塞呢?(前言)</title><link>https://agoodbear.github.io/post/medium-c2fa94a9ab28/</link><pubDate>Fri, 18 Nov 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-c2fa94a9ab28/</guid><description>
+&lt;p&gt;在&lt;strong&gt;RAD的DDx list中&lt;/strong&gt;(Fig.2的左下角)，除了要注意我們急診科可能會比較在意的RV overload syndrome(意思是有可能pulmonary embolism)、Na channel blocker toxicity，與是否leads錯置了。此外就是也有可能出現lateral wall MI。另外在小朋友因為心臟發育一開始是RV比較厚，長大後才變成LV較厚。所以在小小朋友做ECG，也有可能看到RAD喔~~&lt;/p&gt;</description></item><item><title>除了STE以外，還有哪些ECG sign也有可能血管阻塞呢?(前言)</title><link>https://agoodbear.github.io/post/medium-c2fa94a9ab28/</link><pubDate>Fri, 18 Nov 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-c2fa94a9ab28/</guid><description>
 &lt;h3 id="除了ste以外還有哪些ecg-sign也有可能血管阻塞呢前言"&gt;除了STE以外，還有哪些ECG sign也有可能血管阻塞呢?(前言)&lt;/h3&gt;
 &lt;p&gt;讓我們來看看幾張ECG，之後再來回答上頭的問題~~&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
@@ -430,6 +435,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*ab1PYAHkaEQSP9nEuhy-zA.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -442,6 +449,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*_GHxU3OoF6zKeTq7qtk_oQ@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -468,6 +477,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*K6sEg8DiWhvQxwaHkUyDew.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -480,6 +491,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*M6JTCfILjk6-NRJvLpkZmg.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -492,22 +505,12 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*aCqF5yFkYQVN0023sZAwkQ@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Table 1. 哪些ECG pattern可能有MI-Part I&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt=""
-class="image_figure image_external image_unprocessed"
-src="https://cdn-images-1.medium.com/max/1024/1*P0EzOAkMZqd83rgJBXVKzA.png"
-/&gt;
-&lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;</description></item><item><title>43歲男性，胸痛、盜汗，這張ECG有問題嗎?</title><link>https://agoodbear.github.io/post/medium-3a0024bad29f/</link><pubDate>Wed, 17 Aug 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-3a0024bad29f/</guid><description>
+&lt;em&gt;&lt;strong&gt;Table 1. 哪些ECG pattern可能有MI-Part I&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description></item><item><title>43歲男性，胸痛、盜汗，這張ECG有問題嗎?</title><link>https://agoodbear.github.io/post/medium-3a0024bad29f/</link><pubDate>Wed, 17 Aug 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-3a0024bad29f/</guid><description>
 &lt;h3 id="43歲男性胸痛盜汗這張ecg有問題嗎"&gt;43歲男性，胸痛、盜汗，這張ECG有問題嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -517,6 +520,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*j_dZY1RQ8S521jbC_KH1JA@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -547,6 +552,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/0*n2TFIR0wc4R76u0o.jpg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -561,12 +568,13 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*xwV7M-H6W4tVFagTyPmi_A@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;那麼Hyper-K的Peaked T wave和ACS的HATW到底差在哪裡?&lt;/p&gt;
-&lt;p&gt;Fig.2是在Smith ECG Blog上面的教學圖片的內容:&lt;a href="http://hqmeded-ecg.blogspot.com/p/teaching-images.html"&gt;來源在這&lt;/a&gt;&lt;/p&gt;</description></item><item><title>67歲女性，胸痛1~2天，今早大痛</title><link>https://agoodbear.github.io/post/medium-a435a4974882/</link><pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-a435a4974882/</guid><description>
+&lt;p&gt;那麼Hyper-K的Peaked T wave和ACS的HATW到底差在哪裡?&lt;/p&gt;</description></item><item><title>67歲女性，胸痛1~2天，今早大痛</title><link>https://agoodbear.github.io/post/medium-a435a4974882/</link><pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-a435a4974882/</guid><description>
 &lt;h3 id="67歲女性胸痛12天今早大痛"&gt;67歲女性，胸痛1~2天，今早大痛&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -576,6 +584,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*C2Xc3y--irZzyhUMxjSK1g@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -606,6 +616,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*YXX-T6TkoVu2tdaJRii7Hg.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -628,6 +640,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*z6OsqsAtbxD5e90FFqyCnQ@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -646,6 +660,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*c8BhoRBUoDyqK1DNf44oDA.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -718,6 +734,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*PJhve0r0hwAoJO1Arnxi7w.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;

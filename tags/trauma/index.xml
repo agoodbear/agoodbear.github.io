@@ -12,6 +12,8 @@ decoding="async"
 alt="到院後ECG"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/5ptepv.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -33,6 +35,8 @@ decoding="async"
 alt="同事其他個案"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/o3jjk4.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -52,6 +56,8 @@ decoding="async"
 alt="Serial dynamic ECG strips"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/uoc0dz.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -63,16 +69,4 @@ src="https://p.ipic.vip/uoc0dz.png"
 &lt;li&gt;long lead II計算法&lt;/li&gt;
 &lt;li&gt;看ECG機器數值😆&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;應用rule of 300，就是先算RR interval有幾大格，算好後，直接300/幾大格(&lt;strong&gt;Fig.4&lt;/strong&gt;)。不過有一個前提，那就是12 lead ECG的Speed要設在 &lt;strong&gt;25 mm/sec&lt;/strong&gt;。理論上，一般都是設25 mm/sec，沒事不會去做變更啦。&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt="Rule of 300規則"
-class="image_figure image_external image_unprocessed"
-src="https://p.ipic.vip/nrznvd.png"
-/&gt;
-&lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;應用rule of 300，就是先算RR interval有幾大格，算好後，直接300/幾大格(&lt;strong&gt;Fig.4&lt;/strong&gt;)。不過有一個前提，那就是12 lead ECG的Speed要設在 &lt;strong&gt;25 mm/sec&lt;/strong&gt;。理論上，一般都是設25 mm/sec，沒事不會去做變更啦。&lt;/p&gt;</description></item></channel></rss>

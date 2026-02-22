@@ -8,6 +8,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*WPqDirWKj_yqdGzdBAZqnw.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -25,6 +27,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*T52E6q5yGpWZPMwfY9lqAw.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -39,6 +43,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*8NJSL_CXDZJ7zDIbUOXGSw.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -53,19 +59,14 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*Sp7uErs0kp0vKimzbzqcRQ.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;em&gt;&lt;strong&gt;Fig.3 STEMI criteria&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;必須要再三強調，V2/V3的STE與其他lead定義不一樣。看V2/V3要根據性別/年齡合併一起看。&lt;/p&gt;
-&lt;p&gt;舉例來說，男性&amp;lt;40 y/o在V2/V3要≧2.5 mm才是有意義的高。其他以此類推。&lt;/p&gt;
-&lt;h4 id="這延伸了幾個有趣的狀況"&gt;這延伸了幾個有趣的狀況:&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;這也代表著，隨便抓一個人來作12 lead ECG，很有可能會在V2/V3都看到有STE，只是有沒有意義的高，就需要根據上述的criteria了。&lt;/li&gt;
-&lt;li&gt;如果沒有看到STE在V2/V3(比如isoelectric baseline or minimal STD)，那麼就需要考慮是不是有什麼力量往下拉了。&lt;strong&gt;對~~~Post.OMI&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;承上面，怎樣程度的minimal STD都要考慮Post.OMI呢?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;在這篇Smith ECG Blog有提到&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;，&lt;strong&gt;在V2 or V3有任何程度的STD，都必須考慮posterior OMI，直到證明不是為止&lt;/strong&gt;。特別是&lt;strong&gt;downsloping STD&lt;/strong&gt;(符合前述，即使STD&amp;lt;0.5~1 mm都要特別小心)&lt;/p&gt;</description></item><item><title>64歲男性，上腹痛、胸痛、上背痛</title><link>https://agoodbear.github.io/post/medium-5c777eb7b382/</link><pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-5c777eb7b382/</guid><description>
+&lt;p&gt;舉例來說，男性&amp;lt;40 y/o在V2/V3要≧2.5 mm才是有意義的高。其他以此類推。&lt;/p&gt;</description></item><item><title>64歲男性，上腹痛、胸痛、上背痛</title><link>https://agoodbear.github.io/post/medium-5c777eb7b382/</link><pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-5c777eb7b382/</guid><description>
 &lt;h3 id="64歲男性上腹痛胸痛上背痛"&gt;64歲男性，上腹痛、胸痛、上背痛&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -75,6 +76,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*LEbcLpGiMDrL-Xu6ZSo6nw@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -103,6 +106,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*sYlmqMIy0HgpVWurLO1mew.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -124,6 +129,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*NXKy7gSDorREfnBDMYGt6w@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -160,6 +167,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/0*OrHTEsrACw43bk_D"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -180,6 +189,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*BZYaEyrDghAJY-2Uxgz7cA@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -205,6 +216,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*iCF76zQarG9ig0wCsx8sEw.jpeg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -229,6 +242,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/0*2yN5ESIMXzkJ0V-I"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -242,9 +257,10 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/0*nolKXEHS4FR8X6Cm.jpg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/a&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;當臨床上病患有胸痛、盜汗，做了如Fig.1的ECG。這樣的ECG，我們絕對不會miss掉。Inf.leads高到像山一樣高的STE，肯定會讓我們有衝動去會診CV man。但是如果這個病患limb leads(Fig.1左側)完全沒有STE，只有precordial leads有如Fig.1的變化。你能第一時間，也說這病患有MI嗎?&lt;/p&gt;</description></item></channel></rss>
+&lt;em&gt;&lt;strong&gt;Fig.1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description></item></channel></rss>

@@ -9,6 +9,8 @@ decoding="async"
 alt="Syncope的原因"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/5apyuf.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -31,6 +33,8 @@ decoding="async"
 alt="區分seizure/syncope發作"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/nl69xf.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -44,6 +48,8 @@ decoding="async"
 alt="文章內容重點的表格"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/iaajvm.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -62,18 +68,8 @@ decoding="async"
 alt="Syncope評估與檢查建議"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/fyiqjj.png"
-/&gt;
-&lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt="ECG屬於Class I建議"
-class="image_figure image_external image_unprocessed"
-src="https://p.ipic.vip/rdglkh.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -91,6 +87,8 @@ decoding="async"
 alt="到院後ECG"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/5ptepv.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -112,6 +110,8 @@ decoding="async"
 alt="同事其他個案"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/o3jjk4.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -131,6 +131,8 @@ decoding="async"
 alt="Serial dynamic ECG strips"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/uoc0dz.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -142,19 +144,7 @@ src="https://p.ipic.vip/uoc0dz.png"
 &lt;li&gt;long lead II計算法&lt;/li&gt;
 &lt;li&gt;看ECG機器數值😆&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;應用rule of 300，就是先算RR interval有幾大格，算好後，直接300/幾大格(&lt;strong&gt;Fig.4&lt;/strong&gt;)。不過有一個前提，那就是12 lead ECG的Speed要設在 &lt;strong&gt;25 mm/sec&lt;/strong&gt;。理論上，一般都是設25 mm/sec，沒事不會去做變更啦。&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt="Rule of 300規則"
-class="image_figure image_external image_unprocessed"
-src="https://p.ipic.vip/nrznvd.png"
-/&gt;
-&lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;</description></item><item><title>回覆網友ECG提問</title><link>https://agoodbear.github.io/post/medium-757469a98a86/</link><pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-757469a98a86/</guid><description>
+&lt;p&gt;應用rule of 300，就是先算RR interval有幾大格，算好後，直接300/幾大格(&lt;strong&gt;Fig.4&lt;/strong&gt;)。不過有一個前提，那就是12 lead ECG的Speed要設在 &lt;strong&gt;25 mm/sec&lt;/strong&gt;。理論上，一般都是設25 mm/sec，沒事不會去做變更啦。&lt;/p&gt;</description></item><item><title>回覆網友ECG提問</title><link>https://agoodbear.github.io/post/medium-757469a98a86/</link><pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-757469a98a86/</guid><description>
 &lt;h3 id="回覆網友ecg提問"&gt;回覆網友ECG提問&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -164,6 +154,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/0*xfVlrYpJj48KVejF.jpeg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -176,6 +168,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*85WjOJ7-VX02DUqk8PX3RQ@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -202,11 +196,12 @@ decoding="async"
 alt="Fig.2 Tweet example"
 class="image_figure image_external image_unprocessed"
 src="https://i.embed.ly/1/image?url=https%3A%2F%2Fabs.twimg.com%2Ferrors%2Flogo46x38.png&amp;amp;key=a19fcc184b9711e1b4764040d3dc5c07"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;在這張ECG可以在V1看到fibrillation wave(Af其atrial rate:350–600 bpm)。&lt;/p&gt;</description></item><item><title>OHCA到院，啟動心導管嗎?</title><link>https://agoodbear.github.io/post/medium-3ec1599ca9bb/</link><pubDate>Sat, 16 Jul 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-3ec1599ca9bb/</guid><description>
+&lt;/p&gt;</description></item><item><title>OHCA到院，啟動心導管嗎?</title><link>https://agoodbear.github.io/post/medium-3ec1599ca9bb/</link><pubDate>Sat, 16 Jul 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-3ec1599ca9bb/</guid><description>
 &lt;h3 id="ohca到院啟動心導管嗎"&gt;OHCA到院，啟動心導管嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -216,6 +211,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*7sfT-6ZdvaJFT_ZI_X_8Hg@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -240,6 +237,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*h-7A7r5_DB39MPcazvXdGQ.jpeg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -250,8 +249,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*h-7A7r5_DB39MPcazvXdGQ.jpeg"
 &lt;h4 id="q3qtc這個數值有問題嗎"&gt;&lt;strong&gt;Q3:QTc這個數值有問題嗎?&lt;/strong&gt;&lt;/h4&gt;
 &lt;h4 id="q4ohca病患rosc之後要注意哪些重點"&gt;&lt;strong&gt;Q4:OHCA病患ROSC之後要注意哪些重點?&lt;/strong&gt;&lt;/h4&gt;
 &lt;h4 id="q5如果病患懷疑acs要衝導管嗎衝導管之前需要排除什麼問題呢"&gt;&lt;strong&gt;Q5:如果病患懷疑ACS要衝導管嗎?衝導管之前，需要排除什麼問題呢?&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;首先看到&lt;strong&gt;diffuse STD + aVR and/or V1 STE&lt;/strong&gt;最常見的問題是發生了，oxygen demand and supply mismatch造成了subendocardial ischemia。這種的STD有一個特點那就是沒辦法localized the ischemia territory。拿Fig.2來舉例，我們看到了II/III/aVF、V3~V6有STD，我們不能說病患的inf.wall、ant./lateral wall有ischemia，因為通常subendocardial ischemia並無法localize缺血位置。&lt;/p&gt;
-&lt;p&gt;反過來說，怎樣的STD可以localize缺血的位置呢?當STD發生在血管支配的相對位置，不是明顯的diffuse STD，那麼可以反應心臟缺血的位置。&lt;strong&gt;而且是反應STD出現的對側lead有缺血(這裡的STD指的是reciprocal change →這非常非常重要)。&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>這是什麼扭曲變形的ECG?</title><link>https://agoodbear.github.io/post/medium-7bca25391302/</link><pubDate>Fri, 17 Dec 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-7bca25391302/</guid><description>
+&lt;p&gt;首先看到&lt;strong&gt;diffuse STD + aVR and/or V1 STE&lt;/strong&gt;最常見的問題是發生了，oxygen demand and supply mismatch造成了subendocardial ischemia。這種的STD有一個特點那就是沒辦法localized the ischemia territory。拿Fig.2來舉例，我們看到了II/III/aVF、V3~V6有STD，我們不能說病患的inf.wall、ant./lateral wall有ischemia，因為通常subendocardial ischemia並無法localize缺血位置。&lt;/p&gt;</description></item><item><title>這是什麼扭曲變形的ECG?</title><link>https://agoodbear.github.io/post/medium-7bca25391302/</link><pubDate>Fri, 17 Dec 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-7bca25391302/</guid><description>
 &lt;h3 id="這是什麼扭曲變形的ecg呢"&gt;這是什麼扭曲變形的ECG呢?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -261,6 +259,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*IYXFaAl0xjDKnMhNLZ3FPw@2x.jpeg"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -276,6 +276,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*Xdo5DviB_he7pysws4tnZA.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -298,6 +300,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*Az_X28S9p_b1kE3xuhmyrg@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -314,11 +318,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*Az_X28S9p_b1kE3xuhmyrg@2x.png"
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;首先先來看Af+BBB(bundle branch block)是什麼?&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;意思就是Af+LBBB or RBBB。也就是病患本身就有RBBB or LBBB，所以ECG的QRS本來就因為BBB而會變寬，這時候加上Af，就會變成irregularly irregular特性且QRS是寬的。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;那麼Af+WPW是什麼?&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;意思就是有accessory pathway(&lt;strong&gt;以下簡稱AP&lt;/strong&gt;)出現，從atrium放電後，不走正常SA node傳導到AV node這條路徑。反而是去走AP。&lt;/p&gt;</description></item><item><title>VPC也可以小兵立大功嗎?</title><link>https://agoodbear.github.io/post/medium-6cdf5d600a1c/</link><pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-6cdf5d600a1c/</guid><description>
+&lt;p&gt;意思就是Af+LBBB or RBBB。也就是病患本身就有RBBB or LBBB，所以ECG的QRS本來就因為BBB而會變寬，這時候加上Af，就會變成irregularly irregular特性且QRS是寬的。&lt;/p&gt;</description></item><item><title>VPC也可以小兵立大功嗎?</title><link>https://agoodbear.github.io/post/medium-6cdf5d600a1c/</link><pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-6cdf5d600a1c/</guid><description>
 &lt;h3 id="vpc也可以小兵立大功嗎"&gt;VPC也可以小兵立大功嗎?&lt;/h3&gt;
 &lt;h4 id="我們來看看為何vpc也可以小兵立大功"&gt;我們來看看為何VPC也可以小兵立大功&lt;/h4&gt;
 &lt;p&gt;VPC是由心室產生的。VPC就像LBBB一樣具有discordant ST segments，所以當excessive discordant STE或concordant STE時，就要小心。雖然沒有證據顯示MSC可以適用VPC就像LBBB一樣。但是根據Stephen Smith的經驗，這rule用在VPC和用在LBBB非常類似，雖然specific少一點&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
@@ -330,6 +330,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/0*QsTk0Pc3I5gPz8dc"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -351,6 +353,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/0*dIPZ748EHjnWxIhT.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -364,6 +368,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/0*B2iJDLJNTOuty4q9"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -376,6 +382,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/0*TIEHVgbJaZgYTSjX"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -388,6 +396,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*-_JeNAGKVV67vXegvesyZA@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -402,6 +412,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*k_WjnewcbB8zt7dk2q9cCg.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -422,6 +434,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*39AgqmVqJlA-H6mymxXL0Q@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -441,6 +455,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*DImVcrqqnClukvho9mhMAA@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -463,6 +479,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*lb7JibPdXW54B7THqRtXRw.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -483,10 +501,10 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*ziHV3GUukSIgeynYFMP2uw@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;em&gt;&lt;strong&gt;Fig.2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;一般我們要診斷Post.wall MI要有三個criteria:(&lt;strong&gt;Fig.2&lt;/strong&gt;本Case的V1~V3)&lt;/p&gt;
-&lt;h4 id="1rs1-in-v1-or-v2也就是tall-rv1-2v1"&gt;&lt;strong&gt;1.R/S&amp;gt;1 in V1 or V2(也就是Tall RV1) 2.V1&lt;del&gt;V3有STD 3.V1&lt;/del&gt;V3有Upright T wave&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;我在&lt;a href="https://agoodbear.medium.com/%E9%80%99%E6%98%AFpost-wellen-syndrome%E9%82%84%E6%98%AFde-winter-391b08ca389f"&gt;這邊文章有提過&lt;/a&gt;，第一點與第三點並不是必要的，Why?&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;一般我們要診斷Post.wall MI要有三個criteria:(&lt;strong&gt;Fig.2&lt;/strong&gt;本Case的V1~V3)&lt;/p&gt;</description></item></channel></rss>

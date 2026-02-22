@@ -11,6 +11,8 @@ decoding="async"
 alt="資料庫"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/8vwg0a.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -30,6 +32,8 @@ decoding="async"
 alt="資料庫應用觀念"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/bqpo96.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -45,6 +49,8 @@ decoding="async"
 alt="Evernote to Roam"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/0k43pg.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -70,23 +76,13 @@ decoding="async"
 alt="Readwise手機App"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/jvb083.gif"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;Readwise手機App的好處是可以直接OCR看到的紙本書籍。拍照下來，把重要文字OCR出來，接著就可以Export到Roam裡面去了。&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt="Roam手機App"
-class="image_figure image_external image_unprocessed"
-src="https://p.ipic.vip/i44dqg.gif"
-/&gt;
-&lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;</description></item><item><title>Roam教學:第四集-四種Roam research參考文獻資料的呈現模式</title><link>https://agoodbear.github.io/post/medium-6efa37de7325/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-6efa37de7325/</guid><description>
+&lt;p&gt;Readwise手機App的好處是可以直接OCR看到的紙本書籍。拍照下來，把重要文字OCR出來，接著就可以Export到Roam裡面去了。&lt;/p&gt;</description></item><item><title>Roam教學:第四集-四種Roam research參考文獻資料的呈現模式</title><link>https://agoodbear.github.io/post/medium-6efa37de7325/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-6efa37de7325/</guid><description>
 &lt;h3 id="roam教學第四集-四種roam-research參考文獻資料的呈現模式"&gt;&lt;strong&gt;Roam教學&lt;/strong&gt;:第四集-四種Roam research參考文獻資料的呈現模式&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -96,6 +92,8 @@ decoding="async"
 alt="embed"
 class="image_figure image_external image_unprocessed"
 src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi.ytimg.com%2Fvi%2F4-TeZrmGWSg%2Fhqdefault.jpg&amp;amp;key=a19fcc184b9711e1b4764040d3dc5c07"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;

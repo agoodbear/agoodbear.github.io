@@ -7,6 +7,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*f2GmaCa9hR-VLoQKEGX0vw@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -33,6 +35,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*Bf0nYFkHXhsipj1wc8kqXw@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -41,20 +45,7 @@ src="https://cdn-images-1.medium.com/max/1024/1*Bf0nYFkHXhsipj1wc8kqXw@2x.png"
 &lt;p&gt;RAD、RBBB、STE over III、aVR、STD over V2&lt;del&gt;V6(Maximal at V3&lt;/del&gt;V4)、I/aVL。這邊可以很確定在precordial leads的Maximal lead在V3~V4，而且是&lt;strong&gt;excessive discordant&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;在RBBB pattern中，常見在V1~V3有TWI與mild STD**(如果有的話)**，但是STD不超過1 mm。所以超過了1 mm代表了，有某個力量把STD往下拉&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;➡️什麼力量?Post.wall OMI(後壁血管阻塞)。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;另外&lt;strong&gt;aVR STE + Diffuse leads STD&lt;/strong&gt;的DDx非常多。&lt;/p&gt;
-&lt;p&gt;有血管的問題，也有不是血管的問題。&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt=""
-class="image_figure image_external image_unprocessed"
-src="https://cdn-images-1.medium.com/max/1024/1*zL-rA_XVZ8v3YJCxUmd3rQ@2x.png"
-/&gt;
-&lt;/picture&gt;
-&lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;aVR STE的DDx&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description></item><item><title>還在高血鉀嗎?</title><link>https://agoodbear.github.io/post/medium-ef858cdd6d2/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-ef858cdd6d2/</guid><description>
+&lt;p&gt;另外&lt;strong&gt;aVR STE + Diffuse leads STD&lt;/strong&gt;的DDx非常多。&lt;/p&gt;</description></item><item><title>還在高血鉀嗎?</title><link>https://agoodbear.github.io/post/medium-ef858cdd6d2/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-ef858cdd6d2/</guid><description>
 &lt;h3 id="還在高血鉀嗎"&gt;還在高血鉀嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -64,6 +55,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -78,6 +71,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*pEVYam7Maa6UqptWqzpH2g@2x.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -105,6 +100,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*qMtmievwzzgbZ1RkxvAqag.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;

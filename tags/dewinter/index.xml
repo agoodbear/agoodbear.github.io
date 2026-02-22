@@ -20,6 +20,8 @@ decoding="async"
 alt="到院ECG"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/qgljp6.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -61,12 +63,13 @@ decoding="async"
 alt="病患Limb leads ECG Change"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/7kthns.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;綠線&lt;/strong&gt;是J point位置，水平&lt;strong&gt;藍線&lt;/strong&gt;是basline&lt;/p&gt;
-&lt;p&gt;可以看到在II與aVF都是minimal STD、III的J point和baseline幾乎重疊。&lt;/p&gt;</description></item><item><title>這是Post.Wellen syndrome還是De Winter?</title><link>https://agoodbear.github.io/post/medium-391b08ca389f/</link><pubDate>Fri, 11 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-391b08ca389f/</guid><description>
+&lt;p&gt;&lt;strong&gt;綠線&lt;/strong&gt;是J point位置，水平&lt;strong&gt;藍線&lt;/strong&gt;是basline&lt;/p&gt;</description></item><item><title>這是Post.Wellen syndrome還是De Winter?</title><link>https://agoodbear.github.io/post/medium-391b08ca389f/</link><pubDate>Fri, 11 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-391b08ca389f/</guid><description>
 &lt;h3 id="這是postwellen-syndrome還是de-winter"&gt;這是Post.Wellen syndrome還是De Winter?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -76,6 +79,8 @@ decoding="async"
 alt=""
 class="image_figure image_external image_unprocessed"
 src="https://cdn-images-1.medium.com/max/1024/1*G-3NxJGciSjISLUr0SbOOw.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;

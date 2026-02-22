@@ -9,6 +9,8 @@ decoding="async"
 alt="Syncope的原因"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/5apyuf.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -31,6 +33,8 @@ decoding="async"
 alt="區分seizure/syncope發作"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/nl69xf.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -44,6 +48,8 @@ decoding="async"
 alt="文章內容重點的表格"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/iaajvm.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -62,18 +68,8 @@ decoding="async"
 alt="Syncope評估與檢查建議"
 class="image_figure image_external image_unprocessed"
 src="https://p.ipic.vip/fyiqjj.png"
-/&gt;
-&lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt="ECG屬於Class I建議"
-class="image_figure image_external image_unprocessed"
-src="https://p.ipic.vip/rdglkh.png"
+data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
