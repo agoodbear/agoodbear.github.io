@@ -54,13 +54,13 @@ Q3: Fig.1是入院的ECG，預期之後如果繼續胸痛，會出現怎樣的EC
 
 目前HATW並沒有確定的定義。Smith ECG大師描述HATW的特性 →不是高，而且通常不高，但是巨大(bulky)且寬(broad base)，這個T wave的shape要和QRS高度與AUC一起評估看。
 
-[![img](https://cdn-images-1.medium.com/max/1024/0*n2TFIR0wc4R76u0o.jpg)](https://press.ikidane-nippon.com/tw/a00062/)
+[![](https://cdn-images-1.medium.com/max/1024/0*n2TFIR0wc4R76u0o.jpg)](https://press.ikidane-nippon.com/tw/a00062/)
 
 富士山的形狀，就可以用來描述HATW。寬、巨大。[**又開始想去日本了（請點入)**](https://www.flypeach.com/tw)
 
 另外Amal mattu也常說，如果QRS可以塞進去T wave，代表這個T wave是異常的。
 
-![img](https://cdn-images-1.medium.com/max/1024/1*xwV7M-H6W4tVFagTyPmi_A@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*xwV7M-H6W4tVFagTyPmi_A@2x.png)
 
 那麼Hyper-K的Peaked T wave和ACS的HATW到底差在哪裡?
 

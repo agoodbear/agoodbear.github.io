@@ -30,7 +30,7 @@ Rate:77 bpm、sinus rhythm、Normal axis、1st degree AVB
 
 這邊要提一個**downsloping STD**(此Case →V1~V2都有，特別是V2)
 
-![img](https://cdn-images-1.medium.com/max/1024/1*47oUbjm5P6Du7jfSV7Pt-g.png)
+![](https://cdn-images-1.medium.com/max/1024/1*47oUbjm5P6Du7jfSV7Pt-g.png)
 
 Dr.Smith在其Blog中強調，在V1~V4有任何的Maximal STD，就必須考慮到Post.OMI(**96% specificity for Post.OMI**)，直到證明不是。特別是downsloping STD in V2~V3，Smith表示根據他的經驗，這就足以診斷Post.OMI\[^1\]。
 
@@ -116,9 +116,9 @@ RV血管的支配(**Fig.3**)，由RCA的RV branch支配(也稱作RV marginal bra
 
 此外Right side ECG判讀和STEMI criteria的V2～V3一樣，需要注意性別/年齡。統一整理如下表格:(**Fig.5 →STEMI定義、Post.leads定義、R’t side ECG定義**)
 
-![img](https://cdn-images-1.medium.com/max/1024/1*o4JUs7JqGuGfYGnk-jk8vg@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*o4JUs7JqGuGfYGnk-jk8vg@2x.png)
 
-![img](https://cdn-images-1.medium.com/max/1024/1*s-Rfu88qM4PueMf-o8i8SQ@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*s-Rfu88qM4PueMf-o8i8SQ@2x.png)
 
 ![Fig.5](https://cdn-images-1.medium.com/max/1024/1*aGP2rIeF00R8RHvuLn1Egg@2x.png)
 ***Fig.5***
@@ -190,7 +190,7 @@ R’t side ECG沒有看到V3R、V4R有STE，但是V6R有STE(>1 mm)
 
 **CAG:Culprit lesion at RCA-m stenosis**
 
-![img](https://cdn-images-1.medium.com/max/1024/0*nEpgvjdWgw2AZKxO)
+![](https://cdn-images-1.medium.com/max/1024/0*nEpgvjdWgw2AZKxO)
 
 Lesion在RCA-m~~~~~~不是有RVMI嗎?Why?
 

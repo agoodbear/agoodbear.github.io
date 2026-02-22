@@ -43,7 +43,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFpost-wellen-syndr
 **1.要區別De winter's T waves和Post. Wellens' syndrome的方法➡De winter's T wave的T wave可能是從Hyperacute T wave變過來，所以T wave是broad、fat，但Post.wall MI的reperfusion rhythm產生的Tall T wave是Post.wall的Terminal TWI，所以比較窄
 2.如果是De winter's T wave，影響的Precordial lead較多**
 
-![img](https://cdn-images-1.medium.com/max/1024/1*G-3NxJGciSjISLUr0SbOOw.png)
+![](https://cdn-images-1.medium.com/max/1024/1*G-3NxJGciSjISLUr0SbOOw.png)
 
 ![左圖:Ken Grauer的例子，右圖:Smith的例子，比較V2~V3(哪個是fat/board，哪個是narrow?)](https://cdn-images-1.medium.com/max/1024/1*KskSuTVyWBZvAE0KseYnCQ.png)
 *左圖:Ken Grauer的例子，右圖:Smith的例子，**比較V2~V3(哪個是fat/board，哪個是narrow?)***

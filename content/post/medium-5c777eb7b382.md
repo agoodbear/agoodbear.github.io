@@ -78,7 +78,7 @@ Baseline不是很穩，不過可以看到也有low voltage(Sensitive criteria wi
 
 千萬要記得，公式不要亂用，可能會有false-negative or false-positive出現。要用之前先將明顯AMI，與文章內排除的人都先排除，再使用。
 
-![img](https://cdn-images-1.medium.com/max/1024/1*X7311AXMQlSDyy7XxoTp8A@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*X7311AXMQlSDyy7XxoTp8A@2x.png)
 
 這個Case雖然V1-V4都不是QS wave，但是V1是rS wave(<1 mm的r wave)，真要使用公式的話，應該要用LV aneurysm with STE vs. STEMI的T/QRS這個。
 
@@ -363,7 +363,7 @@ RBBB+LAFB不容易判斷出有STEMI。
 
 **心導管報告:LAD-p total occlusion、RCA-p CTO**
 
-![img](https://cdn-images-1.medium.com/max/1024/0*52ebRYyDKUArzQDU)
+![](https://cdn-images-1.medium.com/max/1024/0*52ebRYyDKUArzQDU)
 
 ![CAG報告](https://cdn-images-1.medium.com/max/1024/0*6_hAFbmYZhpQR86y)
 ***CAG報告***

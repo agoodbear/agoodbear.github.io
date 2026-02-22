@@ -291,7 +291,7 @@ def render_figure_markdown(paragraph: dict[str, Any], convert_superscript: bool)
         paragraph.get("markups") or [],
         convert_superscript=convert_superscript,
     ).strip()
-    alt = strip_markdown_for_alt(caption) or "img"
+    alt = strip_markdown_for_alt(caption)
 
     image_md = f"![{alt}]({image_url})"
     href = normalize_url(str(paragraph.get("href") or "").strip())

@@ -51,14 +51,14 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%99%A4%E4%BA%86ste%E4%BB%A5%E5%A
 
 要回答這個問題之前，我們先來看看一些文獻怎麼說。
 
-![img](https://cdn-images-1.medium.com/max/1024/1*K6sEg8DiWhvQxwaHkUyDew.png)
+![](https://cdn-images-1.medium.com/max/1024/1*K6sEg8DiWhvQxwaHkUyDew.png)
 
-![img](https://cdn-images-1.medium.com/max/1024/1*M6JTCfILjk6-NRJvLpkZmg.png)
+![](https://cdn-images-1.medium.com/max/1024/1*M6JTCfILjk6-NRJvLpkZmg.png)
 
 ![Table 1. 哪些ECG pattern可能有MI-Part I](https://cdn-images-1.medium.com/max/1024/1*aCqF5yFkYQVN0023sZAwkQ@2x.png)
 ***Table 1. 哪些ECG pattern可能有MI-Part I***
 
-![img](https://cdn-images-1.medium.com/max/1024/1*P0EzOAkMZqd83rgJBXVKzA.png)
+![](https://cdn-images-1.medium.com/max/1024/1*P0EzOAkMZqd83rgJBXVKzA.png)
 
 ![Table 1. 哪些ECG pattern可能有MI-Part II](https://cdn-images-1.medium.com/max/1024/1*H7Ophv8MgllPdTCaEekFsw.png)
 ***Table 1. 哪些ECG pattern可能有MI-Part II***
@@ -79,12 +79,12 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%99%A4%E4%BA%86ste%E4%BB%A5%E5%A
 
 我把這幾年Amal mattu與Dr.Smith所寫出來，可能伴隨MI的ECG pattern分成下列幾大類，稍微整理一下，讓各位比較好理解。**這部份在10/31於大林慈濟演講過(250張 slide，我要吐血了)，有興趣的，可以……..**
 
-![img](https://cdn-images-1.medium.com/max/1024/1*wE9QbKtBAbMV901KL_vuLQ@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*wE9QbKtBAbMV901KL_vuLQ@2x.png)
 
 ![Fig.3 STEMI(-)/OMI(+)-Part 1](https://cdn-images-1.medium.com/max/1024/1*iJsUP2GGK_Cq8j7bZhhFCA@2x.png)
 ***Fig.3 STEMI(-)/OMI(+)-Part 1***
 
-![img](https://cdn-images-1.medium.com/max/1024/1*8gL11XF7cMit4AUFelpxTw@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*8gL11XF7cMit4AUFelpxTw@2x.png)
 
 ![Fig.4 STEMI(-)/OMI(+)-Part 2](https://cdn-images-1.medium.com/max/1024/1*xWpoy9WxJXbNv_sjLHHRng@2x.png)
 ***Fig.4 STEMI(-)/OMI(+)-Part 2***
@@ -124,7 +124,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%99%A4%E4%BA%86ste%E4%BB%A5%E5%A
 
 這篇文章\[^7\]將STEMI(+)/OMI(+)與STEMI(-)/OMI(+)兩組來比較，兩組皆具有相似的臨床表徵/實驗室報告與超音波發現。但是在STEMI(-)/OMI(+)這組明顯延遲了導管時間，且和STEMI(+)/OMI(+)組別相比較，其明顯增加mortality與morbidity(**請見Fig.8**)。
 
-![img](https://cdn-images-1.medium.com/max/1024/1*cpLgUbdaMMR7ir7QpttqdQ@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*cpLgUbdaMMR7ir7QpttqdQ@2x.png)
 
 ![Fig.8 STEMI(+)/OMI(+) vs. STEMI(-)/OMI(+)](https://cdn-images-1.medium.com/max/1024/1*JpfhNjcM_T5vfR_83UJuEg@2x.png)
 ***Fig.8 STEMI(+)/OMI(+) vs. STEMI(-)/OMI(+)***

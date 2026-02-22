@@ -20,7 +20,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E5%BF%83%E8%87%9F%E8%AD%A6%E8%A8%8
 
 #### 讓我來說說最近同事遇到的一個個案。我覺得從個案裡面可以學到非常多的東西。讓我們一起來淘金這篇文章吧~~~
 
-![img](https://cdn-images-1.medium.com/max/1024/1*7uZfr7ftD9OVd3BKPzzkaQ.png)
+![](https://cdn-images-1.medium.com/max/1024/1*7uZfr7ftD9OVd3BKPzzkaQ.png)
 
 個案是一位39歲男性，過去有高血壓、高血脂，與自發性腦出血病史。
 
@@ -55,15 +55,15 @@ Interval: No QT prolong
 
 Ischemia:首要目標是找看看**有無OMI ECG findings(目前是18個…以後只會越來越多XD)**
 
-![img](https://cdn-images-1.medium.com/max/1024/1*G2QwkE0DPnULRuC0psCX3A.png)
+![](https://cdn-images-1.medium.com/max/1024/1*G2QwkE0DPnULRuC0psCX3A.png)
 
-![img](https://cdn-images-1.medium.com/max/1024/1*2gSPaVcRJw9P3SqzOPJJCw.png)
+![](https://cdn-images-1.medium.com/max/1024/1*2gSPaVcRJw9P3SqzOPJJCw.png)
 
-![img](https://cdn-images-1.medium.com/max/1024/1*qkWpIWHGP_lVUNMz-42Iig.png)
+![](https://cdn-images-1.medium.com/max/1024/1*qkWpIWHGP_lVUNMz-42Iig.png)
 
-![img](https://cdn-images-1.medium.com/max/1024/1*LhHja5QM_5Nw144hVZRwWg.png)
+![](https://cdn-images-1.medium.com/max/1024/1*LhHja5QM_5Nw144hVZRwWg.png)
 
-![img](https://cdn-images-1.medium.com/max/1024/1*2NSeEeAzOLBFJz_k3HAR9A.png)
+![](https://cdn-images-1.medium.com/max/1024/1*2NSeEeAzOLBFJz_k3HAR9A.png)
 
 #### OMI(Occlusion MI)
 
@@ -136,7 +136,7 @@ ETA time可以透過訓練來縮短時間，這是自我提昇幫助病患的唯
 
 文章中各以一年為期分成pre-intervention和post-intervention來做比較:
 
-![img](https://cdn-images-1.medium.com/max/1024/1*pgRxwBSmfSC3qPIT780luQ.png)
+![](https://cdn-images-1.medium.com/max/1024/1*pgRxwBSmfSC3qPIT780luQ.png)
 
 ![Fig.4](https://cdn-images-1.medium.com/max/1024/1*d49jJzd0TtZbQRtHVbmGfw.png)
 ***Fig.4***
@@ -157,7 +157,7 @@ ETA time可以透過訓練來縮短時間，這是自我提昇幫助病患的唯
 
 先不破題Fig.1的ECG看到什麼，後續病患入住心臟科病房，也陸續驗了Troponin。
 
-![img](https://cdn-images-1.medium.com/max/1024/1*afZ50XjC1uQd9bR6j7eGag.png)
+![](https://cdn-images-1.medium.com/max/1024/1*afZ50XjC1uQd9bR6j7eGag.png)
 
 病患住院過程中做了Exercise stress test與Echo。
 
@@ -185,7 +185,7 @@ Dr.Smith有一篇文章關於診斷pericarditis，非常非常的經典\[^4\]。
 
 **You diagnose acute pericarditis at your peril!到底是什麼意思?我請ChatGPT翻譯，我覺得非常貼切。**
 
-![img](https://cdn-images-1.medium.com/max/1024/0*4k0fIDolonxtHjkr)
+![](https://cdn-images-1.medium.com/max/1024/0*4k0fIDolonxtHjkr)
 
 #### **錯誤的診斷可能會對患者造成嚴重後果。**
 
@@ -265,7 +265,7 @@ Fig.5 說明了並**不是所有的plaques都是一樣的**
 
 ### 再度Back to Case
 
-![img](https://cdn-images-1.medium.com/max/1024/1*7uZfr7ftD9OVd3BKPzzkaQ.png)
+![](https://cdn-images-1.medium.com/max/1024/1*7uZfr7ftD9OVd3BKPzzkaQ.png)
 
 病患被診斷pericarditis出院後的第4天早上。突然感覺左側胸口一陣一陣悶脹痛、左後上背也痛。病患表示出院後都還好, 今天才會痛, 痛的感覺和上次住院一樣。
 
@@ -282,7 +282,7 @@ Fig.8的ECG看到了哪些ischemic ECG morphology?
 
 我們可以拉回看Fig.1(第一次急診就醫時的initial ECG)，可以看到V1-V4也是符合LV aneurysm pattern，可以應用T/QRS > 0.36，若有任一lead符合就可診斷STEMI →**Fig.1的V4是絕對>0.36**
 
-![img](https://cdn-images-1.medium.com/max/1024/1*WjoHV4N8M-wE19EvVvy2rg.png)
+![](https://cdn-images-1.medium.com/max/1024/1*WjoHV4N8M-wE19EvVvy2rg.png)
 
 後續病患同一天的Troponin爆炸高…….
 
@@ -295,7 +295,7 @@ Fig.8的ECG看到了哪些ischemic ECG morphology?
 
 #### **CAG final result: Acute D1 total occlusion**
 
-![img](https://cdn-images-1.medium.com/max/1024/0*Lc2ETQOv7bvgj2Sr)
+![](https://cdn-images-1.medium.com/max/1024/0*Lc2ETQOv7bvgj2Sr)
 
 #### 稍微整理一下這個個案
 

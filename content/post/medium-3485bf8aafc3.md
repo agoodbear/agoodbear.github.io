@@ -15,7 +15,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFstemi-%E4%BD%A0%E
 ---
 ### 這是STEMI，你相信嗎?
 
-![img](https://cdn-images-1.medium.com/max/1024/1*BZYaEyrDghAJY-2Uxgz7cA@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*BZYaEyrDghAJY-2Uxgz7cA@2x.png)
 
 來看看昨天夜班上班的一位個案。50歲男性，本來從事捕鰻苗的工作。
 
@@ -39,7 +39,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFstemi-%E4%BD%A0%E
 
 我在ECG上面立刻寫下了，**Post.MI**
 
-![img](https://cdn-images-1.medium.com/max/1024/1*iCF76zQarG9ig0wCsx8sEw.jpeg)
+![](https://cdn-images-1.medium.com/max/1024/1*iCF76zQarG9ig0wCsx8sEw.jpeg)
 
 請專師趕快傳給，值班的CV man。
 
@@ -65,7 +65,7 @@ Post.wall MI佔所有STEMI的10~20%左右。而且通常會合併inf.wall MI、L
 
 只有4~10%為isolated Post.wall MI。
 
-![img](https://cdn-images-1.medium.com/max/1024/0*2yN5ESIMXzkJ0V-I)
+![](https://cdn-images-1.medium.com/max/1024/0*2yN5ESIMXzkJ0V-I)
 
 **舉個例子，來解說上面這幾句話，會讓大家更了解。**
 
@@ -148,7 +148,7 @@ Stephen Smith表示做Post.leads時，千萬不要把V1~V3改成V7~V9。因為co
 
 根據17 segment的區分法，把LV分成17個區塊。Post.leads的位置在Basal-inferior area(Segment 4)。
 
-![img](https://cdn-images-1.medium.com/max/1024/1*UZYMEQQVbdc7EMj961_uTA.png)
+![](https://cdn-images-1.medium.com/max/1024/1*UZYMEQQVbdc7EMj961_uTA.png)
 
 ![Fig.5](https://cdn-images-1.medium.com/max/1024/1*AT1wRGIiTQefnliJeAFh0A.png)
 ***Fig.5***
