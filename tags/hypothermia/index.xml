@@ -27,8 +27,8 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 loading="lazy"
 decoding="async"
 alt="到院時ECG"
-class="image_figure image_external image_unprocessed"
-src="https://p.ipic.vip/86dnuj.png"
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.github.io/images/ipic/86dnuj.png"
 data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
@@ -53,8 +53,8 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 loading="lazy"
 decoding="async"
 alt="分辨J point和J wave"
-class="image_figure image_external image_unprocessed"
-src="https://p.ipic.vip/ogirrn.png"
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.github.io/images/ipic/ogirrn.png"
 data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
@@ -72,8 +72,8 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 loading="lazy"
 decoding="async"
 alt="分析prehospital ECG"
-class="image_figure image_external image_unprocessed"
-src="https://p.ipic.vip/9y6g9s.png"
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.github.io/images/ipic/9y6g9s.png"
 data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
