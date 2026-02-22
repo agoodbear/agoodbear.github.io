@@ -139,6 +139,8 @@ Precordial leads的**R wave有逐漸增加(至少不是逐漸減少)**
 
 #### **Tip4:ECG的ischemia sign遠比Heart echo上LV的RWMA還早**
 
+參考資料補充：[^1] [^2] [^3] [^4]
+
 [^1]: Bischof, J. E., Worrall, C., Thompson, P., Marti, D., & Smith, S. W. (2016). ST depression in lead aVL differentiates inferior ST-elevation myocardial infarction from pericarditis. *The American Journal of Emergency Medicine*, *34*(2), 149–154. [https://doi.org/10.1016/j.ajem.2015.09.035](https://doi.org/10.1016/j.ajem.2015.09.035)
 [^2]: Hassen, G. W., Costea, A., Smith, T., Carrazco, C., Hussein, H., Soroori-Rad, B., Vaidian, S., Seashore, J., Alderwish, E., Sun, W., Chen, A., Simmons, B., Usmani, S., Kalantari, H., & Fernaine, G. (2014). The Neglected Lead on Electrocardiogram: T Wave Inversion in Lead aVL, Nonspecific Finding or a Sign for Left Anterior Descending Artery Lesion? *The Journal of Emergency Medicine*, *46*(2), 165–170. [https://doi.org/10.1016/j.jemermed.2013.08.079](https://doi.org/10.1016/j.jemermed.2013.08.079)
 [^3]: Amsterdam, E. A., Wenger, N. K., Brindis, R. G., Casey, D. E., Ganiats, T. G., Holmes, D. R., Jaffe, A. S., Jneid, H., Kelly, R. F., Kontos, M. C., Levine, G. N., Liebson, P. R., Mukherjee, D., Peterson, E. D., Sabatine, M. S., Smalling, R. W., & Zieman, S. J. (2014). 2014 AHA/ACC Guideline for the Management of Patients With Non–ST-Elevation Acute Coronary Syndromes. *Journal of the American College of Cardiology*, *64*(24), e139–e228. [https://doi.org/10.1016/j.jacc.2014.09.017](https://doi.org/10.1016/j.jacc.2014.09.017)

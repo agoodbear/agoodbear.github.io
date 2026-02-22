@@ -212,6 +212,8 @@ Very high risk P’t一般在randomized controlled trial會被排除，因此這
 3. 為何我們要找出STEMI(-)/OMI(+)的病患?
 4. 在NSTE-ACS病患，哪些狀況是屬於Very high risk feature?
 
+參考資料補充：[^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8]
+
 [^1]: Hillinger, P., Strebel, I., Abächerli, R., Twerenbold, R., Wildi, K., Bernhard, D., Nestelberger, T., Boeddinghaus, J., Badertscher, P., Wussler, D., Koechlin, L., Zimmermann, T., Puelacher, C., Rubini Gimenez, M., du Fay de Lavallaz, J., Walter, J., Geigy, N., Keller, D. I., Reichlin, T., & Mueller, C. (2019). Prospective validation of current quantitative electrocardiographic criteria for ST-elevation myocardial infarction. International Journal of Cardiology, 292, 1–12. [https://doi.org/10/gnkvjh](https://doi.org/10/gnkvjh)
 [^2]: Martin, T. N., Groenning, B. A., Murray, H. M., Steedman, T., Foster, J. E., Elliot, A. T., Dargie, H. J., Selvester, R. H., Pahlm, O., & Wagner, G. S. (2007). ST-Segment Deviation Analysis of the Admission 12-Lead Electrocardiogram as an Aid to Early Diagnosis of Acute Myocardial Infarction With a Cardiac Magnetic Resonance Imaging Gold Standard. Journal of the American College of Cardiology, 50(11), 1021–1028. [https://doi.org/10.1016/j.jacc.2007.04.090](https://doi.org/10.1016/j.jacc.2007.04.090)
 [^3]: Miranda, D. F., Lobo, A. S., Walsh, B., Sandoval, Y., & Smith, S. W. (2018). New Insights Into the Use of the 12-Lead Electrocardiogram for Diagnosing Acute Myocardial Infarction in the Emergency Department. Canadian Journal of Cardiology, 34(2), 132–145. [https://doi.org/10.1016/j.cjca.2017.11.011](https://doi.org/10.1016/j.cjca.2017.11.011)

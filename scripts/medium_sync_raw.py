@@ -491,6 +491,19 @@ def render_body(paragraphs: list[dict[str, Any]]) -> tuple[str, str | None]:
         idx += 1
 
     if refs:
+        # Hugo only renders footnotes that have at least one in-body reference.
+        # Some Medium posts include extra references without superscript markers.
+        # Add fallback references so every imported reference stays visible.
+        body_probe = "\n\n".join(blocks)
+        cited = {
+            int(match.group(1))
+            for match in re.finditer(r"(?<!\\)\[\^(\d+)\]", body_probe)
+        }
+        missing = [idx for idx in range(1, len(refs) + 1) if idx not in cited]
+        if missing:
+            fallback_refs = " ".join(f"[^{idx}]" for idx in missing)
+            blocks.append(f"參考資料補充：{fallback_refs}")
+
         ref_lines = [f"[^{i}]: {ref}" for i, ref in enumerate(refs, start=1) if ref]
         if ref_lines:
             blocks.append("\n".join(ref_lines))

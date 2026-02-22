@@ -260,6 +260,8 @@ CV man到達現場後，覺得ECG無法排除LM/TVD/Proximal LAD問題(ACS sick 
 4. ROSC後根據Airway、Breathing、Circulation一步步矯正異常，接著做12 leads ECG評估是否需要衝導管，然後根據病患意識狀況做進一步額外緊急處理
 5. ROSC後出現STE、懷疑是心因性collpase、Initial shockable rhythm➡啟動心導管有較高機率能夠幫助到病患
 
+參考資料補充：[^1] [^2] [^3]
+
 [^1]: Dr. Smith’s ECG Blog: Chest Pain and Q-waves in V1 and V2. Is there previous septal MI? — [link](https://hqmeded-ecg.blogspot.com/2018/11/chest-pain-and-q-waves-in-v1-and-v2-is.html)
 [^2]: Baranchuk, A., Enriquez, A., García-Niebla, J., Bayés-Genís, A., Villuendas, R., & Bayés de Luna, A. (2015). Differential Diagnosis of rSr’ Pattern in Leads V1-V2. Comprehensive Review and Proposed Algorithm. \_\_Annals of Noninvasive Electrocardiology\_\_, \_\_20\_\_(1), 7–17. [https://doi.org/10.1111/anec.12241](https://doi.org/10.1111/anec.12241)
 [^3]: Yannopoulos, D., Bartos, J. A., Aufderheide, T. P., Callaway, C. W., Deo, R., Garcia, S., Halperin, H. R., Kern, K. B., Kudenchuk, P. J., Neumar, R. W., Raveendran, G., & null, null. (2019). The Evolving Role of the Cardiac Catheterization Laboratory in the Management of Patients With Out-of-Hospital Cardiac Arrest: A Scientific Statement From the American Heart Association. \_\_Circulation\_\_, \_\_139\_\_(12), e530–e552. [https://doi.org/10.1161/CIR.0000000000000630](https://doi.org/10.1161/CIR.0000000000000630)

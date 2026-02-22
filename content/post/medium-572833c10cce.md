@@ -209,6 +209,8 @@ Lesion在RCA-m~~~~~~不是有RVMI嗎?Why?
 3. RVMI如何透過正常12 leads ECG來做診斷、如何透過R’t side ECG來做診斷
 4. RVMI的重要性
 
+參考資料補充：[^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8] [^9] [^10]
+
 [^1]: Dr. Smith’s ECG Blog: Any ST depression in V2 and V3 is posterior OMI until proven otherwise, especially if downsloping — [link](http://hqmeded-ecg.blogspot.com/2021/11/any-st-depression-in-v2-and-v3-is.html)
 [^2]: Turhan, H., Yilmaz, M. B., Yetkin, E., Atak, R., Biyikoglu, S. F., Senen, K., Ileri, M., Cehreli, S., Korkmaz, S., & Kutuk, E. (2003). Diagnostic Value of aVL Derivation for Right Ventricular Involvement in Patients with Acute Inferior Myocardial Infarction. \_\_Annals of Noninvasive Electrocardiology\_\_, \_\_8\_\_(3), 185–188. [https://doi.org/10.1046/j.1542-474X.2003.08303.x](https://doi.org/10.1046/j.1542-474X.2003.08303.x)
 [^3]: Somers, M. P., Brady, W. J., Bateman, D. C., Mattu, A., & Perron, A. D. (2003). Additional electrocardiographic leads in the ED chest pain patient: right ventricular and posterior leads. \_\_The American Journal of Emergency Medicine\_\_, \_\_21\_\_(7), 563–573. [https://doi.org/10.1016/j.ajem.2003.08.008](https://doi.org/10.1016/j.ajem.2003.08.008)

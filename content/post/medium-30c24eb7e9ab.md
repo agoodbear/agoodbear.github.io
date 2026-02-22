@@ -318,6 +318,8 @@ Fig.8的ECG看到了哪些ischemic ECG morphology?
 5. 近期Exercise stress test or CAG為Negative，可以排除ACS嗎?
 6. 當ECG morphology符合LV aneurysm，可以應用T/QRS >0.36(我Blog前面幾篇有提到，可以參閱看看)
 
+參考資料補充：[^1] [^2] [^3] [^4] [^5] [^6] [^7]
+
 [^1]: O’Gara, P. T., Kushner, F. G., Ascheim, D. D., Casey, D. E., Chung, M. K., de Lemos, J. A., Ettinger, S. M., Fang, J. C., Fesmire, F. M., Franklin, B. A., Granger, C. B., Krumholz, H. M., Linderbaum, J. A., Morrow, D. A., Newby, L. K., Ornato, J. P., Ou, N., Radford, M. J., Tamis-Holland, J. E., … Zhao, D. X. (2013). 2013 ACCF/AHA Guideline for the Management of ST-Elevation Myocardial Infarction. Journal of the American College of Cardiology, 61(4), e78–e140. [https://doi.org/10.1016/j.jacc.2012.11.019](https://doi.org/10.1016/j.jacc.2012.11.019)
 [^2]: McLaren, J. T. T., Taher, A. K., Kapoor, M., Yi, S. L., & Chartier, L. B. (2021). Sharing and Teaching Electrocardiograms to Minimize Infarction (STEMI): reducing diagnostic time for acute coronary occlusion in the emergency department. The American Journal of Emergency Medicine, 48, 18–32. [https://doi.org/10.1016/j.ajem.2021.03.067](https://doi.org/10.1016/j.ajem.2021.03.067)
 [^3]: Acute pericarditis: Clinical presentation and diagnosis — UpToDate — [link](https://www.uptodate.com/contents/acute-pericarditis-clinical-presentation-and-diagnosis?search=pericarditis&selectedTitle=1~150&usage_type=default&display_rank=1#H2298771)

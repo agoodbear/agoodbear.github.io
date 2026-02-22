@@ -193,4 +193,6 @@ POCUS finding is compatible with ECG finding.
 5. **做Post.leads不要把V1~V3貼成V7~V9**
 6. **如果懷疑Post.wall MI →PSAX view就最好eyeballing觀看的view**
 
+參考資料補充：[^1]
+
 [^1]: Dr. Smith’s ECG Blog: Did the posterior leads help here? Why not just get good at STDmaxV1-V4? — [link](http://hqmeded-ecg.blogspot.com/2021/12/did-posterior-leads-help-here-why-not.html)

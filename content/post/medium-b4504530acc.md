@@ -145,6 +145,8 @@ Amazing~~~
 ![](https://cdn-images-1.medium.com/max/1024/1*k_oGslBAnfl-t9ihQlCH1A@2x.png)
 ***Fig.6***
 
+參考資料補充：[^1] [^2] [^3] [^4]
+
 [^1]: Robichaud, L., Ross, D., Proulx, M.-H., Légaré, S., Vacon, C., Xue, X., & Segal, E. (2016). Prehospital Nitroglycerin Safety in Inferior ST Elevation Myocardial Infarction. \_\_Prehospital Emergency Care\_\_, \_\_20\_\_(1), 76–81. [https://doi.org/10/gmsvrq](https://doi.org/10/gmsvrq)
 [^2]: [You have two hours to save this patient’s life](http://hqmeded-ecg.blogspot.com/2018/03/you-have-two-hours-to-save-this.html)
 [^3]: Lip, G. Y. H., Ray, K. K., & Shiu, M. F. (1998). Coronary spasm in acute myocardial infarction. \_\_Heart\_\_, \_\_80\_\_(2), 197–199. [https://doi.org/10/gmvd2v](https://doi.org/10/gmvd2v)

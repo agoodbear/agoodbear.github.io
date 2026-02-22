@@ -167,6 +167,8 @@ CV man到現場on了PCPS來support生命徵象，以利後續檢查。PCPS中，
 4. 若在Precordial leads看到multiple leads STD，分不清楚是否是subendocardial ischemia or Posterior OMI →可以做Bedside echo與Post.leads來協助區分。不過Post.leads有可能會有false-negative可能(也就是確實有Posterior OMI，但因為low voltage，導致Post.leads STE不明顯，所以被誤判為沒有)。
 5. 最後我仍然覺得，這個case，我實在很難在第一時間去區別這個Case到底是PE還是AMI。幸好，CV man強力支持PCPS，才有後續的檢查、診斷出現。不過這個Case的ECG著實讓我學了不少。
 
+參考資料補充：[^1] [^2] [^3] [^4] [^5]
+
 [^1]: Kasper, W., Konstantinides, S., Geibel, A., Olschewski, M., Heinrich, F., Grosser, K. D., Rauber, K., Iversen, S., Redecker, M., & Kienast, J. (1997). Management Strategies and Determinants of Outcome in Acute Major Pulmonary Embolism: Results of a Multicenter Registry. \_\_Journal of the American College of Cardiology\_\_, \_\_30\_\_(5), 1165–1171. [https://doi.org/10.1016/S0735-1097(97)00319-7](https://doi.org/10.1016/S0735-1097(97)00319-7)
 [^2]: Dr. Smith’s ECG Blog: Posterior ST Elevation MI in the Setting of Right Bundle Branch Block, with Posterior Leads V7-V9 — [link](http://hqmeded-ecg.blogspot.com/2009/12/posterior-st-elevation-mi-in-setting-of.html)
 [^3]: Bayés de Luna, A., Wagner, G., Birnbaum, Y., Nikus, K., Fiol, M., Gorgels, A., Cinca, J., Clemmensen, P. M., Pahlm, O., Sclarovsky, S., Stern, S., Wellens, H., & Zareba, W. (2006). A New Terminology for Left Ventricular Walls and Location of Myocardial Infarcts That Present Q Wave Based on the Standard of Cardiac Magnetic Resonance Imaging: A Statement for Healthcare Professionals From a Committee Appointed by the International Society for Holter and Noninvasive Electrocardiography. \_\_Circulation\_\_, \_\_114\_\_(16), 1755–1760. [https://doi.org/10/d4gnjk](https://doi.org/10/d4gnjk)
