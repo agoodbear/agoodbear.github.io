@@ -68,7 +68,7 @@
   .ecg-rp-base {
     fill: none;
     stroke: #c2cfcc;
-    stroke-width: 10.4;
+    stroke-width: 20.8;
     opacity: 0.56;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -77,19 +77,19 @@
   .ecg-rp-active {
     fill: none;
     stroke: rgb(15, 95, 87);
-    stroke-width: 9.2;
+    stroke-width: 18.4;
     stroke-linecap: round;
     stroke-linejoin: round;
-    filter: drop-shadow(0 0 7px rgba(32, 163, 147, 0.34));
+    filter: drop-shadow(0 0 10px rgba(32, 163, 147, 0.38));
     transition: stroke 220ms ease, filter 220ms ease;
   }
 
   .ecg-rp-shell[data-compact="true"] .ecg-rp-base {
-    stroke-width: 9.6;
+    stroke-width: 19.2;
   }
 
   .ecg-rp-shell[data-compact="true"] .ecg-rp-active {
-    stroke-width: 8;
+    stroke-width: 16;
   }
 
   .ecg-rp-tip {
@@ -160,15 +160,15 @@
     <span class="ecg-rp-label">ECG Reading Progress</span>
     <span class="ecg-rp-percent" id="ecgReadPercent">0%</span>
   </div>
-  <svg class="ecg-rp-svg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+  <svg class="ecg-rp-svg" viewBox="0 0 1000 220" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
     <path
       class="ecg-rp-base"
-      d="M20 60 L260 60 C278 60 289 36 304 36 C318 36 330 60 346 60 L394 60 L415 70 L438 10 L462 104 L490 60 L596 60 C624 60 650 24 688 24 C726 24 754 60 782 60 L980 60"
+      d="M20 110 L260 110 C278 110 289 62 304 62 C318 62 330 110 346 110 L394 110 L415 130 L438 10 L462 198 L490 110 L596 110 C624 110 650 38 688 38 C726 38 754 110 782 110 L980 110"
     />
     <path
       class="ecg-rp-active"
       id="ecgReadActivePath"
-      d="M20 60 L260 60 C278 60 289 36 304 36 C318 36 330 60 346 60 L394 60 L415 70 L438 10 L462 104 L490 60 L596 60 C624 60 650 24 688 24 C726 24 754 60 782 60 L980 60"
+      d="M20 110 L260 110 C278 110 289 62 304 62 C318 62 330 110 346 110 L394 110 L415 130 L438 10 L462 198 L490 110 L596 110 C624 110 650 38 688 38 C726 38 754 110 782 110 L980 110"
     />
   </svg>
   <div class="ecg-rp-tip" id="ecgReadTip">Reading progress</div>
