@@ -25,10 +25,8 @@
 loading="lazy"
 decoding="async"
 alt="ROSC後的ECG"
-class="image_figure image_external image_processed"
-width="3042"
-height="1470"
-src="https://agoodbear.github.io/images/laqfx4_2744048287731614219.png"
+class="image_figure image_external image_unprocessed"
+src="https://p.ipic.vip/laqfx4.png"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
@@ -54,10 +52,8 @@ src="https://agoodbear.github.io/images/laqfx4_2744048287731614219.png"
 loading="lazy"
 decoding="async"
 alt="LA/LL reversal"
-class="image_figure image_external image_processed"
-width="498"
-height="503"
-src="https://agoodbear.github.io/images/o589rf_12833765503598459909.png"
+class="image_figure image_external image_unprocessed"
+src="https://p.ipic.vip/o589rf.png"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;

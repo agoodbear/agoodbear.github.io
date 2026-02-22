@@ -326,7 +326,112 @@ src="https://p.ipic.vip/8j6o61.png"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; 程式寫作
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;22&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; Hugo架站
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;23&lt;/span&gt;&lt;span class="cl"&gt;---
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之後就在下方進行書寫文章內容。&lt;/p&gt;</description></item><item><title>抓住審閱者的目光，你可能只有五分鐘！</title><link>https://agoodbear.github.io/post/study-post-3/</link><pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-3/</guid><description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之後就在下方進行書寫文章內容。&lt;/p&gt;</description></item><item><title>Medium各種排版功能</title><link>https://agoodbear.github.io/post/medium-1afeaa016c60/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-1afeaa016c60/</guid><description>
+&lt;h3 id="medium各種排版功能"&gt;Medium各種排版功能&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;打入 ` 之後的文字就會灰底&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="img"
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*xXb9LHTT0K9SsQizSxzYZg@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;打入 : 之後輸入英文會出現&lt;a href="https://www.webfx.com/tools/emoji-cheat-sheet/"&gt;emoji符號&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="img"
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*WgW-LwzZwY03S8pq5NLycQ@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;打入```之後會有區塊灰底出現(要在一開始打入)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="img"
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*iC0r-9zWy6lESpKNOUJaxw@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;圖片按下CMD+K，可以幫圖片添加Hyperlink&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;按下*空格、1. →可以進行內縮排版&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;內文處輸入&lt;strong&gt;TK →代表尚未完成的內文段落(幫忙標記)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;各式&lt;a href="https://medium.com/@luyo/medium-%E5%BF%AB%E9%80%9F%E9%8D%B5%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA%E5%8F%8A%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97-b6e4c0203816"&gt;鍵盤快速鍵&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://medium.com/@luyo/medium-%E5%BF%AB%E9%80%9F%E9%8D%B5%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA%E5%8F%8A%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97-b6e4c0203816"&gt;Medium 快速鍵效果展示及使用心得&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Image Grids(選擇圖片時按下CMD，可選多張圖片)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="Previous ECG"
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*jhZIIfIN__Rcb30dwecWAA@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;Previous ECG&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="img"
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="Left sdie:K →6.1、Right side:K →7.4"
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*pEVYam7Maa6UqptWqzpH2g@2x.png"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;em&gt;Left sdie:K →6.1、Right side:K →7.4&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Roam教學:第四集-四種Roam research參考文獻資料的呈現模式</title><link>https://agoodbear.github.io/post/medium-6efa37de7325/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-6efa37de7325/</guid><description>
+&lt;h3 id="roam教學第四集-四種roam-research參考文獻資料的呈現模式"&gt;&lt;strong&gt;Roam教學&lt;/strong&gt;:第四集-四種Roam research參考文獻資料的呈現模式&lt;/h3&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="embed"
+class="image_figure image_external image_unprocessed"
+src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi.ytimg.com%2Fvi%2F4-TeZrmGWSg%2Fhqdefault.jpg&amp;amp;key=a19fcc184b9711e1b4764040d3dc5c07"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;</description></item><item><title>抓住審閱者的目光，你可能只有五分鐘！</title><link>https://agoodbear.github.io/post/study-post-3/</link><pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-3/</guid><description>
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
