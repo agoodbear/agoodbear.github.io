@@ -59,7 +59,8 @@
 
     {{- $posts := where .Site.RegularPages "Type" "in" $s.mainSections }}
     {{- $featured := default 8 $s.numberOfFeaturedPosts }}
-    {{- $featuredPosts := first $featured (where $posts "Params.featured" true)}}
+    {{- $featuredPool := where .Site.RegularPages "Params.featured" true }}
+    {{- $featuredPosts := first $featured $featuredPool }}
     {{- with $featuredPosts }}
     <h2 class="mt-4">{{ T "featured_posts" }}</h2>
     <ul>
