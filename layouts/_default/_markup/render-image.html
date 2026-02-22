@@ -1,0 +1,45 @@
+{{- $file := .Destination -}}
+{{- $imagesDir := .Page.Site.Params.imagesDir -}}
+{{- $alt := .Text -}}
+{{- $cap := .Title -}}
+{{- $scratch := newScratch -}}
+{{- $scratch.Set "classes" "image_figure" -}}
+
+{{/* Determine if page bundles are set. */}}
+{{- $bundle := .Page.Site.Params.usePageBundles -}}
+{{- if eq .Page.Params.usePageBundles false -}}
+  {{- $bundle = false -}}
+{{- end -}}
+{{- if eq .Page.Params.usePageBundles true -}}
+  {{- $bundle = true -}}
+{{- end -}}
+
+{{/* Determine source of image and get attributes.
+      NOTE: For remote images, we intentionally skip resources.GetRemote to avoid
+      build stalls/timeouts when upstream hosts rate-limit requests (e.g. Medium). */}}
+{{- $image := "" -}}
+{{- if strings.HasPrefix $file "http" -}}
+  {{- $scratch.Add "classes" " image_external" -}}
+{{- else -}}
+  {{- $scratch.Add "classes" " image_internal" -}}
+  {{- $file = path.Clean $file -}}
+  {{- if eq $bundle true -}}
+    {{- $image = .Page.Resources.GetMatch $file -}}
+    {{- if and (not $image) .Page.File -}}
+      {{- $file = path.Join .Page.RelPermalink $file -}}
+      {{- $image = resources.Get $file -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- partial "figure" (
+  dict
+    "file" $file
+    "image" $image
+    "diskPath" $.Page.File.Dir
+    "webPath" $.Page.RelPermalink
+    "alt" $alt
+    "cap" $cap
+    "classes" ($scratch.Get "classes")
+    "bundle" $bundle
+) -}}
