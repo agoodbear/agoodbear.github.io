@@ -51,7 +51,7 @@ V1不太清楚是STE還是STD。**如果是STE:**
 
 RAD、RBBB、STE over III、aVR、STD over V2~V6(Maximal at V3~V4)、I/aVL。這邊可以很確定在precordial leads的Maximal lead在V3~V4，而且是**excessive discordant**。
 
-在RBBB pattern中，常見在V1~V3有TWI與mild STD**(如果有的話)**，但是STD不超過1 mm。所以超過了1 mm代表了，有某個力量把STD往下拉\[^2\]。
+在RBBB pattern中，常見在V1~V3有TWI與mild STD**(如果有的話)**，但是STD不超過1 mm。所以超過了1 mm代表了，有某個力量把STD往下拉[^2]。
 
 **➡️什麼力量?Post.wall OMI(後壁血管阻塞)。**
 
@@ -79,7 +79,7 @@ CV man到現場on了PCPS來support生命徵象，以利後續檢查。PCPS中，
 
 > 問題:如果此時我們高度懷疑pulmonary embolism引起的collapse or peri-arrest，我們要如何處理?
 
-- PE with collapse若給予積極CPR+**立即rTPA(用50 mg push)**→有研究顯示35%可以survival to discharge(**MAPPET study**)\[^1\]
+- PE with collapse若給予積極CPR+**立即rTPA(用50 mg push)**→有研究顯示35%可以survival to discharge(**MAPPET study**)[^1]
 
 #### ⭐️Case再度繼續
 
@@ -108,11 +108,11 @@ CV man到現場on了PCPS來support生命徵象，以利後續檢查。PCPS中，
 - 若H.R降下來，去除了subendocardial ischemia的狀態，仍可見到Maximal STD在V1~V4，則會比較像posterior OMI。
 - 此外Bedside echo的角色➡在subendocardial ischemia會完全正常(因為epicardial vessel是正常的)，在posterior OMI則可能會有**basal inf.lateral wall RWMA(17 segment中的Segment 5 )。**如果echo看起來動得不錯，那麼H.R下來時，如果是subendocardial ischemia引起的aVR STE+multiple leads STD，理應改善。
 
-**還想多看一些類似例子增加實力嗎?**\[^4\]
+**還想多看一些類似例子增加實力嗎?**[^4]
 
 [A man in his early sixties with palpitations](http://hqmeded-ecg.blogspot.com/2020/01/a-man-in-his-early-sixties-with.html)
 
-#### **事實上Paper是寫Segment 4才是所謂的Post.wall(Fig.4)\[^3\]**
+#### **事實上Paper是寫Segment 4才是所謂的Post.wall(Fig.4)[^3]**
 
 ![](https://cdn-images-1.medium.com/max/1024/1*lZyXYQNuMYtGVHAODdedZQ@2x.png)
 ***Fig.4***
@@ -157,7 +157,7 @@ CV man到現場on了PCPS來support生命徵象，以利後續檢查。PCPS中，
 
 在V1~V4會出現變大且Upright T wave(對應到Post.wall就是出現Deeply TWI這種reperfusion rhythm)。所以有看到V2~V4是不是出現超大T wave →這又叫做Posterior Wellen’s syndrome。
 
-**這邊要注意，別和De-Winter’s T wave搞混了。可以**[**參考這篇**](https://agoodbear.medium.com/%E9%80%99%E6%98%AFpost-wellen-syndrome%E9%82%84%E6%98%AFde-winter-391b08ca389f)**，我寫的文章來做區分\[^5\]。**
+**這邊要注意，別和De-Winter’s T wave搞混了。可以**[**參考這篇**](https://agoodbear.medium.com/%E9%80%99%E6%98%AFpost-wellen-syndrome%E9%82%84%E6%98%AFde-winter-391b08ca389f)**，我寫的文章來做區分[^5]。**
 
 #### ⭐️統整一下這篇重點:
 

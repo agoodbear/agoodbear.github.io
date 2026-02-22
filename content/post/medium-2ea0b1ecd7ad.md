@@ -54,11 +54,11 @@ AMI就是出現**Myocardial injury的證據(Biomarker上升)+ Myocardial ischemi
 2. 如果沒有看到STE在V2/V3(比如isoelectric baseline or minimal STD)，那麼就需要考慮是不是有什麼力量往下拉了。**對~~~Post.OMI**
 3. 承上面，怎樣程度的minimal STD都要考慮Post.OMI呢?
 
-在這篇Smith ECG Blog有提到\[^1\]，**在V2 or V3有任何程度的STD，都必須考慮posterior OMI，直到證明不是為止**。特別是**downsloping STD**(符合前述，即使STD<0.5~1 mm都要特別小心)
+在這篇Smith ECG Blog有提到[^1]，**在V2 or V3有任何程度的STD，都必須考慮posterior OMI，直到證明不是為止**。特別是**downsloping STD**(符合前述，即使STD<0.5~1 mm都要特別小心)
 
 Ken Grauer與Smith大師，多次強調V2 or V3的ECG morphology。除了前述的任何程度的STD。**如果出現downsloping STD or Shelf-like STD都要小心有Post.OMI.**
 
-在這一篇之前寫的文章中，我有更詳盡的論述，要如何診斷Post.OMI\[^2\]。簡短說一下:**STDmaxV1–4(+) →直指Post.wall MI，直到排除為止(翻成白話文就是在precordial leads出現STD，且STD的最大值是出現在V1-V4其中一個lead，就要考慮後壁梗塞)。**
+在這一篇之前寫的文章中，我有更詳盡的論述，要如何診斷Post.OMI[^2]。簡短說一下:**STDmaxV1–4(+) →直指Post.wall MI，直到排除為止(翻成白話文就是在precordial leads出現STD，且STD的最大值是出現在V1-V4其中一個lead，就要考慮後壁梗塞)。**
 
 ![](https://cdn-images-1.medium.com/max/1024/0*M00QyDT0XGK9XLe0)
 ***Fig.4 Downsloping STD vs. Shelf-like STD***
@@ -101,7 +101,7 @@ Fig.8可以看到在Chest CTA下lateral wall of LV，比較偏向外側區塊有
 
 #### 這邊我們需要提出一個問題，那就是這個在non-ECG-gated contrast-enhanced CT下看到的hypoperfusion，有沒有其他可能性?可不可信?
 
-各位有興趣可以參考這一篇文章\[^3\]。我這邊總結幾項這篇的論點:
+各位有興趣可以參考這一篇文章[^3]。我這邊總結幾項這篇的論點:
 
 1. Cardiac CT(coronary CTA)可以幫助我們評估coronary artery stenosis，此外也可以評估myocardial perfusion defect(MPD)(**也就是像Fig.8一樣出現LV hypodense lesion**)。但是Coronary CTA需要ECG gating，此外也需要高階多切的MDCT。
 2. 然而有不少最近的研究描述(**請見Fig.9**)，ACS可以在一般routine所做的non-ECG-gated contrast-enhanced CT藉由測到myocardial perfusion defect而做出診斷。
@@ -127,7 +127,7 @@ Fig.8可以看到在Chest CTA下lateral wall of LV，比較偏向外側區塊有
 
 且**這三者符合特定的冠狀動脈支配區域**。
 
-另外病患在給了內科療法，仍持續胸痛。根據ESC 2020 NSTEMI guideline，屬於Very high risk feature病患\[^4\]。
+另外病患在給了內科療法，仍持續胸痛。根據ESC 2020 NSTEMI guideline，屬於Very high risk feature病患[^4]。
 
 如果我們沒辦法辨識出這個病患有OMI。依照目前STEMI/NSTEMI paradigm的分類。這位病患理應被分類到NSTEMI這一類中(TnI⬆︎加上myocardial ischemia證據)。剛剛說過，refractory ischemic chest pain算是very high risk feature，所以這位病患應該要在2小時內安排到PCI，看血管有沒有阻塞(見Fig.10)。
 
@@ -142,7 +142,7 @@ Fig.10應該是我的心電圖Blog，出現最多次的一張圖吧XD
 
 #### 但是….也就是這個但是…..
 
-上個月Smith ECG有一篇文章\[^5\]裡面比較了STEMI/NSTEMI paradigm與OMI/NOMI paradigm的差別，裡面有一點講到serial ECG。
+上個月Smith ECG有一篇文章[^5]裡面比較了STEMI/NSTEMI paradigm與OMI/NOMI paradigm的差別，裡面有一點講到serial ECG。
 
 **我重點條列一下:(這不是ChatGPT寫的啦)**
 

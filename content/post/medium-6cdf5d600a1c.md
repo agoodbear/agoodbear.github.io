@@ -17,7 +17,7 @@ canonicalURL: "https://medium.com/@agoodbear/vpc%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%B
 
 #### 我們來看看為何VPC也可以小兵立大功
 
-VPC是由心室產生的。VPC就像LBBB一樣具有discordant ST segments，所以當excessive discordant STE或concordant STE時，就要小心。雖然沒有證據顯示MSC可以適用VPC就像LBBB一樣。但是根據Stephen Smith的經驗，這rule用在VPC和用在LBBB非常類似，雖然specific少一點\[^3\]。
+VPC是由心室產生的。VPC就像LBBB一樣具有discordant ST segments，所以當excessive discordant STE或concordant STE時，就要小心。雖然沒有證據顯示MSC可以適用VPC就像LBBB一樣。但是根據Stephen Smith的經驗，這rule用在VPC和用在LBBB非常類似，雖然specific少一點[^3]。
 
 [![](https://cdn-images-1.medium.com/max/1024/0*QsTk0Pc3I5gPz8dc)](http://hqmeded-ecg.blogspot.com/2014/01/look-at-pvcs.html)
 *From Smith ECG Blog*
@@ -102,7 +102,7 @@ Group beats的第一跳看起來是有P wave(往V1~V2對過去)，偏向RBBB pat
 
 **病患作了PCI顯示LAD total occlusion。**
 
-**在這篇Smith ECG文章中表示\[^1\]：**
+**在這篇Smith ECG文章中表示[^1]：**
 
 - 在LBBB、PPM，或是LBBB like QRS complexes(如VPC)(目前尚未studies)都應該使用MSC去看是否有ACS(**目前只有LBBB/PPM有Validation study**)
 - Appropriate discordance的原則能夠用在所有wide QRS complexes →當有wide QRS complexes出現，有懷疑有ACS，看看是否有excessive discordant現象出現(**也就是符合MSC criteria C**)
@@ -117,7 +117,7 @@ Group beats的第一跳看起來是有P wave(往V1~V2對過去)，偏向RBBB pat
 ![](https://cdn-images-1.medium.com/max/1024/1*l5jt0R2_LRq1RtDUh3TmLw@2x.png)
 ***Fig.5***
 
-Fig.5為QT interval nomogram\[^2\]，在H.R<60以下，只要QT interval > 485 ms，就有TdP的風險，H.R>60，隨著H.R上升，發生TdP risk的QT interval也隨之下降。**換句話說就是，在線以上，就要小心發生TdP**。
+Fig.5為QT interval nomogram[^2]，在H.R<60以下，只要QT interval > 485 ms，就有TdP的風險，H.R>60，隨著H.R上升，發生TdP risk的QT interval也隨之下降。**換句話說就是，在線以上，就要小心發生TdP**。
 
 所以QT interval為560 ms著實，**很可能接下來會發生TdP**。所以趕緊看看是否有Hypo-K、Hypo-Mg。是否有使用增加QT的藥物。病患趕緊On個monitor，擺在自己的眼前，不要等到護理師衝過來和你說，留觀區第幾床看起來怪怪的(已經產生fatal arrhythmia了)。
 
