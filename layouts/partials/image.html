@@ -7,6 +7,7 @@
 {{- $cap := .cap -}}
 {{- $scratch := newScratch -}}
 {{- $scratch.Set "classes" "image_figure" -}}
+{{- $fallback := absURL "/images/EDbear.jpg" -}}
 
 {{/* Add classes for image type */}}
 {{- $typeClass := "" -}}
@@ -48,4 +49,5 @@
     "cap" $cap
     "classes" ($scratch.Get "classes")
     "bundle" $bundle
+    "fallback" $fallback
 ) -}}
