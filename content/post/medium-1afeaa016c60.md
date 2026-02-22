@@ -36,10 +36,10 @@ canonicalURL: "https://medium.com/@agoodbear/medium%E5%90%84%E7%A8%AE%E6%8E%92%E
 
 - Image Grids(選擇圖片時按下CMD，可選多張圖片)
 
-![Previous ECG](https://cdn-images-1.medium.com/max/1024/1*jhZIIfIN__Rcb30dwecWAA@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*jhZIIfIN__Rcb30dwecWAA@2x.png)
 *Previous ECG*
 
 ![](https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png)
 
-![Left sdie:K →6.1、Right side:K →7.4](https://cdn-images-1.medium.com/max/1024/1*pEVYam7Maa6UqptWqzpH2g@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*pEVYam7Maa6UqptWqzpH2g@2x.png)
 *Left sdie:K →6.1、Right side:K →7.4*

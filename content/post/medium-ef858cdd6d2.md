@@ -16,14 +16,14 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%82%84%E5%9C%A8%E9%AB%98%E8%A1%8
 ---
 ### 還在高血鉀嗎?
 
-![Fig 1: K:6.1](https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png)
 *Fig 1: K:6.1*
 
 洗腎病患，因為呼吸喘，而到急診來就診。X光看起來有肺積水，可能水過多了。Fig 1 為入院的ECG。鉀離子:6.1
 
 交班給我時，剛好要追蹤第二次心臟酵素與鉀離子。
 
-![Fig 2](https://cdn-images-1.medium.com/max/1024/1*pEVYam7Maa6UqptWqzpH2g@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*pEVYam7Maa6UqptWqzpH2g@2x.png)
 *Fig 2*
 
 Fig 2是第二次追蹤心臟酵素時做的ECG。
@@ -49,5 +49,5 @@ Fig 2是第二次追蹤心臟酵素時做的ECG。
 3. 慢的心跳，合併conduction block也要考慮**(P wave變平)**
 4. 如果看到Clumped beats，如果怪異沒P，也要考慮(見流程圖Fig 3)
 
-![Fig 3](https://cdn-images-1.medium.com/max/1024/1*qMtmievwzzgbZ1RkxvAqag.png)
+![](https://cdn-images-1.medium.com/max/1024/1*qMtmievwzzgbZ1RkxvAqag.png)
 *Fig 3*

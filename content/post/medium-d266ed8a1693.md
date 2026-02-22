@@ -13,7 +13,7 @@ medium_id: "d266ed8a1693"
 medium_url: "https://medium.com/@agoodbear/ihca-%E8%82%BA%E6%A0%93%E5%A1%9E%E9%82%84%E6%98%AF%E5%85%B6%E4%BB%96%E5%95%8F%E9%A1%8C-d266ed8a1693"
 canonicalURL: "https://medium.com/@agoodbear/ihca-%E8%82%BA%E6%A0%93%E5%A1%9E%E9%82%84%E6%98%AF%E5%85%B6%E4%BB%96%E5%95%8F%E9%A1%8C-d266ed8a1693"
 ---
-![ER arrival](https://cdn-images-1.medium.com/max/1024/1*f2GmaCa9hR-VLoQKEGX0vw@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*f2GmaCa9hR-VLoQKEGX0vw@2x.png)
 ***ER arrival***
 
 ### IHCA →肺栓塞還是其他問題?
@@ -44,7 +44,7 @@ V1不太清楚是STE還是STD。**如果是STE:**
 
 檢查中，PE仍為首要需要排除的診斷。**(臨床症狀、ECG:RAD、newly RBBB、POCUS:似乎見到有RV dilate但無D-sign)**
 
-![Fig.1: 50分鐘後](https://cdn-images-1.medium.com/max/1024/1*Bf0nYFkHXhsipj1wc8kqXw@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*Bf0nYFkHXhsipj1wc8kqXw@2x.png)
 ***Fig.1: 50分鐘後***
 
 這張是50分鐘後的ECG**(Fig.1)**，幾乎沒有baseline不穩的干擾。
@@ -59,7 +59,7 @@ RAD、RBBB、STE over III、aVR、STD over V2~V6(Maximal at V3~V4)、I/aVL。這
 
 有血管的問題，也有不是血管的問題。
 
-![aVR STE的DDx](https://cdn-images-1.medium.com/max/1024/1*zL-rA_XVZ8v3YJCxUmd3rQ@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*zL-rA_XVZ8v3YJCxUmd3rQ@2x.png)
 ***aVR STE的DDx***
 
 總之看到aVR STE，就像看到了一個垃圾桶。很多診斷都在裡面。如果病患有ACS的症狀合併aVR STE的確要考慮，LM、TVD、Proximal LAD問題。
@@ -72,7 +72,7 @@ RAD、RBBB、STE over III、aVR、STD over V2~V6(Maximal at V3~V4)、I/aVL。這
 
 **當然前提是這位病患是Non-STEMI病患才能用此表格!至於這位病患是不是，接著往下看~~~~**
 
-![Fig.2](https://cdn-images-1.medium.com/max/1024/0*KHmmo3oONQAnq6M2)
+![](https://cdn-images-1.medium.com/max/1024/0*KHmmo3oONQAnq6M2)
 ***Fig.2***
 
 CV man到現場on了PCPS來support生命徵象，以利後續檢查。PCPS中，病患整個collapse，開始了CPR。
@@ -91,7 +91,7 @@ CV man到現場on了PCPS來support生命徵象，以利後續檢查。PCPS中，
 
 一樣可見到STD over V1~V6(Maximal at V3~V4)、RBBB，但是**速度變慢了**。
 
-![Fig.3](https://cdn-images-1.medium.com/max/1024/1*ERJdAYJS484y8umvp3aOcA@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*ERJdAYJS484y8umvp3aOcA@2x.png)
 ***Fig.3***
 
 這邊有一個小小的重點。有看到上面aVR STE的DDx表格處，normal variant有SVT、AfRVR嗎?
@@ -114,7 +114,7 @@ CV man到現場on了PCPS來support生命徵象，以利後續檢查。PCPS中，
 
 #### **事實上Paper是寫Segment 4才是所謂的Post.wall(Fig.4)\[^3\]**
 
-![Fig.4](https://cdn-images-1.medium.com/max/1024/1*lZyXYQNuMYtGVHAODdedZQ@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*lZyXYQNuMYtGVHAODdedZQ@2x.png)
 ***Fig.4***
 
 > **Tips:**如果H.R過快引起multiple leads STD+aVR →**先降H.R**(若H.R下降仍可見Maximal STD over V1~V4 →想Posterior OMI)
@@ -131,14 +131,14 @@ CV man到現場on了PCPS來support生命徵象，以利後續檢查。PCPS中，
 
 病患4小時後的TnI飆到250 ng/ml(Large myocardial infarction)。之後在5小時後進入導管室去做PCI。CAG如下**Fig.5，顯示了LCx critical stenosis與RCA CTO**
 
-![Fig.5](https://cdn-images-1.medium.com/max/1024/0*IrcOc95F4_jb5f-e)
+![](https://cdn-images-1.medium.com/max/1024/0*IrcOc95F4_jb5f-e)
 ***Fig.5***
 
 所以這個Case是因為LCx critical stenosis引起的large myocardial infarction導致collapse，並不是因為肺栓塞引起。
 
 我們來看一下PCI後的ECG(**Fig.6**)，就可以知道LCx確確實實就是culprit lesion並不是隨便說說的。
 
-![Fig.6](https://cdn-images-1.medium.com/max/1024/1*cjpdpc0_PzZyGR5Y_g-mmw@2x.png)
+![](https://cdn-images-1.medium.com/max/1024/1*cjpdpc0_PzZyGR5Y_g-mmw@2x.png)
 ***Fig.6***
 
 上面這張是Post-PCI的ECG。我們可以看到什麼 →T wave變大、Upright在precordial leads。
@@ -150,7 +150,7 @@ CV man到現場on了PCPS來support生命徵象，以利後續檢查。PCPS中，
 
 正常Reperfusion rhythm會先出現Biphasic TWI之後變成Deeply TWI →還記得Wellen’s syndrome嗎?Wellen’s syndrome就是出現Reperfusion rhythm的ECG pattern。
 
-![Fig.7](https://cdn-images-1.medium.com/max/1024/0*-46SeXBN7JFPXgXd)
+![](https://cdn-images-1.medium.com/max/1024/0*-46SeXBN7JFPXgXd)
 ***Fig.7***
 
 > 那麼Posterior OMI出現Reperfusion rhythm會出現什麼狀況?
