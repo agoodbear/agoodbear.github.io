@@ -2,6 +2,7 @@
 # if you set it to "/" share icons won't work properly on production
 #這邊要輸入我的github網址
 baseurl = "https://agoodbear.github.io/"  # Include trailing slash
+enableRobotsTXT = true
 # title = "Clarity"  # Edit directly from config/_default/languages.toml # alternatively, uncomment this and remove `title` entry from the aforemention file.
 #這邊下面這行的copyright文字可以變更(主畫面最下面)
 copyright = "Copyright © 2022-2024, Modified by ER Bear"
@@ -39,4 +40,4 @@ home = ["HTML", "RSS", "JSON"]
   shortname = "agoodbear"
 
 [params]
-customCSS = ["custom-css/timeline.css"] # Include custom CSS files
+customCSS = ["custom-css/timeline.css", "custom-css/image-row.css"] # Include custom CSS files

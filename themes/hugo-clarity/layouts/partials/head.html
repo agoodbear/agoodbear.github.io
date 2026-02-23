@@ -18,9 +18,26 @@
 {{- if (ne hugo.Environment "development") }}
   {{- partialCached "analytics" . }}
 {{- end }}
+{{- $robots := "" }}
+{{- with .Params.robots }}
+  {{- $robots = . }}
+{{- end }}
+{{- if and (eq $robots "") .Params.searchPage }}
+  {{- $robots = "noindex,follow" }}
+{{- end }}
+{{- if and (eq $robots "") .Params.noindex }}
+  {{- $robots = "noindex,follow" }}
+{{- end }}
+{{- with $robots }}
+  <meta name="robots" content="{{ . }}">
+{{- end }}
 {{- partial "opengraph" . }}
 {{- partialCached "favicon" . }}
-<link rel="canonical" href="{{ .Permalink }}">
+{{- $canonical := .Permalink }}
+{{- with .Params.canonicalURL }}
+  {{- $canonical = . }}
+{{- end }}
+<link rel="canonical" href="{{ $canonical }}">
 {{ range .AlternativeOutputFormats -}}
   {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}

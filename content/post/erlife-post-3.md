@@ -5,7 +5,7 @@ featured: false #若設定為true，會設定為精選文章
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 toc: false #自動產生TOC
 #featureImage: "/images/HUGO.png" #設定這篇文章首頁的圖片
-thumbnail: "/images/erlife-post-3.png" #每篇文章的縮圖位置在這裡(static/images/)-變更
+thumbnail: "/images/erlife-post-3.webp" #每篇文章的縮圖位置在這裡(static/images/)-變更
 codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
 codeLineNumbers: true # Override global value for showing of line numbers within code block.
 figurePositionShow: true # Override global value for showing the figure label.
