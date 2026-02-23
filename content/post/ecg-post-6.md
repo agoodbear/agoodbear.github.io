@@ -1,6 +1,7 @@
 ---
 title: "讓心臟亂跳的外傷" #輸入這篇的title
 date: "2024-03-05" #輸入時間
+description: "外傷後心律異常 ECG 個案，解析 polymorphic VT 與 R-on-T 線索，整理急診辨識與處置流程。"
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 featured: false #若設定為true，會設定為精選文章
 toc: false #自動產生TOC

@@ -1,6 +1,7 @@
 ---
 title: "82歲胸痛的阿公" #輸入這篇的title
 date: "2025-02-19" #輸入時間
+description: "82歲胸痛個案 ECG 解析，討論 STEMI criteria 與 OMI 判讀差異，整理臨床決策與導管時機。"
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 featured: false #若設定為true，會設定為精選文章
 toc: false #自動產生TOC

@@ -1,6 +1,7 @@
 ---
 title: "心肌梗塞，跳這心律，發生什麼事了?該怎麼辦?" #輸入這篇的title
 date: "2026-01-13" #輸入時間
+description: "急診 ECG 個案解析：心肌梗塞合併異常寬 QRS 心律，整理 RVMI 評估、right-sided ECG 判讀與臨床處置重點。"
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 featured: false #若設定為true，會設定為精選文章
 toc: false #自動產生TOC

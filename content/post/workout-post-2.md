@@ -1,7 +1,7 @@
 ---
 title: "宜蘭友愛萵苣紀錄"
 date: "2026-02-22"
-description: "醫生Gym Shorts"
+description: "宜蘭友愛萵苣運動紀錄，分享醫師健身日常、訓練內容與短影片重點，持續追蹤體能與習慣建立。"
 featured: false
 draft: false
 toc: false

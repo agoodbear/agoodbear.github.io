@@ -1,6 +1,7 @@
 ---
 title: "意識不清的中年婦女" #輸入這篇的title
 date: "2024-02-20" #輸入時間
+description: "意識不清中年女性的 prehospital ECG 教學，從低溫與 J wave 線索建立鑑別診斷與處置方向。"
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 featured: false #若設定為true，會設定為精選文章
 toc: false #自動產生TOC

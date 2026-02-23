@@ -1,6 +1,7 @@
 ---
 title: "41歲女性，到院30分鐘內，IHCA" #輸入這篇的title
 date: "2024-12-30" #輸入時間
+description: "41歲女性到院後快速惡化的急診個案，從序列 ECG 與臨床表現整理 IHCA 前警訊與處置重點。"
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 featured: false #若設定為true，會設定為精選文章
 toc: false #自動產生TOC

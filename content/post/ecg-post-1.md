@@ -1,6 +1,7 @@
 ---
 title: "73歲男性，胸痛持續。需要導管介入嗎?" #輸入這篇的title
 date: "2024-01-31" #輸入時間
+description: "73歲持續胸痛個案，從 serial ECG、影像與臨床表現辨識 OMI，討論早期導管介入時機。"
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 toc: false #自動產生TOC
 thumbnail: "/images/ecg-post-1.png" #每篇文章的縮圖位置在這裡(static/images/)-變更

@@ -1,6 +1,7 @@
 ---
 title: "資料庫的應用與靈感筆記如何建立?" #輸入這篇的title
 date: "2024-01-21" #輸入時間
+description: "分享資料庫與靈感筆記系統建立流程，從蒐集、連結到回顧，提升臨床與寫作知識管理效率。"
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 toc: false #自動產生TOC
 thumbnail: "/images/evernotetoroam.png" #每篇文章的縮圖位置在這裡(static/images/)-變更
