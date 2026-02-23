@@ -7,8 +7,8 @@ largeTwitterCard = false # set to true if you want to show a large twitter card 
 #這邊可以變更作者的簡介
 introDescription = "急診科醫師、心電圖瘋狂愛好者、小小超音波技術員、插管專家，曾經的水肺潛水員"
 # introURL = "about/" # set the url for the 'read more' button below the introDescription, or set to false to not show the button
-# description = "A theme based on VMware's Clarity Design System for publishing technical blogs with Hugo." # Set your site's meta tag (SEO) description here. Alternatively set this description in your home page content file e.g. content/_index.md. Whatever is set in the latter will take precedence.
-# keywords = ["design", "clarity", "hugo theme"] # Set your site's meta tag (SEO) keywords here. Alternatively set these in your home page content file e.g. content/_index.md. Whatever is set in the latter will take precedence.
+description = "急診醫學、心電圖（ECG）與床邊超音波（POCUS）臨床教學，收錄真實案例解析與急診實戰思維。"
+keywords = ["急診醫學", "心電圖", "ECG", "POCUS", "急診超音波", "急性胸痛", "醫學教學"]
 #開啟每篇post的share按鍵-變更
 showShare = true # Uncomment to not show share buttons on each post. Also available in each post's front matter.
 

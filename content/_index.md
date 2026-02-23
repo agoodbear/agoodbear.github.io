@@ -1,5 +1,5 @@
 +++
-author = "Hugo Authors"
-description = "A theme based on VMware's Clarity Design System for publishing technical blogs with Hugo." # Set your site's meta tag (SEO) description here. This overrides any description set in your site configuration.
-keywords = ["design", "clarity", "hugo theme"] # Set your site's meta tag (SEO) keywords here. These override any keywords set in your site configuration.
+author = "急診熊"
+description = "急診熊心聲部落格：專注急診醫學、ECG 判讀與 POCUS 實戰案例，提供臨床決策可直接套用的教學內容。"
+keywords = ["急診熊", "ECG 教學", "心電圖判讀", "POCUS", "急診案例", "胸痛", "OMI", "STEMI"]
 +++
