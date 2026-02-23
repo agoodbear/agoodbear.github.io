@@ -1,6 +1,7 @@
 ---
 title: "眼鏡蛇來我家，這是真的!!!" #輸入這篇的title
 date: "2024-02-11" #輸入時間
+description: "急診醫師下鄉生活紀錄：眼鏡蛇闖入住家真實事件，分享處置經過與在地救援經驗。"
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 toc: false #自動產生TOC
 thumbnail: "/images/erlife-post-1.jpg" #每篇文章的縮圖位置在這裡(static/images/)-變更

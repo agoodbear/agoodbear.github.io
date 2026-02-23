@@ -1,6 +1,7 @@
 ---
 title: "反覆Vf，只能禱告了嗎?" #輸入這篇的title
 date: "2024-07-10" #輸入時間
+description: "反覆 VF 急救案例回顧，整理難治型心室顫動的除顫策略、藥物選擇與可逆病因評估。"
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 featured: false #若設定為true，會設定為精選文章
 toc: false #自動產生TOC

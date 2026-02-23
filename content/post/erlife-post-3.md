@@ -1,6 +1,7 @@
 ---
 title: "法院奇幻之旅-被告重傷害" #輸入這篇的title
 date: "2025-05-06" #輸入時間
+description: "急診實務與法律經驗分享：從被告重傷害案件回顧應對流程、蒐證重點與出庭前準備。"
 featured: false #若設定為true，會設定為精選文章
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 toc: false #自動產生TOC

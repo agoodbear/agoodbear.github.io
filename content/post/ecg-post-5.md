@@ -1,6 +1,7 @@
 ---
 title: "和死神擦身而過的年輕產婦" #輸入這篇的title
 date: "2024-03-04" #輸入時間
+description: "年輕產婦突發胸痛與倒下個案，回顧急救過程並整理產後高風險心肺事件的判讀重點。"
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 featured: false #若設定為true，會設定為精選文章
 toc: false #自動產生TOC
@@ -279,4 +280,3 @@ SCAD在**產後的前幾週最常發生**，但也可能在懷孕期間發生 [^
 [^13]:Spontaneous coronary artery dissection (SCAD) | Heart and Stroke Foundation - [link](https://www.heartandstroke.ca/heart-disease/conditions/spontaneous-coronary-artery-dissection)
 
 [^14]:Pregnancy-related Spontaneous Coronary Artery Dissection: Two Case Reports and a Comprehensive Review of Literature - PMC - [link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3424780/)
-

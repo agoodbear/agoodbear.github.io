@@ -1,6 +1,7 @@
 ---
 title: "蜂螫的隱藏威脅！" #輸入這篇的title
 date: "2024-07-18" #輸入時間
+description: "蜂螫後胸痛與心律不整個案，解析 Kounis syndrome、vasospasm 與 electrical storm 的 ECG 線索。"
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 featured: false #若設定為true，會設定為精選文章
 toc: false #自動產生TOC
@@ -266,4 +267,3 @@ Ischemia:看起來是aVR STE with multiple leads STD的subendocardial ischemia p
 [^5]: Kounis Syndrome • LITFL • ECG Library - [link](https://litfl.com/kounis-syndrome/)
 [^6]:Kounis, N. G., & Zavras, G. M. (1991). Histamine-induced coronary artery spasm: the concept of allergic angina. __The British Journal of Clinical Practice__, __45__(2), 121–128.
 [^7]:Vasospastic angina - UpToDate - [link](https://www.uptodate.com/contents/vasospastic-angina?search=kounis syndrome&source=search_result&selectedTitle=1~4&usage_type=default&display_rank=1)
-

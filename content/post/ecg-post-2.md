@@ -1,6 +1,7 @@
 ---
 title: "How to detect OMI in 10 Steps?" #輸入這篇的title
 date: "2024-01-31" #輸入時間
+description: "How to detect OMI in 10 steps：整理 OMI 與 STEMI 判讀差異，建立急診 ECG 系統化判讀流程。"
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 featured: true #若設定為true，會設定為精選文章
 toc: true #自動產生TOC

@@ -1,7 +1,7 @@
 ---
 title: "宜蘭羅東分洪堰空拍紀錄"
 date: "2026-02-22"
-description: "羅東分洪堰空拍"
+description: "宜蘭羅東分洪堰空拍紀錄，收錄現地景色與航拍影像，整理拍攝路線、場景重點與觀景心得。"
 featured: false
 draft: false
 toc: false
@@ -27,4 +27,3 @@ tags:
     allowfullscreen>
   </iframe>
 </div>
-

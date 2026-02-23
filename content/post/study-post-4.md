@@ -1,6 +1,7 @@
 ---
 title: "和偶像拍自拍~~" #輸入這篇的title
 date: "2024-06-19" #輸入時間
+description: "ICEM 2024 學習紀錄與會議重點整理，分享急診心臟醫學課程收穫與臨床應用心得。"
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 toc: false #自動產生TOC
 thumbnail: "/images/study-post-4.jpeg" #每篇文章的縮圖位置在這裡(static/images/)-變更

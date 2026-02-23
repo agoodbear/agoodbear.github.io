@@ -1,7 +1,7 @@
 ---
 title: "躺的輪椅" #輸入這篇的title
 date: "2024-03-05" #輸入時間
-description: "Hugo" #根本不知道什麼時候會出現
+description: "急診待床壓力下的照護現場紀錄，從「躺的輪椅」談高齡病患舒適度與臨床人力挑戰。"
 featured: false #若設定為true，會設定為精選文章
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 toc: false #自動產生TOC

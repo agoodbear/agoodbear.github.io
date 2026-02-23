@@ -1,6 +1,7 @@
 ---
 title: "67歲暈厥的阿姨" #輸入這篇的title
 date: "2024-07-24" #輸入時間
+description: "67歲暈厥個案判讀，整理高階房室傳導阻滯與心因性 syncope 線索，強化急診分流與處置。"
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 featured: false #若設定為true，會設定為精選文章
 toc: false #自動產生TOC
@@ -305,4 +306,3 @@ Carotid sinus massage會增加SA node和AV node的迷走神經效應，並惡化
 [^5]:Epsilon Wave • LITFL Medical Blog • ECG Library Basics - [link](https://litfl.com/epsilon-wave-ecg-library/)
 [^6]:Heller, J., Hagège, A. A., Besse, B., Desnos, M., Marie, F. N., & Guerot, C. (1996). “Crochetage” (notch) on R wave in inferior limb leads: a new independent electrocardiographic sign of atrial septal defect. __Journal of the American College of Cardiology__, __27__(4), 877–882. https://doi.org/10.1016/0735-1097(95)00554-4
 [^7]:Amazon.com: ECG Core Curriculum: 9780071785211: Zimmerman, Franklin H.: P.251 圖書 - [link](https://www.amazon.com/ECG-Core-Curriculum-Franklin-Zimmerman/dp/0071785213)
-
