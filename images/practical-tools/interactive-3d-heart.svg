@@ -1,0 +1,54 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EAFBF6" />
+      <stop offset="1" stop-color="#D6F4EA" />
+    </linearGradient>
+    <linearGradient id="heart" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#D9465F" />
+      <stop offset="1" stop-color="#B91C1C" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0D9488" />
+      <stop offset="1" stop-color="#0F766E" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="760" rx="34" fill="url(#bg)" />
+  <rect x="70" y="80" width="1060" height="600" rx="28" fill="white" stroke="#C8E8DD" stroke-width="4" />
+  <rect x="118" y="132" width="300" height="496" rx="18" fill="#F2FBF8" stroke="#D5EFE7" stroke-width="3" />
+  <rect x="452" y="132" width="630" height="496" rx="18" fill="#F7FEFC" stroke="#D5EFE7" stroke-width="3" />
+
+  <rect x="154" y="180" width="228" height="18" rx="9" fill="#BDE7DD" />
+  <rect x="154" y="224" width="208" height="14" rx="7" fill="#D4EEE8" />
+  <rect x="154" y="258" width="188" height="14" rx="7" fill="#D4EEE8" />
+  <rect x="154" y="292" width="214" height="14" rx="7" fill="#D4EEE8" />
+  <rect x="154" y="340" width="228" height="64" rx="14" fill="url(#accent)" />
+  <rect x="154" y="424" width="228" height="64" rx="14" fill="#DCF4EE" stroke="#A9DED1" stroke-width="3" />
+
+  <g opacity="0.38" stroke="#DDEFE9" stroke-width="2">
+    <path d="M452 202H1082" />
+    <path d="M452 274H1082" />
+    <path d="M452 346H1082" />
+    <path d="M452 418H1082" />
+    <path d="M452 490H1082" />
+    <path d="M518 132V628" />
+    <path d="M584 132V628" />
+    <path d="M650 132V628" />
+    <path d="M716 132V628" />
+    <path d="M782 132V628" />
+    <path d="M848 132V628" />
+    <path d="M914 132V628" />
+    <path d="M980 132V628" />
+  </g>
+
+  <g transform="translate(640 206)">
+    <path d="M79 36c20-39 78-38 95 6 9 24 1 50-18 72-20 24-49 46-77 68-4 3-9 3-13 0-28-22-57-44-77-68C-30 92-38 66-29 42-12-2 46-3 66 36l6 11 7-11z" fill="url(#heart)" />
+    <path d="M78 56c14-27 55-27 68 4 7 18 2 38-12 54-15 18-36 34-56 50-20-16-41-32-56-50-14-16-19-36-12-54 13-31 54-31 68-4z" fill="#F87171" fill-opacity="0.34" />
+  </g>
+
+  <path d="M494 552H606L626 575L660 510L694 600L730 552H1036" stroke="url(#accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+
+  <text x="600" y="94" fill="#0F5F55" font-size="42" font-weight="700" font-family="Figtree, 'Noto Sans TC', sans-serif">3D 心臟互動視覺化</text>
+  <text x="600" y="712" fill="#2D6F61" font-size="28" font-weight="600" font-family="Figtree, 'Noto Sans TC', sans-serif">Rotate • Zoom • Select Anatomy</text>
+</svg>
