@@ -1,0 +1,1353 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ECG 影像轉數位訊號工具</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap");
+
+      :root {
+        color-scheme: light;
+        --bg: #ecfeff;
+        --ink: #164e63;
+        --ink-soft: #2f6c7c;
+        --panel: #ffffff;
+        --line: #cce8ef;
+        --accent: #0891b2;
+        --accent-strong: #0e7490;
+        --ok: #059669;
+        --warn: #b45309;
+        --ring: rgba(8, 145, 178, 0.36);
+        --shadow: 0 14px 34px rgba(22, 78, 99, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: "Figtree", "Noto Sans TC", "Noto Sans", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 12% 16%, rgba(8, 145, 178, 0.15), transparent 34%),
+          radial-gradient(circle at 88% 6%, rgba(34, 211, 238, 0.17), transparent 34%),
+          var(--bg);
+      }
+
+      .app {
+        width: min(1360px, calc(100vw - 1.8rem));
+        margin: 18px auto 26px;
+      }
+
+      .header {
+        background: rgba(255, 255, 255, 0.84);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        padding: 18px 20px;
+        backdrop-filter: blur(6px);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.38rem, 1.9vw, 1.86rem);
+        line-height: 1.25;
+      }
+
+      .subtitle {
+        margin: 10px 0 0;
+        line-height: 1.65;
+        color: var(--ink-soft);
+        font-size: 0.98rem;
+        max-width: 78ch;
+      }
+
+      .status-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .status-pill {
+        border-radius: 999px;
+        padding: 7px 12px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border: 1px solid transparent;
+      }
+
+      .status-pill.info {
+        background: #dff4fb;
+        color: #0f6580;
+        border-color: #b6e7f6;
+      }
+
+      .status-pill.ok {
+        background: #d6f5ea;
+        color: #08684a;
+        border-color: #9fe7cc;
+      }
+
+      .status-pill.warn {
+        background: #fff4d6;
+        color: #8b5a12;
+        border-color: #ffdf9a;
+      }
+
+      .workspace {
+        margin-top: 16px;
+        display: grid;
+        grid-template-columns: minmax(300px, 330px) minmax(0, 1fr);
+        gap: 16px;
+      }
+
+      .panel {
+        background: var(--panel);
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .controls {
+        padding: 16px;
+      }
+
+      .group + .group {
+        margin-top: 14px;
+      }
+
+      .group-title {
+        margin: 0 0 8px;
+        font-size: 0.9rem;
+        color: #0f6580;
+        letter-spacing: 0.02em;
+      }
+
+      .dropzone {
+        display: block;
+        border-radius: 14px;
+        border: 2px dashed #97d9e9;
+        background: #f2fbfd;
+        padding: 14px;
+        cursor: pointer;
+        transition: border-color 0.2s ease, background 0.2s ease;
+      }
+
+      .dropzone:hover,
+      .dropzone:focus-visible,
+      .dropzone.dragover {
+        border-color: var(--accent);
+        background: #e5f8fc;
+      }
+
+      .dropzone-title {
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .dropzone-hint {
+        margin: 6px 0 0;
+        color: var(--ink-soft);
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+
+      input[type="file"] {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        clip-path: inset(50%);
+        overflow: hidden;
+      }
+
+      .field {
+        margin-top: 10px;
+      }
+
+      .field-inline {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 88px;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .field label {
+        display: block;
+        font-size: 0.86rem;
+        color: #0f6580;
+        margin-bottom: 5px;
+      }
+
+      .field input[type="range"] {
+        width: 100%;
+      }
+
+      .field input[type="number"],
+      .field select {
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid #b9dde7;
+        padding: 10px 11px;
+        min-height: 44px;
+        background: #fff;
+        color: var(--ink);
+        font: inherit;
+      }
+
+      .field input[type="checkbox"] {
+        width: 19px;
+        height: 19px;
+        accent-color: var(--accent);
+      }
+
+      .field .value {
+        min-height: 44px;
+        border-radius: 10px;
+        border: 1px solid #b9dde7;
+        background: #f8fcfd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.86rem;
+        font-weight: 600;
+      }
+
+      .check-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+      }
+
+      .actions {
+        display: grid;
+        gap: 8px;
+      }
+
+      button {
+        border: 0;
+        border-radius: 11px;
+        min-height: 44px;
+        padding: 10px 14px;
+        font: inherit;
+        font-size: 0.93rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.18s ease, filter 0.18s ease;
+      }
+
+      button:hover {
+        transform: translateY(-1px);
+        filter: brightness(0.98);
+      }
+
+      .btn-primary {
+        color: #fff;
+        background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+        box-shadow: 0 10px 22px rgba(8, 145, 178, 0.3);
+      }
+
+      .btn-secondary {
+        color: #0f6580;
+        background: #daf2f8;
+      }
+
+      .btn-success {
+        color: #fff;
+        background: linear-gradient(135deg, #0d8b61, var(--ok));
+      }
+
+      .btn-outline {
+        color: #0f6580;
+        border: 1px solid #9ed8e8;
+        background: #f9fdfe;
+      }
+
+      button:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+        transform: none;
+        filter: none;
+      }
+
+      .visual {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .canvas-wrap {
+        border-radius: 14px;
+        border: 1px solid #c8e5ee;
+        background: #f3fbfd;
+        overflow: auto;
+      }
+
+      .canvas-wrap canvas {
+        width: 100%;
+        height: auto;
+        display: block;
+        background: #fff;
+      }
+
+      .caption {
+        color: #386f7f;
+        font-size: 0.86rem;
+      }
+
+      .signal-panel {
+        margin-top: 16px;
+        padding: 12px;
+      }
+
+      .signal-head {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .signal-title {
+        margin: 0;
+        font-size: 1.02rem;
+      }
+
+      .signal-metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .metric {
+        border-radius: 10px;
+        border: 1px solid #cae7ef;
+        background: #f6fcfe;
+        padding: 9px 10px;
+      }
+
+      .metric-label {
+        color: #54808c;
+        font-size: 0.79rem;
+        margin: 0;
+      }
+
+      .metric-value {
+        margin: 3px 0 0;
+        font-weight: 700;
+        color: #0f6580;
+      }
+
+      .callout {
+        margin-top: 12px;
+        border-radius: 12px;
+        background: #f8fcfd;
+        border: 1px solid #cfeaf2;
+        padding: 10px;
+        font-size: 0.83rem;
+        line-height: 1.6;
+        color: #3f7180;
+      }
+
+      :focus-visible {
+        outline: 3px solid var(--ring);
+        outline-offset: 2px;
+      }
+
+      @media (max-width: 1080px) {
+        .workspace {
+          grid-template-columns: 1fr;
+        }
+
+        .app {
+          width: min(1120px, calc(100vw - 1.3rem));
+          margin-top: 10px;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .header,
+        .controls,
+        .visual,
+        .signal-panel {
+          border-radius: 14px;
+        }
+
+        .field-inline {
+          grid-template-columns: minmax(0, 1fr) 82px;
+        }
+
+        .status-pills {
+          gap: 6px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>ECG 影像轉數位訊號工具（MVP）</h1>
+        <p class="subtitle">
+          上傳紙本 ECG 圖片後，先做影像前處理，再擷取單導程波形並轉成時間序列。可匯出 CSV / JSON / PNG。
+          僅供教學與研究用途，不能用於醫療診斷或治療決策。
+        </p>
+        <div class="status-pills">
+          <span class="status-pill info" id="imageStatus">尚未載入影像</span>
+          <span class="status-pill warn" id="traceStatus">尚未擷取波形</span>
+          <span class="status-pill info" id="calibrationStatus">校正值 px/mm：8.000</span>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <aside class="panel controls" aria-label="控制面板">
+          <section class="group">
+            <h2 class="group-title">1. 載入 ECG 影像</h2>
+            <label class="dropzone" id="dropzone" for="imageInput">
+              <p class="dropzone-title">點擊或拖曳上傳 ECG 圖片</p>
+              <p class="dropzone-hint">支援 PNG、JPG、WebP。建議單導程、背景對比明顯的圖片。</p>
+            </label>
+            <input id="imageInput" type="file" accept="image/*" />
+          </section>
+
+          <section class="group">
+            <h2 class="group-title">2. 影像前處理</h2>
+
+            <div class="field">
+              <label for="contrastInput">對比度</label>
+              <div class="field-inline">
+                <input id="contrastInput" type="range" min="0.6" max="2.4" step="0.05" value="1.25" />
+                <div class="value" id="contrastValue">1.25x</div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="brightnessInput">亮度</label>
+              <div class="field-inline">
+                <input id="brightnessInput" type="range" min="-120" max="120" step="1" value="10" />
+                <div class="value" id="brightnessValue">+10</div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="thresholdInput">波形偵測閾值</label>
+              <div class="field-inline">
+                <input id="thresholdInput" type="range" min="15" max="240" step="1" value="120" />
+                <div class="value" id="thresholdValue">120</div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="smoothingInput">平滑視窗（點）</label>
+              <div class="field-inline">
+                <input id="smoothingInput" type="range" min="1" max="41" step="2" value="9" />
+                <div class="value" id="smoothingValue">9</div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="stepInput">取樣步長（像素）</label>
+              <input id="stepInput" type="number" min="1" max="10" step="1" value="1" />
+            </div>
+
+            <div class="field">
+              <div class="check-row">
+                <input id="invertInput" type="checkbox" />
+                <label for="invertInput" style="margin: 0">反相（深底淺線影像）</label>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button class="btn-primary" id="extractBtn" type="button" disabled>擷取波形</button>
+              <button class="btn-outline" id="resetParamsBtn" type="button">重設前處理參數</button>
+            </div>
+          </section>
+
+          <section class="group">
+            <h2 class="group-title">3. 尺度校正（換算秒與 mV）</h2>
+
+            <div class="field">
+              <label for="knownDistanceInput">兩點已知距離（mm）</label>
+              <input id="knownDistanceInput" type="number" min="1" max="100" step="0.5" value="25" />
+            </div>
+
+            <div class="field">
+              <label for="pxPerMmInput">像素密度（px/mm）</label>
+              <input id="pxPerMmInput" type="number" min="0.1" max="100" step="0.001" value="8" />
+            </div>
+
+            <div class="field">
+              <label for="paperSpeedInput">紙速（mm/s）</label>
+              <input id="paperSpeedInput" type="number" min="1" max="100" step="0.1" value="25" />
+            </div>
+
+            <div class="field">
+              <label for="gainInput">增益（mm/mV）</label>
+              <input id="gainInput" type="number" min="1" max="20" step="0.1" value="10" />
+            </div>
+
+            <div class="actions">
+              <button class="btn-secondary" id="calibrateBtn" type="button" disabled>開始兩點校正</button>
+              <button class="btn-outline" id="clearCalibrationBtn" type="button" disabled>清除校正點</button>
+            </div>
+          </section>
+
+          <section class="group">
+            <h2 class="group-title">4. 匯出結果</h2>
+            <div class="actions">
+              <button class="btn-success" id="downloadCsvBtn" type="button" disabled>下載 CSV</button>
+              <button class="btn-success" id="downloadJsonBtn" type="button" disabled>下載 JSON</button>
+              <button class="btn-secondary" id="downloadPngBtn" type="button" disabled>下載處理後 PNG</button>
+            </div>
+          </section>
+        </aside>
+
+        <section class="panel visual" aria-label="影像預覽區">
+          <strong>影像預覽（可點選兩點做尺度校正）</strong>
+          <div class="canvas-wrap">
+            <canvas id="imageCanvas" width="1280" height="640" role="img" aria-label="ECG 影像預覽"></canvas>
+          </div>
+          <div class="caption" id="calibrationHint">提示：先載入影像，再按「開始兩點校正」，於圖上依序點兩點。</div>
+        </section>
+      </section>
+
+      <section class="panel signal-panel" aria-label="訊號輸出區">
+        <div class="signal-head">
+          <h2 class="signal-title">數位訊號預覽</h2>
+          <span class="caption">X 軸：時間（秒）/ Y 軸：電位（mV）</span>
+        </div>
+        <div class="canvas-wrap" style="margin-top: 10px">
+          <canvas id="signalCanvas" width="1280" height="320" role="img" aria-label="ECG 訊號圖"></canvas>
+        </div>
+        <div class="signal-metrics" id="metrics">
+          <article class="metric">
+            <p class="metric-label">樣本點</p>
+            <p class="metric-value" id="metricSamples">-</p>
+          </article>
+          <article class="metric">
+            <p class="metric-label">總時長（秒）</p>
+            <p class="metric-value" id="metricDuration">-</p>
+          </article>
+          <article class="metric">
+            <p class="metric-label">電位範圍（mV）</p>
+            <p class="metric-value" id="metricRange">-</p>
+          </article>
+          <article class="metric">
+            <p class="metric-label">影像尺寸</p>
+            <p class="metric-value" id="metricSize">-</p>
+          </article>
+        </div>
+        <div class="callout">
+          建議流程：
+          <br />
+          1) 調整對比/亮度讓 ECG 線條比背景更深；
+          2) 若背景太深可打勾反相；
+          3) 使用兩點校正設定 px/mm；
+          4) 點「擷取波形」並觀察下方曲線是否貼近原圖。
+        </div>
+      </section>
+    </main>
+
+    <script>
+      (() => {
+        const dom = {
+          imageInput: document.getElementById("imageInput"),
+          dropzone: document.getElementById("dropzone"),
+          imageCanvas: document.getElementById("imageCanvas"),
+          signalCanvas: document.getElementById("signalCanvas"),
+          contrastInput: document.getElementById("contrastInput"),
+          brightnessInput: document.getElementById("brightnessInput"),
+          thresholdInput: document.getElementById("thresholdInput"),
+          smoothingInput: document.getElementById("smoothingInput"),
+          stepInput: document.getElementById("stepInput"),
+          invertInput: document.getElementById("invertInput"),
+          knownDistanceInput: document.getElementById("knownDistanceInput"),
+          pxPerMmInput: document.getElementById("pxPerMmInput"),
+          paperSpeedInput: document.getElementById("paperSpeedInput"),
+          gainInput: document.getElementById("gainInput"),
+          calibrationHint: document.getElementById("calibrationHint"),
+          imageStatus: document.getElementById("imageStatus"),
+          traceStatus: document.getElementById("traceStatus"),
+          calibrationStatus: document.getElementById("calibrationStatus"),
+          extractBtn: document.getElementById("extractBtn"),
+          resetParamsBtn: document.getElementById("resetParamsBtn"),
+          calibrateBtn: document.getElementById("calibrateBtn"),
+          clearCalibrationBtn: document.getElementById("clearCalibrationBtn"),
+          downloadCsvBtn: document.getElementById("downloadCsvBtn"),
+          downloadJsonBtn: document.getElementById("downloadJsonBtn"),
+          downloadPngBtn: document.getElementById("downloadPngBtn"),
+          contrastValue: document.getElementById("contrastValue"),
+          brightnessValue: document.getElementById("brightnessValue"),
+          thresholdValue: document.getElementById("thresholdValue"),
+          smoothingValue: document.getElementById("smoothingValue"),
+          metricSamples: document.getElementById("metricSamples"),
+          metricDuration: document.getElementById("metricDuration"),
+          metricRange: document.getElementById("metricRange"),
+          metricSize: document.getElementById("metricSize")
+        };
+
+        const imageCtx = dom.imageCanvas.getContext("2d", { willReadFrequently: true });
+        const signalCtx = dom.signalCanvas.getContext("2d");
+        const sourceCanvas = document.createElement("canvas");
+        const sourceCtx = sourceCanvas.getContext("2d", { willReadFrequently: true });
+
+        const state = {
+          fileName: "",
+          loaded: false,
+          calibrationMode: false,
+          calibrationPoints: [],
+          processedImageData: null,
+          tracePoints: [],
+          baselinePx: 0
+        };
+
+        const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+        const round = (value, digits = 3) => Number.parseFloat(value.toFixed(digits));
+
+        const toDisplayName = (name) => {
+          if (!name) {
+            return "未命名影像";
+          }
+          const maxLen = 28;
+          return name.length > maxLen ? `${name.slice(0, maxLen)}...` : name;
+        };
+
+        const formatStatus = (el, text, kind) => {
+          el.textContent = text;
+          el.className = "status-pill";
+          el.classList.add(kind);
+        };
+
+        const setMetricDefaults = () => {
+          dom.metricSamples.textContent = "-";
+          dom.metricDuration.textContent = "-";
+          dom.metricRange.textContent = "-";
+          dom.metricSize.textContent = "-";
+        };
+
+        const baseFileName = () => {
+          const raw = state.fileName ? state.fileName.replace(/\.[^.]+$/, "") : "ecg_trace";
+          return raw
+            .trim()
+            .toLowerCase()
+            .replace(/[^a-z0-9\u4e00-\u9fa5_-]+/gi, "-")
+            .replace(/-+/g, "-")
+            .replace(/^-|-$/g, "") || "ecg_trace";
+        };
+
+        const updateSliderLabels = () => {
+          dom.contrastValue.textContent = `${Number(dom.contrastInput.value).toFixed(2)}x`;
+          const brightness = Number(dom.brightnessInput.value);
+          dom.brightnessValue.textContent = brightness >= 0 ? `+${brightness}` : `${brightness}`;
+          dom.thresholdValue.textContent = String(Number(dom.thresholdInput.value));
+          dom.smoothingValue.textContent = String(Number(dom.smoothingInput.value));
+        };
+
+        const drawPlaceholder = () => {
+          const { width, height } = dom.imageCanvas;
+          imageCtx.clearRect(0, 0, width, height);
+
+          imageCtx.fillStyle = "#f5fcfe";
+          imageCtx.fillRect(0, 0, width, height);
+
+          imageCtx.strokeStyle = "#e3f3f8";
+          imageCtx.lineWidth = 1;
+          for (let x = 0; x < width; x += 26) {
+            imageCtx.beginPath();
+            imageCtx.moveTo(x, 0);
+            imageCtx.lineTo(x, height);
+            imageCtx.stroke();
+          }
+          for (let y = 0; y < height; y += 26) {
+            imageCtx.beginPath();
+            imageCtx.moveTo(0, y);
+            imageCtx.lineTo(width, y);
+            imageCtx.stroke();
+          }
+
+          imageCtx.strokeStyle = "#93d8eb";
+          imageCtx.lineWidth = 3;
+          imageCtx.beginPath();
+          imageCtx.moveTo(26, height * 0.52);
+          imageCtx.bezierCurveTo(width * 0.22, height * 0.52, width * 0.32, height * 0.45, width * 0.41, height * 0.45);
+          imageCtx.lineTo(width * 0.47, height * 0.45);
+          imageCtx.lineTo(width * 0.49, height * 0.62);
+          imageCtx.lineTo(width * 0.53, height * 0.22);
+          imageCtx.lineTo(width * 0.57, height * 0.75);
+          imageCtx.lineTo(width * 0.61, height * 0.52);
+          imageCtx.lineTo(width - 24, height * 0.52);
+          imageCtx.stroke();
+
+          imageCtx.fillStyle = "#0f6580";
+          imageCtx.font = '600 30px "Figtree", "Noto Sans TC", sans-serif';
+          imageCtx.textAlign = "center";
+          imageCtx.fillText("請先上傳 ECG 影像", width * 0.5, height * 0.42);
+          imageCtx.font = '500 20px "Figtree", "Noto Sans TC", sans-serif';
+          imageCtx.fillStyle = "#4b7f8e";
+          imageCtx.fillText("上傳後可進行前處理、擷取波形與匯出", width * 0.5, height * 0.49);
+        };
+
+        const drawSignalPlaceholder = () => {
+          const { width, height } = dom.signalCanvas;
+          signalCtx.clearRect(0, 0, width, height);
+          signalCtx.fillStyle = "#f5fcfe";
+          signalCtx.fillRect(0, 0, width, height);
+          signalCtx.fillStyle = "#48717e";
+          signalCtx.font = '600 24px "Figtree", "Noto Sans TC", sans-serif';
+          signalCtx.textAlign = "center";
+          signalCtx.fillText("尚未產生數位波形", width / 2, height / 2 - 8);
+          signalCtx.font = '500 17px "Figtree", "Noto Sans TC", sans-serif';
+          signalCtx.fillStyle = "#648e99";
+          signalCtx.fillText("載入影像並點選「擷取波形」", width / 2, height / 2 + 24);
+        };
+
+        const fitImageToCanvas = (imgWidth, imgHeight) => {
+          const maxWidth = 1800;
+          const maxHeight = 900;
+          const scale = Math.min(1, maxWidth / imgWidth, maxHeight / imgHeight);
+          return {
+            width: Math.max(300, Math.round(imgWidth * scale)),
+            height: Math.max(180, Math.round(imgHeight * scale))
+          };
+        };
+
+        const renderProcessedImage = () => {
+          if (!state.loaded) {
+            drawPlaceholder();
+            return;
+          }
+
+          const contrast = Number(dom.contrastInput.value);
+          const brightness = Number(dom.brightnessInput.value);
+          const invert = dom.invertInput.checked;
+
+          const src = sourceCtx.getImageData(0, 0, sourceCanvas.width, sourceCanvas.height);
+          const dst = imageCtx.createImageData(src.width, src.height);
+          const sourceData = src.data;
+          const processedData = dst.data;
+
+          for (let i = 0; i < sourceData.length; i += 4) {
+            const gray = 0.299 * sourceData[i] + 0.587 * sourceData[i + 1] + 0.114 * sourceData[i + 2];
+            const adjusted = clamp((gray - 128) * contrast + 128 + brightness, 0, 255);
+            const value = invert ? 255 - adjusted : adjusted;
+
+            processedData[i] = value;
+            processedData[i + 1] = value;
+            processedData[i + 2] = value;
+            processedData[i + 3] = 255;
+          }
+
+          imageCtx.putImageData(dst, 0, 0);
+          state.processedImageData = dst;
+
+          drawCalibrationOverlay();
+          drawTraceOverlay();
+        };
+
+        const drawCalibrationOverlay = () => {
+          if (!state.loaded || state.calibrationPoints.length === 0) {
+            return;
+          }
+
+          imageCtx.save();
+          imageCtx.strokeStyle = "#e11d48";
+          imageCtx.fillStyle = "#e11d48";
+          imageCtx.lineWidth = 2;
+
+          state.calibrationPoints.forEach((point, index) => {
+            imageCtx.beginPath();
+            imageCtx.arc(point.x, point.y, 6, 0, Math.PI * 2);
+            imageCtx.fill();
+            imageCtx.strokeStyle = "#ffffff";
+            imageCtx.lineWidth = 2;
+            imageCtx.beginPath();
+            imageCtx.moveTo(point.x - 10, point.y);
+            imageCtx.lineTo(point.x + 10, point.y);
+            imageCtx.moveTo(point.x, point.y - 10);
+            imageCtx.lineTo(point.x, point.y + 10);
+            imageCtx.stroke();
+
+            imageCtx.fillStyle = "#9f1239";
+            imageCtx.font = '700 16px "Figtree", "Noto Sans TC", sans-serif';
+            imageCtx.fillText(String(index + 1), point.x + 10, point.y - 10);
+            imageCtx.fillStyle = "#e11d48";
+          });
+
+          if (state.calibrationPoints.length === 2) {
+            imageCtx.strokeStyle = "#e11d48";
+            imageCtx.lineWidth = 3;
+            imageCtx.beginPath();
+            imageCtx.moveTo(state.calibrationPoints[0].x, state.calibrationPoints[0].y);
+            imageCtx.lineTo(state.calibrationPoints[1].x, state.calibrationPoints[1].y);
+            imageCtx.stroke();
+          }
+
+          imageCtx.restore();
+        };
+
+        const drawTraceOverlay = () => {
+          if (!state.loaded || state.tracePoints.length === 0) {
+            return;
+          }
+
+          imageCtx.save();
+          imageCtx.strokeStyle = "rgba(8, 145, 178, 0.9)";
+          imageCtx.lineWidth = 2;
+          imageCtx.beginPath();
+          state.tracePoints.forEach((point, index) => {
+            if (index === 0) {
+              imageCtx.moveTo(point.x, point.y_px);
+            } else {
+              imageCtx.lineTo(point.x, point.y_px);
+            }
+          });
+          imageCtx.stroke();
+          imageCtx.restore();
+        };
+
+        const movingAverage = (values, windowSize) => {
+          if (windowSize <= 1) {
+            return [...values];
+          }
+
+          const half = Math.floor(windowSize / 2);
+          const smoothed = [];
+
+          for (let i = 0; i < values.length; i += 1) {
+            let sum = 0;
+            let count = 0;
+            for (let offset = -half; offset <= half; offset += 1) {
+              const idx = i + offset;
+              if (idx >= 0 && idx < values.length) {
+                sum += values[idx];
+                count += 1;
+              }
+            }
+            smoothed.push(sum / count);
+          }
+
+          return smoothed;
+        };
+
+        const median = (values) => {
+          if (values.length === 0) {
+            return 0;
+          }
+
+          const sorted = [...values].sort((a, b) => a - b);
+          const middle = Math.floor(sorted.length / 2);
+
+          if (sorted.length % 2 === 0) {
+            return (sorted[middle - 1] + sorted[middle]) / 2;
+          }
+          return sorted[middle];
+        };
+
+        const extractTrace = () => {
+          if (!state.processedImageData) {
+            return;
+          }
+
+          const { width, height, data } = state.processedImageData;
+          const threshold = Number(dom.thresholdInput.value);
+          const stride = Math.max(1, Math.round(Number(dom.stepInput.value) || 1));
+          const smoothing = Math.max(1, Math.round(Number(dom.smoothingInput.value) || 1));
+          const searchRadius = Math.max(12, Math.round(height * 0.2));
+
+          let previousY = Math.floor(height * 0.5);
+          const sampled = [];
+
+          for (let x = 0; x < width; x += stride) {
+            const yMin = Math.max(0, previousY - searchRadius);
+            const yMax = Math.min(height - 1, previousY + searchRadius);
+
+            let darkestY = previousY;
+            let darkestValue = 255;
+            let weightedY = 0;
+            let totalWeight = 0;
+
+            for (let y = yMin; y <= yMax; y += 1) {
+              const i = (y * width + x) * 4;
+              const value = data[i];
+
+              if (value < darkestValue) {
+                darkestValue = value;
+                darkestY = y;
+              }
+
+              if (value <= threshold) {
+                const weight = threshold - value + 1;
+                weightedY += y * weight;
+                totalWeight += weight;
+              }
+            }
+
+            const pickedY = totalWeight > 0 ? weightedY / totalWeight : darkestY;
+            previousY = Math.round(previousY * 0.7 + pickedY * 0.3);
+
+            sampled.push({ x, y_px: pickedY });
+          }
+
+          if (sampled.length < 5) {
+            return;
+          }
+
+          const smoothY = movingAverage(
+            sampled.map((item) => item.y_px),
+            smoothing % 2 === 0 ? smoothing + 1 : smoothing
+          );
+
+          const baseline = median(smoothY);
+          const pxPerMm = Math.max(0.001, Number(dom.pxPerMmInput.value));
+          const paperSpeed = Math.max(0.001, Number(dom.paperSpeedInput.value));
+          const gain = Math.max(0.001, Number(dom.gainInput.value));
+          const secPerPixel = 1 / (paperSpeed * pxPerMm);
+          const pixelsPerMv = pxPerMm * gain;
+
+          state.baselinePx = baseline;
+          state.tracePoints = sampled.map((item, index) => {
+            const yValue = smoothY[index];
+            const voltageMv = (baseline - yValue) / pixelsPerMv;
+            return {
+              x: item.x,
+              y_px: round(yValue, 4),
+              time_s: round(item.x * secPerPixel, 6),
+              voltage_mV: round(voltageMv, 6)
+            };
+          });
+
+          renderProcessedImage();
+          renderSignal();
+          updateMetrics();
+          updateButtons();
+          formatStatus(dom.traceStatus, `已擷取波形（${state.tracePoints.length} 點）`, "ok");
+        };
+
+        const renderSignal = () => {
+          if (state.tracePoints.length === 0) {
+            drawSignalPlaceholder();
+            return;
+          }
+
+          const width = dom.signalCanvas.width;
+          const height = dom.signalCanvas.height;
+          signalCtx.clearRect(0, 0, width, height);
+          signalCtx.fillStyle = "#f8feff";
+          signalCtx.fillRect(0, 0, width, height);
+
+          const padding = { top: 26, right: 24, bottom: 40, left: 62 };
+          const plotWidth = width - padding.left - padding.right;
+          const plotHeight = height - padding.top - padding.bottom;
+
+          const times = state.tracePoints.map((point) => point.time_s);
+          const values = state.tracePoints.map((point) => point.voltage_mV);
+
+          const minT = times[0];
+          const maxT = times[times.length - 1];
+          let minV = Math.min(...values);
+          let maxV = Math.max(...values);
+
+          if (Math.abs(maxV - minV) < 0.12) {
+            maxV += 0.06;
+            minV -= 0.06;
+          }
+
+          const paddingV = (maxV - minV) * 0.1;
+          maxV += paddingV;
+          minV -= paddingV;
+
+          const xToPx = (t) => padding.left + ((t - minT) / (maxT - minT || 1)) * plotWidth;
+          const yToPx = (v) => padding.top + ((maxV - v) / (maxV - minV || 1)) * plotHeight;
+
+          signalCtx.strokeStyle = "#e2f2f7";
+          signalCtx.lineWidth = 1;
+
+          for (let i = 0; i <= 10; i += 1) {
+            const y = padding.top + (plotHeight / 10) * i;
+            signalCtx.beginPath();
+            signalCtx.moveTo(padding.left, y);
+            signalCtx.lineTo(width - padding.right, y);
+            signalCtx.stroke();
+          }
+
+          for (let i = 0; i <= 10; i += 1) {
+            const x = padding.left + (plotWidth / 10) * i;
+            signalCtx.beginPath();
+            signalCtx.moveTo(x, padding.top);
+            signalCtx.lineTo(x, height - padding.bottom);
+            signalCtx.stroke();
+          }
+
+          signalCtx.strokeStyle = "#0f6580";
+          signalCtx.lineWidth = 1.8;
+          signalCtx.beginPath();
+          signalCtx.moveTo(padding.left, padding.top);
+          signalCtx.lineTo(padding.left, height - padding.bottom);
+          signalCtx.lineTo(width - padding.right, height - padding.bottom);
+          signalCtx.stroke();
+
+          signalCtx.strokeStyle = "#059669";
+          signalCtx.lineWidth = 2.2;
+          signalCtx.beginPath();
+          state.tracePoints.forEach((point, index) => {
+            const x = xToPx(point.time_s);
+            const y = yToPx(point.voltage_mV);
+            if (index === 0) {
+              signalCtx.moveTo(x, y);
+            } else {
+              signalCtx.lineTo(x, y);
+            }
+          });
+          signalCtx.stroke();
+
+          signalCtx.fillStyle = "#0f6580";
+          signalCtx.font = '600 14px "Figtree", "Noto Sans TC", sans-serif';
+          signalCtx.fillText("mV", 16, padding.top - 6);
+          signalCtx.fillText("sec", width - 52, height - 12);
+
+          signalCtx.fillStyle = "#476e79";
+          signalCtx.font = '500 12px "Figtree", "Noto Sans TC", sans-serif';
+
+          const ticks = 5;
+          for (let i = 0; i <= ticks; i += 1) {
+            const ratio = i / ticks;
+            const t = minT + (maxT - minT) * ratio;
+            const x = padding.left + plotWidth * ratio;
+            signalCtx.fillText(t.toFixed(2), x - 10, height - padding.bottom + 18);
+          }
+
+          for (let i = 0; i <= ticks; i += 1) {
+            const ratio = i / ticks;
+            const v = maxV - (maxV - minV) * ratio;
+            const y = padding.top + plotHeight * ratio;
+            signalCtx.fillText(v.toFixed(2), 8, y + 4);
+          }
+        };
+
+        const updateMetrics = () => {
+          if (!state.loaded) {
+            setMetricDefaults();
+            return;
+          }
+
+          dom.metricSize.textContent = `${sourceCanvas.width} x ${sourceCanvas.height}px`;
+
+          if (state.tracePoints.length === 0) {
+            dom.metricSamples.textContent = "0";
+            dom.metricDuration.textContent = "0";
+            dom.metricRange.textContent = "-";
+            return;
+          }
+
+          const values = state.tracePoints.map((point) => point.voltage_mV);
+          const minV = Math.min(...values);
+          const maxV = Math.max(...values);
+          const duration = state.tracePoints[state.tracePoints.length - 1].time_s;
+
+          dom.metricSamples.textContent = String(state.tracePoints.length);
+          dom.metricDuration.textContent = duration.toFixed(3);
+          dom.metricRange.textContent = `${minV.toFixed(3)} ~ ${maxV.toFixed(3)}`;
+        };
+
+        const updateCalibrationStatus = () => {
+          const pxPerMm = Number(dom.pxPerMmInput.value) || 0;
+          formatStatus(dom.calibrationStatus, `校正值 px/mm：${pxPerMm.toFixed(3)}`, "info");
+        };
+
+        const updateButtons = () => {
+          const hasImage = state.loaded;
+          const hasTrace = state.tracePoints.length > 0;
+
+          dom.extractBtn.disabled = !hasImage;
+          dom.calibrateBtn.disabled = !hasImage;
+          dom.clearCalibrationBtn.disabled = !hasImage;
+          dom.downloadPngBtn.disabled = !hasImage;
+          dom.downloadCsvBtn.disabled = !hasTrace;
+          dom.downloadJsonBtn.disabled = !hasTrace;
+        };
+
+        const toCanvasPoint = (event) => {
+          const rect = dom.imageCanvas.getBoundingClientRect();
+          const scaleX = dom.imageCanvas.width / rect.width;
+          const scaleY = dom.imageCanvas.height / rect.height;
+          return {
+            x: clamp((event.clientX - rect.left) * scaleX, 0, dom.imageCanvas.width),
+            y: clamp((event.clientY - rect.top) * scaleY, 0, dom.imageCanvas.height)
+          };
+        };
+
+        const handleCalibrationClick = (event) => {
+          if (!state.calibrationMode) {
+            return;
+          }
+
+          const point = toCanvasPoint(event);
+          state.calibrationPoints.push(point);
+
+          if (state.calibrationPoints.length < 2) {
+            dom.calibrationHint.textContent = "已記錄第一點，請再點選第二點。";
+            renderProcessedImage();
+            return;
+          }
+
+          const [first, second] = state.calibrationPoints;
+          const knownDistance = Math.max(0.001, Number(dom.knownDistanceInput.value));
+          const pixelDistance = Math.hypot(second.x - first.x, second.y - first.y);
+          const pxPerMm = pixelDistance / knownDistance;
+
+          dom.pxPerMmInput.value = pxPerMm.toFixed(3);
+          updateCalibrationStatus();
+
+          state.calibrationMode = false;
+          dom.calibrateBtn.textContent = "開始兩點校正";
+          dom.calibrationHint.textContent = `校正完成：${pixelDistance.toFixed(2)} px / ${knownDistance.toFixed(2)} mm = ${pxPerMm.toFixed(3)} px/mm。`;
+
+          renderProcessedImage();
+        };
+
+        const clearCalibration = () => {
+          state.calibrationPoints = [];
+          state.calibrationMode = false;
+          dom.calibrateBtn.textContent = "開始兩點校正";
+          dom.calibrationHint.textContent = "提示：先載入影像，再按「開始兩點校正」，於圖上依序點兩點。";
+          renderProcessedImage();
+        };
+
+        const handleImageFile = (file) => {
+          if (!file || !file.type.startsWith("image/")) {
+            return;
+          }
+
+          const reader = new FileReader();
+          reader.onload = () => {
+            const image = new Image();
+            image.onload = () => {
+              const fitted = fitImageToCanvas(image.width, image.height);
+              sourceCanvas.width = fitted.width;
+              sourceCanvas.height = fitted.height;
+
+              dom.imageCanvas.width = fitted.width;
+              dom.imageCanvas.height = fitted.height;
+
+              sourceCtx.clearRect(0, 0, fitted.width, fitted.height);
+              sourceCtx.drawImage(image, 0, 0, fitted.width, fitted.height);
+
+              state.fileName = file.name;
+              state.loaded = true;
+              state.tracePoints = [];
+              state.calibrationPoints = [];
+              state.calibrationMode = false;
+
+              renderProcessedImage();
+              drawSignalPlaceholder();
+              updateMetrics();
+              updateButtons();
+
+              formatStatus(dom.imageStatus, `已載入：${toDisplayName(file.name)}`, "ok");
+              formatStatus(dom.traceStatus, "尚未擷取波形", "warn");
+              updateCalibrationStatus();
+              dom.calibrationHint.textContent = "影像已載入。可先微調前處理參數，再擷取波形。";
+            };
+            image.src = String(reader.result);
+          };
+          reader.readAsDataURL(file);
+        };
+
+        const resetProcessingParams = () => {
+          dom.contrastInput.value = "1.25";
+          dom.brightnessInput.value = "10";
+          dom.thresholdInput.value = "120";
+          dom.smoothingInput.value = "9";
+          dom.stepInput.value = "1";
+          dom.invertInput.checked = false;
+          updateSliderLabels();
+          renderProcessedImage();
+        };
+
+        const serializeToCsv = () => {
+          const header = "index,time_s,voltage_mV,x_px,y_px";
+          const rows = state.tracePoints.map((point, index) => {
+            return `${index},${point.time_s},${point.voltage_mV},${point.x},${point.y_px}`;
+          });
+          return [header, ...rows].join("\n");
+        };
+
+        const serializeToJson = () => {
+          const payload = {
+            source_file: state.fileName,
+            generated_at: new Date().toISOString(),
+            calibration: {
+              px_per_mm: Number(dom.pxPerMmInput.value),
+              paper_speed_mm_per_s: Number(dom.paperSpeedInput.value),
+              gain_mm_per_mV: Number(dom.gainInput.value)
+            },
+            preprocessing: {
+              contrast: Number(dom.contrastInput.value),
+              brightness: Number(dom.brightnessInput.value),
+              threshold: Number(dom.thresholdInput.value),
+              smoothing_window: Number(dom.smoothingInput.value),
+              step_px: Number(dom.stepInput.value),
+              invert: dom.invertInput.checked
+            },
+            points: state.tracePoints
+          };
+          return JSON.stringify(payload, null, 2);
+        };
+
+        const downloadBlob = (filename, blob) => {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+        };
+
+        dom.imageInput.addEventListener("change", () => {
+          const [file] = dom.imageInput.files || [];
+          handleImageFile(file);
+        });
+
+        ["dragenter", "dragover"].forEach((eventName) => {
+          dom.dropzone.addEventListener(eventName, (event) => {
+            event.preventDefault();
+            dom.dropzone.classList.add("dragover");
+          });
+        });
+
+        ["dragleave", "drop"].forEach((eventName) => {
+          dom.dropzone.addEventListener(eventName, (event) => {
+            event.preventDefault();
+            dom.dropzone.classList.remove("dragover");
+          });
+        });
+
+        dom.dropzone.addEventListener("drop", (event) => {
+          const file = event.dataTransfer?.files?.[0];
+          handleImageFile(file);
+        });
+
+        dom.dropzone.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            dom.imageInput.click();
+          }
+        });
+
+        [dom.contrastInput, dom.brightnessInput, dom.thresholdInput, dom.smoothingInput].forEach((input) => {
+          input.addEventListener("input", () => {
+            updateSliderLabels();
+            renderProcessedImage();
+          });
+        });
+
+        dom.stepInput.addEventListener("input", () => {
+          const value = clamp(Math.round(Number(dom.stepInput.value) || 1), 1, 10);
+          dom.stepInput.value = String(value);
+          renderProcessedImage();
+        });
+
+        dom.invertInput.addEventListener("change", renderProcessedImage);
+
+        dom.extractBtn.addEventListener("click", extractTrace);
+
+        dom.resetParamsBtn.addEventListener("click", () => {
+          resetProcessingParams();
+          if (state.tracePoints.length > 0) {
+            formatStatus(dom.traceStatus, "前處理已重設，請重新擷取波形", "warn");
+            state.tracePoints = [];
+            drawSignalPlaceholder();
+            updateMetrics();
+            updateButtons();
+          }
+        });
+
+        dom.calibrateBtn.addEventListener("click", () => {
+          if (!state.loaded) {
+            return;
+          }
+
+          if (!state.calibrationMode) {
+            state.calibrationMode = true;
+            state.calibrationPoints = [];
+            dom.calibrateBtn.textContent = "取消校正";
+            dom.calibrationHint.textContent = "校正模式啟用：請依序點選兩個已知距離的點。";
+            renderProcessedImage();
+          } else {
+            state.calibrationMode = false;
+            state.calibrationPoints = [];
+            dom.calibrateBtn.textContent = "開始兩點校正";
+            dom.calibrationHint.textContent = "已取消校正。";
+            renderProcessedImage();
+          }
+        });
+
+        dom.clearCalibrationBtn.addEventListener("click", clearCalibration);
+
+        dom.pxPerMmInput.addEventListener("input", () => {
+          const value = clamp(Number(dom.pxPerMmInput.value) || 8, 0.1, 100);
+          dom.pxPerMmInput.value = value.toFixed(3);
+          updateCalibrationStatus();
+        });
+
+        [dom.paperSpeedInput, dom.gainInput].forEach((input) => {
+          input.addEventListener("input", () => {
+            if (state.tracePoints.length > 0) {
+              extractTrace();
+            }
+          });
+        });
+
+        dom.imageCanvas.addEventListener("click", handleCalibrationClick);
+
+        dom.downloadCsvBtn.addEventListener("click", () => {
+          const csv = serializeToCsv();
+          const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+          downloadBlob(`${baseFileName()}-trace.csv`, blob);
+        });
+
+        dom.downloadJsonBtn.addEventListener("click", () => {
+          const json = serializeToJson();
+          const blob = new Blob([json], { type: "application/json;charset=utf-8" });
+          downloadBlob(`${baseFileName()}-trace.json`, blob);
+        });
+
+        dom.downloadPngBtn.addEventListener("click", () => {
+          if (!state.loaded) {
+            return;
+          }
+          dom.imageCanvas.toBlob((blob) => {
+            if (blob) {
+              downloadBlob(`${baseFileName()}-processed.png`, blob);
+            }
+          }, "image/png");
+        });
+
+        updateSliderLabels();
+        updateButtons();
+        setMetricDefaults();
+        updateCalibrationStatus();
+        drawPlaceholder();
+        drawSignalPlaceholder();
+      })();
+    </script>
+  </body>
+</html>
