@@ -1221,6 +1221,14 @@
           window.setTimeout(() => URL.revokeObjectURL(url), 1000);
         };
 
+        const rerunExtractionIfNeeded = () => {
+          if (state.tracePoints.length > 0) {
+            extractTrace();
+          } else {
+            renderProcessedImage();
+          }
+        };
+
         dom.imageInput.addEventListener("change", () => {
           const [file] = dom.imageInput.files || [];
           handleImageFile(file);
@@ -1255,17 +1263,17 @@
         [dom.contrastInput, dom.brightnessInput, dom.thresholdInput, dom.smoothingInput].forEach((input) => {
           input.addEventListener("input", () => {
             updateSliderLabels();
-            renderProcessedImage();
+            rerunExtractionIfNeeded();
           });
         });
 
         dom.stepInput.addEventListener("input", () => {
           const value = clamp(Math.round(Number(dom.stepInput.value) || 1), 1, 10);
           dom.stepInput.value = String(value);
-          renderProcessedImage();
+          rerunExtractionIfNeeded();
         });
 
-        dom.invertInput.addEventListener("change", renderProcessedImage);
+        dom.invertInput.addEventListener("change", rerunExtractionIfNeeded);
 
         dom.extractBtn.addEventListener("click", extractTrace);
 
@@ -1306,6 +1314,9 @@
           const value = clamp(Number(dom.pxPerMmInput.value) || 8, 0.1, 100);
           dom.pxPerMmInput.value = value.toFixed(3);
           updateCalibrationStatus();
+          if (state.tracePoints.length > 0) {
+            extractTrace();
+          }
         });
 
         [dom.paperSpeedInput, dom.gainInput].forEach((input) => {
