@@ -1,0 +1,368 @@
+{{ define "main" }}
+<article class="page">
+    <header class="page_header">
+        <h1 class="page_title">{{ .Title }}</h1>
+        {{ with .Description }}
+        <p class="page_description">{{ . }}</p>
+        {{ end }}
+    </header>
+
+    <div class="page_content">
+        {{ .Content }}
+    </div>
+
+    <style>
+        .practical-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 28px;
+            margin-top: 32px;
+            padding: 0 20px;
+        }
+
+        .practical-tool-card {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+            border: 1px solid #e8edf2;
+            min-height: 100%;
+        }
+
+        .practical-tool-image {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            object-position: top;
+            border-bottom: 1px solid #ebeff2;
+        }
+
+        .practical-tool-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .practical-tool-title {
+            margin: 0;
+            color: #1e293b;
+            font-size: 1.2rem;
+            line-height: 1.35;
+        }
+
+        .practical-tool-description {
+            margin: 0;
+            color: #475569;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .practical-tool-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: auto;
+            padding-top: 8px;
+        }
+
+        .practical-open-btn,
+        .practical-source-link,
+        .practical-modal-link {
+            border: 0;
+            border-radius: 10px;
+            padding: 9px 14px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+        }
+
+        .practical-open-btn {
+            color: #fff;
+            background: #0f7ec7;
+            box-shadow: 0 4px 14px rgba(15, 126, 199, 0.35);
+        }
+
+        .practical-open-btn:hover,
+        .practical-open-btn:focus-visible {
+            background: #0b6aa9;
+            transform: translateY(-1px);
+        }
+
+        .practical-source-link,
+        .practical-modal-link {
+            color: #0c4a6e;
+            background: #e0f2fe;
+        }
+
+        .practical-source-link:hover,
+        .practical-source-link:focus-visible,
+        .practical-modal-link:hover,
+        .practical-modal-link:focus-visible {
+            background: #c9e9ff;
+        }
+
+        .practical-empty {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 48px 20px;
+            border-radius: 16px;
+            background: #f8fafc;
+            color: #475569;
+        }
+
+        .practical-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 60;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .practical-modal.is-open {
+            display: flex;
+        }
+
+        .practical-modal-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.7);
+        }
+
+        .practical-modal-dialog {
+            position: relative;
+            z-index: 1;
+            width: min(1240px, 96vw);
+            height: min(860px, 90vh);
+            border-radius: 16px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #dbe4ee;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .practical-modal-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 16px 18px;
+            border-bottom: 1px solid #e6edf4;
+            background: #f8fbff;
+        }
+
+        .practical-modal-title-wrap {
+            min-width: 220px;
+            flex: 1;
+        }
+
+        .practical-modal-title {
+            margin: 0;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            color: #0f172a;
+        }
+
+        .practical-modal-description {
+            margin: 4px 0 0;
+            color: #64748b;
+            font-size: .92rem;
+            line-height: 1.45;
+        }
+
+        .practical-modal-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .practical-modal-close {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            border: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 999px;
+            font-size: 1.3rem;
+            line-height: 1;
+            background: rgba(148, 163, 184, 0.22);
+            color: #1e293b;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .practical-modal-close:hover,
+        .practical-modal-close:focus-visible {
+            background: rgba(148, 163, 184, 0.35);
+        }
+
+        .practical-frame-wrap {
+            flex: 1;
+            background: #e5e7eb;
+        }
+
+        .practical-tool-frame {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            background: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .practical-tools-grid {
+                grid-template-columns: 1fr;
+                padding: 0;
+                gap: 20px;
+            }
+
+            .practical-modal {
+                padding: 8px;
+            }
+
+            .practical-modal-dialog {
+                width: 100vw;
+                height: 94vh;
+                border-radius: 12px;
+            }
+
+            .practical-modal-header {
+                padding-right: 48px;
+            }
+
+            .practical-modal-actions {
+                width: 100%;
+            }
+
+            .practical-modal-link {
+                flex: 1;
+                text-align: center;
+            }
+        }
+    </style>
+
+    <div class="practical-tools-grid">
+        {{ $tools := .Site.Data.practical_tools }}
+        {{ if $tools }}
+        {{ range $tools }}
+        <article class="practical-tool-card">
+            <img src="{{ .image }}" alt="{{ .title }} 預覽圖" class="practical-tool-image" loading="lazy">
+            <div class="practical-tool-content">
+                <h2 class="practical-tool-title">{{ .title }}</h2>
+                <p class="practical-tool-description">{{ .description }}</p>
+                <div class="practical-tool-actions">
+                    <button type="button" class="practical-open-btn"
+                        data-tool-title="{{ .title }}"
+                        data-tool-description="{{ .description }}"
+                        data-tool-url="{{ .url }}"
+                        data-tool-embed-url="{{ .embed_url | default .url }}"
+                        data-tool-source-label="{{ .source_label | default "來源" }}">
+                        在彈出視窗開啟
+                    </button>
+                    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="practical-source-link">
+                        {{ .source_label | default "來源" }}
+                    </a>
+                </div>
+            </div>
+        </article>
+        {{ end }}
+        {{ else }}
+        <div class="practical-empty">目前尚無工具。</div>
+        {{ end }}
+    </div>
+
+    <div class="practical-modal" id="practicalToolModal" aria-hidden="true">
+        <div class="practical-modal-backdrop" data-close-modal></div>
+        <div class="practical-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="practicalToolModalTitle">
+            <button type="button" class="practical-modal-close" aria-label="關閉工具視窗" data-close-modal>×</button>
+            <div class="practical-modal-header">
+                <div class="practical-modal-title-wrap">
+                    <h3 class="practical-modal-title" id="practicalToolModalTitle"></h3>
+                    <p class="practical-modal-description" id="practicalToolModalDescription"></p>
+                </div>
+                <div class="practical-modal-actions">
+                    <a href="#" id="practicalToolSource" target="_blank" rel="noopener noreferrer" class="practical-modal-link">來源</a>
+                    <a href="#" id="practicalToolNewTab" target="_blank" rel="noopener noreferrer" class="practical-modal-link">另開新視窗</a>
+                </div>
+            </div>
+            <div class="practical-frame-wrap">
+                <iframe id="practicalToolFrame" class="practical-tool-frame" title="實用工具內容" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (() => {
+            const modal = document.getElementById("practicalToolModal");
+            const modalTitle = document.getElementById("practicalToolModalTitle");
+            const modalDescription = document.getElementById("practicalToolModalDescription");
+            const toolSource = document.getElementById("practicalToolSource");
+            const toolNewTab = document.getElementById("practicalToolNewTab");
+            const toolFrame = document.getElementById("practicalToolFrame");
+
+            if (!modal || !modalTitle || !modalDescription || !toolSource || !toolNewTab || !toolFrame) {
+                return;
+            }
+
+            let lastFocusedElement = null;
+            let previousOverflow = "";
+
+            const closeModal = () => {
+                modal.classList.remove("is-open");
+                modal.setAttribute("aria-hidden", "true");
+                toolFrame.src = "about:blank";
+                document.body.style.overflow = previousOverflow;
+                if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+                    lastFocusedElement.focus();
+                }
+            };
+
+            const openModal = (btn) => {
+                const title = btn.dataset.toolTitle || "";
+                const description = btn.dataset.toolDescription || "";
+                const sourceUrl = btn.dataset.toolUrl || "";
+                const embedUrl = btn.dataset.toolEmbedUrl || sourceUrl;
+                const sourceLabel = btn.dataset.toolSourceLabel || "來源";
+
+                lastFocusedElement = document.activeElement;
+                previousOverflow = document.body.style.overflow;
+
+                modalTitle.textContent = title;
+                modalDescription.textContent = description;
+                toolSource.textContent = sourceLabel;
+                toolSource.href = sourceUrl;
+                toolNewTab.href = embedUrl;
+                toolFrame.src = embedUrl;
+
+                modal.classList.add("is-open");
+                modal.setAttribute("aria-hidden", "false");
+                document.body.style.overflow = "hidden";
+            };
+
+            document.querySelectorAll(".practical-open-btn").forEach((btn) => {
+                btn.addEventListener("click", () => openModal(btn));
+            });
+
+            modal.querySelectorAll("[data-close-modal]").forEach((el) => {
+                el.addEventListener("click", closeModal);
+            });
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape" && modal.classList.contains("is-open")) {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
+</article>
+{{ end }}

@@ -34,13 +34,18 @@
   url = "categories/travel"
   weight = -104
 
+[[main]]
+  name = "實用工具"
+  url = "practical-tools/"
+  weight = -103.5
+
 # Submenus are done this way: parent -> identifier
 
 
 [[main]]
   name = "關於我"
   url = "about/"
-  weight = -104
+  weight = -103
 
 # social menu links
 
