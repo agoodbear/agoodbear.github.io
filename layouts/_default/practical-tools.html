@@ -29,6 +29,13 @@
             box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
             border: 1px solid #e8edf2;
             min-height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .practical-tool-card:hover,
+        .practical-tool-card:focus-within {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
         }
 
         .practical-tool-image {
