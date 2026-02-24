@@ -1,0 +1,13 @@
+- title: "ECG Axis Trainer"
+  description: "互動式心電軸向訓練工具，可快速練習 I、II、aVF、aVL 導程與軸向判讀。"
+  image: "/images/practical-tools/ecg-axis-trainer.png"
+  url: "https://github.com/david-shrk/ecgaxistrainer"
+  embed_url: "https://david-shrk.github.io/ecgaxistrainer/"
+  source_label: "GitHub Repository"
+
+- title: "Subtle Anterior STEMI Calculator"
+  description: "MDCalc 的 4-variable 計算器，用於輔助評估 subtle anterior STEMI 風險。"
+  image: "/images/practical-tools/stemi-calculator.png"
+  url: "https://www.mdcalc.com/calc/10079/subtle-anterior-stemi-calculator-4-variable"
+  embed_url: "https://www.mdcalc.com/calc/10079/subtle-anterior-stemi-calculator-4-variable"
+  source_label: "MDCalc"
