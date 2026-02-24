@@ -1222,10 +1222,11 @@
         };
 
         const rerunExtractionIfNeeded = () => {
-          if (state.tracePoints.length > 0) {
+          const hasTrace = state.tracePoints.length > 0;
+          // Always refresh processed pixels first so extraction uses latest preprocessing params.
+          renderProcessedImage();
+          if (hasTrace) {
             extractTrace();
-          } else {
-            renderProcessedImage();
           }
         };
 
