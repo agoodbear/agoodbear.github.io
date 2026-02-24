@@ -1,0 +1,44 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E9FCFF" />
+      <stop offset="1" stop-color="#D8F4FB" />
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0E7490" />
+      <stop offset="1" stop-color="#0891B2" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="34" fill="url(#bg)" />
+  <rect x="70" y="80" width="1060" height="600" rx="28" fill="white" stroke="#B8E2EE" stroke-width="4" />
+  <rect x="118" y="130" width="320" height="500" rx="18" fill="#F3FBFE" stroke="#CBE8F1" stroke-width="3" />
+  <rect x="486" y="130" width="596" height="290" rx="18" fill="#F3FBFE" stroke="#CBE8F1" stroke-width="3" />
+  <rect x="486" y="444" width="596" height="186" rx="18" fill="#F8FEFF" stroke="#CBE8F1" stroke-width="3" />
+
+  <g opacity="0.45" stroke="#D5EFF6" stroke-width="2">
+    <path d="M486 188H1082" />
+    <path d="M486 246H1082" />
+    <path d="M486 304H1082" />
+    <path d="M486 362H1082" />
+    <path d="M566 130V420" />
+    <path d="M646 130V420" />
+    <path d="M726 130V420" />
+    <path d="M806 130V420" />
+    <path d="M886 130V420" />
+    <path d="M966 130V420" />
+  </g>
+
+  <path d="M520 278H650L677 324L726 176L773 350L816 278H1048" stroke="url(#line)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M521 534H610C642 534 670 510 698 510C726 510 751 534 782 534H804L820 556L852 484L882 576L915 534H1044" stroke="#059669" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+
+  <rect x="152" y="176" width="250" height="18" rx="9" fill="#B4DFEC" />
+  <rect x="152" y="222" width="190" height="16" rx="8" fill="#CBE9F2" />
+  <rect x="152" y="262" width="230" height="16" rx="8" fill="#CBE9F2" />
+  <rect x="152" y="302" width="210" height="16" rx="8" fill="#CBE9F2" />
+
+  <rect x="152" y="390" width="250" height="62" rx="14" fill="#0E7490" />
+  <rect x="152" y="470" width="250" height="62" rx="14" fill="#E0F4FA" stroke="#9ED6E7" stroke-width="3" />
+
+  <text x="600" y="90" fill="#0E5F75" font-size="42" font-weight="700" font-family="Figtree, 'Noto Sans TC', sans-serif">ECG 影像轉數位訊號</text>
+  <text x="600" y="716" fill="#2A6D7E" font-size="28" font-weight="600" font-family="Figtree, 'Noto Sans TC', sans-serif">Upload • Calibrate • Extract • Export</text>
+</svg>
