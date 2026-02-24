@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3D 心臟模型互動工具（Matt Schroyer）</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap");
+
+      :root {
+        --bg: #eef7fb;
+        --panel: #ffffff;
+        --line: #cfe1ec;
+        --ink: #163f59;
+        --muted: #456378;
+        --accent: #0b7aa9;
+        --accent-strong: #0b5f84;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+
+      body {
+        min-height: 100vh;
+        font-family: "Figtree", "Noto Sans TC", "Noto Sans", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 10% 8%, rgba(11, 122, 169, 0.12), transparent 32%),
+          radial-gradient(circle at 88% 8%, rgba(14, 165, 233, 0.12), transparent 32%),
+          var(--bg);
+      }
+
+      .app {
+        width: min(1360px, calc(100vw - 1.2rem));
+        margin: 12px auto 16px;
+      }
+
+      .header {
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 14px 16px;
+        box-shadow: 0 14px 30px rgba(22, 63, 89, 0.1);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.24rem, 1.7vw, 1.66rem);
+      }
+
+      .summary {
+        margin: 8px 0 0;
+        color: var(--muted);
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      .tips {
+        margin: 10px 0 0;
+        color: #356079;
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .button {
+        min-height: 44px;
+        border-radius: 10px;
+        border: 0;
+        padding: 10px 14px;
+        font: inherit;
+        font-weight: 600;
+        font-size: 0.92rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.16s ease, filter 0.16s ease;
+      }
+
+      .button:hover { transform: translateY(-1px); filter: brightness(0.98); }
+      .button.primary { color: #fff; background: linear-gradient(135deg, var(--accent-strong), var(--accent)); }
+      .button.secondary { color: #135578; background: #dcf0fb; }
+
+      .workspace {
+        margin-top: 10px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+        background: var(--panel);
+      }
+
+      iframe {
+        width: 100%;
+        border: 0;
+        display: block;
+        height: 78vh;
+        min-height: 620px;
+      }
+
+      @media (max-width: 920px) {
+        .app { width: calc(100vw - 0.8rem); margin-top: 8px; }
+        iframe { min-height: 540px; height: 82vh; }
+      }
+
+      :focus-visible { outline: 3px solid rgba(11, 122, 169, 0.28); outline-offset: 2px; }
+      @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <section class="header">
+        <h1>3D 心臟模型互動工具（Matt Schroyer Heart）</h1>
+        <p class="summary">
+          站內自託管版本：可旋轉、縮放、平移心臟模型，並用按鈕做 Open/Close Heart 與標記點顯示切換。
+        </p>
+        <p class="tips">
+          操作：滑鼠左鍵旋轉、滾輪縮放、右鍵平移；按「Open/Close Heart」展開或閉合心臟切面。
+        </p>
+        <div class="actions">
+          <a class="button primary" href="./app/index.html" target="_blank" rel="noopener noreferrer">在新分頁開啟模型</a>
+          <a class="button secondary" href="https://github.com/MattSchroyer/heart" target="_blank" rel="noopener noreferrer">GitHub 原始專案</a>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="3D 心臟模型檢視區">
+        <iframe src="./app/index.html" title="Matt Schroyer Heart 3D Viewer" loading="lazy"></iframe>
+      </section>
+    </main>
+  </body>
+</html>
