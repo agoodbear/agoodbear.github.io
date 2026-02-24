@@ -12,6 +12,13 @@
   embed_url: "/tools/interactive-3d-heart/"
   source_label: "立即使用"
 
+- title: "3D 心臟模型互動工具（Matt）"
+  description: "本地自託管 3D 心臟模型，可旋轉/縮放/平移，並以按鈕展開或閉合心臟結構。"
+  image: "/images/practical-tools/matt-heart.svg"
+  url: "/tools/matt-heart-visualization/"
+  embed_url: "/tools/matt-heart-visualization/"
+  source_label: "立即使用"
+
 - title: "ECG Axis Trainer"
   description: "互動式心電軸向訓練工具，可快速練習 I、II、aVF、aVL 導程與軸向判讀。"
   image: "/images/practical-tools/ecg-axis-trainer.png"
