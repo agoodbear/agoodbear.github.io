@@ -1,3 +1,10 @@
+- title: "ECG 影像轉數位訊號工具"
+  description: "上傳 ECG 圖片後，一鍵前處理與波形擷取，可做兩點校正並匯出 CSV / JSON / PNG。"
+  image: "/images/practical-tools/ecg-image-digitizer.svg"
+  url: "/tools/ecg-image-digitizer/"
+  embed_url: "/tools/ecg-image-digitizer/"
+  source_label: "立即使用"
+
 - title: "ECG Axis Trainer"
   description: "互動式心電軸向訓練工具，可快速練習 I、II、aVF、aVL 導程與軸向判讀。"
   image: "/images/practical-tools/ecg-axis-trainer.png"
