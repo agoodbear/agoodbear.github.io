@@ -1,0 +1,28 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "functions": {
+    "source": "functions"
+  },
+  "hosting": [
+    {
+      "site": "write-studio-cloud-agoodbear",
+      "public": "static",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "/write-studio-api/**",
+          "function": {
+            "functionId": "writeStudioApi",
+            "region": "asia-east1"
+          }
+        }
+      ]
+    }
+  ]
+}
