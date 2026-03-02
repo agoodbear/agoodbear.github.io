@@ -1,0 +1,40 @@
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.14rem 0.58rem;
+  margin-left: 0.25rem;
+  border-radius: 999px;
+  font-size: 0.92em;
+  font-weight: 600;
+  line-height: 1.35;
+  white-space: nowrap;
+  vertical-align: baseline;
+  text-decoration: none;
+  transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+}
+
+.tag-pill:hover,
+.tag-pill:focus-visible {
+  transform: translateY(-1px);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(36, 90, 66, 0.12);
+}
+
+.tag-pill--mint {
+  color: #1d5f45;
+  background: #dff6df;
+  border: 1px solid #b9e8be;
+}
+
+.tag-pill--sky {
+  color: #1d5d88;
+  background: #dff1ff;
+  border: 1px solid #b8daf7;
+}
+
+.tag-pill--amber {
+  color: #8a5a12;
+  background: #fff2cf;
+  border: 1px solid #f1d48d;
+}
