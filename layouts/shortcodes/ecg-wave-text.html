@@ -1,0 +1,32 @@
+{{- $level := printf "%v" (.Get "level" | default "p") -}}
+{{- $icon := .Get "icon" | default "" -}}
+{{- $tag := "p" -}}
+{{- if in (slice "1" "2" "3" "4" "5" "6") $level -}}
+  {{- $tag = printf "h%s" $level -}}
+{{- end -}}
+{{- $body := .Inner | strings.TrimSpace | markdownify -}}
+{{- $body = replaceRE `^<p>(.*)</p>$` `$1` $body -}}
+
+{{- $classes := printf "ecg-wave-text ecg-wave-text--%s" $tag -}}
+{{- $waveD := `M0 126 L74 126 C96 126 104 102 118 102 C132 102 143 126 157 126 L220 126 L251 126 L266 142 L284 126 L362 126 C386 126 394 94 412 94 C428 94 438 126 454 126 L507 126 L526 134 L543 18 L560 198 L579 126 L665 126 C688 126 700 104 720 104 C742 104 752 126 771 126 L832 126 L848 134 L868 34 L886 190 L904 126 L986 126 C1009 126 1020 96 1042 96 C1065 96 1076 126 1096 126 L1200 126` -}}
+{{- $iconHtml := "" -}}
+{{- if ne $icon "" -}}
+  {{- $iconHtml = printf `<span class="ecg-wave-text__icon" aria-hidden="true">%s</span>` $icon -}}
+{{- end -}}
+{{- $payload := printf `<span class="ecg-wave-text__label">%s<span class="ecg-wave-text__copy">%s</span></span><svg class="ecg-wave-text__wave" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true"><path class="ecg-wave-text__base" pathLength="100" d="%s"/><path class="ecg-wave-text__scan-glow" pathLength="100" d="%s"/><path class="ecg-wave-text__scan" pathLength="100" d="%s"/></svg>` $iconHtml $body $waveD $waveD $waveD -}}
+
+{{- if eq $tag "h1" -}}
+  <h1 class="{{ $classes }}">{{ $payload | safeHTML }}</h1>
+{{- else if eq $tag "h2" -}}
+  <h2 class="{{ $classes }}">{{ $payload | safeHTML }}</h2>
+{{- else if eq $tag "h3" -}}
+  <h3 class="{{ $classes }}">{{ $payload | safeHTML }}</h3>
+{{- else if eq $tag "h4" -}}
+  <h4 class="{{ $classes }}">{{ $payload | safeHTML }}</h4>
+{{- else if eq $tag "h5" -}}
+  <h5 class="{{ $classes }}">{{ $payload | safeHTML }}</h5>
+{{- else if eq $tag "h6" -}}
+  <h6 class="{{ $classes }}">{{ $payload | safeHTML }}</h6>
+{{- else -}}
+  <p class="{{ $classes }}">{{ $payload | safeHTML }}</p>
+{{- end -}}
