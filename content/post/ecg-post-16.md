@@ -87,7 +87,7 @@ Brugada syndrome
 
 這部分之前有寫過。還是再詳細講一次，一方面自己順便複習一次。
 
-#### ⭐️怎麼樣的V2~V3 ECG morphology偏向RV strain**(如果ECG形成RBBB，以下morphology不適用)** 
+#### **⭐️怎麼樣的V2~V3 ECG morphology偏向RV strain(如果ECG形成RBBB，以下morphology不適用)**
 
 - 通常bigger S wave than R wave
 - 通常J point isoelectric 或 J point elevated，接著凸向上STE然後TWI➜指PE的TWI和[[Wellens' wave]]的TWI長得不一樣(**看Fig.2的ECG morphology**)
@@ -95,11 +95,11 @@ Brugada syndrome
   - **ACS-Wellen的TWI**是陡降，比較sharp
 - 通常some STD in V4~6和inf.lead也會TWI
 
-#### ⭐️Wellens' syndrome是在一個胸痛之後，無痛狀況下做的ECG(在coronary reperfusion之後，應該會伴隨症狀明顯降低)➜如果看到TWI，但是症狀卻是持續的不舒服，要想想別的DDx
+#### **⭐️Wellens' syndrome是在一個胸痛之後，無痛狀況下做的ECG(在coronary reperfusion之後，應該會伴隨症狀明顯降低)➜如果看到TWI，但是症狀卻是持續的不舒服，要想想別的DDx**
 
 - 看到TWI，先看病患症狀如何?再看prior ECG有無此TWI➜如果症狀已緩解，且舊心電圖沒此變化，先考慮可能是reperfusion rhythm(**剛剛心肌梗塞，但是現在通了**➜請跟著再唸一遍，出現Wellens' syndrome，最基本的概念就是**剛剛心肌梗塞，但是現在通了**)
 
-#### ⭐️ACO通常很少伴隨tachycardia，特別是reperfusion之後，除非病患已經cardiogenic shock了(Poor LV function)
+#### **⭐️ACO通常很少伴隨tachycardia，特別是reperfusion之後，除非病患已經cardiogenic shock了(Poor LV function)**
 
 - 但是在PE裡面，sinus tachycardia是很常見的狀況
 
@@ -107,7 +107,7 @@ Brugada syndrome
 
 ![Brugada pattern ECG](../../static/images/ipic/cleanshot-2026-03-01-at-14-46-33-2x.png)
 
-## ❤️Case個案繼續
+## **❤️Case個案繼續**
 
 病患因為前胸痛到後背，痛到冒冷汗。雖然D-dimer正常，我還是切了Chest CTA，沒有aortic dissection
 
@@ -155,7 +155,7 @@ Brugada syndrome
 
 - 正常或**輕微的biomarker上升**
 
-## ❤️Case個案繼續
+## **❤️Case個案繼續**
 
 所以這個case就ECG morphology和相關biomarker應該是算Wellens' syndrome。
 就2018年的第四版心肌梗塞定義(Fourth Universal Definition of Myocardial Infarction 2018)
@@ -284,12 +284,12 @@ Amal mattu在這集的ECG weekly也有提到inverted U wave，有興趣的人可
 
 So cool~~
 
-## ❤️Case個案繼續
+## **❤️Case個案繼續**
 
 ![Serial TnI](../../static/images/ipic/cleanshot-2026-03-02-at-11-35-54.png)
 
 第二次因為走出急診室，剛離開沒多久又痛起來，過了沒多久又開始更痛。
-這些點的TnI，其實也就是高一點點。和第一次就一差不多。
+這些點的TnI，其實也就是高一點點。和第一次就醫差不多。
 
 在Fig.7時是第二次回診加上更痛，且ECG的V2/V3的T wave更高。所以會診了CV man
 
@@ -336,7 +336,7 @@ MSC如果抓0.25這個數值，可以讓sensitivity到80%，specificity到99%。
 {{< imgcol src="https://cdn-images-1.medium.com/max/1024/0*TIEHVgbJaZgYTSjX" alt="" caption="" >}}
 {{< /imgrow >}}
 
-## ❤️Case個案繼續
+## **❤️Case個案繼續**
 
 讓我們來算算這個case的STE/S大概多少? 大約0.7
 
