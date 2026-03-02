@@ -40,4 +40,4 @@ home = ["HTML", "RSS", "JSON"]
   shortname = "agoodbear"
 
 [params]
-customCSS = ["custom-css/timeline.css", "custom-css/image-row.css"] # Include custom CSS files
+customCSS = ["custom-css/timeline.css", "custom-css/image-row.css", "custom-css/tag-pill.css", "custom-css/ecg-wave-text.css", "custom-css/notice-flame.css"] # Include custom CSS files

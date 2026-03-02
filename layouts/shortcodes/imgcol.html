@@ -1,0 +1,17 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $caption := .Get "caption" -}}
+{{- $href := .Get "href" -}}
+
+<figure class="md-img-col">
+  {{- if $href -}}
+    <a href="{{ $href }}">
+      <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" />
+    </a>
+  {{- else -}}
+    <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" />
+  {{- end -}}
+  {{- with $caption -}}
+    <figcaption>{{ . }}</figcaption>
+  {{- end -}}
+</figure>

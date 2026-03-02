@@ -304,3 +304,203 @@
     requestUpdate();
   })();
 </script>
+
+<script>
+  (function () {
+    let lightbox = null;
+    let prevButton = null;
+    let nextButton = null;
+    let lightboxImage = null;
+    let lightboxCounter = null;
+    let lightboxCaption = null;
+    let currentItems = [];
+    let currentIndex = -1;
+
+    function ensureImageRowLightbox() {
+      if (lightbox && lightboxImage && lightboxCounter && lightboxCaption && prevButton && nextButton) {
+        return;
+      }
+
+      lightbox = document.createElement("div");
+      lightbox.className = "imgrow-lightbox";
+      lightbox.setAttribute("aria-hidden", "true");
+      lightbox.setAttribute("role", "dialog");
+      lightbox.setAttribute("aria-modal", "true");
+      lightbox.setAttribute("aria-label", "Image preview");
+
+      const viewport = document.createElement("div");
+      viewport.className = "imgrow-lightbox__viewport";
+
+      prevButton = document.createElement("button");
+      prevButton.className = "imgrow-lightbox__nav imgrow-lightbox__nav--prev";
+      prevButton.type = "button";
+      prevButton.setAttribute("aria-label", "Previous image");
+      prevButton.textContent = "‹";
+
+      const figure = document.createElement("figure");
+      figure.className = "imgrow-lightbox__figure";
+
+      lightboxImage = document.createElement("img");
+      lightboxImage.className = "imgrow-lightbox__image";
+      lightboxImage.alt = "";
+
+      const meta = document.createElement("figcaption");
+      meta.className = "imgrow-lightbox__meta";
+
+      lightboxCounter = document.createElement("span");
+      lightboxCounter.className = "imgrow-lightbox__counter";
+
+      lightboxCaption = document.createElement("div");
+      lightboxCaption.className = "imgrow-lightbox__caption";
+
+      nextButton = document.createElement("button");
+      nextButton.className = "imgrow-lightbox__nav imgrow-lightbox__nav--next";
+      nextButton.type = "button";
+      nextButton.setAttribute("aria-label", "Next image");
+      nextButton.textContent = "›";
+
+      meta.appendChild(lightboxCounter);
+      meta.appendChild(lightboxCaption);
+      figure.appendChild(lightboxImage);
+      figure.appendChild(meta);
+      viewport.appendChild(prevButton);
+      viewport.appendChild(figure);
+      viewport.appendChild(nextButton);
+      lightbox.appendChild(viewport);
+      document.body.appendChild(lightbox);
+
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+          closeImageRowLightbox();
+        }
+      });
+
+      prevButton.addEventListener("click", (event) => {
+        event.stopPropagation();
+        stepImageRowLightbox(-1);
+      });
+
+      nextButton.addEventListener("click", (event) => {
+        event.stopPropagation();
+        stepImageRowLightbox(1);
+      });
+    }
+
+    function closeImageRowLightbox() {
+      if (!lightbox) {
+        return;
+      }
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      currentItems = [];
+      currentIndex = -1;
+      document.body.classList.remove("imgrow-lightbox-open");
+    }
+
+    function updateImageRowLightbox() {
+      if (!lightboxImage || !lightboxCounter || !lightboxCaption || !prevButton || !nextButton) {
+        return;
+      }
+      if (currentIndex < 0 || currentIndex >= currentItems.length) {
+        return;
+      }
+
+      const item = currentItems[currentIndex];
+      lightboxImage.src = item.src;
+      lightboxImage.alt = item.alt || "";
+      lightboxCounter.textContent = `第 ${currentIndex + 1} / ${currentItems.length} 張`;
+      lightboxCaption.textContent = item.caption || item.alt || "";
+      prevButton.disabled = currentIndex === 0;
+      nextButton.disabled = currentIndex === currentItems.length - 1;
+    }
+
+    function stepImageRowLightbox(direction) {
+      const nextIndex = currentIndex + direction;
+      if (nextIndex < 0 || nextIndex >= currentItems.length) {
+        return;
+      }
+      currentIndex = nextIndex;
+      updateImageRowLightbox();
+    }
+
+    function collectRowImages(image) {
+      const row = image.closest(".md-img-row");
+      if (!row) {
+        return { items: [], index: -1 };
+      }
+
+      const images = Array.from(row.querySelectorAll(".md-img-col img")).filter((item) => {
+        const src = (item.getAttribute("src") || item.src || "").trim();
+        return Boolean(src);
+      });
+
+      const items = images.map((item) => {
+        const figure = item.closest(".md-img-col");
+        const captionNode = figure ? figure.querySelector("figcaption") : null;
+        return {
+          src: (item.getAttribute("src") || item.src || "").trim(),
+          alt: (item.getAttribute("alt") || "").trim(),
+          caption: captionNode ? String(captionNode.textContent || "").trim() : "",
+        };
+      });
+
+      return {
+        items,
+        index: images.indexOf(image),
+      };
+    }
+
+    function openImageRowLightbox(image) {
+      const rowState = collectRowImages(image);
+      if (!rowState.items.length || rowState.index < 0) {
+        return;
+      }
+
+      ensureImageRowLightbox();
+
+      currentItems = rowState.items;
+      currentIndex = rowState.index;
+      updateImageRowLightbox();
+
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.classList.add("imgrow-lightbox-open");
+    }
+
+    document.addEventListener("click", (event) => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+        return;
+      }
+
+      const image = event.target.closest(".md-img-row .md-img-col img");
+      if (!image) {
+        return;
+      }
+
+      event.preventDefault();
+      openImageRowLightbox(image);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (!lightbox || !lightbox.classList.contains("open")) {
+        return;
+      }
+
+      if (event.key === "Escape") {
+        closeImageRowLightbox();
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        stepImageRowLightbox(-1);
+        return;
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        stepImageRowLightbox(1);
+      }
+    });
+  })();
+</script>
