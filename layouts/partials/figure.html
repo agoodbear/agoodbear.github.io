@@ -26,6 +26,20 @@
 {{- end -}}
 
 {{- $fileWeb := .file -}}
+{{- $fileDisk := "" -}}
+{{- $isStaticRelative := false -}}
+{{- $staticCandidate := replaceRE `^(\./|\.\./)+static/` "static/" $file -}}
+{{- if strings.HasPrefix $staticCandidate "static/" -}}
+  {{- $isStaticRelative = true -}}
+  {{- $fileDisk = $staticCandidate -}}
+  {{- $fileWeb = printf "/%s" (strings.TrimPrefix "static/" $staticCandidate) -}}
+{{- else if and $diskPath (or (strings.HasPrefix $file "../") (strings.HasPrefix $file "./")) -}}
+  {{- $fileDisk = path.Join $diskPath $file -}}
+  {{- if strings.HasPrefix $fileDisk "static/" -}}
+    {{- $isStaticRelative = true -}}
+    {{- $fileWeb = printf "/%s" (strings.TrimPrefix "static/" $fileDisk) -}}
+  {{- end -}}
+{{- end -}}
 {{- if eq $bundle true -}}
   {{ $fileWeb = path.Join $webPath $file }}
   {{ if in $classes "image_svg" }}
@@ -45,6 +59,13 @@
         {{ $item := printf "%s" . | printf "%s%s" "." | printf "%s%s" $name | printf "%s" }}
         {{ $itemDisk := path.Join $diskPath $item }}
         {{ $itemWeb := path.Join $webPath $item }}
+        {{- $itemStaticCandidate := replaceRE `^(\./|\.\./)+static/` "static/" $item -}}
+        {{- if strings.HasPrefix $itemStaticCandidate "static/" -}}
+          {{- $itemDisk = $itemStaticCandidate -}}
+        {{- end -}}
+        {{- if and $isStaticRelative (strings.HasPrefix $itemDisk "static/") -}}
+          {{- $itemWeb = printf "/%s" (strings.TrimPrefix "static/" $itemDisk) -}}
+        {{- end -}}
         {{- if fileExists $itemDisk -}}
           <source srcset="{{ $itemWeb }}" type="image/{{ . }}">
         {{- end -}}
