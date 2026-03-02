@@ -1,0 +1,5 @@
+{{- $cols := .Get "cols" | default "2" -}}
+{{- $gap := .Get "gap" | default "14" -}}
+<div class="md-img-row" style="--imgrow-cols: {{ $cols }}; --imgrow-gap: {{ $gap }}px;">
+  {{- .Inner | safeHTML -}}
+</div>

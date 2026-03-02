@@ -1,0 +1,284 @@
+.notices.flame {
+  position: relative;
+  isolation: isolate;
+  margin: 2.25rem 0;
+  padding: 1.55rem 1.5rem 1.35rem;
+  border: 2px solid transparent;
+  border-top-width: 2px;
+  border-radius: 24px;
+  color: #5b2c1c;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0) 24%, rgba(255, 236, 214, 0.24) 100%) padding-box,
+    linear-gradient(180deg, rgba(255, 251, 244, 0.98), rgba(255, 239, 223, 0.98)) padding-box,
+    linear-gradient(135deg, #ffe78c 0%, #ffbf58 15%, #ff873c 33%, #ff5d33 54%, #cb261f 78%, #ffdf8d 100%) border-box;
+  background-size: 100% 100%, 100% 100%, 220% 220%;
+  background-position: 0 0, 0 0, 0% 50%;
+  box-shadow:
+    0 0 0 1px rgba(255, 202, 109, 0.44),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    inset 0 0 32px rgba(255, 186, 96, 0.16),
+    0 24px 52px rgba(202, 72, 38, 0.16),
+    0 0 34px rgba(255, 139, 59, 0.16);
+  overflow: hidden;
+  animation: flame-border-wave 4.2s ease-in-out infinite, flame-card-flicker 2.8s ease-in-out infinite;
+}
+
+.notices.flame::before,
+.notices.flame::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.notices.flame::before {
+  inset: -14%;
+  background:
+    radial-gradient(circle at 8% 14%, rgba(255, 224, 122, 0.34), transparent 18%),
+    radial-gradient(circle at 28% 8%, rgba(255, 146, 62, 0.28), transparent 16%),
+    radial-gradient(circle at 82% 12%, rgba(255, 92, 46, 0.28), transparent 18%),
+    radial-gradient(circle at 92% 24%, rgba(255, 184, 92, 0.22), transparent 16%),
+    radial-gradient(circle at 10% 88%, rgba(255, 146, 68, 0.2), transparent 20%),
+    radial-gradient(circle at 90% 84%, rgba(255, 206, 118, 0.22), transparent 20%);
+  filter: blur(20px);
+  opacity: 0.86;
+  animation: flame-aura 3.2s ease-in-out infinite;
+}
+
+.notices.flame::after {
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.34), transparent 16%),
+    radial-gradient(circle at 84% 18%, rgba(255, 139, 59, 0.2), transparent 20%),
+    radial-gradient(circle at 16% 84%, rgba(255, 198, 112, 0.18), transparent 18%),
+    radial-gradient(circle at 86% 82%, rgba(255, 94, 52, 0.16), transparent 22%);
+  box-shadow: inset 0 0 0 1px rgba(255, 243, 221, 0.26);
+}
+
+.notices.flame > * {
+  position: relative;
+  z-index: 1;
+}
+
+.notices.flame .label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 1rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid rgba(255, 228, 173, 0.36);
+  border-radius: 999px;
+  color: #fff7ef;
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  background: linear-gradient(135deg, #a72419 0%, #d24620 52%, #ff9a28 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 208, 133, 0.18),
+    0 12px 26px rgba(186, 58, 27, 0.3),
+    0 0 18px rgba(255, 145, 59, 0.18);
+  text-shadow: 0 1px 0 rgba(111, 10, 0, 0.24);
+  animation: flame-label-pulse 2.4s ease-in-out infinite;
+}
+
+.notices.flame .label:first-child::before {
+  content: "\1F525";
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.notices.flame p,
+.notices.flame ol,
+.notices.flame ul {
+  margin-top: 0;
+}
+
+.notices.flame ol,
+.notices.flame ul {
+  margin-bottom: 0;
+  padding-left: 1.4rem;
+}
+
+.notices.flame li {
+  margin-bottom: 0.72rem;
+  padding-left: 0.2rem;
+  line-height: 1.75;
+}
+
+.notices.flame li:last-child {
+  margin-bottom: 0;
+}
+
+.notices.flame li::marker {
+  color: #c64824;
+  font-weight: 800;
+}
+
+html[data-mode="dim"] .notices.flame {
+  color: #ffe5d6;
+  background:
+    linear-gradient(180deg, rgba(255, 195, 94, 0.08), rgba(255, 195, 94, 0) 24%, rgba(255, 112, 58, 0.06) 100%) padding-box,
+    linear-gradient(180deg, rgba(71, 19, 14, 0.94), rgba(39, 13, 12, 0.97)) padding-box,
+    linear-gradient(135deg, #ffd66a 0%, #ffa240 22%, #ff6946 52%, #b72920 76%, #ffd67a 100%) border-box;
+  background-size: 100% 100%, 100% 100%, 220% 220%;
+  background-position: 0 0, 0 0, 0% 50%;
+  box-shadow:
+    0 0 0 1px rgba(255, 182, 78, 0.22),
+    inset 0 1px 0 rgba(255, 231, 204, 0.08),
+    inset 0 0 34px rgba(255, 119, 67, 0.08),
+    0 24px 48px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(255, 119, 67, 0.1);
+}
+
+html[data-mode="dim"] .notices.flame::before {
+  inset: -14%;
+  background:
+    radial-gradient(circle at 8% 14%, rgba(255, 214, 128, 0.18), transparent 18%),
+    radial-gradient(circle at 28% 8%, rgba(255, 136, 64, 0.2), transparent 16%),
+    radial-gradient(circle at 82% 12%, rgba(255, 92, 46, 0.18), transparent 18%),
+    radial-gradient(circle at 92% 24%, rgba(255, 184, 92, 0.14), transparent 16%),
+    radial-gradient(circle at 10% 88%, rgba(255, 146, 68, 0.12), transparent 20%),
+    radial-gradient(circle at 90% 84%, rgba(255, 206, 118, 0.14), transparent 20%);
+}
+
+html[data-mode="dim"] .notices.flame::after {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 250, 239, 0.08), transparent 16%),
+    radial-gradient(circle at 84% 18%, rgba(255, 139, 59, 0.1), transparent 20%),
+    radial-gradient(circle at 16% 84%, rgba(255, 198, 112, 0.08), transparent 18%),
+    radial-gradient(circle at 86% 82%, rgba(255, 94, 52, 0.08), transparent 22%);
+  box-shadow: inset 0 0 0 1px rgba(255, 214, 164, 0.08);
+}
+
+html[data-mode="dim"] .notices.flame .label {
+  color: #fff3e5;
+  background: linear-gradient(135deg, #c8371f 0%, #f0612e 52%, #ffba4e 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 195, 112, 0.14),
+    0 12px 26px rgba(0, 0, 0, 0.24),
+    0 0 16px rgba(255, 142, 59, 0.12);
+}
+
+html[data-mode="dim"] .notices.flame li::marker {
+  color: #ffbc66;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode="lit"]) .notices.flame {
+    color: #ffe5d6;
+    background:
+      linear-gradient(180deg, rgba(255, 195, 94, 0.08), rgba(255, 195, 94, 0) 24%, rgba(255, 112, 58, 0.06) 100%) padding-box,
+      linear-gradient(180deg, rgba(71, 19, 14, 0.94), rgba(39, 13, 12, 0.97)) padding-box,
+      linear-gradient(135deg, #ffd66a 0%, #ffa240 22%, #ff6946 52%, #b72920 76%, #ffd67a 100%) border-box;
+    background-size: 100% 100%, 100% 100%, 220% 220%;
+    background-position: 0 0, 0 0, 0% 50%;
+    box-shadow:
+      0 0 0 1px rgba(255, 182, 78, 0.22),
+      inset 0 1px 0 rgba(255, 231, 204, 0.08),
+      inset 0 0 34px rgba(255, 119, 67, 0.08),
+      0 24px 48px rgba(0, 0, 0, 0.3),
+      0 0 30px rgba(255, 119, 67, 0.1);
+  }
+
+  html:not([data-mode="lit"]) .notices.flame::before {
+    inset: -14%;
+    background:
+      radial-gradient(circle at 8% 14%, rgba(255, 214, 128, 0.18), transparent 18%),
+      radial-gradient(circle at 28% 8%, rgba(255, 136, 64, 0.2), transparent 16%),
+      radial-gradient(circle at 82% 12%, rgba(255, 92, 46, 0.18), transparent 18%),
+      radial-gradient(circle at 92% 24%, rgba(255, 184, 92, 0.14), transparent 16%),
+      radial-gradient(circle at 10% 88%, rgba(255, 146, 68, 0.12), transparent 20%),
+      radial-gradient(circle at 90% 84%, rgba(255, 206, 118, 0.14), transparent 20%);
+  }
+
+  html:not([data-mode="lit"]) .notices.flame::after {
+    background:
+      radial-gradient(circle at 12% 18%, rgba(255, 250, 239, 0.08), transparent 16%),
+      radial-gradient(circle at 84% 18%, rgba(255, 139, 59, 0.1), transparent 20%),
+      radial-gradient(circle at 16% 84%, rgba(255, 198, 112, 0.08), transparent 18%),
+      radial-gradient(circle at 86% 82%, rgba(255, 94, 52, 0.08), transparent 22%);
+    box-shadow: inset 0 0 0 1px rgba(255, 214, 164, 0.08);
+  }
+
+  html:not([data-mode="lit"]) .notices.flame .label {
+    color: #fff3e5;
+    background: linear-gradient(135deg, #c8371f 0%, #f0612e 52%, #ffba4e 100%);
+    box-shadow:
+      0 0 0 1px rgba(255, 195, 112, 0.14),
+      0 12px 26px rgba(0, 0, 0, 0.24),
+      0 0 16px rgba(255, 142, 59, 0.12);
+  }
+
+  html:not([data-mode="lit"]) .notices.flame li::marker {
+    color: #ffbc66;
+  }
+}
+
+@keyframes flame-border-wave {
+  0% {
+    background-position: 0 0, 0 0, 0% 50%;
+  }
+  50% {
+    background-position: 0 0, 0 0, 100% 50%;
+  }
+  100% {
+    background-position: 0 0, 0 0, 20% 50%;
+  }
+}
+
+@keyframes flame-card-flicker {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px rgba(255, 202, 109, 0.44),
+      inset 0 1px 0 rgba(255, 255, 255, 0.82),
+      inset 0 0 32px rgba(255, 186, 96, 0.16),
+      0 24px 52px rgba(202, 72, 38, 0.16),
+      0 0 34px rgba(255, 139, 59, 0.16);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(255, 216, 132, 0.54),
+      inset 0 1px 0 rgba(255, 255, 255, 0.88),
+      inset 0 0 44px rgba(255, 168, 82, 0.22),
+      0 28px 62px rgba(214, 82, 36, 0.24),
+      0 0 46px rgba(255, 122, 52, 0.28);
+  }
+}
+
+@keyframes flame-aura {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes flame-label-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px rgba(255, 208, 133, 0.18),
+      0 12px 26px rgba(186, 58, 27, 0.3),
+      0 0 18px rgba(255, 145, 59, 0.18);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(255, 216, 146, 0.24),
+      0 14px 28px rgba(186, 58, 27, 0.36),
+      0 0 24px rgba(255, 145, 59, 0.28);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notices.flame,
+  .notices.flame::before,
+  .notices.flame .label {
+    animation: none;
+  }
+}
