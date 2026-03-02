@@ -1,0 +1,25 @@
+{{- $text := "" -}}
+{{- $tone := "mint" -}}
+{{- $href := "" -}}
+
+{{- if .IsNamedParams -}}
+  {{- with .Get "text" }}{{- $text = . -}}{{- end -}}
+  {{- with .Get "tone" }}{{- $tone = . -}}{{- end -}}
+  {{- with .Get "href" }}{{- $href = . -}}{{- end -}}
+{{- else -}}
+  {{- with .Get 0 }}{{- $text = . -}}{{- end -}}
+  {{- with .Get 1 }}{{- $tone = . -}}{{- end -}}
+  {{- with .Get 2 }}{{- $href = . -}}{{- end -}}
+{{- end -}}
+
+{{- $label := $text -}}
+{{- if and $label (not (strings.HasPrefix $label "#")) -}}
+  {{- $label = printf "#%s" $label -}}
+{{- end -}}
+
+{{- $toneClass := printf "tag-pill--%s" ($tone | urlize) -}}
+{{- if $href -}}
+  <a class="tag-pill {{ $toneClass }}" href="{{ $href | safeURL }}">{{ $label }}</a>
+{{- else -}}
+  <span class="tag-pill {{ $toneClass }}">{{ $label }}</span>
+{{- end -}}
