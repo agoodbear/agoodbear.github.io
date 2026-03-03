@@ -5,6 +5,13 @@
   embed_url: "/tools/ecg-image-digitizer/"
   source_label: "立即使用"
 
+- title: "ECG 影像標註工具"
+  description: "可上傳 ECG 圖檔或 PDF，支援直線、卡尺、圓形、矩形、箭頭等標記，並可匯出 JSON / PNG。"
+  image: "/images/practical-tools/ecg-annotator.png"
+  url: "https://github.com/agoodbear/ecg-annotator"
+  embed_url: "/tools/ecg-annotator/"
+  source_label: "GitHub Repository"
+
 - title: "3D 心臟互動視覺化"
   description: "可旋轉、縮放並選取心臟解剖結構，進行互動式 3D 解剖學習與教學展示。"
   image: "/images/practical-tools/interactive-3d-heart.svg"
