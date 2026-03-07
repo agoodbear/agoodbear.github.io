@@ -307,6 +307,195 @@
 
 <script>
   (function () {
+    const triggers = Array.from(document.querySelectorAll("[data-pdf-footnote-trigger]"));
+    if (!triggers.length) return;
+
+    let modal = null;
+    let activeTrigger = null;
+
+    function ensureModal() {
+      if (modal) {
+        return modal;
+      }
+
+      const root = document.createElement("div");
+      root.className = "pdf-footnote-modal";
+      root.id = "pdfFootnoteModal";
+      root.innerHTML =
+        '<div class="pdf-footnote-modal__backdrop" data-pdf-footnote-close></div>' +
+        '<div class="pdf-footnote-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="pdfFootnoteModalTitle">' +
+          '<div class="pdf-footnote-modal__chrome">' +
+            '<div class="pdf-footnote-modal__header">' +
+              '<div>' +
+                '<p class="pdf-footnote-modal__eyebrow">PDF Footnote</p>' +
+                '<h3 class="pdf-footnote-modal__title" id="pdfFootnoteModalTitle"></h3>' +
+                '<div class="pdf-footnote-modal__meta">' +
+                  '<span class="pdf-footnote-modal__page-label"></span>' +
+                  '<a class="pdf-footnote-modal__link" id="pdfFootnoteModalFullReader" target="_blank" rel="noopener">Open Reader</a>' +
+                  '<a class="pdf-footnote-modal__link" id="pdfFootnoteModalSource" target="_blank" rel="noopener">Open PDF</a>' +
+                '</div>' +
+              '</div>' +
+              '<button type="button" class="pdf-footnote-modal__close" aria-label="Close popup" data-pdf-footnote-close>&times;</button>' +
+            '</div>' +
+            '<div class="pdf-footnote-modal__frame-wrap">' +
+              '<div class="pdf-footnote-modal__loading">Loading reader...</div>' +
+              '<iframe class="pdf-footnote-modal__frame" title="PDF footnote reader" loading="lazy"></iframe>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+
+      document.body.appendChild(root);
+
+      modal = {
+        root: root,
+        title: root.querySelector(".pdf-footnote-modal__title"),
+        page: root.querySelector(".pdf-footnote-modal__page-label"),
+        source: root.querySelector("#pdfFootnoteModalSource"),
+        fullReader: root.querySelector("#pdfFootnoteModalFullReader"),
+        loading: root.querySelector(".pdf-footnote-modal__loading"),
+        frame: root.querySelector(".pdf-footnote-modal__frame"),
+      };
+
+      root.addEventListener("click", (event) => {
+        if (event.target.closest("[data-pdf-footnote-close]")) {
+          closeModal();
+        }
+      });
+
+      modal.frame.addEventListener("load", () => {
+        modal.loading.hidden = true;
+      });
+
+      return modal;
+    }
+
+    function handleEscape(event) {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    }
+
+    function closeModal() {
+      if (!modal || !modal.root.classList.contains("is-open")) {
+        return;
+      }
+
+      modal.root.classList.remove("is-open");
+      document.body.style.removeProperty("overflow");
+      document.removeEventListener("keydown", handleEscape);
+
+      const triggerToRestore = activeTrigger;
+      activeTrigger = null;
+      modal.loading.hidden = false;
+      modal.loading.textContent = "Loading reader...";
+      modal.frame.removeAttribute("src");
+
+      if (triggerToRestore) {
+        triggerToRestore.focus();
+      }
+    }
+
+    function getTemplateText(templateId) {
+      if (!templateId) return "";
+      const template = document.getElementById(templateId);
+      if (!template || !("content" in template)) return "";
+      return String(template.content.textContent || "").trim();
+    }
+
+    function buildViewerUrl(trigger, embedMode) {
+      const params = new URLSearchParams();
+      const docId = String(trigger.dataset.docId || "").trim();
+      const highlightId = String(trigger.dataset.highlightId || "").trim();
+      const pdfUrl = String(trigger.dataset.pdfUrl || "").trim();
+      const page = String(trigger.dataset.page || "1").trim();
+      const notePlain = String(trigger.dataset.notePlain || "").trim() || getTemplateText(trigger.dataset.noteTemplate || "");
+      const quote = String(trigger.dataset.quote || "").trim();
+      const title = String(trigger.dataset.title || "PDF footnote").trim();
+      const apiBase = String(trigger.dataset.apiBase || "").trim();
+      const seed = String(trigger.dataset.seedUrl || "").trim();
+      const articlePath = String(trigger.dataset.articlePath || "").trim();
+      const meta = String(trigger.dataset.meta || "").trim();
+      const tag = String(trigger.dataset.tag || "").trim();
+      const description = String(trigger.dataset.description || "").trim();
+
+      if (embedMode) {
+        params.set("view", "embed");
+      }
+      params.set("v", "20260307-10");
+
+      if (docId) params.set("doc", docId);
+      if (highlightId) params.set("highlight", highlightId);
+      if (seed) params.set("seed", seed);
+      if (apiBase) params.set("apiBase", apiBase);
+      if (pdfUrl) params.set("pdf", pdfUrl);
+      if (articlePath) params.set("article", articlePath);
+      if (meta) params.set("meta", meta);
+      if (tag) params.set("tag", tag);
+      if (description) params.set("description", description);
+
+      if (!(docId && highlightId)) {
+        params.set("title", title);
+        params.set("highlightLabel", title);
+        params.set("page", page);
+        params.set("left", String(trigger.dataset.left || "20"));
+        params.set("top", String(trigger.dataset.top || "20"));
+        params.set("width", String(trigger.dataset.width || "28"));
+        params.set("height", String(trigger.dataset.height || "10"));
+        if (notePlain) params.set("note", notePlain);
+        if (quote) params.set("quote", quote);
+      }
+
+      return "/tools/pdf-guideline-studio/?" + params.toString();
+    }
+
+    function openModal(trigger) {
+      ensureModal();
+      activeTrigger = trigger;
+      const embedUrl = buildViewerUrl(trigger, true);
+      const fullReaderUrl = buildViewerUrl(trigger, false);
+      const title = String(trigger.dataset.title || "PDF footnote").trim();
+      const pageLabel = String(trigger.dataset.highlightId || "").trim()
+        ? "Linked highlight"
+        : "Page " + String(trigger.dataset.page || "1").trim();
+
+      modal.title.textContent = title;
+      modal.page.textContent = pageLabel;
+      modal.source.hidden = !String(trigger.dataset.pdfUrl || "").trim();
+      modal.source.href = String(trigger.dataset.pdfUrl || "#").trim() || "#";
+      modal.fullReader.href = fullReaderUrl;
+      modal.loading.hidden = false;
+      modal.loading.textContent = "Loading reader...";
+      modal.frame.src = embedUrl;
+      modal.root.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", handleEscape);
+    }
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => openModal(trigger));
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    const adminLinks = Array.from(document.querySelectorAll("[data-guideline-admin-link]"));
+    if (!adminLinks.length) return;
+
+    try {
+      const token = String(window.localStorage.getItem("pdf-guideline-studio-token") || "").trim();
+      if (!token) return;
+      adminLinks.forEach((link) => {
+        link.hidden = false;
+      });
+    } catch (error) {
+      console.warn("Unable to read guideline admin token", error);
+    }
+  })();
+</script>
+
+<script>
+  (function () {
     let lightbox = null;
     let prevButton = null;
     let nextButton = null;
