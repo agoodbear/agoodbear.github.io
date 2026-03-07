@@ -1,0 +1,608 @@
+.pdf-footnote {
+  display: inline-flex;
+  vertical-align: super;
+  margin-left: 0.18rem;
+}
+
+.pdf-footnote__trigger {
+  appearance: none;
+  border: 0;
+  min-width: 1.55rem;
+  height: 1.55rem;
+  padding: 0 0.42rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+  box-shadow: 0 4px 10px rgba(20, 54, 50, 0.12);
+}
+
+.pdf-footnote__trigger:hover,
+.pdf-footnote__trigger:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(20, 54, 50, 0.16);
+  outline: none;
+}
+
+.pdf-footnote__trigger--mint {
+  background: #dff5eb;
+  color: #14624e;
+}
+
+.pdf-footnote__trigger--sky {
+  background: #deeffc;
+  color: #155883;
+}
+
+.pdf-footnote__trigger--amber {
+  background: #fff0ca;
+  color: #8b5a06;
+}
+
+.footnotes .pdf-footnote {
+  margin-left: 0.36rem;
+  vertical-align: baseline;
+}
+
+.footnotes .pdf-footnote__trigger {
+  min-width: 0;
+  height: 1.22rem;
+  padding: 0 0.48rem;
+  font-size: 0.66rem;
+  box-shadow: none;
+}
+
+.pdf-footnote-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: none;
+}
+
+.pdf-footnote-modal.is-open {
+  display: block;
+}
+
+.pdf-footnote-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 24, 22, 0.52);
+  backdrop-filter: blur(6px);
+}
+
+.pdf-footnote-modal__dialog {
+  position: relative;
+  margin: clamp(18px, 4vw, 44px);
+  height: calc(100vh - clamp(36px, 8vw, 88px));
+  border-radius: 28px;
+  overflow: hidden;
+  background: rgba(248, 251, 253, 0.98);
+  box-shadow: 0 34px 70px rgba(3, 18, 17, 0.22);
+}
+
+.pdf-footnote-modal__chrome {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-footnote-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.15rem 1.35rem 1rem;
+  border-bottom: 1px solid rgba(22, 54, 72, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.pdf-footnote-modal__eyebrow {
+  margin: 0 0 0.3rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5c7280;
+}
+
+.pdf-footnote-modal__title {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.4vw, 1.35rem);
+  color: #203440;
+}
+
+.pdf-footnote-modal__meta {
+  margin-top: 0.38rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  font-size: 0.84rem;
+  color: #667b89;
+}
+
+.pdf-footnote-modal__link {
+  color: #147aa2;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.pdf-footnote-modal__link:hover {
+  text-decoration: underline;
+}
+
+.pdf-footnote-modal__close {
+  appearance: none;
+  border: 0;
+  background: rgba(27, 71, 98, 0.08);
+  color: #214253;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.pdf-footnote-modal__frame-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  background:
+    linear-gradient(180deg, rgba(240, 245, 249, 0.82), rgba(248, 251, 253, 0.96)),
+    #f8fbfd;
+}
+
+.pdf-footnote-modal__frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  background: transparent;
+}
+
+.pdf-footnote-modal__loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #36586d;
+  font-weight: 600;
+  background: rgba(248, 251, 253, 0.78);
+  z-index: 1;
+}
+
+.pdf-footnote-modal__loading[hidden] {
+  display: none !important;
+}
+
+.guideline-shelf {
+  margin: 2rem 0 2.4rem;
+  padding: 1.1rem 1.15rem 1.2rem;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top left, rgba(49, 169, 150, 0.12), transparent 38%),
+    linear-gradient(180deg, rgba(244, 251, 249, 0.98), rgba(255, 255, 255, 0.98));
+  border: 1px solid rgba(20, 84, 73, 0.08);
+  box-shadow: 0 18px 36px rgba(8, 38, 34, 0.06);
+}
+
+.guideline-shelf__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 0.8rem 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.guideline-shelf__eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4c746d;
+}
+
+.guideline-shelf__title {
+  margin: 0;
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+  color: #153f39;
+}
+
+.guideline-shelf__intro {
+  margin: 0;
+  max-width: 38rem;
+  color: #4f6965;
+  line-height: 1.7;
+}
+
+.guideline-shelf__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.95rem;
+}
+
+.guideline-card {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+  padding: 1rem;
+  min-height: 100%;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(20, 84, 73, 0.08);
+  box-shadow: 0 12px 24px rgba(10, 38, 34, 0.06);
+}
+
+.guideline-card__frame {
+  color: #1a7b67;
+}
+
+.guideline-card--sky .guideline-card__frame {
+  color: #2074a4;
+}
+
+.guideline-card--amber .guideline-card__frame {
+  color: #b5730a;
+}
+
+.guideline-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.55rem;
+}
+
+.guideline-card__tag,
+.guideline-card__source {
+  font-size: 0.76rem;
+  line-height: 1;
+  padding: 0.34rem 0.56rem;
+  border-radius: 999px;
+}
+
+.guideline-card__tag {
+  background: #dff5eb;
+  color: #15604e;
+  font-weight: 700;
+}
+
+.guideline-card--sky .guideline-card__tag {
+  background: #deeffc;
+  color: #145a84;
+}
+
+.guideline-card--amber .guideline-card__tag {
+  background: #fff0ca;
+  color: #8e5b08;
+}
+
+.guideline-card__source {
+  background: rgba(19, 80, 71, 0.06);
+  color: #536d69;
+}
+
+.guideline-card__title {
+  margin: 0 0 0.45rem;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: #193f39;
+}
+
+.guideline-card__body {
+  color: #4c6763;
+  line-height: 1.66;
+  font-size: 0.92rem;
+}
+
+.guideline-card__body > :first-child {
+  margin-top: 0;
+}
+
+.guideline-card__body > :last-child {
+  margin-bottom: 0;
+}
+
+.guideline-card__link {
+  margin-top: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #0e6557;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.guideline-card__link:hover {
+  text-decoration: underline;
+}
+
+.guideline-card__subactions {
+  margin-top: 0.65rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.guideline-card__raw-link,
+.guideline-card__admin-link {
+  font-size: 0.82rem;
+  color: #56706c;
+  text-decoration: none;
+}
+
+.guideline-card__raw-link:hover,
+.guideline-card__admin-link:hover {
+  text-decoration: underline;
+}
+
+.guideline-card__admin-link {
+  color: #0e6557;
+  font-weight: 700;
+}
+
+.sidebar_guideline_shelf {
+  margin-top: 0.6rem;
+  padding: 1rem 1.05rem 1.15rem;
+  border-radius: 16px;
+  border: 1px solid rgba(14, 101, 87, 0.14);
+  background: linear-gradient(165deg, rgba(15, 161, 133, 0.08), rgba(16, 58, 87, 0.03));
+}
+
+.sidebar_guideline_title_link {
+  color: #102a43;
+  text-decoration: none;
+}
+
+.sidebar_guideline_title_link:hover {
+  text-decoration: underline;
+}
+
+.sidebar_guideline_intro {
+  margin: 0.28rem 0 0.85rem;
+  color: #5a6f6b;
+  line-height: 1.6;
+  font-size: 0.88rem;
+}
+
+.sidebar_guideline_entry_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.84rem;
+  line-height: 1;
+  padding: 0.58rem 0.85rem;
+  border-radius: 999px;
+}
+
+.guideline-room__empty {
+  border: 1px dashed rgba(16, 58, 87, 0.24);
+  border-radius: 16px;
+  padding: 1rem;
+  color: #42605c;
+  background: rgba(240, 248, 247, 0.65);
+}
+
+.guideline-outline {
+  margin-top: 1.8rem;
+  padding: 1.2rem 1.2rem 1.35rem;
+  border-radius: 24px;
+  border: 1px solid rgba(16, 58, 87, 0.1);
+  background:
+    radial-gradient(circle at top left, rgba(17, 153, 142, 0.08), transparent 34%),
+    linear-gradient(165deg, rgba(241, 248, 246, 0.96), rgba(251, 253, 252, 0.98));
+  box-shadow: 0 18px 40px rgba(19, 52, 59, 0.08);
+}
+
+.guideline-outline__header {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1.35rem;
+}
+
+.guideline-outline__eyebrow {
+  margin: 0;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #56706c;
+}
+
+.guideline-outline__title {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+  line-height: 1.14;
+  color: #173b45;
+}
+
+.guideline-outline__intro {
+  margin: 0;
+  max-width: 860px;
+  color: #53706b;
+  line-height: 1.8;
+}
+
+.guideline-outline__topic + .guideline-outline__topic {
+  margin-top: 1.2rem;
+}
+
+.guideline-outline__topic-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.guideline-outline__topic-title {
+  margin: 0;
+  font-size: 1.45rem;
+  color: #102a43;
+}
+
+.guideline-outline__topic-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: rgba(224, 107, 141, 0.14);
+  color: #9c3555;
+}
+
+.guideline-outline__topic-chip--pink {
+  background: rgba(224, 107, 141, 0.14);
+  color: #9c3555;
+}
+
+.guideline-outline__group-list {
+  margin: 0;
+  padding-left: 1.35rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.guideline-outline__group-item {
+  padding: 1rem 1rem 1rem 1.1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(16, 58, 87, 0.1);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.guideline-outline__group-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.8rem;
+}
+
+.guideline-outline__group-title {
+  margin: 0;
+  font-size: 1.08rem;
+  color: #18354a;
+}
+
+.guideline-outline__group-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 0.7rem;
+  border-radius: 999px;
+  background: rgba(23, 144, 191, 0.1);
+  color: #126483;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.guideline-outline__entry-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.guideline-outline__entry {
+  color: #203440;
+}
+
+.guideline-outline__entry-main {
+  display: inline;
+}
+
+.guideline-outline__entry-title {
+  font-weight: 600;
+}
+
+.guideline-outline__entry-citation {
+  margin-left: 0.45rem;
+  color: #6b7f86;
+  font-size: 0.95rem;
+}
+
+.guideline-outline__entry-note {
+  margin-top: 0.28rem;
+  color: #0e6557;
+  font-size: 0.92rem;
+}
+
+.guideline-outline__actions {
+  margin-top: 0.52rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.guideline-outline__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0.36rem 0.72rem;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 58, 87, 0.14);
+  background: rgba(255, 255, 255, 0.92);
+  color: #214253;
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.guideline-outline__action:hover {
+  text-decoration: none;
+  background: rgba(234, 245, 242, 0.96);
+  border-color: rgba(14, 101, 87, 0.2);
+}
+
+.guideline-outline__action--primary,
+.guideline-outline__action--admin {
+  color: #0e6557;
+}
+
+@media (max-width: 1200px) {
+  .sidebar_guideline_shelf {
+    padding: 0.95rem 0.95rem 1.05rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .pdf-footnote-modal__dialog {
+    margin: 14px;
+    height: calc(100vh - 28px);
+  }
+}
+
+@media (max-width: 720px) {
+  .guideline-card {
+    grid-template-columns: 1fr;
+  }
+
+  .guideline-outline {
+    padding: 1rem 0.95rem 1.1rem;
+  }
+
+  .guideline-outline__group-item {
+    padding: 0.9rem 0.85rem 0.95rem 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pdf-footnote__trigger,
+  .pdf-footnote-modal,
+  .guideline-card {
+    transition: none;
+  }
+}
