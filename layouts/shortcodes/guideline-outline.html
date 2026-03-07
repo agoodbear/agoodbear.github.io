@@ -40,20 +40,28 @@
                 {{- $adminHref := "" -}}
                 {{- $rawPdfHref := "" -}}
                 {{- if $docItem -}}
+                  {{- $pdfHref := "" -}}
+                  {{- with $docItem.href -}}
+                    {{- $pdfHref = . -}}
+                    {{- if hasPrefix $pdfHref "/" -}}
+                      {{- $sep := cond (in $pdfHref "?") "&" "?" -}}
+                      {{- $pdfHref = printf "%s%sv=20260307-11" $pdfHref $sep -}}
+                    {{- end -}}
+                  {{- end -}}
                   {{- $queryParts := slice -}}
                   {{- with $docItem.doc }}{{- $queryParts = $queryParts | append (printf "doc=%s" (. | urlquery)) -}}{{- end -}}
                   {{- with $docItem.seed }}{{- $queryParts = $queryParts | append (printf "seed=%s" (. | urlquery)) -}}{{- end -}}
-                  {{- with $docItem.href }}{{- $queryParts = $queryParts | append (printf "pdf=%s" (. | urlquery)) -}}{{- end -}}
+                  {{- with $pdfHref }}{{- $queryParts = $queryParts | append (printf "pdf=%s" (. | urlquery)) -}}{{- end -}}
                   {{- with $docItem.title }}{{- $queryParts = $queryParts | append (printf "title=%s" (. | urlquery)) -}}{{- end -}}
                   {{- with $docItem.meta }}{{- $queryParts = $queryParts | append (printf "meta=%s" (. | urlquery)) -}}{{- end -}}
                   {{- with $docItem.tag }}{{- $queryParts = $queryParts | append (printf "tag=%s" (. | urlquery)) -}}{{- end -}}
                   {{- with $docItem.tone }}{{- $queryParts = $queryParts | append (printf "tone=%s" (. | urlquery)) -}}{{- end -}}
                   {{- with $docItem.summary }}{{- $queryParts = $queryParts | append (printf "description=%s" (. | urlquery)) -}}{{- end -}}
                   {{- with $.Page.RelPermalink }}{{- $queryParts = $queryParts | append (printf "article=%s" (. | urlquery)) -}}{{- end -}}
-                  {{- $queryParts = $queryParts | append "v=20260306-1" -}}
+                  {{- $queryParts = $queryParts | append "v=20260307-11" -}}
                   {{- $viewerHref = printf "/tools/pdf-guideline-studio/?%s" (delimit $queryParts "&") -}}
                   {{- $adminHref = printf "%s&mode=admin" $viewerHref -}}
-                  {{- with $docItem.href -}}
+                  {{- with $pdfHref -}}
                     {{- $rawPdfHref = cond (hasPrefix . "/") (printf "/js/pdf-js/web/viewer.html?file=%s" (. | urlquery)) . -}}
                   {{- end -}}
                 {{- end -}}
