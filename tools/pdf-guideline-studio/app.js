@@ -1272,9 +1272,14 @@ function bindSidebarEvents() {
     });
 
     if (element.getAttribute("data-highlight-field") === "tags") {
-      element.addEventListener("blur", () => {
+      element.addEventListener("blur", (event) => {
+        const normalized = formatHighlightTagsInput(getSelectedHighlight()?.tags || []);
+        if (event.currentTarget.value !== normalized) {
+          event.currentTarget.value = normalized;
+        }
         updateHighlightFilterUi();
-        refreshHighlightFilterResults();
+        syncHighlightSearchMatches(true);
+        updateSearchUi();
       });
     }
   });
