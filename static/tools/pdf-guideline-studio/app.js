@@ -411,7 +411,7 @@ function bindShellEvents() {
   }, { passive: true });
   refs.sidebarScroll.addEventListener("scroll", scheduleConnectorUpdate, { passive: true });
   window.addEventListener("keydown", handleGlobalHighlightDelete);
-  window.addEventListener("resize", debounce(() => renderPdf(), 180));
+  window.addEventListener("resize", debounce(() => renderPdf({ preserveViewport: true }), 180));
 }
 
 function handleGlobalHighlightDelete(event) {
@@ -1169,7 +1169,9 @@ function escapeShortcodeAttribute(value) {
     .replace(/"/g, '\\"');
 }
 
-async function renderPdf() {
+async function renderPdf(options = {}) {
+  const preserveViewport = Boolean(options.preserveViewport);
+  const preservedViewport = preserveViewport ? capturePdfViewportState() : null;
   const doc = state.doc;
   state.pdfDoc = null;
   state.pageViews = [];
@@ -1203,7 +1205,11 @@ async function renderPdf() {
     renderPdfHighlights();
     updateTopbar();
 
-    if (state.selectedHighlightId) {
+    if (preservedViewport) {
+      window.setTimeout(() => {
+        restorePdfViewportState(preservedViewport, false);
+      }, 60);
+    } else if (state.selectedHighlightId) {
       window.setTimeout(() => {
         scrollToHighlight(state.selectedHighlightId, false);
       }, 120);
@@ -2118,7 +2124,7 @@ function adjustZoom(delta) {
   }
   state.zoom = nextZoom;
   updateTopbar();
-  renderPdf();
+  renderPdf({ preserveViewport: true });
 }
 
 function fitPdfToPane({ rerender = true, silent = false } = {}) {
@@ -2127,11 +2133,72 @@ function fitPdfToPane({ rerender = true, silent = false } = {}) {
   state.zoom = nextZoom;
   updateTopbar();
   if (rerender && state.pdfDoc) {
-    renderPdf();
+    renderPdf({ preserveViewport: true });
   }
   if (!silent) {
     showMessage(changed ? "已調整為 Fit 視窗寬度。" : "目前已是 Fit 視窗寬度。");
   }
+}
+
+function capturePdfViewportState() {
+  if (!refs.pdfPane) {
+    return { page: state.currentPage, yRatio: 0, xRatio: 0 };
+  }
+  const pane = refs.pdfPane;
+  const fallback = { page: state.currentPage, yRatio: 0, xRatio: 0 };
+  if (!state.pageViews.length) {
+    return fallback;
+  }
+
+  const currentView =
+    state.pageViews.find((item) => item.pageNumber === state.currentPage) ||
+    state.pageViews.find((item) => item.pageCard.offsetTop + item.pageCard.offsetHeight >= pane.scrollTop + 1) ||
+    state.pageViews[0];
+  if (!currentView) {
+    return fallback;
+  }
+
+  const pageTop = currentView.pageCard.offsetTop;
+  const pageHeight = Math.max(1, currentView.pageCard.offsetHeight);
+  const yRatio = clamp((pane.scrollTop - pageTop) / pageHeight, 0, 1);
+  const maxLeft = Math.max(1, pane.scrollWidth - pane.clientWidth);
+  const xRatio = clamp(pane.scrollLeft / maxLeft, 0, 1);
+
+  return {
+    page: currentView.pageNumber,
+    yRatio,
+    xRatio,
+  };
+}
+
+function restorePdfViewportState(viewport, smooth) {
+  if (!viewport || !refs.pdfPane || !state.pageViews.length) {
+    return;
+  }
+  const pane = refs.pdfPane;
+  const targetView =
+    state.pageViews.find((item) => item.pageNumber === viewport.page) ||
+    state.pageViews[0];
+  if (!targetView) {
+    return;
+  }
+
+  const pageHeight = Math.max(1, targetView.pageCard.offsetHeight);
+  const rawTop = targetView.pageCard.offsetTop + pageHeight * clamp(viewport.yRatio, 0, 1);
+  const maxTop = Math.max(0, pane.scrollHeight - pane.clientHeight);
+  const top = clamp(rawTop, 0, maxTop);
+  const maxLeft = Math.max(0, pane.scrollWidth - pane.clientWidth);
+  const left = clamp(maxLeft * clamp(viewport.xRatio, 0, 1), 0, maxLeft);
+
+  pane.scrollTo({
+    top,
+    left,
+    behavior: smooth ? "smooth" : "auto",
+  });
+
+  state.currentPage = targetView.pageNumber;
+  updateTopbar();
+  window.setTimeout(scheduleConnectorUpdate, smooth ? 240 : 40);
 }
 
 function goToPage(rawPage, smooth) {
@@ -2152,6 +2219,9 @@ function goToPage(rawPage, smooth) {
 }
 
 function syncCurrentPageFromScroll() {
+  if (state.isRenderingPdf) {
+    return;
+  }
   if (!state.pageViews.length) {
     return;
   }
