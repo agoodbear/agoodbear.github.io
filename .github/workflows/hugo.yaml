@@ -51,9 +51,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Normalize markdown image filenames
-        run: python3 scripts/normalize_markdown_images.py
-
       - name: Build with Hugo
         env:
           # For maximum compatibility with the Hugo modules
@@ -63,54 +60,6 @@ jobs:
           hugo \
             --gc \
             --minify
-
-      - name: Collect newly published post URLs for GSC
-        run: |
-          python3 scripts/collect_new_urls.py \
-            --current-sitemap public/sitemap.xml \
-            --previous-sitemap-url https://agoodbear.github.io/sitemap.xml \
-            --output-dir public/gsc \
-            --site-base-url https://agoodbear.github.io
-
-      - name: Publish URL collection summary
-        id: gsc_summary
-        run: |
-          NEW_COUNT=0
-          if [[ -f public/gsc/new-urls-latest.json ]]; then
-            NEW_COUNT=$(python3 - <<'PY'
-import json
-from pathlib import Path
-p = Path("public/gsc/new-urls-latest.json")
-if p.exists():
-    data = json.loads(p.read_text(encoding="utf-8"))
-    print(int(data.get("new_count", 0)))
-else:
-    print(0)
-PY
-)
-          fi
-
-          echo "new_count=$NEW_COUNT" >> "$GITHUB_OUTPUT"
-          echo "## GSC New URL Collection" >> "$GITHUB_STEP_SUMMARY"
-          if [[ -s public/gsc/new-urls-latest.txt ]]; then
-            echo "New URLs found:" >> "$GITHUB_STEP_SUMMARY"
-            echo "" >> "$GITHUB_STEP_SUMMARY"
-            sed 's/^/- /' public/gsc/new-urls-latest.txt >> "$GITHUB_STEP_SUMMARY"
-            echo "" >> "$GITHUB_STEP_SUMMARY"
-            echo "### Indexing Action Needed" >> "$GITHUB_STEP_SUMMARY"
-            echo "Do you want to submit these new URLs to Google Search Console now?" >> "$GITHUB_STEP_SUMMARY"
-            echo "" >> "$GITHUB_STEP_SUMMARY"
-            echo "Run command:" >> "$GITHUB_STEP_SUMMARY"
-            echo "" >> "$GITHUB_STEP_SUMMARY"
-            echo "\`npm run gsc:index:new\`" >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "No newly published post URLs found in this deployment." >> "$GITHUB_STEP_SUMMARY"
-          fi
-
-      - name: Prompt for indexing submission
-        if: steps.gsc_summary.outputs.new_count != '0'
-        run: |
-          echo "::warning::Detected ${{ steps.gsc_summary.outputs.new_count }} new post URL(s). Submit indexing now with: npm run gsc:index:new"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
