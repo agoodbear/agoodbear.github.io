@@ -1267,9 +1267,17 @@ function bindSidebarEvents() {
         }
       }
       if (field === "tags") {
-        renderSidebar();
+        updateHighlightFilterUi();
+        refreshHighlightSearch({ focus: false, preserveActive: true, smooth: false });
       }
     });
+
+    if (element.getAttribute("data-highlight-field") === "tags") {
+      element.addEventListener("blur", () => {
+        updateHighlightFilterUi();
+        refreshHighlightFilterResults();
+      });
+    }
   });
 
   Array.from(refs.sidebarScroll.querySelectorAll("[data-highlight-color]")).forEach((element) => {
