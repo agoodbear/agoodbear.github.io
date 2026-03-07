@@ -705,7 +705,7 @@ function normalizeHighlightTags(value) {
     .map((item) => item.trim().replace(/^#+/u, ""))
     .filter(Boolean)
     .forEach((item) => {
-      unique.add(sanitizeText(item, "", 48));
+      unique.add(sanitizeText(item, 48));
     });
   return Array.from(unique).filter(Boolean).slice(0, 12);
 }
