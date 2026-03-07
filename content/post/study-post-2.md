@@ -5,6 +5,7 @@ description: "分享資料庫與靈感筆記系統建立流程，從蒐集、連
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 toc: false #自動產生TOC
 thumbnail: "/images/evernotetoroam.png" #每篇文章的縮圖位置在這裡(static/images/)-變更
+typora-copy-images-to: "../../static/images/ipic"
 codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
 codeLineNumbers: false # Override global value for showing of line numbers within code block.
 figurePositionShow: true # Override global value for showing the figure label.
@@ -23,7 +24,7 @@ tags:
 
 為什麼這些自認為是重要知識的文章，我最終還是會認為是垃圾呢?因為<mark>多到，不去整理，不用自己理解過後的語言再去描述這篇文章，那麼這篇文章，對我而言，就是沒有任何價值<mark>。
 
-![資料庫](/images/ipic/8vwg0a.png)
+![資料庫](../../static/images/ipic/8vwg0a.png)
 
 資料庫裡面的知識，我們通常會先用primary selection先篩過一輪，存進資料庫。
 
@@ -39,7 +40,7 @@ tags:
 
 <mark>接著把這些文章精讀，提取出重點，再透過自己的語言寫入資料庫內，這就是secondary selection，也是最重要的一步驟<mark>。
 
-![資料庫應用觀念](/images/ipic/bqpo96.png)
+![資料庫應用觀念](../../static/images/ipic/bqpo96.png)
 
 當進行到secondary selection時，代表已經有自己消化過的資料存進資料庫。這時利用資料庫程式的搜尋，提出已經消化過的內容，應用出來。
 
@@ -47,7 +48,7 @@ tags:
 
 ---
 
-![Evernote to Roam](/images/ipic/0k43pg.png)
+![Evernote to Roam](../../static/images/ipic/0k43pg.png)
 
 我大概從2020年開始，將我的資料庫從Evernote轉換成[Roam research](https://roamresearch.com/)
 
@@ -69,17 +70,17 @@ tags:
 
 ---
 
-![Readwise手機App](/images/ipic/jvb083.gif)
+![Readwise手機App](../../static/images/ipic/jvb083.gif)
 
 Readwise手機App的好處是可以直接OCR看到的紙本書籍。拍照下來，把重要文字OCR出來，接著就可以Export到Roam裡面去了。
 
 
 
-![Roam手機App](/images/ipic/i44dqg.gif)
+![Roam手機App](../../static/images/ipic/i44dqg.gif)
 
 Roam手機App最下方的功能，有一個是Quickcapture，也就是直接打字，直接傳到Roam指定的graph裡面。
 
-![Speak to Roam](/images/ipic/cps50r.gif)
+![Speak to Roam](../../static/images/ipic/cps50r.gif)
 
 Speak to Roam是我覺得近期內，最讚的靈感擷取工具。這工具是由Roam開發商裡面的一位程式設計師所研發。
 

@@ -21,3 +21,31 @@ hugo server -t YOURTHEME
 - An `about.md` that is intended to provide the `/about/` page for a theme demo
 6. If you intend to build a theme that does not fit in the content structure provided in this repository, then you are still more than welcome to submit it for review at the [Hugo Themes](https://github.com/gohugoio/hugoThemes/issues) respository
 
+# Google Search Console Indexing Flow
+
+After each deployment, GitHub Actions now auto-collects newly published `/post/` URLs by diffing:
+- Current build sitemap: `public/sitemap.xml`
+- Previous live sitemap: `https://agoodbear.github.io/sitemap.xml`
+
+The workflow writes:
+- `public/gsc/new-urls-latest.txt`
+- `public/gsc/new-urls-latest.json`
+
+Then you can submit those URLs in one command (Chromium mode):
+
+```bash
+npm run gsc:index:new
+```
+
+Useful options:
+
+```bash
+# Dry run (only print URLs)
+node scripts/submit_gsc_index.mjs --dry-run
+
+# Submit from a local file
+node scripts/submit_gsc_index.mjs --file public/gsc/new-urls-latest.txt
+
+# Submit only first 3 URLs
+node scripts/submit_gsc_index.mjs --limit 3
+```

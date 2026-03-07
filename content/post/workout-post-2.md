@@ -6,6 +6,7 @@ featured: false
 draft: false
 toc: false
 thumbnail: "https://img.youtube.com/vi/CyCvdPLEW8A/maxresdefault.jpg"
+typora-copy-images-to: "../../static/images/ipic"
 categories:
   - workout
 tags:

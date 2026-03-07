@@ -49,6 +49,10 @@ body.pdf-guideline-studio-body--embed {
   overflow: hidden;
 }
 
+body.pdf-guideline-studio-body--modal-open {
+  overflow: hidden;
+}
+
 body.pdf-guideline-studio-body--embed #pdfGuidelineStudioApp {
   height: 100%;
   overflow: hidden;
@@ -1098,6 +1102,67 @@ a {
   width: 100%;
   display: block;
   height: auto;
+  cursor: zoom-in;
+}
+
+.pdf-guideline-studio__image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.pdf-guideline-studio__image-lightbox[hidden] {
+  display: none !important;
+}
+
+.pdf-guideline-studio__image-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: rgba(20, 28, 35, 0.72);
+  backdrop-filter: blur(6px);
+  cursor: zoom-out;
+}
+
+.pdf-guideline-studio__image-lightbox-dialog {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: min(92vw, 1480px);
+  max-height: calc(100vh - 56px);
+}
+
+.pdf-guideline-studio__image-lightbox-img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 56px);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.28);
+}
+
+.pdf-guideline-studio__image-lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: rgba(22, 30, 36, 0.78);
+  color: #ffffff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
 }
 
 .pdf-guideline-studio__highlight-quote {
@@ -1167,6 +1232,32 @@ a {
 
 .pdf-guideline-studio__mini-button--cite:hover {
   background: rgba(23, 144, 191, 0.16);
+}
+
+.pdf-guideline-studio__mini-button--preview {
+  min-width: 30px;
+  min-height: 30px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pg-accent-strong);
+  border-color: rgba(23, 144, 191, 0.24);
+  background: rgba(23, 144, 191, 0.08);
+}
+
+.pdf-guideline-studio__mini-button--preview:hover {
+  background: rgba(23, 144, 191, 0.16);
+}
+
+.pdf-guideline-studio__mini-button--preview svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .pdf-guideline-studio__color-row {

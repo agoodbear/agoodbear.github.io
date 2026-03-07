@@ -1,0 +1,118 @@
+{{- $trigger := "1" -}}
+{{- $pdf := "" -}}
+{{- $page := "1" -}}
+{{- $left := "20" -}}
+{{- $top := "20" -}}
+{{- $width := "28" -}}
+{{- $height := "10" -}}
+{{- $title := "" -}}
+{{- $quote := "" -}}
+{{- $accent := "mint" -}}
+{{- $accentProvided := false -}}
+{{- $doc := "" -}}
+{{- $highlight := "" -}}
+{{- $seed := "" -}}
+{{- $apiBase := "" -}}
+{{- $meta := "" -}}
+{{- $tag := "" -}}
+{{- $description := "" -}}
+
+{{- if .IsNamedParams -}}
+  {{- with .Get "trigger" }}{{- $trigger = . -}}{{- end -}}
+  {{- with .Get "pdf" }}{{- $pdf = . -}}{{- end -}}
+  {{- with .Get "page" }}{{- $page = . -}}{{- end -}}
+  {{- with or (.Get "left") (.Get "x") }}{{- $left = . -}}{{- end -}}
+  {{- with or (.Get "top") (.Get "y") }}{{- $top = . -}}{{- end -}}
+  {{- with or (.Get "width") (.Get "w") }}{{- $width = . -}}{{- end -}}
+  {{- with or (.Get "height") (.Get "h") }}{{- $height = . -}}{{- end -}}
+  {{- with .Get "title" }}{{- $title = . -}}{{- end -}}
+  {{- with .Get "quote" }}{{- $quote = . -}}{{- end -}}
+  {{- with .Get "accent" }}{{- $accent = . -}}{{- $accentProvided = true -}}{{- end -}}
+  {{- with .Get "doc" }}{{- $doc = . -}}{{- end -}}
+  {{- with .Get "highlight" }}{{- $highlight = . -}}{{- end -}}
+  {{- with .Get "seed" }}{{- $seed = . -}}{{- end -}}
+  {{- with .Get "apiBase" }}{{- $apiBase = . -}}{{- end -}}
+  {{- with .Get "meta" }}{{- $meta = . -}}{{- end -}}
+  {{- with .Get "tag" }}{{- $tag = . -}}{{- end -}}
+  {{- with .Get "description" }}{{- $description = . -}}{{- end -}}
+{{- else -}}
+  {{- with .Get 0 }}{{- $trigger = . -}}{{- end -}}
+  {{- with .Get 1 }}{{- $pdf = . -}}{{- end -}}
+  {{- with .Get 2 }}{{- $page = . -}}{{- end -}}
+  {{- with .Get 3 }}{{- $left = . -}}{{- end -}}
+  {{- with .Get 4 }}{{- $top = . -}}{{- end -}}
+  {{- with .Get 5 }}{{- $width = . -}}{{- end -}}
+  {{- with .Get 6 }}{{- $height = . -}}{{- end -}}
+  {{- with .Get 7 }}{{- $title = . -}}{{- end -}}
+  {{- with .Get 8 }}{{- $quote = . -}}{{- end -}}
+  {{- with .Get 9 }}{{- $accent = . -}}{{- $accentProvided = true -}}{{- end -}}
+{{- end -}}
+
+{{- if ne $doc "" -}}
+  {{- $matchedDoc := false -}}
+  {{- with site.Data.guideline_pdfs.items -}}
+    {{- range . -}}
+      {{- $itemDoc := printf "%v" (index . "doc") -}}
+      {{- if and (not $matchedDoc) (eq $itemDoc $doc) -}}
+        {{- with index . "href" }}{{- if eq $pdf "" }}{{- $pdf = . -}}{{- end -}}{{- end -}}
+        {{- with index . "seed" }}{{- if eq $seed "" }}{{- $seed = . -}}{{- end -}}{{- end -}}
+        {{- with index . "title" }}{{- if eq $title "" }}{{- $title = . -}}{{- end -}}{{- end -}}
+        {{- with index . "meta" }}{{- if eq $meta "" }}{{- $meta = . -}}{{- end -}}{{- end -}}
+        {{- with index . "tag" }}{{- if eq $tag "" }}{{- $tag = . -}}{{- end -}}{{- end -}}
+        {{- with index . "summary" }}{{- if eq $description "" }}{{- $description = . -}}{{- end -}}{{- end -}}
+        {{- with index . "tone" }}{{- if not $accentProvided }}{{- $accent = . -}}{{- end -}}{{- end -}}
+        {{- $matchedDoc = true -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $noteHtml := "" -}}
+{{- $notePlain := "" -}}
+{{- with .Inner -}}
+  {{- $noteHtml = . | strings.TrimSpace | markdownify -}}
+  {{- $notePlain = . | strings.TrimSpace | plainify -}}
+{{- end -}}
+
+{{- $footnoteKey := printf "%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s" .Page.RelPermalink $doc $highlight $pdf $page $left $top $width $height $trigger $title -}}
+{{- $footnoteId := printf "pdf-footnote-%s" (substr ($footnoteKey | md5) 0 12) -}}
+{{- $accentClass := printf "pdf-footnote__trigger--%s" ($accent | urlize) -}}
+{{- $titleLabel := cond (ne $title "") $title "PDF footnote" -}}
+{{- $ariaLabel := printf "%s, page %s" $titleLabel $page -}}
+
+<span class="pdf-footnote">
+  <button
+    type="button"
+    class="pdf-footnote__trigger {{ $accentClass }}"
+    data-pdf-footnote-trigger
+    data-footnote-id="{{ $footnoteId }}"
+    data-pdf-url="{{ $pdf | safeURL }}"
+    data-page="{{ $page }}"
+    data-left="{{ $left }}"
+    data-top="{{ $top }}"
+    data-width="{{ $width }}"
+    data-height="{{ $height }}"
+    data-title="{{ $titleLabel }}"
+    data-quote="{{ $quote }}"
+    data-doc-id="{{ $doc }}"
+    data-highlight-id="{{ $highlight }}"
+    data-seed-url="{{ $seed | safeURL }}"
+    data-api-base="{{ $apiBase | safeURL }}"
+    data-meta="{{ $meta }}"
+    data-tag="{{ $tag }}"
+    data-description="{{ $description }}"
+    data-article-path="{{ .Page.RelPermalink }}"
+    data-note-plain="{{ $notePlain }}"
+    data-note-template="{{ printf "%s-note" $footnoteId }}"
+    aria-haspopup="dialog"
+    aria-controls="pdfFootnoteModal"
+    aria-label="{{ $ariaLabel }}"
+  >
+    {{- $trigger -}}
+  </button>
+  <template id="{{ printf "%s-note" $footnoteId }}">
+    {{- if $noteHtml -}}
+      <div class="pdf-footnote-modal__note-copy">{{ $noteHtml | safeHTML }}</div>
+    {{- end -}}
+  </template>
+</span>

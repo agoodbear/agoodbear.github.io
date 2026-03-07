@@ -203,10 +203,12 @@
   &_link, &_title
     margin-bottom: 0
   &_link
-    line-height: 1
+    line-height: 1.25
     > a
       display: block
       line-height: 1.35
+      overflow-wrap: anywhere
+      word-break: break-word
   &s
     margin-top: 2rem
   &_header
@@ -443,8 +445,13 @@
 .excerpt
   &_header, &_footer
     padding: 1rem
+    overflow-wrap: anywhere
+    word-break: break-word
   &_footer
     padding: 0 1rem 2.25rem 1rem
+    p, a
+      overflow-wrap: anywhere
+      word-break: break-word
   &_thumbnail
     min-height: 10rem
     display: none

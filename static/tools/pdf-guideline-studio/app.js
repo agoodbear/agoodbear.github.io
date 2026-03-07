@@ -53,6 +53,7 @@ const state = {
   isDirty: false,
   isSaving: false,
   isRenderingPdf: false,
+  pendingRenderOptions: null,
   currentLoadSource: "seed",
   messageTimer: 0,
   initialHighlightId: "",
@@ -272,6 +273,19 @@ function renderShell() {
           <div class="pdf-guideline-studio__sidebar-scroll" id="sidebarScroll"></div>
         </aside>
       </div>
+
+      <div class="pdf-guideline-studio__image-lightbox" id="imageLightbox" hidden>
+        <button
+          type="button"
+          class="pdf-guideline-studio__image-lightbox-backdrop"
+          id="imageLightboxBackdrop"
+          aria-label="Close image preview"
+        ></button>
+        <div class="pdf-guideline-studio__image-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Highlight image preview">
+          <button type="button" class="pdf-guideline-studio__image-lightbox-close" id="imageLightboxClose" aria-label="Close image preview">×</button>
+          <img class="pdf-guideline-studio__image-lightbox-img" id="imageLightboxImg" alt="Highlight preview" />
+        </div>
+      </div>
     </div>
   `;
 
@@ -330,6 +344,10 @@ function renderShell() {
   refs.connectorSvg = document.getElementById("connectorSvg");
   refs.connectorPath = document.getElementById("connectorPath");
   refs.connectorDot = document.getElementById("connectorDot");
+  refs.imageLightbox = document.getElementById("imageLightbox");
+  refs.imageLightboxBackdrop = document.getElementById("imageLightboxBackdrop");
+  refs.imageLightboxClose = document.getElementById("imageLightboxClose");
+  refs.imageLightboxImg = document.getElementById("imageLightboxImg");
 }
 
 function bindShellEvents() {
@@ -411,7 +429,14 @@ function bindShellEvents() {
   }, { passive: true });
   refs.sidebarScroll.addEventListener("scroll", scheduleConnectorUpdate, { passive: true });
   window.addEventListener("keydown", handleGlobalHighlightDelete);
-  window.addEventListener("resize", debounce(() => renderPdf({ preserveViewport: true }), 180));
+  window.addEventListener("keydown", handleImageLightboxKeydown);
+  window.addEventListener("resize", debounce(() => requestPdfRerender({ preserveViewport: true }), 180));
+  if (refs.imageLightboxBackdrop) {
+    refs.imageLightboxBackdrop.addEventListener("click", closeImageLightbox);
+  }
+  if (refs.imageLightboxClose) {
+    refs.imageLightboxClose.addEventListener("click", closeImageLightbox);
+  }
 }
 
 function handleGlobalHighlightDelete(event) {
@@ -422,6 +447,12 @@ function handleGlobalHighlightDelete(event) {
   if (isTextEntryTarget(event.target)) return;
   event.preventDefault();
   deleteHighlight(state.selectedHighlightId, { skipConfirm: true });
+}
+
+function handleImageLightboxKeydown(event) {
+  if (event.key !== "Escape" || refs.imageLightbox?.hidden !== false) return;
+  event.preventDefault();
+  closeImageLightbox();
 }
 
 function isTextEntryTarget(target) {
@@ -862,6 +893,7 @@ function renderHighlightCard(highlight, isSelected) {
   const headingMatches = getHighlightSearchMatchesForField(highlight.id, "label");
   const quoteMatches = getHighlightSearchMatchesForField(highlight.id, "quote");
   const noteMatches = getHighlightSearchMatchesForField(highlight.id, "note");
+  const hasClipImage = Boolean(highlight.clipImage);
   const citeButtonHtml = `
     <button
       type="button"
@@ -874,11 +906,25 @@ function renderHighlightCard(highlight, isSelected) {
       Cite
     </button>
   `;
+  const previewButtonHtml = hasClipImage
+    ? `
+      <button
+        type="button"
+        class="pdf-guideline-studio__mini-button pdf-guideline-studio__mini-button--preview"
+        data-action="preview-highlight-lightbox"
+        data-highlight-id="${escapeHtml(highlight.id)}"
+        title="放大預覽截圖"
+        aria-label="Open enlarged image preview"
+      >
+        ${iconSvg("expand")}
+      </button>
+    `
+    : "";
   const quoteHtml = highlight.quote
     ? `<blockquote class="pdf-guideline-studio__highlight-quote ${isSelected ? "" : "is-clamped"}">${renderSearchMarkedText(highlight.quote, quoteMatches, state.highlightSearch.activeIndex)}</blockquote>`
     : "";
-  const clipImageHtml = highlight.clipImage
-    ? `<figure class="pdf-guideline-studio__highlight-image"><img src="${escapeHtml(highlight.clipImage)}" alt="Captured PDF region" loading="lazy" /></figure>`
+  const clipImageHtml = hasClipImage
+    ? `<figure class="pdf-guideline-studio__highlight-image"><img src="${escapeHtml(highlight.clipImage)}" alt="Captured PDF region" loading="lazy" data-action="preview-highlight-image" title="雙擊可置中放大" /></figure>`
     : "";
   const noteText = highlight.note || "這段 highlight 尚未補上右側重點整理。";
   const noteHtml = `<p class="pdf-guideline-studio__highlight-note ${isSelected ? "" : "is-clamped"}">${renderSearchMarkedText(noteText, noteMatches, state.highlightSearch.activeIndex)}</p>`;
@@ -934,6 +980,7 @@ function renderHighlightCard(highlight, isSelected) {
           <h4 class="pdf-guideline-studio__highlight-card-heading">${renderSearchMarkedText(heading, headingMatches, state.highlightSearch.activeIndex)}</h4>
         </div>
         <div class="pdf-guideline-studio__highlight-card-tools">
+          ${previewButtonHtml}
           ${citeButtonHtml}
         </div>
       </div>
@@ -1090,6 +1137,51 @@ function bindSidebarEvents() {
       await copyHighlightCiteSnippet(highlightId);
     });
   });
+
+  Array.from(refs.sidebarScroll.querySelectorAll('[data-action="preview-highlight-lightbox"]')).forEach((element) => {
+    element.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const card = element.closest("[data-highlight-card]");
+      const image = card?.querySelector('[data-action="preview-highlight-image"]');
+      openImageLightbox(image?.currentSrc || image?.src || "");
+    });
+  });
+
+  Array.from(refs.sidebarScroll.querySelectorAll('[data-action="preview-highlight-image"]')).forEach((element) => {
+    element.addEventListener("dblclick", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      openImageLightbox(element.currentSrc || element.src || "");
+    });
+  });
+}
+
+function openImageLightbox(src) {
+  const imageSrc = String(src || "").trim();
+  if (!imageSrc || !refs.imageLightbox || !refs.imageLightboxImg) {
+    return;
+  }
+  refs.imageLightboxImg.onerror = () => {
+    closeImageLightbox();
+    showMessage("圖片預覽載入失敗。", "error", true);
+  };
+  refs.imageLightboxImg.onload = () => {
+    refs.imageLightboxImg.onerror = null;
+    refs.imageLightboxImg.onload = null;
+  };
+  refs.imageLightboxImg.src = imageSrc;
+  refs.imageLightbox.hidden = false;
+  document.body.classList.add("pdf-guideline-studio-body--modal-open");
+}
+
+function closeImageLightbox() {
+  if (!refs.imageLightbox || !refs.imageLightboxImg) {
+    return;
+  }
+  refs.imageLightbox.hidden = true;
+  refs.imageLightboxImg.removeAttribute("src");
+  document.body.classList.remove("pdf-guideline-studio-body--modal-open");
 }
 
 async function copyHighlightCiteSnippet(highlightId) {
@@ -1206,9 +1298,15 @@ async function renderPdf(options = {}) {
     updateTopbar();
 
     if (preservedViewport) {
-      window.setTimeout(() => {
+      restorePdfViewportState(preservedViewport, false);
+      window.requestAnimationFrame(() => {
         restorePdfViewportState(preservedViewport, false);
-      }, 60);
+      });
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          restorePdfViewportState(preservedViewport, false);
+        });
+      });
     } else if (state.selectedHighlightId) {
       window.setTimeout(() => {
         scrollToHighlight(state.selectedHighlightId, false);
@@ -1227,7 +1325,23 @@ async function renderPdf(options = {}) {
   } finally {
     state.isRenderingPdf = false;
     updateTopbar();
+    if (state.pendingRenderOptions) {
+      const nextOptions = state.pendingRenderOptions;
+      state.pendingRenderOptions = null;
+      requestPdfRerender(nextOptions);
+    }
   }
+}
+
+function requestPdfRerender(options = {}) {
+  if (state.isRenderingPdf) {
+    const current = state.pendingRenderOptions || {};
+    state.pendingRenderOptions = {
+      preserveViewport: Boolean(options.preserveViewport || current.preserveViewport),
+    };
+    return;
+  }
+  renderPdf(options);
 }
 
 async function renderPdfPages(pdfDoc, pdfjsLib) {
@@ -2124,7 +2238,7 @@ function adjustZoom(delta) {
   }
   state.zoom = nextZoom;
   updateTopbar();
-  renderPdf({ preserveViewport: true });
+  requestPdfRerender({ preserveViewport: true });
 }
 
 function fitPdfToPane({ rerender = true, silent = false } = {}) {
@@ -2133,7 +2247,7 @@ function fitPdfToPane({ rerender = true, silent = false } = {}) {
   state.zoom = nextZoom;
   updateTopbar();
   if (rerender && state.pdfDoc) {
-    renderPdf({ preserveViewport: true });
+    requestPdfRerender({ preserveViewport: true });
   }
   if (!silent) {
     showMessage(changed ? "已調整為 Fit 視窗寬度。" : "目前已是 Fit 視窗寬度。");
@@ -2142,32 +2256,43 @@ function fitPdfToPane({ rerender = true, silent = false } = {}) {
 
 function capturePdfViewportState() {
   if (!refs.pdfPane) {
-    return { page: state.currentPage, yRatio: 0, xRatio: 0 };
+    return { page: state.currentPage, anchorRatio: 0, xRatio: 0, scrollRatio: 0 };
   }
   const pane = refs.pdfPane;
-  const fallback = { page: state.currentPage, yRatio: 0, xRatio: 0 };
+  const maxTop = Math.max(1, pane.scrollHeight - pane.clientHeight);
+  const anchorOffset = pane.scrollTop + pane.clientHeight * 0.35;
+  const fallback = {
+    page: state.currentPage,
+    anchorRatio: 0,
+    xRatio: 0,
+    scrollRatio: clamp(pane.scrollTop / maxTop, 0, 1),
+  };
   if (!state.pageViews.length) {
     return fallback;
   }
 
-  const currentView =
-    state.pageViews.find((item) => item.pageNumber === state.currentPage) ||
-    state.pageViews.find((item) => item.pageCard.offsetTop + item.pageCard.offsetHeight >= pane.scrollTop + 1) ||
-    state.pageViews[0];
+  const threshold = anchorOffset;
+  let currentView = state.pageViews[0];
+  state.pageViews.forEach((item) => {
+    if (item.pageCard.offsetTop <= threshold) {
+      currentView = item;
+    }
+  });
   if (!currentView) {
     return fallback;
   }
 
   const pageTop = currentView.pageCard.offsetTop;
   const pageHeight = Math.max(1, currentView.pageCard.offsetHeight);
-  const yRatio = clamp((pane.scrollTop - pageTop) / pageHeight, 0, 1);
+  const anchorRatio = clamp((anchorOffset - pageTop) / pageHeight, 0, 1);
   const maxLeft = Math.max(1, pane.scrollWidth - pane.clientWidth);
   const xRatio = clamp(pane.scrollLeft / maxLeft, 0, 1);
 
   return {
     page: currentView.pageNumber,
-    yRatio,
+    anchorRatio,
     xRatio,
+    scrollRatio: clamp(pane.scrollTop / maxTop, 0, 1),
   };
 }
 
@@ -2183,10 +2308,16 @@ function restorePdfViewportState(viewport, smooth) {
     return;
   }
 
-  const pageHeight = Math.max(1, targetView.pageCard.offsetHeight);
-  const rawTop = targetView.pageCard.offsetTop + pageHeight * clamp(viewport.yRatio, 0, 1);
   const maxTop = Math.max(0, pane.scrollHeight - pane.clientHeight);
-  const top = clamp(rawTop, 0, maxTop);
+  const pageHeight = Math.max(1, targetView.pageCard.offsetHeight);
+  const rawTop =
+    targetView.pageCard.offsetTop +
+    pageHeight * clamp(viewport.anchorRatio ?? viewport.yRatio ?? 0, 0, 1) -
+    pane.clientHeight * 0.35;
+  const fromPageTop = clamp(rawTop, 0, maxTop);
+  const hasScrollRatio = Number.isFinite(viewport.scrollRatio);
+  const fromScrollRatio = hasScrollRatio ? clamp(maxTop * clamp(viewport.scrollRatio, 0, 1), 0, maxTop) : fromPageTop;
+  const top = Math.abs(fromPageTop - fromScrollRatio) <= 24 ? fromPageTop : fromScrollRatio;
   const maxLeft = Math.max(0, pane.scrollWidth - pane.clientWidth);
   const left = clamp(maxLeft * clamp(viewport.xRatio, 0, 1), 0, maxLeft);
 

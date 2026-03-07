@@ -4,6 +4,7 @@ date: "2019-09-05" #輸入時間
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 toc: false #自動產生TOC
 thumbnail: "/images/study-post-3.jpg" #每篇文章的縮圖位置在這裡(static/images/)-變更
+typora-copy-images-to: "../../static/images/ipic"
 codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
 codeLineNumbers: false # Override global value for showing of line numbers within code block.
 figurePositionShow: true # Override global value for showing the figure label.
@@ -14,7 +15,7 @@ tags:
   - 自我進修
 ---
 
-![](/images/ipic/v4ydr0.jpg)
+![](../../static/images/ipic/v4ydr0.jpg)
 
 這篇是我2019/9去參加新思惟國際的圖與圖說工作坊寫的心得，[原Po於官網上](https://figure.innovarad.tw/jhtsao/)。
 

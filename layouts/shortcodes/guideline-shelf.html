@@ -1,0 +1,17 @@
+{{- $title := .Get "title" | default "Guideline Shelf" -}}
+{{- $intro := .Get "intro" | default "" -}}
+
+<section class="guideline-shelf">
+  <div class="guideline-shelf__header">
+    <div>
+      <p class="guideline-shelf__eyebrow">PDF Collection</p>
+      <h2 class="guideline-shelf__title">{{ $title }}</h2>
+    </div>
+    {{- with $intro -}}
+      <p class="guideline-shelf__intro">{{ . }}</p>
+    {{- end -}}
+  </div>
+  <div class="guideline-shelf__grid">
+    {{- .Inner | safeHTML -}}
+  </div>
+</section>
