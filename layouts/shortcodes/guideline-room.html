@@ -34,21 +34,23 @@
         {{- $viewerHref := "" -}}
         {{- $adminHref := "" -}}
         {{- $rawHref := $href -}}
+        {{- $pdfHref := $href -}}
+        {{- if and $pdfHref (hasPrefix $pdfHref "/") -}}
+          {{- $sep := cond (in $pdfHref "?") "&" "?" -}}
+          {{- $pdfHref = printf "%s%sv=20260307-11" $pdfHref $sep -}}
+          {{- $rawHref = printf "/js/pdf-js/web/viewer.html?file=%s" ($pdfHref | urlquery) -}}
+        {{- end -}}
 
         {{- if or $doc $seed -}}
           {{- $queryParts := slice -}}
           {{- with $doc }}{{- $queryParts = $queryParts | append (printf "doc=%s" (. | urlquery)) -}}{{- end -}}
           {{- with $seed }}{{- $queryParts = $queryParts | append (printf "seed=%s" (. | urlquery)) -}}{{- end -}}
           {{- with $apiBase }}{{- $queryParts = $queryParts | append (printf "apiBase=%s" (. | urlquery)) -}}{{- end -}}
-          {{- with $href }}{{- $queryParts = $queryParts | append (printf "pdf=%s" (. | urlquery)) -}}{{- end -}}
+          {{- with $pdfHref }}{{- $queryParts = $queryParts | append (printf "pdf=%s" (. | urlquery)) -}}{{- end -}}
           {{- with $.Page.RelPermalink }}{{- $queryParts = $queryParts | append (printf "article=%s" (. | urlquery)) -}}{{- end -}}
-          {{- $queryParts = $queryParts | append "v=20260307-10" -}}
+          {{- $queryParts = $queryParts | append "v=20260307-11" -}}
           {{- $viewerHref = printf "/tools/pdf-guideline-studio/?%s" (delimit $queryParts "&") -}}
           {{- $adminHref = printf "%s&mode=admin" $viewerHref -}}
-        {{- end -}}
-
-        {{- if and $href (hasPrefix $href "/") -}}
-          {{- $rawHref = printf "/js/pdf-js/web/viewer.html?file=%s" ($href | urlquery) -}}
         {{- end -}}
 
         {{- if and $viewerHref (eq $cta "Open PDF") -}}
