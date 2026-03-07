@@ -58,11 +58,11 @@ EMC<sup>2</sup> Emergency Medicine Cardiology Course
 
 # <mark>斜槓熊生</mark>
 
-![](/images/ipic/l4uuce.png)
+![](../static/images/ipic/l4uuce.png)
 
 # <mark>熊得獎紀錄</mark>
 
-![](/images/ipic/fit1ql.jpg)
+![](../static/images/ipic/fit1ql.jpg)
 
 
 
@@ -80,11 +80,11 @@ Andrid版本: [下載連結](https://play.google.com/store/apps/details?id=com.a
 
 iOS版本: [下載連結](https://apps.apple.com/us/app/omi-toolbox/id6443695985?itsct=apps_box_link&itscg=30200) (台灣的Apple store不行下載，需要改到US/UK/Turkiye)
 
-![](/images/ipic/xbwj6f.png)
+![](../static/images/ipic/xbwj6f.png)
 
 5. 急診醫學(第二版)-胸痛章節
 
-![](/images/ipic/ovnkkj.png)
+![](../static/images/ipic/ovnkkj.png)
 
 # <mark>電視熊專輯</mark>
 
@@ -100,13 +100,13 @@ iOS版本: [下載連結](https://apps.apple.com/us/app/omi-toolbox/id6443695985
 
 ---
 
-![](/images/ipic/276996782.jpg)
+![](../static/images/ipic/276996782.jpg)
 
 [1分10秒出現XD](https://tw.tv.yahoo.com/%E8%A1%9D%E6%B5%AA%E5%A5%B3%E5%AD%A9%E8%90%BD%E6%B5%B7%E7%8C%9B%E5%88%BA%E7%97%9B-%E4%B8%8A%E5%B2%B8%E6%89%8B%E8%85%95%E8%85%AB%E7%97%9B-%E5%87%B6%E6%89%8B%E6%98%AF%E6%B0%B4%E6%AF%8D-073531868.html)
 
 ---
 
-![新浪網-醒報採訪](/images/ipic/vcoey6.png)
+![新浪網-醒報採訪](../static/images/ipic/vcoey6.png)
 
 ---
 
@@ -116,43 +116,43 @@ iOS版本: [下載連結](https://apps.apple.com/us/app/omi-toolbox/id6443695985
 
 ## <mark style="background-color: lightblue">2020/7 醫學資訊的利用(北區聯合住院醫師訓練)</mark> 
 
- ![](/images/ipic/lj22vz.png)
+ ![](../static/images/ipic/lj22vz.png)
 
 ---
 
 ## <mark style="background-color: lightblue">2021 外傷超音波應用-外傷進階教育</mark>
 
-![](/images/ipic/8tdlmg.png)
+![](../static/images/ipic/8tdlmg.png)
 
 ---
 
 ## <mark style="background-color: lightblue">2021/11/23 新光醫院演講</mark>
 
-![](/images/ipic/en8jxh.png)
+![](../static/images/ipic/en8jxh.png)
 
-![線上演講](/images/ipic/ffohbh.jpg)
+![線上演講](../static/images/ipic/ffohbh.jpg)
 
-![](/images/ipic/qzaxlm.png)
+![](../static/images/ipic/qzaxlm.png)
 
 ---
 
 ## <mark style="background-color: lightblue">2022/10/20 北榮急診住院醫師教學</mark>
 
-![](/images/ipic/r76jpj.png)
+![](../static/images/ipic/r76jpj.png)
 
 ---
 
 ## <mark style="background-color: lightblue">2022/10/27 大林慈濟ECG專題講座</mark>
 
-![](/images/ipic/t5e7im.png)
+![](../static/images/ipic/t5e7im.png)
 
 ---
 
 ## <mark style="background-color: lightblue">2023-10-6 EMT-P心電圖工作坊</mark>
 
-![](/images/ipic/ne78d5.png)
+![](../static/images/ipic/ne78d5.png)
 
-![](/images/ipic/lcpf0j.png)
+![](../static/images/ipic/lcpf0j.png)
 
 
 

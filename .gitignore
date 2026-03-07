@@ -6,3 +6,16 @@ public/
 resources/
 node_modules/
 .hugo_build.lock
+
+# Local tooling artifacts
+.playwright-cli/
+.playwright-gsc-profile-chromium/
+.playwright-temp/
+output/
+test-results/
+tmp/
+scripts/__pycache__/
+
+# Firebase Functions env secrets
+functions/.env
+functions/.env.*

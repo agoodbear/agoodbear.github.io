@@ -1,5 +1,16 @@
 {
+  "scripts": {
+    "images:normalize": "python3 scripts/normalize_markdown_images.py",
+    "typora:preview:install": "python3 scripts/install_typora_preview_panel.py",
+    "site:build": "python3 scripts/normalize_markdown_images.py && hugo --gc --minify",
+    "site:serve": "python3 scripts/site_serve.py",
+    "gsc:collect:new": "python3 scripts/collect_new_urls.py --current-sitemap public/sitemap.xml --previous-sitemap-url https://agoodbear.github.io/sitemap.xml --output-dir public/gsc --site-base-url https://agoodbear.github.io",
+    "gsc:index:new": "node scripts/submit_gsc_index.mjs",
+    "write-studio:webapp": "node scripts/write-studio/cloud-webapp-server.mjs",
+    "write-studio:open": "bash scripts/write-studio/open-local.sh"
+  },
   "dependencies": {
-    "bootstrap": "^5.3.2"
+    "bootstrap": "^5.3.2",
+    "playwright": "^1.52.0"
   }
 }

@@ -4,6 +4,7 @@ date: "2024-08-31" #輸入時間
 draft: true #若為false就會直接刊出，不會以草稿模式運作
 toc: false #自動產生TOC
 thumbnail: "/images/study-post-5.webp" #每篇文章的縮圖位置在這裡(static/images/)-變更
+typora-copy-images-to: "../../static/images/ipic"
 codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
 codeLineNumbers: false # Override global value for showing of line numbers within code block.
 figurePositionShow: true # Override global value for showing the figure label.
@@ -18,7 +19,7 @@ tags:
   - AI工具
 ---
 
-![第二大腦(Roam Research)](/images/ipic/c8y6kb.png)
+![第二大腦(Roam Research)](../../static/images/ipic/c8y6kb.png)
 
 年初講到[資料庫的應用與靈感筆記如何建立?](https://agoodbear.github.io/post/study-post-2/)，有興趣可以點選回到這邊看看。
 
@@ -34,6 +35,6 @@ tags:
 
 目前我primary selection的資料庫為Readwise。
 
-![Extension](/images/ipic/2kzi7v.png)
+![Extension](../../static/images/ipic/2kzi7v.png)
 
 可以在自己的Browser上安裝這個Extension。作為全文的抓取，也可以除去在頁面中出現的一堆廣告之類，讓整個抓取的頁面乾淨一點。

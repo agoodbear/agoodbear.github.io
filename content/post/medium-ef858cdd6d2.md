@@ -4,6 +4,7 @@ date: "2021-06-10"
 draft: false
 toc: false
 thumbnail: "https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png"
+typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
   - "hyperkalemia"

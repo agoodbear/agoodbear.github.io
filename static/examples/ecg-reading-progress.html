@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ECG Reading Progress UI Demo</title>
+    <style>
+      :root {
+        --bg: #f7faf9;
+        --surface: rgba(255, 255, 255, 0.86);
+        --text: #0d3431;
+        --muted: #55716d;
+        --line-base: #b7c8c5;
+        --line-active: #0f5f57;
+        --line-glow: rgba(32, 163, 147, 0.32);
+        --card-border: rgba(13, 94, 87, 0.16);
+        --ecg-shell-left: 12px;
+        --ecg-shell-width: 300px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Figtree", "Noto Sans TC", "Noto Sans", sans-serif;
+        background:
+          radial-gradient(circle at 8% 10%, rgba(117, 204, 190, 0.18), transparent 32%),
+          radial-gradient(circle at 84% 4%, rgba(32, 116, 148, 0.12), transparent 30%),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.76;
+      }
+
+      .article-shell {
+        width: min(800px, calc(100vw - 2.2rem));
+        margin: 56px auto 120px;
+      }
+
+      .article-shell h1 {
+        font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+        line-height: 1.2;
+        margin: 0 0 0.8rem;
+      }
+
+      .article-shell .dek {
+        color: var(--muted);
+        margin: 0 0 2rem;
+      }
+
+      .article-body h2 {
+        font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+        margin-top: 2.8rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .article-body p {
+        margin: 0 0 1.15rem;
+      }
+
+      .ecg-progress {
+        position: fixed;
+        top: 14px;
+        left: var(--ecg-shell-left);
+        right: auto;
+        z-index: 120;
+        width: var(--ecg-shell-width);
+        max-width: calc(100vw - 18px);
+        padding: 8px 11px 9px;
+        border: 1px solid var(--card-border);
+        border-radius: 11px;
+        background: var(--surface);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 24px rgba(16, 78, 72, 0.08);
+      }
+
+      .ecg-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 6px;
+      }
+
+      .ecg-label {
+        font-size: 0.72rem;
+        letter-spacing: 0.075em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .ecg-percent {
+        font-size: 0.74rem;
+        color: var(--text);
+      }
+
+      .ecg-viz {
+        width: 100%;
+        display: block;
+      }
+
+      .ecg-base {
+        fill: none;
+        stroke: var(--line-base);
+        stroke-width: 4.5;
+        opacity: 0.42;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .ecg-active {
+        fill: none;
+        stroke: var(--line-active);
+        stroke-width: 3.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: drop-shadow(0 0 7px var(--line-glow));
+        transition: stroke 220ms ease, filter 220ms ease;
+      }
+
+      .ecg-tooltip {
+        position: absolute;
+        left: 10px;
+        top: calc(100% + 8px);
+        max-width: 260px;
+        font-size: 0.72rem;
+        color: #f8fffd;
+        background: rgba(9, 62, 58, 0.92);
+        padding: 7px 9px;
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgba(5, 24, 22, 0.24);
+        transform: translateY(-4px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 180ms ease, transform 180ms ease;
+      }
+
+      .ecg-tooltip::before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: 18px;
+        width: 12px;
+        height: 12px;
+        background: inherit;
+        transform: rotate(45deg);
+      }
+
+      .ecg-progress:hover .ecg-tooltip,
+      .ecg-progress:focus-within .ecg-tooltip {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .ecg-progress:focus-within {
+        outline: 2px solid rgba(21, 123, 113, 0.38);
+        outline-offset: 2px;
+      }
+
+      .ecg-progress[data-docked="true"] {
+        top: 8px;
+      }
+
+      body.ecg-docked .article-shell {
+        margin-top: 128px;
+      }
+
+      @media (max-width: 720px) {
+        .ecg-progress {
+          left: 8px;
+          top: 8px;
+          padding: 7px 9px 8px;
+          border-radius: 11px;
+        }
+
+        .ecg-meta {
+          margin-bottom: 5px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .ecg-active,
+        .ecg-tooltip {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ECG Reading Progress UI: START -->
+    <div class="ecg-progress" id="ecgProgress" role="status" aria-label="Reading progress ECG" tabindex="0">
+      <div class="ecg-meta">
+        <span class="ecg-label">ECG Reading Progress</span>
+        <span class="ecg-percent" id="ecgPercent">0%</span>
+      </div>
+      <svg class="ecg-viz" id="ecgViz" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <path
+          class="ecg-base"
+          d="M20 60 L260 60 C278 60 289 44 304 44 C318 44 330 60 346 60 L394 60 L415 67 L438 22 L462 90 L490 60 L596 60 C624 60 650 34 688 34 C726 34 754 60 782 60 L980 60"
+        />
+        <path
+          class="ecg-active"
+          id="ecgActivePath"
+          d="M20 60 L260 60 C278 60 289 44 304 44 C318 44 330 60 346 60 L394 60 L415 67 L438 22 L462 90 L490 60 L596 60 C624 60 650 34 688 34 C726 34 754 60 782 60 L980 60"
+        />
+      </svg>
+      <div class="ecg-tooltip" id="ecgTooltip">Reading progress</div>
+    </div>
+    <!-- ECG Reading Progress UI: END -->
+
+    <main class="article-shell">
+      <article class="article-body" id="articleBody">
+        <h1>OMI Case Breakdown: Hidden Ischemia Under a Narrow QRS</h1>
+        <p class="dek">
+          示範頁：向下捲動時，右上角 ECG 波形會按照 baseline → P wave → QRS complex → ST segment → T wave 的順序逐步被畫出。
+        </p>
+
+        <h2>Case Arrival</h2>
+        <p>
+          63 歲男性凌晨到院，主訴胸悶合併冒冷汗。初始生命徵象可接受，但主訴症狀與既往病史高度提示缺血風險。首張 ECG 沒有典型 ST elevation，急診團隊因此進入「非典型 ACS vs early OMI」的判讀路徑。
+        </p>
+        <p>
+          在這類情境下，閱讀者通常需要比平常更長時間停留在每個 lead 的細節比較：R wave 高度、ST 斜率、T wave 對稱性、以及前後兩張 ECG 的趨勢差。這正是本 UI 針對長文醫學推理設計的核心情境。
+        </p>
+
+        <h2>Lead-by-Lead Interpretation</h2>
+        <p>
+          V2 到 V4 出現輕度 J-point 改變，但幅度不大。若只看單張圖，容易低估；若比對 20 分鐘後 repeat ECG，可看到 ST-T 形態逐步轉為較飽滿、較寬的高危樣態，與病人持續疼痛相呼應。
+        </p>
+        <p>
+          aVL 的細微 reciprocal hint 在初學者常被忽略。這類「小線索」在長篇案例中往往散落於段落之間，因此閱讀進度可視化若足夠低干擾，能幫助使用者保持結構化閱讀節奏。
+        </p>
+        <p>
+          此外，QRS 寬度仍在正常範圍，沒有明顯傳導阻滯掩蓋變化，讓 ST-T 判讀更有意義。整體而言，這不是 textbook STEMI，但已不適合被當成單純 low-risk chest pain。
+        </p>
+
+        <h2>Clinical Reasoning Timeline</h2>
+        <p>
+          急診決策節點通常不是單點判斷，而是累積證據的時間函數。第一個節點是「是否需要立即 serial ECG」；第二個節點是「是否已達到啟動心導管團隊的門檻」；第三個節點是「是否存在替代診斷且更合理」。
+        </p>
+        <p>
+          在這份案例中，troponin 初值僅輕度上升，但動態變化曲線在後續快速拉高，與 ECG 漸進性惡化一致。若閱讀者只停在文前 30%，多半只看到模糊訊號；閱讀到後半段才會看到完整的病程拼圖。
+        </p>
+        <p>
+          因此進度條採 ECG 波形意象：不是「單調線段」，而是把資訊理解的峰谷節奏直接映射到閱讀行為。
+        </p>
+
+        <h2>Cath Lab Outcome</h2>
+        <p>
+          最終冠狀動脈攝影顯示 culprit lesion 位於 LAD 中段近乎閉塞，介入後胸痛迅速改善。回頭檢視首張 ECG，其實已存在可疑但不典型的缺血線索。這種案例很適合做教學型長文，因為它同時涉及判讀、時序、以及風險承擔。
+        </p>
+        <p>
+          教學上可引導讀者反思：如果只依賴傳統 STEMI 門檻，是否會延誤再灌流？哪些 lead 的微小改變能在早期提供方向？同時也要避免過度觸發，維持臨床合理性。
+        </p>
+
+        <h2>Take-Home Framework</h2>
+        <p>
+          一個實用框架是：症狀強度 + 連續 ECG 變化 + 生化趨勢 + bedside echo。四者若方向一致，即便單點訊號不足，也應朝高風險缺血處置。這種整合式思考對 OMI 討論特別關鍵。
+        </p>
+        <p>
+          本頁面中的 ECG 進度元件，設計目標是低存在感但高語意：你不需要盯著它看，但它會在邊角持續回饋「你目前走到哪個推理階段」。
+        </p>
+        <p>
+          當你捲動到文末，波形會完整、乾淨、穩定地呈現，象徵案例解析完成。
+        </p>
+      </article>
+    </main>
+
+    <script>
+      (function () {
+        const article = document.getElementById("articleBody");
+        const tracker = document.getElementById("ecgProgress");
+        const path = document.getElementById("ecgActivePath");
+        const tooltip = document.getElementById("ecgTooltip");
+        const percent = document.getElementById("ecgPercent");
+        const root = document.documentElement;
+
+        const readPhases = [
+          { key: "baseline", readEnd: 0.2, pathEnd: 0.34, tip: "Reading progress" },
+          { key: "p-wave", readEnd: 0.35, pathEnd: 0.46, tip: "P wave shaping..." },
+          { key: "qrs", readEnd: 0.62, pathEnd: 0.67, tip: "Clinical reasoning loading..." },
+          { key: "st", readEnd: 0.81, pathEnd: 0.82, tip: "ST segment extending..." },
+          { key: "t-wave", readEnd: 1, pathEnd: 1, tip: "Reading progress" }
+        ];
+
+        const clamp01 = (n) => Math.max(0, Math.min(1, n));
+
+        const mapReadToPath = (readProgress) => {
+          let previousRead = 0;
+          let previousPath = 0;
+          let currentTip = readPhases[0].tip;
+
+          for (const phase of readPhases) {
+            if (readProgress <= phase.readEnd) {
+              const segmentSpan = phase.readEnd - previousRead || 1;
+              const local = clamp01((readProgress - previousRead) / segmentSpan);
+              const pathProgress = previousPath + local * (phase.pathEnd - previousPath);
+              currentTip = phase.tip;
+              return { pathProgress, currentTip };
+            }
+            previousRead = phase.readEnd;
+            previousPath = phase.pathEnd;
+          }
+          return { pathProgress: 1, currentTip: "Reading progress" };
+        };
+
+        const getReadProgress = () => {
+          const articleTop = article.offsetTop;
+          const articleBottom = articleTop + article.offsetHeight;
+          const viewportBottom = window.scrollY + window.innerHeight;
+          const scrollable = articleBottom - articleTop;
+
+          if (scrollable <= 0) return 1;
+          return clamp01((viewportBottom - articleTop) / scrollable);
+        };
+
+        const toRgb = (start, end, p) => Math.round(start + (end - start) * p);
+
+        const setColorByProgress = (p) => {
+          const color = [
+            toRgb(15, 15, p),
+            toRgb(95, 167, p),
+            toRgb(87, 154, p)
+          ];
+          const stroke = `rgb(${color.join(",")})`;
+          root.style.setProperty("--line-active", stroke);
+          root.style.setProperty("--line-glow", `rgba(${color.join(",")}, 0.32)`);
+        };
+
+        const placeTrackerSafely = () => {
+          const margin = 12;
+          const preferredWidth = 300;
+          const minWidth = 210;
+          const rect = article.getBoundingClientRect();
+
+          let width = Math.max(minWidth, Math.min(preferredWidth, window.innerWidth - margin * 2));
+          const leftGutter = rect.left - margin;
+          const canFitOnLeft = leftGutter >= width + margin;
+          let left = margin;
+
+          if (canFitOnLeft) {
+            left = rect.left - width - margin;
+            tracker.dataset.docked = "false";
+            document.body.classList.remove("ecg-docked");
+          } else {
+            width = Math.max(180, Math.min(240, window.innerWidth - margin * 2));
+            left = margin;
+            tracker.dataset.docked = "true";
+            document.body.classList.add("ecg-docked");
+          }
+
+          root.style.setProperty("--ecg-shell-left", `${Math.round(left)}px`);
+          root.style.setProperty("--ecg-shell-width", `${Math.round(width)}px`);
+        };
+
+        const totalLength = path.getTotalLength();
+        path.style.strokeDasharray = `${totalLength}`;
+        path.style.strokeDashoffset = `${totalLength}`;
+
+        let ticking = false;
+
+        const update = () => {
+          placeTrackerSafely();
+          const reading = getReadProgress();
+          const { pathProgress, currentTip } = mapReadToPath(reading);
+          const drawLength = totalLength * clamp01(pathProgress);
+          const progressPct = Math.round(reading * 100);
+
+          path.style.strokeDashoffset = `${totalLength - drawLength}`;
+          percent.textContent = `${progressPct}%`;
+          tooltip.textContent =
+            reading >= 1
+              ? "Reading progress · 100% complete"
+              : `${currentTip} ${progressPct}%`;
+          setColorByProgress(reading);
+          ticking = false;
+        };
+
+        const requestUpdate = () => {
+          if (!ticking) {
+            ticking = true;
+            window.requestAnimationFrame(update);
+          }
+        };
+
+        window.addEventListener("scroll", requestUpdate, { passive: true });
+        window.addEventListener("resize", requestUpdate);
+        window.addEventListener("load", requestUpdate);
+        requestUpdate();
+      })();
+    </script>
+  </body>
+</html>

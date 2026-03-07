@@ -5,6 +5,7 @@ draft: true #若為false就會直接刊出，不會以草稿模式運作
 featured: false #若設定為true，會設定為精選文章
 toc: false #自動產生TOC
 thumbnail: "/images/ecg-post-11.png" #每篇文章的縮圖位置在這裡(static/images/)-變更
+typora-copy-images-to: "../../static/images/ipic"
 codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
 codeLineNumbers: false # Override global value for showing of line numbers within code block.
 figurePositionShow: true # Override global value for showing the figure label.
@@ -49,7 +50,7 @@ Smith ECG Blog的作者之一Jesse McLaren在這一篇描述OMI [^5]，我覺得
 
 這是什麼意思?也就是**可能有高達8成的AMI病患，無法透過STEMI criteria做出AMI的診斷**。
 
-![](/images/ipic/7h4ptc.png)
+![](../../static/images/ipic/7h4ptc.png)
 
 那麼該怎麼辦?可能得透過後續的echo、serial ECG、troponin數值、病患的臨床症狀互相配合，才能做出AMI的診斷。**(這一段文字，我在ecg-post-14有用到)**
 

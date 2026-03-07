@@ -4,6 +4,7 @@ date: "2022-03-01"
 draft: false
 toc: false
 thumbnail: "https://cdn-images-1.medium.com/max/1024/1*yRFGZRBFf8mrOR-6YJog9Q@2x.png"
+typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
   - "medium"

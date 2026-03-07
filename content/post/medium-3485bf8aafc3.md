@@ -4,6 +4,7 @@ date: "2021-12-28"
 draft: false
 toc: false
 thumbnail: "https://cdn-images-1.medium.com/max/1024/1*BZYaEyrDghAJY-2Uxgz7cA@2x.png"
+typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
   - "medium"

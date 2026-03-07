@@ -1,0 +1,1087 @@
+ObjC.import("AppKit");
+ObjC.import("Foundation");
+ObjC.import("WebKit");
+
+const env = $.NSProcessInfo.processInfo.environment;
+const selectedTextB64 = ObjC.unwrap(env.objectForKey("SELECTED_TEXT_B64")) || "";
+const autoSelectId = ObjC.unwrap(env.objectForKey("AUTO_SELECT_ID")) || "";
+const autoApply = ObjC.unwrap(env.objectForKey("AUTO_APPLY")) || "";
+const choiceFile = ObjC.unwrap(env.objectForKey("CHOICE_FILE")) || "";
+
+function decodeBase64(value) {
+  if (!value) return "";
+  const data = $.NSData.alloc.initWithBase64EncodedStringOptions($(value), 0);
+  if (!data) return "";
+  return ObjC.unwrap($.NSString.alloc.initWithDataEncoding(data, $.NSUTF8StringEncoding)) || "";
+}
+
+function trimText(value) {
+  return value.replace(/\r/g, "\n").trim().replace(/\s+/g, " ");
+}
+
+function escapeHtml(value) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function escapeShortcode(value) {
+  return trimText(value).replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+}
+
+const selectedText = decodeBase64(selectedTextB64);
+const trimmedSelectedText = trimText(selectedText);
+const hasSelectedText = Boolean(trimmedSelectedText);
+const imageTemplateLabels = ["第一張圖", "第二張圖", "第三張圖", "第四張圖", "第五張圖", "第六張圖"];
+
+const options = [
+  {
+    id: "tag-mint",
+    menuTitle: "Tag Pill · mint（淺綠標籤）",
+    title: "Tag Pill · mint",
+    chip: "淺綠標籤",
+    desc: "適合放重點提示、章節提示或 ECG 心法類標記。",
+    type: "tag",
+    tone: "mint",
+    requiresSelection: true,
+  },
+  {
+    id: "tag-sky",
+    menuTitle: "Tag Pill · sky（淺藍標籤）",
+    title: "Tag Pill · sky",
+    chip: "淺藍標籤",
+    desc: "適合放補充觀念、Pearl、知識點或延伸閱讀。",
+    type: "tag",
+    tone: "sky",
+    requiresSelection: true,
+  },
+  {
+    id: "tag-amber",
+    menuTitle: "Tag Pill · amber（淺黃標籤）",
+    title: "Tag Pill · amber",
+    chip: "淺黃標籤",
+    desc: "適合放警示、陷阱、contraindication 或注意事項。",
+    type: "tag",
+    tone: "amber",
+    requiresSelection: true,
+  },
+  {
+    id: "wave-h2",
+    menuTitle: "ECG Wave Text · H2（大標題）",
+    title: "ECG Wave Text · H2",
+    chip: "動態標題",
+    desc: "大標題版 ECG 波形標題，語氣俐落，適合案例切段或章節重點。",
+    type: "wave",
+    level: "2",
+    requiresSelection: true,
+  },
+  {
+    id: "wave-h3",
+    menuTitle: "ECG Wave Text · H3（中標題）",
+    title: "ECG Wave Text · H3",
+    chip: "動態小標",
+    desc: "中標題版 ECG 波形標題，適合次段落標示，不會太搶畫面。",
+    type: "wave",
+    level: "3",
+    requiresSelection: true,
+  },
+  {
+    id: "notice-flame",
+    menuTitle: "學習重點火焰框",
+    title: "學習重點火焰框",
+    chip: "重點框",
+    desc: "將重點清單包成火焰風格學習框，適合文章結尾整理重點。",
+    type: "notice",
+    style: "flame",
+    label: "學習重點",
+    requiresSelection: false,
+  },
+  {
+    id: "image-row-2",
+    menuTitle: "並排圖片（2 欄）",
+    title: "並排圖片（2 欄）",
+    chip: "圖片模板",
+    desc: "直接在 Typora 游標處插入兩張圖並排的 shortcode，之後自行填入圖片路徑與圖說。",
+    type: "imageLayout",
+    rows: [2],
+    gap: 14,
+    requiresSelection: false,
+  },
+  {
+    id: "image-row-3",
+    menuTitle: "並排圖片（3 欄）",
+    title: "並排圖片（3 欄）",
+    chip: "圖片模板",
+    desc: "插入三張圖同排的 shortcode 模板，適合同系列比較圖。",
+    type: "imageLayout",
+    rows: [3],
+    gap: 14,
+    requiresSelection: false,
+  },
+  {
+    id: "image-row-4",
+    menuTitle: "並排圖片（4 欄）",
+    title: "並排圖片（4 欄）",
+    chip: "圖片模板",
+    desc: "插入四張圖同排的 shortcode 模板，適合縮圖總覽。",
+    type: "imageLayout",
+    rows: [4],
+    gap: 14,
+    requiresSelection: false,
+  },
+  {
+    id: "image-grid-2-2",
+    menuTitle: "圖片拼版（上 2 / 下 2）",
+    title: "圖片拼版（上 2 / 下 2）",
+    chip: "圖片模板",
+    desc: "插入兩排兩張的 shortcode 模板，適合四張圖分組對照。",
+    type: "imageLayout",
+    rows: [2, 2],
+    gap: 14,
+    requiresSelection: false,
+  },
+  {
+    id: "image-grid-3-2",
+    menuTitle: "圖片拼版（上 3 / 下 2）",
+    title: "圖片拼版（上 3 / 下 2）",
+    chip: "圖片模板",
+    desc: "插入上排三張、下排兩張的 shortcode 模板，適合五張圖摘要排版。",
+    type: "imageLayout",
+    rows: [3, 2],
+    gap: 14,
+    requiresSelection: false,
+  },
+  {
+    id: "pdf-footnote-template",
+    menuTitle: "PDF Footnote Popup 模板",
+    title: "PDF Footnote Popup",
+    chip: "PDF 註腳",
+    desc: "插入可點開 popup 的 PDF footnote 模板，左邊顯示 PDF 原文頁面，右邊顯示高亮重點與整理。",
+    type: "pdfFootnote",
+    requiresSelection: false,
+  },
+  {
+    id: "guideline-shelf-template",
+    menuTitle: "Guideline Shelf 模板",
+    title: "Guideline Shelf",
+    chip: "PDF 集合",
+    desc: "插入文章最上方的 guideline PDF 收納區塊，適合整理 guideline、statement、review PDF。",
+    type: "guidelineShelf",
+    requiresSelection: false,
+  },
+];
+
+function normalizeImageLayoutRows(option) {
+  if (Array.isArray(option.rows) && option.rows.length) {
+    return option.rows.map((value) => Math.max(1, Number(value) || 1));
+  }
+  return [Math.max(2, Number(option.cols) || 2)];
+}
+
+function getImageTemplateItem(index) {
+  const label = imageTemplateLabels[index] || `第${index + 1}張圖`;
+  return {
+    src: `/images/ipic/image-${index + 1}.png`,
+    alt: label,
+    caption: `${label}圖說`,
+  };
+}
+
+function buildImageLayoutShortcode(option) {
+  const rows = normalizeImageLayoutRows(option);
+  const gap = option.gap || 14;
+  const lines = [];
+  let itemIndex = 0;
+
+  rows.forEach((cols, rowIndex) => {
+    lines.push(`{{< imgrow cols="${cols}" gap="${gap}" >}}`);
+    for (let index = 0; index < cols; index += 1) {
+      const item = getImageTemplateItem(itemIndex);
+      lines.push(`{{< imgcol src="${item.src}" alt="${item.alt}" caption="${item.caption}" >}}`);
+      itemIndex += 1;
+    }
+    lines.push("{{< /imgrow >}}");
+    if (rowIndex < rows.length - 1) {
+      lines.push("");
+    }
+  });
+
+  return lines.join("\n");
+}
+
+function normalizeBlockText(value) {
+  return value.replace(/\r/g, "\n").trim();
+}
+
+function buildNoticeShortcode(option) {
+  const content = normalizeBlockText(selectedText) || [
+    "1. 第一個重點",
+    "2. 第二個重點",
+    "3. 第三個重點",
+  ].join("\n");
+  return [
+    `{{% notice ${option.style} "${option.label}" %}}`,
+    "",
+    content,
+    "",
+    "{{% /notice %}}",
+  ].join("\n");
+}
+
+function buildPdfFootnoteShortcode() {
+  const note = normalizeBlockText(selectedText) || "請填右側重點整理";
+  return [
+    '句子內容可在這裡接 footnote{{< pdf-footnote trigger="1" pdf="/pdfs/example.pdf" page="1" x="18" y="24" w="26" h="8" title="請填 PDF 標題" quote="請填 PDF 原文摘句" >}}',
+    note,
+    "{{< /pdf-footnote >}}",
+  ].join("\n");
+}
+
+function buildGuidelineShelfShortcode() {
+  return [
+    '{{< guideline-shelf title="Guideline PDF Shelf" intro="把這篇文章最常引用的 guideline / statement 先放在最上方，讀者可先建立全局參考。" >}}',
+    '{{< guideline-card title="2023 ESC ACS Guideline" href="/pdfs/example.pdf" doc="esc-acs-2023" seed="/pdf-guidelines/esc-acs-2023.json" meta="ESC · 2023" tag="ACS" >}}',
+    "胸痛、ST-T 變化與侵入策略重點快速查詢。",
+    "{{< /guideline-card >}}",
+    "",
+    '{{< guideline-card title="AHA STEMI Statement" href="/pdfs/example-2.pdf" doc="aha-stemi-2025" seed="/pdf-guidelines/aha-stemi-2025.json" meta="AHA · 2025" tag="STEMI" tone="sky" >}}',
+    "把診斷門檻、再灌流決策與常見陷阱收成第二張卡片。",
+    "{{< /guideline-card >}}",
+    "{{< /guideline-shelf >}}",
+  ].join("\n");
+}
+
+function buildShortcode(option) {
+  if (option.type === "imageLayout") {
+    return buildImageLayoutShortcode(option);
+  }
+  if (option.type === "notice") {
+    return buildNoticeShortcode(option);
+  }
+  if (option.type === "pdfFootnote") {
+    return buildPdfFootnoteShortcode(option);
+  }
+  if (option.type === "guidelineShelf") {
+    return buildGuidelineShelfShortcode(option);
+  }
+
+  const escaped = escapeShortcode(selectedText);
+  if (option.type === "tag") {
+    if (!hasSelectedText) {
+      return `{{< tag-pill "請填標籤文字" "${option.tone}" >}}`;
+    }
+    return `{{< tag-pill "${escaped}" "${option.tone}" >}}`;
+  }
+  if (!hasSelectedText) {
+    return `{{< ecg-wave-text level="${option.level}" >}}請填段落標題{{< /ecg-wave-text >}}`;
+  }
+  return `{{< ecg-wave-text level="${option.level}" >}}${trimmedSelectedText}{{< /ecg-wave-text >}}`;
+}
+
+function buildPreviewMarkup(option) {
+  if (option.type === "imageLayout") {
+    const rows = normalizeImageLayoutRows(option);
+    let itemIndex = 0;
+    const rowMarkup = rows.map((cols) => {
+      const cards = Array.from({ length: cols }, () => {
+        const item = getImageTemplateItem(itemIndex);
+        itemIndex += 1;
+        return `
+          <figure class="image-layout-card">
+            <div class="image-layout-thumb">
+              <span>${item.alt}</span>
+            </div>
+            <figcaption>${item.caption}</figcaption>
+          </figure>
+        `;
+      }).join("");
+      return `<div class="image-layout-row" style="--layout-cols:${cols};">${cards}</div>`;
+    }).join("");
+
+    return `<div class="image-layout-preview">${rowMarkup}</div>`;
+  }
+  if (option.type === "notice") {
+    const fallbackLines = [
+      "Wellens' syndrome 的定義與 re-occlusion 風險",
+      "Pseudonormalization of T wave 是什麼",
+      "Inverted U wave 的臨床意義與辨識",
+      "哪些 PVC pattern 需要提高警覺",
+    ];
+    const lines = (normalizeBlockText(selectedText) || fallbackLines.join("\n"))
+      .split(/\n+/)
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .slice(0, 4)
+      .map((line) => line.replace(/^(\d+[\.\)]|[-*+])\s*/, ""));
+    const items = lines.map((line) => `<li>${escapeHtml(line)}</li>`).join("");
+    return `
+      <div class="notice-flame-preview">
+        <div class="notice-flame-preview__label">${escapeHtml(option.label)}</div>
+        <ol>${items}</ol>
+      </div>
+    `;
+  }
+  if (option.type === "pdfFootnote") {
+    return `
+      <div class="pdf-footnote-preview">
+        <p class="pdf-footnote-preview__inline">這句敘述後面接一個 footnote<span class="pdf-footnote-preview__trigger">1</span></p>
+        <div class="pdf-footnote-preview__modal">
+          <div class="pdf-footnote-preview__pdf">
+            <div class="pdf-footnote-preview__highlight"></div>
+          </div>
+          <div class="pdf-footnote-preview__detail">
+            <div class="pdf-footnote-preview__zoom"></div>
+            <div class="pdf-footnote-preview__quote">PDF 原文摘句會放這裡，保留引用語氣。</div>
+            <div class="pdf-footnote-preview__note">${escapeHtml(normalizeBlockText(selectedText) || "右側可寫你對這段 evidence 的重點整理。")}</div>
+          </div>
+          <svg class="pdf-footnote-preview__line" viewBox="0 0 420 170" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 180 78 C 240 78, 260 54, 310 54" />
+          </svg>
+        </div>
+      </div>
+    `;
+  }
+  if (option.type === "guidelineShelf") {
+    return `
+      <div class="guideline-shelf-preview">
+        <div class="guideline-shelf-preview__header">
+          <strong>Guideline PDF Shelf</strong>
+          <span>文章最上方的 PDF 收納區</span>
+        </div>
+        <div class="guideline-shelf-preview__grid">
+          <article class="guideline-shelf-preview__card">
+            <div class="guideline-shelf-preview__tag">ACS</div>
+            <h4>2023 ESC ACS Guideline</h4>
+            <p>胸痛、ST-T 變化與侵入策略快速查詢。</p>
+          </article>
+          <article class="guideline-shelf-preview__card alt">
+            <div class="guideline-shelf-preview__tag">STEMI</div>
+            <h4>AHA STEMI Statement</h4>
+            <p>把再灌流與常見陷阱整理成第二張卡片。</p>
+          </article>
+        </div>
+      </div>
+    `;
+  }
+
+  const text = escapeHtml(trimmedSelectedText || (option.type === "tag" ? "請先選字，再包成標籤" : "請先選字，再套用波形標題"));
+  if (option.type === "tag") {
+    return `<span class="tag-pill ${option.tone}">#${text}</span>`;
+  }
+
+  const tag = option.level === "3" ? "h3" : "h2";
+  const icon = option.icon ? `<span class="wave-icon">${option.icon}</span>` : "";
+  return `
+    <div class="wave-preview">
+      <div class="wave-layer" aria-hidden="true">
+        <svg viewBox="0 0 720 84" preserveAspectRatio="none">
+          <path class="wave-base" d="M4 40 L92 40 L122 38 L146 40 L158 28 L170 54 L188 40 L240 40 L274 40 L294 34 L316 44 L334 20 L354 68 L372 40 L438 40 L468 40 L492 36 L514 48 L540 12 L566 72 L586 40 L716 40"></path>
+          <path class="wave-scan" d="M4 40 L92 40 L122 38 L146 40 L158 28 L170 54 L188 40 L240 40 L274 40 L294 34 L316 44 L334 20 L354 68 L372 40 L438 40 L468 40 L492 36 L514 48 L540 12 L566 72 L586 40 L716 40"></path>
+        </svg>
+      </div>
+      <${tag}>${icon}${text}</${tag}>
+    </div>
+  `;
+}
+
+function buildPreviewHTML(option) {
+  const shortcode = escapeHtml(buildShortcode(option));
+  return `<!doctype html>
+  <html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f8fbfd;
+        --card: #ffffff;
+        --text: #183042;
+        --muted: #607487;
+        --line: #d8e4ec;
+        --accent: #0d5f87;
+        --mint-bg: #dff5e8;
+        --mint-text: #1b6c4a;
+        --sky-bg: #dff0fb;
+        --sky-text: #165d93;
+        --amber-bg: #fff0c8;
+        --amber-text: #8d5d06;
+        --wave-soft: rgba(210, 39, 57, 0.16);
+        --wave-bright: rgba(224, 52, 72, 0.76);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "PingFang TC", "Noto Sans TC", "Helvetica Neue", sans-serif;
+        background: linear-gradient(180deg, #fbfdfe 0%, #f5f8fa 100%);
+        color: var(--text);
+      }
+
+      .card {
+        min-height: 100vh;
+        padding: 18px;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--card);
+        box-shadow: 0 10px 24px rgba(19, 49, 69, 0.06);
+        padding: 18px;
+      }
+
+      .preview-box {
+        min-height: 110px;
+        padding: 16px 18px;
+        border-radius: 16px;
+        border: 1px solid rgba(13, 95, 135, 0.08);
+        background: linear-gradient(180deg, rgba(13, 95, 135, 0.03), rgba(13, 95, 135, 0.01)), #fbfcfd;
+        overflow: hidden;
+      }
+
+      .tag-pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 16px;
+        border-radius: 999px;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .tag-pill.mint { background: var(--mint-bg); color: var(--mint-text); }
+      .tag-pill.sky { background: var(--sky-bg); color: var(--sky-text); }
+      .tag-pill.amber { background: var(--amber-bg); color: var(--amber-text); }
+
+      .wave-preview { position: relative; padding-top: 16px; }
+      .wave-preview h2, .wave-preview h3 {
+        margin: 0;
+        position: relative;
+        z-index: 2;
+        font-weight: 800;
+        line-height: 1.22;
+        word-break: break-word;
+      }
+      .wave-preview h2 { font-size: 34px; }
+      .wave-preview h3 { font-size: 26px; }
+      .wave-icon { margin-right: 6px; }
+      .wave-layer {
+        position: absolute;
+        left: -6px;
+        right: -6px;
+        top: 4px;
+        height: 76px;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .wave-layer svg { width: 100%; height: 100%; overflow: visible; }
+      .wave-base, .wave-scan {
+        fill: none;
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .wave-base { stroke: var(--wave-soft); }
+      .wave-scan {
+        stroke: var(--wave-bright);
+        stroke-dasharray: 210 430;
+        animation: ecg-flow 2.8s linear infinite;
+        filter: drop-shadow(0 0 6px rgba(224, 52, 72, 0.26));
+      }
+      @keyframes ecg-flow {
+        from { stroke-dashoffset: 640; }
+        to { stroke-dashoffset: 0; }
+      }
+
+      .image-layout-preview {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .image-layout-row {
+        display: grid;
+        grid-template-columns: repeat(var(--layout-cols, 2), minmax(0, 1fr));
+        gap: 12px;
+      }
+      .image-layout-card {
+        margin: 0;
+      }
+      .image-layout-thumb {
+        min-height: 68px;
+        border-radius: 12px;
+        border: 1px dashed rgba(13, 95, 135, 0.28);
+        background:
+          linear-gradient(135deg, rgba(13, 95, 135, 0.09), rgba(13, 95, 135, 0.02)),
+          repeating-linear-gradient(
+            135deg,
+            rgba(13, 95, 135, 0.08),
+            rgba(13, 95, 135, 0.08) 10px,
+            rgba(255, 255, 255, 0.42) 10px,
+            rgba(255, 255, 255, 0.42) 20px
+          );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #3b6178;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+        padding: 8px;
+      }
+      .image-layout-card figcaption {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center;
+      }
+
+      .notice-flame-preview {
+        position: relative;
+        isolation: isolate;
+        padding: 16px 18px 14px;
+        border: 2px solid transparent;
+        border-radius: 18px;
+        color: #5b2c1c;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0) 24%, rgba(255, 236, 214, 0.24) 100%) padding-box,
+          linear-gradient(180deg, rgba(255, 251, 244, 0.98), rgba(255, 239, 223, 0.98)) padding-box,
+          linear-gradient(135deg, #ffe78c 0%, #ffbf58 15%, #ff873c 33%, #ff5d33 54%, #cb261f 78%, #ffdf8d 100%) border-box;
+        background-size: 100% 100%, 100% 100%, 220% 220%;
+        background-position: 0 0, 0 0, 0% 50%;
+        box-shadow:
+          0 0 0 1px rgba(255, 202, 109, 0.44),
+          inset 0 1px 0 rgba(255, 255, 255, 0.82),
+          inset 0 0 24px rgba(255, 186, 96, 0.14),
+          0 16px 28px rgba(202, 72, 38, 0.14),
+          0 0 22px rgba(255, 139, 59, 0.14);
+        overflow: hidden;
+        animation: flame-border-wave 4.2s ease-in-out infinite, flame-card-flicker 2.8s ease-in-out infinite;
+      }
+      .notice-flame-preview::before {
+        content: "";
+        position: absolute;
+        inset: -14%;
+        background:
+          radial-gradient(circle at 8% 14%, rgba(255, 224, 122, 0.34), transparent 18%),
+          radial-gradient(circle at 28% 8%, rgba(255, 146, 62, 0.28), transparent 16%),
+          radial-gradient(circle at 82% 12%, rgba(255, 92, 46, 0.28), transparent 18%),
+          radial-gradient(circle at 92% 24%, rgba(255, 184, 92, 0.22), transparent 16%),
+          radial-gradient(circle at 10% 88%, rgba(255, 146, 68, 0.2), transparent 20%),
+          radial-gradient(circle at 90% 84%, rgba(255, 206, 118, 0.22), transparent 20%);
+        filter: blur(20px);
+        opacity: 0.86;
+        animation: flame-aura 3.2s ease-in-out infinite;
+      }
+      .notice-flame-preview::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background:
+          radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.34), transparent 16%),
+          radial-gradient(circle at 84% 18%, rgba(255, 139, 59, 0.2), transparent 20%),
+          radial-gradient(circle at 16% 84%, rgba(255, 198, 112, 0.18), transparent 18%),
+          radial-gradient(circle at 86% 82%, rgba(255, 94, 52, 0.16), transparent 22%);
+        box-shadow: inset 0 0 0 1px rgba(255, 243, 221, 0.26);
+      }
+      .notice-flame-preview > * {
+        position: relative;
+        z-index: 1;
+      }
+      .notice-flame-preview__label {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        margin-bottom: 12px;
+        padding: 8px 14px;
+        border: 1px solid rgba(255, 228, 173, 0.36);
+        border-radius: 999px;
+        color: #fff7ef;
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        background: linear-gradient(135deg, #a72419 0%, #d24620 52%, #ff9a28 100%);
+        box-shadow:
+          0 0 0 1px rgba(255, 208, 133, 0.18),
+          0 12px 20px rgba(186, 58, 27, 0.26),
+          0 0 14px rgba(255, 145, 59, 0.16);
+        text-shadow: 0 1px 0 rgba(111, 10, 0, 0.24);
+        animation: flame-label-pulse 2.4s ease-in-out infinite;
+      }
+      .notice-flame-preview__label::before {
+        content: "\\01F525";
+      }
+      .notice-flame-preview ol {
+        margin: 0;
+        padding-left: 20px;
+      }
+      .notice-flame-preview li {
+        margin-bottom: 8px;
+        line-height: 1.6;
+      }
+      .notice-flame-preview li:last-child {
+        margin-bottom: 0;
+      }
+
+      .pdf-footnote-preview__inline {
+        margin: 0 0 12px;
+        color: var(--text);
+        font-size: 14px;
+      }
+      .pdf-footnote-preview__trigger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        margin-left: 4px;
+        border-radius: 999px;
+        background: var(--mint-bg);
+        color: var(--mint-text);
+        font-size: 12px;
+        font-weight: 800;
+        vertical-align: super;
+      }
+      .pdf-footnote-preview__modal {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 12px;
+        padding: 14px;
+        border-radius: 16px;
+        border: 1px solid rgba(13, 95, 135, 0.1);
+        background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(241,248,246,0.96));
+      }
+      .pdf-footnote-preview__pdf {
+        min-height: 150px;
+        border-radius: 14px;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247,251,252,0.98)),
+          repeating-linear-gradient(180deg, rgba(210, 224, 232, 0.36), rgba(210, 224, 232, 0.36) 11px, transparent 11px, transparent 24px);
+        border: 1px solid rgba(13, 95, 135, 0.08);
+        position: relative;
+      }
+      .pdf-footnote-preview__highlight {
+        position: absolute;
+        left: 18%;
+        top: 40%;
+        width: 28%;
+        height: 14%;
+        border-radius: 10px;
+        border: 2px solid #e24a3d;
+        background: rgba(226, 74, 61, 0.16);
+        box-shadow: 0 0 0 8px rgba(226, 74, 61, 0.08);
+      }
+      .pdf-footnote-preview__detail {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .pdf-footnote-preview__zoom,
+      .pdf-footnote-preview__quote,
+      .pdf-footnote-preview__note {
+        border-radius: 12px;
+        background: #fff;
+        border: 1px solid rgba(13, 95, 135, 0.08);
+        padding: 10px 12px;
+      }
+      .pdf-footnote-preview__zoom {
+        min-height: 74px;
+        background:
+          radial-gradient(circle at top left, rgba(13, 95, 135, 0.08), transparent 46%),
+          linear-gradient(180deg, rgba(255,255,255,1), rgba(247,251,252,1));
+      }
+      .pdf-footnote-preview__quote,
+      .pdf-footnote-preview__note {
+        font-size: 12px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+      .pdf-footnote-preview__line {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+      .pdf-footnote-preview__line path {
+        fill: none;
+        stroke: #e24a3d;
+        stroke-width: 2;
+        stroke-dasharray: 6 6;
+      }
+
+      .guideline-shelf-preview {
+        padding: 14px;
+        border-radius: 16px;
+        border: 1px solid rgba(13, 95, 135, 0.08);
+        background: linear-gradient(180deg, rgba(242,250,247,0.96), rgba(255,255,255,0.98));
+      }
+      .guideline-shelf-preview__header {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: end;
+        margin-bottom: 12px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .guideline-shelf-preview__grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .guideline-shelf-preview__card {
+        border-radius: 14px;
+        background: #fff;
+        border: 1px solid rgba(13, 95, 135, 0.08);
+        padding: 12px;
+        box-shadow: 0 10px 18px rgba(19, 49, 69, 0.05);
+      }
+      .guideline-shelf-preview__card.alt .guideline-shelf-preview__tag {
+        background: var(--sky-bg);
+        color: var(--sky-text);
+      }
+      .guideline-shelf-preview__tag {
+        display: inline-flex;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: var(--mint-bg);
+        color: var(--mint-text);
+        font-size: 11px;
+        font-weight: 800;
+        margin-bottom: 8px;
+      }
+      .guideline-shelf-preview__card h4 {
+        margin: 0 0 6px;
+        font-size: 14px;
+        color: var(--text);
+      }
+      .guideline-shelf-preview__card p {
+        margin: 0;
+        font-size: 12px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      @keyframes flame-border-wave {
+        0% {
+          background-position: 0 0, 0 0, 0% 50%;
+        }
+        50% {
+          background-position: 0 0, 0 0, 100% 50%;
+        }
+        100% {
+          background-position: 0 0, 0 0, 20% 50%;
+        }
+      }
+
+      @keyframes flame-card-flicker {
+        0%,
+        100% {
+          box-shadow:
+            0 0 0 1px rgba(255, 202, 109, 0.44),
+            inset 0 1px 0 rgba(255, 255, 255, 0.82),
+            inset 0 0 24px rgba(255, 186, 96, 0.14),
+            0 16px 28px rgba(202, 72, 38, 0.14),
+            0 0 22px rgba(255, 139, 59, 0.14);
+        }
+        50% {
+          box-shadow:
+            0 0 0 1px rgba(255, 216, 132, 0.54),
+            inset 0 1px 0 rgba(255, 255, 255, 0.88),
+            inset 0 0 30px rgba(255, 168, 82, 0.2),
+            0 18px 32px rgba(214, 82, 36, 0.2),
+            0 0 28px rgba(255, 122, 52, 0.24);
+        }
+      }
+
+      @keyframes flame-aura {
+        0%,
+        100% {
+          opacity: 0.78;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.04);
+        }
+      }
+
+      @keyframes flame-label-pulse {
+        0%,
+        100% {
+          box-shadow:
+            0 0 0 1px rgba(255, 208, 133, 0.18),
+            0 12px 20px rgba(186, 58, 27, 0.26),
+            0 0 14px rgba(255, 145, 59, 0.16);
+        }
+        50% {
+          box-shadow:
+            0 0 0 1px rgba(255, 216, 146, 0.24),
+            0 14px 24px rgba(186, 58, 27, 0.32),
+            0 0 20px rgba(255, 145, 59, 0.24);
+        }
+      }
+
+      .code {
+        margin: 14px 0 0;
+        padding: 14px 16px;
+        border-radius: 14px;
+        background: #102635;
+        color: #d8eef8;
+        font: 13px/1.65 "SFMono-Regular", "Menlo", monospace;
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="panel">
+        <div class="preview-box">${buildPreviewMarkup(option)}</div>
+        <pre class="code">${shortcode}</pre>
+      </div>
+    </div>
+  </body>
+  </html>`;
+}
+
+const state = {
+  index: 0,
+  window: null,
+  popup: null,
+  webView: null,
+  statusField: null,
+  applyButton: null,
+};
+
+function writeChoice(choiceId) {
+  if (!choiceFile) return;
+  $(choiceId).writeToFileAtomicallyEncodingError($(choiceFile), true, $.NSUTF8StringEncoding, null);
+}
+
+function optionCanApply(option) {
+  return !option.requiresSelection || hasSelectedText;
+}
+
+function renderPreview() {
+  const option = options[state.index];
+  state.webView.loadHTMLStringBaseURL(
+    $(buildPreviewHTML(option)),
+    $.NSURL.URLWithString($("about:blank"))
+  );
+  const canApply = optionCanApply(option);
+  if (state.applyButton) {
+    state.applyButton.setEnabled(canApply);
+  }
+  if (canApply) {
+    let actionText = "喜歡就按「套用到 Typora」。";
+    if (option.type === "imageLayout" || option.type === "pdfFootnote" || option.type === "guidelineShelf") {
+      actionText = "會直接插入到 Typora 游標處。";
+    } else if (option.type === "notice") {
+      actionText = hasSelectedText ? "會包住目前選取內容。" : "會直接插入到 Typora 游標處。";
+    }
+    state.statusField.setStringValue($(`目前效果：${option.title}。${actionText}`));
+    return;
+  }
+  state.statusField.setStringValue($(`目前效果：${option.title}。這個效果需要先在 Typora 選取文字。`));
+}
+
+ObjC.registerSubclass({
+  name: "TyporaPreviewPanelDelegate",
+  methods: {
+    "changeOption:": {
+      types: ["void", ["id"]],
+      implementation(sender) {
+        state.index = sender.indexOfSelectedItem;
+        renderPreview();
+      },
+    },
+    "copyAndReturn:": {
+      types: ["void", ["id"]],
+      implementation() {
+        writeChoice(options[state.index].id);
+        state.window.close();
+      },
+    },
+    "closePanel:": {
+      types: ["void", ["id"]],
+      implementation() {
+        state.window.close();
+      },
+    },
+    "windowWillClose:": {
+      types: ["void", ["id"]],
+      implementation() {
+        $.NSApp.terminate(null);
+      },
+    },
+  },
+});
+
+function makeLabel(frame, text, font, color) {
+  const field = $.NSTextField.alloc.initWithFrame(frame);
+  field.setStringValue($(text));
+  field.setBezeled(false);
+  field.setBordered(false);
+  field.setDrawsBackground(false);
+  field.setEditable(false);
+  field.setSelectable(false);
+  field.setFont(font);
+  field.setTextColor(color);
+  return field;
+}
+
+function run() {
+  const app = $.NSApplication.sharedApplication;
+  app.setActivationPolicy($.NSApplicationActivationPolicyAccessory);
+
+  const delegate = $.TyporaPreviewPanelDelegate.alloc.init;
+
+  if (autoSelectId) {
+    const autoIndex = options.findIndex((option) => option.id === autoSelectId);
+    if (autoIndex >= 0) {
+      state.index = autoIndex;
+    }
+  } else if (!hasSelectedText) {
+    const templateIndex = options.findIndex((option) => !option.requiresSelection);
+    if (templateIndex >= 0) {
+      state.index = templateIndex;
+    }
+  }
+
+  if (autoApply === "1") {
+    writeChoice(options[state.index].id);
+    return;
+  }
+
+  const style =
+    $.NSWindowStyleMaskTitled |
+    $.NSWindowStyleMaskClosable |
+    $.NSWindowStyleMaskMiniaturizable;
+
+  const window = $.NSPanel.alloc.initWithContentRectStyleMaskBackingDefer(
+    $.NSMakeRect(0, 0, 640, 470),
+    style,
+    $.NSBackingStoreBuffered,
+    false
+  );
+
+  state.window = window;
+  window.setTitle($("Typora Preview Panel"));
+  window.setFloatingPanel(true);
+  window.setHidesOnDeactivate(false);
+  window.setLevel($.NSFloatingWindowLevel);
+  window.setDelegate(delegate);
+
+  const screenFrame = $.NSScreen.mainScreen.visibleFrame;
+  const windowFrame = window.frame;
+  const rightMargin = 24;
+  const topMargin = 72;
+  const originX = screenFrame.origin.x + screenFrame.size.width - windowFrame.size.width - rightMargin;
+  const originY = screenFrame.origin.y + screenFrame.size.height - windowFrame.size.height - topMargin;
+  window.setFrameOrigin($.NSMakePoint(originX, originY));
+
+  const contentView = window.contentView;
+
+  const title = makeLabel(
+    $.NSMakeRect(24, 424, 280, 28),
+    "Typora Preview Panel Beta",
+    $.NSFont.boldSystemFontOfSize(22),
+    $.NSColor.colorWithCalibratedRedGreenBlueAlpha(0.08, 0.31, 0.46, 1)
+  );
+  contentView.addSubview(title);
+
+  const sub = makeLabel(
+    $.NSMakeRect(24, 398, 580, 20),
+    "可先選字包裝文字效果，也可不選字直接插入模板到 Typora 游標處。",
+    $.NSFont.systemFontOfSize(13),
+    $.NSColor.secondaryLabelColor
+  );
+  contentView.addSubview(sub);
+
+  const pickedTitle = makeLabel(
+    $.NSMakeRect(24, 368, 100, 18),
+    "目前選取文字 / 插入模式",
+    $.NSFont.boldSystemFontOfSize(13),
+    $.NSColor.secondaryLabelColor
+  );
+  contentView.addSubview(pickedTitle);
+
+  const selectionBox = $.NSBox.alloc.initWithFrame($.NSMakeRect(24, 320, 592, 40));
+  selectionBox.setBoxType($.NSBoxCustom);
+  selectionBox.setBorderType($.NSLineBorder);
+  selectionBox.setCornerRadius(12);
+  selectionBox.setBorderColor($.NSColor.colorWithCalibratedRedGreenBlueAlpha(0.84, 0.89, 0.93, 1));
+  selectionBox.setFillColor($.NSColor.colorWithCalibratedRedGreenBlueAlpha(0.97, 0.98, 0.99, 1));
+  contentView.addSubview(selectionBox);
+
+  const selectionField = makeLabel(
+    $.NSMakeRect(16, 8, 560, 24),
+    hasSelectedText ? trimmedSelectedText : "未選取文字，這次會在 Typora 游標處插入模板。",
+    $.NSFont.boldSystemFontOfSize(17),
+    $.NSColor.labelColor
+  );
+  selectionField.cell.setLineBreakMode($.NSLineBreakByTruncatingTail);
+  selectionBox.contentView.addSubview(selectionField);
+
+  const popupLabel = makeLabel(
+    $.NSMakeRect(24, 286, 160, 18),
+    "選擇要預覽的效果",
+    $.NSFont.boldSystemFontOfSize(13),
+    $.NSColor.secondaryLabelColor
+  );
+  contentView.addSubview(popupLabel);
+
+  const popup = $.NSPopUpButton.alloc.initWithFramePullsDown($.NSMakeRect(24, 250, 520, 28), false);
+  options.forEach((option) => popup.addItemWithTitle($(option.menuTitle)));
+  popup.setTarget(delegate);
+  popup.setAction("changeOption:");
+  state.popup = popup;
+  contentView.addSubview(popup);
+
+  const webConfig = $.WKWebViewConfiguration.alloc.init;
+  const webView = $.WKWebView.alloc.initWithFrameConfiguration($.NSMakeRect(24, 80, 592, 154), webConfig);
+  webView.setValueForKey(false, "drawsBackground");
+  state.webView = webView;
+  contentView.addSubview(webView);
+
+  const statusField = makeLabel(
+    $.NSMakeRect(24, 44, 360, 18),
+    "",
+    $.NSFont.systemFontOfSize(12),
+    $.NSColor.secondaryLabelColor
+  );
+  state.statusField = statusField;
+  contentView.addSubview(statusField);
+
+  const closeButton = $.NSButton.alloc.initWithFrame($.NSMakeRect(398, 18, 86, 32));
+  closeButton.setTitle($("關閉"));
+  closeButton.setBezelStyle($.NSBezelStyleRounded);
+  closeButton.setTarget(delegate);
+  closeButton.setAction("closePanel:");
+  contentView.addSubview(closeButton);
+
+  const copyButton = $.NSButton.alloc.initWithFrame($.NSMakeRect(494, 18, 122, 32));
+  copyButton.setTitle($("套用到 Typora"));
+  copyButton.setBezelStyle($.NSBezelStyleRounded);
+  copyButton.setTarget(delegate);
+  copyButton.setAction("copyAndReturn:");
+  state.applyButton = copyButton;
+  contentView.addSubview(copyButton);
+
+  popup.selectItemAtIndex(state.index);
+
+  renderPreview();
+
+  window.makeKeyAndOrderFront(null);
+  app.activateIgnoringOtherApps(true);
+
+  app.run();
+}
+
+run();

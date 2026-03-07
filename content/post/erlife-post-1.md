@@ -5,6 +5,7 @@ description: "急診醫師下鄉生活紀錄：眼鏡蛇闖入住家真實事件
 draft: false #若為false就會直接刊出，不會以草稿模式運作
 toc: false #自動產生TOC
 thumbnail: "/images/erlife-post-1.jpg" #每篇文章的縮圖位置在這裡(static/images/)-變更
+typora-copy-images-to: "../../static/images/ipic"
 codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
 codeLineNumbers: false # Override global value for showing of line numbers within code block.
 figurePositionShow: true # Override global value for showing the figure label.
@@ -15,7 +16,7 @@ tags:
   - 蛇
   - 竹榮
 ---
-![](/images/ipic/nmp534.jpg)
+![](../../static/images/ipic/nmp534.jpg)
 
 下鄉第一年在竹東榮民醫院，發生了一件非常可怕的事。
 

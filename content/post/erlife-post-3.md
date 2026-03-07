@@ -7,6 +7,7 @@ draft: false #若為false就會直接刊出，不會以草稿模式運作
 toc: false #自動產生TOC
 #featureImage: "/images/HUGO.png" #設定這篇文章首頁的圖片
 thumbnail: "/images/erlife-post-3.webp" #每篇文章的縮圖位置在這裡(static/images/)-變更
+typora-copy-images-to: "../../static/images/ipic"
 codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
 codeLineNumbers: true # Override global value for showing of line numbers within code block.
 figurePositionShow: true # Override global value for showing the figure label.
@@ -33,9 +34,9 @@ tags:
 
 於是我就被控告<mark>**重傷害**<mark>。
 
-![](/images/ipic/1cchu0.jpg)
+![](../../static/images/ipic/1cchu0.jpg)
 
-![](/images/ipic/r9sm0i.jpg)
+![](../../static/images/ipic/r9sm0i.jpg)
 
 ### **傳票上面沒有寫是誰要告我，我清楚知道是哪一位。**
 
@@ -79,7 +80,7 @@ tags:
 
 我請醫院的法扶律師擔任我的選任辯護人。
 
-![](/images/ipic/kv23t4.jpg)
+![](../../static/images/ipic/kv23t4.jpg)
 
 我將當天事情發生經過，以及對方告我的點，都加以闡述與提出證據來佐證我的清白。
 
@@ -125,7 +126,7 @@ tags:
 
 同事: **學長，希望你沒有事，這尊佛像送給你，祂可以保護你。**
 
-![](/images/ipic/b7r7re.jpg)
+![](../../static/images/ipic/b7r7re.jpg)
 
 再講一次
 
@@ -163,9 +164,9 @@ tags:
 
 想說出庭時，穿個運動服出庭，似乎不像個醫師。
 
-![](/images/ipic/x4mn72.jpg)
+![](../../static/images/ipic/x4mn72.jpg)
 
-![](/images/ipic/3ok9yf.jpg)
+![](../../static/images/ipic/3ok9yf.jpg)
 
 出庭時，檢察官在我的前方，旁邊有一位書記官，做文字的紀錄。
 
@@ -187,7 +188,7 @@ tags:
 
 去年年底宜蘭縣衛生局再度來文，請我們再和告訴人到宜蘭衛生局醫療爭議調解會，再進行調解一次。
 
-![](/images/ipic/zfytcl.jpg)
+![](../../static/images/ipic/zfytcl.jpg)
 
 我實在很不想看到這個人的嘴臉，於是我請楊律師幫我出席。
 
@@ -205,9 +206,9 @@ tags:
 
 今年四月中，收到了一封地檢署來的公文。
 
-![](/images/ipic/6aur3d.jpg)
+![](../../static/images/ipic/6aur3d.jpg)
 
-![](/images/ipic/0r0bqs.jpg)
+![](../../static/images/ipic/0r0bqs.jpg)
 
 收到不起訴處分書，對方還有10天**再議**的時間，可以提出不服的理由。
 
@@ -237,7 +238,7 @@ tags:
 
 以上就是我的法院奇幻之旅。把兩年前的一開始，到今年結束都交代一下。也讓我能夠時時刻刻回過頭來，細細審思我曾經經歷過哪些事情。
 
-![](/images/ipic/chgi03.png)
+![](../../static/images/ipic/chgi03.png)
 
 ### 被告了，該準備什麼?
 

@@ -7,6 +7,7 @@ draft: false #若為false就會直接刊出，不會以草稿模式運作
 toc: false #自動產生TOC
 #featureImage: "/images/HUGO.png" #設定這篇文章首頁的圖片
 thumbnail: "/images/erlife-post-2.jpg" #每篇文章的縮圖位置在這裡(static/images/)-變更
+typora-copy-images-to: "../../static/images/ipic"
 codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
 codeLineNumbers: true # Override global value for showing of line numbers within code block.
 figurePositionShow: true # Override global value for showing the figure label.
@@ -15,7 +16,7 @@ categories:
 tags:
 ---
 
-![](/images/ipic/9zxy20.jpg)
+![](../../static/images/ipic/9zxy20.jpg)
 
 <iframe width="1000" height="500" src="https://youtube.com/embed/CQu4uK_8I1E?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

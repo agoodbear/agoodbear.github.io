@@ -4,6 +4,7 @@ date: "2023-03-25"
 draft: false
 toc: false
 thumbnail: "https://cdn-images-1.medium.com/max/1024/1*tprAYzfatLfq__U6OEglhw.png"
+typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
   - "medium"
