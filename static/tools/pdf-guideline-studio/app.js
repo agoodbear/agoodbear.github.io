@@ -17,7 +17,7 @@ const STORAGE_KEYS = {
 };
 
 const HIGHLIGHT_COLORS = [
-  { name: "Mint", value: "#f6dd54" },
+  { name: "Yellow", value: "#f6dd54" },
   { name: "Amber", value: "#f7c85f" },
   { name: "Sky", value: "#8fd4ff" },
   { name: "Rose", value: "#f5a5a3" },
@@ -722,6 +722,36 @@ function collectAvailableHighlightTags() {
     normalizeHighlightTags(highlight.tags).forEach((tag) => tags.add(tag));
   });
   return Array.from(tags).sort((a, b) => a.localeCompare(b, "zh-Hant"));
+}
+
+function collectAvailableHighlightColors() {
+  const seen = new Set();
+  const colors = [];
+
+  HIGHLIGHT_COLORS.forEach((preset) => {
+    const value = String(preset.value || "").toLowerCase();
+    const isUsed = state.doc.highlights.some((highlight) => String(highlight.color || "").toLowerCase() === value);
+    if (!isUsed) return;
+    seen.add(value);
+    colors.push({
+      name: preset.name,
+      value,
+      swatch: preset.value,
+    });
+  });
+
+  state.doc.highlights.forEach((highlight) => {
+    const value = String(highlight.color || "").toLowerCase();
+    if (!value || seen.has(value)) return;
+    seen.add(value);
+    colors.push({
+      name: value,
+      value,
+      swatch: value,
+    });
+  });
+
+  return colors;
 }
 
 function areHighlightFiltersActive() {
@@ -2764,20 +2794,23 @@ function updateHighlightFilterUi() {
   const tagWrap = refs.highlightFilterPanel.querySelector('[data-filter-group="tag"]');
   if (!colorWrap || !tagWrap) return;
 
-  colorWrap.innerHTML = HIGHLIGHT_COLORS.map((color) => {
-    const value = String(color.value || "").toLowerCase();
-    const selected = state.highlightFilters.colors.includes(value);
-    return `
-      <button
-        type="button"
-        class="pdf-guideline-studio__filter-chip ${selected ? "is-selected" : ""}"
-        data-filter-color="${escapeHtml(value)}"
-      >
-        <span class="pdf-guideline-studio__filter-chip-dot" style="background:${escapeHtml(color.value)}"></span>
-        ${escapeHtml(color.name)}
-      </button>
-    `;
-  }).join("");
+  const colors = collectAvailableHighlightColors();
+  colorWrap.innerHTML = colors.length
+    ? colors.map((color) => {
+        const value = String(color.value || "").toLowerCase();
+        const selected = state.highlightFilters.colors.includes(value);
+        return `
+          <button
+            type="button"
+            class="pdf-guideline-studio__filter-chip ${selected ? "is-selected" : ""}"
+            data-filter-color="${escapeHtml(value)}"
+          >
+            <span class="pdf-guideline-studio__filter-chip-dot" style="background:${escapeHtml(color.swatch || color.value)}"></span>
+            ${escapeHtml(color.name)}
+          </button>
+        `;
+      }).join("")
+    : `<span class="pdf-guideline-studio__filter-empty">尚未有可篩選顏色</span>`;
 
   const tags = collectAvailableHighlightTags();
   tagWrap.innerHTML = tags.length
