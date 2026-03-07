@@ -1,0 +1,33 @@
+{
+  "id": "test-image-preview",
+  "title": "Image Preview Test Document",
+  "pdfUrl": "https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fagoodbear%2FKL7_eFN-Dc.pdf?alt=media&token=a01041f1-63a3-4cbf-8292-6f819cdebd6f",
+  "meta": "Local Test",
+  "tag": "Preview",
+  "tone": "sky",
+  "articlePath": "/post/pdf-footnote-demo/",
+  "description": "這份文件專門用來測試右側 highlight 截圖的放大預覽功能。",
+  "highlights": [
+    {
+      "id": "test-image-preview-highlight",
+      "page": 1,
+      "left": 20,
+      "top": 30,
+      "width": 40,
+      "height": 18,
+      "quads": [
+        {
+          "left": 20,
+          "top": 30,
+          "width": 40,
+          "height": 18
+        }
+      ],
+      "color": "#78c4b7",
+      "label": "放大預覽測試截圖",
+      "quote": "這是一張固定測試圖，用來驗證右側 highlight 卡片中的放大預覽功能。",
+      "note": "請按右上角放大鍵，確認圖片會置中放大；按背景、右上角 ×、或 Esc 可關閉。",
+      "clipImage": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9Ijk4MCIgdmlld0JveD0iMCAwIDE0MDAgOTgwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZTZmNGZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2QwZWVmZiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjE0MDAiIGhlaWdodD0iOTgwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjkwIiB5PSI4MCIgd2lkdGg9IjEyMjAiIGhlaWdodD0iODIwIiByeD0iMzYiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzE3OTBiZiIgc3Ryb2tlLXdpZHRoPSIxNiIvPgogIDx0ZXh0IHg9IjE0MCIgeT0iMjIwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iODQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwZjZmOTUiPkltYWdlIFByZXZpZXcgVGVzdDwvdGV4dD4KICA8dGV4dCB4PSIxNDAiIHk9IjMyMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQ4IiBmaWxsPSIjMjQzMDNiIj5UaGlzIHJpZ2h0LXNpZGViYXIgaW1hZ2Ugc2hvdWxkIG9wZW4gY2VudGVyZWQgYW5kIGVubGFyZ2VkLjwvdGV4dD4KICA8cmVjdCB4PSIxNDAiIHk9IjQwMCIgd2lkdGg9IjExMjAiIGhlaWdodD0iMzIwIiByeD0iMjgiIGZpbGw9IiNkOWVlZjgiIHN0cm9rZT0iIzBhNWM4MCIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPHRleHQgeD0iMjAwIiB5PSI1MjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzBmNmY5NSI+Q2xpY2sgdGhlIG1hZ25pZnkgYnV0dG9uIG5leHQgdG8gQ2l0ZS48L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSI2MDAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0MiIgZmlsbD0iIzI0MzAzYiI+RXhwZWN0ZWQ6IGZ1bGwgaW1hZ2UsIGNlbnRlcmVkLCBubyBicm9rZW4gcHJldmlldy48L3RleHQ+Cjwvc3ZnPg=="
+    }
+  ]
+}
