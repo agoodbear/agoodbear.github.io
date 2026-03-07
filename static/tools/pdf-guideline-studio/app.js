@@ -26,6 +26,8 @@ const HIGHLIGHT_COLORS = [
 
 const GEOMETRY_DECIMALS = 4;
 const CAPTURE_MAX_OUTPUT_EDGE = 3200;
+const CAPTURE_RENDER_PIXEL_RATIO = 3;
+const CAPTURE_MAX_RENDER_EDGE = 5200;
 
 function createSearchState() {
   return {
@@ -1435,6 +1437,9 @@ async function renderPdfPages(pdfDoc, pdfjsLib) {
       searchEntries,
       searchText: searchEntries.map((entry) => entry.text).join(" "),
       searchTextLower: searchEntries.map((entry) => entry.text).join(" ").toLowerCase(),
+      baseViewportWidth: baseViewport.width,
+      baseViewportHeight: baseViewport.height,
+      cssScale,
       cssWidth,
       cssHeight,
     });
@@ -1759,7 +1764,7 @@ function bindCaptureEvents(pageView) {
     draftBox.style.height = `${box.height}%`;
   });
 
-  pageView.overlay.addEventListener("pointerup", (event) => {
+  pageView.overlay.addEventListener("pointerup", async (event) => {
     if (!startPoint || !draftBox || activePointerId !== event.pointerId) return;
     const rect = pageView.overlay.getBoundingClientRect();
     const endPoint = {
@@ -1773,7 +1778,7 @@ function bindCaptureEvents(pageView) {
       return;
     }
 
-    const clipImage = captureBoxImageDataUrl(pageView, box);
+    const clipImage = await captureBoxImageDataUrl(pageView, box);
     if (!clipImage) {
       showMessage("目前無法擷取該區域，請稍後再試。", "error");
       return;
@@ -1832,45 +1837,106 @@ function normalizeBox(start, end) {
   };
 }
 
-function captureBoxImageDataUrl(pageView, box) {
-  if (!pageView || !pageView.canvas) return "";
+async function captureBoxImageDataUrl(pageView, box) {
+  if (!pageView?.page || !pageView?.canvas) return "";
+
   const sourceCanvas = pageView.canvas;
-  // Use canvas pixel space directly to avoid CSS-to-canvas rounding drift.
-  const x1 = clamp(Math.round((box.left / 100) * sourceCanvas.width), 0, sourceCanvas.width - 1);
-  const y1 = clamp(Math.round((box.top / 100) * sourceCanvas.height), 0, sourceCanvas.height - 1);
-  const x2 = clamp(
+  const currentX1 = clamp(Math.round((box.left / 100) * sourceCanvas.width), 0, sourceCanvas.width - 1);
+  const currentY1 = clamp(Math.round((box.top / 100) * sourceCanvas.height), 0, sourceCanvas.height - 1);
+  const currentX2 = clamp(
     Math.round(((box.left + box.width) / 100) * sourceCanvas.width),
-    x1 + 1,
+    currentX1 + 1,
     sourceCanvas.width
   );
-  const y2 = clamp(
+  const currentY2 = clamp(
     Math.round(((box.top + box.height) / 100) * sourceCanvas.height),
-    y1 + 1,
+    currentY1 + 1,
     sourceCanvas.height
   );
 
-  const sx = x1;
-  const sy = y1;
-  const sw = x2 - x1;
-  const sh = y2 - y1;
+  const fallbackWidth = currentX2 - currentX1;
+  const fallbackHeight = currentY2 - currentY1;
+  if (fallbackWidth < 2 || fallbackHeight < 2) return "";
 
-  if (sw < 2 || sh < 2) return "";
+  try {
+    const baseWidth = Number(pageView.baseViewportWidth) || pageView.page.getViewport({ scale: 1 }).width;
+    const cssScale = Number(pageView.cssScale) || pageView.cssWidth / baseWidth || 1;
+    const currentPixelRatio = sourceCanvas.width / Math.max(1, pageView.cssWidth || sourceCanvas.width);
 
-  // Keep screenshot quality high. Only downscale for extremely large crops.
-  const cropLongestEdge = Math.max(sw, sh);
-  const outputScale = cropLongestEdge > CAPTURE_MAX_OUTPUT_EDGE ? CAPTURE_MAX_OUTPUT_EDGE / cropLongestEdge : 1;
-  const outW = Math.max(2, Math.round(sw * outputScale));
-  const outH = Math.max(2, Math.round(sh * outputScale));
+    let renderPixelRatio = Math.max(currentPixelRatio, CAPTURE_RENDER_PIXEL_RATIO);
+    const maxPixelRatioByEdge = CAPTURE_MAX_RENDER_EDGE / Math.max(1, baseWidth * cssScale);
+    if (Number.isFinite(maxPixelRatioByEdge) && maxPixelRatioByEdge > 0) {
+      renderPixelRatio = Math.min(renderPixelRatio, maxPixelRatioByEdge);
+    }
+    renderPixelRatio = clamp(renderPixelRatio, 1, 4);
 
-  const output = document.createElement("canvas");
-  output.width = outW;
-  output.height = outH;
-  const ctx = output.getContext("2d");
-  if (!ctx) return "";
-  ctx.imageSmoothingEnabled = true;
-  ctx.imageSmoothingQuality = "high";
-  ctx.drawImage(sourceCanvas, sx, sy, sw, sh, 0, 0, outW, outH);
-  return output.toDataURL("image/png");
+    const renderViewport = pageView.page.getViewport({ scale: cssScale * renderPixelRatio });
+    const renderCanvas = document.createElement("canvas");
+    renderCanvas.width = Math.max(2, Math.ceil(renderViewport.width));
+    renderCanvas.height = Math.max(2, Math.ceil(renderViewport.height));
+    const renderContext = renderCanvas.getContext("2d", { alpha: false });
+    if (!renderContext) return "";
+    await pageView.page.render({ canvasContext: renderContext, viewport: renderViewport }).promise;
+
+    const sx = clamp(Math.round((box.left / 100) * renderCanvas.width), 0, renderCanvas.width - 1);
+    const sy = clamp(Math.round((box.top / 100) * renderCanvas.height), 0, renderCanvas.height - 1);
+    const ex = clamp(
+      Math.round(((box.left + box.width) / 100) * renderCanvas.width),
+      sx + 1,
+      renderCanvas.width
+    );
+    const ey = clamp(
+      Math.round(((box.top + box.height) / 100) * renderCanvas.height),
+      sy + 1,
+      renderCanvas.height
+    );
+    const sw = ex - sx;
+    const sh = ey - sy;
+    if (sw < 2 || sh < 2) return "";
+
+    const cropLongestEdge = Math.max(sw, sh);
+    const outputScale = cropLongestEdge > CAPTURE_MAX_OUTPUT_EDGE ? CAPTURE_MAX_OUTPUT_EDGE / cropLongestEdge : 1;
+    const outW = Math.max(2, Math.round(sw * outputScale));
+    const outH = Math.max(2, Math.round(sh * outputScale));
+
+    const output = document.createElement("canvas");
+    output.width = outW;
+    output.height = outH;
+    const outputContext = output.getContext("2d");
+    if (!outputContext) return "";
+    outputContext.imageSmoothingEnabled = true;
+    outputContext.imageSmoothingQuality = "high";
+    outputContext.drawImage(renderCanvas, sx, sy, sw, sh, 0, 0, outW, outH);
+    return output.toDataURL("image/png");
+  } catch (error) {
+    console.warn("High-resolution clip capture failed, falling back to current canvas crop.", error);
+
+    const cropLongestEdge = Math.max(fallbackWidth, fallbackHeight);
+    const outputScale =
+      cropLongestEdge > CAPTURE_MAX_OUTPUT_EDGE ? CAPTURE_MAX_OUTPUT_EDGE / cropLongestEdge : 1;
+    const outW = Math.max(2, Math.round(fallbackWidth * outputScale));
+    const outH = Math.max(2, Math.round(fallbackHeight * outputScale));
+
+    const output = document.createElement("canvas");
+    output.width = outW;
+    output.height = outH;
+    const ctx = output.getContext("2d");
+    if (!ctx) return "";
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
+    ctx.drawImage(
+      sourceCanvas,
+      currentX1,
+      currentY1,
+      fallbackWidth,
+      fallbackHeight,
+      0,
+      0,
+      outW,
+      outH
+    );
+    return output.toDataURL("image/png");
+  }
 }
 
 function normalizeSelectedQuote(value) {
