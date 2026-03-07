@@ -1,0 +1,106 @@
+{{- $title := .Get "title" | default "Guideline集散地" -}}
+{{- $intro := .Get "intro" | default "這裡收納所有 guideline / paper PDF 卡牌，點卡片可進入閱讀器查看左側原文與右側 highlight。" -}}
+{{- $items := slice -}}
+{{- with site.Data.guideline_pdfs -}}
+  {{- if isset . "items" -}}
+    {{- $items = .items -}}
+  {{- end -}}
+{{- end -}}
+
+<section class="guideline-shelf guideline-room">
+  <div class="guideline-shelf__header">
+    <div>
+      <p class="guideline-shelf__eyebrow">PDF Collection Room</p>
+      <h2 class="guideline-shelf__title">{{ $title }}</h2>
+    </div>
+    {{- with $intro -}}
+      <p class="guideline-shelf__intro">{{ . }}</p>
+    {{- end -}}
+  </div>
+
+  <div class="guideline-shelf__grid">
+    {{- if gt (len $items) 0 -}}
+      {{- range $items }}
+        {{- $cardTitle := .title | default "Untitled PDF" -}}
+        {{- $href := .href | default "" -}}
+        {{- $doc := .doc | default "" -}}
+        {{- $seed := .seed | default "" -}}
+        {{- $apiBase := .apiBase | default "" -}}
+        {{- $meta := .meta | default "" -}}
+        {{- $tag := .tag | default "" -}}
+        {{- $tone := .tone | default "mint" -}}
+        {{- $summary := .summary | default "" -}}
+        {{- $cta := .cta | default "Open PDF" -}}
+        {{- $viewerHref := "" -}}
+        {{- $adminHref := "" -}}
+        {{- $rawHref := $href -}}
+
+        {{- if or $doc $seed -}}
+          {{- $queryParts := slice -}}
+          {{- with $doc }}{{- $queryParts = $queryParts | append (printf "doc=%s" (. | urlquery)) -}}{{- end -}}
+          {{- with $seed }}{{- $queryParts = $queryParts | append (printf "seed=%s" (. | urlquery)) -}}{{- end -}}
+          {{- with $apiBase }}{{- $queryParts = $queryParts | append (printf "apiBase=%s" (. | urlquery)) -}}{{- end -}}
+          {{- with $href }}{{- $queryParts = $queryParts | append (printf "pdf=%s" (. | urlquery)) -}}{{- end -}}
+          {{- with $.Page.RelPermalink }}{{- $queryParts = $queryParts | append (printf "article=%s" (. | urlquery)) -}}{{- end -}}
+          {{- $queryParts = $queryParts | append "v=20260307-10" -}}
+          {{- $viewerHref = printf "/tools/pdf-guideline-studio/?%s" (delimit $queryParts "&") -}}
+          {{- $adminHref = printf "%s&mode=admin" $viewerHref -}}
+        {{- end -}}
+
+        {{- if and $href (hasPrefix $href "/") -}}
+          {{- $rawHref = printf "/js/pdf-js/web/viewer.html?file=%s" ($href | urlquery) -}}
+        {{- end -}}
+
+        {{- if and $viewerHref (eq $cta "Open PDF") -}}
+          {{- $cta = "Open Reader" -}}
+        {{- end -}}
+        {{- $toneClass := printf "guideline-card--%s" ($tone | urlize) -}}
+
+        <article class="guideline-card {{ $toneClass }}">
+          <div class="guideline-card__frame" aria-hidden="true">
+            <svg viewBox="0 0 92 112" preserveAspectRatio="xMidYMid meet">
+              <path d="M18 8h42l14 14v82H18z" fill="currentColor" opacity="0.12"></path>
+              <path d="M60 8v16h16" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"></path>
+              <path d="M18 8h42l16 16v80H18z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"></path>
+              <path d="M30 46h34M30 60h34M30 74h24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <div class="guideline-card__content">
+            <div class="guideline-card__meta">
+              {{- with $tag -}}
+                <span class="guideline-card__tag">{{ . }}</span>
+              {{- end -}}
+              {{- with $meta -}}
+                <span class="guideline-card__source">{{ . }}</span>
+              {{- end -}}
+            </div>
+            <h3 class="guideline-card__title">{{ $cardTitle }}</h3>
+            {{- with $summary -}}
+              <div class="guideline-card__body">{{ . | markdownify }}</div>
+            {{- end -}}
+            <a
+              class="guideline-card__link"
+              href="{{ cond (ne $viewerHref "") $viewerHref ($href | safeURL) }}"
+              {{- if eq $viewerHref "" -}} target="_blank" rel="noopener"{{- end -}}
+            >
+              <span>{{ $cta }}</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            {{- if $viewerHref -}}
+              <div class="guideline-card__subactions">
+                {{- if $href -}}
+                  <a class="guideline-card__raw-link" href="{{ $rawHref | safeURL }}" target="_blank" rel="noopener">Raw PDF</a>
+                {{- end -}}
+                <a class="guideline-card__admin-link" href="{{ $adminHref | safeURL }}" data-guideline-admin-link hidden>管理 PDF</a>
+              </div>
+            {{- end -}}
+          </div>
+        </article>
+      {{- end }}
+    {{- else -}}
+      <div class="guideline-room__empty">
+        尚未建立任何準則 PDF 卡牌。請先編輯 <code>data/guideline_pdfs.yaml</code>。
+      </div>
+    {{- end -}}
+  </div>
+</section>

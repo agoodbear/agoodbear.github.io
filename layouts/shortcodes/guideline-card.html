@@ -1,0 +1,97 @@
+{{- $title := "" -}}
+{{- $href := "" -}}
+{{- $doc := "" -}}
+{{- $seed := "" -}}
+{{- $apiBase := "" -}}
+{{- $meta := "" -}}
+{{- $tag := "" -}}
+{{- $cta := "Open PDF" -}}
+{{- $tone := "mint" -}}
+
+{{- if .IsNamedParams -}}
+  {{- with .Get "title" }}{{- $title = . -}}{{- end -}}
+  {{- with .Get "href" }}{{- $href = . -}}{{- end -}}
+  {{- with .Get "doc" }}{{- $doc = . -}}{{- end -}}
+  {{- with .Get "seed" }}{{- $seed = . -}}{{- end -}}
+  {{- with .Get "apiBase" }}{{- $apiBase = . -}}{{- end -}}
+  {{- with .Get "meta" }}{{- $meta = . -}}{{- end -}}
+  {{- with .Get "tag" }}{{- $tag = . -}}{{- end -}}
+  {{- with .Get "cta" }}{{- $cta = . -}}{{- end -}}
+  {{- with .Get "tone" }}{{- $tone = . -}}{{- end -}}
+{{- else -}}
+  {{- with .Get 0 }}{{- $title = . -}}{{- end -}}
+  {{- with .Get 1 }}{{- $href = . -}}{{- end -}}
+  {{- with .Get 2 }}{{- $doc = . -}}{{- end -}}
+  {{- with .Get 3 }}{{- $seed = . -}}{{- end -}}
+  {{- with .Get 4 }}{{- $meta = . -}}{{- end -}}
+  {{- with .Get 5 }}{{- $tag = . -}}{{- end -}}
+  {{- with .Get 6 }}{{- $cta = . -}}{{- end -}}
+  {{- with .Get 7 }}{{- $tone = . -}}{{- end -}}
+{{- end -}}
+
+{{- $body := .Inner | strings.TrimSpace | markdownify -}}
+{{- $toneClass := printf "guideline-card--%s" ($tone | urlize) -}}
+{{- $viewerHref := "" -}}
+{{- $adminHref := "" -}}
+{{- $rawHref := $href -}}
+
+{{- if or $doc $seed -}}
+  {{- $queryParts := slice -}}
+  {{- with $doc }}{{- $queryParts = $queryParts | append (printf "doc=%s" (. | urlquery)) -}}{{- end -}}
+  {{- with $seed }}{{- $queryParts = $queryParts | append (printf "seed=%s" (. | urlquery)) -}}{{- end -}}
+  {{- with $apiBase }}{{- $queryParts = $queryParts | append (printf "apiBase=%s" (. | urlquery)) -}}{{- end -}}
+  {{- with $href }}{{- $queryParts = $queryParts | append (printf "pdf=%s" (. | urlquery)) -}}{{- end -}}
+  {{- with .Page.RelPermalink }}{{- $queryParts = $queryParts | append (printf "article=%s" (. | urlquery)) -}}{{- end -}}
+  {{- $queryParts = $queryParts | append "v=20260307-10" -}}
+  {{- $viewerHref = printf "/tools/pdf-guideline-studio/?%s" (delimit $queryParts "&") -}}
+  {{- $adminHref = printf "%s&mode=admin" $viewerHref -}}
+{{- end -}}
+
+{{- if and $href (hasPrefix $href "/") -}}
+  {{- $rawHref = printf "/js/pdf-js/web/viewer.html?file=%s" ($href | urlquery) -}}
+{{- end -}}
+
+{{- if and $viewerHref (eq $cta "Open PDF") -}}
+  {{- $cta = "Open Reader" -}}
+{{- end -}}
+
+<article class="guideline-card {{ $toneClass }}">
+  <div class="guideline-card__frame" aria-hidden="true">
+    <svg viewBox="0 0 92 112" preserveAspectRatio="xMidYMid meet">
+      <path d="M18 8h42l14 14v82H18z" fill="currentColor" opacity="0.12"></path>
+      <path d="M60 8v16h16" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"></path>
+      <path d="M18 8h42l16 16v80H18z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"></path>
+      <path d="M30 46h34M30 60h34M30 74h24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"></path>
+    </svg>
+  </div>
+  <div class="guideline-card__content">
+    <div class="guideline-card__meta">
+      {{- with $tag -}}
+        <span class="guideline-card__tag">{{ . }}</span>
+      {{- end -}}
+      {{- with $meta -}}
+        <span class="guideline-card__source">{{ . }}</span>
+      {{- end -}}
+    </div>
+    <h3 class="guideline-card__title">{{ $title }}</h3>
+    {{- if $body -}}
+      <div class="guideline-card__body">{{ $body | safeHTML }}</div>
+    {{- end -}}
+    <a
+      class="guideline-card__link"
+      href="{{ cond (ne $viewerHref "") $viewerHref ($href | safeURL) }}"
+      {{- if eq $viewerHref "" -}} target="_blank" rel="noopener"{{- end -}}
+    >
+      <span>{{ $cta }}</span>
+      <span aria-hidden="true">↗</span>
+    </a>
+    {{- if $viewerHref -}}
+      <div class="guideline-card__subactions">
+        {{- if $href -}}
+          <a class="guideline-card__raw-link" href="{{ $rawHref | safeURL }}" target="_blank" rel="noopener">Raw PDF</a>
+        {{- end -}}
+        <a class="guideline-card__admin-link" href="{{ $adminHref | safeURL }}" data-guideline-admin-link hidden>管理 PDF</a>
+      </div>
+    {{- end -}}
+  </div>
+</article>
