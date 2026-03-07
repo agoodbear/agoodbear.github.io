@@ -1011,7 +1011,7 @@ function renderField(label, field, value, type) {
 }
 
 function renderHighlightCard(highlight, isSelected) {
-  const isEditorOpen = state.editMode && highlight.id === state.editingHighlightId;
+  const isEditorOpen = state.editMode && (highlight.id === state.editingHighlightId || isSelected);
   const heading = highlight.label || createHighlightHeading(highlight);
   const headingMatches = getHighlightSearchMatchesForField(highlight.id, "label");
   const quoteMatches = getHighlightSearchMatchesForField(highlight.id, "quote");
