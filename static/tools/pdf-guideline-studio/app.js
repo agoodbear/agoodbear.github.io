@@ -39,6 +39,14 @@ function createSearchState() {
   };
 }
 
+function createHighlightFilterState() {
+  return {
+    open: false,
+    colors: [],
+    tags: [],
+  };
+}
+
 const state = {
   apiBase: "",
   token: readStorage(STORAGE_KEYS.token) || "",
@@ -65,6 +73,7 @@ const state = {
   pageCount: 0,
   pdfSearch: createSearchState(),
   highlightSearch: createSearchState(),
+  highlightFilters: createHighlightFilterState(),
   docEditorCollapsed: true,
   lastHighlightSelectionSource: "",
 };
@@ -263,11 +272,19 @@ function renderShell() {
                 <p class="pdf-guideline-studio__sidebar-kicker">Highlights</p>
                 <h2 class="pdf-guideline-studio__sidebar-title" id="sidebarTitle">Highlights (0)</h2>
               </div>
-              <div class="pdf-guideline-studio__search-shell pdf-guideline-studio__search-shell--sidebar" id="highlightSearchShell">
-                <button type="button" class="pdf-guideline-studio__toolbar-button pdf-guideline-studio__sidebar-search-button" id="highlightSearchButton" title="搜尋 highlight 內容">
-                  ${iconSvg("search")}
-                </button>
-                ${renderSearchPanel("highlight", "搜尋 highlight 內容")}
+              <div class="pdf-guideline-studio__sidebar-tools">
+                <div class="pdf-guideline-studio__search-shell pdf-guideline-studio__search-shell--sidebar" id="highlightFilterShell">
+                  <button type="button" class="pdf-guideline-studio__toolbar-button pdf-guideline-studio__sidebar-search-button" id="highlightFilterButton" title="篩選 highlight">
+                    ${iconSvg("filter")}
+                  </button>
+                  ${renderHighlightFilterPanel()}
+                </div>
+                <div class="pdf-guideline-studio__search-shell pdf-guideline-studio__search-shell--sidebar" id="highlightSearchShell">
+                  <button type="button" class="pdf-guideline-studio__toolbar-button pdf-guideline-studio__sidebar-search-button" id="highlightSearchButton" title="搜尋 highlight 內容">
+                    ${iconSvg("search")}
+                  </button>
+                  ${renderSearchPanel("highlight", "搜尋 highlight 內容")}
+                </div>
               </div>
             </div>
           </div>
@@ -337,6 +354,8 @@ function renderShell() {
   refs.highlightSearchCount = document.getElementById("highlightSearchCount");
   refs.highlightSearchPrevButton = document.getElementById("highlightSearchPrevButton");
   refs.highlightSearchNextButton = document.getElementById("highlightSearchNextButton");
+  refs.highlightFilterButton = document.getElementById("highlightFilterButton");
+  refs.highlightFilterPanel = document.getElementById("highlightFilterPanel");
   refs.pdfPane = document.getElementById("pdfPane");
   refs.pdfStack = document.getElementById("pdfStack");
   refs.pdfLoading = document.getElementById("pdfLoading");
@@ -410,6 +429,14 @@ function bindShellEvents() {
   refs.highlightSearchButton.addEventListener("click", () => {
     toggleSearchPanel("highlight");
   });
+  if (refs.highlightFilterButton) {
+    refs.highlightFilterButton.addEventListener("click", () => {
+      toggleHighlightFilterPanel();
+    });
+  }
+  if (refs.highlightFilterPanel) {
+    refs.highlightFilterPanel.addEventListener("click", handleHighlightFilterPanelClick);
+  }
   bindSearchEvents("pdf");
   bindSearchEvents("highlight");
 
@@ -666,7 +693,62 @@ function normalizeHighlight(input, index) {
     quote: sanitizeText(source.quote || "", 12000),
     note: sanitizeText(source.note || "", 40000),
     clipImage: sanitizeText(source.clipImage || source.imageDataUrl || "", 2000000),
+    tags: normalizeHighlightTags(source.tags || source.tagList || source.tag || ""),
   };
+}
+
+function normalizeHighlightTags(value) {
+  const source = Array.isArray(value) ? value.join(" ") : String(value || "");
+  const unique = new Set();
+  source
+    .split(/[\s,，、;；]+/u)
+    .map((item) => item.trim().replace(/^#+/u, ""))
+    .filter(Boolean)
+    .forEach((item) => {
+      unique.add(sanitizeText(item, "", 48));
+    });
+  return Array.from(unique).filter(Boolean).slice(0, 12);
+}
+
+function formatHighlightTagsInput(tags) {
+  return normalizeHighlightTags(tags)
+    .map((item) => `#${item}`)
+    .join(" ");
+}
+
+function collectAvailableHighlightTags() {
+  const tags = new Set();
+  state.doc.highlights.forEach((highlight) => {
+    normalizeHighlightTags(highlight.tags).forEach((tag) => tags.add(tag));
+  });
+  return Array.from(tags).sort((a, b) => a.localeCompare(b, "zh-Hant"));
+}
+
+function areHighlightFiltersActive() {
+  return state.highlightFilters.colors.length > 0 || state.highlightFilters.tags.length > 0;
+}
+
+function matchesHighlightFilters(highlight) {
+  const colorFilters = state.highlightFilters.colors;
+  const tagFilters = state.highlightFilters.tags;
+  if (colorFilters.length && !colorFilters.includes(String(highlight.color || "").toLowerCase())) {
+    return false;
+  }
+  if (tagFilters.length) {
+    const highlightTags = normalizeHighlightTags(highlight.tags).map((tag) => tag.toLowerCase());
+    if (!tagFilters.every((tag) => highlightTags.includes(String(tag).toLowerCase()))) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function getFilteredHighlights() {
+  const highlights = Array.isArray(state.doc?.highlights) ? state.doc.highlights : [];
+  if (!areHighlightFiltersActive()) {
+    return highlights;
+  }
+  return highlights.filter((highlight) => matchesHighlightFilters(highlight));
 }
 
 function normalizeHighlightQuad(input) {
@@ -722,6 +804,7 @@ function applyQueryHighlightOverrides() {
 function updateTopbar() {
   const doc = state.doc;
   const selectedHighlight = getSelectedHighlight();
+  const filteredHighlights = getFilteredHighlights();
   const storageLabel =
     state.currentLoadSource === "api"
       ? "Firebase API"
@@ -756,7 +839,9 @@ function updateTopbar() {
   refs.modeBadge.textContent = state.editMode ? "管理模式" : "唯讀模式";
   refs.countBadge.textContent = `${state.doc.highlights.length} highlights`;
   refs.pageBadge.textContent = `Page ${state.currentPage} / ${Math.max(1, state.pageCount || 1)}`;
-  refs.sidebarTitle.textContent = `Highlights (${state.doc.highlights.length})`;
+  refs.sidebarTitle.textContent = areHighlightFiltersActive()
+    ? `Highlights (${filteredHighlights.length}/${state.doc.highlights.length})`
+    : `Highlights (${state.doc.highlights.length})`;
 
   if (refs.adminModeButton) {
     refs.adminModeButton.innerHTML = `${iconSvg("shield")}<span>${state.editMode ? "結束管理" : "管理模式"}</span>`;
@@ -788,10 +873,12 @@ function updateTopbar() {
   refs.pdfSearchButton.disabled = !state.pageViews.length;
   refs.highlightSearchButton.disabled = !state.doc.highlights.length;
   updateSearchUi();
+  updateHighlightFilterUi();
 }
 
 function renderSidebar() {
   const doc = state.doc;
+  const filteredHighlights = getFilteredHighlights();
   if (!doc.highlights.some((item) => item.id === state.selectedHighlightId)) {
     state.selectedHighlightId = doc.highlights[0] ? doc.highlights[0].id : "";
   }
@@ -842,9 +929,15 @@ function renderSidebar() {
     `
     : "";
 
-  const highlightsHtml = doc.highlights.length
-    ? doc.highlights.map((highlight) => renderHighlightCard(highlight, highlight.id === state.selectedHighlightId)).join("")
-    : `<div class="pdf-guideline-studio__empty">${state.editMode ? "目前還沒有 highlight。可用筆工具選字，或用相機工具框選圖表區域。" : "目前尚未整理 highlight。管理者完成編輯後，這裡會顯示右側重點。"}</div>`;
+  const highlightsHtml = filteredHighlights.length
+    ? filteredHighlights.map((highlight) => renderHighlightCard(highlight, highlight.id === state.selectedHighlightId)).join("")
+    : `<div class="pdf-guideline-studio__empty">${
+        doc.highlights.length
+          ? "目前篩選條件下沒有符合的 highlight。"
+          : state.editMode
+            ? "目前還沒有 highlight。可用筆工具選字，或用相機工具框選圖表區域。"
+            : "目前尚未整理 highlight。管理者完成編輯後，這裡會顯示右側重點。"
+      }</div>`;
 
   refs.sidebarScroll.innerHTML = `
     <section class="pdf-guideline-studio__doc-meta">
@@ -893,6 +986,7 @@ function renderHighlightCard(highlight, isSelected) {
   const headingMatches = getHighlightSearchMatchesForField(highlight.id, "label");
   const quoteMatches = getHighlightSearchMatchesForField(highlight.id, "quote");
   const noteMatches = getHighlightSearchMatchesForField(highlight.id, "note");
+  const tags = normalizeHighlightTags(highlight.tags);
   const hasClipImage = Boolean(highlight.clipImage);
   const citeButtonHtml = `
     <button
@@ -928,12 +1022,18 @@ function renderHighlightCard(highlight, isSelected) {
     : "";
   const noteText = highlight.note || "這段 highlight 尚未補上右側重點整理。";
   const noteHtml = `<p class="pdf-guideline-studio__highlight-note ${isSelected ? "" : "is-clamped"}">${renderSearchMarkedText(noteText, noteMatches, state.highlightSearch.activeIndex)}</p>`;
+  const tagsHtml = tags.length
+    ? `<div class="pdf-guideline-studio__highlight-tags">${tags
+        .map((tag) => `<span class="pdf-guideline-studio__highlight-tag">#${escapeHtml(tag)}</span>`)
+        .join("")}</div>`
+    : "";
   const editHtml =
     isEditorOpen
       ? `
         <div class="pdf-guideline-studio__doc-form">
           ${clipImageHtml}
           ${renderHighlightField("標題", "label", highlight.label)}
+          ${renderHighlightField("Tags", "tags", formatHighlightTagsInput(tags))}
           ${renderHighlightField("原文摘句", "quote", highlight.quote, "textarea")}
           ${renderHighlightField("右側重點", "note", highlight.note, "textarea")}
           <div class="pdf-guideline-studio__field">
@@ -960,6 +1060,7 @@ function renderHighlightCard(highlight, isSelected) {
       `
       : `
         ${clipImageHtml}
+        ${tagsHtml}
         ${quoteHtml}
         ${noteHtml}
       `;
@@ -1037,6 +1138,24 @@ function renderSearchPanel(kind, placeholder) {
   `;
 }
 
+function renderHighlightFilterPanel() {
+  return `
+    <div class="pdf-guideline-studio__filter-panel" id="highlightFilterPanel" hidden>
+      <div class="pdf-guideline-studio__filter-section">
+        <div class="pdf-guideline-studio__filter-label">顏色</div>
+        <div class="pdf-guideline-studio__filter-options" data-filter-group="color"></div>
+      </div>
+      <div class="pdf-guideline-studio__filter-section">
+        <div class="pdf-guideline-studio__filter-label">#Tag</div>
+        <div class="pdf-guideline-studio__filter-options" data-filter-group="tag"></div>
+      </div>
+      <div class="pdf-guideline-studio__filter-actions">
+        <button type="button" class="pdf-guideline-studio__mini-button" data-action="clear-highlight-filters">清除篩選</button>
+      </div>
+    </div>
+  `;
+}
+
 function getHighlightSearchMatchesForField(highlightId, field) {
   return state.highlightSearch.matches.filter((match) => match.highlightId === highlightId && match.field === field);
 }
@@ -1106,12 +1225,19 @@ function bindSidebarEvents() {
   Array.from(refs.sidebarScroll.querySelectorAll("[data-highlight-field]")).forEach((element) => {
     element.addEventListener("input", (event) => {
       const field = event.currentTarget.getAttribute("data-highlight-field");
-      updateSelectedHighlight({ [field]: sanitizeText(event.currentTarget.value, field === "note" ? 40000 : 12000) }, false);
+      const nextValue =
+        field === "tags"
+          ? normalizeHighlightTags(event.currentTarget.value)
+          : sanitizeText(event.currentTarget.value, field === "note" ? 40000 : 12000);
+      updateSelectedHighlight({ [field]: nextValue }, false);
       if (field === "label") {
         const heading = refs.sidebarScroll.querySelector(`[data-highlight-card="${cssEscape(state.selectedHighlightId)}"] .pdf-guideline-studio__highlight-card-heading`);
         if (heading) {
           heading.textContent = event.currentTarget.value || createHighlightHeading(getSelectedHighlight());
         }
+      }
+      if (field === "tags") {
+        renderSidebar();
       }
     });
   });
@@ -2481,6 +2607,75 @@ function bindSearchEvents(kind) {
   });
 }
 
+function toggleHighlightFilterPanel() {
+  if (!refs.highlightFilterButton || refs.highlightFilterButton.disabled) {
+    return;
+  }
+  if (!state.highlightFilters.open) {
+    closeSearchPanel("highlight");
+  }
+  state.highlightFilters.open = !state.highlightFilters.open;
+  updateHighlightFilterUi();
+}
+
+function handleHighlightFilterPanelClick(event) {
+  const button = event.target.closest("button");
+  if (!button) return;
+
+  if (button.matches('[data-action="clear-highlight-filters"]')) {
+    clearHighlightFilters();
+    return;
+  }
+
+  const color = button.getAttribute("data-filter-color");
+  if (color) {
+    toggleHighlightFilterColor(color);
+    return;
+  }
+
+  const tag = button.getAttribute("data-filter-tag");
+  if (tag) {
+    toggleHighlightFilterTag(tag);
+  }
+}
+
+function toggleHighlightFilterColor(color) {
+  const value = String(color || "").toLowerCase();
+  if (!value) return;
+  const list = new Set(state.highlightFilters.colors);
+  if (list.has(value)) {
+    list.delete(value);
+  } else {
+    list.add(value);
+  }
+  state.highlightFilters.colors = Array.from(list);
+  refreshHighlightFilterResults();
+}
+
+function toggleHighlightFilterTag(tag) {
+  const value = sanitizeText(tag || "", 48).toLowerCase();
+  if (!value) return;
+  const list = new Set(state.highlightFilters.tags);
+  if (list.has(value)) {
+    list.delete(value);
+  } else {
+    list.add(value);
+  }
+  state.highlightFilters.tags = Array.from(list);
+  refreshHighlightFilterResults();
+}
+
+function clearHighlightFilters() {
+  state.highlightFilters.colors = [];
+  state.highlightFilters.tags = [];
+  refreshHighlightFilterResults();
+}
+
+function refreshHighlightFilterResults() {
+  refreshHighlightSearch({ focus: false, preserveActive: false, smooth: false });
+  renderSidebar();
+}
+
 function toggleSearchPanel(kind) {
   const parts = getSearchParts(kind);
   if (!parts.button || parts.button.disabled) {
@@ -2493,6 +2688,10 @@ function toggleSearchPanel(kind) {
   }
 
   parts.search.open = true;
+  if (kind === "highlight") {
+    state.highlightFilters.open = false;
+    updateHighlightFilterUi();
+  }
   updateSearchUi();
   window.requestAnimationFrame(() => {
     parts.input?.focus();
@@ -2549,11 +2748,60 @@ function updateSearchUi() {
   updateSingleSearchUi("highlight");
 }
 
+function updateHighlightFilterUi() {
+  if (!refs.highlightFilterButton || !refs.highlightFilterPanel) return;
+
+  const available = state.doc.highlights.length > 0;
+  refs.highlightFilterButton.disabled = !available;
+  if (!available) {
+    state.highlightFilters.open = false;
+  }
+  refs.highlightFilterButton.classList.toggle("is-active", state.highlightFilters.open || areHighlightFiltersActive());
+  refs.highlightFilterButton.setAttribute("aria-expanded", state.highlightFilters.open ? "true" : "false");
+  refs.highlightFilterPanel.hidden = !state.highlightFilters.open;
+
+  const colorWrap = refs.highlightFilterPanel.querySelector('[data-filter-group="color"]');
+  const tagWrap = refs.highlightFilterPanel.querySelector('[data-filter-group="tag"]');
+  if (!colorWrap || !tagWrap) return;
+
+  colorWrap.innerHTML = HIGHLIGHT_COLORS.map((color) => {
+    const value = String(color.value || "").toLowerCase();
+    const selected = state.highlightFilters.colors.includes(value);
+    return `
+      <button
+        type="button"
+        class="pdf-guideline-studio__filter-chip ${selected ? "is-selected" : ""}"
+        data-filter-color="${escapeHtml(value)}"
+      >
+        <span class="pdf-guideline-studio__filter-chip-dot" style="background:${escapeHtml(color.value)}"></span>
+        ${escapeHtml(color.name)}
+      </button>
+    `;
+  }).join("");
+
+  const tags = collectAvailableHighlightTags();
+  tagWrap.innerHTML = tags.length
+    ? tags.map((tag) => {
+        const value = String(tag).toLowerCase();
+        const selected = state.highlightFilters.tags.includes(value);
+        return `
+          <button
+            type="button"
+            class="pdf-guideline-studio__filter-chip ${selected ? "is-selected" : ""}"
+            data-filter-tag="${escapeHtml(value)}"
+          >
+            #${escapeHtml(tag)}
+          </button>
+        `;
+      }).join("")
+    : `<span class="pdf-guideline-studio__filter-empty">尚未設定 tag</span>`;
+}
+
 function updateSingleSearchUi(kind) {
   const parts = getSearchParts(kind);
   if (!parts.button) return;
 
-  const available = kind === "pdf" ? state.pageViews.length > 0 : state.doc.highlights.length > 0;
+  const available = kind === "pdf" ? state.pageViews.length > 0 : getFilteredHighlights().length > 0;
   if (!available) {
     parts.search.open = false;
   }
@@ -2590,11 +2838,12 @@ function syncHighlightSearchMatches(preserveActive = true) {
   }
 
   const matches = [];
-  state.doc.highlights.forEach((highlight) => {
+  getFilteredHighlights().forEach((highlight) => {
     [
       { field: "label", value: highlight.label || "" },
       { field: "quote", value: highlight.quote || "" },
       { field: "note", value: highlight.note || "" },
+      { field: "tags", value: normalizeHighlightTags(highlight.tags).map((tag) => `#${tag}`).join(" ") },
     ].forEach(({ field, value }) => {
       collectStringMatches(value, term, search.caseSensitive).forEach(({ start, end }) => {
         matches.push({
@@ -3307,6 +3556,7 @@ function serializeDoc(doc) {
       quote: item.quote,
       note: item.note,
       clipImage: item.clipImage || "",
+      tags: normalizeHighlightTags(item.tags),
     })),
   };
 }
@@ -3541,6 +3791,8 @@ function iconSvg(name) {
       '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 3z" /><path d="M8 9h8" /><path d="M8 13h5" /></svg>',
     search:
       '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6" /><path d="M20 20l-4.2-4.2" /></svg>',
+    filter:
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16" /><path d="M7 12h10" /><path d="M10 18h4" /></svg>',
   };
 
   return icons[name] || "";

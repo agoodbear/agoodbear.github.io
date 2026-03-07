@@ -184,6 +184,19 @@ function sanitizeText(value, fallback = "", maxLength = 12000) {
   return text.slice(0, maxLength);
 }
 
+function normalizeStoredHighlightTags(value) {
+  const source = Array.isArray(value) ? value.join(" ") : String(value || "");
+  const unique = new Set();
+  source
+    .split(/[\s,，、;；]+/u)
+    .map((item) => item.trim().replace(/^#+/u, ""))
+    .filter(Boolean)
+    .forEach((item) => {
+      unique.add(sanitizeText(item, "", 48));
+    });
+  return Array.from(unique).filter(Boolean).slice(0, 12);
+}
+
 function normalizeStoredHighlightQuad(input) {
   const quad = input && typeof input === "object" ? input : {};
   const left = clampNumber(quad.left, 0, 100);
@@ -236,6 +249,7 @@ function normalizeStoredGuidelineDoc(docId, value) {
         quote: sanitizeText(item.quote, "", 12000),
         note: sanitizeText(item.note, "", 40000),
         clipImage: sanitizeText(item.clipImage || item.imageDataUrl, "", 2000000),
+        tags: normalizeStoredHighlightTags(item.tags || item.tagList || item.tag || ""),
         createdAt: sanitizeText(item.createdAt, "", 80),
         updatedAt: sanitizeText(item.updatedAt, "", 80),
       };
@@ -309,6 +323,7 @@ function buildGuidelineDocPayload(input, existingDoc, forcedId) {
         quote: sanitizeText(item.quote, existing && existing.quote ? existing.quote : "", 12000),
         note: sanitizeText(item.note, existing && existing.note ? existing.note : "", 40000),
         clipImage: sanitizeText(item.clipImage || item.imageDataUrl, existing && existing.clipImage ? existing.clipImage : "", 2000000),
+        tags: normalizeStoredHighlightTags(item.tags || item.tagList || item.tag || (existing && existing.tags ? existing.tags : "")),
         createdAt: existing && existing.createdAt ? existing.createdAt : now,
         updatedAt: now,
         order: index,
