@@ -797,6 +797,12 @@ a {
   gap: 12px;
 }
 
+.pdf-guideline-studio__sidebar-tools {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .pdf-guideline-studio__sidebar-kicker {
   margin: 0 0 4px;
   font-size: 0.76rem;
@@ -824,6 +830,83 @@ a {
 
 .pdf-guideline-studio__search-shell--sidebar .pdf-guideline-studio__search-input {
   width: min(28vw, 220px);
+}
+
+.pdf-guideline-studio__filter-panel {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 10px);
+  transform: translateY(-50%);
+  z-index: 14;
+  width: min(320px, 78vw);
+  padding: 12px;
+  border: 1px solid rgba(117, 136, 150, 0.22);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 14px 32px rgba(18, 32, 45, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.pdf-guideline-studio__filter-panel[hidden] {
+  display: none !important;
+}
+
+.pdf-guideline-studio__filter-section + .pdf-guideline-studio__filter-section {
+  margin-top: 12px;
+}
+
+.pdf-guideline-studio__filter-label {
+  margin-bottom: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--pg-muted);
+}
+
+.pdf-guideline-studio__filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pdf-guideline-studio__filter-chip {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 0 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(117, 136, 150, 0.22);
+  background: #fff;
+  color: var(--pg-ink);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pdf-guideline-studio__filter-chip.is-selected {
+  color: var(--pg-accent-strong);
+  border-color: rgba(23, 144, 191, 0.32);
+  background: rgba(23, 144, 191, 0.08);
+}
+
+.pdf-guideline-studio__filter-chip-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(35, 52, 67, 0.12);
+}
+
+.pdf-guideline-studio__filter-actions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pdf-guideline-studio__filter-empty {
+  color: var(--pg-muted);
+  font-size: 0.82rem;
 }
 
 .pdf-guideline-studio__connector {
@@ -967,6 +1050,25 @@ a {
 
 .pdf-guideline-studio__doc-link:hover {
   text-decoration: underline;
+}
+
+.pdf-guideline-studio__highlight-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.pdf-guideline-studio__highlight-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(23, 144, 191, 0.08);
+  color: var(--pg-accent-strong);
+  font-size: 0.78rem;
+  font-weight: 700;
 }
 
 .pdf-guideline-studio__doc-form {
