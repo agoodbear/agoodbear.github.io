@@ -1245,6 +1245,9 @@ function bindSidebarEvents() {
 
     element.addEventListener("click", select);
     element.addEventListener("keydown", (event) => {
+      if (event.target.closest("button, textarea, input, a")) {
+        return;
+      }
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
         select(event);
@@ -1265,10 +1268,6 @@ function bindSidebarEvents() {
         if (heading) {
           heading.textContent = event.currentTarget.value || createHighlightHeading(getSelectedHighlight());
         }
-      }
-      if (field === "tags") {
-        updateHighlightFilterUi();
-        refreshHighlightSearch({ focus: false, preserveActive: true, smooth: false });
       }
     });
 
