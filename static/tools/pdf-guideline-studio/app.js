@@ -155,6 +155,7 @@ function renderShell() {
               : `
                 <button type="button" class="pdf-guideline-studio__button--ghost" id="cloudConfigButton">設定 API/Token</button>
                 <button type="button" class="pdf-guideline-studio__button--ghost" id="checkApiButton">檢查 API/Token</button>
+                <button type="button" class="pdf-guideline-studio__button--ghost" id="adminLogoutButton">一鍵登出管理</button>
                 <button type="button" class="pdf-guideline-studio__button--tonal" id="adminModeButton">
                   ${iconSvg("shield")}
                   <span>管理模式</span>
@@ -283,6 +284,7 @@ function renderShell() {
   refs.openFullReaderButton = document.getElementById("openFullReaderButton");
   refs.cloudConfigButton = document.getElementById("cloudConfigButton");
   refs.checkApiButton = document.getElementById("checkApiButton");
+  refs.adminLogoutButton = document.getElementById("adminLogoutButton");
   refs.adminModeButton = document.getElementById("adminModeButton");
   refs.saveButton = document.getElementById("saveButton");
   refs.storageBadge = document.getElementById("storageBadge");
@@ -336,6 +338,9 @@ function bindShellEvents() {
   }
   if (refs.checkApiButton) {
     refs.checkApiButton.addEventListener("click", handleCheckApiToken);
+  }
+  if (refs.adminLogoutButton) {
+    refs.adminLogoutButton.addEventListener("click", handleAdminLogout);
   }
   if (refs.adminModeButton) {
     refs.adminModeButton.addEventListener("click", handleToggleAdminMode);
@@ -724,6 +729,9 @@ function updateTopbar() {
 
   if (refs.adminModeButton) {
     refs.adminModeButton.innerHTML = `${iconSvg("shield")}<span>${state.editMode ? "結束管理" : "管理模式"}</span>`;
+  }
+  if (refs.adminLogoutButton) {
+    refs.adminLogoutButton.disabled = !state.token && !state.apiBase;
   }
   if (refs.saveButton) {
     refs.saveButton.disabled = !state.editMode || !state.isDirty || state.isSaving;
@@ -2882,6 +2890,41 @@ async function handleToggleAdminMode() {
   renderPdfHighlights();
   updateTopbar();
   showMessage("已進入管理模式。");
+}
+
+function handleAdminLogout() {
+  const hadToken = Boolean(state.token || readStorage(STORAGE_KEYS.token));
+  const hadApiBase = Boolean(state.apiBase || readStorage(STORAGE_KEYS.apiBase));
+
+  removeStorage(STORAGE_KEYS.token);
+  removeStorage(STORAGE_KEYS.apiBase);
+
+  state.token = "";
+  state.apiBase = "";
+  state.editMode = false;
+  state.drawMode = false;
+  state.captureMode = false;
+  state.editingHighlightId = "";
+  state.currentLoadSource = "local";
+
+  if (state.doc && state.doc.id) {
+    cacheLocalDoc(state.doc);
+  }
+
+  const nextUrl = new URL(window.location.href);
+  nextUrl.searchParams.delete("mode");
+  nextUrl.searchParams.delete("apiBase");
+  window.history.replaceState({}, "", nextUrl.toString());
+
+  renderSidebar();
+  renderPdfHighlights();
+  updateTopbar();
+
+  if (hadToken || hadApiBase) {
+    showMessage("已登出管理，並清除這台電腦的 API/Token。");
+  } else {
+    showMessage("目前已是登出狀態，這台電腦沒有儲存管理 API/Token。");
+  }
 }
 
 async function verifyAdminToken(apiBase, token) {
