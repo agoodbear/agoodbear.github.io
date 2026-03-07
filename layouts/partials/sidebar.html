@@ -57,6 +57,24 @@
     </ul>
     {{ end }}
 
+    {{- $guidelineCount := 0 -}}
+    {{- with site.Data.guideline_hub -}}
+      {{- if isset . "total_items" -}}
+        {{- $guidelineCount = .total_items -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if gt $guidelineCount 0 }}
+    {{- $guidelineRoomUrl := relLangURL "guideline-pdfs/" -}}
+    {{- with site.GetPage "guideline-pdfs" -}}
+      {{- $guidelineRoomUrl = .RelPermalink -}}
+    {{- end -}}
+    <div class="sidebar_guideline_shelf">
+      <h2 class="mt-4"><a class="sidebar_guideline_title_link" href="{{ $guidelineRoomUrl }}">Guideline集散地</a></h2>
+      <p class="sidebar_guideline_intro">這裡整理 AMI 與 ischemic stroke guideline，目前共 {{ $guidelineCount }} 份，每一筆都可直接開 Reader、Raw PDF 與管理 PDF。</p>
+      <a class="button sidebar_guideline_entry_button" href="{{ $guidelineRoomUrl }}" title="進入Guideline集散地">進入Guideline集散地</a>
+    </div>
+    {{- end }}
+
     {{- $posts := where .Site.RegularPages "Type" "in" $s.mainSections }}
     {{- $featured := default 8 $s.numberOfFeaturedPosts }}
     {{- $featuredPool := where .Site.RegularPages "Params.featured" true }}

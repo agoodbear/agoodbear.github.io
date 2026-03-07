@@ -1,0 +1,89 @@
+{{- $hub := site.Data.guideline_hub -}}
+{{- if not $hub -}}
+<section class="guideline-outline">
+  <div class="guideline-room__empty">尚未建立 Guideline 索引資料，請先編輯 <code>data/guideline_hub.yaml</code>。</div>
+</section>
+{{- else -}}
+{{- $pdfIndex := newScratch -}}
+{{- with site.Data.guideline_pdfs.items -}}
+  {{- range $item := . -}}
+    {{- with $item.doc -}}
+      {{- $pdfIndex.Set (printf "doc:%s" .) $item -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<section class="guideline-outline">
+  <div class="guideline-outline__header">
+    <h2 class="guideline-outline__title">{{ $hub.title }}</h2>
+  </div>
+
+  {{- range $topic := $hub.topics }}
+    <section class="guideline-outline__topic">
+      <div class="guideline-outline__topic-head">
+        <h3 class="guideline-outline__topic-title">{{ $topic.title }}</h3>
+      </div>
+
+      <ol class="guideline-outline__group-list">
+        {{- range $group := $topic.groups }}
+          <li class="guideline-outline__group-item">
+            <div class="guideline-outline__group-head">
+              <h4 class="guideline-outline__group-title">{{ $group.title }}</h4>
+            </div>
+            <ul class="guideline-outline__entry-list">
+              {{- range $entry := $group.items }}
+                {{- $docItem := false -}}
+                {{- with $entry.doc -}}
+                  {{- $docItem = $pdfIndex.Get (printf "doc:%s" .) -}}
+                {{- end -}}
+                {{- $viewerHref := "" -}}
+                {{- $adminHref := "" -}}
+                {{- $rawPdfHref := "" -}}
+                {{- if $docItem -}}
+                  {{- $queryParts := slice -}}
+                  {{- with $docItem.doc }}{{- $queryParts = $queryParts | append (printf "doc=%s" (. | urlquery)) -}}{{- end -}}
+                  {{- with $docItem.seed }}{{- $queryParts = $queryParts | append (printf "seed=%s" (. | urlquery)) -}}{{- end -}}
+                  {{- with $docItem.href }}{{- $queryParts = $queryParts | append (printf "pdf=%s" (. | urlquery)) -}}{{- end -}}
+                  {{- with $docItem.title }}{{- $queryParts = $queryParts | append (printf "title=%s" (. | urlquery)) -}}{{- end -}}
+                  {{- with $docItem.meta }}{{- $queryParts = $queryParts | append (printf "meta=%s" (. | urlquery)) -}}{{- end -}}
+                  {{- with $docItem.tag }}{{- $queryParts = $queryParts | append (printf "tag=%s" (. | urlquery)) -}}{{- end -}}
+                  {{- with $docItem.tone }}{{- $queryParts = $queryParts | append (printf "tone=%s" (. | urlquery)) -}}{{- end -}}
+                  {{- with $docItem.summary }}{{- $queryParts = $queryParts | append (printf "description=%s" (. | urlquery)) -}}{{- end -}}
+                  {{- with $.Page.RelPermalink }}{{- $queryParts = $queryParts | append (printf "article=%s" (. | urlquery)) -}}{{- end -}}
+                  {{- $queryParts = $queryParts | append "v=20260306-1" -}}
+                  {{- $viewerHref = printf "/tools/pdf-guideline-studio/?%s" (delimit $queryParts "&") -}}
+                  {{- $adminHref = printf "%s&mode=admin" $viewerHref -}}
+                  {{- with $docItem.href -}}
+                    {{- $rawPdfHref = cond (hasPrefix . "/") (printf "/js/pdf-js/web/viewer.html?file=%s" (. | urlquery)) . -}}
+                  {{- end -}}
+                {{- end -}}
+
+                <li class="guideline-outline__entry">
+                  <div class="guideline-outline__entry-main">
+                    <span class="guideline-outline__entry-title">{{ $entry.title }}</span>
+                    {{- with $entry.citation -}}
+                      <span class="guideline-outline__entry-citation">{{ . }}</span>
+                    {{- end -}}
+                  </div>
+                  {{- with $entry.note -}}
+                    <div class="guideline-outline__entry-note">{{ . }}</div>
+                  {{- end -}}
+                  {{- if $docItem -}}
+                    <div class="guideline-outline__actions">
+                      <a class="guideline-outline__action guideline-outline__action--primary" href="{{ $viewerHref | safeURL }}">Reader</a>
+                      <a class="guideline-outline__action" href="{{ $rawPdfHref | safeURL }}" target="_blank" rel="noopener">Raw PDF</a>
+                      <a class="guideline-outline__action guideline-outline__action--admin" href="{{ $adminHref | safeURL }}" data-guideline-admin-link hidden>管理 PDF</a>
+                    </div>
+                  {{- else -}}
+                    <div class="guideline-outline__entry-note">PDF 尚未接入。</div>
+                  {{- end -}}
+                </li>
+              {{- end }}
+            </ul>
+          </li>
+        {{- end }}
+      </ol>
+    </section>
+  {{- end }}
+</section>
+{{- end -}}
