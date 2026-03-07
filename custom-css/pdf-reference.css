@@ -572,6 +572,20 @@
   color: #0e6557;
 }
 
+/* Prevent long unbroken text/URLs from overflowing list cards */
+.excerpt_footer.partition > * {
+  min-width: 0;
+}
+
+.excerpt_footer .pale,
+.excerpt_footer .pale p,
+.excerpt_footer .pale a,
+.excerpt_footer .pale li {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 @media (max-width: 1200px) {
   .sidebar_guideline_shelf {
     padding: 0.95rem 0.95rem 1.05rem;
