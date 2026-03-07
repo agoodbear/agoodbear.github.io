@@ -184,6 +184,20 @@ function sanitizeText(value, fallback = "", maxLength = 12000) {
   return text.slice(0, maxLength);
 }
 
+function normalizeStoredHighlightQuad(input) {
+  const quad = input && typeof input === "object" ? input : {};
+  const left = clampNumber(quad.left, 0, 100);
+  const top = clampNumber(quad.top, 0, 100);
+  const width = clampNumber(quad.width, 0.1, Math.max(0.1, 100 - left));
+  const height = clampNumber(quad.height, 0.1, Math.max(0.1, 100 - top));
+  return {
+    left,
+    top,
+    width,
+    height,
+  };
+}
+
 function normalizeStoredGuidelineDoc(docId, value) {
   const doc = value && typeof value === "object" ? value : {};
   const highlightsSource = Array.isArray(doc.highlights)
@@ -191,20 +205,41 @@ function normalizeStoredGuidelineDoc(docId, value) {
     : Object.values(doc.highlights || {});
   const highlights = highlightsSource
     .filter((item) => item && typeof item === "object")
-    .map((item, index) => ({
-      id: sanitizeText(item.id, `highlight-${index + 1}`, 120) || `highlight-${index + 1}`,
-      page: Math.max(1, Math.round(clampNumber(item.page || item.pageIndex || 1, 1, 9999))),
-      left: clampNumber(item.left, 0, 100),
-      top: clampNumber(item.top, 0, 100),
-      width: clampNumber(item.width, 0.5, 100),
-      height: clampNumber(item.height, 0.5, 100),
-      color: sanitizeText(item.color, "#78c4b7", 32) || "#78c4b7",
-      label: sanitizeText(item.label, "", 240),
-      quote: sanitizeText(item.quote, "", 12000),
-      note: sanitizeText(item.note, "", 40000),
-      createdAt: sanitizeText(item.createdAt, "", 80),
-      updatedAt: sanitizeText(item.updatedAt, "", 80),
-    }))
+    .map((item, index) => {
+      const quads = Array.isArray(item.quads)
+        ? item.quads
+            .filter((quad) => quad && typeof quad === "object")
+            .map((quad) => normalizeStoredHighlightQuad(quad))
+        : [];
+      const bounds = quads.length
+        ? quads.reduce(
+            (acc, quad) => ({
+              left: Math.min(acc.left, quad.left),
+              top: Math.min(acc.top, quad.top),
+              right: Math.max(acc.right, quad.left + quad.width),
+              bottom: Math.max(acc.bottom, quad.top + quad.height),
+            }),
+            { left: 100, top: 100, right: 0, bottom: 0 }
+          )
+        : null;
+
+      return {
+        id: sanitizeText(item.id, `highlight-${index + 1}`, 120) || `highlight-${index + 1}`,
+        page: Math.max(1, Math.round(clampNumber(item.page || item.pageIndex || 1, 1, 9999))),
+        left: bounds ? bounds.left : clampNumber(item.left, 0, 100),
+        top: bounds ? bounds.top : clampNumber(item.top, 0, 100),
+        width: bounds ? Math.max(0.1, bounds.right - bounds.left) : clampNumber(item.width, 0.5, 100),
+        height: bounds ? Math.max(0.1, bounds.bottom - bounds.top) : clampNumber(item.height, 0.5, 100),
+        quads,
+        color: sanitizeText(item.color, "#78c4b7", 32) || "#78c4b7",
+        label: sanitizeText(item.label, "", 240),
+        quote: sanitizeText(item.quote, "", 12000),
+        note: sanitizeText(item.note, "", 40000),
+        clipImage: sanitizeText(item.clipImage || item.imageDataUrl, "", 2000000),
+        createdAt: sanitizeText(item.createdAt, "", 80),
+        updatedAt: sanitizeText(item.updatedAt, "", 80),
+      };
+    })
     .sort((a, b) => {
       if (a.page !== b.page) {
         return a.page - b.page;
@@ -243,17 +278,37 @@ function buildGuidelineDocPayload(input, existingDoc, forcedId) {
       const preferredId = sanitizeText(item.id, "", 120);
       const existing = preferredId ? existingHighlights.get(preferredId) : null;
       const highlightId = preferredId || crypto.randomUUID();
+      const quads = Array.isArray(item.quads)
+        ? item.quads
+            .filter((quad) => quad && typeof quad === "object")
+            .map((quad) => normalizeStoredHighlightQuad(quad))
+        : existing && Array.isArray(existing.quads)
+          ? existing.quads.map((quad) => normalizeStoredHighlightQuad(quad))
+          : [];
+      const bounds = quads.length
+        ? quads.reduce(
+            (acc, quad) => ({
+              left: Math.min(acc.left, quad.left),
+              top: Math.min(acc.top, quad.top),
+              right: Math.max(acc.right, quad.left + quad.width),
+              bottom: Math.max(acc.bottom, quad.top + quad.height),
+            }),
+            { left: 100, top: 100, right: 0, bottom: 0 }
+          )
+        : null;
       return {
         id: highlightId,
         page: Math.max(1, Math.round(clampNumber(item.page || item.pageIndex || 1, 1, 9999))),
-        left: clampNumber(item.left, 0, 100),
-        top: clampNumber(item.top, 0, 100),
-        width: clampNumber(item.width, 0.5, 100),
-        height: clampNumber(item.height, 0.5, 100),
+        left: bounds ? bounds.left : clampNumber(item.left, 0, 100),
+        top: bounds ? bounds.top : clampNumber(item.top, 0, 100),
+        width: bounds ? Math.max(0.1, bounds.right - bounds.left) : clampNumber(item.width, 0.5, 100),
+        height: bounds ? Math.max(0.1, bounds.bottom - bounds.top) : clampNumber(item.height, 0.5, 100),
+        quads,
         color: sanitizeText(item.color, existing && existing.color ? existing.color : "#78c4b7", 32) || "#78c4b7",
         label: sanitizeText(item.label, existing && existing.label ? existing.label : "", 240),
         quote: sanitizeText(item.quote, existing && existing.quote ? existing.quote : "", 12000),
         note: sanitizeText(item.note, existing && existing.note ? existing.note : "", 40000),
+        clipImage: sanitizeText(item.clipImage || item.imageDataUrl, existing && existing.clipImage ? existing.clipImage : "", 2000000),
         createdAt: existing && existing.createdAt ? existing.createdAt : now,
         updatedAt: now,
         order: index,
