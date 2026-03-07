@@ -1,0 +1,36 @@
+{
+  "id": "troponins-heart-failure",
+  "title": "Troponins in Heart Failure",
+  "pdfUrl": "https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fagoodbear%2FKL7_eFN-Dc.pdf?alt=media&token=a01041f1-63a3-4cbf-8292-6f819cdebd6f",
+  "meta": "Review · 2019",
+  "tag": "Biomarker",
+  "tone": "mint",
+  "articlePath": "/post/pdf-footnote-demo/",
+  "description": "示範 guideline / paper 閱讀模式。左側顯示 PDF 原頁，右側整理 highlight 與中文重點，管理者可用文字選取模式再新增更多段落。",
+  "highlights": [
+    {
+      "id": "troponin-hf-1",
+      "page": 1,
+      "left": 20,
+      "top": 30,
+      "width": 57,
+      "height": 9,
+      "color": "#78c4b7",
+      "label": "HF 病人的 troponin 不等於 ACS",
+      "quote": "Increased troponin levels in HF are a frequent and significant finding, but they should not automatically be interpreted as acute coronary syndrome.",
+      "note": "在心衰竭病人看到 troponin 升高，第一步不是直接貼上 ACS 標籤。這段原文提醒我們要先結合病程、心電圖、hemodynamic context 與 serial change 來判讀。"
+    },
+    {
+      "id": "troponin-hf-2",
+      "page": 1,
+      "left": 20,
+      "top": 39,
+      "width": 58,
+      "height": 10,
+      "color": "#f5be67",
+      "label": "多種非 ACS 狀態也會讓 troponin 上升",
+      "quote": "Acute and chronic HF, as well as other ischemic or non-ischemic conditions, may lead to a transient increase in cTn levels.",
+      "note": "臨床上最容易誤踩的點是把數值本身當成診斷。慢性 HF、tachyarrhythmia、renal dysfunction 等情境都可能造成 troponin 上升，所以要把 troponin 放回臨床脈絡裡面。"
+    }
+  ]
+}
