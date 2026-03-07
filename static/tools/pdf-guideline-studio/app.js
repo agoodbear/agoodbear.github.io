@@ -382,9 +382,7 @@ function bindShellEvents() {
     }
     renderPdfHighlights();
     updateTopbar();
-    if (state.drawMode) {
-      showMessage("已進入文字選取模式，請在左側 PDF 直接反白文字。");
-    }
+    hideMessage();
   });
 
   refs.focusHighlightButton.addEventListener("click", () => {
@@ -2269,13 +2267,11 @@ function toggleCaptureMode() {
   if (state.captureMode) {
     state.drawMode = false;
     state.editingHighlightId = "";
-    showMessage("已進入截圖框選模式，請在左側 PDF 拖曳框選區域。");
     renderSidebar();
-  } else {
-    showMessage("已結束截圖框選模式。");
   }
   renderPdfHighlights();
   updateTopbar();
+  hideMessage();
 }
 
 function cycleSelectedHighlightColor() {
@@ -3500,6 +3496,13 @@ function showMessage(text, kind = "info", sticky = false) {
       refs.message.classList.remove("is-error");
     }, 3600);
   }
+}
+
+function hideMessage() {
+  window.clearTimeout(state.messageTimer);
+  refs.message.hidden = true;
+  refs.message.textContent = "";
+  refs.message.classList.remove("is-error");
 }
 
 function iconSvg(name) {
