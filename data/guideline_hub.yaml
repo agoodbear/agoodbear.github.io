@@ -1,6 +1,6 @@
 title: "目前收錄以下 guideline"
-intro: "這裡整理已接入站內閱讀器的 AMI 與 ischemic stroke guideline。每一筆都可直接開 Reader、Raw PDF 與管理 PDF。"
-total_items: 25
+intro: "這裡整理已接入站內閱讀器的 AMI、ischemic stroke 與 ACLS guideline。每一筆都可直接開 Reader、Raw PDF 與管理 PDF。"
+total_items: 27
 topics:
   - title: "AMI"
     accent: "pink"
@@ -100,3 +100,15 @@ topics:
             doc: "stroke-2026-aha-asa-acute-ischemic-stroke-guideline"
             citation: "Prabhakaran et al. (2026)"
             note: "AHA / ASA Guideline。"
+  - title: "ACLS"
+    accent: "pink"
+    groups:
+      - title: "Resuscitation Guideline"
+        badge: "Timeline"
+        items:
+          - title: "2025 ACLS (ACC/AHA)"
+            doc: "acls-2025-acc-aha"
+            note: "ACC / AHA 2025 ACLS guideline。"
+          - title: "2025 ACLS (ERC)"
+            doc: "acls-2025-erc"
+            note: "ERC 2025 ACLS guideline。"
