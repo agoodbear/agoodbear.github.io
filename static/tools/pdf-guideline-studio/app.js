@@ -1810,8 +1810,9 @@ function coalesceHighlightQuads(quads) {
     const sameLine = Math.abs(prev.top - current.top) <= 0.65 && Math.abs(prev.bottom - current.bottom) <= 1.2;
     const gap = current.left - prev.right;
     const overlaps = current.left <= prev.right;
-    // Bridge normal word spacing so highlight looks like continuous sentence bands.
-    const canMerge = sameLine && (overlaps || gap <= 2.4);
+    // Keep user-created highlights close to the actual text selection instead of
+    // aggressively bridging normal word gaps into a single oversized band.
+    const canMerge = sameLine && (overlaps || gap <= 0.18);
     if (!canMerge) {
       merged.push(current);
       return;
@@ -2133,17 +2134,7 @@ function rangeToHighlightGeometry(range, container) {
   const containerRect = container.getBoundingClientRect();
   if (!containerRect.width || !containerRect.height) return null;
 
-  let candidateRects = Array.from(range.getClientRects())
-    .map((rect) => intersectRect(rect, containerRect))
-    .filter(Boolean);
-  candidateRects = mergeSelectionRects(candidateRects);
-
-  if (!candidateRects.length) {
-    const fallback = intersectRect(range.getBoundingClientRect(), containerRect);
-    if (fallback) {
-      candidateRects.push(fallback);
-    }
-  }
+  const candidateRects = getRangeClientRectsInContainer(range, container);
 
   if (!candidateRects.length) return null;
 
