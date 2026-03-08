@@ -385,6 +385,10 @@ function bindShellEvents() {
     refs.adminModeButton.addEventListener("click", handleToggleAdminMode);
   }
   if (refs.saveButton) {
+    refs.saveButton.addEventListener("mousedown", (event) => {
+      // Keep the active editor field stable so the first save click is not consumed by blur formatting.
+      event.preventDefault();
+    });
     refs.saveButton.addEventListener("click", handleSaveDocument);
   }
 
@@ -3524,6 +3528,7 @@ async function checkApiHealth(apiBase) {
 async function handleSaveDocument() {
   if (!state.editMode || !state.doc) return;
 
+  syncActiveHighlightEditorFields();
   const payload = serializeDoc(state.doc);
   state.isSaving = true;
   updateTopbar();
@@ -3569,6 +3574,43 @@ async function handleSaveDocument() {
     state.isSaving = false;
     updateTopbar();
   }
+}
+
+function syncActiveHighlightEditorFields() {
+  const highlight = getSelectedHighlight();
+  if (!highlight || !refs.sidebarScroll) return;
+
+  const card = refs.sidebarScroll.querySelector(
+    `[data-highlight-card="${cssEscape(highlight.id)}"]`
+  );
+  if (!card) return;
+
+  const labelInput = card.querySelector('[data-highlight-field="label"]');
+  const tagsInput = card.querySelector('[data-highlight-field="tags"]');
+  const quoteInput = card.querySelector('[data-highlight-field="quote"]');
+  const noteInput = card.querySelector('[data-highlight-field="note"]');
+
+  if (labelInput) {
+    highlight.label = sanitizeText(labelInput.value, 12000);
+  }
+  if (tagsInput) {
+    highlight.tags = normalizeHighlightTags(tagsInput.value);
+    const normalized = formatHighlightTagsInput(highlight.tags);
+    if (tagsInput.value !== normalized) {
+      tagsInput.value = normalized;
+    }
+  }
+  if (quoteInput) {
+    highlight.quote = sanitizeText(quoteInput.value, 12000);
+  }
+  if (noteInput) {
+    highlight.note = sanitizeText(noteInput.value, 40000);
+  }
+
+  state.isDirty = true;
+  updateHighlightFilterUi();
+  syncHighlightSearchMatches(true);
+  updateSearchUi();
 }
 
 function serializeDoc(doc) {
