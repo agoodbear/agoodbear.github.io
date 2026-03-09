@@ -250,12 +250,23 @@
     }
 
     .ai-learning-entry-body h2 {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 0.95rem;
+        border-radius: 14px;
         font-size: 1.2rem;
-        font-weight: 700;
         line-height: 1.4;
-        color: #0c4a6e;
-        margin-top: 1.2rem;
-        margin-bottom: 0.5rem;
+        box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
+    }
+
+    .ai-learning-entry-body h2:nth-of-type(1) {
+        background: linear-gradient(135deg, #fff1bf, #ffe08a);
+        color: #7a4b00;
+    }
+
+    .ai-learning-entry-body h2:nth-of-type(2) {
+        background: linear-gradient(135deg, #d9fbe6, #b8f2cf);
+        color: #0f5f3c;
     }
 
     .ai-learning-empty {
@@ -335,6 +346,7 @@
 
         .ai-learning-entry-body h2 {
             font-size: 1.05rem;
+            padding: 0.48rem 0.8rem;
         }
     }
 </style>
