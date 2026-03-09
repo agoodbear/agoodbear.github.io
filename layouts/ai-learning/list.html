@@ -1,0 +1,353 @@
+{{ define "main" }}
+{{ $pages := .RegularPages.ByDate.Reverse }}
+{{ $yearGroups := $pages.GroupByDate "2006" }}
+<div class="wrap content ai-learning-page">
+    <div class="ai-learning-layout">
+        <article class="post_content ai-learning-content ai-learning-main">
+            <h1 class="post_title">{{ .Title }}</h1>
+            {{ with .Description }}
+            <p class="ai-learning-description">{{ . }}</p>
+            {{ end }}
+
+            <div class="post_body ai-learning-intro">
+                {{ .Content }}
+            </div>
+
+            <section class="ai-learning-entries" aria-label="AI 學習紀錄">
+                {{ if $pages }}
+                {{ range $yearGroup := $yearGroups }}
+                {{ $yearKey := $yearGroup.Key }}
+                <section class="ai-learning-year-block" aria-label="{{ $yearKey }} 年 AI 學習紀錄">
+                    <div class="ai-learning-year-heading">{{ $yearKey }}年</div>
+                    {{ range $monthGroup := $yearGroup.Pages.GroupByDate "01" }}
+                    <section class="ai-learning-month-block" id="month-{{ $yearKey }}-{{ $monthGroup.Key }}">
+                        <div class="ai-learning-month-heading">{{ (index $monthGroup.Pages 0).Date.Format "1月" }}</div>
+                        <div class="ai-learning-month-entries">
+                            {{ range $monthGroup.Pages.ByDate.Reverse }}
+                            <article class="ai-learning-entry" id="entry-{{ .Date.Format "2006-01-02" }}">
+                                <div class="ai-learning-entry-date">{{ .Date.Format "2006/1/2" }}</div>
+                                <div class="ai-learning-entry-body">
+                                    {{ .Content }}
+                                </div>
+                            </article>
+                            {{ end }}
+                        </div>
+                    </section>
+                    {{ end }}
+                </section>
+                {{ end }}
+                {{ else }}
+                <div class="ai-learning-empty">尚未新增 AI 學習紀錄，之後會依日期持續累積。</div>
+                {{ end }}
+            </section>
+        </article>
+
+        {{ if $pages }}
+        <aside class="ai-learning-sidebar" aria-label="AI 學習月份導覽">
+            <nav class="ai-learning-jump-nav">
+                <div class="ai-learning-jump-title">快速跳轉</div>
+                <div class="ai-learning-jump-groups">
+                    {{ range $yearIndex, $yearGroup := $yearGroups }}
+                    {{ $yearKey := $yearGroup.Key }}
+                    <details class="ai-learning-year-menu" {{ if eq $yearIndex 0 }}open{{ end }}>
+                        <summary>{{ $yearKey }}年</summary>
+                        <div class="ai-learning-month-links">
+                            {{ range $monthGroup := $yearGroup.Pages.GroupByDate "01" }}
+                            <a href="#month-{{ $yearKey }}-{{ $monthGroup.Key }}" class="ai-learning-month-link">
+                                {{ (index $monthGroup.Pages 0).Date.Format "1月" }}
+                            </a>
+                            {{ end }}
+                        </div>
+                    </details>
+                    {{ end }}
+                </div>
+            </nav>
+        </aside>
+        {{ end }}
+    </div>
+</div>
+
+<style>
+    .ai-learning-page {
+        max-width: 1360px;
+    }
+
+    .ai-learning-layout {
+        display: block;
+    }
+
+    .ai-learning-content {
+        width: 100%;
+        max-width: none;
+    }
+
+    .ai-learning-description {
+        margin-top: 0.75rem;
+        color: var(--text);
+        opacity: 0.82;
+        line-height: 1.8;
+    }
+
+    .ai-learning-intro {
+        margin-bottom: 2rem;
+    }
+
+    .ai-learning-jump-nav {
+        padding: 1.15rem 1.2rem;
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(7, 89, 133, 0.08), rgba(14, 165, 233, 0.12));
+        border: 1px solid rgba(14, 116, 144, 0.12);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .ai-learning-sidebar {
+        margin-bottom: 2.25rem;
+    }
+
+    .ai-learning-jump-title {
+        font-size: 0.95rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: #0c4a6e;
+        text-transform: uppercase;
+        margin-bottom: 0.85rem;
+    }
+
+    .ai-learning-jump-groups {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .ai-learning-year-menu {
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.74);
+        border: 1px solid rgba(14, 116, 144, 0.12);
+        overflow: hidden;
+    }
+
+    .ai-learning-year-menu summary {
+        cursor: pointer;
+        list-style: none;
+        padding: 0.9rem 1rem;
+        font-weight: 700;
+        color: #12324a;
+        position: relative;
+    }
+
+    .ai-learning-year-menu summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .ai-learning-year-menu summary::after {
+        content: "+";
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.1rem;
+        color: #0f7ec7;
+    }
+
+    .ai-learning-year-menu[open] summary::after {
+        content: "−";
+    }
+
+    .ai-learning-month-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        padding: 0 1rem 1rem;
+    }
+
+    .ai-learning-month-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 4.2rem;
+        padding: 0.5rem 0.8rem;
+        border-radius: 999px;
+        background: #ffffff;
+        color: #0f4c75;
+        font-weight: 600;
+        text-decoration: none;
+        border: 1px solid rgba(15, 126, 199, 0.18);
+        transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+    }
+
+    .ai-learning-month-link:hover,
+    .ai-learning-month-link:focus-visible {
+        background: #0f7ec7;
+        color: #fff;
+        transform: translateY(-1px);
+    }
+
+    .ai-learning-entries {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .ai-learning-year-block {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .ai-learning-year-heading {
+        font-size: 1.55rem;
+        font-weight: 800;
+        color: #0f2740;
+    }
+
+    .ai-learning-month-block {
+        scroll-margin-top: 6.5rem;
+    }
+
+    .ai-learning-month-heading {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding: 0.38rem 0.75rem;
+        border-radius: 999px;
+        background: #e0f2fe;
+        color: #075985;
+        font-size: 0.98rem;
+        font-weight: 700;
+    }
+
+    .ai-learning-month-entries {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .ai-learning-entry {
+        padding: 1.5rem 1.4rem;
+        border: 1px solid rgba(15, 23, 42, 0.1);
+        border-left: 5px solid #0f7ec7;
+        border-radius: 16px;
+        background: var(--post-bg);
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .ai-learning-entry-date {
+        font-size: 1.35rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: #0c4a6e;
+        margin-bottom: 1rem;
+        padding-bottom: 0.85rem;
+        border-bottom: 1px dashed rgba(15, 23, 42, 0.14);
+    }
+
+    .ai-learning-entry-body > *:first-child {
+        margin-top: 0;
+    }
+
+    .ai-learning-entry-body > *:last-child {
+        margin-bottom: 0;
+    }
+
+    .ai-learning-entry-body h2 {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 0.95rem;
+        border-radius: 14px;
+        font-size: 1.2rem;
+        line-height: 1.4;
+        box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
+    }
+
+    .ai-learning-entry-body h2:nth-of-type(1) {
+        background: linear-gradient(135deg, #fff1bf, #ffe08a);
+        color: #7a4b00;
+    }
+
+    .ai-learning-entry-body h2:nth-of-type(2) {
+        background: linear-gradient(135deg, #d9fbe6, #b8f2cf);
+        color: #0f5f3c;
+    }
+
+    .ai-learning-empty {
+        padding: 1.5rem;
+        border-radius: 16px;
+        background: rgba(148, 163, 184, 0.12);
+        color: var(--text);
+    }
+
+    @media (min-width: 1100px) {
+        .ai-learning-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 260px;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .ai-learning-main {
+            min-width: 0;
+        }
+
+        .ai-learning-sidebar {
+            margin-top: 4.6rem;
+            margin-bottom: 0;
+            position: sticky;
+            top: 6.4rem;
+            align-self: start;
+        }
+
+        .ai-learning-jump-nav {
+            max-height: calc(100vh - 8rem);
+            overflow: auto;
+        }
+
+        .ai-learning-month-links {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .ai-learning-month-link {
+            width: 100%;
+            justify-content: flex-start;
+            padding: 0.65rem 0.85rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .ai-learning-jump-nav {
+            padding: 1rem;
+        }
+
+        .ai-learning-year-menu summary {
+            padding: 0.8rem 0.9rem;
+        }
+
+        .ai-learning-month-links {
+            padding: 0 0.9rem 0.9rem;
+            gap: 0.55rem;
+        }
+
+        .ai-learning-month-link {
+            min-width: 3.6rem;
+            padding: 0.45rem 0.7rem;
+        }
+
+        .ai-learning-year-heading {
+            font-size: 1.35rem;
+        }
+
+        .ai-learning-entry {
+            padding: 1.2rem 1rem;
+        }
+
+        .ai-learning-entry-date {
+            font-size: 1.15rem;
+        }
+
+        .ai-learning-entry-body h2 {
+            font-size: 1.05rem;
+            padding: 0.48rem 0.8rem;
+        }
+    }
+</style>
+{{ end }}

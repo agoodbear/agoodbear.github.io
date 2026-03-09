@@ -30,6 +30,11 @@
   weight = -104
 
 [[main]]
+  name = "AI學習"
+  url = "ai-learning/"
+  weight = -103.75
+
+[[main]]
   name = "實用工具"
   url = "practical-tools/"
   weight = -103.5

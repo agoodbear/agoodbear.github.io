@@ -12,6 +12,16 @@
     </div>
 
     <style>
+        .page_header {
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .page_description {
+            max-width: 1120px;
+            line-height: 1.7;
+        }
+
         .practical-tools-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -227,6 +237,10 @@
         }
 
         @media (max-width: 768px) {
+            .page_header {
+                padding: 0 12px;
+            }
+
             .practical-tools-grid {
                 grid-template-columns: 1fr;
                 padding: 0;
