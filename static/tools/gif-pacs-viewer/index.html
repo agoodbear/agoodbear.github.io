@@ -150,6 +150,12 @@
             cursor: grabbing;
         }
 
+        .viewer-box .gif-wrapper.is-fit-centered {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+
         .annotation-layer {
             position: absolute;
             z-index: 10;
@@ -240,6 +246,55 @@
             background: rgba(4, 16, 22, 0.64);
             color: var(--muted);
             font-size: 0.78rem;
+        }
+
+        .viewport-controls {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px;
+            border-radius: 999px;
+            border: 1px solid rgba(143, 184, 188, 0.18);
+            background: rgba(4, 16, 22, 0.64);
+        }
+
+        .viewport-btn {
+            min-width: 40px;
+            min-height: 40px;
+            border: 1px solid rgba(79, 174, 191, 0.25);
+            border-radius: 999px;
+            background: rgba(7, 23, 29, 0.9);
+            color: var(--text);
+            transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .viewport-btn:hover,
+        .viewport-btn:focus-visible {
+            background: rgba(8, 145, 178, 0.22);
+            border-color: rgba(34, 211, 238, 0.8);
+            transform: translateY(-1px);
+        }
+
+        .viewport-readout {
+            min-width: 92px;
+            text-align: center;
+            font-size: 0.88rem;
+            color: #d9f6f6;
+        }
+
+        .viewer-zoom-chip {
+            position: absolute;
+            left: 14px;
+            bottom: 14px;
+            z-index: 20;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(5, 15, 20, 0.78);
+            border: 1px solid rgba(143, 184, 188, 0.18);
+            color: #dff7f5;
+            font-size: 0.78rem;
+            line-height: 1;
+            pointer-events: none;
         }
 
         .empty-state,
@@ -361,6 +416,18 @@
 
         <div class="flex flex-wrap items-center gap-2 md:gap-3">
             <span class="status-pill"><i class="fa-regular fa-keyboard"></i> 滑鼠滾輪翻幀 / Delete 刪除標註</span>
+            <div class="viewport-controls" aria-label="視野控制">
+                <button id="btn-zoom-out" class="viewport-btn" aria-label="縮小視野">
+                    <i class="fa-solid fa-magnifying-glass-minus"></i>
+                </button>
+                <div id="zoom-readout" class="viewport-readout">Zoom 100%</div>
+                <button id="btn-zoom-in" class="viewport-btn" aria-label="放大視野">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                </button>
+                <button id="btn-reset-view" class="viewport-btn" aria-label="重設視野">
+                    <i class="fa-solid fa-arrows-to-circle"></i>
+                </button>
+            </div>
             <button id="btn-sync-scroll" class="sync-btn min-h-11 bg-slate-900/80 text-slate-300 hover:text-white px-4 py-2 rounded-xl text-sm border border-cyan-900/40 flex items-center gap-2 transition-all">
                 <i class="fa-solid fa-link"></i>
                 <span>同步捲動</span>
@@ -464,6 +531,7 @@
                 <div class="absolute top-3 right-3 text-right pointer-events-none z-20">
                     <div class="text-cyan-300 font-mono text-xl md:text-2xl font-bold frame-counter">-- / --</div>
                 </div>
+                <div class="viewer-zoom-chip">Zoom <span class="zoom-chip-value">100%</span></div>
                 <div class="absolute bottom-0 left-0 w-full h-1.5 bg-slate-900 z-20">
                     <div class="progress-bar h-full bg-cyan-500 w-0 transition-all duration-75"></div>
                 </div>
@@ -481,6 +549,7 @@
                 <div class="absolute top-3 right-3 text-right pointer-events-none z-20">
                     <div class="text-emerald-300 font-mono text-xl md:text-2xl font-bold frame-counter">-- / --</div>
                 </div>
+                <div class="viewer-zoom-chip">Zoom <span class="zoom-chip-value">100%</span></div>
                 <div class="absolute bottom-0 left-0 w-full h-1.5 bg-slate-900 z-20">
                     <div class="progress-bar h-full bg-emerald-500 w-0 transition-all duration-75"></div>
                 </div>
@@ -504,12 +573,18 @@
                 this.loadingState = this.container.querySelector(".loading-state");
                 this.frameCounter = this.container.querySelector(".frame-counter");
                 this.progressBar = this.container.querySelector(".progress-bar");
+                this.zoomChipValue = this.container.querySelector(".zoom-chip-value");
 
                 this.superGif = null;
                 this.isLoaded = false;
                 this.sourceUrl = null;
                 this.fileName = "";
                 this.isRemote = false;
+                this.zoomLevel = 1;
+                this.minZoom = 0.5;
+                this.maxZoom = 4;
+                this.zoomStep = 0.25;
+                this.renderScale = 1;
 
                 this.annotations = {};
                 this.selectedAnno = null;
@@ -529,10 +604,12 @@
                 this.container.addEventListener("mousedown", () => {
                     document.querySelectorAll(".viewer-box").forEach((box) => box.classList.remove("active-focus"));
                     this.container.classList.add("active-focus");
+                    updateViewportReadout();
                 });
                 window.addEventListener("resize", this.boundSyncAnnotationBounds);
                 window.addEventListener("resize", this.boundRefreshViewportMode);
                 this.wrapper.addEventListener("scroll", this.boundSyncAnnotationBounds);
+                this.wrapper.addEventListener("dblclick", () => this.resetView());
             }
 
             setLoading(isLoading) {
@@ -556,6 +633,8 @@
                 this.isLoaded = false;
                 this.selectedAnno = null;
                 this.annotations = initialAnnotations ? structuredClone(initialAnnotations) : {};
+                this.zoomLevel = 1;
+                this.renderScale = 1;
 
                 this.wrapper.innerHTML = "";
                 this.annoCanvas = null;
@@ -583,6 +662,8 @@
                         this.syncAnnotationBounds();
                         this.updateDisplay();
                         this.applyFilters();
+                        this.updateZoomChip();
+                        updateViewportReadout();
 
                         document.getElementById("btn-export").disabled = !Object.values(viewers).some((viewer) => viewer.isLoaded);
                     });
@@ -680,27 +761,75 @@
                 }
 
                 requestAnimationFrame(() => {
-                    const viewportWidth = Math.max(0, this.wrapper.clientWidth - 40);
-                    const viewportHeight = Math.max(0, this.wrapper.clientHeight - 84);
+                    const styles = window.getComputedStyle(this.wrapper);
+                    const paddingX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+                    const paddingY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+                    const viewportWidth = Math.max(0, this.wrapper.clientWidth - paddingX);
+                    const viewportHeight = Math.max(0, this.wrapper.clientHeight - paddingY);
                     const naturalWidth = gifCanvas.width;
                     const naturalHeight = gifCanvas.height;
-                    const needsPan = naturalWidth > viewportWidth || naturalHeight > viewportHeight;
+                    const fitScale = Math.min(viewportWidth / naturalWidth, viewportHeight / naturalHeight, 1);
+                    const effectiveScale = fitScale * this.zoomLevel;
+                    const displayWidth = naturalWidth * effectiveScale;
+                    const displayHeight = naturalHeight * effectiveScale;
+                    const needsPan = displayWidth > viewportWidth || displayHeight > viewportHeight;
+                    const centerXRatio = this.wrapper.scrollWidth > 0 ? (this.wrapper.scrollLeft + this.wrapper.clientWidth / 2) / this.wrapper.scrollWidth : 0.5;
+                    const centerYRatio = this.wrapper.scrollHeight > 0 ? (this.wrapper.scrollTop + this.wrapper.clientHeight / 2) / this.wrapper.scrollHeight : 0.5;
+                    this.renderScale = effectiveScale;
+
+                    gifCanvas.style.width = displayWidth + "px";
+                    gifCanvas.style.height = displayHeight + "px";
 
                     this.wrapper.classList.toggle("is-pannable", needsPan);
                     this.wrapper.classList.toggle("is-fitted", !needsPan);
+                    this.wrapper.classList.toggle("is-fit-centered", !needsPan);
 
                     if (needsPan) {
-                        gifCanvas.style.maxWidth = "none";
-                        gifCanvas.style.maxHeight = "none";
+                        this.wrapper.scrollLeft = Math.max(0, centerXRatio * this.wrapper.scrollWidth - this.wrapper.clientWidth / 2);
+                        this.wrapper.scrollTop = Math.max(0, centerYRatio * this.wrapper.scrollHeight - this.wrapper.clientHeight / 2);
                     } else {
-                        gifCanvas.style.maxWidth = "100%";
-                        gifCanvas.style.maxHeight = "100%";
                         this.wrapper.scrollLeft = 0;
                         this.wrapper.scrollTop = 0;
                     }
 
                     this.syncAnnotationBounds();
+                    this.updateZoomChip();
+                    updateViewportReadout();
                 });
+            }
+
+            zoomIn() {
+                this.setZoom(this.zoomLevel + this.zoomStep);
+            }
+
+            zoomOut() {
+                this.setZoom(this.zoomLevel - this.zoomStep);
+            }
+
+            setZoom(nextZoom) {
+                if (!this.isLoaded) {
+                    return;
+                }
+                const clamped = Math.max(this.minZoom, Math.min(this.maxZoom, nextZoom));
+                if (Math.abs(clamped - this.zoomLevel) < 0.001) {
+                    return;
+                }
+                this.zoomLevel = Number(clamped.toFixed(2));
+                this.refreshViewportMode();
+            }
+
+            resetView() {
+                if (!this.isLoaded) {
+                    return;
+                }
+                this.zoomLevel = 1;
+                this.refreshViewportMode();
+            }
+
+            updateZoomChip() {
+                if (this.zoomChipValue) {
+                    this.zoomChipValue.textContent = Math.round(this.zoomLevel * 100) + "%";
+                }
             }
 
             syncAnnotationBounds() {
@@ -1107,6 +1236,40 @@
         buttons.arrow.onclick = () => setActiveTool("arrow");
         buttons.text.onclick = () => setActiveTool("text");
 
+        function getFocusedViewer() {
+            const focused = document.querySelector(".viewer-box.active-focus");
+            if (focused && focused.id === "viewer-left") {
+                return viewers.left;
+            }
+            if (focused && focused.id === "viewer-right") {
+                return viewers.right;
+            }
+            if (viewers.left.isLoaded) {
+                return viewers.left;
+            }
+            if (viewers.right.isLoaded) {
+                return viewers.right;
+            }
+            return viewers.left;
+        }
+
+        function updateViewportReadout() {
+            const viewer = getFocusedViewer();
+            const readout = document.getElementById("zoom-readout");
+            if (!readout) {
+                return;
+            }
+            if (!viewer || !viewer.isLoaded) {
+                readout.textContent = "Zoom 100%";
+                return;
+            }
+            readout.textContent = (viewer.side === "left" ? "L" : "R") + " " + Math.round(viewer.zoomLevel * 100) + "%";
+        }
+
+        document.getElementById("btn-zoom-in").onclick = () => getFocusedViewer().zoomIn();
+        document.getElementById("btn-zoom-out").onclick = () => getFocusedViewer().zoomOut();
+        document.getElementById("btn-reset-view").onclick = () => getFocusedViewer().resetView();
+
         const syncButton = document.getElementById("btn-sync-scroll");
         syncButton.onclick = () => {
             AppState.syncMode = !AppState.syncMode;
@@ -1324,9 +1487,25 @@
                 if (event.key.toLowerCase() === "v") {
                     setActiveTool("none");
                 }
+
+                if ((event.key === "+" || event.key === "=") && !event.metaKey && !event.ctrlKey) {
+                    event.preventDefault();
+                    getFocusedViewer().zoomIn();
+                }
+
+                if (event.key === "-" && !event.metaKey && !event.ctrlKey) {
+                    event.preventDefault();
+                    getFocusedViewer().zoomOut();
+                }
+
+                if (event.key === "0" && !event.metaKey && !event.ctrlKey) {
+                    event.preventDefault();
+                    getFocusedViewer().resetView();
+                }
             });
 
             restoreEmbeddedState();
+            updateViewportReadout();
         });
     </script>
 </body>
