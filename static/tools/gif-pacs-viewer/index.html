@@ -136,6 +136,7 @@
         }
 
         .upload-area {
+            position: relative;
             border: 1.5px dashed rgba(143, 184, 188, 0.32);
             transition: border-color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
         }
@@ -145,6 +146,22 @@
             border-color: rgba(34, 211, 238, 0.75);
             background-color: rgba(34, 211, 238, 0.1);
             transform: translateY(-1px);
+        }
+
+        .upload-input {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .upload-copy {
+            position: relative;
+            z-index: 1;
+            pointer-events: none;
         }
 
         input[type="range"] {
@@ -361,9 +378,11 @@
                         <span><i class="fa-solid fa-arrow-left mr-1"></i> 左側影像</span>
                     </label>
                     <div id="drop-zone-left" class="upload-area rounded-2xl p-4 text-center cursor-pointer bg-slate-950/70">
-                        <input type="file" id="file-input-left" accept="image/gif" class="hidden">
-                        <p class="text-sm text-cyan-50/80 font-medium m-0">拖曳或點擊上傳 GIF</p>
-                        <p class="text-xs text-slate-400 mt-2 mb-0">支援本機 GIF 與資料 URL</p>
+                        <input type="file" id="file-input-left" accept="image/gif" class="upload-input" aria-label="上傳左側 GIF">
+                        <div class="upload-copy">
+                            <p class="text-sm text-cyan-50/80 font-medium m-0">拖曳或點擊上傳 GIF</p>
+                            <p class="text-xs text-slate-400 mt-2 mb-0">支援本機 GIF 與資料 URL</p>
+                        </div>
                     </div>
                     <div class="flex gap-2">
                         <input type="url" id="url-input-left" placeholder="遠端 GIF URL..." class="w-full min-h-11 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-cyan-500 focus:outline-none">
@@ -378,9 +397,11 @@
                         <span>右側影像 <i class="fa-solid fa-arrow-right ml-1"></i></span>
                     </label>
                     <div id="drop-zone-right" class="upload-area rounded-2xl p-4 text-center cursor-pointer bg-slate-950/70">
-                        <input type="file" id="file-input-right" accept="image/gif" class="hidden">
-                        <p class="text-sm text-emerald-50/80 font-medium m-0">拖曳或點擊上傳 GIF</p>
-                        <p class="text-xs text-slate-400 mt-2 mb-0">適合做前後對照或不同序列比較</p>
+                        <input type="file" id="file-input-right" accept="image/gif" class="upload-input" aria-label="上傳右側 GIF">
+                        <div class="upload-copy">
+                            <p class="text-sm text-emerald-50/80 font-medium m-0">拖曳或點擊上傳 GIF</p>
+                            <p class="text-xs text-slate-400 mt-2 mb-0">適合做前後對照或不同序列比較</p>
+                        </div>
                     </div>
                     <div class="flex gap-2">
                         <input type="url" id="url-input-right" placeholder="遠端 GIF URL..." class="w-full min-h-11 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-cyan-500 focus:outline-none">
@@ -1089,8 +1110,6 @@
             const dropZone = document.getElementById("drop-zone-" + side);
             const loadButton = document.getElementById("btn-load-" + side);
             const urlInput = document.getElementById("url-input-" + side);
-
-            dropZone.onclick = () => fileInput.click();
 
             const loadFile = (file) => {
                 if (!file || file.type !== "image/gif") {
