@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIF PACS Viewer | 雙視窗對照模式</title>
+    <script>
+        (() => {
+            const params = new URLSearchParams(window.location.search);
+            const isEmbedded = params.get("embed") === "1" || window.self !== window.top;
+            if (isEmbedded) {
+                document.documentElement.classList.add("is-embedded");
+            }
+        })();
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/libgif@0.0.3/libgif.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,6 +57,11 @@
         body {
             display: flex;
             flex-direction: column;
+        }
+
+        html.is-embedded,
+        html.is-embedded body {
+            overflow: hidden;
         }
 
         button,
@@ -297,6 +311,155 @@
             pointer-events: none;
         }
 
+        .app-header {
+            flex-shrink: 0;
+        }
+
+        .app-main {
+            min-height: 0;
+        }
+
+        .control-sidebar {
+            scrollbar-gutter: stable;
+        }
+
+        .sidebar-stack {
+            min-height: 0;
+        }
+
+        html.is-embedded .app-header {
+            padding: 10px 14px !important;
+            gap: 10px !important;
+        }
+
+        html.is-embedded .app-header h1 {
+            font-size: 1.9rem;
+        }
+
+        html.is-embedded .app-header p {
+            font-size: 0.95rem;
+        }
+
+        html.is-embedded .status-pill {
+            display: none;
+        }
+
+        html.is-embedded .viewport-controls {
+            gap: 6px;
+            padding: 4px;
+        }
+
+        html.is-embedded .viewport-btn {
+            min-width: 34px;
+            min-height: 34px;
+        }
+
+        html.is-embedded .viewport-readout {
+            min-width: 78px;
+            font-size: 0.8rem;
+        }
+
+        html.is-embedded .control-sidebar {
+            width: 286px !important;
+        }
+
+        html.is-embedded .sidebar-stack {
+            padding: 10px !important;
+            gap: 10px !important;
+        }
+
+        html.is-embedded .sidebar-stack > div {
+            padding: 10px !important;
+        }
+
+        html.is-embedded .sidebar-stack .upload-area {
+            padding: 10px !important;
+        }
+
+        html.is-embedded .sidebar-stack .upload-copy p:first-child {
+            font-size: 0.94rem !important;
+        }
+
+        html.is-embedded .sidebar-stack .upload-copy p:last-child {
+            font-size: 0.72rem !important;
+            margin-top: 6px !important;
+        }
+
+        html.is-embedded .sidebar-stack .min-h-12,
+        html.is-embedded .sidebar-stack .min-h-11 {
+            min-height: 40px !important;
+        }
+
+        html.is-embedded .sidebar-stack .tool-btn {
+            min-height: 72px !important;
+        }
+
+        html.is-embedded .viewer-grid {
+            gap: 10px !important;
+            padding: 10px !important;
+        }
+
+        html.is-embedded .viewer-header {
+            top: 10px;
+            left: 10px;
+            padding: 7px 9px;
+        }
+
+        html.is-embedded .viewer-box .gif-wrapper {
+            padding: 52px 14px 16px;
+        }
+
+        html.is-embedded .viewer-zoom-chip {
+            left: 10px;
+            bottom: 10px;
+            padding: 5px 8px;
+            font-size: 0.72rem;
+        }
+
+        @media (max-height: 900px) {
+            html.is-embedded .app-header {
+                padding: 8px 12px !important;
+            }
+
+            html.is-embedded .app-header .w-11 {
+                width: 2.5rem !important;
+                height: 2.5rem !important;
+            }
+
+            html.is-embedded .app-header h1 {
+                font-size: 1.7rem;
+            }
+
+            html.is-embedded .control-sidebar {
+                width: 272px !important;
+            }
+
+            html.is-embedded .sidebar-stack {
+                padding: 8px !important;
+                gap: 8px !important;
+            }
+
+            html.is-embedded .sidebar-stack > div {
+                padding: 8px !important;
+                gap: 8px !important;
+            }
+
+            html.is-embedded .sidebar-stack .tool-btn {
+                min-height: 64px !important;
+            }
+
+            html.is-embedded .sidebar-stack label,
+            html.is-embedded .sidebar-stack .text-sm,
+            html.is-embedded .sidebar-stack .text-xs {
+                line-height: 1.3;
+            }
+
+            html.is-embedded .viewer-grid {
+                gap: 8px !important;
+                padding: 8px !important;
+            }
+        }
+
         .empty-state,
         .loading-state {
             text-align: center;
@@ -403,7 +566,7 @@
     <script id="embedded-data" type="application/json">{}</script>
 </head>
 <body>
-    <header class="glass px-4 py-3 md:px-5 md:py-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between shrink-0">
+    <header class="app-header glass px-4 py-3 md:px-5 md:py-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between shrink-0">
         <div class="flex items-center gap-3 min-w-0">
             <div class="w-11 h-11 rounded-2xl flex items-center justify-center text-white shadow-lg" style="background: linear-gradient(135deg, #0891b2, #22d3ee);">
                 <i class="fa-solid fa-columns"></i>
@@ -439,9 +602,9 @@
         </div>
     </header>
 
-    <main class="flex-1 flex overflow-hidden">
-        <aside class="w-[328px] glass border-r border-cyan-950/40 flex flex-col shrink-0 h-full overflow-y-auto">
-            <div class="p-3 md:p-4 flex flex-col gap-4">
+    <main class="app-main flex-1 flex overflow-hidden">
+        <aside class="control-sidebar w-[328px] glass border-r border-cyan-950/40 flex flex-col shrink-0 h-full overflow-y-auto">
+            <div class="sidebar-stack p-3 md:p-4 flex flex-col gap-4">
                 <div class="flex flex-col gap-2.5 p-3 rounded-2xl bg-slate-950/50 border border-cyan-950/40">
                     <label class="text-xs font-bold text-cyan-300 uppercase tracking-[0.22em] flex justify-between">
                         <span><i class="fa-solid fa-arrow-left mr-1"></i> 左側影像</span>

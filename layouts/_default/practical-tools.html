@@ -156,8 +156,8 @@
         .practical-modal-dialog {
             position: relative;
             z-index: 1;
-            width: min(1240px, 96vw);
-            height: min(860px, 90vh);
+            width: min(1380px, 98vw);
+            height: min(940px, 96vh);
             border-radius: 16px;
             overflow: hidden;
             background: #fff;
@@ -360,6 +360,17 @@
                 const sourceUrl = btn.dataset.toolUrl || "";
                 const embedUrl = btn.dataset.toolEmbedUrl || sourceUrl;
                 const sourceLabel = btn.dataset.toolSourceLabel || "來源";
+                let resolvedEmbedUrl = embedUrl;
+
+                try {
+                    const url = new URL(embedUrl, window.location.origin);
+                    if (url.origin === window.location.origin) {
+                        url.searchParams.set("embed", "1");
+                    }
+                    resolvedEmbedUrl = url.toString();
+                } catch (_error) {
+                    resolvedEmbedUrl = embedUrl;
+                }
 
                 lastFocusedElement = document.activeElement;
                 previousOverflow = document.body.style.overflow;
@@ -368,8 +379,8 @@
                 modalDescription.textContent = description;
                 toolSource.textContent = sourceLabel;
                 toolSource.href = sourceUrl;
-                toolNewTab.href = embedUrl;
-                toolFrame.src = embedUrl;
+                toolNewTab.href = resolvedEmbedUrl;
+                toolFrame.src = resolvedEmbedUrl;
 
                 modal.classList.add("is-open");
                 modal.setAttribute("aria-hidden", "false");
