@@ -214,23 +214,6 @@
             font-size: 0.78rem;
         }
 
-        .help-card {
-            background: linear-gradient(180deg, rgba(8, 30, 36, 0.96), rgba(6, 22, 28, 0.96));
-            border: 1px solid rgba(79, 174, 191, 0.18);
-            border-radius: 18px;
-            padding: 14px 16px;
-        }
-
-        .help-card ul {
-            margin: 10px 0 0;
-            padding-left: 18px;
-            color: var(--muted);
-        }
-
-        .help-card li + li {
-            margin-top: 6px;
-        }
-
         .empty-state,
         .loading-state {
             text-align: center;
@@ -364,15 +347,6 @@
     <main class="flex-1 flex overflow-hidden">
         <aside class="w-[360px] glass border-r border-cyan-950/40 flex flex-col shrink-0 h-full overflow-y-auto">
             <div class="p-4 md:p-5 flex flex-col gap-6">
-                <section class="help-card">
-                    <p class="text-xs uppercase tracking-[0.28em] text-cyan-300/70 m-0">實用提示</p>
-                    <ul class="text-sm leading-6">
-                        <li>左、右視窗可分別載入本機 GIF 或遠端 URL。</li>
-                        <li>啟用同步後，兩側會一起翻幀，方便比較前後差異。</li>
-                        <li>匯出會把目前標註與來源資訊包進單一 HTML 檔。</li>
-                    </ul>
-                </section>
-
                 <div class="flex flex-col gap-3 p-4 rounded-2xl bg-slate-950/50 border border-cyan-950/40">
                     <label class="text-xs font-bold text-cyan-300 uppercase tracking-[0.22em] flex justify-between">
                         <span><i class="fa-solid fa-arrow-left mr-1"></i> 左側影像</span>
