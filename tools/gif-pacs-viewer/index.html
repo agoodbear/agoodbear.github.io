@@ -103,23 +103,51 @@
         .viewer-box .gif-wrapper {
             position: relative;
             display: none;
-            max-width: min(100%, calc(100vw - 440px));
-            max-height: 100%;
-            padding: 32px;
+            width: 100%;
+            height: 100%;
+            padding: 60px 20px 24px;
+            overflow: auto;
+            overscroll-behavior: contain;
+            cursor: grab;
         }
 
         .jsgif {
             position: relative;
             display: inline-block;
+            margin: 0 auto;
         }
 
         .jsgif canvas {
             display: block;
-            max-width: 100%;
-            max-height: min(76vh, 100%);
+            max-width: none;
+            max-height: none;
             object-fit: contain;
             border-radius: 18px;
             box-shadow: 0 20px 44px rgba(0, 0, 0, 0.42);
+        }
+
+        .viewer-box .gif-wrapper.is-fitted {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .viewer-box .gif-wrapper.is-fitted .jsgif canvas {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .viewer-box .gif-wrapper.is-pannable {
+            display: block !important;
+        }
+
+        .viewer-box .gif-wrapper.is-pannable .jsgif {
+            min-width: max-content;
+            min-height: max-content;
+        }
+
+        .viewer-box .gif-wrapper.is-panning {
+            cursor: grabbing;
         }
 
         .annotation-layer {
@@ -275,7 +303,7 @@
             }
 
             .viewer-box .gif-wrapper {
-                max-width: 100%;
+                padding: 56px 16px 20px;
             }
         }
 
@@ -299,7 +327,7 @@
             }
 
             .viewer-box .gif-wrapper {
-                padding: 18px;
+                padding: 52px 12px 18px;
             }
 
             .annotation-layer {
@@ -345,13 +373,13 @@
     </header>
 
     <main class="flex-1 flex overflow-hidden">
-        <aside class="w-[360px] glass border-r border-cyan-950/40 flex flex-col shrink-0 h-full overflow-y-auto">
-            <div class="p-4 md:p-5 flex flex-col gap-6">
-                <div class="flex flex-col gap-3 p-4 rounded-2xl bg-slate-950/50 border border-cyan-950/40">
+        <aside class="w-[328px] glass border-r border-cyan-950/40 flex flex-col shrink-0 h-full overflow-y-auto">
+            <div class="p-3 md:p-4 flex flex-col gap-4">
+                <div class="flex flex-col gap-2.5 p-3 rounded-2xl bg-slate-950/50 border border-cyan-950/40">
                     <label class="text-xs font-bold text-cyan-300 uppercase tracking-[0.22em] flex justify-between">
                         <span><i class="fa-solid fa-arrow-left mr-1"></i> 左側影像</span>
                     </label>
-                    <div id="drop-zone-left" class="upload-area rounded-2xl p-4 text-center cursor-pointer bg-slate-950/70">
+                    <div id="drop-zone-left" class="upload-area rounded-2xl p-3 text-center cursor-pointer bg-slate-950/70">
                         <input type="file" id="file-input-left" accept="image/gif" class="upload-input" aria-label="上傳左側 GIF">
                         <div class="upload-copy">
                             <p class="text-sm text-cyan-50/80 font-medium m-0">拖曳或點擊上傳 GIF</p>
@@ -366,11 +394,11 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col gap-3 p-4 rounded-2xl bg-slate-950/50 border border-emerald-950/40">
+                <div class="flex flex-col gap-2.5 p-3 rounded-2xl bg-slate-950/50 border border-emerald-950/40">
                     <label class="text-xs font-bold text-emerald-300 uppercase tracking-[0.22em] flex justify-between">
                         <span>右側影像 <i class="fa-solid fa-arrow-right ml-1"></i></span>
                     </label>
-                    <div id="drop-zone-right" class="upload-area rounded-2xl p-4 text-center cursor-pointer bg-slate-950/70">
+                    <div id="drop-zone-right" class="upload-area rounded-2xl p-3 text-center cursor-pointer bg-slate-950/70">
                         <input type="file" id="file-input-right" accept="image/gif" class="upload-input" aria-label="上傳右側 GIF">
                         <div class="upload-copy">
                             <p class="text-sm text-emerald-50/80 font-medium m-0">拖曳或點擊上傳 GIF</p>
@@ -385,16 +413,16 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col gap-3 pt-2">
+                <div class="flex flex-col gap-2 pt-1">
                     <label class="text-xs uppercase font-bold text-slate-400 tracking-[0.22em]">工具</label>
                     <div class="grid grid-cols-3 gap-2">
-                        <button id="btn-tool-select" class="tool-btn active min-h-14 bg-slate-900 hover:bg-slate-800 text-slate-200 py-2 rounded-2xl text-xs border border-slate-700 flex flex-col items-center justify-center gap-1 transition-all" aria-label="選取工具">
+                        <button id="btn-tool-select" class="tool-btn active min-h-12 bg-slate-900 hover:bg-slate-800 text-slate-200 py-2 rounded-2xl text-xs border border-slate-700 flex flex-col items-center justify-center gap-1 transition-all" aria-label="選取工具">
                             <i class="fa-solid fa-arrow-pointer text-base"></i><span>選取</span>
                         </button>
-                        <button id="btn-tool-arrow" class="tool-btn min-h-14 bg-slate-900 hover:bg-slate-800 text-slate-200 py-2 rounded-2xl text-xs border border-slate-700 flex flex-col items-center justify-center gap-1 transition-all" aria-label="箭頭工具">
+                        <button id="btn-tool-arrow" class="tool-btn min-h-12 bg-slate-900 hover:bg-slate-800 text-slate-200 py-2 rounded-2xl text-xs border border-slate-700 flex flex-col items-center justify-center gap-1 transition-all" aria-label="箭頭工具">
                             <i class="fa-solid fa-location-arrow text-base"></i><span>箭頭</span>
                         </button>
-                        <button id="btn-tool-text" class="tool-btn min-h-14 bg-slate-900 hover:bg-slate-800 text-slate-200 py-2 rounded-2xl text-xs border border-slate-700 flex flex-col items-center justify-center gap-1 transition-all" aria-label="文字工具">
+                        <button id="btn-tool-text" class="tool-btn min-h-12 bg-slate-900 hover:bg-slate-800 text-slate-200 py-2 rounded-2xl text-xs border border-slate-700 flex flex-col items-center justify-center gap-1 transition-all" aria-label="文字工具">
                             <i class="fa-solid fa-font text-base"></i><span>文字</span>
                         </button>
                     </div>
@@ -404,7 +432,7 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col gap-3">
+                <div class="flex flex-col gap-2.5">
                     <label class="text-xs uppercase font-bold text-slate-400 tracking-[0.22em]">影像調整</label>
                     <div class="space-y-2">
                         <div class="flex justify-between text-sm text-slate-200"><span>亮度</span><span id="val-brightness">100%</span></div>
@@ -488,12 +516,14 @@
 
                 this.isDragging = false;
                 this.dragStart = { x: 0, y: 0 };
+                this.dragStartClient = { x: 0, y: 0 };
                 this.dragOriginal = null;
                 this.dragAction = "none";
 
                 this.annoCanvas = null;
                 this.ctx = null;
                 this.boundSyncAnnotationBounds = () => this.syncAnnotationBounds();
+                this.boundRefreshViewportMode = () => this.refreshViewportMode();
 
                 this.container.addEventListener("wheel", (event) => this.handleWheel(event), { passive: false });
                 this.container.addEventListener("mousedown", () => {
@@ -501,6 +531,8 @@
                     this.container.classList.add("active-focus");
                 });
                 window.addEventListener("resize", this.boundSyncAnnotationBounds);
+                window.addEventListener("resize", this.boundRefreshViewportMode);
+                this.wrapper.addEventListener("scroll", this.boundSyncAnnotationBounds);
             }
 
             setLoading(isLoading) {
@@ -547,6 +579,7 @@
                         gifCanvas.style.margin = "0 auto";
 
                         this.initAnnotationLayer(gifCanvas.width, gifCanvas.height);
+                        this.refreshViewportMode();
                         this.syncAnnotationBounds();
                         this.updateDisplay();
                         this.applyFilters();
@@ -636,6 +669,40 @@
                 window.addEventListener("mouseup", (event) => this.onMouseUp(event));
             }
 
+            refreshViewportMode() {
+                if (!this.superGif) {
+                    return;
+                }
+
+                const gifCanvas = this.superGif.get_canvas();
+                if (!gifCanvas) {
+                    return;
+                }
+
+                requestAnimationFrame(() => {
+                    const viewportWidth = Math.max(0, this.wrapper.clientWidth - 40);
+                    const viewportHeight = Math.max(0, this.wrapper.clientHeight - 84);
+                    const naturalWidth = gifCanvas.width;
+                    const naturalHeight = gifCanvas.height;
+                    const needsPan = naturalWidth > viewportWidth || naturalHeight > viewportHeight;
+
+                    this.wrapper.classList.toggle("is-pannable", needsPan);
+                    this.wrapper.classList.toggle("is-fitted", !needsPan);
+
+                    if (needsPan) {
+                        gifCanvas.style.maxWidth = "none";
+                        gifCanvas.style.maxHeight = "none";
+                    } else {
+                        gifCanvas.style.maxWidth = "100%";
+                        gifCanvas.style.maxHeight = "100%";
+                        this.wrapper.scrollLeft = 0;
+                        this.wrapper.scrollTop = 0;
+                    }
+
+                    this.syncAnnotationBounds();
+                });
+            }
+
             syncAnnotationBounds() {
                 if (!this.annoCanvas || !this.superGif) {
                     return;
@@ -652,6 +719,7 @@
                 this.annoCanvas.style.top = canvasRect.top - wrapperRect.top + "px";
                 this.annoCanvas.style.width = canvasRect.width + "px";
                 this.annoCanvas.style.height = canvasRect.height + "px";
+                this.annoCanvas.style.pointerEvents = this.wrapper.classList.contains("is-pannable") || this.wrapper.classList.contains("is-fitted") ? "auto" : "none";
             }
 
             getMousePos(event) {
@@ -723,6 +791,14 @@
                     this.dragOriginal = JSON.parse(JSON.stringify(hit));
                 } else {
                     this.selectedAnno = null;
+                    this.isDragging = true;
+                    this.dragAction = "pan_view";
+                    this.dragStartClient = { x: event.clientX, y: event.clientY };
+                    this.dragOriginal = {
+                        scrollLeft: this.wrapper.scrollLeft,
+                        scrollTop: this.wrapper.scrollTop
+                    };
+                    this.wrapper.classList.add("is-panning");
                 }
 
                 this.drawAnnotations();
@@ -730,6 +806,15 @@
 
             onMouseMove(event) {
                 if (!this.annoCanvas || !this.ctx || !this.isLoaded) {
+                    return;
+                }
+
+                if (this.dragAction === "pan_view" && this.isDragging) {
+                    const dx = event.clientX - this.dragStartClient.x;
+                    const dy = event.clientY - this.dragStartClient.y;
+                    this.wrapper.scrollLeft = this.dragOriginal.scrollLeft - dx;
+                    this.wrapper.scrollTop = this.dragOriginal.scrollTop - dy;
+                    this.syncAnnotationBounds();
                     return;
                 }
 
@@ -744,6 +829,8 @@
                         this.annoCanvas.style.cursor = "nwse-resize";
                     } else if (this.hitTest(mouse, this.superGif.get_current_frame())) {
                         this.annoCanvas.style.cursor = "move";
+                    } else if (this.wrapper.classList.contains("is-pannable")) {
+                        this.annoCanvas.style.cursor = "grab";
                     } else {
                         this.annoCanvas.style.cursor = "default";
                     }
@@ -782,6 +869,14 @@
                     return;
                 }
 
+                if (this.dragAction === "pan_view") {
+                    this.isDragging = false;
+                    this.dragAction = "none";
+                    this.wrapper.classList.remove("is-panning");
+                    this.annoCanvas.style.cursor = this.wrapper.classList.contains("is-pannable") ? "grab" : "default";
+                    return;
+                }
+
                 const mouse = this.getMousePos(event);
 
                 if (this.dragAction === "draw_arrow") {
@@ -797,6 +892,7 @@
 
                 this.isDragging = false;
                 this.dragAction = "none";
+                this.wrapper.classList.remove("is-panning");
                 this.drawAnnotations();
             }
 
