@@ -1,3 +1,10 @@
+- title: "GIF PACS 雙視窗檢視器"
+  description: "支援左右 GIF 對照、同步翻幀、箭頭與文字標註、亮度對比調整，以及單檔 HTML 匯出保存。"
+  image: "/images/practical-tools/gif-pacs-viewer.svg"
+  url: "/tools/gif-pacs-viewer/"
+  embed_url: "/tools/gif-pacs-viewer/"
+  source_label: "立即使用"
+
 - title: "ECG 影像轉數位訊號工具"
   description: "上傳 ECG 圖片後，一鍵前處理與波形擷取，可做兩點校正並匯出 CSV / JSON / PNG。"
   image: "/images/practical-tools/ecg-image-digitizer.svg"

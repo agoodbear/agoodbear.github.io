@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF PACS Viewer | 雙視窗對照模式</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/libgif@0.0.3/libgif.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #061216;
+            --panel: rgba(8, 26, 31, 0.92);
+            --panel-strong: rgba(10, 33, 39, 0.96);
+            --line: rgba(79, 174, 191, 0.22);
+            --text: #dff7f5;
+            --muted: #8fb8bc;
+            --accent: #22d3ee;
+            --accent-strong: #0891b2;
+            --good: #22c55e;
+            --warn: #fbbf24;
+            --danger: #f87171;
+            --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            min-height: 100%;
+            background:
+                radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 28%),
+                radial-gradient(circle at top right, rgba(34, 197, 94, 0.12), transparent 24%),
+                linear-gradient(160deg, #02070b 0%, #071419 55%, #061216 100%);
+            color: var(--text);
+            font-family: "Figtree", "Noto Sans TC", sans-serif;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .glass {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(18px);
+        }
+
+        .viewer-box {
+            position: relative;
+            background:
+                linear-gradient(180deg, rgba(4, 12, 16, 0.75), rgba(4, 12, 16, 0.94)),
+                radial-gradient(rgba(120, 155, 160, 0.18) 1px, transparent 1px);
+            background-size: auto, 22px 22px;
+            overflow: hidden;
+            border: 1px solid rgba(120, 155, 160, 0.22);
+            border-radius: 24px;
+            min-height: 0;
+        }
+
+        .viewer-box.active-focus {
+            border-color: rgba(34, 211, 238, 0.85);
+            box-shadow: inset 0 0 0 1px rgba(34, 211, 238, 0.25);
+        }
+
+        .viewer-header {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border-radius: 999px;
+            background: rgba(5, 15, 20, 0.74);
+            border: 1px solid rgba(143, 184, 188, 0.18);
+            color: #dff7f5;
+            font-size: 0.82rem;
+            line-height: 1;
+        }
+
+        .viewer-box .gif-wrapper {
+            position: relative;
+            display: none;
+            max-width: min(100%, calc(100vw - 440px));
+            max-height: 100%;
+            padding: 32px;
+        }
+
+        .jsgif {
+            position: relative;
+            display: inline-block;
+        }
+
+        .jsgif canvas {
+            display: block;
+            max-width: 100%;
+            max-height: min(76vh, 100%);
+            object-fit: contain;
+            border-radius: 18px;
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.42);
+        }
+
+        .annotation-layer {
+            position: absolute;
+            z-index: 10;
+        }
+
+        .cursor-crosshair {
+            cursor: crosshair !important;
+        }
+
+        .cursor-text {
+            cursor: text !important;
+        }
+
+        .upload-area {
+            border: 1.5px dashed rgba(143, 184, 188, 0.32);
+            transition: border-color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+        }
+
+        .upload-area:hover,
+        .upload-area.active {
+            border-color: rgba(34, 211, 238, 0.75);
+            background-color: rgba(34, 211, 238, 0.1);
+            transform: translateY(-1px);
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            margin-top: -6px;
+            width: 16px;
+            height: 16px;
+            border-radius: 999px;
+            background: var(--accent);
+            border: 2px solid #042833;
+            box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.18);
+        }
+
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 4px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(8, 145, 178, 0.6), rgba(34, 211, 238, 0.9));
+        }
+
+        .tool-btn.active {
+            background: linear-gradient(180deg, rgba(8, 145, 178, 0.95), rgba(6, 95, 122, 0.95));
+            color: white;
+            border-color: rgba(34, 211, 238, 0.9);
+            box-shadow: 0 10px 24px rgba(8, 145, 178, 0.28);
+        }
+
+        .sync-btn.active {
+            background: linear-gradient(180deg, rgba(34, 197, 94, 0.95), rgba(21, 128, 61, 0.95));
+            color: white;
+            border-color: rgba(74, 222, 128, 0.9);
+            box-shadow: 0 10px 24px rgba(34, 197, 94, 0.26);
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(143, 184, 188, 0.2);
+            background: rgba(4, 16, 22, 0.64);
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        .help-card {
+            background: linear-gradient(180deg, rgba(8, 30, 36, 0.96), rgba(6, 22, 28, 0.96));
+            border: 1px solid rgba(79, 174, 191, 0.18);
+            border-radius: 18px;
+            padding: 14px 16px;
+        }
+
+        .help-card ul {
+            margin: 10px 0 0;
+            padding-left: 18px;
+            color: var(--muted);
+        }
+
+        .help-card li + li {
+            margin-top: 6px;
+        }
+
+        .empty-state,
+        .loading-state {
+            text-align: center;
+        }
+
+        .empty-state {
+            color: rgba(143, 184, 188, 0.78);
+        }
+
+        .loading-state {
+            color: var(--accent);
+        }
+
+        .frame-counter {
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+        }
+
+        .toolbar-btn-on {
+            background: rgba(8, 145, 178, 0.22) !important;
+            border-color: rgba(34, 211, 238, 0.8) !important;
+            color: white !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.32);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 999px;
+            background: rgba(143, 184, 188, 0.34);
+        }
+
+        @media (max-width: 1180px) {
+            body {
+                overflow: auto;
+            }
+
+            main {
+                flex-direction: column;
+                overflow: visible !important;
+            }
+
+            aside {
+                width: 100% !important;
+                max-height: none;
+                border-right: 0 !important;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .viewer-grid {
+                grid-template-columns: 1fr !important;
+                height: auto !important;
+                min-height: 1100px;
+            }
+
+            .viewer-box .gif-wrapper {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 720px) {
+            html,
+            body {
+                overflow: auto;
+            }
+
+            header {
+                padding: 14px !important;
+            }
+
+            .viewer-grid {
+                padding: 10px !important;
+                gap: 10px !important;
+            }
+
+            .viewer-box {
+                min-height: 48vh;
+            }
+
+            .viewer-box .gif-wrapper {
+                padding: 18px;
+            }
+
+            .annotation-layer {
+                max-width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+    <script id="embedded-data" type="application/json">{}</script>
+</head>
+<body>
+    <header class="glass px-4 py-3 md:px-5 md:py-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between shrink-0">
+        <div class="flex items-center gap-3 min-w-0">
+            <div class="w-11 h-11 rounded-2xl flex items-center justify-center text-white shadow-lg" style="background: linear-gradient(135deg, #0891b2, #22d3ee);">
+                <i class="fa-solid fa-columns"></i>
+            </div>
+            <div class="min-w-0">
+                <h1 class="text-lg md:text-xl font-bold tracking-wide truncate">GIF PACS Viewer</h1>
+                <p class="text-sm text-cyan-100/70 m-0">雙視窗對照、同步翻幀、即時標註與單檔匯出</p>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 md:gap-3">
+            <span class="status-pill"><i class="fa-regular fa-keyboard"></i> 滑鼠滾輪翻幀 / Delete 刪除標註</span>
+            <button id="btn-sync-scroll" class="sync-btn min-h-11 bg-slate-900/80 text-slate-300 hover:text-white px-4 py-2 rounded-xl text-sm border border-cyan-900/40 flex items-center gap-2 transition-all">
+                <i class="fa-solid fa-link"></i>
+                <span>同步捲動</span>
+            </button>
+            <button id="btn-export" class="min-h-11 bg-cyan-700 hover:bg-cyan-600 text-white px-4 py-2 rounded-xl text-sm flex items-center gap-2 transition-colors border border-cyan-500/40 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                <i class="fa-solid fa-file-export"></i>
+                <span>匯出 HTML</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-1 flex overflow-hidden">
+        <aside class="w-[360px] glass border-r border-cyan-950/40 flex flex-col shrink-0 h-full overflow-y-auto">
+            <div class="p-4 md:p-5 flex flex-col gap-6">
+                <section class="help-card">
+                    <p class="text-xs uppercase tracking-[0.28em] text-cyan-300/70 m-0">實用提示</p>
+                    <ul class="text-sm leading-6">
+                        <li>左、右視窗可分別載入本機 GIF 或遠端 URL。</li>
+                        <li>啟用同步後，兩側會一起翻幀，方便比較前後差異。</li>
+                        <li>匯出會把目前標註與來源資訊包進單一 HTML 檔。</li>
+                    </ul>
+                </section>
+
+                <div class="flex flex-col gap-3 p-4 rounded-2xl bg-slate-950/50 border border-cyan-950/40">
+                    <label class="text-xs font-bold text-cyan-300 uppercase tracking-[0.22em] flex justify-between">
+                        <span><i class="fa-solid fa-arrow-left mr-1"></i> 左側影像</span>
+                    </label>
+                    <div id="drop-zone-left" class="upload-area rounded-2xl p-4 text-center cursor-pointer bg-slate-950/70">
+                        <input type="file" id="file-input-left" accept="image/gif" class="hidden">
+                        <p class="text-sm text-cyan-50/80 font-medium m-0">拖曳或點擊上傳 GIF</p>
+                        <p class="text-xs text-slate-400 mt-2 mb-0">支援本機 GIF 與資料 URL</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <input type="url" id="url-input-left" placeholder="遠端 GIF URL..." class="w-full min-h-11 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-cyan-500 focus:outline-none">
+                        <button id="btn-load-left" class="min-h-11 min-w-11 bg-cyan-700 hover:bg-cyan-600 text-white px-3 rounded-xl text-sm" aria-label="載入左側遠端 GIF">
+                            <i class="fa-solid fa-cloud-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-3 p-4 rounded-2xl bg-slate-950/50 border border-emerald-950/40">
+                    <label class="text-xs font-bold text-emerald-300 uppercase tracking-[0.22em] flex justify-between">
+                        <span>右側影像 <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                    </label>
+                    <div id="drop-zone-right" class="upload-area rounded-2xl p-4 text-center cursor-pointer bg-slate-950/70">
+                        <input type="file" id="file-input-right" accept="image/gif" class="hidden">
+                        <p class="text-sm text-emerald-50/80 font-medium m-0">拖曳或點擊上傳 GIF</p>
+                        <p class="text-xs text-slate-400 mt-2 mb-0">適合做前後對照或不同序列比較</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <input type="url" id="url-input-right" placeholder="遠端 GIF URL..." class="w-full min-h-11 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-cyan-500 focus:outline-none">
+                        <button id="btn-load-right" class="min-h-11 min-w-11 bg-emerald-700 hover:bg-emerald-600 text-white px-3 rounded-xl text-sm" aria-label="載入右側遠端 GIF">
+                            <i class="fa-solid fa-cloud-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-3 pt-2">
+                    <label class="text-xs uppercase font-bold text-slate-400 tracking-[0.22em]">工具</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button id="btn-tool-select" class="tool-btn active min-h-14 bg-slate-900 hover:bg-slate-800 text-slate-200 py-2 rounded-2xl text-xs border border-slate-700 flex flex-col items-center justify-center gap-1 transition-all" aria-label="選取工具">
+                            <i class="fa-solid fa-arrow-pointer text-base"></i><span>選取</span>
+                        </button>
+                        <button id="btn-tool-arrow" class="tool-btn min-h-14 bg-slate-900 hover:bg-slate-800 text-slate-200 py-2 rounded-2xl text-xs border border-slate-700 flex flex-col items-center justify-center gap-1 transition-all" aria-label="箭頭工具">
+                            <i class="fa-solid fa-location-arrow text-base"></i><span>箭頭</span>
+                        </button>
+                        <button id="btn-tool-text" class="tool-btn min-h-14 bg-slate-900 hover:bg-slate-800 text-slate-200 py-2 rounded-2xl text-xs border border-slate-700 flex flex-col items-center justify-center gap-1 transition-all" aria-label="文字工具">
+                            <i class="fa-solid fa-font text-base"></i><span>文字</span>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button id="btn-align-frames" class="min-h-11 bg-slate-900 text-slate-200 hover:bg-slate-800 py-2 rounded-xl text-sm border border-slate-700">右側對齊左側幀數</button>
+                        <button id="btn-clear-all" class="min-h-11 bg-rose-950/40 text-rose-300 hover:bg-rose-900/60 py-2 rounded-xl text-sm border border-rose-900/50">清除所有標註</button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <label class="text-xs uppercase font-bold text-slate-400 tracking-[0.22em]">影像調整</label>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm text-slate-200"><span>亮度</span><span id="val-brightness">100%</span></div>
+                        <input type="range" id="brightness" min="0" max="200" value="100" class="w-full" aria-label="亮度">
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm text-slate-200"><span>對比度</span><span id="val-contrast">100%</span></div>
+                        <input type="range" id="contrast" min="0" max="200" value="100" class="w-full" aria-label="對比度">
+                    </div>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button id="btn-grayscale" class="min-h-11 bg-slate-900 text-slate-200 hover:bg-slate-800 py-2 rounded-xl text-sm border border-slate-700">灰階</button>
+                        <button id="btn-invert" class="min-h-11 bg-slate-900 text-slate-200 hover:bg-slate-800 py-2 rounded-xl text-sm border border-slate-700">反轉</button>
+                        <button id="btn-reset" class="min-h-11 bg-slate-900 text-slate-200 hover:bg-slate-800 py-2 rounded-xl text-sm border border-slate-700">重置</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="viewer-grid flex-1 grid grid-cols-2 gap-3 bg-black/20 p-3 min-h-0">
+            <section id="viewer-left" class="viewer-box flex flex-col items-center justify-center relative">
+                <div class="viewer-header"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span> Left Viewer</div>
+                <div class="empty-state px-6">
+                    <i class="fa-solid fa-image text-4xl mb-3 text-cyan-300/60"></i>
+                    <p class="text-base font-medium m-0">左視窗待載入</p>
+                    <p class="text-sm mt-2 mb-0 text-slate-400">拖曳 GIF 或貼上遠端連結後開始比對</p>
+                </div>
+                <div class="loading-state hidden"><i class="fa-solid fa-circle-notch fa-spin text-3xl"></i></div>
+                <div class="gif-wrapper"></div>
+                <div class="absolute top-3 right-3 text-right pointer-events-none z-20">
+                    <div class="text-cyan-300 font-mono text-xl md:text-2xl font-bold frame-counter">-- / --</div>
+                </div>
+                <div class="absolute bottom-0 left-0 w-full h-1.5 bg-slate-900 z-20">
+                    <div class="progress-bar h-full bg-cyan-500 w-0 transition-all duration-75"></div>
+                </div>
+            </section>
+
+            <section id="viewer-right" class="viewer-box flex flex-col items-center justify-center relative">
+                <div class="viewer-header"><span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> Right Viewer</div>
+                <div class="empty-state px-6">
+                    <i class="fa-solid fa-image text-4xl mb-3 text-emerald-300/60"></i>
+                    <p class="text-base font-medium m-0">右視窗待載入</p>
+                    <p class="text-sm mt-2 mb-0 text-slate-400">可載入不同版本 GIF 進行逐幀比較</p>
+                </div>
+                <div class="loading-state hidden text-emerald-400"><i class="fa-solid fa-circle-notch fa-spin text-3xl"></i></div>
+                <div class="gif-wrapper"></div>
+                <div class="absolute top-3 right-3 text-right pointer-events-none z-20">
+                    <div class="text-emerald-300 font-mono text-xl md:text-2xl font-bold frame-counter">-- / --</div>
+                </div>
+                <div class="absolute bottom-0 left-0 w-full h-1.5 bg-slate-900 z-20">
+                    <div class="progress-bar h-full bg-emerald-500 w-0 transition-all duration-75"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        const AppState = {
+            syncMode: false,
+            activeTool: "none",
+            globalFilters: { brightness: 100, contrast: 100, grayscale: 0, invert: 0 }
+        };
+
+        class MedicalViewer {
+            constructor(containerId, side) {
+                this.container = document.getElementById(containerId);
+                this.side = side;
+                this.wrapper = this.container.querySelector(".gif-wrapper");
+                this.emptyState = this.container.querySelector(".empty-state");
+                this.loadingState = this.container.querySelector(".loading-state");
+                this.frameCounter = this.container.querySelector(".frame-counter");
+                this.progressBar = this.container.querySelector(".progress-bar");
+
+                this.superGif = null;
+                this.isLoaded = false;
+                this.sourceUrl = null;
+                this.fileName = "";
+                this.isRemote = false;
+
+                this.annotations = {};
+                this.selectedAnno = null;
+
+                this.isDragging = false;
+                this.dragStart = { x: 0, y: 0 };
+                this.dragOriginal = null;
+                this.dragAction = "none";
+
+                this.annoCanvas = null;
+                this.ctx = null;
+                this.boundSyncAnnotationBounds = () => this.syncAnnotationBounds();
+
+                this.container.addEventListener("wheel", (event) => this.handleWheel(event), { passive: false });
+                this.container.addEventListener("mousedown", () => {
+                    document.querySelectorAll(".viewer-box").forEach((box) => box.classList.remove("active-focus"));
+                    this.container.classList.add("active-focus");
+                });
+                window.addEventListener("resize", this.boundSyncAnnotationBounds);
+            }
+
+            setLoading(isLoading) {
+                if (isLoading) {
+                    this.emptyState.style.display = "none";
+                    this.wrapper.style.display = "none";
+                    this.loadingState.style.display = "block";
+                    return;
+                }
+
+                this.loadingState.style.display = "none";
+                this.wrapper.style.display = "block";
+            }
+
+            load(source, filename, isRemote, initialAnnotations = null) {
+                this.sourceUrl = source;
+                this.fileName = filename;
+                this.isRemote = isRemote;
+                this.setLoading(true);
+
+                this.isLoaded = false;
+                this.selectedAnno = null;
+                this.annotations = initialAnnotations ? structuredClone(initialAnnotations) : {};
+
+                this.wrapper.innerHTML = "";
+                this.annoCanvas = null;
+                this.ctx = null;
+
+                const img = document.createElement("img");
+                if (isRemote) {
+                    img.crossOrigin = "anonymous";
+                }
+                img.src = source;
+                this.wrapper.appendChild(img);
+
+                img.onload = () => {
+                    this.superGif = new SuperGif({ gif: img, auto_play: false, loop_mode: true });
+                    this.superGif.load(() => {
+                        this.isLoaded = true;
+                        this.setLoading(false);
+
+                        const gifCanvas = this.superGif.get_canvas();
+                        gifCanvas.style.display = "block";
+                        gifCanvas.style.margin = "0 auto";
+
+                        this.initAnnotationLayer(gifCanvas.width, gifCanvas.height);
+                        this.syncAnnotationBounds();
+                        this.updateDisplay();
+                        this.applyFilters();
+
+                        document.getElementById("btn-export").disabled = !Object.values(viewers).some((viewer) => viewer.isLoaded);
+                    });
+                };
+
+                img.onerror = () => {
+                    this.setLoading(false);
+                    this.wrapper.style.display = "none";
+                    this.emptyState.style.display = "block";
+                    alert("[" + this.side + "] 圖片載入失敗，請確認 GIF 格式與遠端網址是否可直接存取。");
+                };
+            }
+
+            updateDisplay() {
+                if (!this.isLoaded) {
+                    return;
+                }
+
+                const current = this.superGif.get_current_frame() + 1;
+                const total = this.superGif.get_length();
+                this.frameCounter.innerText = current + " / " + total;
+                this.progressBar.style.width = (current / total) * 100 + "%";
+                this.drawAnnotations();
+            }
+
+            handleWheel(event) {
+                if (!this.isLoaded || AppState.activeTool !== "none") {
+                    return;
+                }
+
+                event.preventDefault();
+                const direction = event.deltaY < 0 ? -1 : 1;
+                this.moveRelative(direction);
+
+                if (AppState.syncMode) {
+                    const otherSide = this.side === "left" ? "right" : "left";
+                    const otherViewer = viewers[otherSide];
+                    if (otherViewer && otherViewer.isLoaded) {
+                        otherViewer.moveRelative(direction);
+                    }
+                }
+            }
+
+            moveRelative(direction) {
+                if (!this.isLoaded) {
+                    return;
+                }
+                this.superGif.move_relative(direction);
+                this.updateDisplay();
+            }
+
+            moveTo(frameIndex) {
+                if (!this.isLoaded) {
+                    return;
+                }
+                const safeFrame = Math.max(0, Math.min(frameIndex, this.superGif.get_length() - 1));
+                this.superGif.move_to(safeFrame);
+                this.updateDisplay();
+            }
+
+            applyFilters() {
+                const canvas = this.wrapper.querySelector("canvas");
+                if (!canvas) {
+                    return;
+                }
+                const filters = AppState.globalFilters;
+                canvas.style.filter =
+                    "brightness(" + filters.brightness + "%) " +
+                    "contrast(" + filters.contrast + "%) " +
+                    "grayscale(" + filters.grayscale + "%) " +
+                    "invert(" + filters.invert + "%)";
+            }
+
+            initAnnotationLayer(width, height) {
+                this.annoCanvas = document.createElement("canvas");
+                this.annoCanvas.className = "annotation-layer";
+                this.annoCanvas.width = width;
+                this.annoCanvas.height = height;
+                this.ctx = this.annoCanvas.getContext("2d");
+                this.wrapper.appendChild(this.annoCanvas);
+
+                this.annoCanvas.addEventListener("mousedown", (event) => this.onMouseDown(event));
+                window.addEventListener("mousemove", (event) => this.onMouseMove(event));
+                window.addEventListener("mouseup", (event) => this.onMouseUp(event));
+            }
+
+            syncAnnotationBounds() {
+                if (!this.annoCanvas || !this.superGif) {
+                    return;
+                }
+
+                const gifCanvas = this.superGif.get_canvas();
+                if (!gifCanvas) {
+                    return;
+                }
+
+                const wrapperRect = this.wrapper.getBoundingClientRect();
+                const canvasRect = gifCanvas.getBoundingClientRect();
+                this.annoCanvas.style.left = canvasRect.left - wrapperRect.left + "px";
+                this.annoCanvas.style.top = canvasRect.top - wrapperRect.top + "px";
+                this.annoCanvas.style.width = canvasRect.width + "px";
+                this.annoCanvas.style.height = canvasRect.height + "px";
+            }
+
+            getMousePos(event) {
+                const rect = this.annoCanvas.getBoundingClientRect();
+                const scaleX = this.annoCanvas.width / rect.width;
+                const scaleY = this.annoCanvas.height / rect.height;
+                return {
+                    x: (event.clientX - rect.left) * scaleX,
+                    y: (event.clientY - rect.top) * scaleY
+                };
+            }
+
+            addAnnotation(annotation) {
+                const frame = this.superGif.get_current_frame();
+                if (!this.annotations[frame]) {
+                    this.annotations[frame] = [];
+                }
+                this.annotations[frame].push(annotation);
+                this.drawAnnotations();
+            }
+
+            onMouseDown(event) {
+                if (!this.isLoaded || !this.annoCanvas) {
+                    return;
+                }
+
+                const mouse = this.getMousePos(event);
+                const frame = this.superGif.get_current_frame();
+
+                if (AppState.activeTool === "arrow") {
+                    this.isDragging = true;
+                    this.dragAction = "draw_arrow";
+                    this.dragStart = mouse;
+                    this.selectedAnno = null;
+                    return;
+                }
+
+                if (AppState.activeTool === "text") {
+                    showInlineTextEditor(this.annoCanvas, mouse.x, mouse.y, (text) => {
+                        if (text) {
+                            this.addAnnotation({
+                                id: crypto.randomUUID(),
+                                type: "text",
+                                x: mouse.x,
+                                y: mouse.y,
+                                text,
+                                fontSize: 30
+                            });
+                            setActiveTool("none");
+                        }
+                    });
+                    return;
+                }
+
+                if (this.selectedAnno && this.selectedAnno.type === "text" && this.hitTestResize(mouse, this.selectedAnno)) {
+                    this.isDragging = true;
+                    this.dragAction = "resize";
+                    this.dragStart = mouse;
+                    this.dragOriginal = JSON.parse(JSON.stringify(this.selectedAnno));
+                    return;
+                }
+
+                const hit = this.hitTest(mouse, frame);
+                if (hit) {
+                    this.selectedAnno = hit;
+                    this.isDragging = true;
+                    this.dragAction = "move";
+                    this.dragStart = mouse;
+                    this.dragOriginal = JSON.parse(JSON.stringify(hit));
+                } else {
+                    this.selectedAnno = null;
+                }
+
+                this.drawAnnotations();
+            }
+
+            onMouseMove(event) {
+                if (!this.annoCanvas || !this.ctx || !this.isLoaded) {
+                    return;
+                }
+
+                const mouse = this.getMousePos(event);
+
+                if (!this.isDragging) {
+                    if (AppState.activeTool === "arrow") {
+                        this.annoCanvas.style.cursor = "crosshair";
+                    } else if (AppState.activeTool === "text") {
+                        this.annoCanvas.style.cursor = "text";
+                    } else if (this.selectedAnno && this.selectedAnno.type === "text" && this.hitTestResize(mouse, this.selectedAnno)) {
+                        this.annoCanvas.style.cursor = "nwse-resize";
+                    } else if (this.hitTest(mouse, this.superGif.get_current_frame())) {
+                        this.annoCanvas.style.cursor = "move";
+                    } else {
+                        this.annoCanvas.style.cursor = "default";
+                    }
+                    return;
+                }
+
+                if (this.dragAction === "draw_arrow") {
+                    this.drawAnnotations();
+                    drawArrow(this.ctx, this.dragStart.x, this.dragStart.y, mouse.x, mouse.y, "#fbbf24", 3);
+                } else if (this.dragAction === "move" && this.selectedAnno) {
+                    const dx = mouse.x - this.dragStart.x;
+                    const dy = mouse.y - this.dragStart.y;
+                    if (this.selectedAnno.type === "arrow") {
+                        this.selectedAnno.start.x = this.dragOriginal.start.x + dx;
+                        this.selectedAnno.start.y = this.dragOriginal.start.y + dy;
+                        this.selectedAnno.end.x = this.dragOriginal.end.x + dx;
+                        this.selectedAnno.end.y = this.dragOriginal.end.y + dy;
+                    } else {
+                        this.selectedAnno.x = this.dragOriginal.x + dx;
+                        this.selectedAnno.y = this.dragOriginal.y + dy;
+                    }
+                    this.drawAnnotations();
+                } else if (this.dragAction === "resize" && this.selectedAnno) {
+                    const dy = mouse.y - this.dragStart.y;
+                    let size = this.dragOriginal.fontSize + dy;
+                    if (size < 12) {
+                        size = 12;
+                    }
+                    this.selectedAnno.fontSize = size;
+                    this.drawAnnotations();
+                }
+            }
+
+            onMouseUp(event) {
+                if (!this.isDragging || !this.isLoaded) {
+                    return;
+                }
+
+                const mouse = this.getMousePos(event);
+
+                if (this.dragAction === "draw_arrow") {
+                    if (Math.hypot(mouse.x - this.dragStart.x, mouse.y - this.dragStart.y) > 5) {
+                        this.addAnnotation({
+                            id: crypto.randomUUID(),
+                            type: "arrow",
+                            start: this.dragStart,
+                            end: mouse
+                        });
+                    }
+                }
+
+                this.isDragging = false;
+                this.dragAction = "none";
+                this.drawAnnotations();
+            }
+
+            hitTest(pos, frame) {
+                const list = this.annotations[frame] || [];
+                const rect = this.annoCanvas.getBoundingClientRect();
+                const scale = this.annoCanvas.width / rect.width;
+                const tolerance = 20 * scale;
+
+                for (let index = list.length - 1; index >= 0; index -= 1) {
+                    const item = list[index];
+                    if (item.type === "arrow") {
+                        if (distToSegment(pos, item.start, item.end) < tolerance) {
+                            return item;
+                        }
+                    } else if (item.type === "text") {
+                        if (hitTestText(this.ctx, pos, item, tolerance)) {
+                            return item;
+                        }
+                    }
+                }
+                return null;
+            }
+
+            hitTestResize(pos, item) {
+                const rect = this.annoCanvas.getBoundingClientRect();
+                const scale = this.annoCanvas.width / rect.width;
+                return hitTestResizeHandle(this.ctx, pos, item, 25 * scale);
+            }
+
+            drawAnnotations() {
+                if (!this.ctx || !this.superGif) {
+                    return;
+                }
+
+                this.ctx.clearRect(0, 0, this.annoCanvas.width, this.annoCanvas.height);
+                const frame = this.superGif.get_current_frame();
+                const list = this.annotations[frame] || [];
+
+                list.forEach((item) => {
+                    const isSelected = this.selectedAnno === item;
+                    if (item.type === "arrow") {
+                        drawArrow(this.ctx, item.start.x, item.start.y, item.end.x, item.end.y, isSelected ? "#22d3ee" : "#fbbf24", isSelected ? 6 : 4);
+                    } else {
+                        drawText(this.ctx, item, isSelected);
+                    }
+                });
+            }
+
+            removeSelectedAnnotation() {
+                if (!this.isLoaded || !this.selectedAnno) {
+                    return false;
+                }
+                const frame = this.superGif.get_current_frame();
+                this.annotations[frame] = (this.annotations[frame] || []).filter((annotation) => annotation !== this.selectedAnno);
+                this.selectedAnno = null;
+                this.drawAnnotations();
+                return true;
+            }
+        }
+
+        const viewers = {
+            left: new MedicalViewer("viewer-left", "left"),
+            right: new MedicalViewer("viewer-right", "right")
+        };
+
+        function distToSegment(p, v, w) {
+            const lengthSquared = (v.x - w.x) ** 2 + (v.y - w.y) ** 2;
+            if (lengthSquared === 0) {
+                return Math.hypot(p.x - v.x, p.y - v.y);
+            }
+            let t = ((p.x - v.x) * (w.x - v.x) + (p.y - v.y) * (w.y - v.y)) / lengthSquared;
+            t = Math.max(0, Math.min(1, t));
+            const projection = {
+                x: v.x + t * (w.x - v.x),
+                y: v.y + t * (w.y - v.y)
+            };
+            return Math.hypot(p.x - projection.x, p.y - projection.y);
+        }
+
+        function hitTestText(ctx, pos, obj, pad) {
+            ctx.font = "bold " + obj.fontSize + "px 'Figtree', 'Noto Sans TC', sans-serif";
+            const metrics = ctx.measureText(obj.text);
+            const width = metrics.width;
+            const height = obj.fontSize;
+            const x = obj.x - width / 2 - pad;
+            const y = obj.y - height - pad - 5;
+            return pos.x >= x && pos.x <= x + width + pad * 2 && pos.y >= y && pos.y <= y + height + pad * 2;
+        }
+
+        function hitTestResizeHandle(ctx, pos, obj, radius) {
+            ctx.font = "bold " + obj.fontSize + "px 'Figtree', 'Noto Sans TC', sans-serif";
+            const metrics = ctx.measureText(obj.text);
+            const width = metrics.width;
+            const handleX = obj.x + width / 2 + 8;
+            const handleY = obj.y - 5 + 8;
+            return Math.hypot(pos.x - handleX, pos.y - handleY) < radius;
+        }
+
+        function drawArrow(ctx, fromX, fromY, toX, toY, color, lineWidth) {
+            const head = 15 + lineWidth * 2;
+            const angle = Math.atan2(toY - fromY, toX - fromX);
+            ctx.beginPath();
+            ctx.moveTo(fromX, fromY);
+            ctx.lineTo(toX, toY);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = lineWidth;
+            ctx.lineCap = "round";
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(toX, toY);
+            ctx.lineTo(toX - head * Math.cos(angle - Math.PI / 6), toY - head * Math.sin(angle - Math.PI / 6));
+            ctx.lineTo(toX - head * Math.cos(angle + Math.PI / 6), toY - head * Math.sin(angle + Math.PI / 6));
+            ctx.lineTo(toX, toY);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+
+        function drawText(ctx, obj, isSelected) {
+            ctx.font = "bold " + obj.fontSize + "px 'Figtree', 'Noto Sans TC', sans-serif";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "bottom";
+            const metrics = ctx.measureText(obj.text);
+            const width = metrics.width;
+            const height = obj.fontSize;
+            const padding = 8;
+
+            ctx.fillStyle = isSelected ? "rgba(8, 145, 178, 0.62)" : "rgba(2, 6, 23, 0.68)";
+            ctx.fillRect(obj.x - width / 2 - padding, obj.y - height - padding - 5, width + padding * 2, height + padding * 2);
+
+            ctx.fillStyle = "#facc15";
+            ctx.fillText(obj.text, obj.x, obj.y - 5);
+
+            if (isSelected) {
+                ctx.beginPath();
+                ctx.arc(obj.x + width / 2 + padding, obj.y - 5 + padding, 8, 0, 2 * Math.PI);
+                ctx.fillStyle = "white";
+                ctx.fill();
+                ctx.strokeStyle = "black";
+                ctx.stroke();
+            }
+        }
+
+        function showInlineTextEditor(canvas, x, y, callback) {
+            const rect = canvas.getBoundingClientRect();
+            const screenX = rect.left + (x / canvas.width) * rect.width;
+            const screenY = rect.top + (y / canvas.height) * rect.height;
+
+            const input = document.createElement("input");
+            input.type = "text";
+            input.className = "fixed z-50 px-3 py-2 text-[28px] rounded-xl bg-slate-950 text-yellow-300 border border-yellow-500 shadow-lg";
+            input.style.left = screenX + "px";
+            input.style.top = screenY + "px";
+            document.body.appendChild(input);
+            requestAnimationFrame(() => input.focus());
+
+            let done = false;
+            const finish = () => {
+                if (done) {
+                    return;
+                }
+                done = true;
+                const value = input.value.trim();
+                input.remove();
+                callback(value);
+            };
+
+            input.addEventListener("keydown", (event) => {
+                if (event.key === "Enter") {
+                    finish();
+                }
+                if (event.key === "Escape") {
+                    input.value = "";
+                    finish();
+                }
+            });
+            input.addEventListener("blur", finish);
+        }
+
+        const buttons = {
+            select: document.getElementById("btn-tool-select"),
+            arrow: document.getElementById("btn-tool-arrow"),
+            text: document.getElementById("btn-tool-text")
+        };
+
+        function setActiveTool(tool) {
+            AppState.activeTool = tool;
+            Object.values(buttons).forEach((button) => button.classList.remove("active"));
+            if (tool === "none") {
+                buttons.select.classList.add("active");
+            } else if (buttons[tool]) {
+                buttons[tool].classList.add("active");
+            }
+
+            ["left", "right"].forEach((side) => {
+                const viewer = viewers[side];
+                if (!viewer.annoCanvas) {
+                    return;
+                }
+                viewer.annoCanvas.classList.remove("cursor-crosshair", "cursor-text");
+                if (tool === "arrow") {
+                    viewer.annoCanvas.classList.add("cursor-crosshair");
+                }
+                if (tool === "text") {
+                    viewer.annoCanvas.classList.add("cursor-text");
+                }
+            });
+        }
+
+        buttons.select.onclick = () => setActiveTool("none");
+        buttons.arrow.onclick = () => setActiveTool("arrow");
+        buttons.text.onclick = () => setActiveTool("text");
+
+        const syncButton = document.getElementById("btn-sync-scroll");
+        syncButton.onclick = () => {
+            AppState.syncMode = !AppState.syncMode;
+            syncButton.classList.toggle("active", AppState.syncMode);
+            if (AppState.syncMode && viewers.left.isLoaded && viewers.right.isLoaded) {
+                viewers.right.moveTo(viewers.left.superGif.get_current_frame());
+            }
+        };
+
+        document.getElementById("btn-align-frames").onclick = () => {
+            if (viewers.left.isLoaded && viewers.right.isLoaded) {
+                viewers.right.moveTo(viewers.left.superGif.get_current_frame());
+            }
+        };
+
+        document.getElementById("btn-clear-all").onclick = () => {
+            if (confirm("確定清除左右視窗的所有標註？")) {
+                Object.values(viewers).forEach((viewer) => {
+                    viewer.annotations = {};
+                    viewer.selectedAnno = null;
+                    viewer.drawAnnotations();
+                });
+            }
+        };
+
+        const grayscaleButton = document.getElementById("btn-grayscale");
+        const invertButton = document.getElementById("btn-invert");
+
+        function updateFilterButtonState() {
+            grayscaleButton.classList.toggle("toolbar-btn-on", AppState.globalFilters.grayscale === 100);
+            invertButton.classList.toggle("toolbar-btn-on", AppState.globalFilters.invert === 100);
+        }
+
+        function updateFilterLabels() {
+            document.getElementById("val-brightness").innerText = AppState.globalFilters.brightness + "%";
+            document.getElementById("val-contrast").innerText = AppState.globalFilters.contrast + "%";
+            document.getElementById("brightness").value = AppState.globalFilters.brightness;
+            document.getElementById("contrast").value = AppState.globalFilters.contrast;
+        }
+
+        function updateFilters() {
+            Object.values(viewers).forEach((viewer) => viewer.applyFilters());
+            updateFilterLabels();
+            updateFilterButtonState();
+        }
+
+        ["brightness", "contrast"].forEach((id) => {
+            document.getElementById(id).oninput = (event) => {
+                AppState.globalFilters[id] = Number(event.target.value);
+                updateFilters();
+            };
+        });
+
+        grayscaleButton.onclick = () => {
+            AppState.globalFilters.grayscale = AppState.globalFilters.grayscale ? 0 : 100;
+            updateFilters();
+        };
+
+        invertButton.onclick = () => {
+            AppState.globalFilters.invert = AppState.globalFilters.invert ? 0 : 100;
+            updateFilters();
+        };
+
+        document.getElementById("btn-reset").onclick = () => {
+            AppState.globalFilters = { brightness: 100, contrast: 100, grayscale: 0, invert: 0 };
+            updateFilters();
+        };
+
+        function bindFileInput(side) {
+            const fileInput = document.getElementById("file-input-" + side);
+            const dropZone = document.getElementById("drop-zone-" + side);
+            const loadButton = document.getElementById("btn-load-" + side);
+            const urlInput = document.getElementById("url-input-" + side);
+
+            dropZone.onclick = () => fileInput.click();
+
+            const loadFile = (file) => {
+                if (!file || file.type !== "image/gif") {
+                    alert("請選擇 GIF 檔案。");
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = (event) => viewers[side].load(event.target.result, file.name, false);
+                reader.readAsDataURL(file);
+            };
+
+            fileInput.onchange = (event) => loadFile(event.target.files[0]);
+
+            ["dragenter", "dragover"].forEach((type) => {
+                dropZone.addEventListener(type, (event) => {
+                    event.preventDefault();
+                    dropZone.classList.add("active");
+                });
+            });
+
+            ["dragleave", "dragend", "drop"].forEach((type) => {
+                dropZone.addEventListener(type, (event) => {
+                    event.preventDefault();
+                    dropZone.classList.remove("active");
+                });
+            });
+
+            dropZone.addEventListener("drop", (event) => {
+                const file = event.dataTransfer && event.dataTransfer.files ? event.dataTransfer.files[0] : null;
+                loadFile(file);
+            });
+
+            loadButton.onclick = () => {
+                const url = urlInput.value.trim();
+                if (!url) {
+                    return;
+                }
+                viewers[side].load(url, side.toUpperCase() + "_URL", true);
+            };
+
+            urlInput.addEventListener("keydown", (event) => {
+                if (event.key === "Enter") {
+                    loadButton.click();
+                }
+            });
+        }
+
+        bindFileInput("left");
+        bindFileInput("right");
+
+        const exportButton = document.getElementById("btn-export");
+        exportButton.onclick = () => {
+            const payload = {
+                layout: "split",
+                filters: AppState.globalFilters,
+                left: serializeViewer(viewers.left),
+                right: serializeViewer(viewers.right)
+            };
+
+            const dataEl = document.getElementById("embedded-data");
+            dataEl.textContent = JSON.stringify(payload);
+
+            const html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+            const blob = new Blob([html], { type: "text/html" });
+            const url = URL.createObjectURL(blob);
+            const anchor = document.createElement("a");
+            anchor.href = url;
+            anchor.download = "GIF_PACS_Dual_Export.html";
+            document.body.appendChild(anchor);
+            anchor.click();
+            document.body.removeChild(anchor);
+            URL.revokeObjectURL(url);
+        };
+
+        function serializeViewer(viewer) {
+            return {
+                source: viewer.isLoaded ? viewer.sourceUrl : null,
+                isRemote: viewer.isRemote,
+                filename: viewer.fileName,
+                annotations: viewer.annotations
+            };
+        }
+
+        function restoreEmbeddedState() {
+            const dataEl = document.getElementById("embedded-data");
+            if (!dataEl) {
+                return;
+            }
+            const text = dataEl.textContent.trim();
+            if (!text || text === "{}") {
+                updateFilters();
+                return;
+            }
+
+            try {
+                const data = JSON.parse(text);
+                if (data.filters) {
+                    AppState.globalFilters = {
+                        brightness: Number(data.filters.brightness ?? 100),
+                        contrast: Number(data.filters.contrast ?? 100),
+                        grayscale: Number(data.filters.grayscale ?? 0),
+                        invert: Number(data.filters.invert ?? 0)
+                    };
+                }
+
+                if (data.layout === "split") {
+                    if (data.left && data.left.source) {
+                        viewers.left.load(data.left.source, data.left.filename || "Left", Boolean(data.left.isRemote), data.left.annotations || {});
+                    }
+                    if (data.right && data.right.source) {
+                        viewers.right.load(data.right.source, data.right.filename || "Right", Boolean(data.right.isRemote), data.right.annotations || {});
+                    }
+                }
+            } catch (error) {
+                console.error(error);
+            }
+
+            updateFilters();
+        }
+
+        window.addEventListener("DOMContentLoaded", () => {
+            window.addEventListener("keydown", (event) => {
+                if (event.key === "Delete" || event.key === "Backspace") {
+                    const removed = Object.values(viewers).some((viewer) => viewer.removeSelectedAnnotation());
+                    if (removed) {
+                        event.preventDefault();
+                    }
+                }
+
+                if (event.key === "Escape" && AppState.activeTool !== "none") {
+                    setActiveTool("none");
+                }
+
+                if (event.key.toLowerCase() === "a") {
+                    setActiveTool("arrow");
+                }
+
+                if (event.key.toLowerCase() === "t") {
+                    setActiveTool("text");
+                }
+
+                if (event.key.toLowerCase() === "v") {
+                    setActiveTool("none");
+                }
+            });
+
+            restoreEmbeddedState();
+        });
+    </script>
+</body>
+</html>
