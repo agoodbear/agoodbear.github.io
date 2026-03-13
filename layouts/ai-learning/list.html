@@ -44,6 +44,22 @@
 
         {{ if $pages }}
         <aside class="ai-learning-sidebar" aria-label="AI 學習月份導覽">
+            <section class="ai-learning-search-panel" aria-label="AI 學習頁內搜尋">
+                <div class="ai-learning-search-title">頁內搜尋</div>
+                <label class="ai-learning-search-label" for="ai-learning-search-input">搜尋 AI 學習紀錄</label>
+                <div class="ai-learning-search-field">
+                    <input
+                        id="ai-learning-search-input"
+                        class="ai-learning-search-input"
+                        type="search"
+                        placeholder="搜尋日期、關鍵字、心得..."
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
+                    <button type="button" class="ai-learning-search-clear" id="ai-learning-search-clear" hidden>清除</button>
+                </div>
+                <div class="ai-learning-search-meta" id="ai-learning-search-meta">輸入關鍵字後，這一頁只會顯示符合的學習紀錄。</div>
+            </section>
             <nav class="ai-learning-jump-nav">
                 <div class="ai-learning-jump-title">快速跳轉</div>
                 <div class="ai-learning-jump-groups">
@@ -53,7 +69,7 @@
                         <summary>{{ $yearKey }}年</summary>
                         <div class="ai-learning-month-links">
                             {{ range $monthGroup := $yearGroup.Pages.GroupByDate "01" }}
-                            <a href="#month-{{ $yearKey }}-{{ $monthGroup.Key }}" class="ai-learning-month-link">
+                            <a href="#month-{{ $yearKey }}-{{ $monthGroup.Key }}" class="ai-learning-month-link" data-target-month="month-{{ $yearKey }}-{{ $monthGroup.Key }}">
                                 {{ (index $monthGroup.Pages 0).Date.Format "1月" }}
                             </a>
                             {{ end }}
@@ -92,6 +108,7 @@
         margin-bottom: 2rem;
     }
 
+    .ai-learning-search-panel,
     .ai-learning-jump-nav {
         padding: 1.15rem 1.2rem;
         border-radius: 18px;
@@ -101,9 +118,13 @@
     }
 
     .ai-learning-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
         margin-bottom: 2.25rem;
     }
 
+    .ai-learning-search-title,
     .ai-learning-jump-title {
         font-size: 0.95rem;
         font-weight: 700;
@@ -111,6 +132,76 @@
         color: #0c4a6e;
         text-transform: uppercase;
         margin-bottom: 0.85rem;
+    }
+
+    .ai-learning-search-label {
+        display: block;
+        margin-bottom: 0.65rem;
+        color: #12324a;
+        font-size: 0.95rem;
+        font-weight: 700;
+    }
+
+    .ai-learning-search-field {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+    }
+
+    .ai-learning-search-input {
+        flex: 1;
+        min-width: 0;
+        height: 2.8rem;
+        padding: 0.75rem 0.95rem;
+        border-radius: 14px;
+        border: 1px solid rgba(15, 126, 199, 0.22);
+        background: rgba(255, 255, 255, 0.9);
+        color: #12324a;
+        font-size: 0.98rem;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .ai-learning-search-input::placeholder {
+        color: rgba(18, 50, 74, 0.55);
+    }
+
+    .ai-learning-search-input:hover {
+        border-color: rgba(15, 126, 199, 0.35);
+    }
+
+    .ai-learning-search-input:focus-visible {
+        outline: none;
+        border-color: #0f7ec7;
+        background: #ffffff;
+        box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.18);
+    }
+
+    .ai-learning-search-clear {
+        flex: 0 0 auto;
+        height: 2.8rem;
+        padding: 0 0.9rem;
+        border: 1px solid rgba(15, 126, 199, 0.18);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.86);
+        color: #0f4c75;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+    }
+
+    .ai-learning-search-clear:hover,
+    .ai-learning-search-clear:focus-visible {
+        outline: none;
+        background: #0f7ec7;
+        color: #fff;
+        transform: translateY(-1px);
+    }
+
+    .ai-learning-search-meta {
+        margin-top: 0.75rem;
+        color: rgba(18, 50, 74, 0.78);
+        font-size: 0.92rem;
+        line-height: 1.7;
     }
 
     .ai-learning-jump-groups {
@@ -231,6 +322,24 @@
         box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
     }
 
+    .ai-learning-search-empty {
+        display: none;
+        padding: 1.15rem 1.2rem;
+        border-radius: 16px;
+        border: 1px dashed rgba(15, 126, 199, 0.28);
+        background: rgba(224, 242, 254, 0.48);
+        color: #0c4a6e;
+        font-weight: 600;
+    }
+
+    .ai-learning-search-empty.is-visible {
+        display: block;
+    }
+
+    .is-search-hidden {
+        display: none !important;
+    }
+
     .ai-learning-entry-date {
         font-size: 1.35rem;
         font-weight: 700;
@@ -314,8 +423,18 @@
     }
 
     @media (max-width: 768px) {
+        .ai-learning-search-panel,
         .ai-learning-jump-nav {
             padding: 1rem;
+        }
+
+        .ai-learning-search-field {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .ai-learning-search-clear {
+            width: 100%;
         }
 
         .ai-learning-year-menu summary {
@@ -350,4 +469,98 @@
         }
     }
 </style>
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const searchInput = document.getElementById("ai-learning-search-input");
+        const clearButton = document.getElementById("ai-learning-search-clear");
+        const meta = document.getElementById("ai-learning-search-meta");
+        const entriesSection = document.querySelector(".ai-learning-entries");
+
+        if (!searchInput || !clearButton || !meta || !entriesSection) {
+            return;
+        }
+
+        const entries = Array.from(document.querySelectorAll(".ai-learning-entry"));
+        const monthBlocks = Array.from(document.querySelectorAll(".ai-learning-month-block"));
+        const yearBlocks = Array.from(document.querySelectorAll(".ai-learning-year-block"));
+        const yearMenus = Array.from(document.querySelectorAll(".ai-learning-year-menu"));
+        const monthLinks = Array.from(document.querySelectorAll(".ai-learning-month-link"));
+
+        if (!entries.length) {
+            return;
+        }
+
+        const emptyState = document.createElement("div");
+        emptyState.className = "ai-learning-search-empty";
+        emptyState.setAttribute("aria-live", "polite");
+        emptyState.textContent = "沒有找到符合的 AI 學習紀錄。";
+        entriesSection.appendChild(emptyState);
+
+        const normalize = (value) => value.toLowerCase().replace(/\s+/g, " ").trim();
+
+        entries.forEach((entry) => {
+            const dateText = entry.querySelector(".ai-learning-entry-date")?.textContent || "";
+            const bodyText = entry.querySelector(".ai-learning-entry-body")?.textContent || "";
+            entry.dataset.searchText = normalize(dateText + " " + bodyText);
+        });
+
+        const updateMeta = (query, visibleCount) => {
+            if (!query) {
+                meta.textContent = "輸入關鍵字後，這一頁只會顯示符合的學習紀錄。";
+                return;
+            }
+
+            meta.textContent = "搜尋「" + query + "」後，找到 " + visibleCount + " 篇符合的學習紀錄。";
+        };
+
+        const applyFilter = () => {
+            const rawQuery = searchInput.value.trim();
+            const query = normalize(rawQuery);
+            let visibleEntries = 0;
+
+            entries.forEach((entry) => {
+                const matched = !query || entry.dataset.searchText.includes(query);
+                entry.classList.toggle("is-search-hidden", !matched);
+                if (matched) {
+                    visibleEntries += 1;
+                }
+            });
+
+            monthBlocks.forEach((monthBlock) => {
+                const visible = monthBlock.querySelectorAll(".ai-learning-entry:not(.is-search-hidden)").length > 0;
+                monthBlock.classList.toggle("is-search-hidden", !visible);
+            });
+
+            yearBlocks.forEach((yearBlock, index) => {
+                const visible = yearBlock.querySelectorAll(".ai-learning-month-block:not(.is-search-hidden)").length > 0;
+                yearBlock.classList.toggle("is-search-hidden", !visible);
+
+                if (yearMenus[index]) {
+                    yearMenus[index].classList.toggle("is-search-hidden", !visible);
+                    if (query && visible) {
+                        yearMenus[index].open = true;
+                    }
+                }
+            });
+
+            monthLinks.forEach((link) => {
+                const monthId = link.dataset.targetMonth;
+                const monthBlock = monthId ? document.getElementById(monthId) : null;
+                const visible = !!monthBlock && !monthBlock.classList.contains("is-search-hidden");
+                link.classList.toggle("is-search-hidden", !visible);
+            });
+
+            clearButton.hidden = !rawQuery;
+            emptyState.classList.toggle("is-visible", !!query && visibleEntries === 0);
+            updateMeta(rawQuery, visibleEntries);
+        };
+
+        searchInput.addEventListener("input", applyFilter);
+        clearButton.addEventListener("click", () => {
+            searchInput.value = "";
+            applyFilter();
+            searchInput.focus();
+        });
+    });
+</script>
 {{ end }}
