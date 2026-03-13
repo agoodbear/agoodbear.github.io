@@ -45,8 +45,6 @@
         {{ if $pages }}
         <aside class="ai-learning-sidebar" aria-label="AI 學習月份導覽">
             <section class="ai-learning-search-panel" aria-label="AI 學習頁內搜尋">
-                <div class="ai-learning-search-title">頁內搜尋</div>
-                <label class="ai-learning-search-label" for="ai-learning-search-input">搜尋 AI 學習紀錄</label>
                 <div class="ai-learning-search-field">
                     <input
                         id="ai-learning-search-input"
@@ -58,7 +56,14 @@
                     >
                     <button type="button" class="ai-learning-search-clear" id="ai-learning-search-clear" hidden>清除</button>
                 </div>
-                <div class="ai-learning-search-meta" id="ai-learning-search-meta">輸入關鍵字後，這一頁只會顯示符合的學習紀錄。</div>
+                <div class="ai-learning-search-toolbar" id="ai-learning-search-toolbar" hidden>
+                    <div class="ai-learning-search-count" id="ai-learning-search-count" aria-live="polite">0篇符合</div>
+                    <div class="ai-learning-search-nav">
+                        <button type="button" class="ai-learning-search-step" id="ai-learning-search-prev" aria-label="上一個搜尋結果">↑</button>
+                        <div class="ai-learning-search-position" id="ai-learning-search-position" aria-live="polite">0 / 0</div>
+                        <button type="button" class="ai-learning-search-step" id="ai-learning-search-next" aria-label="下一個搜尋結果">↓</button>
+                    </div>
+                </div>
             </section>
             <nav class="ai-learning-jump-nav">
                 <div class="ai-learning-jump-title">快速跳轉</div>
@@ -124,7 +129,6 @@
         margin-bottom: 2.25rem;
     }
 
-    .ai-learning-search-title,
     .ai-learning-jump-title {
         font-size: 0.95rem;
         font-weight: 700;
@@ -132,14 +136,6 @@
         color: #0c4a6e;
         text-transform: uppercase;
         margin-bottom: 0.85rem;
-    }
-
-    .ai-learning-search-label {
-        display: block;
-        margin-bottom: 0.65rem;
-        color: #12324a;
-        font-size: 0.95rem;
-        font-weight: 700;
     }
 
     .ai-learning-search-field {
@@ -197,11 +193,71 @@
         transform: translateY(-1px);
     }
 
-    .ai-learning-search-meta {
+    .ai-learning-search-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
         margin-top: 0.75rem;
-        color: rgba(18, 50, 74, 0.78);
+    }
+
+    .ai-learning-search-count,
+    .ai-learning-search-position {
+        color: #0c4a6e;
         font-size: 0.92rem;
-        line-height: 1.7;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .ai-learning-search-nav {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+    }
+
+    .ai-learning-search-step {
+        width: 2.2rem;
+        height: 2.2rem;
+        border: 1px solid rgba(15, 126, 199, 0.2);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.92);
+        color: #0f4c75;
+        font-size: 1rem;
+        font-weight: 800;
+        cursor: pointer;
+        transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+    }
+
+    .ai-learning-search-step:hover,
+    .ai-learning-search-step:focus-visible {
+        outline: none;
+        background: #0f7ec7;
+        color: #fff;
+        transform: translateY(-1px);
+    }
+
+    .ai-learning-search-step:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .ai-learning-match-highlight {
+        background: linear-gradient(135deg, #fff1a6, #ffd86b);
+        color: #6b4500;
+        border-radius: 0.3em;
+        padding: 0.04em 0.1em;
+        box-shadow: 0 0 0 1px rgba(255, 214, 10, 0.35);
+    }
+
+    .ai-learning-entry.is-search-active {
+        border-color: rgba(15, 126, 199, 0.24);
+        border-left-color: #0891b2;
+        box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.18), 0 14px 34px rgba(15, 23, 42, 0.1);
+    }
+
+    .ai-learning-entry {
+        scroll-margin-top: 7.4rem;
     }
 
     .ai-learning-jump-groups {
@@ -433,6 +489,15 @@
             align-items: stretch;
         }
 
+        .ai-learning-search-toolbar {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .ai-learning-search-nav {
+            justify-content: space-between;
+        }
+
         .ai-learning-search-clear {
             width: 100%;
         }
@@ -473,20 +538,36 @@
     window.addEventListener("DOMContentLoaded", () => {
         const searchInput = document.getElementById("ai-learning-search-input");
         const clearButton = document.getElementById("ai-learning-search-clear");
-        const meta = document.getElementById("ai-learning-search-meta");
+        const toolbar = document.getElementById("ai-learning-search-toolbar");
+        const countLabel = document.getElementById("ai-learning-search-count");
+        const positionLabel = document.getElementById("ai-learning-search-position");
+        const prevButton = document.getElementById("ai-learning-search-prev");
+        const nextButton = document.getElementById("ai-learning-search-next");
         const entriesSection = document.querySelector(".ai-learning-entries");
 
-        if (!searchInput || !clearButton || !meta || !entriesSection) {
+        if (!searchInput || !clearButton || !toolbar || !countLabel || !positionLabel || !prevButton || !nextButton || !entriesSection) {
             return;
         }
 
-        const entries = Array.from(document.querySelectorAll(".ai-learning-entry"));
+        const entryRecords = Array.from(document.querySelectorAll(".ai-learning-entry")).map((entry) => {
+            const dateElement = entry.querySelector(".ai-learning-entry-date");
+            const bodyElement = entry.querySelector(".ai-learning-entry-body");
+
+            return {
+                entry,
+                dateElement,
+                bodyElement,
+                dateHtml: dateElement ? dateElement.innerHTML : "",
+                bodyHtml: bodyElement ? bodyElement.innerHTML : "",
+                searchText: ""
+            };
+        });
         const monthBlocks = Array.from(document.querySelectorAll(".ai-learning-month-block"));
         const yearBlocks = Array.from(document.querySelectorAll(".ai-learning-year-block"));
         const yearMenus = Array.from(document.querySelectorAll(".ai-learning-year-menu"));
         const monthLinks = Array.from(document.querySelectorAll(".ai-learning-month-link"));
 
-        if (!entries.length) {
+        if (!entryRecords.length) {
             return;
         }
 
@@ -497,30 +578,144 @@
         entriesSection.appendChild(emptyState);
 
         const normalize = (value) => value.toLowerCase().replace(/\s+/g, " ").trim();
+        const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-        entries.forEach((entry) => {
-            const dateText = entry.querySelector(".ai-learning-entry-date")?.textContent || "";
-            const bodyText = entry.querySelector(".ai-learning-entry-body")?.textContent || "";
-            entry.dataset.searchText = normalize(dateText + " " + bodyText);
+        let matchedRecords = [];
+        let activeMatchIndex = -1;
+        let lastQuery = "";
+
+        entryRecords.forEach((record) => {
+            const dateText = record.dateElement ? record.dateElement.textContent : "";
+            const bodyText = record.bodyElement ? record.bodyElement.textContent : "";
+            record.searchText = normalize(dateText + " " + bodyText);
         });
 
-        const updateMeta = (query, visibleCount) => {
-            if (!query) {
-                meta.textContent = "輸入關鍵字後，這一頁只會顯示符合的學習紀錄。";
+        const restoreRecordHtml = (record) => {
+            if (record.dateElement) {
+                record.dateElement.innerHTML = record.dateHtml;
+            }
+
+            if (record.bodyElement) {
+                record.bodyElement.innerHTML = record.bodyHtml;
+            }
+        };
+
+        const highlightInElement = (root, regex) => {
+            const textNodes = [];
+            const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+                acceptNode(node) {
+                    if (!node.nodeValue || !node.nodeValue.trim()) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
+                    const parent = node.parentNode;
+                    if (!parent || ["SCRIPT", "STYLE", "MARK"].includes(parent.nodeName)) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
+                    regex.lastIndex = 0;
+                    return regex.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+                }
+            });
+
+            while (walker.nextNode()) {
+                textNodes.push(walker.currentNode);
+            }
+
+            textNodes.forEach((node) => {
+                const fragment = document.createDocumentFragment();
+                const text = node.nodeValue;
+                let lastIndex = 0;
+                let match;
+
+                regex.lastIndex = 0;
+                while ((match = regex.exec(text)) !== null) {
+                    const matchText = match[0];
+                    const start = match.index;
+
+                    if (start > lastIndex) {
+                        fragment.appendChild(document.createTextNode(text.slice(lastIndex, start)));
+                    }
+
+                    const mark = document.createElement("mark");
+                    mark.className = "ai-learning-match-highlight";
+                    mark.textContent = matchText;
+                    fragment.appendChild(mark);
+
+                    lastIndex = start + matchText.length;
+                }
+
+                if (lastIndex < text.length) {
+                    fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+                }
+
+                if (node.parentNode) {
+                    node.parentNode.replaceChild(fragment, node);
+                }
+            });
+        };
+
+        const highlightRecord = (record, rawQuery) => {
+            if (!rawQuery) {
                 return;
             }
 
-            meta.textContent = "搜尋「" + query + "」後，找到 " + visibleCount + " 篇符合的學習紀錄。";
+            const regex = new RegExp(escapeRegExp(rawQuery), "gi");
+            if (record.dateElement) {
+                highlightInElement(record.dateElement, regex);
+            }
+            if (record.bodyElement) {
+                highlightInElement(record.bodyElement, regex);
+            }
+        };
+
+        const setToolbarState = (query, matchCount) => {
+            if (!query) {
+                toolbar.hidden = true;
+                return;
+            }
+
+            toolbar.hidden = false;
+            countLabel.textContent = matchCount + "篇符合";
+            positionLabel.textContent = matchCount ? activeMatchIndex + 1 + " / " + matchCount : "0 / 0";
+            prevButton.disabled = matchCount <= 1;
+            nextButton.disabled = matchCount <= 1;
+        };
+
+        const scrollToActiveMatch = () => {
+            if (!matchedRecords.length || activeMatchIndex < 0) {
+                return;
+            }
+
+            matchedRecords.forEach((record, index) => {
+                record.entry.classList.toggle("is-search-active", index === activeMatchIndex);
+            });
+
+            matchedRecords[activeMatchIndex].entry.scrollIntoView({ behavior: "smooth", block: "start" });
+            positionLabel.textContent = activeMatchIndex + 1 + " / " + matchedRecords.length;
+        };
+
+        const moveMatch = (direction) => {
+            if (matchedRecords.length <= 1) {
+                return;
+            }
+
+            activeMatchIndex = (activeMatchIndex + direction + matchedRecords.length) % matchedRecords.length;
+            scrollToActiveMatch();
         };
 
         const applyFilter = () => {
             const rawQuery = searchInput.value.trim();
             const query = normalize(rawQuery);
+            const queryChanged = rawQuery !== lastQuery;
             let visibleEntries = 0;
 
-            entries.forEach((entry) => {
-                const matched = !query || entry.dataset.searchText.includes(query);
-                entry.classList.toggle("is-search-hidden", !matched);
+            entryRecords.forEach((record) => {
+                restoreRecordHtml(record);
+                record.entry.classList.remove("is-search-active");
+
+                const matched = !query || record.searchText.includes(query);
+                record.entry.classList.toggle("is-search-hidden", !matched);
                 if (matched) {
                     visibleEntries += 1;
                 }
@@ -550,17 +745,48 @@
                 link.classList.toggle("is-search-hidden", !visible);
             });
 
+            matchedRecords = query
+                ? entryRecords.filter((record) => !record.entry.classList.contains("is-search-hidden"))
+                : [];
+
+            matchedRecords.forEach((record) => highlightRecord(record, rawQuery));
+
+            if (matchedRecords.length) {
+                activeMatchIndex = queryChanged || activeMatchIndex < 0
+                    ? 0
+                    : Math.min(activeMatchIndex, matchedRecords.length - 1);
+                scrollToActiveMatch();
+            } else {
+                activeMatchIndex = -1;
+                positionLabel.textContent = "0 / 0";
+            }
+
             clearButton.hidden = !rawQuery;
             emptyState.classList.toggle("is-visible", !!query && visibleEntries === 0);
-            updateMeta(rawQuery, visibleEntries);
+            setToolbarState(rawQuery, matchedRecords.length);
+            lastQuery = rawQuery;
         };
 
         searchInput.addEventListener("input", applyFilter);
+        searchInput.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowDown" && matchedRecords.length) {
+                event.preventDefault();
+                moveMatch(1);
+            }
+
+            if (event.key === "ArrowUp" && matchedRecords.length) {
+                event.preventDefault();
+                moveMatch(-1);
+            }
+        });
         clearButton.addEventListener("click", () => {
             searchInput.value = "";
             applyFilter();
             searchInput.focus();
         });
+        prevButton.addEventListener("click", () => moveMatch(-1));
+        nextButton.addEventListener("click", () => moveMatch(1));
+        applyFilter();
     });
 </script>
 {{ end }}
