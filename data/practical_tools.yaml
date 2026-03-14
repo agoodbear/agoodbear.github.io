@@ -49,7 +49,7 @@
 
 - title: "冠狀動脈 3D 教學"
   description: "可互動旋轉與點選冠狀動脈分支的教學網頁，適合 ECG 與解剖對照學習。"
-  image: "/images/practical-tools/interactive-3d-heart.svg"
+  image: "/images/practical-tools/coronary-3d-teaching-cover.png"
   url: "https://htmlpreview.github.io/?https://github.com/agoodbear/coronary-3d-teaching/blob/main/coronary-3d-viewer-v3.html"
   embed_url: "https://htmlpreview.github.io/?https://github.com/agoodbear/coronary-3d-teaching/blob/main/coronary-3d-viewer-v3.html"
   source_label: "立即使用"
