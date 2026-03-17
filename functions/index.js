@@ -10,6 +10,8 @@ const bucket = admin.storage().bucket();
 const DOCS_PATH = "/writeStudio/docs";
 const ASSETS_PATH = "/writeStudio/assets";
 const PDF_GUIDELINES_PATH = "/pdfGuidelines/docs";
+const SUBSCRIBERS_PATH = "/subscriptions/emails";
+const SUBSCRIBERS_META_PATH = "/subscriptions/meta";
 const API_PREFIX = "/write-studio-api";
 const MAX_BODY_BYTES = 60 * 1024 * 1024;
 
@@ -182,6 +184,18 @@ function clampNumber(value, min, max) {
 function sanitizeText(value, fallback = "", maxLength = 12000) {
   const text = String(value ?? fallback).trim();
   return text.slice(0, maxLength);
+}
+
+function normalizeEmail(email) {
+  return String(email || "").trim().toLowerCase();
+}
+
+function isValidEmail(email) {
+  const value = normalizeEmail(email);
+  if (!value || value.length > 254) {
+    return false;
+  }
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/u.test(value);
 }
 
 function normalizeStoredHighlightTags(value) {
@@ -362,6 +376,85 @@ exports.writeStudioApi = functions
 
       if (path === `${API_PREFIX}/health` && method === "GET") {
         sendJson(res, 200, { ok: true, authRequired: Boolean(getToken()), apiPrefix: API_PREFIX });
+        return;
+      }
+
+      if (path === `${API_PREFIX}/subscribers/count` && method === "GET") {
+        const countRef = rtdb.ref(`${SUBSCRIBERS_META_PATH}/count`);
+        const countSnap = await countRef.get();
+        let count = Number(countSnap.val() || 0);
+        if (!Number.isFinite(count) || count < 0) {
+          const subscribersSnap = await rtdb.ref(SUBSCRIBERS_PATH).get();
+          const subscribers = subscribersSnap.exists() ? subscribersSnap.val() : {};
+          count = Object.keys(subscribers || {}).length;
+          await countRef.set(count);
+        }
+        sendJson(res, 200, { ok: true, count });
+        return;
+      }
+
+      if (path === `${API_PREFIX}/subscribers` && method === "POST") {
+        const body = await parseJsonBody(req);
+        const email = normalizeEmail(body.email);
+        if (!isValidEmail(email)) {
+          sendJson(res, 400, { ok: false, error: "請輸入有效的 Email。" });
+          return;
+        }
+
+        const now = new Date().toISOString();
+        const sourcePath = sanitizeText(body.sourcePath, "", 320);
+        const subscriberId = crypto.createHash("sha256").update(email).digest("hex");
+        const requestId = crypto.randomUUID();
+        const subscriberRef = rtdb.ref(`${SUBSCRIBERS_PATH}/${subscriberId}`);
+
+        const txResult = await subscriberRef.transaction((current) => {
+          if (current && typeof current === "object") {
+            return current;
+          }
+          return {
+            email,
+            createdAt: now,
+            updatedAt: now,
+            sourcePath,
+            requestId,
+          };
+        });
+
+        const created =
+          txResult &&
+          txResult.committed &&
+          txResult.snapshot &&
+          txResult.snapshot.exists() &&
+          txResult.snapshot.child("requestId").val() === requestId;
+
+        const countRef = rtdb.ref(`${SUBSCRIBERS_META_PATH}/count`);
+        let count = 0;
+        if (created) {
+          const countTx = await countRef.transaction((current) => {
+            const n = Number(current);
+            if (Number.isFinite(n) && n >= 0) {
+              return n + 1;
+            }
+            return 1;
+          });
+          count = Number(countTx.snapshot.val() || 0);
+        } else {
+          const countSnap = await countRef.get();
+          count = Number(countSnap.val() || 0);
+          if (!Number.isFinite(count) || count < 0) {
+            const subscribersSnap = await rtdb.ref(SUBSCRIBERS_PATH).get();
+            const subscribers = subscribersSnap.exists() ? subscribersSnap.val() : {};
+            count = Object.keys(subscribers || {}).length;
+            await countRef.set(count);
+          }
+        }
+
+        sendJson(res, 200, {
+          ok: true,
+          created,
+          alreadySubscribed: !created,
+          count,
+        });
         return;
       }
 

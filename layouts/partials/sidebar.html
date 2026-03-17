@@ -289,6 +289,91 @@
           opacity: 1;
         }
       }
+
+      .sidebar-subscribe-card {
+        margin-top: 1rem;
+        border: 1px solid rgba(13, 110, 253, 0.2);
+        background: linear-gradient(180deg, rgba(13, 110, 253, 0.06), rgba(13, 110, 253, 0.02));
+        border-radius: 12px;
+        padding: 1rem;
+      }
+
+      .sidebar-subscribe-title {
+        margin: 0 0 0.35rem;
+        font-size: 1.05rem;
+        font-weight: 700;
+      }
+
+      .sidebar-subscribe-desc {
+        margin: 0 0 0.85rem;
+        font-size: 0.88rem;
+        opacity: 0.85;
+      }
+
+      .sidebar-subscribe-row {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .sidebar-subscribe-input {
+        flex: 1;
+        min-width: 0;
+        border: 1px solid var(--color-border, #d5dce5);
+        border-radius: 10px;
+        padding: 0.6rem 0.7rem;
+        background: var(--bg, #fff);
+        color: inherit;
+      }
+
+      .sidebar-subscribe-input:focus {
+        outline: none;
+        border-color: rgba(13, 110, 253, 0.65);
+        box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.14);
+      }
+
+      .sidebar-subscribe-button {
+        border: 0;
+        border-radius: 10px;
+        padding: 0.6rem 0.9rem;
+        background: #0d6efd;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .sidebar-subscribe-button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      .sidebar-subscribe-status {
+        min-height: 1.2rem;
+        margin: 0.7rem 0 0.35rem;
+        font-size: 0.85rem;
+      }
+
+      .sidebar-subscribe-status.success {
+        color: #0a7a39;
+      }
+
+      .sidebar-subscribe-status.error {
+        color: #b42318;
+      }
+
+      .sidebar-subscribe-status.info {
+        color: #0b63b6;
+      }
+
+      .sidebar-subscribe-count {
+        margin: 0;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 420px) {
+        .sidebar-subscribe-row {
+          flex-direction: column;
+        }
+      }
     </style>
 
     <div class="flip-counter-wrapper">
@@ -309,6 +394,27 @@
         <div class="flip-digit"><span class="current">-</span></div>
         <div class="flip-digit"><span class="current">-</span></div>
         <div class="flip-digit"><span class="current">-</span></div>
+      </div>
+
+      <div class="sidebar-subscribe-card">
+        <h3 class="sidebar-subscribe-title">訂閱更新</h3>
+        <p class="sidebar-subscribe-desc">輸入你的 Email，收到最新文章通知。</p>
+        <form id="sidebar-subscribe-form" novalidate>
+          <div class="sidebar-subscribe-row">
+            <input
+              id="sidebar-subscribe-email"
+              class="sidebar-subscribe-input"
+              type="email"
+              inputmode="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required
+            >
+            <button id="sidebar-subscribe-submit" class="sidebar-subscribe-button" type="submit">訂閱</button>
+          </div>
+        </form>
+        <p id="sidebar-subscribe-status" class="sidebar-subscribe-status" aria-live="polite"></p>
+        <p class="sidebar-subscribe-count">目前訂閱者：<strong id="sidebar-subscriber-count">--</strong> 人</p>
       </div>
     </div>
 
@@ -335,6 +441,15 @@
       // Counter logic
       const counterRef = ref(db, 'pageViews/total');
       const counterEl = document.getElementById('flip-counter');
+      const subscribeForm = document.getElementById('sidebar-subscribe-form');
+      const subscribeInput = document.getElementById('sidebar-subscribe-email');
+      const subscribeSubmit = document.getElementById('sidebar-subscribe-submit');
+      const subscribeStatus = document.getElementById('sidebar-subscribe-status');
+      const subscriberCountEl = document.getElementById('sidebar-subscriber-count');
+      const subscribeApiBases = [
+        'https://asia-east1-agoodbear-website.cloudfunctions.net/writeStudioApi/write-studio-api',
+        'https://write-studio-cloud-agoodbear.web.app/write-studio-api'
+      ];
 
       // Check if already counted in this session
       const sessionKey = 'pv_counted';
@@ -382,7 +497,88 @@
         }, 100);
       }
 
+      function setSubscribeStatus(message, type = '') {
+        subscribeStatus.textContent = message || '';
+        subscribeStatus.classList.remove('success', 'error', 'info');
+        if (type) {
+          subscribeStatus.classList.add(type);
+        }
+      }
+
+      function setSubscriberCount(count) {
+        if (Number.isFinite(Number(count)) && Number(count) >= 0) {
+          subscriberCountEl.textContent = Number(count).toLocaleString('zh-TW');
+          return;
+        }
+        subscriberCountEl.textContent = '--';
+      }
+
+      async function callSubscribeApi(path, init = {}) {
+        let lastError = null;
+        for (const base of subscribeApiBases) {
+          try {
+            const response = await fetch(`${base}${path}`, init);
+            const payload = await response.json().catch(() => ({}));
+            if (!response.ok) {
+              throw new Error(payload && payload.error ? payload.error : `HTTP ${response.status}`);
+            }
+            return payload;
+          } catch (error) {
+            lastError = error;
+          }
+        }
+        throw lastError || new Error('Subscription API unavailable.');
+      }
+
+      async function refreshSubscriberCount() {
+        try {
+          const payload = await callSubscribeApi('/subscribers/count', { method: 'GET' });
+          setSubscriberCount(payload.count);
+        } catch (error) {
+          console.error('Subscriber count error:', error);
+          setSubscriberCount(null);
+        }
+      }
+
+      async function handleSubscribeSubmit(event) {
+        event.preventDefault();
+        const email = String(subscribeInput.value || '').trim();
+        if (!email) {
+          setSubscribeStatus('請先輸入 Email。', 'error');
+          return;
+        }
+
+        subscribeSubmit.disabled = true;
+        setSubscribeStatus('送出中...', 'info');
+
+        try {
+          const payload = await callSubscribeApi('/subscribers', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email,
+              sourcePath: window.location.pathname
+            })
+          });
+
+          if (payload.alreadySubscribed) {
+            setSubscribeStatus('你已經訂閱過囉，謝謝支持！', 'info');
+          } else {
+            setSubscribeStatus('訂閱完成，感謝你的支持！', 'success');
+            subscribeForm.reset();
+          }
+          setSubscriberCount(payload.count);
+        } catch (error) {
+          console.error('Subscribe error:', error);
+          setSubscribeStatus(error && error.message ? error.message : '訂閱失敗，請稍後再試。', 'error');
+        } finally {
+          subscribeSubmit.disabled = false;
+        }
+      }
+
       updateCounter();
+      refreshSubscriberCount();
+      subscribeForm.addEventListener('submit', handleSubscribeSubmit);
     </script>
   </section>
 </aside>
