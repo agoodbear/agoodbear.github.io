@@ -1,4 +1,5 @@
 const crypto = require("node:crypto");
+const nodemailer = require("nodemailer");
 const admin = require("firebase-admin");
 const functions = require("firebase-functions");
 
@@ -12,8 +13,12 @@ const ASSETS_PATH = "/writeStudio/assets";
 const PDF_GUIDELINES_PATH = "/pdfGuidelines/docs";
 const SUBSCRIBERS_PATH = "/subscriptions/emails";
 const SUBSCRIBERS_META_PATH = "/subscriptions/meta";
+const NOTIFIED_POSTS_PATH = "/subscriptions/notifiedPosts";
 const API_PREFIX = "/write-studio-api";
 const MAX_BODY_BYTES = 60 * 1024 * 1024;
+const SITE_URL = "https://agoodbear.github.io";
+const SITE_NAME = "急診熊心聲部落格";
+const UNSUBSCRIBE_SECRET = process.env.UNSUBSCRIBE_SECRET || "default-unsub-secret-change-me";
 
 function getToken() {
   return String(process.env.WRITE_STUDIO_TOKEN || "").trim();
@@ -732,9 +737,198 @@ exports.writeStudioApi = functions
         return;
       }
 
+      // ── Unsubscribe (GET /unsubscribe?token=xxx) ──
+      if (path === `${API_PREFIX}/unsubscribe` && method === "GET") {
+        const token = String(req.query.token || "").trim();
+        if (!token) {
+          res.status(400).send(unsubscribeHtml("❌ 無效的退訂連結", false));
+          return;
+        }
+        try {
+          const decoded = verifyUnsubscribeToken(token);
+          const subscriberId = crypto.createHash("sha256").update(decoded.email).digest("hex");
+          const subRef = rtdb.ref(`${SUBSCRIBERS_PATH}/${subscriberId}`);
+          const snap = await subRef.get();
+          if (snap.exists()) {
+            await subRef.remove();
+            // Decrement count
+            const countRef = rtdb.ref(`${SUBSCRIBERS_META_PATH}/count`);
+            await countRef.transaction((current) => {
+              const n = Number(current);
+              return Number.isFinite(n) && n > 0 ? n - 1 : 0;
+            });
+          }
+          res.status(200).send(unsubscribeHtml("✅ 已成功退訂，你將不再收到通知信。", true));
+        } catch (err) {
+          functions.logger.warn("Unsubscribe token error", err);
+          res.status(400).send(unsubscribeHtml("❌ 退訂連結已過期或無效", false));
+        }
+        return;
+      }
+
+      // ── Notify new ECG posts (POST /notify-new-posts) ──
+      if (path === `${API_PREFIX}/notify-new-posts` && method === "POST") {
+        if (!requireAuth(req, res)) return;
+
+        const body = await parseJsonBody(req);
+        const ecgPosts = Array.isArray(body.posts) ? body.posts : [];
+        if (ecgPosts.length === 0) {
+          sendJson(res, 200, { ok: true, message: "No ECG posts provided.", notified: 0 });
+          return;
+        }
+
+        // Filter out already-notified posts
+        const notifiedSnap = await rtdb.ref(NOTIFIED_POSTS_PATH).get();
+        const notifiedMap = notifiedSnap.exists() ? notifiedSnap.val() : {};
+        const newPosts = ecgPosts.filter((p) => !notifiedMap[slugToKey(p.slug)]);
+
+        if (newPosts.length === 0) {
+          sendJson(res, 200, { ok: true, message: "All posts already notified.", notified: 0 });
+          return;
+        }
+
+        // Get all subscribers
+        const subscribersSnap = await rtdb.ref(SUBSCRIBERS_PATH).get();
+        const subscribers = subscribersSnap.exists() ? subscribersSnap.val() : {};
+        const emails = Object.values(subscribers)
+          .map((s) => s.email)
+          .filter(Boolean);
+
+        if (emails.length === 0) {
+          sendJson(res, 200, { ok: true, message: "No subscribers.", notified: 0 });
+          return;
+        }
+
+        // Send emails
+        const transporter = createMailTransporter();
+        let sentCount = 0;
+        const errors = [];
+
+        for (const email of emails) {
+          try {
+            const unsubLink = generateUnsubscribeLink(email);
+            const htmlBody = buildNotificationEmail(newPosts, unsubLink);
+            const textBody = buildNotificationEmailText(newPosts, unsubLink);
+            await transporter.sendMail({
+              from: `"${SITE_NAME}" <${process.env.GMAIL_USER}>`,
+              to: email,
+              subject: `📝 ${SITE_NAME}｜新心電圖文章通知`,
+              html: htmlBody,
+              text: textBody,
+              headers: {
+                "List-Unsubscribe": `<${unsubLink}>`,
+                "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+              },
+            });
+            sentCount++;
+          } catch (err) {
+            functions.logger.error(`Failed to send to ${email}`, err);
+            errors.push({ email: email.slice(0, 3) + "***", error: err.message });
+          }
+        }
+
+        // Mark posts as notified
+        const now = new Date().toISOString();
+        const updates = {};
+        for (const p of newPosts) {
+          updates[slugToKey(p.slug)] = { notifiedAt: now, title: p.title || p.slug };
+        }
+        await rtdb.ref(NOTIFIED_POSTS_PATH).update(updates);
+
+        sendJson(res, 200, {
+          ok: true,
+          notified: sentCount,
+          newPostsCount: newPosts.length,
+          subscriberCount: emails.length,
+          errors: errors.length > 0 ? errors : undefined,
+        });
+        return;
+      }
+
       sendJson(res, 404, { ok: false, error: "API route not found." });
     } catch (error) {
       functions.logger.error("writeStudioApi error", error);
       sendJson(res, 500, { ok: false, error: error instanceof Error ? error.message : "Internal error." });
     }
   });
+
+// ── Helper functions for email notifications ──
+
+function slugToKey(slug) {
+  return String(slug || "").replace(/[.#$/[\]]/g, "_");
+}
+
+function createMailTransporter() {
+  return nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_APP_PASSWORD,
+    },
+  });
+}
+
+function generateUnsubscribeToken(email) {
+  const payload = JSON.stringify({ email: normalizeEmail(email), exp: Date.now() + 90 * 24 * 60 * 60 * 1000 });
+  const hmac = crypto.createHmac("sha256", UNSUBSCRIBE_SECRET).update(payload).digest("hex");
+  return Buffer.from(`${payload}|${hmac}`).toString("base64url");
+}
+
+function verifyUnsubscribeToken(token) {
+  const raw = Buffer.from(token, "base64url").toString("utf8");
+  const sepIdx = raw.lastIndexOf("|");
+  if (sepIdx < 0) throw new Error("Invalid token format.");
+  const payload = raw.slice(0, sepIdx);
+  const sig = raw.slice(sepIdx + 1);
+  const expected = crypto.createHmac("sha256", UNSUBSCRIBE_SECRET).update(payload).digest("hex");
+  if (!crypto.timingSafeEqual(Buffer.from(sig), Buffer.from(expected))) {
+    throw new Error("Invalid signature.");
+  }
+  const data = JSON.parse(payload);
+  if (data.exp && Date.now() > data.exp) {
+    throw new Error("Token expired.");
+  }
+  return data;
+}
+
+function generateUnsubscribeLink(email) {
+  const token = generateUnsubscribeToken(email);
+  return `https://asia-east1-agoodbear-website.cloudfunctions.net/writeStudioApi/write-studio-api/unsubscribe?token=${encodeURIComponent(token)}`;
+}
+
+function unsubscribeHtml(message, success) {
+  return `<!DOCTYPE html><html lang="zh-TW"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>退訂 - ${SITE_NAME}</title>
+<style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:2rem;max-width:400px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.icon{font-size:3rem;margin-bottom:1rem}
+a{color:#0d6efd;text-decoration:none}</style></head>
+<body><div class="card"><div class="icon">${success ? "👋" : "⚠️"}</div>
+<h2>${message}</h2>
+<p style="margin-top:1rem"><a href="${SITE_URL}">← 回到${SITE_NAME}</a></p></div></body></html>`;
+}
+
+function buildNotificationEmail(posts, unsubLink) {
+  const postListHtml = posts.map((p) => {
+    const url = `${SITE_URL}/post/${p.slug}/`;
+    return `<li style="margin-bottom:12px"><a href="${url}" style="color:#0d6efd;text-decoration:none;font-weight:600">${escapeHtml(p.title || p.slug)}</a></li>`;
+  }).join("");
+
+  return `<!DOCTYPE html><html lang="zh-TW"><head><meta charset="utf-8"></head><body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:560px;margin:0 auto;padding:20px;color:#333">
+<h2 style="color:#0d6efd">📝 新心電圖文章通知</h2>
+<p>嗨，${SITE_NAME}有新的心電圖文章：</p>
+<ul style="padding-left:20px">${postListHtml}</ul>
+<p style="margin-top:24px">感謝你的訂閱支持！</p>
+<hr style="border:none;border-top:1px solid #eee;margin:24px 0">
+<p style="font-size:12px;color:#999">如不想收到通知，請<a href="${unsubLink}" style="color:#999">點此退訂</a>。</p>
+</body></html>`;
+}
+
+function buildNotificationEmailText(posts, unsubLink) {
+  const lines = posts.map((p) => `- ${p.title || p.slug}: ${SITE_URL}/post/${p.slug}/`).join("\n");
+  return `新心電圖文章通知\n\n${SITE_NAME}有新的心電圖文章：\n\n${lines}\n\n感謝你的訂閱支持！\n\n---\n退訂：${unsubLink}`;
+}
+
+function escapeHtml(str) {
+  return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}

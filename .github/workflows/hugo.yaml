@@ -67,3 +67,20 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: main  # Deploying to main as per user's existing setup
+
+      - name: Notify subscribers of new ECG posts
+        if: success()
+        env:
+          NOTIFY_API_URL: https://asia-east1-agoodbear-website.cloudfunctions.net/writeStudioApi/write-studio-api/notify-new-posts
+          WRITE_STUDIO_TOKEN: ${{ secrets.WRITE_STUDIO_TOKEN }}
+        run: |
+          ECG_POSTS=$(node scripts/collect-ecg-posts.js)
+          POST_COUNT=$(echo "$ECG_POSTS" | node -e "const d=require('fs').readFileSync('/dev/stdin','utf8');console.log(JSON.parse(d).length)")
+          echo "Found $POST_COUNT ECG posts"
+          if [ "$POST_COUNT" -gt 0 ]; then
+            curl -sf -X POST "$NOTIFY_API_URL" \
+              -H "Content-Type: application/json" \
+              -H "X-Write-Studio-Token: $WRITE_STUDIO_TOKEN" \
+              -d "{\"posts\": $ECG_POSTS}" \
+              --max-time 30 || echo "::warning::Notification API call failed (non-blocking)"
+          fi
