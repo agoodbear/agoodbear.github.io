@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Discord on 急診熊心聲部落格</title><link>https://agoodbear.github.io/tags/discord/</link><description>Recent content in Discord on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Wed, 18 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/discord/index.xml" rel="self" type="application/rss+xml"/><item><title>養龍蝦心得：用 WhatsApp + Discord + OpenClaw 打造自動化知識管理流程</title><link>https://agoodbear.github.io/post/study-post-6/</link><pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-6/</guid><description>
+&lt;h2 id="養龍蝦通訊介面的安裝很有趣"&gt;養龍蝦，通訊介面的安裝很有趣&lt;/h2&gt;
+&lt;p&gt;我覺得養龍蝦，通訊介面的安裝，很有趣。&lt;/p&gt;
+&lt;p&gt;我覺得 WhatsApp 很好用，特別是這軟體的母公司是 Meta。很多社群軟體看到的資訊按下分享，第一個按鈕就是 WhatsApp。&lt;/p&gt;
+&lt;p&gt;按下去後開始分析內文、幫我貼標籤存入我的第二大腦 Roam 裡。&lt;/p&gt;
+&lt;h2 id="從-whatsapp-到-discord資料分類的進化"&gt;從 WhatsApp 到 Discord：資料分類的進化&lt;/h2&gt;
+&lt;p&gt;但隨著什麼都透過 WhatsApp 轉入 OpenClaw，這樣之後要找資料，有點小麻煩。不過因為已經 tag 標籤，存入 Roam 裡，照道理用 filter 搜尋就好。但要在 WhatsApp 那一長串你和 OpenClaw 之間的對話尋找，我只能說——大海撈針。&lt;/p&gt;
+&lt;p&gt;後來想到 &lt;strong&gt;Discord 也可以當作 OpenClaw 的通訊介面&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id="自動化-pdf-筆記流程"&gt;自動化 PDF 筆記流程&lt;/h2&gt;
+&lt;p&gt;所以我設定：當我從 WhatsApp 傳任何 PDF 連結或原檔，就會開始自動分析 PDF 內文。&lt;/p&gt;
+&lt;p&gt;然後在 Discord 我設定了一個&lt;strong&gt;主頻道：閱讀筆記&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;閱讀筆記下有一則我 pinned 好的 &lt;strong&gt;PDF 索引&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;此頻道下方有一個 &lt;strong&gt;thread（討論串：PDF 存放區）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="運作方式"&gt;運作方式&lt;/h3&gt;
+&lt;p&gt;WhatsApp 傳入 PDF，透過 OpenClaw 呼叫大腦分析好文章後，會做兩件事：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;自己去把分析內文存入討論串內&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;會在主頻道的 PDF 索引檔內自己建立 PDF 索引與討論串連結點&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="這樣做的好處"&gt;這樣做的好處&lt;/h2&gt;
+&lt;p&gt;我把 WhatsApp 有點當主工作區。當遇到特定狀況（舉例：丟個 PDF 檔案），他會協同 Discord 做分類。&lt;/p&gt;</description></item></channel></rss>
