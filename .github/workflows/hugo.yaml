@@ -84,3 +84,30 @@ jobs:
               -d "{\"posts\": $ECG_POSTS}" \
               --max-time 30 || echo "::warning::Notification API call failed (non-blocking)"
           fi
+
+      - name: Resubmit sitemap to Google Search Console
+        if: success()
+        env:
+          GCLOUD_ADC_JSON: ${{ secrets.GCLOUD_ADC_JSON }}
+        run: |
+          echo "$GCLOUD_ADC_JSON" > /tmp/gcloud-adc.json
+          # Get access token using refresh token
+          ACCESS_TOKEN=$(curl -sf -X POST "https://oauth2.googleapis.com/token" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d "client_id=$(echo "$GCLOUD_ADC_JSON" | node -e "process.stdout.write(JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).client_id)")" \
+            -d "client_secret=$(echo "$GCLOUD_ADC_JSON" | node -e "process.stdout.write(JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).client_secret)")" \
+            -d "refresh_token=$(echo "$GCLOUD_ADC_JSON" | node -e "process.stdout.write(JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).refresh_token)")" \
+            -d "grant_type=refresh_token" | node -e "process.stdout.write(JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).access_token)")
+          
+          if [ -n "$ACCESS_TOKEN" ]; then
+            # Resubmit sitemap
+            curl -sf -X PUT \
+              "https://searchconsole.googleapis.com/webmasters/v3/sites/https%3A%2F%2Fagoodbear.github.io%2F/sitemaps/https%3A%2F%2Fagoodbear.github.io%2Fsitemap.xml" \
+              -H "Authorization: Bearer $ACCESS_TOKEN" \
+              -H "x-goog-user-project: gen-lang-client-0217249336" \
+              -H "Content-Type: application/json" \
+              --max-time 15 && echo "✅ Sitemap resubmitted" || echo "::warning::Sitemap resubmit failed (non-blocking)"
+          else
+            echo "::warning::Failed to get access token for Search Console"
+          fi
+          rm -f /tmp/gcloud-adc.json
