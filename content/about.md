@@ -1,9 +1,8 @@
 +++
 title = "關於我"
-description = "Hugo, the world's fastest framework for building websites"
+description = "急診醫師曹建雄的個人經歷：從北榮急診訓練、下鄉竹榮、到行醫教學寫作的這 20 年。"
 date = "2024-01-01"
-aliases = ["about-us", "about-hugo", "contact"]
-author = "Hugo Authors"
+author = "急診熊"
 +++
 
 <div class="timeline">
