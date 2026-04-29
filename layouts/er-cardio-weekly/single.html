@@ -1,0 +1,61 @@
+{{ define "main" }}
+<header class="topbar">
+  <a href="{{ "/er-cardio-weekly/" | relURL }}" class="brand" style="text-decoration: none;">
+    <svg class="ecg-mark" viewBox="0 0 56 28" aria-hidden="true" style="margin-right: 8px;">
+      <path d="M2,14 L10,14 L13,8 L17,20 L21,4 L25,24 L29,14 L36,14 L39,10 L43,18 L54,18" />
+    </svg>
+    ER · CARDIO · WEEKLY
+  </a>
+  <span class="crumb">/ {{ .Params.week | default .Title }}</span>
+  <div class="actions">
+    <button class="icon-btn" id="ecw-theme-toggle" title="切換暗色模式" aria-label="切換暗色模式">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<div class="layout-article">
+  <div class="left"></div>
+  <article class="article">
+    <div class="note-row" style="margin-bottom: 14px;">
+      <span style="font-family: 'Inter Tight', sans-serif; font-weight: 700; letter-spacing: 0.16em; font-size: 12px; color: var(--accent);">{{ .Params.week | default .Title }}</span>
+      {{ with .Params.weekRange }}<span style="margin: 0 10px; color: var(--muted);">·</span><span>{{ . }}</span>{{ end }}
+    </div>
+
+    <h1 class="article-title">{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="article-sub">{{ . | safeHTML }}</p>{{ end }}
+
+    <div class="article-meta">
+      <span>{{ .Date.Format "2006-01-02" }} 發布</span>
+      {{ with .Params.readingTime }}<span class="dot"></span><span>{{ . }}閱讀</span>{{ end }}
+      <span class="dot"></span><span>by 急診心臟學週報編輯室</span>
+    </div>
+
+    {{ with .Params.tags }}
+    <div style="display: flex; gap: 6px; margin-top: 18px; flex-wrap: wrap;">
+      {{ range . }}<span class="chip">{{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
+
+    <div class="article-content" style="margin-top: 32px;">
+      {{ .Content }}
+    </div>
+  </article>
+
+  <aside class="right">
+    <nav class="toc" aria-label="本期章節">
+      <div class="toc-label">本期章節</div>
+      <ol id="ecw-toc-list">
+        {{ with .Params.sections }}
+          {{ range . }}
+          <li data-target="{{ .id }}"><span class="toc-num">{{ .num }}.</span>{{ .title }}</li>
+          {{ end }}
+        {{ end }}
+      </ol>
+    </nav>
+  </aside>
+</div>
+{{ end }}

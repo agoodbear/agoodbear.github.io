@@ -1,0 +1,87 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="wordmark">
+        <svg class="ecg-mark" viewBox="0 0 56 28" aria-hidden="true">
+          <path d="M2,14 L10,14 L13,8 L17,20 L21,4 L25,24 L29,14 L36,14 L39,10 L43,18 L54,18" />
+        </svg>
+        ER · CARDIO · WEEKLY
+      </div>
+      <h1 class="tagline">給急診醫師的<br>ECG <span class="accent">／</span> 心臟學每週重點。</h1>
+      {{ $weekPages := where .Pages "Section" "er-cardio-weekly" }}
+      {{ $latest := index ($weekPages.ByDate.Reverse) 0 }}
+      <div class="issue-meta">
+        <span class="num">No. {{ len $weekPages }}</span>
+        <span>·</span>
+        <span>最新期：{{ $latest.Params.week | default $latest.Title }}</span>
+        <span>·</span>
+        <span>{{ $latest.Date.Format "2006-01-02" }}</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <p class="sub">
+        每週一封，21 分鐘讀完。涵蓋 OMI 判讀、心律不整新知、裝置與電氣治療、AI ECG、急救與毒物——從 Dr Smith / Ken Grauer / LITFL / ECG Weekly 到 CrossRef 10 本期刊與 PubMed 追蹤作者，由急診熊心聲彙整。
+      </p>
+      <div class="subscribe-label">訂閱本週報</div>
+      <form class="subscribe" onsubmit="event.preventDefault(); alert('訂閱功能尚未上線，敬請期待。');">
+        <input type="email" placeholder="email@example.com" aria-label="email" required>
+        <button type="submit">訂閱</button>
+        <a class="rss" href="{{ "/er-cardio-weekly/index.xml" | relURL }}" title="RSS" aria-label="RSS">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="6" cy="18" r="2"/>
+            <path d="M4 4 a16 16 0 0 1 16 16"/>
+            <path d="M4 11 a9 9 0 0 1 9 9"/>
+          </svg>
+        </a>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="layout-list" style="padding-top: 48px;">
+  <div>
+    <div class="filter-label" style="font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 8px;">最近發布</div>
+    {{ $weeks := where .Pages "Section" "er-cardio-weekly" }}
+    {{ range $weeks.ByDate.Reverse }}
+    <article class="row">
+      <div>
+        <div class="week">{{ .Params.week | default .Title }}</div>
+        <div class="week-sub">{{ with .Params.weekRange }}{{ . }}{{ else }}{{ .Date.Format "2006-01-02" }}{{ end }}</div>
+      </div>
+      <div>
+        <h2 class="head" style="margin-top: 0;"><a href="{{ .RelPermalink }}" style="text-decoration: none; color: inherit;">{{ .Title }}</a></h2>
+        {{ with .Params.subtitle }}<p style="font-family: 'Newsreader', serif; font-style: italic; font-size: 16px; color: var(--ink-2); margin: 6px 0 0;">{{ . }}</p>{{ end }}
+        <div class="meta">
+          <span>{{ .Date.Format "2006-01-02" }}</span>
+          {{ with .Params.readingTime }}<span class="dot"></span><span>{{ . }}閱讀</span>{{ end }}
+          <span class="dot"></span><span>{{ .WordCount }} 字</span>
+        </div>
+        {{ with .Params.tags }}
+        <div class="tags">
+          {{ range . }}<span class="chip">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </article>
+    {{ else }}
+    <p style="color: var(--muted); padding: 40px 0;">尚未發布任何週報。</p>
+    {{ end }}
+  </div>
+  <aside class="rail">
+    <input class="search" type="search" placeholder="搜尋週報..." aria-label="搜尋">
+    <div class="filter-label">標籤</div>
+    {{ $allTags := slice }}
+    {{ range $weeks }}{{ range .Params.tags }}{{ $allTags = $allTags | append . }}{{ end }}{{ end }}
+    {{ $tagCounts := dict }}
+    {{ range $allTags }}
+      {{ $tagCounts = merge $tagCounts (dict . (add (index $tagCounts . | default 0) 1)) }}
+    {{ end }}
+    <div class="filter-list">
+      {{ range $tag, $count := $tagCounts }}
+      <label><input type="checkbox" data-tag="{{ $tag }}"> {{ $tag }} <span class="count">{{ $count }}</span></label>
+      {{ end }}
+    </div>
+  </aside>
+</div>
+{{ end }}

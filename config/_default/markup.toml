@@ -6,6 +6,12 @@
   [goldmark.extensions]
     footnote = true
     typographer = false
+  [goldmark.parser]
+    autoHeadingID = true
+    autoHeadingIDType = "github"
+    [goldmark.parser.attribute]
+      block = true
+      title = true
   [highlight]
     codeFences = true
     guessSyntax = true

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ block "title" . }}{{ if .IsPage }}{{ .Title }} ｜ 急診心臟學週報{{ else }}急診心臟學週報 ｜ ER Cardio Weekly{{ end }}{{ end }}</title>
+  <meta name="description" content="{{ block "description" . }}{{ with .Description }}{{ . }}{{ else }}給急診醫師的 ECG / 心臟學每週重點。{{ end }}{{ end }}">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ if .IsPage }}{{ .Title }}{{ else }}急診心臟學週報{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <link rel="alternate" type="application/rss+xml" title="急診心臟學週報" href="{{ "/er-cardio-weekly/index.xml" | absURL }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="stylesheet" href="{{ "/er-cardio-weekly/ecw.css" | relURL }}">
+  <script>
+    // 防 FOUC：先把暗色 class 在 head 套上
+    (function() {
+      try {
+        var stored = localStorage.getItem('ecw-theme');
+        var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) document.documentElement.classList.add('ecw-init-dark');
+      } catch (_) {}
+    })();
+  </script>
+  <style>
+    html.ecw-init-dark body.ecw { /* token 由 .ecw.is-dark 控，這個只是同步 init 早一點 */ }
+  </style>
+</head>
+<body class="ecw">
+  <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="ecw-progress" style="--progress: 0%"></div></div>
+
+  {{ block "main" . }}{{ end }}
+
+  <footer style="padding: 40px 0; text-align: center; font-size: 12px; color: var(--muted); border-top: 1px solid var(--hairline); margin-top: 80px;">
+    急診心臟學週報 ER Cardio Weekly · 急診熊心聲出品 · <a href="/">回首頁</a>
+  </footer>
+
+  <script src="{{ "/er-cardio-weekly/js/ecw.js" | relURL }}" defer></script>
+</body>
+</html>

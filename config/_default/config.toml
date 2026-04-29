@@ -32,6 +32,10 @@ category = "categories"
 tag = "tags"
 series = "series"
 
+# 急診週報 section 用 ISO 週次當 permalink slug
+[permalinks]
+er-cardio-weekly = "/er-cardio-weekly/:slug/"
+
 [outputs]
 home = ["HTML", "RSS", "JSON"]
 
