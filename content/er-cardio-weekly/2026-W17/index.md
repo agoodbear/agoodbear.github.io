@@ -25,7 +25,13 @@ sections:
 
 ## 摘要 / 本週速讀 {#tldr}
 
-W17 的訊號集中在三條主軸。第一，**OMI 判讀的「冷門場景」一次冒出三條**：Magnus Nossen 在 Dr Smith blog 連發兩篇談 T wave inversion 的拆解（包含「angiogram 上的 innocent bystander 是什麼」），加上 Amal Mattu 用「LVAD + AICD 病人 wide-complex tachycardia」直接示範電腦判讀如何被 device 騙倒；這幾個案例的共同點是**一旦 baseline 不正常（CKD、HFrEF + LVAD、COPD），常規 STEMI / VT criteria 就不再可靠**。第二，**EHJ 同一週放兩條 practice-level 訊號**：CAAN-AF trial（CRT + AF 加做 AV 結 ablation 是否有益）因 futility 提早終止；STOPSTORM.eu interim analysis 證實 stereotactic radioablation 在 refractory VT 可把 VT burden 砍 80%、12 個月存活 77%。第三，**裝置面三件大事**：HRS 一連發三個 abstract（Sphere-9 6-month VT outcomes、ultra-low temperature ablation、VINTAGE intramyocardial navigation），Apple Watch 在兒童族群的 arrhythmia capture 也被證實優於傳統 patch monitor。
+W17 的訊號集中在三條主軸。
+
+**第一，OMI 判讀的「冷門場景」一次冒出三條。** Magnus Nossen 在 Dr Smith blog 連發兩篇談 T wave inversion 的拆解（包含「angiogram 上的 innocent bystander 是什麼」），加上 Amal Mattu 用「LVAD + AICD 病人 wide-complex tachycardia」直接示範電腦判讀如何被 device 騙倒。這幾個案例的共同點是**一旦 baseline 不正常（CKD、HFrEF + LVAD、COPD），常規 STEMI / VT criteria 就不再可靠**。
+
+**第二，EHJ 同一週放兩條 practice-level 訊號。** CAAN-AF trial（CRT + AF 加做 AV 結 ablation 是否有益）因 futility 提早終止；STOPSTORM.eu interim analysis 證實 stereotactic radioablation 在 refractory VT 可把 VT burden 砍 80%、12 個月存活 77%。
+
+**第三，裝置面三件大事。** HRS 一連發三個 abstract（Sphere-9 6-month VT outcomes、ultra-low temperature ablation、VINTAGE intramyocardial navigation），Apple Watch 在兒童族群的 arrhythmia capture 也被證實優於傳統 patch monitor。
 
 本週五則值得在晨會帶過的：
 
