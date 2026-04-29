@@ -63,6 +63,20 @@
     });
   }
 
+  // ─── 「**標題**：內文」段落升級成 sub-heading ──────────────────────────
+  document.querySelectorAll('.article-content p').forEach(function (p) {
+    var first = p.firstChild;
+    if (!first || first.tagName !== 'STRONG') return;
+    var next = first.nextSibling;
+    if (!next || next.nodeType !== 3) return;        // text node
+    var t = next.textContent;
+    // 必須以「：」（全形）或「:」（半形）開頭，且至少有一些內文跟著
+    if (!/^[：:]\s*\S/.test(t)) return;
+    p.classList.add('para-with-title');
+    // 把開頭的「：」吃掉（因為視覺上 strong 已成 sub-heading，不需要冒號）
+    next.textContent = t.replace(/^[：:]\s*/, '');
+  });
+
   // ─── Heading anchor deep-link (hover #) ────────────────────────────────
   document.querySelectorAll('.article-content h2[id], .article-content h3[id]').forEach(function (h) {
     var id = h.id;
