@@ -734,11 +734,16 @@ body.ecw { min-height: 100vh; }
   font-weight: 600;
 }
 
-/* Sources appendix — 4 卡片 grid（L1/L2/L3/L4）*/
+/* Sources appendix — 4 卡片 grid（衝出 720 文章欄到 1280）*/
 .ecw .sources-appendix {
   margin-top: 96px;
   padding-top: 32px;
   border-top: 1px solid var(--hairline);
+  /* break out of .article max-width:720px */
+  width: min(1280px, calc(100vw - 64px));
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .ecw .sources-title {
   font-size: 12px;
@@ -807,13 +812,17 @@ body.ecw { min-height: 100vh; }
   list-style: none;
   padding: 0;
   margin: 2px 0 0;
-  font-size: 12.5px;
-  line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.5;
   color: var(--ink-2);
+  /* 主動允許單詞 wrap，但不要逐字斷 */
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 .ecw .source-card ul li {
   padding: 4px 0;
   border-bottom: 1px solid var(--hairline-2);
+  white-space: normal;
 }
 .ecw .source-card ul li:last-child { border-bottom: 0; }
 .ecw .source-card .source-more {
@@ -830,9 +839,11 @@ body.ecw { min-height: 100vh; }
 
 @media (max-width: 1100px) {
   .ecw .sources-grid { grid-template-columns: repeat(2, 1fr); }
+  .ecw .sources-appendix { width: calc(100vw - 48px); }
 }
 @media (max-width: 600px) {
   .ecw .sources-grid { grid-template-columns: 1fr; }
+  .ecw .sources-appendix { width: calc(100vw - 24px); }
 }
 
 /* References list */
