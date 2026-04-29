@@ -372,22 +372,22 @@ _下週（W18）預計延續追蹤：CAAN-AF 後續的 EP 社群討論、STOPSTO
 <div class="source-label">L1 · 部落格 / 學會</div>
 <div class="source-count">99<span class="unit">篇本週新文</span></div>
 <ul>
-<li>ECG Weekly (Mattu) <strong>20</strong></li>
-<li>ACC <strong>21</strong></li>
-<li>LITFL <strong>12</strong> · Core EM <strong>11</strong></li>
-<li>Dr Smith <strong>10</strong> · HRS <strong>8</strong></li>
-<li>EMCrit <strong>6</strong> · ESC <strong>6</strong> · REBEL EM <strong>4</strong></li>
+<li><span class="li-en">ECG Weekly (Mattu) <strong>20</strong></span><span class="li-zh">Mattu 心電圖週刊（影音教學）</span></li>
+<li><span class="li-en">ACC <strong>21</strong></span><span class="li-zh">美國心臟學會官方</span></li>
+<li><span class="li-en">LITFL <strong>12</strong> · Core EM <strong>11</strong></span><span class="li-zh">澳洲急診維基 · Core 急診部落格</span></li>
+<li><span class="li-en">Dr Smith <strong>10</strong> · HRS <strong>8</strong></span><span class="li-zh">Dr Smith 心電圖部落格 · 美國心律學會</span></li>
+<li><span class="li-en">EMCrit <strong>6</strong> · ESC <strong>6</strong> · REBEL EM <strong>4</strong></span><span class="li-zh">EMCrit 重症急診 · 歐洲心臟學會 · REBEL 急診部落格</span></li>
 </ul>
 <a class="source-more" href="/er-cardio-weekly/sources/blog/">看完整 →</a>
 </div>
 <div class="source-card">
 <div class="source-label">L2 · PubMed 追蹤作者</div>
-<div class="source-count">4<span class="unit">篇 unique（8 hit）</span></div>
+<div class="source-count">4<span class="unit">篇獨立文（8 次匹配）</span></div>
 <ul>
-<li>Smith / Meyers AI ECG <strong>3</strong> 篇</li>
-<li>Ken Grauer · Sodium ch. VT 1</li>
-<li>Jesse McLaren · cardiac syncope</li>
-<li>Aslanger / Frick / Ghali — 0</li>
+<li><span class="li-en">Smith / Meyers AI ECG <strong>3</strong> 篇</span><span class="li-zh">Hennepin OMI 團隊 AI 心電圖三篇</span></li>
+<li><span class="li-en">Ken Grauer · Sodium ch. VT</span><span class="li-zh">鈉離子通道相關室性心搏過速</span></li>
+<li><span class="li-en">Jesse McLaren · cardiac syncope</span><span class="li-zh">心因性昏厥辨識</span></li>
+<li><span class="li-en">Aslanger / Frick / Ghali — 0</span><span class="li-zh">三人本週無新作</span></li>
 </ul>
 <a class="source-more" href="/er-cardio-weekly/sources/authors/">看完整 →</a>
 </div>
@@ -395,11 +395,11 @@ _下週（W18）預計延續追蹤：CAAN-AF 後續的 EP 社群討論、STOPSTO
 <div class="source-label">L3 · CrossRef 期刊</div>
 <div class="source-count">59<span class="unit">篇候選</span></div>
 <ul>
-<li>J Electrocardiology <strong>25</strong></li>
-<li>Resuscitation <strong>16</strong></li>
-<li>Heart Rhythm <strong>13</strong></li>
-<li>Circulation-AE <strong>3</strong> · EHJ <strong>2</strong></li>
-<li>JACC-EP / Annals EM / Europace / JACC / JAMA Card — 0</li>
+<li><span class="li-en">J Electrocardiology <strong>25</strong></span><span class="li-zh">心電圖期刊</span></li>
+<li><span class="li-en">Resuscitation <strong>16</strong></span><span class="li-zh">急救期刊</span></li>
+<li><span class="li-en">Heart Rhythm <strong>13</strong></span><span class="li-zh">心律期刊</span></li>
+<li><span class="li-en">Circulation-AE <strong>3</strong> · EHJ <strong>2</strong></span><span class="li-zh">循環—心律電生理 · 歐洲心臟期刊</span></li>
+<li><span class="li-en">JACC-EP / Annals EM / Europace / JACC / JAMA Card — 0</span><span class="li-zh">五本期刊本週空檔</span></li>
 </ul>
 <a class="source-more" href="/er-cardio-weekly/sources/journals/">看完整 →</a>
 </div>
@@ -407,9 +407,9 @@ _下週（W18）預計延續追蹤：CAAN-AF 後續的 EP 社群討論、STOPSTO
 <div class="source-label">L4 · X.com</div>
 <div class="source-count"><span class="pending">待 setup</span></div>
 <ul>
-<li>@smithECGBlog @PendellM @ekgpress</li>
-<li>@AslangerE @ecgcases @EM_RESUS</li>
-<li>@willyhfrick @RobertHermanMD</li>
+<li><span class="li-en">@smithECGBlog @PendellM @ekgpress</span><span class="li-zh">Stephen Smith · Pendell Meyers · Ken Grauer</span></li>
+<li><span class="li-en">@AslangerE @ecgcases @EM_RESUS</span><span class="li-zh">Emre Aslanger · Jesse McLaren · Sam Ghali</span></li>
+<li><span class="li-en">@willyhfrick @RobertHermanMD</span><span class="li-zh">Willy Frick · Robert Herman</span></li>
 </ul>
 <a class="source-more" href="/er-cardio-weekly/sources/x/">看完整 →</a>
 </div>
