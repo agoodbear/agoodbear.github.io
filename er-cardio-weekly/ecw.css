@@ -237,18 +237,23 @@ body.ecw { min-height: 100vh; }
   border-radius: 2px;
 }
 
-/* Section H2 */
-.ecw .article h2 {
-  font-size: 28px;
-  line-height: 1.25;
-  margin: 4em 0 1em;
+/* Section H2 — 大標、上方 hairline 強調 */
+.ecw .article h2,
+.ecw .article-content h2 {
+  font-size: 32px;
+  line-height: 1.22;
+  margin: 4em 0 0.9em;
   font-weight: 600;
+  letter-spacing: -0.018em;
   scroll-margin-top: 100px;
   display: flex;
   align-items: baseline;
   gap: 12px;
+  padding-top: 28px;
+  border-top: 1px solid var(--hairline);
 }
-.ecw .article h2 .num {
+.ecw .article h2 .num,
+.ecw .article-content h2 .num {
   font-family: 'Newsreader', serif;
   font-style: italic;
   font-weight: 400;
@@ -256,7 +261,8 @@ body.ecw { min-height: 100vh; }
   color: var(--muted);
   font-feature-settings: "lnum";
 }
-.ecw .article h2 .toggle {
+.ecw .article h2 .toggle,
+.ecw .article-content h2 .toggle {
   margin-left: auto;
   font-size: 12px;
   color: var(--muted);
@@ -266,10 +272,80 @@ body.ecw { min-height: 100vh; }
   font-weight: 400;
   letter-spacing: 0.05em;
 }
-.ecw .article h3 {
-  font-size: 17px;
-  margin: 1.6em 0 0.6em;
+
+/* H3 子標題 — 視覺與 body 拉開 */
+.ecw .article h3,
+.ecw .article-content h3 {
+  font-size: 20px;
+  line-height: 1.35;
+  margin: 2em 0 0.55em;
   font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+/* H4 — 第三層 */
+.ecw .article h4,
+.ecw .article-content h4 {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 1.6em 0 0.4em;
+  font-weight: 600;
+  color: var(--ink-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Body paragraph 強調 */
+.ecw .article-content p,
+.ecw .article-content li {
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.78;
+}
+
+/* Strong — 加粗 + 黑體（讓掃讀眼睛抓得到）*/
+.ecw .article-content strong,
+.ecw .article-content b {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Em — serif italic */
+.ecw .article-content em,
+.ecw .article-content i {
+  font-family: 'Newsreader', 'Noto Sans TC', serif;
+  font-style: italic;
+  color: var(--ink-2);
+}
+
+/* mark 螢光標記（之後可在 markdown 用 <mark> 標重點）*/
+.ecw .article-content mark {
+  background: linear-gradient(transparent 62%, rgba(122, 40, 40, 0.18) 62%);
+  color: var(--ink);
+  padding: 0 1px;
+  font-weight: 600;
+}
+
+/* Lede 首段 drop-cap（可加 class="lede" 觸發）*/
+.ecw .article-content > p:first-of-type {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+/* Bullet list 加緊一些 */
+.ecw .article-content ul li,
+.ecw .article-content ol li {
+  margin: 8px 0;
+  line-height: 1.7;
+}
+
+/* HR 分隔線 */
+.ecw .article-content hr {
+  border: 0;
+  border-top: 1px solid var(--hairline);
+  margin: 3em 0;
 }
 
 /* Paragraph deep-link affordance */
