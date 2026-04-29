@@ -1,0 +1,75 @@
+{{ define "main" }}
+<header class="topbar">
+  <a href="{{ "/er-cardio-weekly/" | relURL }}" class="brand" style="text-decoration: none;">
+    <svg class="ecg-mark" viewBox="0 0 56 28" aria-hidden="true" style="margin-right: 8px;">
+      <path d="M2,14 L10,14 L13,8 L17,20 L21,4 L25,24 L29,14 L36,14 L39,10 L43,18 L54,18" />
+    </svg>
+    ER · CARDIO · WEEKLY
+  </a>
+  <span class="crumb">/ 本週原始訊號清單</span>
+  <div class="actions">
+    <button class="icon-btn" id="ecw-theme-toggle" title="切換暗色模式" aria-label="切換暗色模式">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<div class="container" style="max-width: 1280px; margin: 0 auto; padding: 56px 32px 96px;">
+  <div style="margin-bottom: 32px;">
+    <div style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 6px; font-family: 'Inter Tight', sans-serif;">SOURCES · ARCHIVE</div>
+    <h1 style="font-family: 'Inter Tight', 'Noto Sans TC', sans-serif; font-size: 36px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 12px; line-height: 1.18;">本週原始訊號清單</h1>
+    <p style="font-family: 'Newsreader', serif; font-style: italic; font-size: 18px; color: var(--ink-2); margin: 0; max-width: 640px;">
+      急診心臟週報底下 4 層來源獨立彙整。每層獨立 archive，依時間流排序。
+    </p>
+  </div>
+
+  {{ $data := index .Site.Data "er-cardio-weekly" }}
+  {{ $sources := $data.sources }}
+  <div class="sources-grid" style="margin-top: 24px;">
+
+    <a href="{{ "/er-cardio-weekly/sources/blog/" | relURL }}" class="source-card" style="text-decoration: none; color: inherit;">
+      <div class="source-label">L1 · 部落格 / 學會</div>
+      <div class="source-count">{{ len $sources.blog }}<span class="unit">篇</span></div>
+      <ul>
+        <li><span class="li-en">11 個來源</span><span class="li-zh">Dr Smith · ECG Weekly · LITFL · EMCrit · REBEL EM · ACC · ESC · HRS · AHA · First10EM · Core EM</span></li>
+      </ul>
+      <span class="source-more">看時間流 →</span>
+    </a>
+
+    <a href="{{ "/er-cardio-weekly/sources/authors/" | relURL }}" class="source-card" style="text-decoration: none; color: inherit;">
+      <div class="source-label">L2 · PubMed 追蹤作者</div>
+      <div class="source-count">{{ len $sources.authors }}<span class="unit">篇 unique</span></div>
+      <ul>
+        <li><span class="li-en">7 位作者</span><span class="li-zh">Stephen Smith · Pendell Meyers · Ken Grauer · Jesse McLaren · Emre Aslanger · Willy Frick · Sam Ghali</span></li>
+      </ul>
+      <span class="source-more">看時間流 →</span>
+    </a>
+
+    <a href="{{ "/er-cardio-weekly/sources/journals/" | relURL }}" class="source-card" style="text-decoration: none; color: inherit;">
+      <div class="source-label">L3 · CrossRef 期刊</div>
+      <div class="source-count">{{ len $sources.journals }}<span class="unit">篇候選</span></div>
+      <ul>
+        <li><span class="li-en">10 本期刊</span><span class="li-zh">Heart Rhythm · JACC-EP · Circulation-AE · J Electrocardiology · Annals EM · Resuscitation · Europace · JACC · EHJ · JAMA Cardiology</span></li>
+      </ul>
+      <span class="source-more">看時間流 →</span>
+    </a>
+
+    <a href="{{ "/er-cardio-weekly/sources/x/" | relURL }}" class="source-card" style="text-decoration: none; color: inherit;">
+      <div class="source-label">L4 · X.com</div>
+      <div class="source-count">{{ if gt (len $sources.x) 0 }}{{ len $sources.x }}<span class="unit">則</span>{{ else }}<span class="pending">待 setup</span>{{ end }}</div>
+      <ul>
+        <li><span class="li-en">8 個 handle</span><span class="li-zh">@smithECGBlog · @PendellM · @ekgpress · @AslangerE · @ecgcases · @EM_RESUS · @willyhfrick · @RobertHermanMD</span></li>
+      </ul>
+      <span class="source-more">看時間流 →</span>
+    </a>
+
+  </div>
+
+  <p style="margin-top: 48px; font-size: 12px; color: var(--muted); text-align: center; font-family: 'Newsreader', serif; font-style: italic;">
+    cache 更新：{{ $sources.generatedAt }}
+  </p>
+</div>
+{{ end }}

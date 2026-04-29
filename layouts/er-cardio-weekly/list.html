@@ -70,18 +70,32 @@
   </div>
   <aside class="rail">
     <input class="search" type="search" placeholder="搜尋週報..." aria-label="搜尋">
-    <div class="filter-label">標籤</div>
-    {{ $allTags := slice }}
-    {{ range $weeks }}{{ range .Params.tags }}{{ $allTags = $allTags | append . }}{{ end }}{{ end }}
-    {{ $tagCounts := dict }}
-    {{ range $allTags }}
-      {{ $tagCounts = merge $tagCounts (dict . (add (index $tagCounts . | default 0) 1)) }}
-    {{ end }}
-    <div class="filter-list">
-      {{ range $tag, $count := $tagCounts }}
-      <label><input type="checkbox" data-tag="{{ $tag }}"> {{ $tag }} <span class="count">{{ $count }}</span></label>
-      {{ end }}
+
+    {{ $data := index .Site.Data "er-cardio-weekly" }}
+    {{ $sources := $data.sources }}
+    {{ if $sources }}
+    <div class="filter-label" style="margin-top: 28px;">本週各源新增</div>
+    <div class="source-stat-list">
+      <a href="{{ "/er-cardio-weekly/sources/blog/" | relURL }}" class="source-stat">
+        <span class="source-stat-label">L1 部落格</span>
+        <span class="source-stat-count">{{ len $sources.blog }}</span>
+      </a>
+      <a href="{{ "/er-cardio-weekly/sources/authors/" | relURL }}" class="source-stat">
+        <span class="source-stat-label">L2 PubMed 作者</span>
+        <span class="source-stat-count">{{ len $sources.authors }}</span>
+      </a>
+      <a href="{{ "/er-cardio-weekly/sources/journals/" | relURL }}" class="source-stat">
+        <span class="source-stat-label">L3 期刊</span>
+        <span class="source-stat-count">{{ len $sources.journals }}</span>
+      </a>
+      <a href="{{ "/er-cardio-weekly/sources/x/" | relURL }}" class="source-stat">
+        <span class="source-stat-label">L4 X.com</span>
+        <span class="source-stat-count">{{ if gt (len $sources.x) 0 }}{{ len $sources.x }}{{ else }}—{{ end }}</span>
+      </a>
     </div>
+    <a href="{{ "/er-cardio-weekly/sources/" | relURL }}" style="display: block; margin-top: 16px; font-size: 11.5px; letter-spacing: 0.04em; color: var(--accent); text-decoration: none; font-family: 'Inter Tight', sans-serif;">看完整 4 層 archive →</a>
+    <p style="margin-top: 14px; font-size: 10.5px; color: var(--muted); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5;">cache 更新：<br>{{ replaceRE "T" " " (dateFormat "2006-01-02 15:04" $sources.generatedAt) }}</p>
+    {{ end }}
   </aside>
 </div>
 {{ end }}

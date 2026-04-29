@@ -1,0 +1,99 @@
+{{ define "main" }}
+<header class="topbar">
+  <a href="{{ "/er-cardio-weekly/" | relURL }}" class="brand" style="text-decoration: none;">
+    <svg class="ecg-mark" viewBox="0 0 56 28" aria-hidden="true" style="margin-right: 8px;">
+      <path d="M2,14 L10,14 L13,8 L17,20 L21,4 L25,24 L29,14 L36,14 L39,10 L43,18 L54,18" />
+    </svg>
+    ER · CARDIO · WEEKLY
+  </a>
+  <span class="crumb">/ <a href="{{ "/er-cardio-weekly/sources/" | relURL }}" style="color: var(--muted); text-decoration: none;">本週原始訊號</a> / {{ .Title }}</span>
+  <div class="actions">
+    <button class="icon-btn" id="ecw-theme-toggle" title="切換暗色模式" aria-label="切換暗色模式">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<div class="container" style="max-width: 1080px; margin: 0 auto; padding: 56px 32px 96px;">
+  <div style="margin-bottom: 32px;">
+    <div style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 6px; font-family: 'Inter Tight', sans-serif;">SOURCES · {{ upper .Params.sourceLayer }}</div>
+    <h1 style="font-family: 'Inter Tight', 'Noto Sans TC', sans-serif; font-size: 36px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 12px; line-height: 1.2;">{{ .Title }}</h1>
+    <p style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: var(--ink-2); margin: 0; max-width: 720px; line-height: 1.6;">{{ .Description }}</p>
+  </div>
+
+  {{ $data := index .Site.Data "er-cardio-weekly" }}
+  {{ $sources := $data.sources }}
+  {{ $layer := .Params.sourceLayer }}
+  {{ $items := slice }}
+  {{ if eq $layer "blog" }}{{ $items = $sources.blog }}{{ end }}
+  {{ if eq $layer "authors" }}{{ $items = $sources.authors }}{{ end }}
+  {{ if eq $layer "journals" }}{{ $items = $sources.journals }}{{ end }}
+  {{ if eq $layer "x" }}{{ $items = $sources.x }}{{ end }}
+
+  <div class="archive-meta" style="font-size: 12px; color: var(--muted); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--hairline); font-family: 'Inter Tight', sans-serif; letter-spacing: 0.04em;">
+    {{ len $items }} 筆 · cache 更新 {{ $sources.generatedAt }}
+  </div>
+
+  {{ if eq (len $items) 0 }}
+  <div style="padding: 60px 0; text-align: center; color: var(--muted); font-family: 'Newsreader', serif; font-style: italic;">
+    {{ if eq $layer "x" }}
+      X.com cookie 尚未設定。執行 <code>uv run python main.py setup</code> 提供 Twitter cookie 後即可抓取。
+    {{ else }}
+      本週此來源無新內容。
+    {{ end }}
+  </div>
+  {{ else }}
+  <div class="archive-list">
+    {{ range $items }}
+    <article class="archive-item">
+      {{ if eq $layer "blog" }}
+        <div class="archive-source">{{ .source }}</div>
+        <h3 class="archive-title"><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></h3>
+        {{ with .summary }}<p class="archive-summary">{{ . }}</p>{{ end }}
+        <div class="archive-meta-row">
+          {{ with .published }}<span>{{ . }}</span>{{ end }}
+          {{ with .tags }}{{ range . }}<span class="chip">{{ . }}</span>{{ end }}{{ end }}
+        </div>
+      {{ end }}
+
+      {{ if eq $layer "authors" }}
+        <div class="archive-source">{{ .matchedAuthor }} · {{ .journal }}</div>
+        <h3 class="archive-title"><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></h3>
+        {{ with .abstract }}<p class="archive-summary">{{ . }}</p>{{ end }}
+        <div class="archive-meta-row">
+          {{ with .published }}<span>{{ . }}</span>{{ end }}
+          {{ with .pmid }}<span>PMID {{ . }}</span>{{ end }}
+          {{ with .authorTag }}<span class="chip">{{ . }}</span>{{ end }}
+          {{ with .tags }}{{ range . }}<span class="chip">{{ . }}</span>{{ end }}{{ end }}
+        </div>
+      {{ end }}
+
+      {{ if eq $layer "journals" }}
+        <div class="archive-source">{{ .journal }}</div>
+        <h3 class="archive-title"><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></h3>
+        {{ with .abstract }}<p class="archive-summary">{{ . }}</p>{{ end }}
+        <div class="archive-meta-row">
+          {{ with .published }}<span>{{ . }}</span>{{ end }}
+          {{ with .authors }}<span>{{ delimit . ", " }}</span>{{ end }}
+          {{ with .doi }}<span>DOI {{ . }}</span>{{ end }}
+          {{ with .tags }}{{ range . }}<span class="chip">{{ . }}</span>{{ end }}{{ end }}
+        </div>
+      {{ end }}
+
+      {{ if eq $layer "x" }}
+        <div class="archive-source">@{{ .handle }}</div>
+        <p class="archive-summary">{{ .content }}</p>
+        <div class="archive-meta-row">
+          {{ with .posted }}<span>{{ . }}</span>{{ end }}
+          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">看原文 →</a>{{ end }}
+        </div>
+      {{ end }}
+    </article>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
