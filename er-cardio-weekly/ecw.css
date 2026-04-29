@@ -921,7 +921,14 @@ body.ecw { min-height: 100vh; }
   align-items: start;
 }
 .ecw .layout-article .left { padding-top: 80px; }
-.ecw .layout-article .right { padding-top: 80px; }
+.ecw .layout-article .right {
+  padding-top: 80px;
+  position: sticky;
+  top: 76px;                       /* topbar 高 56 + 20 緩衝 */
+  align-self: start;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;                /* TOC 太長時自己捲，不影響主文 */
+}
 
 /* small note row */
 .ecw .note-row {
