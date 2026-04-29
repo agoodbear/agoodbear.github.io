@@ -319,26 +319,20 @@ body.ecw { min-height: 100vh; }
 }
 
 /* 「**標題**：內文」段落升級成 sub-heading 視覺
- * JS 在 ecw.js 偵測「<strong> 開頭 + 接著是「：」」的 <p>，加 .para-with-title class */
+ * JS 在 ecw.js 偵測「<strong> 開頭 + 接著是「：」」的 <p>，加 .para-with-title class
+ * 不用 hairline 上邊（部分段落含 PMID/DOI 連結夾層抓不到，視覺會不一致） */
 .ecw .article-content p.para-with-title {
-  margin-top: 2.6em;
-  padding-top: 1.3em;
-  border-top: 1px solid var(--hairline);
+  margin-top: 2.2em;
 }
 .ecw .article-content p.para-with-title > strong:first-child {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-family: 'Inter Tight', 'Noto Sans TC', sans-serif;
   font-size: 19px;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.32;
   color: var(--ink);
-}
-/* 標題後緊跟的「：」吸進標題，內文從新行開始閱讀 */
-.ecw .article-content p.para-with-title > strong:first-child::after {
-  content: " ";
-  display: inline;
 }
 
 /* Em — serif italic */
