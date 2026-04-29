@@ -63,6 +63,22 @@
     });
   }
 
+  // ─── 滾到附錄時 TOC 自動淡出（避免 4 卡片寬度跟 TOC 區重疊）──────────
+  var appendix = document.querySelector('.sources-appendix');
+  var rightCol = document.querySelector('.layout-article .right');
+  if (appendix && rightCol) {
+    var apIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        rightCol.classList.toggle('is-hidden', e.isIntersecting);
+      });
+    }, {
+      // 附錄進視窗上半就開始淡，提早給空間
+      rootMargin: '0px 0px -40% 0px',
+      threshold: 0,
+    });
+    apIO.observe(appendix);
+  }
+
   // ─── 「**標題**：內文」段落升級成 sub-heading ──────────────────────────
   document.querySelectorAll('.article-content p').forEach(function (p) {
     var first = p.firstChild;
