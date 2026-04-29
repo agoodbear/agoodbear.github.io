@@ -820,9 +820,18 @@ body.ecw { min-height: 100vh; }
   overflow-wrap: anywhere;
 }
 .ecw .source-card ul li {
-  padding: 4px 0;
+  padding: 6px 0;
   border-bottom: 1px solid var(--hairline-2);
   white-space: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ecw .source-card ul li .li-zh {
+  font-size: 11.5px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  line-height: 1.45;
 }
 .ecw .source-card ul li:last-child { border-bottom: 0; }
 .ecw .source-card .source-more {
