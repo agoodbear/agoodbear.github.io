@@ -296,12 +296,19 @@ body.ecw { min-height: 100vh; }
   letter-spacing: 0.06em;
 }
 
-/* Body paragraph 強調 */
-.ecw .article-content p,
+/* Body paragraph 強調 + 段落呼吸 */
+.ecw .article-content p {
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.85;
+  margin: 0 0 1.4em;
+}
+.ecw .article-content p + p { margin-top: 0.4em; }
 .ecw .article-content li {
   color: var(--ink);
   font-size: 17px;
-  line-height: 1.78;
+  line-height: 1.75;
+  margin: 0.5em 0;
 }
 
 /* Strong — 加粗 + 黑體（讓掃讀眼睛抓得到）*/
