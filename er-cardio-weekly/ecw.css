@@ -1028,6 +1028,12 @@ body.ecw { min-height: 100vh; }
   align-self: start;
   max-height: calc(100vh - 80px);
   overflow-y: auto;                /* TOC 太長時自己捲，不影響主文 */
+  transition: opacity 250ms ease, visibility 250ms ease;
+}
+.ecw .layout-article .right.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /* small note row */
