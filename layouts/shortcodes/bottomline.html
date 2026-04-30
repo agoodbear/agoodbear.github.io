@@ -1,0 +1,15 @@
+{{- /*
+  bottomline — 章節結尾的「Bottom line」總結方塊
+  用法：
+    {{< bottomline >}}
+    本章重點一句話
+    {{< /bottomline >}}
+
+  可選 label 參數覆寫預設「BOTTOM LINE」標籤：
+    {{< bottomline label="本章重點" >}}...{{< /bottomline >}}
+*/ -}}
+{{- $label := .Get "label" | default "Bottom line" -}}
+<div class="bottom-line">
+  <div class="label">{{ $label }}</div>
+  {{ .Inner | $.Page.RenderString }}
+</div>

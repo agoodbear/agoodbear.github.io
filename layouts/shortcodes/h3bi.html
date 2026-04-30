@@ -1,0 +1,20 @@
+{{- /*
+  h3bi — bilingual H3：英文主標題 + 繁中副標題（分兩行視覺）
+  參數：
+    en    英文/作者名（必填，主標）
+    zh    繁中對照（必填，副標）
+    meta  右側元資料（選，例如「2026-05 issue 精選 10 篇」「W17 區間」）
+    id    自訂 anchor id（選，預設 anchorize en）
+
+  用法：
+    {{< h3bi en="Resuscitation" zh="急救期刊" meta="2026-05 issue 精選 10 篇" >}}
+    {{< h3bi en="Stephen W. Smith" zh="Hennepin Healthcare · OMI 主軸" >}}
+*/ -}}
+{{- $en := .Get "en" -}}
+{{- $zh := .Get "zh" -}}
+{{- $meta := .Get "meta" -}}
+{{- $id := .Get "id" | default (anchorize $en) -}}
+<h3 id="{{ $id }}" class="h3bi">
+  <span class="h3bi-en">{{ $en }}</span>
+  {{- with $zh }}<span class="h3bi-zh">{{ . }}{{ with $meta }}<span class="h3bi-meta"> — {{ . }}</span>{{ end }}</span>{{ end }}
+</h3>

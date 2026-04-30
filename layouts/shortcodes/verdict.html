@@ -1,0 +1,14 @@
+{{- /*
+  verdict — inline 標籤晶片，標記某論述的層級
+  變體（type 參數）：
+    practice    — 改寫實務（綠點，預設）
+    hypothesis  — 假說/初步證據（金點）
+    context     — 背景補充（灰點）
+
+  用法：
+    {{< verdict >}}practice-changing{{< /verdict >}}
+    {{< verdict type="hypothesis" >}}early signal{{< /verdict >}}
+    {{< verdict type="context" >}}backgrounder{{< /verdict >}}
+*/ -}}
+{{- $type := .Get "type" | default "practice" -}}
+<span class="verdict {{ $type }}">{{ .Inner }}</span>

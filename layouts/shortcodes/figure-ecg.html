@@ -1,0 +1,29 @@
+{{- /*
+  figure-ecg — ECG 圖片 + 標題 + 來源出處
+  參數：
+    src     圖片路徑（必填，相對 page bundle 或絕對路徑）
+    alt     替代文字（必填，描述 ECG 內容）
+    caption 圖說（選，會放粗體開頭）
+    source  來源（選，會以 cite 樣式接在 caption 後）
+
+  用法（page bundle 內）：
+    {{< figure-ecg src="omi-inferior.png" alt="下壁 OMI ECG，aVL T 倒置" caption="鏡像倒置 hyperacute T" source="Dr Smith ECG Blog 2026-04-15" >}}
+*/ -}}
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $caption := .Get "caption" | default "" -}}
+{{- $source := .Get "source" | default "" -}}
+{{- $resolvedSrc := $src -}}
+{{- with $.Page.Resources.GetMatch $src -}}
+  {{- $resolvedSrc = .RelPermalink -}}
+{{- end -}}
+<figure class="figure-ecg">
+  <img src="{{ $resolvedSrc }}" alt="{{ $alt }}" loading="lazy">
+  {{- if or $caption $source -}}
+  <figcaption>
+    {{- with $caption }}<b>{{ . }}</b>{{ end -}}
+    {{- if and $caption $source }} — {{ end -}}
+    {{- with $source }}<cite>{{ . }}</cite>{{ end -}}
+  </figcaption>
+  {{- end -}}
+</figure>

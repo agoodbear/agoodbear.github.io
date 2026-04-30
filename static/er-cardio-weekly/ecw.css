@@ -1185,3 +1185,44 @@ body.ecw { min-height: 100vh; }
   overflow: hidden;
   padding: 0 18px;
 }
+
+/* ── h3bi（雙語 H3：英文主標 + 繁中副標分行） ──────────────────────────── */
+.ecw .article-content h3.h3bi,
+.ecw .article h3.h3bi {
+  margin-top: 36px;
+  margin-bottom: 18px;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+.ecw .h3bi .h3bi-en {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  color: var(--ink);
+}
+.ecw .h3bi .h3bi-zh {
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-top: 6px;
+  letter-spacing: 0.04em;
+}
+.ecw .h3bi .h3bi-meta {
+  color: var(--ink-2);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+/* ── 表格內中文副標（接在英文 paper title 之後的繁中翻譯）─────────────── */
+.ecw table .zh-sub {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-2);
+  margin-top: 4px;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+}
