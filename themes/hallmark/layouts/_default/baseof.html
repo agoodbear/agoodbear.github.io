@@ -28,6 +28,12 @@
   {{- /* Hallmark theme.css */ -}}
   <link rel="stylesheet" href="{{ "css/theme.css" | relURL }}">
 
+  {{- /* Site custom CSS (timeline / image-row / tag-pill / ecg-wave-text / etc.)
+         Defined in config/_default/params.toml; loads existing custom-css files. */ -}}
+  {{ range site.Params.customCSS }}
+    <link rel="stylesheet" href="{{ . | relURL }}">
+  {{ end }}
+
   {{ block "head" . }}{{ end }}
 </head>
 
