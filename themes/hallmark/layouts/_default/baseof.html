@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{ site.LanguageCode | default "zh-tw" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+
+  {{ with .Description | default site.Params.description }}
+    <meta name="description" content="{{ . }}">
+  {{ end }}
+
+  {{- /* Open Graph */ -}}
+  <meta property="og:title" content="{{ .Title | default site.Title }}">
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  {{ with .Params.featured_image | default site.Params.thumbnail }}
+    <meta property="og:image" content="{{ . | absURL }}">
+  {{ end }}
+
+  <link rel="icon" type="image/png" href="/icons/favicon.png">
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  {{- /* Google Fonts */ -}}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter+Tight:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;600;900&display=swap" rel="stylesheet">
+
+  {{- /* Hallmark theme.css */ -}}
+  <link rel="stylesheet" href="{{ "css/theme.css" | relURL }}">
+
+  {{ block "head" . }}{{ end }}
+</head>
+
+<body class="{{ block "body-class" . }}{{ end }}">
+
+  {{ partial "header.html" . }}
+
+  {{ block "main" . }}{{ end }}
+
+  {{ partial "newsletter.html" . }}
+
+  {{ partial "footer.html" . }}
+
+  {{ block "scripts" . }}{{ end }}
+</body>
+</html>

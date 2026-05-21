@@ -15,7 +15,7 @@ timeout = "30s"
 # Ignore errors when fetching remote resources (prevents build failure)
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
-theme = ["hugo-clarity", "hugo-embed-pdf-shortcode"]
+theme = ["hallmark", "hugo-clarity", "hugo-embed-pdf-shortcode"]
 disqusShortname = "agoodbear"
 #變更語系(也要修改config/_default/languages.toml):修改的話，右上角連結都會不見。這themes應該是把eng/和其他語言都有不同的頁面呈現(把menu.en.toml改成menu.zh-tw.toml就可)-變更
 DefaultContentLanguage = "zh-tw"

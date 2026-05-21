@@ -1,0 +1,17 @@
+name = "Hallmark"
+license = "MIT"
+licenselink = ""
+description = "急診熊心聲部落格 editorial redesign — studied from every.to with light-paper pivot. See design.md."
+homepage = "https://agoodbear.github.io/"
+tags = ["editorial", "newsprint", "long-document", "letter"]
+features = ["typography", "responsive", "accessibility"]
+min_version = "0.100.0"
+
+[author]
+  name = "急診熊"
+  homepage = "https://agoodbear.github.io/"
+
+[original]
+  name = "every.to (studied DNA)"
+  homepage = "https://every.to/"
+  repo = ""

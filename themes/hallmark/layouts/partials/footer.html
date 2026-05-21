@@ -1,0 +1,12 @@
+<footer class="footer wrap">
+  <div class="wordmark">{{ site.Title | default "急診熊心聲部落格" }}</div>
+  <p class="mission">{{ site.Params.mission | default "A notebook by a Taiwanese ER physician — ECG, emergency medicine, AI workflows, and the things you only learn at 3 AM. Written slowly. Read at your own pace." }}</p>
+  <div class="social">
+    {{ with site.Params.threads }}<a href="{{ . }}">Threads</a>{{ end }}
+    {{ with site.Params.facebook }}<a href="{{ . }}">Facebook</a>{{ end }}
+    {{ with site.Params.twitter }}<a href="{{ . }}">X</a>{{ end }}
+    {{ with site.Params.instagram }}<a href="{{ . }}">Instagram</a>{{ end }}
+    <a href="{{ "/index.xml" | relURL }}">RSS</a>
+  </div>
+  <div class="copyright">{{ with site.Copyright }}{{ . }}{{ else }}© 2022–{{ now.Year }} 急診熊 · All Rights Reserved · Taipei, Taiwan{{ end }}</div>
+</footer>

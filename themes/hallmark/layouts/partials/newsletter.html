@@ -1,0 +1,13 @@
+{{- /* Newsletter band — shown on all pages by default; suppress via .Params.no_newsletter */ -}}
+{{ if not .Params.no_newsletter }}
+<section class="newsletter wrap" aria-label="Newsletter subscription">
+  <div class="label">Subscribe · 訂閱電子報</div>
+  <h2>每兩週收到一份急診現場的整理筆記</h2>
+  <p>ECG case、AI 工作流、和那些只有在凌晨三點的急診室才會學到的事 —— 直接寄到信箱。免費。隨時可退訂。</p>
+  <form action="{{ site.Params.newsletter_action | default "#" }}" method="post" onsubmit="{{ if not site.Params.newsletter_action }}event.preventDefault(); alert('訂閱功能尚未串接 (Mailchimp / Buttondown / ConvertKit)');{{ end }}">
+    <input type="email" name="email" placeholder="your@email.com" aria-label="Email address" required>
+    <button type="submit">訂閱</button>
+  </form>
+  <div class="small">No spam, ever. Unsubscribe with one click.</div>
+</section>
+{{ end }}

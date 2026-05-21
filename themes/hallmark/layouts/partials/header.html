@@ -1,0 +1,19 @@
+<header class="brandstrip">
+  <div class="brandstrip-inner">
+    <a href="{{ "" | relURL }}" class="wordmark">{{ site.Title | default "急診熊心聲部落格" }}<span class="sub">An editorial notebook</span></a>
+    <nav class="nav-row" aria-label="primary">
+      {{ $current := . }}
+      {{ range site.Menus.main }}
+        {{ $active := or (eq $current.RelPermalink .URL) (and (ne .URL "/") (hasPrefix $current.RelPermalink .URL)) }}
+        <a href="{{ .URL | relURL }}"{{ if $active }} class="is-active"{{ end }}>{{ .Name }}</a>
+      {{ else }}
+        {{- /* fallback if no menu configured */ -}}
+        <a href="{{ "" | relURL }}">首頁</a>
+        <a href="{{ "/categories/心電圖/" | relURL }}">心電圖</a>
+        <a href="{{ "/categories/急診人生/" | relURL }}">急診人生</a>
+        <a href="{{ "/ai-learning/" | relURL }}">AI 學習</a>
+        <a href="{{ "/about/" | relURL }}">關於我</a>
+      {{ end }}
+    </nav>
+  </div>
+</header>
