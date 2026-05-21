@@ -316,6 +316,28 @@ img { max-width: 100%; height: auto; display: block; }
   .page-masthead { padding: var(--space-xl) var(--space-md) var(--space-lg); }
 }
 
+/* Mobile — brand strip stack + hide italic subtitle to avoid wordmark wrap */
+@media (max-width: 720px) {
+  .brandstrip-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+  }
+  .brandstrip .wordmark {
+    font-size: var(--text-base);
+    white-space: nowrap;
+  }
+  .brandstrip .wordmark .sub {
+    display: none;
+  }
+  .brandstrip .nav-row {
+    width: 100%;
+    font-size: var(--text-xs);
+    gap: var(--space-sm);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
