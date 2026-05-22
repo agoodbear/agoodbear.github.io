@@ -241,14 +241,15 @@
   letter-spacing: 0.04em;
 }
 
-/* Eyebrow inline icon — pixel-art GIF accent next to "最新文章" */
+/* Eyebrow inline icon — pixel-art GIF accent next to "最新文章".
+   Negative top+bottom margin pull the icon out of the line-box so the
+   eyebrow's bottom border stays put — icon overflows the band visually. */
 .eyebrow-icon {
   display: inline-block;
   width: 120px;
   height: 120px;
   vertical-align: middle;
-  margin-left: 0.6em;
-  margin-top: -0.4em;
+  margin: -54px 0 -54px 0.6em;
   image-rendering: pixelated;
 }
 
