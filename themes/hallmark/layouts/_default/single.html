@@ -166,6 +166,44 @@
   border-bottom: 1px solid var(--color-accent);
   padding-bottom: 1px;
 }
+
+/* Editorial table — warm paper, top/bottom rule, header underline, no vertical borders */
+.article-body table {
+  width: 100%;
+  margin: var(--space-xl) 0;
+  border-collapse: collapse;
+  font-family: var(--font-body-zh);
+  font-size: var(--text-base);
+  line-height: 1.55;
+  color: var(--color-ink);
+  border-top: 2px solid var(--color-ink);
+  border-bottom: 2px solid var(--color-ink);
+}
+.article-body thead th {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-ink);
+  text-align: left;
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-ink);
+  background: transparent;
+}
+.article-body tbody td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-rule);
+  vertical-align: top;
+}
+.article-body tbody tr:last-child td { border-bottom: none; }
+.article-body tbody tr:nth-child(even) td { background: var(--color-paper-2); }
+.article-body table strong { color: var(--color-accent-ink); }
+@media (max-width: 720px) {
+  .article-body table { font-size: var(--text-sm); }
+  .article-body thead th,
+  .article-body tbody td { padding: var(--space-xs) var(--space-sm); }
+}
 .article-body .endmark {
   text-align: center;
   margin: var(--space-2xl) 0 var(--space-xl);
