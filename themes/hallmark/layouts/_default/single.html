@@ -56,6 +56,13 @@
   border-top: 1px solid var(--color-rule);
 }
 .article-header .meta .tag { color: var(--color-accent-ink); }
+.article-header .meta .tag a {
+  color: var(--color-accent-ink);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 120ms var(--ease-out);
+}
+.article-header .meta .tag a:hover { border-bottom-color: var(--color-accent); }
 .article-header .meta .dot { color: var(--color-rule-bold); }
 
 .hero-figure {
@@ -313,7 +320,14 @@
              total is. Re-enable views_month / views_total here only if a future
              counter writes per-slug paths into Firebase. */ -}}
       {{ with .Params.tags }}
-        <span class="dot">·</span><span class="tag">{{ delimit . " · " }}</span>
+        <span class="dot">·</span>
+        <span class="tag">
+          {{ range $i, $t := . }}
+            {{- if $i }} · {{ end -}}
+            {{- $tp := site.GetPage (printf "/tags/%s" $t) -}}
+            {{ if $tp }}<a href="{{ $tp.RelPermalink }}">{{ $t }}</a>{{ else }}{{ $t }}{{ end }}
+          {{ end }}
+        </span>
       {{ end }}
     </div>
   </header>
