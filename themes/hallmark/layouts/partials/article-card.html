@@ -16,14 +16,21 @@
 {{- $catName := index $catMap $catSlug | default $catSlug -}}
 <article class="card">
   <a href="{{ .RelPermalink }}">
-    <div class="image">
-      {{- $img := .Params.thumbnail | default .Params.featured_image | default .Params.featureImage | default .Params.image | default .Params.cover -}}
-      {{ if $img }}
+    {{- $img := .Params.thumbnail | default .Params.featured_image | default .Params.featureImage | default .Params.image | default .Params.cover -}}
+    {{ if $img }}
+      <div class="image">
         <img src="{{ $img | relURL }}" alt="{{ .Title }}" loading="lazy">
-      {{ else }}
-        <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--color-paper-2),var(--color-paper-3));"></div>
-      {{ end }}
-    </div>
+      </div>
+    {{ else }}
+      {{- /* No thumbnail — render typographic stamp instead of blank box.
+             Editorial fallback: paper-2 background, accent eyebrow with date
+             & category, big serif date as visual anchor. */ -}}
+      <div class="image image-stamp">
+        <span class="stamp-eyebrow">{{ if $catName }}{{ $catName }} · {{ end }}{{ .Date.Format "2006-01-02" }}</span>
+        <span class="stamp-date">{{ .Date.Format "Jan 02" }}</span>
+        <span class="stamp-year">{{ .Date.Format "2006" }}</span>
+      </div>
+    {{ end }}
     {{ if $catName }}
       <div class="label-line">{{ $catName }}</div>
     {{ end }}
