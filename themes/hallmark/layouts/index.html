@@ -410,15 +410,23 @@ article.card .meta {
 <nav class="subnav" aria-label="primary">
   <div class="subnav-inner">
     <a href="{{ "" | relURL }}" class="is-active">所有文章</a>
-    <a href="{{ "/categories/心電圖/" | relURL }}">心電圖</a>
-    <a href="{{ "/categories/超音波/" | relURL }}">超音波</a>
-    <a href="{{ "/categories/急診人生/" | relURL }}">急診人生</a>
-    <a href="{{ "/categories/醫生Gym/" | relURL }}">醫生 Gym</a>
-    <a href="{{ "/categories/自我進修/" | relURL }}">自我進修</a>
-    <a href="{{ "/ai-learning/" | relURL }}">AI 學習</a>
-    <a href="{{ "/categories/旅遊/" | relURL }}">旅遊</a>
-    <a href="{{ "/practical-tools/" | relURL }}">實用工具</a>
-    <a href="{{ "/about/" | relURL }}">關於我</a>
+    {{- /* Pull category links from menu config (slug-based URLs).
+           Falls back to hard-coded list if no menu defined. */ -}}
+    {{ if site.Menus.main }}
+      {{ range site.Menus.main }}
+        <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+      {{ end }}
+    {{ else }}
+      <a href="{{ "/categories/ecg/" | relURL }}">心電圖</a>
+      <a href="{{ "/categories/pocus/" | relURL }}">超音波</a>
+      <a href="{{ "/categories/erlife/" | relURL }}">急診人生</a>
+      <a href="{{ "/categories/workout/" | relURL }}">醫生 Gym</a>
+      <a href="{{ "/categories/study/" | relURL }}">自我進修</a>
+      <a href="{{ "/ai-learning/" | relURL }}">AI 學習</a>
+      <a href="{{ "/categories/travel/" | relURL }}">旅遊</a>
+      <a href="{{ "/practical-tools/" | relURL }}">實用工具</a>
+      <a href="{{ "/about/" | relURL }}">關於我</a>
+    {{ end }}
   </div>
 </nav>
 
