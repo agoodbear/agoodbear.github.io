@@ -11,6 +11,130 @@
 <span>Mar 16, 2026</span>
 <span class=dot>·</span>
 <span>1 分鐘閱讀</span>
-<span class=dot>·</span><span class=tag>AI學習 · Claude Code · AI Agent · Browser Control · Workflow</span></div></header><div class=article-body><h2 id=今日最有感的事>今日最有感的事</h2><p>今天最有感的，不是某一個模型又更強了，而是越來越清楚看到：<strong>AI agent 的競爭，正在從『誰比較會回答』，轉向『誰比較能穩定接上真實世界』。</strong></p><p>這個「真實世界」有三層。</p><p>第一層，是 <strong>agent orchestration</strong>。像 Paperclip 這類工具在談的，不再是「怎麼做一個 agent」，而是「怎麼同時管理很多個 agent」，包括工作分派、預算控制、審計與持續運作。這代表單一 agent 已經逐漸商品化；真正困難的，不是做出 User → LLM → Tool 的 loop，而是把這個 loop 放進一個可治理、可追蹤、可長時間運轉的系統裡。</p><p>第二層，是 <strong>live environment access</strong>。像 chrome-cdp-skill 這類工具吸引人的地方，不只是能自動點按鈕，而是它能直接接到「你正在使用中的 Chrome」，沿用已登入 session、既有 cookies 與目前分頁狀態。這背後的意義很大：agent 不再只是在沙盒裡模擬工作，而是開始接手使用者真實的數位環境。這也解釋了為什麼 browser control 的價值，並不只是 screenshot 或 DOM，而是能否真正連上人的工作現場。</p><p>第三層，是 <strong>decision / execution split</strong>。今天看到一個很漂亮的思路：Claude 不直接控制 Gmail，而是先把判斷結果寫進 TSV 任務帳本，再交給另一個受控執行器去動作。這個架構讓我很有感，因為它代表成熟的 agent workflow 不一定追求「直接做」，而是追求「先把語意判斷轉成可稽核、可重播、可控管的結構化任務，再執行」。這其實更像 production mindset。</p><p>如果把今天的感想濃縮成一句話，那就是：</p><blockquote><p><strong>AI agent 的真正門檻，不再只是推理能力，而是怎麼安全、穩定、可治理地接管真實工作流。</strong></p></blockquote><p>Claude Code 生態今天爆紅的幾個 repo、Paperclip 的多 agent 管理、chrome-cdp 對 live Chrome 的接管、以及 TSV 中介帳本這種設計，表面上是不同主題，底層其實都在回答同一題：<strong>怎麼讓 AI 從 demo 走向真正可用。</strong></p><h2 id=今日收集的資源>今日收集的資源</h2><ul><li><p><strong>learn-claude-code</strong><br>從零開始理解 Claude Code 類 agent 的底層 loop：User → LLM → Tool → repeat<br><a href=https://github.com/shareAI-lab/learn-claude-code>https://github.com/shareAI-lab/learn-claude-code</a></p></li><li><p><strong>claude-code-best-practice</strong><br>Claude Code 實戰最佳實踐整理<br><a href=https://github.com/shanraisshan/claude-code-best-practice>https://github.com/shanraisshan/claude-code-best-practice</a></p></li><li><p><strong>claude-plugins-official</strong><br>Anthropic 官方維護的 Claude Code plugin 目錄<br><a href=https://github.com/anthropics/claude-plugins-official>https://github.com/anthropics/claude-plugins-official</a></p></li><li><p><strong>obra skills framework</strong><br>Agentic 開發框架與方法論<br><a href=https://github.com/sponsors/obra>https://github.com/sponsors/obra</a></p></li><li><p><strong>Paperclip</strong><br>多 agent 協作與治理思路，重點在預算、組織、審計與長時間運作<br>（今天主要從社群貼文學到概念，待後續再深挖原始 repo）</p></li><li><p><strong>chrome-cdp-skill</strong><br>讓 AI agent 直接連到使用中的 Chrome，而不是另開一個乾淨瀏覽器<br><a href=https://github.com/pasky/chrome-cdp-skill>https://github.com/pasky/chrome-cdp-skill</a></p></li><li><p><strong>Google Drive TSV 任務帳本思路</strong><br>把 Claude 的語意判斷轉成結構化指令，再由執行器處理高權限操作；很適合 Gmail / workflow automation 場景</p></li><li><p><strong>InsightTube</strong><br>不只做雙語字幕，也把影片變成可摘要、可切章節、可對話的 AI 學習介面</p></li></ul><div class=endmark>◆ ◆ ◆</div></div></article><section class=article-end><div class=author-mark>急</div><div class=body><strong>急診熊</strong>，台灣急診醫師，2005 年起進急診。專注 ECG、急診醫學臨床判讀與醫學教學。本部落格的所有內容都是親身踩過的薄冰。</div></section><section class="newsletter wrap" aria-label="Newsletter subscription"><div class=label>Subscribe · 訂閱電子報</div><h2>每兩週收到一份急診現場的整理筆記</h2><p>ECG case、AI 工作流、和那些只有在凌晨三點的急診室才會學到的事 —— 直接寄到信箱。免費。隨時可退訂。</p><form action=# method=post onsubmit='event.preventDefault(),alert("訂閱功能尚未串接 (Mailchimp / Buttondown / ConvertKit)")'><input type=email name=email placeholder=your@email.com aria-label="Email address" required>
-<button type=submit>訂閱</button></form><div class=small>No spam, ever. Unsubscribe with one click.</div></section><footer class="footer wrap"><div class=wordmark>急診熊心聲部落格</div><p class=mission>A notebook by a Taiwanese ER physician — ECG, emergency medicine, AI workflows, and the things you only learn at 3 AM. Written slowly. Read at your own pace.</p><div class=social><a href=@ED_Ultrasounder>X</a>
-<a href=/index.xml>RSS</a></div><div class=copyright>Copyright © 2022-2024, Modified by ER Bear</div></footer></body></html>
+<span class=dot>·</span><span class=tag>AI學習 · Claude Code · AI Agent · Browser Control · Workflow</span></div></header><div class=article-body><h2 id=今日最有感的事>今日最有感的事</h2><p>今天最有感的，不是某一個模型又更強了，而是越來越清楚看到：<strong>AI agent 的競爭，正在從『誰比較會回答』，轉向『誰比較能穩定接上真實世界』。</strong></p><p>這個「真實世界」有三層。</p><p>第一層，是 <strong>agent orchestration</strong>。像 Paperclip 這類工具在談的，不再是「怎麼做一個 agent」，而是「怎麼同時管理很多個 agent」，包括工作分派、預算控制、審計與持續運作。這代表單一 agent 已經逐漸商品化；真正困難的，不是做出 User → LLM → Tool 的 loop，而是把這個 loop 放進一個可治理、可追蹤、可長時間運轉的系統裡。</p><p>第二層，是 <strong>live environment access</strong>。像 chrome-cdp-skill 這類工具吸引人的地方，不只是能自動點按鈕，而是它能直接接到「你正在使用中的 Chrome」，沿用已登入 session、既有 cookies 與目前分頁狀態。這背後的意義很大：agent 不再只是在沙盒裡模擬工作，而是開始接手使用者真實的數位環境。這也解釋了為什麼 browser control 的價值，並不只是 screenshot 或 DOM，而是能否真正連上人的工作現場。</p><p>第三層，是 <strong>decision / execution split</strong>。今天看到一個很漂亮的思路：Claude 不直接控制 Gmail，而是先把判斷結果寫進 TSV 任務帳本，再交給另一個受控執行器去動作。這個架構讓我很有感，因為它代表成熟的 agent workflow 不一定追求「直接做」，而是追求「先把語意判斷轉成可稽核、可重播、可控管的結構化任務，再執行」。這其實更像 production mindset。</p><p>如果把今天的感想濃縮成一句話，那就是：</p><blockquote><p><strong>AI agent 的真正門檻，不再只是推理能力，而是怎麼安全、穩定、可治理地接管真實工作流。</strong></p></blockquote><p>Claude Code 生態今天爆紅的幾個 repo、Paperclip 的多 agent 管理、chrome-cdp 對 live Chrome 的接管、以及 TSV 中介帳本這種設計，表面上是不同主題，底層其實都在回答同一題：<strong>怎麼讓 AI 從 demo 走向真正可用。</strong></p><h2 id=今日收集的資源>今日收集的資源</h2><ul><li><p><strong>learn-claude-code</strong><br>從零開始理解 Claude Code 類 agent 的底層 loop：User → LLM → Tool → repeat<br><a href=https://github.com/shareAI-lab/learn-claude-code>https://github.com/shareAI-lab/learn-claude-code</a></p></li><li><p><strong>claude-code-best-practice</strong><br>Claude Code 實戰最佳實踐整理<br><a href=https://github.com/shanraisshan/claude-code-best-practice>https://github.com/shanraisshan/claude-code-best-practice</a></p></li><li><p><strong>claude-plugins-official</strong><br>Anthropic 官方維護的 Claude Code plugin 目錄<br><a href=https://github.com/anthropics/claude-plugins-official>https://github.com/anthropics/claude-plugins-official</a></p></li><li><p><strong>obra skills framework</strong><br>Agentic 開發框架與方法論<br><a href=https://github.com/sponsors/obra>https://github.com/sponsors/obra</a></p></li><li><p><strong>Paperclip</strong><br>多 agent 協作與治理思路，重點在預算、組織、審計與長時間運作<br>（今天主要從社群貼文學到概念，待後續再深挖原始 repo）</p></li><li><p><strong>chrome-cdp-skill</strong><br>讓 AI agent 直接連到使用中的 Chrome，而不是另開一個乾淨瀏覽器<br><a href=https://github.com/pasky/chrome-cdp-skill>https://github.com/pasky/chrome-cdp-skill</a></p></li><li><p><strong>Google Drive TSV 任務帳本思路</strong><br>把 Claude 的語意判斷轉成結構化指令，再由執行器處理高權限操作；很適合 Gmail / workflow automation 場景</p></li><li><p><strong>InsightTube</strong><br>不只做雙語字幕，也把影片變成可摘要、可切章節、可對話的 AI 學習介面</p></li></ul><div class=endmark>◆ ◆ ◆</div></div></article><section class=article-end><div class=author-mark>急</div><div class=body><strong>急診熊</strong>，台灣急診醫師，2005 年起進急診。專注 ECG、急診醫學臨床判讀與醫學教學。本部落格的所有內容都是親身踩過的薄冰。</div></section><section class="newsletter wrap" aria-label="Newsletter subscription"><div class=label>Subscribe · 訂閱電子報</div><h2>每兩週收到一份急診現場的整理筆記</h2><p>ECG case、AI 工作流、和那些只有在凌晨三點的急診室才會學到的事 —— 直接寄到信箱。免費。隨時可退訂。</p><form id=hallmark-subscribe-form novalidate><input id=hallmark-subscribe-email type=email name=email placeholder=your@email.com aria-label="Email address" required>
+<button id=hallmark-subscribe-submit type=submit>訂閱</button></form><p id=hallmark-subscribe-status class=small aria-live=polite style=min-height:1.2em;margin-top:var(--space-sm)></p><div class=small>No spam, ever. Unsubscribe with one click. · 目前訂閱者：<strong id=hallmark-subscriber-count>--</strong> 人</div></section><script type=module>
+  const apiBases = [
+    'https://asia-east1-agoodbear-website.cloudfunctions.net/writeStudioApi/write-studio-api',
+    'https://write-studio-cloud-agoodbear.web.app/write-studio-api'
+  ];
+  const form = document.getElementById('hallmark-subscribe-form');
+  const input = document.getElementById('hallmark-subscribe-email');
+  const submit = document.getElementById('hallmark-subscribe-submit');
+  const status = document.getElementById('hallmark-subscribe-status');
+  const countEl = document.getElementById('hallmark-subscriber-count');
+
+  function setStatus(msg, type) {
+    status.textContent = msg || '';
+    status.style.color = type === 'error' ? 'var(--color-accent-ink)' : type === 'success' ? 'var(--color-accent-ink)' : 'var(--color-ink-3)';
+  }
+
+  function setCount(n) {
+    if (Number.isFinite(Number(n)) && Number(n) >= 0) {
+      countEl.textContent = Number(n).toLocaleString('zh-TW');
+    } else {
+      countEl.textContent = '--';
+    }
+  }
+
+  async function callApi(path, init = {}) {
+    let lastErr = null;
+    for (const base of apiBases) {
+      try {
+        const res = await fetch(`${base}${path}`, init);
+        const payload = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(payload.error || `HTTP ${res.status}`);
+        return payload;
+      } catch (e) { lastErr = e; }
+    }
+    throw lastErr || new Error('Subscription API unavailable.');
+  }
+
+  async function refreshCount() {
+    try {
+      const r = await callApi('/subscribers/count', { method: 'GET' });
+      setCount(r.count);
+    } catch (e) {
+      console.error('Subscriber count error:', e);
+      setCount(null);
+    }
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const email = String(input.value || '').trim();
+    if (!email) { setStatus('請先輸入 Email。', 'error'); return; }
+    submit.disabled = true;
+    setStatus('送出中…', 'info');
+    try {
+      const r = await callApi('/subscribers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, sourcePath: window.location.pathname })
+      });
+      if (r.alreadySubscribed) {
+        setStatus('你已經訂閱過囉，謝謝支持！', 'info');
+      } else {
+        setStatus('訂閱完成，感謝你的支持！', 'success');
+        form.reset();
+      }
+      setCount(r.count);
+    } catch (e) {
+      console.error('Subscribe error:', e);
+      setStatus(e && e.message ? e.message : '訂閱失敗，請稍後再試。', 'error');
+    } finally {
+      submit.disabled = false;
+    }
+  }
+
+  refreshCount();
+  form.addEventListener('submit', handleSubmit);
+</script><footer class="footer wrap"><div class=wordmark>急診熊心聲部落格</div><p class=mission>A notebook by a Taiwanese ER physician — ECG, emergency medicine, AI workflows, and the things you only learn at 3 AM. Written slowly. Read at your own pace.</p><div class=social><a href=@ED_Ultrasounder>X</a>
+<a href=/index.xml>RSS</a></div><div class=copyright>Copyright © 2022-2024, Modified by ER Bear</div></footer><script type=module>
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getDatabase, ref, get, runTransaction } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDHGO0T7gomSortOftnubF8v4-ZkQ3FPks",
+    authDomain: "agoodbear-website.firebaseapp.com",
+    databaseURL: "https://agoodbear-website-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "agoodbear-website",
+    storageBucket: "agoodbear-website.firebasestorage.app",
+    messagingSenderId: "263335877825",
+    appId: "1:263335877825:web:10c1cf65b632e6e35fc840"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  const counterRef = ref(db, 'pageViews/total');
+
+  const sessionKey = 'pv_counted';
+  const alreadyCounted = sessionStorage.getItem(sessionKey);
+
+  function display(count) {
+    const formatted = Number(count).toLocaleString('en-US');
+    document.querySelectorAll('[data-pv-display]').forEach(el => {
+      el.textContent = formatted;
+    });
+  }
+
+  async function updateCounter() {
+    try {
+      if (!alreadyCounted) {
+        await runTransaction(counterRef, (current) => (current || 0) + 1);
+        sessionStorage.setItem(sessionKey, 'true');
+      }
+      const snapshot = await get(counterRef);
+      const count = snapshot.val() || 0;
+      display(count);
+    } catch (err) {
+      console.error('PV counter error:', err);
+      document.querySelectorAll('[data-pv-display]').forEach(el => {
+        el.textContent = '—';
+      });
+    }
+  }
+
+  if (document.querySelector('[data-pv-display]')) {
+    updateCounter();
+  }
+</script></body></html>

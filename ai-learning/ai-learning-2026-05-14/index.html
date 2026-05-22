@@ -11,6 +11,130 @@
 <span>May 14, 2026</span>
 <span class=dot>·</span>
 <span>2 分鐘閱讀</span>
-<span class=dot>·</span><span class=tag>AI學習 · Claude Agent SDK · 訂閱方案 · cron 自動化 · headless · API token</span></div></header><div class=article-body><p><span class="tag-pill tag-pill--mint">#AI學習</span> <span class="tag-pill tag-pill--sky">#Claude Agent SDK</span> <span class="tag-pill tag-pill--amber">#訂閱方案</span> <span class="tag-pill tag-pill--rose">#cron 自動化</span> <span class="tag-pill tag-pill--violet">#headless</span></p><h2 id=今日最有感的事>今日最有感的事</h2><p>今天最該停下來看清楚的，是 Anthropic 那條「Claude Agent SDK 怎麼吃你訂閱方案」的新規定——因為它直接決定我接下來這一個月要不要動手改 cron。</p><p>先把規定本身講清楚。官方文章說 Pro / Max / Team / Enterprise 訂閱會額外拿到「每月 Agent SDK 信用額度」（依方案 20 到 200 美金不等），但這筆額度<strong>只給用訂閱認證的 SDK 用法</strong>，用 API key 接 Claude Developer Platform 是另一條路、不會拿到這筆 credit。文章還明確點名 <code>claude -p</code>（也就是 Claude Code 的非互動模式）就是吃這個新額度的場景，而且 credit 是「per-user、不能 pool、不會 roll over」。最關鍵的一句是：當這筆 credit 用完，<strong>如果你開了 extra usage 才會以 standard API rate 繼續跑、沒開就直接停到下個月 refresh</strong>。</p><p>這代表 6/15 之後 Claude 把計費盤切成三個池子：互動式對話（IDE / TUI 對話視窗）走訂閱主額度 5 小時 sliding window，這個池子裡的 sub-agent 也跟著免費；非互動的 <code>claude -p</code> / Agent SDK / GitHub Actions 走新的月度信用額度桶；用 API key 直接呼叫 Developer Platform 才是 token 按用量計費。三個池子分開，不會互卡——但也不會互救。</p><p>真正值得看的是，這條規定對我目前的自動化基礎建設打擊面有多大。我請 Claude 把實際在用的 cron 抓出來盤點，結果不太好看：mail-digest（每天 08:00、Opus 4.7、~30K in / 5K out）、21:00 workflow（每天 21:00、Opus × 2 + Haiku 篩 URL、~130K in / 8K out）、world-news-briefing（每天、~800K token）、ercw 週報（週日 10:00、Sonnet、86K in / 7K out）、gdoc-highlight poller（60 秒輪詢）——這些全部都壓在 <code>~/scripts/lib/claude_sub.py</code> 上跑，而 claude_sub.py 走的就是「OAuth 訂閱認證 + headless 單發呼叫」這條路。Anthropic 6/15 那條新規打的禁區，正好就是這個機制本身。</p><p>更直白地說：我以為自己「沒在用 API」就安全，其實不是。<strong>現在 cron 走的不是 API 路徑，是「OAuth 訂閱認證 + headless」這條中間路徑</strong>，6/15 後才被切出去算進新月度信用額度。如果某個月 Opus 兩條 cron 把 200 美金吃完、又沒開 extra usage，後半個月所有自動化會直接停擺到下月 1 號。</p><p>繞路的方向今天聊出三條：第一條是把長腳本搬進互動 session、靠 task notification 接續，這條繞得最徹底但放棄了 cron 的「我不在也會跑」優勢；第二條是 claude_sub.py 加 <code>--api-key</code> fallback、月度額度爆了就一鍵切 API 付費繼續跑，金錢成本可控、但要寫好預算 cap 避免 catchup-cron 暴衝；第三條是把 Haiku 級的小任務（mail 分桶、URL 篩選）改用更便宜的模型或 Codex CLI 走 ChatGPT 訂閱額度。</p><p>另外今天還意外確認了一件事，對 PDF extraction、zotero-backfill 這類 skill 來說，因為 script 內部完全沒 import anthropic SDK、沒讀 ANTHROPIC_API_KEY、也沒 spawn <code>claude -p</code>，本質上就是「主 session 派 sub-agent 跑純 Python 工具」——這種 pattern A 完全不受 6/15 政策影響，繼續吃訂閱主額度。同樣邏輯：手動按按鈕觸發的 skill，<strong>只要 skill 內部不偷偷 spawn headless OAuth process</strong>，就還是走訂閱、不會被切。</p><p>所以這條規定真正的教訓不是「以後要花錢」，而是<strong>自動化要算清楚自己走哪條認證路徑</strong>。互動 session 派 sub-agent 是免費的、headless OAuth 6/15 後是要算錢的、API key 一直都是要算錢的。我之前那條「cron 一律不包 headless」的 memory 鐵律寫對方向、但執行面其實沒徹底——claude_sub.py 就是反例。這個月要做的事很清楚：先讓六月帳單跑一輪看實際金額、再決定要不要動手把哪幾條 cron 搬進 ccbot session（雖然 ccbot 我已經沒在用，但 long-running interactive session 這個模式本身仍然合法）或改 API 直付。</p><p>順便補一個小細節：今天已經把「6/15 在帳戶頁面 claim 月度 SDK 額度」這件事丟進 Google 行事曆當天提醒，避免到時候忘記點那個一次性 opt-in、結果 cron 直接停擺。</p><h2 id=今日收集的資源>今日收集的資源</h2><p><strong>Anthropic 官方：把 Agent SDK 接上你的訂閱方案</strong></p><ul><li>連結: <a href=https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan>https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan</a></li><li>6/15 起 Pro / Max / Team / Enterprise 訂閱會拿一筆每月 Agent SDK 信用額度（20-200 美金），專給 <code>claude -p</code> 非互動模式 / Agent SDK / Actions 用；credit 用完且沒開 extra usage 會直接停到下個月。今天這篇是規劃自動化繞路的事實源頭，每個月初值得回來複習一次。</li></ul><p><strong>Roam Research Help — Mentions / Tags 子頁</strong></p><ul><li>連結: <a href=https://roamresearch.com/#/app/help/page/-bNjVrFfG>https://roamresearch.com/#/app/help/page/-bNjVrFfG</a></li><li>Roam 官方 help graph 的子頁，今天順手用 Playwright + roamAlphaAPI 抓進 syntax cheatsheet。help graph 不在自己擁有的 graph 清單裡、Roam MCP 拿不到 token、所以這條路只能走 Playwright 直連。</li></ul><p><strong>ecg-smith-search Supabase edge function 入口</strong></p><ul><li>連結: <a href=https://ftnrvkvzzvlfvdqirhxq.supabase.co/functions/v1/ecg-smith-search>https://ftnrvkvzzvlfvdqirhxq.supabase.co/functions/v1/ecg-smith-search</a></li><li>四大 ECG 來源（Dr. Smith Blog + Amal Mattu + Jerry Jones + Rapid ECG Mastery）的向量搜尋 endpoint；ecg-search skill 跟 ecg-prompt skill 的 RAG 雙打都從這裡進。今天為了寫 DeWinter / TQRSD 的 image prompt 認真用了一輪、確認「先 RAG 再寫 prompt」這條 SOP 確實能擋掉憑印象寫錯的 pattern。</li></ul><p><strong>Firebase Storage（Roam 圖床）</strong></p><ul><li>連結: <a href=https://firebasestorage.googleapis.com/.../>https://firebasestorage.googleapis.com/.../</a></li><li>Roam 自帶的 Firebase 圖床 base URL；ECG render demo 從 <code>/tmp/</code> cp 到 Desktop 之後上傳到這裡拿可點開的大圖 URL，是把本機產物丟給自己看的標準動線。</li></ul><div class=endmark>◆ ◆ ◆</div></div></article><section class=article-end><div class=author-mark>急</div><div class=body><strong>急診熊</strong>，台灣急診醫師，2005 年起進急診。專注 ECG、急診醫學臨床判讀與醫學教學。本部落格的所有內容都是親身踩過的薄冰。</div></section><section class="newsletter wrap" aria-label="Newsletter subscription"><div class=label>Subscribe · 訂閱電子報</div><h2>每兩週收到一份急診現場的整理筆記</h2><p>ECG case、AI 工作流、和那些只有在凌晨三點的急診室才會學到的事 —— 直接寄到信箱。免費。隨時可退訂。</p><form action=# method=post onsubmit='event.preventDefault(),alert("訂閱功能尚未串接 (Mailchimp / Buttondown / ConvertKit)")'><input type=email name=email placeholder=your@email.com aria-label="Email address" required>
-<button type=submit>訂閱</button></form><div class=small>No spam, ever. Unsubscribe with one click.</div></section><footer class="footer wrap"><div class=wordmark>急診熊心聲部落格</div><p class=mission>A notebook by a Taiwanese ER physician — ECG, emergency medicine, AI workflows, and the things you only learn at 3 AM. Written slowly. Read at your own pace.</p><div class=social><a href=@ED_Ultrasounder>X</a>
-<a href=/index.xml>RSS</a></div><div class=copyright>Copyright © 2022-2024, Modified by ER Bear</div></footer></body></html>
+<span class=dot>·</span><span class=tag>AI學習 · Claude Agent SDK · 訂閱方案 · cron 自動化 · headless · API token</span></div></header><div class=article-body><p><span class="tag-pill tag-pill--mint">#AI學習</span> <span class="tag-pill tag-pill--sky">#Claude Agent SDK</span> <span class="tag-pill tag-pill--amber">#訂閱方案</span> <span class="tag-pill tag-pill--rose">#cron 自動化</span> <span class="tag-pill tag-pill--violet">#headless</span></p><h2 id=今日最有感的事>今日最有感的事</h2><p>今天最該停下來看清楚的，是 Anthropic 那條「Claude Agent SDK 怎麼吃你訂閱方案」的新規定——因為它直接決定我接下來這一個月要不要動手改 cron。</p><p>先把規定本身講清楚。官方文章說 Pro / Max / Team / Enterprise 訂閱會額外拿到「每月 Agent SDK 信用額度」（依方案 20 到 200 美金不等），但這筆額度<strong>只給用訂閱認證的 SDK 用法</strong>，用 API key 接 Claude Developer Platform 是另一條路、不會拿到這筆 credit。文章還明確點名 <code>claude -p</code>（也就是 Claude Code 的非互動模式）就是吃這個新額度的場景，而且 credit 是「per-user、不能 pool、不會 roll over」。最關鍵的一句是：當這筆 credit 用完，<strong>如果你開了 extra usage 才會以 standard API rate 繼續跑、沒開就直接停到下個月 refresh</strong>。</p><p>這代表 6/15 之後 Claude 把計費盤切成三個池子：互動式對話（IDE / TUI 對話視窗）走訂閱主額度 5 小時 sliding window，這個池子裡的 sub-agent 也跟著免費；非互動的 <code>claude -p</code> / Agent SDK / GitHub Actions 走新的月度信用額度桶；用 API key 直接呼叫 Developer Platform 才是 token 按用量計費。三個池子分開，不會互卡——但也不會互救。</p><p>真正值得看的是，這條規定對我目前的自動化基礎建設打擊面有多大。我請 Claude 把實際在用的 cron 抓出來盤點，結果不太好看：mail-digest（每天 08:00、Opus 4.7、~30K in / 5K out）、21:00 workflow（每天 21:00、Opus × 2 + Haiku 篩 URL、~130K in / 8K out）、world-news-briefing（每天、~800K token）、ercw 週報（週日 10:00、Sonnet、86K in / 7K out）、gdoc-highlight poller（60 秒輪詢）——這些全部都壓在 <code>~/scripts/lib/claude_sub.py</code> 上跑，而 claude_sub.py 走的就是「OAuth 訂閱認證 + headless 單發呼叫」這條路。Anthropic 6/15 那條新規打的禁區，正好就是這個機制本身。</p><p>更直白地說：我以為自己「沒在用 API」就安全，其實不是。<strong>現在 cron 走的不是 API 路徑，是「OAuth 訂閱認證 + headless」這條中間路徑</strong>，6/15 後才被切出去算進新月度信用額度。如果某個月 Opus 兩條 cron 把 200 美金吃完、又沒開 extra usage，後半個月所有自動化會直接停擺到下月 1 號。</p><p>繞路的方向今天聊出三條：第一條是把長腳本搬進互動 session、靠 task notification 接續，這條繞得最徹底但放棄了 cron 的「我不在也會跑」優勢；第二條是 claude_sub.py 加 <code>--api-key</code> fallback、月度額度爆了就一鍵切 API 付費繼續跑，金錢成本可控、但要寫好預算 cap 避免 catchup-cron 暴衝；第三條是把 Haiku 級的小任務（mail 分桶、URL 篩選）改用更便宜的模型或 Codex CLI 走 ChatGPT 訂閱額度。</p><p>另外今天還意外確認了一件事，對 PDF extraction、zotero-backfill 這類 skill 來說，因為 script 內部完全沒 import anthropic SDK、沒讀 ANTHROPIC_API_KEY、也沒 spawn <code>claude -p</code>，本質上就是「主 session 派 sub-agent 跑純 Python 工具」——這種 pattern A 完全不受 6/15 政策影響，繼續吃訂閱主額度。同樣邏輯：手動按按鈕觸發的 skill，<strong>只要 skill 內部不偷偷 spawn headless OAuth process</strong>，就還是走訂閱、不會被切。</p><p>所以這條規定真正的教訓不是「以後要花錢」，而是<strong>自動化要算清楚自己走哪條認證路徑</strong>。互動 session 派 sub-agent 是免費的、headless OAuth 6/15 後是要算錢的、API key 一直都是要算錢的。我之前那條「cron 一律不包 headless」的 memory 鐵律寫對方向、但執行面其實沒徹底——claude_sub.py 就是反例。這個月要做的事很清楚：先讓六月帳單跑一輪看實際金額、再決定要不要動手把哪幾條 cron 搬進 ccbot session（雖然 ccbot 我已經沒在用，但 long-running interactive session 這個模式本身仍然合法）或改 API 直付。</p><p>順便補一個小細節：今天已經把「6/15 在帳戶頁面 claim 月度 SDK 額度」這件事丟進 Google 行事曆當天提醒，避免到時候忘記點那個一次性 opt-in、結果 cron 直接停擺。</p><h2 id=今日收集的資源>今日收集的資源</h2><p><strong>Anthropic 官方：把 Agent SDK 接上你的訂閱方案</strong></p><ul><li>連結: <a href=https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan>https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan</a></li><li>6/15 起 Pro / Max / Team / Enterprise 訂閱會拿一筆每月 Agent SDK 信用額度（20-200 美金），專給 <code>claude -p</code> 非互動模式 / Agent SDK / Actions 用；credit 用完且沒開 extra usage 會直接停到下個月。今天這篇是規劃自動化繞路的事實源頭，每個月初值得回來複習一次。</li></ul><p><strong>Roam Research Help — Mentions / Tags 子頁</strong></p><ul><li>連結: <a href=https://roamresearch.com/#/app/help/page/-bNjVrFfG>https://roamresearch.com/#/app/help/page/-bNjVrFfG</a></li><li>Roam 官方 help graph 的子頁，今天順手用 Playwright + roamAlphaAPI 抓進 syntax cheatsheet。help graph 不在自己擁有的 graph 清單裡、Roam MCP 拿不到 token、所以這條路只能走 Playwright 直連。</li></ul><p><strong>ecg-smith-search Supabase edge function 入口</strong></p><ul><li>連結: <a href=https://ftnrvkvzzvlfvdqirhxq.supabase.co/functions/v1/ecg-smith-search>https://ftnrvkvzzvlfvdqirhxq.supabase.co/functions/v1/ecg-smith-search</a></li><li>四大 ECG 來源（Dr. Smith Blog + Amal Mattu + Jerry Jones + Rapid ECG Mastery）的向量搜尋 endpoint；ecg-search skill 跟 ecg-prompt skill 的 RAG 雙打都從這裡進。今天為了寫 DeWinter / TQRSD 的 image prompt 認真用了一輪、確認「先 RAG 再寫 prompt」這條 SOP 確實能擋掉憑印象寫錯的 pattern。</li></ul><p><strong>Firebase Storage（Roam 圖床）</strong></p><ul><li>連結: <a href=https://firebasestorage.googleapis.com/.../>https://firebasestorage.googleapis.com/.../</a></li><li>Roam 自帶的 Firebase 圖床 base URL；ECG render demo 從 <code>/tmp/</code> cp 到 Desktop 之後上傳到這裡拿可點開的大圖 URL，是把本機產物丟給自己看的標準動線。</li></ul><div class=endmark>◆ ◆ ◆</div></div></article><section class=article-end><div class=author-mark>急</div><div class=body><strong>急診熊</strong>，台灣急診醫師，2005 年起進急診。專注 ECG、急診醫學臨床判讀與醫學教學。本部落格的所有內容都是親身踩過的薄冰。</div></section><section class="newsletter wrap" aria-label="Newsletter subscription"><div class=label>Subscribe · 訂閱電子報</div><h2>每兩週收到一份急診現場的整理筆記</h2><p>ECG case、AI 工作流、和那些只有在凌晨三點的急診室才會學到的事 —— 直接寄到信箱。免費。隨時可退訂。</p><form id=hallmark-subscribe-form novalidate><input id=hallmark-subscribe-email type=email name=email placeholder=your@email.com aria-label="Email address" required>
+<button id=hallmark-subscribe-submit type=submit>訂閱</button></form><p id=hallmark-subscribe-status class=small aria-live=polite style=min-height:1.2em;margin-top:var(--space-sm)></p><div class=small>No spam, ever. Unsubscribe with one click. · 目前訂閱者：<strong id=hallmark-subscriber-count>--</strong> 人</div></section><script type=module>
+  const apiBases = [
+    'https://asia-east1-agoodbear-website.cloudfunctions.net/writeStudioApi/write-studio-api',
+    'https://write-studio-cloud-agoodbear.web.app/write-studio-api'
+  ];
+  const form = document.getElementById('hallmark-subscribe-form');
+  const input = document.getElementById('hallmark-subscribe-email');
+  const submit = document.getElementById('hallmark-subscribe-submit');
+  const status = document.getElementById('hallmark-subscribe-status');
+  const countEl = document.getElementById('hallmark-subscriber-count');
+
+  function setStatus(msg, type) {
+    status.textContent = msg || '';
+    status.style.color = type === 'error' ? 'var(--color-accent-ink)' : type === 'success' ? 'var(--color-accent-ink)' : 'var(--color-ink-3)';
+  }
+
+  function setCount(n) {
+    if (Number.isFinite(Number(n)) && Number(n) >= 0) {
+      countEl.textContent = Number(n).toLocaleString('zh-TW');
+    } else {
+      countEl.textContent = '--';
+    }
+  }
+
+  async function callApi(path, init = {}) {
+    let lastErr = null;
+    for (const base of apiBases) {
+      try {
+        const res = await fetch(`${base}${path}`, init);
+        const payload = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(payload.error || `HTTP ${res.status}`);
+        return payload;
+      } catch (e) { lastErr = e; }
+    }
+    throw lastErr || new Error('Subscription API unavailable.');
+  }
+
+  async function refreshCount() {
+    try {
+      const r = await callApi('/subscribers/count', { method: 'GET' });
+      setCount(r.count);
+    } catch (e) {
+      console.error('Subscriber count error:', e);
+      setCount(null);
+    }
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const email = String(input.value || '').trim();
+    if (!email) { setStatus('請先輸入 Email。', 'error'); return; }
+    submit.disabled = true;
+    setStatus('送出中…', 'info');
+    try {
+      const r = await callApi('/subscribers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, sourcePath: window.location.pathname })
+      });
+      if (r.alreadySubscribed) {
+        setStatus('你已經訂閱過囉，謝謝支持！', 'info');
+      } else {
+        setStatus('訂閱完成，感謝你的支持！', 'success');
+        form.reset();
+      }
+      setCount(r.count);
+    } catch (e) {
+      console.error('Subscribe error:', e);
+      setStatus(e && e.message ? e.message : '訂閱失敗，請稍後再試。', 'error');
+    } finally {
+      submit.disabled = false;
+    }
+  }
+
+  refreshCount();
+  form.addEventListener('submit', handleSubmit);
+</script><footer class="footer wrap"><div class=wordmark>急診熊心聲部落格</div><p class=mission>A notebook by a Taiwanese ER physician — ECG, emergency medicine, AI workflows, and the things you only learn at 3 AM. Written slowly. Read at your own pace.</p><div class=social><a href=@ED_Ultrasounder>X</a>
+<a href=/index.xml>RSS</a></div><div class=copyright>Copyright © 2022-2024, Modified by ER Bear</div></footer><script type=module>
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getDatabase, ref, get, runTransaction } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDHGO0T7gomSortOftnubF8v4-ZkQ3FPks",
+    authDomain: "agoodbear-website.firebaseapp.com",
+    databaseURL: "https://agoodbear-website-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "agoodbear-website",
+    storageBucket: "agoodbear-website.firebasestorage.app",
+    messagingSenderId: "263335877825",
+    appId: "1:263335877825:web:10c1cf65b632e6e35fc840"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  const counterRef = ref(db, 'pageViews/total');
+
+  const sessionKey = 'pv_counted';
+  const alreadyCounted = sessionStorage.getItem(sessionKey);
+
+  function display(count) {
+    const formatted = Number(count).toLocaleString('en-US');
+    document.querySelectorAll('[data-pv-display]').forEach(el => {
+      el.textContent = formatted;
+    });
+  }
+
+  async function updateCounter() {
+    try {
+      if (!alreadyCounted) {
+        await runTransaction(counterRef, (current) => (current || 0) + 1);
+        sessionStorage.setItem(sessionKey, 'true');
+      }
+      const snapshot = await get(counterRef);
+      const count = snapshot.val() || 0;
+      display(count);
+    } catch (err) {
+      console.error('PV counter error:', err);
+      document.querySelectorAll('[data-pv-display]').forEach(el => {
+        el.textContent = '—';
+      });
+    }
+  }
+
+  if (document.querySelector('[data-pv-display]')) {
+    updateCounter();
+  }
+</script></body></html>

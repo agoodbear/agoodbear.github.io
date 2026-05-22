@@ -11,6 +11,130 @@
 <span>Mar 17, 2026</span>
 <span class=dot>·</span>
 <span>1 分鐘閱讀</span>
-<span class=dot>·</span><span class=tag>AI學習 · OpenClaw · Browser Relay · Facebook Reader · Roam</span></div></header><div class=article-body><h2 id=今日最有感的事>今日最有感的事</h2><p>今天最有感的，不是某個模型又變強了，而是我更清楚看見：<strong>真正好用的 AI，不只是會回答問題，而是能進入我正在工作的上下文。</strong></p><p>過去遇到 Facebook 這類平台時，AI 常常只能拿到 Open Graph metadata、部分摘要、或被登入牆擋住的殘缺資訊。這種情況下，AI 雖然「有在工作」，但離真正有用還差一大截。因為我看到的是全文，AI 看到的卻只是預覽卡片，兩邊處理的是不同世界。</p><p>今天的突破點在於：改用瀏覽器控制流程，讓 AI 不再只依賴 <code>web_fetch</code>、metadata 或一般爬取，而是透過已開啟的瀏覽器頁面與 snapshot，直接讀取頁面上實際渲染出來的內容。這件事的意義非常大。</p><p>它代表 AI 的能力，從「讀網頁」升級成「讀我眼前正在看的畫面」。差別在於：</p><ul><li>它可以接觸登入後內容，而不只公開頁面</li><li>它可以處理 Facebook、社群平台、動態 JS 頁面這類一般抓取常失敗的場景</li><li>它可以和我的實際工作流程銜接，而不是每次都從零開始開新 session</li></ul><p>今天實測最有感的一幕，是原本只能抓到 Facebook 貼文前面一小段摘要；但改走瀏覽器 snapshot 後，就成功讀到洪惠風整理的 <strong>2026 ACC/AHA 血脂治療指引 10 個重點</strong>，包含：</p><ul><li>早期介入與生活型態轉型</li><li>PREVENT™ 風險評估公式</li><li>初級預防門檻前移</li><li>回歸 goal-directed therapy</li><li>ApoB / Lp(a) / CAC 的角色提升</li><li>二級預防目標更嚴格（如 LDL-C &lt;55 mg/dL）</li></ul><p>這個經驗讓我重新確認：<strong>AI 的瓶頸很多時候不是推理能力，而是能不能拿到對的上下文。</strong></p><p>如果上下文拿不到，再強的模型也只能在殘缺資訊上硬猜；但一旦上下文接上，AI 才真的能變成工作流裡的搭檔。</p><p>另一個今天很值得記下來的點，是我把這次成功流程進一步固化成 skill 規則：之後遇到 Facebook share/post link，不應太早停在 partial metadata，而要按順序升級：</p><ol><li>先試 <code>web_fetch</code> / raw HTML / OG metadata</li><li>再試 <code>yt-dlp</code></li><li>再試 cookies</li><li>不夠就直接走 browser path</li><li>若使用者已安裝 browser relay / attach-tab / CDP 類工具，就優先接 live tab</li></ol><p>也就是說，今天不只是解決了一篇貼文，而是把一條未來可重複使用的「讀登入後網頁內容」工作流做出來了。</p><p>我覺得這種能力，未來不只可以用在 Facebook，也能延伸到：</p><ul><li>讀需要登入的教學平台內容</li><li>讀 email / internal tools / GitHub private pages</li><li>讀正在操作中的管理後台</li><li>讓 AI 更貼近真實的人類工作桌面</li></ul><p>如果說以前的 AI 像是在門外幫忙查資料，那今天比較像是：<strong>它終於被邀請進桌面旁邊一起看螢幕。</strong></p><h2 id=今日收集的資源>今日收集的資源</h2><ul><li>Facebook 貼文：洪惠風整理 <strong>2026 ACC/AHA 血脂治療指引</strong></li><li>原始 guideline：<a href=https://www.ahajournals.org/doi/10.1161/CIR.0000000000001423>https://www.ahajournals.org/doi/10.1161/CIR.0000000000001423</a></li><li>NVIDIA NemoClaw：<a href=https://github.com/NVIDIA/NemoClaw>https://github.com/NVIDIA/NemoClaw</a></li><li>chrome-cdp-skill：<a href=https://github.com/pasky/chrome-cdp-skill>https://github.com/pasky/chrome-cdp-skill</a></li></ul><div class=endmark>◆ ◆ ◆</div></div></article><section class=article-end><div class=author-mark>急</div><div class=body><strong>急診熊</strong>，台灣急診醫師，2005 年起進急診。專注 ECG、急診醫學臨床判讀與醫學教學。本部落格的所有內容都是親身踩過的薄冰。</div></section><section class="newsletter wrap" aria-label="Newsletter subscription"><div class=label>Subscribe · 訂閱電子報</div><h2>每兩週收到一份急診現場的整理筆記</h2><p>ECG case、AI 工作流、和那些只有在凌晨三點的急診室才會學到的事 —— 直接寄到信箱。免費。隨時可退訂。</p><form action=# method=post onsubmit='event.preventDefault(),alert("訂閱功能尚未串接 (Mailchimp / Buttondown / ConvertKit)")'><input type=email name=email placeholder=your@email.com aria-label="Email address" required>
-<button type=submit>訂閱</button></form><div class=small>No spam, ever. Unsubscribe with one click.</div></section><footer class="footer wrap"><div class=wordmark>急診熊心聲部落格</div><p class=mission>A notebook by a Taiwanese ER physician — ECG, emergency medicine, AI workflows, and the things you only learn at 3 AM. Written slowly. Read at your own pace.</p><div class=social><a href=@ED_Ultrasounder>X</a>
-<a href=/index.xml>RSS</a></div><div class=copyright>Copyright © 2022-2024, Modified by ER Bear</div></footer></body></html>
+<span class=dot>·</span><span class=tag>AI學習 · OpenClaw · Browser Relay · Facebook Reader · Roam</span></div></header><div class=article-body><h2 id=今日最有感的事>今日最有感的事</h2><p>今天最有感的，不是某個模型又變強了，而是我更清楚看見：<strong>真正好用的 AI，不只是會回答問題，而是能進入我正在工作的上下文。</strong></p><p>過去遇到 Facebook 這類平台時，AI 常常只能拿到 Open Graph metadata、部分摘要、或被登入牆擋住的殘缺資訊。這種情況下，AI 雖然「有在工作」，但離真正有用還差一大截。因為我看到的是全文，AI 看到的卻只是預覽卡片，兩邊處理的是不同世界。</p><p>今天的突破點在於：改用瀏覽器控制流程，讓 AI 不再只依賴 <code>web_fetch</code>、metadata 或一般爬取，而是透過已開啟的瀏覽器頁面與 snapshot，直接讀取頁面上實際渲染出來的內容。這件事的意義非常大。</p><p>它代表 AI 的能力，從「讀網頁」升級成「讀我眼前正在看的畫面」。差別在於：</p><ul><li>它可以接觸登入後內容，而不只公開頁面</li><li>它可以處理 Facebook、社群平台、動態 JS 頁面這類一般抓取常失敗的場景</li><li>它可以和我的實際工作流程銜接，而不是每次都從零開始開新 session</li></ul><p>今天實測最有感的一幕，是原本只能抓到 Facebook 貼文前面一小段摘要；但改走瀏覽器 snapshot 後，就成功讀到洪惠風整理的 <strong>2026 ACC/AHA 血脂治療指引 10 個重點</strong>，包含：</p><ul><li>早期介入與生活型態轉型</li><li>PREVENT™ 風險評估公式</li><li>初級預防門檻前移</li><li>回歸 goal-directed therapy</li><li>ApoB / Lp(a) / CAC 的角色提升</li><li>二級預防目標更嚴格（如 LDL-C &lt;55 mg/dL）</li></ul><p>這個經驗讓我重新確認：<strong>AI 的瓶頸很多時候不是推理能力，而是能不能拿到對的上下文。</strong></p><p>如果上下文拿不到，再強的模型也只能在殘缺資訊上硬猜；但一旦上下文接上，AI 才真的能變成工作流裡的搭檔。</p><p>另一個今天很值得記下來的點，是我把這次成功流程進一步固化成 skill 規則：之後遇到 Facebook share/post link，不應太早停在 partial metadata，而要按順序升級：</p><ol><li>先試 <code>web_fetch</code> / raw HTML / OG metadata</li><li>再試 <code>yt-dlp</code></li><li>再試 cookies</li><li>不夠就直接走 browser path</li><li>若使用者已安裝 browser relay / attach-tab / CDP 類工具，就優先接 live tab</li></ol><p>也就是說，今天不只是解決了一篇貼文，而是把一條未來可重複使用的「讀登入後網頁內容」工作流做出來了。</p><p>我覺得這種能力，未來不只可以用在 Facebook，也能延伸到：</p><ul><li>讀需要登入的教學平台內容</li><li>讀 email / internal tools / GitHub private pages</li><li>讀正在操作中的管理後台</li><li>讓 AI 更貼近真實的人類工作桌面</li></ul><p>如果說以前的 AI 像是在門外幫忙查資料，那今天比較像是：<strong>它終於被邀請進桌面旁邊一起看螢幕。</strong></p><h2 id=今日收集的資源>今日收集的資源</h2><ul><li>Facebook 貼文：洪惠風整理 <strong>2026 ACC/AHA 血脂治療指引</strong></li><li>原始 guideline：<a href=https://www.ahajournals.org/doi/10.1161/CIR.0000000000001423>https://www.ahajournals.org/doi/10.1161/CIR.0000000000001423</a></li><li>NVIDIA NemoClaw：<a href=https://github.com/NVIDIA/NemoClaw>https://github.com/NVIDIA/NemoClaw</a></li><li>chrome-cdp-skill：<a href=https://github.com/pasky/chrome-cdp-skill>https://github.com/pasky/chrome-cdp-skill</a></li></ul><div class=endmark>◆ ◆ ◆</div></div></article><section class=article-end><div class=author-mark>急</div><div class=body><strong>急診熊</strong>，台灣急診醫師，2005 年起進急診。專注 ECG、急診醫學臨床判讀與醫學教學。本部落格的所有內容都是親身踩過的薄冰。</div></section><section class="newsletter wrap" aria-label="Newsletter subscription"><div class=label>Subscribe · 訂閱電子報</div><h2>每兩週收到一份急診現場的整理筆記</h2><p>ECG case、AI 工作流、和那些只有在凌晨三點的急診室才會學到的事 —— 直接寄到信箱。免費。隨時可退訂。</p><form id=hallmark-subscribe-form novalidate><input id=hallmark-subscribe-email type=email name=email placeholder=your@email.com aria-label="Email address" required>
+<button id=hallmark-subscribe-submit type=submit>訂閱</button></form><p id=hallmark-subscribe-status class=small aria-live=polite style=min-height:1.2em;margin-top:var(--space-sm)></p><div class=small>No spam, ever. Unsubscribe with one click. · 目前訂閱者：<strong id=hallmark-subscriber-count>--</strong> 人</div></section><script type=module>
+  const apiBases = [
+    'https://asia-east1-agoodbear-website.cloudfunctions.net/writeStudioApi/write-studio-api',
+    'https://write-studio-cloud-agoodbear.web.app/write-studio-api'
+  ];
+  const form = document.getElementById('hallmark-subscribe-form');
+  const input = document.getElementById('hallmark-subscribe-email');
+  const submit = document.getElementById('hallmark-subscribe-submit');
+  const status = document.getElementById('hallmark-subscribe-status');
+  const countEl = document.getElementById('hallmark-subscriber-count');
+
+  function setStatus(msg, type) {
+    status.textContent = msg || '';
+    status.style.color = type === 'error' ? 'var(--color-accent-ink)' : type === 'success' ? 'var(--color-accent-ink)' : 'var(--color-ink-3)';
+  }
+
+  function setCount(n) {
+    if (Number.isFinite(Number(n)) && Number(n) >= 0) {
+      countEl.textContent = Number(n).toLocaleString('zh-TW');
+    } else {
+      countEl.textContent = '--';
+    }
+  }
+
+  async function callApi(path, init = {}) {
+    let lastErr = null;
+    for (const base of apiBases) {
+      try {
+        const res = await fetch(`${base}${path}`, init);
+        const payload = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(payload.error || `HTTP ${res.status}`);
+        return payload;
+      } catch (e) { lastErr = e; }
+    }
+    throw lastErr || new Error('Subscription API unavailable.');
+  }
+
+  async function refreshCount() {
+    try {
+      const r = await callApi('/subscribers/count', { method: 'GET' });
+      setCount(r.count);
+    } catch (e) {
+      console.error('Subscriber count error:', e);
+      setCount(null);
+    }
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const email = String(input.value || '').trim();
+    if (!email) { setStatus('請先輸入 Email。', 'error'); return; }
+    submit.disabled = true;
+    setStatus('送出中…', 'info');
+    try {
+      const r = await callApi('/subscribers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, sourcePath: window.location.pathname })
+      });
+      if (r.alreadySubscribed) {
+        setStatus('你已經訂閱過囉，謝謝支持！', 'info');
+      } else {
+        setStatus('訂閱完成，感謝你的支持！', 'success');
+        form.reset();
+      }
+      setCount(r.count);
+    } catch (e) {
+      console.error('Subscribe error:', e);
+      setStatus(e && e.message ? e.message : '訂閱失敗，請稍後再試。', 'error');
+    } finally {
+      submit.disabled = false;
+    }
+  }
+
+  refreshCount();
+  form.addEventListener('submit', handleSubmit);
+</script><footer class="footer wrap"><div class=wordmark>急診熊心聲部落格</div><p class=mission>A notebook by a Taiwanese ER physician — ECG, emergency medicine, AI workflows, and the things you only learn at 3 AM. Written slowly. Read at your own pace.</p><div class=social><a href=@ED_Ultrasounder>X</a>
+<a href=/index.xml>RSS</a></div><div class=copyright>Copyright © 2022-2024, Modified by ER Bear</div></footer><script type=module>
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getDatabase, ref, get, runTransaction } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDHGO0T7gomSortOftnubF8v4-ZkQ3FPks",
+    authDomain: "agoodbear-website.firebaseapp.com",
+    databaseURL: "https://agoodbear-website-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "agoodbear-website",
+    storageBucket: "agoodbear-website.firebasestorage.app",
+    messagingSenderId: "263335877825",
+    appId: "1:263335877825:web:10c1cf65b632e6e35fc840"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  const counterRef = ref(db, 'pageViews/total');
+
+  const sessionKey = 'pv_counted';
+  const alreadyCounted = sessionStorage.getItem(sessionKey);
+
+  function display(count) {
+    const formatted = Number(count).toLocaleString('en-US');
+    document.querySelectorAll('[data-pv-display]').forEach(el => {
+      el.textContent = formatted;
+    });
+  }
+
+  async function updateCounter() {
+    try {
+      if (!alreadyCounted) {
+        await runTransaction(counterRef, (current) => (current || 0) + 1);
+        sessionStorage.setItem(sessionKey, 'true');
+      }
+      const snapshot = await get(counterRef);
+      const count = snapshot.val() || 0;
+      display(count);
+    } catch (err) {
+      console.error('PV counter error:', err);
+      document.querySelectorAll('[data-pv-display]').forEach(el => {
+        el.textContent = '—';
+      });
+    }
+  }
+
+  if (document.querySelector('[data-pv-display]')) {
+    updateCounter();
+  }
+</script></body></html>
