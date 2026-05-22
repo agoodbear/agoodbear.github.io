@@ -40,8 +40,31 @@
     </div>
     {{ end }}
 
-    <div class="article-content" style="margin-top: 32px;">
+    {{- /* Opening flourish — 48×2px accent rule, marks "meta ends, body begins" */ -}}
+    <hr class="opening-rule" aria-hidden="true">
+
+    <div class="article-content">
       {{ .Content }}
+    </div>
+
+    {{- /* Article-end CTA — return to overview + next issue */ -}}
+    <div class="article-end">
+      <a href="{{ "/er-cardio-weekly/" | relURL }}" class="end-link">← 回到 ER Cardio Weekly 總覽</a>
+      {{ with .NextInSection }}
+        <a href="{{ .RelPermalink }}" class="end-link">下一期：{{ .Params.week | default .Title }} →</a>
+      {{ end }}
+      {{ with .PrevInSection }}
+        <a href="{{ .RelPermalink }}" class="end-link">上一期：{{ .Params.week | default .Title }} →</a>
+      {{ end }}
+    </div>
+
+    {{- /* Author credit block — editorial identity anchor */ -}}
+    <div class="author-card">
+      <div class="author-avatar" aria-hidden="true">🐻</div>
+      <div>
+        <div class="author-name">急診心臟學週報 編輯室</div>
+        <div class="author-bio">急診熊心聲出品 · ER Cardio Weekly · 每週彙整 ECG 與急診心臟學重點，給急診醫師的臨床決策清單。</div>
+      </div>
     </div>
   </article>
 
