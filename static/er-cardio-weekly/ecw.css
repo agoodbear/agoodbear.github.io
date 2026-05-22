@@ -1,5 +1,5 @@
 /* Editorial styles for ER Cardio Weekly (Hugo section). Source: handoff-bundle/styles.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;600;900&display=swap');
 
 /* ─── Hugo standalone baseline reset (added 2026-04-29) ─── */
 *, *::before, *::after { box-sizing: border-box; }
@@ -20,30 +20,40 @@ body.ecw { min-height: 100vh; }
   .ecw .article { padding: 24px 0 60px; max-width: 100%; }
   .ecw .article .article-title { font-size: 30px; }
   .ecw .article .article-sub { font-size: 17px; }
-  .ecw .article p, .ecw .article li { font-size: 16px; }
+  .ecw .article p, .ecw .article li { font-size: 18px; }
   .ecw .article h2 { font-size: 22px; margin: 2.4em 0 0.6em; }
   .ecw .topbar { padding: 0 16px; height: 52px; }
   .ecw .hero { padding: 32px 0 24px; }
   .ecw .hero .tagline { font-size: 26px; }
 }
 
-/* ─── Theme tokens ─── */
+/* ─── Theme tokens — Hallmark-aligned + First Round Review DNA pivot ───
+ * studied from review.firstround.com (URL mode, 2026-05-22):
+ *   paper #FBFBF6, near-pure-black ink, deep aubergine accent #3B1044,
+ *   100% serif typography (single-font discipline).
+ * Kept ECW heritage: dark mode toggle, 3-col layout, progress bar.
+ * Differentiator from main Hallmark site:
+ *   main site accent = orange #F35F00 (every.to-derived)
+ *   ECW accent     = deep aubergine #3B1044 (First Round-derived)
+ *   — visual identity for the weekly section. */
 .ecw {
-  --bg: #FAF8F3;
-  --ink: #1A1A1A;
-  --ink-2: #444;
+  --bg: #FBFBF6;            /* warm cream paper (was #FAF8F3) */
+  --ink: #000503;            /* near-pure-black (was #1A1A1A) */
+  --ink-2: #3a3a3a;
   --muted: #666;
   --hairline: #E6E0D3;
   --hairline-2: #EFEAE0;
-  --accent: #7A2828;       /* default deep wine */
-  --accent-soft: #7A28281A;
+  --accent: #3B1044;         /* deep aubergine (was #7A2828 deep wine) */
+  --accent-soft: #3B10441A;
+  --accent-bg: #F8E8FF;      /* lavender (light accent panel) */
   --code-bg: #F2EEE3;
   --row-zebra: #F5F1E6;
-  --selection: #7A28281f;
+  --selection: #3B10441f;
 
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Inter', 'Noto Sans TC', ui-sans-serif, system-ui, sans-serif;
+  /* Body now 100% serif — First Round single-font discipline */
+  font-family: 'Newsreader', 'Noto Serif TC', 'Source Serif Pro', Georgia, ui-serif, serif;
   font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -56,29 +66,38 @@ body.ecw { min-height: 100vh; }
   --muted: #8A8578;
   --hairline: #2E2A24;
   --hairline-2: #25221C;
+  --accent: #E4ADFF;         /* lavender (high-contrast pair for aubergine) */
+  --accent-soft: #E4ADFF1A;
+  --accent-bg: #2A1838;
   --code-bg: #25221C;
   --row-zebra: #1F1D18;
-  --selection: rgba(212,99,99,0.22);
+  --selection: rgba(228,173,255,0.22);
 }
 
 .ecw ::selection { background: var(--selection); }
 
-/* Display / serif title font for headings */
+/* Display / serif title font for headings (First Round single-font serif) */
 .ecw h1, .ecw h2, .ecw h3, .ecw h4,
 .ecw .display {
-  font-family: 'Inter Tight', 'Noto Sans TC', system-ui, sans-serif;
+  font-family: 'Newsreader', 'Noto Serif TC', 'Source Serif Pro', Georgia, ui-serif, serif;
   font-weight: 600;
-  letter-spacing: -0.012em;
+  letter-spacing: -0.015em;
   color: var(--ink);
 }
 
+/* Legacy .serif class kept for backwards compatibility (already serif now) */
 .ecw .serif {
-  font-family: 'Newsreader', 'Noto Sans TC', Georgia, serif;
+  font-family: 'Newsreader', 'Noto Serif TC', Georgia, serif;
 }
 
-/* Body */
+/* Sans utility for chips / eyebrows / labels (allow narrow sans for UI bits) */
+.ecw .sans {
+  font-family: 'Inter Tight', 'Noto Sans TC', system-ui, sans-serif;
+}
+
+/* Body — bigger reading size per First Round DNA (was 17px) */
 .ecw p, .ecw li {
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.7;
   color: var(--ink);
 }
