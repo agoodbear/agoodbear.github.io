@@ -18,10 +18,12 @@ body.ecw { min-height: 100vh; }
   .ecw .row .week { font-size: 22px; }
   .ecw .row .head { font-size: 18px; }
   .ecw .article { padding: 24px 0 60px; max-width: 100%; }
-  .ecw .article .article-title { font-size: 30px; }
-  .ecw .article .article-sub { font-size: 17px; }
+  .ecw .article .article-title { font-size: 36px; line-height: 1.12; }
+  .ecw .article .article-sub { font-size: 22px; line-height: 1.3; }
   .ecw .article p, .ecw .article li { font-size: 18px; }
-  .ecw .article h2 { font-size: 22px; margin: 2.4em 0 0.6em; }
+  .ecw .article h2 { font-size: 26px; margin: 2.4em 0 0.6em; }
+  .ecw .article .lede { font-size: 19px; }
+  .ecw .article .lede::first-letter { font-size: 56px; }
   .ecw .topbar { padding: 0 16px; height: 52px; }
   .ecw .hero { padding: 32px 0 24px; }
   .ecw .hero .tagline { font-size: 26px; }
@@ -202,24 +204,60 @@ body.ecw { min-height: 100vh; }
 .ecw .verdict.hypothesis::before { background: #B8860B; }
 .ecw .verdict.context::before { background: var(--muted); }
 
-/* Pull quote */
+/* Pull quote — First Round signature move: bold serif 44px, breaks out
+ * wider than the 680px reading column (920px ≈ +120px each side).
+ * Top + bottom hairline rules in accent, no left bar. */
 .ecw blockquote {
-  border-left: 4px solid var(--accent);
-  padding: 4px 0 4px 18px;
-  margin: 22px 0;
-  font-style: italic;
-  font-family: 'Newsreader', 'Noto Sans TC', Georgia, serif;
-  font-size: 18px;
-  line-height: 1.65;
-  color: var(--ink-2);
+  font-family: 'Newsreader', 'Noto Serif TC', 'Source Serif Pro', Georgia, serif;
+  font-size: 36px;
+  line-height: 1.18;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--ink);
+  margin: 56px auto;
+  padding: 24px 0 28px;
+  border-top: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+  text-wrap: balance;
+  /* Break out of .article max-width 680 → up to 920 */
+  width: min(920px, calc(100vw - 64px));
+  max-width: 920px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: left;
+}
+.ecw blockquote::before {
+  content: "“";
+  display: block;
+  font-family: 'Newsreader', serif;
+  font-size: 56px;
+  line-height: 0.5;
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 .ecw blockquote cite {
   display: block;
-  margin-top: 8px;
+  margin-top: 18px;
   font-style: normal;
-  font-size: 13px;
-  color: var(--muted);
-  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-weight: 600;
+}
+@media (max-width: 760px) {
+  .ecw blockquote {
+    font-size: 24px;
+    width: 100%;
+    left: 0;
+    transform: none;
+    padding: 18px 0 20px;
+    margin: 36px 0;
+  }
+  .ecw blockquote::before { font-size: 40px; }
 }
 
 /* Tables */
@@ -778,43 +816,53 @@ body.ecw { min-height: 100vh; }
 }
 .ecw .article-meta .dot { width: 2px; height: 2px; background: var(--muted); border-radius: 50%; }
 
-/* Article */
+/* Article — First Round Review layout discipline
+ * Reading column kept narrow (~680px) so pull quotes / figures break out wider.
+ * H1 = 60px serif Newsreader Medium (First Round 64px Skandia Medium)
+ * Deck = 32px Inter SANS regular (First Round Leif Regular sans, intentional
+ *        pairing — serif H1 + sans deck so they don't compete)
+ * Drop cap = 72px serif for editorial drama */
 .ecw .article {
-  max-width: 720px;
+  max-width: 680px;
   margin: 0 auto;
-  padding: 56px 0 96px;
+  padding: 72px 0 96px;
 }
 .ecw .article .article-title {
-  font-family: 'Inter Tight', 'Noto Sans TC', sans-serif;
-  font-size: 44px;
-  line-height: 1.12;
+  font-family: 'Newsreader', 'Noto Serif TC', 'Source Serif Pro', Georgia, serif;
+  font-size: 60px;
+  line-height: 1.08;
   font-weight: 600;
   letter-spacing: -0.022em;
   margin: 0;
   text-wrap: balance;
-}
-.ecw .article .article-sub {
-  font-family: 'Newsreader', 'Noto Sans TC', serif;
-  font-size: 22px;
-  line-height: 1.45;
-  color: var(--ink-2);
-  margin: 18px 0 0;
-  font-weight: 400;
-  font-style: italic;
-}
-.ecw .article .lede {
-  font-size: 18px;
-  line-height: 1.7;
-  margin-top: 32px;
   color: var(--ink);
 }
+.ecw .article .article-sub {
+  font-family: 'Inter Tight', 'Noto Sans TC', system-ui, sans-serif;
+  font-size: 32px;
+  line-height: 1.25;
+  color: var(--ink-2);
+  margin: 24px 0 0;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -0.015em;
+  max-width: 38em;
+}
+.ecw .article .lede {
+  font-size: 22px;
+  line-height: 1.75;
+  margin-top: 40px;
+  color: var(--ink);
+  font-family: 'Newsreader', 'Noto Serif TC', serif;
+}
 .ecw .article .lede::first-letter {
-  font-family: 'Newsreader', serif;
-  font-size: 48px;
+  font-family: 'Newsreader', 'Noto Serif TC', serif;
+  font-size: 72px;
   float: left;
-  line-height: 0.95;
-  padding: 4px 8px 0 0;
-  font-weight: 500;
+  line-height: 0.85;
+  padding: 6px 12px 0 0;
+  font-weight: 600;
+  color: var(--accent);
 }
 
 .ecw .article ul, .ecw .article ol {
@@ -1116,9 +1164,9 @@ body.ecw { min-height: 100vh; }
 }
 .ecw.mobile .row .week { font-size: 22px; }
 .ecw.mobile .row .head { font-size: 18px; }
-.ecw.mobile .article .article-title { font-size: 30px; }
-.ecw.mobile .article .article-sub { font-size: 17px; }
-.ecw.mobile .article p, .ecw.mobile .article li { font-size: 16px; }
+.ecw.mobile .article .article-title { font-size: 36px; line-height: 1.12; }
+.ecw.mobile .article .article-sub { font-size: 22px; line-height: 1.3; }
+.ecw.mobile .article p, .ecw.mobile .article li { font-size: 18px; }
 .ecw.mobile .hero { padding: 32px 0 24px; }
 .ecw.mobile .hero .tagline { font-size: 26px; }
 .ecw.mobile .article { padding: 24px 0 60px; max-width: 100%; }
