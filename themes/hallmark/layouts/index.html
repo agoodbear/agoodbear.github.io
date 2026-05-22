@@ -241,35 +241,15 @@
   letter-spacing: 0.04em;
 }
 
-/* Most Recent accent GIF — small Claude Code-flavored mark after grid-4 */
-.most-recent-divider {
-  margin: var(--space-xl) auto var(--space-lg);
-  padding: 0;
-  text-align: center;
-}
-.most-recent-divider img {
+/* Eyebrow inline icon — small GIF accent next to "最新文章" */
+.eyebrow-icon {
   display: inline-block;
-  margin: 0 auto;
-  width: 160px;
-  height: 160px;
-  border-radius: 4px;
-  opacity: 0.95;
-}
-.most-recent-divider figcaption {
-  font-family: var(--font-body);
-  font-size: var(--text-xs);
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-ink-3);
-  margin-top: var(--space-xs);
-}
-.most-recent-divider figcaption strong {
-  color: var(--color-accent-ink);
-  font-weight: 600;
-}
-@media (max-width: 720px) {
-  .most-recent-divider img { width: 120px; height: 120px; }
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  margin-left: 0.6em;
+  margin-top: -0.2em;
+  image-rendering: pixelated;
 }
 
 /* Statement (between sections) */
@@ -524,16 +504,12 @@ article.card .meta {
     </div>
   </section>
 
-  <div class="eyebrow">Most Recent · 最新文章</div>
+  <div class="eyebrow">Most Recent · 最新文章<img class="eyebrow-icon" src="{{ "images/most-recent-divider.gif" | relURL }}" alt="" loading="lazy" decoding="async" width="28" height="28"></div>
   <section class="grid-4">
     {{ range $recent }}
       {{ partial "article-card.html" . }}
     {{ end }}
   </section>
-
-  <figure class="most-recent-divider">
-    <img src="{{ "images/most-recent-divider.gif" | relURL }}" alt="" loading="lazy" decoding="async" width="480" height="480">
-  </figure>
 
   <aside class="statement">
     <div class="wordmark">{{ site.Title | default "急診熊心聲部落格" }}</div>
