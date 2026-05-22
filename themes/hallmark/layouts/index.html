@@ -402,7 +402,7 @@ article.card .meta {
   <div class="meta-row">
     <span>Vol. {{ sub (now.Year) 2022 }} · No. {{ now.YearDay }}</span>
     <span>{{ now.Format "Monday · Jan 2, 2006" }}</span>
-    <span>Cumulative readers · {{ site.Params.cumulative_readers | default "128,402" }}</span>
+    <span>Cumulative readers · <span id="pv-counter" data-pv-display>—</span></span>
     <span>Taipei · Taiwan</span>
   </div>
 </header>

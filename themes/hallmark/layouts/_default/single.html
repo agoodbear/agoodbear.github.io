@@ -309,12 +309,9 @@
       <span>{{ .Date.Format "Jan 2, 2006" }}</span>
       <span class="dot">·</span>
       <span>{{ .ReadingTime }} 分鐘閱讀</span>
-      {{ with .Params.views_month }}
-        <span class="dot">·</span><span>本月閱讀 · {{ . }}</span>
-      {{ end }}
-      {{ with .Params.views_total }}
-        <span class="dot">·</span><span>累積 · {{ . }}</span>
-      {{ end }}
+      {{- /* Per-post PV not tracked in Firebase pageViews/total — only site-wide
+             total is. Re-enable views_month / views_total here only if a future
+             counter writes per-slug paths into Firebase. */ -}}
       {{ with .Params.tags }}
         <span class="dot">·</span><span class="tag">{{ delimit . " · " }}</span>
       {{ end }}

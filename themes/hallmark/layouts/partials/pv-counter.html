@@ -1,0 +1,55 @@
+{{- /* PV counter — Firebase Realtime Database
+       Ported from layouts/partials/sidebar.html (lines 442-486 era).
+       Writes `pageViews/total` (+1 per session) and displays into any
+       element with [data-pv-display] on the page.
+       Skip rendering if no element references pv-counter (saves Firebase
+       SDK load on pages that don't need it). */ -}}
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getDatabase, ref, get, runTransaction } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDHGO0T7gomSortOftnubF8v4-ZkQ3FPks",
+    authDomain: "agoodbear-website.firebaseapp.com",
+    databaseURL: "https://agoodbear-website-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "agoodbear-website",
+    storageBucket: "agoodbear-website.firebasestorage.app",
+    messagingSenderId: "263335877825",
+    appId: "1:263335877825:web:10c1cf65b632e6e35fc840"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  const counterRef = ref(db, 'pageViews/total');
+
+  const sessionKey = 'pv_counted';
+  const alreadyCounted = sessionStorage.getItem(sessionKey);
+
+  function display(count) {
+    const formatted = Number(count).toLocaleString('en-US');
+    document.querySelectorAll('[data-pv-display]').forEach(el => {
+      el.textContent = formatted;
+    });
+  }
+
+  async function updateCounter() {
+    try {
+      if (!alreadyCounted) {
+        await runTransaction(counterRef, (current) => (current || 0) + 1);
+        sessionStorage.setItem(sessionKey, 'true');
+      }
+      const snapshot = await get(counterRef);
+      const count = snapshot.val() || 0;
+      display(count);
+    } catch (err) {
+      console.error('PV counter error:', err);
+      document.querySelectorAll('[data-pv-display]').forEach(el => {
+        el.textContent = '—';
+      });
+    }
+  }
+
+  if (document.querySelector('[data-pv-display]')) {
+    updateCounter();
+  }
+</script>
