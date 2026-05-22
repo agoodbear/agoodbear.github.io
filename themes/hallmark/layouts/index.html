@@ -241,14 +241,14 @@
   letter-spacing: 0.04em;
 }
 
-/* Eyebrow inline icon — small GIF accent next to "最新文章" */
+/* Eyebrow inline icon — tiny pixel-art GIF accent next to "最新文章" */
 .eyebrow-icon {
   display: inline-block;
-  width: 28px;
-  height: 28px;
+  width: 16px;
+  height: 16px;
   vertical-align: middle;
-  margin-left: 0.6em;
-  margin-top: -0.2em;
+  margin-left: 0.5em;
+  margin-top: -0.15em;
   image-rendering: pixelated;
 }
 
@@ -504,7 +504,7 @@ article.card .meta {
     </div>
   </section>
 
-  <div class="eyebrow">Most Recent · 最新文章<img class="eyebrow-icon" src="{{ "images/most-recent-divider.gif" | relURL }}" alt="" loading="lazy" decoding="async" width="28" height="28"></div>
+  <div class="eyebrow">Most Recent · 最新文章<img class="eyebrow-icon" src="{{ "images/most-recent-divider.gif" | relURL }}" alt="" loading="lazy" decoding="async" width="16" height="16"></div>
   <section class="grid-4">
     {{ range $recent }}
       {{ partial "article-card.html" . }}
