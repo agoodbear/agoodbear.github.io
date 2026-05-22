@@ -1,0 +1,266 @@
+{{ define "head" }}
+<style>
+.page-masthead {
+  max-width: var(--measure-wide);
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg) var(--space-xl);
+}
+.page-masthead .breadcrumb {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent-ink);
+  margin: 0 0 var(--space-md);
+}
+.page-masthead h1 {
+  font-family: var(--font-display-zh);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-md);
+  color: var(--color-ink);
+}
+.page-masthead .deck {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-xl);
+  line-height: 1.45;
+  color: var(--color-ink-2);
+  margin: 0;
+  max-width: var(--measure);
+}
+.page-masthead .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-3);
+  padding-top: var(--space-md);
+  margin-top: var(--space-lg);
+  border-top: 1px solid var(--color-rule);
+}
+.page-masthead .meta .dot { color: var(--color-rule-bold); }
+
+.timeline-filters {
+  max-width: var(--measure-wide);
+  margin: 0 auto var(--space-xl);
+  padding: 0 var(--space-lg) var(--space-md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  align-items: baseline;
+  border-bottom: 1px solid var(--color-rule);
+}
+.timeline-filters .label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent-ink);
+}
+.timeline-filters a {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--color-ink-2);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+.timeline-filters a.is-active { color: var(--color-ink); border-bottom-color: var(--color-accent); }
+
+.year-section { max-width: var(--measure-wide); margin: 0 auto; padding: 0 var(--space-lg); }
+.year-block { margin: var(--space-2xl) 0; }
+.year-block .year-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--color-ink);
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+.year-block .year-head h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-style: italic;
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 0;
+  color: var(--color-ink);
+}
+.year-block .year-head .count {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ink-3);
+}
+.month-block {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: var(--space-xl);
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--color-rule);
+}
+.month-block:first-of-type { border-top: none; }
+.month-block .month-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-2xl);
+  color: var(--color-accent-ink);
+  line-height: 1.2;
+}
+.month-block .month-label .num {
+  font-family: var(--font-display-zh);
+  font-style: normal;
+  color: var(--color-ink-3);
+  font-size: var(--text-sm);
+  display: block;
+  margin-top: var(--space-2xs);
+  letter-spacing: 0.1em;
+}
+.month-block .entries { display: flex; flex-direction: column; gap: var(--space-md); }
+.entry { padding-bottom: var(--space-md); border-bottom: 1px solid var(--color-rule); }
+.entry:last-child { border-bottom: none; }
+.entry .entry-head { display: flex; align-items: baseline; gap: var(--space-md); margin-bottom: var(--space-2xs); }
+.entry .day {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--text-xl);
+  color: var(--color-accent);
+  flex: 0 0 3rem;
+}
+.entry h3 {
+  font-family: var(--font-display-zh);
+  font-weight: 600;
+  font-size: var(--text-xl);
+  line-height: 1.25;
+  margin: 0;
+  color: var(--color-ink);
+  flex: 1;
+}
+.entry .excerpt {
+  font-family: var(--font-display-zh);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--color-ink-2);
+  margin: var(--space-xs) 0 var(--space-xs) 4rem;
+  max-width: 42rem;
+}
+.entry .tags {
+  margin-left: 4rem;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink-3);
+}
+.entry .tags .tag { color: var(--color-accent-ink); margin-right: 0.4em; }
+
+@media (max-width: 720px) {
+  .month-block { grid-template-columns: 1fr; gap: var(--space-sm); }
+  .entry .excerpt, .entry .tags { margin-left: 0; }
+  .entry .day { flex: 0 0 auto; }
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+
+<header class="page-masthead">
+  <div class="breadcrumb">AI 學習 · A Learning Log</div>
+  <h1>{{ .Title | default "AI 學習日誌" }}</h1>
+  <p class="deck">{{ .Description | default "用日期累積自己的 AI 學習歷程，把每天真的有吸收的觀念、實作心得和值得回看的連結整理下來。每一篇都是一日一頁、像紙本的日記。" }}</p>
+  <div class="meta">
+    <span>Entries · {{ len .Pages }}</span>
+    {{ with index .Pages 0 }}
+      <span class="dot">·</span><span>Updated · {{ .Date.Format "2006-01-02" }}</span>
+    {{ end }}
+    {{ with (index .Pages (sub (len .Pages) 1)) }}
+      <span class="dot">·</span><span>Started · {{ .Date.Format "2006-01-02" }}</span>
+    {{ end }}
+    {{ with site.Params.ai_learning_views }}
+      <span class="dot">·</span><span>分類瀏覽 · {{ . }}</span>
+    {{ end }}
+  </div>
+</header>
+
+{{- /* Build year list */ -}}
+{{ $years := slice }}
+{{ $byYear := dict }}
+{{ range .Pages }}
+  {{ $y := .Date.Format "2006" }}
+  {{ if not (in $years $y) }}
+    {{ $years = $years | append $y }}
+  {{ end }}
+  {{ $list := index $byYear $y | default (slice) }}
+  {{ $list = $list | append . }}
+  {{ $byYear = merge $byYear (dict $y $list) }}
+{{ end }}
+
+<nav class="timeline-filters">
+  <span class="label">Jump to year</span>
+  {{ range $i, $y := $years }}
+    <a href="#y{{ $y }}"{{ if eq $i 0 }} class="is-active"{{ end }}>{{ $y }}</a>
+  {{ end }}
+</nav>
+
+<section class="year-section">
+  {{ range $i, $y := $years }}
+    {{ $pagesInYear := index $byYear $y }}
+    <article class="year-block" id="y{{ $y }}">
+      <header class="year-head">
+        <h2>{{ $y }}</h2>
+        <span class="count">{{ len $pagesInYear }} entries</span>
+      </header>
+
+      {{- /* Group by month inside year */ -}}
+      {{ $months := slice }}
+      {{ $byMonth := dict }}
+      {{ range $pagesInYear }}
+        {{ $m := .Date.Format "January" }}
+        {{ if not (in $months $m) }}
+          {{ $months = $months | append $m }}
+        {{ end }}
+        {{ $mList := index $byMonth $m | default (slice) }}
+        {{ $mList = $mList | append . }}
+        {{ $byMonth = merge $byMonth (dict $m $mList) }}
+      {{ end }}
+
+      {{ range $months }}
+        {{ $m := . }}
+        {{ $entries := index $byMonth $m }}
+        <div class="month-block">
+          <div class="month-label">{{ $m }}<span class="num">{{ $y }} · {{ with index $entries 0 }}{{ .Date.Format "1月" }}{{ end }}</span></div>
+          <div class="entries">
+            {{ range $entries }}
+              <div class="entry">
+                <div class="entry-head">
+                  <span class="day">{{ .Date.Format "02" }}</span>
+                  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                </div>
+                {{ with .Summary }}
+                  <p class="excerpt">{{ . | truncate 160 }}</p>
+                {{ end }}
+                {{ with .Params.tags }}
+                  <div class="tags">{{ range first 5 . }}<span class="tag">{{ . }}</span>{{ end }}</div>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </article>
+  {{ end }}
+</section>
+
+{{ end }}

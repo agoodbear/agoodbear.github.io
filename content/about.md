@@ -3,6 +3,13 @@ title = "關於我"
 description = "急診醫師曹建雄的個人經歷：從北榮急診訓練、下鄉竹榮、到行醫教學寫作的這 20 年。"
 date = "2024-01-01"
 author = "急診熊"
+layout = "letter"
+kicker = "關於我 · About the editor"
+signature = "Taiwanese ER physician · ECG enthusiast · AI 工作流持續探索者 · 寫字的人"
+station = "Taipei, Taiwan"
+since = "2005"
+writing_since = "2022"
+closing = "Written from the desk on the second floor of the ER,"
 +++
 
 <div class="timeline">

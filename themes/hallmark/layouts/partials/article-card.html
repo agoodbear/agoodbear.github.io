@@ -1,0 +1,33 @@
+{{- /* Article card — used in landing grids, category pages, related sections */ -}}
+{{- $catMap := dict
+  "ecg" "心電圖"
+  "erlife" "急診人生"
+  "study" "自我進修"
+  "travel" "旅遊"
+  "workout" "醫生 Gym"
+  "pocus" "超音波"
+  "medium" "Medium"
+  "hyperkalemia" "高鉀血症"
+  "ai-learning" "AI 學習"
+  "er-cardio-weekly" "急診心臟週報"
+  "practical-tools" "實用工具"
+-}}
+{{- $catSlug := index .Params.categories 0 | default "" -}}
+{{- $catName := index $catMap $catSlug | default $catSlug -}}
+<article class="card">
+  <a href="{{ .RelPermalink }}">
+    <div class="image">
+      {{- $img := .Params.thumbnail | default .Params.featured_image | default .Params.featureImage | default .Params.image | default .Params.cover -}}
+      {{ if $img }}
+        <img src="{{ $img | relURL }}" alt="{{ .Title }}" loading="lazy">
+      {{ else }}
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--color-paper-2),var(--color-paper-3));"></div>
+      {{ end }}
+    </div>
+    {{ if $catName }}
+      <div class="label-line">{{ $catName }}</div>
+    {{ end }}
+    <h3>{{ .Title }}</h3>
+    <div class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ with .ReadingTime }} · {{ . }} 分鐘{{ end }}</div>
+  </a>
+</article>
