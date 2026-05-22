@@ -544,15 +544,22 @@ article.card .meta {
       <span class="sub">Sized by post count — bigger means more often written about.</span>
     </div>
     <div class="list">
-      {{- /* Build tag list with counts, ordered by count desc */ -}}
+      {{- /* Build tag list with counts, ordered by count desc.
+             Use site.GetPage "/tags" to get each tag's actual Hugo-slugified
+             RelPermalink (e.g. "STEMI mimics" → /tags/stemi-mimics/) instead
+             of manually constructing /tags/<raw-name>/ which 404s on tags
+             with spaces or uppercase. */ -}}
+      {{ $tagSection := site.GetPage "/tags" }}
       {{ $tags := slice }}
-      {{ range $name, $taxonomy := site.Taxonomies.tags }}
-        {{ $tags = $tags | append (dict "name" $name "count" (len $taxonomy.Pages) "url" (printf "/tags/%s/" $name)) }}
+      {{ if $tagSection }}
+        {{ range $tagSection.Pages }}
+          {{ $tags = $tags | append (dict "name" .Title "count" (len .Pages) "url" .RelPermalink) }}
+        {{ end }}
       {{ end }}
       {{ $tags = sort $tags "count" "desc" }}
       {{ range first 35 $tags }}
         {{ $cls := cond (ge .count 10) "t-xl" (cond (ge .count 6) "t-lg" (cond (ge .count 3) "t-md" "t-sm")) }}
-        <a href="{{ .url | relURL }}" class="{{ $cls }}">{{ .name }}</a>
+        <a href="{{ .url }}" class="{{ $cls }}">{{ .name }}</a>
       {{ end }}
     </div>
   </section>
