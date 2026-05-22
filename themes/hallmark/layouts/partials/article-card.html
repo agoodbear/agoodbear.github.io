@@ -23,11 +23,18 @@
       </div>
     {{ else }}
       {{- /* No thumbnail — render typographic stamp instead of blank box.
-             Compact editorial fallback: short serif date + year only.
-             Category & ISO date already shown in label-line + meta below. */ -}}
-      <div class="image image-stamp">
-        <span class="stamp-date">{{ .Date.Format "Jan 02" }}</span>
-        <span class="stamp-year">{{ .Date.Format "2006" }}</span>
+             If front matter `hook` is set, use it as the visual anchor and
+             demote date to a corner byline; otherwise fall back to large
+             May / 2026 layout. */ -}}
+      {{- $hook := .Params.hook -}}
+      <div class="image image-stamp{{ if $hook }} image-stamp--hook{{ end }}">
+        {{ if $hook }}
+          <p class="stamp-hook">{{ $hook }}</p>
+          <span class="stamp-byline">{{ .Date.Format "Jan 02, 2006" }}</span>
+        {{ else }}
+          <span class="stamp-date">{{ .Date.Format "Jan 02" }}</span>
+          <span class="stamp-year">{{ .Date.Format "2006" }}</span>
+        {{ end }}
       </div>
     {{ end }}
     {{ if $catName }}

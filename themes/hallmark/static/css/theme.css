@@ -324,6 +324,53 @@ article.card .image.image-stamp {
   padding: var(--space-sm) var(--space-md);
   overflow: hidden;
 }
+/* Hook variant — taller tile, pull-quote as main visual */
+article.card .image.image-stamp--hook {
+  aspect-ratio: 5 / 2;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: var(--space-md);
+  gap: var(--space-sm);
+}
+article.card .image.image-stamp--hook .stamp-hook {
+  font-family: var(--font-display-zh);
+  font-weight: 600;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  line-height: 1.4;
+  color: var(--color-ink);
+  margin: 0;
+  letter-spacing: -0.005em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+article.card .image.image-stamp--hook .stamp-hook::before {
+  content: "“";
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-accent);
+  margin-right: 0.1em;
+}
+article.card .image.image-stamp--hook .stamp-hook::after {
+  content: "”";
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-accent);
+  margin-left: 0.05em;
+}
+article.card .image.image-stamp--hook .stamp-byline {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-ink-3);
+  align-self: flex-end;
+}
 article.card .image.image-stamp::before {
   content: "";
   position: absolute;
