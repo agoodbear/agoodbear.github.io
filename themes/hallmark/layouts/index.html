@@ -241,6 +241,24 @@
   letter-spacing: 0.04em;
 }
 
+/* Most Recent divider GIF — sits between grid-4 and statement */
+.most-recent-divider {
+  margin: var(--space-2xl) auto 0;
+  padding: 0;
+  text-align: center;
+}
+.most-recent-divider img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 4px;
+}
+@media (max-width: 720px) {
+  .most-recent-divider img { max-width: 240px; }
+}
+
 /* Statement (between sections) */
 .statement {
   border-top: 2px solid var(--color-ink);
@@ -499,6 +517,10 @@ article.card .meta {
       {{ partial "article-card.html" . }}
     {{ end }}
   </section>
+
+  <figure class="most-recent-divider">
+    <img src="{{ "images/most-recent-divider.gif" | relURL }}" alt="" loading="lazy" decoding="async" width="480" height="480">
+  </figure>
 
   <aside class="statement">
     <div class="wordmark">{{ site.Title | default "急診熊心聲部落格" }}</div>
