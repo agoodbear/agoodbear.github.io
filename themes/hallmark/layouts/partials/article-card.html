@@ -23,10 +23,9 @@
       </div>
     {{ else }}
       {{- /* No thumbnail — render typographic stamp instead of blank box.
-             Editorial fallback: paper-2 background, accent eyebrow with date
-             & category, big serif date as visual anchor. */ -}}
+             Compact editorial fallback: short serif date + year only.
+             Category & ISO date already shown in label-line + meta below. */ -}}
       <div class="image image-stamp">
-        <span class="stamp-eyebrow">{{ if $catName }}{{ $catName }} · {{ end }}{{ .Date.Format "2006-01-02" }}</span>
         <span class="stamp-date">{{ .Date.Format "Jan 02" }}</span>
         <span class="stamp-year">{{ .Date.Format "2006" }}</span>
       </div>
