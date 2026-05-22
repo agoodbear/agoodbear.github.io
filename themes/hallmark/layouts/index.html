@@ -241,15 +241,14 @@
   letter-spacing: 0.04em;
 }
 
-/* Eyebrow inline icon — pixel-art GIF accent next to "最新文章".
-   Negative top+bottom margin pull the icon out of the line-box so the
-   eyebrow's bottom border stays put — icon overflows the band visually. */
+/* Eyebrow inline icon — pixel-art GIF accent next to "最新文章" */
 .eyebrow-icon {
   display: inline-block;
-  width: 120px;
-  height: 120px;
+  width: 60px;
+  height: 60px;
   vertical-align: middle;
-  margin: -54px 0 -54px 0.6em;
+  margin-left: 0.6em;
+  margin-top: -0.4em;
   image-rendering: pixelated;
 }
 
@@ -505,7 +504,7 @@ article.card .meta {
     </div>
   </section>
 
-  <div class="eyebrow">Most Recent · 最新文章<img class="eyebrow-icon" src="{{ "images/most-recent-divider.gif" | relURL }}" alt="" loading="lazy" decoding="async" width="120" height="120"></div>
+  <div class="eyebrow">Most Recent · 最新文章<img class="eyebrow-icon" src="{{ "images/most-recent-divider.gif" | relURL }}" alt="" loading="lazy" decoding="async" width="60" height="60"></div>
   <section class="grid-4">
     {{ range $recent }}
       {{ partial "article-card.html" . }}
