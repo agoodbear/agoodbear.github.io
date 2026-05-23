@@ -446,19 +446,19 @@ body.ecw { min-height: 100vh; }
 }
 .ecw .article .para:hover .anchor { opacity: 0.5; }
 
-/* TOC */
+/* TOC — sticky + scroll-spy with prominent active highlight (round-4) */
 .ecw .toc {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
+  font-family: 'Inter Tight', 'Noto Sans TC', sans-serif;
+  font-size: 14px;
   line-height: 1.6;
 }
 .ecw .toc .toc-label {
-  font-size: 10.5px;
-  letter-spacing: 0.18em;
+  font-size: 11px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 600;
-  margin-bottom: 12px;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 16px;
 }
 .ecw .toc ol {
   list-style: none;
@@ -466,26 +466,36 @@ body.ecw { min-height: 100vh; }
   margin: 0;
 }
 .ecw .toc li {
-  padding: 4px 0 4px 14px;
-  border-left: 1px solid var(--hairline);
+  padding: 8px 0 8px 16px;            /* round-4: bigger touch target, was 4px */
+  border-left: 2px solid var(--hairline); /* round-4: 1 → 2px */
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   cursor: pointer;
-  transition: color 120ms;
+  transition: color 120ms, border-left-color 120ms, background 120ms, padding 120ms;
+  margin-bottom: 2px;
 }
-.ecw .toc li:hover { color: var(--ink); }
+.ecw .toc li:hover {
+  color: var(--ink);
+  border-left-color: var(--accent-soft);
+}
 .ecw .toc li.active {
   border-left-color: var(--accent);
+  border-left-width: 3px;
   color: var(--ink);
-  font-weight: 500;
+  font-weight: 600;
+  background: var(--accent-bg);        /* round-4: highlight bg, not just border */
+  padding-left: 18px;                  /* round-4: slight indent shift */
 }
+.ecw.is-dark .ecw .toc li.active { background: var(--accent-soft); }
 .ecw .toc li .toc-num {
-  font-family: 'Newsreader', serif;
+  font-family: 'Newsreader', 'Noto Serif TC', serif;
   font-style: italic;
   color: var(--muted);
-  font-size: 12px;
-  margin-right: 6px;
+  font-size: 13px;
+  margin-right: 8px;
+  transition: color 120ms;
 }
+.ecw .toc li.active .toc-num { color: var(--accent); font-weight: 600; }
 
 /* List page row */
 .ecw .row {
@@ -891,17 +901,24 @@ body.ecw { min-height: 100vh; }
   font-size: 18px;
 }
 
-/* Body type unification — was split between 20px (.ecw p) and 17px
- * (.ecw .article-content p); review flagged the conflict. */
+/* Body type — round-4: bigger line-height + paragraph margin for breathing */
 .ecw .article-content p,
 .ecw .article-content li {
   font-size: 18px;
-  line-height: 1.85;
+  line-height: 1.95;                  /* round-4: 1.85 → 1.95 (more breathing) */
   font-feature-settings: "ss01", "onum", "kern";
+}
+.ecw .article-content p {
+  margin: 0 0 1.8em;                  /* round-4: explicit paragraph spacing */
+}
+.ecw .article-content ul,
+.ecw .article-content ol {
+  margin: 1.4em 0 1.8em;
 }
 .ecw .article-content ul li,
 .ecw .article-content ol li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;                /* round-4: 8 → 10px */
+  line-height: 1.85;
 }
 
 /* Section divider — turn raw <hr> into editorial chapter break with § mark */
@@ -920,10 +937,13 @@ body.ecw { min-height: 100vh; }
   letter-spacing: 0.2em;
 }
 
-/* H2 section heads — tighter top margin per review (was 4em on Chinese content) */
+/* H2 section heads — round-4: keep large 4em top to create chapter breaks
+ * (Bear's perception "wall of text" wants MORE breathing, not less).
+ * Add extra top padding so each section has its own visual stage. */
 .ecw .article-content h2 {
-  margin-top: 2.8em;
-  margin-bottom: 0.8em;
+  margin-top: 4em;
+  margin-bottom: 1em;
+  padding-top: 40px;
 }
 
 /* Article-end CTA — return to overview + next-issue link (round-3 structure review) */
