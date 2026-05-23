@@ -840,7 +840,7 @@ body.ecw { min-height: 100vh; }
 }
 .ecw .article .article-title {
   font-family: 'Newsreader', 'Noto Serif TC', 'Source Serif Pro', Georgia, serif;
-  font-size: 64px;          /* round-3 review: 60 → 64 */
+  font-size: 44px;
   line-height: 1.06;        /* tighter, was 1.08 */
   font-weight: 700;         /* round-3 review: 600 → 700 for FR drama */
   letter-spacing: -0.028em; /* round-3 review: -0.022 → -0.028 */
