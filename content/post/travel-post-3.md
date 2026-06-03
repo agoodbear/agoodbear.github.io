@@ -120,6 +120,8 @@ tags:
 
 <figure class="paoma-fig"><img src="/images/paoma/21-guishan.jpg" alt="遠眺龜山島"><figcaption>從北口遠眺龜山島</figcaption></figure>
 
+<figure class="paoma-fig"><img src="/images/paoma/19-yonaguni.jpg" alt="距與那國島 125.98 公里地面標示"><figcaption>涼亭地面的「距與那國島 125.98 公里」標示——與那國島是離台灣最近的日本島</figcaption></figure>
+
 ## 回程的驚喜
 
 回程時，領隊 Allen 在路邊牆壁上停下來，指著一叢長得像「破傘」的蕨類，幫我們上了一課。
