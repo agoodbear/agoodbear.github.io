@@ -48,7 +48,17 @@ tags:
 
 ## 一路向上
 
-切進步道沒多久，遇到一棵少見的**百年茄苳老樹**，盤根錯節地撐開一大片樹蔭，大家都停下來抬頭看。
+剛切進步道，就先在路邊遇到一種很有戲的野蜂——**青條花蜂**。
+
+<figure class="paoma-fig"><video src="/videos/paoma/paoma-bee.mp4" autoplay muted loop playsinline></video><figcaption>路邊遇到的青條花蜂</figcaption></figure>
+
+> **🐝 冷知識：會「集體掛睡」的青條花蜂**
+>
+> 那天在步道邊遇見的，是台灣常見的野蜂「**青條花蜂**」（學名 *Amegilla calceifera*），腹部四到五條水青色橫帶閃著金屬光，就是名字的由來。最特別的是傍晚時分，沒有巢可回的**雄蜂**會聚在一起，用大顎緊緊咬住枯枝或草莖過夜，掛成一整串。牠的大顎像會自動上鎖的小鉗子，咬住後幾乎不費力，就這樣懸著睡到天亮——白天還在爭地盤的對手，入夜竟成了同枝共眠的旅伴。[^bee]
+
+<figure class="paoma-fig"><a href="https://www.nmns.edu.tw/ch/learn/museum-education/naturalist/scienceimages/detail/SciencePhotography-07047/" target="_blank" rel="noopener"><img src="https://www.nmns.edu.tw/export/sites/nmns/ch/learn/museum-education/naturalist/scienceimages/.galleries/07/07_047_01.jpg" alt="青條花蜂用大顎咬住細枝、集體掛成一串睡覺"></a><figcaption>青條花蜂用大顎咬住細枝、集體掛成一串過夜的奇特景觀。（攝影：陳銘修／國立自然科學博物館「科學攝影」，<a href="https://www.nmns.edu.tw/ch/learn/museum-education/naturalist/scienceimages/detail/SciencePhotography-07047/" target="_blank" rel="noopener">點圖看原頁</a>）</figcaption></figure>
+
+再往前走沒多久，遇到一棵少見的**百年茄苳老樹**，盤根錯節地撐開一大片樹蔭，大家都停下來抬頭看。
 
 <figure class="paoma-fig"><img src="/images/paoma/04-camphor.jpg" alt="百年茄苳老樹"><figcaption>上爬途中的數百年茄苳老樹</figcaption></figure>
 
@@ -87,14 +97,6 @@ tags:
 更扯的是，還有超讚的家長中途充當起「小蜜蜂」車長，一路發**冰棒**補給。在山上吃到冰棒，這後勤也太強了。
 
 <figure class="paoma-fig"><video src="/videos/paoma/paoma-popsicle.mp4" autoplay muted loop playsinline></video><figcaption>家長充當小蜜蜂車長，送冰棒補給</figcaption></figure>
-
-說到山上的小生物——這趟還認識了一種有趣的野蜂。
-
-<figure class="paoma-fig"><video src="/videos/paoma/paoma-bee.mp4" autoplay muted loop playsinline></video><figcaption>青條花蜂</figcaption></figure>
-
-> **🐝 冷知識：會「集體掛睡」的青條花蜂**
->
-> 那天在步道邊遇見的，是台灣常見的野蜂「**青條花蜂**」（學名 *Amegilla calceifera*），腹部四到五條水青色橫帶閃著金屬光，就是名字的由來。最特別的是傍晚時分，沒有巢可回的**雄蜂**會聚在一起，用大顎緊緊咬住枯枝或草莖過夜，掛成一整串。牠的大顎像會自動上鎖的小鉗子，咬住後幾乎不費力，就這樣懸著睡到天亮——白天還在爭地盤的對手，入夜竟成了同枝共眠的旅伴。[^bee]
 
 ## 登頂・金面大觀
 
