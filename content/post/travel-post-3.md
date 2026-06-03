@@ -88,9 +88,9 @@ tags:
 
 <figure class="paoma-fig"><img src="/images/paoma/13-tudigong.jpg" alt="山神土地公"><figcaption>路過山神土地公，立馬行禮</figcaption></figure>
 
-走到一處小溪旁休息，有位家長夥伴竟然背了**兩顆西瓜**上山，當場剖一顆分給大家。爬到一半能吃到冰涼的西瓜，那一口真的太讚了。
+走到一處小溪旁休息，有**兩位家長夥伴**竟然各背了**一顆西瓜**上山，當場剖一顆分給大家。爬到一半能吃到冰涼的西瓜，那一口真的太讚了。
 
-<figure class="paoma-fig"><img src="/images/paoma/14-watermelon.jpg" alt="溪邊分西瓜"><figcaption>家長帶了兩顆西瓜上山，剖一顆分大家</figcaption></figure>
+<figure class="paoma-fig"><img src="/images/paoma/14-watermelon.jpg" alt="溪邊分西瓜"><figcaption>兩位家長各背一顆西瓜上山，剖一顆分大家</figcaption></figure>
 
 <figure class="paoma-fig"><video src="/videos/paoma/paoma-creek.mp4" autoplay muted loop playsinline></video><figcaption>小溪旁玩了一下，繼續上路囉</figcaption></figure>
 
