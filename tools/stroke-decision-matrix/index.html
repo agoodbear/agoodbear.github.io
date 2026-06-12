@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>急性缺血性中風 治療決策矩陣 · 2026 AHA/ASA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#eef1f6; --sheet:#ffffff;
+    --navy:#1b2a42; --slate:#33425c; --chrome:#1f2d3d;
+    --ink:#1f2937; --ink2:#5a6678; --ink3:#94a0b3;
+    --line:#e4e9f0;
+    /* 行動色（全頁唯一飽和色） */
+    --dapt:#E08A00; --ivt:#2563EB; --combo:#0D9488; --evt:#DB2777; --supp:#64748B;
+    --dapt-s:#FAEAD0; --dapt-st:#94570A; --dapt-sb:#E2AC55;
+    --ivt-s:#DCE7FD;  --ivt-st:#1E40AF;  --ivt-sb:#9BB8F8;
+    --combo-s:#D2F0EC;--combo-st:#0B6E63;--combo-sb:#6FC7BE;
+    --evt-s:#FBDDEC;  --evt-st:#A61E63;  --evt-sb:#EF9EC6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--canvas);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;padding:26px 16px}
+  .sheet{max-width:1180px;margin:0 auto;background:var(--sheet);border-radius:14px;
+    box-shadow:0 10px 44px rgba(20,40,70,.16);overflow:hidden}
+
+  /* HEADER */
+  header{background:linear-gradient(115deg,var(--navy),#26456f);color:#fff;
+    padding:24px 32px;display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap}
+  header h1{font-size:30px;font-weight:900;letter-spacing:.5px}
+  header .sub{font-size:13px;color:#9fbbe2;margin-top:4px;letter-spacing:.4px}
+  .gbadge{border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.07);border-radius:8px;padding:9px 15px;text-align:right}
+  .gbadge .g{font-size:14.5px;font-weight:800}
+  .gbadge .s{font-size:11.5px;color:#9fbbe2;margin-top:2px}
+  .gbadge i{font-style:italic}
+
+  .body{padding:24px 28px 26px}
+  .sectitle{display:flex;align-items:baseline;gap:10px;margin:2px 0 14px}
+  .sectitle b{font-size:16px;font-weight:800;color:var(--navy)}
+  .sectitle span{font-size:12px;color:var(--ink3);font-weight:600;letter-spacing:.6px}
+
+  /* ===== HERO 矩陣 ===== */
+  .scroll{overflow-x:auto}
+  .matrix{display:grid;grid-template-columns:208px repeat(3,minmax(168px,1fr));gap:8px;min-width:760px}
+  .corner{display:flex;flex-direction:column;justify-content:flex-end;padding:6px 10px}
+  .corner .a{font-size:11px;font-weight:700;color:var(--ink2)}
+  .corner .b{font-size:10px;color:var(--ink3)}
+  .winh{background:var(--chrome);color:#fff;border-radius:10px;padding:11px 10px;text-align:center;position:relative;overflow:hidden}
+  .winh::before{content:"";position:absolute;left:0;right:0;top:0;height:3px}
+  .winh.w1::before{background:#34c06a}.winh.w2::before{background:#f08a3c}.winh.w3::before{background:#9b7be6}
+  .winh .wt{font-size:15.5px;font-weight:800}
+  .winh .wd{font-size:10.5px;color:#aebbcf;margin-top:2px}
+
+  .prof{background:#fbfcfe;border:1px solid var(--line);border-radius:11px;padding:11px 13px;
+    display:flex;flex-direction:column;justify-content:center;gap:5px}
+  .prof .pn{font-size:14.5px;font-weight:800;color:var(--ink)}
+  .prof .pc{font-size:10.5px;color:var(--ink3);line-height:1.35}
+  .prof .pchip{align-self:flex-start;font-size:10px;font-weight:700;background:#eef2f8;color:#566480;
+    border-radius:6px;padding:2px 7px;font-family:"Inter",sans-serif}
+
+  .tile{position:relative;border-radius:11px;padding:13px 11px;min-height:74px;
+    display:flex;flex-direction:column;justify-content:center;gap:3px;color:#fff;
+    box-shadow:0 1px 4px rgba(20,40,70,.13)}
+  .tile .act{font-size:16px;font-weight:800;letter-spacing:.4px;line-height:1.12}
+  .tile .sub{font-size:10.5px;font-weight:500;opacity:.95;line-height:1.3}
+  .tile .cor{position:absolute;top:7px;right:8px;font-size:10px;font-weight:800;font-family:"Inter",sans-serif;
+    background:rgba(255,255,255,.26);color:#fff;border-radius:5px;padding:1px 6px;letter-spacing:.3px}
+  .tile.dapt{background:var(--dapt)} .tile.ivt{background:var(--ivt)}
+  .tile.combo{background:var(--combo)} .tile.evt{background:var(--evt)} .tile.supp{background:var(--supp)}
+  /* soft = 個案 / 可考慮 / 不確定 */
+  .tile.soft{box-shadow:none;border:1.6px dashed}
+  .tile.dapt.soft{background:var(--dapt-s);color:var(--dapt-st);border-color:var(--dapt-sb)}
+  .tile.ivt.soft{background:var(--ivt-s);color:var(--ivt-st);border-color:var(--ivt-sb)}
+  .tile.combo.soft{background:var(--combo-s);color:var(--combo-st);border-color:var(--combo-sb)}
+  .tile.evt.soft{background:var(--evt-s);color:var(--evt-st);border-color:var(--evt-sb)}
+  .tile.soft .cor{background:currentColor;color:#fff;opacity:1}
+  .tile.soft .sub{opacity:.85}
+
+  /* ===== 圖例 ===== */
+  .legend{margin-top:18px;background:#f7f9fc;border:1px solid var(--line);border-radius:12px;
+    padding:14px 18px;display:flex;flex-wrap:wrap;gap:18px 26px;align-items:center}
+  .legend .grp{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .legend .lt{font-size:11.5px;font-weight:800;color:var(--ink2);margin-right:2px}
+  .sw{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--ink)}
+  .sw i{width:15px;height:15px;border-radius:4px;display:inline-block}
+  .sw.s i{background:transparent;border:1.6px dashed #9aa6b8}
+  .div{width:1px;height:20px;background:var(--line)}
+
+  /* ===== 參考細節 ===== */
+  .ref{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .ref .full{grid-column:1 / -1}
+  .card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:#fff}
+  .card h3{font-size:13.5px;font-weight:800;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:7px}
+  .card h3 span{color:var(--ink3);font-weight:600;font-size:11.5px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .cc h4{font-size:12.5px;font-weight:800;margin-bottom:5px}
+  .cc h4 small{font-weight:600;font-size:10.5px;color:var(--ink3)}
+  .cc p{font-size:11.5px;color:var(--ink2);line-height:1.6}
+  .cc b{color:var(--ink)}
+  .cc.pink h4{color:#a61e63} .cc.teal h4{color:#0b6e63}
+  .cc.ok h4{color:#0b8a4a} .cc.bad h4{color:#c0392b}
+  .hr{height:1px;background:var(--line);margin:12px 0}
+  .fn{font-size:11px;color:var(--ink3);line-height:1.5}
+
+  .drug{border:1px solid var(--line);border-radius:9px;padding:12px 14px}
+  .drug .dn{font-size:14px;font-weight:800;margin-bottom:7px;display:flex;align-items:center;gap:6px}
+  .drug .yr{font-size:10px;font-weight:800;color:#fff;background:var(--evt);border-radius:4px;padding:1px 6px;font-family:Inter}
+  .drug ul{list-style:none;font-size:11.5px;color:var(--ink2);line-height:1.65}
+  .drug ul li.d0{color:var(--ink);font-weight:700}
+  .flat{display:inline-block;font-size:10px;font-weight:800;color:#fff;background:var(--navy);border-radius:4px;padding:2px 8px;margin-top:7px;font-family:Inter}
+  .ci{margin-top:12px;background:#fff7e6;border:1px solid #ffe0a3;border-radius:8px;padding:9px 13px;font-size:11.5px;color:#8a5a00;line-height:1.5}
+
+  .route{list-style:none;font-size:12.5px;line-height:1.55}
+  .route>li{position:relative;padding-left:19px;margin-bottom:11px}
+  .route>li::before{content:"";position:absolute;left:0;top:5px;width:10px;height:10px;border-radius:50%}
+  .route>li.b::before{background:var(--ivt)}.route>li.o::before{background:var(--dapt)}.route>li.p::before{background:#9b7be6}
+  .route .s{list-style:none;margin-top:4px;font-size:11.5px;color:var(--ink2)}
+  .route .s li{margin:2px 0}
+  .route b{color:var(--ink)}
+  .route .cl{font-size:11px;color:#6b53b8;font-weight:700;margin-top:2px}
+
+  .audit{background:#f3faf6;border:1px solid #b9ddc9}
+  .audit h3{color:#19684a}
+  .audit ul{list-style:none;font-size:11.5px;line-height:1.65;color:var(--ink2)}
+  .audit li{margin-bottom:6px}
+  .audit .fix{color:#19684a;font-weight:800}
+  .audit .ok2{color:#0b6e63;font-weight:800}
+
+  footer{border-top:1px solid var(--line);background:#fafbfd;padding:15px 28px;display:flex;flex-direction:column;gap:9px}
+  .lg{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;font-size:11.5px;color:var(--ink2)}
+  .lg .k{font-weight:800;color:var(--ink)}
+  .cor-pill{display:inline-block;font-size:10px;font-weight:800;color:#fff;border-radius:4px;padding:1px 6px;margin-right:4px;font-family:Inter}
+  .c1{background:#1d4d8c}.c2a{background:#2b8a3e}.c2b{background:#d9740f}.c3{background:#c0392b}
+  .cite{font-size:10.5px;color:var(--ink3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;border-top:1px dashed var(--line);padding-top:9px}
+  .cite i{font-style:italic}
+
+  @media (max-width:860px){
+    body{padding:12px 6px}
+    header{padding:18px 18px}header h1{font-size:23px}
+    .body{padding:18px 14px}
+    .ref,.two{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <div>
+      <h1>急性缺血性中風 治療決策矩陣</h1>
+      <div class="sub">Acute Ischemic Stroke — Time-Based Treatment Algorithm</div>
+    </div>
+    <div class="gbadge">
+      <div class="g">2026 AHA/ASA Guidelines</div>
+      <div class="s">Prabhakaran et al. · <i>Stroke</i> 2026</div>
+    </div>
+  </header>
+
+  <div class="body">
+    <div class="sectitle"><b>決策矩陣</b><span>顏色 = 該做什麼　·　角落 = COR 等級　·　虛線框 = 個案考量</span></div>
+
+    <!-- ===== HERO 矩陣 ===== -->
+    <div class="scroll">
+    <div class="matrix">
+      <!-- 表頭列 -->
+      <div class="corner"><div class="a">病人特徵</div><div class="b">Patient Profile ╲ 時間窗</div></div>
+      <div class="winh w1"><div class="wt">0 – 4.5 小時</div><div class="wd">黃金窗 · IVT ± EVT</div></div>
+      <div class="winh w2"><div class="wt">4.5 – 24 小時</div><div class="wd">延長窗 · 影像篩選 · EVT</div></div>
+      <div class="winh w3"><div class="wt">醒後 / 不明</div><div class="wd">DWI(+) FLAIR(−) → IVT</div></div>
+
+      <!-- R1 輕微非致殘 -->
+      <div class="prof"><div class="pn">輕微症狀，非致殘</div><span class="pchip">NIHSS 0–5</span><div class="pc">無致殘症狀，無 LVO</div></div>
+      <div class="tile dapt"><span class="cor">1</span><span class="act">雙抗 DAPT</span><span class="sub">21 天 · IVT 無益（COR 3）</span></div>
+      <div class="tile dapt"><span class="cor">1</span><span class="act">雙抗 DAPT</span><span class="sub">21 天</span></div>
+      <div class="tile dapt"><span class="cor">1</span><span class="act">雙抗 DAPT</span><span class="sub">21 天</span></div>
+
+      <!-- R2 中度無LVO -->
+      <div class="prof"><div class="pn">中度症狀，無 LVO</div><span class="pchip">NIHSS ≥ 5</span><div class="pc">有致殘症狀，CTA 無大血管閉塞</div></div>
+      <div class="tile ivt"><span class="cor">1A</span><span class="act">溶栓 IVT</span><span class="sub">TNK / tPA</span></div>
+      <div class="tile supp"><span class="act">支持治療</span><span class="sub">IVT &gt;4.5h 不建議</span></div>
+      <div class="tile ivt"><span class="cor">2a</span><span class="act">溶栓 IVT</span><span class="sub">DWI(+) FLAIR(−)</span></div>
+
+      <!-- R3 LVO 小中 -->
+      <div class="prof"><div class="pn">LVO，小 / 中梗塞</div><span class="pchip">ASPECTS ≥ 6</span><div class="pc">penumbra 完整</div></div>
+      <div class="tile combo"><span class="cor">1A</span><span class="act">溶栓 + 取栓</span><span class="sub">橋接或直接取栓</span></div>
+      <div class="tile evt"><span class="cor">1A</span><span class="act">取栓 EVT</span><span class="sub">DAWN / DEFUSE-3</span></div>
+      <div class="tile combo"><span class="act">溶栓 + 取栓</span><span class="sub">DWI-FLAIR mismatch</span></div>
+
+      <!-- R4 LVO 大梗 -->
+      <div class="prof"><div class="pn">LVO，大梗塞</div><span class="pchip">ASPECTS 3–5</span><div class="pc">有 penumbra · core &lt;70mL · ratio &gt;1.8</div></div>
+      <div class="tile combo"><span class="cor">2a</span><span class="act">溶栓 + 取栓</span><span class="sub">TESLA · CTP/MRI</span></div>
+      <div class="tile evt"><span class="cor">2a</span><span class="act">取栓 EVT</span><span class="sub">SELECT2 / TESLA</span></div>
+      <div class="tile evt soft"><span class="cor">個案</span><span class="act">取栓 EVT</span><span class="sub">個案評估</span></div>
+
+      <!-- R5 巨大梗塞 -->
+      <div class="prof"><div class="pn">LVO，巨大梗塞</div><span class="pchip">ASPECTS 0–2</span><div class="pc">core &gt;100 mL</div></div>
+      <div class="tile ivt soft"><span class="cor">可給</span><span class="act">溶栓 可給</span><span class="sub">EVT 個案 · 預後差</span></div>
+      <div class="tile supp"><span class="act">支持治療</span></div>
+      <div class="tile supp"><span class="act">支持治療</span></div>
+
+      <!-- R6 基底動脈 -->
+      <div class="prof"><div class="pn">基底動脈 LVO</div><span class="pchip">後循環</span><div class="pc">Basilar occlusion · 症狀多樣</div></div>
+      <div class="tile combo"><span class="cor">1A</span><span class="act">溶栓 + 取栓</span></div>
+      <div class="tile evt"><span class="cor">1A</span><span class="act">取栓 至 24h</span><span class="sub">ATTENTION / BAOCHE</span></div>
+      <div class="tile evt soft"><span class="cor">可考慮</span><span class="act">取栓 EVT</span></div>
+    </div>
+    </div>
+
+    <!-- 圖例 -->
+    <div class="legend">
+      <div class="grp">
+        <span class="lt">行動色彩</span>
+        <span class="sw"><i style="background:var(--dapt)"></i>雙抗 DAPT</span>
+        <span class="sw"><i style="background:var(--ivt)"></i>溶栓 IVT</span>
+        <span class="sw"><i style="background:var(--combo)"></i>溶栓+取栓</span>
+        <span class="sw"><i style="background:var(--evt)"></i>取栓 EVT</span>
+        <span class="sw"><i style="background:var(--supp)"></i>支持治療</span>
+      </div>
+      <div class="div"></div>
+      <div class="grp">
+        <span class="lt">強度</span>
+        <span class="sw"><i style="background:#8a97ab"></i>實心 = 已建議（COR 1–2）</span>
+        <span class="sw s"><i></i>虛線 = 個案 / 可考慮</span>
+        <span class="sw">角落數字 = COR 等級</span>
+      </div>
+    </div>
+
+    <!-- ===== 參考細節 ===== -->
+    <div class="ref">
+
+      <!-- 影像篩選 -->
+      <div class="card full">
+        <h3>影像篩選標準 <span>· Imaging Selection — 兩種典範勿混淆</span></h3>
+        <div class="two">
+          <div>
+            <div class="cc pink">
+              <h4>EVT 影像篩選 <small>大梗塞 vs 標準核心延長窗</small></h4>
+            </div>
+            <div class="two" style="margin-top:6px">
+              <div class="cc">
+                <h4>大梗塞 ASPECTS 3–5 <small>SELECT2 / TESLA / ANGEL-ASPECT</small></h4>
+                <p>NCCT/DWI <b>ASPECTS 3–5</b><br>或 core <b>≥ 50 mL</b>（SELECT2）／<b>70–100 mL</b>（ANGEL-ASPECT）<br>0–6h <b>不需</b> mismatch</p>
+              </div>
+              <div class="cc">
+                <h4 style="color:#c0660f">標準核心延長窗 <small>DAWN / DEFUSE-3 · 6–24h</small></h4>
+                <p>Core（rCBF &lt;30%）<b>&lt;70 mL</b><br>Mismatch ratio <b>≥ 1.8</b><br>Mismatch volume <b>≥ 15 mL</b></p>
+              </div>
+            </div>
+            <div class="hr"></div>
+            <div class="fn">✓ NIHSS ≥ 6 且 premorbid mRS ≤ 2　|　ASPECTS 0–2／core &gt;100 mL：證據新增中，絕對預後仍差，個案決定</div>
+          </div>
+          <div>
+            <div class="cc teal"><h4>Wake-up / 不明發病 IVT 篩選 <small>WAKE-UP trial · Thomalla 2018</small></h4></div>
+            <div class="two" style="margin-top:6px">
+              <div class="cc ok">
+                <h4>✓ IVT 可給（mismatch）</h4>
+                <p>DWI 陽性（急性限水擴散）<br>FLAIR 陰性（無 T2 訊號）<br>→ 等同 &lt;4.5h 發病</p>
+              </div>
+              <div class="cc bad">
+                <h4>✗ IVT 不建議（no mismatch）</h4>
+                <p>DWI 陽性 + FLAIR 陽性<br>→ 發病可能 &gt;4.5h<br>不應給予 IVT</p>
+              </div>
+            </div>
+            <div class="hr"></div>
+            <div class="fn">替代方案：CTP perfusion mismatch（Tmax &gt;6s / core ≥ 1.2）亦可作篩選依據</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IVT 藥物 -->
+      <div class="card">
+        <h3>靜脈血栓溶解劑 <span>(IVT)</span></h3>
+        <div class="two">
+          <div class="drug">
+            <div class="dn">Tenecteplase <span class="yr">2026 首選</span></div>
+            <ul>
+              <li class="d0">0.25 mg/kg IV bolus（最高 25 mg）</li>
+              <li>✓ 單次靜推，操作簡便</li>
+              <li>✓ LVO 接 EVT 時優先選用</li>
+            </ul>
+            <span class="flat">COR 1 · LOE A</span>
+          </div>
+          <div class="drug">
+            <div class="dn">Alteplase (tPA)</div>
+            <ul>
+              <li class="d0">0.9 mg/kg（最高 90 mg）</li>
+              <li>10% bolus + 90% 輸注 60 min</li>
+              <li>✓ 效果等同 TNK，仍可用</li>
+            </ul>
+            <span class="flat">COR 1 · LOE A</span>
+          </div>
+        </div>
+        <div class="ci">⚠️ 主要禁忌：近期手術 / 顱內出血史 / 凝血異常 / SBP &gt;185 mmHg（未控制）</div>
+      </div>
+
+      <!-- 到院路徑 -->
+      <div class="card">
+        <h3>到院路徑與轉院決策</h3>
+        <ul class="route">
+          <li class="b">已在 <b>EVT 中心</b> → CTA 確認 LVO → 直接取栓 ± TNK</li>
+          <li class="o">非 EVT 中心，懷疑 LVO：
+            <ul class="s">
+              <li>• 轉院 &lt;30 min → 直接轉（不等 IVT）</li>
+              <li>• 轉院 &gt;30 min → 先給 IVT 再轉（drip-and-ship）</li>
+            </ul>
+          </li>
+          <li class="p"><b>Mobile Stroke Unit（MSU）</b>：院前給 IVT，到院直接進 angio suite
+            <div class="cl">COR 2a — 改善 outcomes（2026 新增推薦）</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 實證校訂 -->
+      <div class="card full audit">
+        <h3>實證校訂註記 <span>· 已對照 OpenEvidence + 原始試驗</span></h3>
+        <ul>
+          <li><span class="fix">✓ 修正</span>　基底動脈 24h 窗：原引「BASICS」不正確——<b>BASICS（2021）為中性試驗且僅收 ≤6h</b>；6–24h 實證來自 <b>ATTENTION（≤12h）/ BAOCHE（6–24h）</b>（VERITAS IPD meta：mRS 0–3 45% vs 30%）。</li>
+          <li><span class="fix">✓ 修正</span>　輕微非致殘 IVT 改標 <b>COR 3（no benefit）</b>——PRISMS／ARAMIS／TEMPO-2 顯示溶栓無益且增出血；DAPT 21 天為主軸（CHANCE/POINT）。</li>
+          <li><span class="fix">✓ 修正</span>　巨大梗塞 ASPECTS 0–2：原「EVT 不建議 COR 3」過頭——pooled 360 例獨立行走/功能獨立/死亡率仍改善（惟絕對預後差），改「個案考量」。</li>
+          <li><span class="fix">✓ 修正</span>　影像篩選分流：原把 DEFUSE-3「core &lt;70mL」掛在「大梗塞篩選」下自相矛盾——已拆為大梗塞（≥50mL）與標準核心延長窗兩種典範。</li>
+          <li><span class="ok2">— 查證無誤</span>　TNK 0.25mg/kg 優先（ATTEST-2／EXTEND-IA TNK／T-FLAVOR）、Alteplase 劑量、醒後 DWI(+)/FLAIR(−)（WAKE-UP）、6–24h DAWN/DEFUSE-3、SBP&gt;185 禁忌、<b>2026 AHA/ASA 指引與 DOI 經 crossref 驗證為真實文獻</b>。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="lg">
+      <span><span class="k">推薦等級</span></span>
+      <span><span class="cor-pill c1">COR 1</span>強烈建議</span>
+      <span><span class="cor-pill c2a">COR 2a</span>適度建議</span>
+      <span><span class="cor-pill c2b">COR 2b</span>可考慮</span>
+      <span><span class="cor-pill c3">COR 3</span>不建議 / 無益</span>
+      <span style="margin-left:8px"><span class="k">縮寫</span>　<b>LVO</b> 大血管閉塞　<b>EVT</b> 動脈取栓　<b>IVT</b> 靜脈溶栓　<b>ASPECTS</b> Alberta Stroke Program Early CT Score</span>
+    </div>
+    <div class="cite">
+      <span>Prabhakaran S et al. 2026 Guideline for the Early Management of Patients with Acute Ischemic Stroke. <i>Stroke.</i> 2026;57. DOI: 10.1161/STR.0000000000000513</span>
+      <span>僅供教學參考 · 臨床決策請依個案評估</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
