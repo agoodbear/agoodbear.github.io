@@ -1,3 +1,10 @@
+- title: "急性缺血性中風 治療決策矩陣"
+  description: "以 2026 AHA/ASA 指引為本的「時間窗 × 病人型」決策矩陣，用顏色直接代表處置（溶栓／取栓／雙抗／支持），一眼掃完整片狀況；含影像篩選標準、TNK/tPA 劑量與到院轉院路徑。內容經 OpenEvidence 對照原始試驗校訂。"
+  image: "/images/practical-tools/stroke-decision-matrix.png"
+  url: "/tools/stroke-decision-matrix/"
+  embed_url: "/tools/stroke-decision-matrix/"
+  source_label: "立即使用"
+
 - title: "GIF PACS 雙視窗檢視器"
   description: "支援左右 GIF 對照、同步翻幀、箭頭與文字標註、亮度對比調整，以及單檔 HTML 匯出保存。"
   image: "/images/practical-tools/gif-pacs-viewer.svg"
