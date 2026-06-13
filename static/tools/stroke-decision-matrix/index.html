@@ -127,6 +127,29 @@
   .audit li{margin-bottom:6px}
   .audit .fix{color:#19684a;font-weight:800}
   .audit .ok2{color:#0b6e63;font-weight:800}
+  .audit .new2{color:#1e40af;font-weight:800}
+
+  /* ===== Penumbra / Core Mismatch 定義 ===== */
+  .mmgrid{display:grid;grid-template-columns:212px 1fr;gap:18px;align-items:center}
+  .mmdiag{display:flex;flex-direction:column;gap:8px}
+  .mmbar{display:flex;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+  .mmbar>div{flex:1;padding:8px 5px;text-align:center;font-size:10px;font-weight:800;line-height:1.25}
+  .mmbar .core{background:#fde2e2;color:#b23b3b}
+  .mmbar .pen{background:#fcefcf;color:#9a6a09;flex:1.3}
+  .mmbar .norm{background:#dcefe0;color:#2b7a44}
+  .mmbar small{display:block;font-weight:600;font-size:9px;opacity:.85;margin-top:2px;font-family:Inter}
+  .mmboxes{display:flex;gap:8px}
+  .mmboxes>div{flex:1;background:#f7f9fc;border:1px solid var(--line);border-radius:7px;padding:6px 8px;text-align:center;font-size:9.5px;color:var(--ink3)}
+  .mmboxes b{display:block;color:var(--ink);font-size:12px;font-family:Inter;margin-bottom:2px}
+  table.mmt{width:100%;border-collapse:collapse;font-size:11.5px}
+  table.mmt th{background:#f3f6fb;color:var(--navy);font-weight:800;text-align:left;padding:7px 9px;border-bottom:2px solid var(--line);font-size:11px}
+  table.mmt td{padding:7px 9px;border-bottom:1px solid var(--line);color:var(--ink2);vertical-align:top;line-height:1.4}
+  table.mmt tr:last-child td{border-bottom:0}
+  table.mmt td b{color:var(--ink)}
+  table.mmt .tn{font-weight:800;color:var(--navy);font-family:Inter}
+  table.mmt .rt{color:#a61e63;font-weight:700}
+  .mmnote{margin-top:11px;font-size:10.5px;color:var(--ink3);line-height:1.55}
+  @media (max-width:860px){.mmgrid{grid-template-columns:1fr}}
 
   footer{border-top:1px solid var(--line);background:#fafbfd;padding:15px 28px;display:flex;flex-direction:column;gap:9px}
   .lg{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;font-size:11.5px;color:var(--ink2)}
@@ -167,7 +190,7 @@
       <!-- 表頭列 -->
       <div class="corner"><div class="a">病人特徵</div><div class="b">Patient Profile ╲ 時間窗</div></div>
       <div class="winh w1"><div class="wt">0 – 4.5 小時</div><div class="wd">黃金窗 · IVT ± EVT</div></div>
-      <div class="winh w2"><div class="wt">4.5 – 24 小時</div><div class="wd">延長窗 · 影像篩選 · EVT</div></div>
+      <div class="winh w2"><div class="wt">4.5 – 24 小時</div><div class="wd">延長窗 · EVT · rTPA 至 9h（CTP mismatch）</div></div>
       <div class="winh w3"><div class="wt">醒後 / 不明</div><div class="wd">DWI(+) FLAIR(−) → IVT</div></div>
 
       <!-- R1 輕微非致殘 -->
@@ -179,7 +202,7 @@
       <!-- R2 中度無LVO -->
       <div class="prof"><div class="pn">中度症狀，無 LVO</div><span class="pchip">NIHSS ≥ 5</span><div class="pc">有致殘症狀，CTA 無大血管閉塞</div></div>
       <div class="tile ivt"><span class="cor">1A</span><span class="act">溶栓 IVT</span><span class="sub">TNK / tPA</span></div>
-      <div class="tile supp"><span class="act">支持治療</span><span class="sub">IVT &gt;4.5h 不建議</span></div>
+      <div class="tile ivt soft"><span class="cor">2b</span><span class="act">溶栓 可考慮</span><span class="sub">4.5–9h CTP mismatch（EXTEND）· &gt;9h 或無 mismatch → 支持治療</span></div>
       <div class="tile ivt"><span class="cor">2a</span><span class="act">溶栓 IVT</span><span class="sub">DWI(+) FLAIR(−)</span></div>
 
       <!-- R3 LVO 小中 -->
@@ -269,6 +292,35 @@
         </div>
       </div>
 
+      <!-- Penumbra / Core Mismatch 定義 -->
+      <div class="card full">
+        <h3>Penumbra / Core Mismatch 定義 <span>· 灌流影像篩選的三種典範</span></h3>
+        <div class="mmgrid">
+          <div class="mmdiag">
+            <div class="mmbar">
+              <div class="core">CORE 已死亡<small>rCBF &lt;30%</small></div>
+              <div class="pen">PENUMBRA 可搶救<small>Tmax &gt;6s</small></div>
+              <div class="norm">正常<small>未受損</small></div>
+            </div>
+            <div class="mmboxes">
+              <div><b>Ratio ≥ 1.8</b>低灌流量 ÷ 核心</div>
+              <div><b>Volume ≥ 15 mL</b>絕對 mismatch 體積</div>
+            </div>
+          </div>
+          <div>
+            <table class="mmt">
+              <thead><tr><th>試驗</th><th>適用情境</th><th>Core 上限</th><th>Ratio</th><th>Mismatch Vol</th></tr></thead>
+              <tbody>
+                <tr><td class="tn">EXTEND</td><td>IVT <b>4.5–9h</b> / 醒後（灌流篩選）</td><td><b>≤ 70 mL</b></td><td class="rt">&gt; 1.2</td><td>&gt; 10 mL</td></tr>
+                <tr><td class="tn">DEFUSE-3</td><td>EVT <b>6–16h</b>（灌流 mismatch）</td><td>&lt; 70 mL</td><td class="rt">≥ 1.8</td><td>≥ 15 mL</td></tr>
+                <tr><td class="tn">DAWN</td><td>EVT <b>6–24h</b>（臨床–核心 mismatch）</td><td>依年齡/NIHSS 分組<br>core &lt;21 / &lt;31 / &lt;51 mL</td><td class="rt">臨床落差</td><td>—</td></tr>
+              </tbody>
+            </table>
+            <div class="mmnote">⊙ 測量工具：CT Perfusion → RAPID / Viz.ai 自動輸出 core mL、penumbra mL、ratio。　大梗塞 EVT 試驗（SELECT2／TESLA／ANGEL-ASPECT）以 <b>NCCT ASPECTS</b> 篩選、非灌流 mismatch，見上方「大梗塞 EVT 篩選」。</div>
+          </div>
+        </div>
+      </div>
+
       <!-- IVT 藥物 -->
       <div class="card">
         <h3>靜脈血栓溶解劑 <span>(IVT)</span></h3>
@@ -320,7 +372,8 @@
           <li><span class="fix">✓ 修正</span>　輕微非致殘 IVT 改標 <b>COR 3（no benefit）</b>——PRISMS／ARAMIS／TEMPO-2 顯示溶栓無益且增出血；DAPT 21 天為主軸（CHANCE/POINT）。</li>
           <li><span class="fix">✓ 修正</span>　巨大梗塞 ASPECTS 0–2：原「EVT 不建議 COR 3」過頭——pooled 360 例獨立行走/功能獨立/死亡率仍改善（惟絕對預後差），改「個案考量」。</li>
           <li><span class="fix">✓ 修正</span>　影像篩選分流：原把 DEFUSE-3「core &lt;70mL」掛在「大梗塞篩選」下自相矛盾——已拆為大梗塞（≥50mL）與標準核心延長窗兩種典範。</li>
-          <li><span class="ok2">— 查證無誤</span>　TNK 0.25mg/kg 優先（ATTEST-2／EXTEND-IA TNK／T-FLAVOR）、Alteplase 劑量、醒後 DWI(+)/FLAIR(−)（WAKE-UP）、6–24h DAWN/DEFUSE-3、SBP&gt;185 禁忌、<b>2026 AHA/ASA 指引與 DOI 經 crossref 驗證為真實文獻</b>。</li>
+          <li><span class="new2">＋ 新增</span>　中度無 LVO、4.5–9h（或醒後）灌流篩選溶栓：依 <b>EXTEND</b>（core ≤70mL、mismatch ratio &gt;1.2、volume &gt;10mL）；2026 指引承認延長窗灌流篩選 IVT（COR 2b 量級），詳見下方「Penumbra / Core Mismatch 定義」。</li>
+          <li><span class="ok2">— 查證無誤</span>　TNK 0.25mg/kg 優先（ATTEST-2／EXTEND-IA TNK／T-FLAVOR）、Alteplase 劑量、醒後 DWI(+)/FLAIR(−)（WAKE-UP）、SBP&gt;185 禁忌均屬實。<b>2026-06-13 經 PubMed + OpenEvidence 獨立查證：指引（Prabhakaran et al, Stroke 2026, DOI 10.1161/STR.0000000000000513）為真實文獻；基底動脈 6–24h 證據為 BAOCHE(6–24h)／ATTENTION(≤12h)（非 BASICS，後者僅 ≤6h 且中性）；巨大梗塞 ASPECTS 0–2 EVT 屬 COR 2b 個案／共享決策（LASTE，≤6.5h、MRI-DWI），非「不建議」。</b></li>
         </ul>
       </div>
     </div>
