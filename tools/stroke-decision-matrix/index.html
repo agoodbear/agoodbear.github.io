@@ -152,7 +152,12 @@
   @media (max-width:860px){.mmgrid{grid-template-columns:1fr}}
 
   /* ===== 互動式決策流程 ===== */
-  .algo{background:#fbfcfe;border:1px solid var(--line);border-radius:14px;padding:18px}
+  .algo-section{margin-top:30px;background:linear-gradient(180deg,#e9eef8,#e1e9f5);border:1px solid #ccd8ed;border-radius:16px;padding:24px 20px;position:relative;overflow:hidden}
+  .algo-section::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--ivt),var(--combo),var(--evt))}
+  .algo-head{text-align:center;margin-bottom:18px}
+  .algo-title{font-size:24px;font-weight:900;color:var(--ivt);letter-spacing:1px}
+  .algo-sub{font-size:12.5px;color:var(--slate);margin-top:6px;font-weight:600}
+  .algo{background:#fff;border:1px solid #d3deee;border-radius:12px;padding:18px;box-shadow:0 5px 20px rgba(27,42,66,.08)}
   .algo-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:13px}
   .algo-step{font-size:11.5px;font-weight:800;color:var(--ivt);font-family:Inter;letter-spacing:.4px}
   .algo-reset{border:1px solid var(--line);background:#fff;color:var(--ink2);border-radius:8px;padding:6px 13px;font-size:11.5px;font-weight:700;cursor:pointer}
@@ -285,14 +290,19 @@
     </div>
 
     <!-- ===== 互動式決策流程（緊接矩陣下方）===== -->
-    <div class="sectitle" style="margin-top:26px"><b>互動式決策流程</b><span>Interactive Algorithm · 點選病人情境，逐步推導建議處置</span></div>
-    <div class="algo">
-      <div class="algo-bar">
-        <span class="algo-step" id="algoStep"></span>
-        <button class="algo-reset" id="algoReset" type="button">↺ 重新開始</button>
+    <div class="algo-section">
+      <div class="algo-head">
+        <div class="algo-title">互動式決策流程</div>
+        <div class="algo-sub">Interactive Algorithm · 點選病人情境，逐步推導建議處置</div>
       </div>
-      <div class="algo-crumbs" id="algoCrumbs"></div>
-      <div id="algoStage"></div>
+      <div class="algo">
+        <div class="algo-bar">
+          <span class="algo-step" id="algoStep"></span>
+          <button class="algo-reset" id="algoReset" type="button">↺ 重新開始</button>
+        </div>
+        <div class="algo-crumbs" id="algoCrumbs"></div>
+        <div id="algoStage"></div>
+      </div>
     </div>
 
     <!-- ===== 參考細節 ===== -->
