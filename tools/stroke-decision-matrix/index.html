@@ -151,6 +151,40 @@
   .mmnote{margin-top:11px;font-size:10.5px;color:var(--ink3);line-height:1.55}
   @media (max-width:860px){.mmgrid{grid-template-columns:1fr}}
 
+  /* ===== 互動式決策流程 ===== */
+  .algo{background:#fbfcfe;border:1px solid var(--line);border-radius:14px;padding:18px}
+  .algo-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:13px}
+  .algo-step{font-size:11.5px;font-weight:800;color:var(--ivt);font-family:Inter;letter-spacing:.4px}
+  .algo-reset{border:1px solid var(--line);background:#fff;color:var(--ink2);border-radius:8px;padding:6px 13px;font-size:11.5px;font-weight:700;cursor:pointer}
+  .algo-reset:hover{background:#eef2f8}
+  .algo-crumbs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:14px;min-height:6px}
+  .algo-crumb{display:inline-flex;align-items:center;font-size:11px;font-weight:600;background:#eaf1fb;color:#34507a;border-radius:999px;padding:3px 11px}
+  .algo-crumbs .sep{color:var(--ink3);font-weight:800}
+  .algo-qtitle{font-size:11px;font-weight:800;color:var(--ink3);letter-spacing:.6px;margin-bottom:5px;font-family:Inter}
+  .algo-q{font-size:17px;font-weight:800;color:var(--navy);line-height:1.4;margin-bottom:15px}
+  .algo-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(216px,1fr));gap:11px}
+  .algo-opt{text-align:left;border:1.5px solid #dbe3ee;background:#fff;border-radius:11px;padding:13px 15px;cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .15s;display:flex;flex-direction:column;gap:3px}
+  .algo-opt:hover,.algo-opt:focus-visible{border-color:var(--ivt);box-shadow:0 5px 16px rgba(37,99,235,.16);transform:translateY(-2px);outline:none}
+  .algo-opt .ol{font-size:14.5px;font-weight:800;color:var(--ink)}
+  .algo-opt .os{font-size:11.5px;color:var(--ink2);line-height:1.4}
+  .algo-result{border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+  .algo-rhead{padding:15px 18px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .algo-rhead .ra{font-size:21px;font-weight:900;letter-spacing:.5px}
+  .algo-rhead .rc{font-size:12px;font-weight:800;font-family:Inter;background:rgba(255,255,255,.22);border-radius:6px;padding:3px 10px;white-space:nowrap}
+  .algo-rbody{padding:15px 18px;background:#fff}
+  .algo-rbody .rsub{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:9px}
+  .algo-rbody ul{list-style:none;font-size:12px;color:var(--ink2);line-height:1.6}
+  .algo-rbody ul li{padding-left:14px;position:relative;margin-bottom:4px}
+  .algo-rbody ul li::before{content:"–";position:absolute;left:2px;color:var(--ink3)}
+  .algo-trials{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .algo-trial{font-size:10.5px;font-weight:700;font-family:Inter;background:#eef2f8;color:#566480;border-radius:6px;padding:2px 9px}
+  .algo-rnav{display:flex;gap:9px;margin-top:14px}
+  .algo-back{border:1px solid var(--line);background:#fff;color:var(--ink2);border-radius:8px;padding:8px 15px;font-size:12px;font-weight:700;cursor:pointer}
+  .algo-back:hover{background:#eef2f8}
+  .algo-disc{margin-top:13px;font-size:10.5px;color:var(--ink3);line-height:1.5;border-top:1px dashed var(--line);padding-top:10px}
+  .rh-dapt{background:var(--dapt)}.rh-ivt{background:var(--ivt)}.rh-combo{background:var(--combo)}
+  .rh-evt{background:var(--evt)}.rh-supp{background:var(--supp)}
+
   footer{border-top:1px solid var(--line);background:#fafbfd;padding:15px 28px;display:flex;flex-direction:column;gap:9px}
   .lg{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;font-size:11.5px;color:var(--ink2)}
   .lg .k{font-weight:800;color:var(--ink)}
@@ -377,6 +411,17 @@
         </ul>
       </div>
     </div>
+
+    <!-- ===== 互動式決策流程 ===== -->
+    <div class="sectitle" style="margin-top:30px"><b>互動式決策流程</b><span>Interactive Algorithm · 點選病人情境逐步推導建議</span></div>
+    <div class="algo">
+      <div class="algo-bar">
+        <span class="algo-step" id="algoStep"></span>
+        <button class="algo-reset" id="algoReset" type="button">↺ 重新開始</button>
+      </div>
+      <div class="algo-crumbs" id="algoCrumbs"></div>
+      <div id="algoStage"></div>
+    </div>
   </div>
 
   <footer>
@@ -395,5 +440,142 @@
   </footer>
 
 </div>
+
+<script>
+(() => {
+  const NODES = {
+    start:{t:'q',title:'第一步 · 影像確認',q:'NCCT 排除出血、確認為急性缺血性中風後，依 CTA 看大血管閉塞（LVO）狀態：',
+      o:[{l:'無 LVO',s:'CTA 無大血管閉塞',n:'nolvo_sev'},
+         {l:'前循環 LVO',s:'ICA／MCA（M1、M2）',n:'ant_time'},
+         {l:'後循環 LVO（基底動脈）',s:'Basilar／椎動脈',n:'bas_time'}]},
+
+    nolvo_sev:{t:'q',title:'無 LVO · 嚴重度',q:'症狀嚴重度與是否致殘？',
+      o:[{l:'輕微、非致殘',s:'NIHSS 0–5，無致殘性缺損',n:'r_dapt'},
+         {l:'中度／致殘',s:'NIHSS ≥5 或有致殘性缺損',n:'nolvo_time'}]},
+    nolvo_time:{t:'q',title:'無 LVO · 致殘 · 時間窗',q:'距最後正常（LKW）多久？',
+      o:[{l:'0–4.5 小時',n:'r_ivt_early'},
+         {l:'4.5–9 小時',n:'nolvo_ctp'},
+         {l:'醒後／不明',n:'nolvo_wake'},
+         {l:'> 9 小時',n:'r_support'}]},
+    nolvo_ctp:{t:'q',title:'4.5–9h · 灌流篩選',q:'CTP 是否符合 EXTEND mismatch？（core ≤70mL、ratio >1.2、mismatch >10mL）',
+      o:[{l:'符合 mismatch',s:'有可搶救 penumbra',n:'r_ivt_extend'},
+         {l:'不符／無 mismatch',n:'r_support'}]},
+    nolvo_wake:{t:'q',title:'醒後／不明 · MRI 篩選',q:'DWI(+)／FLAIR(−) mismatch（WAKE-UP）？',
+      o:[{l:'DWI(+)、FLAIR(−)',s:'推估等同 <4.5h',n:'r_ivt_wake'},
+         {l:'FLAIR(+) 或無 mismatch',n:'r_support'}]},
+
+    ant_time:{t:'q',title:'前循環 LVO · 時間窗',q:'距最後正常（LKW）多久？',
+      o:[{l:'0–6 小時',s:'早期窗',n:'ant_early'},
+         {l:'6–24 小時',s:'延長窗（需 mismatch）',n:'ant_late'},
+         {l:'醒後／不明',n:'ant_late'}]},
+    ant_early:{t:'q',title:'前循環 LVO · 0–6h · 梗塞範圍',q:'NCCT／CTP 的 ASPECTS／core？',
+      o:[{l:'ASPECTS ≥6（小／中梗塞）',s:'penumbra 完整',n:'r_combo_early'},
+         {l:'ASPECTS 3–5（大梗塞）',s:'core <70mL、有 penumbra',n:'r_combo_large'},
+         {l:'ASPECTS 0–2（巨大梗塞）',s:'core >100mL',n:'r_evt_huge'}]},
+    ant_late:{t:'q',title:'前循環 LVO · 6–24h／醒後 · 影像篩選',q:'ASPECTS 與 mismatch（DAWN／DEFUSE-3）？',
+      o:[{l:'ASPECTS ≥6 且 mismatch(+)',s:'DAWN／DEFUSE-3 符合',n:'r_evt_late'},
+         {l:'ASPECTS 3–5（大梗塞）',s:'SELECT2／TESLA',n:'r_evt_large_late'},
+         {l:'ASPECTS 0–2 或無 mismatch',n:'r_support_lvo_late'}]},
+
+    bas_time:{t:'q',title:'基底動脈 LVO · 時間窗',q:'距最後正常（LKW）多久？',
+      o:[{l:'0–4.5 小時',n:'r_bas_combo'},
+         {l:'4.5–24 小時',n:'r_bas_evt24'},
+         {l:'醒後／不明',n:'r_bas_consider'}]},
+
+    r_dapt:{t:'r',cls:'dapt',a:'雙抗 DAPT 21 天',cor:'COR 1',
+      sub:'輕微非致殘、無 LVO — 以雙重抗血小板為主',
+      li:['Aspirin + Clopidogrel 21 天（之後續單一抗血小板做二級預防）','24h 內開始；CHANCE／POINT 支持','靜脈溶栓對「非致殘」缺損無益（COR 3，PRISMS）'],
+      tr:['CHANCE','POINT','PRISMS']},
+    r_ivt_early:{t:'r',cls:'ivt',a:'靜脈溶栓 IVT',cor:'COR 1 · LOE A',
+      sub:'致殘症狀、無 LVO、0–4.5 小時',
+      li:['Tenecteplase 0.25 mg/kg IV bolus（最高 25mg，2026 首選）','或 Alteplase 0.9 mg/kg（10% bolus + 90% 輸注 60min）','給藥前 SBP <185 mmHg；排除禁忌'],
+      tr:['ATTEST-2','EXTEND-IA TNK']},
+    r_ivt_extend:{t:'r',cls:'ivt',a:'靜脈溶栓 可考慮',cor:'COR 2b',
+      sub:'4.5–9 小時、CTP mismatch（EXTEND）',
+      li:['灌流篩選符合：core ≤70mL、ratio >1.2、mismatch >10mL','EXTEND 使用 Alteplase','獲益與出血風險須個別權衡'],
+      tr:['EXTEND','灌流 IPD meta']},
+    r_ivt_wake:{t:'r',cls:'ivt',a:'靜脈溶栓 可給',cor:'COR 2a',
+      sub:'醒後／不明發病、DWI(+) FLAIR(−)',
+      li:['DWI-FLAIR mismatch 推估發病 <4.5h','Alteplase；TNK 亦可考慮','無 mismatch 則不建議'],
+      tr:['WAKE-UP']},
+    r_support:{t:'r',cls:'supp',a:'支持性治療',cor:'',
+      sub:'超出溶栓窗／無 mismatch、無 LVO',
+      li:['一般支持治療、併發症處置','早期二級預防（抗血小板、危險因子）','評估復健'],
+      tr:[]},
+    r_combo_early:{t:'r',cls:'combo',a:'溶栓 + 取栓',cor:'COR 1 · LOE A',
+      sub:'前循環 LVO、0–6h、ASPECTS ≥6',
+      li:['可溶栓者：橋接（IVT → EVT）','或直接取栓，視中心能力與轉院時間','TNK 接 EVT 時優先選用'],
+      tr:['HERMES','SWIFT-PRIME']},
+    r_combo_large:{t:'r',cls:'combo',a:'溶栓 + 取栓',cor:'COR 2a',
+      sub:'前循環 LVO、0–6h、大梗塞 ASPECTS 3–5',
+      li:['core <70mL、有 penumbra；建議 CTP／MRI 佐證','可橋接溶栓並施行 EVT'],
+      tr:['SELECT2','TESLA']},
+    r_evt_huge:{t:'r',cls:'evt',a:'取栓 EVT 可考慮',cor:'COR 2b',
+      sub:'巨大梗塞 ASPECTS 0–2（core >100mL）— 共享決策',
+      li:['LASTE 支持，≤6.5h、以 MRI-DWI 篩選為佳','絕對獲益較低、預後仍差 → 與病人／家屬共享決策','可溶栓者仍可同時給 IVT'],
+      tr:['LASTE']},
+    r_evt_late:{t:'r',cls:'evt',a:'取栓 EVT',cor:'COR 1 · LOE A',
+      sub:'前循環 LVO、6–24h、ASPECTS ≥6 且 mismatch(+)',
+      li:['DAWN（臨床–核心 mismatch）或 DEFUSE-3（灌流 mismatch）符合','溶栓窗外，以取栓為主'],
+      tr:['DAWN','DEFUSE-3']},
+    r_evt_large_late:{t:'r',cls:'evt',a:'取栓 EVT',cor:'COR 2a',
+      sub:'前循環 LVO、6–24h、大梗塞 ASPECTS 3–5',
+      li:['影像篩選必要（CTP／MRI／NCCT ASPECTS）','核心較大、獲益較小，仍建議'],
+      tr:['SELECT2','TESLA','ANGEL-ASPECT']},
+    r_support_lvo_late:{t:'r',cls:'supp',a:'支持性治療',cor:'',
+      sub:'6–24h、ASPECTS 0–2 或無 mismatch',
+      li:['ASPECTS 0–2 於 6–24h 無確切證據 → 個案決定','無 mismatch 不建議取栓','一般支持 + 二級預防'],
+      tr:[]},
+    r_bas_combo:{t:'r',cls:'combo',a:'溶栓 + 取栓',cor:'COR 1 · LOE A',
+      sub:'基底動脈 LVO、0–4.5 小時',
+      li:['可溶栓者橋接並施行取栓','後循環症狀多樣，須警覺辨識'],
+      tr:['ATTENTION','BAOCHE']},
+    r_bas_evt24:{t:'r',cls:'evt',a:'取栓 EVT（至 24h）',cor:'COR 1',
+      sub:'基底動脈 LVO、4.5–24 小時',
+      li:['ATTENTION（≤12h）／ BAOCHE（6–24h）支持','非 BASICS（後者僅 ≤6h 且為中性試驗）'],
+      tr:['ATTENTION ≤12h','BAOCHE 6–24h']},
+    r_bas_consider:{t:'r',cls:'evt',a:'取栓 EVT 可考慮',cor:'',
+      sub:'基底動脈 LVO、醒後／不明',
+      li:['個案評估，參考臨床–影像不匹配','與病人／家屬討論預後'],
+      tr:[]}
+  };
+
+  const stage=document.getElementById('algoStage');
+  const crumbsEl=document.getElementById('algoCrumbs');
+  const stepEl=document.getElementById('algoStep');
+  const resetBtn=document.getElementById('algoReset');
+  if(!stage) return;
+  let path=[], cur='start';
+  const esc=s=>(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+  function go(n,l){path.push({from:cur,label:l});cur=n;render();}
+  function back(){if(path.length){cur=path.pop().from;render();}}
+  function reset(){path=[];cur='start';render();}
+
+  function render(){
+    const n=NODES[cur];
+    crumbsEl.innerHTML=path.map(p=>'<span class="algo-crumb">'+esc(p.label)+'</span>').join('<span class="sep">›</span>');
+    if(n.t==='q'){
+      stepEl.textContent='第 '+(path.length+1)+' 步';
+      stage.innerHTML='<div class="algo-qtitle">'+esc(n.title)+'</div>'+
+        '<div class="algo-q">'+esc(n.q)+'</div>'+
+        '<div class="algo-opts">'+n.o.map((o,i)=>'<button class="algo-opt" type="button" data-i="'+i+'"><span class="ol">'+esc(o.l)+'</span>'+(o.s?'<span class="os">'+esc(o.s)+'</span>':'')+'</button>').join('')+'</div>'+
+        (path.length?'<div class="algo-rnav"><button class="algo-back" type="button" id="algoBack">← 上一步</button></div>':'');
+      stage.querySelectorAll('.algo-opt').forEach(b=>b.addEventListener('click',()=>{const o=n.o[+b.dataset.i];go(o.n,o.l);}));
+    }else{
+      stepEl.textContent='✓ 建議處置';
+      stage.innerHTML='<div class="algo-result"><div class="algo-rhead rh-'+n.cls+'"><span class="ra">'+esc(n.a)+'</span>'+(n.cor?'<span class="rc">'+esc(n.cor)+'</span>':'')+'</div>'+
+        '<div class="algo-rbody"><div class="rsub">'+esc(n.sub)+'</div><ul>'+n.li.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'+
+        (n.tr&&n.tr.length?'<div class="algo-trials">'+n.tr.map(t=>'<span class="algo-trial">'+esc(t)+'</span>').join('')+'</div>':'')+'</div></div>'+
+        '<div class="algo-rnav"><button class="algo-back" type="button" id="algoBack">← 上一步</button><button class="algo-back" type="button" id="algoReset2">↺ 重新開始</button></div>'+
+        '<div class="algo-disc">本流程依 2026 AHA/ASA 指引整理、為教學輔助；實際決策仍須結合完整影像、禁忌與個別臨床判斷。</div>';
+      document.getElementById('algoReset2').addEventListener('click',reset);
+    }
+    const bk=document.getElementById('algoBack');if(bk)bk.addEventListener('click',back);
+  }
+  resetBtn.addEventListener('click',reset);
+  render();
+})();
+</script>
 </body>
 </html>
