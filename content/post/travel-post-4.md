@@ -6,6 +6,7 @@ featured: false
 draft: false
 toc: true
 thumbnail: "/images/jiuliaoxi/p15-waterfall.jpg"
+featured_image: "/images/jiuliaoxi/og-waterfall.jpg"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - travel

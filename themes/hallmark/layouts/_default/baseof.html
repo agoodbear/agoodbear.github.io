@@ -13,8 +13,18 @@
   <meta property="og:title" content="{{ .Title | default site.Title }}">
   <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
   <meta property="og:url" content="{{ .Permalink }}">
-  {{ with .Params.featured_image | default site.Params.thumbnail }}
+  {{ $ogDesc := .Description | default (.Summary | plainify | chomp) }}
+  {{ with $ogDesc }}
+    <meta property="og:description" content="{{ . | truncate 200 }}">
+  {{ end }}
+  {{ with .Params.featured_image | default .Params.thumbnail | default site.Params.thumbnail }}
     <meta property="og:image" content="{{ . | absURL }}">
+    <meta name="twitter:image" content="{{ . | absURL }}">
+  {{ end }}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ .Title | default site.Title }}">
+  {{ with $ogDesc }}
+    <meta name="twitter:description" content="{{ . | truncate 200 }}">
   {{ end }}
 
   <link rel="icon" type="image/png" href="/icons/favicon.png">
