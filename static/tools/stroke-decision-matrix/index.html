@@ -284,6 +284,17 @@
       </div>
     </div>
 
+    <!-- ===== 互動式決策流程（緊接矩陣下方）===== -->
+    <div class="sectitle" style="margin-top:26px"><b>互動式決策流程</b><span>Interactive Algorithm · 點選病人情境，逐步推導建議處置</span></div>
+    <div class="algo">
+      <div class="algo-bar">
+        <span class="algo-step" id="algoStep"></span>
+        <button class="algo-reset" id="algoReset" type="button">↺ 重新開始</button>
+      </div>
+      <div class="algo-crumbs" id="algoCrumbs"></div>
+      <div id="algoStage"></div>
+    </div>
+
     <!-- ===== 參考細節 ===== -->
     <div class="ref">
 
@@ -410,17 +421,6 @@
           <li><span class="ok2">— 查證無誤</span>　TNK 0.25mg/kg 優先（ATTEST-2／EXTEND-IA TNK／T-FLAVOR）、Alteplase 劑量、醒後 DWI(+)/FLAIR(−)（WAKE-UP）、SBP&gt;185 禁忌均屬實。<b>2026-06-13 經 PubMed + OpenEvidence 獨立查證：指引（Prabhakaran et al, Stroke 2026, DOI 10.1161/STR.0000000000000513）為真實文獻；基底動脈 6–24h 證據為 BAOCHE(6–24h)／ATTENTION(≤12h)（非 BASICS，後者僅 ≤6h 且中性）；巨大梗塞 ASPECTS 0–2 EVT 屬 COR 2b 個案／共享決策（LASTE，≤6.5h、MRI-DWI），非「不建議」。</b></li>
         </ul>
       </div>
-    </div>
-
-    <!-- ===== 互動式決策流程 ===== -->
-    <div class="sectitle" style="margin-top:30px"><b>互動式決策流程</b><span>Interactive Algorithm · 點選病人情境逐步推導建議</span></div>
-    <div class="algo">
-      <div class="algo-bar">
-        <span class="algo-step" id="algoStep"></span>
-        <button class="algo-reset" id="algoReset" type="button">↺ 重新開始</button>
-      </div>
-      <div class="algo-crumbs" id="algoCrumbs"></div>
-      <div id="algoStage"></div>
     </div>
   </div>
 
