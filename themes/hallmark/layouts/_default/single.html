@@ -333,6 +333,16 @@
   margin: 0 0 var(--space-lg);
   line-height: 1.5;
 }
+/* Disqus' embed.js samples the host page's colours to auto-theme its widget,
+   but its parser can't read oklch() (the rest of this theme is all oklch) and
+   throws "parseColor received unparseable color", aborting before the comment
+   box / reactions render. Giving #disqus_thread a solid rgb/hex background +
+   text colour stops Disqus' colour walk-up here with parseable values.
+   Hex values mirror --color-paper / --color-ink so the widget still blends in. */
+.comments #disqus_thread {
+  background-color: #fbf8f3;
+  color: #0b121a;
+}
 @media (max-width: 900px) {
   .comments { padding: 0 var(--space-md) var(--space-xl); }
 }
