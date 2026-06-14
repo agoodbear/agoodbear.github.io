@@ -6,16 +6,20 @@
  * ───────────────────────────────────────────────────────────────────── */
 
 :root {
-  --color-paper:      oklch(98%  0.008 80);
-  --color-paper-2:    oklch(95%  0.012 80);
-  --color-paper-3:    oklch(91%  0.016 80);
-  --color-ink:        oklch(18%  0.020 250);
-  --color-ink-2:      oklch(35%  0.015 250);
-  --color-ink-3:      oklch(55%  0.012 250);
-  --color-rule:       oklch(85%  0.010 80);
-  --color-rule-bold:  oklch(70%  0.015 80);
-  --color-accent:     oklch(70%  0.200 45);
-  --color-accent-ink: oklch(50%  0.180 35);
+  /* rgb/hex tokens (exact sRGB renderings of the original oklch values, kept in
+     the trailing comments). Switched off oklch() because Disqus' embed.js samples
+     the page's computed colours to auto-theme its widget and its parser throws on
+     oklch(), which aborts the entire comment thread. Visually identical. */
+  --color-paper:      #fbf8f3;  /* oklch(98% 0.008 80)  */
+  --color-paper-2:    #f3eee6;  /* oklch(95% 0.012 80)  */
+  --color-paper-3:    #e7e0d6;  /* oklch(91% 0.016 80)  */
+  --color-ink:        #0b121a;  /* oklch(18% 0.020 250) */
+  --color-ink-2:      #353b42;  /* oklch(35% 0.015 250) */
+  --color-ink-3:      #6c7278;  /* oklch(55% 0.012 250) */
+  --color-rule:       #d1cdc7;  /* oklch(85% 0.010 80)  */
+  --color-rule-bold:  #a39e94;  /* oklch(70% 0.015 80)  */
+  --color-accent:     #fe6a01;  /* oklch(70% 0.200 45)  */
+  --color-accent-ink: #b22800;  /* oklch(50% 0.180 35)  */
 
   --font-display:    "Fraunces", "Noto Serif TC", ui-serif, Georgia, serif;
   --font-display-zh: "Noto Serif TC", "Fraunces", ui-serif, serif;
@@ -42,13 +46,8 @@ html { overflow-x: clip; scroll-behavior: smooth; }
 body {
   overflow-x: clip;
   margin: 0;
-  /* rgb/hex literals (== --color-paper / --color-ink) instead of the oklch()
-     vars: Disqus' embed.js samples the page's base background + text colour to
-     auto-theme its widget, and its parser throws on oklch() — which aborts the
-     whole comment thread. These hex values render identically to the oklch
-     tokens; the rest of the theme still uses the oklch custom properties. */
-  background: #fbf8f3;
-  color: #0b121a;
+  background: var(--color-paper);
+  color: var(--color-ink);
   font-family: var(--font-body-zh);
   font-size: var(--text-base);
   line-height: 1.55;
@@ -507,7 +506,7 @@ article.card a:hover .image.image-stamp::before { background: var(--color-accent
 .site-search-backdrop {
   position: absolute;
   inset: 0;
-  background: oklch(18% 0.02 250 / 0.42);
+  background: rgba(11, 18, 26, 0.42);
   backdrop-filter: blur(3px);
   animation: site-search-fade var(--dur-short) var(--ease-out);
 }
@@ -522,7 +521,7 @@ article.card a:hover .image.image-stamp::before { background: var(--color-accent
   background: var(--color-paper);
   border: 1px solid var(--color-rule-bold);
   border-radius: 14px;
-  box-shadow: 0 24px 60px oklch(18% 0.02 250 / 0.28);
+  box-shadow: 0 24px 60px rgba(11, 18, 26, 0.28);
   overflow: hidden;
   animation: site-search-rise 180ms var(--ease-out);
 }
@@ -616,7 +615,7 @@ article.card a:hover .image.image-stamp::before { background: var(--color-accent
   overflow: hidden;
 }
 .s-result mark {
-  background: oklch(70% 0.20 45 / 0.28);
+  background: rgba(254, 106, 1, 0.28);
   color: inherit;
   border-radius: 2px;
   padding: 0 1px;
