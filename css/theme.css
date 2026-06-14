@@ -42,8 +42,13 @@ html { overflow-x: clip; scroll-behavior: smooth; }
 body {
   overflow-x: clip;
   margin: 0;
-  background: var(--color-paper);
-  color: var(--color-ink);
+  /* rgb/hex literals (== --color-paper / --color-ink) instead of the oklch()
+     vars: Disqus' embed.js samples the page's base background + text colour to
+     auto-theme its widget, and its parser throws on oklch() — which aborts the
+     whole comment thread. These hex values render identically to the oklch
+     tokens; the rest of the theme still uses the oklch custom properties. */
+  background: #fbf8f3;
+  color: #0b121a;
   font-family: var(--font-body-zh);
   font-size: var(--text-base);
   line-height: 1.55;
