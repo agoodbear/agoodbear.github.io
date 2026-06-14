@@ -307,6 +307,35 @@
 @media (max-width: 520px) {
   .article-body > p:first-of-type::first-letter { font-size: 3.5em; }
 }
+
+/* Comments (Disqus) */
+.comments {
+  max-width: var(--measure);
+  margin: var(--space-2xl) auto 0;
+  padding: 0 var(--space-lg) var(--space-2xl);
+}
+.comments .comments-head {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent-ink);
+  padding-bottom: var(--space-xs);
+  border-bottom: 2px solid var(--color-ink);
+  margin-bottom: var(--space-lg);
+}
+.comments .comments-sub {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-base);
+  color: var(--color-ink-3);
+  margin: 0 0 var(--space-lg);
+  line-height: 1.5;
+}
+@media (max-width: 900px) {
+  .comments { padding: 0 var(--space-md) var(--space-xl); }
+}
 </style>
 {{ end }}
 
@@ -411,6 +440,16 @@
       </div>
     </section>
   {{ end }}
+{{ end }}
+
+{{- /* Reader comments — Disqus (likes / reactions / threaded comments).
+       Honours per-post `comments: false` in front matter. */ -}}
+{{ if and (ne .Params.comments false) site.Config.Services.Disqus.Shortname }}
+<section class="comments">
+  <div class="comments-head">讀者回響 · Comments</div>
+  <p class="comments-sub">看完有什麼想法？在下面留言、按讚或給個表情，一起討論。</p>
+  {{ template "_internal/disqus.html" . }}
+</section>
 {{ end }}
 
 {{ end }}
