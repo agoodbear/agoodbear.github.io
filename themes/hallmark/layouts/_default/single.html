@@ -425,6 +425,18 @@
   </div>
 </article>
 
+{{- /* Reader comments — Disqus (likes / reactions / threaded comments).
+       Placed right after the article body (before the author byline and
+       「More from」related grid) so readers see it without scrolling past
+       延伸閱讀. Honours per-post `comments: false` in front matter. */ -}}
+{{ if and (ne .Params.comments false) site.Config.Services.Disqus.Shortname }}
+<section class="comments">
+  <div class="comments-head">讀者回響 · Comments</div>
+  <p class="comments-sub">看完有什麼想法？在下面留言、按讚或給個表情，一起討論。</p>
+  {{ template "_internal/disqus.html" . }}
+</section>
+{{ end }}
+
 <section class="article-end">
   <div class="author-mark">急</div>
   <div class="body">
@@ -450,16 +462,6 @@
       </div>
     </section>
   {{ end }}
-{{ end }}
-
-{{- /* Reader comments — Disqus (likes / reactions / threaded comments).
-       Honours per-post `comments: false` in front matter. */ -}}
-{{ if and (ne .Params.comments false) site.Config.Services.Disqus.Shortname }}
-<section class="comments">
-  <div class="comments-head">讀者回響 · Comments</div>
-  <p class="comments-sub">看完有什麼想法？在下面留言、按讚或給個表情，一起討論。</p>
-  {{ template "_internal/disqus.html" . }}
-</section>
 {{ end }}
 
 {{ end }}
