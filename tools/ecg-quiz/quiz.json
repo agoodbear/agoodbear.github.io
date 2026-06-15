@@ -1,0 +1,405 @@
+{
+  "_note": "Pilot v1：20 題真實 Dr. Smith's ECG Blog 12-lead 案例。題目圖 hotlink 自 drsmithsecgblog.com，答案與詳解一律依 Smith 原文結論撰寫，出處連結回原文。可由 ecg_smith_articles 批量擴充。",
+  "questions": [
+    {
+      "id": "smith-1944",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/signed-off-as-normal-no-concern/",
+      "tags": [
+        "OMI mimic",
+        "心肌炎",
+        "下壁"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/04/Is-it-OMI-from-AK-1024x586.jpeg",
+      "stem": "30 多歲男性，陣發性胸痛。這張 ECG 被傳統電腦演算法判讀為「Normal」，分流醫師也簽註「正常／無疑慮」。但第一次 hs-troponin I 回報 3500 ng/L。關於這張 ECG 與處置，何者最正確？",
+      "options": [
+        "下壁 T 波偏大屬正常變異，無需進一步處置",
+        "雖非診斷性，但有 infero-postero-lateral OMI 特徵，應啟動 cath lab 釐清",
+        "先等 troponin 自行下降再評估",
+        "電腦判讀為正常，依結果安心處理即可"
+      ],
+      "answer": 1,
+      "explain": "Smith 認為此圖「非診斷性」，但下壁與 V4–6 T 波偏大、aVL 有 reciprocal T 波倒置，足以懷疑 infero-postero-lateral OMI 而主張啟動 cath lab。實際冠狀動脈乾淨、troponin 升到 6800 ng/L、心臟 MRI 確診 myocarditis（心肌炎）——這是能完全模仿 OMI 的 mimic。重點：傳統演算法常把帶 OMI 的 ECG 標成「正常」，面對明顯升高的 troponin 與可疑波形，不能採信「正常」判讀。"
+    },
+    {
+      "id": "smith-1941",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/60-yo-with-chest-pain-and-cardiogenic-shock-with-acute-lv-failure-does-it-matter-what-the-ecg-shows-and-why-is-the-entire-heart-affected/",
+      "tags": [
+        "心因性休克",
+        "OMI",
+        "precordial swirl"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2025/10/ED-ECG-pain-free-shock-1024x462.jpg",
+      "stem": "60 多歲男性，已知冠心病、曾置放支架、缺血性心肌病。新發胸痛 2 小時、到院時胸痛已緩解；BP 56/46、意識混亂，床邊超音波 EF 約 10%、合併肺水腫。第一次 hs-troponin I 僅 7 ng/L。最適當的處置是？",
+      "options": [
+        "立即啟動 cath lab：急性心因性休克合併急性左室幫浦衰竭，無論 ECG 與 troponin 都須當作 OMI",
+        "胸痛已緩解，可先排除急性冠心症",
+        "troponin 僅 7，先觀察、等下一次 troponin 再決定",
+        "診斷為單純心衰竭，給利尿劑後觀察"
+      ],
+      "answer": 0,
+      "explain": "Smith：急性心因性休克合併急性左室幫浦衰竭，不論 ECG 表現、也不論胸痛是否消失，都必須當作急性 OMI 處理。此 ECG 呈 precordial swirl（V1–V2 微 STE、V5–6 STD）提示 reperfusing LAD。第一次 troponin 只有 7（「DO NOT TRUST THE FIRST TROPONIN」），峰值卻 >60,000 ng/L；冠脈為多條病變、LCX 急性血栓阻塞。本例最終仍死亡——急性冠脈阻塞造成心因性休克者近半數死亡。"
+    },
+    {
+      "id": "smith-1939",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/30-something-with-chest-pain/",
+      "tags": [
+        "OMI",
+        "下壁後壁側壁",
+        "年輕病人"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/03/From-AR-chest-pain-1024x527.jpeg",
+      "stem": "30 多歲男性，胸痛 4 小時（兩天前曾有一次自行緩解的胸痛）。ECG：II、III、aVF 輕微 STE，aVL 有 reciprocal ST 壓低；V3、V4 ST 壓低；V6 輕微 STE。未達 STEMI 毫米標準。最可能的判讀是？",
+      "options": [
+        "良性早期再極化（BER）",
+        "正常 ECG，年輕病人風險低",
+        "僅單純後壁缺血，可門診追蹤",
+        "下壁－後壁－側壁 OMI，應啟動 cath lab"
+      ],
+      "answer": 3,
+      "explain": "Smith：下壁 STE＋aVL reciprocal ST 壓低＝下壁 OMI；V3–V4 ST 壓低＝後壁 OMI；V6 STE＝側壁——合為下壁-後壁-側壁 OMI。雖未達 STEMI 毫米標準，cath 證實 inferoposterior 阻塞、troponin 升到 ≥43,000 ng/L（大面積梗塞）。重點：年輕病人也可在「不符 STEMI 標準」下發生大範圍 OMI，決定預後的關鍵是 time to intervention，而非是否符合 STEMI criteria。"
+    },
+    {
+      "id": "smith-1936",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/recurrent-and-refractory-chest-pain-after-infarct-in-a-developing-country/",
+      "tags": [
+        "LV aneurysm",
+        "前間壁",
+        "持續性 STE"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/03/LV-aneurysm-with-unstable-angina-from-Kenya-1024x466.jpg",
+      "stem": "70 多歲女性，兩週前在醫療資源有限的國家發生「心臟病發作」，此次胸痛 1 小時、性質類似前次。ECG：V1–V2 呈 QS 波、R 波遞增不良，V2–V5 ST 段呈弓背（coved）輕微抬高並有終末 T 波倒置。Smith 一眼判讀最符合下列何者？",
+      "options": [
+        "前間壁梗塞合併左室室壁瘤（LV aneurysm）型態",
+        "急性心包炎",
+        "急性前壁 STEMI，需立即再灌流",
+        "正常變異"
+      ],
+      "answer": 0,
+      "explain": "Smith 不看其他資料即讀為「亞急性 MI，也很典型是 LV aneurysm」。V1–V2 QS、R 波遞減、V2–V5 coved STE 伴終末 T 波倒置，是前間壁梗塞後「持續性 STE」的室壁瘤型態（非急性）。心臟超音波 EF 20–25%、心尖 dyskinesis（＝aneurysm）併左室血栓。臨床屬完成性前壁 MI 後的不穩定心絞痛；因疼痛無法控制而行 cath，culprit 在 LAD、TIMI-2 flow。"
+    },
+    {
+      "id": "smith-1935",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/50-year-old-with-shortness-of-breath/",
+      "tags": [
+        "低電壓",
+        "心包填塞",
+        "POCUS"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/03/PCE1-1024x516.jpg",
+      "stem": "50 歲病人，數天來漸進性呼吸困難，伴噁心、胸背痛，過去無心肺病史。Triage：HR 100、BP 140/100、SpO2 100%，外觀不喘不痛。ECG：sinus tachycardia＋四肢與胸前導程瀰漫性低電壓＋V3–5 非特異性 T 波倒置。最適當的下一步是？",
+      "options": [
+        "當作急性冠心症，給雙抗＋抗凝",
+        "當作氣喘發作，給支氣管擴張劑",
+        "判讀為正常，安排返家",
+        "床邊心臟超音波（POCUS）評估心包積液／填塞"
+      ],
+      "answer": 3,
+      "explain": "不明原因呼吸困難＋sinus tach＋瀰漫性低電壓＝心包填塞 until proven otherwise，應立即床邊 POCUS。本例 POCUS 證實大量環狀心包積液併填塞生理（RV/RA 舒張期塌陷、IVC 不塌陷），最終診斷為特發性心包炎併心包填塞。重點：典型臨床三徵（低血壓、頸靜脈怒張、心音遙遠）與心電圖三徵（竇速＋低電壓＋electrical alternans）對填塞的敏感度都低，多數病例並無低血壓或 electrical alternans。"
+    },
+    {
+      "id": "smith-1928",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/is-this-ecg-easy-for-you-yet/",
+      "tags": [
+        "肺栓塞",
+        "右心應變",
+        "TWI"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/02/arhs1-1024x611.jpg",
+      "stem": "40 多歲女性，呼吸困難＋胸痛，心搏過速、外觀很不舒服。ECG：下壁與前壁導程「同時」出現 T 波倒置（V2–V4 small r、big S 後接弓起 ST 再轉 TWI），合併竇性心搏過速。最可能的診斷是？",
+      "options": [
+        "前壁 OMI",
+        "正常變異",
+        "慢性右心室肥厚（RVH）",
+        "急性肺栓塞／右心室急性壓力負荷（acute right heart strain）"
+      ],
+      "answer": 3,
+      "explain": "Smith：下壁＋前壁「同時」TWI、加上特定形態與心搏過速，是 acute right heart strain 的高特異度型態，此例即為 PE。床邊超音波見嚴重擴大的右心室；與慢性 RVH（V1 有大 R 波）不同，急性右心室應變沒有 V1 大 R 波。給 heparin、CT 證實 saddle PE，病人康復。"
+    },
+    {
+      "id": "smith-1926",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/fast-narrow-regular-what-is-it-more-difficult-what-to-do/",
+      "tags": [
+        "心房撲動",
+        "2:1 傳導",
+        "心律"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/02/Fast-narrow-regular-what-is-it-and-what-to-do-1024x467.jpg",
+      "stem": "中年男性，漸進性呼吸困難＋姿勢性胸痛，後查出肺部大腫塊壓迫支氣管與肺動脈。ECG：規則、窄 QRS、心室率約 160；lead II 可見鋸齒狀波、V1 每個 QRS 前有 2 個相同間距的直立心房波。最可能的心律是？",
+      "options": [
+        "竇性心搏過速",
+        "心房顫動",
+        "心房撲動（atrial flutter）伴 2:1 傳導",
+        "心室頻脈（VT）"
+      ],
+      "answer": 2,
+      "explain": "Smith：lead II 鋸齒狀、V1 每個 QRS 對應 2 個等距直立心房波＝2:1 傳導的心房撲動；心室率 160、心房率約 320。重點：因本例 LV 功能很差，給 β／鈣離子阻斷劑減慢 AV 傳導有風險（負性肌力）；病程數週故有心房附壁血栓風險，最終經 TEE 排除血栓後成功電擊整流。"
+    },
+    {
+      "id": "smith-1930",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/chest-pain-and-right-bundle-branch-block-2/",
+      "tags": [
+        "OMI",
+        "RBBB",
+        "hyperacute T"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2010/01/FirstEKGSTEMIappearance.jpg",
+      "stem": "62 歲男性，有冠心病史，騎腳踏車時胸痛。ECG：右束支傳導阻滯（RBBB），V4–V6 有 hyperacute T 波並輕微 STE，V2–V3 T 波直立。最正確的判讀與處置是？",
+      "options": [
+        "V4–V6 hyperacute T＝LAD OMI，應緊急啟動 cath lab",
+        "急性心包炎",
+        "RBBB 本來就有 ST-T 變化，屬正常、不需處理",
+        "良性早期再極化"
+      ],
+      "answer": 0,
+      "explain": "Smith：RBBB 通常在 V2–V3 呈倒 T、可有 ≤1mm ST 壓低；此例 V2–V3 T 波直立加輕微 STE 即高度可疑前壁 STEMI，而 V4–V6 的 hyperacute T 波更是 LAD OMI 的診斷依據——他緊急啟動 cath lab。重點：RBBB 不該在側壁出現 STE，出現即不正常。cath 顯示 LAD 病變（cath 時已 TIMI-2 flow）。"
+    },
+    {
+      "id": "smith-1807",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/altered-mental-status-kg-done/",
+      "tags": [
+        "低體溫",
+        "Osborn 波",
+        "心搏過緩"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2025/04/IMG_5575-1.jpg",
+      "stem": "59 歲男性，意識改變、嗜睡、低血壓（收縮壓 70–80）。ECG：竇性心搏過緩（約 47 bpm），側胸導程在 QRS 末出現與 T 波等高的 Osborn（J）波、其間 ST 段凹陷、QT 延長。到院肛溫 29.2°C。最符合的診斷是？",
+      "options": [
+        "低體溫（hypothermia）",
+        "高血鉀",
+        "急性下壁 OMI",
+        "早期再極化"
+      ],
+      "answer": 0,
+      "explain": "在此臨床情境下，竇緩＋Osborn（J）波＋QT 延長是低體溫的典型 ECG 表現，且嚴重度與核心體溫相關（此例肛溫 29.2°C 屬中重度）。常伴 shiver artifact。經外部回溫後 ST-T 異常與 Osborn 波會消失、心率回升。"
+    },
+    {
+      "id": "smith-1933",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/acute-cardiogenic-shock-in-a-patient-with-ventricular-paced-rhythm/",
+      "tags": [
+        "paced rhythm",
+        "Modified Sgarbossa",
+        "OMI"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/02/paced-cardiogenic-shock-1024x452.jpg",
+      "stem": "70 多歲、冠心病史，突發胸痛＋盜汗，BP 70s/30s 之心因性休克。床邊超音波 LV 功能極差、明顯區域性室壁運動異常、RV 不大、無心包積液。ECG 為心室節律器節律（ventricular paced rhythm）。下列何者最正確？",
+      "options": [
+        "此為單純節律器正常型態",
+        "最可能是急性肺栓塞",
+        "節律器節律無法判讀缺血，只能等 troponin",
+        "依 Smith Modified Sgarbossa Criteria 多導程符合 OMI，是急性冠脈阻塞造成的休克，應立即 cath"
+      ],
+      "answer": 3,
+      "explain": "Smith：心因性休克合併胸痛＋床邊超音波 LV 極差、RV 小、無心包積液→不論 ECG 都先當作急性 OMI。ECG 雖為 paced rhythm，但依 Modified Sgarbossa：下壁導程比例過度 discordant STE（lead III 達 70%）、aVL 比例過度 reciprocal discordant STD（>30% 即 100% 特異）、V2 concordant STD——任一條即足以診斷 paced 節律下的 OMI。本例因被認為「太不穩定」延誤 cath，是不該有的延誤。"
+    },
+    {
+      "id": "smith-1825",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/if-you-saw-this-ekg-completely-isolated/",
+      "tags": [
+        "reperfusion",
+        "Wellens 型態",
+        "下側壁"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2025/05/Ambiguous.jpg",
+      "stem": "一張在沒有臨床資料下判讀的 ECG：前側壁導程 ST 段先上斜、接著突然下轉成倒置 T 波（up-sloping ST → 終末 TWI），整體電壓不特別高。Smith 不看資料即最支持下列何者？",
+      "options": [
+        "急性 ST 抬高型 OMI（進行中阻塞）",
+        "左心室肥厚（LVH）伴 strain",
+        "正常變異",
+        "再灌流型態（reperfused OMI）／Wellens 型 reperfusion T 波"
+      ],
+      "answer": 3,
+      "explain": "Smith 看到此圖即 95% 判為 reperfused OMI（5% takotsubo），並認為不像 LVH（LVH 少見此 up-sloping ST，且電壓不高）。「ST 上斜後突然下轉、接負向 T 波」正是 Wellens 在 LAD 區描述的再灌流型態，也可出現在下壁／側壁。本例 ECG 1 為 PCI 後記錄，確為 inferolateral 再灌流（culprit 為 distal LCx 急性阻塞、已置放支架）。"
+    },
+    {
+      "id": "smith-1923",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/is-this-a-wide-complex-rhythm/",
+      "tags": [
+        "Shark Fin",
+        "Kounis",
+        "誤當 VT"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2025/12/kounis-better-image-1024x473.jpg",
+      "stem": "一張被醫護在監視器上誤認為「寬 QRS 心律」的 ECG。實際為心房顫動、下壁導程出現「鯊魚鰭（Shark Fin）」型態、V2 為倒置鯊魚鰭。病史：多處蜂螫後倒下、抽搐、後心跳停止（VF/VT）。最符合的判讀是？",
+      "options": [
+        "正常竇性心律",
+        "高血鉀的 sine wave",
+        "下壁（合併後壁）OMI 的 Shark Fin 型態；病因為 Kounis 症候群（過敏引發冠脈痙攣）",
+        "心室頻脈（VT），給 lidocaine"
+      ],
+      "answer": 2,
+      "explain": "Smith：這不是寬 QRS 心搏過速，而是心房顫動＋「Shark Fin」（又稱 Giant R-wave／triangular QRS-ST-T）的 OMI 型態，R 波末端融入下斜 STE，下壁＋V2 倒置鯊魚鰭代表後壁受累。Queen of Hearts 也正確標為 OMI 而非 VT。病史為蜂螫→Smith 答「Kounis 症候群」；冠脈攝影顯示痙攣（spasm）、無阻塞性病變，給冠脈內 NTG 後緩解。重點：誤當 VT 給 lidocaine 是陷阱。"
+    },
+    {
+      "id": "smith-1894",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/is-this-a-wellens-ecg/",
+      "tags": [
+        "BTWI",
+        "Wellens mimic",
+        "高電壓"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2025/11/TWI-from-JH-1024x575.jpg",
+      "stem": "一張在沒有病史下傳給 Smith 的 ECG：前壁導程 ST 段緩慢上凸、輕微抬高並有較深 T 波倒置，同時 QRS 電壓非常高（V2、V3 雙相複合波 >50mm）、V1 有窄而高的 R 波、無 R 波遞減、可能有大 U 波。Smith 的第一反應是？",
+      "options": [
+        "高血鉀",
+        "這是 Wellens 波的「假象（mimic）」，最可能是年輕瘦個案的良性 T 波倒置（BTWI）",
+        "典型 Wellens 症候群，需安排血管攝影",
+        "急性前壁 OMI"
+      ],
+      "answer": 1,
+      "explain": "Smith 一眼判為 Wellens 的「假象」：高 QRS 電壓、V1 窄高 R 波、無前壁 R 波遞減（與前壁梗塞相反）、ST-T 為緩升上凸——都指向良性。後續證實為 17 歲、喝能量飲料後症狀，60 分鐘 ECG 不變、troponin 全陰、超音波無 HOCM，最終診斷為良性 T 波倒置（Benign T-wave Inversion）的變異型。重點：別把高電壓年輕個案的 BTWI 誤當 Wellens。"
+    },
+    {
+      "id": "smith-1290",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/what-caused-this-conduction-abnormality/",
+      "tags": [
+        "完全房室阻滯",
+        "Lyme 心臟炎",
+        "傳導"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2021/08/LCDay1.jpg",
+      "stem": "青少年男性，站起時頭暈、近暈厥，坐著無症狀。ECG：完全性（三度）房室傳導阻滯，伴寬 QRS 緩慢逸搏（LBBB 型態）。進一步問診：約 3 週前背部有數個「牛眼狀」紅疹後自行消退；床邊超音波 EF 正常、無心包積液。最可能的病因是？",
+      "options": [
+        "高血鉀",
+        "節律器故障",
+        "急性 OMI",
+        "萊姆病心臟炎（Lyme carditis）"
+      ],
+      "answer": 3,
+      "explain": "Smith 僅憑「青少年」即答「Lyme」。在萊姆病流行地區、加上 3 週前的「牛眼狀」遊走性紅斑病史，完全性房室阻滯最可能是 Lyme carditis——螺旋體直接侵犯 AV 節下方傳導系統造成 LBBB 型逸搏。給 ceftriaxone 後傳導逐日恢復（三度→二度 type 1→一度），免於植入節律器。重點：流行區的傳導異常要想到 Lyme。"
+    },
+    {
+      "id": "smith-1644",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/a-young-woman-with-chest-pain-cath-lab/",
+      "tags": [
+        "Brugada",
+        "STEMI mimic",
+        "V1-V2"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2024/04/IMG_3177.jpg",
+      "stem": "年輕女性，急性胸痛。傳統電腦演算法判讀為「ACUTE MI / STEMI」並啟動 cath lab。ECG：V1–V2 呈下斜型 ST 抬高（coved）。介入科醫師到場後追問病史並取消活化。最正確的判讀是？",
+      "options": [
+        "真正的前間壁 STEMI",
+        "Brugada 型態（Brugada phenotype），非 OMI",
+        "早期再極化",
+        "急性心包炎"
+      ],
+      "answer": 1,
+      "explain": "Smith：這明顯是 Brugada 型態——V1–V2 下斜型 STE，對有經驗者一看就知道不是 OMI。傳統演算法卻誤判 STEMI、急診醫師據此活化 cath lab；介入科醫師問出 Brugada 家族史後取消。病人續查有多次暈厥病史，最終診斷 Brugada 症候群並植入 ICD。重點：別被電腦的「STEMI」誤導，要認得 Brugada 型態。"
+    },
+    {
+      "id": "smith-1906",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/a-man-in-his-50s-with-altered-mental-status-and-abdominal-pain-what-treatment-must-be-given-immediately-and-how-much/",
+      "tags": [
+        "高血鉀",
+        "sine wave",
+        "鈣劑"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2025/12/case1-1024x427.png",
+      "stem": "50 歲男性，末期腎病、心衰竭，意識改變＋上腹痛，已 5 天未洗腎。ECG：寬 QRS、近乎 sinusoidal（正弦波樣）、速率偏慢。最該立即給予的治療是？",
+      "options": [
+        "先觀察、等電解質報告再說",
+        "立即給鈣（穩定心肌膜）——這是高血鉀的 peri-arrest 表現",
+        "給 β 阻斷劑減慢心率",
+        "立即電擊整流（當作 VT）"
+      ],
+      "answer": 1,
+      "explain": "寬 QRS＋正弦波樣、速率太慢不像 VT，在 ESRD 久未洗腎的情境下高度指向高血鉀（本例 K 8.4 mEq/L），應立即給鈣穩定心肌膜。重點：2g calcium gluconate 對 peri-arrest 高血鉀「遠遠不夠」（Meyers／Smith 註：1 amp CaCl₂ 約等於 3 倍量的 calcium gluconate 才等莫耳）；本例追加 6g 後 QRS 才改善，最終靠洗腎根治。"
+    },
+    {
+      "id": "smith-1910",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/narrow-complex-tachycardia-it-recurs-after-adenosine-what-should-we-do-now/",
+      "tags": [
+        "SVT",
+        "AVNRT",
+        "adenosine"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/01/Narrow-complex-tachy-NOT-irreg-irreg-1024x465.jpg",
+      "stem": "50 多歲男性，心悸，發燒、低血壓（80/40），超音波示容積偏低（IVC 扁平）、LV 功能良好。ECG：窄 QRS 心搏過速、看不到 P 波、非「不規則的不規則」。最合理的判讀與初始處置是？",
+      "options": [
+        "心房顫動，給 rate control",
+        "心室頻脈，給 amiodarone",
+        "竇性心搏過速，只要補液即可",
+        "室上性心搏過速（SVT，可能 AVNRT），可先用 adenosine（或電擊）"
+      ],
+      "answer": 3,
+      "explain": "Smith：窄 QRS、無 P 波、非不規則的不規則（故非 AF），是 SVT；無鋸齒波，可能為 AVNRT。初始可用 adenosine（或電擊，但電擊需深度鎮靜較費時）。本例特別之處：給 adenosine 雖轉竇律但立即又回 SVT，故反覆 adenosine／電擊都只是短暫——對「轉了又回」的 SVT，要找根本（含潛在發燒等誘因）而非一再電擊。"
+    },
+    {
+      "id": "smith-1900",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/see-inflated-hyperacute-t-waves-deflate-after-thrombolytics/",
+      "tags": [
+        "OMI",
+        "early repol mimic",
+        "溶栓"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2025/11/computer-calls-early-repol-2-1024x471.jpeg",
+      "stem": "一張被傳統電腦演算法與覆判心臟科醫師都判為「Early Repolarization」的 ECG：V3–V6 有顯著 STE 與 hyperacute、飽滿的 T 波（V3 約 3mm、V5 約 2mm，已達 STEMI 毫米標準）。最正確的判讀是？",
+      "options": [
+        "LAD 阻塞（甚至已達 STEMI 標準的 OMI），需緊急再灌流",
+        "左心室肥厚",
+        "早期再極化（early repolarization），可返家",
+        "急性心包炎"
+      ],
+      "answer": 0,
+      "explain": "Smith：這其實是 LAD 阻塞——V3–V6 顯著 STE＋hyperacute inflated T 波，且 V3 約 3mm、V5 約 2mm 已達 STEMI 毫米標準。重點：即使達 STEMI 標準的 OMI 仍常被誤判為 early repolarization。本例在非 PCI 中心、長程轉送，醫師於 door-to-drug 14 分鐘給 TNK-tPA 溶栓，疼痛數分鐘內完全緩解、隨後 ECG 顯示再灌流。"
+    },
+    {
+      "id": "smith-1870",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/ecg-interpretation-can-keep-you-out-of-the-courtroom-and-viral-infection-by-itself-is-not-an-explanation-for-dyspnea/",
+      "tags": [
+        "肺栓塞",
+        "前壁 TWI",
+        "非 Wellens"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2025/09/From-Expert-Witness-Newsletter-1-1024x457.jpg",
+      "stem": "21 歲大學生，已知 COVID，因咳嗽、胸痛、呼吸困難就診，外觀良好、生命徵象大致正常。ECG（無臨床資料下判讀）：V1–V3 呈「圓頂狀（domed）」ST 抬高並 T 波倒置，lead III 也有 T 波倒置。最該優先考慮的診斷是？",
+      "options": [
+        "病毒感染造成的非特異性變化，可返家",
+        "急性心包炎",
+        "Wellens 症候群（LAD 再灌流）",
+        "肺栓塞（PE）"
+      ],
+      "answer": 3,
+      "explain": "Smith 的「EKG Nerdz」群組在無臨床資料下一致判為 PE：V1–V3「圓頂狀」STE＋T 波倒置「且」lead III 也 TWI，是 PE 的型態（與只在前壁的 Wellens 不同——同時下壁 III 的 TWI 指向右心應變）。本例卻被判為「非特異性 T 波」而出院。重點：呼吸困難不能以「病毒感染」搪塞出院；任何不明原因呼吸困難都要有可解釋的診斷。"
+    },
+    {
+      "id": "smith-1722",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/how-terrible-can-it-be-to-fail-to/",
+      "tags": [
+        "OMI",
+        "hyperacute T",
+        "漏診"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2024/10/missedLADOMIpresentation.png",
+      "stem": "60 多歲女性，曾因近端 LAD 前壁 MI 接受 PCI，此次胸悶＋呼吸困難。ECG：V2、V3 有巨大 hyperacute T 波、STE 未達標準。初次 troponin I 158 ng/L 被診為 NSTEMI 收住觀察、未重做 ECG。下列何者最正確？",
+      "options": [
+        "未達 STEMI 標準＝NSTEMI，觀察即可",
+        "V2–V3 巨大 hyperacute T 波即 LAD OMI，應立即再灌流並密集追蹤 ECG",
+        "屬左心室肥厚的再極化變化",
+        "正常變異"
+      ],
+      "answer": 1,
+      "explain": "Smith：這是「明顯（blatantly obvious）」的急性前壁 OMI——V2、V3 巨大 hyperacute T 波，雖 STE 未達 STEMI 毫米標準。重點：辨識 hyperacute T、掌握 OMI paradigm 至關重要。本例被當 NSTEMI、16 小時未重做 ECG，troponin 由 158→1482→9639 ng/L 飆升，最終心臟停止；雖一度 ROSC（cath 見近端 LAD 100% in-stent restenosis）仍不治。延誤辨識 OMI 可能致命。"
+    }
+  ]
+}
