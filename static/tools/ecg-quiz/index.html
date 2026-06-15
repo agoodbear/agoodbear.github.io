@@ -106,11 +106,26 @@
   @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
   .ans{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;margin-bottom:11px}
   .ans .badge{font-size:.72rem;letter-spacing:.05em;color:#fff;background:var(--ok);padding:4px 10px;border-radius:999px}
-  .explain{margin:0 0 4px;color:var(--ink-soft);line-height:1.78;font-size:.97rem}
+  .explain{margin:0 0 4px;color:var(--ink-soft);line-height:1.8;font-size:.97rem}
   .explain strong{color:var(--ink);font-weight:800}
-  .explain mark{background:var(--mark);color:#5b4a12;padding:0 3px;border-radius:3px;font-weight:600}
-  .explain p{margin:0 0 11px}
+  .explain mark{background:var(--mark);color:#5b4a12;padding:0 4px;border-radius:3px;font-weight:600}
+  .explain p{margin:0 0 12px}
   .explain p:last-child{margin-bottom:0}
+  /* 值得學習的重點 callout */
+  .explain .lp{margin:15px 0;background:linear-gradient(180deg,#fffdf6,#fff8ec);border:1px solid #ffe1ab;
+    border-left:4px solid #f5a623;border-radius:12px;padding:14px 16px}
+  .explain .lp-title{display:flex;align-items:center;gap:6px;font-weight:800;color:#a8650a;
+    margin-bottom:9px;font-size:.93rem;letter-spacing:.02em}
+  .explain .lp ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+  .explain .lp li{position:relative;padding-left:20px;line-height:1.65;color:var(--ink)}
+  .explain .lp li::before{content:"▸";position:absolute;left:3px;top:0;color:#f5a623;font-weight:800}
+  .explain .lp li strong{color:#8a5208}
+  /* 觸類旁通延伸 */
+  .explain .extend{margin:14px 0 0;background:#f4f9ff;border:1px solid #e0eefb;border-radius:11px;
+    padding:12px 15px;line-height:1.7}
+  .explain .extend strong{color:var(--blue-d)}
+  /* 一般小標 */
+  .explain .lead{font-weight:800;color:var(--ink);background:#eef2f6;border-radius:6px;padding:1px 8px;margin-right:5px;font-size:.86rem}
 
   .related{margin-top:16px;background:#f6faff;border:1px solid #e0eefb;border-radius:12px;padding:13px 15px}
   .related-title{font-size:.82rem;font-weight:800;color:var(--blue-d);margin-bottom:8px;display:flex;align-items:center;gap:6px}
@@ -147,6 +162,20 @@
   .lightbox.open{display:block}
   .lightbox img{max-width:none;min-width:100%;height:auto;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
   .lightbox-close{position:fixed;top:16px;right:18px;width:42px;height:42px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;z-index:81}
+  /* 對齊時間軸的紅色垂直 caliper */
+  .caliper{position:fixed;top:0;left:50%;width:2px;height:100%;background:#ff2d2d;z-index:83;display:none;
+    box-shadow:0 0 7px rgba(255,45,45,.7)}
+  .lightbox.open .caliper{display:block}
+  .caliper::after{content:"";position:absolute;top:0;left:-11px;width:24px;height:100%;cursor:ew-resize}
+  .caliper-grip{position:absolute;top:64px;left:50%;transform:translateX(-50%);background:#ff2d2d;color:#fff;
+    font-size:.78rem;font-weight:700;padding:4px 9px;border-radius:8px;white-space:nowrap;cursor:ew-resize;
+    user-select:none;touch-action:none;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+  .caliper-hint{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:84;color:#fff;
+    background:rgba(8,15,26,.7);padding:6px 13px;border-radius:999px;font-size:.8rem;display:none}
+  .lightbox.open .caliper-hint{display:block}
+  /* 相關篇章站內跳轉 */
+  .related a.rel-internal::before{content:"▶";color:var(--blue);opacity:1}
+  .related a.rel-internal{font-weight:700}
 
   /* report modal */
   .modal{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;padding:18px}
@@ -240,7 +269,9 @@
 
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose" aria-label="關閉">×</button>
+  <span class="caliper-hint">拖紅線對齊同一時間軸 · 捲動可看全圖 · ✕ 關閉</span>
   <img id="lightboxImg" alt="ECG 放大檢視" referrerpolicy="no-referrer">
+  <div class="caliper" id="caliper"><span class="caliper-grip">⇄ 時間軸</span></div>
 </div>
 
 <div class="modal" id="reportModal">
@@ -316,8 +347,12 @@ function refreshWrongUI(){
 
 function srcChip(q){ const s=SOURCES[q.source]||SOURCES.own; return '<span class="src-chip" style="background:'+s.color+'e8"><span class="dot"></span>'+s.name+'</span>'; }
 
-function openLightbox(url){ $("lightboxImg").src=url; $("lightbox").classList.add("open"); document.body.style.overflow="hidden"; }
+function openLightbox(url){ $("lightboxImg").src=url; $("lightbox").classList.add("open"); document.body.style.overflow="hidden"; $("caliper").style.left=Math.round(window.innerWidth/2)+"px"; }
 function closeLightbox(){ $("lightbox").classList.remove("open"); $("lightboxImg").src=""; document.body.style.overflow=""; }
+
+const urlToId=new Map();
+function normUrl(u){ return (u||"").trim().replace(/[#?].*$/,"").replace(/\/+$/,"").toLowerCase(); }
+function jumpTo(id){ const i=BANK.findIndex(x=>x.id===id); if(i>=0){ cur=i; render(BANK[i],i); window.scrollTo({top:0,behavior:"smooth"}); } }
 
 function render(q,idx){
   picked=null; revealed=false;
@@ -360,7 +395,12 @@ function doReveal(){
   // 相關篇章
   const rel=Array.isArray(q.related)?q.related:[];
   if(rel.length){
-    relatedList.innerHTML=rel.map(r=>'<li><a href="'+r.url+'" target="_blank" rel="noopener">'+r.title+'</a></li>').join("");
+    relatedList.innerHTML=rel.map(r=>{
+      const inBank=urlToId.get(normUrl(r.url));
+      if(inBank && inBank!==q.id) return '<li><a href="#" class="rel-internal" data-qid="'+inBank+'">'+r.title+'（在此練這題）</a></li>';
+      return '<li><a href="'+r.url+'" target="_blank" rel="noopener">'+r.title+'</a></li>';
+    }).join("");
+    relatedList.querySelectorAll(".rel-internal").forEach(a=>a.addEventListener("click",e=>{e.preventDefault(); jumpTo(a.dataset.qid);}));
     relatedEl.hidden=false;
   }else relatedEl.hidden=true;
   // 出處
@@ -423,8 +463,17 @@ $("exitWrong").addEventListener("click",()=>exitWrongMode(false));
 $("reportBtn").addEventListener("click",openReport);
 $("reportSend").addEventListener("click",sendReport);
 reportModal.querySelectorAll("[data-close-report]").forEach(el=>el.addEventListener("click",closeReport));
-$("lightbox").addEventListener("click",closeLightbox);
 $("lightboxClose").addEventListener("click",closeLightbox);
+$("lightbox").addEventListener("click",e=>{ if(e.target===$("lightbox")) closeLightbox(); });
+(function(){
+  const cal=$("caliper"); let drag=false;
+  function down(e){ drag=true; e.stopPropagation(); if(e.cancelable)e.preventDefault(); }
+  function move(e){ if(!drag) return; const x=(e.touches&&e.touches[0])?e.touches[0].clientX:e.clientX; cal.style.left=Math.max(0,Math.min(window.innerWidth,x))+"px"; }
+  function up(){ drag=false; }
+  cal.addEventListener("pointerdown",down); cal.addEventListener("touchstart",down,{passive:false});
+  document.addEventListener("pointermove",move); document.addEventListener("touchmove",move,{passive:false});
+  document.addEventListener("pointerup",up); document.addEventListener("touchend",up);
+})();
 document.addEventListener("keydown",e=>{
   if(e.key==="Escape"){ if($("lightbox").classList.contains("open"))closeLightbox(); else if(reportModal.classList.contains("open"))closeReport(); return; }
   if($("lightbox").classList.contains("open")||reportModal.classList.contains("open")) return;
@@ -477,6 +526,7 @@ if(sb){
 fetch("./quiz.json").then(r=>r.json()).then(d=>{
   BANK=d.questions||[];
   if(!BANK.length){stem.textContent="目前尚無題目。"; return;}
+  urlToId.clear(); BANK.forEach(q=>{ if(q.sourceUrl) urlToId.set(normUrl(q.sourceUrl), q.id); });
   refreshWrongUI();
   const want=new URLSearchParams(location.search).get("q");
   const startIdx = want ? BANK.findIndex(q=>q.id===want) : -1;
