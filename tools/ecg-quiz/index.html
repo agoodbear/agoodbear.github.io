@@ -297,7 +297,7 @@
   <button class="lightbox-close" id="lightboxClose" aria-label="關閉">×</button>
   <div class="lb-toolbar">
     <button class="lb-tool" id="toolCal">📏 量間距</button>
-    <button class="lb-tool" id="toolCalib">校準＝1大格(200ms)</button>
+    <button class="lb-tool" id="toolLock">🔒 固定間距</button>
     <button class="lb-tool" id="toolMag">🔍 放大鏡</button>
     <span class="lb-readout" id="calRead">拖紅線對齊時間軸</span>
   </div>
@@ -501,20 +501,14 @@ $("lightboxClose").addEventListener("click",closeLightbox);
 $("lightbox").addEventListener("click",e=>{ if(e.target===$("lightbox")) closeLightbox(); });
 (function(){
   const redLine=$("caliper"), calA=$("calA"), calB=$("calB"), loupe=$("loupe"),
-        toolCal=$("toolCal"), toolMag=$("toolMag"), toolCalib=$("toolCalib"), calRead=$("calRead"), lbImg=$("lightboxImg");
-  let dragTarget=null, calMode=false, magMode=false, msPerPx=0;
+        toolCal=$("toolCal"), toolMag=$("toolMag"), toolLock=$("toolLock"), calRead=$("calRead"), lbImg=$("lightboxImg");
+  let dragTarget=null, calMode=false, magMode=false, locked=false, lockGap=0;
   const cx=e=>(e.touches&&e.touches[0])?e.touches[0].clientX:e.clientX;
   const cy=e=>(e.touches&&e.touches[0])?e.touches[0].clientY:e.clientY;
+  const posOf=el=>parseFloat(el.style.left)||0;
   function startDrag(el){ return e=>{ dragTarget=el; e.stopPropagation(); if(e.cancelable)e.preventDefault(); }; }
   [redLine,calA,calB].forEach(el=>{ el.addEventListener("pointerdown",startDrag(el)); el.addEventListener("touchstart",startDrag(el),{passive:false}); });
-  function readout(){
-    if(!calMode){ return; }
-    const gap=Math.abs((parseFloat(calA.style.left)||0)-(parseFloat(calB.style.left)||0));
-    let t="A↔B "+Math.round(gap)+" px";
-    if(msPerPx>0){ const ms=gap*msPerPx; t+=" ≈ "+Math.round(ms)+" ms"; if(ms>=200&&ms<=2500) t+="（HR "+Math.round(60000/ms)+"）"; }
-    else t+="（按校準）";
-    calRead.textContent=t;
-  }
+  function readout(){ if(!calMode) return; calRead.textContent="A↔B 間距 "+Math.round(Math.abs(posOf(calA)-posOf(calB)))+" px"+(locked?"（已固定）":""); }
   function moveLoupe(e){
     const r=lbImg.getBoundingClientRect(), px=cx(e), py=cy(e);
     if(px<r.left||px>r.right||py<r.top||py>r.bottom){ loupe.style.display="none"; return; }
@@ -526,7 +520,15 @@ $("lightbox").addEventListener("click",e=>{ if(e.target===$("lightbox")) closeLi
     loupe.style.left=(px-size/2)+"px"; loupe.style.top=(py-size/2)+"px";
   }
   function onMove(e){
-    if(dragTarget){ dragTarget.style.left=Math.max(0,Math.min(window.innerWidth,cx(e)))+"px"; readout(); }
+    if(dragTarget){
+      const x=Math.max(0,Math.min(window.innerWidth,cx(e)));
+      if((dragTarget===calA||dragTarget===calB) && locked){
+        dragTarget.style.left=x+"px";
+        const other=dragTarget===calA?calB:calA, sign=dragTarget===calA?1:-1;
+        other.style.left=(x+sign*lockGap)+"px";
+      } else dragTarget.style.left=x+"px";
+      readout();
+    }
     if(magMode) moveLoupe(e);
   }
   document.addEventListener("pointermove",onMove); document.addEventListener("touchmove",onMove,{passive:false});
@@ -534,14 +536,16 @@ $("lightbox").addEventListener("click",e=>{ if(e.target===$("lightbox")) closeLi
   toolCal.addEventListener("click",e=>{ e.stopPropagation(); calMode=!calMode; toolCal.classList.toggle("on",calMode);
     calA.classList.toggle("show",calMode); calB.classList.toggle("show",calMode);
     if(calMode){ calA.style.left=Math.round(window.innerWidth*0.42)+"px"; calB.style.left=Math.round(window.innerWidth*0.58)+"px"; readout(); }
-    else calRead.textContent="拖紅線對齊時間軸"; });
-  toolCalib.addEventListener("click",e=>{ e.stopPropagation(); if(!calMode){ toolCal.click(); }
-    const gap=Math.abs((parseFloat(calA.style.left)||0)-(parseFloat(calB.style.left)||0));
-    if(gap>3){ msPerPx=200/gap; calRead.textContent="已校準：A↔B＝200ms（再拖去量）"; setTimeout(readout,1400); } });
+    else { locked=false; toolLock.classList.remove("on"); toolLock.textContent="🔒 固定間距"; calRead.textContent="拖紅線對齊時間軸"; } });
+  toolLock.addEventListener("click",e=>{ e.stopPropagation(); if(!calMode){ toolCal.click(); }
+    locked=!locked; toolLock.classList.toggle("on",locked);
+    if(locked){ lockGap=posOf(calB)-posOf(calA); toolLock.textContent="🔓 解除固定"; }
+    else toolLock.textContent="🔒 固定間距";
+    readout(); });
   toolMag.addEventListener("click",e=>{ e.stopPropagation(); magMode=!magMode; toolMag.classList.toggle("on",magMode);
     if(!magMode){ loupe.style.display="none"; } });
-  window.__resetLbTools=function(){ calMode=false;magMode=false;msPerPx=0;
-    toolCal.classList.remove("on");toolMag.classList.remove("on");
+  window.__resetLbTools=function(){ calMode=false;magMode=false;locked=false;lockGap=0;
+    toolCal.classList.remove("on");toolMag.classList.remove("on");toolLock.classList.remove("on");toolLock.textContent="🔒 固定間距";
     calA.classList.remove("show");calB.classList.remove("show");loupe.style.display="";
     calRead.textContent="拖紅線對齊時間軸"; };
 })();
