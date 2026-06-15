@@ -59,7 +59,11 @@
         "下壁－後壁－側壁 OMI，應啟動 cath lab"
       ],
       "answer": 3,
-      "explain": "Smith：下壁 STE＋aVL reciprocal ST 壓低＝下壁 OMI；V3–V4 ST 壓低＝後壁 OMI；V6 STE＝側壁——合為下壁-後壁-側壁 OMI。雖未達 STEMI 毫米標準，cath 證實 inferoposterior 阻塞、troponin 升到 ≥43,000 ng/L（大面積梗塞）。重點：年輕病人也可在「不符 STEMI 標準」下發生大範圍 OMI，決定預後的關鍵是 time to intervention，而非是否符合 STEMI criteria。"
+      "explain": "<p>Smith：下壁 <strong>STE</strong>＋aVL <strong>reciprocal ST 壓低</strong>＝<mark>下壁 OMI</mark>；V3–V4 ST 壓低＝<mark>後壁 OMI</mark>；V6 STE＝<mark>側壁受累</mark>——合為下壁-後壁-側壁 OMI。雖<strong>未達 STEMI 毫米標準</strong>，cath 證實 inferoposterior 阻塞、troponin 升到 ≥43,000 ng/L（大面積梗塞）。</p><p><strong>觸類旁通：</strong>年輕病人一樣會在「不符 STEMI 標準」下發生大範圍 OMI。Smith 反覆強調，決定預後的關鍵是 <mark>time to intervention</mark>，而非是否達到 STEMI criteria——這正是用 OMI/NOMI paradigm 取代傳統 STEMI/NSTEMI 二分法的核心。</p>",
+      "related": [
+        {"title": "漏掉 OMI 有多嚴重？16 小時未重做 ECG 的致命代價", "url": "https://drsmithsecgblog.com/how-terrible-can-it-be-to-fail-to/"},
+        {"title": "胸痛合併 RBBB：束支阻滯下照樣揪出 OMI", "url": "https://drsmithsecgblog.com/chest-pain-and-right-bundle-branch-block-2/"}
+      ]
     },
     {
       "id": "smith-1936",
