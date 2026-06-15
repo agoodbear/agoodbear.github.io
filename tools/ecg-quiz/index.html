@@ -357,10 +357,11 @@ function placeholder(src, idx){
   return '<div class="ecg-paper"></div><svg class="ecg-trace" viewBox="0 0 360 200" preserveAspectRatio="none" aria-hidden="true"><path d="'+trace+'" style="stroke:'+c+'"/></svg><span class="ph-tag">範例佔位圖</span>';
 }
 
-const WRONG_KEY="ecgquiz_wrong_v1";
+const WRONG_KEY="ecgquiz_wrong_v1", DONE_KEY="ecgquiz_done_v1";
 let BANK=[], cur=-1, done=0, picked=null, revealed=false, mode="all";
 let wrongSet=new Set(), currentUser=null;
 try{ wrongSet=new Set(JSON.parse(localStorage.getItem(WRONG_KEY)||"[]")); }catch(e){}
+try{ done=parseInt(localStorage.getItem(DONE_KEY)||"0")||0; }catch(e){}
 
 const $=id=>document.getElementById(id);
 const figure=$("figure"),stem=$("stem"),optionsEl=$("options"),reveal=$("reveal"),
@@ -371,6 +372,7 @@ const figure=$("figure"),stem=$("stem"),optionsEl=$("options"),reveal=$("reveal"
 const KEYS=["A","B","C","D","E","F"];
 
 function saveWrong(){ try{ localStorage.setItem(WRONG_KEY, JSON.stringify([...wrongSet])); }catch(e){} }
+function saveDone(){ try{ localStorage.setItem(DONE_KEY, String(done)); }catch(e){} syncDone(); }
 function wrongInBank(){ return BANK.filter(q=>wrongSet.has(q.id)); }
 function refreshWrongUI(){
   const n=wrongInBank().length;
@@ -413,7 +415,7 @@ function select(i){
 function doReveal(){
   if(revealed) return;
   const q=BANK[cur];
-  revealed=true; done++; doneCount.textContent=done;
+  revealed=true; done++; doneCount.textContent=done; saveDone();
   optionsEl.querySelectorAll(".opt").forEach(b=>{
     const i=+b.dataset.i; b.disabled=true; b.classList.remove("sel");
     if(i===q.answer){b.classList.add("correct"); b.querySelector(".mark").textContent="✓";}
@@ -577,8 +579,12 @@ async function loadCloudWrong(){
     if(localIds.length){ await sb.from("ecg_quiz_wrong").upsert(localIds.map(qid=>({user_id:currentUser.id,question_id:qid})),{onConflict:"user_id,question_id"}); }
     const {data}=await sb.from("ecg_quiz_wrong").select("question_id");
     if(data){ wrongSet=new Set(data.map(r=>r.question_id)); saveWrong(); refreshWrongUI(); }
+    const {data:st}=await sb.from("ecg_quiz_stats").select("practiced").eq("user_id",currentUser.id).maybeSingle();
+    const cloudP=st?(st.practiced||0):0;
+    done=Math.max(done, cloudP); doneCount.textContent=done; try{localStorage.setItem(DONE_KEY,String(done));}catch(e){} syncDone();
   }catch(e){}
 }
+async function syncDone(){ if(!sb||!currentUser) return; try{ await sb.from("ecg_quiz_stats").upsert({user_id:currentUser.id,practiced:done,updated_at:new Date().toISOString()},{onConflict:"user_id"}); }catch(e){} }
 async function syncWrong(qid,isWrong){
   if(!sb||!currentUser) return;
   try{
@@ -602,7 +608,7 @@ fetch("./quiz.json").then(r=>r.json()).then(d=>{
   BANK=d.questions||[];
   if(!BANK.length){stem.textContent="目前尚無題目。"; return;}
   urlToId.clear(); BANK.forEach(q=>{ if(q.sourceUrl) urlToId.set(normUrl(q.sourceUrl), q.id); });
-  refreshWrongUI();
+  doneCount.textContent=done; refreshWrongUI();
   const want=new URLSearchParams(location.search).get("q");
   const startIdx = want ? BANK.findIndex(q=>q.id===want) : -1;
   if(startIdx>=0){ cur=startIdx; render(BANK[cur],cur); } else next();
