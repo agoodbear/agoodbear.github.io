@@ -4,16 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ECG 隨機考題</title>
-<meta name="description" content="從 ECG 教學部落格與自有個案隨機抽題：題目、ECG 圖、解答、出處，一鍵練習。">
+<meta name="description" content="從 Dr. Smith ECG Blog 真實案例隨機抽題：題目、ECG 圖、解答、詳解、出處，含錯題本與回報。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
   :root{
     --blue:#0f7ec7; --blue-d:#0b6aa9; --blue-soft:#e6f3fc;
     --ink:#16263a; --ink-soft:#4a5f76; --line:#e3ebf3;
     --ok:#16a34a; --ok-soft:#e8f7ee; --bad:#dc2626; --bad-soft:#fdeaea;
     --paper:#ffffff; --bg1:#eef4fa; --bg2:#e3ecf5;
+    --mark:#fff3bf;
     --shadow:0 18px 48px rgba(18,57,93,.14);
     --radius:22px;
   }
@@ -25,59 +27,57 @@
     background:
       radial-gradient(1100px 520px at 12% -8%, #f4f9ff 0%, rgba(244,249,255,0) 60%),
       linear-gradient(160deg, var(--bg1), var(--bg2));
-    min-height:100vh;
-    -webkit-font-smoothing:antialiased;
+    min-height:100vh;-webkit-font-smoothing:antialiased;
   }
   .wrap{max-width:760px;margin:0 auto;padding:34px 20px 56px}
 
-  /* top bar */
-  .top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:20px;flex-wrap:wrap}
   .brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:1.32rem;letter-spacing:.2px}
   .brand .pulse{width:34px;height:34px;flex:0 0 auto}
-  .brand .beta{
-    font-family:"Space Grotesk",sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.12em;
+  .brand .beta{font-family:"Space Grotesk",sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.12em;
     color:var(--blue);background:var(--blue-soft);padding:3px 8px;border-radius:999px;transform:translateY(-2px)}
-  .counter{font-size:.86rem;color:var(--ink-soft);background:#fff;border:1px solid var(--line);
-    padding:7px 13px;border-radius:999px;box-shadow:0 2px 8px rgba(18,57,93,.05)}
-  .counter b{color:var(--blue);font-weight:800}
+  .top-right{display:flex;align-items:center;gap:9px}
+  .pill{font-size:.84rem;color:var(--ink-soft);background:#fff;border:1px solid var(--line);
+    padding:7px 13px;border-radius:999px;box-shadow:0 2px 8px rgba(18,57,93,.05);cursor:default}
+  .pill b{color:var(--blue);font-weight:800}
+  .wrongbook{cursor:pointer;transition:all .15s ease;user-select:none}
+  .wrongbook:hover{border-color:#f0b8b8;background:#fff6f6}
+  .wrongbook.active{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .wrongbook.active b{color:#fff}
+  .wrongbook.empty{opacity:.5;cursor:not-allowed}
 
-  /* card */
+  .mode-banner{display:none;align-items:center;gap:8px;background:#fff1f1;border:1px solid #f6cccc;
+    color:#b03a3a;border-radius:12px;padding:9px 14px;margin-bottom:14px;font-size:.9rem;font-weight:600}
+  .mode-banner.show{display:flex}
+  .mode-banner button{margin-left:auto;border:0;background:#fff;color:#b03a3a;border:1px solid #f0bcbc;
+    border-radius:8px;padding:4px 10px;font:inherit;font-weight:700;font-size:.82rem;cursor:pointer}
+
   .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
     box-shadow:var(--shadow);overflow:hidden;animation:rise .45s cubic-bezier(.2,.8,.2,1)}
   @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
-  /* figure (ECG) */
   .figure{position:relative;height:248px;background:#fff;border-bottom:1px solid var(--line);overflow:hidden}
   .figure.has-img{height:auto;max-height:480px;display:flex;align-items:center;justify-content:center;background:#fbfdff}
   .figure.has-img .ecg-img{width:100%;height:auto;max-height:480px;object-fit:contain;display:block;cursor:zoom-in}
   .zoom-hint{position:absolute;right:14px;bottom:12px;font-size:.72rem;color:#fff;font-weight:600;
-    background:rgba(15,23,42,.55);padding:5px 10px;border-radius:8px;pointer-events:none;display:flex;gap:5px;align-items:center}
-  .ecg-paper{
-    position:absolute;inset:0;
-    background-color:#fffafa;
+    background:rgba(15,23,42,.55);padding:5px 10px;border-radius:8px;pointer-events:none}
+  .ecg-paper{position:absolute;inset:0;background-color:#fffafa;
     background-image:
       linear-gradient(rgba(229,115,115,.20) 1px,transparent 1px),
       linear-gradient(90deg,rgba(229,115,115,.20) 1px,transparent 1px),
       linear-gradient(rgba(229,115,115,.40) 1px,transparent 1px),
       linear-gradient(90deg,rgba(229,115,115,.40) 1px,transparent 1px);
-    background-size:8px 8px,8px 8px,40px 40px,40px 40px;
-  }
+    background-size:8px 8px,8px 8px,40px 40px,40px 40px;}
   .ecg-trace{position:absolute;inset:0;width:100%;height:100%}
-  .ecg-trace path{stroke:#c0392b;stroke-width:2.1;fill:none;stroke-linejoin:round;stroke-linecap:round;
-    filter:drop-shadow(0 1px 1px rgba(192,57,43,.18))}
+  .ecg-trace path{stroke:#c0392b;stroke-width:2.1;fill:none;stroke-linejoin:round;stroke-linecap:round}
   .src-chip{position:absolute;left:14px;top:14px;display:inline-flex;align-items:center;gap:6px;
     font-size:.76rem;font-weight:700;color:#fff;padding:6px 12px;border-radius:999px;
-    background:rgba(15,126,199,.92);backdrop-filter:blur(3px);box-shadow:0 4px 12px rgba(0,0,0,.16)}
+    background:rgba(15,126,199,.92);box-shadow:0 4px 12px rgba(0,0,0,.16)}
   .src-chip .dot{width:7px;height:7px;border-radius:50%;background:#fff;opacity:.9}
   .ph-tag{position:absolute;right:14px;bottom:12px;font-size:.7rem;color:#9a5b58;
     background:rgba(255,255,255,.78);padding:4px 9px;border-radius:8px;font-weight:600}
 
-  /* body */
   .body{padding:24px 24px 6px}
-  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:13px}
-  .reveal .tags{margin:16px 0 0}
-  .tag{font-size:.74rem;font-weight:600;color:var(--ink-soft);background:#f1f5f9;
-    border:1px solid var(--line);padding:4px 10px;border-radius:8px}
   .stem{font-size:1.16rem;line-height:1.6;font-weight:700;margin:0 0 18px;letter-spacing:.1px}
 
   .options{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
@@ -98,56 +98,81 @@
   .opt.correct .mark{opacity:1;color:var(--ok)}
   .opt.wrong .mark{opacity:1;color:var(--bad)}
 
-  /* reveal */
-  .reveal{margin-top:18px;border-top:1px dashed var(--line);padding-top:18px;
-    animation:fade .35s ease}
+  .reveal{margin-top:18px;border-top:1px dashed var(--line);padding-top:18px;animation:fade .35s ease}
   .reveal[hidden]{display:none}
   @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-  .ans{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;margin-bottom:9px}
-  .ans .badge{font-size:.72rem;letter-spacing:.05em;color:#fff;background:var(--ok);
-    padding:4px 10px;border-radius:999px}
-  .explain{margin:0 0 16px;color:var(--ink-soft);line-height:1.72;font-size:.96rem}
-  .source{display:inline-flex;align-items:center;gap:7px;font-size:.86rem;font-weight:600;
+  .ans{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;margin-bottom:11px}
+  .ans .badge{font-size:.72rem;letter-spacing:.05em;color:#fff;background:var(--ok);padding:4px 10px;border-radius:999px}
+  .explain{margin:0 0 4px;color:var(--ink-soft);line-height:1.78;font-size:.97rem}
+  .explain strong{color:var(--ink);font-weight:800}
+  .explain mark{background:var(--mark);color:#5b4a12;padding:0 3px;border-radius:3px;font-weight:600}
+  .explain p{margin:0 0 11px}
+  .explain p:last-child{margin-bottom:0}
+
+  .related{margin-top:16px;background:#f6faff;border:1px solid #e0eefb;border-radius:12px;padding:13px 15px}
+  .related-title{font-size:.82rem;font-weight:800;color:var(--blue-d);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+  .related ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+  .related a{color:var(--blue);text-decoration:none;font-size:.9rem;line-height:1.45;display:inline-flex;gap:6px}
+  .related a:hover{text-decoration:underline}
+  .related a::before{content:"↗";opacity:.6;flex:0 0 auto}
+
+  .source{display:inline-flex;align-items:center;gap:7px;font-size:.86rem;font-weight:600;margin-top:16px;
     color:var(--blue);text-decoration:none;background:var(--blue-soft);padding:8px 13px;border-radius:10px}
   .source:hover{background:#d6ecfb}
   .source.nolink{color:var(--ink-soft);background:#f1f5f9;pointer-events:none}
 
-  /* actions */
-  .actions{display:flex;gap:11px;padding:18px 24px 24px;flex-wrap:wrap}
-  .btn{flex:1;min-width:140px;border:0;border-radius:13px;padding:14px 18px;font:inherit;
-    font-weight:800;font-size:1rem;cursor:pointer;transition:all .16s ease}
-  .btn.primary{color:#fff;background:linear-gradient(180deg,#1389d4,var(--blue));
-    box-shadow:0 8px 20px rgba(15,126,199,.32)}
-  .btn.primary:hover{background:var(--blue-d);transform:translateY(-1px);box-shadow:0 10px 24px rgba(15,126,199,.4)}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 0}
+  .tag{font-size:.74rem;font-weight:600;color:var(--ink-soft);background:#f1f5f9;border:1px solid var(--line);padding:4px 10px;border-radius:8px}
+
+  .actions{display:flex;gap:11px;padding:18px 24px 8px;flex-wrap:wrap}
+  .btn{flex:1;min-width:140px;border:0;border-radius:13px;padding:14px 18px;font:inherit;font-weight:800;font-size:1rem;cursor:pointer;transition:all .16s ease}
+  .btn.primary{color:#fff;background:linear-gradient(180deg,#1389d4,var(--blue));box-shadow:0 8px 20px rgba(15,126,199,.32)}
+  .btn.primary:hover{background:var(--blue-d);transform:translateY(-1px)}
   .btn.ghost{color:var(--blue);background:#fff;border:1.6px solid #bcd9ee}
   .btn.ghost:hover{background:var(--blue-soft);transform:translateY(-1px)}
   .btn:disabled{opacity:.45;cursor:default;transform:none;box-shadow:none}
 
+  .card-foot{display:flex;justify-content:flex-end;padding:0 24px 20px}
+  .report-link{background:none;border:0;color:#94a3b8;font:inherit;font-size:.84rem;cursor:pointer;padding:6px;display:inline-flex;align-items:center;gap:5px}
+  .report-link:hover{color:var(--bad)}
+
   .foot{text-align:center;color:#8194a8;font-size:.78rem;margin-top:22px;line-height:1.6}
-  .foot kbd{font-family:"Space Grotesk",monospace;background:#fff;border:1px solid var(--line);
-    border-bottom-width:2px;border-radius:6px;padding:1px 6px;font-size:.74rem;color:var(--ink-soft)}
+  .foot kbd{font-family:"Space Grotesk",monospace;background:#fff;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:1px 6px;font-size:.74rem;color:var(--ink-soft)}
 
-  /* lightbox (放大看 ECG) */
-  .lightbox{position:fixed;inset:0;z-index:80;display:none;background:rgba(8,15,26,.92);
-    overflow:auto;padding:24px;cursor:zoom-out;text-align:center}
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;z-index:80;display:none;background:rgba(8,15,26,.92);overflow:auto;padding:24px;cursor:zoom-out;text-align:center}
   .lightbox.open{display:block}
-  .lightbox img{max-width:none;min-width:100%;height:auto;border-radius:8px;
-    box-shadow:0 20px 60px rgba(0,0,0,.5)}
-  .lightbox-close{position:fixed;top:16px;right:18px;width:42px;height:42px;border:0;border-radius:50%;
-    background:rgba(255,255,255,.18);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;z-index:81}
-  .lightbox-close:hover{background:rgba(255,255,255,.32)}
+  .lightbox img{max-width:none;min-width:100%;height:auto;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  .lightbox-close{position:fixed;top:16px;right:18px;width:42px;height:42px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;z-index:81}
 
-  /* embedded (in popup modal) */
+  /* report modal */
+  .modal{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;padding:18px}
+  .modal.open{display:flex}
+  .modal-bg{position:absolute;inset:0;background:rgba(15,23,42,.55)}
+  .modal-box{position:relative;z-index:1;width:min(440px,96vw);background:#fff;border-radius:18px;padding:22px;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+  .modal-box h3{margin:0 0 4px;font-size:1.12rem}
+  .modal-box .sub{margin:0 0 16px;color:var(--ink-soft);font-size:.86rem}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:.84rem;font-weight:700;margin-bottom:6px;color:var(--ink)}
+  .field select,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;color:var(--ink)}
+  .field textarea{min-height:74px;resize:vertical}
+  .modal-actions{display:flex;gap:10px;margin-top:6px}
+  .modal-actions .btn{min-width:0}
+  .modal-msg{font-size:.86rem;margin-top:10px;min-height:1.2em}
+  .modal-msg.ok{color:var(--ok)}
+  .modal-msg.err{color:var(--bad)}
+
   html.is-embedded body{background:#f4f8fc}
   html.is-embedded .wrap{padding:18px 16px 30px}
   html.is-embedded .top{margin-bottom:14px}
 
   @media(max-width:560px){
     .wrap{padding:22px 14px 40px}
-    .brand{font-size:1.15rem}
+    .brand{font-size:1.12rem}
     .stem{font-size:1.07rem}
     .figure{height:200px}
     .btn{min-width:100%}
+    .top-right{width:100%;justify-content:space-between}
   }
 </style>
 </head>
@@ -167,7 +192,15 @@
       </svg>
       ECG 隨機考題 <span class="beta">BETA</span>
     </div>
-    <div class="counter">已練習 <b id="doneCount">0</b> 題</div>
+    <div class="top-right">
+      <button class="pill wrongbook empty" id="wrongbook" title="只練答錯過的題目">🗂 錯題本 <b id="wrongCount">0</b></button>
+      <span class="pill">已練習 <b id="doneCount">0</b></span>
+    </div>
+  </div>
+
+  <div class="mode-banner" id="modeBanner">
+    <span>📕 錯題本模式：只出你答錯過的題（<b id="modeWrongN">0</b> 題）</span>
+    <button id="exitWrong">回到全部題目</button>
   </div>
 
   <section class="card" id="card" aria-live="polite">
@@ -177,7 +210,11 @@
       <ul class="options" id="options"></ul>
       <div class="reveal" id="reveal" hidden>
         <div class="ans"><span class="badge">解答</span><span id="ansText"></span></div>
-        <p class="explain" id="explain"></p>
+        <div class="explain" id="explain"></div>
+        <div class="related" id="related" hidden>
+          <div class="related-title">📚 Smith 相關篇章</div>
+          <ul id="relatedList"></ul>
+        </div>
         <a class="source" id="source" target="_blank" rel="noopener"></a>
         <div class="tags" id="tags"></div>
       </div>
@@ -185,6 +222,9 @@
     <div class="actions">
       <button class="btn primary" id="revealBtn">看解答</button>
       <button class="btn ghost" id="nextBtn">下一題（隨機）</button>
+    </div>
+    <div class="card-foot">
+      <button class="report-link" id="reportBtn">🚩 這題怪怪的？回報</button>
     </div>
   </section>
 
@@ -199,72 +239,96 @@
   <img id="lightboxImg" alt="ECG 放大檢視" referrerpolicy="no-referrer">
 </div>
 
+<div class="modal" id="reportModal">
+  <div class="modal-bg" data-close-report></div>
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <h3>回報這題</h3>
+    <p class="sub">回報會送到管理後台的「使用者回饋」，感謝你幫忙改進題庫。</p>
+    <div class="field">
+      <label for="reportCat">問題類別</label>
+      <select id="reportCat">
+        <option>圖片看不到／怪</option>
+        <option>答案好像錯</option>
+        <option>題目文字怪</option>
+        <option>詳解怪怪的</option>
+        <option>選項怪</option>
+        <option>其他</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="reportNote">補充說明（可選）</label>
+      <textarea id="reportNote" placeholder="例如：V6 的 ST 我覺得沒有抬高…"></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="btn primary" id="reportSend">送出回報</button>
+      <button class="btn ghost" data-close-report>取消</button>
+    </div>
+    <div class="modal-msg" id="reportMsg"></div>
+  </div>
+</div>
+
 <script>
+const SB_URL="https://ftnrvkvzzvlfvdqirhxq.supabase.co";
+const SB_KEY="sb_publishable_nfZvsG0mzj5hTpfgxpED3Q_DcwmqX07";
+const sb = (window.supabase && window.supabase.createClient) ? window.supabase.createClient(SB_URL, SB_KEY) : null;
+
 const SOURCES = {
   own:   {name:"自有個案", color:"#0f7ec7"},
   smith: {name:"Dr. Smith's ECG Blog", color:"#7c3aed"},
   litfl: {name:"LITFL", color:"#0d9488"},
   grauer:{name:"Ken Grauer (ECG Blog)", color:"#d97706"}
 };
-
-// 範例 ECG 佔位波形（非診斷用，正式題庫換成真實個案圖）
 const TRACES = [
   "M0 130 H40 l6 -10 l4 20 l5 -55 l5 70 l5 -25 H120 l6 -10 l4 20 l5 -55 l5 70 l5 -25 H200 l6 -10 l4 20 l5 -55 l5 70 l5 -25 H280 l6 -10 l4 20 l5 -55 l5 70 l5 -25 H360",
   "M0 135 q10 0 14 0 l4 -8 l4 16 l5 -62 l5 78 l6 -24 q8 6 16 0 q10 -2 18 4 H120 l4 -8 l4 16 l5 -62 l5 78 l6 -24 q10 4 22 2 H230 l4 -8 l4 16 l5 -62 l5 78 l6 -24 H360",
   "M0 128 H30 l5 -6 l5 12 l5 -48 l5 64 l5 -22 q9 8 20 6 q12 -2 18 6 H150 l5 -6 l5 12 l5 -48 l5 64 l5 -22 H260 l5 -6 l5 12 l5 -48 l5 64 l5 -22 H360"
 ];
-
 function placeholder(src, idx){
-  const c = (SOURCES[src]||SOURCES.own).color;
-  const trace = TRACES[idx % TRACES.length];
-  return '<div class="ecg-paper"></div>'+
-    '<svg class="ecg-trace" viewBox="0 0 360 200" preserveAspectRatio="none" aria-hidden="true">'+
-    '<path d="'+trace+'" style="stroke:'+c+'"/></svg>'+
-    '<span class="ph-tag">範例佔位圖</span>';
+  const c=(SOURCES[src]||SOURCES.own).color, trace=TRACES[idx%TRACES.length];
+  return '<div class="ecg-paper"></div><svg class="ecg-trace" viewBox="0 0 360 200" preserveAspectRatio="none" aria-hidden="true"><path d="'+trace+'" style="stroke:'+c+'"/></svg><span class="ph-tag">範例佔位圖</span>';
 }
 
-let BANK=[], cur=-1, done=0, picked=null, revealed=false;
+const WRONG_KEY="ecgquiz_wrong_v1";
+let BANK=[], cur=-1, done=0, picked=null, revealed=false, mode="all";
+let wrongSet=new Set();
+try{ wrongSet=new Set(JSON.parse(localStorage.getItem(WRONG_KEY)||"[]")); }catch(e){}
 
 const $=id=>document.getElementById(id);
-const figure=$("figure"),tags=$("tags"),stem=$("stem"),optionsEl=$("options"),
-      reveal=$("reveal"),ansText=$("ansText"),explainEl=$("explain"),sourceEl=$("source"),
-      revealBtn=$("revealBtn"),nextBtn=$("nextBtn"),doneCount=$("doneCount");
+const figure=$("figure"),stem=$("stem"),optionsEl=$("options"),reveal=$("reveal"),
+  ansText=$("ansText"),explainEl=$("explain"),relatedEl=$("related"),relatedList=$("relatedList"),
+  sourceEl=$("source"),tagsEl=$("tags"),revealBtn=$("revealBtn"),nextBtn=$("nextBtn"),
+  doneCount=$("doneCount"),wrongCount=$("wrongCount"),wrongbook=$("wrongbook"),
+  modeBanner=$("modeBanner"),modeWrongN=$("modeWrongN");
 const KEYS=["A","B","C","D","E","F"];
 
-function srcChip(q){
-  const s=SOURCES[q.source]||SOURCES.own;
-  return '<span class="src-chip" style="background:'+s.color+'e8"><span class="dot"></span>'+s.name+'</span>';
+function saveWrong(){ try{ localStorage.setItem(WRONG_KEY, JSON.stringify([...wrongSet])); }catch(e){} }
+function wrongInBank(){ return BANK.filter(q=>wrongSet.has(q.id)); }
+function refreshWrongUI(){
+  const n=wrongInBank().length;
+  wrongCount.textContent=n;
+  wrongbook.classList.toggle("empty", n===0 && mode!=="wrong");
+  modeWrongN.textContent=n;
 }
 
-function openLightbox(url){
-  const lb=document.getElementById("lightbox");
-  document.getElementById("lightboxImg").src=url;
-  lb.classList.add("open"); document.body.style.overflow="hidden";
-}
-function closeLightbox(){
-  const lb=document.getElementById("lightbox");
-  lb.classList.remove("open"); document.getElementById("lightboxImg").src=""; document.body.style.overflow="";
-}
+function srcChip(q){ const s=SOURCES[q.source]||SOURCES.own; return '<span class="src-chip" style="background:'+s.color+'e8"><span class="dot"></span>'+s.name+'</span>'; }
+
+function openLightbox(url){ $("lightboxImg").src=url; $("lightbox").classList.add("open"); document.body.style.overflow="hidden"; }
+function closeLightbox(){ $("lightbox").classList.remove("open"); $("lightboxImg").src=""; document.body.style.overflow=""; }
 
 function render(q,idx){
   picked=null; revealed=false;
   if(q.image){
     figure.className="figure has-img";
     figure.innerHTML='<img class="ecg-img" src="'+q.image+'" alt="ECG 12 導程" referrerpolicy="no-referrer">'+srcChip(q)+'<span class="zoom-hint">🔍 點圖放大</span>';
-    const im=figure.querySelector(".ecg-img");
-    im.addEventListener("click",()=>openLightbox(q.image));
+    figure.querySelector(".ecg-img").addEventListener("click",()=>openLightbox(q.image));
   }else{
     figure.className="figure";
     figure.innerHTML=placeholder(q.source,idx)+srcChip(q);
   }
-  tags.innerHTML = (q.tags||[]).map(t=>'<span class="tag">#'+t+'</span>').join("");
-  stem.textContent = q.stem;
-  optionsEl.innerHTML = q.options.map((o,i)=>
-    '<button class="opt" data-i="'+i+'"><span class="key">'+KEYS[i]+'</span><span>'+o+'</span><span class="mark"></span></button>'
-  ).join("");
+  stem.textContent=q.stem;
+  optionsEl.innerHTML=q.options.map((o,i)=>'<button class="opt" data-i="'+i+'"><span class="key">'+KEYS[i]+'</span><span>'+o+'</span><span class="mark"></span></button>').join("");
   optionsEl.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>select(+b.dataset.i)));
   reveal.hidden=true; revealBtn.disabled=false; revealBtn.textContent="看解答";
-  $("card").style.animation="none"; void $("card").offsetWidth; $("card").style.animation="";
 }
 
 function select(i){
@@ -282,35 +346,84 @@ function doReveal(){
     if(i===q.answer){b.classList.add("correct"); b.querySelector(".mark").textContent="✓";}
     else if(i===picked){b.classList.add("wrong"); b.querySelector(".mark").textContent="✗";}
   });
-  ansText.textContent = KEYS[q.answer]+"．"+q.options[q.answer];
-  explainEl.textContent = q.explain;
+  // 錯題本：答錯加入、答對移除
+  if(picked!==null && picked!==q.answer) wrongSet.add(q.id);
+  else if(picked===q.answer) wrongSet.delete(q.id);
+  saveWrong(); refreshWrongUI();
+
+  ansText.textContent=KEYS[q.answer]+"．"+q.options[q.answer];
+  explainEl.innerHTML=q.explain||"";
+  // 相關篇章
+  const rel=Array.isArray(q.related)?q.related:[];
+  if(rel.length){
+    relatedList.innerHTML=rel.map(r=>'<li><a href="'+r.url+'" target="_blank" rel="noopener">'+r.title+'</a></li>').join("");
+    relatedEl.hidden=false;
+  }else relatedEl.hidden=true;
+  // 出處
   const s=SOURCES[q.source]||SOURCES.own;
-  if(q.sourceUrl){
-    sourceEl.className="source"; sourceEl.href=q.sourceUrl;
-    sourceEl.innerHTML="出處："+s.name+" ↗";
-  }else{
-    sourceEl.className="source nolink"; sourceEl.removeAttribute("href");
-    sourceEl.innerHTML="出處："+s.name;
-  }
+  if(q.sourceUrl){ sourceEl.className="source"; sourceEl.href=q.sourceUrl; sourceEl.innerHTML="出處："+s.name+" ↗"; }
+  else{ sourceEl.className="source nolink"; sourceEl.removeAttribute("href"); sourceEl.innerHTML="出處："+s.name; }
+  tagsEl.innerHTML=(q.tags||[]).map(t=>'<span class="tag">#'+t+'</span>').join("");
+
   reveal.hidden=false; revealBtn.disabled=true; revealBtn.textContent="已揭曉";
 }
 
 function next(){
-  if(BANK.length<2){cur=0;} else {
-    let n; do{ n=Math.floor(Math.random()*BANK.length);}while(n===cur);
-    cur=n;
+  const pool = mode==="wrong" ? wrongInBank() : BANK;
+  if(mode==="wrong" && pool.length===0){ exitWrongMode(true); return; }
+  if(pool.length===1){ cur=BANK.indexOf(pool[0]); }
+  else{
+    let pick; do{ pick=pool[Math.floor(Math.random()*pool.length)]; }while(BANK.indexOf(pick)===cur);
+    cur=BANK.indexOf(pick);
   }
   render(BANK[cur],cur);
 }
 
+function enterWrongMode(){
+  if(wrongInBank().length===0) return;
+  mode="wrong"; wrongbook.classList.add("active"); modeBanner.classList.add("show");
+  refreshWrongUI(); next();
+}
+function exitWrongMode(cleared){
+  mode="all"; wrongbook.classList.remove("active"); modeBanner.classList.remove("show");
+  refreshWrongUI();
+  if(cleared){ stem.textContent="🎉 錯題本清空了！已切回全部題目。"; }
+  next();
+}
+
+// 回報
+const reportModal=$("reportModal"),reportMsg=$("reportMsg");
+function openReport(){ reportMsg.textContent=""; reportMsg.className="modal-msg"; reportModal.classList.add("open"); }
+function closeReport(){ reportModal.classList.remove("open"); }
+async function sendReport(){
+  const q=BANK[cur]; if(!q) return;
+  const btn=$("reportSend"); btn.disabled=true; reportMsg.className="modal-msg"; reportMsg.textContent="送出中…";
+  const payload={ p_qid:q.id, p_category:$("reportCat").value, p_note:$("reportNote").value||"",
+    p_stem:q.stem||"", p_url:location.origin+location.pathname+"?q="+encodeURIComponent(q.id) };
+  try{
+    if(!sb) throw new Error("no client");
+    const {error}=await sb.rpc("submit_ecg_quiz_feedback", payload);
+    if(error) throw error;
+    reportMsg.className="modal-msg ok"; reportMsg.textContent="✓ 已送出，感謝回報！";
+    $("reportNote").value="";
+    setTimeout(closeReport,1200);
+  }catch(e){
+    reportMsg.className="modal-msg err"; reportMsg.textContent="送出失敗，請稍後再試。";
+  }finally{ btn.disabled=false; }
+}
+
 revealBtn.addEventListener("click",doReveal);
 nextBtn.addEventListener("click",next);
-document.getElementById("lightbox").addEventListener("click",closeLightbox);
-document.getElementById("lightboxClose").addEventListener("click",closeLightbox);
+wrongbook.addEventListener("click",()=>{ mode==="wrong"?exitWrongMode(false):enterWrongMode(); });
+$("exitWrong").addEventListener("click",()=>exitWrongMode(false));
+$("reportBtn").addEventListener("click",openReport);
+$("reportSend").addEventListener("click",sendReport);
+reportModal.querySelectorAll("[data-close-report]").forEach(el=>el.addEventListener("click",closeReport));
+$("lightbox").addEventListener("click",closeLightbox);
+$("lightboxClose").addEventListener("click",closeLightbox);
 document.addEventListener("keydown",e=>{
-  const lbOpen=document.getElementById("lightbox").classList.contains("open");
-  if(e.key==="Escape"){ if(lbOpen) closeLightbox(); return; }
-  if(lbOpen) return;
+  if(e.key==="Escape"){ if($("lightbox").classList.contains("open"))closeLightbox(); else if(reportModal.classList.contains("open"))closeReport(); return; }
+  if($("lightbox").classList.contains("open")||reportModal.classList.contains("open")) return;
   if(e.key>="1"&&e.key<="6"){const i=+e.key-1; if(BANK[cur]&&i<BANK[cur].options.length) select(i);}
   else if(e.code==="Space"){e.preventDefault(); revealed?next():doReveal();}
   else if(e.key==="n"||e.key==="N"){next();}
@@ -319,7 +432,10 @@ document.addEventListener("keydown",e=>{
 fetch("./quiz.json").then(r=>r.json()).then(d=>{
   BANK=d.questions||[];
   if(!BANK.length){stem.textContent="目前尚無題目。"; return;}
-  next();
+  refreshWrongUI();
+  const want=new URLSearchParams(location.search).get("q");
+  const startIdx = want ? BANK.findIndex(q=>q.id===want) : -1;
+  if(startIdx>=0){ cur=startIdx; render(BANK[cur],cur); } else next();
 }).catch(()=>{stem.textContent="題庫載入失敗。";});
 </script>
 </body>
