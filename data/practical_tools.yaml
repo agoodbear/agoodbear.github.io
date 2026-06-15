@@ -1,3 +1,10 @@
+- title: "EM Pulse 急診文獻雷達"
+  description: "每天清晨自動掃描 PubMed 近 7 天、急診／重症／外傷期刊的新文獻，依〔期刊分級＋文獻類型＋發表新近度〕計分排序，做成可篩選（Tier／指引／統合分析／RCT…）的文獻雷達；含本週精選、熱門主題關鍵字與一鍵連 PubMed 原文。資料每天台灣清晨自動更新。逆向自急診醫師 İbrahim Sarbay 的 EM Pulse、介面全繁中化，醫學標題維持英文原文。"
+  image: "/images/practical-tools/em-pulse.png"
+  url: "https://agoodbear.github.io/em-pulse-tw/"
+  embed_url: "https://agoodbear.github.io/em-pulse-tw/"
+  source_label: "立即使用"
+
 - title: "ECG 隨機考題"
   description: "從自有個案與 ECG 教學部落格（Dr. Smith、LITFL、Ken Grauer）隨機抽題：題目、ECG 圖、解答、出處一次到位。支援選答、即時對答案、看詳解、一鍵下一題，並附原文出處連結。教學練習用途，ECG 圖片版權屬原作者。"
   image: "/images/practical-tools/ecg-quiz.svg"
