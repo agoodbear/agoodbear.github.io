@@ -75,6 +75,7 @@
   /* body */
   .body{padding:24px 24px 6px}
   .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:13px}
+  .reveal .tags{margin:16px 0 0}
   .tag{font-size:.74rem;font-weight:600;color:var(--ink-soft);background:#f1f5f9;
     border:1px solid var(--line);padding:4px 10px;border-radius:8px}
   .stem{font-size:1.16rem;line-height:1.6;font-weight:700;margin:0 0 18px;letter-spacing:.1px}
@@ -172,13 +173,13 @@
   <section class="card" id="card" aria-live="polite">
     <div class="figure" id="figure"></div>
     <div class="body">
-      <div class="tags" id="tags"></div>
       <h1 class="stem" id="stem">載入中…</h1>
       <ul class="options" id="options"></ul>
       <div class="reveal" id="reveal" hidden>
         <div class="ans"><span class="badge">解答</span><span id="ansText"></span></div>
         <p class="explain" id="explain"></p>
         <a class="source" id="source" target="_blank" rel="noopener"></a>
+        <div class="tags" id="tags"></div>
       </div>
     </div>
     <div class="actions">
