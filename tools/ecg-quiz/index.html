@@ -45,6 +45,9 @@
   .wrongbook.active{background:var(--bad);color:#fff;border-color:var(--bad)}
   .wrongbook.active b{color:#fff}
   .wrongbook.empty{opacity:.5;cursor:not-allowed}
+  .auth-btn{cursor:pointer;transition:all .15s ease;user-select:none}
+  .auth-btn:hover{border-color:#bcd9ee;background:#fafdff}
+  .auth-btn.in{background:var(--blue-soft);border-color:#bcd9ee;color:var(--blue-d)}
 
   .mode-banner{display:none;align-items:center;gap:8px;background:#fff1f1;border:1px solid #f6cccc;
     color:#b03a3a;border-radius:12px;padding:9px 14px;margin-bottom:14px;font-size:.9rem;font-weight:600}
@@ -193,6 +196,7 @@
       ECG 隨機考題 <span class="beta">BETA</span>
     </div>
     <div class="top-right">
+      <button class="pill auth-btn" id="authBtn" title="登入後錯題本跨裝置同步、只屬於你">🔐 用 Google 登入</button>
       <button class="pill wrongbook empty" id="wrongbook" title="只練答錯過的題目">🗂 錯題本 <b id="wrongCount">0</b></button>
       <span class="pill">已練習 <b id="doneCount">0</b></span>
     </div>
@@ -290,7 +294,7 @@ function placeholder(src, idx){
 
 const WRONG_KEY="ecgquiz_wrong_v1";
 let BANK=[], cur=-1, done=0, picked=null, revealed=false, mode="all";
-let wrongSet=new Set();
+let wrongSet=new Set(), currentUser=null;
 try{ wrongSet=new Set(JSON.parse(localStorage.getItem(WRONG_KEY)||"[]")); }catch(e){}
 
 const $=id=>document.getElementById(id);
@@ -346,9 +350,9 @@ function doReveal(){
     if(i===q.answer){b.classList.add("correct"); b.querySelector(".mark").textContent="✓";}
     else if(i===picked){b.classList.add("wrong"); b.querySelector(".mark").textContent="✗";}
   });
-  // 錯題本：答錯加入、答對移除
-  if(picked!==null && picked!==q.answer) wrongSet.add(q.id);
-  else if(picked===q.answer) wrongSet.delete(q.id);
+  // 錯題本：答錯加入、答對移除（登入時同步雲端，每人專屬）
+  if(picked!==null && picked!==q.answer){ wrongSet.add(q.id); syncWrong(q.id,true); }
+  else if(picked===q.answer){ wrongSet.delete(q.id); syncWrong(q.id,false); }
   saveWrong(); refreshWrongUI();
 
   ansText.textContent=KEYS[q.answer]+"．"+q.options[q.answer];
@@ -428,6 +432,47 @@ document.addEventListener("keydown",e=>{
   else if(e.code==="Space"){e.preventDefault(); revealed?next():doReveal();}
   else if(e.key==="n"||e.key==="N"){next();}
 });
+
+// ===== Google 登入 + 雲端錯題本（每人專屬，RLS 隔離）=====
+const authBtn=$("authBtn");
+const inIframe = window.self!==window.top;
+function setAuthUI(){
+  if(currentUser){
+    const label=currentUser.email?currentUser.email.split("@")[0]:"已登入";
+    authBtn.innerHTML="👤 "+label+" · 登出"; authBtn.classList.add("in");
+    authBtn.title=(currentUser.email||"")+"（雲端同步錯題本）｜點擊登出";
+  }else{
+    authBtn.innerHTML="🔐 用 Google 登入"; authBtn.classList.remove("in");
+    authBtn.title="登入後錯題本跨裝置同步、只屬於你";
+  }
+}
+async function loadCloudWrong(){
+  if(!sb||!currentUser) return;
+  try{
+    const localIds=[...wrongSet];
+    if(localIds.length){ await sb.from("ecg_quiz_wrong").upsert(localIds.map(qid=>({user_id:currentUser.id,question_id:qid})),{onConflict:"user_id,question_id"}); }
+    const {data}=await sb.from("ecg_quiz_wrong").select("question_id");
+    if(data){ wrongSet=new Set(data.map(r=>r.question_id)); saveWrong(); refreshWrongUI(); }
+  }catch(e){}
+}
+async function syncWrong(qid,isWrong){
+  if(!sb||!currentUser) return;
+  try{
+    if(isWrong) await sb.from("ecg_quiz_wrong").upsert({user_id:currentUser.id,question_id:qid},{onConflict:"user_id,question_id"});
+    else await sb.from("ecg_quiz_wrong").delete().eq("user_id",currentUser.id).eq("question_id",qid);
+  }catch(e){}
+}
+async function doLogin(){
+  if(!sb) return;
+  if(inIframe){ window.open(location.pathname,"_blank"); return; }
+  await sb.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.origin+location.pathname}});
+}
+async function doLogout(){ if(sb){ await sb.auth.signOut(); } currentUser=null; setAuthUI(); }
+authBtn.addEventListener("click",()=>{ currentUser?doLogout():doLogin(); });
+if(sb){
+  sb.auth.getSession().then(({data})=>{ currentUser=(data&&data.session)?data.session.user:null; setAuthUI(); if(currentUser) loadCloudWrong(); });
+  sb.auth.onAuthStateChange((_e,session)=>{ const was=currentUser; currentUser=session?session.user:null; setAuthUI(); if(currentUser&&!was) loadCloudWrong(); });
+}else setAuthUI();
 
 fetch("./quiz.json").then(r=>r.json()).then(d=>{
   BANK=d.questions||[];
