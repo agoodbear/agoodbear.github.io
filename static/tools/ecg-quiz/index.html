@@ -120,6 +120,13 @@
   .explain .lp li{position:relative;padding-left:20px;line-height:1.65;color:var(--ink)}
   .explain .lp li::before{content:"▸";position:absolute;left:3px;top:0;color:#f5a623;font-weight:800}
   .explain .lp li strong{color:#8a5208}
+  /* 為何其他選項不對（錯誤選項分析） */
+  .explain .wo{margin:15px 0;background:#fdf5f4;border:1px solid #f1cccb;border-left:4px solid #dc6e6e;border-radius:12px;padding:14px 16px}
+  .explain .wo-title{display:flex;align-items:center;gap:6px;font-weight:800;color:#a93c3c;margin-bottom:9px;font-size:.93rem}
+  .explain .wo ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+  .explain .wo li{position:relative;padding-left:22px;line-height:1.65;color:var(--ink)}
+  .explain .wo li::before{content:"✗";position:absolute;left:3px;top:0;color:#dc6e6e;font-weight:800}
+  .explain .wo li strong{color:#a33}
   /* 觸類旁通延伸 */
   .explain .extend{margin:14px 0 0;background:#f4f9ff;border:1px solid #e0eefb;border-radius:11px;
     padding:12px 15px;line-height:1.7}
@@ -173,6 +180,25 @@
   .caliper-hint{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:84;color:#fff;
     background:rgba(8,15,26,.7);padding:6px 13px;border-radius:999px;font-size:.8rem;display:none}
   .lightbox.open .caliper-hint{display:block}
+  /* lightbox 工具列 */
+  .lb-toolbar{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:85;display:none;gap:7px;
+    align-items:center;background:rgba(8,15,26,.82);padding:7px 11px;border-radius:999px;flex-wrap:wrap;justify-content:center;max-width:94vw}
+  .lightbox.open .lb-toolbar{display:flex}
+  .lb-tool{border:0;background:rgba(255,255,255,.16);color:#fff;font:inherit;font-size:.8rem;font-weight:700;
+    padding:6px 12px;border-radius:999px;cursor:pointer;transition:background .15s}
+  .lb-tool:hover{background:rgba(255,255,255,.28)}
+  .lb-tool.on{background:#0f7ec7}
+  .lb-readout{color:#fff;font-size:.8rem;font-weight:700;white-space:nowrap;padding:0 4px}
+  /* 量間距卡尺雙線 */
+  .cal-line{position:fixed;top:0;width:2px;height:100%;z-index:82;display:none;background:#22d3ee;box-shadow:0 0 6px rgba(34,211,238,.75)}
+  .lightbox.open .cal-line.show{display:block}
+  .cal-line::after{content:"";position:absolute;top:0;left:-12px;width:26px;height:100%;cursor:ew-resize}
+  .cal-line .cap{position:absolute;top:108px;left:50%;transform:translateX(-50%);background:#0891b2;color:#fff;
+    font-size:.72rem;font-weight:700;padding:3px 7px;border-radius:6px;cursor:ew-resize}
+  /* 放大鏡 */
+  .loupe{position:fixed;width:180px;height:180px;border-radius:50%;border:3px solid #fff;
+    box-shadow:0 8px 24px rgba(0,0,0,.55);z-index:86;pointer-events:none;display:none;
+    background-repeat:no-repeat;background-color:#fff}
   /* 相關篇章站內跳轉 */
   .related a.rel-internal::before{content:"▶";color:var(--blue);opacity:1}
   .related a.rel-internal{font-weight:700}
@@ -269,9 +295,17 @@
 
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose" aria-label="關閉">×</button>
-  <span class="caliper-hint">拖紅線對齊同一時間軸 · 捲動可看全圖 · ✕ 關閉</span>
+  <div class="lb-toolbar">
+    <button class="lb-tool" id="toolCal">📏 量間距</button>
+    <button class="lb-tool" id="toolCalib">校準＝1大格(200ms)</button>
+    <button class="lb-tool" id="toolMag">🔍 放大鏡</button>
+    <span class="lb-readout" id="calRead">拖紅線對齊時間軸</span>
+  </div>
   <img id="lightboxImg" alt="ECG 放大檢視" referrerpolicy="no-referrer">
   <div class="caliper" id="caliper"><span class="caliper-grip">⇄ 時間軸</span></div>
+  <div class="cal-line cal-a" id="calA"><span class="cap">A</span></div>
+  <div class="cal-line cal-b" id="calB"><span class="cap">B</span></div>
+  <div class="loupe" id="loupe"></div>
 </div>
 
 <div class="modal" id="reportModal">
@@ -348,7 +382,7 @@ function refreshWrongUI(){
 function srcChip(q){ const s=SOURCES[q.source]||SOURCES.own; return '<span class="src-chip" style="background:'+s.color+'e8"><span class="dot"></span>'+s.name+'</span>'; }
 
 function openLightbox(url){ $("lightboxImg").src=url; $("lightbox").classList.add("open"); document.body.style.overflow="hidden"; $("caliper").style.left=Math.round(window.innerWidth/2)+"px"; }
-function closeLightbox(){ $("lightbox").classList.remove("open"); $("lightboxImg").src=""; document.body.style.overflow=""; }
+function closeLightbox(){ $("lightbox").classList.remove("open"); $("lightboxImg").src=""; document.body.style.overflow=""; if(window.__resetLbTools)window.__resetLbTools(); }
 
 const urlToId=new Map();
 function normUrl(u){ return (u||"").trim().replace(/[#?].*$/,"").replace(/\/+$/,"").toLowerCase(); }
@@ -466,13 +500,50 @@ reportModal.querySelectorAll("[data-close-report]").forEach(el=>el.addEventListe
 $("lightboxClose").addEventListener("click",closeLightbox);
 $("lightbox").addEventListener("click",e=>{ if(e.target===$("lightbox")) closeLightbox(); });
 (function(){
-  const cal=$("caliper"); let drag=false;
-  function down(e){ drag=true; e.stopPropagation(); if(e.cancelable)e.preventDefault(); }
-  function move(e){ if(!drag) return; const x=(e.touches&&e.touches[0])?e.touches[0].clientX:e.clientX; cal.style.left=Math.max(0,Math.min(window.innerWidth,x))+"px"; }
-  function up(){ drag=false; }
-  cal.addEventListener("pointerdown",down); cal.addEventListener("touchstart",down,{passive:false});
-  document.addEventListener("pointermove",move); document.addEventListener("touchmove",move,{passive:false});
-  document.addEventListener("pointerup",up); document.addEventListener("touchend",up);
+  const redLine=$("caliper"), calA=$("calA"), calB=$("calB"), loupe=$("loupe"),
+        toolCal=$("toolCal"), toolMag=$("toolMag"), toolCalib=$("toolCalib"), calRead=$("calRead"), lbImg=$("lightboxImg");
+  let dragTarget=null, calMode=false, magMode=false, msPerPx=0;
+  const cx=e=>(e.touches&&e.touches[0])?e.touches[0].clientX:e.clientX;
+  const cy=e=>(e.touches&&e.touches[0])?e.touches[0].clientY:e.clientY;
+  function startDrag(el){ return e=>{ dragTarget=el; e.stopPropagation(); if(e.cancelable)e.preventDefault(); }; }
+  [redLine,calA,calB].forEach(el=>{ el.addEventListener("pointerdown",startDrag(el)); el.addEventListener("touchstart",startDrag(el),{passive:false}); });
+  function readout(){
+    if(!calMode){ return; }
+    const gap=Math.abs((parseFloat(calA.style.left)||0)-(parseFloat(calB.style.left)||0));
+    let t="A↔B "+Math.round(gap)+" px";
+    if(msPerPx>0){ const ms=gap*msPerPx; t+=" ≈ "+Math.round(ms)+" ms"; if(ms>=200&&ms<=2500) t+="（HR "+Math.round(60000/ms)+"）"; }
+    else t+="（按校準）";
+    calRead.textContent=t;
+  }
+  function moveLoupe(e){
+    const r=lbImg.getBoundingClientRect(), px=cx(e), py=cy(e);
+    if(px<r.left||px>r.right||py<r.top||py>r.bottom){ loupe.style.display="none"; return; }
+    loupe.style.display="block";
+    const Z=2.4, size=180, x=px-r.left, y=py-r.top;
+    loupe.style.backgroundImage="url('"+lbImg.src+"')";
+    loupe.style.backgroundSize=(r.width*Z)+"px "+(r.height*Z)+"px";
+    loupe.style.backgroundPosition=(-(x*Z-size/2))+"px "+(-(y*Z-size/2))+"px";
+    loupe.style.left=(px-size/2)+"px"; loupe.style.top=(py-size/2)+"px";
+  }
+  function onMove(e){
+    if(dragTarget){ dragTarget.style.left=Math.max(0,Math.min(window.innerWidth,cx(e)))+"px"; readout(); }
+    if(magMode) moveLoupe(e);
+  }
+  document.addEventListener("pointermove",onMove); document.addEventListener("touchmove",onMove,{passive:false});
+  document.addEventListener("pointerup",()=>{dragTarget=null;}); document.addEventListener("touchend",()=>{dragTarget=null;});
+  toolCal.addEventListener("click",e=>{ e.stopPropagation(); calMode=!calMode; toolCal.classList.toggle("on",calMode);
+    calA.classList.toggle("show",calMode); calB.classList.toggle("show",calMode);
+    if(calMode){ calA.style.left=Math.round(window.innerWidth*0.42)+"px"; calB.style.left=Math.round(window.innerWidth*0.58)+"px"; readout(); }
+    else calRead.textContent="拖紅線對齊時間軸"; });
+  toolCalib.addEventListener("click",e=>{ e.stopPropagation(); if(!calMode){ toolCal.click(); }
+    const gap=Math.abs((parseFloat(calA.style.left)||0)-(parseFloat(calB.style.left)||0));
+    if(gap>3){ msPerPx=200/gap; calRead.textContent="已校準：A↔B＝200ms（再拖去量）"; setTimeout(readout,1400); } });
+  toolMag.addEventListener("click",e=>{ e.stopPropagation(); magMode=!magMode; toolMag.classList.toggle("on",magMode);
+    if(!magMode){ loupe.style.display="none"; } });
+  window.__resetLbTools=function(){ calMode=false;magMode=false;msPerPx=0;
+    toolCal.classList.remove("on");toolMag.classList.remove("on");
+    calA.classList.remove("show");calB.classList.remove("show");loupe.style.display="";
+    calRead.textContent="拖紅線對齊時間軸"; };
 })();
 document.addEventListener("keydown",e=>{
   if(e.key==="Escape"){ if($("lightbox").classList.contains("open"))closeLightbox(); else if(reportModal.classList.contains("open"))closeReport(); return; }
