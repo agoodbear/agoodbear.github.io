@@ -604,7 +604,7 @@ if(sb){
   sb.auth.onAuthStateChange((_e,session)=>{ const was=currentUser; currentUser=session?session.user:null; setAuthUI(); if(currentUser&&!was) loadCloudWrong(); });
 }else setAuthUI();
 
-fetch("./quiz.json").then(r=>r.json()).then(d=>{
+fetch("./quiz.json",{cache:"no-cache"}).then(r=>r.json()).then(d=>{
   BANK=d.questions||[];
   if(!BANK.length){stem.textContent="目前尚無題目。"; return;}
   urlToId.clear(); BANK.forEach(q=>{ if(q.sourceUrl) urlToId.set(normUrl(q.sourceUrl), q.id); });
