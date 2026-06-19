@@ -157,9 +157,8 @@
   .btn.ghost:hover{background:var(--blue-soft);transform:translateY(-1px)}
   .btn:disabled{opacity:.45;cursor:default;transform:none;box-shadow:none}
 
-  .card-foot{display:flex;justify-content:flex-end;padding:0 24px 20px}
-  .report-link{background:none;border:0;color:#94a3b8;font:inherit;font-size:.84rem;cursor:pointer;padding:6px;display:inline-flex;align-items:center;gap:5px}
-  .report-link:hover{color:var(--bad)}
+  .btn.report{flex:0 0 auto;min-width:auto;font-weight:700;font-size:.9rem;padding:14px 16px;color:#64748b;background:#fff;border:1.6px solid #e2e8f0;display:inline-flex;align-items:center;gap:6px}
+  .btn.report:hover{color:var(--bad);border-color:var(--bad);background:#fff5f5;transform:translateY(-1px)}
 
   .foot{text-align:center;color:#8194a8;font-size:.78rem;margin-top:22px;line-height:1.6}
   .foot kbd{font-family:"Space Grotesk",monospace;background:#fff;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:1px 6px;font-size:.74rem;color:var(--ink-soft)}
@@ -281,9 +280,7 @@
     <div class="actions">
       <button class="btn primary" id="revealBtn">看解答</button>
       <button class="btn ghost" id="nextBtn">下一題（隨機）</button>
-    </div>
-    <div class="card-foot">
-      <button class="report-link" id="reportBtn">🚩 這題怪怪的？回報</button>
+      <button class="btn report" id="reportBtn">🚩 回報</button>
     </div>
   </section>
 
