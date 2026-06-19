@@ -48,6 +48,11 @@
   .auth-btn{cursor:pointer;transition:all .15s ease;user-select:none}
   .auth-btn:hover{border-color:#bcd9ee;background:#fafdff}
   .auth-btn.in{background:var(--blue-soft);border-color:#bcd9ee;color:var(--blue-d)}
+  .sync-status{font-size:.8rem;padding:8px 13px;border-radius:11px;margin:-6px 0 16px;display:flex;align-items:center;gap:7px;line-height:1.45}
+  .sync-status.synced{color:var(--ok);background:var(--ok-soft)}
+  .sync-status.local{color:#b45309;background:#fdf0dd;cursor:pointer}
+  .sync-status.local:hover{background:#fbe6c8}
+  .sync-status .ss-link{font-weight:800;text-decoration:underline;text-underline-offset:2px}
 
   .mode-banner{display:none;align-items:center;gap:8px;background:#fff1f1;border:1px solid #f6cccc;
     color:#b03a3a;border-radius:12px;padding:9px 14px;margin-bottom:14px;font-size:.9rem;font-weight:600}
@@ -255,6 +260,8 @@
       <span class="pill">已練習 <b id="doneCount">0</b></span>
     </div>
   </div>
+
+  <div class="sync-status local" id="syncStatus" hidden></div>
 
   <div class="mode-banner" id="modeBanner">
     <span>📕 錯題本模式：只出你答錯過的題（<b id="modeWrongN">0</b> 題）</span>
@@ -567,6 +574,25 @@ function setAuthUI(){
   }else{
     authBtn.innerHTML="🔐 用 Google 登入"; authBtn.classList.remove("in");
     authBtn.title="登入後錯題本跨裝置同步、只屬於你";
+  }
+  updateSyncStatus();
+}
+function updateSyncStatus(){
+  const el=$("syncStatus"); if(!el) return;
+  el.hidden=false;
+  const embedded=document.documentElement.classList.contains("is-embedded");
+  if(currentUser){
+    el.className="sync-status synced";
+    el.innerHTML="☁️ 進度已同步到你的帳號（"+(currentUser.email||"已登入")+"）";
+    el.onclick=null;
+  }else if(embedded){
+    el.className="sync-status local";
+    el.innerHTML="⚠️ 嵌入視窗無法登入，已練習與錯題本只存這個瀏覽器。<span class='ss-link'>開新分頁登入以同步 →</span>";
+    el.onclick=()=>window.open(location.pathname,"_blank");
+  }else{
+    el.className="sync-status local";
+    el.innerHTML="⚠️ 尚未登入，進度只存這個瀏覽器（換裝置/清快取會歸零）。<span class='ss-link'>用 Google 登入跨裝置同步 →</span>";
+    el.onclick=()=>doLogin();
   }
 }
 async function loadCloudWrong(){
