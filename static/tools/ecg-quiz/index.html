@@ -69,6 +69,8 @@
   .figure.has-img .ecg-img{width:100%;height:auto;max-height:480px;object-fit:contain;display:block;cursor:zoom-in}
   .zoom-hint{position:absolute;right:14px;bottom:12px;font-size:.72rem;color:#fff;font-weight:600;
     background:rgba(15,23,42,.55);padding:5px 10px;border-radius:8px;pointer-events:none}
+  .img-fail{position:absolute;right:14px;bottom:12px;font-size:.72rem;color:#fff;font-weight:600;
+    background:rgba(192,57,43,.88);padding:5px 10px;border-radius:8px;pointer-events:none}
   .ecg-paper{position:absolute;inset:0;background-color:#fffafa;
     background-image:
       linear-gradient(rgba(229,115,115,.20) 1px,transparent 1px),
@@ -417,7 +419,7 @@ function refreshWrongUI(){
 
 function srcChip(q){ const s=SOURCES[q.source]||SOURCES.own; return '<span class="src-chip" style="background:'+s.color+'e8"><span class="dot"></span>'+s.name+'</span>'; }
 
-function openLightbox(url){ $("lightboxImg").src=url; $("lightbox").classList.add("open"); document.body.style.overflow="hidden"; $("caliper").style.left=Math.round(window.innerWidth/2)+"px"; }
+function openLightbox(url){ $("lightboxImg").src=url; $("lightbox").classList.add("open"); document.body.style.overflow="hidden"; $("caliper").style.left=Math.round(window.innerWidth/2)+"px"; const c=$("lightboxClose"); if(c) c.focus(); }
 function closeLightbox(){ $("lightbox").classList.remove("open"); $("lightboxImg").src=""; document.body.style.overflow=""; if(window.__resetLbTools)window.__resetLbTools(); }
 
 const urlToId=new Map();
@@ -428,8 +430,11 @@ function render(q,idx){
   picked=null; revealed=false;
   if(q.image){
     figure.className="figure has-img";
-    figure.innerHTML='<img class="ecg-img" src="'+q.image+'" alt="ECG 12 導程" referrerpolicy="no-referrer">'+srcChip(q)+'<span class="zoom-hint">🔍 點圖放大</span>';
-    figure.querySelector(".ecg-img").addEventListener("click",()=>openLightbox(q.image));
+    figure.innerHTML='<img class="ecg-img" src="'+q.image+'" alt="ECG 12 導程" referrerpolicy="no-referrer" tabindex="0" role="button" aria-label="放大檢視 ECG 圖（按 Enter 開啟）">'+srcChip(q)+'<span class="zoom-hint">🔍 點圖放大</span>';
+    const img=figure.querySelector(".ecg-img");
+    img.addEventListener("click",()=>openLightbox(q.image));
+    img.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "||e.code==="Space"){ e.preventDefault(); e.stopPropagation(); openLightbox(q.image); } });
+    img.addEventListener("error",()=>{ if(!img.isConnected) return; figure.className="figure"; figure.innerHTML=placeholder(q.source,idx)+srcChip(q)+'<span class="img-fail">⚠️ 原圖載入失敗</span>'; });
   }else{
     figure.className="figure";
     figure.innerHTML=placeholder(q.source,idx)+srcChip(q);
@@ -691,7 +696,7 @@ if(sb){
   sb.auth.onAuthStateChange((_e,session)=>{ const was=currentUser; currentUser=session?session.user:null; setAuthUI(); if(currentUser&&!was) loadCloudWrong(); });
 }else setAuthUI();
 
-fetch("./quiz.json",{cache:"no-cache"}).then(r=>r.json()).then(d=>{
+fetch("./quiz.json").then(r=>r.json()).then(d=>{
   BANK=d.questions||[];
   if(!BANK.length){stem.textContent="目前尚無題目。"; return;}
   urlToId.clear(); BANK.forEach(q=>{ if(q.sourceUrl) urlToId.set(normUrl(q.sourceUrl), q.id); });
