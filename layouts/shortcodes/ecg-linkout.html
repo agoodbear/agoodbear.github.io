@@ -1,0 +1,4 @@
+{{- $href := .Get "href" -}}
+{{- $anno := .Get "anno" -}}
+{{- $linktext := .Get "linktext" | default "到原文看 ECG ↗" -}}
+<div class="ecg-linkout"><div class="elo-strip"></div><div class="elo-body"><div class="elo-ic">◟◞</div><div><div class="elo-anno">{{ $anno | safeHTML }}</div><a class="elo-link" href="{{ $href | safeURL }}" target="_blank" rel="noopener">{{ $linktext }}</a></div></div></div>

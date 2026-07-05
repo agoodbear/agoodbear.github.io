@@ -135,4 +135,40 @@
       }
     });
   });
+
+  // ─── Tier-3「延伸與出處」(#more) 載入時預設收合 ───────────────────────
+  var moreH2 = document.getElementById('more');
+  if (moreH2) {
+    var moreBtn = moreH2.querySelector('.toggle');
+    if (moreBtn) moreBtn.click();
+  }
+
+  // ─── 列表搜尋接活（#ecw-search）─────────────────────────────────────
+  var searchInput = document.getElementById('ecw-search');
+  if (searchInput) {
+    var rows = Array.prototype.slice.call(document.querySelectorAll('.layout-list .row'));
+    var listContainer = rows.length ? rows[0].parentNode : null;
+    var noResult = null;
+    searchInput.addEventListener('input', function () {
+      var q = searchInput.value.trim().toLowerCase();
+      var visible = 0;
+      rows.forEach(function (row) {
+        var match = !q || row.textContent.toLowerCase().indexOf(q) !== -1;
+        row.classList.toggle('is-hidden', !match);
+        if (match) visible++;
+      });
+      if (!listContainer) return;
+      if (visible === 0) {
+        if (!noResult) {
+          noResult = document.createElement('p');
+          noResult.className = 'no-result';
+          noResult.textContent = '找不到符合的週報';
+          listContainer.appendChild(noResult);
+        }
+      } else if (noResult) {
+        noResult.remove();
+        noResult = null;
+      }
+    });
+  }
 })();

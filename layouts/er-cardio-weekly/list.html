@@ -14,19 +14,19 @@
       <div class="issue-meta">
         <span class="num">No. {{ len $weekPages }}</span>
         <span>·</span>
-        <span>最新期：{{ $latest.Params.week | default $latest.Title }}</span>
+        <span>最新期：{{ $latest.Params.week | default ($latest.Params.shortTitle | default $latest.Title) }}</span>
         <span>·</span>
         <span>{{ $latest.Date.Format "2006-01-02" }}</span>
       </div>
     </div>
     <div class="hero-right">
       <p class="sub">
-        每週一封，21 分鐘讀完。涵蓋 OMI 判讀、心律不整新知、裝置與電氣治療、AI ECG、急救與毒物——從 Dr Smith / Ken Grauer / LITFL / ECG Weekly 到 CrossRef 10 本期刊與 PubMed 追蹤作者，由急診熊心聲彙整。
+        每週一封。核心 3 分鐘掃完「這週該改什麼」，想深讀再往下。涵蓋 OMI 判讀、心律不整、裝置與電氣治療、AI ECG、急救與毒物——由急診熊心聲從 Dr Smith / Ken Grauer / LITFL / ECG Weekly、CrossRef 期刊與 PubMed 追蹤作者彙整。
       </p>
       <div class="subscribe-label">訂閱本週報</div>
-      <form class="subscribe" onsubmit="event.preventDefault(); alert('訂閱功能尚未上線，敬請期待。');">
-        <input type="email" placeholder="email@example.com" aria-label="email" required>
-        <button type="submit">訂閱</button>
+      <div class="subscribe">
+        <span style="flex: 1; display: flex; align-items: center; padding: 0 14px; height: 40px; border: 1px solid var(--hairline); border-radius: 2px; font-size: 13.5px; color: var(--muted); font-family: 'Inter', 'Noto Sans TC', sans-serif;">沒有 email 名單，用 RSS 追蹤每週更新</span>
+        <a href="{{ "/er-cardio-weekly/index.xml" | relURL }}" style="height: 40px; padding: 0 18px; display: inline-flex; align-items: center; background: var(--accent); color: #fff; border: 0; border-radius: 2px; font-size: 14px; font-weight: 500; text-decoration: none; letter-spacing: 0.01em; white-space: nowrap; font-family: 'Inter Tight', 'Noto Sans TC', sans-serif;">用 RSS 訂閱</a>
         <a class="rss" href="{{ "/er-cardio-weekly/index.xml" | relURL }}" title="RSS" aria-label="RSS">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
             <circle cx="6" cy="18" r="2"/>
@@ -34,7 +34,7 @@
             <path d="M4 11 a9 9 0 0 1 9 9"/>
           </svg>
         </a>
-      </form>
+      </div>
     </div>
   </div>
 </section>
@@ -50,7 +50,7 @@
         <div class="week-sub">{{ with .Params.weekRange }}{{ . }}{{ else }}{{ .Date.Format "2006-01-02" }}{{ end }}</div>
       </div>
       <div>
-        <h2 class="head" style="margin-top: 0;"><a href="{{ .RelPermalink }}" style="text-decoration: none; color: inherit;">{{ .Title }}</a></h2>
+        <h2 class="head" style="margin-top: 0;"><a href="{{ .RelPermalink }}" style="text-decoration: none; color: inherit;">{{ .Params.shortTitle | default .Title }}</a></h2>
         {{ with .Params.subtitle }}<p style="font-family: 'Newsreader', serif; font-style: italic; font-size: 16px; color: var(--ink-2); margin: 6px 0 0;">{{ . }}</p>{{ end }}
         <div class="meta">
           <span>{{ .Date.Format "2006-01-02" }}</span>
@@ -69,33 +69,14 @@
     {{ end }}
   </div>
   <aside class="rail">
-    <input class="search" type="search" placeholder="搜尋週報..." aria-label="搜尋">
+    <input class="search" id="ecw-search" type="search" placeholder="搜尋週報..." aria-label="搜尋">
 
-    {{ $data := index .Site.Data "er-cardio-weekly" }}
-    {{ $sources := $data.sources }}
-    {{ if $sources }}
-    <div class="filter-label" style="margin-top: 28px;">本週各源新增</div>
-    <div class="source-stat-list">
-      <a href="{{ "/er-cardio-weekly/sources/blog/" | relURL }}" class="source-stat">
-        <span class="source-stat-label">L1 部落格</span>
-        <span class="source-stat-count">{{ len $sources.blog }}</span>
-      </a>
-      <a href="{{ "/er-cardio-weekly/sources/authors/" | relURL }}" class="source-stat">
-        <span class="source-stat-label">L2 PubMed 作者</span>
-        <span class="source-stat-count">{{ len $sources.authors }}</span>
-      </a>
-      <a href="{{ "/er-cardio-weekly/sources/journals/" | relURL }}" class="source-stat">
-        <span class="source-stat-label">L3 期刊</span>
-        <span class="source-stat-count">{{ len $sources.journals }}</span>
-      </a>
-      <a href="{{ "/er-cardio-weekly/sources/x/" | relURL }}" class="source-stat">
-        <span class="source-stat-label">L4 X.com</span>
-        <span class="source-stat-count">{{ if gt (len $sources.x) 0 }}{{ len $sources.x }}{{ else }}—{{ end }}</span>
-      </a>
-    </div>
-    <a href="{{ "/er-cardio-weekly/sources/" | relURL }}" style="display: block; margin-top: 16px; font-size: 11.5px; letter-spacing: 0.04em; color: var(--accent); text-decoration: none; font-family: 'Inter Tight', sans-serif;">看完整 4 層 archive →</a>
-    <p style="margin-top: 14px; font-size: 10.5px; color: var(--muted); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5;">cache 更新：<br>{{ replaceRE "T" " " (dateFormat "2006-01-02 15:04" $sources.generatedAt) }}</p>
+    {{ with $latest.Params.scanned }}
+    <div class="filter-label" style="margin-top: 28px;">本週策展</div>
+    <div class="curation"><span class="big">本週掃了 {{ . }} 則</span>，挑出 <span class="big">{{ $latest.Params.picked }}</span> 則。<span class="muted">其餘為重複或非本週訊號。</span></div>
     {{ end }}
+
+    <a href="{{ "/er-cardio-weekly/sources/" | relURL }}" style="display: block; margin-top: 16px; font-size: 11.5px; letter-spacing: 0.04em; color: var(--accent); text-decoration: none; font-family: 'Inter Tight', sans-serif;">看來源 archive →</a>
   </aside>
 </div>
 {{ end }}

@@ -1,0 +1,2 @@
+{{- $kind := .Get 1 -}}
+<span class="ev-chip{{ with $kind }} {{ . }}{{ end }}">{{ .Get 0 }}</span>

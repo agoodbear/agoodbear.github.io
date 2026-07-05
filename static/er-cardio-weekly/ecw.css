@@ -1437,3 +1437,167 @@ body.ecw { min-height: 100vh; }
   line-height: 1.55;
   letter-spacing: 0.02em;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+ * ER Cardio Weekly — 三層訊號驅動改版（2026-W27 recast）
+ * 全部沿用既有 token；暗色由 .ecw.is-dark override token 自動生效。
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Tier-1：本週臨床改動卡 ─────────────────────────────────────────── */
+.ecw .practice-changes {
+  border: 1.5px solid var(--accent);
+  background: var(--accent-bg);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 32px 0 40px;
+}
+.ecw .practice-changes .pc-head {
+  font-family: 'Inter Tight', 'Noto Sans TC', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent);
+}
+.ecw .practice-changes .pc-sub {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.ecw .practice-changes ol {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.ecw .practice-changes li {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 12px;
+  align-items: baseline;
+}
+.ecw .practice-changes .pc-n {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 700;
+  color: var(--accent);
+  font-feature-settings: "tnum";
+}
+.ecw .practice-changes .pc-text {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.ecw .practice-changes .pc-text b { font-weight: 700; color: var(--ink); }
+.ecw .practice-changes .pc-src {
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px;
+  color: var(--accent);
+  text-decoration: none;
+  margin-left: 6px;
+  white-space: nowrap;
+}
+.ecw .practice-changes a.pc-src:hover { text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 760px) {
+  .ecw .practice-changes { padding: 16px 18px; }
+  .ecw .practice-changes .pc-text { font-size: 15px; }
+}
+.ecw.is-dark .practice-changes { background: var(--accent-soft); }
+
+/* ── 證據分級 chip（inline）────────────────────────────────────────── */
+.ecw .ev-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 100px;
+  background: var(--hairline-2);
+  border: 1px solid var(--hairline);
+  color: var(--muted);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.ecw .ev-chip::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--muted);
+  flex: 0 0 auto;
+}
+.ecw .ev-chip.rct::before { background: var(--accent); }
+.ecw .ev-chip.guide::before { background: #0F8A6A; }
+.ecw .ev-chip.retro::before { background: #B8860B; }
+.ecw .ev-chip.opinion::before { background: var(--muted); }
+
+/* ── 標註式外連（版權不能轉載時）──────────────────────────────────── */
+.ecw .ecg-linkout {
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  background: var(--code-bg);
+  margin: 20px 0;
+  overflow: hidden;
+}
+.ecw .ecg-linkout .elo-strip {
+  height: 8px;
+  background: repeating-linear-gradient(90deg, transparent 0 13px, var(--hairline) 13px 14px);
+  border-bottom: 1px solid var(--hairline);
+}
+.ecw .ecg-linkout .elo-body {
+  padding: 14px 16px;
+  display: flex;
+  gap: 14px;
+}
+.ecw .ecg-linkout .elo-ic {
+  color: var(--accent);
+  font-size: 20px;
+  line-height: 1.4;
+  flex: 0 0 auto;
+}
+.ecw .ecg-linkout .elo-anno {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.ecw .ecg-linkout .elo-anno b { color: var(--accent); font-weight: 600; }
+.ecw .ecg-linkout .elo-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+}
+.ecw .ecg-linkout .elo-link:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── 列表頁策展一句話 ──────────────────────────────────────────────── */
+.ecw .curation {
+  font-family: 'Inter', 'Noto Sans TC', sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.ecw .curation .big {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  font-feature-settings: "tnum";
+}
+.ecw .curation .muted { color: var(--muted); }
+
+/* ── 雙軌閱讀時間：核心時間強調 ────────────────────────────────────── */
+.ecw .article-meta .core-time { color: var(--accent); font-weight: 600; }
+
+/* ── 列表搜尋：隱藏列 + 無結果提示 ─────────────────────────────────── */
+.ecw .row.is-hidden { display: none; }
+.ecw .no-result {
+  padding: 40px 0;
+  color: var(--muted);
+  font-family: 'Inter', 'Noto Sans TC', sans-serif;
+  font-size: 14px;
+}

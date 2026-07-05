@@ -30,7 +30,7 @@
 
     <div class="article-meta">
       <span>{{ .Date.Format "2006-01-02" }} 發布</span>
-      {{ with .Params.readingTime }}<span class="dot"></span><span>{{ . }}閱讀</span>{{ end }}
+      {{ if .Params.coreTime }}<span class="dot"></span><span class="core-time">核心 {{ .Params.coreTime }}</span>{{ with .Params.fullTime }}<span class="dot"></span><span>全文 {{ . }}</span>{{ end }}{{ else }}{{ with .Params.readingTime }}<span class="dot"></span><span>{{ . }}閱讀</span>{{ end }}{{ end }}
       <span class="dot"></span><span>by 急診心臟學週報編輯室</span>
     </div>
 
@@ -42,6 +42,18 @@
 
     {{- /* Opening flourish — 48×2px accent rule, marks "meta ends, body begins" */ -}}
     <hr class="opening-rule" aria-hidden="true">
+
+    {{ with .Params.practiceChanges }}
+    <div class="practice-changes" id="changes">
+      <div class="pc-head">▲ 本週臨床改動 · 只看這個也夠</div>
+      <div class="pc-sub">這週值得你下一個班就改的動作。想深讀往下看重點卡。</div>
+      <ol>
+        {{ range $i, $c := . }}
+        <li><span class="pc-n">{{ printf "%02d" (add $i 1) }}</span><span class="pc-text">{{ $c.text | safeHTML }}{{ with $c.href }}<a class="pc-src" href="{{ . }}" target="_blank" rel="noopener">{{ $c.source }} ↗</a>{{ else }}{{ with $c.source }}<span class="pc-src">{{ . }}</span>{{ end }}{{ end }}</span></li>
+        {{ end }}
+      </ol>
+    </div>
+    {{ end }}
 
     <div class="article-content">
       {{ .Content }}
