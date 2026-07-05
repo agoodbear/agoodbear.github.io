@@ -10,7 +10,7 @@ coreTime: "3 分鐘"
 fullTime: "12 分鐘"
 readingTime: "12 分鐘"
 scanned: 163
-picked: 3
+picked: 4
 tags: ["OMI", "電生理", "AI ECG", "Resus"]
 practiceChanges:
   - text: "肌鈣蛋白升高但「不到 STEMI」，先比 prior、15–30 分追 serial、加看後壁，再決定是不是 <b>OMI</b>——別讓「NSTEMI」這個標籤替你放行"
@@ -22,11 +22,15 @@ practiceChanges:
   - text: "心跳停止別反射性給<b>碳酸氫鈉</b>——保留給高血鉀、鈉通道阻斷劑中毒等有適應症者；敗血症固定給液量回到個別化"
     source: "EMCrit 428 · 6-27"
     href: "https://emcrit.org/emcrit/a-few-things/#:~:text=sodium%20bicarbonate"
+  - text: "subtle、『差點要取消』的病人 → 讓 AI-ECG 當那張反對票，但拍板仍靠 prior／serial／echo"
+    source: "Friedman et al. · J Electrocardiol"
+    href: "https://pubmed.ncbi.nlm.nih.gov/41967390/#:~:text=47.1%25%20vs%2094.1%25"
 sections:
   - { id: "changes", num: "▲", title: "本週改動" }
   - { id: "s1",  num: "01", title: "下壁 OMI × NSTEMI 標籤" }
   - { id: "s2",  num: "02", title: "寬 QRS 假性 ST／J 點" }
   - { id: "s3",  num: "03", title: "arrest 碳酸氫鈉" }
+  - { id: "s4",  num: "04", title: "AI ECG · 被取消啟動" }
   - { id: "more", num: "▾", title: "延伸與出處" }
 ---
 
@@ -72,15 +76,21 @@ sections:
 
 ---
 
+## AI 在「被取消的導管室啟動」裡揪出 OMI {#s4}
+
+{{< ecg-linkout href="https://pubmed.ncbi.nlm.nih.gov/41967390/#:~:text=47.1%25%20vs%2094.1%25" anno="被取消的導管室啟動裡，<b>STEMI 準則敏感度只有 47.1%、AI 演算法達 94.1%</b>（p=0.005）——這個灰帶不是安全名單" linktext="到 PubMed 看摘要 ↗" >}}
+
+**是什麼：** Friedman BS、Malloy-Post R、Smith SW、Meyers HP 等《Journal of Electrocardiology》（心電圖學期刊）2026（PMID 41967390），回顧 17 個月導管室啟動，納入以「ECG 不符 STEMI 準則」為由被取消者，OMI 定義為血管攝影 TIMI 0／1 罪犯病灶。結果：1224 次啟動中 185 例（15.1%）被取消而納入分析，其中 **有 17 位其實是真正的 OMI**。[^friedman-ai-cancel]
+
+**為什麼要在意：** **STEMI 準則的敏感度僅 47.1%、AI 演算法達 94.1%（p=0.005）**，特異度則相近（66.1% vs 73.2%，p=0.090）；AI 的陽性／陰性概似比（3.51／0.08）也優於 STEMI 準則（1.39／0.80）。「被取消的啟動」不是安全名單，而是 OMI 最愛藏身的灰帶之一。{{< grade "回溯 · 單中心 · n=17 · 假說級" "retro" >}}
+
+**所以呢：** 當你或會診「差點要取消」一個 subtle 病人時，AI-ECG 值得當那張反對票——但它在乾淨 baseline 上最強、在寬 QRS／「有故事的心臟」上容易被帶偏（正呼應卡 02），拍板仍要回到 prior、serial 與床邊超音波。作者定位它為「臨床輔助」而非取代，仍需前瞻研究驗證實際落地成效。
+
+**穿戴補一則：** ESC 365（6-25 補帶）以 moxifloxacin 介入試驗，檢驗智慧手錶單導程心電圖監測 QT 間期延長的效度與信度[^esc-qt-smartwatch-06-25]——當愈來愈多病人戴著能量 QT 的手錶，未來「藥物引起 QT 延長」的早期訊號，可能先出現在手錶而非我們的 12 導程上。
+
+---
+
 ## 延伸與出處 {#more}
-
-### AI 在「被取消的導管室啟動」裡揪出 OMI
-
-Friedman BS、Malloy-Post R、Smith SW、Meyers HP 等，《Journal of Electrocardiology》（心電圖學期刊）2026（PMID 41967390），回顧 17 個月內的導管室啟動，納入以「ECG 不符 STEMI 準則」為由被取消的個案，將 OMI 定義為血管攝影顯示 TIMI 0／1 血流的罪犯病灶。[^friedman-ai-cancel] 結果是：1224 次啟動中，185 例（15.1%）被取消而納入分析，其中 **有 17 位其實是真正的 OMI**。在這群最難判讀的圖上，**STEMI 準則的敏感度只有 47.1%，AI 演算法達 94.1%（p=0.005）**，特異度則相近（66.1% vs 73.2%，p=0.090）；AI 的陽性／陰性概似比（3.51／0.08）也優於 STEMI 準則（1.39／0.80）。{{< grade "回溯 · 單中心 · n=17 · 假說級" "retro" >}}
-
-「被取消的啟動」不是安全名單，而是 OMI 最愛藏身的灰帶之一；以 OMI 為訓練目標的 AI，能在這個桶子裡把敏感度幾乎翻倍，同時不明顯犧牲特異度。作者定位它為改善急診與心臟科判讀一致性的「臨床輔助」，而非取代，仍需前瞻研究驗證實際落地成效。這也是本週把 AI-ECG 定位成「差點要取消時那張反對票」的依據——它在乾淨 baseline 上最強、在寬 QRS 或「有故事的心臟」上容易被帶偏（正呼應卡 02 的寬 QRS 陷阱），拍板仍要回到 prior、serial 與床邊超音波。
-
-穿戴端補一則：ESC 365（6-25 補帶）以 moxifloxacin 介入試驗，檢驗智慧手錶單導程心電圖監測 QT 間期延長的效度與信度[^esc-qt-smartwatch-06-25]——當愈來愈多病人戴著能量 QT 的手錶，未來「藥物引起 QT 延長」的早期訊號，可能先出現在手錶而非我們的 12 導程上。
 
 ### 誰這週有新作
 
