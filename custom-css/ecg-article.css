@@ -88,3 +88,16 @@
 }
 .ecg-qlist li::marker { content: none; }
 .ecg-qlist li strong { color: var(--color-accent-ink, #b22800); }
+
+/* ── 字體分工：ECG 文正文改無襯線、標題／引言保襯線（Bear 偏好，marker scope 只作用本類文） ── */
+.article-body:has(.uses-article-cards) {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Segoe UI", sans-serif;
+}
+.article-body:has(.uses-article-cards) h2,
+.article-body:has(.uses-article-cards) h3,
+.article-body:has(.uses-article-cards) h4,
+.article-body:has(.uses-article-cards) blockquote,
+.article-body:has(.uses-article-cards) .ecg-wave-text,
+.article-body:has(.uses-article-cards) .algo-fig__title {
+  font-family: Georgia, "Noto Serif TC", "Songti TC", ui-serif, serif;
+}
