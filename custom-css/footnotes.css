@@ -1,0 +1,55 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * footnotes.css — goldmark 原生 footnote 樣式（長文引用用）
+ * 對齊站台 theme.css token；全 hex（避 Disqus embed.js 解析 oklch 崩留言的雷）。
+ * scope 在 .article-body 底下，只作用在文章內文。
+ * ───────────────────────────────────────────────────────────────────── */
+
+/* 內文上標數字（footnote ref） */
+.article-body sup[id^="fnref"] { line-height: 0; white-space: nowrap; }
+.article-body sup[id^="fnref"] a {
+  color: var(--color-accent-ink, #b22800);
+  font-weight: 600;
+  border-bottom: none;
+  padding: 0 1px;
+  font-variant-numeric: tabular-nums;
+}
+.article-body sup[id^="fnref"] a:hover { text-decoration: underline; }
+
+/* 文末 footnote 區 → 當「參考文獻」 */
+.article-body .footnotes {
+  margin-top: var(--space-2xl, 6rem);
+  padding-top: var(--space-lg, 2rem);
+  border-top: 2px solid var(--color-ink, #0b121a);
+  font-family: var(--font-body-zh, "Noto Sans TC", sans-serif);
+  font-size: var(--text-sm, .875rem);
+  line-height: 1.6;
+  color: var(--color-ink-2, #353b42);
+}
+.article-body .footnotes::before {
+  content: "參考文獻";
+  display: block;
+  font-family: var(--font-body, ui-sans-serif, sans-serif);
+  font-size: var(--text-xs, .75rem);
+  font-weight: 700;
+  letter-spacing: .16em;
+  color: var(--color-accent-ink, #b22800);
+  margin-bottom: var(--space-md, 1.25rem);
+}
+.article-body .footnotes hr { display: none; }             /* 用 ::before 標題取代預設分隔線 */
+.article-body .footnotes ol { margin: 0; padding-left: 1.6rem; }
+.article-body .footnotes li { margin-bottom: .5rem; line-height: 1.6; }
+.article-body .footnotes li::marker {
+  color: var(--color-ink-3, #6c7278);
+  font-variant-numeric: tabular-nums;
+}
+.article-body .footnotes li p { margin: 0; }
+.article-body .footnotes a {                                /* PMID/DOI 連結 */
+  color: var(--color-accent-ink, #b22800);
+  border-bottom: 1px solid var(--color-rule, #d1cdc7);
+}
+.article-body .footnote-backref {                           /* 回跳箭頭 ↩ */
+  border-bottom: none;
+  margin-left: .35em;
+  text-decoration: none;
+  color: var(--color-ink-3, #6c7278);
+}

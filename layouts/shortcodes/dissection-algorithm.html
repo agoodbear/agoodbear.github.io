@@ -1,0 +1,53 @@
+{{- /* dissection-algorithm.html — Type A AD vs ACS 臨床決策 algorithm（手繪 SVG 版）
+       期刊 flowchart 語意配色：藍=決策點・琥珀=Step 評估路徑・綠=ACS 安全出口・紅=確診 AD 危險行動。
+       視覺全內含 inline SVG（unsafe=true 直出）；wrapper 樣式在 custom-css/algorithm-card.css。 */ -}}
+<div class="algo-fig">
+  <div class="algo-fig__ey">實戰演算法 · Clinical Algorithm</div>
+  <div class="algo-fig__title">STEMI 的臉，什麼時候該想到 Type A Aortic Dissection？</div>
+  <div class="algo-fig__sub">紅 flag 才多看一眼主動脈；AD 只佔 STEMI 約 0.5–1.3%。</div>
+  <svg viewBox="0 0 680 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Type A 主動脈剝離 vs ACS 臨床決策流程圖" font-family="'Noto Sans TC','PingFang TC',sans-serif">
+    <defs><marker id="algoArrow" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#4a4640"/></marker></defs>
+    <g fill="none" stroke="#4a4640" stroke-width="1.3">
+      <path d="M432,64 V99" marker-end="url(#algoArrow)"/>
+      <path d="M432,198 V255" marker-end="url(#algoArrow)"/>
+      <path d="M432,354 V377" marker-end="url(#algoArrow)"/>
+      <path d="M432,448 V469" marker-end="url(#algoArrow)"/>
+      <path d="M432,540 V557" marker-end="url(#algoArrow)"/>
+      <path d="M432,654 V689" marker-end="url(#algoArrow)"/>
+      <path d="M328,150 H152 V575" marker-end="url(#algoArrow)"/>
+      <path d="M328,606 H244" marker-end="url(#algoArrow)"/>
+      <path d="M152,636 V687" marker-end="url(#algoArrow)"/>
+    </g>
+    <g font-size="12.5" fill="#6c7278">
+      <rect x="420" y="214" width="24" height="18" fill="#fbf8f3"/><text x="432" y="227" text-anchor="middle">有</text>
+      <rect x="240" y="140" width="24" height="18" fill="#fbf8f3"/><text x="252" y="153" text-anchor="middle">無</text>
+      <rect x="272" y="596" width="24" height="18" fill="#fbf8f3"/><text x="284" y="609" text-anchor="middle">否</text>
+      <rect x="420" y="662" width="24" height="18" fill="#fbf8f3"/><text x="432" y="675" text-anchor="middle">是</text>
+    </g>
+    <rect x="338" y="20" width="188" height="44" rx="22" fill="#eef1f4" stroke="#4a5560" stroke-width="1.4"/>
+    <text x="432" y="47" text-anchor="middle" font-size="15" fill="#2b3540">ECG：STEMI / OMI 型態</text>
+    <polygon points="432,102 536,150 432,198 328,150" fill="#e6eef5" stroke="#35607e" stroke-width="1.4"/>
+    <text x="432" y="145" text-anchor="middle" font-size="14.5" fill="#1c3d52">主動脈剝離</text>
+    <text x="432" y="165" text-anchor="middle" font-size="14.5" fill="#1c3d52">red flag？</text>
+    <rect x="280" y="256" width="304" height="98" rx="2.5" fill="#fbf3e6" stroke="#b8863f" stroke-width="1.3"/>
+    <text x="296" y="283" font-size="14.5" fill="#3a3020"><tspan fill="#a5671a" font-weight="700" font-family="'Noto Serif TC',serif">Step 1</tspan>　分辨 red flag 份量</text>
+    <text x="296" y="307" font-size="12.8" fill="#6b5a3d">低特異度：shock／syncope／VT</text>
+    <text x="296" y="328" font-size="12.8" fill="#6b5a3d">高特異度：new AR murmur・pulse deficit・</text>
+    <text x="296" y="346" font-size="12.8" fill="#6b5a3d">　　　　　focal neuro deficit・爆炸／遷移痛</text>
+    <rect x="280" y="378" width="304" height="70" rx="2.5" fill="#fbf3e6" stroke="#b8863f" stroke-width="1.3"/>
+    <text x="296" y="405" font-size="14.5" fill="#3a3020"><tspan fill="#a5671a" font-weight="700" font-family="'Noto Serif TC',serif">Step 2</tspan>　focused TTE 主動脈根部</text>
+    <text x="296" y="428" font-size="12.8" fill="#6b5a3d">flap・dilatation・new AR・PEF（沒有也不能排除）</text>
+    <rect x="280" y="470" width="304" height="70" rx="2.5" fill="#fbf3e6" stroke="#b8863f" stroke-width="1.3"/>
+    <text x="296" y="497" font-size="14.5" fill="#3a3020"><tspan fill="#a5671a" font-weight="700" font-family="'Noto Serif TC',serif">Step 3</tspan>　導管室訊號當場拉回</text>
+    <text x="296" y="520" font-size="12.8" fill="#6b5a3d">linear vessel・導絲異常阻力・IVUS 壁內血腫</text>
+    <polygon points="432,558 536,606 432,654 328,606" fill="#e6eef5" stroke="#35607e" stroke-width="1.4"/>
+    <text x="432" y="611" text-anchor="middle" font-size="14.5" fill="#1c3d52">確認 Type A AD？</text>
+    <rect x="334" y="690" width="196" height="46" rx="23" fill="#fbe9e6" stroke="#c0392b" stroke-width="1.6"/>
+    <text x="432" y="718" text-anchor="middle" font-size="14.5" fill="#8f2318" font-weight="600">停抗凝 · 轉心臟外科</text>
+    <rect x="62" y="576" width="180" height="60" rx="2.5" fill="#e8f3ec" stroke="#2e7d52" stroke-width="1.3"/>
+    <text x="152" y="601" text-anchor="middle" font-size="14" fill="#1f5a3a">依 ACS 處置</text>
+    <text x="152" y="621" text-anchor="middle" font-size="12.5" fill="#4a7a5f">抗凝・抗血小板・primary PCI</text>
+    <rect x="72" y="688" width="160" height="44" rx="22" fill="#e8f3ec" stroke="#2e7d52" stroke-width="1.3"/>
+    <text x="152" y="715" text-anchor="middle" font-size="14" fill="#1f5a3a">再灌流治療</text>
+  </svg>
+</div>

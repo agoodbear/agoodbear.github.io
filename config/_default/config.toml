@@ -44,4 +44,4 @@ home = ["HTML", "RSS", "JSON"]
   shortname = "agoodbear"
 
 [params]
-customCSS = ["custom-css/timeline.css", "custom-css/image-row.css", "custom-css/tag-pill.css", "custom-css/ecg-wave-text.css", "custom-css/notice-flame.css", "custom-css/pdf-reference.css"] # Include custom CSS files
+customCSS = ["custom-css/timeline.css", "custom-css/image-row.css", "custom-css/tag-pill.css", "custom-css/ecg-wave-text.css", "custom-css/notice-flame.css", "custom-css/pdf-reference.css", "custom-css/algorithm-card.css", "custom-css/footnotes.css", "custom-css/ecg-article.css"] # Include custom CSS files

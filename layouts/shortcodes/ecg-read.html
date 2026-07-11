@@ -1,0 +1,22 @@
+{{- /* ecg-read.html — 五宮格判讀卡（Ken Grauer 順序）
+       用法（paired）：內容每行一項「Label: 內容」，label 用英文冒號分隔：
+       {{< ecg-read >}}
+       Rate: 竇性，心室率不快
+       Rhythm: SR
+       Axis: normal axis
+       Interval: QRS 窄
+       Ischemia: II、III、aVF ST 抬高 …
+       {{< /ecg-read >}}
+       視覺在 custom-css/ecg-article.css 的 .ecg-read（需先 {{< article-cards >}} 啟用 marker，但本卡自帶 class 不依賴 marker）。 */ -}}
+<div class="ecg-read">
+<div class="ecg-read__head">五宮格判讀 · Rate–Rhythm–Axis–Interval–Ischemia</div>
+{{- range (split (trim .Inner "\n") "\n") -}}
+{{- $l := trim . " " -}}
+{{- if $l -}}
+{{- $k := trim (index (split $l ":") 0) " " -}}
+{{- $v := trim (replaceRE (printf "^%s\\s*:\\s*" $k) "" $l) " " -}}
+{{- $v = replaceRE `^<p>(.*)</p>$` "$1" ($v | markdownify) -}}
+<div class="ecg-read__row"><span class="ecg-read__k">{{ $k }}</span><span class="ecg-read__v">{{ $v | safeHTML }}</span></div>
+{{- end -}}
+{{- end -}}
+</div>

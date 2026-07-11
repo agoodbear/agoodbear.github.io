@@ -1,0 +1,10 @@
+{{- /* ecg-qlist.html — Q&A 卡片清單（仿 Artifact .qlist）
+       用法（paired）：內容是一般 markdown 清單，每個 - 項會變一張卡：
+       {{< ecg-qlist >}}
+       - **Q1**：…
+       - **Q2**：…
+       {{< /ecg-qlist >}}
+       視覺在 custom-css/ecg-article.css 的 .ecg-qlist。 */ -}}
+<div class="ecg-qlist">
+{{ .Inner | markdownify }}
+</div>
