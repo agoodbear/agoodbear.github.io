@@ -64,5 +64,12 @@
   {{ partial "pv-counter.html" . }}
 
   {{ block "scripts" . }}{{ end }}
+
+  {{- /* 2026 改版換 hallmark 時漏接：這個 hook 只被 hugo-clarity 的 baseof 載入，
+         導致 imgrow 圖片燈箱（點圖放大）全站失效。補回。
+         同檔內另兩支腳本在 hallmark 上會 early-return：
+         ECG 閱讀進度條找 .post_content（clarity 舊 class，hallmark 是 .article-body）、
+         PDF 註腳彈窗找 [data-pdf-footnote-trigger]，兩者皆查無元素即 return。 */ -}}
+  {{- partialCached "hooks/body-end" . }}
 </body>
 </html>
