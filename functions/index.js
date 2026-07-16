@@ -18,7 +18,17 @@ const API_PREFIX = "/write-studio-api";
 const MAX_BODY_BYTES = 60 * 1024 * 1024;
 const SITE_URL = "https://agoodbear.github.io";
 const SITE_NAME = "急診熊心聲部落格";
-const UNSUBSCRIBE_SECRET = process.env.UNSUBSCRIBE_SECRET || "default-unsub-secret-change-me";
+// Fail-closed: no hard-coded fallback secret (this repo is public). Deployment
+// MUST set UNSUBSCRIBE_SECRET, otherwise unsubscribe-token generation/verification
+// throws loudly instead of silently signing with a publicly known default.
+const UNSUBSCRIBE_SECRET = String(process.env.UNSUBSCRIBE_SECRET || "").trim();
+
+function requireUnsubscribeSecret() {
+  if (!UNSUBSCRIBE_SECRET) {
+    throw new Error("UNSUBSCRIBE_SECRET is not set. Refusing to sign/verify unsubscribe tokens.");
+  }
+  return UNSUBSCRIBE_SECRET;
+}
 
 function getToken() {
   return String(process.env.WRITE_STUDIO_TOKEN || "").trim();
@@ -43,7 +53,9 @@ function normalizePath(reqPath) {
 function isAuthorized(req) {
   const required = getToken();
   if (!required) {
-    return true;
+    // Fail-closed: if WRITE_STUDIO_TOKEN is missing/empty, refuse all
+    // authenticated endpoints instead of leaving every write wide open.
+    return false;
   }
   const provided = String(req.get("X-Write-Studio-Token") || "").trim();
   return provided && provided === required;
@@ -870,7 +882,7 @@ function createMailTransporter() {
 
 function generateUnsubscribeToken(email) {
   const payload = JSON.stringify({ email: normalizeEmail(email), exp: Date.now() + 90 * 24 * 60 * 60 * 1000 });
-  const hmac = crypto.createHmac("sha256", UNSUBSCRIBE_SECRET).update(payload).digest("hex");
+  const hmac = crypto.createHmac("sha256", requireUnsubscribeSecret()).update(payload).digest("hex");
   return Buffer.from(`${payload}|${hmac}`).toString("base64url");
 }
 
@@ -880,7 +892,7 @@ function verifyUnsubscribeToken(token) {
   if (sepIdx < 0) throw new Error("Invalid token format.");
   const payload = raw.slice(0, sepIdx);
   const sig = raw.slice(sepIdx + 1);
-  const expected = crypto.createHmac("sha256", UNSUBSCRIBE_SECRET).update(payload).digest("hex");
+  const expected = crypto.createHmac("sha256", requireUnsubscribeSecret()).update(payload).digest("hex");
   if (!crypto.timingSafeEqual(Buffer.from(sig), Buffer.from(expected))) {
     throw new Error("Invalid signature.");
   }
@@ -910,8 +922,10 @@ a{color:#0d6efd;text-decoration:none}</style></head>
 
 function buildNotificationEmail(posts, unsubLink) {
   const postListHtml = posts.map((p) => {
-    const url = `${SITE_URL}/post/${p.slug}/`;
-    return `<li style="margin-bottom:12px"><a href="${url}" style="color:#0d6efd;text-decoration:none;font-weight:600">${escapeHtml(p.title || p.slug)}</a></li>`;
+    // encodeURIComponent + escapeHtml: slug can't break out of the href attribute
+    // or smuggle a foreign scheme into subscriber emails.
+    const url = `${SITE_URL}/post/${encodeURIComponent(String(p.slug || ""))}/`;
+    return `<li style="margin-bottom:12px"><a href="${escapeHtml(url)}" style="color:#0d6efd;text-decoration:none;font-weight:600">${escapeHtml(p.title || p.slug)}</a></li>`;
   }).join("");
 
   return `<!DOCTYPE html><html lang="zh-TW"><head><meta charset="utf-8"></head><body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:560px;margin:0 auto;padding:20px;color:#333">
@@ -925,7 +939,7 @@ function buildNotificationEmail(posts, unsubLink) {
 }
 
 function buildNotificationEmailText(posts, unsubLink) {
-  const lines = posts.map((p) => `- ${p.title || p.slug}: ${SITE_URL}/post/${p.slug}/`).join("\n");
+  const lines = posts.map((p) => `- ${p.title || p.slug}: ${SITE_URL}/post/${encodeURIComponent(String(p.slug || ""))}/`).join("\n");
   return `新心電圖文章通知\n\n${SITE_NAME}有新的心電圖文章：\n\n${lines}\n\n感謝你的訂閱支持！\n\n---\n退訂：${unsubLink}`;
 }
 

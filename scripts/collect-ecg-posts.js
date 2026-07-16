@@ -25,8 +25,15 @@ for (const file of files) {
   const dateMatch = content.match(/^date\s*=\s*"?([^"\n]+)/m) || content.match(/^date\s*:\s*"?([^"\n]+)/m);
   if (dateMatch) date = dateMatch[1].trim().replace(/"/g, "");
 
-  // Skip drafts
-  if (/^draft\s*=\s*true/m.test(content)) continue;
+  // Skip drafts — support both TOML (`draft = true`) and YAML (`draft: true`)
+  if (/^draft\s*[:=]\s*true\b/m.test(content)) continue;
+
+  // Skip scheduled (future-dated) posts: Hugo won't have published them yet,
+  // so notifying subscribers would mail out a 404 link.
+  if (date) {
+    const ts = Date.parse(date);
+    if (!Number.isNaN(ts) && ts > Date.now()) continue;
+  }
 
   posts.push({ slug, title, date });
 }
