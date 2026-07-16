@@ -8,7 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="preload" href="./quiz.json" as="fetch" crossorigin="anonymous">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <style>
   :root{
     --blue:#0f7ec7; --blue-d:#0b6aa9; --blue-soft:#e6f3fc;
@@ -372,6 +373,7 @@
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const SB_URL="https://ftnrvkvzzvlfvdqirhxq.supabase.co";
 const SB_KEY="sb_publishable_nfZvsG0mzj5hTpfgxpED3Q_DcwmqX07";
@@ -625,10 +627,12 @@ $("lightbox").addEventListener("click",e=>{ if(e.target===$("lightbox")) closeLi
     calRead.textContent="拖紅線對齊時間軸"; };
 })();
 document.addEventListener("keydown",e=>{
-  if(e.key==="Escape"){ if($("lightbox").classList.contains("open"))closeLightbox(); else if(reportModal.classList.contains("open"))closeReport(); return; }
-  if($("lightbox").classList.contains("open")||reportModal.classList.contains("open")) return;
+  if(e.key==="Escape"){ if($("lightbox").classList.contains("open"))closeLightbox(); else if(reportModal.classList.contains("open"))closeReport(); else if(resetModal.classList.contains("open"))closeReset(); return; }
+  if($("lightbox").classList.contains("open")||reportModal.classList.contains("open")||resetModal.classList.contains("open")) return;
+  const t=e.target;
+  const onControl=t&&(t.tagName==="BUTTON"||t.tagName==="A"||t.tagName==="INPUT"||t.tagName==="TEXTAREA"||t.tagName==="SELECT"||t.isContentEditable);
   if(e.key>="1"&&e.key<="6"){const i=+e.key-1; if(BANK[cur]&&i<BANK[cur].options.length) select(i);}
-  else if(e.code==="Space"){e.preventDefault(); revealed?next():doReveal();}
+  else if(e.code==="Space"){ if(onControl) return; e.preventDefault(); revealed?next():doReveal();}
   else if(e.key==="n"||e.key==="N"){next();}
 });
 
@@ -668,9 +672,21 @@ async function loadCloudWrong(){
   if(!sb||!currentUser) return;
   try{
     const localIds=[...wrongSet];
-    if(localIds.length){ await sb.from("ecg_quiz_wrong").upsert(localIds.map(qid=>({user_id:currentUser.id,question_id:qid})),{onConflict:"user_id,question_id"}); }
-    const {data}=await sb.from("ecg_quiz_wrong").select("question_id");
-    if(data){ wrongSet=new Set(data.map(r=>r.question_id)); saveWrong(); refreshWrongUI(); }
+    let pushOk=true;
+    if(localIds.length){
+      // ignoreDuplicates:true → ON CONFLICT DO NOTHING，不需要 UPDATE policy；
+      // 並檢查回傳 error（supabase-js 不會 throw），上雲失敗就不能拿雲端覆蓋本機。
+      const {error:upErr}=await sb.from("ecg_quiz_wrong").upsert(
+        localIds.map(qid=>({user_id:currentUser.id,question_id:qid})),
+        {onConflict:"user_id,question_id",ignoreDuplicates:true});
+      if(upErr){ pushOk=false; console.warn("錯題本上雲失敗，改用合併模式保留本機錯題：",upErr.message||upErr); }
+    }
+    const {data,error:selErr}=await sb.from("ecg_quiz_wrong").select("question_id");
+    if(!selErr&&data){
+      if(pushOk){ wrongSet=new Set(data.map(r=>r.question_id)); }
+      else{ data.forEach(r=>wrongSet.add(r.question_id)); } // 合併不覆蓋，避免流失
+      saveWrong(); refreshWrongUI();
+    }
     const {data:st}=await sb.from("ecg_quiz_stats").select("practiced").eq("user_id",currentUser.id).maybeSingle();
     const cloudP=st?(st.practiced||0):0;
     done=Math.max(done, cloudP); doneCount.textContent=done; try{localStorage.setItem(DONE_KEY,String(done));}catch(e){} syncDone();
