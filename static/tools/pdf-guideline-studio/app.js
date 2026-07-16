@@ -10,6 +10,46 @@ const DEFAULT_API_BASES = [
   "/write-studio-api",
 ];
 
+// Hosts the ?apiBase= query parameter is allowed to point at. Without this
+// allowlist a phishing link (?apiBase=https://evil.example) gets persisted to
+// localStorage and later receives the admin X-Write-Studio-Token.
+const API_BASE_ALLOWED_HOSTS = new Set([
+  "write-studio-cloud-agoodbear.web.app",
+  "write-studio-cloud-agoodbear.firebaseapp.com",
+  "asia-east1-agoodbear-website.cloudfunctions.net",
+  "localhost",
+  "127.0.0.1",
+]);
+
+function isAllowedApiBase(value) {
+  const raw = String(value || "").trim();
+  if (!raw) return false;
+  if (raw.startsWith("//")) return false;
+  if (raw.startsWith("/")) return true; // same-origin relative path
+  try {
+    const url = new URL(raw);
+    if (url.protocol !== "https:" && url.protocol !== "http:") return false;
+    if (url.protocol === "http:" && url.hostname !== "localhost" && url.hostname !== "127.0.0.1") return false;
+    return API_BASE_ALLOWED_HOSTS.has(url.hostname) || url.hostname === window.location.hostname;
+  } catch (error) {
+    return false;
+  }
+}
+
+// Only http(s) or same-origin-relative URLs may be rendered into href
+// attributes; javascript:/data:/vbscript: and friends are dropped.
+function sanitizeLinkUrl(value) {
+  const raw = String(value ?? "").trim();
+  if (!raw) return "";
+  try {
+    const url = new URL(raw, window.location.origin);
+    if (url.protocol !== "http:" && url.protocol !== "https:") return "";
+  } catch (error) {
+    return "";
+  }
+  return raw;
+}
+
 const STORAGE_KEYS = {
   apiBase: "pdf-guideline-studio-api-base",
   token: "pdf-guideline-studio-token",
@@ -499,16 +539,20 @@ function isTextEntryTarget(target) {
 }
 
 async function discoverApiBase() {
-  const configured = String(state.query.get("apiBase") || readStorage(STORAGE_KEYS.apiBase) || "")
-    .trim()
-    .replace(/\/+$/, "");
+  const queryBase = String(state.query.get("apiBase") || "").trim().replace(/\/+$/, "");
+  const allowedQueryBase = queryBase && isAllowedApiBase(queryBase) ? queryBase : "";
+  if (queryBase && !allowedQueryBase) {
+    console.warn("pdf-guideline-studio: ?apiBase= is not on the allowlist, ignoring:", queryBase);
+  }
+  const configured = allowedQueryBase
+    || String(readStorage(STORAGE_KEYS.apiBase) || "").trim().replace(/\/+$/, "");
   if (configured) {
     const health = await checkApiHealth(configured);
     if (health.ok) {
       writeStorage(STORAGE_KEYS.apiBase, configured);
       return configured;
     }
-    if (!state.query.get("apiBase")) {
+    if (!allowedQueryBase) {
       removeStorage(STORAGE_KEYS.apiBase);
     }
   }
@@ -858,10 +902,12 @@ function updateTopbar() {
   refs.docDescription.hidden = !doc.description;
   refs.docDescription.textContent = doc.description || "";
 
-  refs.openPdfButton.hidden = !doc.pdfUrl;
-  refs.openPdfButton.href = doc.pdfUrl || "#";
-  refs.backToArticleButton.hidden = !doc.articlePath;
-  refs.backToArticleButton.href = doc.articlePath || "#";
+  const safePdfUrl = sanitizeLinkUrl(doc.pdfUrl);
+  const safeArticlePath = sanitizeLinkUrl(doc.articlePath);
+  refs.openPdfButton.hidden = !safePdfUrl;
+  refs.openPdfButton.href = safePdfUrl || "#";
+  refs.backToArticleButton.hidden = !safeArticlePath;
+  refs.backToArticleButton.href = safeArticlePath || "#";
 
   if (refs.openFullReaderButton) {
     refs.openFullReaderButton.href = buildReaderUrl({ embed: false });
@@ -923,12 +969,14 @@ function renderSidebar() {
     .map((item) => `<span class="pdf-guideline-studio__doc-chip">${escapeHtml(item)}</span>`)
     .join("");
 
+  const sidebarArticleUrl = sanitizeLinkUrl(doc.articlePath);
+  const sidebarPdfUrl = sanitizeLinkUrl(doc.pdfUrl);
   const utilityLinks = [
-    doc.articlePath
-      ? `<a class="pdf-guideline-studio__doc-link" href="${escapeHtml(doc.articlePath)}">回文章</a>`
+    sidebarArticleUrl
+      ? `<a class="pdf-guideline-studio__doc-link" href="${escapeHtml(sidebarArticleUrl)}">回文章</a>`
       : "",
-    doc.pdfUrl
-      ? `<a class="pdf-guideline-studio__doc-link" href="${escapeHtml(doc.pdfUrl)}" target="_blank" rel="noopener">Open PDF</a>`
+    sidebarPdfUrl
+      ? `<a class="pdf-guideline-studio__doc-link" href="${escapeHtml(sidebarPdfUrl)}" target="_blank" rel="noopener">Open PDF</a>`
       : "",
     state.viewMode === "embed"
       ? `<a class="pdf-guideline-studio__doc-link" href="${escapeHtml(buildReaderUrl({ embed: false }))}" target="_blank" rel="noopener">完整閱讀器</a>`
