@@ -5,7 +5,7 @@ description: "聽完一場急診抗生素研討會的整理：發燒性嗜中性
 featured: false
 draft: false
 toc: true
-thumbnail: "/images/ipic/study7-thumb.png"
+thumbnail: "/images/ipic/study7-thumb.webp"
 categories:
   - study
 tags:

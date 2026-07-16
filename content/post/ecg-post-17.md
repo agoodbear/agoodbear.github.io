@@ -5,7 +5,7 @@ description: "兩個一開始都當急性冠心症在救的病人，最後診斷
 draft: false #Bear 2026-07-11 審完發布
 featured: false
 toc: true
-thumbnail: "/images/ipic/ecg-post-17-thumbnail.png"
+thumbnail: "/images/ipic/ecg-post-17-thumbnail.webp"
 typora-copy-images-to: "../../static/images/ipic"
 codeMaxLines: 10
 codeLineNumbers: false

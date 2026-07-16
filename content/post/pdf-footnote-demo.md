@@ -5,7 +5,7 @@ description: "Demo page for PDF footnote popup and guideline shelf."
 draft: true
 featured: false
 toc: false
-thumbnail: "/images/ipic/ecg-post-16-thumbnail.png"
+thumbnail: "/images/ipic/ecg-post-16-thumbnail.webp"
 typora-copy-images-to: "../../static/images/ipic"
 codeMaxLines: 10
 codeLineNumbers: false

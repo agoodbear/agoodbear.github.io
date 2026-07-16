@@ -5,7 +5,7 @@ description: "宜蘭大同鄉九寮溪自然步道健行全紀錄：從九寮溪
 featured: false
 draft: false
 toc: true
-thumbnail: "/images/jiuliaoxi/p15-waterfall.jpg"
+thumbnail: "/images/jiuliaoxi/p15-waterfall-thumb.webp"
 featured_image: "/images/jiuliaoxi/og-waterfall.jpg"
 og_image_width: 1200
 og_image_height: 630

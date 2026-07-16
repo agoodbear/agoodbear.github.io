@@ -5,7 +5,7 @@ description: "分享如何透過 WhatsApp、Discord 和 OpenClaw 建立自動化
 featured: false
 draft: false
 toc: false
-thumbnail: "/images/openclaw-workflow.png"
+thumbnail: "/images/openclaw-workflow.webp"
 categories:
   - study
 tags:
