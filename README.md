@@ -12,7 +12,7 @@
 
 ## 技術棧
 
-- **靜態網站產生器**：[Hugo](https://gohugo.io/) v0.154.5（CI 鎖定）
+- **靜態網站產生器**：[Hugo](https://gohugo.io/) v0.156.0（CI 鎖定，見 `.github/workflows/hugo.yaml` 的 `HUGO_VERSION`）
 - **主題**：[hugo-clarity](https://github.com/chipzoller/hugo-clarity) + hugo-embed-pdf-shortcode + hugo-dynamic-tabs
 - **部署**：GitHub Actions → GitHub Pages
 - **留言系統**：Disqus（shortname `agoodbear`）
