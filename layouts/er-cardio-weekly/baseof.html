@@ -3,6 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{ partial "google-analytics.html" . }}
+
   <title>{{ block "title" . }}{{ if .IsPage }}{{ .Title }} ｜ 急診心臟學週報{{ else }}急診心臟學週報 ｜ ER Cardio Weekly{{ end }}{{ end }}</title>
   <meta name="description" content="{{ block "description" . }}{{ with .Description }}{{ . }}{{ else }}給急診醫師的 ECG / 心臟學每週重點。{{ end }}{{ end }}">
   <meta property="og:type" content="article">
