@@ -32,4 +32,48 @@ ER · CARDIO · WEEKLY</div><h1 class=tagline>給急診醫師的<br>ECG <span cl
 <span class=dot></span><span>4863 字</span></div><div class=tags><span class=chip>OMI</span><span class=chip>AI ECG</span><span class=chip>裝置</span><span class=chip>Arrhythmia</span><span class=chip>Resus</span></div></div></article><article class=row><div><div class=week>2026-W16</div><div class=week-sub>2026-04-13 — 2026-04-19</div></div><div><h2 class=head style=margin-top:0><a href=/er-cardio-weekly/2026-w16/ style=text-decoration:none;color:inherit>本週五大訊號：鏡像 hyperacute T、Mattu UMEM 三部曲、PFA × Biotronik 裝置警訊</a></h2><p style="font-family:newsreader,serif;font-style:italic;font-size:16px;color:var(--ink-2);margin:6px 0 0">Dr Smith 把下壁 OMI 判讀延伸到「鏡像 T 倒置」，Amal 連三週貫穿 ECG 思維陷阱，HRS 同週通報 Sphere-9 + Biotronik ICD/CRT-D 裝置互動。</p><div class=meta><span>2026-04-19</span>
 <span class=dot></span><span>12 分鐘閱讀</span>
 <span class=dot></span><span>2343 字</span></div><div class=tags><span class=chip>OMI</span><span class=chip>Arrhythmia</span><span class=chip>PFA</span><span class=chip>AI ECG</span><span class=chip>Resus</span></div></div></article><article class=row><div><div class=week>本週原始訊號清單</div><div class=week-sub>0001-01-01</div></div><div><h2 class=head style=margin-top:0><a href=/er-cardio-weekly/sources/ style=text-decoration:none;color:inherit>本週原始訊號清單</a></h2><div class=meta><span>0001-01-01</span>
-<span class=dot></span><span>0 字</span></div></div></article></div><aside class=rail><input class=search id=ecw-search type=search placeholder=搜尋週報... aria-label=搜尋><div class=filter-label style=margin-top:28px>本週策展</div><div class=curation><span class=big>本週掃了 119 則</span>，挑出 <span class=big>3</span> 則。<span class=muted>其餘為重複或非本週訊號。</span></div><a href=/er-cardio-weekly/sources/ style="display:block;margin-top:16px;font-size:11.5px;letter-spacing:.04em;color:var(--accent);text-decoration:none;font-family:inter tight,sans-serif">看來源 archive →</a></aside></div><footer style="padding:40px 0;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--hairline);margin-top:80px">急診心臟學週報 ER Cardio Weekly · 急診熊心聲出品 · <a href=/>回首頁</a></footer><script src=/er-cardio-weekly/js/ecw.js defer></script></body></html>
+<span class=dot></span><span>0 字</span></div></div></article></div><aside class=rail><input class=search id=ecw-search type=search placeholder=搜尋週報... aria-label=搜尋><div class=filter-label style=margin-top:28px>本週策展</div><div class=curation><span class=big>本週掃了 119 則</span>，挑出 <span class=big>3</span> 則。<span class=muted>其餘為重複或非本週訊號。</span></div><a href=/er-cardio-weekly/sources/ style="display:block;margin-top:16px;font-size:11.5px;letter-spacing:.04em;color:var(--accent);text-decoration:none;font-family:inter tight,sans-serif">看來源 archive →</a></aside></div><footer style="padding:40px 0;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--hairline);margin-top:80px">急診心臟學週報 ER Cardio Weekly · 急診熊心聲出品 · <a href=/>回首頁</a></footer><script src=/er-cardio-weekly/js/ecw.js defer></script><script type=module>
+  const SESSION_KEY = 'pv_counted';
+
+  async function pvCounter() {
+    const needsCount = !sessionStorage.getItem(SESSION_KEY);
+    const displays = document.querySelectorAll('[data-pv-display]');
+    if (!needsCount && !displays.length) return;
+
+    try {
+      const [{ initializeApp }, { getDatabase, ref, get, runTransaction }] = await Promise.all([
+        import("https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"),
+        import("https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"),
+      ]);
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDHGO0T7gomSortOftnubF8v4-ZkQ3FPks",
+        authDomain: "agoodbear-website.firebaseapp.com",
+        databaseURL: "https://agoodbear-website-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "agoodbear-website",
+        storageBucket: "agoodbear-website.firebasestorage.app",
+        messagingSenderId: "263335877825",
+        appId: "1:263335877825:web:10c1cf65b632e6e35fc840"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+      const counterRef = ref(db, 'pageViews/total');
+
+      if (needsCount) {
+        await runTransaction(counterRef, (current) => (current || 0) + 1);
+        sessionStorage.setItem(SESSION_KEY, 'true');
+      }
+
+      if (!displays.length) return;
+      const snapshot = await get(counterRef);
+      const formatted = Number(snapshot.val() || 0).toLocaleString('en-US');
+      displays.forEach(el => { el.textContent = formatted; });
+    } catch (err) {
+      console.error('PV counter error:', err);
+      displays.forEach(el => { el.textContent = '—'; });
+    }
+  }
+
+  pvCounter();
+</script><script type=module src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token": "f8e6f89bf5aa4319ab5e44e648919fd1"}'></script></body></html>

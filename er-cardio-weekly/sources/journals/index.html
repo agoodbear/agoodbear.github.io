@@ -165,4 +165,48 @@ ER · CARDIO · WEEKLY
 <span class=chip>arrhythmia</span><span class=chip>ventricular tachycardia</span><span class=chip>VT</span><span class=chip>tachycardia</span><span class=chip>ICD</span></div></article><article class=archive-item><div class=archive-source>European Heart J</div><h3 class=archive-title><a href=https://doi.org/10.1093/eurheartj/ehag206 target=_blank rel=noopener>Cardiac resynchronization therapy with or without atrioventricular node ablation in atrial fibrillation: the CAAN-AF trial</a></h3><p class=archive-summary>Secondary outcomes, including cardiovascular mortality (odds ratio, 1.93; 95% CI 0.60–6.20), unplanned hospitalizations (IRR, 1.01; 95% CI 0.71–1.74), ventricular arrhythmias requiring device therapy (IRR, 0.68; 95% CI 0.17–2.63), 6MWD, and SF-36 scores, also showed no significant differences.</p><div class=archive-meta-row><span>2026-04-16</span>
 <span>Sanders P, Ariyaratnam J, Stiles M, Puvrez A</span>
 <span>DOI 10.1093/eurheartj/ehag206</span>
-<span class=chip>atrial fibrillation</span><span class=chip>AF</span><span class=chip>CRT</span></div></article></div></div><footer style="padding:40px 0;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--hairline);margin-top:80px">急診心臟學週報 ER Cardio Weekly · 急診熊心聲出品 · <a href=/>回首頁</a></footer><script src=/er-cardio-weekly/js/ecw.js defer></script></body></html>
+<span class=chip>atrial fibrillation</span><span class=chip>AF</span><span class=chip>CRT</span></div></article></div></div><footer style="padding:40px 0;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--hairline);margin-top:80px">急診心臟學週報 ER Cardio Weekly · 急診熊心聲出品 · <a href=/>回首頁</a></footer><script src=/er-cardio-weekly/js/ecw.js defer></script><script type=module>
+  const SESSION_KEY = 'pv_counted';
+
+  async function pvCounter() {
+    const needsCount = !sessionStorage.getItem(SESSION_KEY);
+    const displays = document.querySelectorAll('[data-pv-display]');
+    if (!needsCount && !displays.length) return;
+
+    try {
+      const [{ initializeApp }, { getDatabase, ref, get, runTransaction }] = await Promise.all([
+        import("https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"),
+        import("https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"),
+      ]);
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDHGO0T7gomSortOftnubF8v4-ZkQ3FPks",
+        authDomain: "agoodbear-website.firebaseapp.com",
+        databaseURL: "https://agoodbear-website-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "agoodbear-website",
+        storageBucket: "agoodbear-website.firebasestorage.app",
+        messagingSenderId: "263335877825",
+        appId: "1:263335877825:web:10c1cf65b632e6e35fc840"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+      const counterRef = ref(db, 'pageViews/total');
+
+      if (needsCount) {
+        await runTransaction(counterRef, (current) => (current || 0) + 1);
+        sessionStorage.setItem(SESSION_KEY, 'true');
+      }
+
+      if (!displays.length) return;
+      const snapshot = await get(counterRef);
+      const formatted = Number(snapshot.val() || 0).toLocaleString('en-US');
+      displays.forEach(el => { el.textContent = formatted; });
+    } catch (err) {
+      console.error('PV counter error:', err);
+      displays.forEach(el => { el.textContent = '—'; });
+    }
+  }
+
+  pvCounter();
+</script><script type=module src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token": "f8e6f89bf5aa4319ab5e44e648919fd1"}'></script></body></html>

@@ -125,4 +125,48 @@ The average Emergency Clinician is interrupted every 6 minutes. When busy, it ca
 <span class=chip>cardiac arrest</span></div></article><article class=archive-item><div class=archive-source>Core EM</div><h3 class=archive-title><a href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE1GX0FZSHJSczFiVjBqZTlBTktLS2NuNlBXYWtMR3lmYzNILWJCMGxxWkdnbUptZTNRMlZYWF9BRWFnekplT2tWTTlCY2gyX2xfZURmTVpmMlJSMUwtODdzUg?oc=5" target=_blank rel=noopener>Chief Complaint – Chest Pain</a></h3><div class=archive-meta-row><span>2015-06-24</span>
 <span class=chip>chest pain</span></div></article><article class=archive-item><div class=archive-source>ACC</div><h3 class=archive-title><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxPUDF0Q1V6RjdDcjRlWDBpenJ3YzNjSUkzeGhNbllOWUpQS2s0MUJXUFdIMFBuNGI2R1huazMybHkxcEVXekxGRkxqX3hzREZZVnltZVJsTEdmRWwyZ25mSkRkVUpaZmVaMHlReC03Ny1wMVFwY2p5OENnM0w0ZXJvNjAtTnJVbmd6bFhQYW9uRnIteVVmd01Zd0ZBZmFkNFRXdjhDTS05dFV2cHhh?oc=5" target=_blank rel=noopener>Arrhythmia Diagnosis During an Ajmaline Test</a></h3><div class=archive-meta-row><span>2011-09-08</span>
 <span class=chip>arrhythmia</span></div></article><article class=archive-item><div class=archive-source>ACC</div><h3 class=archive-title><a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxQUmZfQWtIUmk1R1puQXltWkhaVTVSN1dobTRwbExyY2Ytd0hWeXVpSU5qNjFxbHgyb0E0ZFpndE1hbTZUZk81V3I1b1E5RjZRSG1KdjROWVFXbXp0dkpORElPb0lhcEtOSUNzQ1VEM1g3ZzFlVzZNVzByTklKdm9QS0VIUmwyTW0zcDlUWXN0WQ?oc=5" target=_blank rel=noopener>Efficacy of High-Dose Atorvastatin Loading Before Primary Percutaneous Coronary Intervention in ST-Elevation Myocardial Infarction - STATIN STEMI</a></h3><div class=archive-meta-row><span>2010-03-15</span>
-<span class=chip>STEMI</span></div></article></div></div><footer style="padding:40px 0;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--hairline);margin-top:80px">急診心臟學週報 ER Cardio Weekly · 急診熊心聲出品 · <a href=/>回首頁</a></footer><script src=/er-cardio-weekly/js/ecw.js defer></script></body></html>
+<span class=chip>STEMI</span></div></article></div></div><footer style="padding:40px 0;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--hairline);margin-top:80px">急診心臟學週報 ER Cardio Weekly · 急診熊心聲出品 · <a href=/>回首頁</a></footer><script src=/er-cardio-weekly/js/ecw.js defer></script><script type=module>
+  const SESSION_KEY = 'pv_counted';
+
+  async function pvCounter() {
+    const needsCount = !sessionStorage.getItem(SESSION_KEY);
+    const displays = document.querySelectorAll('[data-pv-display]');
+    if (!needsCount && !displays.length) return;
+
+    try {
+      const [{ initializeApp }, { getDatabase, ref, get, runTransaction }] = await Promise.all([
+        import("https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"),
+        import("https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"),
+      ]);
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDHGO0T7gomSortOftnubF8v4-ZkQ3FPks",
+        authDomain: "agoodbear-website.firebaseapp.com",
+        databaseURL: "https://agoodbear-website-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "agoodbear-website",
+        storageBucket: "agoodbear-website.firebasestorage.app",
+        messagingSenderId: "263335877825",
+        appId: "1:263335877825:web:10c1cf65b632e6e35fc840"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+      const counterRef = ref(db, 'pageViews/total');
+
+      if (needsCount) {
+        await runTransaction(counterRef, (current) => (current || 0) + 1);
+        sessionStorage.setItem(SESSION_KEY, 'true');
+      }
+
+      if (!displays.length) return;
+      const snapshot = await get(counterRef);
+      const formatted = Number(snapshot.val() || 0).toLocaleString('en-US');
+      displays.forEach(el => { el.textContent = formatted; });
+    } catch (err) {
+      console.error('PV counter error:', err);
+      displays.forEach(el => { el.textContent = '—'; });
+    }
+  }
+
+  pvCounter();
+</script><script type=module src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token": "f8e6f89bf5aa4319ab5e44e648919fd1"}'></script></body></html>

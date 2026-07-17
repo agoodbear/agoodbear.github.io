@@ -4,4 +4,48 @@ ER · CARDIO · WEEKLY
 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button></div></header><div class=container style="max-width:1280px;margin:0 auto;padding:56px 32px 96px"><div style=margin-bottom:32px><div style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px;font-family:inter tight,sans-serif">SOURCES · ARCHIVE</div><h1 style="font-family:inter tight,noto sans tc,sans-serif;font-size:36px;font-weight:600;letter-spacing:-.02em;margin:0 0 12px;line-height:1.18">本週原始訊號清單</h1><p style=font-family:newsreader,serif;font-style:italic;font-size:18px;color:var(--ink-2);margin:0;max-width:640px>急診心臟週報底下 4 層來源獨立彙整。每層獨立 archive，依時間流排序。</p></div><div class=sources-grid style=margin-top:24px><a href=/er-cardio-weekly/sources/blog/ class=source-card style=text-decoration:none;color:inherit><div class=source-label>L1 · 部落格 / 學會</div><div class=source-count>99<span class=unit>篇</span></div><ul><li><span class=li-en>11 個來源</span><span class=li-zh>Dr Smith · ECG Weekly · LITFL · EMCrit · REBEL EM · ACC · ESC · HRS · AHA · First10EM · Core EM</span></li></ul><span class=source-more>看時間流 →</span>
 </a><a href=/er-cardio-weekly/sources/authors/ class=source-card style=text-decoration:none;color:inherit><div class=source-label>L2 · PubMed 追蹤作者</div><div class=source-count>5<span class=unit>篇 unique</span></div><ul><li><span class=li-en>7 位作者</span><span class=li-zh>Stephen Smith · Pendell Meyers · Ken Grauer · Jesse McLaren · Emre Aslanger · Willy Frick · Sam Ghali</span></li></ul><span class=source-more>看時間流 →</span>
 </a><a href=/er-cardio-weekly/sources/journals/ class=source-card style=text-decoration:none;color:inherit><div class=source-label>L3 · CrossRef 期刊</div><div class=source-count>59<span class=unit>篇候選</span></div><ul><li><span class=li-en>10 本期刊</span><span class=li-zh>Heart Rhythm · JACC-EP · Circulation-AE · J Electrocardiology · Annals EM · Resuscitation · Europace · JACC · EHJ · JAMA Cardiology</span></li></ul><span class=source-more>看時間流 →</span>
-</a><a href=/er-cardio-weekly/sources/x/ class=source-card style=text-decoration:none;color:inherit><div class=source-label>L4 · X.com</div><div class=source-count><span class=pending>待 setup</span></div><ul><li><span class=li-en>8 個 handle</span><span class=li-zh>@smithECGBlog · @PendellM · @ekgpress · @AslangerE · @ecgcases · @EM_RESUS · @willyhfrick · @RobertHermanMD</span></li></ul><span class=source-more>看時間流 →</span></a></div><p style=margin-top:48px;font-size:12px;color:var(--muted);text-align:center;font-family:newsreader,serif;font-style:italic>cache 更新：2026-04-29T23:09:22+08:00</p></div><footer style="padding:40px 0;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--hairline);margin-top:80px">急診心臟學週報 ER Cardio Weekly · 急診熊心聲出品 · <a href=/>回首頁</a></footer><script src=/er-cardio-weekly/js/ecw.js defer></script></body></html>
+</a><a href=/er-cardio-weekly/sources/x/ class=source-card style=text-decoration:none;color:inherit><div class=source-label>L4 · X.com</div><div class=source-count><span class=pending>待 setup</span></div><ul><li><span class=li-en>8 個 handle</span><span class=li-zh>@smithECGBlog · @PendellM · @ekgpress · @AslangerE · @ecgcases · @EM_RESUS · @willyhfrick · @RobertHermanMD</span></li></ul><span class=source-more>看時間流 →</span></a></div><p style=margin-top:48px;font-size:12px;color:var(--muted);text-align:center;font-family:newsreader,serif;font-style:italic>cache 更新：2026-04-29T23:09:22+08:00</p></div><footer style="padding:40px 0;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--hairline);margin-top:80px">急診心臟學週報 ER Cardio Weekly · 急診熊心聲出品 · <a href=/>回首頁</a></footer><script src=/er-cardio-weekly/js/ecw.js defer></script><script type=module>
+  const SESSION_KEY = 'pv_counted';
+
+  async function pvCounter() {
+    const needsCount = !sessionStorage.getItem(SESSION_KEY);
+    const displays = document.querySelectorAll('[data-pv-display]');
+    if (!needsCount && !displays.length) return;
+
+    try {
+      const [{ initializeApp }, { getDatabase, ref, get, runTransaction }] = await Promise.all([
+        import("https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"),
+        import("https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"),
+      ]);
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDHGO0T7gomSortOftnubF8v4-ZkQ3FPks",
+        authDomain: "agoodbear-website.firebaseapp.com",
+        databaseURL: "https://agoodbear-website-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "agoodbear-website",
+        storageBucket: "agoodbear-website.firebasestorage.app",
+        messagingSenderId: "263335877825",
+        appId: "1:263335877825:web:10c1cf65b632e6e35fc840"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+      const counterRef = ref(db, 'pageViews/total');
+
+      if (needsCount) {
+        await runTransaction(counterRef, (current) => (current || 0) + 1);
+        sessionStorage.setItem(SESSION_KEY, 'true');
+      }
+
+      if (!displays.length) return;
+      const snapshot = await get(counterRef);
+      const formatted = Number(snapshot.val() || 0).toLocaleString('en-US');
+      displays.forEach(el => { el.textContent = formatted; });
+    } catch (err) {
+      console.error('PV counter error:', err);
+      displays.forEach(el => { el.textContent = '—'; });
+    }
+  }
+
+  pvCounter();
+</script><script type=module src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token": "f8e6f89bf5aa4319ab5e44e648919fd1"}'></script></body></html>
