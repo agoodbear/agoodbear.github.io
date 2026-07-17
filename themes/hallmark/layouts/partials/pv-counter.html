@@ -1,14 +1,23 @@
 {{- /* PV counter — Firebase Realtime Database
-       Ported from layouts/partials/sidebar.html (lines 442-486 era).
-       Writes `pageViews/total` (+1 per session) and displays into any
-       element with [data-pv-display] on the page.
-       Skip rendering if no element references pv-counter (saves Firebase
-       SDK load on pages that don't need it). */ -}}
+       Writes `pageViews/total` (+1 per session, site-wide) and displays the
+       total into any element with [data-pv-display].
+
+       Counting is decoupled from display: every page counts, but only pages
+       that actually show the number read it back. Before 2026-07-17 the whole
+       thing was gated on [data-pv-display] existing, and that element only
+       lives on the homepage — so readers arriving straight at an article from
+       search or social never incremented the counter at all.
+
+       The SDK is still loaded lazily: sessionStorage is checked first, so
+       pages 2..N of a session pull in no Firebase at all. */ -}}
 <script type="module">
-  // Dynamic import()s below only fire when the page actually has a
-  // [data-pv-display] element — a top-level static `import` would download
-  // both Firebase SDKs on every page regardless of the guard.
-  async function updateCounter() {
+  const SESSION_KEY = 'pv_counted';
+
+  async function pvCounter() {
+    const needsCount = !sessionStorage.getItem(SESSION_KEY);
+    const displays = document.querySelectorAll('[data-pv-display]');
+    if (!needsCount && !displays.length) return;
+
     try {
       const [{ initializeApp }, { getDatabase, ref, get, runTransaction }] = await Promise.all([
         import("https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"),
@@ -29,28 +38,20 @@
       const db = getDatabase(app);
       const counterRef = ref(db, 'pageViews/total');
 
-      const sessionKey = 'pv_counted';
-      const alreadyCounted = sessionStorage.getItem(sessionKey);
-
-      if (!alreadyCounted) {
+      if (needsCount) {
         await runTransaction(counterRef, (current) => (current || 0) + 1);
-        sessionStorage.setItem(sessionKey, 'true');
+        sessionStorage.setItem(SESSION_KEY, 'true');
       }
+
+      if (!displays.length) return;
       const snapshot = await get(counterRef);
-      const count = snapshot.val() || 0;
-      const formatted = Number(count).toLocaleString('en-US');
-      document.querySelectorAll('[data-pv-display]').forEach(el => {
-        el.textContent = formatted;
-      });
+      const formatted = Number(snapshot.val() || 0).toLocaleString('en-US');
+      displays.forEach(el => { el.textContent = formatted; });
     } catch (err) {
       console.error('PV counter error:', err);
-      document.querySelectorAll('[data-pv-display]').forEach(el => {
-        el.textContent = '—';
-      });
+      displays.forEach(el => { el.textContent = '—'; });
     }
   }
 
-  if (document.querySelector('[data-pv-display]')) {
-    updateCounter();
-  }
+  pvCounter();
 </script>

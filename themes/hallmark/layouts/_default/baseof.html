@@ -71,5 +71,7 @@
          ECG 閱讀進度條找 .post_content（clarity 舊 class，hallmark 是 .article-body）、
          PDF 註腳彈窗找 [data-pdf-footnote-trigger]，兩者皆查無元素即 return。 */ -}}
   {{- partialCached "hooks/body-end" . }}
+
+  {{ partial "analytics.html" . }}
 </body>
 </html>
