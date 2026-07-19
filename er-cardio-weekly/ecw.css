@@ -11,8 +11,8 @@ body.ecw { min-height: 100vh; }
 .ecw .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
 @media (max-width: 760px) {
   .ecw .container { padding: 0 18px; }
-  .ecw .layout-list { grid-template-columns: 1fr !important; gap: 24px; padding: 0 18px; }
-  .ecw .layout-article { grid-template-columns: 1fr !important; gap: 24px; padding: 0 18px; }
+  .ecw .layout-list { grid-template-columns: minmax(0, 1fr) !important; gap: 24px; padding: 0 18px; }
+  .ecw .layout-article { grid-template-columns: minmax(0, 1fr) !important; gap: 24px; padding: 0 18px; }
   .ecw .layout-article .left, .ecw .layout-article .right { display: none; }
   .ecw .row { grid-template-columns: 1fr !important; gap: 8px; padding: 22px 0; }
   .ecw .row .week { font-size: 22px; }
@@ -23,7 +23,6 @@ body.ecw { min-height: 100vh; }
   .ecw .article p, .ecw .article li { font-size: 18px; }
   .ecw .article h2 { font-size: 26px; margin: 2.4em 0 0.6em; }
   .ecw .article .lede { font-size: 19px; }
-  .ecw .article .lede::first-letter { font-size: 56px; }
   .ecw .topbar { padding: 0 16px; height: 52px; }
   .ecw .hero { padding: 32px 0 24px; }
   .ecw .hero .tagline { font-size: 26px; }
@@ -47,15 +46,17 @@ body.ecw { min-height: 100vh; }
   --hairline-2: #EFEAE0;
   --accent: #3B1044;         /* deep aubergine (was #7A2828 deep wine) */
   --accent-soft: #3B10441A;
-  --accent-bg: #F8E8FF;      /* lavender (light accent panel) */
+  --accent-bg: #F2EBF3;      /* round-5: warm grey-mauve (was cold #F8E8FF fluoro lavender) */
   --code-bg: #F2EEE3;
   --row-zebra: #F5F1E6;
   --selection: #3B10441f;
 
   background: var(--bg);
   color: var(--ink);
-  /* Body now 100% serif — First Round single-font discipline */
-  font-family: 'Newsreader', 'Noto Serif TC', 'Source Serif Pro', Georgia, ui-serif, serif;
+  /* Body 100% serif — round-5: CJK-first stack. Noto Serif TC's Latin glyphs
+   * share the CJK design so mixed 中英文 lines stop size-jumping; Newsreader
+   * kept only for pure-Latin decorative bits (.num, toc-num). */
+  font-family: 'Noto Serif TC', 'Newsreader', 'Source Serif Pro', Georgia, ui-serif, serif;
   font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -81,9 +82,9 @@ body.ecw { min-height: 100vh; }
 /* Display / serif title font for headings (First Round single-font serif) */
 .ecw h1, .ecw h2, .ecw h3, .ecw h4,
 .ecw .display {
-  font-family: 'Newsreader', 'Noto Serif TC', 'Source Serif Pro', Georgia, ui-serif, serif;
+  font-family: 'Noto Serif TC', 'Newsreader', 'Source Serif Pro', Georgia, ui-serif, serif;
   font-weight: 600;
-  letter-spacing: -0.015em;
+  letter-spacing: 0;              /* round-5: no negative tracking on 全形字 */
   color: var(--ink);
 }
 
@@ -116,6 +117,12 @@ body.ecw { min-height: 100vh; }
   color: var(--accent);
 }
 
+/* round-5: long raw URLs (footnotes / references) must never blow out the
+ * grid track — this was causing horizontal overflow on mobile. */
+.ecw .article-content a { overflow-wrap: anywhere; }
+.ecw .article-content .footnotes a,
+.ecw .refs a { word-break: break-all; }
+
 /* Hairline divider */
 .ecw .rule {
   height: 1px;
@@ -144,11 +151,11 @@ body.ecw { min-height: 100vh; }
 
 /* Reading progress bar */
 .ecw .progress-track {
-  position: absolute;
+  position: fixed;                 /* round-5: was absolute — scrolled out of view instantly */
   top: 0; left: 0; right: 0;
   height: 2px;
   background: transparent;
-  z-index: 50;
+  z-index: 60;
 }
 .ecw .progress-bar {
   height: 100%;
@@ -208,11 +215,11 @@ body.ecw { min-height: 100vh; }
  * wider than the 680px reading column (920px ≈ +120px each side).
  * Top + bottom hairline rules in accent, no left bar. */
 .ecw blockquote {
-  font-family: 'Newsreader', 'Noto Serif TC', 'Source Serif Pro', Georgia, serif;
-  font-size: 42px;          /* round-3 review: 36 → 42 to hold 920px */
-  line-height: 1.15;        /* tighter */
-  font-weight: 700;         /* round-3 review: 600 → 700 */
-  letter-spacing: -0.015em;
+  font-family: 'Noto Serif TC', 'Newsreader', 'Source Serif Pro', Georgia, serif;
+  font-size: 30px;          /* round-5: 42 → 30 — 42px×Noto Serif TC 900 is a CJK 黑塊 */
+  line-height: 1.5;
+  font-weight: 600;         /* round-5: 700 → 600 */
+  letter-spacing: 0;
   font-style: normal;
   color: var(--ink);
   margin: 56px auto;
@@ -298,11 +305,11 @@ body.ecw { min-height: 100vh; }
 /* Section H2 — 大標、上方 hairline 強調 */
 .ecw .article h2,
 .ecw .article-content h2 {
-  font-size: 32px;
-  line-height: 1.22;
+  font-size: 30px;
+  line-height: 1.25;
   margin: 4em 0 0.9em;
   font-weight: 600;
-  letter-spacing: -0.018em;
+  letter-spacing: 0;
   scroll-margin-top: 100px;
   display: flex;
   align-items: baseline;
@@ -361,7 +368,6 @@ body.ecw { min-height: 100vh; }
   line-height: 1.85;
   margin: 0 0 1.4em;
 }
-.ecw .article-content p + p { margin-top: 0.4em; }
 .ecw .article-content li {
   color: var(--ink);
   font-size: 17px;
@@ -380,33 +386,40 @@ body.ecw { min-height: 100vh; }
  * JS 在 ecw.js 偵測「<strong> 開頭 + 接著是「：」」的 <p>，加 .para-with-title class
  * 不用 hairline 上邊（部分段落含 PMID/DOI 連結夾層抓不到，視覺會不一致） */
 .ecw .article-content p.para-with-title {
-  margin-top: 2.2em;
+  margin-top: 2em;
 }
 .ecw .article-content p.para-with-title > strong:first-child {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   font-family: 'Inter Tight', 'Noto Sans TC', sans-serif;
-  font-size: 19px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.32;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
   color: var(--ink);
 }
 
-/* Em — serif italic */
+/* Em — serif italic. round-5: fallback was 'Noto Sans TC' (黑體假斜);
+ * use Noto Serif TC + font-synthesis-style:none so CJK never fakes an italic
+ * slant while Latin book titles still get a real italic. */
 .ecw .article-content em,
 .ecw .article-content i {
-  font-family: 'Newsreader', 'Noto Sans TC', serif;
+  font-family: 'Noto Serif TC', 'Newsreader', serif;
   font-style: italic;
+  font-synthesis-style: none;
   color: var(--ink-2);
 }
 
-/* mark 螢光標記（之後可在 markdown 用 <mark> 標重點）*/
+/* mark 螢光標記. round-5: was 改版前 wine rgba(122,40,40) — now accent family
+ * so the whole page carries a single hue. */
 .ecw .article-content mark {
-  background: linear-gradient(transparent 62%, rgba(122, 40, 40, 0.18) 62%);
+  background: linear-gradient(transparent 62%, rgba(59, 16, 68, 0.13) 62%);
   color: var(--ink);
   padding: 0 1px;
   font-weight: 600;
+}
+.ecw.is-dark .article-content mark {
+  background: linear-gradient(transparent 62%, rgba(228, 173, 255, 0.26) 62%);
 }
 
 /* Lede 首段 drop-cap（可加 class="lede" 觸發）*/
@@ -486,7 +499,7 @@ body.ecw { min-height: 100vh; }
   background: var(--accent-bg);        /* round-4: highlight bg, not just border */
   padding-left: 18px;                  /* round-4: slight indent shift */
 }
-.ecw.is-dark .ecw .toc li.active { background: var(--accent-soft); }
+.ecw.is-dark .toc li.active { background: var(--accent-soft); }
 .ecw .toc li .toc-num {
   font-family: 'Newsreader', 'Noto Serif TC', serif;
   font-style: italic;
@@ -836,27 +849,27 @@ body.ecw { min-height: 100vh; }
 .ecw .article {
   max-width: 680px;
   margin: 0 auto;
-  padding: 72px 0 96px;
+  padding: 56px 0 96px;
 }
 .ecw .article .article-title {
-  font-family: 'Newsreader', 'Noto Serif TC', 'Source Serif Pro', Georgia, serif;
+  font-family: 'Noto Serif TC', 'Newsreader', 'Source Serif Pro', Georgia, serif;
   font-size: 44px;
-  line-height: 1.06;        /* tighter, was 1.08 */
-  font-weight: 700;         /* round-3 review: 600 → 700 for FR drama */
-  letter-spacing: -0.028em; /* round-3 review: -0.022 → -0.028 */
+  line-height: 1.14;        /* round-5: a touch more air for 全形字 */
+  font-weight: 600;         /* round-5: 700 → 600 — 700 fell to Noto Serif TC 900 Black */
+  letter-spacing: 0;        /* round-5: no negative tracking on CJK */
   margin: 0;
   text-wrap: balance;
   color: var(--ink);
 }
 .ecw .article .article-sub {
   font-family: 'Inter Tight', 'Noto Sans TC', system-ui, sans-serif;
-  font-size: 24px;          /* round-3 review: 32 → 24 so it doesn't fight H1 */
-  line-height: 1.3;
+  font-size: 20px;          /* round-5: 24 → 20 so it stops fighting H1 */
+  line-height: 1.55;
   color: var(--ink-2);
-  margin: 28px 0 0;
+  margin: 24px 0 0;
   font-weight: 400;
   font-style: normal;
-  letter-spacing: -0.010em;
+  letter-spacing: 0;
   max-width: 38em;
 }
 
@@ -870,80 +883,60 @@ body.ecw { min-height: 100vh; }
 }
 
 .ecw .article .lede {
-  font-size: 22px;
+  font-size: 21px;
   line-height: 1.75;
   margin-top: 40px;
   color: var(--ink);
-  font-family: 'Newsreader', 'Noto Serif TC', serif;
-}
-.ecw .article .lede::first-letter {
-  font-family: 'Newsreader', 'Noto Serif TC', serif;
-  font-size: 72px;
-  float: left;
-  line-height: 0.85;
-  padding: 6px 12px 0 0;
-  font-weight: 700;
-  color: var(--accent);
+  font-family: 'Noto Serif TC', 'Newsreader', serif;
 }
 
-/* Auto drop cap on first paragraph of article-content (round-3 review:
- * the .lede class is rarely added by authors, so this triggers automatically) */
-.ecw .article-content > p:first-of-type::first-letter {
-  font-family: 'Newsreader', 'Noto Serif TC', serif;
-  font-size: 72px;
-  float: left;
-  line-height: 0.85;
-  padding: 6px 12px 0 0;
-  font-weight: 700;
-  color: var(--accent);
-}
+/* round-5: CJK drop-cap removed — ::first-letter drama is a Latin convention,
+ * on 方塊字 it renders like a bug and tore「是什麼：」into「是」+「什麼：」. */
 .ecw .article-content > p:first-of-type {
   font-size: 18px;
 }
 
-/* Body type — round-4: bigger line-height + paragraph margin for breathing */
+/* Body type — round-5: tighter, denser magazine rhythm.
+ * line-height 1.95 → 1.82 and para margin 1.8em → 1.2em stop the page from
+ * feeling stretched apart. "onum" (old-style figures) dropped so medical
+ * numbers (38%, QTc 550) render as even lining figures. */
 .ecw .article-content p,
 .ecw .article-content li {
   font-size: 18px;
-  line-height: 1.95;                  /* round-4: 1.85 → 1.95 (more breathing) */
-  font-feature-settings: "ss01", "onum", "kern";
+  line-height: 1.82;
+  font-feature-settings: "ss01", "kern";
 }
 .ecw .article-content p {
-  margin: 0 0 1.8em;                  /* round-4: explicit paragraph spacing */
+  margin: 0 0 1.2em;
 }
 .ecw .article-content ul,
 .ecw .article-content ol {
-  margin: 1.4em 0 1.8em;
+  margin: 1.2em 0 1.4em;
 }
 .ecw .article-content ul li,
 .ecw .article-content ol li {
-  margin-bottom: 10px;                /* round-4: 8 → 10px */
-  line-height: 1.85;
+  margin-bottom: 8px;
+  line-height: 1.78;
 }
 
-/* Section divider — turn raw <hr> into editorial chapter break with § mark */
+/* Section divider — round-5: § chapter mark removed (Latin editorial drama).
+ * A plain hairline is enough of a breather; the § stacked on top of the H2
+ * border-top was a double divider. */
 .ecw .article-content hr {
-  border: none;
-  margin: 56px 0 48px;
-  position: relative;
+  border: 0;
+  border-top: 1px solid var(--hairline-2);
+  height: 0;
+  margin: 32px 0;
 }
-.ecw .article-content hr::after {
-  content: '§';
-  display: block;
-  text-align: center;
-  font-family: 'Newsreader', serif;
-  font-size: 18px;
-  color: var(--accent);
-  letter-spacing: 0.2em;
-}
+.ecw .article-content hr::after { content: none; }
 
-/* H2 section heads — round-4: keep large 4em top to create chapter breaks
- * (Bear's perception "wall of text" wants MORE breathing, not less).
- * Add extra top padding so each section has its own visual stage. */
+/* H2 section heads — round-5: tightened from the 4em "sky".
+ * Section breaks now come from ONE mechanism — the H2 hairline + 編號 —
+ * so the page stops reading as a stretched-open wall of text. */
 .ecw .article-content h2 {
-  margin-top: 4em;
-  margin-bottom: 1em;
-  padding-top: 40px;
+  margin-top: 2.4em;
+  margin-bottom: 0.7em;
+  padding-top: 26px;
 }
 
 /* Article-end CTA — return to overview + next-issue link (round-3 structure review) */
@@ -1193,6 +1186,37 @@ body.ecw { min-height: 100vh; }
 }
 .ecw .refs li i { font-style: italic; color: var(--muted); }
 
+/* ── Goldmark footnotes（「引用」區）— round-5 ──────────────────────────
+ * These inherit 18px body size and expand into a second article; drop two
+ * levels so the citations read as an appendix, not a follow-up essay. */
+.ecw .article-content .footnotes {
+  font-size: 14px;
+  margin-top: 8px;
+}
+.ecw .article-content .footnotes hr {
+  display: none;                   /* the 引用 H2 already separates it */
+}
+.ecw .article-content .footnotes ol { padding-left: 20px; }
+.ecw .article-content .footnotes li {
+  font-size: 14px;
+  margin: 0.4em 0;
+}
+.ecw .article-content .footnotes li p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-2);
+  font-family: 'Inter', 'Noto Sans TC', sans-serif;
+  margin: 0 0 0.4em;
+}
+.ecw .article-content .footnotes a { color: var(--muted); }
+.ecw .article-content .footnotes a:hover { color: var(--accent); }
+.ecw .footnote-backref { text-decoration: none; font-size: 12px; margin-left: 4px; }
+/* Adjacent footnote refs [^a][^b] rendered「12」— separate them into「1, 2」*/
+.ecw .article-content sup + sup::before {
+  content: ", ";
+  color: var(--muted);
+}
+
 /* 列表頁 rail 「本週各源新增」 stat list */
 .ecw .source-stat-list {
   display: flex;
@@ -1326,16 +1350,30 @@ body.ecw { min-height: 100vh; }
   padding: 0 32px;
 }
 
+/* round-5: symmetric side columns so the 680px article sits dead-centre.
+ * Was `200px 1fr 220px` — the empty left column + wide flexing middle made
+ * the page read left-heavy. minmax(0,1fr) on the middle stops long URLs /
+ * footnotes from blowing the track out. */
 .ecw .layout-article {
   display: grid;
-  grid-template-columns: 200px 1fr 220px;
+  grid-template-columns: 240px minmax(0, 1fr) 240px;
   gap: 48px;
-  max-width: 1180px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 40px;
   align-items: start;
 }
 .ecw .layout-article .left { padding-top: 80px; }
+/* Below 1080 the TOC gives way to the reading column (was only 760). */
+@media (max-width: 1080px) {
+  .ecw .layout-article {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding: 0 24px;
+  }
+  .ecw .layout-article .left,
+  .ecw .layout-article .right { display: none; }
+}
 .ecw .layout-article .right {
   padding-top: 80px;
   position: sticky;
@@ -1445,9 +1483,9 @@ body.ecw { min-height: 100vh; }
 
 /* ── Tier-1：本週臨床改動卡 ─────────────────────────────────────────── */
 .ecw .practice-changes {
-  border: 1.5px solid var(--accent);
+  border: 1px solid var(--accent);
   background: var(--accent-bg);
-  border-radius: 12px;
+  border-radius: 4px;
   padding: 22px 24px;
   margin: 32px 0 40px;
 }
@@ -1510,12 +1548,13 @@ body.ecw { min-height: 100vh; }
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  padding: 2px 8px;
-  border-radius: 100px;
-  background: var(--hairline-2);
-  border: 1px solid var(--hairline);
+  font-family: 'Inter', 'Noto Sans TC', sans-serif;
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  padding: 0;
+  background: transparent;         /* round-5: was a grey pill — it read as a UI button
+                                    * inside serif prose; evidence grade is a note, not a control. */
+  border: 0;
   color: var(--muted);
   vertical-align: middle;
   white-space: nowrap;
@@ -1534,35 +1573,35 @@ body.ecw { min-height: 100vh; }
 .ecw .ev-chip.opinion::before { background: var(--muted); }
 
 /* ── 標註式外連（版權不能轉載時）──────────────────────────────────── */
+/* round-5: was a beige ticket-stub card with a punched perforation strip —
+ * too much UI texture per section. Now a quiet left-rule epigraph so the page
+ * card vocabulary stays within「紫框卡(Tier-1)＋左線題詞＋hairline」. */
 .ecw .ecg-linkout {
-  border: 1px solid var(--hairline);
-  border-radius: 10px;
-  background: var(--code-bg);
-  margin: 20px 0;
+  border: 0;
+  border-left: 2px solid var(--accent);
+  border-radius: 0;
+  background: transparent;
+  margin: 24px 0 28px;
   overflow: hidden;
 }
-.ecw .ecg-linkout .elo-strip {
-  height: 8px;
-  background: repeating-linear-gradient(90deg, transparent 0 13px, var(--hairline) 13px 14px);
-  border-bottom: 1px solid var(--hairline);
-}
+.ecw .ecg-linkout .elo-strip { display: none; }
 .ecw .ecg-linkout .elo-body {
-  padding: 14px 16px;
+  padding: 2px 0 2px 18px;
   display: flex;
-  gap: 14px;
+  gap: 12px;
 }
 .ecw .ecg-linkout .elo-ic {
   color: var(--accent);
-  font-size: 20px;
-  line-height: 1.4;
+  font-size: 18px;
+  line-height: 1.5;
   flex: 0 0 auto;
 }
 .ecw .ecg-linkout .elo-anno {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ink-2);
 }
-.ecw .ecg-linkout .elo-anno b { color: var(--accent); font-weight: 600; }
+.ecw .ecg-linkout .elo-anno b { color: var(--ink); font-weight: 600; }
 .ecw .ecg-linkout .elo-link {
   font-family: 'Inter', sans-serif;
   font-size: 12px;
