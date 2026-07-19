@@ -227,12 +227,11 @@ body.ecw { min-height: 100vh; }
   border-top: 1px solid var(--accent);
   border-bottom: 1px solid var(--accent);
   text-wrap: balance;
-  /* Break out of .article max-width 680 → up to 920 */
-  width: min(920px, calc(100vw - 64px));
-  max-width: 920px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  /* round-6: was viewport-centred breakout (left:50%/translateX) — that only
+   * aligns when the article is viewport-centred, which it no longer is.
+   * Full content-column width instead; still visually distinct via the rules. */
+  width: auto;
+  max-width: none;
   text-align: left;
 }
 .ecw blockquote::before {
@@ -847,7 +846,7 @@ body.ecw { min-height: 100vh; }
  *        pairing — serif H1 + sans deck so they don't compete)
  * Drop cap = 72px serif for editorial drama */
 .ecw .article {
-  max-width: 680px;
+  max-width: 820px;              /* round-6: 680 → 820, wider column (was reading as a thin strip) */
   margin: 0 auto;
   padding: 56px 0 96px;
 }
@@ -1350,28 +1349,28 @@ body.ecw { min-height: 100vh; }
   padding: 0 32px;
 }
 
-/* round-5: symmetric side columns so the 680px article sits dead-centre.
- * Was `200px 1fr 220px` — the empty left column + wide flexing middle made
- * the page read left-heavy. minmax(0,1fr) on the middle stops long URLs /
- * footnotes from blowing the track out. */
+/* round-6: content + right-TOC pair, no empty left gutter.
+ * round-5 centred the 680 article between two empty side columns — on wide
+ * screens that read as a thin strip floating in whitespace. Now the reading
+ * column is wider (820) and left-anchored to the outer margin; the pair is
+ * centred as a block, so the content actually uses the horizontal space. */
 .ecw .layout-article {
   display: grid;
-  grid-template-columns: 240px minmax(0, 1fr) 240px;
-  gap: 48px;
-  max-width: 1240px;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 64px;
+  max-width: 1220px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 48px;
   align-items: start;
 }
-.ecw .layout-article .left { padding-top: 80px; }
-/* Below 1080 the TOC gives way to the reading column (was only 760). */
+.ecw .layout-article .left { display: none; }   /* round-6: empty spacer dropped */
+/* Below 1080 the TOC gives way to the reading column. */
 @media (max-width: 1080px) {
   .ecw .layout-article {
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
     padding: 0 24px;
   }
-  .ecw .layout-article .left,
   .ecw .layout-article .right { display: none; }
 }
 .ecw .layout-article .right {
