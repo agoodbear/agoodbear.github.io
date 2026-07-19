@@ -26,7 +26,7 @@
     </div>
 
     <h1 class="article-title">{{ .Title }}</h1>
-    {{ with .Params.subtitle }}<p class="article-sub">{{ . | safeHTML }}</p>{{ end }}
+    {{ with .Params.subtitle }}<p class="article-sub">{{ . | replaceRE `^_+|_+$` "" | safeHTML }}</p>{{ end }}
 
     <div class="article-meta">
       <span>{{ .Date.Format "2006-01-02" }} 發布</span>

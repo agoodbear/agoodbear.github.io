@@ -51,7 +51,7 @@
       </div>
       <div>
         <h2 class="head" style="margin-top: 0;"><a href="{{ .RelPermalink }}" style="text-decoration: none; color: inherit;">{{ .Params.shortTitle | default .Title }}</a></h2>
-        {{ with .Params.subtitle }}<p style="font-family: 'Newsreader', serif; font-style: italic; font-size: 16px; color: var(--ink-2); margin: 6px 0 0;">{{ . }}</p>{{ end }}
+        {{ with .Params.subtitle }}<p style="font-family: 'Noto Serif TC', 'Newsreader', serif; font-size: 16px; line-height: 1.55; color: var(--ink-2); margin: 6px 0 0;">{{ . | replaceRE `^_+|_+$` "" }}</p>{{ end }}
         <div class="meta">
           <span>{{ .Date.Format "2006-01-02" }}</span>
           {{ with .Params.readingTime }}<span class="dot"></span><span>{{ . }}閱讀</span>{{ end }}

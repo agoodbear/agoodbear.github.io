@@ -79,17 +79,27 @@
     apIO.observe(appendix);
   }
 
-  // ─── 「**標題**：內文」段落升級成 sub-heading ──────────────────────────
+  // ─── 「**標題：**內文」段落升級成 kicker（round-5 修）───────────────────
+  // 舊版只認「冒號在 <strong> 外」，但全刊實際都寫成 **為什麼要在意：**
+  // （冒號在 strong 內），導致這套掃讀結構全站失效。兩種寫法都支援。
   document.querySelectorAll('.article-content p').forEach(function (p) {
     var first = p.firstChild;
     if (!first || first.tagName !== 'STRONG') return;
+    var label = first.textContent;
+    // 情況 A：冒號在 strong 內，例如 <strong>為什麼要在意：</strong>
+    if (/[：:]\s*$/.test(label)) {
+      // 標籤要短，避免把「整句粗體結尾剛好是冒號」誤判成 kicker
+      if (label.replace(/[：:]\s*$/, '').length > 14) return;
+      p.classList.add('para-with-title');
+      first.textContent = label.replace(/[：:]\s*$/, '');
+      return;
+    }
+    // 情況 B：冒號在 strong 外，例如 <strong>標籤</strong>：內文
     var next = first.nextSibling;
     if (!next || next.nodeType !== 3) return;        // text node
     var t = next.textContent;
-    // 必須以「：」（全形）或「:」（半形）開頭，且至少有一些內文跟著
     if (!/^[：:]\s*\S/.test(t)) return;
     p.classList.add('para-with-title');
-    // 把開頭的「：」吃掉（因為視覺上 strong 已成 sub-heading，不需要冒號）
     next.textContent = t.replace(/^[：:]\s*/, '');
   });
 
