@@ -1042,11 +1042,10 @@ body.ecw { min-height: 100vh; }
   margin-top: 96px;
   padding-top: 32px;
   border-top: 1px solid var(--hairline);
-  /* break out of .article max-width:720px */
-  width: min(1280px, calc(100vw - 64px));
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  /* round-6: was a viewport-centred breakout (width:min(1280..); left:50%;
+   * translateX(-50%)). Once the article stopped being viewport-centred that
+   * pushed the block to left:-79px on old issues. Sit within the column. */
+  width: auto;
 }
 .ecw .sources-title {
   font-size: 12px;
@@ -1067,7 +1066,7 @@ body.ecw { min-height: 100vh; }
 }
 .ecw .sources-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));   /* round-6: adapt to the reading column width */
   gap: 16px;
 }
 .ecw .source-card {
