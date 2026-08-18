@@ -24,6 +24,7 @@ tags:
 .gs-fig figcaption{font-size:.9em;color:#777;margin-top:.5em;line-height:1.6}
 .gs-wide{max-width:860px}
 .article-body .gs-fig{margin-left:auto;margin-right:auto}
+.gs-fig iframe{width:100%;border:0;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.15);display:block}
 .article-body .gs-pair{width:min(1180px,94vw);max-width:none;margin-left:50%;transform:translateX(-50%)}
 .gs-tall{max-width:420px}
 .video{max-width:900px;margin:1.9em auto;padding-bottom:0;height:auto;position:static}
@@ -179,7 +180,13 @@ AI 算出來的是一組經緯度，但那組經緯度不一定在你走得到�
 
 <figure class="gs-fig gs-tall"><img src="/images/guishan-sunrise/p06-two-sons.jpg" alt="兩個孩子在海灘上拍照"><figcaption>05:14</figcaption></figure>
 
-快到時間，我把 AI 做的那頁現場單打開來看。那頁我放在這裡，可以自己拉日期、位置、時間看看：[龜山朝日現場單](https://claude.ai/code/artifact/119e7de7-3f67-47f7-9f6d-de4125920054)。
+快到時間，我把 AI 做的那頁現場單打開來看。
+
+那頁裡最好玩的一塊我搬下來了。選地點、拉日期、沿海岸線南北移動、再拉時間，上面那條天際線和太陽會跟著動，右邊會告訴你這一刻太陽從島的哪個部位冒出來。整頁完整版在這裡：[龜山朝日現場單](https://claude.ai/code/artifact/119e7de7-3f67-47f7-9f6d-de4125920054)。
+
+<figure class="gs-fig gs-wide"><iframe id="gs-lab-frame" src="/tools/guishan-lab.html" title="日出方位實驗室" loading="lazy" scrolling="no" style="height:1480px"></iframe><figcaption>拉拉看。台２線可以走進海灘的三個點都在裡面，壯圍沙丘那個不管哪一天都排不出來</figcaption></figure>
+
+<script>(function(){var f=document.getElementById("gs-lab-frame");if(!f)return;function set(h){if(h>200)f.style.height=(h+8)+"px";}function fit(){try{set(f.contentDocument.documentElement.scrollHeight);}catch(e){}}window.addEventListener("message",function(e){var h=e.data&&e.data.gsLabHeight;if(h)set(h);});f.addEventListener("load",fit);window.addEventListener("resize",fit);setTimeout(fit,600);setTimeout(fit,2000);})();</script>
 
 <figure class="gs-fig gs-tall"><video src="/videos/guishan-sunrise/04-fieldcard.mp4" poster="/images/guishan-sunrise/poster-04-fieldcard.jpg" autoplay muted loop playsinline preload="none"></video><figcaption>05:33 手機上的現場單：站位座標、面向 75.0 度、首光 05:34:10，還有一張算出來的天際線</figcaption></figure>
 
