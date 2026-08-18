@@ -5,6 +5,7 @@
 .gs-fig figcaption{font-size:.9em;color:#777;margin-top:.5em;line-height:1.6}
 .gs-wide{max-width:860px}
 .article-body .gs-fig{margin-left:auto;margin-right:auto}
+.gs-fig iframe{width:100%;border:0;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.15);display:block}
 .article-body .gs-pair{width:min(1180px,94vw);max-width:none;margin-left:50%;transform:translateX(-50%)}
 .gs-tall{max-width:420px}
 .video{max-width:900px;margin:1.9em auto;padding-bottom:0;height:auto;position:static}
