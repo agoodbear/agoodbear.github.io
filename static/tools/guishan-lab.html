@@ -443,11 +443,23 @@
     .keys .key:first-child { grid-column: 1 / -1; }
   }
 
-/* 嵌入用：去掉頁面級留白，只留實驗室本身 */
+/* ---------- 嵌入用：去頁面留白，並改成畫面在左、滑軌在右 ---------- */
 body{margin:0;padding:0;background:var(--ground)}
 main{max-width:none;margin:0;padding:14px}
-#lab{margin:0}
-#lab>h2{margin-top:0}
+#lab{margin:0;width:auto;display:flex;flex-direction:column;gap:1rem}
+#lab>h2{margin-top:0;order:1;font-size:1.05rem}
+#lab>.sitepick{order:2}
+#lab>.labgrid{order:3}
+#lab>.note{order:9;max-width:none;margin:0;padding-top:.2rem;border-top:1px solid var(--line)}
+@media (min-width:64rem){
+  /* 左欄：看的東西在最上面，數字接在下面，全年色帶收到最後 */
+  .labmain{display:flex;flex-direction:column}
+  .labmain>.stage{order:1}
+  .labmain>.readout{order:2}
+  .labmain>.year{order:3}
+  /* 右欄：拉的東西，捲動時跟著釘住 */
+  .labside{position:sticky;top:.6rem}
+}
 </style></head>
 <body><main><section id="lab">
     <h2>日出方位實驗室</h2>
