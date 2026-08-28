@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 640" width="880" height="640" role="img" aria-label="SlideCue 語音跟隨流程圖：聲音從眼鏡麥克風經手機送到 Mac，辨識與對齊都在 Mac 完成，只把行號送回眼鏡；下半說明如何用最後十六個字比對出念到第幾行">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2f6f4f"/>
+    </marker>
+    <marker id="ar-o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c2680f"/>
+    </marker>
+    <marker id="ar-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8a97a0"/>
+    </marker>
+    <style>
+      .t{font-family:'Noto Sans TC','PingFang TC',-apple-system,'Helvetica Neue',sans-serif}
+      .hd{font-size:17px;font-weight:700;fill:#1f2d24}
+      .bx{font-size:15px;font-weight:600;fill:#22432f}
+      .sub{font-size:12.5px;fill:#5c6b73}
+      .lbl{font-size:12.5px;font-weight:600;fill:#2f6f4f}
+      .lblo{font-size:13px;font-weight:700;fill:#c2680f}
+      .note{font-size:12.5px;fill:#5c6b73}
+      .num{font-size:15px;font-weight:700;fill:#c2680f}
+    </style>
+  </defs>
+  <rect width="880" height="640" fill="#ffffff"/>
+
+  <!-- ── 第一段：訊號路徑 ── -->
+  <text class="t hd" x="40" y="34">① 聲音跑一圈，回來的只有一個數字</text>
+
+  <g class="t">
+    <rect x="40" y="58" width="212" height="78" rx="11" fill="#f5faf7" stroke="#2f6f4f" stroke-width="2"/>
+    <text class="bx" x="146" y="89" text-anchor="middle">G2 眼鏡</text>
+    <text class="sub" x="146" y="112" text-anchor="middle">麥克風收音（它永遠在臉上）</text>
+
+    <rect x="334" y="58" width="212" height="78" rx="11" fill="#f5faf7" stroke="#2f6f4f" stroke-width="2"/>
+    <text class="bx" x="440" y="89" text-anchor="middle">手機</text>
+    <text class="sub" x="440" y="112" text-anchor="middle">只負責轉送，不做辨識</text>
+
+    <rect x="628" y="58" width="212" height="78" rx="11" fill="#f5faf7" stroke="#2f6f4f" stroke-width="2"/>
+    <text class="bx" x="734" y="89" text-anchor="middle">Mac</text>
+    <text class="sub" x="734" y="112" text-anchor="middle">辨識與對齊都在這裡做完</text>
+
+    <line x1="252" y1="97" x2="326" y2="97" stroke="#2f6f4f" stroke-width="2" marker-end="url(#ar)"/>
+    <text class="lbl" x="289" y="88" text-anchor="middle">藍牙</text>
+
+    <line x1="546" y1="97" x2="620" y2="97" stroke="#2f6f4f" stroke-width="2" marker-end="url(#ar)"/>
+    <text class="lbl" x="583" y="88" text-anchor="middle">Wi-Fi</text>
+
+    <line x1="734" y1="136" x2="734" y2="168" stroke="#2f6f4f" stroke-width="2" marker-end="url(#ar)"/>
+    <rect x="600" y="170" width="240" height="60" rx="10" fill="#eef6f1" stroke="#2f6f4f" stroke-width="2"/>
+    <text class="bx" x="720" y="196" text-anchor="middle">whisper 辨識 ＋ 對齊</text>
+    <text class="sub" x="720" y="217" text-anchor="middle">整份講稿當成提示詞餵進去</text>
+
+    <!-- 回程 -->
+    <path d="M600,200 L146,200 L146,140" fill="none" stroke="#c2680f" stroke-width="2.5" stroke-dasharray="7 4" marker-end="url(#ar-o)"/>
+    <rect x="272" y="178" width="248" height="30" rx="8" fill="#fff8f0" stroke="#c2680f" stroke-width="1.5"/>
+    <text class="lblo" x="396" y="198" text-anchor="middle">只回傳一個數字：第 N 行</text>
+  </g>
+
+  <text class="t note" x="40" y="258">鏡片不需要知道我在講什麼，它只要把箭頭移到那一行。</text>
+  <text class="t note" x="40" y="280">斷行是眼鏡端算的（韌體會自己換行，只有它知道斷在哪），開麥的那一刻送給 Mac，對齊才有依據。</text>
+
+  <line x1="40" y1="308" x2="840" y2="308" stroke="#e2e8e5" stroke-width="1.5"/>
+
+  <!-- ── 第二段：怎麼算出第幾行 ── -->
+  <text class="t hd" x="40" y="348">② Mac 上怎麼算出我念到第幾行</text>
+
+  <g class="t">
+    <rect x="40" y="374" width="228" height="74" rx="11" fill="#f5faf7" stroke="#2f6f4f" stroke-width="2"/>
+    <text class="bx" x="154" y="404" text-anchor="middle">取聽到的最後 16 字</text>
+    <text class="sub" x="154" y="427" text-anchor="middle">「現在」念到哪才是重點</text>
+
+    <rect x="326" y="374" width="228" height="74" rx="11" fill="#f5faf7" stroke="#2f6f4f" stroke-width="2"/>
+    <text class="bx" x="440" y="404" text-anchor="middle">拆成相鄰兩字一組</text>
+    <text class="sub" x="440" y="427" text-anchor="middle">聽錯一兩個字不影響定位</text>
+
+    <rect x="612" y="374" width="228" height="74" rx="11" fill="#f5faf7" stroke="#2f6f4f" stroke-width="2"/>
+    <text class="bx" x="726" y="404" text-anchor="middle">跟往後 3 行算重疊率</text>
+    <text class="sub" x="726" y="427" text-anchor="middle">從目前這行起算，只往前看</text>
+
+    <line x1="268" y1="411" x2="318" y2="411" stroke="#2f6f4f" stroke-width="2" marker-end="url(#ar)"/>
+    <line x1="554" y1="411" x2="604" y2="411" stroke="#2f6f4f" stroke-width="2" marker-end="url(#ar)"/>
+
+    <!-- 分岔 -->
+    <path d="M726,448 L726,478 L336,478 L336,502" fill="none" stroke="#2f6f4f" stroke-width="2" marker-end="url(#ar)"/>
+    <path d="M726,478 L726,502" fill="none" stroke="#8a97a0" stroke-width="2" marker-end="url(#ar-g)"/>
+
+    <rect x="196" y="504" width="280" height="66" rx="11" fill="#eef6f1" stroke="#2f6f4f" stroke-width="2"/>
+    <text class="bx" x="336" y="532" text-anchor="middle">最高分 <tspan class="num" fill="#2f6f4f">≥ 0.3</tspan></text>
+    <text class="sub" x="336" y="554" text-anchor="middle">箭頭移到那一行</text>
+
+    <rect x="586" y="504" width="280" height="66" rx="11" fill="#f6f7f8" stroke="#8a97a0" stroke-width="2"/>
+    <text class="bx" x="726" y="532" text-anchor="middle" fill="#4a565e">最高分 <tspan class="num" fill="#4a565e">&lt; 0.3</tspan></text>
+    <text class="sub" x="726" y="554" text-anchor="middle">原地不動</text>
+  </g>
+
+  <text class="t note" x="40" y="600">寧可不動，不可跳錯：箭頭停在原地我還讀得下去，跳錯地方會當場斷片。</text>
+  <text class="t note" x="40" y="622">也只往前不回頭，因為講稿裡「心電圖」「這位病人」一直重複，允許回頭比對箭頭就會來回亂跳。</text>
+</svg>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>演講 on 急診熊心聲部落格</title><link>https://agoodbear.github.io/tags/%E6%BC%94%E8%AC%9B/</link><description>Recent content in 演講 on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Fri, 28 Aug 2026 09:30:00 +0800</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/%E6%BC%94%E8%AC%9B/index.xml" rel="self" type="application/rss+xml"/><item><title>把講稿搬到聽眾臉旁邊：我做了一個 G2 眼鏡外掛 SlideCue，然後它上架了</title><link>https://agoodbear.github.io/post/study-post-10/</link><pubDate>Fri, 28 Aug 2026 09:30:00 +0800</pubDate><guid>https://agoodbear.github.io/post/study-post-10/</guid><description>
+&lt;style&gt;
+.sc-fig{margin:1.8em auto;max-width:720px;text-align:center}
+.sc-fig img{width:100%;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+.sc-fig figcaption{font-size:.9em;color:#777;margin-top:.6em;line-height:1.7}
+.sc-fig.sc-wide{max-width:900px}
+.sc-fig.sc-wide img{border-radius:8px;box-shadow:0 1px 8px rgba(0,0,0,.10)}
+.sc-flow{display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:.5em;margin:1.8em auto;max-width:760px}
+.sc-flow .box{flex:1 1 180px;border:2px solid #2f6f4f;border-radius:10px;padding:.9em 1em;background:#f5faf7}
+.sc-flow .box b{display:block;font-size:1.02em;margin-bottom:.35em;color:#2f6f4f}
+.sc-flow .box span{font-size:.88em;color:#555;line-height:1.6}
+.sc-flow .arrow{align-self:center;font-size:1.3em;color:#2f6f4f}
+@media (max-width:600px){.sc-flow{flex-direction:column}.sc-flow .arrow{transform:rotate(90deg)}}
+&lt;/style&gt;
+&lt;p&gt;我最近在整理一份 ACLS 的講稿，120 張投影片、將近三萬字，全部寫在 Keynote 的講者附註裡。上課時我習慣把筆電擺在講桌上，每講完一段就轉頭去瞄一眼下一段要說什麼。&lt;/p&gt;
+&lt;p&gt;轉頭這個動作很小，小到聽的人未必說得出哪裡怪，但它每一次都把我跟台下的連線切斷一次。低頭看稿更明顯，你一低頭，全場都知道你在念稿。&lt;/p&gt;
+&lt;p&gt;我戴 Even Realities G2 一陣子了。它的字是投影在鏡片上的，看出去像一塊懸在正前方兩公尺處的字幕，不擋人臉。第一次戴上去我就在想：講稿如果出現在這個位置，那個轉頭的動作就不必存在了。&lt;/p&gt;
+&lt;h2 id="官方已經有提詞功能但它不知道我翻到第幾張"&gt;官方已經有提詞功能，但它不知道我翻到第幾張&lt;/h2&gt;
+&lt;p&gt;Even 內建了 Teleprompt，可以把一整份文字丟上鏡片，用語速自動捲動或用 R1 戒指手動推進。這是第一方功能，免費、不必接電腦，做得也很完整。&lt;/p&gt;
+&lt;p&gt;問題是它跟投影片是兩條各走各的線。你得先把稿子貼進去，然後在台上同時管兩件事：投影片翻到哪、稿子捲到哪。只要有一次不同步（臨時跳過一張、回頭補一句），接下來整場都在找位置。&lt;/p&gt;
+&lt;p&gt;而那份講稿，本來就寫在 Keynote 的講者附註裡。我要的其實只有一句話：&lt;strong&gt;翻到第幾張，就顯示第幾張的附註&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;盤點過同類型的東西，Google Slides 有人做過類似的（powerslides），Android 上有離線提詞機（whisprompt），但把「翻頁」和「講稿行號」綁在一起的，當時找不到。那就自己做。&lt;/p&gt;
+&lt;figure class="sc-fig"&gt;
+&lt;img src="https://agoodbear.github.io/images/slidecue/lens-prompter.png" alt="SlideCue 在 G2 鏡片上的提詞畫面：上排四格顯示現在時刻、授課時間、下課倒數與講稿分頁，下方是講稿內文與指示行的箭頭"&gt;
+&lt;figcaption&gt;鏡片上實際的樣子。上排是現在時刻、已經講了多久、離結束還剩多久；左側箭頭指著正在念的那一行。實際鏡片是單色綠、576 × 288 像素。&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id="卡住的地方是眼鏡看不到我的電腦"&gt;卡住的地方是：眼鏡看不到我的電腦&lt;/h2&gt;
+&lt;p&gt;這個東西之所以要做一個星期而不是一個晚上，關鍵在架構。&lt;/p&gt;</description></item></channel></rss>
