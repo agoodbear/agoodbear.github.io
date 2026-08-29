@@ -160,6 +160,54 @@ iOS版本: [下載連結](https://apps.apple.com/us/app/omi-toolbox/id6443695985
 
 ![](../static/images/ipic/lcpf0j.png)
 
+---
+
+## <mark style="background-color: lightblue">2024/5/31 專師進階教育-專師必須掌握的五大ECG重點</mark>
+
+![](../static/images/ipic/lecture-2024-05-31-acs-ecg.jpg)
+
+---
+
+## <mark style="background-color: lightblue">2024/7/23 專師進階教育-手把手成為ECG拆彈專家</mark>
+
+![](../static/images/ipic/lecture-2024-07-23-ecg-bomb.jpg)
+
+---
+
+## <mark style="background-color: lightblue">2025/5/22 奇美醫院住院醫師教學日-什麼是OMI?</mark>
+
+![](../static/images/ipic/lecture-2025-05-22-chimei-omi.jpg)
+
+---
+
+## <mark style="background-color: lightblue">2025/6/30 專師進階教育-健身之路：從動機、訓練選擇到極限挑戰</mark>
+
+![](../static/images/ipic/lecture-2025-06-30-fitness.jpg)
+
+---
+
+## <mark style="background-color: lightblue">2025/10/21 台灣專科護理師學會-專科護理師考試心電圖重點指引</mark>
+
+![](../static/images/ipic/lecture-2025-10-21-np-exam-ecg.png)
+
+---
+
+## <mark style="background-color: lightblue">2026/3/16 台灣專科護理師學會-專科護理師考試心電圖重點指引（改版）</mark>
+
+![](../static/images/ipic/lecture-2026-03-16-np-exam-ecg.png)
+
+---
+
+## <mark style="background-color: lightblue">2026/5/5 專師進階教育-心電圖基本判讀、正常與異常</mark>
+
+![](../static/images/ipic/lecture-2026-05-05-ecg-basic.jpg)
+
+---
+
+## <mark style="background-color: lightblue">2026/6/30 專師進階教育-心電圖進階應用</mark>
+
+![](../static/images/ipic/lecture-2026-06-30-ecg-advanced.jpg)
+
 
 
 # <mark>攝影熊眼</mark>
