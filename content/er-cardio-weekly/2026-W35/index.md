@@ -1,0 +1,204 @@
+---
+title: "電不下來的心搏過速，不是電得不夠"
+subtitle: "_腺苷 12 毫克推兩次、200 焦耳電兩次都沒把它壓下來——這件事本身就是答案：電擊只終止折返，電不下來代表這個快不是問題本身，而是別的東西在驅動它。本週另外三張卡（一張被兩位醫師簽過名的漏診、一個只在陽性端有價值的 AI、以及一個不等於中風被處理的左心耳封堵）講的其實是同一件事——你手上那個標籤，正在替你結束思考。_"
+shortTitle: "電不下來就別再電"
+slug: "2026-W35"
+week: "2026-W35"
+weekRange: "2026-08-24 — 2026-08-30"
+date: 2026-08-30T10:00:06+08:00
+coreTime: "3 分鐘"
+fullTime: "12 分鐘"
+readingTime: "12 分鐘"
+scanned: 191
+picked: 4
+tags: ["OMI", "電生理", "Resus"]
+practiceChanges:
+  - text: "腺苷兩次無效、電擊整流兩次也無效的規則心搏過速，**停止再加焦耳**——電擊只終止折返；電不下來或電完立刻恢復，代表這是自律性節律，該找的是驅動它的病因不是更大的能量"
+    source: "Smith ECG Blog 8-23"
+    href: "https://drsmithsecgblog.com/12-mg-of-adenosine-x-2-did-not-work-and-neither-did-electrical-cardioversion-at-200j-x-2/"
+  - text: "心室率貼近 150 的規則窄 QRS 心搏過速，**先假設是心房撲動直到排除**：增益調兩倍看 V1 與 II，腺苷用來揭露心房活動、不是用來轉復"
+    source: "ECG Weekly 8-24（UMMC Part IV）"
+    href: "https://ecgweekly.com/weekly-workout/ummc-cases-part-iv-two-easily-missed-ecg-diagnoses/"
+  - text: "**電腦判讀那一行，在你自己讀完之前先蓋住**——本週那張被急診醫師與心臟科醫師雙雙接受的圖，漏掉的是藏在 T 波裡的心房活動"
+    source: "ECG Weekly 8-24（UMMC Part IV）"
+    href: "https://ecgweekly.com/weekly-workout/ummc-cases-part-iv-two-easily-missed-ecg-diagnoses/"
+  - text: "**AI 心電圖只用在陽性端加碼、不用在陰性端減碼**——大會前瞻資料顯示 AI 陽性的 NSTEMI 校正後心血管死亡風險比 2.45（GRACE >140 之外的增益），但同一工具在未篩選胸痛族群的敏感度只有 52%"
+    source: "ESC 2026 大會發表 ＋ JACEP Open 瑞典驗證"
+    href: "https://pubmed.ncbi.nlm.nih.gov/42614578/"
+  - text: "病歷寫「心房顫動 s/p 左心耳封堵」時，**讀成「出血風險被處理了、中風風險沒有」**——本月兩份獨立統合分析都顯示缺血性中風反而較高（IRR 1.34／RR 1.41）"
+    source: "JAMA Cardiology 8-26（Laudani 等）"
+    href: "https://doi.org/10.1001/jamacardio.2026.2640"
+sections:
+  - { id: "changes", num: "▲", title: "本週改動" }
+  - { id: "s1",  num: "01", title: "電不下來就不是折返" }
+  - { id: "s2",  num: "02", title: "兩位醫師都簽過名" }
+  - { id: "s3",  num: "03", title: "AI 只在陽性端加碼" }
+  - { id: "s4",  num: "04", title: "封堵不等於處理好" }
+  - { id: "more", num: "▾", title: "延伸與出處" }
+---
+
+## 腺苷不動、電擊也不動，這件事本身就是診斷 {#s1}
+
+{{< ecg-linkout href="https://drsmithsecgblog.com/12-mg-of-adenosine-x-2-did-not-work-and-neither-did-electrical-cardioversion-at-200j-x-2/#:~:text=60-something%20with%20dyspnea" anno="看這張圖之前先把三個問題準備好：<b>心率有沒有超過這個年齡的竇性上限</b>（粗估 220 − 年齡）、<b>它是完全規則還是規則得「太完美」</b>、<b>把增益調高之後 T 波裡有沒有多出來的東西</b>。這三題的答案決定你要再打一次電，還是去找病人身上那個把心跳推上去的東西" linktext="到 Smith 部落格看這張圖與後續 ↗" >}}
+
+**是什麼：** Smith 心電圖部落格（Dr. Smith's ECG Blog）8-23：一位 60 多歲、以呼吸困難就診的病人，腺苷 12 毫克推了兩次沒有反應，200 焦耳電擊整流打了兩次也沒有把節律轉回來。標題就是整篇的題目。[^smith-adenosine-08-23]
+
+**為什麼要在意：** 多數人讀到這裡的直覺是「難治型」，然後開始想第三次電擊、想能量、想抗心律不整藥。這個方向本身就是錯的。
+
+<mark>電擊整流能終止的只有折返性心律</mark>——房室結迴路頻脈、房室迴路頻脈、心房撲動、心房顫動、心室頻脈。它的作用機轉是同時去極化整片心肌、把折返環路裡的可興奮間隙抹掉。對於自律性（automatic）節律——竇性心搏過速、自律性心房頻脈、多源性心房頻脈、交界性頻脈——沒有環路可以打斷，那個焦點在電擊後的第一拍就會恢復發放。
+
+所以<mark>電不下來、或電完立刻恢復，這兩件事都在告訴你：這不是折返</mark>。同樣的道理適用於腺苷：房室結依賴的折返性心搏過速，12 毫克的終止率超過九成；兩次都失敗，等於這個節律的迴路不通過房室結。
+
+還有一個安全問題常被忽略：如果它其實是竇性心搏過速，那個高心率是病人維持心輸出的代償。把代償打掉，血壓會跟著掉。 {{< grade "案例 · 單例教學 · 觀點級" "opinion" >}}
+
+**所以呢：** 第三次電擊之前，先跑三個檢查。第一是技術面——腺苷有沒有快速推注加立刻沖水、靜脈管路夠不夠近端、病人有沒有在用茶鹼或大量咖啡因（會拮抗腺苷）；技術性失敗要先排除，才輪到診斷性失敗。第二是節律本身：把增益調高，找 P 波、找撲動波，並用 <mark>220 − 年齡</mark> 粗估這個年紀的竇性上限，明顯超過才輪得到自動節律以外的解釋。第三，也是這張卡真正的重點——**去找驅動因子**：敗血症、肺栓塞、低血容、出血、疼痛、甲狀腺、貧血、藥物。這位病人是以呼吸困難來的，這幾個選項一個都不能跳過。
+
+**台灣情境：** 台灣急診遇到規則心搏過速合併不穩，ACLS 流程會很快把人推向同步電擊，這在時間壓力下是合理的。真正需要補上的是**電擊失敗後的第二步該往哪走**：目前的預設是往上加能量、往抗心律不整藥走，而這份案例提醒的是往回走——回到病人身上找那個把心跳推高的原因。把「電擊失敗＝重新評估診斷」寫成一句口訣，比多背幾條能量建議實用。
+
+---
+
+## 一張被兩位醫師簽過名的漏診 {#s2}
+
+{{< ecg-linkout href="https://ecgweekly.com/weekly-workout/ummc-cases-part-iv-two-easily-missed-ecg-diagnoses/#:~:text=subtle%20atrial%20activity%20might%20be%20hiding" anno="這題的重點<b>不在 QRS，在 QRS 之間</b>：把注意力放在兩個 QRS 中間那段基線與 T 波，問「這個 T 波是不是比它應該有的樣子多了一點東西」；同時算一次心室率，<b>只要落在 145–155 就先假設心房在 300 左右</b>" linktext="到 ECG Weekly 看這組題目 ↗" >}}
+
+**是什麼：** ECG Weekly（心電圖週刊）8-24〈UMMC Cases Part IV: Two Easily Missed ECG Diagnoses〉：一位 73 歲女性因心悸與呼吸困難就診，心電圖是規則的窄 QRS 心搏過速，電腦判讀**同時被急診醫師與心臟科醫師接受**——而某個重要的東西被漏掉了。作者要讀者先回答三題：規則窄 QRS 心搏過速的鑑別診斷有哪些？在這個看起來很單純的節律裡，可能藏著什麼細微的心房活動？如果診斷仍不確定，有哪些簡單的床邊手法可以用？[^ecgweekly-ummc4-08-24]
+
+**為什麼要在意：** 這題有兩層，第二層是給系統的。
+
+第一層是形態學。規則窄 QRS 心搏過速裡，心房活動最常見的藏身處就是 T 波——<mark>心房撲動 2:1 傳導時，第二個撲動波正好落在 T 波上</mark>，讓 T 波看起來只是「高一點、尖一點、對稱一點」。心室率 150 附近是最危險的區段，因為它同時是竇性心搏過速的合理範圍、房室結迴路頻脈的常見範圍、以及心房撲動 2:1 的必然結果。
+
+第二層是「兩位醫師都接受了」這句話。<mark>電腦判讀是全院最強的錨</mark>：它先出現、它有權威外觀、而且第二位閱片者通常已經知道第一位怎麼看。這時第二個人提供的不是獨立驗證，而是社會性背書。診斷錯誤研究裡的定錨與從眾效應，在心電圖判讀上幾乎是教科書級的示範。 {{< grade "案例 · 教學題組 · 觀點級" "opinion" >}}
+
+**所以呢：** 三個床邊動作，都不需要設備。第一，**增益調兩倍**，重看 V1 與 II——這兩個導程對心房活動最敏感。第二，**心率落在 145–155 就假設是心房撲動**，直到你能證明不是。第三，不確定時把迷走刺激或腺苷當成**顯影劑而非治療**：目的是暫時拉長房室阻滯、讓心房活動露出來，而不是期待它轉復。
+
+還有一個閱片習慣值得建立：**先自己讀完再看電腦判讀與前手意見**。順序反過來，你得到的就不是第二意見，只是第一意見的複本。
+
+**台灣情境：** 台灣急診的心電圖，電腦判讀那一行印在紙張最上緣，是視線第一個落點，而且會被抄進病歷。這是全流程裡最強、也最便宜可解的錨。可行的作法很土：印出來之後先把最上面那一行摺起來，或用手蓋住，讀完自己的結論再放開。這個動作零成本，但它把「兩位醫師都簽過名」從一次背書變回兩次判讀。
+
+---
+
+## AI 心電圖只在陽性端加碼，不在陰性端減碼 {#s3}
+
+{{< ecg-linkout href="https://www.escardio.org/Congresses-Events/ESC-Congress" anno="這則的<b>證據狀態比數字更重要</b>：目前只有大會現場發表，沒有可供查核的全文。看的時候務必把兩組敏感度並排——<b>已歸類 NSTEMI 族群 83%</b> 對 <b>未篩選胸痛族群 52%</b>——差距來自族群篩選與盛行率，不是模型突然變強" linktext="到 ESC 大會官網查議程與摘要 ↗" >}}
+
+**是什麼：** 本週 ESC 2026 大會現場釋出的前瞻資料：在已被歸類為 NSTEMI 的病人中，Queen of Hearts 人工智慧心電圖模型判為陽性者，**即使在 GRACE 分數 >140 之外校正**，心血管死亡的校正風險比仍為 2.45；對血管攝影確認的閉塞型心肌梗塞，敏感度 83%、特異度 99%、陽性預測值 98%、陰性預測值 89%；在確診 NSTEMI 的族群中，AI 陽性者的峰值肌鈣蛋白約為陰性者的 2.5 倍，接受經皮冠狀動脈介入的比例為 80% 對 40%。同場另展示了 Queen of Hearts v3、肺栓塞與高血鉀偵測模型。[^esc2026-qoh-nstemi]
+
+**為什麼要在意：** 這則必須跟上週那份瑞典驗證一起讀，否則會被誤讀成相反的結論。
+
+上週的數字是：24,511 位未經篩選的急診胸痛病人，同一個模型的敏感度只有 52%。[^jacepo-qoh-swedish] 本週的數字是：在已經被歸類為 NSTEMI 的族群中，敏感度 83%、而且陽性帶有 GRACE 之外的預後增益。
+
+兩組數字不矛盾，但<mark>83% 對 52% 的落差幾乎全部來自族群篩選，不是模型變強</mark>。前者的病人已經通過肌鈣蛋白這一關、已經被醫師覺得可疑；後者是掛號進來的每一個胸痛。同一個工具在不同盛行率與不同轉介篩選下，表現會大幅移動——這是所有診斷測試的通則，不是這個模型的缺陷。
+
+第三個數字最值得停下來：介入比例 80% 對 40%。這個差距可以有兩種解釋，而它們的臨床意涵完全相反。<mark>它可能是「AI 陽性代表病人比較嚴重」，也可能是「AI 陽性改變了醫師的行為」</mark>——要分辨這兩者，需要的是隨機化，不是更大的世代。在非隨機資料裡，介入率差距同時是結果也是原因。
+
+還有一層是證據狀態：這些數字目前只有大會層級的發表，沒有同儕審查全文可供查核。 {{< grade "前瞻 · 大會發表 · 無同儕審查全文 · 初步級" "opinion" >}}
+
+**所以呢：** 兩條規則。第一，把 AI 心電圖的使用面收斂到單向——<mark>陽性可以當成升級處置的理由</mark>（提早跟心臟科討論、拉高監測層級、縮短連拍間隔），**陰性不能當成任何降級的理由**。上週那個 52% 就是為什麼。第二，在論文出版之前，不要把這些數字寫進科內流程文件或衛教資料；大會現場的數字在正式發表時被修正是常態，而流程文件一旦寫下去就很難撤回。
+
+**台灣情境：** 這類工具在台灣仍無健保給付路徑，短期內不會有。但這則真正可以帶回來的是那個 GRACE 的對照點——這份資料主打的優勢不是「比 GRACE 準」，而是**「第一張心電圖當下就有結果，不必等生化」**。台灣急診真正的瓶頸從來不是風險分數的鑑別度，而是從檢傷到決策之間那段等待。任何宣稱能改善急診決策的工具，第一個該被檢驗的問題都是「它把哪一段等待縮短了」，而不是「它的 C-index 是多少」。
+
+---
+
+## 左心耳封堵處理的是出血，不是中風 {#s4}
+
+{{< ecg-linkout href="https://doi.org/10.1001/jamacardio.2026.2640#:~:text=higher%20risk%20of%20ischemic%20stroke" anno="讀這份統合分析<b>不要只看主要終點</b>：任何中風（IRR 1.08）與大出血（IRR 0.96）都沒有差異，真正的訊號躲在兩個次要終點裡，而且方向相反——<b>缺血性中風 IRR 1.34</b>、<b>非手術相關大出血 IRR 0.73</b>" linktext="到 JAMA Cardiology 看完整統合分析 ↗" >}}
+
+**是什麼：** JAMA Cardiology（美國醫學會期刊：心臟學）8-26，Laudani C、Bujak K、Giacoppo D、Finocchiaro S 等：8 個隨機試驗、7,434 位心房顫動病人，加權平均追蹤 37.9 個月，比較導管式左心耳封堵（LAAC）與口服抗凝血劑（OAC）。任何中風（IRR 1.08，95% CI 0.82–1.41）與大出血（IRR 0.96，0.81–1.14）都沒有差異；但**缺血性中風較高**（IRR 1.34，1.01–1.77），**非手術相關大出血較低**（IRR 0.73，0.58–0.92）。手術本身每 1,000 人：5 次中風、9 次出血事件、1 死、5 次裝置栓塞、9 次心包積液。作者結論明確：這些資料不支持把左心耳封堵當成中度至高度中風風險心房顫動病人的第一線策略。[^jamacardio-laac-08-26]
+
+**為什麼要在意：** 五天前，Circulation: Arrhythmia and Electrophysiology（循環：心律不整與電生理）另一組人馬做了獨立的統合分析（6 個隨機試驗、7,004 人），方向完全一致：缺血性中風 RR 1.41（3.2% 對 2.1%），非手術相關大出血 RR 0.57（<mark>6.2% 對 10.7%</mark>）。[^circep-laac-08-21] 上一期只把它放在延伸區；當第二份獨立分析在五天內給出同方向的答案，它就從單一報告升級成一個可以據以修改預設的訊號。
+
+對急診而言，這改寫的是一句預設台詞：「這個心房顫動病人做過左心耳封堵，所以中風的部分已經處理好了」。<mark>兩份分析都顯示缺血性中風的風險是往上的，不是往下</mark>。這個裝置換到的東西在另一端——停掉抗凝血劑之後的長期出血下降。 {{< grade "統合分析 · 8 個隨機試驗 · n=7,434 · 高證據級" "rct" >}}
+
+**所以呢：** 三件事。第一，<mark>看到「AF s/p LAAC」不要調降中風的事前機率</mark>——有神經學症狀就照常走中風流程、照常算時間窗、照常影像。第二，這些病人多半已經停用口服抗凝血劑，這在急性缺血性中風的溶栓評估上反而是有利條件（少一個禁忌），值得在第一時間確認並記錄最後一次服藥時間與藥名。第三，封堵不等於心房顫動消失——速率控制、心律控制、心因性症狀的處置一律不變。
+
+**台灣情境：** 台灣的左心耳封堵量在近幾年成長，急診遇到「心房顫動 s/p LAAC」的頻率只會往上。病歷上這行字最常被讀成「中風風險已被處理」，而依這兩份統合分析，比較接近事實的讀法是**「出血風險被處理了，中風風險沒有，而且略高」**。這句話不需要新的檢查或新的流程，只需要換一個讀法——但它決定的是這位病人在急診前 30 分鐘被推去哪裡。
+
+---
+
+## 延伸與出處 {#more}
+
+### 這週四張卡的共同線
+
+上一期在講「每個工具都有結構性抓不到的那一半」。本週視窗（2026-08-24 — 2026-08-30）的四張卡則往前一步，指向那一半是怎麼被遮住的：**因為某個標籤先出現了，然後思考就停在那裡**。
+
+腺苷失敗被標成「難治型心搏過速」，於是往能量方向走，而不往病因方向走（卡 01）。電腦判讀被標成已讀，於是第二位醫師的獨立性消失（卡 02）。AI 判讀被標成一個二元結果，於是陽性與陰性被當成對稱的資訊（卡 03）。裝置被標成「已處理」，於是中風的事前機率被無聲地調低（卡 04）。
+
+四個場景的共同結構是：**標籤帶來的是一種結束感，而不是一個結論**。可操作的對策也一致——把「這個標籤是誰下的、根據什麼、可不可以被下一筆資料推翻」當成閱片與交班的固定問句。
+
+### 作者層本週無新索引
+
+L2 作者追蹤層本週沒有新的 PubMed 索引紀錄。Smith 與 Meyers 列名的瑞典 Queen of Hearts 驗證、McLaren 的急診心搏過慢品質指標、以及 Frick 與 Smith 的〈簡單性的錯覺〉都仍是最新一筆，三份都在上一期處理過。本週的新訊號全部來自部落格、期刊與大會端——這本身也是一個有用的訊號：**追蹤特定作者不能取代追蹤期刊與會議**。
+
+### European Heart Journal（歐洲心臟期刊）：53 萬人的模型，換一個國家掉了 0.14
+
+PRECISE-HF：英國初級照護 535,583 位因懷疑心衰竭而測 NT-proBNP 的病人，用 XGBoost 把 NT-proBNP 與年齡、性別、族裔、腎絲球過濾率、身體質量指數、收縮壓、貧血、利尿劑處方、心房顫動／糖尿病／心肌梗塞／慢性阻塞性肺病病史整合成個體化機率。內部驗證判別力 AUROC 0.896、Brier 分數 0.061；排除門檻敏感度 90.1%、陰性預測值 98.5%，可排除 64.8% 的病人。與 ESC 建議的固定門檻相比，每 1,000 人多排除 144 位、代價是 3 個漏診；納入端每 1,000 人少 73 個偽陽性。[^ehj-precise-hf]
+
+值得記住的是最後一欄：<mark>外部驗證（瑞典 REVOLUTION-HF 世代）的 AUROC 從 0.896 掉到 0.757</mark>。這個 0.14 的落差和卡 03 裡 83% 與 52% 的落差是同一件事的兩個版本——**內部數字是模型的上限，不是它在你的醫院會有的表現**。任何導入決策都應該以外部驗證那一欄為準。
+
+### Europace（歐洲節律）：GLORIA-AF 中風加權風險分數
+
+20,517 人推導、8,309 人外部驗證的十項目 0–23 分量表，C-index 0.661 對 CHA₂DS₂-VA 的 0.626（外部驗證 0.652 對 0.616）。判別力確實較佳，但兩者都落在 0.6 出頭——這個區間的意思是：**風險分數適合用來描述族群，不適合用來決定單一病人**。急診端的用法不變：CHA₂DS₂-VASc 仍是溝通與轉介的共同語言。[^europace-gloria]
+
+### JACC（美國心臟學會期刊）：STEMI 直接介入的 bivalirudin 對 heparin
+
+依出血風險高低分層再比較 bivalirudin 與 heparin 的結果。對台灣急診端的直接影響有限（抗凝策略由導管室決定），但對於在急診就要開始給藥、且病人明確屬於高出血風險族群時，值得知道這條線目前仍在被重新分層檢視。[^jacc-bivalirudin]
+
+### Heart Rhythm（心律期刊）：像左中隔分支阻滯的那個型態
+
+急性冠心症中出現「左中隔分支阻滯樣」心電圖型態的臨床表現與預後意涵。這是相對少被教的傳導異常型態（V1–V2 出現顯著 R 波、電軸相對正常），在急性缺血脈絡下容易被歸類成「非特異性」而放過。同期另有可程式化脈寬提升植入式心律去顫器電擊效率、以及超音波導引胸骨旁隧道術的皮下型 ICD 植入幾何研究。[^hrthm-lsfb][^hrthm-pulsewidth]
+
+### JACC: Clinical Electrophysiology（美國心臟學會期刊：臨床電生理）：長 PR 間期不是良性的
+
+豬模型顯示**單純延長 PR 間期即可造成心房重塑、纖維化與可誘發的心房顫動**——這替臨床上長期被視為「一度房室阻滯、無臨床意義」的發現提供了機轉層面的反證。同期另有 META-AF（metformin 作為心房顫動電燒的輔助治療）與以竇性節律期間陡峭再極化梯度定位心房顫動起始位點的研究。[^jacep-longpr][^jacep-metaaf]
+
+### Journal of Electrocardiology（心電圖學期刊）：QRS 寬度與左束支傳導阻滯的預後
+
+在未接受心室節律調節或心臟再同步治療的慢性心衰竭族群中，QRS 延長或左束支傳導阻滯型態與心血管預後關聯的系統性回顧與統合分析。同期另有心房顫動發作前 P 波變異度指標的比較研究。[^jelectro-lbbb]
+
+### Resuscitation（急救期刊）：雙重去顫的裝置安全需要的是制度不是事後測試
+
+作者主張雙重（序列）去顫的裝置安全問題，不能靠「用完再測一次機器」解決，需要的是實施框架——包含哪些機型可以配對、由誰授權、事後如何登錄。同期另有區域性訓練計畫對旁觀者心肺復甦率影響的評估。[^resus-dualdefib][^resus-bystander]
+
+### ESC／ACC 大會端
+
+ESC（歐洲心臟學會）8-27 釋出 AI 輔助心電圖與臨床風險分數在第二型糖尿病族群篩檢無症狀心衰竭的比較；ACC（美國心臟學會）8-29 整理 AIR-STEMI、PRESC1SE-MI 與 TARGET CTA 三項重症心臟科試驗。兩則都在會議層級，正式發表前不宜據以修改流程。[^esc-aiecg-dm][^acc-esc2026]
+
+---
+
+## 引用 {#refs}
+
+[^smith-adenosine-08-23]: Smith SW，〈"12 mg of adenosine x 2 did not work, and neither did Electrical Cardioversion at 200J x 2"〉— Dr. Smith's ECG Blog（Smith 心電圖部落格），2026-08-23。原文：「60-something with dyspnea. Tried adenosine 12 mg x…」。 https://drsmithsecgblog.com/12-mg-of-adenosine-x-2-did-not-work-and-neither-did-electrical-cardioversion-at-200j-x-2/#:~:text=60-something%20with%20dyspnea
+
+[^ecgweekly-ummc4-08-24]: 〈UMMC Cases Part IV: Two Easily Missed ECG Diagnoses〉— ECG Weekly（心電圖週刊，Amal Mattu），2026-08-24。原文：「A 73-year-old woman presents to the ED with palpitations and shortness of breath. Her ECG shows a regular narrow-complex tachycardia, and the computer interpretation is accepted by both the emergency physician and cardiologist. But something important has been missed... What subtle atrial activity might be hiding within what initially appears to be a straightforward rhythm?」。 https://ecgweekly.com/weekly-workout/ummc-cases-part-iv-two-easily-missed-ecg-diagnoses/#:~:text=subtle%20atrial%20activity%20might%20be%20hiding
+
+[^esc2026-qoh-nstemi]: Powerful Medical／PMcardio 團隊於 ESC 2026 大會發表之前瞻資料（Queen of Hearts AI-ECG 於 NSTEMI 族群之預後價值），2026-08-28 大會現場釋出。要點：AI 陽性者在 GRACE >140 之外校正後，心血管死亡校正風險比 2.45；對血管攝影確認之閉塞型心肌梗塞敏感度 83%、特異度 99%、陽性預測值 98%、陰性預測值 89%；確診 NSTEMI 族群中 AI 陽性者峰值肌鈣蛋白約 2.5 倍、接受經皮冠狀動脈介入比例 80% 對 40%。**注意：本則數據目前僅見於大會現場發表，尚無同儕審查全文可供查核；上述數字依大會發表內容轉述，正式論文出版前應視為未定稿，不宜作為修改臨床流程之依據。** https://www.escardio.org/Congresses-Events/ESC-Congress
+
+[^jacepo-qoh-swedish]: Lindow T、Nyström A、Forberg JL、Mokhtari A 等（Smith、Meyers 列名），〈Improved Detection of Acute Coronary Occlusion Myocardial Infarction by an Artificial Intelligence Electrocardiogram Model in Swedish Emergency Departments〉— JACEP Open（美國急診醫師學會期刊公開版），2026-10（線上先行）。原文：「Among 24,511 patients... 467 (1.9%) had OMI. QoH achieved higher sensitivity than STEMI criteria (52% [47 to 57] vs 23% [19 to 27])」。 https://pubmed.ncbi.nlm.nih.gov/42614578/#:~:text=QoH%20achieved%20higher%20sensitivity%20than%20STEMI%20criteria
+
+[^jamacardio-laac-08-26]: Laudani C、Bujak K、Giacoppo D、Finocchiaro S 等，〈Catheter-Based Left Atrial Appendage Closure vs Oral Anticoagulation in Patients With Atrial Fibrillation〉— JAMA Cardiology（美國醫學會期刊：心臟學），2026-08-26。原文：「Eight trials (7434 patients) were included... catheter-based LAAC was associated with a higher risk of ischemic stroke (IRR, 1.34; 95% CI, 1.01-1.77) and a lower risk of nonprocedural major bleeding (IRR, 0.73; 95% CI, 0.58-0.92) compared with OAC... These findings do not support the routine use of LAAC as a first-line strategy for stroke prevention.」。 https://doi.org/10.1001/jamacardio.2026.2640
+
+[^circep-laac-08-21]: Rao A、Ravi V、Murthi M、Chikatimalla R 等，〈Left Atrial Appendage Closure Versus Oral Anticoagulation in Atrial Fibrillation: A Systematic Review and Meta-Analysis of Randomized Controlled Trials〉— Circulation: Arrhythmia and Electrophysiology（循環：心律不整與電生理），2026-08-21。原文：「LAAC was associated with a higher risk of ischemic stroke (RR, 1.41 [95% CI, 1.04–1.91]; P =0.03; 3.2% versus 2.1%)... LAAC was associated with a significantly lower risk of nonprocedural major bleeding (RR, 0.57 [95% CI, 0.43–0.77]; P <0.01; 6.2% versus 10.7%).」。 https://doi.org/10.1161/circep.126.015245
+
+[^ehj-precise-hf]: Docherty K、Heywood B、Anderson L、Bayes-Genis A 等，〈Personalized evaluation of NT-proBNP and clinical characteristics in suspected heart failure: the PRECISE-HF study〉— European Heart Journal（歐洲心臟期刊），2026-08-28。原文：「Overall, 535 583 patients were included... The PRECISE-HF model demonstrated excellent discrimination (AUROC 0.896) and calibration (Brier score 0.061)... In external validation, the model retained good discrimination (AUROC 0.757) and calibration (Brier score 0.163).」。 https://doi.org/10.1093/eurheartj/ehag686
+
+[^europace-gloria]: Xie Y、Li W、Meng Y、Huang T 等，〈Development and Validation of the GLORIA-AF Stroke Weighted Risk Score for Patients with Atrial Fibrillation〉— Europace（歐洲節律），2026-08-29。原文：「The derived score achieved a C-index of 0.661 (95% CI, 0.636–0.685), higher than CHA2DS2-VA (0.626; P < 0.001)... In external validation (8,309 patients; 147 strokes), the C-index was 0.652」。 https://doi.org/10.1093/europace/euag236
+
+[^jacc-bivalirudin]: Qiu M、Duan Y、Feng X、Chen K 等，〈Bivalirudin Versus Heparin in Low and Non-Low Bleeding Risk Patients Undergoing Primary PCI for STEMI〉— JACC（美國心臟學會期刊），2026 年 8 月號。 https://doi.org/10.1016/j.jacc.2026.06.035
+
+[^hrthm-lsfb]: Matsui Y、Higuchi S、Takehisa K、Horiuchi M 等，〈Left septal fascicular block–like ECG pattern in acute coronary syndrome: Clinical presentation and prognostic implications〉— Heart Rhythm（心律期刊），2026 年 9 月號。 https://doi.org/10.1016/j.hrthm.2026.03.1888
+
+[^hrthm-pulsewidth]: Katcher M、Davis K、Badie N、McSpadden L 等，〈Improved implantable cardioverter-defibrillator shock efficacy using programmable pulse width〉— Heart Rhythm（心律期刊），2026 年 9 月號。 https://doi.org/10.1016/j.hrthm.2026.04.035
+
+[^jacep-longpr]: Kataoka S、Kwon C、Lee S、Venkateswaran R 等，〈Long PR Interval Leads to Atrial Remodeling, Fibrosis and Inducible Atrial Fibrillation in a Swine Model〉— JACC: Clinical Electrophysiology（美國心臟學會期刊：臨床電生理），2026 年 8 月號。 https://doi.org/10.1016/j.jacep.2026.03.001
+
+[^jacep-metaaf]: Deshmukh A、Shah M、Kozlowski P、Chakrabarti A 等，〈Metformin as an Adjunctive Therapy to Catheter Ablation of Atrial Fibrillation (META-AF)〉— JACC: Clinical Electrophysiology（美國心臟學會期刊：臨床電生理），2026 年 8 月號。 https://doi.org/10.1016/j.jacep.2026.07.008
+
+[^jelectro-lbbb]: Herrán-Fonseca C、Gomes Batista P、Vasconcelos Montenegro M、Albino dos Santos Silva R 等，〈Prognostic impact of prolonged QRS duration or LBBB morphology on cardiovascular outcomes in chronic heart failure without ventricular pacing or cardiac resynchronization therapy: A systematic review and meta-analysis〉— Journal of Electrocardiology（心電圖學期刊），2026 年 11 月號。 https://doi.org/10.1016/j.jelectrocard.2026.154430
+
+[^resus-dualdefib]: Schnaubelt S、Dunkl S、Krammel M、Girsa M 等，〈Device safety during dual defibrillation requires implementation frameworks, not just post-use testing〉— Resuscitation（急救期刊），2026 年 10 月號。 https://doi.org/10.1016/j.resuscitation.2026.111252
+
+[^resus-bystander]: Toy J、Tolles J、Dillon D、Breyre A 等，〈Evaluating the effect of a regional training initiative on bystander cardiopulmonary resuscitation rates after out-of-hospital cardiac arrest〉— Resuscitation（急救期刊），2026 年 10 月號。 https://doi.org/10.1016/j.resuscitation.2026.111262
+
+[^esc-aiecg-dm]: 〈Comparison of AI-assisted ECG and clinical risk scores in selecting individuals with type 2 diabetes for screening for asymptomatic heart failure〉— ESC（歐洲心臟學會），2026-08-27。 https://news.google.com/rss/articles/CBMiW0FVX3lxTFBKZlA5aUdpeldBak9uTThPVDVrazJoYnRQM1pwZHJma29MTFNPN2YyUXgxRlZFamRmcUZqeDJXWFVnWGdLSE9tQjdFbU41NS1uYlhuTGladWFaUEk?oc=5
+
+[^acc-esc2026]: 〈AIR-STEMI, PRESC1SE-MI and TARGET CTA Highlight Critical Care Cardiology Science〉— ACC（美國心臟學會），2026-08-29。 https://news.google.com/rss/articles/CBMimgFBVV95cUxOa0ZpT3hzbjVLelY0eW90aVRGSzZSR3JvTlRHUlZKSjNYckJOblU0c2xkYWhDM1RHNVRZZzVBVjNSS3k1M1VQVUt1Z1BiM1NyX1E4X1Z5YzY3QkkteFhyZkR3T1VJbmNFc2tYYVNtUi02bzBBRmFBQzAtbWtKa0MxSHdIUXlMQmxocVBtRm05TGVDSHdLRTdoU1dR?oc=5
