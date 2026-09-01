@@ -3,7 +3,7 @@ title: "每一家急診都在加薪，為什麼還是找不到人（下）：病
 date: "2026-09-01"
 description: "上集算出來的結論是：人沒有變少，病人也沒有變多。那為什麼現場愈來愈撐不住？答案在出口——該住院的病人卡在急診出不去。48 小時滯留率、8 小時轉入率、官方指標為什麼永遠看不到現場的痛苦，以及這一年半的加薪潮為什麼止不住血。"
 featured: false
-draft: false
+draft: true
 toc: true
 thumbnail: "/images/erlife-post-7.jpg"
 categories:
