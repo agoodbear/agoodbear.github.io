@@ -1,0 +1,119 @@
+{{/*
+  toc-rail — 長文左側目次
+  在文章頁自動抓 .article-body 底下的 h2/h3 生成側邊索引，點擊平滑跳段，
+  捲動時高亮目前所在章節。左邊空間不夠（或視窗太窄）時自動收成一顆浮動按鈕。
+  純前端、不改主題版型；正式站台也會載入（這是給讀者用的）。
+*/}}
+<style>
+  .tocr{position:fixed;z-index:55;font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC",sans-serif;
+    font-size:12.6px;line-height:1.5;display:none}
+  .tocr.on{display:block}
+  .tocr-hd{display:flex;align-items:center;justify-content:space-between;gap:6px;
+    font-size:11px;letter-spacing:.09em;text-transform:uppercase;opacity:.55;margin:0 0 7px 10px}
+  .tocr-tg{cursor:pointer;border:none;background:transparent;color:inherit;opacity:.6;font-size:13px;line-height:1;padding:2px 4px}
+  .tocr-tg:hover{opacity:1}
+  .tocr-list{list-style:none;margin:0;padding:0;max-height:calc(100vh - 200px);overflow-y:auto;
+    border-left:2px solid rgba(148,163,184,.3)}
+  .tocr-list::-webkit-scrollbar{width:0}
+  .tocr a{display:block;padding:5px 8px 5px 10px;color:inherit;text-decoration:none;opacity:.62;
+    border-left:2px solid transparent;margin-left:-2px;transition:opacity .15s,border-color .15s}
+  .tocr a:hover{opacity:1}
+  .tocr a.h3{padding-left:20px;font-size:11.8px;opacity:.5}
+  .tocr a.now{opacity:1;font-weight:700;border-left-color:#dc2626}
+  .tocr.mini .tocr-list{display:none}
+  .tocr-fab{position:fixed;left:16px;bottom:18px;z-index:56;display:none;cursor:pointer;border:none;
+    border-radius:999px;padding:9px 15px;font-size:12.5px;font-weight:700;color:#fff;background:#334155;
+    box-shadow:0 8px 22px rgba(15,23,42,.28);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang TC",sans-serif}
+  .tocr-fab.on{display:block}
+  .tocr-sheet{position:fixed;inset:0;z-index:57;display:none;background:rgba(15,23,42,.5)}
+  .tocr-sheet.on{display:block}
+  .tocr-sheet > div{position:absolute;left:0;right:0;bottom:0;max-height:72vh;overflow:auto;padding:14px 16px 22px;
+    background:#fff;border-radius:14px 14px 0 0}
+  @media (prefers-color-scheme:dark){.tocr-sheet > div{background:#1e293b;color:#e2e8f0}}
+  .tocr-sheet a{display:block;padding:9px 4px;color:inherit;text-decoration:none;border-bottom:1px solid rgba(148,163,184,.22)}
+  .tocr-sheet a.h3{padding-left:20px;font-size:.92em;opacity:.75}
+  @media print{.tocr,.tocr-fab,.tocr-sheet{display:none!important}}
+</style>
+
+<nav class="tocr" id="tocRail" aria-label="文章目次">
+  <div class="tocr-hd"><span>目次</span><button class="tocr-tg" id="tocTg" type="button" title="收合／展開">－</button></div>
+  <ul class="tocr-list" id="tocList"></ul>
+</nav>
+<button class="tocr-fab" id="tocFab" type="button">☰ 目次</button>
+<div class="tocr-sheet" id="tocSheet"><div id="tocSheetList"></div></div>
+
+<script>
+(function(){
+  if(!location.pathname.includes('/post/'))return;
+  var body=document.querySelector('.article-body')||document.querySelector('.post_body');
+  if(!body)return;
+  var hs=[].slice.call(body.querySelectorAll('h2,h3')).filter(function(h){return h.textContent.trim();});
+  if(hs.length<3)return;                       // 短文不做目次
+
+  var rail=document.getElementById('tocRail'), list=document.getElementById('tocList'),
+      fab=document.getElementById('tocFab'), sheet=document.getElementById('tocSheet'),
+      sheetList=document.getElementById('tocSheetList'), tg=document.getElementById('tocTg');
+
+  function slug(s,i){return 'sec-'+i+'-'+s.trim().replace(/\s+/g,'-').replace(/[^一-鿿\w-]/g,'').slice(0,24);}
+  hs.forEach(function(h,i){ if(!h.id)h.id=slug(h.textContent,i); });
+
+  function build(target,cls){
+    target.innerHTML='';
+    hs.forEach(function(h){
+      var a=document.createElement('a');
+      a.href='#'+h.id; a.textContent=h.textContent.trim();
+      if(h.tagName==='H3')a.className='h3';
+      a.dataset.t=h.id;
+      a.onclick=function(e){e.preventDefault();jump(h);};
+      if(cls==='rail'){var li=document.createElement('li');li.appendChild(a);target.appendChild(li);}
+      else target.appendChild(a);
+    });
+  }
+  function jump(h){
+    var y=h.getBoundingClientRect().top+window.scrollY-Math.round(window.innerHeight*0.16);
+    window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+    sheet.classList.remove('on');
+    history.replaceState(null,'','#'+h.id);
+  }
+  build(list,'rail'); build(sheetList,'sheet');
+
+  // 依左側留白決定：放側欄，還是收成浮動按鈕
+  function place(){
+    // ⚠️ 左側留白要量「最靠左的那個內容區塊」。hallmark 的 .article-header（標題、分類列）
+    //    比 .article-body 更往左伸，只量 body 會讓側欄壓到標題（2026-09-01 踩過）。
+    var hdr=document.querySelector('.article-header');
+    var gutter=body.getBoundingClientRect().left;
+    if(hdr){ gutter=Math.min(gutter, hdr.getBoundingClientRect().left); }
+    var M=14, MINW=148, MAXW=210;
+    var ecg=document.getElementById('ecgReadProgress');
+    var top=118;
+    if(ecg && !ecg.hidden){ var er=ecg.getBoundingClientRect(); if(er.height)top=Math.max(top, er.bottom+16); }
+    var avail=gutter-M*2;                       // 左側扣掉邊距後真正能用的寬度
+    if(avail >= MINW && window.innerWidth >= 1024){
+      rail.style.left=M+'px';
+      rail.style.width=Math.min(MAXW, avail)+'px';
+      rail.style.top=top+'px';
+      rail.classList.add('on'); fab.classList.remove('on');
+    }else{
+      rail.classList.remove('on'); fab.classList.add('on');
+    }
+  }
+  tg.onclick=function(){rail.classList.toggle('mini');this.textContent=rail.classList.contains('mini')?'＋':'－';};
+  fab.onclick=function(){sheet.classList.add('on');};
+  sheet.onclick=function(e){if(e.target===sheet)sheet.classList.remove('on');};
+
+  // 捲動高亮
+  var links=[].slice.call(document.querySelectorAll('.tocr a'));
+  function spy(){
+    var best=null, mid=window.innerHeight*0.28;
+    hs.forEach(function(h){ if(h.getBoundingClientRect().top<=mid)best=h; });
+    links.forEach(function(a){a.classList.toggle('now', !!best && a.dataset.t===best.id);});
+  }
+  var tick=false;
+  function onScroll(){ if(tick)return; tick=true; requestAnimationFrame(function(){place();spy();tick=false;}); }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  place(); spy();
+})();
+</script>

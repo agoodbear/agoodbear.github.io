@@ -136,7 +136,11 @@
   }
 
   @media (min-width: 1200px) {
-    body.ecg-rp-lane .post_content {
+    /* 留白不夠時改讓出一條軌道。hallmark 用 .article-header/.article-body，
+       hugo-clarity 用 .post_content——兩個都要寫，只寫一個會變成進度條壓在標題上。 */
+    body.ecg-rp-lane .post_content,
+    body.ecg-rp-lane .article-header,
+    body.ecg-rp-lane .article-body {
       padding-left: 124px;
     }
   }
@@ -176,18 +180,28 @@
 
 <script>
   (function () {
-    const isSinglePage = document.documentElement.classList.contains("page");
-    const isPostPath = window.location.pathname.includes("/post/");
-    if (!isSinglePage || !isPostPath) return;
+    // 只在心電圖文章顯示（ecg-post-*、er-cardio-weekly，或分類含心電圖／ecg）
+    const path = window.location.pathname;
+    const isPostPath = path.includes("/post/") || path.includes("/er-cardio-weekly/");
+    // 判斷這篇是不是心電圖文章：看「文章自己的」分類連結（要排除全站導覽列，
+    // 導覽列每一頁都有『心電圖』的連結，不能拿來當依據）。
+    const chrome = [].slice.call(document.querySelectorAll("nav, header"));
+    const ownCat = [].slice.call(document.querySelectorAll('a[href*="/categories/"]'))
+      .filter(function (a) { return !chrome.some(function (c) { return c.contains(a); }); })
+      .map(function (a) { return decodeURIComponent(a.getAttribute("href") || ""); });
+    const isEcg = /\/ecg-post-|\/er-cardio-weekly\//.test(path)
+      || ownCat.some(function (h) { return /\/categories\/(ecg|心電圖)\/?$/i.test(h); });
+    if (!isPostPath || !isEcg) return;
 
     const shell = document.getElementById("ecgReadProgress");
-    const article = document.querySelector(".post_content");
-    const articleBody = document.querySelector(".post_content .post_body");
-    const path = document.getElementById("ecgReadActivePath");
+    // hallmark 主題用 .article-body；hugo-clarity 用 .post_content .post_body。兩個都撐住。
+    const article = document.querySelector(".article-body") || document.querySelector(".post_content");
+    const articleBody = document.querySelector(".article-body") || document.querySelector(".post_content .post_body");
+    const wavePath = document.getElementById("ecgReadActivePath");
     const percent = document.getElementById("ecgReadPercent");
     const tip = document.getElementById("ecgReadTip");
 
-    if (!shell || !article || !articleBody || !path || !percent || !tip) return;
+    if (!shell || !article || !articleBody || !wavePath || !percent || !tip) return;
 
     const readPhases = [
       { readEnd: 0.2, pathEnd: 0.34, tip: "Reading progress" },
@@ -198,16 +212,21 @@
     ];
 
     const clamp01 = (n) => Math.max(0, Math.min(1, n));
-    const totalLength = path.getTotalLength();
-    path.style.strokeDasharray = `${totalLength}`;
-    path.style.strokeDashoffset = `${totalLength}`;
+    const totalLength = wavePath.getTotalLength();
+    wavePath.style.strokeDasharray = `${totalLength}`;
+    wavePath.style.strokeDashoffset = `${totalLength}`;
 
     const placeInLeftGutter = () => {
-      const margin = 12;
-      const articleRect = article.getBoundingClientRect();
-      const preferredWidth = 220;
-      const leftGutter = articleRect.left - margin;
-      const available = leftGutter - margin;
+      // ⚠️ 這幾個常數必須跟 toc-rail.html 的 M / MAXW 一致，否則進度條與目次不會對齊
+      // （2026-09-01 的 bug：進度條靠「文章左緣」右對齊、目次靠「視窗左緣」左對齊，
+      //   螢幕一寬就分家，還會壓到文章的分類列）。
+      const margin = 14;
+      const preferredWidth = 210;
+      // 量最靠左的內容區塊：.article-header（標題／分類列）通常比 .article-body 更往左伸。
+      const header = document.querySelector(".article-header");
+      let contentLeft = article.getBoundingClientRect().left;
+      if (header) contentLeft = Math.min(contentLeft, header.getBoundingClientRect().left);
+      const available = contentLeft - margin * 2;
 
       if (available < 92) {
         if (window.innerWidth >= 1200) {
@@ -226,9 +245,8 @@
       }
 
       const width = Math.max(92, Math.min(preferredWidth, available));
-      const left = Math.round(articleRect.left - width - margin);
       document.body.classList.remove("ecg-rp-lane");
-      document.documentElement.style.setProperty("--ecg-rp-left", `${left}px`);
+      document.documentElement.style.setProperty("--ecg-rp-left", `${margin}px`);
       document.documentElement.style.setProperty("--ecg-rp-width", `${Math.round(width)}px`);
       shell.dataset.compact = width < 150 ? "true" : "false";
       shell.hidden = false;
@@ -283,9 +301,9 @@
       const progressPct = Math.round(readProgress * 100);
 
       const rgb = [toRgb(15, 15, readProgress), toRgb(95, 167, readProgress), toRgb(87, 154, readProgress)];
-      path.style.strokeDashoffset = `${totalLength - drawLength}`;
-      path.style.stroke = `rgb(${rgb.join(",")})`;
-      path.style.filter = `drop-shadow(0 0 6px rgba(${rgb.join(",")}, 0.26))`;
+      wavePath.style.strokeDashoffset = `${totalLength - drawLength}`;
+      wavePath.style.stroke = `rgb(${rgb.join(",")})`;
+      wavePath.style.filter = `drop-shadow(0 0 6px rgba(${rgb.join(",")}, 0.26))`;
       percent.textContent = `${progressPct}%`;
       tip.textContent = readProgress >= 1 ? "Reading progress · 100% complete" : `${currentTip} ${progressPct}%`;
       ticking = false;
@@ -693,6 +711,9 @@
     });
   })();
 </script>
+
+{{/* 長文左側目次（正式站台也載入，給讀者用） */}}
+{{ partial "toc-rail.html" . }}
 
 {{/* 本機預覽用的「請CC修改」紅筆標記，只在 hugo server 時載入 */}}
 {{ partial "cc-mark.html" . }}

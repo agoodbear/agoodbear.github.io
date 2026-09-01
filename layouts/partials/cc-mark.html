@@ -8,9 +8,9 @@
 <style>
   .ccm-bubble,.ccm-panel{font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC",sans-serif;font-size:13px;line-height:1.5;color:#0f172a;background:#fff;border:1px solid rgba(15,23,42,.16);border-radius:10px;box-shadow:0 10px 30px rgba(15,23,42,.18)}
   @media (prefers-color-scheme:dark){.ccm-bubble,.ccm-panel{color:#e2e8f0;background:#1e293b;border-color:rgba(226,232,240,.18)}}
-  .ccm-bubble{position:absolute;z-index:9998;padding:8px;display:none;max-width:340px}
+  .ccm-bubble{position:absolute;z-index:9998;padding:8px;display:none;max-width:320px}
   .ccm-bubble.on{display:block}
-  .ccm-bubble.wide{max-width:460px}
+  .ccm-bubble.wide{max-width:420px}
   .ccm-q{cursor:pointer;border:1px solid rgba(148,163,184,.6);background:transparent;color:inherit;border-radius:999px;width:26px;height:26px;font-size:13px;font-weight:700;line-height:1;margin-left:auto;opacity:.7}
   .ccm-q:hover,.ccm-q.on{opacity:1;border-color:#dc2626;color:#dc2626}
   .ccm-help{margin-top:8px;padding:9px 10px;border-radius:8px;background:rgba(148,163,184,.13);font-size:12.3px;line-height:1.65;max-height:290px;overflow:auto}
@@ -31,12 +31,15 @@
   @media (prefers-color-scheme:dark){.ccm-mini.pri{background:#e2e8f0;color:#0f172a;border-color:#e2e8f0}}
   .ccm-fab{position:fixed;right:18px;bottom:18px;z-index:9999;cursor:pointer;border:none;border-radius:999px;padding:10px 16px;font-size:13px;font-weight:700;color:#fff;background:#dc2626;box-shadow:0 8px 24px rgba(220,38,38,.4);font-family:-apple-system,BlinkMacSystemFont,"PingFang TC",sans-serif}
   .ccm-fab[data-n="0"]{background:#64748b;box-shadow:0 8px 24px rgba(100,116,139,.32)}
-  .ccm-panel{position:fixed;right:18px;bottom:66px;z-index:9999;width:min(430px,calc(100vw - 36px));max-height:min(70vh,620px);display:none;flex-direction:column}
+  .ccm-panel{position:fixed;right:18px;bottom:66px;z-index:9999;width:min(348px,calc(100vw - 32px));max-height:min(66vh,560px);display:none;flex-direction:column}
   .ccm-panel.on{display:flex}
   .ccm-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;border-bottom:1px solid rgba(148,163,184,.3)}
   .ccm-head strong{font-size:13.5px}
   .ccm-list{overflow:auto;padding:6px 12px 10px}
-  .ccm-item{padding:9px 0;border-bottom:1px dashed rgba(148,163,184,.32)}
+  .ccm-item{padding:9px 0;border-bottom:1px dashed rgba(148,163,184,.32);cursor:pointer;border-radius:6px;transition:background 120ms}
+  .ccm-item:hover{background:rgba(148,163,184,.14)}
+  .ccm-item .ccm-cmd::after{content:" ↗";opacity:0;font-size:11px;transition:opacity 120ms}
+  .ccm-item:hover .ccm-cmd::after{opacity:.55}
   .ccm-item:last-child{border-bottom:0}
   .ccm-tag{display:inline-block;border-radius:5px;padding:1px 7px;font-size:11.5px;font-weight:700;color:#fff;margin-right:6px}
   .ccm-cmd{margin:4px 0 3px;white-space:pre-wrap}
@@ -45,13 +48,44 @@
   .ccm-x:hover{opacity:1;color:#dc2626}
   .ccm-foot{display:flex;gap:7px;padding:9px 12px;border-top:1px solid rgba(148,163,184,.3)}
   .ccm-empty{padding:16px 4px;opacity:.6;text-align:center}
+  .ccm-reply{margin:7px 0 4px;padding:7px 9px;border-radius:7px;background:rgba(148,163,184,.13);font-size:12.2px;line-height:1.6}
+  .ccm-badge{display:inline-block;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;color:#fff;margin-bottom:4px}
+  .ccm-badge.done{background:#059669}.ccm-badge.moved{background:#2563eb}
+  .ccm-badge.declined{background:#b45309}.ccm-badge.info{background:#7c3aed}
+  .ccm-diff{font-size:11.8px;line-height:1.55;margin-top:3px;white-space:pre-wrap;word-break:break-word}
+  .ccm-diff .d-b{display:block;padding:3px 6px;border-radius:4px;background:rgba(220,38,38,.13);text-decoration:line-through;opacity:.75;margin-bottom:3px}
+  .ccm-diff .d-a{display:block;padding:3px 6px;border-radius:4px;background:rgba(5,150,105,.16)}
+  .ccm-rnote{margin-top:4px;opacity:.8;font-size:11.5px}
+  .ccm-acts{display:flex;gap:6px;margin-top:6px}
+  .ccm-acts button{cursor:pointer;border-radius:5px;padding:3px 10px;font-size:11.5px;border:1px solid rgba(148,163,184,.55);background:transparent;color:inherit}
+  .ccm-acts .yes:hover{border-color:#059669;color:#059669}
+  .ccm-acts .no:hover{border-color:#dc2626;color:#dc2626}
+  .ccm-item.done .ccm-reply{display:none}
+  .ccm-item.done .ccm-acts{display:none}
+  .ccm-filter{cursor:pointer;font-size:11.5px;opacity:.7;background:transparent;border:none;color:inherit;text-decoration:underline}
+  .ccm-note{padding:7px 12px;font-size:11.8px;line-height:1.55;background:rgba(5,150,105,.12);
+    color:#047857;border-bottom:1px solid rgba(148,163,184,.3)}
+  @media (prefers-color-scheme:dark){.ccm-note{color:#6ee7b7}}
   .ccm-miss{font-size:11px;color:#dc2626;font-weight:700}
+  .ccm-item.done{opacity:.42}
+  .ccm-item.done .ccm-cmd{text-decoration:line-through}
+  .ccm-ok{cursor:pointer;border:1px solid rgba(148,163,184,.55);background:transparent;color:inherit;border-radius:5px;padding:1px 7px;font-size:11px;float:right;margin-right:6px;opacity:.6}
+  .ccm-ok:hover{opacity:1;border-color:#059669;color:#059669}
+  .ccm-item.done .ccm-ok{opacity:1;border-color:#059669;color:#059669}
+  mark.ccm-hit.done{background:rgba(5,150,105,.16);border-bottom-color:#059669}
   .ccm-figtag{font-size:11px;font-weight:700;color:#a16207;background:rgba(250,204,21,.24);border-radius:4px;padding:1px 6px;margin-left:5px}
   mark.ccm-hit{background:rgba(250,204,21,.42);border-bottom:2px solid #eab308;padding:1px 0;border-radius:2px}
   @media (prefers-color-scheme:dark){mark.ccm-hit{background:rgba(234,179,8,.3);color:inherit}}
   /* 圖／表無法用 <mark> 包（SVG 裡塞不進 HTML），改成整塊外框標記 */
   figure.ccm-fig,table.ccm-fig{position:relative;outline:3px solid #eab308;outline-offset:5px;border-radius:4px;background:rgba(250,204,21,.09)}
   figure.ccm-fig::after,table.ccm-fig::after{content:"✎ CC 標記";position:absolute;top:-13px;left:-3px;background:#eab308;color:#3b2f00;font-size:10.5px;font-weight:700;letter-spacing:.03em;padding:2px 7px;border-radius:4px;font-family:-apple-system,BlinkMacSystemFont,"PingFang TC",sans-serif;pointer-events:none}
+  mark.ccm-hit,figure.ccm-fig,table.ccm-fig{cursor:pointer}
+  @keyframes ccmFlash{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,0)}
+    18%{box-shadow:0 0 0 6px rgba(220,38,38,.55)}55%{box-shadow:0 0 0 6px rgba(220,38,38,.28)}}
+  .ccm-flash{animation:ccmFlash 1.5s ease-out 2;border-radius:3px}
+  .ccm-toast{position:fixed;left:50%;bottom:88px;transform:translateX(-50%);z-index:10000;
+    background:rgba(15,23,42,.93);color:#fff;font-size:13px;padding:9px 16px;border-radius:8px;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang TC",sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.25)}
   @media print{.ccm-fab,.ccm-panel,.ccm-bubble{display:none!important}}
 </style>
 
@@ -62,10 +96,12 @@
     <strong>CC 標記</strong>
     <span style="font-size:11.5px;opacity:.6" id="ccmFile"></span>
   </div>
+  <div class="ccm-note" id="ccmNote" hidden></div>
   <div class="ccm-list" id="ccmList"></div>
   <div class="ccm-foot">
     <button class="ccm-mini pri" id="ccmCopy" type="button">📋 打包複製</button>
-    <button class="ccm-mini" id="ccmClear" type="button">🧹 清空</button>
+    <button class="ccm-mini" id="ccmToggleDone" type="button">👁 顯示已完成</button>
+    <button class="ccm-mini" id="ccmSweep" type="button">🗑 刪除已完成</button>
     <button class="ccm-mini" id="ccmClose" type="button" style="margin-left:auto">關閉</button>
   </div>
 </div>
@@ -125,7 +161,24 @@
   }
   document.getElementById('ccmFile').textContent=srcFile();
 
+  var REPLIES=[];                       // CC 的回覆（來自 /cc-replies.json）
+  function norm(s){return String(s||'').replace(/\s+/g,'').slice(0,24);}
+  function replyFor(mk){
+    if(!REPLIES.length)return null;
+    if(mk.id){var byId=REPLIES.find(function(r){return r.id===mk.id;}); if(byId)return byId;}
+    var k=norm(mk.text);
+    if(!k)return null;
+    return REPLIES.find(function(r){return norm(r.match)&&(norm(r.match)===k||k.indexOf(norm(r.match).slice(0,14))===0);})||null;
+  }
   function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  // ⚠️ 唯一的一份「圖／表識別」規則：存標記與還原標記必須共用它。
+  //    只存位置索引會出事——文章中間插入一張新圖，後面每一張的索引都往後移一格，
+  //    標記就會框到隔壁那張圖（2026-09-02 踩過：問瀑布圖的標記跳去框算式圖）。
+  function figLabelOf(f,i){
+    var t=f.querySelector('svg > title')||f.querySelector('figcaption')||f.querySelector('caption');
+    return t?t.textContent.replace(/\s+/g,' ').trim().slice(0,40)
+            :(f.tagName==='TABLE'?'表格':'圖')+' #'+(i+1);
+  }
   function save(m){localStorage.setItem(KEY,JSON.stringify(m));render()}
 
   // 找出這段選取所在的區塊與所屬 h2，給 CC 定位用
@@ -187,14 +240,16 @@
     return {norm:norm,map:map};
   }
 
-  function wrapSeg(node,from,to,mk){
+  function wrapSeg(node,from,to,mk,idx){
     if(to<=from)return;
     // SVG 內不包 <mark>（塞進去不會顯示，還會弄壞圖）；那一段靠 figure 外框呈現
     if(node.parentElement&&node.parentElement.closest('svg'))return;
     var t=node;
     if(from>0)t=t.splitText(from);
     if(t.nodeValue.length>(to-from))t.splitText(to-from);
-    var m=document.createElement('mark');m.className='ccm-hit';m.title=mk.kind+'：'+mk.cmd;
+    var m=document.createElement('mark');m.className='ccm-hit'+(mk.done?' done':'');
+    m.title=(mk.done?'✓ 已處理｜':'')+mk.kind+'：'+mk.cmd;
+    if(idx!=null)m.dataset.ccmI=idx;
     t.parentNode.replaceChild(m,t);m.appendChild(t);
   }
 
@@ -207,10 +262,17 @@
     // 圖／表的外框標記先全部清掉，稍後依標記重上
     body.querySelectorAll('.ccm-fig').forEach(function(f){f.classList.remove('ccm-fig')});
     var figs=[].slice.call(body.querySelectorAll('figure,table'));
-    return load().map(function(mk){
+    var marks=load(), figHealed=false;
+    var out=marks.map(function(mk,idx){
       // 先處理「有沒有框到圖／表」
       var gotFig=false;
-      (mk.figs||[]).forEach(function(i){ if(figs[i]){figs[i].classList.add('ccm-fig');gotFig=true;} });
+      (mk.figs||[]).forEach(function(i,k){
+        var want=(mk.figLabels||[])[k], f=null;
+        if(want){ for(var j=0;j<figs.length;j++){ if(figLabelOf(figs[j],j)===want){ f=figs[j];
+          if(j!==i){ mk.figs[k]=j; figHealed=true; } break; } } }
+        if(!f) f=figs[i];
+        if(f){ f.classList.add('ccm-fig'); f.dataset.ccmI=idx; gotFig=true; }
+      });
       var needle=String(mk.text||'').replace(/\s+/g,'');   // 比對時兩邊都拿掉空白
       if(!needle)return {hit:gotFig,partial:false};
       var ix=buildIndex(),at=ix.norm.indexOf(needle),len=needle.length,partial=false;
@@ -234,27 +296,57 @@
         if(!cur||cur.node!==e.n){cur={node:e.n,from:e.o,to:e.o+1};seen.push(cur);}
         else cur.to=e.o+1;
       }
-      seen.forEach(function(s){wrapSeg(s.node,s.from,s.to,mk);});
+      seen.forEach(function(s){wrapSeg(s.node,s.from,s.to,mk,idx);});
       return {hit:true,partial:partial};
     });
+    // 索引被標題救回來的話，順手寫回去，下次就不用再猜（不呼叫 save()，避免遞迴 render）
+    if(figHealed){try{localStorage.setItem(KEY,JSON.stringify(marks))}catch(e){}}
+    return out;
   }
 
   function render(){
-    var m=load();
-    fab.textContent='CC 標記 '+m.length;fab.dataset.n=String(m.length);
+    var m=load(), open_=m.filter(function(x){return !x.done;}).length;
+    fab.textContent='CC 標記 '+open_+(m.length>open_?('／'+m.length):'');
+    fab.dataset.n=String(open_);
     if(!m.length){list.innerHTML='<div class="ccm-empty">還沒有標記。<br>在文章上圈選一段文字就會跳出選單。</div>';highlight();return;}
     list.innerHTML=m.map(function(x,i){
-      return '<div class="ccm-item" data-row="'+i+'"><button class="ccm-x" data-i="'+i+'" title="刪除">×</button>'+
+      if(x.done&&!SHOW_DONE)return '';
+      return '<div class="ccm-item'+(x.done?' done':'')+'" data-row="'+i+'">'+
+        '<button class="ccm-x" data-i="'+i+'" title="刪除">×</button>'+
+        '<button class="ccm-ok" data-ok="'+i+'" title="標為已處理">'+(x.done?'✓ 已處理':'標為已處理')+'</button>'+
         '<span class="ccm-tag" style="background:'+COLOR[x.kind]+'">'+x.kind+'</span>'+
         '<span style="font-size:11.5px;opacity:.55">'+(x.head||'（未分節）')+'</span>'+
         '<span class="ccm-miss" hidden> ⚠︎ 未定位</span>'+
         ((x.figs&&x.figs.length)?'<span class="ccm-figtag">✎ 含 '+x.figs.length+' 張圖／表</span>':'')+
         '<div class="ccm-cmd">'+esc(x.cmd)+'</div>'+
         ((x.figLabels&&x.figLabels.length)?'<div class="ccm-src" style="opacity:.8">▣ '+esc(x.figLabels.join('；').slice(0,110))+'</div>':'')+
-        '<div class="ccm-src">「'+esc(x.text.slice(0,90))+(x.text.length>90?'…':'')+'」</div></div>';
+        '<div class="ccm-src">「'+esc(x.text.slice(0,90))+(x.text.length>90?'…':'')+'」</div>'+
+        replyHtml(x,i)+'</div>';
     }).join('');
     list.querySelectorAll('.ccm-x').forEach(function(b){
       b.onclick=function(){var a=load();a.splice(+b.dataset.i,1);save(a);};
+    });
+    list.querySelectorAll('.ccm-ok').forEach(function(b){
+      b.onclick=function(e){e.stopPropagation();var a=load(),i=+b.dataset.ok;a[i].done=!a[i].done;save(a);};
+    });
+    list.querySelectorAll('.ccm-x').forEach(function(b){
+      b.addEventListener('click',function(e){e.stopPropagation();});
+    });
+    list.querySelectorAll('.ccm-acts .yes').forEach(function(b){
+      b.onclick=function(e){e.stopPropagation();var a=load(),i=+b.dataset.yes;
+        a[i].done=true;a[i].confirmedAt=new Date().toISOString();save(a);};
+    });
+    list.querySelectorAll('.ccm-acts .no').forEach(function(b){
+      b.onclick=function(e){e.stopPropagation();var a=load(),i=+b.dataset.no;
+        var extra=prompt('退回這一條。要補一句給 CC 的說明嗎？（可留空）','');
+        if(extra===null)return;
+        a[i].done=false;a[i].autoDone=false;a[i].reopened=true;
+        if(extra.trim())a[i].cmd=a[i].cmd+'　↩ 退回補充：'+extra.trim();
+        save(a);};
+    });
+    list.querySelectorAll('.ccm-item').forEach(function(it){
+      it.title='點一下跳到文章中的位置';
+      it.onclick=function(e){ if(e.target.closest('.ccm-x,.ccm-ok'))return; jumpTo(+it.dataset.row); };
     });
     highlight().forEach(function(r,i){
       var row=list.querySelector('.ccm-item[data-row="'+i+'"] .ccm-miss');
@@ -262,6 +354,22 @@
       if(!r.hit){row.textContent=' ⚠︎ 未定位';row.hidden=false;}
       else if(r.partial){row.textContent=' ◐ 部分定位';row.style.color='#d97706';row.hidden=false;}
     });
+  }
+  var LABEL={done:'✔ 已改',moved:'→ 已改，內容在下集',declined:'✕ 沒改',info:'ℹ 已處理'};
+  function replyHtml(x,i){
+    var r=replyFor(x);
+    if(!r)return '<div class="ccm-reply" style="opacity:.6">CC 還沒回覆這一條</div>';
+    var h='<div class="ccm-reply"><span class="ccm-badge '+(r.status||'info')+'">CC '+(LABEL[r.status]||'已處理')+'</span>';
+    if(r.before||r.after){
+      h+='<div class="ccm-diff">';
+      if(r.before)h+='<span class="d-b">'+esc(r.before)+'</span>';
+      if(r.after)h+='<span class="d-a">'+esc(r.after)+'</span>';
+      h+='</div>';
+    }
+    if(r.note)h+='<div class="ccm-rnote">'+esc(r.note)+'</div>';
+    h+='<div class="ccm-acts"><button class="yes" data-yes="'+i+'" type="button">✅ 確認完成</button>'+
+       '<button class="no" data-no="'+i+'" type="button">↩ 退回重改</button></div>';
+    return h+'</div>';
   }
   function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
 
@@ -282,8 +390,7 @@
         try{
           if(rng.intersectsNode&&rng.intersectsNode(f)){
             figIdx.push(i);
-            var t=f.querySelector('svg > title')||f.querySelector('figcaption')||f.querySelector('caption');
-            figLabel.push(t?t.textContent.replace(/\s+/g,' ').trim().slice(0,40):(f.tagName==='TABLE'?'表格':'圖')+' #'+(i+1));
+            figLabel.push(figLabelOf(f,i));
           }
         }catch(e){}
       });
@@ -317,7 +424,8 @@
       bubble.querySelector('#ccmSave').onclick=function(){
         var cmd=bubble.querySelector('#ccmCmd').value.trim();
         if(!kind||!cmd){bubble.querySelector('#ccmCmd').focus();return;}
-        var a=load();a.push({kind:kind,cmd:cmd,text:txt,head:ctx.head,lead:ctx.lead,
+        var a=load();a.push({id:'m'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),
+                             kind:kind,cmd:cmd,text:txt,head:ctx.head,lead:ctx.lead,
                              figs:figIdx,figLabels:figLabel,at:new Date().toISOString()});
         save(a);bubble.classList.remove('on');window.getSelection().removeAllRanges();
       };
@@ -331,17 +439,64 @@
     if(!e.target.closest('.ccm-bubble'))bubble.classList.remove('on');
   });
 
-  fab.onclick=function(){panel.classList.toggle('on')};
+  function toast(msg){
+    var d=document.createElement('div');d.className='ccm-toast';d.textContent=msg;
+    document.body.appendChild(d);setTimeout(function(){d.remove()},2600);
+  }
+  function flash(el){
+    el.classList.remove('ccm-flash');void el.offsetWidth;el.classList.add('ccm-flash');
+    setTimeout(function(){el.classList.remove('ccm-flash')},3200);
+  }
+  // 面板 → 文章
+  function jumpTo(i){
+    var el=body.querySelector('[data-ccm-i="'+i+'"]');
+    if(!el){toast('這一條定位不到（原文可能已經改掉了）');return false;}
+    var y=el.getBoundingClientRect().top+window.scrollY-Math.round(window.innerHeight*0.34);
+    window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+    flash(el);return true;
+  }
+  // 文章 → 面板
+  body.addEventListener('click',function(e){
+    var el=e.target.closest('mark.ccm-hit,figure.ccm-fig,table.ccm-fig');
+    if(!el||el.dataset.ccmI==null)return;
+    if(window.getSelection&&String(window.getSelection()).trim().length>1)return; // 圈選中不觸發
+    panel.classList.add('on');
+    var row=list.querySelector('.ccm-item[data-row="'+el.dataset.ccmI+'"]');
+    if(row){row.scrollIntoView({block:'center',behavior:'smooth'});
+            row.style.outline='2px solid #dc2626';row.style.outlineOffset='2px';
+            setTimeout(function(){row.style.outline='';},2200);}
+  });
+
+  // 面板寬度跟著右側留白走：留白夠就用 348，不夠就縮到剛好不壓到內文（下限 268）
+  function fitPanel(){
+    var r=body.getBoundingClientRect();
+    var right=Math.max(0, window.innerWidth - r.right);   // 右側留白
+    var w=Math.max(268, Math.min(348, right-24));
+    if(w>window.innerWidth-32)w=window.innerWidth-32;
+    panel.style.width=Math.round(w)+'px';
+  }
+  window.addEventListener('resize',fitPanel);
+  fitPanel();
+
+  fab.onclick=function(){fitPanel();panel.classList.toggle('on')};
   document.getElementById('ccmClose').onclick=function(){panel.classList.remove('on')};
-  document.getElementById('ccmClear').onclick=function(){
-    if(confirm('清空這一頁的所有 CC 標記？'))save([]);
+  var SHOW_DONE=false;
+  document.getElementById('ccmToggleDone').onclick=function(){
+    SHOW_DONE=!SHOW_DONE;
+    this.textContent=SHOW_DONE?'👁 隱藏已完成':'👁 顯示已完成';
+    render();
+  };
+  document.getElementById('ccmSweep').onclick=function(){
+    var a=load(),left=a.filter(function(x){return !x.done;});
+    if(a.length===left.length){alert('沒有已完成的標記');return;}
+    if(confirm('永久刪除 '+(a.length-left.length)+' 個已完成的標記？\n（不刪也沒關係——按「👁 隱藏已完成」就看不到了，紀錄還留著）'))save(left);
   };
   document.getElementById('ccmCopy').onclick=function(){
-    var m=load();
-    if(!m.length){alert('還沒有標記');return;}
+    var m=load().filter(function(x){return !x.done;});
+    if(!m.length){alert('沒有未處理的標記');return;}
     var out='【請CC修改 · Hugo 草稿】\n檔案：'+srcFile()+'\n預覽：'+location.href+'\n共 '+m.length+' 處\n\n'+
       m.map(function(x,i){
-        return (i+1)+'. '+x.kind+'｜指令：'+x.cmd+'\n'+
+        return (i+1)+'. '+x.kind+'｜指令：'+x.cmd+(x.id?'　[id:'+x.id+']':'')+'\n'+
                '   【所在節】'+(x.head||'（未分節）')+'\n'+
                '   【段落開頭】'+x.lead+'\n'+
                ((x.figLabels&&x.figLabels.length)?'   【也框到圖／表】'+x.figLabels.join('；')+'\n':'')+
@@ -351,6 +506,24 @@
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(out).then(done,fallback);}else fallback();
     function fallback(){var t=document.createElement('textarea');t.value=out;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();done();}
   };
+
+  // ── CC 的回覆放在 static/cc-replies.json。這裡只負責「把回覆掛到對應的標記上」，
+  //    不自動幫你按完成——完成與否由你按「✅ 確認完成」決定。
+  (function loadReplies(){
+    fetch('/cc-replies.json?_=' + Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){
+      if(!j||!j.pages)return;
+      var e=j.pages[location.pathname]; if(!e)return;
+      REPLIES=e.replies||[];
+      var a=load(), n=a.filter(function(x){return !!replyFor(x);}).length;
+      var note=document.getElementById('ccmNote');
+      if(n){
+        note.textContent='✎ CC 已回覆 '+n+' / '+a.length+' 條'+(e.note?('　'+e.note):'')+
+          '　每一條展開看改前改後，確認沒問題就按「✅ 確認完成」。';
+        note.hidden=false;
+      }
+      render();
+    }).catch(function(){});
+  })();
 
   render();
 })();

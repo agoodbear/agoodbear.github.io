@@ -19,3 +19,6 @@ scripts/__pycache__/
 # Firebase Functions env secrets
 functions/.env
 functions/.env.*
+
+# CC 改稿工具的本機回覆檔（含內部審稿註記，不可公開）
+static/cc-replies.json
