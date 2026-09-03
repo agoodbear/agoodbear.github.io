@@ -113,6 +113,10 @@
   var body=document.querySelector('.article-body')||document.querySelector('.post_content .post_body')
           ||document.querySelector('.post_body')||document.querySelector('article');
   if(!body) return;
+  // 標題／副標（front matter 的 title／description）也要能圈：範圍擴到「同時包住 .article-header 與 .article-body」的最近祖先
+  //（2026-09-03 Bear：副標選起來沒跳 CC 標記）。CC 收到落在標題區的標記＝改 front matter，不是改內文。
+  var scope=(function(){var h=document.querySelector('.article-header'); if(!h) return body;
+    var a=body.parentElement; while(a && a!==document.body && !a.contains(h)) a=a.parentElement; return (a&&a!==document.body)?a:body;})();
 
   var KEY='ccm:'+location.pathname;
   var COLOR={'潤':'#2563eb','接':'#059669','查':'#d97706','議':'#7c3aed'};
@@ -184,11 +188,11 @@
   // 找出這段選取所在的區塊與所屬 h2，給 CC 定位用
   function context(node){
     var el=node.nodeType===3?node.parentElement:node;
-    var blk=el&&el.closest('p,li,td,th,figcaption,blockquote,h2,h3');
+    var blk=el&&el.closest('p,li,td,th,figcaption,blockquote,h1,h2,h3,.deck');
     var head='';
     var n=blk;
     while(n){ if(n.previousElementSibling){n=n.previousElementSibling; if(/^H2$/i.test(n.tagName)){head=n.textContent.trim();break;}}
-              else{n=n.parentElement; if(!n||n===body)break;} }
+              else{n=n.parentElement; if(!n||n===scope)break;} }
     return {head:head,lead:blk?blk.textContent.trim().slice(0,26):''};
   }
 
@@ -198,12 +202,12 @@
     if(!n.nodeValue)return false;
     var p=n.parentElement;
     if(!p)return false;
-    return !p.closest('script,style,svg,.ccm-panel,.ccm-bubble');
+    return !p.closest('script,style,svg,nav,aside,.tocr,.ccm-panel,.ccm-bubble');
   }
 
   // 取出「選取範圍內、且通過 OK() 的」文字——取代 String(selection)
   function rangeText(rng){
-    var out='',w=document.createTreeWalker(body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+    var out='',w=document.createTreeWalker(scope,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
       if(!OK(n))return NodeFilter.FILTER_REJECT;
       try{ if(!rng.intersectsNode(n))return NodeFilter.FILTER_REJECT; }catch(e){}
       return NodeFilter.FILTER_ACCEPT;
@@ -220,7 +224,7 @@
   // 把整篇的 text node 串成一條「壓過空白」的字串，並記住每個字回到哪個 node 的第幾格。
   // 這樣即使選取範圍中間夾了 <sup> 註腳、<strong> 粗體、<a> 連結，也定位得到。
   function buildIndex(){
-    var nodes=[],w=document.createTreeWalker(body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+    var nodes=[],w=document.createTreeWalker(scope,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
       if(!n.nodeValue)return NodeFilter.FILTER_REJECT;
       if(!OK(n))return NodeFilter.FILTER_REJECT;
       return NodeFilter.FILTER_ACCEPT;
@@ -240,6 +244,45 @@
     return {norm:norm,map:map};
   }
 
+  // 同一句話在文章裡出現不只一次時（例如口頭禪「但是……也就是這個但是」），
+  // 只靠 indexOf 一定抓到第一次出現，標記就畫錯段。這兩支負責分辨「是哪一次」：
+  // 存標記時記下 occ（第幾次出現）；還原時優先用 occ，舊標記沒有 occ 就拿【段落開頭】lead 對段落。
+  function blockOf(node){
+    var el=node&&node.nodeType===3?node.parentElement:node;
+    return el?el.closest('p,li,td,th,figcaption,blockquote,h1,h2,h3,.deck'):null;
+  }
+  function occurrencesOf(hay,needle){
+    var out=[],p=hay.indexOf(needle);
+    while(p>=0){out.push(p);p=hay.indexOf(needle,p+1);}
+    return out;
+  }
+  function normPosOf(rng,ix){
+    var sc=rng.startContainer,so=rng.startOffset;
+    if(sc.nodeType!==3){
+      var w=document.createTreeWalker(scope,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+        if(!OK(n))return NodeFilter.FILTER_REJECT;
+        try{return rng.intersectsNode(n)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;}catch(e){return NodeFilter.FILTER_REJECT;}
+      }});
+      var first=w.nextNode(); if(!first)return -1; sc=first; so=0;
+    }
+    for(var k=0;k<ix.map.length;k++){ if(ix.map[k].n===sc&&ix.map[k].o>=so)return k; }
+    return -1;
+  }
+  function pickOccurrence(mk,ix,needle){
+    var occs=occurrencesOf(ix.norm,needle);
+    if(!occs.length)return -1;
+    if(occs.length===1)return occs[0];
+    if(typeof mk.occ==='number'&&occs[mk.occ]!=null)return occs[mk.occ];
+    var want=String(mk.lead||'').replace(/\s+/g,'').slice(0,20);
+    if(want){
+      for(var i=0;i<occs.length;i++){
+        var e=ix.map[occs[i]],blk=e&&blockOf(e.n);
+        if(blk&&String(blk.textContent||'').replace(/\s+/g,'').slice(0,20)===want)return occs[i];
+      }
+    }
+    return occs[0];
+  }
+
   function wrapSeg(node,from,to,mk,idx){
     if(to<=from)return;
     // SVG 內不包 <mark>（塞進去不會顯示，還會弄壞圖）；那一段靠 figure 外框呈現
@@ -255,13 +298,13 @@
 
   // 回傳每個標記有沒有成功定位（給面板標「未定位」用）
   function highlight(){
-    body.querySelectorAll('mark.ccm-hit').forEach(function(m){
+    scope.querySelectorAll('mark.ccm-hit').forEach(function(m){
       var t=document.createTextNode(m.textContent);m.parentNode.replaceChild(t,m);
     });
-    body.normalize();
+    scope.normalize();
     // 圖／表的外框標記先全部清掉，稍後依標記重上
-    body.querySelectorAll('.ccm-fig').forEach(function(f){f.classList.remove('ccm-fig')});
-    var figs=[].slice.call(body.querySelectorAll('figure,table'));
+    scope.querySelectorAll('.ccm-fig').forEach(function(f){f.classList.remove('ccm-fig')});
+    var figs=[].slice.call(scope.querySelectorAll('figure,table'));
     var marks=load(), figHealed=false;
     var out=marks.map(function(mk,idx){
       // 先處理「有沒有框到圖／表」
@@ -275,7 +318,7 @@
       });
       var needle=String(mk.text||'').replace(/\s+/g,'');   // 比對時兩邊都拿掉空白
       if(!needle)return {hit:gotFig,partial:false};
-      var ix=buildIndex(),at=ix.norm.indexOf(needle),len=needle.length,partial=false;
+      var ix=buildIndex(),at=pickOccurrence(mk,ix,needle),len=needle.length,partial=false;
       if(at<0){
         // 對不上就二分找「最長還能命中的前綴」——舊版存下來的標記（文字夾帶過 CSS／SVG）
         // 才不會整條掉光，至少亮出對得上的那一段。
@@ -378,7 +421,7 @@
     if(e.target.closest('.ccm-bubble,.ccm-panel,.ccm-fab'))return;
     setTimeout(function(){
       var sel=window.getSelection();
-      if(!sel||!sel.rangeCount||!String(sel).trim()||!body.contains(sel.anchorNode)){bubble.classList.remove('on');return;}
+      if(!sel||!sel.rangeCount||!String(sel).trim()||!scope.contains(sel.anchorNode)){bubble.classList.remove('on');return;}
       var rng=sel.getRangeAt(0);
       var txt=rangeText(rng);      // 不用 String(sel)：那會夾帶 <style> CSS 與 SVG 軸標籤
       if(!txt||txt.length<2){bubble.classList.remove('on');return;}
@@ -386,7 +429,7 @@
       var ctx=context(sel.anchorNode);
       // 選取範圍有沒有掃到圖／表？（SVG 裡塞不進 <mark>，所以另外記下來、整塊外框標記）
       var figIdx=[],figLabel=[];
-      [].slice.call(body.querySelectorAll('figure,table')).forEach(function(f,i){
+      [].slice.call(scope.querySelectorAll('figure,table')).forEach(function(f,i){
         try{
           if(rng.intersectsNode&&rng.intersectsNode(f)){
             figIdx.push(i);
@@ -424,8 +467,12 @@
       bubble.querySelector('#ccmSave').onclick=function(){
         var cmd=bubble.querySelector('#ccmCmd').value.trim();
         if(!kind||!cmd){bubble.querySelector('#ccmCmd').focus();return;}
+        // 記下這段文字是全文第幾次出現（0 起算），同一句話重複時還原才畫得對段
+        var occ=0;
+        try{ var ix2=buildIndex(),needle2=txt.replace(/\s+/g,''),pos=normPosOf(rng,ix2);
+             if(pos>=0){ var occs2=occurrencesOf(ix2.norm,needle2); for(var oi=0;oi<occs2.length;oi++){ if(occs2[oi]<pos)occ=oi+1; } } }catch(e){occ=0;}
         var a=load();a.push({id:'m'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),
-                             kind:kind,cmd:cmd,text:txt,head:ctx.head,lead:ctx.lead,
+                             kind:kind,cmd:cmd,text:txt,head:ctx.head,lead:ctx.lead,occ:occ,
                              figs:figIdx,figLabels:figLabel,at:new Date().toISOString()});
         save(a);bubble.classList.remove('on');window.getSelection().removeAllRanges();
       };
@@ -449,14 +496,14 @@
   }
   // 面板 → 文章
   function jumpTo(i){
-    var el=body.querySelector('[data-ccm-i="'+i+'"]');
+    var el=scope.querySelector('[data-ccm-i="'+i+'"]');
     if(!el){toast('這一條定位不到（原文可能已經改掉了）');return false;}
     var y=el.getBoundingClientRect().top+window.scrollY-Math.round(window.innerHeight*0.34);
     window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
     flash(el);return true;
   }
   // 文章 → 面板
-  body.addEventListener('click',function(e){
+  scope.addEventListener('click',function(e){
     var el=e.target.closest('mark.ccm-hit,figure.ccm-fig,table.ccm-fig');
     if(!el||el.dataset.ccmI==null)return;
     if(window.getSelection&&String(window.getSelection()).trim().length>1)return; // 圈選中不觸發

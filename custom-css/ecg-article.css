@@ -101,3 +101,11 @@
 .article-body:has(.uses-article-cards) .algo-fig__title {
   font-family: Georgia, "Noto Serif TC", "Songti TC", ui-serif, serif;
 }
+/* 引言（英文原話為主）換正式易讀的襯線、不斜體（Bear 2026-09-03：blockquote 英文字型不好看） */
+.article-body:has(.uses-article-cards) blockquote,
+.article-body:has(.uses-article-cards) blockquote p {
+  font-family: "Times New Roman", Times, "Noto Serif TC", "Songti TC", serif;
+  font-style: normal;
+  font-size: 1.04em;
+  line-height: 1.8;
+}

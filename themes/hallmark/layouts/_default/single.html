@@ -412,7 +412,7 @@
   {{- $heroImg := .Params.thumbnail | default .Params.featured_image | default .Params.featureImage | default .Params.image | default .Params.cover -}}
   {{ if $heroImg }}
     <figure class="hero-figure">
-      <img src="{{ $heroImg | relURL }}" alt="{{ .Title }}">
+      <img src="{{ $heroImg | relURL }}" alt="{{ .Title }}"{{ with .Params.hero_ratio }} style="aspect-ratio: {{ . | safeCSS }};"{{ end }}>{{/* front matter hero_ratio: "3/2" 可覆寫預設 16/9 裁切（2026-09-03，Codex 3:2 封面下緣被切） */}}
       {{ with .Params.featured_caption }}
         <figcaption>{{ . }}</figcaption>
       {{ end }}
