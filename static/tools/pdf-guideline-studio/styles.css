@@ -1776,3 +1776,9 @@ a {
   z-index: 40;
   box-shadow: 0 6px 16px rgba(36, 48, 59, 0.18);
 }
+
+/* 完整模式：Highlights 清單頂端那張文件摘要卡（標籤／描述／回文章／Open PDF）
+   跟右欄文件資訊重複，拿掉讓 highlight 多顯示一些；embed 模式保留 */
+.pdf-guideline-studio.is-full .pdf-guideline-studio__doc-meta {
+  display: none;
+}
