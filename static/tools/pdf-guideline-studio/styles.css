@@ -70,7 +70,10 @@ a {
 }
 
 .pdf-guideline-studio {
-  min-height: 100vh;
+  /* 整頁剛好一個視窗高：標題區、狀態列吃自然高度，工作區吃剩下的，外層不再出現捲軸 */
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
   display: flex;
   flex-direction: column;
 }
@@ -81,9 +84,10 @@ a {
 }
 
 .pdf-guideline-studio__masthead {
-  position: sticky;
-  top: 0;
+  /* 不再 sticky：正常情況整頁不會捲；視窗太矮才會捲，這時標題區跟著捲走，才不會蓋住 PDF 工具列 */
+  position: relative;
   z-index: 20;
+  flex: 0 0 auto;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -244,6 +248,7 @@ a {
 }
 
 .pdf-guideline-studio__status-strip {
+  flex: 0 0 auto;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -312,8 +317,9 @@ a {
   gap: 18px;
   align-items: stretch;
   padding: 18px 22px 24px;
-  height: calc(100vh - var(--pg-topbar-height) - 70px);
-  min-height: calc(100vh - var(--pg-topbar-height) - 70px);
+  flex: 1 1 auto;
+  height: auto;
+  min-height: 420px;
 }
 
 .pdf-guideline-studio.is-embed .pdf-guideline-studio__shell {
@@ -1402,8 +1408,14 @@ a {
 }
 
 @media (max-width: 1180px) {
+  .pdf-guideline-studio {
+    height: auto;
+    min-height: 100vh;
+  }
+
   .pdf-guideline-studio__shell {
     grid-template-columns: 1fr;
+    flex: 0 0 auto;
     height: auto;
     min-height: 0;
   }
