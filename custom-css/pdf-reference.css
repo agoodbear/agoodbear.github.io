@@ -579,6 +579,7 @@
 #guideline-hub .gh__flags { display: flex; gap: 0.35rem; margin-bottom: 0.3rem; }
 #guideline-hub .gh__flag { font-size: 0.66rem; font-weight: 800; letter-spacing: 0.1em; padding: 0.15rem 0.45rem; border-radius: 999px; background: var(--gh-tint); color: var(--gh-accent-ink); }
 #guideline-hub .gh__flag--new { background: var(--gh-accent); color: #fff; }
+#guideline-hub .gh__flag--fast { background: #fff3c4; color: #7a4d00; }
 #guideline-hub .gh__entry-title {
   display: block; font-weight: 600; font-size: 1.02rem; line-height: 1.5; color: var(--color-ink, #0b121a);
   overflow-wrap: anywhere;
