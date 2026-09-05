@@ -1100,7 +1100,15 @@ function renderHighlightCard(highlight, isSelected) {
   // 精簡卡：預設只露原文摘句（與已填的重點／tags），右上小箭頭才展開完整編輯或全文。
   const isEditorOpen = state.editMode && highlight.id === state.editingHighlightId;
   const isExpanded = isEditorOpen || isSelected || state.expandedHighlightIds.has(highlight.id);
-  const customLabel = sanitizeText(highlight.label || "", 240);
+  // 舊資料會把摘句前段自動塞進 label；若 label 只是摘句的開頭（或等於自動標題）就視為沒填
+  const rawLabel = sanitizeText(highlight.label || "", 240);
+  const labelStem = rawLabel.replace(/\.{3}$|…$/, "").trim().toLowerCase();
+  const quoteStem = sanitizeText(highlight.quote || "", 12000).replace(/\s+/g, " ").trim().toLowerCase();
+  const labelIsAuto =
+    !rawLabel ||
+    rawLabel === createHighlightHeading({ ...highlight, label: "" }) ||
+    (labelStem.length >= 12 && quoteStem.replace(/\s+/g, " ").startsWith(labelStem.replace(/\s+/g, " ")));
+  const customLabel = labelIsAuto ? "" : rawLabel;
   const heading = customLabel || createHighlightHeading(highlight);
   const headingMatches = getHighlightSearchMatchesForField(highlight.id, "label");
   const quoteMatches = getHighlightSearchMatchesForField(highlight.id, "quote");
