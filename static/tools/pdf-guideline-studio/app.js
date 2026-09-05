@@ -146,6 +146,18 @@ async function bootstrap() {
   renderShell();
   bindShellEvents();
 
+  // 先暖機：pdf.js 與 PDF 第一段不等 API 探測（health + doc 兩趟約 1 秒）就先抓，
+  // 讓 CDN edge 與瀏覽器先有 PDF 的快取，getDocument 時少一次冷啟動。
+  ensurePdfJs().catch(() => null);
+  const earlyPdfUrl = sanitizeText(state.query.get("pdf") || "", 4000);
+  if (earlyPdfUrl && /^(\/|https?:)/.test(earlyPdfUrl) && typeof window.fetch === "function") {
+    try {
+      fetch(earlyPdfUrl, { headers: { Range: "bytes=0-262143" }, credentials: "omit" }).catch(() => null);
+    } catch (error) {
+      /* ignore warmup failure */
+    }
+  }
+
   state.apiBase = await discoverApiBase();
   const doc = await loadDocument();
   state.doc = normalizeDoc(doc);
