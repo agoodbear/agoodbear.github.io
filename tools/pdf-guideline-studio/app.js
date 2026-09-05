@@ -1708,6 +1708,29 @@ async function renderPdfPages(pdfDoc, pdfjsLib) {
   }
   refs.pdfStack.appendChild(fragment);
 
+  attachLazyObserver(ctx);
+
+  await ensurePageRendered(1);
+  pumpRenderQueue();
+}
+
+function paneIsScrollContainer() {
+  const pane = refs.pdfPane;
+  if (!pane) return false;
+  const overflowY = getComputedStyle(pane).overflowY;
+  if (overflowY !== "auto" && overflowY !== "scroll") return false;
+  // 窄版面（≤1180px）面板改成自然高度，捲的是整個視窗，不是面板
+  return pane.scrollHeight > pane.clientHeight + 1;
+}
+
+function attachLazyObserver(ctx) {
+  if (!ctx || ctx.disposed) return;
+  if (ctx.observer) {
+    ctx.observer.disconnect();
+  }
+  ctx.wanted.clear();
+  const root = paneIsScrollContainer() ? refs.pdfPane : null;
+  ctx.observerRoot = root;
   ctx.observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -1721,12 +1744,30 @@ async function renderPdfPages(pdfDoc, pdfjsLib) {
       });
       pumpRenderQueue();
     },
-    { root: refs.pdfPane, rootMargin: LAZY_RENDER_ROOT_MARGIN, threshold: 0 }
+    { root, rootMargin: LAZY_RENDER_ROOT_MARGIN, threshold: 0 }
   );
   state.pageViews.forEach((pageView) => ctx.observer.observe(pageView.pageCard));
+}
 
-  await ensurePageRendered(1);
-  pumpRenderQueue();
+if (typeof window.matchMedia === "function") {
+  const narrowLayout = window.matchMedia("(max-width: 1180px)");
+  const onLayoutChange = () => {
+    const ctx = state.pdfRender;
+    if (!ctx || ctx.disposed) return;
+    const wantRoot = paneIsScrollContainer() ? refs.pdfPane : null;
+    if (wantRoot !== ctx.observerRoot) {
+      attachLazyObserver(ctx);
+    }
+  };
+  if (typeof narrowLayout.addEventListener === "function") {
+    narrowLayout.addEventListener("change", onLayoutChange);
+  } else if (typeof narrowLayout.addListener === "function") {
+    narrowLayout.addListener(onLayoutChange);
+  }
+  window.addEventListener("resize", () => {
+    window.clearTimeout(window.__ghLayoutTimer);
+    window.__ghLayoutTimer = window.setTimeout(onLayoutChange, 200);
+  });
 }
 
 async function pumpRenderQueue() {
