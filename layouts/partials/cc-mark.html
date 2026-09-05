@@ -174,7 +174,53 @@
     if(!k)return null;
     return REPLIES.find(function(r){return norm(r.match)&&(norm(r.match)===k||k.indexOf(norm(r.match).slice(0,14))===0);})||null;
   }
-  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  // ── 標記儲存：家裡 Mac 的檔案（經 8790 代理 /__ccm/marks），localhost 與 preview.agoodbear.com、醫院那台看同一份。
+  //    localStorage 只當快取／離線備援。2026-09-03 Bear：換到 tunnel 網址後 localhost 的標記「不見了」→ 因為 localStorage 一個 origin 一份。
+  var API=(location.hostname==='preview.agoodbear.com')?'/__ccm/marks':'http://127.0.0.1:8790/__ccm/marks';
+  var APIURL=API+'?path='+encodeURIComponent(location.pathname);
+  var MARKS=null, SYNCED=false;
+  // 墓碑：刪掉的標記記 key，跟著存到伺服器，別台電腦才不會把自己那份舊的又推回來
+  var DEL=new Set(); try{JSON.parse(localStorage.getItem(KEY+':del')||'[]').forEach(function(k){DEL.add(k)})}catch(e){}
+  function mkey(x){return x.id||('t:'+String(x.text||'').replace(/\s+/g,'').slice(0,40)+'|'+(x.cmd||''));}
+  function tomb(x){ if(!x)return; DEL.add(mkey(x)); try{localStorage.setItem(KEY+':del',JSON.stringify(Array.from(DEL)))}catch(e){} }
+  function loadLocal(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function load(){ if(MARKS===null)MARKS=loadLocal(); return MARKS; }
+  function setMarks(m){ MARKS=m; try{localStorage.setItem(KEY,JSON.stringify(m))}catch(e){} }
+  // 合併規則：同一個 key 取 u（最後動的時間）較新的那份；任一邊的墓碑都算數；順序＝伺服器順序＋本機新增
+  function mergeMarks(local,remote){
+    var byK={},out=[],seen={};
+    remote.forEach(function(r){ if(DEL.has(mkey(r)))return; byK[mkey(r)]=r; });
+    local.forEach(function(l){ var k=mkey(l); if(DEL.has(k))return; var r=byK[k]; if(!r||((l.u||0)>=(r.u||0)))byK[k]=l; });
+    remote.concat(local).forEach(function(x){ var k=mkey(x); if(seen[k]||!byK[k])return; seen[k]=1; out.push(byK[k]); });
+    return out;
+  }
+  function absorbRemoteDel(remote){ (remote&&Array.isArray(remote.del)?remote.del:[]).forEach(function(k){DEL.add(k)}); try{localStorage.setItem(KEY+':del',JSON.stringify(Array.from(DEL)))}catch(e){} }
+  function getRemote(){ return fetch(APIURL,{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}); }
+  function put(m){
+    return fetch(APIURL,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({marks:m,del:Array.from(DEL)})})
+      .then(function(r){ if(!r.ok)throw new Error(r.status); SYNCED=true; })
+      .catch(function(){ SYNCED=false; toast('⚠️ 標記只存在這個瀏覽器（家裡的代理沒回應），換電腦會看不到'); });
+  }
+  // 存：先拉伺服器現況合併，再整份寫回（避免蓋掉別台剛加的）
+  function push(m){
+    return getRemote().catch(function(){return null;}).then(function(remote){
+      var rm=(remote&&Array.isArray(remote.marks))?remote.marks:[]; absorbRemoteDel(remote);
+      var merged=mergeMarks(m,rm);
+      if(JSON.stringify(merged)!==JSON.stringify(m)){ setMarks(merged); render(); }
+      return put(merged);
+    });
+  }
+  // 拉：伺服器 → 合併 → 有差就重畫；本機有伺服器沒有的（含第一次遷移）就推上去
+  var refreshing=false;
+  function refresh(){
+    if(refreshing)return Promise.resolve(); refreshing=true;
+    return getRemote().then(function(remote){
+      if(!remote)return; var rm=Array.isArray(remote.marks)?remote.marks:[]; absorbRemoteDel(remote);
+      var merged=mergeMarks(load(),rm), mj=JSON.stringify(merged);
+      if(mj!==JSON.stringify(load())){ setMarks(merged); render(); }
+      if(mj!==JSON.stringify(rm)||(remote.del||[]).length!==DEL.size) return put(merged); else SYNCED=true;
+    }).catch(function(){}).then(function(){refreshing=false;});
+  }
   // ⚠️ 唯一的一份「圖／表識別」規則：存標記與還原標記必須共用它。
   //    只存位置索引會出事——文章中間插入一張新圖，後面每一張的索引都往後移一格，
   //    標記就會框到隔壁那張圖（2026-09-02 踩過：問瀑布圖的標記跳去框算式圖）。
@@ -183,7 +229,7 @@
     return t?t.textContent.replace(/\s+/g,' ').trim().slice(0,40)
             :(f.tagName==='TABLE'?'表格':'圖')+' #'+(i+1);
   }
-  function save(m){localStorage.setItem(KEY,JSON.stringify(m));render()}
+  function save(m){setMarks(m);push(m);render()}
 
   // 找出這段選取所在的區塊與所屬 h2，給 CC 定位用
   function context(node){
@@ -343,7 +389,7 @@
       return {hit:true,partial:partial};
     });
     // 索引被標題救回來的話，順手寫回去，下次就不用再猜（不呼叫 save()，避免遞迴 render）
-    if(figHealed){try{localStorage.setItem(KEY,JSON.stringify(marks))}catch(e){}}
+    if(figHealed){setMarks(marks);push(marks);}
     return out;
   }
 
@@ -367,17 +413,17 @@
         replyHtml(x,i)+'</div>';
     }).join('');
     list.querySelectorAll('.ccm-x').forEach(function(b){
-      b.onclick=function(){var a=load();a.splice(+b.dataset.i,1);save(a);};
+      b.onclick=function(){var a=load();var gone=a.splice(+b.dataset.i,1)[0];tomb(gone);save(a);};
     });
     list.querySelectorAll('.ccm-ok').forEach(function(b){
-      b.onclick=function(e){e.stopPropagation();var a=load(),i=+b.dataset.ok;a[i].done=!a[i].done;save(a);};
+      b.onclick=function(e){e.stopPropagation();var a=load(),i=+b.dataset.ok;a[i].done=!a[i].done;a[i].u=Date.now();save(a);};
     });
     list.querySelectorAll('.ccm-x').forEach(function(b){
       b.addEventListener('click',function(e){e.stopPropagation();});
     });
     list.querySelectorAll('.ccm-acts .yes').forEach(function(b){
       b.onclick=function(e){e.stopPropagation();var a=load(),i=+b.dataset.yes;
-        a[i].done=true;a[i].confirmedAt=new Date().toISOString();save(a);};
+        a[i].done=true;a[i].confirmedAt=new Date().toISOString();a[i].u=Date.now();save(a);};
     });
     list.querySelectorAll('.ccm-acts .no').forEach(function(b){
       b.onclick=function(e){e.stopPropagation();var a=load(),i=+b.dataset.no;
@@ -385,7 +431,7 @@
         if(extra===null)return;
         a[i].done=false;a[i].autoDone=false;a[i].reopened=true;
         if(extra.trim())a[i].cmd=a[i].cmd+'　↩ 退回補充：'+extra.trim();
-        save(a);};
+        a[i].u=Date.now();save(a);};
     });
     list.querySelectorAll('.ccm-item').forEach(function(it){
       it.title='點一下跳到文章中的位置';
@@ -473,7 +519,7 @@
              if(pos>=0){ var occs2=occurrencesOf(ix2.norm,needle2); for(var oi=0;oi<occs2.length;oi++){ if(occs2[oi]<pos)occ=oi+1; } } }catch(e){occ=0;}
         var a=load();a.push({id:'m'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),
                              kind:kind,cmd:cmd,text:txt,head:ctx.head,lead:ctx.lead,occ:occ,
-                             figs:figIdx,figLabels:figLabel,at:new Date().toISOString()});
+                             figs:figIdx,figLabels:figLabel,at:new Date().toISOString(),u:Date.now()});
         save(a);bubble.classList.remove('on');window.getSelection().removeAllRanges();
       };
       bubble.querySelector('#ccmCmd').addEventListener('keydown',function(ev){
@@ -536,7 +582,7 @@
   document.getElementById('ccmSweep').onclick=function(){
     var a=load(),left=a.filter(function(x){return !x.done;});
     if(a.length===left.length){alert('沒有已完成的標記');return;}
-    if(confirm('永久刪除 '+(a.length-left.length)+' 個已完成的標記？\n（不刪也沒關係——按「👁 隱藏已完成」就看不到了，紀錄還留著）'))save(left);
+    if(confirm('永久刪除 '+(a.length-left.length)+' 個已完成的標記？\n（不刪也沒關係——按「👁 隱藏已完成」就看不到了，紀錄還留著）')){a.filter(function(x){return x.done;}).forEach(tomb);save(left);}
   };
   document.getElementById('ccmCopy').onclick=function(){
     var m=load().filter(function(x){return !x.done;});
@@ -573,6 +619,11 @@
   })();
 
   render();
+  // 開頁先跟家裡的共用儲存合併一次（含第一次把 localStorage 舊標記搬上去）；之後每 45 秒、以及切回這個分頁時再合併
+  refresh();
+  setInterval(refresh,45000);
+  document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='visible')refresh(); });
+  window.addEventListener('focus',refresh);
 })();
 </script>
 {{ end }}

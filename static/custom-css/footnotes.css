@@ -6,6 +6,9 @@
 
 /* 內文上標數字（footnote ref） */
 .article-body sup[id^="fnref"] { line-height: 0; white-space: nowrap; }
+/* 註腳數字黏在前一個字後面，不准自己掉到下一行：塞一個零寬的 word joiner（U+2060）在上標前面，
+ * 中文標點後本來允許斷行，有 WJ 就不能斷（2026-09-04 Bear：「55」孤零零跑到下一行） */
+.article-body sup[id^="fnref"]::before { content: "\2060"; }
 .article-body sup[id^="fnref"] a {
   color: var(--color-accent-ink, #b22800);
   font-weight: 600;

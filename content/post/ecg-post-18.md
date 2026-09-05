@@ -1,8 +1,8 @@
 ---
 title: "Type 1~5 MI掰了？第五版心肌梗塞定義，X.com上的大家在吵什麼？"
-date: "2026-09-03"
+date: "2026-09-05"
 description: "2026 年 8 月 28 日，第五版心肌梗塞通用定義（UDMI）上線，Type 1 到 Type 5 一夕變成歷史名詞。把這幾天 X.com 上 84 則貼文一則一則點完，整理大家在講的、在吵的：secondary MI 為什麼不是 Type 2 換名、sepsis 加 troponin 紅字現在該叫什麼、OMI 進了 Figure 9 但名字沒進，還有明天上班 ED man 要改的五件事。"
-draft: true
+draft: false #Bear 2026-09-05 審完發布
 featured: false
 toc: true
 thumbnail: "/images/ipic/ecg-post-18-thumbnail.webp"
@@ -32,7 +32,7 @@ tags:
 
 ![ESC 官方帳號 2026 年 8 月 28 日的貼文（X.com 截圖）](../../static/images/ipic/ecg-post-18-esc-tweet.webp "Fig. 1. ESC 官方帳號 8 月 28 日的貼文（X.com 截圖）")
 
-貼文本身只有一行「NEW 2026 #ESCGuidelines – Fifth Universal Definition of Myocardial Infarction (2026)」加一個連結，重點在附圖：三顆心臟並排，紅的是 primary（斑塊破裂或其他急性冠狀動脈病灶），藍綠的是 secondary（急性病況造成供需失衡，把 obstructive CAD 掀出來，或造成新的心室功能受損），深藍的是 procedure-related（手術併發症造成冠狀動脈或橋血管阻塞、新的心室功能受損，或 30 天內的支架／橋血管失效），底下掛著 ESC、ACC、AHA、WHF 四個學會的 logo。發文時間是台北時間下午 2 點 28 分。
+貼文只講一件事：第五版 UDMI 出爐了。附圖那三顆心臟就是新的三分類，後面會講。
 
 然後整個 timeline 就炸了。
 
@@ -108,17 +108,19 @@ X 上讚數最高的解說文，是 @AnasNomanMD 的九點摘要。他開頭那�
 
 原文的解釋是：心肌的氧氣供需失衡，可以是需求變多（tachycardia、severe hypertension），也可以是供應變少（hypotension、hypoxia、anemia），所以很多急性病都能引起，最常見的是 tachyarrhythmia。缺血會有多嚴重，要看誘因拖多久、多厲害，還有病人底下有沒有 obstructive CAD 或結構性心臟病，而且常常兩三個誘因一起來。翻成白話文：先有一個急性病，它把心臟的氧氣供需打壞，心肌才缺血，這才叫 secondary。[^12]
 
+![心肌氧氣供需失衡：供應變少 vs 需求變多](../../static/images/ipic/ecg-post-18-supply-demand.webp "Fig. 3. 心肌氧氣供需失衡：供應那邊是 hypotension、hypoxia、anemia，需求那邊是 tachycardia、severe hypertension，失衡就缺血")
+
 ### 確診門檻變高，分三層
 
 另一個是 secondary MI 的確診門檻變高，而且分三層：
 
-![第五版 Secondary MI 的 Considered 判準：acute myocardial injury ＋ 另一個急性病況 ＋ 至少一項缺血證據](../../static/images/ipic/ecg-post-18-secondary-mi-considered.png "Fig. 3. 第五版 Secondary MI 的 Considered 判準：acute myocardial injury ＋ 另一個急性病況 ＋ 至少一項缺血證據")
+![第五版 Secondary MI 的 Considered 判準：acute myocardial injury ＋ 另一個急性病況 ＋ 至少一項缺血證據](../../static/images/ipic/ecg-post-18-secondary-mi-considered.png "Fig. 4. 第五版 Secondary MI 的 Considered 判準：acute myocardial injury ＋ 另一個急性病況 ＋ 至少一項缺血證據")
 
 - **Considered**:acute myocardial injury + 另一個急性病況 + 至少一項（缺血症狀、新的 ischemic ECG change、pathological Q wave）。
 - **Likely**：再加上已知 CAD，或是 ECG 缺血範圍、troponin 幅度大到讓你強烈懷疑。
 - **Confirmed**：要影像。冠狀動脈 ≥70% 狹窄（或 ≥50% 但生理學檢查證實限流）且沒有急性冠狀動脈病灶；或是新的 RWMA/失去存活心肌，分布符合缺血。[^13]
 
-![原文 Box 4：Secondary MI 的診斷準則](../../static/images/ipic/ecg-post-18-udmi5-box4.webp "Fig. 4. 原文 Box 4：secondary MI 的 considered／likely／confirmed 三層準則（原文跨兩欄，這裡上下接起來）。來源同 Table 1")
+![原文 Box 4：Secondary MI 的診斷準則](../../static/images/ipic/ecg-post-18-udmi5-box4.webp "Fig. 5. 原文 Box 4：secondary MI 的 considered／likely／confirmed 三層準則（原文跨兩欄，這裡上下接起來）。來源同 Table 1")
 
 <mark>**沒做到影像，secondary MI 就只能停在 considered 或 likely，不能 confirmed。**</mark>
 
@@ -128,7 +130,9 @@ X 上讚數最高的解說文，是 @AnasNomanMD 的九點摘要。他開頭那�
 
 熊評論：**第五版對 secondary MI 的態度，翻成白話文就是寧可少抓，也不要亂貼標籤。** 原文 Table 1 的 rationale 欄直接寫「prioritize specificity」，目的是把真正有治療意義的病人挑出來，不要讓「troponin 紅字+有急性病」就自動變成 MI 診斷。[^15]
 
-![原文 Table 1：第四版與第五版對照表](../../static/images/ipic/ecg-post-18-udmi5-table1.webp "Fig. 5. 原文 Table 1：第四版 vs 第五版逐項對照，最右欄就是 rationale。來源：Mills NL, et al. Fifth Universal Definition of Myocardial Infarction (2026)，© ESC/ACC/AHA/WHF，教學引用")
+Table 1 的 rationale 欄把兩邊的取向寫得很白。Primary MI 是 prioritizes sensitivity：寧可多抓，不能漏掉任何一個急性冠狀動脈病灶，因為漏掉的代價是一條血管、一塊心肌；所以 injury 加上症狀、ECG、Q 波任一項就先算 likely，導管和影像是拿來確認機轉、給 ICD 第六碼用的。Secondary MI 是 prioritizes specificity：寧可少抓，不要把每一個 sepsis 加 troponin 紅字都貼上 MI，因為貼了對治療多半沒有意義，病人卻多一個心臟病的標籤；所以要客觀證據，obstructive CAD 或新的 RWMA，做不到就停在 considered／likely。同一份文件、兩個方向相反的取向，原因是兩種 MI 抓錯的代價不同：primary 怕漏，secondary 怕濫。
+
+![原文 Table 1：第四版與第五版對照表](../../static/images/ipic/ecg-post-18-udmi5-table1.webp "Fig. 6. 原文 Table 1：第四版 vs 第五版逐項對照，最右欄就是 rationale。來源：Mills NL, et al. Fifth Universal Definition of Myocardial Infarction (2026)，© ESC/ACC/AHA/WHF，教學引用")
 
 ## 回答 Q2：Sepsis+troponin 紅字，現在叫什麼？
 
@@ -172,7 +176,7 @@ Troponin rise and/or fall，至少一個值超過 99th percentile，這叫 acute
 
 先講讓我開心的部分。第五版的 ECG 章節，第一次把「沒有 STE 但其實是 acute coronary occlusion」的那些 pattern 一個一個點名列出來：posterior MI(V1-V3 STD)、de Winter、Wellens、Aslanger pattern、South African flag sign、新出現的 LBBB/RBBB 合併缺血跡象、Sgarbossa 和 modified Sgarbossa(ST/S ≤0.25)、hyperacute T wave、VT/VF。[^23]
 
-![原文 Table 5：心肌缺血／梗塞的 ECG 表現](../../static/images/ipic/ecg-post-18-udmi5-table5.webp "Fig. 6. 原文 Table 5：心肌缺血／梗塞的 ECG 表現，de Winter、Wellens、Sgarbossa 都在表裡。來源同 Table 1")
+![原文 Table 5：心肌缺血／梗塞的 ECG 表現](../../static/images/ipic/ecg-post-18-udmi5-table5.webp "Fig. 7. 原文 Table 5：心肌缺血／梗塞的 ECG 表現，de Winter、Wellens、Sgarbossa 都在表裡。來源同 Table 1")
 
 而且原文明講：**多達四分之一被當 NSTEMI 處理的病人，culprit artery 其實是完全塞住的。**[^24]
 
@@ -180,13 +184,11 @@ Troponin rise and/or fall，至少一個值超過 99th percentile，這叫 acute
 
 第四版其實也有描述這些型態，只是沒有點名。它引了 de Winter 2008 那篇，寫的是「upsloping ST-segment depression with tall symmetric T waves associated with LAD occlusion」這種描述句。第五版是直接叫名字，還畫進 Figure 9。[^26]
 
-![原文 Figure 9：急性冠狀動脈阻塞的 ECG 特徵](../../static/images/ipic/ecg-post-18-udmi5-figure9.webp "Fig. 7. 原文 Figure 9：急性冠狀動脈阻塞的 ECG 特徵，下半部就是「沒有 STE 也要想到阻塞」的那幾個 pattern。來源同 Table 1")
+![原文 Figure 9：急性冠狀動脈阻塞的 ECG 特徵](../../static/images/ipic/ecg-post-18-udmi5-figure9.webp "Fig. 8. 原文 Figure 9：急性冠狀動脈阻塞的 ECG 特徵，下半部就是「沒有 STE 也要想到阻塞」的那幾個 pattern。來源同 Table 1")
 
 對 ED man 來說，這代表以後半夜 Call CV man，手上多了一份四大學會掛名的官方文件可以拿出來。
 
 ### STEMI/NSTEMI 這兩個名字，保留
-
-但是......也就是這個但是。
 
 **STEMI/NSTEMI 這兩個名字，保留。**[^27]
 
@@ -240,13 +242,11 @@ Farkas 另外還有一則更硬的批評，全部貼文裡排第四高。他批�
 
 要說清楚：ECG STAT 那頁沒有署名，是平台的參考庫，不能寫成「Mattu 說」。但這個對比我覺得很有意思。Smith 在慕尼黑現場開砲、Farkas 在 X 上罵，大師阿嬤一句話都沒說，他的平台一天之內把整套教材換好，連 STEMI/NSTEMI 保留都寫成「管理與編碼上仍然重要」。一個吵，一個直接用。[^43]
 
-<!-- cc草稿 id:mmtlcea4o1mk7 -->
 順便把 ECG STAT 那頁的 ACS 流程圖貼過來：
 
-![ECG STAT 的 ACS 初步評估流程圖](../../static/images/ipic/ecg-post-18-ecgstat-acs-flow.webp "Fig. 8. ECG STAT（ECG Weekly）ACS 頁面的初步評估流程圖，原圖出自 2025 ACC/AHA/ACEP/NAEMSP/SCAI ACS Guideline；會員內容，教學引用")
+![ECG STAT 的 Suspected ACS 流程圖](../../static/images/ipic/ecg-post-18-ecgstat-suspected-acs.webp "Fig. 9. ECG STAT《Suspected ACS: What Are You Actually Diagnosing?》，把第五版 UDMI 的 primary／secondary 接在 ACS 評估流程的尾端。© ECG STAT（ECG Weekly 會員內容，教學引用）")
 
-<!-- cc草稿 id:mmtlcea4o1mk7 -->
-流程本身很傳統：病史和理學檢查，懷疑 ACS 就 10 分鐘內做 ECG、抽 troponin；STEMI 直接評估再灌流；不是 STEMI 就連續 ECG 加連續 troponin（hs-cTn 隔 1 到 2 小時，傳統 cTn 隔 3 到 6 小時），再用 clinical decision pathway 分成低風險、中風險，和符合 NSTEMI 或高風險的那群。圖上沒有 OMI 三個字，但同一頁的文字有提醒：acute coronary occlusion 可能有、也可能沒有傳統的 STEMI criteria。
+這張 ECG STAT 的流程圖畫得非常好，第五版 UDMI 的概念全部收進去了，而且把整套邏輯排成一條線：先看症狀，10 分鐘內 ECG；有 STEMI criteria 或 STEMI-equivalent、OMI pattern 就直接走再灌流，不等 troponin。沒有的話抽連續 hs-cTn，先問有沒有 acute myocardial injury，再問有沒有缺血證據，兩個都有才是 acute MI，然後才分 primary 還是 secondary。左下那格「fix the stressor & repeat the ECG」是給 secondary 用的：誘因治好、ECG 變化退掉，偏向 secondary ischemia；退不掉或變糟，回頭懷疑 primary。最底下那句就是全篇主旨：troponin 講的是 injury，臨床表現和 ECG 才決定它是不是缺血、是不是 MI、要不要立刻再灌流。
 
 ## 剩下幾件事
 
@@ -258,7 +258,7 @@ Farkas 另外還有一則更硬的批評，全部貼文裡排第四高。他批�
 
 要公平講一句：第四版就已經「建議」用 sex-specific threshold 了，只是那時候還註明「對每一種 assay 是不是都有價值，仍有爭議」。第五版是把它從建議變成定義本身。[^45]
 
-**最新一代 hs-cTnT 在大型健康族群，女性的 URL 大約是男性的一半。**[^46] 原文引的是 Roche Elecsys Troponin T hs Gen 6（第六代高敏 troponin T，cobas e 801 平台）的全球健康參考族群研究 REF-TSIX；這句只講 troponin T，troponin I 各廠牌要看各自的參考值。
+**最新一代 hs-cTnT 在大型健康族群，女性的 URL 大約是男性的一半。**[^46]
 
 ### MINOCA 改名了，但縮寫沒變
 
@@ -292,6 +292,16 @@ X 上當然有人不買單。有一位寫：「一群業餘醫師委員會投票
 
 第五版把這套收起來，回到古典的 40 ms/25%，理由只有一句：古典定義跟 CMR 看到的 transmural infarction 相關性比較高。那套 0.02 秒、0.03 秒我背了八年......還給它了。[^52]
 
+### ACS、STEMI/NSTEMI、UA 還在用嗎？
+
+還在，而且是兩套並存，各管一件事。STEMI/NSTEMI 保留，定位是「看 ECG 決定要不要立刻再灌流」的工作診斷。原文自己講：「While imperfect, this classification is simple and useful to identify those patients likely to benefit from immediate coronary intervention or fibrinolysis.」ICD-11 也各給一個碼。它的極限原文也講了：STEMI/NSTEMI 只告訴你 ST 有沒有上升、現在要不要衝導管，沒告訴你這個 MI 是怎麼來的，是斑塊破裂、SCAD，還是被 sepsis 拖下水。急性期過了以後的決定，二級預防怎麼開、要不要去找 SCAD 那類血管病、要不要先治那個急性病，靠的是機轉，這兩個詞給不了。[^56]
+
+Unstable angina 也保留，還在 ACS 的光譜裡，而且跟 MI 一樣分層：新發生的、休息或輕微活動就出現的缺血症狀，連續 troponin 排除 MI，就可以考慮 UA；ECG 有缺血跡象，更像；導管找到 atherothrombosis 或其他急性冠狀動脈病灶，才算確診。沒做導管不代表不是 UA，只是停在「考慮／很像」。原文順便交代了為什麼 UA 越來越少：hs-cTn 普及以後，以前很多 UA 被重新歸成 MI，剩下真正 troponin 沒升的那群預後比較好。[^57]
+
+![第五版 UDMI §10 Unstable Angina 原文，三層判準螢光標示＋中文翻譯](../../static/images/ipic/ecg-post-18-udmi5-ua-highlight.webp "Fig. 10. 原文 §10 Unstable Angina：黃＝考慮、橘＝更像、綠＝確診，右側為中文翻譯。來源 Mills et al. Fifth UDMI 2026，© ESC/ACC/AHA/WHF，教學引用")
+
+所以是三個軸，不互相取代：ACS 是 UA 加急性 MI 的統稱；STEMI/NSTEMI 用 ECG 分，管急性期處置與編碼；primary/secondary/procedure-related 用機轉分，取代 Type 1～5，管最終診斷。前面 ECG STAT 那頁把四套講法並排（ACS、STEMI/NSTEMI、primary/secondary/procedure-related、acute coronary occlusion）、說不能互換，講的就是這件事。
+
 ## 回答 Q4：明天上班，ED man 要改什麼？
 
 1. **Troponin 紅字的病人，病歷上先寫 acute myocardial injury。** 要寫 MI，要有缺血證據。
@@ -319,6 +329,7 @@ X 上當然有人不買單。有一位寫：「一群業餘醫師委員會投票
 5. Procedure-related MI：任何心臟手術/介入 30 天內；不靠 troponin 倍數確診；>30 天的 stent thrombosis 算 primary。
 6. MINOCA 的 I 改成 injury，是工作診斷；CMR 做完只有 22-27% 是 MI。
 7. Typical/atypical 不鼓勵用；pathological Q wave 回到 ≥40 ms 和/或 ≥25% R wave。
+8. ACS、STEMI/NSTEMI、unstable angina 都保留：ACS 是統稱，STEMI/NSTEMI 管急性期再灌流與編碼，primary/secondary/procedure-related 管機轉與最終診斷，三個軸不互換。
 
 ## 參考資料
 
@@ -336,16 +347,16 @@ X 上當然有人不買單。有一位寫：「一群業餘醫師委員會投票
 
 每段引述與數字的出處，逐條對回原文與貼文。
 
-[^1]: @escardio 2026-08-28 https://x.com/escardio/status/2093224205798044021 · 讚數為 X syndication CDN 2026-09-03 抓取值
-[^2]: @AsherElad 2026-08-28 https://x.com/AsherElad/status/2093275677474554203 逐字：「Types 1-5 are gone. MI is now primary, secondary or procedure-related」；同義句另見 @gcfmd、@Bernilina、@AkhilGulati、@BartoszHudzik 貼文（udmi5-research/x-posts-verified）
+[^1]: @escardio 2026-08-28 https://x.com/escardio/status/2093224205798044021 · 讚數為 2026-09-03 當時看到的數值
+[^2]: @AsherElad 2026-08-28 https://x.com/AsherElad/status/2093275677474554203 逐字：「Types 1-5 are gone. MI is now primary, secondary or procedure-related」；同義句另見 @gcfmd、@Bernilina、@AkhilGulati、@BartoszHudzik 貼文
 [^3]: Mills NL, Newby LK, Zaman S, et al. Fifth Universal Definition of Myocardial Infarction (2026). EHJ DOI 10.1093/eurheartj/ehag101；JACC 10.1016/j.jacc.2026.07.025；Circulation 10.1161/CIR.0000000000001477；Global Heart 10.5334/gh.1578。首頁註記「co-published in European Heart Journal, Journal of the American College of Cardiology, Circulation, and Global Heart」。ESC 新聞稿 2026-08-28、ESC Congress 慕尼黑 2026-08-30 專場
 [^4]: Fourth UDMI: Thygesen K, et al. Circulation 2018, DOI 10.1161/CIR.0000000000000617
 [^5]: 劉宜學〈Fifth Universal Definition of Myocardial Infarction (2026) (I)–(V)〉wecareheart.com 2026-08-29 https://wecareheart.com/treatment-guidelines/fifth-universal-definition-of-myocardial-infarction-2026-i/
 [^6]: Fifth UDMI §4「What Is New」與 Table 1「Comparison of the Fourth and Fifth Universal Definitions of Myocardial Infarction」。逐字：「Myocardial infarction is now classified into one of three clinical types: Primary myocardial infarction: spontaneous presentation due to a primary acute coronary pathology / Secondary myocardial infarction: resulting from myocardial oxygen supply–demand imbalance due to another acute condition / Procedure-related myocardial infarction: occurring as a complication of a percutaneous or surgical cardiac procedure」
 [^7]: Fifth UDMI Table 1。逐字（Type 1 列）：「Restricted to atherothrombosis」→「Includes all acute coronary pathologies: atherothrombosis; spontaneous coronary artery dissection; coronary embolism; vasospasm; and restenosis, stent thrombosis, or graft failure >30 days from procedure」；（Type 3 列）「Term removed」；（Type 4/5 列）「Coronary complication within 30 days of a cardiac procedure」。第四版 48 小時：Fourth UDMI「Criteria for PCI-Related MI ≤48 Hours After the Index Procedure (Type 4a MI)」「Criteria for CABG-Related MI ≤48 Hours After the Index Procedure (Type 5 MI)」
-[^8]: @AnasNomanMD 2026-08-29 https://x.com/AnasNomanMD/status/2093752960568459643 逐字如上；讚數 205（CDN 2026-09-03）
-[^9]: @okame_icu 2026-08-28 https://x.com/okame_icu/status/2093319913675071636 讚 268；隔日自我更正「アテローム性動脈硬化症『以外の』→『以外も含む』」https://x.com/okame_icu/status/2093629240382304633。排名依 udmi5-research 84 則去重貼文的 CDN 讚數
-[^10]: @ArisSikolas 2026-08-28 https://x.com/ArisSikolas/status/2093289918873076180 讚 90；討論串 1/7–7/7 全文經 Firecrawl 抓取存於 udmi5-research
+[^8]: @AnasNomanMD 2026-08-29 https://x.com/AnasNomanMD/status/2093752960568459643 逐字如上；讚數 205（2026-09-03）
+[^9]: @okame_icu 2026-08-28 https://x.com/okame_icu/status/2093319913675071636 讚 268；隔日自我更正「アテローム性動脈硬化症『以外の』→『以外も含む』」https://x.com/okame_icu/status/2093629240382304633。排名依本文整理的 84 則去重貼文讚數
+[^10]: @ArisSikolas 2026-08-28 https://x.com/ArisSikolas/status/2093289918873076180 讚 90；討論串共 7 則
 [^11]: 同上 2/7 逐字：「Type 2 MI ALREADY required evidence of acute myocardial ischaemia. So requiring ischaemia is NOT new.」；Fourth UDMI「Criteria for Type 2 MI」：rise/fall cTn + supply–demand imbalance + 至少一項（症狀／新缺血 ECG／Q 波／影像）
 [^12]: 同上 3/7；Fifth UDMI Table 1 Type 2 列：「Myocardial oxygen supply–demand imbalance due to an alternative acute condition」；Fourth UDMI Type 2 定義原含「coronary spasm and spontaneous coronary dissection may be involved as well (ie, type 2 MI)」
 [^13]: Fifth UDMI Box 4「Diagnostic Criteria for Secondary Myocardial Infarction」逐字：「Obstructive coronary artery disease, defined as ≥70% stenosis in an epicardial vessel by angiography (or ≥50% stenosis in an epicardial vessel that is flow-limiting on physiological assessment) without an acute coronary pathology」「Development of a new or presumed new regional wall motion abnormality or absence of viable myocardium in a pattern consistent with an ischemic etiology」；三層 considered／likely／confirmed 同 Box 4 與 @ArisSikolas 5/7–7/7
@@ -357,14 +368,14 @@ X 上當然有人不買單。有一位寫：「一群業餘醫師委員會投票
 [^19]: @tlevin 2026-09-01 https://x.com/tlevin/status/2094605446648631296 逐字：「I don't think this helps me very much. Prefer just type 1 and type 2. Not sure what to call the trop of 1500 in older nursing home patient who has urosepsis with sinus tach without obstructive cad or wall motion abnormalities in the new classification.」
 [^20]: @minhaskh 2026-08-31 https://x.com/minhaskh/status/2094428547527884952 逐字：「No they will still come and say they had 3 heart attacks while in the hospital with normal EKG, normal echo and no coronary angiography done ever! High sensitivity troponin still is an issue!」
 [^21]: Fifth UDMI §7.2.2 逐字：「For patients with comorbidities, advanced frailty, or limited life expectancy due to the underlying acute condition, additional cardiac imaging is sometimes not appropriate. Hence, it may not be possible to definitively confirm the diagnosis of secondary myocardial infarction and clinical judgment is required.」
-[^22]: Fifth UDMI Table 4 ICD-11：BA41.0 STEMI／BA41.1 NSTEMI，第六碼 _A secondary（併急性病況碼）；§18。台灣 ICD-10-CM 對應：待確認
+[^22]: Fifth UDMI Table 4 ICD-11：BA41.0 STEMI／BA41.1 NSTEMI，第六碼 _A secondary（併急性病況碼）；§18。台灣 ICD-10-CM 對應：尚待查證
 [^23]: Fifth UDMI §13 逐字：「Further electrocardiographic patterns that suggest acute coronary occlusion include marked ST-segment depression or hyperacute T waves in V1–V2 with reciprocal changes elsewhere, de Winter pattern (upsloping ST-segment depression with tall, symmetric T waves in V2–V5), Wellens syndrome (biphasic or deeply inverted T waves in V2–V3 during pain-free intervals), Aslanger pattern (ST-segment elevation isolated to lead III with ST-segment depression in any of leads V4–V6 with a positive T wave), and the "South African flag" sign (ST-segment elevation in leads I, aVL, and V2 and ST-segment depression in lead III).」modified Sgarbossa「ST/S-wave ratio ≤0.25」；Table 5 含 hyperacute T waves、ventricular arrhythmia (VF or VT)
 [^24]: Fifth UDMI §13 逐字：「Previous studies have shown that up to 1 in 4 patients managed as a NSTEMI without classical ST-segment elevation on conventional 12-lead ECG have an acute occlusion of the culprit artery.」（refs 50, 51, 53）
 [^25]: Fifth UDMI 參考文獻 51 逐字：「McLaren J, de Alencar JN, Aslanger EK, Meyers HP, Smith SW. From ST-segment elevation MI to occlusion MI: the new paradigm shift in acute myocardial infarction. JACC Adv. 2024;3:101314. doi: 10.1016/j.jacadv.2024.101314」；ref 52 Ricci et al. Ann Emerg Med 2025 OMI ECG patterns
 [^26]: Fourth UDMI ECG 章逐字：「tall, prominent, symmetrical T waves in the precordial leads, upsloping ST-segment depression >1 mm at the J-point in the precordial leads... are associated with significant left anterior descending artery (LAD) occlusion」（refs 151–153，含 de Winter 2008 NEJM）；第四版全文 grep 無「Aslanger」「South African」
 [^27]: Fifth UDMI §7.1.2 逐字：「While imperfect, this classification is simple and useful to identify those patients likely to benefit from immediate coronary intervention or fibrinolysis.」；ICD-11 BA41.0／BA41.1；Figure 2 註腳將 STEMI 定位為 working diagnosis
 [^28]: ESC 365 session 52817「5th Universal Definition of Myocardial Infarction (ESC, ACC, AHA, and WHF): Ask the Task Force」2026-08-30；presentation 320633 key messages 16:15–16:20（Mills／Newby／Zaman）、presentation 320634 panel discussion 16:20–17:15。https://esc365.escardio.org/session/52817
-[^29]: ESC 365 session 頁面標示「ESC2026 Premium Access」「Sign in for access options」；Grok CLI 第六組查詢 from:smithECGBlog since:2026-08-25 共 12 則（僅 2 則與 UDMI 相關），其他帳號關於 Smith 現場提問的貼文 0 則（udmi5-research/x-posts-verified/q6_smith_verified.json）
+[^29]: ESC 365 session 頁面標示「ESC2026 Premium Access」「Sign in for access options」；檢索 @smithECGBlog 2026-08-25 起的貼文共 12 則，僅 2 則與 UDMI 相關；其他帳號提到 Smith 現場提問的貼文 0 則
 [^30]: @smithECGBlog 2026-08-31 https://x.com/smithECGBlog/status/2094510216456937806 逐字如上；讚 49
 [^31]: @PulmCrit 2026-08-31 https://x.com/PulmCrit/status/2094542556705030163 逐字如上
 [^32]: @BryanTanMD 2026-09-01 https://x.com/BryanTanMD/status/2094638536863449144 逐字：「Genuinely curious to know why does it matter if we call it STEMI or OMI. We can recognize a STEMI on ekg. We know patient needs to go to cath lab when we see a STEMI. We know vessel is occluded when there is a STEMI. Calling OMI doesn't change management or outcomes.」
@@ -372,16 +383,16 @@ X 上當然有人不買單。有一位寫：「一群業餘醫師委員會投票
 [^34]: @smithECGBlog 2026-09-01 https://x.com/smithECGBlog/status/2094755321289826526 逐字：「The name "STE" makes people think that STE is all that matters. Is there any other pathology in medicine that is named after a test used to diagnose it? There are none. "Low WBC appendicitis?" If low, you can wait until tomorrow to operate? If pt dies, guidelines were followed!」
 [^35]: @vitorborin_ 2026-08-31 https://x.com/vitorborin_/status/2094538802979102721 逐字：「If a scientific society is producing a Universal Definition of myocardial infarction, but feels unable to adopt an important change because the ICD has not yet incorporated the term, it raises an important question: Should classification systems constrain disease definitions, or should disease definitions be driven primarily by the best available evidence?」
 [^36]: @AhmedAd76369091 2026-08-31 https://x.com/AhmedAd76369091/status/2094542219617226876 逐字：「I guess we just keep using OMI/NOMI until it becomes so widespread they can't escape it. Eventually the definitions and coding will have to catch up... A bit of Darwinian survival of the most useful framework.」
-[^37]: @PulmCrit 2026-08-29 https://x.com/PulmCrit/status/2093708143444283705 讚 116；排名依 udmi5-research 84 則去重貼文 CDN 讚數（914／268／261／205／133／116）
-[^38]: 同上逐字（原文的「[＃1]」「[＃2]」為避免 Roam tag 改為全形井號）：「This concept is incorrect and misleading, because subendocardial ischemia DOESN'T localize to any region. There are really just TWO possible patterns of acute myocardial ischemia on an ECG: [＃1] Subendocardial ischemia (diffuse STD). [＃2] Transmural ischemia (which often causes regional STE and regional ST depression due to reciprocal changes).」
+[^37]: @PulmCrit 2026-08-29 https://x.com/PulmCrit/status/2093708143444283705 讚 116；排名依本文整理的 84 則去重貼文讚數（914／268／261／205／133／116）
+[^38]: 同上逐字：「This concept is incorrect and misleading, because subendocardial ischemia DOESN'T localize to any region. There are really just TWO possible patterns of acute myocardial ischemia on an ECG: [#1] Subendocardial ischemia (diffuse STD). [#2] Transmural ischemia (which often causes regional STE and regional ST depression due to reciprocal changes).」
 [^39]: 同上逐字：「this is often *incorrectly* invoked to explain regional reciprocal STD. This causes clinicians to *miss* the true diagnosis of transmural infarction (e.g., posterior transmural ischemia causing anterior STD).」
-[^40]: Grok CLI 第七組查詢 from:amalmattu since:2026-08-20 僅 2 則：https://x.com/amalmattu/status/2091116015035777411（2026-08-22，讚 70）、https://x.com/amalmattu/status/2091972886001020987（2026-08-24，讚 19）；since:2026-08-28 = 0 則；ESC 365 講者搜尋「Mattu」0 筆；@ECGWeekly 同期貼文無 UDMI（udmi5-research/x-posts-verified/q7_mattu_verified.json）
-[^41]: ECG Weekly ECG STAT「Acute Coronary Syndromes (ACS)」標註 August 28, 2026；tag 頁 https://ecgweekly.com/ecg-tag/5th-universal-definition-of-mi/；副標逐字「Aligned with the Fifth Universal Definition of Myocardial Infarction and the 2025 ACC/AHA/ACEP/NAEMSP/SCAI ACS Guideline」；全文存 udmi5-research/source-text/ecgweekly_acute-coronary-syndromes.txt（會員牆內，以 Bear 的 ECG Weekly 訂閱登入抓取）
-[^42]: 同上頁逐字：「However： Trigger + elevated troponin ≠ secondary MI.」「Clinical Pearl： A dynamic troponin is not synonymous with MI.」「STEMI vs NSTEMI: ECG-based classification of acute MI that remains clinically important for management and coding.」「These classifications should not be used interchangeably.」；OMI 頁逐字：「The Fifth Universal Definition of MI retains the conventional STEMI/NSTEMI classification but explicitly recognizes that not all acute coronary occlusions produce diagnostic ST elevation」（udmi5-research/source-text/ecgweekly_omi-stemi-beyond.txt）
-[^43]: ECG STAT 頁面無作者署名（參考文獻列 Meyers HP, Smith SW. Acute Coronary Syndromes. In: Mattu A and Swadron S, ed. CorePendium）；「大師阿嬤」為 Bear 對 Amal Mattu 的慣用暱稱（ecg-writing-style-profile §7.7）
+[^40]: 檢索 @amalmattu 2026-08-20 起的貼文僅 2 則：https://x.com/amalmattu/status/2091116015035777411（2026-08-22，讚 70）、https://x.com/amalmattu/status/2091972886001020987（2026-08-24，讚 19）；08-28 之後 0 則；ESC 365 講者搜尋「Mattu」0 筆；@ECGWeekly 同期貼文無 UDMI
+[^41]: ECG Weekly ECG STAT「Acute Coronary Syndromes (ACS)」標註 August 28, 2026；tag 頁 https://ecgweekly.com/ecg-tag/5th-universal-definition-of-mi/；副標逐字「Aligned with the Fifth Universal Definition of Myocardial Infarction and the 2025 ACC/AHA/ACEP/NAEMSP/SCAI ACS Guideline」（會員內容）
+[^42]: 同上頁逐字：「However: Trigger + elevated troponin ≠ secondary MI.」「Clinical Pearl: A dynamic troponin is not synonymous with MI.」「STEMI vs NSTEMI: ECG-based classification of acute MI that remains clinically important for management and coding.」「These classifications should not be used interchangeably.」；OMI 頁逐字：「The Fifth Universal Definition of MI retains the conventional STEMI/NSTEMI classification but explicitly recognizes that not all acute coronary occlusions produce diagnostic ST elevation」
+[^43]: ECG STAT 頁面無作者署名（參考文獻列 Meyers HP, Smith SW. Acute Coronary Syndromes. In: Mattu A and Swadron S, ed. CorePendium）；「大師阿嬤」是我對 Amal Mattu 的暱稱
 [^44]: @DrMarthaGulati 2026-08-30 https://x.com/DrMarthaGulati/status/2094173910157681058 讚 261，逐字：「The new 5th Universal Definition of MI explicitly requires sex-specific 99th-percentile troponin thresholds recognizing that using the same cutoff in women and men can systematically underdiagnose myocardial injury in women」
 [^45]: Fourth UDMI 逐字：「sex-specific 99th percentile URLs are recommended for hs-cTn assays... However, there is controversy as to whether this approach provides valuable additional information for all hs-cTn assays.」；Fifth UDMI §14.1.1「sex-specific 99th percentile URLs are necessary to define myocardial injury」；Box 1
-[^46]: Fifth UDMI §14.1.1 逐字：「the URL in females is half the URL in males for cardiac troponin T in a large and representative global healthy reference population」（ref 165）；ref 165 = Daniels LB, Mueller C, Giannitsis E, et al; TSIX Investigators. Establishing reference values in healthy participants for the cardiac troponin T high-sensitivity Gen 6 Assay: REF-TSIX global reference study. Clin Chem 2026;72:488–502. doi:10.1093/clinchem/hvag011；性別特異 99th URL 數值待二次確認（僅見於搜尋摘要）
+[^46]: Fifth UDMI §14.1.1 逐字：「the URL in females is half the URL in males for cardiac troponin T in a large and representative global healthy reference population」（ref 165）；ref 165 = Daniels LB, Mueller C, Giannitsis E, et al; TSIX Investigators. Establishing reference values in healthy participants for the cardiac troponin T high-sensitivity Gen 6 Assay: REF-TSIX global reference study. Clin Chem 2026;72:488–502. doi:10.1093/clinchem/hvag011
 [^47]: Fifth UDMI §11 逐字：「The definition of MINOCA is updated to "myocardial injury with non-obstructive coronary arteries."」「When CMR has been performed, myocardial infarction is the final diagnosis in 22%–27% of patients」；non-obstructive = 「no stenosis ≥50%」
 [^48]: Fifth UDMI §7.2 逐字：「97.5% of patients undergoing cardiac surgery had cardiac troponin levels more than 10 times the URL of the assay, and that thresholds more than 218 times the URL (95% confidence interval 40 to 318) were required to identify those at increased risk of peri-procedural mortality」；Fourth UDMI Type 4a「>5 times the 99th percentile URL」、Type 5「>10 times the 99th percentile URL」；X 上 @AsherElad https://x.com/AsherElad/status/2093275680511250502、@ArisSikolas https://x.com/ArisSikolas/status/2093728985628729825 討論串同此
 [^49]: Fifth UDMI §7.2.3 逐字：「When an acute coronary event related to a prior cardiac procedure occurs beyond 30 days, the diagnosis of primary myocardial infarction should be considered.」；心臟手術定義含 structural intervention、catheter ablation
@@ -389,5 +400,7 @@ X 上當然有人不買單。有一位寫：「一群業餘醫師委員會投票
 [^51]: @MrWBond 2026-08-29 https://x.com/MrWBond/status/2093835224081658339 逐字：「Committees of hobbyist doctors voting that I should say chest discomfort instead of chest pain is a small part of what is wrong — not just with Medicine — but the modern world. Idiotic.」
 [^52]: Fifth UDMI §13 逐字：「The classical definition of a pathological Q wave requires a Q-wave duration ≥40 ms and/or a depth of ≥25% of the R wave in the same lead. While an alternative pathological Q wave definition was suggested in prior versions of the UDMI, the classical definition has a higher correlation with transmural myocardial infarction in CMR imaging studies.」；Fourth UDMI Table 3
 [^53]: 第 5 點為個人觀點；Life Support Institute 部落格亦建議過渡期「dual fluency」https://lifesupportinstitute.com.au/blog/fifth-universal-definition-myocardial-infarction
-[^54]: 84 則為 Grok CLI 五組查詢去重後、經 X syndication CDN 逐則驗證的貼文數；第三組查詢（中日韓文）search_notes：「No zh-TW, zh-CN, or ko posts about 5th UDMI 2026 were found」，見 udmi5-research/x-posts-verified/
+[^54]: 84 則為 2026-08-28 至 09-02 間以多組關鍵字在 X 搜尋、逐則核對存在與讚數後去重的貼文數；另以繁中、簡中、韓文關鍵字各查一組，皆為零則
 [^55]: @EPCHCardiology、@RYO_cardeccmepi 現場照片貼文 2026-08-30；劉宜學 wecareheart.com 2026-08-29
+[^56]: Fifth UDMI §7.1.2 逐字：「The most widely adopted classification in practice stratifies myocardial infarction into two groups based on the presenting ECG, according to the presence or absence of ST-segment elevation… The recently released ICD-11 reflects the widespread use of this classification by introducing distinct codes for ST-segment elevation myocardial infarction (STEMI) (BA41.0) and non-ST-segment elevation myocardial infarction (NSTEMI) (BA41.1)… While imperfect, this classification is simple and useful to identify those patients likely to benefit from immediate coronary intervention or fibrinolysis. The terms in isolation offer limited insight into the underlying pathophysiological mechanism of myocardial infarction, however, and are therefore less useful at guiding management beyond the acute presentation.」
+[^57]: Fifth UDMI §10 逐字：「a diagnosis of unstable angina should be considered if myocardial infarction is excluded through serial cardiac troponin measurements. The diagnosis is more likely when symptoms are associated with signs of myocardial ischemia on the ECG, and the diagnosis is confirmed if atherothrombosis or an alternative acute coronary pathology is identified on coronary angiography」「acute coronary syndrome (ACS) is still commonly used as an umbrella term to describe these diagnoses」「a significant proportion of patients previously diagnosed with unstable angina would be reclassified as having myocardial infarction due to the lower sensitivity of the then utilized biomarker assays. Those with unstable angina without an elevation in cardiac troponin had a more favourable prognosis」
