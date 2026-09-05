@@ -1,7 +1,7 @@
 title: "Guideline 集散地"
 intro: "急診會用到的 AMI、ischemic stroke、ACLS 與心肌梗塞定義 guideline，全部接進站內 Reader。年份越新排越前面，每一組最新的一份會特別標出來。"
 updated: "2026-09-05"
-total_items: 31
+total_items: 33
 topics:
   - id: "ami"
     title: "AMI / ACS"
@@ -176,6 +176,20 @@ topics:
       - title: "Resuscitation Guideline"
         badge: "美國 / 歐洲"
         items:
+          - title: "2025 AHA Adult Advanced Life Support（Part 9 抽出版）"
+            doc: "acls-2025-aha-adult-als-part9"
+            year: 2025
+            added: "2026-09-05"
+            flag: "秒開"
+            citation: "Del Rios et al. (2025)"
+            note: "全套 489 頁裡的 Part 9，只有 40 頁。急診要查成人 ALS 直接開這份。"
+          - title: "2025 ERC Adult Advanced Life Support（章節抽出版）"
+            doc: "acls-2025-erc-adult-als"
+            year: 2025
+            added: "2026-09-05"
+            flag: "秒開"
+            citation: "Soar et al. (2025)"
+            note: "ERC 全套 541 頁裡的 Adult ALS 章節，63 頁。"
           - title: "2025 AHA Guidelines for CPR and Emergency Cardiovascular Care"
             doc: "acls-2025-acc-aha"
             year: 2025

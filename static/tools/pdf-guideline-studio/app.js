@@ -1485,6 +1485,7 @@ async function renderPdf(options = {}) {
   const preserveViewport = Boolean(options.preserveViewport);
   const preservedViewport = preserveViewport ? capturePdfViewportState() : null;
   const doc = state.doc;
+  disposeLazyRenderer();
   state.pdfDoc = null;
   state.pageViews = [];
   state.pageCount = 0;
@@ -1504,7 +1505,13 @@ async function renderPdf(options = {}) {
   try {
     state.isRenderingPdf = true;
     const pdfjsLib = await ensurePdfJs();
-    const pdfDoc = await pdfjsLib.getDocument(doc.pdfUrl).promise;
+    const pdfDoc = await pdfjsLib.getDocument({
+      url: doc.pdfUrl,
+      rangeChunkSize: 262144,
+      disableAutoFetch: true,
+      disableStream: true,
+    }).promise;
+    if (window.performance?.mark) performance.mark("gh:pdf-doc-ready");
     state.pdfDoc = pdfDoc;
     state.pageCount = pdfDoc.numPages;
     state.currentPage = clamp(state.currentPage, 1, pdfDoc.numPages);
@@ -1512,8 +1519,7 @@ async function renderPdf(options = {}) {
     refs.pdfLoading.hidden = true;
     refs.toolbarNote.textContent = `共 ${pdfDoc.numPages} 頁，點右側 highlight 可回到 PDF 原文位置。`;
     await renderPdfPages(pdfDoc, pdfjsLib);
-    syncPdfSearchMatches(true);
-    applyPdfSearchMarks();
+    refreshPdfSearch({ focus: false, preserveActive: true });
     renderPdfHighlights();
     updateTopbar();
 
@@ -1564,104 +1570,304 @@ function requestPdfRerender(options = {}) {
   renderPdf(options);
 }
 
+const LAZY_RENDER_ROOT_MARGIN = "1400px 0px";
+const MAX_RENDERED_PAGES = 30;
+const MAX_CANVAS_PIXELS = 16777216;
+
+function disposeLazyRenderer() {
+  const ctx = state.pdfRender;
+  if (!ctx) return;
+  if (ctx.observer) {
+    ctx.observer.disconnect();
+  }
+  ctx.disposed = true;
+  state.pdfRender = null;
+}
+
+function buildPageCard(pageNumber) {
+  const pageCard = document.createElement("article");
+  pageCard.className = "pdf-guideline-studio__page-card is-pending";
+  pageCard.setAttribute("data-page-card", String(pageNumber));
+  pageCard.innerHTML = `
+    <div class="pdf-guideline-studio__page-meta">
+      <span>Page ${pageNumber}</span>
+      <span>${pageNumber === 1 ? "Original PDF" : "Literature Page"}</span>
+    </div>
+    <div class="pdf-guideline-studio__page-stage">
+      <canvas class="pdf-guideline-studio__page-canvas"></canvas>
+      <div class="pdf-guideline-studio__page-text-layer" data-page-text-layer="${pageNumber}"></div>
+      <div class="pdf-guideline-studio__page-search-layer" data-page-search-layer="${pageNumber}"></div>
+      <div class="pdf-guideline-studio__page-overlay" data-page-overlay="${pageNumber}"></div>
+    </div>
+  `;
+  return pageCard;
+}
+
+function applyPageViewGeometry(pageView, baseWidth, baseHeight, paneWidth) {
+  const cssScale = (paneWidth / baseWidth) * state.zoom;
+  const cssWidth = baseWidth * cssScale;
+  const cssHeight = baseHeight * cssScale;
+  pageView.baseViewportWidth = baseWidth;
+  pageView.baseViewportHeight = baseHeight;
+  pageView.cssScale = cssScale;
+  pageView.cssWidth = cssWidth;
+  pageView.cssHeight = cssHeight;
+  pageView.canvas.style.width = `${cssWidth}px`;
+  pageView.canvas.style.height = `${cssHeight}px`;
+  pageView.stage.style.width = `${cssWidth}px`;
+  pageView.stage.style.height = `${cssHeight}px`;
+  pageView.textLayer.style.width = `${cssWidth}px`;
+  pageView.textLayer.style.height = `${cssHeight}px`;
+  pageView.searchLayer.style.width = `${cssWidth}px`;
+  pageView.searchLayer.style.height = `${cssHeight}px`;
+}
+
+function indexPageText(pageView, textContent) {
+  const searchEntries = [];
+  let searchCursor = 0;
+  const contentItems = Array.isArray(textContent?.items) ? textContent.items : [];
+  contentItems.forEach((item, index) => {
+    const rawText = String(item?.str || "");
+    const text = normalizeSearchText(rawText, 4000, { caseSensitive: true });
+    if (!text) return;
+    searchEntries.push({
+      index,
+      rawText,
+      text,
+      start: searchCursor,
+      end: searchCursor + text.length,
+    });
+    searchCursor += text.length + 1;
+  });
+  pageView.searchEntries = searchEntries;
+  pageView.searchText = searchEntries.map((entry) => entry.text).join(" ");
+  pageView.searchTextLower = pageView.searchText.toLowerCase();
+  pageView.textReady = true;
+}
+
 async function renderPdfPages(pdfDoc, pdfjsLib) {
+  disposeLazyRenderer();
   const paneWidth = Math.max(320, refs.pdfPane.clientWidth - 40);
+  const deviceScale = Math.min(window.devicePixelRatio || 1, 2);
+  const firstPage = await pdfDoc.getPage(1);
+  const firstViewport = firstPage.getViewport({ scale: 1 });
+  const ctx = {
+    pdfDoc,
+    pdfjsLib,
+    paneWidth,
+    deviceScale,
+    wanted: new Set(),
+    renderedOrder: [],
+    running: false,
+    observer: null,
+    disposed: false,
+    textIndexPromise: null,
+  };
+  state.pdfRender = ctx;
 
+  const fragment = document.createDocumentFragment();
   for (let pageNumber = 1; pageNumber <= pdfDoc.numPages; pageNumber += 1) {
-    const pageCard = document.createElement("article");
-    pageCard.className = "pdf-guideline-studio__page-card";
-    pageCard.setAttribute("data-page-card", String(pageNumber));
-    pageCard.innerHTML = `
-      <div class="pdf-guideline-studio__page-meta">
-        <span>Page ${pageNumber}</span>
-        <span>${pageNumber === 1 ? "Original PDF" : "Literature Page"}</span>
-      </div>
-      <div class="pdf-guideline-studio__page-stage">
-        <canvas class="pdf-guideline-studio__page-canvas"></canvas>
-        <div class="pdf-guideline-studio__page-text-layer" data-page-text-layer="${pageNumber}"></div>
-        <div class="pdf-guideline-studio__page-search-layer" data-page-search-layer="${pageNumber}"></div>
-        <div class="pdf-guideline-studio__page-overlay" data-page-overlay="${pageNumber}"></div>
-      </div>
-    `;
-    refs.pdfStack.appendChild(pageCard);
+    const pageCard = buildPageCard(pageNumber);
+    const pageView = {
+      pageNumber,
+      pageCard,
+      stage: pageCard.querySelector(".pdf-guideline-studio__page-stage"),
+      page: pageNumber === 1 ? firstPage : null,
+      canvas: pageCard.querySelector(".pdf-guideline-studio__page-canvas"),
+      textLayer: pageCard.querySelector(".pdf-guideline-studio__page-text-layer"),
+      searchLayer: pageCard.querySelector(".pdf-guideline-studio__page-search-layer"),
+      overlay: pageCard.querySelector(".pdf-guideline-studio__page-overlay"),
+      textDivs: [],
+      searchEntries: [],
+      searchText: "",
+      searchTextLower: "",
+      baseViewportWidth: firstViewport.width,
+      baseViewportHeight: firstViewport.height,
+      cssScale: 1,
+      cssWidth: 0,
+      cssHeight: 0,
+      rendered: false,
+      rendering: null,
+      textReady: false,
+    };
+    applyPageViewGeometry(pageView, firstViewport.width, firstViewport.height, paneWidth);
+    state.pageViews.push(pageView);
+    fragment.appendChild(pageCard);
+  }
+  refs.pdfStack.appendChild(fragment);
 
-    const canvas = pageCard.querySelector(".pdf-guideline-studio__page-canvas");
-    const textLayer = pageCard.querySelector(".pdf-guideline-studio__page-text-layer");
-    const searchLayer = pageCard.querySelector(".pdf-guideline-studio__page-search-layer");
-    const overlay = pageCard.querySelector(".pdf-guideline-studio__page-overlay");
-    const page = await pdfDoc.getPage(pageNumber);
+  ctx.observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const pageNumber = Number(entry.target.getAttribute("data-page-card"));
+        if (!pageNumber) return;
+        if (entry.isIntersecting) {
+          ctx.wanted.add(pageNumber);
+        } else {
+          ctx.wanted.delete(pageNumber);
+        }
+      });
+      pumpRenderQueue();
+    },
+    { root: refs.pdfPane, rootMargin: LAZY_RENDER_ROOT_MARGIN, threshold: 0 }
+  );
+  state.pageViews.forEach((pageView) => ctx.observer.observe(pageView.pageCard));
+
+  await ensurePageRendered(1);
+  pumpRenderQueue();
+}
+
+async function pumpRenderQueue() {
+  const ctx = state.pdfRender;
+  if (!ctx || ctx.running || ctx.disposed) return;
+  ctx.running = true;
+  try {
+    for (;;) {
+      if (ctx.disposed) break;
+      const pending = Array.from(ctx.wanted).filter((pageNumber) => {
+        const view = state.pageViews[pageNumber - 1];
+        return view && !view.rendered && !view.rendering;
+      });
+      if (!pending.length) break;
+      pending.sort((a, b) => Math.abs(a - state.currentPage) - Math.abs(b - state.currentPage));
+      await ensurePageRendered(pending[0]);
+    }
+  } finally {
+    ctx.running = false;
+  }
+}
+
+function evictRenderedPages(ctx, keepPageNumber) {
+  while (ctx.renderedOrder.length > MAX_RENDERED_PAGES) {
+    let farthestIndex = -1;
+    let farthestDistance = -1;
+    ctx.renderedOrder.forEach((pageNumber, index) => {
+      if (pageNumber === keepPageNumber || ctx.wanted.has(pageNumber)) return;
+      const distance = Math.abs(pageNumber - state.currentPage);
+      if (distance > farthestDistance) {
+        farthestDistance = distance;
+        farthestIndex = index;
+      }
+    });
+    if (farthestIndex === -1) break;
+    const [pageNumber] = ctx.renderedOrder.splice(farthestIndex, 1);
+    const view = state.pageViews[pageNumber - 1];
+    if (!view) continue;
+    view.canvas.width = 0;
+    view.canvas.height = 0;
+    view.textLayer.innerHTML = "";
+    view.searchLayer.innerHTML = "";
+    view.textDivs = [];
+    view.rendered = false;
+    view.pageCard.classList.add("is-pending");
+    try {
+      if (view.page && typeof view.page.cleanup === "function") {
+        view.page.cleanup();
+      }
+    } catch (error) {
+      /* ignore */
+    }
+  }
+}
+
+async function ensurePageRendered(pageNumber) {
+  const pageView = state.pageViews[pageNumber - 1];
+  const ctx = state.pdfRender;
+  if (!pageView || !ctx || ctx.disposed) return pageView || null;
+  if (pageView.rendered) return pageView;
+  if (pageView.rendering) return pageView.rendering;
+
+  pageView.rendering = (async () => {
+    const { pdfDoc, pdfjsLib, paneWidth } = ctx;
+    const page = pageView.page || (await pdfDoc.getPage(pageNumber));
+    if (ctx.disposed) return pageView;
+    pageView.page = page;
+
     const baseViewport = page.getViewport({ scale: 1 });
-    const cssScale = (paneWidth / baseViewport.width) * state.zoom;
-    const deviceScale = window.devicePixelRatio || 1;
-    const renderViewport = page.getViewport({ scale: cssScale * deviceScale });
-    const cssWidth = baseViewport.width * cssScale;
-    const cssHeight = baseViewport.height * cssScale;
-
+    applyPageViewGeometry(pageView, baseViewport.width, baseViewport.height, paneWidth);
+    let deviceScale = ctx.deviceScale;
+    const cssPixels = pageView.cssWidth * pageView.cssHeight;
+    if (cssPixels * deviceScale * deviceScale > MAX_CANVAS_PIXELS) {
+      deviceScale = Math.max(1, Math.sqrt(MAX_CANVAS_PIXELS / cssPixels));
+    }
+    const renderViewport = page.getViewport({ scale: pageView.cssScale * deviceScale });
+    const canvas = pageView.canvas;
     canvas.width = Math.ceil(renderViewport.width);
     canvas.height = Math.ceil(renderViewport.height);
-    canvas.style.width = `${cssWidth}px`;
-    canvas.style.height = `${cssHeight}px`;
-
-    const stage = pageCard.querySelector(".pdf-guideline-studio__page-stage");
-    stage.style.width = `${cssWidth}px`;
-    stage.style.height = `${cssHeight}px`;
-    textLayer.style.width = `${cssWidth}px`;
-    textLayer.style.height = `${cssHeight}px`;
-    searchLayer.style.width = `${cssWidth}px`;
-    searchLayer.style.height = `${cssHeight}px`;
-
     const context = canvas.getContext("2d");
     await page.render({ canvasContext: context, viewport: renderViewport }).promise;
+    if (ctx.disposed) return pageView;
+
     const textContent = await page.getTextContent();
-    textLayer.innerHTML = "";
+    if (ctx.disposed) return pageView;
+    if (!pageView.textReady) {
+      indexPageText(pageView, textContent);
+    }
+    pageView.textLayer.innerHTML = "";
     const textDivs = [];
     const textLayerTask = pdfjsLib.renderTextLayer({
       textContentSource: textContent,
-      container: textLayer,
-      viewport: page.getViewport({ scale: cssScale }),
+      container: pageView.textLayer,
+      viewport: page.getViewport({ scale: pageView.cssScale }),
       textDivs,
     });
     if (textLayerTask && textLayerTask.promise) {
       await textLayerTask.promise;
     }
+    if (ctx.disposed) return pageView;
+    pageView.textDivs = textDivs;
+    pageView.rendered = true;
+    pageView.pageCard.classList.remove("is-pending");
+    if (pageNumber === 1 && window.performance?.mark) performance.mark("gh:first-page-rendered");
+    ctx.renderedOrder.push(pageNumber);
+    evictRenderedPages(ctx, pageNumber);
 
-    const searchEntries = [];
-    let searchCursor = 0;
-    const contentItems = Array.isArray(textContent.items) ? textContent.items : [];
-    contentItems.forEach((item, index) => {
-      const rawText = String(item?.str || "");
-      const text = normalizeSearchText(rawText, 4000, { caseSensitive: true });
-      if (!text) return;
-      searchEntries.push({
-        index,
-        rawText,
-        text,
-        start: searchCursor,
-        end: searchCursor + text.length,
-      });
-      searchCursor += text.length + 1;
-    });
+    renderPdfHighlights();
+    const activeMatch = state.pdfSearch.matches[state.pdfSearch.activeIndex] || null;
+    if (activeMatch && activeMatch.pageNumber === pageNumber) {
+      applyPdfSearchMarks();
+      const targetRect = getPdfSearchTargetRect(pageView, activeMatch.matchIndex, activeMatch.termLength);
+      if (targetRect) {
+        scrollPdfPaneToSearchMatch(pageView, targetRect, false);
+      }
+    }
+    scheduleConnectorUpdate();
+    return pageView;
+  })().finally(() => {
+    pageView.rendering = null;
+  });
+  return pageView.rendering;
+}
 
-    state.pageViews.push({
-      pageNumber,
-      pageCard,
-      stage,
-      page,
-      canvas,
-      textLayer,
-      searchLayer,
-      overlay,
-      textDivs,
-      searchEntries,
-      searchText: searchEntries.map((entry) => entry.text).join(" "),
-      searchTextLower: searchEntries.map((entry) => entry.text).join(" ").toLowerCase(),
-      baseViewportWidth: baseViewport.width,
-      baseViewportHeight: baseViewport.height,
-      cssScale,
-      cssWidth,
-      cssHeight,
-    });
-  }
+function isPdfTextIndexComplete() {
+  return state.pageViews.length > 0 && state.pageViews.every((pageView) => pageView.textReady);
+}
+
+function ensurePdfTextIndex() {
+  const ctx = state.pdfRender;
+  if (!ctx || ctx.disposed) return Promise.resolve(false);
+  if (ctx.textIndexPromise) return ctx.textIndexPromise;
+  ctx.textIndexPromise = (async () => {
+    const total = state.pageViews.length;
+    let done = 0;
+    for (const pageView of state.pageViews) {
+      if (ctx.disposed) return false;
+      if (!pageView.textReady) {
+        const page = pageView.page || (await ctx.pdfDoc.getPage(pageView.pageNumber));
+        if (ctx.disposed) return false;
+        pageView.page = page;
+        const textContent = await page.getTextContent();
+        if (ctx.disposed) return false;
+        indexPageText(pageView, textContent);
+      }
+      done += 1;
+      if (refs.pdfSearchCount && done % 20 === 0 && done < total) {
+        refs.pdfSearchCount.textContent = `索引中 ${done}/${total}`;
+      }
+    }
+    return true;
+  })();
+  return ctx.textIndexPromise;
 }
 
 function renderPdfHighlights() {
@@ -2057,6 +2263,9 @@ function normalizeBox(start, end) {
 }
 
 async function captureBoxImageDataUrl(pageView, box) {
+  if (pageView?.pageNumber && !pageView.rendered) {
+    await ensurePageRendered(pageView.pageNumber);
+  }
   if (!pageView?.page || !pageView?.canvas) return "";
 
   const sourceCanvas = pageView.canvas;
@@ -3042,6 +3251,13 @@ function syncPdfSearchMatches(preserveActive = true) {
 }
 
 function refreshPdfSearch({ focus = true, preserveActive = true, smooth = false } = {}) {
+  if (state.pdfSearch.term && state.pageViews.length && !isPdfTextIndexComplete()) {
+    ensurePdfTextIndex().then((completed) => {
+      if (completed && state.pdfSearch.term) {
+        refreshPdfSearch({ focus, preserveActive: true, smooth });
+      }
+    });
+  }
   syncPdfSearchMatches(preserveActive);
   applyPdfSearchMarks();
   updateSearchUi();

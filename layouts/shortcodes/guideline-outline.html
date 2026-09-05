@@ -164,10 +164,11 @@
         <li class="gh__entry{{ if $isLatest }} gh__entry--latest{{ end }}{{ if $isNew }} gh__entry--new{{ end }}" id="gh-entry-{{ $entry.doc }}" data-gh-entry data-gh-search="{{ $hay }}">
           <div class="gh__year"><span class="gh__year-num">{{ $year | default "—" }}</span></div>
           <div class="gh__body">
-            {{- if or $isLatest $isNew }}
+            {{- if or $isLatest $isNew $entry.flag }}
             <div class="gh__flags">
               {{- if $isLatest }}<span class="gh__flag">最新</span>{{ end }}
               {{- if $isNew }}<span class="gh__flag gh__flag--new">NEW</span>{{ end }}
+              {{- with $entry.flag }}<span class="gh__flag gh__flag--fast">⚡ {{ . }}</span>{{ end }}
             </div>
             {{- end }}
             {{- if $viewer }}

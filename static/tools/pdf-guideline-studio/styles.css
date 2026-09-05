@@ -1481,3 +1481,20 @@ a {
     transition: none;
   }
 }
+
+/* 懶載入：尚未畫出的頁面先放淡色占位，避免長文件一次畫完 */
+.pdf-guideline-studio__page-card.is-pending .pdf-guideline-studio__page-stage {
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.035), rgba(15, 23, 42, 0.015)),
+    #fff;
+}
+.pdf-guideline-studio__page-card.is-pending .pdf-guideline-studio__page-stage::after {
+  content: "載入中…";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.85rem;
+  color: rgba(15, 23, 42, 0.35);
+  letter-spacing: 0.08em;
+}
