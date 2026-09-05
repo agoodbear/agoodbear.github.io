@@ -45,7 +45,10 @@
   {{- /* Site custom CSS (timeline / image-row / tag-pill / ecg-wave-text / etc.)
          Defined in config/_default/params.toml; loads existing custom-css files. */ -}}
   {{ range site.Params.customCSS }}
-    <link rel="stylesheet" href="{{ . | relURL }}">
+    {{- /* 以檔案內容 hash 當版本號，改了 CSS 才會換網址，避免瀏覽器／CDN 拿舊快取 */ -}}
+    {{- $v := "" -}}
+    {{- with os.ReadFile (printf "static/%s" .) }}{{ $v = . | md5 | truncate 8 "" }}{{ end -}}
+    <link rel="stylesheet" href="{{ . | relURL }}{{ with $v }}?v={{ . }}{{ end }}">
   {{ end }}
 
   {{ block "head" . }}{{ end }}

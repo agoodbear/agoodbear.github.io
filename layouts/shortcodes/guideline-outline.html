@@ -1,97 +1,256 @@
+{{- /* Guideline 集散地：主題磚 + 搜尋 + 年份時間軸。資料來源 data/guideline_hub.yaml（結構）與 data/guideline_pdfs.yaml（PDF）。 */ -}}
 {{- $hub := site.Data.guideline_hub -}}
 {{- if not $hub -}}
-<section class="guideline-outline">
-  <div class="guideline-room__empty">尚未建立 Guideline 索引資料，請先編輯 <code>data/guideline_hub.yaml</code>。</div>
-</section>
+<section class="gh"><p class="gh__empty">尚未建立 Guideline 索引資料，請先編輯 <code>data/guideline_hub.yaml</code>。</p></section>
 {{- else -}}
-{{- $pdfIndex := newScratch -}}
+{{- $s := newScratch -}}
+{{- $ver := "20260307-11" -}}
+{{- $newDays := 120 -}}
+
+{{- /* PDF 註冊表 doc → item */ -}}
 {{- with site.Data.guideline_pdfs.items -}}
   {{- range $item := . -}}
-    {{- with $item.doc -}}
-      {{- $pdfIndex.Set (printf "doc:%s" .) $item -}}
-    {{- end -}}
+    {{- with $item.doc -}}{{- $s.SetInMap "pdf" . $item -}}{{- end -}}
   {{- end -}}
 {{- end -}}
 
-<section class="guideline-outline">
-  <div class="guideline-outline__header">
-    <h2 class="guideline-outline__title">{{ $hub.title }}</h2>
-  </div>
+{{- /* 第一輪：算連結、數量、年份、最新收錄 */ -}}
+{{- $s.Set "total" 0 -}}
+{{- range $topic := $hub.topics -}}
+  {{- $s.SetInMap "topicCount" $topic.id 0 -}}
+  {{- $s.SetInMap "topicLatest" $topic.id "" -}}
+  {{- range $group := $topic.groups -}}
+    {{- range $entry := $group.items -}}
+      {{- $s.Add "total" 1 -}}
+      {{- $s.SetInMap "topicCount" $topic.id (add (index ($s.Get "topicCount") $topic.id) 1) -}}
+      {{- $year := "" -}}
+      {{- with $entry.year -}}{{- $year = printf "%v" . -}}{{- else -}}{{- with findRE `^\d{4}` $entry.title -}}{{- $year = index . 0 -}}{{- end -}}{{- end -}}
+      {{- $s.SetInMap "year" $entry.doc $year -}}
+      {{- if gt $year (index ($s.Get "topicLatest") $topic.id) -}}{{- $s.SetInMap "topicLatest" $topic.id $year -}}{{- end -}}
+      {{- $docItem := false -}}
+      {{- with $entry.doc -}}{{- with index ($s.Get "pdf" | default dict) . -}}{{- $docItem = . -}}{{- end -}}{{- end -}}
+      {{- if $docItem -}}
+        {{- $pdfHref := "" -}}
+        {{- with $docItem.href -}}
+          {{- $pdfHref = . -}}
+          {{- if hasPrefix $pdfHref "/" -}}
+            {{- $sep := cond (in $pdfHref "?") "&" "?" -}}
+            {{- $pdfHref = printf "%s%sv=%s" $pdfHref $sep $ver -}}
+          {{- end -}}
+        {{- end -}}
+        {{- $q := slice -}}
+        {{- with $docItem.doc }}{{- $q = $q | append (printf "doc=%s" (. | urlquery)) -}}{{- end -}}
+        {{- with $docItem.seed }}{{- $q = $q | append (printf "seed=%s" (. | urlquery)) -}}{{- end -}}
+        {{- with $pdfHref }}{{- $q = $q | append (printf "pdf=%s" (. | urlquery)) -}}{{- end -}}
+        {{- with $docItem.title }}{{- $q = $q | append (printf "title=%s" (. | urlquery)) -}}{{- end -}}
+        {{- with $docItem.meta }}{{- $q = $q | append (printf "meta=%s" (. | urlquery)) -}}{{- end -}}
+        {{- with $docItem.tag }}{{- $q = $q | append (printf "tag=%s" (. | urlquery)) -}}{{- end -}}
+        {{- with $docItem.tone }}{{- $q = $q | append (printf "tone=%s" (. | urlquery)) -}}{{- end -}}
+        {{- with $docItem.summary }}{{- $q = $q | append (printf "description=%s" (. | urlquery)) -}}{{- end -}}
+        {{- with $.Page.RelPermalink }}{{- $q = $q | append (printf "article=%s" (. | urlquery)) -}}{{- end -}}
+        {{- $q = $q | append (printf "v=%s" $ver) -}}
+        {{- $viewer := printf "/tools/pdf-guideline-studio/?%s" (delimit $q "&") -}}
+        {{- $s.SetInMap "viewer" $entry.doc $viewer -}}
+        {{- $s.SetInMap "admin" $entry.doc (printf "%s&mode=admin" $viewer) -}}
+        {{- with $pdfHref -}}
+          {{- $s.SetInMap "raw" $entry.doc (cond (hasPrefix . "/") (printf "/js/pdf-js/web/viewer.html?file=%s" (. | urlquery)) .) -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $isNew := false -}}
+      {{- with $entry.added -}}
+        {{- $t := time . -}}
+        {{- if lt (sub now.Unix $t.Unix) (mul $newDays 86400) -}}{{- $isNew = true -}}{{- end -}}
+      {{- end -}}
+      {{- if $isNew -}}
+        {{- $s.SetInMap "isNew" $entry.doc true -}}
+        {{- $s.Add "recent" (slice (dict "title" $entry.title "doc" $entry.doc "year" $year "topic" $topic.title "accent" $topic.accent)) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $total := $s.Get "total" -}}
+{{- $viewerMap := $s.Get "viewer" | default dict -}}
+{{- $adminMap := $s.Get "admin" | default dict -}}
+{{- $rawMap := $s.Get "raw" | default dict -}}
+{{- $yearMap := $s.Get "year" | default dict -}}
+{{- $newMap := $s.Get "isNew" | default dict -}}
+{{- $topicCount := $s.Get "topicCount" -}}
+{{- $topicLatest := $s.Get "topicLatest" -}}
+{{- $recent := $s.Get "recent" | default slice -}}
+
+{{- /* 圖示 */ -}}
+{{- $icons := dict
+  "heart" `<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>`
+  "brain" `<path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/>`
+  "pulse" `<path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>`
+  "definition" `<path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/>`
+-}}
+
+<section class="gh" id="guideline-hub">
+  <header class="gh__hero">
+    <p class="gh__eyebrow">Guideline Hub · 共 {{ $total }} 份{{ with $hub.updated }} · 更新 {{ . }}{{ end }}</p>
+    {{- with $hub.intro }}<p class="gh__intro">{{ . }}</p>{{ end }}
+
+    <label class="gh__search">
+      <svg class="gh__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" data-gh-search-input placeholder="搜尋：ESC、STEMI、tenecteplase、2025、台灣……" aria-label="搜尋 guideline" autocomplete="off" spellcheck="false">
+      <span class="gh__count" data-gh-count>{{ $total }} / {{ $total }}</span>
+      <button type="button" class="gh__clear" data-gh-clear hidden>清除</button>
+    </label>
+
+    <nav class="gh__tiles" aria-label="Guideline 主題">
+      {{- range $topic := $hub.topics }}
+      {{- $n := index $topicCount $topic.id -}}
+      {{- $latest := index $topicLatest $topic.id -}}
+      <a class="gh__tile gh__tile--{{ $topic.accent | default "rose" }}" href="#gh-{{ $topic.id }}">
+        <span class="gh__tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ index $icons ($topic.icon | default "heart") | safeHTML }}</svg></span>
+        <span class="gh__tile-name">{{ $topic.title }}</span>
+        {{- with $topic.subtitle }}<span class="gh__tile-sub">{{ . }}</span>{{ end }}
+        <span class="gh__tile-meta"><b>{{ $n }}</b> 份{{ with $latest }} · 最新 {{ . }}{{ end }}</span>
+      </a>
+      {{- end }}
+    </nav>
+
+    {{- with $recent }}
+    <div class="gh__recent">
+      <span class="gh__recent-label">最新收錄</span>
+      <div class="gh__recent-list">
+        {{- range . }}
+        {{- $href := index $viewerMap .doc -}}
+        <a class="gh__chip gh__chip--{{ .accent | default "rose" }}" href="{{ if $href }}{{ $href | safeURL }}{{ else }}#gh-entry-{{ .doc }}{{ end }}"><span class="gh__chip-new">NEW</span>{{ .title }}</a>
+        {{- end }}
+      </div>
+    </div>
+    {{- end }}
+  </header>
 
   {{- range $topic := $hub.topics }}
-    <section class="guideline-outline__topic">
-      <div class="guideline-outline__topic-head">
-        <h3 class="guideline-outline__topic-title">{{ $topic.title }}</h3>
+  <section class="gh__topic gh__topic--{{ $topic.accent | default "rose" }}" id="gh-{{ $topic.id }}" data-gh-topic>
+    <header class="gh__topic-head">
+      <span class="gh__topic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ index $icons ($topic.icon | default "heart") | safeHTML }}</svg></span>
+      <div class="gh__topic-text">
+        <h3 class="gh__topic-title">{{ $topic.title }}</h3>
+        {{- with $topic.subtitle }}<p class="gh__topic-sub">{{ . }}</p>{{ end }}
       </div>
+      <span class="gh__topic-count" data-gh-topic-count>{{ index $topicCount $topic.id }} 份</span>
+    </header>
 
-      <ol class="guideline-outline__group-list">
-        {{- range $group := $topic.groups }}
-          <li class="guideline-outline__group-item">
-            <div class="guideline-outline__group-head">
-              <h4 class="guideline-outline__group-title">{{ $group.title }}</h4>
+    {{- range $group := $topic.groups }}
+    {{- $gs := newScratch -}}
+    {{- $gs.Set "min" "" -}}{{- $gs.Set "max" "" -}}
+    {{- range $group.items -}}
+      {{- $y := index $yearMap .doc -}}
+      {{- if $y -}}
+        {{- if or (eq ($gs.Get "min") "") (lt $y ($gs.Get "min")) -}}{{- $gs.Set "min" $y -}}{{- end -}}
+        {{- if or (eq ($gs.Get "max") "") (gt $y ($gs.Get "max")) -}}{{- $gs.Set "max" $y -}}{{- end -}}
+      {{- end -}}
+    {{- end -}}
+    <div class="gh__group" data-gh-group>
+      <div class="gh__group-head">
+        <h4 class="gh__group-title">{{ $group.title }}</h4>
+        {{- with $group.badge }}<span class="gh__badge">{{ . }}</span>{{ end }}
+        <span class="gh__group-span">
+          {{- with $gs.Get "min" }}{{ . }}{{ if ne . ($gs.Get "max") }} – {{ $gs.Get "max" }}{{ end }} · {{ end }}{{ len $group.items }} 份</span>
+      </div>
+      <ol class="gh__timeline">
+        {{- range $i, $entry := $group.items }}
+        {{- $year := index $yearMap $entry.doc -}}
+        {{- $viewer := index $viewerMap $entry.doc -}}
+        {{- $raw := index $rawMap $entry.doc -}}
+        {{- $admin := index $adminMap $entry.doc -}}
+        {{- $isNew := index $newMap $entry.doc -}}
+        {{- $isLatest := eq $i 0 -}}
+        {{- $hay := printf "%s %s %s %s %s %s %s" $entry.title ($entry.citation | default "") ($entry.note | default "") $group.title ($group.badge | default "") $topic.title $year | lower -}}
+        <li class="gh__entry{{ if $isLatest }} gh__entry--latest{{ end }}{{ if $isNew }} gh__entry--new{{ end }}" id="gh-entry-{{ $entry.doc }}" data-gh-entry data-gh-search="{{ $hay }}">
+          <div class="gh__year"><span class="gh__year-num">{{ $year | default "—" }}</span></div>
+          <div class="gh__body">
+            {{- if or $isLatest $isNew }}
+            <div class="gh__flags">
+              {{- if $isLatest }}<span class="gh__flag">最新</span>{{ end }}
+              {{- if $isNew }}<span class="gh__flag gh__flag--new">NEW</span>{{ end }}
             </div>
-            <ul class="guideline-outline__entry-list">
-              {{- range $entry := $group.items }}
-                {{- $docItem := false -}}
-                {{- with $entry.doc -}}
-                  {{- $docItem = $pdfIndex.Get (printf "doc:%s" .) -}}
-                {{- end -}}
-                {{- $viewerHref := "" -}}
-                {{- $adminHref := "" -}}
-                {{- $rawPdfHref := "" -}}
-                {{- if $docItem -}}
-                  {{- $pdfHref := "" -}}
-                  {{- with $docItem.href -}}
-                    {{- $pdfHref = . -}}
-                    {{- if hasPrefix $pdfHref "/" -}}
-                      {{- $sep := cond (in $pdfHref "?") "&" "?" -}}
-                      {{- $pdfHref = printf "%s%sv=20260307-11" $pdfHref $sep -}}
-                    {{- end -}}
-                  {{- end -}}
-                  {{- $queryParts := slice -}}
-                  {{- with $docItem.doc }}{{- $queryParts = $queryParts | append (printf "doc=%s" (. | urlquery)) -}}{{- end -}}
-                  {{- with $docItem.seed }}{{- $queryParts = $queryParts | append (printf "seed=%s" (. | urlquery)) -}}{{- end -}}
-                  {{- with $pdfHref }}{{- $queryParts = $queryParts | append (printf "pdf=%s" (. | urlquery)) -}}{{- end -}}
-                  {{- with $docItem.title }}{{- $queryParts = $queryParts | append (printf "title=%s" (. | urlquery)) -}}{{- end -}}
-                  {{- with $docItem.meta }}{{- $queryParts = $queryParts | append (printf "meta=%s" (. | urlquery)) -}}{{- end -}}
-                  {{- with $docItem.tag }}{{- $queryParts = $queryParts | append (printf "tag=%s" (. | urlquery)) -}}{{- end -}}
-                  {{- with $docItem.tone }}{{- $queryParts = $queryParts | append (printf "tone=%s" (. | urlquery)) -}}{{- end -}}
-                  {{- with $docItem.summary }}{{- $queryParts = $queryParts | append (printf "description=%s" (. | urlquery)) -}}{{- end -}}
-                  {{- with $.Page.RelPermalink }}{{- $queryParts = $queryParts | append (printf "article=%s" (. | urlquery)) -}}{{- end -}}
-                  {{- $queryParts = $queryParts | append "v=20260307-11" -}}
-                  {{- $viewerHref = printf "/tools/pdf-guideline-studio/?%s" (delimit $queryParts "&") -}}
-                  {{- $adminHref = printf "%s&mode=admin" $viewerHref -}}
-                  {{- with $pdfHref -}}
-                    {{- $rawPdfHref = cond (hasPrefix . "/") (printf "/js/pdf-js/web/viewer.html?file=%s" (. | urlquery)) . -}}
-                  {{- end -}}
-                {{- end -}}
-
-                <li class="guideline-outline__entry">
-                  <div class="guideline-outline__entry-main">
-                    <span class="guideline-outline__entry-title">{{ $entry.title }}</span>
-                    {{- with $entry.citation -}}
-                      <span class="guideline-outline__entry-citation">{{ . }}</span>
-                    {{- end -}}
-                  </div>
-                  {{- with $entry.note -}}
-                    <div class="guideline-outline__entry-note">{{ . }}</div>
-                  {{- end -}}
-                  {{- if $docItem -}}
-                    <div class="guideline-outline__actions">
-                      <a class="guideline-outline__action guideline-outline__action--primary" href="{{ $viewerHref | safeURL }}">Reader</a>
-                      <a class="guideline-outline__action" href="{{ $rawPdfHref | safeURL }}" target="_blank" rel="noopener">Raw PDF</a>
-                      <a class="guideline-outline__action guideline-outline__action--admin" href="{{ $adminHref | safeURL }}" data-guideline-admin-link hidden>管理 PDF</a>
-                    </div>
-                  {{- else -}}
-                    <div class="guideline-outline__entry-note">PDF 尚未接入。</div>
-                  {{- end -}}
-                </li>
+            {{- end }}
+            {{- if $viewer }}
+            <a class="gh__entry-title" href="{{ $viewer | safeURL }}">{{ $entry.title }}</a>
+            {{- else }}
+            <span class="gh__entry-title gh__entry-title--plain">{{ $entry.title }}</span>
+            {{- end }}
+            {{- with $entry.citation }}<p class="gh__entry-meta">{{ . }}</p>{{ end }}
+            {{- with $entry.note }}<p class="gh__entry-note">{{ . }}</p>{{ end }}
+            <div class="gh__actions">
+              {{- if $viewer }}
+              <a class="gh__btn gh__btn--primary" href="{{ $viewer | safeURL }}">開啟 Reader</a>
+              {{- with $raw }}<a class="gh__btn" href="{{ . | safeURL }}" target="_blank" rel="noopener">Raw PDF<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>{{ end }}
+              <a class="gh__btn gh__btn--admin" href="{{ $admin | safeURL }}" data-guideline-admin-link hidden>管理 PDF</a>
+              {{- else }}
+              <span class="gh__btn gh__btn--disabled">PDF 尚未接入</span>
               {{- end }}
-            </ul>
-          </li>
+            </div>
+          </div>
+        </li>
         {{- end }}
       </ol>
-    </section>
+    </div>
+    {{- end }}
+  </section>
   {{- end }}
+
+  <p class="gh__empty" data-gh-empty hidden>沒有符合「<span data-gh-empty-q></span>」的 guideline。換個關鍵字，或按「清除」。</p>
 </section>
+
+<script>
+(function () {
+  var root = document.getElementById("guideline-hub");
+  if (!root) return;
+  var input = root.querySelector("[data-gh-search-input]");
+  var count = root.querySelector("[data-gh-count]");
+  var clear = root.querySelector("[data-gh-clear]");
+  var empty = root.querySelector("[data-gh-empty]");
+  var emptyQ = root.querySelector("[data-gh-empty-q]");
+  var entries = Array.prototype.slice.call(root.querySelectorAll("[data-gh-entry]"));
+  var groups = Array.prototype.slice.call(root.querySelectorAll("[data-gh-group]"));
+  var topics = Array.prototype.slice.call(root.querySelectorAll("[data-gh-topic]"));
+  var total = entries.length;
+  if (!input || !count) return;
+
+  function apply() {
+    var q = (input.value || "").trim().toLowerCase();
+    var terms = q.split(/\s+/).filter(Boolean);
+    var shown = 0;
+    entries.forEach(function (el) {
+      var hay = el.getAttribute("data-gh-search") || "";
+      var ok = terms.every(function (t) { return hay.indexOf(t) !== -1; });
+      el.hidden = !ok;
+      if (ok) shown += 1;
+    });
+    groups.forEach(function (g) {
+      g.hidden = !g.querySelector("[data-gh-entry]:not([hidden])");
+    });
+    topics.forEach(function (t) {
+      var n = t.querySelectorAll("[data-gh-entry]:not([hidden])").length;
+      t.hidden = n === 0;
+      var c = t.querySelector("[data-gh-topic-count]");
+      if (c) c.textContent = n + " 份";
+    });
+    count.textContent = shown + " / " + total;
+    if (clear) clear.hidden = !q;
+    if (empty) empty.hidden = shown > 0;
+    if (emptyQ) emptyQ.textContent = q;
+    root.classList.toggle("gh--filtering", !!q);
+  }
+
+  input.addEventListener("input", apply);
+  if (clear) clear.addEventListener("click", function () { input.value = ""; apply(); input.focus(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "/" && !/input|textarea|select/i.test((document.activeElement || {}).tagName || "")) {
+      e.preventDefault();
+      input.focus();
+    }
+  });
+  try {
+    var q = new URLSearchParams(window.location.search).get("q");
+    if (q) { input.value = q; apply(); }
+  } catch (err) {}
+})();
+</script>
 {{- end -}}
