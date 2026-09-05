@@ -1,7 +1,7 @@
 title: "Guideline 集散地"
-intro: "急診會用到的 AMI、ischemic stroke、ACLS 與心肌梗塞定義 guideline，全部接進站內 Reader。年份越新排越前面，每一組最新的一份會特別標出來。"
+intro: "急診會用到的 AMI／ACS、心肌梗塞定義、ischemic stroke、ACLS／PALS、外傷、sepsis 與 POCUS guideline。有 PDF 的接進站內 Reader，沒有的連原文。年份越新排越前面，每一組最新的一份會特別標出來。"
 updated: "2026-09-05"
-total_items: 33
+total_items: 46
 topics:
   - id: "ami"
     title: "AMI / ACS"
@@ -200,3 +200,141 @@ topics:
             year: 2025
             citation: "Greif et al. (2025)"
             note: "Resuscitation 2025;215(suppl 1) 全套，含 Adult ALS。"
+  - id: "pals"
+    title: "PALS / 兒童急救"
+    subtitle: "兒童 BLS 與 ALS，AHA/AAP 與 ERC 版本"
+    icon: "baby"
+    accent: "sky"
+    groups:
+      - title: "AHA / AAP"
+        badge: "美國"
+        items:
+          - title: "2025 AHA/AAP Part 8: Pediatric Advanced Life Support（抽出版）"
+            doc: "pals-2025-aha-aap-part8"
+            year: 2025
+            added: "2026-09-05"
+            flag: "秒開"
+            citation: "Lasa et al. (2025)"
+            note: "從 2025 AHA CPR/ECC 全套抽出的 Part 8，59 頁。"
+          - title: "2025 AHA/AAP Part 6: Pediatric Basic Life Support（抽出版）"
+            doc: "pals-2025-aha-aap-pbls-part6"
+            year: 2025
+            added: "2026-09-05"
+            flag: "秒開"
+            citation: "Joyner et al. (2025)"
+            note: "Part 6 兒童 BLS，24 頁。"
+      - title: "ERC"
+        badge: "歐洲"
+        items:
+          - title: "2025 European Resuscitation Council Guidelines: Paediatric Life Support（章節抽出版）"
+            doc: "pals-2025-erc-pls"
+            year: 2025
+            added: "2026-09-05"
+            flag: "秒開"
+            citation: "Djakow et al. (2025)"
+            note: "Resuscitation 2025;215(suppl 1):110767，67 頁，含兒童 BLS／ALS 與 post-resuscitation care。"
+  - id: "trauma"
+    title: "Trauma / ATLS"
+    subtitle: "初始外傷處置與大量出血"
+    icon: "shield"
+    accent: "slate"
+    groups:
+      - title: "ATLS（ACS Committee on Trauma）"
+        badge: "美國"
+        items:
+          - title: "2025 ATLS 11th Edition（Advanced Trauma Life Support）"
+            doc: "trauma-2025-atls-11"
+            year: 2025
+            added: "2026-09-05"
+            link: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/"
+            citation: "American College of Surgeons Committee on Trauma (2025)"
+            note: "課程手冊有版權，站內不放 PDF，連到 ACS 官方頁。第 11 版改成 xABCDE（先控制大出血）、平衡輸血與限縮晶體液。"
+      - title: "European Task Force for Advanced Bleeding Care in Trauma"
+        badge: "歐洲"
+        items:
+          - title: "2023 The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition"
+            doc: "trauma-2023-european-bleeding-guideline-6th"
+            year: 2023
+            added: "2026-09-05"
+            citation: "Rossaint et al. (2023)"
+            note: "Critical Care 2023;27:80。外傷大量出血與凝血病變的歐洲指引第六版。"
+  - id: "sepsis"
+    title: "Sepsis"
+    subtitle: "Surviving Sepsis Campaign 與定義、診斷標準"
+    icon: "bug"
+    accent: "orange"
+    groups:
+      - title: "Surviving Sepsis Campaign（SCCM / ESICM）"
+        badge: "國際"
+        items:
+          - title: "2026 Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock"
+            doc: "sepsis-2026-ssc-adult"
+            year: 2026
+            added: "2026-09-05"
+            citation: "Prescott et al. (2026)"
+            note: "Intensive Care Med 2026;52:863–936 與 Crit Care Med 2026;54(4):725–812 同步刊出，取代 2021 版。"
+          - title: "2021 Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock"
+            doc: "sepsis-2021-ssc-adult"
+            year: 2021
+            added: "2026-09-05"
+            citation: "Evans et al. (2021)"
+            note: "Intensive Care Med 2021;47:1181–1247。"
+          - title: "2020 Surviving Sepsis Campaign International Guidelines for the Management of Septic Shock and Sepsis-Associated Organ Dysfunction in Children"
+            doc: "sepsis-2020-ssc-pediatric"
+            year: 2020
+            added: "2026-09-05"
+            citation: "Weiss et al. (2020)"
+            note: "Intensive Care Med 2020;46(Suppl 1):S10–S67，兒童版。"
+      - title: "定義與診斷標準"
+        badge: "Definition"
+        items:
+          - title: "2024 International Consensus Criteria for Pediatric Sepsis and Septic Shock（Phoenix criteria）"
+            doc: "sepsis-2024-phoenix-criteria"
+            year: 2024
+            added: "2026-09-05"
+            link: "https://doi.org/10.1001/jama.2024.0179"
+            citation: "Schlapbach et al. (2024)"
+            note: "JAMA 2024。SCCM 工作小組的兒童 sepsis 與 septic shock 定義。站內無 PDF，連原文。"
+          - title: "2016 The Third International Consensus Definitions for Sepsis and Septic Shock（Sepsis-3）"
+            doc: "sepsis-2016-sepsis-3"
+            year: 2016
+            added: "2026-09-05"
+            link: "https://doi.org/10.1001/jama.2016.0287"
+            citation: "Singer et al. (2016)"
+            note: "JAMA 2016。成人 sepsis 定義，以 SOFA 判定器官功能障礙。站內無 PDF，連原文。"
+  - id: "pocus"
+    title: "POCUS"
+    subtitle: "急診與重症床邊超音波的專業學會指引"
+    icon: "radio"
+    accent: "teal"
+    groups:
+      - title: "ACEP"
+        badge: "美國"
+        items:
+          - title: "2023 Ultrasound Guidelines: Emergency, Point-of-Care, and Clinical Ultrasound Guidelines in Medicine"
+            doc: "pocus-2023-acep-ultrasound-guidelines"
+            year: 2023
+            added: "2026-09-05"
+            link: "https://doi.org/10.1016/j.annemergmed.2023.06.005"
+            citation: "ACEP (2023)"
+            note: "Ann Emerg Med 2023;82(3)。ACEP 政策聲明 2023 修訂版，涵蓋核心應用、訓練與認證。PDF 要 ACEP 會員登入才拿得到，站內先連原文；你若有會員帳號可再補。"
+      - title: "SCCM"
+        badge: "重症"
+        items:
+          - title: "2024 SCCM Guidelines on Adult Critical Care Ultrasonography: Focused Update 2024"
+            doc: "pocus-2024-sccm-focused-update"
+            year: 2024
+            added: "2026-09-05"
+            link: "https://doi.org/10.1097/CCM.0000000000006530"
+            citation: "Díaz-Gómez et al. (2025)"
+            note: "Crit Care Med 2025;53(2)。心跳停止、sepsis、呼吸衰竭、輸液、心因性休克五個情境。站內無 PDF，連原文。"
+      - title: "AAP / ACEP / SAEM / WINFOCUS"
+        badge: "兒童"
+        items:
+          - title: "2015 Point-of-Care Ultrasonography by Pediatric Emergency Medicine Physicians（Policy Statement）"
+            doc: "pocus-2015-aap-pem-policy"
+            year: 2015
+            added: "2026-09-05"
+            link: "https://doi.org/10.1542/peds.2015-0343"
+            citation: "Marin & Lewiss (2015)"
+            note: "Pediatrics 2015;135(4)。站內無 PDF，連原文。"
