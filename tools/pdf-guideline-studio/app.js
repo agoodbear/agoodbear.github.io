@@ -186,8 +186,9 @@ async function bootstrap() {
 function renderShell() {
   const isEmbed = state.viewMode === "embed";
 
-  APP_ROOT.innerHTML = `
-    <div class="pdf-guideline-studio ${isEmbed ? "is-embed" : "is-full"}">
+  // 標題區＋狀態列＋訊息列：embed 模式放最上面（原本樣子）；完整模式搬進右欄，
+  // 讓 PDF 面板從最頂端滿高。
+  const headerBlock = `
       <header class="pdf-guideline-studio__masthead">
         <div class="pdf-guideline-studio__brand">
           <p class="pdf-guideline-studio__eyebrow">${isEmbed ? "Footnote Reader" : "OMI-style PDF Workspace"}</p>
@@ -241,6 +242,11 @@ function renderShell() {
       </div>
 
       <div class="pdf-guideline-studio__message" id="studioMessage" hidden></div>
+  `;
+
+  APP_ROOT.innerHTML = `
+    <div class="pdf-guideline-studio ${isEmbed ? "is-embed" : "is-full"}">
+      ${isEmbed ? headerBlock : ""}
 
       <div class="pdf-guideline-studio__shell" id="studioShell">
         <svg class="pdf-guideline-studio__connector" id="connectorSvg" aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -318,6 +324,7 @@ function renderShell() {
         </section>
 
         <aside class="pdf-guideline-studio__panel pdf-guideline-studio__panel--sidebar">
+          ${isEmbed ? "" : `<div class="pdf-guideline-studio__doc-head">${headerBlock}</div>`}
           <div class="pdf-guideline-studio__sidebar-head">
             <div class="pdf-guideline-studio__sidebar-head-row">
               <div>

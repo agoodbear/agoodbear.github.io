@@ -1510,3 +1510,103 @@ a {
   color: rgba(15, 23, 42, 0.35);
   letter-spacing: 0.08em;
 }
+
+/* ==========================================================================
+   完整模式雙欄版面：PDF 面板從最頂端滿高，標題／狀態列搬進右欄頂端
+   ========================================================================== */
+.pdf-guideline-studio.is-full .pdf-guideline-studio__shell {
+  grid-template-columns: minmax(0, 1fr) clamp(320px, 27vw, 420px);
+  gap: 14px;
+  padding: 12px 14px 14px;
+}
+
+.pdf-guideline-studio.is-full .pdf-guideline-studio__doc-head {
+  flex: 0 0 auto;
+  max-height: 46vh;
+  overflow: auto;
+  border-bottom: 1px solid var(--pg-border);
+  background: #ffffff;
+}
+
+.pdf-guideline-studio.is-full .pdf-guideline-studio__masthead {
+  position: static;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  padding: 14px 16px 10px;
+  border-bottom: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.pdf-guideline-studio.is-full .pdf-guideline-studio__eyebrow {
+  margin-bottom: 4px;
+  font-size: 0.68rem;
+}
+
+.pdf-guideline-studio.is-full .pdf-guideline-studio__title {
+  font-size: 1.05rem;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.pdf-guideline-studio.is-full .pdf-guideline-studio__title-row {
+  gap: 6px;
+}
+
+.pdf-guideline-studio.is-full .pdf-guideline-studio__summary {
+  margin-top: 6px;
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.pdf-guideline-studio.is-full .pdf-guideline-studio__topbar-actions {
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.pdf-guideline-studio.is-full .pdf-guideline-studio__topbar-actions .pdf-guideline-studio__button,
+.pdf-guideline-studio.is-full .pdf-guideline-studio__topbar-actions .pdf-guideline-studio__button--ghost,
+.pdf-guideline-studio.is-full .pdf-guideline-studio__topbar-actions .pdf-guideline-studio__button--tonal {
+  min-height: 32px;
+  padding: 0 10px;
+  font-size: 0.8rem;
+  border-radius: 9px;
+  box-shadow: none;
+}
+
+.pdf-guideline-studio.is-full .pdf-guideline-studio__status-strip {
+  padding: 0 16px 12px;
+  gap: 6px;
+}
+
+.pdf-guideline-studio.is-full .pdf-guideline-studio__badge {
+  min-height: 26px;
+  padding: 0 9px;
+  font-size: 0.72rem;
+}
+
+.pdf-guideline-studio.is-full .pdf-guideline-studio__message {
+  margin: 0 16px 12px;
+}
+
+@media (max-width: 1180px) {
+  /* 單欄時右欄（標題＋highlights）排在 PDF 上面，標題區不再限高 */
+  .pdf-guideline-studio.is-full .pdf-guideline-studio__shell {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+  }
+
+  .pdf-guideline-studio.is-full .pdf-guideline-studio__panel--sidebar {
+    order: -1;
+  }
+
+  .pdf-guideline-studio.is-full .pdf-guideline-studio__doc-head {
+    max-height: none;
+  }
+
+  .pdf-guideline-studio.is-full .pdf-guideline-studio__sidebar-scroll {
+    max-height: 40vh;
+  }
+}
