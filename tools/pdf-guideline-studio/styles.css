@@ -1782,3 +1782,251 @@ a {
 .pdf-guideline-studio.is-full .pdf-guideline-studio__doc-meta {
   display: none;
 }
+
+/* ==========================================================================
+   Highlight 卡精簡版：預設只露摘句；筆／箭頭才展開。左側 highlight 動效。
+   ========================================================================== */
+.pdf-guideline-studio__highlight-list {
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.pdf-guideline-studio__highlight-card {
+  gap: 8px;
+  padding: 10px 12px 11px 14px;
+  border-radius: 12px;
+  transition: transform 140ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.pdf-guideline-studio__highlight-card-accent {
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+}
+
+.pdf-guideline-studio__highlight-card.is-selected {
+  border-color: color-mix(in srgb, var(--hl-color, #f6dd54) 55%, var(--pg-border));
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--hl-color, #f6dd54) 30%, transparent),
+    0 10px 22px rgba(23, 144, 191, 0.1);
+}
+
+.pdf-guideline-studio__highlight-card.is-new {
+  animation: pgHighlightCardIn 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes pgHighlightCardIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pdf-guideline-studio__highlight-card-top {
+  align-items: center;
+  gap: 8px;
+  min-height: 24px;
+}
+
+.pdf-guideline-studio__highlight-card-kicker {
+  flex: none;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(36, 48, 59, 0.06);
+  color: var(--pg-muted);
+  text-transform: none;
+}
+
+.pdf-guideline-studio__highlight-card-heading {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pdf-guideline-studio__highlight-card-heading[hidden] {
+  display: none;
+}
+
+.pdf-guideline-studio__highlight-card-tools {
+  gap: 4px;
+}
+
+.pdf-guideline-studio__highlight-card .pdf-guideline-studio__mini-button {
+  min-height: 24px;
+  padding: 0 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--pg-muted);
+  transition: color 140ms ease, border-color 140ms ease, background-color 140ms ease;
+}
+
+.pdf-guideline-studio__highlight-card .pdf-guideline-studio__mini-button:hover {
+  color: var(--pg-accent-strong);
+  border-color: rgba(23, 144, 191, 0.3);
+}
+
+.pdf-guideline-studio__mini-button--toggle,
+.pdf-guideline-studio__mini-button--preview {
+  width: 24px;
+  padding: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdf-guideline-studio__mini-button--toggle svg,
+.pdf-guideline-studio__mini-button--preview svg {
+  width: 13px;
+  height: 13px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 160ms ease;
+}
+
+.pdf-guideline-studio__mini-button--toggle.is-open {
+  color: var(--pg-accent-strong);
+  border-color: rgba(23, 144, 191, 0.3);
+  background: rgba(23, 144, 191, 0.08);
+}
+
+.pdf-guideline-studio__highlight-card:not(.is-editing) .pdf-guideline-studio__mini-button--toggle.is-open svg {
+  transform: rotate(180deg);
+}
+
+.pdf-guideline-studio__highlight-quote {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  padding-left: 10px;
+  border-left: 2px solid color-mix(in srgb, var(--hl-color, #f6dd54) 70%, transparent);
+  color: #3f4d5a;
+}
+
+.pdf-guideline-studio__highlight-quote.is-clamped {
+  -webkit-line-clamp: 3;
+}
+
+.pdf-guideline-studio__highlight-note {
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: var(--pg-ink);
+}
+
+.pdf-guideline-studio__highlight-note.is-clamped {
+  -webkit-line-clamp: 2;
+}
+
+.pdf-guideline-studio__highlight-tags {
+  gap: 5px;
+  margin-bottom: 0;
+}
+
+.pdf-guideline-studio__highlight-tag {
+  min-height: 20px;
+  padding: 0 7px;
+  font-size: 0.68rem;
+}
+
+.pdf-guideline-studio__highlight-image.is-compact img {
+  max-height: 120px;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* 展開後的編輯表單：小一號、textarea 自動長高 */
+.pdf-guideline-studio__doc-form--highlight {
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--pg-border);
+}
+
+.pdf-guideline-studio__doc-form--highlight .pdf-guideline-studio__field {
+  gap: 4px;
+}
+
+.pdf-guideline-studio__doc-form--highlight .pdf-guideline-studio__field-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+}
+
+.pdf-guideline-studio__doc-form--highlight .pdf-guideline-studio__field input,
+.pdf-guideline-studio__doc-form--highlight .pdf-guideline-studio__field textarea {
+  padding: 7px 10px;
+  border-radius: 9px;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.pdf-guideline-studio__doc-form--highlight .pdf-guideline-studio__field textarea {
+  min-height: 52px;
+  resize: none;
+  overflow: hidden;
+}
+
+.pdf-guideline-studio__doc-form--highlight .pdf-guideline-studio__highlight-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* 左側 PDF 上的 highlight：柔一點的過場與新建脈衝 */
+.pdf-guideline-studio__page-highlight-segment {
+  transition: background-color 160ms ease, box-shadow 220ms ease;
+}
+
+.pdf-guideline-studio__page-highlight:hover .pdf-guideline-studio__page-highlight-segment {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--highlight-color, #f6dd54) 55%, transparent);
+}
+
+.pdf-guideline-studio__page-highlight.is-selected .pdf-guideline-studio__page-highlight-segment {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--highlight-color, #f6dd54) 80%, transparent);
+}
+
+.pdf-guideline-studio__page-highlight.is-new .pdf-guideline-studio__page-highlight-segment {
+  animation: pgHighlightPulse 900ms ease-out;
+}
+
+@keyframes pgHighlightPulse {
+  0% { box-shadow: 0 0 0 0 rgba(23, 144, 191, 0.55); }
+  100% { box-shadow: 0 0 0 10px rgba(23, 144, 191, 0); }
+}
+
+.pdf-guideline-studio__page-text-layer.is-selection-enabled {
+  cursor: text;
+}
+
+.pdf-guideline-studio__page-text-layer.is-selection-enabled span::selection {
+  background: color-mix(in srgb, #f6dd54 55%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pdf-guideline-studio__highlight-card.is-new,
+  .pdf-guideline-studio__page-highlight.is-new .pdf-guideline-studio__page-highlight-segment {
+    animation: none;
+  }
+}
+
+.pdf-guideline-studio__highlight-card-heading {
+  flex: 1 1 0%;
+}
+
+.pdf-guideline-studio__highlight-card-tools {
+  flex: 0 0 auto;
+}
+
+/* 卡片是 grid：欄寬要 minmax(0,1fr)，長標題才會在列內縮而不是撐爆卡片 */
+.pdf-guideline-studio__highlight-card {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.pdf-guideline-studio__highlight-card > * {
+  min-width: 0;
+  max-width: 100%;
+}
