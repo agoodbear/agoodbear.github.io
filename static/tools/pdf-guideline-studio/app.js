@@ -53,6 +53,7 @@ function sanitizeLinkUrl(value) {
 const STORAGE_KEYS = {
   apiBase: "pdf-guideline-studio-api-base",
   token: "pdf-guideline-studio-token",
+  docHeadOpen: "pdf-guideline-studio-dochead-open",
   localDocPrefix: "pdf-guideline-studio-local-doc:",
 };
 
@@ -188,6 +189,7 @@ function renderShell() {
 
   // 標題區＋狀態列＋訊息列：embed 模式放最上面（原本樣子）；完整模式搬進右欄，
   // 讓 PDF 面板從最頂端滿高。
+  const docHeadOpen = readStorage(STORAGE_KEYS.docHeadOpen) === "1";
   const headerBlock = `
       <header class="pdf-guideline-studio__masthead">
         <div class="pdf-guideline-studio__brand">
@@ -201,11 +203,11 @@ function renderShell() {
         </div>
 
         <div class="pdf-guideline-studio__topbar-actions">
-          <a class="pdf-guideline-studio__button--ghost" id="backToArticleButton" href="#" hidden>
+          <a class="pdf-guideline-studio__button--ghost" id="backToArticleButton" href="#" data-tip="回文章" title="回文章" hidden>
             ${iconSvg("arrowLeft")}
             <span>回文章</span>
           </a>
-          <a class="pdf-guideline-studio__button--ghost" id="openPdfButton" href="#" target="_blank" rel="noopener" hidden>
+          <a class="pdf-guideline-studio__button--ghost" id="openPdfButton" href="#" target="_blank" rel="noopener" data-tip="原始 PDF（新分頁）" title="原始 PDF" hidden>
             ${iconSvg("external")}
             <span>原始 PDF</span>
           </a>
@@ -218,9 +220,9 @@ function renderShell() {
                 </a>
               `
               : `
-                <button type="button" class="pdf-guideline-studio__button--ghost" id="cloudConfigButton">設定 API/Token</button>
-                <button type="button" class="pdf-guideline-studio__button--ghost" id="checkApiButton">檢查 API/Token</button>
-                <button type="button" class="pdf-guideline-studio__button--ghost" id="adminLogoutButton">一鍵登出管理</button>
+                <button type="button" class="pdf-guideline-studio__button--ghost" id="cloudConfigButton" data-tip="設定 API/Token" title="設定 API/Token">${iconSvg("settings")}<span>設定 API/Token</span></button>
+                <button type="button" class="pdf-guideline-studio__button--ghost" id="checkApiButton" data-tip="檢查 API/Token" title="檢查 API/Token">${iconSvg("check")}<span>檢查 API/Token</span></button>
+                <button type="button" class="pdf-guideline-studio__button--ghost" id="adminLogoutButton" data-tip="一鍵登出管理（清掉 Token）" title="一鍵登出管理">${iconSvg("logout")}<span>一鍵登出管理</span></button>
                 <button type="button" class="pdf-guideline-studio__button--tonal" id="adminModeButton">
                   ${iconSvg("shield")}
                   <span>管理模式</span>
@@ -324,7 +326,7 @@ function renderShell() {
         </section>
 
         <aside class="pdf-guideline-studio__panel pdf-guideline-studio__panel--sidebar">
-          ${isEmbed ? "" : `<div class="pdf-guideline-studio__doc-head">${headerBlock}</div>`}
+          ${isEmbed ? "" : `<div class="pdf-guideline-studio__doc-head${docHeadOpen ? "" : " is-collapsed"}" id="docHead"><button type="button" class="pdf-guideline-studio__doc-head-toggle" id="docHeadToggle" data-tip="${docHeadOpen ? "收合文件資訊" : "展開文件資訊"}" aria-expanded="${docHeadOpen ? "true" : "false"}">${iconSvg("chevronDown")}</button>${headerBlock}</div>`}
           <div class="pdf-guideline-studio__sidebar-head">
             <div class="pdf-guideline-studio__sidebar-head-row">
               <div>
@@ -431,6 +433,17 @@ function renderShell() {
 }
 
 function bindShellEvents() {
+  const docHead = document.getElementById("docHead");
+  const docHeadToggle = document.getElementById("docHeadToggle");
+  if (docHead && docHeadToggle) {
+    docHeadToggle.addEventListener("click", () => {
+      const open = !docHead.classList.toggle("is-collapsed");
+      docHeadToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      docHeadToggle.setAttribute("data-tip", open ? "收合文件資訊" : "展開文件資訊");
+      writeStorage(STORAGE_KEYS.docHeadOpen, open ? "1" : "0");
+      scheduleConnectorUpdate();
+    });
+  }
   if (refs.cloudConfigButton) {
     refs.cloudConfigButton.addEventListener("click", handleConfigureCloud);
   }
@@ -4159,6 +4172,14 @@ function hideMessage() {
 
 function iconSvg(name) {
   const icons = {
+    settings:
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4" /><line x1="10" x2="3" y1="4" y2="4" /><line x1="21" x2="12" y1="12" y2="12" /><line x1="8" x2="3" y1="12" y2="12" /><line x1="21" x2="16" y1="20" y2="20" /><line x1="12" x2="3" y1="20" y2="20" /><line x1="14" x2="14" y1="2" y2="6" /><line x1="8" x2="8" y1="10" y2="14" /><line x1="16" x2="16" y1="18" y2="22" /></svg>',
+    check:
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="m8.5 12 2.5 2.5 4.5-5" /></svg>',
+    logout:
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><polyline points="16 17 21 12 16 7" /><line x1="21" x2="9" y1="12" y2="12" /></svg>',
+    chevronDown:
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>',
     arrowLeft:
       '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>',
     external:
