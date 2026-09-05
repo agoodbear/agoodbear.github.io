@@ -460,6 +460,10 @@
 #guideline-hub .gh__tile--violet, #guideline-hub .gh__topic--violet, #guideline-hub .gh__chip--violet { --gh-accent: #6d28d9; --gh-accent-ink: #4c1d95; --gh-tint: rgba(109, 40, 217, 0.09); }
 #guideline-hub .gh__tile--indigo, #guideline-hub .gh__topic--indigo, #guideline-hub .gh__chip--indigo { --gh-accent: #3451b2; --gh-accent-ink: #253a86; --gh-tint: rgba(52, 81, 178, 0.10); }
 #guideline-hub .gh__tile--amber, #guideline-hub .gh__topic--amber, #guideline-hub .gh__chip--amber { --gh-accent: #0f766e; --gh-accent-ink: #115e59; --gh-tint: rgba(15, 118, 110, 0.10); }
+#guideline-hub .gh__tile--sky, #guideline-hub .gh__topic--sky, #guideline-hub .gh__chip--sky { --gh-accent: #0284c7; --gh-accent-ink: #075985; --gh-tint: rgba(2, 132, 199, 0.10); }
+#guideline-hub .gh__tile--slate, #guideline-hub .gh__topic--slate, #guideline-hub .gh__chip--slate { --gh-accent: #475569; --gh-accent-ink: #1e293b; --gh-tint: rgba(71, 85, 105, 0.12); }
+#guideline-hub .gh__tile--orange, #guideline-hub .gh__topic--orange, #guideline-hub .gh__chip--orange { --gh-accent: #ea580c; --gh-accent-ink: #9a3412; --gh-tint: rgba(234, 88, 12, 0.10); }
+#guideline-hub .gh__tile--teal, #guideline-hub .gh__topic--teal, #guideline-hub .gh__chip--teal { --gh-accent: #0d9488; --gh-accent-ink: #115e59; --gh-tint: rgba(13, 148, 136, 0.10); }
 
 /* ---- Hero ---- */
 #guideline-hub .gh__hero { display: grid; gap: 1rem; margin-bottom: 2.25rem; }
