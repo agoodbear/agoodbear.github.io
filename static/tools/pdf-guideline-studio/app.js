@@ -98,6 +98,8 @@ const state = {
   pageViews: [],
   selectedHighlightId: "",
   editingHighlightId: "",
+  expandedHighlightIds: new Set(),
+  lastCreatedHighlightId: "",
   editMode: false,
   drawMode: false,
   captureMode: false,
@@ -1095,13 +1097,21 @@ function renderField(label, field, value, type) {
 }
 
 function renderHighlightCard(highlight, isSelected) {
-  const isEditorOpen = state.editMode && (highlight.id === state.editingHighlightId || isSelected);
-  const heading = highlight.label || createHighlightHeading(highlight);
+  // 精簡卡：預設只露原文摘句（與已填的重點／tags），右上小箭頭才展開完整編輯或全文。
+  const isEditorOpen = state.editMode && highlight.id === state.editingHighlightId;
+  const isExpanded = isEditorOpen || isSelected || state.expandedHighlightIds.has(highlight.id);
+  const customLabel = sanitizeText(highlight.label || "", 240);
+  const heading = customLabel || createHighlightHeading(highlight);
   const headingMatches = getHighlightSearchMatchesForField(highlight.id, "label");
   const quoteMatches = getHighlightSearchMatchesForField(highlight.id, "quote");
   const noteMatches = getHighlightSearchMatchesForField(highlight.id, "note");
   const tags = normalizeHighlightTags(highlight.tags);
   const hasClipImage = Boolean(highlight.clipImage);
+  const isNew = highlight.id === state.lastCreatedHighlightId;
+  const toggleAction = state.editMode ? "toggle-highlight-editor" : "toggle-highlight-expand";
+  const toggleTitle = state.editMode
+    ? (isEditorOpen ? "收合編輯" : "展開編輯（標題、Tags、重點、顏色）")
+    : (isExpanded ? "收合" : "展開全文");
   const citeButtonHtml = `
     <button
       type="button"
@@ -1128,26 +1138,38 @@ function renderHighlightCard(highlight, isSelected) {
       </button>
     `
     : "";
+  const toggleButtonHtml = `
+    <button
+      type="button"
+      class="pdf-guideline-studio__mini-button pdf-guideline-studio__mini-button--toggle ${isEditorOpen || (!state.editMode && isExpanded) ? "is-open" : ""}"
+      data-action="${toggleAction}"
+      data-highlight-id="${escapeHtml(highlight.id)}"
+      title="${escapeHtml(toggleTitle)}"
+      aria-label="${escapeHtml(toggleTitle)}"
+      aria-expanded="${isEditorOpen || (!state.editMode && isExpanded) ? "true" : "false"}"
+    >
+      ${state.editMode ? iconSvg("pen") : iconSvg("chevronDown")}
+    </button>
+  `;
   const quoteHtml = highlight.quote
-    ? `<blockquote class="pdf-guideline-studio__highlight-quote ${isSelected ? "" : "is-clamped"}">${renderSearchMarkedText(highlight.quote, quoteMatches, state.highlightSearch.activeIndex)}</blockquote>`
+    ? `<blockquote class="pdf-guideline-studio__highlight-quote ${isExpanded ? "" : "is-clamped"}">${renderSearchMarkedText(highlight.quote, quoteMatches, state.highlightSearch.activeIndex)}</blockquote>`
     : "";
   const clipImageHtml = hasClipImage
-    ? `<figure class="pdf-guideline-studio__highlight-image"><img src="${escapeHtml(highlight.clipImage)}" alt="Captured PDF region" loading="lazy" data-action="preview-highlight-image" title="雙擊可置中放大" /></figure>`
+    ? `<figure class="pdf-guideline-studio__highlight-image ${isExpanded ? "" : "is-compact"}"><img src="${escapeHtml(highlight.clipImage)}" alt="Captured PDF region" loading="lazy" data-action="preview-highlight-image" title="雙擊可置中放大" /></figure>`
     : "";
-  const noteText = highlight.note || "這段 highlight 尚未補上右側重點整理。";
-  const noteHtml = `<p class="pdf-guideline-studio__highlight-note ${isSelected ? "" : "is-clamped"}">${renderSearchMarkedText(noteText, noteMatches, state.highlightSearch.activeIndex)}</p>`;
+  const noteHtml = highlight.note
+    ? `<p class="pdf-guideline-studio__highlight-note ${isExpanded ? "" : "is-clamped"}">${renderSearchMarkedText(highlight.note, noteMatches, state.highlightSearch.activeIndex)}</p>`
+    : "";
   const tagsHtml = tags.length
     ? `<div class="pdf-guideline-studio__highlight-tags">${tags
         .map((tag) => `<span class="pdf-guideline-studio__highlight-tag">#${escapeHtml(tag)}</span>`)
         .join("")}</div>`
     : "";
-  const editHtml =
-    isEditorOpen
-      ? `
-        <div class="pdf-guideline-studio__doc-form">
-          ${clipImageHtml}
-          ${renderHighlightField("標題", "label", highlight.label)}
-          ${renderHighlightField("Tags", "tags", formatHighlightTagsInput(tags))}
+  const editHtml = isEditorOpen
+    ? `
+        <div class="pdf-guideline-studio__doc-form pdf-guideline-studio__doc-form--highlight">
+          ${renderHighlightField("標題（選填，空白時用摘句）", "label", highlight.label)}
+          ${renderHighlightField("Tags（逗號分隔）", "tags", formatHighlightTagsInput(tags))}
           ${renderHighlightField("原文摘句", "quote", highlight.quote, "textarea")}
           ${renderHighlightField("右側重點", "note", highlight.note, "textarea")}
           <div class="pdf-guideline-studio__field">
@@ -1169,36 +1191,36 @@ function renderHighlightCard(highlight, isSelected) {
           </div>
           <div class="pdf-guideline-studio__highlight-actions">
             <button type="button" class="pdf-guideline-studio__mini-button is-danger" data-action="delete-highlight" data-highlight-id="${escapeHtml(highlight.id)}">刪除</button>
+            <button type="button" class="pdf-guideline-studio__mini-button" data-action="toggle-highlight-editor" data-highlight-id="${escapeHtml(highlight.id)}">收合</button>
           </div>
         </div>
       `
-      : `
-        ${clipImageHtml}
-        ${tagsHtml}
-        ${quoteHtml}
-        ${noteHtml}
-      `;
+    : "";
 
   return `
     <article
-      class="pdf-guideline-studio__highlight-card ${isSelected ? "is-selected" : ""}"
+      class="pdf-guideline-studio__highlight-card ${isSelected ? "is-selected" : ""} ${isNew ? "is-new" : ""} ${isEditorOpen ? "is-editing" : ""}"
       data-highlight-card="${escapeHtml(highlight.id)}"
       id="sidebar-highlight-${escapeHtml(highlight.id)}"
       tabindex="0"
       role="button"
       aria-label="${escapeHtml(heading)}"
+      style="--hl-color:${escapeHtml(highlight.color || "#f6dd54")}"
     >
       <span class="pdf-guideline-studio__highlight-card-accent" style="background:${escapeHtml(highlight.color)}"></span>
       <div class="pdf-guideline-studio__highlight-card-top">
-        <div class="pdf-guideline-studio__highlight-card-title">
-          <span class="pdf-guideline-studio__highlight-card-kicker">Page ${escapeHtml(String(highlight.page))}</span>
-          <h4 class="pdf-guideline-studio__highlight-card-heading">${renderSearchMarkedText(heading, headingMatches, state.highlightSearch.activeIndex)}</h4>
-        </div>
+        <span class="pdf-guideline-studio__highlight-card-kicker">p.${escapeHtml(String(highlight.page))}</span>
+        <h4 class="pdf-guideline-studio__highlight-card-heading" ${customLabel ? "" : "hidden"}>${renderSearchMarkedText(heading, headingMatches, state.highlightSearch.activeIndex)}</h4>
         <div class="pdf-guideline-studio__highlight-card-tools">
           ${previewButtonHtml}
           ${citeButtonHtml}
+          ${toggleButtonHtml}
         </div>
       </div>
+      ${clipImageHtml}
+      ${quoteHtml}
+      ${noteHtml}
+      ${tagsHtml}
       ${editHtml}
     </article>
   `;
@@ -1299,6 +1321,13 @@ function renderSearchMarkedText(text, matches, activeIndex) {
   return html;
 }
 
+function autosizeTextarea(element) {
+  if (!element) return;
+  element.style.height = "auto";
+  const next = Math.min(Math.max(element.scrollHeight + 2, 52), 420);
+  element.style.height = `${next}px`;
+}
+
 function bindSidebarEvents() {
   const docEditorToggle = refs.sidebarScroll.querySelector('[data-action="toggle-doc-editor"]');
   if (docEditorToggle) {
@@ -1324,7 +1353,7 @@ function bindSidebarEvents() {
         return;
       }
       const highlightId = element.getAttribute("data-highlight-card");
-      selectHighlight(highlightId, true, { openEditor: true, source: "sidebar" });
+      selectHighlight(highlightId, true, { openEditor: false, source: "sidebar" });
     };
 
     element.addEventListener("click", select);
@@ -1339,6 +1368,45 @@ function bindSidebarEvents() {
     });
   });
 
+  Array.from(refs.sidebarScroll.querySelectorAll('[data-action="toggle-highlight-editor"]')).forEach((element) => {
+    element.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const highlightId = element.getAttribute("data-highlight-id");
+      const opening = state.editingHighlightId !== highlightId;
+      state.editingHighlightId = opening ? highlightId : "";
+      if (opening) {
+        state.selectedHighlightId = highlightId;
+      }
+      renderSidebar();
+      renderPdfHighlights();
+      if (opening) {
+        window.requestAnimationFrame(() => {
+          const card = document.getElementById(`sidebar-highlight-${highlightId}`);
+          const firstField = card?.querySelector('[data-highlight-field="label"]');
+          if (firstField) firstField.focus({ preventScroll: true });
+          scrollSidebarCardIntoView(highlightId, true);
+        });
+      }
+      scheduleConnectorUpdate();
+    });
+  });
+  Array.from(refs.sidebarScroll.querySelectorAll('[data-action="toggle-highlight-expand"]')).forEach((element) => {
+    element.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const highlightId = element.getAttribute("data-highlight-id");
+      if (state.expandedHighlightIds.has(highlightId)) {
+        state.expandedHighlightIds.delete(highlightId);
+      } else {
+        state.expandedHighlightIds.add(highlightId);
+      }
+      renderSidebar();
+      scheduleConnectorUpdate();
+    });
+  });
+  Array.from(refs.sidebarScroll.querySelectorAll("textarea[data-highlight-field], textarea[data-doc-field]")).forEach((element) => {
+    autosizeTextarea(element);
+    element.addEventListener("input", () => autosizeTextarea(element));
+  });
   Array.from(refs.sidebarScroll.querySelectorAll("[data-highlight-field]")).forEach((element) => {
     element.addEventListener("input", (event) => {
       const field = event.currentTarget.getAttribute("data-highlight-field");
@@ -1350,7 +1418,9 @@ function bindSidebarEvents() {
       if (field === "label") {
         const heading = refs.sidebarScroll.querySelector(`[data-highlight-card="${cssEscape(state.selectedHighlightId)}"] .pdf-guideline-studio__highlight-card-heading`);
         if (heading) {
-          heading.textContent = event.currentTarget.value || createHighlightHeading(getSelectedHighlight());
+          const nextLabel = sanitizeText(event.currentTarget.value, 240);
+          heading.textContent = nextLabel || createHighlightHeading(getSelectedHighlight());
+          heading.hidden = !nextLabel;
         }
       }
     });
@@ -1974,6 +2044,7 @@ function renderPdfHighlights() {
         box.style.height = `${renderBounds.height}%`;
         box.style.setProperty("--highlight-color", highlight.color);
         box.classList.toggle("is-selected", highlight.id === state.selectedHighlightId);
+        box.classList.toggle("is-new", highlight.id === state.lastCreatedHighlightId);
         box.setAttribute("aria-label", `${highlight.label || "Highlight"} on page ${highlight.page}`);
         renderQuads.forEach((segment) => {
           const piece = document.createElement("span");
@@ -2196,7 +2267,8 @@ function bindDrawEvents(pageView) {
     addHighlight(pageView.pageNumber, geometry.bounds, {
       quote,
       quads: geometry.quads,
-      label: createSelectionLabel(quote),
+      // 標題留白：卡片預設只露摘句，要另取標題再展開編輯填
+      label: "",
     });
   };
 
@@ -2319,11 +2391,22 @@ function addHighlight(pageNumber, box, prefill = {}) {
   state.currentPage = pageNumber;
   state.editingHighlightId = "";
   state.isDirty = true;
+  state.lastCreatedHighlightId = highlight.id;
+  window.clearTimeout(state.lastCreatedTimer);
+  state.lastCreatedTimer = window.setTimeout(() => {
+    if (state.lastCreatedHighlightId === highlight.id) {
+      state.lastCreatedHighlightId = "";
+      document.querySelectorAll(".is-new").forEach((el) => el.classList.remove("is-new"));
+    }
+  }, 1600);
   renderSidebar();
   renderPdfHighlights();
   updateTopbar();
-  showMessage("已新增 highlight，原文摘句已自動帶入右側。");
-  scheduleConnectorUpdate();
+  showMessage("已新增 highlight，原文摘句已自動帶入右側。點卡片右上角的筆可補標題、Tags 與重點。");
+  window.requestAnimationFrame(() => {
+    scrollSidebarCardIntoView(highlight.id, true);
+    scheduleConnectorUpdate();
+  });
 }
 
 function normalizeBox(start, end) {
