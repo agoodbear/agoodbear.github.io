@@ -61,13 +61,13 @@
   border: 2.5px solid var(--color-ink);
   /* 四角半徑刻意不對稱＝手繪感，不是元件庫那種完美圓角 */
   border-radius: 15px 21px 14px 23px / 21px 14px 22px 15px;
-  transform: translateY(-58%) rotate(-3.6deg);
+  transform: translateY(-40%) rotate(-3.6deg);
   box-shadow: 2.5px 3px 0 var(--color-ink);
   transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s;
 }
 .masthead .domain-badge:hover,
 .masthead .domain-badge:focus-visible {
-  transform: translateY(-58%) rotate(-3.6deg) scale(1.04);
+  transform: translateY(-40%) rotate(-3.6deg) scale(1.04);
   box-shadow: 3.5px 5px 0 var(--color-ink);
 }
 .masthead .db-bear { width: 1.62em; height: 1.62em; flex: none; display: block; }
@@ -77,7 +77,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .masthead .domain-badge { transition: none; }
-  .masthead .domain-badge:hover { transform: translateY(-58%) rotate(-3.6deg); }
+  .masthead .domain-badge:hover { transform: translateY(-40%) rotate(-3.6deg); }
 }
 
 /* 窄螢幕：大標會換行，此時絕對定位會把徽章甩出視窗右緣。
