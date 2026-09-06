@@ -16,7 +16,7 @@ const SUBSCRIBERS_META_PATH = "/subscriptions/meta";
 const NOTIFIED_POSTS_PATH = "/subscriptions/notifiedPosts";
 const API_PREFIX = "/write-studio-api";
 const MAX_BODY_BYTES = 60 * 1024 * 1024;
-const SITE_URL = "https://agoodbear.github.io";
+const SITE_URL = "https://agoodbear.com";
 const SITE_NAME = "急診熊心聲部落格";
 // Fail-closed: no hard-coded fallback secret (this repo is public). Deployment
 // MUST set UNSUBSCRIBE_SECRET, otherwise unsubscribe-token generation/verification
