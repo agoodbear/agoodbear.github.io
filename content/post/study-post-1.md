@@ -180,7 +180,7 @@ https://x.com/smithECGBlog/status/1745156040159559767?s=20
 
 *斜體字* ➔ 按下CMD+I 
 
-[超連結 ](https://agoodbear.github.io/)➔ 按下CMD+K 
+[超連結 ](https://agoodbear.com/)➔ 按下CMD+K 
 
 ~~刪除線 ~~➔ 按下CMD+U 
 

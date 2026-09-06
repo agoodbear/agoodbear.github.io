@@ -160,7 +160,7 @@ ECG如下:
 
 這是什麼?
 
-這是在[上一篇文章](https://agoodbear.github.io/post/ecg-post-4/)中提到的STEMI mimics，其中一個SCAD(Spontaneous coronary artery dissection)。
+這是在[上一篇文章](https://agoodbear.com/post/ecg-post-4/)中提到的STEMI mimics，其中一個SCAD(Spontaneous coronary artery dissection)。
 
 ---
 

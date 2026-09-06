@@ -23,7 +23,7 @@ tags:
   - 蜂螫
 ---
 
-寫完上一篇因為influenza myocarditis導致electrical storm，後來電了DSD，ROSC的個案。([搭配一起服用傳送門](https://agoodbear.github.io/post/ecg-post-8/))
+寫完上一篇因為influenza myocarditis導致electrical storm，後來電了DSD，ROSC的個案。([搭配一起服用傳送門](https://agoodbear.com/post/ecg-post-8/))
 
 讓我回想到，我還有一個個案，也有類似的經驗。我後來拿到了**東部急診聯合病例討論季會**分享。
 
@@ -99,7 +99,7 @@ CPR兩分鐘後，看了一下ECG monitor的rhythm
 
 我請另一位同事幫我把另一台電擊器推過來，幫我貼上TCP的貼片，同樣轉到200J
 
-我印象中，這個個案的貼法是**下圖右**，而[另一個個案](https://agoodbear.github.io/post/ecg-post-8/)的貼法是**下圖左**
+我印象中，這個個案的貼法是**下圖右**，而[另一個個案](https://agoodbear.com/post/ecg-post-8/)的貼法是**下圖左**
 
 ![DSD貼法](../../static/images/ipic/xkurqk.png)
 

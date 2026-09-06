@@ -383,5 +383,5 @@ CAG報告➜ LAD:  **pLAD critical lesion, plaque rupture with thrombus formatio
 [^3]: Article: Wellens Syndrome | Life in the Fast Lane • LITFL [link](https://litfl.com/wellens-syndrome-ecg-library/)
 [^4]: Reinig, M. G., Harizi, R., & Spodick, D. H. (2005). Electrocardiographic T- and U-Wave Discordance. __Annals of Noninvasive Electrocardiology__, __10__(1), 41–46. https://doi.org/10/d2xxd2
 [^5]: Amal Mattu’s ECG Case of the Week – January 16, 2023 – ECG Weekly - [link](https://ecgweekly.com/2023/01/amal-mattus-ecg-case-of-the-week-january-16-2023/)
-[^6]: Article: VPC也可以小兵立大功嗎? | 急診熊心聲部落格 | 急診熊心聲部落格 [link](https://agoodbear.github.io/post/medium-6cdf5d600a1c/)
-[^7]: Dr. Smith’s ECG Blog: Hyperacute T-waves and Concordant ST Elevation seen in PVCs only — [link](http://hqmeded-ecg.blogspot.com/2018/10/hyperacute-t-waves-and-concordant-st.html) [↩︎](https://agoodbear.github.io/post/medium-6cdf5d600a1c/#fnref:1) [↩︎](https://agoodbear.github.io/post/medium-6cdf5d600a1c/#fnref1:1)
+[^6]: Article: VPC也可以小兵立大功嗎? | 急診熊心聲部落格 | 急診熊心聲部落格 [link](https://agoodbear.com/post/medium-6cdf5d600a1c/)
+[^7]: Dr. Smith’s ECG Blog: Hyperacute T-waves and Concordant ST Elevation seen in PVCs only — [link](http://hqmeded-ecg.blogspot.com/2018/10/hyperacute-t-waves-and-concordant-st.html) [↩︎](https://agoodbear.com/post/medium-6cdf5d600a1c/#fnref:1) [↩︎](https://agoodbear.com/post/medium-6cdf5d600a1c/#fnref1:1)

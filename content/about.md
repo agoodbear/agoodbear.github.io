@@ -44,7 +44,7 @@ closing = "Written from the desk on the second floor of the ER,"
 </div>
 
 
-眼鏡蛇來我家事件，請見[此篇](https://agoodbear.github.io/post/erlife-post-1/)
+眼鏡蛇來我家事件，請見[此篇](https://agoodbear.com/post/erlife-post-1/)
 
 ---
 

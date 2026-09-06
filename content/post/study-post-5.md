@@ -21,7 +21,7 @@ tags:
 
 ![第二大腦(Roam Research)](../../static/images/ipic/c8y6kb.png)
 
-年初講到[資料庫的應用與靈感筆記如何建立?](https://agoodbear.github.io/post/study-post-2/)，有興趣可以點選回到這邊看看。
+年初講到[資料庫的應用與靈感筆記如何建立?](https://agoodbear.com/post/study-post-2/)，有興趣可以點選回到這邊看看。
 
 內容主要為**靈感筆記**的建立，與整體資料庫的應用。
 
