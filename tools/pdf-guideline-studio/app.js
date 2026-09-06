@@ -965,7 +965,13 @@ function updateTopbar() {
   }
   if (refs.saveButton) {
     refs.saveButton.disabled = !state.editMode || !state.isDirty || state.isSaving;
-    refs.saveButton.innerHTML = `${iconSvg("save")}<span>${state.isSaving ? "儲存中..." : "儲存變更"}</span>`;
+    const saveLabel = state.isSaving
+      ? "儲存中..."
+      : state.saveFlashUntil && state.saveFlashUntil > Date.now()
+        ? state.saveFlashText
+        : "儲存變更";
+    refs.saveButton.innerHTML = `${iconSvg("save")}<span>${saveLabel}</span>`;
+    refs.saveButton.classList.toggle("is-flash", Boolean(!state.isSaving && state.saveFlashUntil && state.saveFlashUntil > Date.now()));
   }
 
   refs.drawModeButton.disabled = !state.editMode || !state.pdfDoc;
@@ -1222,6 +1228,18 @@ function renderHighlightCard(highlight, isSelected) {
         <div class="pdf-guideline-studio__highlight-card-tools">
           ${previewButtonHtml}
           ${citeButtonHtml}
+          ${state.editMode ? `
+            <button
+              type="button"
+              class="pdf-guideline-studio__mini-button pdf-guideline-studio__mini-button--trash"
+              data-action="delete-highlight"
+              data-highlight-id="${escapeHtml(highlight.id)}"
+              title="刪除這段 highlight（可在 6 秒內復原）"
+              aria-label="刪除 highlight"
+            >
+              ${iconSvg("trash")}
+            </button>
+          ` : ""}
           ${toggleButtonHtml}
         </div>
       </div>
@@ -1352,6 +1370,7 @@ function bindSidebarEvents() {
       state.doc[field] = sanitizeText(event.currentTarget.value, field === "pdfUrl" ? 4000 : 40000);
       state.isDirty = true;
       updateTopbar();
+      scheduleAutoSave();
     });
   });
 
@@ -2400,6 +2419,7 @@ function addHighlight(pageNumber, box, prefill = {}) {
   state.editingHighlightId = "";
   state.isDirty = true;
   state.lastCreatedHighlightId = highlight.id;
+  scheduleAutoSave();
   window.clearTimeout(state.lastCreatedTimer);
   state.lastCreatedTimer = window.setTimeout(() => {
     if (state.lastCreatedHighlightId === highlight.id) {
@@ -2646,25 +2666,42 @@ function getQuadBounds(quads) {
 
 function deleteHighlight(highlightId, options = {}) {
   if (!state.editMode || !highlightId) return;
-  const target = state.doc.highlights.find((item) => item.id === highlightId);
-  if (!target) return;
-  const skipConfirm = Boolean(options.skipConfirm);
-  if (!skipConfirm && !window.confirm("確定要刪除這段 highlight 嗎？")) {
-    return;
-  }
-  state.doc.highlights = state.doc.highlights.filter((item) => item.id !== highlightId);
+  const index = state.doc.highlights.findIndex((item) => item.id === highlightId);
+  if (index === -1) return;
+  const [target] = state.doc.highlights.splice(index, 1);
+  state.lastDeletedHighlight = { highlight: target, index };
   if (state.editingHighlightId === highlightId) {
     state.editingHighlightId = "";
   }
-  state.selectedHighlightId = state.doc.highlights[0] ? state.doc.highlights[0].id : "";
+  const neighbor = state.doc.highlights[Math.min(index, state.doc.highlights.length - 1)];
+  state.selectedHighlightId = neighbor ? neighbor.id : "";
   if (!state.selectedHighlightId) {
     state.lastHighlightSelectionSource = "";
   }
-  state.currentPage = state.doc.highlights[0] ? state.doc.highlights[0].page : 1;
+  state.currentPage = neighbor ? neighbor.page : state.currentPage;
   state.isDirty = true;
   renderSidebar();
   renderPdfHighlights();
   updateTopbar();
+  scheduleAutoSave();
+  showMessageWithAction("已刪除 highlight。", "復原", restoreLastDeletedHighlight, 6000);
+}
+
+function restoreLastDeletedHighlight() {
+  const record = state.lastDeletedHighlight;
+  if (!record || !state.editMode) return;
+  state.lastDeletedHighlight = null;
+  const index = Math.min(Math.max(record.index, 0), state.doc.highlights.length);
+  state.doc.highlights.splice(index, 0, record.highlight);
+  state.selectedHighlightId = record.highlight.id;
+  state.currentPage = record.highlight.page;
+  state.isDirty = true;
+  renderSidebar();
+  renderPdfHighlights();
+  updateTopbar();
+  scheduleAutoSave();
+  hideMessage();
+  window.requestAnimationFrame(() => scrollSidebarCardIntoView(record.highlight.id, true));
 }
 
 function updateSelectedHighlight(patch, rerenderSidebar) {
@@ -2672,6 +2709,7 @@ function updateSelectedHighlight(patch, rerenderSidebar) {
   if (!highlight) return;
   Object.assign(highlight, patch);
   state.isDirty = true;
+  scheduleAutoSave();
   renderPdfHighlights();
   if (rerenderSidebar) {
     renderSidebar();
@@ -3944,8 +3982,71 @@ async function checkApiHealth(apiBase) {
   }
 }
 
-async function handleSaveDocument() {
+const AUTOSAVE_DELAY_MS = 1500;
+
+function flashSaveButton(text, ms = 2200) {
+  state.saveFlashText = text;
+  state.saveFlashUntil = Date.now() + ms;
+  updateTopbar();
+  window.clearTimeout(state.saveFlashTimer);
+  state.saveFlashTimer = window.setTimeout(() => {
+    state.saveFlashUntil = 0;
+    updateTopbar();
+  }, ms + 50);
+}
+
+// 有 highlight 變動就自動儲存：先立刻寫本機草稿當保險，1.5 秒沒再變動就送雲端。
+function scheduleAutoSave() {
   if (!state.editMode || !state.doc) return;
+  try {
+    cacheLocalDoc(state.doc);
+  } catch (error) {
+    console.warn("Unable to cache local draft", error);
+  }
+  window.clearTimeout(state.autoSaveTimer);
+  state.autoSaveTimer = window.setTimeout(() => {
+    if (!state.editMode || !state.isDirty) return;
+    if (state.isSaving) {
+      scheduleAutoSave();
+      return;
+    }
+    handleSaveDocument({ quiet: true, auto: true });
+  }, AUTOSAVE_DELAY_MS);
+}
+
+// 離開頁面前把還沒送出的變動用 keepalive 送出去（大檔可能超過 keepalive 上限，本機草稿仍在）。
+function flushSaveOnExit() {
+  if (!state.editMode || !state.doc || !state.isDirty) return;
+  window.clearTimeout(state.autoSaveTimer);
+  try {
+    syncActiveHighlightEditorFields();
+    const payload = serializeDoc(state.doc);
+    cacheLocalDoc(payload);
+    if (state.apiBase && state.token && typeof window.fetch === "function") {
+      const body = JSON.stringify(payload);
+      if (body.length < 60000) {
+        fetch(`${state.apiBase}/pdf-guidelines/${encodeURIComponent(payload.id)}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json", "X-Write-Studio-Token": state.token },
+          body,
+          keepalive: true,
+        }).catch(() => null);
+      }
+    }
+  } catch (error) {
+    console.warn("flushSaveOnExit failed", error);
+  }
+}
+
+window.addEventListener("pagehide", flushSaveOnExit);
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") flushSaveOnExit();
+});
+
+async function handleSaveDocument(options = {}) {
+  if (!state.editMode || !state.doc) return;
+  const quiet = Boolean(options && options.quiet);
+  window.clearTimeout(state.autoSaveTimer);
 
   syncActiveHighlightEditorFields();
   const payload = serializeDoc(state.doc);
@@ -3976,11 +4077,19 @@ async function handleSaveDocument() {
       state.doc = normalizeDoc(result.doc || payload);
       state.currentLoadSource = "api";
       cacheLocalDoc(state.doc);
-      showMessage("已儲存到 Firebase API。");
+      if (quiet) {
+        flashSaveButton("已自動儲存 ✓");
+      } else {
+        showMessage("已儲存到 Firebase API。");
+      }
     } else {
       cacheLocalDoc(payload);
       state.currentLoadSource = "local";
-      showMessage("目前沒有 Cloud API，已先存到本機草稿。");
+      if (quiet) {
+        flashSaveButton("已存本機草稿");
+      } else {
+        showMessage("目前沒有 Cloud API，已先存到本機草稿。");
+      }
     }
 
     state.isDirty = false;
@@ -3988,7 +4097,7 @@ async function handleSaveDocument() {
     renderPdfHighlights();
   } catch (error) {
     console.error(error);
-    showMessage(`儲存失敗：${formatError(error)}`, "error", true);
+    showMessage(`${quiet ? "自動" : ""}儲存失敗：${formatError(error)}（變動還在本機草稿，可再按「儲存變更」重試）`, "error", true);
   } finally {
     state.isSaving = false;
     updateTopbar();
@@ -4254,6 +4363,27 @@ function showMessage(text, kind = "info", sticky = false) {
   }
 }
 
+function showMessageWithAction(text, actionLabel, onAction, ms = 6000) {
+  window.clearTimeout(state.messageTimer);
+  refs.message.hidden = false;
+  refs.message.classList.remove("is-error");
+  refs.message.textContent = "";
+  const span = document.createElement("span");
+  span.textContent = text;
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "pdf-guideline-studio__message-action";
+  button.innerHTML = `${iconSvg("undo")}<span>${escapeHtml(actionLabel)}</span>`;
+  button.addEventListener("click", (event) => {
+    event.stopPropagation();
+    onAction();
+  });
+  refs.message.append(span, button);
+  state.messageTimer = window.setTimeout(() => {
+    hideMessage();
+  }, ms);
+}
+
 function hideMessage() {
   window.clearTimeout(state.messageTimer);
   refs.message.hidden = true;
@@ -4271,6 +4401,10 @@ function iconSvg(name) {
       '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><polyline points="16 17 21 12 16 7" /><line x1="21" x2="9" y1="12" y2="12" /></svg>',
     chevronDown:
       '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>',
+    trash:
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18" /><path d="M8 6V4h8v2" /><path d="M19 6l-1 14H6L5 6" /><path d="M10 11v6" /><path d="M14 11v6" /></svg>',
+    undo:
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7v6h6" /><path d="M3.5 13a9 9 0 1 0 2.6-6.4L3 10" /></svg>',
     arrowLeft:
       '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>',
     external:
