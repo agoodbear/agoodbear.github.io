@@ -4,7 +4,9 @@ import path from "path";
 import process from "process";
 import { chromium } from "playwright";
 
-const DEFAULT_PROPERTY = "https://agoodbear.com/";
+// GSC resource_id：新資源是「網域資源」，id 就是 sc-domain:<網域>。
+// 寫成網址形式（https://agoodbear.com/）會指到一個不存在的資源，開出來是空白頁。
+const DEFAULT_PROPERTY = "sc-domain:agoodbear.com";
 const DEFAULT_URL_LIST_ENDPOINT =
   "https://agoodbear.com/gsc/new-urls-latest.txt";
 const DEFAULT_LOCAL_URL_LIST = path.join(
