@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SlideCue on 急診熊心聲部落格</title><link>https://agoodbear.github.io/tags/slidecue/</link><description>Recent content in SlideCue on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Fri, 28 Aug 2026 09:30:00 +0800</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/slidecue/index.xml" rel="self" type="application/rss+xml"/><item><title>把講稿搬到聽眾臉旁邊：我做了一個 G2 眼鏡外掛 SlideCue，然後它上架了</title><link>https://agoodbear.github.io/post/study-post-10/</link><pubDate>Fri, 28 Aug 2026 09:30:00 +0800</pubDate><guid>https://agoodbear.github.io/post/study-post-10/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SlideCue on 急診熊心聲部落格</title><link>https://agoodbear.com/tags/slidecue/</link><description>Recent content in SlideCue on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Fri, 28 Aug 2026 09:30:00 +0800</lastBuildDate><atom:link href="https://agoodbear.com/tags/slidecue/index.xml" rel="self" type="application/rss+xml"/><item><title>把講稿搬到聽眾臉旁邊：我做了一個 G2 眼鏡外掛 SlideCue，然後它上架了</title><link>https://agoodbear.com/post/study-post-10/</link><pubDate>Fri, 28 Aug 2026 09:30:00 +0800</pubDate><guid>https://agoodbear.com/post/study-post-10/</guid><description>
 &lt;style&gt;
 .sc-fig{margin:1.8em auto;max-width:720px;text-align:center}
 .sc-fig img{width:100%;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.18)}
@@ -21,7 +21,7 @@
 &lt;p&gt;而那份講稿，本來就寫在 Keynote 的講者附註裡。我要的其實只有一句話：&lt;strong&gt;翻到第幾張，就顯示第幾張的附註&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;盤點過同類型的東西，Google Slides 有人做過類似的（powerslides），Android 上有離線提詞機（whisprompt），但把「翻頁」和「講稿行號」綁在一起的，當時找不到。那就自己做。&lt;/p&gt;
 &lt;figure class="sc-fig"&gt;
-&lt;img src="https://agoodbear.github.io/images/slidecue/lens-prompter.png" alt="SlideCue 在 G2 鏡片上的提詞畫面：上排四格顯示現在時刻、授課時間、下課倒數與講稿分頁，下方是講稿內文與指示行的箭頭"&gt;
+&lt;img src="https://agoodbear.com/images/slidecue/lens-prompter.png" alt="SlideCue 在 G2 鏡片上的提詞畫面：上排四格顯示現在時刻、授課時間、下課倒數與講稿分頁，下方是講稿內文與指示行的箭頭"&gt;
 &lt;figcaption&gt;鏡片上實際的樣子。上排是現在時刻、已經講了多久、離結束還剩多久；左側箭頭指著正在念的那一行。實際鏡片是單色綠、576 × 288 像素。&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;h2 id="卡住的地方是眼鏡看不到我的電腦"&gt;卡住的地方是：眼鏡看不到我的電腦&lt;/h2&gt;

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Roam Search on 急診熊心聲部落格</title><link>https://agoodbear.github.io/tags/roam-search/</link><description>Recent content in Roam Search on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Sun, 21 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.github.io/tags/roam-search/index.xml" rel="self" type="application/rss+xml"/><item><title>資料庫的應用與靈感筆記如何建立?</title><link>https://agoodbear.github.io/post/study-post-2/</link><pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/study-post-2/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Roam Search on 急診熊心聲部落格</title><link>https://agoodbear.com/tags/roam-search/</link><description>Recent content in Roam Search on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Sun, 21 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.com/tags/roam-search/index.xml" rel="self" type="application/rss+xml"/><item><title>資料庫的應用與靈感筆記如何建立?</title><link>https://agoodbear.com/post/study-post-2/</link><pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/study-post-2/</guid><description>
 &lt;h2 id="我的筆記知識庫第二大腦"&gt;我的&lt;strong&gt;筆記知識庫(第二大腦)&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;很久以前是使用Evernote當做第二大腦。後來發現，我用Evernote Clip來擷取網頁，存成read it later的形式。&lt;/p&gt;
 &lt;p&gt;但是這樣的動作，只是把比較大的垃圾堆(Big data)，整理成比較小的垃圾堆(Small Big data)😅。總歸一句，都還是垃圾。&lt;/p&gt;
@@ -10,8 +10,8 @@ loading="lazy"
 decoding="async"
 alt="資料庫"
 class="image_figure image_internal image_unprocessed"
-src="https://agoodbear.github.io/images/ipic/8vwg0a.png"
-data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+src="https://agoodbear.com/images/ipic/8vwg0a.png"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
@@ -31,8 +31,8 @@ loading="lazy"
 decoding="async"
 alt="資料庫應用觀念"
 class="image_figure image_internal image_unprocessed"
-src="https://agoodbear.github.io/images/ipic/bqpo96.png"
-data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+src="https://agoodbear.com/images/ipic/bqpo96.png"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
@@ -48,8 +48,8 @@ loading="lazy"
 decoding="async"
 alt="Evernote to Roam"
 class="image_figure image_internal image_unprocessed"
-src="https://agoodbear.github.io/images/ipic/0k43pg.png"
-data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+src="https://agoodbear.com/images/ipic/0k43pg.png"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
@@ -75,14 +75,14 @@ loading="lazy"
 decoding="async"
 alt="Readwise手機App"
 class="image_figure image_internal image_unprocessed"
-src="https://agoodbear.github.io/images/ipic/jvb083.gif"
-data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+src="https://agoodbear.com/images/ipic/jvb083.gif"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;Readwise手機App的好處是可以直接OCR看到的紙本書籍。拍照下來，把重要文字OCR出來，接著就可以Export到Roam裡面去了。&lt;/p&gt;</description></item><item><title>Roam教學:第四集-四種Roam research參考文獻資料的呈現模式</title><link>https://agoodbear.github.io/post/medium-6efa37de7325/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.github.io/post/medium-6efa37de7325/</guid><description>
+&lt;p&gt;Readwise手機App的好處是可以直接OCR看到的紙本書籍。拍照下來，把重要文字OCR出來，接著就可以Export到Roam裡面去了。&lt;/p&gt;</description></item><item><title>Roam教學:第四集-四種Roam research參考文獻資料的呈現模式</title><link>https://agoodbear.com/post/medium-6efa37de7325/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-6efa37de7325/</guid><description>
 &lt;h3 id="roam教學第四集-四種roam-research參考文獻資料的呈現模式"&gt;&lt;strong&gt;Roam教學&lt;/strong&gt;:第四集-四種Roam research參考文獻資料的呈現模式&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -92,7 +92,7 @@ decoding="async"
 alt="embed"
 class="image_figure image_external image_unprocessed"
 src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi.ytimg.com%2Fvi%2F4-TeZrmGWSg%2Fhqdefault.jpg&amp;amp;key=a19fcc184b9711e1b4764040d3dc5c07"
-data-fallback-src="https://agoodbear.github.io/images/EDbear.jpg"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
