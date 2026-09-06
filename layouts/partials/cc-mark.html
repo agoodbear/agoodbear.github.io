@@ -364,9 +364,22 @@
       });
       var needle=String(mk.text||'').replace(/\s+/g,'');   // 比對時兩邊都拿掉空白
       if(!needle)return {hit:gotFig,partial:false};
-      var ix=buildIndex(),at=pickOccurrence(mk,ix,needle),len=needle.length,partial=false;
+      var ix=buildIndex(),at=pickOccurrence(mk,ix,needle),len=needle.length,partial=false,moved=false;
       if(at<0){
-        // 對不上就二分找「最長還能命中的前綴」——舊版存下來的標記（文字夾帶過 CSS／SVG）
+        // 「潤」的定義就是改掉被圈的字，改得徹底一點，原文在頁面上就一個字都不剩了，
+        // 原地再怎麼找都找不到。先拿 CC 回覆裡的「改後整句」當備援錨點，把標記亮在改寫後的位置。
+        var rep_=replyFor(mk);
+        if(rep_&&rep_.after){
+          var na=String(rep_.after).replace(/\s+/g,'').slice(0,24),pa=-1;
+          if(na.length>=8){
+            pa=ix.norm.indexOf(na);
+            if(pa<0&&na.length>12){na=na.slice(0,12);pa=ix.norm.indexOf(na);}
+          }
+          if(pa>=0){at=pa;len=na.length;moved=true;}
+        }
+      }
+      if(at<0){
+        // 還是對不上就二分找「最長還能命中的前綴」——舊版存下來的標記（文字夾帶過 CSS／SVG）
         // 才不會整條掉光，至少亮出對得上的那一段。
         var lo=1,hi=needle.length,best=0,bestAt=-1;
         while(lo<=hi){var mid=(lo+hi)>>1,p=ix.norm.indexOf(needle.slice(0,mid));
@@ -377,7 +390,7 @@
       var a=ix.map[at],b=ix.map[at+len-1];
       if(!a||!b)return {hit:gotFig,partial:false};
       if((a.n.parentElement&&a.n.parentElement.closest('mark.ccm-hit'))||
-         (b.n.parentElement&&b.n.parentElement.closest('mark.ccm-hit')))return {hit:true,partial:partial};
+         (b.n.parentElement&&b.n.parentElement.closest('mark.ccm-hit')))return {hit:true,partial:partial,moved:moved};
       // 先把要包的片段依 node 收集起來，再動 DOM（避免 split 之後位移）
       var seen=[],cur=null;
       for(var k=at;k<=at+len-1;k++){
@@ -386,7 +399,7 @@
         else cur.to=e.o+1;
       }
       seen.forEach(function(s){wrapSeg(s.node,s.from,s.to,mk,idx);});
-      return {hit:true,partial:partial};
+      return {hit:true,partial:partial,moved:moved};
     });
     // 索引被標題救回來的話，順手寫回去，下次就不用再猜（不呼叫 save()，避免遞迴 render）
     if(figHealed){setMarks(marks);push(marks);}
@@ -441,6 +454,7 @@
       var row=list.querySelector('.ccm-item[data-row="'+i+'"] .ccm-miss');
       if(!row)return;
       if(!r.hit){row.textContent=' ⚠︎ 未定位';row.hidden=false;}
+      else if(r.moved){row.textContent=' ↪ 原文已改寫，亮在新內容上';row.style.color='#0f766e';row.hidden=false;}
       else if(r.partial){row.textContent=' ◐ 部分定位';row.style.color='#d97706';row.hidden=false;}
     });
   }
