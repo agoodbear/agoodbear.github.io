@@ -1,7 +1,7 @@
 title: "Guideline 集散地"
-intro: "急診會用到的 AMI／ACS、心肌梗塞定義、ischemic stroke、ACLS／PALS、外傷、sepsis 與 POCUS guideline。有 PDF 的接進站內 Reader，沒有的連原文。年份越新排越前面，每一組最新的一份會特別標出來。"
+intro: "急診會用到的 AMI／ACS、心肌梗塞定義、ischemic stroke、ACLS／PALS、外傷、sepsis、POCUS 與困難呼吸道 guideline。有 PDF 的接進站內 Reader，沒有的連原文。年份越新排越前面，每一組最新的一份會特別標出來。"
 updated: "2026-09-06"
-total_items: 50
+total_items: 56
 topics:
   - id: "ami"
     title: "AMI / ACS"
@@ -368,3 +368,57 @@ topics:
             link: "https://doi.org/10.1542/peds.2015-0343"
             citation: "Marin & Lewiss (2015)"
             note: "Pediatrics 2015;135(4)。站內無 PDF，連原文。"
+  - id: "airway"
+    title: "困難呼吸道"
+    subtitle: "困難插管、重症插管、食道插管防範"
+    icon: "wind"
+    accent: "cyan"
+    groups:
+      - title: "ASA"
+        badge: "美國"
+        items:
+          - title: "2022 ASA Practice Guidelines for Management of the Difficult Airway"
+            doc: "airway-2022-asa-difficult-airway"
+            year: 2022
+            added: "2026-09-06"
+            citation: "Apfelbaum et al. (2022)"
+            note: "Anesthesiology 2022;136:31–81。取代 2013 版；強調術前 time-out、減少嘗試次數、影像喉頭鏡，並把 ECMO 納入失敗後的考量。"
+      - title: "DAS（Difficult Airway Society）"
+        badge: "英國"
+        items:
+          - title: "2018 Guidelines for the Management of Tracheal Intubation in Critically Ill Adults"
+            doc: "airway-2018-das-critically-ill-intubation"
+            year: 2018
+            added: "2026-09-06"
+            citation: "Higgs et al. (2018)"
+            note: "Br J Anaesth 2018;120:323–352。DAS／ICS／FICM／RCoA 共同發布，回應 NAP4，最貼近急診與加護病房插管情境。"
+          - title: "2015 DAS Guidelines for Management of Unanticipated Difficult Intubation in Adults"
+            doc: "airway-2015-das-unanticipated-difficult-intubation"
+            year: 2015
+            added: "2026-09-06"
+            citation: "Frerk et al. (2015)"
+            note: "Br J Anaesth 2015;115:827–848。Plan A–D 的原始出處。"
+      - title: "CAFG（Canadian Airway Focus Group）"
+        badge: "加拿大"
+        items:
+          - title: "2021 CAFG Recommendations, Part 1: Difficult Airway Management Encountered in an Unconscious Patient"
+            doc: "airway-2021-cafg-part1"
+            year: 2021
+            added: "2026-09-06"
+            citation: "Law et al. (2021)"
+            note: "Can J Anesth 2021;68:1373–1404。"
+          - title: "2021 CAFG Recommendations, Part 2: Planning and Implementing Safe Management of the Patient With an Anticipated Difficult Airway"
+            doc: "airway-2021-cafg-part2"
+            year: 2021
+            added: "2026-09-06"
+            citation: "Law et al. (2021)"
+            note: "Can J Anesth 2021;68:1405–1436。"
+      - title: "PUMA（Project for Universal Management of Airways）"
+        badge: "國際共識"
+        items:
+          - title: "2022 Preventing Unrecognised Oesophageal Intubation: A Consensus Guideline"
+            doc: "airway-2022-puma-oesophageal-intubation"
+            year: 2022
+            added: "2026-09-06"
+            citation: "Chrimes et al. (2022)"
+            note: "Anaesthesia 2022;77:1395–1415。以持續呼氣 CO2 波形為排除食道插管的主軸。"

@@ -464,6 +464,7 @@
 #guideline-hub .gh__tile--slate, #guideline-hub .gh__topic--slate, #guideline-hub .gh__chip--slate { --gh-accent: #475569; --gh-accent-ink: #1e293b; --gh-tint: rgba(71, 85, 105, 0.12); }
 #guideline-hub .gh__tile--orange, #guideline-hub .gh__topic--orange, #guideline-hub .gh__chip--orange { --gh-accent: #ea580c; --gh-accent-ink: #9a3412; --gh-tint: rgba(234, 88, 12, 0.10); }
 #guideline-hub .gh__tile--teal, #guideline-hub .gh__topic--teal, #guideline-hub .gh__chip--teal { --gh-accent: #0d9488; --gh-accent-ink: #115e59; --gh-tint: rgba(13, 148, 136, 0.10); }
+#guideline-hub .gh__tile--cyan, #guideline-hub .gh__topic--cyan, #guideline-hub .gh__chip--cyan { --gh-accent: #0e7490; --gh-accent-ink: #155e75; --gh-tint: rgba(14, 116, 144, 0.10); }
 
 /* ---- Hero ---- */
 #guideline-hub .gh__hero { display: grid; gap: 1rem; margin-bottom: 2.25rem; }

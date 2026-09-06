@@ -208,6 +208,15 @@
   margin: 0;
   line-height: 1.55;
 }
+.pinned .head .pinned-cta { margin-top: var(--space-sm); }
+.pinned .head .pinned-cta a {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent-ink);
+  border-bottom: 1px solid var(--color-accent);
+  padding-bottom: 1px;
+}
 .pinned .list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -482,26 +491,36 @@ article.card .meta {
   {{ end }}
 
   <section class="pinned">
+    {{- /* 常駐專欄：直接讀 data/guideline_hub.yaml，主題數與份數跟集散地同步，不再手寫 */ -}}
+    {{- $hub := site.Data.guideline_hub -}}
+    {{- $total := 0 -}}
+    {{- $rows := slice -}}
+    {{- range $topic := $hub.topics -}}
+      {{- $n := 0 -}}{{- $latest := "" -}}
+      {{- range $group := $topic.groups -}}
+        {{- range $entry := $group.items -}}
+          {{- $n = add $n 1 -}}
+          {{- $y := "" -}}
+          {{- with $entry.year -}}{{- $y = printf "%v" . -}}{{- else -}}{{- with findRE `^\d{4}` $entry.title -}}{{- $y = index . 0 -}}{{- end -}}{{- end -}}
+          {{- if gt $y $latest -}}{{- $latest = $y -}}{{- end -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $total = add $total $n -}}
+      {{- $rows = $rows | append (dict "id" $topic.id "name" $topic.title "sub" $topic.subtitle "n" $n "latest" $latest) -}}
+    {{- end -}}
     <div class="head">
       <p class="eyebrow-inline">Pinned · 常駐專欄</p>
       <h2>Guideline 集散地</h2>
-      <p>急診值班時最常翻、最不想再 Google 一遍的權威指引總彙。挑一條打開、整理過、附原文連結，更新到最新版本。</p>
+      <p>急診值班時最常翻、最不想再 Google 一遍的權威指引總彙。{{ len $rows }} 個主題、{{ $total }} 份，全部接進站內閱讀器，依年份排成時間軸。</p>
+      <p class="pinned-cta"><a href="/guideline-pdfs/">打開集散地，含全文搜尋 →</a></p>
     </div>
     <div class="list">
-      {{ $guidelines := site.Params.guidelines | default (slice
-        (dict "name" "ACLS 2025" "desc" "AHA · 最新更新 2025/10")
-        (dict "name" "ATLS 11th" "desc" "American College of Surgeons")
-        (dict "name" "PALS" "desc" "AHA · 兒科急救核心")
-        (dict "name" "OMI Manifesto" "desc" "Smith / Meyers · 取代 STEMI paradigm")
-        (dict "name" "Sepsis-3 · Hour-1 Bundle" "desc" "SCCM · 黃金一小時處置")
-        (dict "name" "POCUS Guidelines · ED" "desc" "ACEP · 急診超音波應用")
-      ) }}
-      {{ range $i, $g := $guidelines }}
-        <a class="item" href="{{ $g.url | default "/guideline-pdfs/" }}">
+      {{ range $i, $r := $rows }}
+        <a class="item" href="/guideline-pdfs/#gh-{{ $r.id }}">
           <span class="num">{{ printf "%02d" (add $i 1) }}</span>
           <div>
-            <div class="name">{{ $g.name }}</div>
-            <div class="desc">{{ $g.desc }}</div>
+            <div class="name">{{ $r.name }}</div>
+            <div class="desc">{{ $r.n }} 份{{ with $r.latest }} · 最新 {{ . }}{{ end }}{{ with $r.sub }} · {{ . }}{{ end }}</div>
           </div>
         </a>
       {{ end }}

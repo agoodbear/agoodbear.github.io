@@ -2,7 +2,7 @@
 title: "Guideline集散地"
 date: "2026-03-05"
 lastmod: "2026-09-05"
-description: "急診常用的 AMI／ACS、心肌梗塞定義、ischemic stroke、ACLS／PALS、外傷、sepsis 與 POCUS guideline 索引，依年份排成時間軸，有 PDF 的接上站內 Reader 與 Raw PDF。"
+description: "急診常用的 AMI／ACS、心肌梗塞定義、ischemic stroke、ACLS／PALS、外傷、sepsis、POCUS 與困難呼吸道 guideline 索引，依年份排成時間軸，有 PDF 的接上站內 Reader 與 Raw PDF。"
 draft: false
 featured: false
 toc: false
