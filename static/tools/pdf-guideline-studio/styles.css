@@ -2030,3 +2030,70 @@ a {
   min-width: 0;
   max-width: 100%;
 }
+
+/* 卡片上的刪除鍵、復原訊息、自動儲存提示 */
+.pdf-guideline-studio__mini-button--trash {
+  width: 24px;
+  padding: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdf-guideline-studio__mini-button--trash svg {
+  width: 13px;
+  height: 13px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pdf-guideline-studio__highlight-card .pdf-guideline-studio__mini-button--trash:hover {
+  color: #b23b2e;
+  border-color: rgba(178, 59, 46, 0.4);
+  background: rgba(178, 59, 46, 0.06);
+}
+
+.pdf-guideline-studio__message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pdf-guideline-studio__message[hidden] {
+  display: none;
+}
+
+.pdf-guideline-studio__message-action {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(23, 144, 191, 0.3);
+  background: #ffffff;
+  color: var(--pg-accent-strong);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pdf-guideline-studio__message-action svg {
+  width: 13px;
+  height: 13px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pdf-guideline-studio__button.is-flash {
+  background: linear-gradient(135deg, #19a86b 0%, #128a57 100%);
+  box-shadow: none;
+}
