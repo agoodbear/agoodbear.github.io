@@ -34,6 +34,10 @@ tags:
 /* 連續的註腳上標之間補頓號，避免「3456」黏成一團 */
 .footnote-ref + .footnote-ref::before{content:"、";font-weight:400}
 sup:has(> .footnote-ref) + sup:has(> .footnote-ref)::before{content:"、"}
+/* 註腳上標包方括號＋留一點間距：本文數字很密，「2024」後面直接接上標 9、10 會被讀成「2024 年 9、10 月」 */
+.footnote-ref::before{content:"["}
+.footnote-ref::after{content:"]"}
+sup:has(> .footnote-ref){margin-left:.12em}
 </style>
 
 ## 第一現場：急診室壞掉了，還是只是太忙？
