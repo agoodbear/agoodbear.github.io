@@ -102,7 +102,7 @@ jobs:
           if [ -n "$ACCESS_TOKEN" ]; then
             # Resubmit sitemap
             curl -sf -X PUT \
-              "https://searchconsole.googleapis.com/webmasters/v3/sites/https%3A%2F%2Fagoodbear.github.io%2F/sitemaps/https%3A%2F%2Fagoodbear.github.io%2Fsitemap.xml" \
+              "https://searchconsole.googleapis.com/webmasters/v3/sites/https%3A%2F%2Fagoodbear.com%2F/sitemaps/https%3A%2F%2Fagoodbear.com%2Fsitemap.xml" \
               -H "Authorization: Bearer $ACCESS_TOKEN" \
               -H "x-goog-user-project: gen-lang-client-0217249336" \
               -H "Content-Type: application/json" \

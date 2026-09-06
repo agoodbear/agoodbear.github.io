@@ -4,9 +4,9 @@ import path from "path";
 import process from "process";
 import { chromium } from "playwright";
 
-const DEFAULT_PROPERTY = "https://agoodbear.github.io/";
+const DEFAULT_PROPERTY = "https://agoodbear.com/";
 const DEFAULT_URL_LIST_ENDPOINT =
-  "https://agoodbear.github.io/gsc/new-urls-latest.txt";
+  "https://agoodbear.com/gsc/new-urls-latest.txt";
 const DEFAULT_LOCAL_URL_LIST = path.join(
   process.cwd(),
   "public",

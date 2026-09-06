@@ -55,7 +55,7 @@ def main() -> int:
     parser.add_argument("--current-sitemap", required=True)
     parser.add_argument("--previous-sitemap-url", required=True)
     parser.add_argument("--output-dir", required=True)
-    parser.add_argument("--site-base-url", default="https://agoodbear.github.io")
+    parser.add_argument("--site-base-url", default="https://agoodbear.com")
     args = parser.parse_args()
 
     current_urls = normalize_post_urls(
