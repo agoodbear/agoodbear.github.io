@@ -32,6 +32,46 @@
   margin: 0;
   color: var(--color-ink);
 }
+/* ─── 網域徽章（接在大標尾巴的手繪貼紙）──────────────────────────────── */
+.masthead .domain-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.30em;
+  /* 相對 h1 字級，所以大標怎麼縮它就怎麼縮，手機上不用另外處理 */
+  font-size: 0.185em;
+  vertical-align: 0.52em;
+  margin-left: 0.34em;
+  padding: 0.26em 0.58em 0.24em 0.42em;
+  font-family: "Baloo 2", var(--font-body-zh);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--color-ink);
+  background: var(--color-paper-2);
+  border: 2.5px solid var(--color-ink);
+  /* 四角半徑刻意不對稱＝手繪感，不是元件庫那種完美圓角 */
+  border-radius: 15px 21px 14px 23px / 21px 14px 22px 15px;
+  transform: rotate(-3.6deg);
+  box-shadow: 2.5px 3px 0 var(--color-ink);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s;
+}
+.masthead .domain-badge:hover,
+.masthead .domain-badge:focus-visible {
+  transform: rotate(-3.6deg) translateY(-3px) scale(1.04);
+  box-shadow: 3.5px 5px 0 var(--color-ink);
+}
+.masthead .db-bear { width: 1.62em; height: 1.62em; flex: none; display: block; }
+.masthead .db-row { display: flex; flex-direction: column; gap: 0.12em; }
+.masthead .db-dot { color: var(--color-accent-ink); margin-left: -0.06em; }
+.masthead .db-ecg { display: block; width: 100%; height: 0.40em; color: var(--color-accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .masthead .domain-badge { transition: none; }
+  .masthead .domain-badge:hover { transform: rotate(-3.6deg); }
+}
+
 .masthead .tagline {
   font-family: var(--font-display);
   font-style: italic;
@@ -489,7 +529,7 @@ article.card .meta {
 
 <header class="masthead">
   <div class="kicker">An Editorial Notebook · Since 2022</div>
-  <h1 class="wordmark">{{ site.Title | default "急診熊心聲部落格" }}</h1>
+  <h1 class="wordmark">{{ site.Title | default "急診熊心聲部落格" }}{{ partial "domain-badge.html" . }}</h1>
   <p class="tagline">{{ site.Params.tagline | default "A working physician's notes on ECG, AI workflows, and the cold reality of the emergency department — written in Taiwan, read with care." }}</p>
   {{- /* Localized weekday name (Hugo's time.Format doesn't natively output 中文) */ -}}
   {{- $weekdays := dict "Monday" "星期一" "Tuesday" "星期二" "Wednesday" "星期三" "Thursday" "星期四" "Friday" "星期五" "Saturday" "星期六" "Sunday" "星期日" -}}

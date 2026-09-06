@@ -38,6 +38,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter+Tight:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;600;900&display=swap" rel="stylesheet">
+  {{- /* 首頁大標尾巴的網域徽章專用圓體。text= 子集化：只下載 "agoodbear.com"
+         這 11 個字元的字形，額外流量以百 bytes 計，不影響 LCP。
+         必須獨立一個 <link>——text= 是整個請求全域生效，併進上面那行會把
+         Noto Serif TC 也子集化成只剩這幾個字母，整站中文大標會直接壞掉。 */ -}}
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&text=agoodbear.com&display=swap" rel="stylesheet">
 
   {{- /* Hallmark theme.css */ -}}
   <link rel="stylesheet" href="{{ "css/theme.css" | relURL }}">

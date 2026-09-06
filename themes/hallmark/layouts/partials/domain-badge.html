@@ -1,0 +1,36 @@
+{{- /*
+  網域徽章：接在首頁大標尾巴上的手繪貼紙，帶出新網域 agoodbear.com。
+
+  設計取向：整站是 editorial／報紙質感（襯線大標、紙色底、克制的橘紅 accent），
+  所以「可愛」要收斂——做成手繪貼紙而不是彩色卡通：沿用站上色票、不引進糖果色，
+  靠不規則圓角＋傾斜＋硬陰影做出手貼上去的感覺。
+
+  圖形內容刻意呼應身分：熊＝急診熊，底下那道 QRS 波＝ECG。
+  熊用實心塊面而非線稿——在 ~26px 的實際尺寸下，線稿的五官會糊成一團。
+
+  字型 Baloo 2 走 Google Fonts 的 text= 子集載入（見 baseof.html），
+  只下載 "agoodbear.com" 用到的字元，額外流量以百 bytes 計。
+*/ -}}
+<a class="domain-badge" href="{{ "/" | absURL }}" aria-label="agoodbear.com">
+  <svg class="db-bear" viewBox="0 0 44 44" aria-hidden="true" focusable="false">
+    <circle cx="11.4" cy="11.6" r="6.6" fill="currentColor"/>
+    <circle cx="32.6" cy="11.6" r="6.6" fill="currentColor"/>
+    <circle cx="11.4" cy="11.6" r="2.9" fill="var(--color-accent)"/>
+    <circle cx="32.6" cy="11.6" r="2.9" fill="var(--color-accent)"/>
+    <circle cx="22" cy="23.6" r="14.4" fill="currentColor"/>
+    <circle cx="16.5" cy="21.2" r="2.15" fill="var(--color-paper-2)"/>
+    <circle cx="27.5" cy="21.2" r="2.15" fill="var(--color-paper-2)"/>
+    <ellipse cx="22" cy="28.4" rx="5.6" ry="4.3" fill="var(--color-paper-2)"/>
+    <ellipse cx="22" cy="26.9" rx="2.5" ry="1.85" fill="currentColor"/>
+    <path d="M22 28.6v1.5M22 30.1c-.9 1.1-2.6 1.05-3.1-.15M22 30.1c.9 1.1 2.6 1.05 3.1-.15"
+          stroke="currentColor" stroke-width="1.35" stroke-linecap="round" fill="none"/>
+  </svg>
+  <span class="db-row">
+    <span class="db-text">agoodbear<span class="db-dot">.com</span></span>
+    <svg class="db-ecg" viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M2 8h18l4-1 3 2 4-9 4 14 4-6 4 1h24l4-1 3 2 4-9 4 14 4-6 4 1h26"
+            stroke="currentColor" stroke-width="1.8" fill="none"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</a>
