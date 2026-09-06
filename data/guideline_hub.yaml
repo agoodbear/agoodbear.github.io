@@ -1,7 +1,7 @@
 title: "Guideline 集散地"
 intro: "急診會用到的 AMI／ACS、心肌梗塞定義、ischemic stroke、ACLS／PALS、外傷、sepsis、POCUS 與困難呼吸道 guideline。有 PDF 的接進站內 Reader，沒有的連原文。年份越新排越前面，每一組最新的一份會特別標出來。"
 updated: "2026-09-06"
-total_items: 56
+total_items: 57
 topics:
   - id: "ami"
     title: "AMI / ACS"
@@ -386,6 +386,12 @@ topics:
       - title: "DAS（Difficult Airway Society）"
         badge: "英國"
         items:
+          - title: "2025 DAS Guidelines for Management of Unanticipated Difficult Tracheal Intubation in Adults"
+            doc: "airway-2025-das-unanticipated-difficult-intubation"
+            year: 2025
+            added: "2026-09-06"
+            citation: "Ahmad et al. (2025)"
+            note: "Br J Anaesth 2026;136:283–307（線上 2025-11-07）。2015 版的更新；65 條建議；維持 Plan A（插管）→B（聲門上裝置）→C（面罩）→D（頸前緊急氣道）的線性流程；全程供氧、波形二氧化碳監測確認通氣、把握第一次嘗試。"
           - title: "2018 Guidelines for the Management of Tracheal Intubation in Critically Ill Adults"
             doc: "airway-2018-das-critically-ill-intubation"
             year: 2018
@@ -397,7 +403,7 @@ topics:
             year: 2015
             added: "2026-09-06"
             citation: "Frerk et al. (2015)"
-            note: "Br J Anaesth 2015;115:827–848。Plan A–D 的原始出處。"
+            note: "Br J Anaesth 2015;115:827–848。Plan A–D 的原始出處；2025 版已更新，留作對照。"
       - title: "CAFG（Canadian Airway Focus Group）"
         badge: "加拿大"
         items:
