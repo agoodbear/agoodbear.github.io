@@ -217,6 +217,73 @@
   border-bottom: 1px solid var(--color-accent);
   padding-bottom: 1px;
 }
+.pinned .topics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.pinned .topic {
+  --t-tint: rgba(217, 72, 15, 0.09);
+  --t-ink: #a8380a;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 16px 14px;
+  border: 1px solid var(--color-rule);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--color-ink);
+  transition: transform 160ms var(--ease-out), border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+}
+.pinned .topic:hover {
+  transform: translateY(-2px);
+  border-color: var(--t-ink);
+  box-shadow: 0 10px 24px rgba(11, 18, 26, 0.08);
+  color: var(--color-ink);
+}
+.pinned .topic .ico {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--t-tint);
+  color: var(--t-ink);
+  display: grid;
+  place-items: center;
+}
+.pinned .topic .ico svg { width: 22px; height: 22px; }
+.pinned .topic .name {
+  font-family: var(--font-display-zh);
+  font-weight: 600;
+  font-size: 1.02rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+.pinned .topic .count {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--color-ink-3);
+}
+.pinned .topic--rose { --t-tint: rgba(217, 72, 15, 0.09); --t-ink: #a8380a; }
+.pinned .topic--violet { --t-tint: rgba(109, 40, 217, 0.09); --t-ink: #4c1d95; }
+.pinned .topic--indigo { --t-tint: rgba(52, 81, 178, 0.10); --t-ink: #253a86; }
+.pinned .topic--amber { --t-tint: rgba(15, 118, 110, 0.10); --t-ink: #115e59; }
+.pinned .topic--sky { --t-tint: rgba(2, 132, 199, 0.10); --t-ink: #075985; }
+.pinned .topic--slate { --t-tint: rgba(71, 85, 105, 0.12); --t-ink: #1e293b; }
+.pinned .topic--orange { --t-tint: rgba(234, 88, 12, 0.10); --t-ink: #9a3412; }
+.pinned .topic--teal { --t-tint: rgba(13, 148, 136, 0.10); --t-ink: #115e59; }
+.pinned .topic--cyan { --t-tint: rgba(14, 116, 144, 0.10); --t-ink: #155e75; }
+@media (max-width: 720px) {
+  .pinned .topics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .pinned .topic { padding: 12px 12px 11px; gap: 8px; }
+  .pinned .topic .ico { width: 34px; height: 34px; }
+  .pinned .topic .name { font-size: 0.95rem; }
+}
 .pinned .list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -506,22 +573,20 @@ article.card .meta {
         {{- end -}}
       {{- end -}}
       {{- $total = add $total $n -}}
-      {{- $rows = $rows | append (dict "id" $topic.id "name" $topic.title "sub" $topic.subtitle "n" $n "latest" $latest) -}}
+      {{- $rows = $rows | append (dict "id" $topic.id "name" $topic.title "sub" $topic.subtitle "n" $n "latest" $latest "icon" $topic.icon "accent" $topic.accent) -}}
     {{- end -}}
     <div class="head">
       <p class="eyebrow-inline">Pinned · 常駐專欄</p>
       <h2>Guideline 集散地</h2>
-      <p>急診值班時最常翻、最不想再 Google 一遍的權威指引總彙。{{ len $rows }} 個主題、{{ $total }} 份，全部接進站內閱讀器，依年份排成時間軸。</p>
+      <p>急診值班時最常翻、最不想再 Google 一遍的權威指引，{{ $total }} 份全部接進站內閱讀器，依年份排成時間軸。點一個主題進去挑。</p>
       <p class="pinned-cta"><a href="/guideline-pdfs/">打開集散地，含全文搜尋 →</a></p>
     </div>
-    <div class="list">
-      {{ range $i, $r := $rows }}
-        <a class="item" href="/guideline-pdfs/#gh-{{ $r.id }}">
-          <span class="num">{{ printf "%02d" (add $i 1) }}</span>
-          <div>
-            <div class="name">{{ $r.name }}</div>
-            <div class="desc">{{ $r.n }} 份{{ with $r.latest }} · 最新 {{ . }}{{ end }}{{ with $r.sub }} · {{ . }}{{ end }}</div>
-          </div>
+    <div class="topics" aria-label="Guideline 主題">
+      {{ range $r := $rows }}
+        <a class="topic topic--{{ $r.accent | default "rose" }}" href="/guideline-pdfs/#gh-{{ $r.id }}" title="{{ $r.name }}：{{ $r.n }} 份{{ with $r.sub }}，{{ . }}{{ end }}">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ partial "guideline-icon.html" $r.icon }}</svg></span>
+          <span class="name">{{ $r.name }}</span>
+          <span class="count" aria-hidden="true">{{ $r.n }}</span>
         </a>
       {{ end }}
     </div>
