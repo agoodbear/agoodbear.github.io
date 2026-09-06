@@ -1,0 +1,24 @@
+{{- /* 急診熊書架：只放首頁。資料 data/books.yaml；amazon_tag 有值時連結自動帶 ?tag= 並加 rel=sponsored。 */ -}}
+{{- with site.Data.books -}}
+{{- $data := . -}}
+{{- with $data.books }}
+<div class="eyebrow">Bookshelf · {{ $data.shelf_title | default "急診熊書架" }}</div>
+<section class="shelf" aria-label="{{ $data.shelf_title | default "急診熊書架" }}">
+  {{- with $data.shelf_note }}<p class="shelf__note">{{ . }}</p>{{ end }}
+  <ul class="shelf__track">
+    {{- range $b := . }}
+    {{- $href := $b.url -}}
+    {{- with $data.amazon_tag }}{{ $href = printf "%s?tag=%s" $b.url . }}{{ end }}
+    <li class="shelf__item">
+      <a class="shelf__link" href="{{ $href }}" target="_blank" rel="noopener{{ if $data.amazon_tag }} sponsored{{ end }}">
+        <span class="shelf__cover"><img src="{{ $b.cover | relURL }}" alt="{{ $b.title }}" loading="lazy" decoding="async" width="120" height="180"></span>
+        <span class="shelf__title">{{ $b.title }}</span>
+        <span class="shelf__author">{{ $b.author }}</span>
+        {{- with $b.blurb }}<span class="shelf__blurb">{{ . }}</span>{{ end }}
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}
+{{- end }}

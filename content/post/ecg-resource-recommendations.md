@@ -3,6 +3,8 @@ title: "ECG 學習資源整理：推薦書籍與推薦網站"
 date: "2026-03-08"
 description: "整理我自己常用的 ECG 學習資源，先從推薦書籍與推薦網站開始，方便初學者少走一些彎路。"
 draft: true
+thumbnail: "/images/ipic/ecg-resource-recommendations-thumbnail.webp"
+hero_ratio: "3/2"
 featured: false
 toc: false
 typora-copy-images-to: "../../static/images/ipic"

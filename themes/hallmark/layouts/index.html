@@ -468,7 +468,8 @@ article.card .meta {
   .pinned .list { grid-template-columns: 1fr; }
 }
 @media (max-width: 520px) {
-  .grid-4 { grid-template-columns: 1fr; }
+  /* minmax(0,1fr)：1fr 的下限是 min-content，卡片裡有不可斷行內容時會把單欄撐到 500px 以上、四張卡溢出到下一區 */
+  .grid-4 { grid-template-columns: minmax(0, 1fr); }
 }
 </style>
 {{ end }}
@@ -598,6 +599,8 @@ article.card .meta {
       {{ partial "article-card.html" . }}
     {{ end }}
   </section>
+
+  {{ partial "book-shelf.html" . }}
 
   <aside class="statement">
     <div class="wordmark">{{ site.Title | default "急診熊心聲部落格" }}</div>
