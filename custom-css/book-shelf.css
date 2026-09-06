@@ -65,6 +65,12 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.shelf__disclosure {
+  margin: 0.25rem 0 0;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: var(--color-ink-3, #6c7278);
+}
 @media (max-width: 640px) {
   .shelf__track { gap: 1rem; }
   .shelf__item { width: 112px; }
