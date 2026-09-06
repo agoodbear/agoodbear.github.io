@@ -13,7 +13,7 @@
       <a class="shelf__link" href="{{ $href }}" target="_blank" rel="noopener{{ if $data.amazon_tag }} sponsored{{ end }}">
         <span class="shelf__cover"><img src="{{ $b.cover | relURL }}" alt="{{ $b.title }}" loading="lazy" decoding="async" width="120" height="180"></span>
         <span class="shelf__title">{{ $b.title }}</span>
-        <span class="shelf__author">{{ $b.author }}</span>
+        <span class="shelf__author">{{ $b.author }}{{ with $b.edition }} · {{ . }}{{ end }}</span>
         {{- with $b.blurb }}<span class="shelf__blurb">{{ . }}</span>{{ end }}
       </a>
     </li>
