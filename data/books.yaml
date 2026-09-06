@@ -2,7 +2,8 @@
 # 換書／調順序：改下面 books 的順序；改一句話推薦：改 blurb。封面放 static/images/books/<ASIN>.jpg。
 shelf_title: "急診熊書架"
 shelf_note: "Kindle 裡翻過、值得放在桌邊的幾本。點封面到 Amazon。"
-amazon_tag: ""   # 申請到 Amazon Associates 後填 ID（例如 agoodbear-20），連結會自動帶 ?tag=
+amazon_tag: "agoodbear-20"   # Amazon Associates ID（2026-09-06 核准），連結自動帶 ?tag= 並加 rel=sponsored
+shelf_disclosure: "本站為 Amazon 聯盟夥伴（Amazon Associate），透過這些連結購書，本站會獲得少量分潤，書價不變。"
 books:
   - asin: "B0FBKPDDNP"
     title: "ECGs for Acute, Critical and Emergency Care, Vol. 2"
