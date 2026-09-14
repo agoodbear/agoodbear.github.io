@@ -1,4 +1,9 @@
+{{ define "head" }}{{ partial "ercw-head.html" . }}{{ end }}
+{{ define "scripts" }}<script src="{{ "er-cardio-weekly/js/ecw.js" | relURL }}" defer></script>{{ end }}
 {{ define "main" }}
+<main class="ecw-content">
+{{ partial "ercw-breadcrumb.html" . }}
+<div class="progress-track" aria-hidden="true"><div class="progress-bar" id="ecw-progress"></div></div>
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-left">
@@ -6,26 +11,26 @@
         <svg class="ecg-mark" viewBox="0 0 56 28" aria-hidden="true">
           <path d="M2,14 L10,14 L13,8 L17,20 L21,4 L25,24 L29,14 L36,14 L39,10 L43,18 L54,18" />
         </svg>
-        ER · CARDIO · WEEKLY
+        急診熊心聲 · 每週專欄
       </div>
-      <h1 class="tagline">給急診醫師的<br>ECG <span class="accent">／</span> 心臟學每週重點。</h1>
-      {{ $weekPages := where .Pages "Section" "er-cardio-weekly" }}
-      {{ $latest := index ($weekPages.ByDate.Reverse) 0 }}
+      <h1 class="tagline">急診心臟週報</h1>
+      {{ $weekPages := partial "ercw-issues.html" . }}
+      {{ $latest := dict "Params" dict }}{{ with $weekPages }}{{ $latest = index . 0 }}{{ end }}
       <div class="issue-meta">
         <span class="num">No. {{ len $weekPages }}</span>
         <span>·</span>
         <span>最新期：{{ $latest.Params.week | default ($latest.Params.shortTitle | default $latest.Title) }}</span>
         <span>·</span>
-        <span>{{ $latest.Date.Format "2006-01-02" }}</span>
+        <span>{{ with $latest.Date }}{{ .Format "2006-01-02" }}{{ end }}</span>
       </div>
     </div>
     <div class="hero-right">
       <p class="sub">
-        每週一封。核心 3 分鐘掃完「這週該改什麼」，想深讀再往下。涵蓋 OMI 判讀、心律不整、裝置與電氣治療、AI ECG、急救與毒物——由急診熊心聲從 Dr Smith / Ken Grauer / LITFL / ECG Weekly、CrossRef 期刊與 PubMed 追蹤作者彙整。
+        每週一期。核心 3 分鐘掃完「這週該改什麼」，想深讀再往下。涵蓋 OMI 判讀、心律不整、裝置與電氣治療、AI ECG、急救與毒物——由急診熊心聲從 Dr Smith / Ken Grauer / LITFL / ECG Weekly、CrossRef 期刊與 PubMed 追蹤作者彙整。
       </p>
       <div class="subscribe-label">訂閱本週報</div>
       <div class="subscribe">
-        <span style="flex: 1; display: flex; align-items: center; padding: 0 14px; height: 40px; border: 1px solid var(--hairline); border-radius: 2px; font-size: 13.5px; color: var(--muted); font-family: 'Inter', 'Noto Sans TC', sans-serif;">沒有 email 名單，用 RSS 追蹤每週更新</span>
+        <span style="flex: 1; display: flex; align-items: center; padding: 0 14px; height: 40px; border: 1px solid var(--hairline); border-radius: 2px; font-size: 13.5px; color: var(--muted); font-family: 'Inter', 'Noto Sans TC', sans-serif;">使用 RSS 追蹤每週更新</span>
         <a href="{{ "/er-cardio-weekly/index.xml" | relURL }}" style="height: 40px; padding: 0 18px; display: inline-flex; align-items: center; background: var(--accent); color: #fff; border: 0; border-radius: 2px; font-size: 14px; font-weight: 500; text-decoration: none; letter-spacing: 0.01em; white-space: nowrap; font-family: 'Inter Tight', 'Noto Sans TC', sans-serif;">用 RSS 訂閱</a>
         <a class="rss" href="{{ "/er-cardio-weekly/index.xml" | relURL }}" title="RSS" aria-label="RSS">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -42,8 +47,8 @@
 <div class="layout-list" style="padding-top: 48px;">
   <div>
     <div class="filter-label" style="font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 8px;">最近發布</div>
-    {{ $weeks := where .Pages "Section" "er-cardio-weekly" }}
-    {{ range $weeks.ByDate.Reverse }}
+    {{ $weeks := partial "ercw-issues.html" . }}
+    {{ range $weeks }}
     <article class="row">
       <div>
         <div class="week">{{ .Params.week | default .Title }}</div>
@@ -51,11 +56,11 @@
       </div>
       <div>
         <h2 class="head" style="margin-top: 0;"><a href="{{ .RelPermalink }}" style="text-decoration: none; color: inherit;">{{ .Params.shortTitle | default .Title }}</a></h2>
-        {{ with .Params.subtitle }}<p style="font-family: 'Noto Serif TC', 'Newsreader', serif; font-size: 16px; line-height: 1.55; color: var(--ink-2); margin: 6px 0 0;">{{ . | replaceRE `^_+|_+$` "" }}</p>{{ end }}
+        {{ with .Params.subtitle }}<p style="font-family: 'Noto Serif TC', var(--font-display); font-size: 16px; line-height: 1.55; color: var(--ink-2); margin: 6px 0 0;">{{ . | replaceRE `^_+|_+$` "" }}</p>{{ end }}
         <div class="meta">
           <span>{{ .Date.Format "2006-01-02" }}</span>
           {{ with .Params.readingTime }}<span class="dot"></span><span>{{ . }}閱讀</span>{{ end }}
-          <span class="dot"></span><span>{{ .WordCount }} 字</span>
+
         </div>
         {{ with .Params.tags }}
         <div class="tags">
@@ -79,4 +84,5 @@
     <a href="{{ "/er-cardio-weekly/sources/" | relURL }}" style="display: block; margin-top: 16px; font-size: 11.5px; letter-spacing: 0.04em; color: var(--accent); text-decoration: none; font-family: 'Inter Tight', sans-serif;">看來源 archive →</a>
   </aside>
 </div>
+</main>
 {{ end }}

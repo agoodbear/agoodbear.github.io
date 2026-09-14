@@ -1,0 +1,7 @@
+{{- $issues := slice -}}
+{{- range where site.RegularPages "Section" "er-cardio-weekly" -}}
+  {{- if and .Params.week (not .Draft) (not .Params.sources) (le .Date now) (not (in .RelPermalink "/sources/")) -}}
+    {{- $issues = $issues | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- return (sort $issues "Date" "desc") -}}

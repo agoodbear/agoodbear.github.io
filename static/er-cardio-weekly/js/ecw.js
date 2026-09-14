@@ -1,30 +1,10 @@
 // 急診心臟學週報 — 互動 JS（合一檔）
-// 涵蓋：theme toggle / progress bar / TOC scroll-spy / heading deep-link / collapse
+// 涵蓋：progress bar / TOC scroll-spy / heading deep-link / collapse
 
 (function () {
   'use strict';
 
-  // ─── Theme toggle (.is-dark on body) ─────────────────────────────────
-  var KEY = 'ecw-theme';
-  var body = document.body;
-  function applyTheme(t) {
-    if (t === 'dark') body.classList.add('is-dark');
-    else body.classList.remove('is-dark');
-  }
-  var stored = localStorage.getItem(KEY);
-  var initial = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  applyTheme(initial);
-  document.documentElement.classList.remove('ecw-init-dark');
-
-  var themeBtn = document.getElementById('ecw-theme-toggle');
-  if (themeBtn) {
-    themeBtn.addEventListener('click', function () {
-      var next = body.classList.contains('is-dark') ? 'light' : 'dark';
-      applyTheme(next);
-      localStorage.setItem(KEY, next);
-    });
-  }
-
+  // 配色與主站一致，不再讀取週報獨立暗色偏好。
   // ─── Progress bar ─────────────────────────────────────────────────────
   var bar = document.getElementById('ecw-progress');
   if (bar) {

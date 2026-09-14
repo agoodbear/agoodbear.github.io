@@ -654,6 +654,8 @@ article.card .meta {
     </div>
   </section>
 
+  {{ partial "ercw-latest.html" . }}
+
   <div class="eyebrow">Most Recent · 最新文章<img class="eyebrow-icon" src="{{ "images/most-recent-divider.gif" | relURL }}" alt="" loading="lazy" decoding="async" width="16" height="16"></div>
   <section class="grid-4">
     {{ range $recent }}

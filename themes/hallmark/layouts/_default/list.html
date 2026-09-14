@@ -168,6 +168,9 @@
 
 {{ $paginator := .Paginate (where .Pages "Section" "!=" "") 24 }}
 
+{{ if and (eq .Kind "term") (eq .Data.Plural "categories") (eq (lower .Data.Term) "ecg") }}
+<div class="ercw-category-promo">{{ partial "ercw-latest.html" . }}</div>
+{{ end }}
 <section class="cat-grid">
   {{ range $paginator.Pages }}
     {{ partial "article-card.html" . }}

@@ -1,27 +1,16 @@
+{{ define "head" }}{{ partial "ercw-head.html" . }}{{ end }}
+{{ define "scripts" }}<script src="{{ "er-cardio-weekly/js/ecw.js" | relURL }}" defer></script>{{ end }}
 {{ define "main" }}
-<header class="topbar">
-  <a href="{{ "/er-cardio-weekly/" | relURL }}" class="brand" style="text-decoration: none;">
-    <svg class="ecg-mark" viewBox="0 0 56 28" aria-hidden="true" style="margin-right: 8px;">
-      <path d="M2,14 L10,14 L13,8 L17,20 L21,4 L25,24 L29,14 L36,14 L39,10 L43,18 L54,18" />
-    </svg>
-    ER · CARDIO · WEEKLY
-  </a>
-  <span class="crumb">/ 本週原始訊號清單</span>
-  <div class="actions">
-    <button class="icon-btn" id="ecw-theme-toggle" title="切換暗色模式" aria-label="切換暗色模式">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-        <circle cx="12" cy="12" r="4"/>
-        <path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/>
-      </svg>
-    </button>
-  </div>
-</header>
+<main class="ecw-content">
+{{ partial "ercw-breadcrumb.html" . }}
+<div class="progress-track" aria-hidden="true"><div class="progress-bar" id="ecw-progress"></div></div>
+
 
 <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 56px 32px 96px;">
   <div style="margin-bottom: 32px;">
     <div style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 6px; font-family: 'Inter Tight', sans-serif;">SOURCES · ARCHIVE</div>
     <h1 style="font-family: 'Inter Tight', 'Noto Sans TC', sans-serif; font-size: 36px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 12px; line-height: 1.18;">本週原始訊號清單</h1>
-    <p style="font-family: 'Newsreader', serif; font-style: italic; font-size: 18px; color: var(--ink-2); margin: 0; max-width: 640px;">
+    <p style="font-family: var(--font-display); font-style: italic; font-size: 18px; color: var(--ink-2); margin: 0; max-width: 640px;">
       急診心臟週報底下 4 層來源獨立彙整。每層獨立 archive，依時間流排序。
     </p>
   </div>
@@ -68,8 +57,9 @@
 
   </div>
 
-  <p style="margin-top: 48px; font-size: 12px; color: var(--muted); text-align: center; font-family: 'Newsreader', serif; font-style: italic;">
+  <p style="margin-top: 48px; font-size: 12px; color: var(--muted); text-align: center; font-family: var(--font-display); font-style: italic;">
     cache 更新：{{ $sources.generatedAt }}
   </p>
 </div>
+</main>
 {{ end }}

@@ -1,31 +1,30 @@
 /* Editorial styles for ER Cardio Weekly (Hugo section). Source: handoff-bundle/styles.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;600;900&display=swap');
 
 /* ─── Hugo standalone baseline reset (added 2026-04-29) ─── */
-*, *::before, *::after { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body.ecw { min-height: 100vh; }
-.ecw img { max-width: 100%; height: auto; }
-.ecw button { font: inherit; }
-.ecw .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+
+
+
+.ecw-content img { max-width: 100%; height: auto; }
+.ecw-content button { font: inherit; }
+.ecw-content .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
 @media (max-width: 760px) {
-  .ecw .container { padding: 0 18px; }
-  .ecw .layout-list { grid-template-columns: minmax(0, 1fr) !important; gap: 24px; padding: 0 18px; }
-  .ecw .layout-article { grid-template-columns: minmax(0, 1fr) !important; gap: 24px; padding: 0 18px; }
-  .ecw .layout-article .left, .ecw .layout-article .right { display: none; }
-  .ecw .row { grid-template-columns: 1fr !important; gap: 8px; padding: 22px 0; }
-  .ecw .row .week { font-size: 22px; }
-  .ecw .row .head { font-size: 18px; }
-  .ecw .article { padding: 24px 0 60px; max-width: 100%; }
-  .ecw .article .article-title { font-size: 36px; line-height: 1.12; }
-  .ecw .article .article-sub { font-size: 22px; line-height: 1.3; }
-  .ecw .article p, .ecw .article li { font-size: 18px; }
-  .ecw .article h2 { font-size: 26px; margin: 2.4em 0 0.6em; }
-  .ecw .article .lede { font-size: 19px; }
-  .ecw .topbar { padding: 0 16px; height: 52px; }
-  .ecw .hero { padding: 32px 0 24px; }
-  .ecw .hero .tagline { font-size: 26px; }
+  .ecw-content .container { padding: 0 18px; }
+  .ecw-content .layout-list { grid-template-columns: minmax(0, 1fr) !important; gap: 24px; padding: 0 18px; }
+  .ecw-content .layout-article { grid-template-columns: minmax(0, 1fr) !important; gap: 24px; padding: 0 18px; }
+  .ecw-content .layout-article .left, .ecw-content .layout-article .right { display: none; }
+  .ecw-content .row { grid-template-columns: 1fr !important; gap: 8px; padding: 22px 0; }
+  .ecw-content .row .week { font-size: 22px; }
+  .ecw-content .row .head { font-size: 18px; }
+  .ecw-content .article { padding: 24px 0 60px; max-width: 100%; }
+  .ecw-content .article .article-title { font-size: 36px; line-height: 1.12; }
+  .ecw-content .article .article-sub { font-size: 22px; line-height: 1.3; }
+  .ecw-content .article p, .ecw-content .article li { font-size: 18px; }
+  .ecw-content .article h2 { font-size: 26px; margin: 2.4em 0 0.6em; }
+  .ecw-content .article .lede { font-size: 19px; }
+  .ecw-content .topbar { padding: 0 16px; height: 52px; }
+  .ecw-content .hero { padding: 32px 0 24px; }
+  .ecw-content .hero .tagline { font-size: 26px; }
 }
 
 /* ─── Theme tokens — Hallmark-aligned + First Round Review DNA pivot ───
@@ -37,7 +36,7 @@ body.ecw { min-height: 100vh; }
  *   main site accent = orange #F35F00 (every.to-derived)
  *   ECW accent     = deep aubergine #3B1044 (First Round-derived)
  *   — visual identity for the weekly section. */
-.ecw {
+.ecw-content {
   --bg: #FBFBF6;            /* warm cream paper (was #FAF8F3) */
   --ink: #000503;            /* near-pure-black (was #1A1A1A) */
   --ink-2: #3a3a3a;
@@ -56,56 +55,43 @@ body.ecw { min-height: 100vh; }
   /* Body 100% serif — round-5: CJK-first stack. Noto Serif TC's Latin glyphs
    * share the CJK design so mixed 中英文 lines stop size-jumping; Newsreader
    * kept only for pure-Latin decorative bits (.num, toc-num). */
-  font-family: 'Noto Serif TC', 'Newsreader', 'Source Serif Pro', Georgia, ui-serif, serif;
+  font-family: var(--font-display-zh);
   font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-.ecw.is-dark {
-  --bg: #1A1816;
-  --ink: #E8E4DC;
-  --ink-2: #C9C3B6;
-  --muted: #8A8578;
-  --hairline: #2E2A24;
-  --hairline-2: #25221C;
-  --accent: #E4ADFF;         /* lavender (high-contrast pair for aubergine) */
-  --accent-soft: #E4ADFF1A;
-  --accent-bg: #2A1838;
-  --code-bg: #25221C;
-  --row-zebra: #1F1D18;
-  --selection: rgba(228,173,255,0.22);
-}
 
-.ecw ::selection { background: var(--selection); }
+
+.ecw-content ::selection { background: var(--selection); }
 
 /* Display / serif title font for headings (First Round single-font serif) */
-.ecw h1, .ecw h2, .ecw h3, .ecw h4,
-.ecw .display {
-  font-family: 'Noto Serif TC', 'Newsreader', 'Source Serif Pro', Georgia, ui-serif, serif;
+.ecw-content h1, .ecw-content h2, .ecw-content h3, .ecw-content h4,
+.ecw-content .display {
+  font-family: var(--font-display-zh);
   font-weight: 600;
   letter-spacing: 0;              /* round-5: no negative tracking on 全形字 */
   color: var(--ink);
 }
 
 /* Legacy .serif class kept for backwards compatibility (already serif now) */
-.ecw .serif {
-  font-family: 'Newsreader', 'Noto Serif TC', Georgia, serif;
+.ecw-content .serif {
+  font-family: var(--font-display-zh);
 }
 
 /* Sans utility for chips / eyebrows / labels (allow narrow sans for UI bits) */
-.ecw .sans {
-  font-family: 'Inter Tight', 'Noto Sans TC', system-ui, sans-serif;
+.ecw-content .sans {
+  font-family: var(--font-body-zh);
 }
 
 /* Body — bigger reading size per First Round DNA (was 17px) */
-.ecw p, .ecw li {
+.ecw-content p, .ecw-content li {
   font-size: 20px;
   line-height: 1.7;
   color: var(--ink);
 }
 
-.ecw a {
+.ecw-content a {
   color: var(--ink);
   text-decoration: underline;
   text-decoration-color: var(--accent);
@@ -113,25 +99,25 @@ body.ecw { min-height: 100vh; }
   text-decoration-thickness: 1px;
 }
 
-.ecw a:hover {
+.ecw-content a:hover {
   color: var(--accent);
 }
 
 /* round-5: long raw URLs (footnotes / references) must never blow out the
  * grid track — this was causing horizontal overflow on mobile. */
-.ecw .article-content a { overflow-wrap: anywhere; }
-.ecw .article-content .footnotes a,
-.ecw .refs a { word-break: break-all; }
+.ecw-content .article-content a { overflow-wrap: anywhere; }
+.ecw-content .article-content .footnotes a,
+.ecw-content .refs a { word-break: break-all; }
 
 /* Hairline divider */
-.ecw .rule {
+.ecw-content .rule {
   height: 1px;
   background: var(--hairline);
   border: 0;
 }
 
 /* Tag chip — 1px border, square corners (1-2px radius) */
-.ecw .chip {
+.ecw-content .chip {
   display: inline-flex;
   align-items: center;
   height: 22px;
@@ -144,20 +130,20 @@ body.ecw { min-height: 100vh; }
   font-weight: 500;
   background: transparent;
   text-transform: uppercase;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body-zh);
   white-space: nowrap;
 }
-.ecw .chip:hover { color: var(--accent); border-color: var(--accent); }
+.ecw-content .chip:hover { color: var(--accent); border-color: var(--accent); }
 
 /* Reading progress bar */
-.ecw .progress-track {
+.ecw-content .progress-track {
   position: fixed;                 /* round-5: was absolute — scrolled out of view instantly */
   top: 0; left: 0; right: 0;
   height: 2px;
   background: transparent;
   z-index: 60;
 }
-.ecw .progress-bar {
+.ecw-content .progress-bar {
   height: 100%;
   background: var(--accent);
   width: var(--progress, 38%);
@@ -165,13 +151,13 @@ body.ecw { min-height: 100vh; }
 }
 
 /* Bottom-line callout */
-.ecw .bottom-line {
+.ecw-content .bottom-line {
   border-left: 3px solid var(--accent);
   background: transparent;
   padding: 12px 16px;
   margin: 20px 0 8px;
 }
-.ecw .bottom-line .label {
+.ecw-content .bottom-line .label {
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -179,7 +165,7 @@ body.ecw { min-height: 100vh; }
   font-weight: 600;
   margin-bottom: 4px;
 }
-.ecw .bottom-line p {
+.ecw-content .bottom-line p {
   font-size: 15.5px;
   line-height: 1.65;
   margin: 0;
@@ -187,7 +173,7 @@ body.ecw { min-height: 100vh; }
 }
 
 /* LLM verdict chip — outline only */
-.ecw .verdict {
+.ecw-content .verdict {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -201,21 +187,21 @@ body.ecw { min-height: 100vh; }
   background: transparent;
   letter-spacing: 0.01em;
 }
-.ecw .verdict::before {
+.ecw-content .verdict::before {
   content: "";
   width: 6px; height: 6px;
   border-radius: 50%;
   background: var(--muted);
 }
-.ecw .verdict.practice::before { background: var(--accent); }
-.ecw .verdict.hypothesis::before { background: #B8860B; }
-.ecw .verdict.context::before { background: var(--muted); }
+.ecw-content .verdict.practice::before { background: var(--accent); }
+.ecw-content .verdict.hypothesis::before { background: #B8860B; }
+.ecw-content .verdict.context::before { background: var(--muted); }
 
 /* Pull quote — First Round signature move: bold serif 44px, breaks out
  * wider than the 680px reading column (920px ≈ +120px each side).
  * Top + bottom hairline rules in accent, no left bar. */
-.ecw blockquote {
-  font-family: 'Noto Serif TC', 'Newsreader', 'Source Serif Pro', Georgia, serif;
+.ecw-content blockquote {
+  font-family: var(--font-display-zh);
   font-size: 30px;          /* round-5: 42 → 30 — 42px×Noto Serif TC 900 is a CJK 黑塊 */
   line-height: 1.5;
   font-weight: 600;         /* round-5: 700 → 600 */
@@ -234,17 +220,17 @@ body.ecw { min-height: 100vh; }
   max-width: none;
   text-align: left;
 }
-.ecw blockquote::before {
+.ecw-content blockquote::before {
   content: "“";
   display: block;
-  font-family: 'Newsreader', serif;
+  font-family: var(--font-display-zh);
   font-size: 56px;
   line-height: 0.5;
   color: var(--accent);
   margin-bottom: 12px;
   font-weight: 600;
 }
-.ecw blockquote cite {
+.ecw-content blockquote cite {
   display: block;
   margin-top: 18px;
   font-style: normal;
@@ -252,11 +238,11 @@ body.ecw { min-height: 100vh; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
-  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-family: var(--font-body-zh);
   font-weight: 600;
 }
 @media (max-width: 760px) {
-  .ecw blockquote {
+  .ecw-content blockquote {
     font-size: 24px;
     width: 100%;
     left: 0;
@@ -264,23 +250,23 @@ body.ecw { min-height: 100vh; }
     padding: 18px 0 20px;
     margin: 36px 0;
   }
-  .ecw blockquote::before { font-size: 40px; }
+  .ecw-content blockquote::before { font-size: 40px; }
 }
 
 /* Tables */
-.ecw table {
+.ecw-content table {
   width: 100%;
   border-collapse: collapse;
   font-size: 14.5px;
   margin: 18px 0;
 }
-.ecw table th, .ecw table td {
+.ecw-content table th, .ecw-content table td {
   padding: 9px 12px;
   text-align: left;
   border: 1px solid var(--hairline);
   vertical-align: top;
 }
-.ecw table th {
+.ecw-content table th {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -288,13 +274,13 @@ body.ecw { min-height: 100vh; }
   color: var(--muted);
   background: var(--hairline-2);
 }
-.ecw table tbody tr:nth-child(even) td {
+.ecw-content table tbody tr:nth-child(even) td {
   background: var(--row-zebra);
 }
 
 /* Inline code */
-.ecw code {
-  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+.ecw-content code {
+  font-family: var(--font-body-zh);
   font-size: 14px;
   background: var(--code-bg);
   padding: 1px 5px;
@@ -302,8 +288,8 @@ body.ecw { min-height: 100vh; }
 }
 
 /* Section H2 — 大標、上方 hairline 強調 */
-.ecw .article h2,
-.ecw .article-content h2 {
+.ecw-content .article h2,
+.ecw-content .article-content h2 {
   font-size: 30px;
   line-height: 1.25;
   margin: 4em 0 0.9em;
@@ -316,30 +302,30 @@ body.ecw { min-height: 100vh; }
   padding-top: 28px;
   border-top: 1px solid var(--hairline);
 }
-.ecw .article h2 .num,
-.ecw .article-content h2 .num {
-  font-family: 'Newsreader', serif;
+.ecw-content .article h2 .num,
+.ecw-content .article-content h2 .num {
+  font-family: var(--font-display-zh);
   font-style: italic;
   font-weight: 400;
   font-size: 18px;
   color: var(--muted);
   font-feature-settings: "lnum";
 }
-.ecw .article h2 .toggle,
-.ecw .article-content h2 .toggle {
+.ecw-content .article h2 .toggle,
+.ecw-content .article-content h2 .toggle {
   margin-left: auto;
   font-size: 12px;
   color: var(--muted);
   cursor: pointer;
   user-select: none;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body-zh);
   font-weight: 400;
   letter-spacing: 0.05em;
 }
 
 /* H3 子標題 — 視覺與 body 拉開 */
-.ecw .article h3,
-.ecw .article-content h3 {
+.ecw-content .article h3,
+.ecw-content .article-content h3 {
   font-size: 20px;
   line-height: 1.35;
   margin: 2em 0 0.55em;
@@ -349,8 +335,8 @@ body.ecw { min-height: 100vh; }
 }
 
 /* H4 — 第三層 */
-.ecw .article h4,
-.ecw .article-content h4 {
+.ecw-content .article h4,
+.ecw-content .article-content h4 {
   font-size: 16px;
   line-height: 1.4;
   margin: 1.6em 0 0.4em;
@@ -361,13 +347,13 @@ body.ecw { min-height: 100vh; }
 }
 
 /* Body paragraph 強調 + 段落呼吸 */
-.ecw .article-content p {
+.ecw-content .article-content p {
   color: var(--ink);
   font-size: 17px;
   line-height: 1.85;
   margin: 0 0 1.4em;
 }
-.ecw .article-content li {
+.ecw-content .article-content li {
   color: var(--ink);
   font-size: 17px;
   line-height: 1.75;
@@ -375,8 +361,8 @@ body.ecw { min-height: 100vh; }
 }
 
 /* Strong — 加粗 + 黑體（讓掃讀眼睛抓得到）*/
-.ecw .article-content strong,
-.ecw .article-content b {
+.ecw-content .article-content strong,
+.ecw-content .article-content b {
   font-weight: 700;
   color: var(--ink);
 }
@@ -384,13 +370,13 @@ body.ecw { min-height: 100vh; }
 /* 「**標題**：內文」段落升級成 sub-heading 視覺
  * JS 在 ecw.js 偵測「<strong> 開頭 + 接著是「：」」的 <p>，加 .para-with-title class
  * 不用 hairline 上邊（部分段落含 PMID/DOI 連結夾層抓不到，視覺會不一致） */
-.ecw .article-content p.para-with-title {
+.ecw-content .article-content p.para-with-title {
   margin-top: 2em;
 }
-.ecw .article-content p.para-with-title > strong:first-child {
+.ecw-content .article-content p.para-with-title > strong:first-child {
   display: block;
   margin-bottom: 4px;
-  font-family: 'Inter Tight', 'Noto Sans TC', sans-serif;
+  font-family: var(--font-body-zh);
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -401,9 +387,9 @@ body.ecw { min-height: 100vh; }
 /* Em — serif italic. round-5: fallback was 'Noto Sans TC' (黑體假斜);
  * use Noto Serif TC + font-synthesis-style:none so CJK never fakes an italic
  * slant while Latin book titles still get a real italic. */
-.ecw .article-content em,
-.ecw .article-content i {
-  font-family: 'Noto Serif TC', 'Newsreader', serif;
+.ecw-content .article-content em,
+.ecw-content .article-content i {
+  font-family: var(--font-display-zh);
   font-style: italic;
   font-synthesis-style: none;
   color: var(--ink-2);
@@ -411,42 +397,42 @@ body.ecw { min-height: 100vh; }
 
 /* mark 螢光標記. round-5: was 改版前 wine rgba(122,40,40) — now accent family
  * so the whole page carries a single hue. */
-.ecw .article-content mark {
+.ecw-content .article-content mark {
   background: linear-gradient(transparent 62%, rgba(59, 16, 68, 0.13) 62%);
   color: var(--ink);
   padding: 0 1px;
   font-weight: 600;
 }
-.ecw.is-dark .article-content mark {
+.ecw-content.is-dark .article-content mark {
   background: linear-gradient(transparent 62%, rgba(228, 173, 255, 0.26) 62%);
 }
 
 /* Lede 首段 drop-cap（可加 class="lede" 觸發）*/
-.ecw .article-content > p:first-of-type {
+.ecw-content .article-content > p:first-of-type {
   font-size: 18px;
   line-height: 1.7;
   color: var(--ink);
 }
 
 /* Bullet list 加緊一些 */
-.ecw .article-content ul li,
-.ecw .article-content ol li {
+.ecw-content .article-content ul li,
+.ecw-content .article-content ol li {
   margin: 8px 0;
   line-height: 1.7;
 }
 
 /* HR 分隔線 */
-.ecw .article-content hr {
+.ecw-content .article-content hr {
   border: 0;
   border-top: 1px solid var(--hairline);
   margin: 3em 0;
 }
 
 /* Paragraph deep-link affordance */
-.ecw .article .para {
+.ecw-content .article .para {
   position: relative;
 }
-.ecw .article .para .anchor {
+.ecw-content .article .para .anchor {
   position: absolute;
   left: -24px;
   top: 6px;
@@ -454,17 +440,17 @@ body.ecw { min-height: 100vh; }
   opacity: 0;
   font-size: 14px;
   text-decoration: none;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body-zh);
 }
-.ecw .article .para:hover .anchor { opacity: 0.5; }
+.ecw-content .article .para:hover .anchor { opacity: 0.5; }
 
 /* TOC — sticky + scroll-spy with prominent active highlight (round-4) */
-.ecw .toc {
-  font-family: 'Inter Tight', 'Noto Sans TC', sans-serif;
+.ecw-content .toc {
+  font-family: var(--font-body-zh);
   font-size: 14px;
   line-height: 1.6;
 }
-.ecw .toc .toc-label {
+.ecw-content .toc .toc-label {
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -472,12 +458,12 @@ body.ecw { min-height: 100vh; }
   font-weight: 700;
   margin-bottom: 16px;
 }
-.ecw .toc ol {
+.ecw-content .toc ol {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.ecw .toc li {
+.ecw-content .toc li {
   padding: 8px 0 8px 16px;            /* round-4: bigger touch target, was 4px */
   border-left: 2px solid var(--hairline); /* round-4: 1 → 2px */
   color: var(--muted);
@@ -486,11 +472,11 @@ body.ecw { min-height: 100vh; }
   transition: color 120ms, border-left-color 120ms, background 120ms, padding 120ms;
   margin-bottom: 2px;
 }
-.ecw .toc li:hover {
+.ecw-content .toc li:hover {
   color: var(--ink);
   border-left-color: var(--accent-soft);
 }
-.ecw .toc li.active {
+.ecw-content .toc li.active {
   border-left-color: var(--accent);
   border-left-width: 3px;
   color: var(--ink);
@@ -498,19 +484,19 @@ body.ecw { min-height: 100vh; }
   background: var(--accent-bg);        /* round-4: highlight bg, not just border */
   padding-left: 18px;                  /* round-4: slight indent shift */
 }
-.ecw.is-dark .toc li.active { background: var(--accent-soft); }
-.ecw .toc li .toc-num {
-  font-family: 'Newsreader', 'Noto Serif TC', serif;
+.ecw-content.is-dark .toc li.active { background: var(--accent-soft); }
+.ecw-content .toc li .toc-num {
+  font-family: var(--font-display-zh);
   font-style: italic;
   color: var(--muted);
   font-size: 13px;
   margin-right: 8px;
   transition: color 120ms;
 }
-.ecw .toc li.active .toc-num { color: var(--accent); font-weight: 600; }
+.ecw-content .toc li.active .toc-num { color: var(--accent); font-weight: 600; }
 
 /* List page row */
-.ecw .row {
+.ecw-content .row {
   padding: 28px 0;
   border-bottom: 1px solid var(--hairline);
   display: grid;
@@ -518,15 +504,15 @@ body.ecw { min-height: 100vh; }
   gap: 32px;
   align-items: start;
 }
-.ecw .row .week {
-  font-family: 'Inter Tight', sans-serif;
+.ecw-content .row .week {
+  font-family: var(--font-body-zh);
   font-size: 28px;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1;
   color: var(--ink);
 }
-.ecw .row .week-sub {
+.ecw-content .row .week-sub {
   font-size: 11px;
   color: var(--muted);
   letter-spacing: 0.08em;
@@ -534,8 +520,8 @@ body.ecw { min-height: 100vh; }
   margin-top: 6px;
   font-weight: 500;
 }
-.ecw .row .head {
-  font-family: 'Inter Tight', 'Noto Sans TC', sans-serif;
+.ecw-content .row .head {
+  font-family: var(--font-body-zh);
   font-size: 22px;
   line-height: 1.35;
   font-weight: 600;
@@ -543,8 +529,8 @@ body.ecw { min-height: 100vh; }
   color: var(--ink);
   margin: 0 0 10px;
 }
-.ecw .row .head:hover { color: var(--accent); }
-.ecw .row .meta {
+.ecw-content .row .head:hover { color: var(--accent); }
+.ecw-content .row .meta {
   font-size: 12.5px;
   color: var(--muted);
   margin-top: 14px;
@@ -552,10 +538,10 @@ body.ecw { min-height: 100vh; }
   gap: 14px;
   align-items: center;
 }
-.ecw .row .meta .dot {
+.ecw-content .row .meta .dot {
   width: 2px; height: 2px; border-radius: 50%; background: var(--muted);
 }
-.ecw .row .tags {
+.ecw-content .row .tags {
   display: flex;
   gap: 6px;
   margin-top: 14px;
@@ -563,12 +549,12 @@ body.ecw { min-height: 100vh; }
 }
 
 /* Hero — 兩欄 editorial 排版（左：品牌+大標 / 右：副文+訂閱）*/
-.ecw .hero {
+.ecw-content .hero {
   padding: 96px 0 80px;
   border-bottom: 1px solid var(--hairline);
   position: relative;
 }
-.ecw .hero-inner {
+.ecw-content .hero-inner {
   max-width: 1480px;
   margin: 0 auto;
   padding: 0 80px 0 96px;          /* 左 96 / 右 80：左欄稍微靠近左側邊緣 */
@@ -578,13 +564,13 @@ body.ecw { min-height: 100vh; }
   align-items: end;
 }
 /* 左：品牌標誌 + 大標題堆疊 */
-.ecw .hero-left { display: flex; flex-direction: column; gap: 28px; }
-.ecw .hero-left .wordmark {
+.ecw-content .hero-left { display: flex; flex-direction: column; gap: 28px; }
+.ecw-content .hero-left .wordmark {
   font-size: 12px;
   letter-spacing: 0.36em;
   margin-bottom: 0;
 }
-.ecw .hero-left .tagline {
+.ecw-content .hero-left .tagline {
   font-size: 56px;
   line-height: 1.1;
   font-weight: 600;
@@ -593,17 +579,17 @@ body.ecw { min-height: 100vh; }
   max-width: 720px;
   margin: 0;
 }
-.ecw .hero-left .tagline .accent {
+.ecw-content .hero-left .tagline .accent {
   color: var(--accent);
   font-weight: 600;
 }
 /* 左下角期次 indicator — 同一列、不換行 */
-.ecw .hero-left .issue-meta {
+.ecw-content .hero-left .issue-meta {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   gap: 14px;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body-zh);
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -615,9 +601,9 @@ body.ecw { min-height: 100vh; }
   max-width: 720px;
   white-space: nowrap;
 }
-.ecw .hero-left .issue-meta > span { white-space: nowrap; }
-.ecw .hero-left .issue-meta .num {
-  font-family: 'Newsreader', serif;
+.ecw-content .hero-left .issue-meta > span { white-space: nowrap; }
+.ecw-content .hero-left .issue-meta .num {
+  font-family: var(--font-display-zh);
   font-style: italic;
   font-weight: 500;
   font-size: 14px;
@@ -628,21 +614,21 @@ body.ecw { min-height: 100vh; }
 }
 
 /* 右：副文 + 訂閱 */
-.ecw .hero-right {
+.ecw-content .hero-right {
   display: flex;
   flex-direction: column;
   gap: 28px;
   padding-bottom: 8px;
   max-width: 480px;
 }
-.ecw .hero-right .sub {
+.ecw-content .hero-right .sub {
   max-width: 100%;
   margin: 0;
   font-size: 16.5px;
   line-height: 1.65;
 }
-.ecw .hero-right .subscribe { max-width: 100%; margin: 0; }
-.ecw .hero-right .subscribe-label {
+.ecw-content .hero-right .subscribe { max-width: 100%; margin: 0; }
+.ecw-content .hero-right .subscribe-label {
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -652,24 +638,24 @@ body.ecw { min-height: 100vh; }
 }
 
 @media (max-width: 1100px) {
-  .ecw .hero-inner {
+  .ecw-content .hero-inner {
     padding: 0 48px;
     gap: 64px;
   }
-  .ecw .hero-left .tagline { font-size: 44px; }
+  .ecw-content .hero-left .tagline { font-size: 44px; }
 }
 @media (max-width: 900px) {
-  .ecw .hero { padding: 56px 0 40px; }
-  .ecw .hero-inner {
+  .ecw-content .hero { padding: 56px 0 40px; }
+  .ecw-content .hero-inner {
     grid-template-columns: 1fr;
     gap: 32px;
     padding: 0 24px;
   }
-  .ecw .hero-left .tagline { font-size: 32px; }
-  .ecw .hero-right { max-width: 100%; }
+  .ecw-content .hero-left .tagline { font-size: 32px; }
+  .ecw-content .hero-right { max-width: 100%; }
 }
-.ecw .hero .wordmark {
-  font-family: 'Inter Tight', sans-serif;
+.ecw-content .hero .wordmark {
+  font-family: var(--font-body-zh);
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 0.32em;
@@ -680,8 +666,8 @@ body.ecw { min-height: 100vh; }
   align-items: center;
   gap: 10px;
 }
-.ecw .hero .tagline {
-  font-family: 'Inter Tight', 'Noto Sans TC', sans-serif;
+.ecw-content .hero .tagline {
+  font-family: var(--font-body-zh);
   font-size: 38px;
   line-height: 1.18;
   font-weight: 600;
@@ -691,7 +677,7 @@ body.ecw { min-height: 100vh; }
   margin: 0;
   text-wrap: balance;
 }
-.ecw .hero .sub {
+.ecw-content .hero .sub {
   margin-top: 18px;
   font-size: 16px;
   color: var(--muted);
@@ -700,13 +686,13 @@ body.ecw { min-height: 100vh; }
 }
 
 /* Subscribe form */
-.ecw .subscribe {
+.ecw-content .subscribe {
   margin-top: 28px;
   display: flex;
   gap: 8px;
   max-width: 460px;
 }
-.ecw .subscribe input {
+.ecw-content .subscribe input {
   flex: 1;
   background: transparent;
   border: 1px solid var(--hairline);
@@ -715,11 +701,11 @@ body.ecw { min-height: 100vh; }
   height: 40px;
   font-size: 14px;
   color: var(--ink);
-  font-family: inherit;
+  font-family: var(--font-body-zh);
   outline: none;
 }
-.ecw .subscribe input:focus { border-color: var(--accent); }
-.ecw .subscribe button {
+.ecw-content .subscribe input:focus { border-color: var(--accent); }
+.ecw-content .subscribe button {
   height: 40px;
   padding: 0 18px;
   background: var(--accent);
@@ -729,10 +715,10 @@ body.ecw { min-height: 100vh; }
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  font-family: inherit;
+  font-family: var(--font-body-zh);
   letter-spacing: 0.01em;
 }
-.ecw .subscribe .rss {
+.ecw-content .subscribe .rss {
   height: 40px;
   width: 40px;
   display: inline-flex; align-items: center; justify-content: center;
@@ -741,15 +727,15 @@ body.ecw { min-height: 100vh; }
   color: var(--muted);
   text-decoration: none;
 }
-.ecw .subscribe .rss:hover { color: var(--accent); border-color: var(--accent); }
+.ecw-content .subscribe .rss:hover { color: var(--accent); border-color: var(--accent); }
 
 /* Sticky right rail */
-.ecw .rail {
+.ecw-content .rail {
   position: sticky;
   top: 60px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body-zh);
 }
-.ecw .rail input.search {
+.ecw-content .rail input.search {
   width: 100%;
   background: transparent;
   border: 1px solid var(--hairline);
@@ -759,10 +745,10 @@ body.ecw { min-height: 100vh; }
   font-size: 13px;
   color: var(--ink);
   outline: none;
-  font-family: inherit;
+  font-family: var(--font-body-zh);
 }
-.ecw .rail input.search:focus { border-color: var(--accent); }
-.ecw .rail .filter-label {
+.ecw-content .rail input.search:focus { border-color: var(--accent); }
+.ecw-content .rail .filter-label {
   font-size: 10.5px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -770,24 +756,24 @@ body.ecw { min-height: 100vh; }
   font-weight: 600;
   margin: 28px 0 10px;
 }
-.ecw .rail .filter-list {
+.ecw-content .rail .filter-list {
   display: flex; flex-direction: column; gap: 2px;
 }
-.ecw .rail .filter-list label {
+.ecw-content .rail .filter-list label {
   font-size: 13px;
   display: flex; align-items: center; gap: 10px;
   padding: 5px 0;
   color: var(--ink-2);
   cursor: pointer;
 }
-.ecw .rail .filter-list .count {
+.ecw-content .rail .filter-list .count {
   margin-left: auto; color: var(--muted); font-size: 12px;
   font-feature-settings: "tnum";
 }
-.ecw .rail .filter-list input[type=checkbox] { accent-color: var(--accent); }
+.ecw-content .rail .filter-list input[type=checkbox] { accent-color: var(--accent); }
 
 /* Toggle button (dark mode) */
-.ecw .icon-btn {
+.ecw-content .icon-btn {
   width: 32px; height: 32px;
   display: inline-flex; align-items: center; justify-content: center;
   border: 1px solid var(--hairline);
@@ -796,10 +782,10 @@ body.ecw { min-height: 100vh; }
   color: var(--ink-2);
   cursor: pointer;
 }
-.ecw .icon-btn:hover { color: var(--accent); border-color: var(--accent); }
+.ecw-content .icon-btn:hover { color: var(--accent); border-color: var(--accent); }
 
 /* Top bar (article view) */
-.ecw .topbar {
+.ecw-content .topbar {
   position: sticky;
   top: 0;
   background: var(--bg);
@@ -810,26 +796,26 @@ body.ecw { min-height: 100vh; }
   align-items: center;
   padding: 0 32px;
 }
-.ecw .topbar .brand {
-  font-family: 'Inter Tight', sans-serif;
+.ecw-content .topbar .brand {
+  font-family: var(--font-body-zh);
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--accent);
 }
-.ecw .topbar .crumb {
+.ecw-content .topbar .crumb {
   margin-left: 16px;
   color: var(--muted);
   font-size: 13px;
 }
-.ecw .topbar .actions {
+.ecw-content .topbar .actions {
   margin-left: auto;
   display: flex; gap: 8px; align-items: center;
 }
 
 /* Article meta */
-.ecw .article-meta {
+.ecw-content .article-meta {
   font-size: 13px;
   color: var(--muted);
   display: flex;
@@ -837,7 +823,7 @@ body.ecw { min-height: 100vh; }
   align-items: center;
   margin: 14px 0 0;
 }
-.ecw .article-meta .dot { width: 2px; height: 2px; background: var(--muted); border-radius: 50%; }
+.ecw-content .article-meta .dot { width: 2px; height: 2px; background: var(--muted); border-radius: 50%; }
 
 /* Article — First Round Review layout discipline
  * Reading column kept narrow (~680px) so pull quotes / figures break out wider.
@@ -845,13 +831,13 @@ body.ecw { min-height: 100vh; }
  * Deck = 32px Inter SANS regular (First Round Leif Regular sans, intentional
  *        pairing — serif H1 + sans deck so they don't compete)
  * Drop cap = 72px serif for editorial drama */
-.ecw .article {
+.ecw-content .article {
   max-width: 820px;              /* round-6: 680 → 820, wider column (was reading as a thin strip) */
   margin: 0 auto;
   padding: 56px 0 96px;
 }
-.ecw .article .article-title {
-  font-family: 'Noto Serif TC', 'Newsreader', 'Source Serif Pro', Georgia, serif;
+.ecw-content .article .article-title {
+  font-family: var(--font-display-zh);
   font-size: 44px;
   line-height: 1.14;        /* round-5: a touch more air for 全形字 */
   font-weight: 600;         /* round-5: 700 → 600 — 700 fell to Noto Serif TC 900 Black */
@@ -860,8 +846,8 @@ body.ecw { min-height: 100vh; }
   text-wrap: balance;
   color: var(--ink);
 }
-.ecw .article .article-sub {
-  font-family: 'Inter Tight', 'Noto Sans TC', system-ui, sans-serif;
+.ecw-content .article .article-sub {
+  font-family: var(--font-body-zh);
   font-size: 20px;          /* round-5: 24 → 20 so it stops fighting H1 */
   line-height: 1.55;
   color: var(--ink-2);
@@ -873,7 +859,7 @@ body.ecw { min-height: 100vh; }
 }
 
 /* Opening flourish — 48×2px accent rule after meta, before body (round-3 structure review) */
-.ecw .article .opening-rule {
+.ecw-content .article .opening-rule {
   width: 48px;
   height: 2px;
   background: var(--accent);
@@ -881,17 +867,17 @@ body.ecw { min-height: 100vh; }
   border: none;
 }
 
-.ecw .article .lede {
+.ecw-content .article .lede {
   font-size: 21px;
   line-height: 1.75;
   margin-top: 40px;
   color: var(--ink);
-  font-family: 'Noto Serif TC', 'Newsreader', serif;
+  font-family: var(--font-display-zh);
 }
 
 /* round-5: CJK drop-cap removed — ::first-letter drama is a Latin convention,
  * on 方塊字 it renders like a bug and tore「是什麼：」into「是」+「什麼：」. */
-.ecw .article-content > p:first-of-type {
+.ecw-content .article-content > p:first-of-type {
   font-size: 18px;
 }
 
@@ -899,21 +885,21 @@ body.ecw { min-height: 100vh; }
  * line-height 1.95 → 1.82 and para margin 1.8em → 1.2em stop the page from
  * feeling stretched apart. "onum" (old-style figures) dropped so medical
  * numbers (38%, QTc 550) render as even lining figures. */
-.ecw .article-content p,
-.ecw .article-content li {
+.ecw-content .article-content p,
+.ecw-content .article-content li {
   font-size: 18px;
   line-height: 1.82;
   font-feature-settings: "ss01", "kern";
 }
-.ecw .article-content p {
+.ecw-content .article-content p {
   margin: 0 0 1.2em;
 }
-.ecw .article-content ul,
-.ecw .article-content ol {
+.ecw-content .article-content ul,
+.ecw-content .article-content ol {
   margin: 1.2em 0 1.4em;
 }
-.ecw .article-content ul li,
-.ecw .article-content ol li {
+.ecw-content .article-content ul li,
+.ecw-content .article-content ol li {
   margin-bottom: 8px;
   line-height: 1.78;
 }
@@ -921,38 +907,38 @@ body.ecw { min-height: 100vh; }
 /* Section divider — round-5: § chapter mark removed (Latin editorial drama).
  * A plain hairline is enough of a breather; the § stacked on top of the H2
  * border-top was a double divider. */
-.ecw .article-content hr {
+.ecw-content .article-content hr {
   border: 0;
   border-top: 1px solid var(--hairline-2);
   height: 0;
   margin: 32px 0;
 }
-.ecw .article-content hr::after { content: none; }
+.ecw-content .article-content hr::after { content: none; }
 
 /* H2 section heads — round-5: tightened from the 4em "sky".
  * Section breaks now come from ONE mechanism — the H2 hairline + 編號 —
  * so the page stops reading as a stretched-open wall of text. */
-.ecw .article-content h2 {
+.ecw-content .article-content h2 {
   margin-top: 2.4em;
   margin-bottom: 0.7em;
   padding-top: 26px;
 }
 
 /* Article-end CTA — return to overview + next-issue link (round-3 structure review) */
-.ecw .article-end {
+.ecw-content .article-end {
   margin: 80px 0 0;
   padding-top: 32px;
   border-top: 1px solid var(--accent);
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body-zh);
   font-size: 14px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-2);
 }
-.ecw .article-end .end-link {
+.ecw-content .article-end .end-link {
   color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid transparent;
@@ -960,10 +946,10 @@ body.ecw { min-height: 100vh; }
   transition: border-color 120ms ease;
   font-weight: 600;
 }
-.ecw .article-end .end-link:hover { border-bottom-color: var(--accent); }
+.ecw-content .article-end .end-link:hover { border-bottom-color: var(--accent); }
 
 /* Author card — block-level credit (round-3 structure review) */
-.ecw .author-card {
+.ecw-content .author-card {
   margin: 48px 0 0;
   padding: 24px;
   background: var(--accent-bg);
@@ -972,8 +958,8 @@ body.ecw { min-height: 100vh; }
   align-items: flex-start;
   border-radius: 4px;
 }
-.ecw.is-dark .author-card { background: var(--accent-soft); }
-.ecw .author-card .author-avatar {
+.ecw-content.is-dark .author-card { background: var(--accent-soft); }
+.ecw-content .author-card .author-avatar {
   flex: 0 0 48px;
   width: 48px;
   height: 48px;
@@ -986,33 +972,33 @@ body.ecw { min-height: 100vh; }
   line-height: 1;
   border: 1px solid var(--accent);
 }
-.ecw .author-card .author-name {
-  font-family: 'Newsreader', 'Noto Serif TC', serif;
+.ecw-content .author-card .author-name {
+  font-family: var(--font-display-zh);
   font-size: 18px;
   font-weight: 600;
   color: var(--ink);
   letter-spacing: -0.01em;
 }
-.ecw .author-card .author-bio {
-  font-family: 'Inter Tight', 'Noto Sans TC', sans-serif;
+.ecw-content .author-card .author-bio {
+  font-family: var(--font-body-zh);
   font-size: 14px;
   line-height: 1.6;
   color: var(--ink-2);
   margin-top: 6px;
 }
 
-.ecw .article ul, .ecw .article ol {
+.ecw-content .article ul, .ecw-content .article ol {
   padding-left: 22px;
 }
-.ecw .article ul li, .ecw .article ol li {
+.ecw-content .article ul li, .ecw-content .article ol li {
   margin: 6px 0;
 }
 
 /* Figure */
-.ecw figure {
+.ecw-content figure {
   margin: 28px 0;
 }
-.ecw figure .ph {
+.ecw-content figure .ph {
   width: 100%;
   aspect-ratio: 16 / 7;
   border: 1px solid var(--hairline);
@@ -1025,20 +1011,20 @@ body.ecw { min-height: 100vh; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
-.ecw figcaption {
+.ecw-content figcaption {
   font-size: 12.5px;
   color: var(--muted);
   margin-top: 8px;
   line-height: 1.55;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body-zh);
 }
-.ecw figcaption b {
+.ecw-content figcaption b {
   color: var(--ink-2);
   font-weight: 600;
 }
 
 /* Sources appendix — 4 卡片 grid（衝出 720 文章欄到 1280）*/
-.ecw .sources-appendix {
+.ecw-content .sources-appendix {
   margin-top: 96px;
   padding-top: 32px;
   border-top: 1px solid var(--hairline);
@@ -1047,29 +1033,29 @@ body.ecw { min-height: 100vh; }
    * pushed the block to left:-79px on old issues. Sit within the column. */
   width: auto;
 }
-.ecw .sources-title {
+.ecw-content .sources-title {
   font-size: 12px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 600;
   margin: 0 0 6px;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body-zh);
 }
-.ecw .sources-intro {
+.ecw-content .sources-intro {
   font-size: 13.5px;
   color: var(--muted);
   margin: 0 0 24px;
-  font-family: 'Newsreader', serif;
+  font-family: var(--font-display-zh);
   font-style: italic;
   max-width: 540px;
 }
-.ecw .sources-grid {
+.ecw-content .sources-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));   /* round-6: adapt to the reading column width */
   gap: 16px;
 }
-.ecw .source-card {
+.ecw-content .source-card {
   border: 1px solid var(--hairline);
   border-radius: 2px;
   padding: 18px 16px 14px;
@@ -1078,16 +1064,16 @@ body.ecw { min-height: 100vh; }
   gap: 10px;
   background: transparent;
 }
-.ecw .source-card .source-label {
+.ecw-content .source-card .source-label {
   font-size: 10.5px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 600;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body-zh);
 }
-.ecw .source-card .source-count {
-  font-family: 'Inter Tight', sans-serif;
+.ecw-content .source-card .source-count {
+  font-family: var(--font-body-zh);
   font-size: 32px;
   font-weight: 600;
   letter-spacing: -0.025em;
@@ -1095,22 +1081,22 @@ body.ecw { min-height: 100vh; }
   line-height: 1;
   font-feature-settings: "tnum";
 }
-.ecw .source-card .source-count .unit {
+.ecw-content .source-card .source-count .unit {
   font-size: 11.5px;
   font-weight: 500;
   color: var(--muted);
   letter-spacing: 0.04em;
   margin-left: 6px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body-zh);
 }
-.ecw .source-card .source-count .pending {
-  font-family: 'Newsreader', serif;
+.ecw-content .source-card .source-count .pending {
+  font-family: var(--font-display-zh);
   font-style: italic;
   font-size: 22px;
   color: var(--muted);
   font-weight: 400;
 }
-.ecw .source-card ul {
+.ecw-content .source-card ul {
   list-style: none;
   padding: 0;
   margin: 2px 0 0;
@@ -1121,7 +1107,7 @@ body.ecw { min-height: 100vh; }
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
-.ecw .source-card ul li {
+.ecw-content .source-card ul li {
   padding: 6px 0;
   border-bottom: 1px solid var(--hairline-2);
   white-space: normal;
@@ -1129,14 +1115,14 @@ body.ecw { min-height: 100vh; }
   flex-direction: column;
   gap: 2px;
 }
-.ecw .source-card ul li .li-zh {
+.ecw-content .source-card ul li .li-zh {
   font-size: 11.5px;
   color: var(--muted);
   letter-spacing: 0.02em;
   line-height: 1.45;
 }
-.ecw .source-card ul li:last-child { border-bottom: 0; }
-.ecw .source-card .source-more {
+.ecw-content .source-card ul li:last-child { border-bottom: 0; }
+.ecw-content .source-card .source-more {
   margin-top: auto;
   padding-top: 10px;
   font-size: 11.5px;
@@ -1144,27 +1130,27 @@ body.ecw { min-height: 100vh; }
   text-decoration: none;
   letter-spacing: 0.04em;
   font-weight: 500;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body-zh);
 }
-.ecw .source-card .source-more:hover { text-decoration: underline; text-underline-offset: 3px; }
+.ecw-content .source-card .source-more:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 @media (max-width: 1100px) {
-  .ecw .sources-grid { grid-template-columns: repeat(2, 1fr); }
-  .ecw .sources-appendix { width: calc(100vw - 48px); }
+  .ecw-content .sources-grid { grid-template-columns: repeat(2, 1fr); }
+  .ecw-content .sources-appendix { width: calc(100vw - 48px); }
 }
 @media (max-width: 600px) {
-  .ecw .sources-grid { grid-template-columns: 1fr; }
-  .ecw .sources-appendix { width: calc(100vw - 24px); }
+  .ecw-content .sources-grid { grid-template-columns: 1fr; }
+  .ecw-content .sources-appendix { width: calc(100vw - 24px); }
 }
 
 /* References list */
-.ecw .refs {
+.ecw-content .refs {
   margin-top: 64px;
   padding-top: 24px;
   border-top: 1px solid var(--hairline);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body-zh);
 }
-.ecw .refs h3 {
+.ecw-content .refs h3 {
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -1172,56 +1158,56 @@ body.ecw { min-height: 100vh; }
   margin: 0 0 12px;
   font-weight: 600;
 }
-.ecw .refs ol {
+.ecw-content .refs ol {
   list-style: decimal;
   padding-left: 22px;
 }
-.ecw .refs li {
+.ecw-content .refs li {
   font-size: 13.5px;
   line-height: 1.6;
   color: var(--ink-2);
   margin: 8px 0;
 }
-.ecw .refs li i { font-style: italic; color: var(--muted); }
+.ecw-content .refs li i { font-style: italic; color: var(--muted); }
 
 /* ── Goldmark footnotes（「引用」區）— round-5 ──────────────────────────
  * These inherit 18px body size and expand into a second article; drop two
  * levels so the citations read as an appendix, not a follow-up essay. */
-.ecw .article-content .footnotes {
+.ecw-content .article-content .footnotes {
   font-size: 14px;
   margin-top: 8px;
 }
-.ecw .article-content .footnotes hr {
+.ecw-content .article-content .footnotes hr {
   display: none;                   /* the 引用 H2 already separates it */
 }
-.ecw .article-content .footnotes ol { padding-left: 20px; }
-.ecw .article-content .footnotes li {
+.ecw-content .article-content .footnotes ol { padding-left: 20px; }
+.ecw-content .article-content .footnotes li {
   font-size: 14px;
   margin: 0.4em 0;
 }
-.ecw .article-content .footnotes li p {
+.ecw-content .article-content .footnotes li p {
   font-size: 14px;
   line-height: 1.7;
   color: var(--ink-2);
-  font-family: 'Inter', 'Noto Sans TC', sans-serif;
+  font-family: var(--font-body-zh);
   margin: 0 0 0.4em;
 }
-.ecw .article-content .footnotes a { color: var(--muted); }
-.ecw .article-content .footnotes a:hover { color: var(--accent); }
-.ecw .footnote-backref { text-decoration: none; font-size: 12px; margin-left: 4px; }
+.ecw-content .article-content .footnotes a { color: var(--muted); }
+.ecw-content .article-content .footnotes a:hover { color: var(--accent); }
+.ecw-content .footnote-backref { text-decoration: none; font-size: 12px; margin-left: 4px; }
 /* Adjacent footnote refs [^a][^b] rendered「12」— separate them into「1, 2」*/
-.ecw .article-content sup + sup::before {
+.ecw-content .article-content sup + sup::before {
   content: ", ";
   color: var(--muted);
 }
 
 /* 列表頁 rail 「本週各源新增」 stat list */
-.ecw .source-stat-list {
+.ecw-content .source-stat-list {
   display: flex;
   flex-direction: column;
   gap: 0;
 }
-.ecw .source-stat {
+.ecw-content .source-stat {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -1229,47 +1215,47 @@ body.ecw { min-height: 100vh; }
   border-bottom: 1px solid var(--hairline-2);
   text-decoration: none;
   color: inherit;
-  font-family: 'Inter', 'Noto Sans TC', sans-serif;
+  font-family: var(--font-body-zh);
 }
-.ecw .source-stat:last-child { border-bottom: 0; }
-.ecw .source-stat:hover { color: var(--accent); }
-.ecw .source-stat .source-stat-label {
+.ecw-content .source-stat:last-child { border-bottom: 0; }
+.ecw-content .source-stat:hover { color: var(--accent); }
+.ecw-content .source-stat .source-stat-label {
   font-size: 12.5px;
   color: var(--ink-2);
   font-weight: 500;
 }
-.ecw .source-stat:hover .source-stat-label { color: var(--accent); }
-.ecw .source-stat .source-stat-count {
-  font-family: 'Inter Tight', sans-serif;
+.ecw-content .source-stat:hover .source-stat-label { color: var(--accent); }
+.ecw-content .source-stat .source-stat-count {
+  font-family: var(--font-body-zh);
   font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.02em;
   font-feature-settings: "tnum";
   color: var(--ink);
 }
-.ecw .source-stat:hover .source-stat-count { color: var(--accent); }
+.ecw-content .source-stat:hover .source-stat-count { color: var(--accent); }
 
 /* Sources archive list（時間流，hairline 分隔，no card 陰影）*/
-.ecw .archive-list {
+.ecw-content .archive-list {
   display: flex;
   flex-direction: column;
 }
-.ecw .archive-item {
+.ecw-content .archive-item {
   padding: 24px 0;
   border-bottom: 1px solid var(--hairline);
 }
-.ecw .archive-item:last-child { border-bottom: 0; }
-.ecw .archive-item .archive-source {
+.ecw-content .archive-item:last-child { border-bottom: 0; }
+.ecw-content .archive-item .archive-source {
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 600;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body-zh);
   margin-bottom: 8px;
 }
-.ecw .archive-item .archive-title {
-  font-family: 'Inter Tight', 'Noto Sans TC', sans-serif;
+.ecw-content .archive-item .archive-title {
+  font-family: var(--font-body-zh);
   font-size: 19px;
   font-weight: 600;
   line-height: 1.35;
@@ -1277,7 +1263,7 @@ body.ecw { min-height: 100vh; }
   color: var(--ink);
   margin: 0 0 10px;
 }
-.ecw .archive-item .archive-title a {
+.ecw-content .archive-item .archive-title a {
   color: inherit;
   text-decoration: none;
   background-image: linear-gradient(transparent calc(100% - 1px), var(--hairline) calc(100% - 1px));
@@ -1285,34 +1271,34 @@ body.ecw { min-height: 100vh; }
   background-size: 0 100%;
   transition: background-size 200ms, color 200ms;
 }
-.ecw .archive-item .archive-title a:hover {
+.ecw-content .archive-item .archive-title a:hover {
   color: var(--accent);
   background-size: 100% 100%;
   background-image: linear-gradient(transparent calc(100% - 1px), var(--accent) calc(100% - 1px));
 }
-.ecw .archive-item .archive-summary {
+.ecw-content .archive-item .archive-summary {
   font-size: 14.5px;
   line-height: 1.65;
   color: var(--ink-2);
   margin: 0 0 12px;
   max-width: 760px;
 }
-.ecw .archive-item .archive-meta-row {
+.ecw-content .archive-item .archive-meta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
   font-size: 12px;
   color: var(--muted);
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body-zh);
 }
-.ecw .archive-item .archive-meta-row .chip {
+.ecw-content .archive-item .archive-meta-row .chip {
   height: 20px;
   padding: 0 7px;
   font-size: 10.5px;
 }
-.ecw .archive-item code {
-  font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+.ecw-content .archive-item code {
+  font-family: var(--font-body-zh);
   font-size: 13px;
   background: var(--code-bg);
   padding: 1px 6px;
@@ -1320,26 +1306,26 @@ body.ecw { min-height: 100vh; }
 }
 
 /* Mobile-specific */
-.ecw.mobile {
+.ecw-content.mobile {
   font-size: 16px;
 }
-.ecw.mobile .row {
+.ecw-content.mobile .row {
   grid-template-columns: 1fr;
   gap: 8px;
   padding: 22px 0;
 }
-.ecw.mobile .row .week { font-size: 22px; }
-.ecw.mobile .row .head { font-size: 18px; }
-.ecw.mobile .article .article-title { font-size: 36px; line-height: 1.12; }
-.ecw.mobile .article .article-sub { font-size: 22px; line-height: 1.3; }
-.ecw.mobile .article p, .ecw.mobile .article li { font-size: 18px; }
-.ecw.mobile .hero { padding: 32px 0 24px; }
-.ecw.mobile .hero .tagline { font-size: 26px; }
-.ecw.mobile .article { padding: 24px 0 60px; max-width: 100%; }
-.ecw.mobile .article h2 { font-size: 22px; margin: 2.4em 0 0.6em; }
+.ecw-content.mobile .row .week { font-size: 22px; }
+.ecw-content.mobile .row .head { font-size: 18px; }
+.ecw-content.mobile .article .article-title { font-size: 36px; line-height: 1.12; }
+.ecw-content.mobile .article .article-sub { font-size: 22px; line-height: 1.3; }
+.ecw-content.mobile .article p, .ecw-content.mobile .article li { font-size: 18px; }
+.ecw-content.mobile .hero { padding: 32px 0 24px; }
+.ecw-content.mobile .hero .tagline { font-size: 26px; }
+.ecw-content.mobile .article { padding: 24px 0 60px; max-width: 100%; }
+.ecw-content.mobile .article h2 { font-size: 22px; margin: 2.4em 0 0.6em; }
 
 /* 3-col layout for desktop list */
-.ecw .layout-list {
+.ecw-content .layout-list {
   display: grid;
   grid-template-columns: 1fr 220px;
   gap: 64px;
@@ -1353,7 +1339,7 @@ body.ecw { min-height: 100vh; }
  * screens that read as a thin strip floating in whitespace. Now the reading
  * column is wider (820) and left-anchored to the outer margin; the pair is
  * centred as a block, so the content actually uses the horizontal space. */
-.ecw .layout-article {
+.ecw-content .layout-article {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 240px;
   gap: 64px;
@@ -1362,17 +1348,17 @@ body.ecw { min-height: 100vh; }
   padding: 0 48px;
   align-items: start;
 }
-.ecw .layout-article .left { display: none; }   /* round-6: empty spacer dropped */
+.ecw-content .layout-article .left { display: none; }   /* round-6: empty spacer dropped */
 /* Below 1080 the TOC gives way to the reading column. */
 @media (max-width: 1080px) {
-  .ecw .layout-article {
+  .ecw-content .layout-article {
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
     padding: 0 24px;
   }
-  .ecw .layout-article .right { display: none; }
+  .ecw-content .layout-article .right { display: none; }
 }
-.ecw .layout-article .right {
+.ecw-content .layout-article .right {
   padding-top: 80px;
   position: sticky;
   top: 76px;                       /* topbar 高 56 + 20 緩衝 */
@@ -1381,38 +1367,38 @@ body.ecw { min-height: 100vh; }
   overflow-y: auto;                /* TOC 太長時自己捲，不影響主文 */
   transition: opacity 250ms ease, visibility 250ms ease;
 }
-.ecw .layout-article .right.is-hidden {
+.ecw-content .layout-article .right.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
 /* small note row */
-.ecw .note-row {
-  font-family: 'Inter', sans-serif;
+.ecw-content .note-row {
+  font-family: var(--font-body-zh);
   font-size: 12px;
   color: var(--muted);
   letter-spacing: 0.04em;
 }
 
 /* Logo mark — single-stroke ECG */
-.ecw .ecg-mark {
+.ecw-content .ecg-mark {
   display: inline-block;
   width: 28px; height: 14px;
   vertical-align: middle;
 }
-.ecw .ecg-mark path {
+.ecw-content .ecg-mark path {
   stroke: var(--accent);
   stroke-width: 1.4;
   fill: none;
 }
 
 /* Mobile TOC drawer */
-.ecw.mobile .topbar { padding: 0 16px; height: 52px; }
-.ecw.mobile .topbar .brand { font-size: 11px; letter-spacing: 0.24em; }
+.ecw-content.mobile .topbar { padding: 0 16px; height: 52px; }
+.ecw-content.mobile .topbar .brand { font-size: 11px; letter-spacing: 0.24em; }
 
 /* Frame card outer (the artboard's own frame) */
-.artboard-frame {
+.ecw-content .artboard-frame {
   background: var(--bg);
   height: 100%;
   width: 100%;
@@ -1421,34 +1407,34 @@ body.ecw { min-height: 100vh; }
 }
 
 /* Reset for mobile artboards */
-.mobile-screen {
+.ecw-content .mobile-screen {
   height: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
-.mobile-screen .scroll {
+.ecw-content .mobile-screen .scroll {
   flex: 1;
   overflow: hidden;
   padding: 0 18px;
 }
 
 /* ── h3bi（雙語 H3：英文主標 + 繁中副標分行） ──────────────────────────── */
-.ecw .article-content h3.h3bi,
-.ecw .article h3.h3bi {
+.ecw-content .article-content h3.h3bi,
+.ecw-content .article h3.h3bi {
   margin-top: 36px;
   margin-bottom: 18px;
   line-height: 1.35;
   letter-spacing: 0;
 }
-.ecw .h3bi .h3bi-en {
+.ecw-content .h3bi .h3bi-en {
   display: block;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 0.005em;
   color: var(--ink);
 }
-.ecw .h3bi .h3bi-zh {
+.ecw-content .h3bi .h3bi-zh {
   display: block;
   font-size: 17px;
   font-weight: 500;
@@ -1456,7 +1442,7 @@ body.ecw { min-height: 100vh; }
   margin-top: 6px;
   letter-spacing: 0.04em;
 }
-.ecw .h3bi .h3bi-meta {
+.ecw-content .h3bi .h3bi-meta {
   color: var(--ink-2);
   font-weight: 400;
   font-style: italic;
@@ -1465,7 +1451,7 @@ body.ecw { min-height: 100vh; }
 }
 
 /* ── 表格內中文副標（接在英文 paper title 之後的繁中翻譯）─────────────── */
-.ecw table .zh-sub {
+.ecw-content table .zh-sub {
   display: block;
   font-size: 13px;
   color: var(--ink-2);
@@ -1476,31 +1462,31 @@ body.ecw { min-height: 100vh; }
 
 /* ═══════════════════════════════════════════════════════════════════════
  * ER Cardio Weekly — 三層訊號驅動改版（2026-W27 recast）
- * 全部沿用既有 token；暗色由 .ecw.is-dark override token 自動生效。
+ * 全部沿用既有 token；暗色由 .ecw-content.is-dark override token 自動生效。
  * ═══════════════════════════════════════════════════════════════════════ */
 
 /* ── Tier-1：本週臨床改動卡 ─────────────────────────────────────────── */
-.ecw .practice-changes {
+.ecw-content .practice-changes {
   border: 1px solid var(--accent);
   background: var(--accent-bg);
   border-radius: 4px;
   padding: 22px 24px;
   margin: 32px 0 40px;
 }
-.ecw .practice-changes .pc-head {
-  font-family: 'Inter Tight', 'Noto Sans TC', sans-serif;
+.ecw-content .practice-changes .pc-head {
+  font-family: var(--font-body-zh);
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 700;
   color: var(--accent);
 }
-.ecw .practice-changes .pc-sub {
+.ecw-content .practice-changes .pc-sub {
   font-size: 12.5px;
   color: var(--muted);
   margin-top: 6px;
 }
-.ecw .practice-changes ol {
+.ecw-content .practice-changes ol {
   list-style: none;
   padding: 0;
   margin: 16px 0 0;
@@ -1508,45 +1494,45 @@ body.ecw { min-height: 100vh; }
   flex-direction: column;
   gap: 14px;
 }
-.ecw .practice-changes li {
+.ecw-content .practice-changes li {
   display: grid;
   grid-template-columns: 26px 1fr;
   gap: 12px;
   align-items: baseline;
 }
-.ecw .practice-changes .pc-n {
-  font-family: 'Inter Tight', sans-serif;
+.ecw-content .practice-changes .pc-n {
+  font-family: var(--font-body-zh);
   font-weight: 700;
   color: var(--accent);
   font-feature-settings: "tnum";
 }
-.ecw .practice-changes .pc-text {
+.ecw-content .practice-changes .pc-text {
   font-size: 16px;
   line-height: 1.55;
   color: var(--ink);
 }
-.ecw .practice-changes .pc-text b { font-weight: 700; color: var(--ink); }
-.ecw .practice-changes .pc-src {
-  font-family: 'Inter', sans-serif;
+.ecw-content .practice-changes .pc-text b { font-weight: 700; color: var(--ink); }
+.ecw-content .practice-changes .pc-src {
+  font-family: var(--font-body-zh);
   font-size: 11.5px;
   color: var(--accent);
   text-decoration: none;
   margin-left: 6px;
   white-space: nowrap;
 }
-.ecw .practice-changes a.pc-src:hover { text-decoration: underline; text-underline-offset: 2px; }
+.ecw-content .practice-changes a.pc-src:hover { text-decoration: underline; text-underline-offset: 2px; }
 @media (max-width: 760px) {
-  .ecw .practice-changes { padding: 16px 18px; }
-  .ecw .practice-changes .pc-text { font-size: 15px; }
+  .ecw-content .practice-changes { padding: 16px 18px; }
+  .ecw-content .practice-changes .pc-text { font-size: 15px; }
 }
-.ecw.is-dark .practice-changes { background: var(--accent-soft); }
+.ecw-content.is-dark .practice-changes { background: var(--accent-soft); }
 
 /* ── 證據分級 chip（inline）────────────────────────────────────────── */
-.ecw .ev-chip {
+.ecw-content .ev-chip {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-family: 'Inter', 'Noto Sans TC', sans-serif;
+  font-family: var(--font-body-zh);
   font-size: 11.5px;
   letter-spacing: 0.02em;
   padding: 0;
@@ -1557,7 +1543,7 @@ body.ecw { min-height: 100vh; }
   vertical-align: middle;
   white-space: nowrap;
 }
-.ecw .ev-chip::before {
+.ecw-content .ev-chip::before {
   content: "";
   width: 5px;
   height: 5px;
@@ -1565,16 +1551,16 @@ body.ecw { min-height: 100vh; }
   background: var(--muted);
   flex: 0 0 auto;
 }
-.ecw .ev-chip.rct::before { background: var(--accent); }
-.ecw .ev-chip.guide::before { background: #0F8A6A; }
-.ecw .ev-chip.retro::before { background: #B8860B; }
-.ecw .ev-chip.opinion::before { background: var(--muted); }
+.ecw-content .ev-chip.rct::before { background: var(--accent); }
+.ecw-content .ev-chip.guide::before { background: #0F8A6A; }
+.ecw-content .ev-chip.retro::before { background: #B8860B; }
+.ecw-content .ev-chip.opinion::before { background: var(--muted); }
 
 /* ── 標註式外連（版權不能轉載時）──────────────────────────────────── */
 /* round-5: was a beige ticket-stub card with a punched perforation strip —
  * too much UI texture per section. Now a quiet left-rule epigraph so the page
  * card vocabulary stays within「紫框卡(Tier-1)＋左線題詞＋hairline」. */
-.ecw .ecg-linkout {
+.ecw-content .ecg-linkout {
   border: 0;
   border-left: 2px solid var(--accent);
   border-radius: 0;
@@ -1582,26 +1568,26 @@ body.ecw { min-height: 100vh; }
   margin: 24px 0 28px;
   overflow: hidden;
 }
-.ecw .ecg-linkout .elo-strip { display: none; }
-.ecw .ecg-linkout .elo-body {
+.ecw-content .ecg-linkout .elo-strip { display: none; }
+.ecw-content .ecg-linkout .elo-body {
   padding: 2px 0 2px 18px;
   display: flex;
   gap: 12px;
 }
-.ecw .ecg-linkout .elo-ic {
+.ecw-content .ecg-linkout .elo-ic {
   color: var(--accent);
   font-size: 18px;
   line-height: 1.5;
   flex: 0 0 auto;
 }
-.ecw .ecg-linkout .elo-anno {
+.ecw-content .ecg-linkout .elo-anno {
   font-size: 15px;
   line-height: 1.75;
   color: var(--ink-2);
 }
-.ecw .ecg-linkout .elo-anno b { color: var(--ink); font-weight: 600; }
-.ecw .ecg-linkout .elo-link {
-  font-family: 'Inter', sans-serif;
+.ecw-content .ecg-linkout .elo-anno b { color: var(--ink); font-weight: 600; }
+.ecw-content .ecg-linkout .elo-link {
+  font-family: var(--font-body-zh);
   font-size: 12px;
   color: var(--accent);
   font-weight: 600;
@@ -1609,32 +1595,64 @@ body.ecw { min-height: 100vh; }
   display: inline-block;
   margin-top: 8px;
 }
-.ecw .ecg-linkout .elo-link:hover { text-decoration: underline; text-underline-offset: 2px; }
+.ecw-content .ecg-linkout .elo-link:hover { text-decoration: underline; text-underline-offset: 2px; }
 
 /* ── 列表頁策展一句話 ──────────────────────────────────────────────── */
-.ecw .curation {
-  font-family: 'Inter', 'Noto Sans TC', sans-serif;
+.ecw-content .curation {
+  font-family: var(--font-body-zh);
   font-size: 13px;
   line-height: 1.6;
   color: var(--ink-2);
 }
-.ecw .curation .big {
-  font-family: 'Inter Tight', sans-serif;
+.ecw-content .curation .big {
+  font-family: var(--font-body-zh);
   font-size: 15px;
   font-weight: 600;
   color: var(--ink);
   font-feature-settings: "tnum";
 }
-.ecw .curation .muted { color: var(--muted); }
+.ecw-content .curation .muted { color: var(--muted); }
 
 /* ── 雙軌閱讀時間：核心時間強調 ────────────────────────────────────── */
-.ecw .article-meta .core-time { color: var(--accent); font-weight: 600; }
+.ecw-content .article-meta .core-time { color: var(--accent); font-weight: 600; }
 
 /* ── 列表搜尋：隱藏列 + 無結果提示 ─────────────────────────────────── */
-.ecw .row.is-hidden { display: none; }
-.ecw .no-result {
+.ecw-content .row.is-hidden { display: none; }
+.ecw-content .no-result {
   padding: 40px 0;
   color: var(--muted);
-  font-family: 'Inter', 'Noto Sans TC', sans-serif;
+  font-family: var(--font-body-zh);
   font-size: 14px;
 }
+
+/* 與 Hallmark 共用視覺變數；僅作用於週報內容。 */
+.ecw-content {--bg:var(--color-paper);--ink:var(--color-ink);--ink-2:var(--color-ink-2);--muted:var(--color-ink-3);--hairline:var(--color-rule);--hairline-2:var(--color-paper-3);--accent:var(--color-accent-ink);--accent-soft:var(--color-paper-2);--accent-bg:var(--color-paper-2);--code-bg:var(--color-paper-2);--row-zebra:var(--color-paper-2);--selection:var(--color-paper-3);font-family:var(--font-display-zh);}
+.ecw-content .ecw-breadcrumb {max-width:1240px;margin:0 auto;padding:28px 32px 0;display:flex;flex-wrap:wrap;gap:10px;font:12px/1.7 var(--font-body-zh);color:var(--muted);}
+.ecw-content .ecw-breadcrumb a {color:var(--accent);}
+.ecw-content .layout-article {max-width:1240px;grid-template-columns:minmax(0,1fr) 200px;gap:64px;padding:0 32px;margin:auto;}
+.ecw-content .layout-article>.left {display:none;}
+.ecw-content .article {min-width:0;padding-top:36px;}
+.ecw-content .article-title {font-size:clamp(32px,4vw,54px);line-height:1.3;letter-spacing:-.02em;}
+.ecw-content .article-sub {font-size:20px;line-height:1.75;color:var(--ink-2);font-family:var(--font-body-zh);}
+.ecw-content .article p,.ecw-content .article li {line-height:1.85;}
+.ecw-content .right {padding-top:45px;}
+.ecw-content .toc {top:90px;}
+.ecw-content h2[id],.ecw-content h3[id],.ecw-content [id^="fn:"] {scroll-margin-top:85px;}
+.ecw-content .practice-changes {border:0;border-left:3px solid var(--color-accent);border-radius:0;background:var(--color-paper-2);}
+.ecw-content .hero {border-bottom:1px solid var(--color-rule);padding:40px 0;}
+.ecw-content .hero .tagline {font-size:clamp(36px,5vw,58px);line-height:1.25;}
+.ecw-content .wordmark .ecg-mark {display:none;}
+.ecw-content .hero-inner {max-width:1240px;padding:0 32px;}
+.ecw-content .layout-list {max-width:1240px;padding-left:32px;padding-right:32px;margin:auto;}
+.ecw-content .progress-track {z-index:50;}
+@media(max-width:760px){.ecw-content .layout-article{grid-template-columns:minmax(0,1fr)!important;padding:0 20px;gap:0;}.ecw-content .ecw-breadcrumb{padding:22px 20px 0;gap:8px;font-size:11px;}.ecw-content .article{padding-top:24px;}.ecw-content .article-sub{font-size:17px;line-height:1.7;}.ecw-content .article p,.ecw-content .article li{font-size:17px;}.ecw-content .hero-inner{padding:0 20px;}.ecw-content .subscribe{flex-wrap:wrap;}.ecw-content .subscribe>span{flex-basis:100%!important;}}
+@media(min-width:761px) and (max-width:1080px){.ecw-content .layout-article{grid-template-columns:minmax(0,1fr);max-width:920px;gap:0;}}
+@media(max-width:760px){
+  .ecw-content .article .article-title{font-size:32px;line-height:1.35;letter-spacing:-.02em;}
+  .ecw-content .article .article-sub{font-size:17px;line-height:1.75;}
+  .ecw-content .article-meta{display:flex;flex-wrap:wrap;gap:8px 12px;font-size:12px;line-height:1.6;}
+  .ecw-content .article-meta>span{white-space:nowrap;}
+  .ecw-content .article-meta>.dot{display:none;}
+}
+.ecw-content .hero-left .tagline,.ecw-content .row .head{font-family:var(--font-display-zh);}
+.ecw-content .row .week{font-family:var(--font-body);font-size:20px;white-space:nowrap;letter-spacing:-.03em;}

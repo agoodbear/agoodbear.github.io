@@ -1,27 +1,16 @@
+{{ define "head" }}{{ partial "ercw-head.html" . }}{{ end }}
+{{ define "scripts" }}<script src="{{ "er-cardio-weekly/js/ecw.js" | relURL }}" defer></script>{{ end }}
 {{ define "main" }}
-<header class="topbar">
-  <a href="{{ "/er-cardio-weekly/" | relURL }}" class="brand" style="text-decoration: none;">
-    <svg class="ecg-mark" viewBox="0 0 56 28" aria-hidden="true" style="margin-right: 8px;">
-      <path d="M2,14 L10,14 L13,8 L17,20 L21,4 L25,24 L29,14 L36,14 L39,10 L43,18 L54,18" />
-    </svg>
-    ER · CARDIO · WEEKLY
-  </a>
-  <span class="crumb">/ <a href="{{ "/er-cardio-weekly/sources/" | relURL }}" style="color: var(--muted); text-decoration: none;">本週原始訊號</a> / {{ .Title }}</span>
-  <div class="actions">
-    <button class="icon-btn" id="ecw-theme-toggle" title="切換暗色模式" aria-label="切換暗色模式">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-        <circle cx="12" cy="12" r="4"/>
-        <path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/>
-      </svg>
-    </button>
-  </div>
-</header>
+<main class="ecw-content">
+{{ partial "ercw-breadcrumb.html" . }}
+<div class="progress-track" aria-hidden="true"><div class="progress-bar" id="ecw-progress"></div></div>
+
 
 <div class="container" style="max-width: 1080px; margin: 0 auto; padding: 56px 32px 96px;">
   <div style="margin-bottom: 32px;">
     <div style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 6px; font-family: 'Inter Tight', sans-serif;">SOURCES · {{ upper .Params.sourceLayer }}</div>
     <h1 style="font-family: 'Inter Tight', 'Noto Sans TC', sans-serif; font-size: 36px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 12px; line-height: 1.2;">{{ .Title }}</h1>
-    <p style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: var(--ink-2); margin: 0; max-width: 720px; line-height: 1.6;">{{ .Description }}</p>
+    <p style="font-family: var(--font-display); font-style: italic; font-size: 17px; color: var(--ink-2); margin: 0; max-width: 720px; line-height: 1.6;">{{ .Description }}</p>
   </div>
 
   {{ $data := index .Site.Data "er-cardio-weekly" }}
@@ -38,7 +27,7 @@
   </div>
 
   {{ if eq (len $items) 0 }}
-  <div style="padding: 60px 0; text-align: center; color: var(--muted); font-family: 'Newsreader', serif; font-style: italic;">
+  <div style="padding: 60px 0; text-align: center; color: var(--muted); font-family: var(--font-display); font-style: italic;">
     {{ if eq $layer "x" }}
       X.com cookie 尚未設定。執行 <code>uv run python main.py setup</code> 提供 Twitter cookie 後即可抓取。
     {{ else }}
@@ -96,4 +85,5 @@
   </div>
   {{ end }}
 </div>
+</main>
 {{ end }}

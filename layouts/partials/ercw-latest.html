@@ -1,0 +1,8 @@
+{{ with partial "ercw-issues.html" . }}
+{{ with index . 0 }}
+<section id="weekly" class="ercw-promo" aria-label="急診心臟週報最新一期">
+  <div class="ercw-promo-label"><span>每週專欄</span><a href="{{ "/er-cardio-weekly/" | relURL }}">急診心臟週報</a><small>{{ .Params.week }} · {{ .Date.Format "2006.01.02" }}</small></div>
+  <div class="ercw-promo-story"><h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2><p>{{ .Params.subtitle | plainify | strings.TrimSpace | truncate 95 }}</p></div>
+  <div class="ercw-promo-links"><a class="ercw-promo-read" href="{{ .RelPermalink }}">閱讀本期 <span aria-hidden="true">↗</span></a><a href="{{ "/er-cardio-weekly/" | relURL }}">全部週報 →</a></div>
+</section>
+{{ end }}{{ end }}
