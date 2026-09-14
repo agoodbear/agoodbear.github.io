@@ -1,0 +1,198 @@
+{{- /*
+  OMI圖鑑（/omi/）
+  資料：data/omi_atlas.yaml（四組 → finding，文字來源與代號規則寫在檔頭）
+  互動：assets/omi-atlas/omi-atlas.js；樣式：assets/omi-atlas/omi-atlas.css
+  文章連進來用 shortcode：omi "hatw" → /omi/#hatw（見 layouts/shortcodes/omi.html）
+  所有 finding 的內容都直接輸出成 HTML，沒有 JS 時是一份完整清單，搜尋引擎也讀得到。
+*/ -}}
+
+{{ define "head" }}
+{{- with resources.Get "omi-atlas/omi-atlas.css" }}
+{{- $css := . | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{- end }}
+{{ end }}
+
+{{ define "body-class" }}page-omi-atlas{{ end }}
+
+{{ define "main" }}
+{{- $atlas := index site.Data "omi_atlas" | default (dict) }}
+<main class="oa" id="omi-atlas" data-state="root">
+  <script>document.documentElement.classList.add('oa-js');setTimeout(function(){var m=document.getElementById('omi-atlas');if(m&&!m.classList.contains('is-ready')){document.documentElement.classList.remove('oa-js')}},4000);</script>
+  <header class="oa-head">
+    <nav class="oa-crumbs" aria-label="目前位置"></nav>
+    <h1 class="oa-title">OMI ECG findings</h1>
+    <div class="oa-intro">
+      <p class="oa-legend">⭐️＝2025 年新加進來的 finding</p>
+    </div>
+  </header>
+
+  <div class="oa-stage">
+    <svg class="oa-wires" aria-hidden="true" focusable="false"></svg>
+
+    <div class="oa-groups">
+      {{- range $g := $atlas.groups }}
+      {{- $n := len $g.findings }}
+      {{- /* 卡片裡的 finding 排兩欄、由上往下填：6 個＝3+3、4 個＝2+2、7 個＝4+3、3 個＝2+1 */ -}}
+      {{- $rows := div (add $n 1) 2 }}
+      <a class="oa-group" href="#{{ $g.id }}" data-group="{{ $g.id }}">
+        <span class="oa-group-band">
+          <span class="oa-group-name">{{ $g.name }}</span>
+          <span class="oa-group-count">{{ $n }} 個 finding</span>
+          <span class="oa-group-toggle" aria-hidden="true"></span>
+        </span>
+        <span class="oa-group-body">
+          {{- partial "omi-trace.html" $g.id }}
+          <span class="oa-chips" data-rows="{{ $rows }}">
+            {{- range $f := $g.findings }}
+            <span class="oa-chip" data-id="{{ $f.id }}"><span class="oa-chip-label">{{ $f.short | default $f.name }}</span>{{ if $f.new2025 }}<span class="oa-chip-new" title="2025 新增">⭐️</span>{{ end }}</span>
+            {{- end }}
+          </span>
+          <span class="oa-group-hint">{{ $n }} 個 finding，再點一次收起來</span>
+        </span>
+      </a>
+      {{- end }}
+    </div>
+
+    {{- range $g := $atlas.groups }}
+    <ul class="oa-branch" data-group="{{ $g.id }}" aria-label="{{ $g.name }}">
+      {{- range $f := $g.findings }}
+      <li>
+        <a class="oa-node" href="#{{ $f.id }}" data-id="{{ $f.id }}">
+          <span class="oa-node-name">{{ $f.name }}</span>
+          {{- with $f.full }}<span class="oa-node-full">{{ . }}</span>{{ end }}
+          {{- if $f.new2025 }}<span class="oa-new">⭐️ 2025 新增</span>{{ end }}
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+    {{- end }}
+
+    <div class="oa-details">
+      {{- range $g := $atlas.groups }}
+      {{- $fs := $g.findings }}
+      {{- $lastIdx := sub (len $fs) 1 }}
+      {{- range $i, $f := $fs }}
+      <article class="oa-detail" id="{{ $f.id }}" data-group="{{ $g.id }}" aria-labelledby="{{ $f.id }}-name">
+        <header class="oa-d-head">
+          <p class="oa-d-group"><a href="#{{ $g.id }}">{{ $g.name }}</a></p>
+          <h2 class="oa-d-name{{ if gt (strings.RuneCount $f.name) 22 }} is-long{{ end }}" id="{{ $f.id }}-name" tabindex="-1">{{ $f.name }}</h2>
+          {{- with $f.full }}
+          <p class="oa-d-full">{{ . }}</p>
+          {{- end }}
+          {{- if $f.new2025 }}
+          <p class="oa-new">⭐️ 2025 新增</p>
+          {{- end }}
+        </header>
+
+        <div class="oa-d-body">
+          <div class="oa-d-main">
+            {{- with $f.look }}
+            <p class="oa-d-look">{{ . | markdownify }}</p>
+            {{- end }}
+            {{- with $f.points }}
+            <ul class="oa-d-points">
+              {{- range . }}
+              <li>{{ .text | markdownify }}</li>
+              {{- end }}
+            </ul>
+            {{- end }}
+            {{- with $f.criteria }}
+            <section class="oa-d-criteria">
+              <h3>判準</h3>
+              <ul>
+                {{- range . }}
+                <li>{{ .text | markdownify }}</li>
+                {{- end }}
+              </ul>
+            </section>
+            {{- end }}
+            {{- /* 沒有通過查核的投影片就不放圖，也不留佔位文字。
+                   review: true＝出處還沒確認的圖：只在 hugo server（預覽站）出現，正式 build 自動略過，Bear 確認後拿掉這個欄位才會上線 */ -}}
+            {{- range $f.slides }}
+            {{- if or (not .review) hugo.IsServer }}
+            <figure class="oa-d-slide{{ if .review }} is-review{{ end }}">
+              {{- if .review }}
+              <p class="oa-d-review">預覽限定：出處待確認，正式站不會顯示</p>
+              {{- end }}
+              <img src="{{ .src | relURL }}" alt="{{ .alt }}" loading="lazy" decoding="async"{{ with .width }} width="{{ . }}"{{ end }}{{ with .height }} height="{{ . }}"{{ end }}>
+              {{- with .caption }}
+              <figcaption>{{ . | markdownify }}</figcaption>
+              {{- end }}
+            </figure>
+            {{- end }}
+            {{- end }}
+            {{- with $f.refs }}
+            <section class="oa-d-refs">
+              <h3>出處</h3>
+              <ol>
+                {{- range . }}
+                <li>{{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>{{ else }}{{ .label }}{{ end }}</li>
+                {{- end }}
+              </ol>
+            </section>
+            {{- end }}
+          </div>
+
+          <aside class="oa-d-side">
+            {{- with $f.leads }}
+            <section class="oa-d-fact">
+              <h3>看哪裡</h3>
+              <p>{{ delimit . "、" }}</p>
+            </section>
+            {{- end }}
+            {{- with $f.artery }}
+            <section class="oa-d-fact">
+              <h3>想到哪條血管</h3>
+              <p>{{ . | markdownify }}</p>
+            </section>
+            {{- end }}
+            {{- with $f.pitfall }}
+            <section class="oa-d-fact">
+              <h3>別被騙</h3>
+              <p>{{ . | markdownify }}</p>
+            </section>
+            {{- end }}
+            <section class="oa-d-fact">
+              <h3>完整講解</h3>
+              {{- $part := false }}
+              {{- with $f.part_url }}{{ $part = site.GetPage . }}{{ end }}
+              {{- if $part }}
+              <p><a href="{{ $part.RelPermalink }}">{{ $f.part }}：{{ $part.Title }}</a></p>
+              {{- else }}
+              <p class="oa-muted">{{ $f.part }}（還在寫）</p>
+              {{- end }}
+            </section>
+            {{- $cases := where site.RegularPages "Params.omi_findings" "intersect" (slice $f.id) }}
+            {{- with $cases }}
+            <section class="oa-d-fact">
+              <h3>我的 case</h3>
+              <ul>
+                {{- range . }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{- end }}
+              </ul>
+            </section>
+            {{- end }}
+          </aside>
+        </div>
+
+        <nav class="oa-d-sibs" aria-label="同一組的其他 finding">
+          {{- if gt $i 0 }}{{ with index $fs (sub $i 1) }}<a class="oa-prev" href="#{{ .id }}">上一個：{{ .name }}</a>{{ end }}{{ else }}<span class="oa-prev"></span>{{ end }}
+          <a class="oa-up" href="#{{ $g.id }}">回到{{ $g.name }}</a>
+          {{- if lt $i $lastIdx }}{{ with index $fs (add $i 1) }}<a class="oa-next" href="#{{ .id }}">下一個：{{ .name }}</a>{{ end }}{{ else }}<span class="oa-next"></span>{{ end }}
+        </nav>
+      </article>
+      {{- end }}
+      {{- end }}
+    </div>
+  </div>
+</main>
+{{ end }}
+
+{{ define "scripts" }}
+{{- with resources.Get "omi-atlas/omi-atlas.js" }}
+{{- $js := . | js.Build (dict "minify" true "target" "es2018") | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{- end }}
+{{ end }}

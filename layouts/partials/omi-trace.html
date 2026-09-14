@@ -1,0 +1,23 @@
+{{- /*
+  OMI圖鑑首頁卡片底部的示意波形（純裝飾、aria-hidden，放在 finding 小框後面）
+  傳入組別 id：qrstu＝完整 PQRSTU、std＝ST 段壓低（壓低那段加深）、pattern＝雙相 T 與高聳 T 交替、calc＝標出 QRS 與 T 的高度
+  一拍寬 160、基線 y=38，viewBox 640×60 放四拍；preserveAspectRatio slice 讓波形鋪滿卡片寬度
+*/ -}}
+{{- $normal := "h14 c4,0 6,-7 10,-7 c4,0 6,7 10,7 h10 l3,4 l5,-34 l5,40 l4,-10 h12 c6,0 10,-16 16,-16 c6,0 10,16 16,16 h6 c3,0 4,-5 7,-5 c3,0 4,5 7,5 h35" -}}
+{{- $std := "h14 c4,0 6,-7 10,-7 c4,0 6,7 10,7 h10 l3,4 l5,-34 l5,40 l4,-4 h12 c6,0 10,-14 16,-14 c6,0 10,8 16,8 h55" -}}
+{{- $biphasic := "h14 c4,0 6,-7 10,-7 c4,0 6,7 10,7 h10 l3,4 l5,-34 l5,40 l4,-10 h12 c5,0 8,-9 12,-9 c4,0 6,20 12,20 c5,0 8,-11 12,-11 h51" -}}
+{{- $tallT := "h14 c4,0 6,-7 10,-7 c4,0 6,7 10,7 h10 l3,4 l5,-34 l5,40 l4,-6 c8,-4 12,-26 18,-26 c6,0 8,22 14,22 h67" -}}
+{{- $id := . -}}
+<svg class="oa-trace" viewBox="0 0 640 60" preserveAspectRatio="xMinYMid slice" aria-hidden="true" focusable="false">
+{{- if eq $id "std" }}
+<path class="oa-trace-line" d="{{ printf "M0,38 %s %s %s %s" $std $std $std $std }}"/>
+<path class="oa-trace-key" d="M61,44 h12 M221,44 h12 M381,44 h12 M541,44 h12"/>
+{{- else if eq $id "pattern" }}
+<path class="oa-trace-line" d="{{ printf "M0,38 %s %s %s %s" $biphasic $tallT $biphasic $tallT }}"/>
+{{- else if eq $id "calc" }}
+<path class="oa-trace-line" d="{{ printf "M0,38 %s %s %s %s" $normal $normal $normal $normal }}"/>
+<path class="oa-trace-measure" d="M36,8 h4 M38,8 v40 M36,48 h4 M112,22 h4 M114,22 v16 M112,38 h4 M356,8 h4 M358,8 v40 M356,48 h4 M432,22 h4 M434,22 v16 M432,38 h4"/>
+{{- else }}
+<path class="oa-trace-line" d="{{ printf "M0,38 %s %s %s %s" $normal $normal $normal $normal }}"/>
+{{- end }}
+</svg>

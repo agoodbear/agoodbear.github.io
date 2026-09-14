@@ -5,8 +5,8 @@
   weight = -109
 
 [[main]]
-  name = "超音波"
-  url = "categories/pocus"
+  name = "OMI圖鑑"
+  url = "omi/"
   weight = -108
 
 [[main]]

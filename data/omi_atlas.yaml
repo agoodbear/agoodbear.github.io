@@ -1,0 +1,1078 @@
+# OMI圖鑑（/omi/）資料檔
+#
+# 分組與順序：照 2025-05-22 奇美住院醫師 ECG 教學《What is OMI?》slide 368–371，name 欄＝投影片原文
+#   （只把 slide 368 的拼字 bifascular 改回 bifascicular）。
+# 文字來源：Bear 的 Roam「OMI ECG findings Part 1–4（Hugo 原稿）」與 Keynote 投影片；原稿沒有的才用 LITFL／Dr. Smith's ECG Blog／ECG Weekly。
+#   *_src、points[].src、criteria[].src 記的是出處（roam:<uid>／slide:<deck>-<NNN>／pmid:／url:）。
+#   要改字請先在 Roam 改，再同步到這裡，兩邊才不會分岔。
+# criteria（判準）裡的每個數字都要兩條獨立來源對上；查證紀錄在
+#   ~/Desktop/Claude Code專用檔/blog-drafts/omi-findings/atlas-content/*-verify.md，查不到的不放。
+# id＝文章連結用的代號：omi shortcode "hatw" → /omi/#hatw。上線後就不要改，改了舊文章的連結會斷。
+# new2025: true＝2022 前言之後才加進來的四個。
+# part_url：該篇 Part 轉進 Hugo 後填（例如 "/post/omi-findings-part-1a"），「完整講解」就會變成連結。
+
+updated: '2026-09-14'
+groups:
+- id: qrstu
+  name: 根據QRSTU判斷
+  slide: 368
+  findings:
+  - id: nttv1
+    name: NTTV1
+    full: New Tall T wave in V1
+    part: Part 1（上）T波與U波
+    look: '**V1的T wave比V6高** ➜ NTTV1'
+    look_src: AJQnOMjwH
+    leads:
+    - V1
+    - V6
+    artery: LCx（posterior／inferobasal）
+    artery_src: pmid:6833662（'common in patients with isolated left circumflex artery disease but is rare in those with isolated left anterior descending artery disease'）; url:https://drsmithsecgblog.com/is-there-evidence-of-omi-on-this-ecg/（Ken Grauer：'These findings confirm ongoing "precordial T wave imbalance" — and are highly correlated with a LCx "culprit". As noted by Drs. Singh and Smith — cardiac cath confirmed 100% proximal LCx occlusion.'）; roam:O_rTggIj5（機轉）
+    pitfall: '**LVH是常見的假陽性**（HATW也一樣要防LVH，同一個病人兩個finding都要想到它）；Ken Grauer自己也提醒，V1高而直立的T wave有時只是repolarization variant或LV strain的鏡像。而且「V1的T wave本來就是倒的」這句話本身不完全對：V1的T wave正常可以是negative、flat或upright，**單看一張ECG說V1直立就有缺血是站不住的**。Dr. Smith 2012的原始研究（subtle anterior STEMI vs early repolarization）也寫明：upright T wave in V1、或V1的T wave大於V6，**did not provide important information**，他問的是anterior（LAD），NTTV1指向的多半是LCx，兩把尺不要混用。'
+    pitfall_src: 'url:https://drsmithsecgblog.com/is-there-evidence-of-omi-on-this-ecg/（Grauer：''tall, upright T waves in lead V1 might not sometimes be the result of a repolarization variant or a mirror-image reflection of LV "strain" that can sometimes be seen in anterior leads''）; url:https://www.aliem.com/tall-t-wave-lead-v1/（NTTV1 causes 列出 ''LVH''）; url:https://drsmithsecgblog.com/a-case-of-misinterpreted-troponins-in/（Grauer PEARL #1：''The T wave in lead V1 may normally be negative, flat, or upright''）; pmid:22520989（''Upward concavity, upright T wave in V1 or T wave, in V1 greater than T wave in V6, and J-wave notching did not provide important information.''）; roam:ACZJiMwyr, roam:_WvOWVRQb, roam:xWne-FZfT, roam:nz7ngYQmp'
+    points:
+    - text: V1的T wave比V6高，尤其是**新出現的**（New Upright T wave，或TV1>TV6）➜ 要懷疑CAD或acute ischemia。機轉是**後壁(posterior/inferobasal)缺血或損傷的鏡像**，所以跟**LCx**綁在一起，而不是跟LAD。
+      src: roam:O_rTggIj5, roam:uVsmXqSUU, roam:fIhM_G15d, roam:TpUDeL895
+    - text: 判斷方法：**同一張ECG上V1和V6的T wave互相比**，不是背絕對高度（幾mm）；有舊片一定要調出來比，NTTV1的「N」就是New，沒有舊片只有TTV1，證據力差一截。
+      src: roam:hGozq_sek, roam:JMhHj214O
+    - text: NTTV1不是拿來下診斷的，是拿來**把你的眼睛叫醒**的：看到它要回頭找V2–V3有沒有STD、R wave有沒有變高、去把舊片挖出來、**再做一張ECG**，而不是馬上Call CV man。
+      src: roam:Z08_A--kI, roam:CH-dU9uHs, roam:SDRd6-S-T
+    criteria:
+    - text: Manno 1983（**218位**因胸痛接受診斷性心導管的病患）：upright T wave in V1（以**0.15 mV**為判定切點）在**isolated LCx disease常見、在isolated LAD disease少見**；多條血管疾病中，只要LCx有病，upright T wave in V1也常見。
+      src:
+      - pmid:6833662
+      - url:https://www.aliem.com/tall-t-wave-lead-v1/
+      - url:https://drsmithsecgblog.com/is-there-evidence-of-omi-on-this-ecg/
+      verified: '① 原始研究 PubMed abstract（PMID 6833662，2026-09-14 eutils efetch）：「the 12 lead electrocardiograms of 218 patients undergoing diagnostic catheterization for the evaluation of chest pain were reviewed」「An upright T wave in lead V1 (greater than or equal to 0.15 mV)」「an upright T wave in precordial lead V1 is common in patients with isolated left circumflex artery disease but is rare in those with isolated left anterior descending artery disease. Similarly, in patients with multivessel disease, an upright T wave is common when the left circumflex artery is diseased.」② 獨立第二來源 ALiEM《EKG Subtlety: Tall T-Wave in Lead V1》（Salim Rezaie，2026-09-14 curl 原頁）：「84.4% of patients in a series of 218 patients undergoing cardiac catheterization had severe CAD (>75% stenosis)」「In patients with one vessel disease and NTTV1 >0.15mV, the lesion was: Left circumflex artery disease (44%) Right coronary artery (22%) Left anterior descending artery (2%)」。③ LCx 關聯另見 Ken Grauer（Dr. Smith''s ECG Blog《Is there evidence of OMI on this ECG?》，curl 原頁）：「has been associated with recent OMI from a LCx culprit artery ( See Manno et al: JACC 1:1213, 1983」。註：ALiEM 寫「>0.15mV」、原文為「≥0.15 mV」，兩者只有切點數值一致，故正文只寫數值不寫不等號。'
+    slides:
+    - src: /images/omi/nttv1-slide-2025-072.webp
+      width: 1600
+      height: 1200
+      alt: 投影片「當遇到 Upright TV1合併症狀」流程圖：左側藍底標籤「首要任務」寫「要先排除Normal variants」；右側藍底標籤「比對心電圖」列出①New Upright T wave或②TV1>TV6，旁邊「下 轉 上」「平 轉 上」兩行，粉紅框標出「下／平」並註明「正常T wave of V1」；中段寫「心中要懷疑」「可能是CAD or acute ischemia」，最下方箭頭指向「Repeat ECGs」。全部是文字＋箭頭的流程圖，沒有真實心電圖波形。
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 72），我自己畫的判讀流程圖
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/d1b0e6d05c1/slide_072.png；crop=None
+    refs:
+    - label: Manno BV, Hakki AH, Iskandrian AS, Hare T. Significance of the upright T wave in precordial lead V1 in adults with coronary artery disease. J Am Coll Cardiol. 1983 May;1(5):1213-5. PMID 6833662
+      url: https://pubmed.ncbi.nlm.nih.gov/6833662/
+    - label: LITFL (Ed Burns). T wave. ECG Library Basics
+      url: https://litfl.com/t-wave-ecg-library/
+    - label: Smith SW, Khalil A, Henry TD, et al. Electrocardiographic differentiation of early repolarization from subtle anterior ST-segment elevation myocardial infarction. Ann Emerg Med. 2012 Jul;60(1):45-56.e2. PMID 22520989（NTTV1反面意見的原始文獻）
+      url: https://pubmed.ncbi.nlm.nih.gov/22520989/
+    - label: Dr. Smith's ECG Blog. Is there evidence of OMI on this ECG?（Ken Grauer 評論段）
+      url: https://drsmithsecgblog.com/is-there-evidence-of-omi-on-this-ecg/
+    - label: 'Rezaie S. EKG Subtlety: Tall T-Wave in Lead V1. ALiEM'
+      url: https://www.aliem.com/tall-t-wave-lead-v1/
+  - id: hatw
+    name: HATW
+    full: Hyperacute T wave
+    part: Part 1（上）T波與U波
+    look: '**T wave相對QRS太肥、太對稱** ➜ HATW。記住是「R wave變矮」不是「T wave變高」。'
+    look_src: 39YQ-ac4P
+    points:
+    - text: '**Hyperacute T wave不是「高」，是「胖」。** 判準是**area under the curve相對於QRS**、加上**symmetry**。'
+      src: dwgRy0193（只取前兩句，文獻那句留在 Part 1）
+    - text: HATW不是「山變高了」，是「山變胖了」。面積變大，不是高度變大。
+      src: 6J5x-y7jx
+    slides:
+    - src: /images/omi/hatw-slide-089.webp
+      width: 1600
+      height: 1200
+      alt: 投影片「HATW要看的重點」：一段放大的心電圖波形，深灰色塊框住 T wave、淺綠色塊框住 QRS，上方寫「T wave是否夠寬、夠胖」，下方寫「T wave和QRS之間的比率是否不成比例」
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 89）
+      src_note: keynote-search slides/d1b0e6d05c1/slide_089.png；Roam 原稿標記 AfVZiwnFq
+    - src: /images/omi/hatw-slide-088.webp
+      width: 1600
+      height: 1200
+      alt: 投影片「我們來看看兩個例子」：左邊是 LVH 的 V1 到 V3，右邊是 HATW 的 V1 到 V3，下方藍底大字問「差在哪裡?」
+      caption: 同一份投影片（slide 88）：LVH 和 HATW 的 V1–V3 放在一起，差在哪裡？
+      src_note: keynote-search slides/d1b0e6d05c1/slide_088.png；Roam 原稿標記 U_SdRcJeK；兩張 ECG 條圖的原始出處待確認
+    pitfall: '**利益揭露要老實講**：本研究部分由Powerful Medical（做PMcardio／Queen of Hearts的公司）資助，Meyers與Smith持有該公司股票選擇權、Herman是該公司Chief Medical Officer。不是研究做壞了（derivation／validation分開、outcome用血管攝影上culprit lesion的TIMI flow grade作硬終點），但**這個score最後是要裝進一個要賣錢的AI產品裡的**：AI說是OMI，還是要自己會看那條T波胖不胖。這個score的sensitivity偏低，**陰性不能rule out**；而且**不適用於寬QRS**：研究收案時就排除了QRS偏寬的病人，LBBB／paced rhythm不在驗證範圍內。'
+    pitfall_src: 'pmid:40892623（Conflict of interest statement 逐字：''The work performed by authors and scientists for this publication was in part funded by Powerful Medical.'' ''Dr Herman is the Chief Medical Officer of Powerful Medical.'' ''Drs Meyers and Smith hold stock options in Powerful Medical.''；Methods：''Exclusions were lack of preangiogram ECG, QRS duration ≥110 ms, and elevated troponin without angiogram. The outcome definition was myocardial infarction with TIMI flow grade 0-1 culprit lesion.''；Results 的 sensitivity 為原文數據）; url:https://www.powerfulmedical.com/（網站標題 ''PMcardio: AI ECG & Cardiac Care Platform - Powerful Medical''，產品列 ''Queen of Hearts''）; roam:DB9q0YCJJ, roam:DY5D-LCVc, roam:8xbiAL2x8'
+    criteria:
+    - text: HATW score（Meyers 2025, JACC Adv）：用兩個量測把HATW客觀化，**T-wave magnitude**（T波面積相對於QRS amplitude）與**symmetry**（T波peak-to-end時間相對於onset-to-peak時間）；derivation與validation分成兩組評估。作者結論：這是第一個HATW的客觀定義，在疑似ACS的病人中，作為acute coronary occlusion的ECG finding有顯著臨床效用。切點與specificity、sensitivity、PPV、LR+等數字目前只找到原始論文一個來源，本頁暫不列出。
+      src:
+      - pmid:40892623
+      verified: '原始研究 PubMed abstract（PMID 40892623，2026-09-14 eutils efetch）逐字：「ECG measures included T-wave magnitude (T-wave area relative to QRS amplitude) and symmetry (T-wave peak-to-end time relative to onset-to-peak time). The HATW score was derived and evaluated on separate groups.」「CONCLUSIONS: The HATW score is the first objective definition of HATW showing significant clinical utility as an ECG finding of acute coronary occlusion in potential acute coronary syndrome patients.」此條已改成不含數字的定義型判準，一個原始來源即足。原稿的數字（0.7、98.4%、20.7%、47.4%、12.54、84%、N = 1,300、QRS ≥110 ms）本次找第二來源：Dr. Smith''s ECG Blog《OMI Facts and References》《OMI Literature Timeline》（查核者 curl 原頁，只有書目、無這組數字）；搜尋子代理另查 JACC Adv editorial（Khlidj 2025, PMC12662095）、Powerful Medical 網站、新聞與 EM 部落格，亦未找到逐字覆誦（此為否定性結果，未引入任何內容）；ECG Weekly 會員制打不開不算。故數字全部拿掉。'
+    refs:
+    - label: Meyers HP, Simančík F, Herman R, Rafajdus A, Frick WH, Nunes de Alencar J, Aslanger EK, Smith SW. Hyperacute T Waves Are Specific for Occlusion Myocardial Infarction, Even Without Diagnostic ST-Segment Elevation. JACC Adv. 2025;4(10 Pt 2):102120. PMID 40892623
+      url: https://pubmed.ncbi.nlm.nih.gov/40892623/
+    - label: Mills NL, Newby LK, Zaman S, et al. Fifth Universal Definition of Myocardial Infarction (2026). Glob Heart. 2026;21:64. DOI 10.5334/gh.1578（開放全文；同步刊於 Circulation, DOI 10.1161/CIR.0000000000001477）；Table 5 列有 Hyperacute T waves 的定義
+      url: https://doi.org/10.5334/gh.1578
+  - id: pathologic-q
+    name: Pathologic Q wave
+    part: Part 1（下）QRS與ST
+    look: '**新出現的pathologic Q wave**（尤其配上STE或hyperacute T） ➜ Pathologic Q wave'
+    look_src: 4ZIqbZZng
+    pitfall: 看到Q wave先別急著放心，Raitt 1995（四個溶栓試驗pool起來、過去沒有MI病史的病人）發現：**症狀發作1小時內入院的病人，已有相當比例的initial ECG出現abnormal Q wave**，而且有Q wave**並沒有消除thrombolytic therapy縮小infarct size的效果**。⚠️ Raitt的摘要沒有依血管別分層、也沒有出現「LAD」；Dr. Smith部落格轉述成「LAD STEMI」是他加的，引用時不要講成「一半的LAD OMI」。DDx（非梗塞的Q wave）：**HCM**（深而窄、像匕首的「dagger-like」Q wave）等cardiomyopathy、**LVH**、**Pre-excitation(WPW)**（負向的delta wave會做出假的Q wave）、**lead擺錯**（例如V1–V2擺太高，就可能做出假的Q wave）、心臟極度順時針／逆時針轉位。實用鑑別（Ken Grauer）：**V4的Q wave若比V5、V6的septal q wave大，那就不是正常septal q wave，是infarction Q wave**，不用尺，用眼睛就能做。
+    pitfall_src: 'pmid:7897120（''Data from 695 patients who had no past history of myocardial infarction ... were pooled from four prospective trials of thrombolytic therapy.'' ''Of patients admitted within 1 h of symptoms, 53% had abnormal Q waves on the initial ECG.'' ''the presence of abnormal Q waves on the admission ECG did not eliminate the effect of thrombolytic therapy on reducing final infarct size (p < 0.0001)''）; url:https://drsmithsecgblog.com/chest-pain-followed-by-6-days-of/（''See Raitt et al.: 50% of LAD STEMI have Q-waves by one hour.''）; UDMI4 作者接受稿（''Pre-excitation, cardiomyopathy, TTS, cardiac amyloidosis, LBBB, left anterior hemiblock, LVH, right ventricular hypertrophy, myocarditis, acute cor pulmonale, or hyperkalaemia may be associated with Q waves or QS complexes in the absence of MI.''；''Improper lead placement, QRS abnormalities, or technical error (e.g. lead reversal) may result in the appearance of new Q waves or QS complexes''）; url:https://drsmithsecgblog.com/chest-pain-and-q-waves-in-v1-and-v2-is/（2018-11-04：''Septal Q-waves may be caused by placing leads V1 and V2 too high.''）; url:https://litfl.com/hypertrophic-cardiomyopathy-hcm-ecg-library/（''Deep, narrow ("dagger-like") Q waves in lateral (I, aVL, V5-6) +/- inferior (II, III, aVF) leads''）; url:https://litfl.com/pre-excitation-syndromes-ecg-library/（''due to negatively deflected delta waves in inferior/anterior leads ("pseudo-Q waves")''）; url:https://litfl.com/q-wave-ecg-library/（DDx：''Cardiomyopathies — Hypertrophic (HCM), infiltrative myocardial disease'' ''Rotation of the heart — Extreme clockwise or counter-clockwise rotation'' ''Lead placement errors''）; url:https://drsmithsecgblog.com/judge-for-yourself-management-of-this/（''the Q wave in lead V4 ( RED arrow ) should never normally be larger than "normal" septal q waves that may sometimes be seen in leads V5,V6''）; roam:v7dW2a7x6, roam:LKQYksy2D, roam:hiYlWWKLk'
+    points:
+    - text: Pathologic Q wave **≠ 舊的心肌梗塞**。急性期第一個小時內就可能出現Q wave，**有Q wave不能排除acute OMI**，而且initial ECG有abnormal Q wave**並沒有消除thrombolytic therapy縮小infarct size的效果**。
+      src: roam:SFgyiAQaX, roam:Oj1AOC4mK, roam:WwWIHRV1L; pmid:7897120; url:https://drsmithsecgblog.com/chest-pain-followed-by-6-days-of/
+    - text: 判準邏輯不對稱：**兩條符合任一條＝病理性**（pathologic Q wave，or）；**兩條都要符合才算正常**（septal q wave，and）。要被判正常，門檻反而比較高。
+      src: roam:cTYY9yCzU, roam:2xkP47-xG
+    - text: 單獨一個V1的QS可以是正常的；但**在OMI的脈絡下，V2–V3出現任何Q wave都不正常**（除非是lead擺錯、LBBB或paced rhythm）。另外**Qr in V1也是PE相當specific的ECG sign**：看到Qr in V1，anterior OMI跟PE兩盞燈要同時亮。
+      src: roam:anNXomqWi, roam:YeT3TAre4, roam:gWKJOz3HL, roam:hNa6j48Vo; UDMI4 作者接受稿（'A QS complex in lead V1 is normal.'）; url:https://litfl.com/q-wave-ecg-library/（'Under normal circumstances, Q waves are not seen in the right-sided leads (V1-3)'）; pmid:12804925（'Qr in V(1)(14 vs 0 in controls; p<0.0001)'）
+    criteria:
+    - text: '**UDMI第五版（2026）Table 5**：Pathologic Q waves＝Q-wave duration **≥40 ms** 和／或 depth **≥25% of the R wave**，出現在**兩個相鄰導程**。正文說明這是古典定義（分母是**同一導程的R wave**）；先前版本的UDMI用過另一套定義，第五版採用古典定義的理由是：它與CMR上的transmural myocardial infarction相關性較高。'
+      src:
+      - url:https://globalheartjournal.com/articles/10.5334/gh.1578（UDMI5 Global Heart 版，Table 5 與 §13）
+      - url:https://pmc.ncbi.nlm.nih.gov/articles/PMC13523810/（同文 PMC 官方全文）
+      verified: 路徑① globalheartjournal.com 原頁（2026-09-14 curl）與路徑② PMC13523810 官方全文（Europe PMC fullTextXML，同日 curl）逐字一致：Table 5「Pathologic Q waves Q-wave duration ≥40 ms and/or a depth of ≥25% of the R wave in two contiguous leads」；§13 正文「The classical definition of a pathological Q wave requires a Q-wave duration ≥40 ms and/or a depth of ≥25% of the R wave in the same lead ( 151 ). While an alternative pathological Q wave definition was suggested in prior versions of the UDMI, the classical definition has a higher correlation with transmural myocardial infarction in CMR imaging studies ( 98 ).」（對照：第四版 Table 3 確實是另一套判準——'Any Q wave in leads V2-V3 >0.02 s or QS complex in leads V2-V3.' 等三列，本次以作者接受稿 PDF 目視核對。）⚠️ 這兩條路徑是同一份同步刊出文件的兩個官方全文站，符合交辦的 UDMI5 特例，但不是兩份不同作者的文件；Circulation／EHJ／JACC 版本 403 或需訂閱未能開啟。原稿併列的 LITFL「經典四條」（>40 ms、>2 mm、>25% of QRS depth、V1–3）只有 LITFL 一個來源，且分母與 UDMI5 不同，已拿掉。
+    slides:
+    - src: /images/omi/pathologic-q-slide-2025-101.webp
+      width: 1600
+      height: 1200
+      alt: 投影片左右對照：左欄「Pathologic Q wave」標「寬度 > 0.04 s」「or」「高度 > R wave of QRS的25%」；右欄「septal q wave」標「寬度 < 0.04 s」「and」「高度 < R wave of QRS的25%」，兩欄各配一個深灰方格底的QRS示意小圖。
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 101），Pathologic Q wave 與正常 septal q wave 的判準對照（UDMI 第五版的寫法是「≥」，而且要求出現在兩個相鄰導程）
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/d1b0e6d05c1/slide_101.png；crop=None
+    - src: /images/omi/pathologic-q-slide-2025-103.webp
+      width: 1600
+      height: 1200
+      alt: Stephen W. Smith 醫師本人的 X（Twitter）貼文截圖：「I wrote this in my book 20 years ago」，附教科書《The ECG in Acute MI》書封縮圖與內文段落（紅線標註「Never let Q waves alone dissuade you from initiating reperfusion strategies」等句）；右側是我加的三行中文重點：不要讓 Q wave 阻礙你啟動導管、前壁 OMI 在第一個小時內就可能出現 Q wave 或 R wave 消失、Q wave 很難用來推估 AMI 發生多久。
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 103）；圖：Stephen W. Smith 醫師本人於 X 的公開貼文（@smithECGBlog），引用其教科書《The ECG in Acute MI》內文
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/d1b0e6d05c1/slide_103.png；crop=None
+    refs:
+    - label: Mills NL, Newby LK, Zaman S, et al. Fifth Universal Definition of Myocardial Infarction (2026). Glob Heart. 2026;21:64. DOI 10.5334/gh.1578（開放全文；同步刊於 Circulation, DOI 10.1161/CIR.0000000000001477）
+      url: https://doi.org/10.5334/gh.1578
+    - label: Thygesen K, Alpert JS, Jaffe AS, et al. Fourth Universal Definition of Myocardial Infarction (2018). Circulation. 2018;138(20):e618-e651. PMID 30571511
+      url: https://pubmed.ncbi.nlm.nih.gov/30571511/
+    - label: LITFL (Ed Burns, Robert Buttner). Q Wave. ECG Library Basics
+      url: https://litfl.com/q-wave-ecg-library/
+    - label: 'Raitt MH, Maynard C, Wagner GS, Cerqueira MD, Selvester RH, Weaver WD. Appearance of abnormal Q waves early in the course of acute myocardial infarction: implications for efficacy of thrombolytic therapy. J Am Coll Cardiol. 1995 Apr;25(5):1084-8. PMID 7897120'
+      url: https://pubmed.ncbi.nlm.nih.gov/7897120/
+    - label: Dr. Smith's ECG Blog (Magnus Nossen, edits by Smith). Chest pain followed by 6 days of increasing dyspnea - what happened? 2025-02-26
+      url: https://drsmithsecgblog.com/chest-pain-followed-by-6-days-of/
+    - label: Dr. Smith's ECG Blog. Judge for yourself the management of this patient with "NSTEMI, multivessel disease". 2023-09-10（Ken Grauer 評論段）
+      url: https://drsmithsecgblog.com/judge-for-yourself-management-of-this/
+    - label: Kucher N, Walpoth N, Wustmann K, Noveanu M, Gertsch M. QR in V1--an ECG sign associated with right ventricular strain and adverse clinical outcome in pulmonary embolism. Eur Heart J. 2003 Jun;24(12):1113-9. PMID 12804925（Qr in V1的PE陷阱）
+      url: https://pubmed.ncbi.nlm.nih.gov/12804925/
+    - label: LITFL (Ed Burns, Robert Buttner). Hypertrophic Cardiomyopathy (HCM). ECG Library Diagnosis
+      url: https://litfl.com/hypertrophic-cardiomyopathy-hcm-ecg-library/
+    - label: LITFL (Ed Burns, Robert Buttner). Pre-excitation syndromes. ECG Library Diagnosis
+      url: https://litfl.com/pre-excitation-syndromes-ecg-library/
+    - label: Dr. Smith's ECG Blog. Chest Pain and Q-waves in V1 and V2. Is there previous septal MI? 2018-11-04
+      url: https://drsmithsecgblog.com/chest-pain-and-q-waves-in-v1-and-v2-is/
+  - id: subtle-ste
+    name: Subtle STE(不符合STEMI criteria)
+    short: Subtle STE
+    part: Part 1（下）QRS與ST
+    look: '**有STE但不到STEMI criteria** ➜ Subtle STE'
+    look_src: 8G5StEujP
+    leads:
+    - V2–V3（依年齡性別分層）
+    - 其他10個lead（一律≥1 mm）
+    leads_src: url:https://globalheartjournal.com/articles/10.5334/gh.1578（§13 正文：'≥2.5 mm in men <40 years, ≥2 mm in men ≥40 years, or ≥1.5 mm in women regardless of age in leads V 2 –V 3 ; and/or ≥1 mm in all other leads'）; url:https://litfl.com/acute-coronary-syndromes/（'≥ 1 mm ST elevation in other leads'）
+    pitfall: '**電腦判讀靠不住**：「Normal ECG」四個字對忙碌的急診有致命的安撫效果，但傳統電腦演算法常常把其實是OMI的ECG標成完全正常，所以凡是電腦寫「Normal ECG」都要自己重新獨立看一次。**High-lateral MI**也特別容易被漏：ST elevation主要在I、aVL（±V2），reciprocal STD／TWI在inferior leads、lead III最明顯，STE常出現在不相鄰的導程而被漏看；**LCx分布區的缺血在ECG上也常被忽略**，我覺得這是台灣急診特別容易中招的一個特例。'
+    pitfall_src: url:https://drsmithsecgblog.com/signed-off-as-normal-no-concern/（Dr. Smith's ECG Blog 2026-04-17：'The conventional algorithms frequently will mark as completely normal an ECG that manifests OMI !!'；註：該篇個案本身最後是 myocarditis，引用的是這句一般性陳述）; url:https://litfl.com/high-lateral-stemi-ecg-library/（'ST elevation primarily localised to leads I, aVL +/- V2' 'Reciprocal ST depression and/or T wave inversion in inferior leads, most pronounced in lead III'）; url:https://pmc.ncbi.nlm.nih.gov/articles/PMC10597609/（'A high lateral myocardial infarction (HLMI) can often be missed due to noncontiguous ST elevation on the electrocardiogram (ECG)'）; UDMI4 作者接受稿（'ECG evidence of myocardial ischaemia in the distribution of a left circumflex artery is often overlooked.'）; roam:recQEJYM1, roam:NbNe7lH_4（「我覺得台灣急診特別容易中招」為作者看法）
+    points:
+    - text: Subtle STE＝**有ST elevation但沒達到STEMI criteria的門檻**。STEMI criteria本身的sensitivity不高：Hillinger 2019（前瞻性多中心，軟體自動量測到院第一張ECG，對照最終判定的STEMI）與Martin 2007（以ceMRI診斷AMI為gold standard）都顯示，只靠STEMI criteria會漏掉一大群心肌梗塞。
+      src: roam:3JK13vW1v, roam:7_FzElV_n; pmid:31056411; pmid:17825710
+    - text: 不要只看絕對高度（幾mm），看比例：**QRS電壓小的lead，血管塞了也可能擠不出1 mm**；改看**ST段形態**（是否變直／變凸，正常early repol是上凹的）、**有沒有reciprocal change**（常比STE本身更好認）、**T wave有沒有跟著變胖**、跟舊片比、跟重做的新片比。
+      src: roam:1lcTfD6sx, roam:Awe0zuN6h, roam:ZghqDBOPV, roam:4jIo8ZSWB, roam:dyew-bFjY, roam:3HDYwKBGQ, roam:EI_qzSBY1
+    - text: Subtle STE要成立，需要**臨床情境＋形態＋隊友**三個一起到齊，不是看到任何一點點不到1 mm的STE就打電話：那是**撿到槍**。
+      src: roam:xEmr0QsGl, roam:H0GzMOpBY, roam:62Jygn3gP, roam:K7mMAyqiX
+    criteria:
+    - text: '**STEMI criteria（UDMI第五版正文§13；與第四版Table 2切點相同）**：J point處新發ST elevation，出現在**兩個相鄰導程**，V2–V3：男性<40歲 **≥2.5 mm**、男性≥40歲 **≥2 mm**、女性不分年齡 **≥1.5 mm**；其他導程 **≥1 mm**；且在**沒有LVH或LBBB**的前提下。'
+      src:
+      - url:https://globalheartjournal.com/articles/10.5334/gh.1578（UDMI5 §13 正文）
+      - pmid:30571511（UDMI4, Table 2）
+      - url:https://litfl.com/acute-coronary-syndromes/
+      verified: '① UDMI5 Global Heart 版 §13 正文（globalheartjournal.com 與 PMC13523810 兩站逐字一致，2026-09-14 curl）：「The working diagnosis of STEMI requires new ST-segment elevation at the J-point in at least two contiguous leads: ≥2.5 mm in men <40 years, ≥2 mm in men ≥40 years, or ≥1.5 mm in women regardless of age in leads V 2 –V 3 ; and/or ≥1 mm in all other leads, in the absence of left ventricular hypertrophy or left bundle branch block (LBBB) ( Table 5 ).」② 獨立第二來源 LITFL《Acute Coronary Syndromes》（Chris Nickson，curl 原頁）：「≥ 2.5 mm (i.e ≥ 2.5 small squares) ST elevation in leads V2-3 in men under 40 years, or ≥ 2.0 mm (i.e ≥ 2 small squares) ST elevation in leads V2-3 in men over 40 years ≥ 1.5 mm ST elevation in V2-3 in women ≥ 1 mm ST elevation in other leads」。③ UDMI4 Table 2（Imperial College 典藏之作者接受稿 PDF，目視核對）：「New ST-elevation at the J-point in two contiguous leads with the cut-point: ≥1 mm in all leads other than leads V2-V3 where the following cut-points apply: ≥2mm in men ≥40 years; ≥2.5 mm in men <40 years, or ≥1.5 mm in women regardless of age.」表題「(in the absence of left ventricular hypertrophy and bundle branch block)」。⚠️ UDMI5 Global Heart 版 Table 5 本身寫成「≥2.5 mm in males >40 years, ≥2 mm in males ≥40 years」，與同文正文、第四版、LITFL 的「<40」不一致，故本條以正文為準，不再寫「Table 5 與第四版一模一樣」。'
+    - text: 'AHA Mission: Lifeline（ACTION Registry–GWTG）全國登錄資料（Riley 2013）：最終診斷STEMI的病人中，有一部分**第一張ECG是non-diagnostic**、靠後續ECG才診斷；這群人多數在第一張ECG之後不久就出現diagnostic變化；和第一張就診斷的病人相比，guideline-based treatment、院內major bleeding與死亡**沒有顯著差異**。'
+      src:
+      - pmid:23237133
+      verified: '原始研究 PubMed abstract（PMID 23237133，2026-09-14 eutils efetch）逐字：「We divided this study population into 2 groups: those diagnosed on initial ECG (N = 36,994) and those with an initial non-diagnostic ECG that were diagnosed on a follow-up ECG (N = 4,566).」「For patients with an initial non-diagnostic ECG, 72.4% (n = 3,305) had an ECG diagnostic for STEMI within 90 minutes of their initial ECG. There did not appear to be significant differences in the administration of guideline-recommended treatments for STEMI, in-hospital major bleeding (P = .926), or death (P = .475) between these groups.」數字（41,560／36,994／4,566／11.0%／72.4%／3,305／P值）未找到獨立第二來源逐字覆誦（原稿第二路徑 ECG Weekly 為會員制打不開），已拿掉，只留不含數字的敘述。'
+    refs:
+    - label: Mills NL, Newby LK, Zaman S, et al. Fifth Universal Definition of Myocardial Infarction (2026). Glob Heart. 2026;21:64. DOI 10.5334/gh.1578（開放全文；同步刊於 Circulation, DOI 10.1161/CIR.0000000000001477）
+      url: https://doi.org/10.5334/gh.1578
+    - label: Thygesen K, Alpert JS, Jaffe AS, et al. Fourth Universal Definition of Myocardial Infarction (2018). Circulation. 2018;138(20):e618-e651. PMID 30571511
+      url: https://pubmed.ncbi.nlm.nih.gov/30571511/
+    - label: LITFL (Chris Nickson). Acute Coronary Syndromes. CCC Cardiology
+      url: https://litfl.com/acute-coronary-syndromes/
+    - label: Hillinger P, et al. Prospective validation of current quantitative electrocardiographic criteria for ST-elevation myocardial infarction. Int J Cardiol. 2019;292:1-12. PMID 31056411
+      url: https://pubmed.ncbi.nlm.nih.gov/31056411/
+    - label: Martin TN, et al. ST-segment deviation analysis of the admission 12-lead electrocardiogram as an aid to early diagnosis of acute myocardial infarction with a cardiac magnetic resonance imaging gold standard. J Am Coll Cardiol. 2007;50(11):1021-8. PMID 17825710
+      url: https://pubmed.ncbi.nlm.nih.gov/17825710/
+    - label: 'Riley RF, Newby LK, Don CW, et al. Diagnostic time course, treatment, and in-hospital outcomes for patients with ST-segment elevation myocardial infarction presenting with nondiagnostic initial electrocardiogram: a report from the American Heart Association Mission: Lifeline program. Am Heart J. 2013 Jan;165(1):50-6. PMID 23237133'
+      url: https://pubmed.ncbi.nlm.nih.gov/23237133/
+    - label: Dr. Smith's ECG Blog (Steve Smith). Signed off as "normal, no concern". 2026-04-17
+      url: https://drsmithsecgblog.com/signed-off-as-normal-no-concern/
+    - label: LITFL (Mike Cadogan, Robert Buttner). High Lateral STEMI. ECG Library Diagnosis
+      url: https://litfl.com/high-lateral-stemi-ecg-library/
+    - label: Alanís Naranjo JM, Rivera Hermosillo JC. South African flag sign. Oxf Med Case Reports. 2023;2023:omad104. PMID 37881265
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10597609/
+    slides:
+    - src: /images/omi/subtle-ste-slide-2025-119.webp
+      width: 1600
+      height: 1200
+      alt: 投影片上方並排兩段心電圖：左邊是 lead III 輕微的 ST elevation（角落印著圖號 4），右邊是明顯的 ST elevation；下方淺藍底，左欄「Subtle STE」被粉紅色虛線框住，框內大叉叉壓在「STEMI Criteria」字上，右欄「Marked STE」，粉紅色箭頭指向往下的箭頭與「診斷MI的sensitivity」。
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 119）：只看 STEMI criteria，subtle STE 會被漏掉，診斷 MI 的 sensitivity 就往下掉。上方兩段心電圖是期刊圖，出處待確認（投影片備註引用 Martí 2014）；虛線框、叉叉與箭頭是我加的。
+      src_note: 'keynote-search slides/d1b0e6d05c1/slide_119.png；查核員因出處不明拿掉；Bear 2026-09-14 要求先放預覽站再確認（review: true，正式 build 不顯示）'
+      review: true
+  - id: inverted-u
+    name: Inverted U wave
+    part: Part 1（上）T波與U波
+    look: '**U wave倒過來** ➜ Inverted U wave。很罕見，但抓到就是一個。'
+    look_src: MCB5oJjkG
+    leads:
+    - I
+    - aVL
+    - V4–V6
+    leads_src: pmid:7424944（'Twenty-seven patients had U wave negativity in leads I, aVL or V4 through V6.'，即 Gerson 1980 判讀的導程）; url:https://litfl.com/u-wave-ecg-library/（NSTEMI 例：'subtle U-wave inversion in the lateral leads (I, V5 and V6)'）
+    artery: LAD／left main（尤其是proximal LAD）
+    artery_src: pmid:487534（'highly predictiveof significant coronary artery disease and, more specifically, of disease of the proximal left anterior descending coronary artery'）; pmid:7424944（'greater than or equal to 75 percent stenosis of the left anterior descending or left main coronary artery'）; url:https://litfl.com/u-wave-ecg-library/（'predict a ≥ 75% stenosis of the LAD / LMCA'）
+    pitfall: Inverted U wave**不是ACS專屬**，是「這顆心臟有病」的訊號，不是「這條血管現在塞住」的訊號：**高血壓、瓣膜性心臟病（例如主動脈瓣與二尖瓣逆流）、先天性心臟病、心肌病變、甲狀腺亢進**都可能出現，它也和**LV dysfunction**有關。最難的鑑別是跟**biphasic T wave的後半段**搞混，一定要先確認T wave已經結束（用QT interval當卡尺）。另外文獻很老（1979–1980）；Reinig 2005重新分析T wave與U wave方向不一致的病人，T倒U正那組的CAD比例只比T正U倒那組略高，而且**差異未達統計顯著**：真正撐起「高度特異」這句話的是Gerson那兩篇；Reinig真正的貢獻是提醒**U wave不能單獨看，要連著它的T wave一起判讀**。
+    pitfall_src: url:https://litfl.com/u-wave-ecg-library/（Common causes of inverted U waves：'Coronary artery disease / Hypertension / Valvular heart disease / Congenital heart disease / Cardiomyopathy / Hyperthyroidism'；'Have been shown to predict ... the presence of left ventricular dysfunction'）; pmid:6211085（Kishida 1982：'The three most common conditions associated with a negative U wave are systemic hypertension, aortic and mitral regurgitation and ischemic heart disease.'）; roam:ju25YhKuK, roam:LRJ9R53x9, roam:PhmSxJcPc（QT卡尺鑑別）; pmid:15649236（'Coronary disease was slightly more common in Group A (64%) than in Group B (46%) (P = 0.174; ns).' 'we propose that the U wave not be analyzed in isolation, but rather with respect to its T wave.'）; roam:daJnkdPo3
+    points:
+    - text: 定義：在一個**T wave直立**的lead，T wave結束之後出現**向下**的U wave（Neg U under T(+)）。正常U wave跟T wave**同方向**、**心跳越慢越明顯**。
+      src: roam:Uvu3_i-dA, roam:Fk5Tc7lqL, roam:nCo9oExGM; url:https://litfl.com/u-wave-ecg-library/（'U-wave inversion is abnormal (in leads with upright T waves)'；'The U wave normally goes in the same direction as the T wave'；'the U wave grows bigger as the heart rate slows down'）
+    - text: 辨認關鍵：拿**QT interval當卡尺**，找一個QT interval很clear cut的lead，把QT長度平移到懷疑的lead，**落在QT interval外面才是inverted U wave，落在裡面是biphasic T wave的後半段**。
+      src: roam:cE_126cDp, roam:LRJ9R53x9, roam:PhmSxJcPc
+    - text: 它可以**比STE更早出現**，也可以**在沒有胸痛的時候出現**，這是它跟HATW一樣珍貴的地方：**早期訊號**。
+      src: roam:BtfuaOsse, roam:IS2xVYEhR; url:https://litfl.com/u-wave-ecg-library/（'May be the earliest marker of unstable angina and evolving myocardial infarction'）; slide:d1b0e6d05c1/133 講者備註（「可以在Pain(+) or Pain free(+)出現」「Early sign->可以在AMI出現ECG變化之前發生」）; pmid:8092544（Salmasi 1994，無症狀高風險族群運動測試：'None of these patients had a history of angina pectoris or myocardial infarction and all had normal resting ECG.' 'It is concluded that exercise-induced inverted U wave is a reliable indicator of silent myocardial ischemia due to occult CAD in asymptomatic high-risk subjects.'）
+    criteria:
+    - text: '**Gerson 1979（運動誘發）**：exercise-induced U-wave inversion對顯著冠狀動脈疾病、尤其是**proximal LAD disease**有高度預測力。**Gerson 1980（靜止時）**：在接受冠狀動脈攝影的病人中，resting U wave negativity是 **≥75% LAD或left main狹窄**與**LV dysfunction**的顯著預測因子。'
+      src:
+      - pmid:487534
+      - pmid:7424944
+      - url:https://litfl.com/u-wave-ecg-library/
+      verified: ① 原始研究 PubMed abstract（2026-09-14 eutils efetch）：Gerson 1979（PMID 487534）「We conclude that exercise-induced inversion of the U-wave is highly predictiveof significant coronary artery disease and, more specifically, of disease of the proximal left anterior descending coronary artery.」；Gerson 1980（PMID 7424944）「Among patients selected for coronary cineangiographic study, U wave negativity was a significant predictor (p < 0.001) of greater than or equal to 75 percent stenosis of the left anterior descending or left main coronary artery and of left ventricular dysfunction (p < 0.001).」② 獨立第二來源 LITFL《U Wave》（Ed Burns，curl 原頁；該頁參考文獻列 Gerson 1980）：「Have been shown to predict a ≥ 75% stenosis of the LAD / LMCA and the presence of left ventricular dysfunction」。「≥75%」兩邊一致。原稿的 36（15%）／35／33／24／1 of 82（1.2%）、27 位、89%／89%／80%、64%／46%／41%、p<0.001 只有原始摘要一個來源，已拿掉。
+    slides:
+    - src: /images/omi/inverted-u-slide-2025-132.webp
+      width: 1600
+      height: 1200
+      alt: 投影片「異常U wave」左右對照：左側淺藍底「Prominent U wave」，V3、V4 各有一個黑色箭頭指向 T 波後方向上的 U wave；右側米黃底「Inverted U wave」，V3、V4、V5 各有一個粉紅色箭頭指向 T 波後方向下的 U wave。
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 132）：Prominent U wave 與 Inverted U wave 對照。右側心電圖出自 Girish MP, et al. Indian Pacing Electrophysiol J. 2005（Figure 1A）；左側心電圖出處待確認。
+      src_note: 'keynote-search slides/d1b0e6d05c1/slide_132.png；查核員因出處不明拿掉；Bear 2026-09-14 要求先放預覽站再確認（review: true，正式 build 不顯示）'
+      review: true
+    - src: /images/omi/inverted-u-slide-2025-133.webp
+      width: 1600
+      height: 1200
+      alt: 投影片「異常U wave」：左側米黃底「Inverted U wave」為V3、V4、V5三個導程的心電圖，粉紅色箭頭指向T波後方向下凹陷的U wave；右側「臨床意義」，藍底大字「Early sign」「with」「Myocardial ischemia」。
+      caption: '取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 133），標出 Inverted U wave 的臨床意義；心電圖引自 Girish MP, et al. U wave: an important noninvasive electrocardiographic diagnostic marker. Indian Pacing Electrophysiol J. 2005;5(1):63-5（Figure 1A）'
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/d1b0e6d05c1/slide_133.png；crop=None
+    refs:
+    - label: Gerson MC, Phillips JF, Morris SN, McHenry PL. Exercise-induced U-wave inversion as a marker of stenosis of the left anterior descending coronary artery. Circulation. 1979 Nov;60(5):1014-20. PMID 487534
+      url: https://pubmed.ncbi.nlm.nih.gov/487534/
+    - label: Gerson MC, McHenry PL. Resting U wave inversion as a marker of stenosis of the left anterior descending coronary artery. Am J Med. 1980 Oct;69(4):545-50. PMID 7424944
+      url: https://pubmed.ncbi.nlm.nih.gov/7424944/
+    - label: LITFL (Ed Burns). U Wave. ECG Library Basics
+      url: https://litfl.com/u-wave-ecg-library/
+    - label: Reinig MG, Harizi R, Spodick DH. Electrocardiographic T- and U-wave discordance. Ann Noninvasive Electrocardiol. 2005 Jan;10(1):41-6. PMID 15649236
+      url: https://pubmed.ncbi.nlm.nih.gov/15649236/
+    - label: 'Girish MP, Gupta MD, Mukhopadhyay S, Yusuf J, Sunil Roy TN, Trehan V. U wave: an important noninvasive electrocardiographic diagnostic marker. Indian Pacing Electrophysiol J. 2005;5(1):63-5. PMID 16943944（slide 133 心電圖出處）'
+      url: https://pubmed.ncbi.nlm.nih.gov/16943944/
+    - label: 'Kishida H, Cole JS, Surawicz B. Negative U wave: a highly specific but poorly understood sign of heart disease. Am J Cardiol. 1982 Jun;49(8):2030-6. PMID 6211085'
+      url: https://pubmed.ncbi.nlm.nih.gov/6211085/
+    - label: Salmasi AM, Abraham R, al-Kutoubi A, Nicolaides AN. Exercise-induced inverted U wave in asymptomatic high-risk subjects. A preliminary study. Angiology. 1994 Sep;45(9):789-95. PMID 8092544
+      url: https://pubmed.ncbi.nlm.nih.gov/8092544/
+  - id: bifascicular-block
+    name: New-onset bifascicular block
+    new2025: true
+    part: Part 1（下）QRS與ST
+    look: '**新出現的bifascicular block（RBBB＋fascicular block，最常見是LAFB）＋胸痛** ➜ New-onset bifascicular block。這代表septal perforator被切掉，是proximal LAD的凶兆。'
+    look_src: -w38SZcy2
+    artery: proximal LAD，**也要想left main**
+    artery_src: 4IgRUmrq_
+    pitfall: '**最大的陷阱：把wide QRS當成「所以不能判斷、所以不是STEMI」。** Dr. Smith寫得很白：formal STEMI criteria不適用於RBBB合併LAFB，這種情況沒有正式criteria；STE不明顯或J point被QRS蓋住時，常常就被漏掉。但也別反過來以為RBBB完全不影響ST段判讀：解法是**用appropriate discordance當尺**（BBB的terminal QRS與ST-T本來就該落在isoelectric baseline的相對兩側），**違反這個rule就要考慮ACS**，特別是右到中前胸導程。**HATW score不適用於這群人**（Meyers 2025收案時已排除寬QRS）。RBBB在急診並不少見、常是偶然發現；Widimsky研究裡**舊RBBB的住院死亡率是四組block中最低的（6.4%）**，不要每個RBBB都緊張，緊張的對象是「新的」。RBBB也可能是**PE**：acute PE的ECG可以出現complete或incomplete RBBB、right axis deviation、dominant R wave in V1，Qr in V1也要想到它，床邊超音波看RV可以很快幫忙分辨。'
+    pitfall_src: url:https://drsmithsecgblog.com/arrest-at-airport-with-easy-but/（'the formal "STEMI criteria" do not apply to RBBB with LAFB. There are no formal criteria for this situation'；'If the STE is not as striking, or the J point is more obscured by the QRS pattern than in this case, it is often not recognized and missed.'）; url:https://litfl.com/t-wave-ecg-library/（'Appropriate discordance refers to the fact that abnormal depolarisation (such as in bundle branch block) should be followed by abnormal repolarisation, which appears discordant to the preceding QRS complex in the form of ST-depression and T-wave inversion'）; slide:2021《ECG教學-2021年北區住院醫師ECG教學-Subtle STEMI》slide 30／31 講者備註（「一般來說BBB要符合Rule of Appropriate Discordance—>當違反此rule時，就要考慮ACS」「ACS+RBBB-->Concept of appropriate discordance常常會被打破-->可以用此協助診斷ACS(特別是在R't to mid precordial lead)」）; UDMI4 作者接受稿（'In patients with RBBB, new or presumed new ST-segment elevation ≥1 mm or ST-segment or T wave abnormalities (excluding leads V1–V4) (Table 2) may indicate acute myocardial ischaemia.'）; pmid:40892623（'Exclusions were lack of preangiogram ECG, QRS duration ≥110 ms'）; pmid:19931763（'Right bundle-branch block is not an uncommon finding on an electrocardiogram in the emergency department patient, noted incidentally and thus without clinical import'）; pmid:21890488 ＋ PMC4755083（old RBBB 6.4%）; url:https://litfl.com/right-bundle-branch-block-rbbb-ecg-library/（'Appropriate discordance with ST depression and/or T-wave inversion in right precordial leads (V1-3).'）; url:https://litfl.com/ecg-changes-in-pulmonary-embolism/（'Complete or incomplete RBBB' 'Right axis deviation' 'Dominant R wave in V1 – a manifestation of acute right ventricular dilatation'）; pmid:12804925（'Qr in V(1)(14 vs 0 in controls; p<0.0001)'）; roam:MEd5bvjvm, roam:zAa_gEgoo, roam:dHe3rSN76, roam:gtHkKLf_h, roam:_60YboKBd
+    points:
+    - text: 機轉：Right bundle branch跟left anterior fascicle主要靠**LAD的septal perforator**供血；**第一支septal perforator(S1)從近端LAD分出**，供應包含束支在內的basal septum，**近端LAD或left main塞住 ➜ septal perforator沒血 ➜ 新出現的RBBB+LAFB**。
+      src: 'roam:g3s5DVNcc, roam:uzzaheaF7, roam:uF26m7UsK; url:https://litfl.com/anterior-myocardial-infarction-ecg-library/（''S1 supplies the basal part of the interventricular septum, including the bundle branches (corresponding to leads aVR and V1)''；''Occlusion proximal to S1 Signs of basal septal involvement: ... Complete RBBB''）'
+    - text: 抓「新」是唯一的關鍵動作：Widimsky 2012裡，整體RBBB跟LBBB的住院死亡率**相近**；但**新發（或推測新發）RBBB 18.8% vs 舊RBBB 6.4%，差了將近三倍**。看到RBBB第一件事不是判斷左右，是**去翻舊心電圖**。
+      src: roam:Rg6sisNhu, roam:TnHdyBvdy; pmid:21890488; url:https://pmc.ncbi.nlm.nih.gov/articles/PMC4755083/
+    - text: 很常見到**downsloping STE**：這不像典型STEMI長相，最容易被判成「BBB的secondary change」然後翻頁。Dr. Smith講得更直接：acute OMI合併RBBB+LAFB的病人，**要嘛正要arrest、要嘛剛被救回來、要嘛正在cardiogenic shock**。
+      src: roam:ooKDeyU9k, roam:tVuyrWEOG, roam:dZZ8nmDGc; url:https://drsmithsecgblog.com/a-man-in-his-50s-with-acute-chest-pain-see-what-happens-when-it-is-not-a-stemi/（'Any time you see RBBB + LAFB in acute OMI, the patient is about to arrest, has just been resuscitated, or is in cardiogenic shock'）
+    criteria:
+    - text: '**Widimsky 2012（多中心AMI世代）**：住院死亡率，**新發或推測新發RBBB 18.8%**（新舊×左右四組block中最高）、**新發LBBB 13.2%**、**舊RBBB 6.4%**（四組中最低）；整體RBBB與LBBB的住院死亡率相近。新發（或推測新發）的block不分左右，cardiogenic shock發生率是所有ECG次族群中最高的。急性left main occlusion的病人裡，也有一部分到院ECG是以RBBB（多半合併LAH）表現。'
+      src:
+      - pmid:21890488
+      - url:https://pmc.ncbi.nlm.nih.gov/articles/PMC4755083/
+      - url:https://drsmithsecgblog.com/arrest-at-airport-with-easy-but/
+      - url:https://drsmithsecgblog.com/how-does-acute-left-main-occlusion/
+      verified: ① 原始研究（PubMed abstract PMID 21890488 ＋ PMC3249219 全文，2026-09-14 curl）：「In-hospital mortality of RBBB patients was similar to LBBB (14.3 vs. 13.1%, P = 0.661). Patients with new or presumably new blocks had the highest (LBBB 15.8% and RBBB 15.4%) incidence of cardiogenic shock from all ECG subgroups.」「In-hospital mortality was highest (18.8%) among patients presenting with new or presumably new RBBB, followed by new or presumably new LBBB (13.2%), old LBBB (10.1%), and old RBBB (6.4%). Among 35 patients with acute left main coronary artery occlusion, 26% presented with RBBB (mostly with LAH) on the admission ECG.」② 獨立第二來源 Pozen JM, Mankad AK, Owens JT, Jovin IS. N Am J Med Sci 2015;7(12):569-571（PMC4755083 全文 curl）：「new RBBB is associated with a higher mean Killip class (1.88% vs. 1.45%), percentage of TIMI flow 0 (55% vs. 34.9%), and in-hospital mortality (18.8% vs. 6.4%) than if RBBB existed prior to the AMI」「in-hospital mortality was 18.8% for those with new RBBB, significantly higher than 13.2% for those with new LBBB」。③ Dr. Smith's ECG Blog《Cardiac Arrest at the airport...》（Pendell Meyers，2021-09-23，curl）：「in-hospital mortality was 18.8% for AMI with new RBBB alone」；《How does Acute Total Left Main Coronary occlusion present on the ECG?》（Smith & Meyers，2019-08-09，curl）：「among 35 patients with acute left main coronary artery occlusion, 9 presented with RBBB (mostly with LAFB) on the admission ECG」（與原文 26% 表達方式不同，故 left main 那句只留定性敘述）。雙證通過的數字：18.8%、13.2%、6.4%。單一來源已拿掉：6,742 位／8 家醫院、6.3%／2.8%／3.2%／0.3%、14.3% vs 13.1%（P = 0.661）、舊 LBBB 10.1%、shock 15.4%／15.8%、26%。
+    - text: 同一篇Table 4（RBBB合併hemiblock）：RBBB合併LAH或LPH的病人年紀較大、EF較低、三條血管病變較多，死亡率只是「稍高」，**三組住院死亡率的比較未達統計顯著**；RBBB+LPH那組人數很少，而且**完全沒接受再灌流的比例明顯較高**。所以只能說「有往上走的趨勢」，不能說「已證實合併hemiblock死亡率更高」。
+      src:
+      - url:https://pmc.ncbi.nlm.nih.gov/articles/PMC3249219/
+      verified: 原始研究全文（Widimsky 2012，PMC3249219，Europe PMC fullTextXML 2026-09-14 curl）逐字：「Patients, in whom RBBB was combined with either LAH or LPH tended to be older, had higher incidence of diabetes, had lower ejection fraction, more frequent occurrence of three-vessel disease and LAD as an infarct-related artery, and had slightly higher mortality ( Table 4 ).」Table 4：「% from all patients 2.8 3.2 0.3」「Reperfusion—none (%) 18.0 17.7 47.1 0.014」「In-hospital mortality (%) 10.5 14.8 17.7 0.438」「P -value refers to the comparison of all three groups」。本條已改為不含數字的敘述，依原始全文即可；Table 4 各格數字找不到獨立第二來源（Bear 投影片 slide 155 只是同一張表的截圖，不算獨立），全部拿掉。
+    slides:
+    - src: /images/omi/bifascicular-block-slide-2025-153.webp
+      width: 1600
+      height: 1200
+      alt: '投影片上方為期刊標題頁截圖：European Heart Journal (2012) 33, 86–95，doi:10.1093/eurheartj/ehr291，標題「Primary angioplasty in acute myocardial infarction with right bundle branch block: should new onset right bundle branch block be added to future guidelines as an indication for reperfusion therapy?」；下方是依該文數字重繪的長條圖「接受PCI的比例」，RBBB（紅框圈起）的長條高於LBBB。'
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 153）；圖：期刊標題頁截圖引自 Widimsky P, et al. Eur Heart J. 2012;33(1):86-95，長條圖依該文數字重繪
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/d1b0e6d05c1/slide_153.png；crop=None
+    - src: /images/omi/bifascicular-block-slide-2025-155.webp
+      width: 1600
+      height: 1200
+      alt: 投影片上方為期刊表格截圖「Table 4 Right bundle branch block with/without left anterior/posterior hemiblock」，欄位RBBB alone／RBBB+LAH／RBBB+LPH／P-value，紅框圈住In-hospital mortality列中RBBB+LAH與RBBB+LPH兩格；下方是我寫的中文重點：粉紅色字「AMI中RBBB如果合併LAFB or LPFB」「往往具有較高的死亡率」「須高度懷疑廣泛前壁心肌梗塞」，以及深灰色字「LAD occlusion with RBBB+LAFB，具有非常高的死亡風險」與一句PCI前發生cardiogenic shock或cardiac arrest比例的估計。
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 155）；上方表格截圖引自 Widimsky P, et al. Eur Heart J. 2012;33(1):86-95（Table 4）。⚠️ 表中三組住院死亡率的差異未達統計顯著（見表格最右欄 P-value），投影片寫的「較高的死亡率」只能當趨勢看；最後一句的休克／arrest 比例是 Dr. Smith 部落格的個人臨床經驗估計（原文「I would estimate in my experience」），不是研究統計出來的結果
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/d1b0e6d05c1/slide_155.png；crop=None
+    refs:
+    - label: 'Widimsky P, Rohác F, Stásek J, Kala P, Rokyta R, et al. Primary angioplasty in acute myocardial infarction with right bundle branch block: should new onset right bundle branch block be added to future guidelines as an indication for reperfusion therapy? Eur Heart J. 2012 Jan;33(1):86-95. PMID 21890488'
+      url: https://pubmed.ncbi.nlm.nih.gov/21890488/
+    - label: Pozen JM, Mankad AK, Owens JT, Jovin IS. New Right Bundle Branch Block as a Criterion for Emergent Coronary Angiography. N Am J Med Sci. 2015;7(12):569-571
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4755083/
+    - label: Dr. Smith's ECG Blog (Pendell Meyers). A man in his 50s with acute chest pain. See what happens when it is "Not a STEMI". 2026-07-13
+      url: https://drsmithsecgblog.com/a-man-in-his-50s-with-acute-chest-pain-see-what-happens-when-it-is-not-a-stemi/
+    - label: Dr. Smith's ECG Blog (Steve Smith & Pendell Meyers). How does Acute Total Left Main Coronary occlusion present on the ECG? 2019-08-09
+      url: https://drsmithsecgblog.com/how-does-acute-left-main-occlusion/
+    - label: Dr. Smith's ECG Blog (Pendell Meyers). Cardiac Arrest at the airport, with an easy but important ECG for everyone to recognize. 2021-09-23（slide 155 那句臨床經驗估計的原始出處）
+      url: https://drsmithsecgblog.com/arrest-at-airport-with-easy-but/
+    - label: LITFL (Ed Burns, Robert Buttner). Anterior Myocardial Infarction. ECG Library Diagnosis
+      url: https://litfl.com/anterior-myocardial-infarction-ecg-library/
+    - label: 'Horton CL, Brady WJ. Right bundle-branch block in acute coronary syndrome: diagnostic and therapeutic implications for the emergency physician. Am J Emerg Med. 2009 Nov;27(9):1130-41. PMID 19931763'
+      url: https://pubmed.ncbi.nlm.nih.gov/19931763/
+    - label: LITFL (Ed Burns, Robert Buttner). Right Bundle Branch Block (RBBB). ECG Library Diagnosis
+      url: https://litfl.com/right-bundle-branch-block-rbbb-ecg-library/
+    - label: LITFL (Ed Burns, Robert Buttner). ECG changes in Pulmonary Embolism. ECG Library
+      url: https://litfl.com/ecg-changes-in-pulmonary-embolism/
+    - label: Mills NL, Newby LK, Zaman S, et al. Fifth Universal Definition of Myocardial Infarction (2026). Glob Heart. 2026;21:64. DOI 10.5334/gh.1578, §13（把 new or presumed new RBBB／LBBB 合併其他缺血徵象列為可視同 STEMI；該句引用文獻 144 即 Widimsky 2012）
+      url: https://doi.org/10.5334/gh.1578
+- id: std
+  name: 根據STD判斷
+  slide: 369
+  findings:
+  - id: stdmax-v1-4
+    name: STDmaxV1-4 indicative of Post.OMI
+    short: STDmaxV1-4
+    part: Part 2 根據STD判斷
+    look: '**STD的最大值落在V1–V4** ➜ STDmaxV1-4。posterior OMI until proven otherwise。**去做posterior leads**。'
+    look_src: RA4iu_gsZ
+    leads:
+    - V1–V4
+    artery: LCx／OM（posterior OMI）
+    artery_src: 2isDP4MBW
+    pitfall: V7–V9陰性不能拿來rule out：Dr. Smith's ECG Blog一個由Pendell Meyers撰寫的case，STD最大在V2–V4、整張ECG完全沒有STE，拉了posterior leads只有「a hint of STE」，多數心臟科醫師會說不符合posterior leads criteria，CAG卻是proximal LCx完全阻塞。另外兩點：V1–V4的STD偶爾其實是subendocardial ischemia，posterior leads如果也是STD，就比較像subendocardial ischemia；RBBB／RVH／LVH／LBBB／ventricular paced rhythm／digoxin effect／hypokalemia都可能造成非缺血性的STD，看ST-T之前要先確認QRS沒有藏著能解釋它的東西。
+    pitfall_src: roam:igzjHlx6B, roam:SbdFLwUXe, roam:q85c-d_fE; url:https://drsmithsecgblog.com/a-man-in-his-early-40s-with-chest-pain-2/; pmid:15561323; url:https://litfl.com/st-segment-ecg-library/; url:https://drsmithsecgblog.com/a-50-something-male-with-dyspnea/
+    points:
+    - text: STDmaxV1-4：precordial leads（V1–V6）出現ischemic STD，而且STD的最大值落在V1、V2、V3、V4其中一個lead（相對於V5、V6）。重點不在「深不深」，而在「哪一個lead最深」。
+      src: roam:BblisH-zu
+    - text: 機轉是向量：posterior OMI是對面（後壁）transmural STE的鏡像，投影成V1–V4的STD；diffuse subendocardial ischemia的STD合力則指向心尖（V5、V6）。看到STDmaxV1-4，先當posterior OMI，直到證明不是為止。
+      src: roam:BblisH-zu; url:https://drsmithsecgblog.com/a-man-in-his-early-40s-with-chest-pain-2/; pmid:34775811
+    - text: 前胸QRS／T wave有四個加分線索：horizontal（非upsloping）的STD、V2的dominant R wave（R/S ratio > 1）、broad R wave（> 30 ms）、V1–V4的upright T wave，這些都是後壁「鏡像」翻過來的樣子。可以用Ken Grauer的「Mirror Test」：把V1–V3上下翻轉，看它變不變成一張你認得出的anterior STEMI。
+      src: roam:BblisH-zu; url:https://litfl.com/posterior-myocardial-infarction-ecg-library/; url:https://www.ncbi.nlm.nih.gov/books/NBK553168/
+    criteria:
+    - text: Ischemic STDmaxV1-4對OMI的specificity是97%（Meyers 2021，808位高風險ACS病人）。論文標題寫的是「of Any Amplitude」：這個finding沒有「要多深才算」的門檻，不到1 mm的STDmaxV1-4同樣具有specificity。
+      src:
+      - pmid:34775811
+      - url:https://rebelem.com/posterior-occlusion-myocardial-infarctions-and-stdmaxv1-4/
+      verified: ①原始研究：PubMed 34775811 摘要（2026-09-14 efetch）逐字「Among 808 patients, there were 265 OMIs」「Suspected ischemic STDmaxV1-4 had 97% specificity and 37% sensitivity for OMI」「Of the 99 OMIs detected by STDmaxV1-4, 34% had <1 mm ST-segment depression」；esummary 標題「Ischemic ST-Segment Depression Maximal in V1-V4 (Versus V5-V6) of Any Amplitude Is Specific for Occlusion Myocardial Infarction (Versus Nonocclusive Ischemia).」②獨立來源：REBEL EM〈Posterior Occlusion Myocardial Infarctions and STDmaxV1-4〉（Salim Rezaie，2021-12-09，curl 原文）作者自己的整理逐字「808 patients with 3421 ECGs」「This number is increased to 97% for suspected ischemic STDmaxV1-4」「Even <1.0mm of STDmaxV1-4 is specific for OMI」。97%、808、<1 mm 兩條路徑對上。原草稿的『34% <1 mm』只有原始研究一條路徑（REBEL EM 沒有 34%；Dr. Smith's ECG Blog 那頁是論文作者群自己的轉載，不算獨立），已拿掉。
+    - text: V7–V9 posterior leads的STE門檻是0.5 mm，不是1 mm。AHA/ACCF/HRS 2009的ECG判讀標準化建議明寫V7–V9的門檻是0.05 mV（0.5 mm）；最新的UDMI第五版（2026）只說要用V7–V9的STE來確認，沒有再給數字，所以實務上照用，但別說成「最新指引規定」。
+      src:
+      - pmid:19228819
+      - url:https://litfl.com/posterior-myocardial-infarction-ecg-library/
+      - url:https://www.ncbi.nlm.nih.gov/books/NBK553168/
+      - roam:atN2-ziyu
+      verified: '①原始定義文件：Wagner GS, et al. AHA/ACCF/HRS Recommendations Part VI: Acute Ischemia/Infarction. Circulation 2009;119(10):e262-70（PMID 19228819 esummary 核對；全文讀 Bear 本機 PDF ~/Downloads/01_醫學論文_ECG研究/CIRCULATIONAHA.108.191098.pdf）逐字「5. For men and women, the threshold value for abnormal J-point elevation in V7 through V9 should be 0.05 mV (0.5 mm).」②獨立來源：LITFL〈Posterior Myocardial Infarction〉（Burns & Buttner，2024-10-23，WebFetch）逐字「only 0.5 mm of ST elevation is required to make the diagnosis of posterior MI」；③StatPearls〈Posterior Myocardial Infarction〉（Lizzo JM, Shams P，last update 2025-12-01，curl 原文）逐字「Upward ST-segment displacement exceeding 0.5 mm in a single lead indicates posterior ischemia」。UDMI 第五版：讀本機全文 udmi5-research/source-text/udmi5.txt，V7 只出現在「confirmed by ST-segment elevation in the posterior leads V7 to V9」一句，沒有門檻。原草稿『男性<40歲用≥1 mm』：AHA 2009 對 V7–V9 寫的是 For men and women、沒有年齡例外；UDMI 第四版原文本次打不開（ahajournals／JACC 回 403，EHJ 頁面沒有該段），無法雙證，已拿掉。'
+    slides:
+    - src: /images/omi/stdmax-v1-4-slide-2025-170.webp
+      width: 1600
+      height: 1200
+      alt: 投影片上方是JAHA論文首頁截圖，標題「Ischemic ST-Segment Depression Maximal in V1–V4 (Versus V5–V6) of Any Amplitude Is Specific for Occlusion Myocardial Infarction (Versus Nonocclusive Ischemia)」，作者列 Meyers 等13人；黃色螢光標記CONCLUSIONS段落寫97%／96% specificity；下方淺藍色色塊是我自己整理的中文重點「ACS症狀患者、在V1~V4有Maximal STD出現、首要考慮有OMI(97%的specificity)」
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 170）；圖：Meyers HP, et al. J Am Heart Assoc. 2021
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/d1b0e6d05c1/slide_170.png；crop=None
+    - src: /images/omi/stdmax-v1-4-slide-beirong-083.webp
+      width: 1600
+      height: 1200
+      alt: 投影片左右並排兩張 V2 導程示意圖：左邊標題「前壁STD」，QRS 之後 ST 段往下壓；右邊標題「後壁STE」，是同一個波形上下翻轉後的樣子，ST 段變成往上抬；中間黑色箭頭寫「垂直翻轉」，下方大字「STD也有可能是『STE』」。
+      caption: 取自我 2022 年北榮住院醫師 ECG 教學投影片（slide 83）：前壁的 STD 上下翻轉，就是後壁的 STE。兩張 V2 示意圖的出處待確認。
+      src_note: 'keynote-search slides/d58dd2025ca/slide_083.png；查核員因出處不明拿掉；Bear 2026-09-14 要求先放預覽站再確認（review: true，正式 build 不顯示）'
+      review: true
+    refs:
+    - label: Meyers HP, Bracey A, Lee D, et al. Ischemic ST-Segment Depression Maximal in V1-V4 (Versus V5-V6) of Any Amplitude Is Specific for Occlusion Myocardial Infarction (Versus Nonocclusive Ischemia). J Am Heart Assoc. 2021 Dec 7;10(23):e022866. PMID 34775811.
+      url: https://pubmed.ncbi.nlm.nih.gov/34775811/
+    - label: Shah A, Wagner GS, Green CL, et al. Electrocardiographic differentiation of the ST-segment depression of acute myocardial injury due to the left circumflex artery occlusion from that of myocardial ischemia of nonocclusive etiologies. Am J Cardiol. 1997 Aug 15;80(4):512-3. PMID 9285669.
+      url: https://pubmed.ncbi.nlm.nih.gov/9285669/
+    - label: Wung SF, Drew BJ. New electrocardiographic criteria for posterior wall acute myocardial ischemia validated by a percutaneous transluminal coronary angioplasty model of acute myocardial infarction. Am J Cardiol. 2001 Apr 15;87(8):970-4. PMID 11305988.
+      url: https://pubmed.ncbi.nlm.nih.gov/11305988/
+    - label: 'Wagner GS, Macfarlane P, Wellens H, et al. AHA/ACCF/HRS recommendations for the standardization and interpretation of the electrocardiogram: part VI: acute ischemia/infarction. Circulation. 2009 Mar 17;119(10):e262-70. PMID 19228819.'
+      url: https://pubmed.ncbi.nlm.nih.gov/19228819/
+    - label: Poh KK, Chia BL, Tan HC, Yeo TC, Lim YT. Absence of ST elevation in ECG leads V7, V8, V9 in ischaemia of non-occlusive aetiologies. Int J Cardiol. 2004 Dec;97(3):389-92. PMID 15561323.
+      url: https://pubmed.ncbi.nlm.nih.gov/15561323/
+    - label: 'Dr. Smith''s ECG Blog（Pendell Meyers 撰）：A man in his early 40s with chest pain: STD in V1-V4, but posterior lead are negative（2021-02-14）'
+      url: https://drsmithsecgblog.com/a-man-in-his-early-40s-with-chest-pain-2/
+    - label: Dr. Smith's ECG Blog（Steve Smith）：A 50-something male with Dyspnea（2015-03-02）
+      url: https://drsmithsecgblog.com/a-50-something-male-with-dyspnea/
+    - label: REBEL EM（Salim Rezaie）：Posterior Occlusion Myocardial Infarctions and STDmaxV1-4（2021-12-09）
+      url: https://rebelem.com/posterior-occlusion-myocardial-infarctions-and-stdmaxv1-4/
+    - label: LITFL：Posterior Myocardial Infarction（last updated 2024-10-23）
+      url: https://litfl.com/posterior-myocardial-infarction-ecg-library/
+    - label: LITFL：The ST Segment（last updated 2024-10-08）
+      url: https://litfl.com/st-segment-ecg-library/
+    - label: Lizzo JM, Shams P. Posterior Myocardial Infarction. StatPearls（last update 2025-12-01）
+      url: https://www.ncbi.nlm.nih.gov/books/NBK553168/
+  - id: avr-ste
+    name: aVR STE + multiple leads STD
+    part: Part 2 根據STD判斷
+    look: '**有STE，而且在aVR**（＋multiple leads STD） ➜ 這是那個垃圾桶。裡面什麼都有，但sick的病人要Call CV一起討論。'
+    look_src: vwnm0UgcZ, fdGf5FaPe
+    leads:
+    - aVR
+    artery: 不是單一血管：Harhash 2019裡真正找到culprit occlusion的病人，沒有一位是left main或LAD；這個pattern反映的是diffuse subendocardial ischemia（供需失衡），已經確定是ACS之後，才偏向考慮left main／三條血管都爛／proximal LAD。
+    artery_src: roam:2OcLf6YI2, roam:wAjIPClyI, roam:IKW0tQKWh; pmid:30639554; url:https://litfl.com/st-elevation-in-avr/
+    pitfall: 看到aVR翹起來、STD一片，很容易反射性喊「left main，衝導管」：這是錯的。真正的left main完全阻塞如果aVR有STE，別的地方一定也有STE，是一張明顯的大範圍STEMI，不需要靠aVR提醒你；反過來，「只有aVR翹、其他全是STD」的ECG，正好在告訴你「這不是完全阻塞」。但也不能因此就不理它：這群病人住院死亡率很高，先矯正supply/demand的原因（心跳、血色素、血壓、血氧），再看STD有沒有回來。例外確實存在（有側枝循環的left main完全阻塞，ECG可以長成diffuse STD的樣子），所以胸痛refractory、血行動力學不穩、或STD裡藏著某個區域的STE時，要把「例外」拉回檯面。
+    pitfall_src: roam:PNOnM0EWP, roam:nemQYrcxE, roam:ca14-cLoa, roam:Rh6WWOLQ7; url:https://drsmithsecgblog.com/how-does-acute-left-main-occlusion/; pmid:30639554
+    points:
+    - text: aVR STE本身就是一面鏡子：aVR底下沒有心室肌（Smith的說法）或對到basal septum（Mattu／LITFL的說法），兩派解剖說法不同，但結論一致，那個STE不是自己底下的血管塞住，而是別的地方一堆STD的鏡像。可以把aVR想成(−)aVR：I跟II有STD，數學上(−)aVR一定有STD，(+)aVR就一定有STE。
+      src: roam:Qb7QB8V7J; url:https://drsmithsecgblog.com/does-ste-in-avr-indicate-acute-coronary/; url:https://litfl.com/st-elevation-in-avr/
+    - text: 結論要放大講：aVR STE + diffuse STD，不是left main occlusion，也不是OMI，它是diffuse subendocardial ischemia（供需失衡）。真正100%左主幹阻塞的病人，通常來不及走到你面前：會走進急診、意識清楚、拿著這張ECG的病人，正是因為他的left main「還沒有完全塞住」。
+      src: roam:LXAtsh3Xy, roam:xfCirYN6C
+    - text: 這個pattern的死亡率很高，但機轉不是單一血管阻塞，是「整顆心臟供氧全面不足」：可能是ACS（left main insufficiency、三條血管都爛、proximal LAD），也可能根本不是ACS（sepsis、嚴重貧血、GI bleeding、hypoxia、SVT/AF RVR、hypovolemia、主動脈瓣狹窄、高血壓急症）。第一步不是打電話，是先找出並矯正supply/demand的原因；矯正完再照一張ECG，STD還在、病人還在痛（或胸痛refractory、血壓在掉），就要跟CV討論。
+      src: roam:wAjIPClyI, roam:nemQYrcxE
+    criteria:
+    - text: STE-aVR + multilead STD的病人裡，只有10%找到被認為是culprit的coronary occlusion，而且這些病灶沒有一個是left main或LAD occlusion（Harhash 2019）。
+      src:
+      - pmid:30639554
+      - url:https://litfl.com/st-elevation-in-avr/
+      verified: ①原始研究：PubMed 30639554 摘要（2026-09-14 efetch）逐字「Coronary occlusion, thought to be culprit, was identified in only 8 patients (10%), and none of those lesions were left main or left anterior descending occlusions.」②獨立來源：LITFL〈ST Elevation in aVR〉（Burns & Buttner，2024-10-08，WebFetch；該句連結到 PMID 30639554）用自己的話寫「A 2019 single-centre retrospective analysis identified patients presenting with STE-aVR with multilead ST depression. Coronary occlusion was found only in 10% of patients, and none of these lesions were involving the LAD or left main coronary artery」。10% 與『沒有 LM／LAD』兩條路徑對上。原草稿括號『8/79做了導管的人』：摘要沒有明寫分母是 79、LITFL 也沒寫，屬推算，已拿掉。
+    refs:
+    - label: 'Harhash AA, Huang JJ, Reddy S, et al. aVR ST Segment Elevation: Acute STEMI or Not? Incidence of an Acute Coronary Occlusion. Am J Med. 2019 May;132(5):622-630. PMID 30639554.'
+      url: https://pubmed.ncbi.nlm.nih.gov/30639554/
+    - label: Dr. Smith's ECG Blog（Steve Smith）：Does ST Elevation in lead aVR indicate acute coronary occlusion?（2020-03-09）
+      url: https://drsmithsecgblog.com/does-ste-in-avr-indicate-acute-coronary/
+    - label: Dr. Smith's ECG Blog（Steve Smith、Pendell Meyers 合寫）：How does Acute Total Left Main Coronary occlusion present on the ECG?（2019-08-09）
+      url: https://drsmithsecgblog.com/how-does-acute-left-main-occlusion/
+    - label: LITFL：ST Elevation in aVR（last updated 2024-10-08）
+      url: https://litfl.com/st-elevation-in-avr/
+  - id: reciprocal-std
+    name: Reciprocal STD change and/or TWI
+    short: Reciprocal STD／TWI
+    part: Part 2 根據STD判斷
+    look: '**inferior或lateral的STD／TWI，跟某個STE對稱** ➜ Reciprocal STD / TWI。reciprocal change常常比STE本身更明顯。'
+    look_src: OFA_s5KO8
+    leads:
+    - I／aVL
+    - II／III／aVF
+    leads_src: roam:yVD6K8QxC
+    artery: 依對側面關係決定，不是單一血管：I／aVL的STD想inferior（II/III/aVF）；II／III／aVF的STD想high lateral（I/aVL）；V1–V4的STD想posterior（LCx／OM，見[STDmaxV1-4](/omi/#stdmax-v1-4)）；V5–V6的STD配V1 STE則想septal（proximal LAD，見[Precordial Swirl](/omi/#precordial-swirl)）。
+    artery_src: roam:yVD6K8QxC, roam:2isDP4MBW, roam:IKW0tQKWh
+    pitfall: T wave往下不等於TWI，更不等於reciprocal change。判斷關鍵是「比例」不是「方向」：QRS本身predominantly negative的lead，T wave跟著淺淺往下是正常的。LBBB／RBBB／paced rhythm／LVH strain／WPW這些QRS本身異常的ST-T改變是secondary repolarization change，不算reciprocal；其中LBBB與ventricular paced rhythm要改走modified Sgarbossa criteria。另外，reciprocal change的定義是「對面真的有東西」：如果翻遍12個lead都找不到任何STE或hyperacute T wave，那個STD比較可能是[aVR STE + multiple leads STD](/omi/#avr-ste)那一格的diffuse subendocardial ischemia，不是reciprocal。
+    pitfall_src: roam:lDMbyPGqY; url:https://drsmithsecgblog.com/a-30-something-with-acute-chest-pain/; url:https://drsmithsecgblog.com/a-50-something-male-with-dyspnea/; atlas msc look_src LGDFoI5pO, eNmJFMC9P
+    points:
+    - text: 這個finding裡的STD本身不是答案，它是幫「另一個lead的subtle STE」作證的：一個subtle的STE，加上對側lead的reciprocal STD/TWI，就從「怪怪的」變成「diagnostic」。
+      src: roam:NWcyEPMXG
+    - text: 先記住兩件事（我自己slide上的話）：reciprocal change可能會在STE之前出現，也可能比STE更明顯。其中一個機轉是low voltage：QRS本來就矮的人，跟著QRS成比例的STE也會跟著不明顯，但reciprocal change的STD不受這個限制，反而可能更顯眼，所以在這種人身上，常常是先看到STD、才看到STE，那個STD是在替你指路。
+      src: roam:QD39_QVar
+    - text: 對側面關係要背起來：V1–V4的STD想後壁（posterior，見[STDmaxV1-4](/omi/#stdmax-v1-4)）；I／aVL的STD想下壁（inferior：II/III/aVF）；II／III／aVF的STD想高側壁（high lateral：I/aVL）；V5–V6的STD配V1 STE則想中膈（septal，見[Precordial Swirl](/omi/#precordial-swirl)）。lead III和aVL之間有「magical」的mirror-image關係：proximal LAD occlusion幾乎必有inferior leads的reciprocal STD，mid/distal LAD occlusion則不一定。
+      src: roam:yVD6K8QxC, roam:fm6Edi93F; url:https://drsmithsecgblog.com/a-30-something-with-acute-chest-pain/; url:https://drsmithsecgblog.com/a-58-year-old-with-weakness-and-more/
+    criteria:
+    - text: Bischof 2016：154位inferior STEMI全部（100%）在aVL有某種程度的STD；STE很小、還不到STEMI criteria、但心導管證實有阻塞的subtle inferior STEMI（54位），也有91%在aVL有STD。
+      src:
+      - pmid:26542793
+      - url:https://clinician.nejm.org/nejm-jw.NA40636
+      - url:https://litfl.com/inferior-stemi-ecg-library/
+      verified: ①原始研究：PubMed 26542793 摘要（2026-09-14 efetch）逐字「Of 154 inferior STEMI patients, 154 had some amount of ST depression in lead aVL (100%; confidence interval, 98%-100%)」「a third cohort of patients with subtle inferior STEMI (<1-mm STE with occluded artery on catheterization)」「there were 272 inferior MIs with coronary occlusion, of which 54 were "subtle." Of these, 49 had some ST depression in lead aVL」（49/54＝90.7%）。②獨立來源：NEJM Journal Watch〈Beware of ST Depression in ECG Lead aVL〉（Daniel J. Pallin，2016-02-26，WebFetch，全文公開）逐字「154 with inferior STEMI」「54 with subtle inferior STEMI」「Some degree (at least 0.25 mm) of ST depression in lead aVL was detected in 100% of patients with inferior STEMI, 0% with pericarditis, and 91% with subtle inferior STEMI.」③LITFL〈Inferior STEMI〉（Burns & Buttner，2024-10-08，WebFetch）逐字「91% of 'subtle' inferior STEMIs that do not meet STEMI criteria but show occlusion on PCI demonstrate ST depression in aVL」。154、100%、54、91% 都有兩條以上路徑對上。拿掉：272（只有原始研究）；原草稿『STE不到1 mm』（原始研究寫 <1-mm、Journal Watch 寫 ≤1-mm，兩邊不一致，改成不帶數字的描述）；『愈subtle愈可能是唯一線索』（研究沒有這個結論）。
+    - text: 什麼不算reciprocal change：如果那個lead的QRS本身是predominantly negative（例如frontal plane axis很vertical時的aVL），T wave跟著淺淺地往下是正常變異，不是reciprocal change；真正的reciprocal TWI，會跟QRS的負向大小「不成比例地肥厚（disproportionately bulky）」。
+      src:
+      - url:https://drsmithsecgblog.com/a-30-something-with-acute-chest-pain/
+      - roam:lDMbyPGqY
+      verified: 定義型判準（不含統計數字），原始出處為 Ken Grauer 在 Dr. Smith's ECG Blog〈A 30-something with acute chest pain〉（Steve Smith，2024-10-03）的評論，本次 WebFetch 逐字「The T wave vector often follows closely behind the QRS vector」「when the QRS is predominantly negative in lead aVL — then the T wave in this lead may also be negative as a normal finding」「Contrast this normal amount of T wave inversion ... with the disproportionately 'bulky' T wave inversion」；該 case 的 frontal plane axis 為「+80 degrees」、「Coronaries were clean」。原草稿寫『STD/TWI的形狀』不成比例地肥厚，Grauer 原文講的是 T wave inversion，已改成 TWI。
+    slides:
+    - src: /images/omi/reciprocal-std-slide-2021-016.webp
+      width: 1600
+      height: 1200
+      alt: 投影片標題「Reciprocal Change」，上半部淺藍色長條「先了解一些事實」，下方文字「Reciprocal change可能會在STE之前出現」「Reciprocal change有可能會比STE更明顯」，中間淺藍色細長條「重要分隔線」，下方大字「Reciprocal change的STD是良性」「但對側的STE是致命的」，全頁純文字無圖
+      caption: 取自我 2021 年新光醫院住院醫師 ECG 教學投影片（slide 16）
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/dd600f69ed7/slide_016.png；crop=None
+    refs:
+    - label: Bischof JE, Worrall C, Thompson P, Marti D, Smith SW. ST depression in lead aVL differentiates inferior ST-elevation myocardial infarction from pericarditis. Am J Emerg Med. 2016 Feb;34(2):149-54. PMID 26542793.
+      url: https://pubmed.ncbi.nlm.nih.gov/26542793/
+    - label: Pallin DJ. Beware of ST Depression in ECG Lead aVL. NEJM Journal Watch（2016-02-26）
+      url: https://clinician.nejm.org/nejm-jw.NA40636
+    - label: Fletcher WO, Gibbons RJ, Clements IP. The relationship of inferior ST depression, lateral ST elevation, and left precordial ST elevation to myocardium at risk in acute anterior myocardial infarction. Am Heart J. 1993 Sep;126(3 Pt 1):526-35. PMID 8362705.
+      url: https://pubmed.ncbi.nlm.nih.gov/8362705/
+    - label: LITFL：Inferior STEMI（last updated 2024-10-08）
+      url: https://litfl.com/inferior-stemi-ecg-library/
+    - label: 'Ken Grauer, ECG Blog #426 — Are STEMI Criteria Met?（2024-04-20）'
+      url: https://www.ekgblog.com/2024/04/ecg-blog-426-are-stemi-criteria-met.html
+    - label: Dr. Smith's ECG Blog（Steve Smith，含 Ken Grauer 評論）：A 30-something with acute chest pain（2024-10-03）
+      url: https://drsmithsecgblog.com/a-30-something-with-acute-chest-pain/
+    - label: Dr. Smith's ECG Blog（含 Ken Grauer 評論）：A 58 year old with Weakness and more than 4 mm ST Elevation in V3（2018-08-09）
+      url: https://drsmithsecgblog.com/a-58-year-old-with-weakness-and-more/
+  - id: precordial-swirl
+    name: Precordial Swirl
+    new2025: true
+    part: Part 2 根據STD判斷
+    look: '**V1（±V2）的STE或不成比例的直立T＋V5–V6 reciprocal STD／TWI** ➜ Precordial Swirl。想proximal LAD／septal branch之前的阻塞。'
+    look_src: V8-X6BPY1
+    leads:
+    - V1（±V2）
+    - V5–V6
+    artery: Proximal LAD／septal阻塞
+    artery_src: igQ-k9i3Y
+    pitfall: '**有LVH或BBB就不能用這條。** 它跟STDmaxV1-4看的是同一組lead，一個往下壓、一個往上翹，**方向搞反，血管也會猜反。**'
+    pitfall_src: V8-X6BPY1, jLQCuvTjt, GK26CKmn3（Step 3〈第一組:方向剛好相反〉對照表）
+    points:
+    - text: 2025年正式發表的定義（Goss et al.）：STE and/or hyperacute T waves in V1-V2, with reciprocal STD and/or TWI in V5-V6，形成precordial leads上的「順時針漩渦」。機轉：LAD若塞在first septal perforator（S1）之前，連整片中膈都是transmural缺血；中膈偏右前方，injury向量投影到V1（還有aVR）是STE，心尖與側壁在向量另一端，V5、V6拿到reciprocal STD。
+      src: roam:3YgNmzz-A, roam:KnFJnBav5; pmid:40319770; url:https://drsmithsecgblog.com/precordial-swirl-20-cases-of-swirl-or/
+    - text: 怎麼看：先看V1，ST-T是不是「長得不像它該長的樣子」（不成比例的STE／不成比例的直立T／coved shape）；論文給的量化版是V2的T波振幅÷S波振幅 > 0.40。再看V6：有沒有STD？那個STD是不是「水平貨架」而不是LVH strain那種「斜下」？T wave是不是還直立著（典型swirl是平的STD配直立T）？
+      src: roam:CuciTQ3b6, roam:0m2G94e1E; pmid:40319770; url:https://emcrit.org/ibcc/ecg/
+    - text: 跟[aVR STE + multiple leads STD](/omi/#avr-ste)（diffuse subendocardial ischemia）的鑑別，比誰高就好：aVR STE ＞ V1 STE，想subendocardial ischemia／left main／3-vessel；V1 STE ＞ aVR STE，想precordial swirl／塞在S1之前的proximal LAD。這是判讀小技巧、不是有sens/spec數字的判準，當線索用，不要當唯一理由。
+      src: roam:wB-4PkgFa; url:https://emcrit.org/ibcc/ecg/
+    criteria:
+    - text: Goss 2025測試的其中一條定義（寬鬆版）：normal QRS（narrow QRS **且沒有LVH**）＋V5和/或V6有STD＋V1和/或V2有任何STE。「沒有LVH」是寫在定義裡的排除條件，不是文末的注意事項；共同作者Meyers在Dr. Smith's ECG Blog（2025-08-18）說，LVH與subendocardial ischemia是這個pattern最常見的兩個mimic。
+      src:
+      - pmid:40319770
+      - url:https://drsmithsecgblog.com/a-man-in-his-60s-with-acute-chest-pain-is-this-precordial-swirl/
+      - url:https://emcrit.org/ibcc/ecg/
+      verified: 定義型判準（不含統計數字）。①原始研究：PubMed 40319770 摘要（2026-09-14 efetch）逐字「Precordial swirl pattern, defined as normal QRS (narrow QRS without LVH) with STD in V5 and/or V6 plus any STE in V1 and/or V2」，另一條定義為「When defined as a narrow QRS plus STD in V5/V6 plus T wave to S wave amplitude ratio > 0.40 in V2」。②共同作者 Pendell Meyers，Dr. Smith's ECG Blog〈A man in his 60s with acute chest pain. Is this precordial swirl?〉（2025-08-18，WebFetch）逐字「In our best rule in the publication, the rule we recommend using, LVH is an exclusion criteria (mimicker) of precordial swirl pattern.」「LVH and subendocardial ischemia are the two most common mimics of our precordial swirl pattern.」③獨立來源 IBCC〈ECG Guide〉（Josh Farkas，2026-05-07，curl 原文，引 PMID 40319770）逐字「[4] Absence of LVH.」「LVH is the most common entity to sort out.」。原草稿『論文的正式判準』：摘要裡作者測了兩條定義，這條是寬鬆版，已改寫；『作者特別強調』改為具名的共同作者 Meyers。
+    slides:
+    - src: /images/omi/precordial-swirl-slide-2025-226.webp
+      width: 1600
+      height: 1200
+      alt: 投影片上方是六格V1/V2導程心電圖（黑底紅框，標示A至F，Ken Grauer整理的圖），下方粉紅色大字「V1」，右側文字「A、B、C的V1有disproportionate STE」「E的V1有不成比例的upright T wave」「F的V1有coved shape STE」
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 226）；上方六格 V1/V2 圖組：Ken Grauer 整理的 Figure-1，出自他在 Dr. Smith's ECG Blog〈Precordial Swirl — 20 cases of Swirl or Look-Alikes〉（2022-10-15）的評論，心電圖取自該文 Dr. Smith 提供的案例
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/d1b0e6d05c1/slide_226.png；crop=None
+    refs:
+    - label: 'Goss L, Meyers HP, Friedman B, Bracey A, Smith SW. Precordial swirl sign: A new ECG pattern of left anterior descending artery occlusion myocardial infarction. J Electrocardiol. 2025 Jul-Aug;91:153931. PMID 40319770.'
+      url: https://pubmed.ncbi.nlm.nih.gov/40319770/
+    - label: Dr. Smith's ECG Blog（Steve Smith，含 Ken Grauer 的 MY Comment）：Precordial Swirl — 20 cases of Swirl or Look-Alikes（2022-10-15）
+      url: https://drsmithsecgblog.com/precordial-swirl-20-cases-of-swirl-or/
+    - label: 'Ken Grauer, ECG Blog #380 — What is "Swirl"?（2023-05-20）'
+      url: https://www.ekgblog.com/2023/05/ecg-380-what-is-swirl-metodo.html
+    - label: Dr. Smith's ECG Blog（Pendell Meyers 撰）：A man in his 60s with acute chest pain. Is this precordial swirl?（2025-08-18）
+      url: https://drsmithsecgblog.com/a-man-in-his-60s-with-acute-chest-pain-is-this-precordial-swirl/
+    - label: Farkas J. ECG Guide（Precordial swirl pattern 一節）. Internet Book of Critical Care（IBCC），EMCrit（2026-05-07）
+      url: https://emcrit.org/ibcc/ecg/
+- id: pattern
+  name: 特別Pattern
+  slide: 370
+  findings:
+  - id: tqrsd
+    name: TQRSD
+    full: Terminal QRS Distortion
+    part: Part 3（上）LAD的三張臉
+    look: V2或V3只要**同時**沒有S wave也沒有J wave ➜ 直接當OMI，不用算。
+    look_src: yxC-ylCFX
+    leads:
+    - V2
+    - V3
+    artery: LAD
+    artery_src: U8mnVq1zO（Part 3（上）：有TQRSD就別算了，直接當LAD occlusion處理）
+    pitfall: TQRSD是4-variable formula的排除條件。**看到TQRSD不要算公式，直接當OMI處理。**
+    pitfall_src: 1NbaRR_tl
+    points:
+    - text: TQRSD＝V2或V3任一個lead，S wave和J wave**兩個都不見了**。注意是「或」不是「和」：只要V2、V3任何一個lead同時沒有S wave又沒有J wave，就成立。
+      src: roam:T3ic3u9kS, roam:8ZT1f4qe3
+    - text: TQRSD是**rule-in工具，不是rule-out工具**。沒有TQRSD，一點都不代表不是OMI。
+      src: roam:DG-pNPtuL
+    criteria:
+    - text: S wave＝R wave結束時，任何往下掉到PQ junction以下的偏折；J wave＝在J point、高於ST段水平的任何正向偏折（notching或slurring）。
+      src:
+      - pmid:27658331
+      - url:https://www.thebottomline.org.uk/summaries/terminal-qrs-distortion/
+      verified: ①原始研究：Lee DH, Walsh B, Smith SW. Am J Emerg Med 2016;34:2182–2185 期刊全文（2.4 Data collection and processing，p.2183）逐字「The presence of an S wave was defined as any deflection at the end of the R wave that dipped below the level of the PQ junction.」「J waves were defined as any positive deflection (notching or slurring) above the level of the ST segment at the J point.」②不同作者群：The Bottom Line〈Terminal QRS distortion〉（David Slessor，2022-02-25，curl 取得原頁）S wave 項下逐字「Any deflection at the end of the R wave that dipped below the level of the PQ junction」、J wave 項下逐字「Any positive deflection (notching or slurring) above the level of the ST segment at the J point」。
+    - text: 171位被心臟科醫師判讀為benign early repolarization的病人，0位有TQRSD：specificity for LAD occlusion 100%（95% CI 97.8–100）。但這個100%有前提：原文寫的是「鑑別診斷是acute MI vs early repolarization」的時候，不是無條件的100%。
+      src:
+      - pmid:27658331
+      - url:https://www.emdocs.net/52-in-52-15-terminal-qrs-distortion-is-present-in-anterior-myocardial-infarction-but-absent-in-early-repolarization/
+      - url:https://www.thebottomline.org.uk/summaries/terminal-qrs-distortion/
+      verified: '①原始研究：PMID 27658331 PubMed abstract（本 session efetch）逐字「One hundred seventy-one patients were identified with benign ER. Zero of 171 had TQRSD (specificity for LADO, 100%; 95% confidence interval, 97.8-100).」「it was, thus, 100% specific to LADO when the differential diagnosis was acute myocardial infarction vs ER.」；期刊全文 Results 逐字「171 of 171 (100%; 95% confidence interval, 97.8%-100%) ECGs had either an S wave or a J wave in both leads V2 and V3.」②171／0 的獨立文件：emDocs〈52 in 52 – #15〉（Christiaan van Nispen、Brannon Inman，2022-10-11）逐字「Of 171 benign early repolarization ECGs included, all 171 had at least one of S wave or J wave in at least V2 or V3 and thus did not meet criteria for TQRSD」。③100%／CI 的獨立文件：The Bottom Line（David Slessor，2022-02-25）逐字「Terminal QRS distortion was absent in 100% of patients with benign early repolorisation (95% CI 97.8-100%)」。'
+    slides:
+    - src: /images/omi/tqrsd-slide-2025-252.webp
+      width: 1600
+      height: 1200
+      alt: 投影片「當STE in V2~V4」：左邊是期刊圖，benign early repolarization的V3，箭頭標J-wave與S-wave；右邊藍底是另一張期刊圖，TQRSD的V3，箭頭標No J-wave、No S-wave。下方左側紅字「用來 Rule in」，右側藍底大紅字「AMI」。
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 252）；兩張 V3 波形圖出自 Lee DH, Walsh B, Smith SW. Am J Emerg Med. 2016;34(11):2182-2185（左：Fig. 2，右：Fig. 1）
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/d1b0e6d05c1/slide_252.png；crop=None
+    refs:
+    - label: Lee DH, Walsh B, Smith SW. Terminal QRS distortion is present in anterior myocardial infarction but absent in early repolarization. Am J Emerg Med. 2016 Nov;34(11):2182-2185. PMID 27658331.
+      url: https://pubmed.ncbi.nlm.nih.gov/27658331/
+    - label: 'emDocs：52 in 52 – #15: Terminal QRS distortion is present in anterior myocardial infarction but absent in early repolarization（Christiaan van Nispen、Brannon Inman，2022-10-11）'
+      url: https://www.emdocs.net/52-in-52-15-terminal-qrs-distortion-is-present-in-anterior-myocardial-infarction-but-absent-in-early-repolarization/
+    - label: The Bottom Line：Terminal QRS distortion（David Slessor，2022-02-25）
+      url: https://www.thebottomline.org.uk/summaries/terminal-qrs-distortion/
+    - label: 'ECG Weekly：Differential Diagnoses: terminal QRS distortion in the differentiation of STEMI from early repolarization（Dr. Amal Mattu，2019-08-12；全文需訂閱）'
+      url: https://ecgweekly.com/weekly-workout/differential-diagnoses-terminal-qrs-distortion-in-the-differentiation-of-stemi-from-early-repolarization
+    - label: 'Ken Grauer, ECG Blog #415 — The Cath showed NO Occlusion!（2024-02-04）'
+      url: https://www.ekgblog.com/2024/02/ecg-blog-415-cath-showed-no-occlusion.html
+  - id: wellens
+    name: Wellens' syndrome
+    part: Part 3（上）LAD的三張臉
+    look: '**V2–V4的biphasic或deep symmetric TWI，而且病人**現在**不痛了** ➜ Wellens'' syndrome。不要因為不痛就放心。'
+    look_src: LQ07tbkeh
+    leads:
+    - V2–V4
+    artery: LAD（塞過了、現在通了）
+    artery_src: a3XfJgPJX, TwXb-Ws5m
+    pitfall: '**Wellens禁做stress test**。biphasic T wave若是先下後上，想低血鉀，不是LAD。'
+    pitfall_src: TwXb-Ws5m, HMLjf3p04, 3JS5QEONB
+    points:
+    - text: Wellens waves ≠ Wellens' syndrome：Wellens waves只是T wave的形狀（biphasic或deep symmetric TWI）；Wellens' syndrome是T wave形狀＋完整的臨床情境。差在哪？差在**病患現在痛不痛**。
+      src: roam:hPvcHypy_, roam:S7FRRbkUB, roam:ZkcxogE4a, roam:YqqZq71hj
+    - text: 機轉是reperfusion T wave：LAD剛剛塞過、現在自己通了。所以才要求pain-free、troponin不高、沒有Q wave、R wave保留。
+      src: roam:C2WOAcILZ, roam:7PGL-uM0U, roam:0iaR7wlHP
+    criteria:
+    - text: T wave有兩種型態：deeply and symmetrically inverted（又深又對稱的倒轉），約佔75%；biphasic（先正後負，terminal negativity），約佔25%（比例依Rhinehardt 2002的回顧整理）。文獻對Type A／Type B的命名不一致，直接描述形狀最不會出錯。
+      src:
+      - pmid:12442245
+      - url:https://www.ncbi.nlm.nih.gov/books/NBK482490/
+      - url:https://litfl.com/wellens-syndrome-ecg-library/
+      verified: ①Rhinehardt 2002 全文（Bear Zotero ALPVPXYJ，2026-09-14 pdftotext）逐字「pattern, which comprises approximately 75% of cases, the T wave is deeply inverted」「The less common variant, comprising 25% of Wellens' syndrome cases, presents with biphasic T waves」②StatPearls〈Wellens Syndrome〉（Miner B, Grigg WS, Hart EH；Last Update 2023-07-31；同日 curl）逐字「These T wave findings are present in approximately 25% of cases.」「These findings are present in approximately 75% of cases.」③LITFL〈Wellens Syndrome〉（Mike Cadogan、Robert Buttner，2021-09-08；同日 WebFetch）逐字「Biphasic, with initial positivity and terminal negativity (25% of cases)」「Deeply and symmetrically inverted (75% of cases)」。Bear 2026-09-14 裁示：原始 de Zwaan 1989 取不到，以 Rhinehardt 2002 為出處。註：1982 原始研究（26 位）Fig. 1 是 Pattern A 4 位、B 22 位；75%／25% 可能來自 1989 的資料，未能核對。
+    - text: ST段是isoelectric或只有minimal elevation（Rhinehardt 2002：<1 mm），沒有明顯的ST elevation。
+      src:
+      - pmid:12442245
+      - url:https://www.ncbi.nlm.nih.gov/books/NBK482490/
+      - url:https://litfl.com/wellens-syndrome-ecg-library/
+      verified: ①Rhinehardt 2002 全文 Table 1 逐字「Isoelectric or minimally elevated (<1 mm) ST segment」、內文「(ie, less than 1 mm)」②StatPearls〈Wellens Syndrome〉逐字「Isoelectric or minimally elevated ST segment, less than 1 mm」③LITFL〈Wellens Syndrome〉逐字「Isoelectric or minimally-elevated ST segment (< 1mm)」，並寫明「Rhinehart et al (2002) describe the following diagnostic criteria」。Bear 2026-09-14 裁示以 Rhinehardt 2002 為出處；註：1982 原文寫「minimally elevated (1 mm)」。
+    - text: Wellens' syndrome不要安排stress test：LAD已經是critical stenosis，做stress test可能誘發急性心肌梗塞或猝死。
+      src:
+      - url:https://www.ncbi.nlm.nih.gov/books/NBK482490/
+      - url:https://litfl.com/wellens-syndrome-ecg-library/
+      - pmid:12442245
+      verified: ①StatPearls〈Wellens Syndrome〉逐字「Because Wellens syndrome patients have critical narrowing of the LAD coronary artery, a stress test should be avoided as this can precipitate an acute myocardial infarction and sudden death.」②LITFL〈Wellens Syndrome〉逐字「Due to the critical LAD stenosis, these patients usually require invasive therapy, do poorly with medical management, and may suffer MI or cardiac arrest if inappropriately stress tested」③Rhinehardt 2002 期刊全文 p.641 逐字「The avoidance of provocative testing, including stress imaging, is key in that such testing may precipitate an AMI with significant acute sequelae.」
+    refs:
+    - label: Rhinehardt J, Brady WJ, Perron AD, Mattu A. Electrocardiographic manifestations of Wellens' syndrome. Am J Emerg Med. 2002;20(7):638-643. PMID 12442245.
+      url: https://pubmed.ncbi.nlm.nih.gov/12442245/
+    - label: de Zwaan C, Bär FW, Wellens HJ. Characteristic electrocardiographic pattern indicating a critical stenosis high in left anterior descending coronary artery in patients admitted because of impending myocardial infarction. Am Heart J. 1982;103(4 Pt 2):730-736. PMID 6121481.
+      url: https://pubmed.ncbi.nlm.nih.gov/6121481/
+    - label: de Zwaan C, Bär FW, Janssen JH, et al. Angiographic and clinical characteristics of patients with unstable angina showing an ECG pattern indicating critical narrowing of the proximal LAD coronary artery. Am Heart J. 1989;117(3):657-665. PMID 2784024.
+      url: https://pubmed.ncbi.nlm.nih.gov/2784024/
+    - label: StatPearls：Wellens Syndrome（NCBI Bookshelf, NBK482490）
+      url: https://www.ncbi.nlm.nih.gov/books/NBK482490/
+    - label: LITFL：Wellens Syndrome（ECG Library）
+      url: https://litfl.com/wellens-syndrome-ecg-library/
+    - label: LITFL：T wave（ECG Library Basics）
+      url: https://litfl.com/t-wave-ecg-library/
+    - label: StatPearls：ECG T Wave（NCBI Bookshelf, NBK538264）
+      url: https://www.ncbi.nlm.nih.gov/books/NBK538264/
+    slides:
+    - src: /images/omi/wellens-slide-2025-261.webp
+      width: 1600
+      height: 1200
+      alt: 投影片左側兩張 T 波示意圖：上方標 A，配文字「Biphasic T wave inversion」與粉紅色大字「Pattern A　約佔25%」；下方標 B，配文字「Deeply T wave inversion」與粉紅色大字「Pattern B　約佔75%」。
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 261）；比例依 Rhinehardt J, et al. Am J Emerg Med. 2002;20(7):638-643 的整理。A／B 示意圖出處待確認。
+      src_note: 'keynote-search slides/d1b0e6d05c1/slide_261.png；查核員因出處不明拿掉；Bear 2026-09-14 要求先放預覽站再確認（review: true，正式 build 不顯示）'
+      review: true
+    - src: /images/omi/wellens-slide-2025-262.webp
+      width: 1600
+      height: 1200
+      alt: 投影片「診斷的定義」：左側兩張 T 波示意圖，上方標 A（先正後負的 biphasic 波形）、下方標 B（又深又對稱的倒轉）；右側藍底列出七項診斷條件：Deeply TWI or Biphasic TWI in V2~V3、Isoelectric or minimal STE(< 1 mm)、No Precordial Q wave、Preserved RWP、Recent history of angina、ECG pattern present in pain free state、Normal or slightly elevated serum cardiac markers；上方附 Rhinehardt 2002 的書目。
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 262）；診斷條件引自 Rhinehardt J, et al. Am J Emerg Med. 2002;20(7):638-643。A／B 示意圖出處待確認。
+      src_note: 'keynote-search slides/d1b0e6d05c1/slide_262.png；查核員因出處不明拿掉；Bear 2026-09-14 要求先放預覽站再確認（review: true，正式 build 不顯示）'
+      review: true
+  - id: de-winter
+    name: De Winter's T wave
+    part: Part 3（上）LAD的三張臉
+    look: '**V1–V6的J point STD＋upright, tall, symmetric T wave** ➜ de Winter''s T wave。這是LAD的anterior STEMI equivalent。'
+    look_src: 2df-nPNdc
+    leads:
+    - V1–V6
+    artery: proximal LAD（急性、正在塞）
+    artery_src: a3XfJgPJX
+    pitfall: V2-V3出現STD＋又高又大的T wave，別急著當de Winter：也可能是posterior wall MI剛通了（Post. Wellens' syndrome：後壁reperfusion的terminal TWI，鏡像到前胸導程就變成又高又大的upright T wave）。只侷限V2-V3先想後壁，影響的precordial leads比較多才想de Winter。T wave又高又尖，也別忘了排除高血鉀（de Winter原始報告裡，病人入院血鉀是正常的）。
+    pitfall_src: AFiHqjJbm, FL3UVzJCP, 2CAzkcO0Y, sL-wkzAn1, m-e5krch8；血鉀正常：pmid:18987380 全文、url:https://drsmithsecgblog.com/hyperacute-t-waves/
+    points:
+    - text: de Winter＝富士山，但山腳先陷下去1-3 mm：J point的upsloping ST depression直接接進又高又對稱的T wave，是**急性、正在塞**的proximal LAD occlusion。
+      src: roam:0DqslDKkj, roam:CDCCW8OeV, roam:a3XfJgPJX
+    - text: de Winter和Wellens長得都在V2-V4，但一個是「現在進行式」（acute proximal LAD occlusion）、一個是「過去完成式」（sub-acute occlusion，塞過了、現在通了）。
+      src: roam:a3XfJgPJX
+    - text: 2022年ACC專家共識已把de Winter's sign列為STEMI equivalent。
+      src: roam:dtLH_6DBA, pmid:36241466
+    criteria:
+    - text: precordial leads的J point出現upsloping ST depression，直接接進tall, symmetrical T wave。幅度有兩種寫法：de Winter 2008原始letter寫V1–V6「1–3 mm」；同團隊Verouden 2009與ACC 2022寫「>1 mm」。
+      src:
+      - pmid:18987380
+      - url:https://www.ekgblog.com/2022/07/ecg-blog-319-qrs-alternans.html
+      - url:https://drsmithsecgblog.com/hyperacute-t-waves/
+      - pmid:19620137
+      - pmid:36241466
+      - url:https://litfl.com/de-winter-t-wave/
+      verified: '1–3 mm：①原始研究 de Winter RJ, et al. N Engl J Med 2008;359:2071–2073 全文 p.2071（渲染圖親眼看）逐字「the ST segment showed a 1- to 3-mm upsloping ST-segment depression at the J point in leads V1 to V6 that continued into tall, positive symmetrical T waves.」②不同作者群：Ken Grauer, ECG Blog #319（curl 原頁）逐字「Typical deWinter T waves manifest 1-3 mm of upsloping J-point ST depression in at least a few leads, prior to continuing into tall, peaked T waves.」③不同作者群：Dr. Smith''s ECG Blog〈Hyperacute T waves〉（curl 原頁）逐字「1-3 mm of upsloping ST depression in leads V1 to V6 that continues into tall, positive symmetrical T waves」。>1 mm：④原始研究 Verouden NJ, et al. Heart 2009;95:1701–1706 全文 Results（p.1702，渲染圖確認是 >）逐字「We observed overt ST-segment depression at the J-point (>1 mm) with upsloping ST-segments continuing into tall, symmetrical T-waves in the precordial leads.」（abstract 寫「at least 1 mm」）⑤ACC 2022 Table 1 逐字「upsloping ST-segment depression >1 mm at the J-point in the precordial leads」⑥LITFL 逐字「Upsloping ST segment depression > 1mm at the J point in the precordial leads」。兩種寫法各自有原始研究＋不同作者群，照實並列。'
+    - text: aVR常伴隨輕微的ST elevation。幅度各來源寫法不一致：de Winter 2008原始letter寫「多數病人1–2 mm」；同一團隊2009年較大的世代，以及ACC 2022，寫的幅度都比較小。
+      src:
+      - pmid:18987380
+      - url:https://drsmithsecgblog.com/hyperacute-t-waves/
+      - pmid:19620137
+      - pmid:36241466
+      verified: ①原始研究 de Winter 2008 全文 p.2071 逐字「In most patients there was a 1- to 2-mm ST-elevation in lead aVR」；Figure 1 圖說 p.2072 逐字「lead aVR shows slight ST-segment elevation in most cases.」②不同作者群：Dr. Smith's ECG Blog〈Hyperacute T waves〉逐字「with 1-2 mm ST elevation in aVR」。→ 1–2 mm 有原始研究＋獨立來源。③同團隊 Verouden 2009 全文逐字「included patients showed a mean J-point elevation of approximately 0.5 mm in lead aVR (fig 1)」；④ACC 2022 Table 1 逐字「0.5–1 mm ST-segment elevation may be seen in lead aVR」（LITFL 同寫「0.5mm – 1mm」）。0.5 mm 只有 Verouden 一份、0.5–1 mm 沒有原始研究，兩者都不符雙來源規則，所以公開文字只寫「比較小」，不寫這兩個數字。
+    - text: 約2%，分母是anterior MI：de Winter 2008原始letter在1532位anterior MI病人中找到30位（2.0%）；同一團隊Verouden 2009在1890位因anterior MI接受LAD primary PCI的病人中找到35位（2%）。兩篇世代重疊，不是兩個獨立研究互相重現。
+      src:
+      - pmid:18987380
+      - pmid:19620137
+      - url:https://litfl.com/de-winter-t-wave/
+      verified: ①原始研究 de Winter 2008 全文 p.2071（渲染圖親眼看）逐字「We recognized this characteristic ECG pattern in 30 of 1532 patients with anterior myocardial infarction (2.0%).」（資料來源同段逐字「Working from our primary database of percutaneous coronary interventions」）②不同作者群：LITFL〈De Winter T Wave〉逐字「They observed this ECG pattern in 30 / 1532 patients with acute LAD occlusions (2% of cases)」——數字相同，但把分母寫成 acute LAD occlusions，與原文 anterior myocardial infarction 不符（Dr. Smith's ECG Blog 也寫「2% of LAD occlusions」），公開文字照原文。③原始研究 Verouden 2009 abstract 逐字「Of 1890 patients who underwent primary PCI of the LAD artery, we could identify 35 patients (2%) with this distinct ECG pattern.」；全文逐字「a total of 1890 patients who underwent primary PCI for anterior myocardial infarction at our institution were recorded in the database」④LITFL 逐字「They found a de Winter ECG pattern in 35 / 1890 patients requiring PCI to the LAD (2% of cases).」⑤世代重疊：Verouden 2009 全文逐字「ECG pattern from other patients included in this cohort have been published previously.10」（ref 10＝de Winter 2008 NEJM）。
+    slides:
+    - src: /images/omi/de-winter-slide-2025-274.webp
+      width: 1600
+      height: 1200
+      alt: '投影片「De winter''s T waves」：中間黑框是PubMed書目頁截圖，可見「N Engl J Med. 2008 Nov 6;359(19):2071-3. doi: 10.1056/NEJMc0804737.」、標題「A new ECG sign of proximal LAD occlusion」、作者「Robbert J de Winter, Niels J W Verouden, Hein J J Wellens, Arthur A M Wilde, Interventional Cardiology Group of the Academic Medical Center」與「PMID: 18987380　DOI: 10.1056/NEJMc0804737」；下方是V3導程的線條示意圖，三個心跳，QRS之後先往下陷，再往上斜接進高聳對稱的T wave。'
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 274）；上方為 PubMed 書目頁截圖：de Winter RJ, Verouden NJ, Wellens HJ, Wilde AA. N Engl J Med. 2008;359(19):2071-2073（PMID 18987380）
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/d1b0e6d05c1/slide_274.png；crop=None
+    - src: /images/omi/de-winter-slide-2025-276.webp
+      width: 1600
+      height: 1200
+      alt: 投影片左欄粉紅底，上方標「典型特徵」、下方標「其他特徵」。右上是V3導程線條示意圖，三個心跳：第一個心跳紅色箭頭標「Upsloping STD」，第二個T wave藍色箭頭標「Symmetry、Tall T wave」。下半部文字：「通常在aVR有1-2 mm的STE」「正常QRS duration(或著輕微的QRS widening)」「在一些病患有PRWP」。
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 276）；特徵整理自 de Winter RJ, et al. N Engl J Med. 2008;359(19):2071-2073。aVR 1–2 mm 是這篇原始 letter 的寫法，同團隊 2009 年較大的世代與 ACC 2022 寫的幅度較小。
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/d1b0e6d05c1/slide_276.png；crop=None
+    refs:
+    - label: de Winter RJ, Verouden NJ, Wellens HJ, Wilde AA; Interventional Cardiology Group of the Academic Medical Center. A new ECG sign of proximal LAD occlusion. N Engl J Med. 2008;359(19):2071-2073. PMID 18987380.（Letter，PubMed 無 abstract）
+      url: https://pubmed.ncbi.nlm.nih.gov/18987380/
+    - label: Verouden NJ, Koch KT, Peters RJ, et al. Persistent precordial "hyperacute" T-waves signify proximal left anterior descending artery occlusion. Heart. 2009;95(20):1701-1706. PMID 19620137.
+      url: https://pubmed.ncbi.nlm.nih.gov/19620137/
+    - label: LITFL：De Winter T Wave
+      url: https://litfl.com/de-winter-t-wave/
+    - label: Writing Committee (Kontos MC, de Lemos JA, Deitelzweig SB, et al). 2022 ACC Expert Consensus Decision Pathway on the Evaluation and Disposition of Acute Chest Pain in the Emergency Department. J Am Coll Cardiol. 2022;80(20):1925-1960. PMID 36241466.
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10691881/
+    - label: Dr. Smith's ECG Blog：Hyperacute T waves
+      url: https://drsmithsecgblog.com/hyperacute-t-waves/
+    - label: 'Ken Grauer, ECG Blog #319 — QRS Alternans?'
+      url: https://www.ekgblog.com/2022/07/ecg-blog-319-qrs-alternans.html
+  - id: south-african-flag
+    name: South African Flag sign
+    part: Part 3（下）不相鄰導程
+    look: '**I、aVL、V2三個lead都STE**（V2那個「跳過V1、不連續」的STE就是靈魂），**reciprocal STD在lead III**（常延伸II、aVF） ➜ South African Flag sign。'
+    look_src: PhgzEki87
+    leads:
+    - I
+    - aVL
+    - V2
+    - III
+    artery: first diagonal
+    artery_src: PhgzEki87
+    pitfall: V2若是rSr'合併輕微saddleback（漸進上斜）的ST elevation，形狀跟真正SAF sign常見的V2 STE不一樣，要想到**V2電極貼太高**（Ken Grauer在一個病例中的判斷）。若只有V2抬、其他胸前導程乾淨，偏向D1／D2阻塞；V3、V4也開始抬，可能是LAD occlusion還在evolve：兩種都要Call CV man。證據等級要誠實講：原始描述是Durant & Singh 2015的單一病例報告，命名的Littmann 2016是Letter（PubMed分類：Letter、Comment），標題自稱a teaching tool；PubMed上以這個sign為題的文獻大多是case report。**不要把它當成已驗證的診斷規則**。
+    pitfall_src: roam:9Yf746kzf, roam:Tk2DfVxxo, roam:xB9157nya, roam:6JJc_vACY, roam:4wMbcGE-e, roam:ULl9WW-Yq; url:https://drsmithsecgblog.com/acute-omi-or-benign-early-repolarization/; url:https://drsmithsecgblog.com/a-woman-in-her-30s-with-sudden-chest/; pmid:26527178; pmid:25722286
+    points:
+    - text: '**STE in lead I、aVL、V2**＋**reciprocal STD in lead III**（II、aVF常伴隨，但III最明顯）。aVL和V2在紙上分屬兩區，照傳統分組不相鄰。'
+      src: roam:nrFi_-Awq, roam:YhJ_-VEEa, roam:YKSHUVhRS; url:https://www.ekgblog.com/2026/08/ecg-blog-540-does-it-fit-clinical.html; url:https://litfl.com/high-lateral-stemi-ecg-library/
+    - text: Ken Grauer補的第三條：**除了V2，其他胸前導程都沒有STE**。這條是拿來跟「LAD occlusion還在evolve、STE還沒擴到V2以外的胸前導程」做鑑別的關鍵。
+      src: roam:RNzY-_7Lg, roam:mTMKE52_d, roam:6JJc_vACY; url:https://www.ekgblog.com/2026/08/ecg-blog-540-does-it-fit-clinical.html; url:https://drsmithsecgblog.com/a-woman-in-her-30s-with-sudden-chest/
+    - text: 為什麼容易漏：aVL和V2在傳統分組裡不算相鄰導程，所以1st或2nd diagonal阻塞造成的「aVL＋V2 STE、其他胸前導程沒有」這個pattern，照定義就可能湊不到「兩個相鄰導程」的STEMI criteria。
+      src: roam:1aAQAAIof, roam:E9LPbMzAG; url:https://drsmithsecgblog.com/a-woman-in-her-30s-with-sudden-chest/
+    criteria:
+    - text: STE in lead I、aVL、V2＋reciprocal STD in lead III（常延伸到II、aVF，程度較輕）；Ken Grauer另加一條：除V2外，其他胸前導程沒有STE。
+      src:
+      - pmid:25722286
+      - url:https://www.ekgblog.com/2026/08/ecg-blog-540-does-it-fit-clinical.html
+      - url:https://litfl.com/high-lateral-stemi-ecg-library/
+      verified: '2026-09-14 自行核對，無數字判準。①原始病例報告 Durant E, Singh A. Am J Emerg Med 2015;33(9):1326.e3-5（PMID 25722286，PubMed 無摘要；讀 Bear Zotero 內 accepted manuscript 全文）逐字：『Prehospital and initial hospital electrocardiograms (ECG) showed ST elevations in leads 1, v2, and avL and ST depressions in the inferior leads (II, III, and avF)』；同文引 Birnbaum 等研究：『none of these patients had ST-segment elevation in V3-V6』。②Ken Grauer, ECG Blog #540（2026-08-01，curl 原始頁面）逐字：『i) ST elevation in leads I, aVL and V2; ii) Reciprocal ST depression in lead III (ST depression is also often seen to a lesser degree in neighboring inferior leads II and aVF); iii) No ST elevation in any chest lead except for lead V2.』③LITFL《High Lateral STEMI》（Mike Cadogan、Robert Buttner）逐字：『ST Elevation: Lead I, aVL, V2; ST Depression: Lead III (and inferior leads)』。命名者 Littmann 2016 為 Letter、無摘要、全文未取得；兩篇獨立期刊文章轉述其定義一致（Zahdeh 2025 Cureus, PMC12681995：『noncontiguous leads (I, aVL, and V2) with reciprocal ST depression in inferior leads』；Rajendran 2021 QJM：『ST-elevation in the lead I, aVL, V2 and ST-depression in lead III』）。第三條是 Grauer 個人加的，文中已標明出處。'
+    refs:
+    - label: 'Ken Grauer. ECG Blog #540 — Does it "Fit" the Clinical?（2026-08-01）'
+      url: https://www.ekgblog.com/2026/08/ecg-blog-540-does-it-fit-clinical.html
+    - label: LITFL：High Lateral STEMI（Mike Cadogan、Robert Buttner）
+      url: https://litfl.com/high-lateral-stemi-ecg-library/
+    - label: 'Durant E, Singh A. Acute first diagonal artery occlusion: a characteristic pattern of ST elevation in noncontiguous leads. Am J Emerg Med. 2015 Sep;33(9):1326.e3-5. PMID 25722286'
+      url: https://pubmed.ncbi.nlm.nih.gov/25722286/
+    - label: 'Littmann L. South African flag sign: a teaching tool for easier ECG recognition of high lateral infarct. Am J Emerg Med. 2016 Jan;34(1):107-9. PMID 26527178'
+      url: https://pubmed.ncbi.nlm.nih.gov/26527178/
+    - label: Dr. Smith's ECG Blog：A woman in her 30s with sudden chest pain, nausea, and diaphoresis. Was her cardiology management appropriate?（2022-04-08，My Comment by Ken Grauer）
+      url: https://drsmithsecgblog.com/a-woman-in-her-30s-with-sudden-chest/
+    - label: Dr. Smith's ECG Blog：Acute OMI or "Benign" Early Repolarization?（2023-12-27，My Comment by Ken Grauer）
+      url: https://drsmithsecgblog.com/acute-omi-or-benign-early-repolarization/
+  - id: aslanger
+    name: Aslanger's pattern
+    part: Part 3（下）不相鄰導程
+    look: '**只有lead III有STE（II／aVF沒有）＋V4–V6 STD，但V2沒有STD** ➜ Aslanger''s pattern。inferior OMI疊在多血管疾病上。'
+    look_src: fCKyX5TzO
+    leads:
+    - III
+    - V4–V6
+    - V2
+    pitfall: 下壁三個導程一起抬就不算了，那是單純的inferior MI。
+    pitfall_src: fCKyX5TzO
+    points:
+    - text: '**三條criteria**（Aslanger 2020原文）：①lead III有STE、但其他inferior leads（II、aVF）沒有 ②V4–V6任一lead有STD、T wave positive或terminally positive，而且**V2沒有STD** ③**lead V1的ST比V2高**。機轉是inferior MI的ST向量加上多血管病變subendocardial ischemia的ST向量，合力偏右，II和aVF被抵銷，只剩lead III還看得到STE（「兩台風扇對吹，中間的II和aVF被抵銷」）。'
+      src: roam:zzE36TnWj, roam:cDXep6WOf, roam:qKHgCxFwl, roam:0EjjKGXAs, roam:2R0a5AVoA; pmid:32526537; url:https://drsmithsecgblog.com/typical-chest-pain-would-you-activate/
+    - text: Ken Grauer補充版：唯一有明顯STE的leads可能只剩**III、aVR、V1**三個；lead I的reciprocal STD可能比aVL更明顯（因為ST向量偏右）。
+      src: roam:HZq8f--qO, roam:uS-o_ZXJM; url:https://www.ekgblog.com/2026/05/ecg-blog-529-should-prompt-cath-be-done.html
+    - text: 兩個發生率分母不同，別搞混：在**NSTEMI族群**中佔**6.3%**；原文另說**13.3%的inferior MI**可能以這個pattern表現。這群人的住院與一年死亡率跟inferior STEMI相近（統計上沒有差異），卻可能因為被貼上NSTEMI標籤而拿不到emergent revascularization：這才是Aslanger's pattern真正的臨床意義。
+      src: roam:obRKTeZJX, roam:vr6j-VG8h, roam:CZVklh1nf; pmid:32526537; url:https://litfl.com/aslanger-pattern/
+    criteria:
+    - text: ①lead III有任何STE、但其他inferior leads沒有；②V4–V6任一lead有STD（但V2沒有），且T wave positive或terminally positive；③lead V1的ST高於V2。
+      src:
+      - pmid:32526537
+      - pmid:36601361
+      verified: 2026-09-14 自行核對，定義型判準、無數字。⚠️草稿說這三條是從 PubMed 摘要逐字核對——不實，efetch 摘要裡沒有這三條。①原始研究全文（Bear Zotero 內 Elsevier PDF，J Electrocardiol 2020;61:41-46）Methods 逐字：『The prespecified ECG pattern was defined as (1) any STE in DIII but not in other inferior leads, (2) STD in any of leads V4 to V6 (but not in V2) with a positive or terminally positive T-wave, (3) ST in lead V1 higher than ST in V2.』②獨立作者群 Miyauchi E, et al. Cureus 2023;15(1):e33227（PMID 36601361，PMC9805815 全文）逐字：『The Aslanger pattern was defined as (1) any ST elevation in lead III, but not in other inferior leads, (2) ST depression in any of the leads V4 to V6 (but not in V2) with a positive or terminally positive T-wave, and (3) ST in lead V1 is higher than ST in V2.』兩者一致。
+    - text: 發生率：NSTEMI族群中6.3%、沒有MI的對照組0.5%；原文推估13.3%的inferior MI可能以這個pattern表現。死亡率：住院與一年死亡率跟inferior STEMI相近，沒有統計差異。
+      src:
+      - pmid:32526537
+      - url:https://litfl.com/aslanger-pattern/
+      verified: '2026-09-14。6.3%：PubMed 摘要逐字『observed in 6.3% (61/966) of the non-STEMI cohort』；LITFL《Aslanger Pattern: Another OMI?》（Robert Buttner、Mike Cadogan，WebFetch 兩次一致）逐字『The Aslanger Pattern was observed in 6.3% of NSTEMI patients』。0.5%：摘要『0.5% (5/1000) of no-MI patients』；LITFL『present in 0.5% of patients without acute MI』。13.3%：原始全文 Discussion（Zotero PDF）『Our data indicate that 13.3% of inferior MIs may present with this pattern and may be deprived of emergent revascularization therapy because of being incorrectly labeled as non-STEMI』；LITFL『13.3% of inferior MIs may present with Aslanger Pattern』。死亡率只留定性結論：摘要『they had a similar in-hospital (5% vs. 4%, respectively; P = 0.675) and one-year mortality compared to the patients with inferior STEMI』。拿掉的數字：61/966、5/1000（只有原始研究一份文件）；5% vs 4%、11% vs 8% 與 P 值（找不到獨立第二來源，而且原文摘要寫 P = 0.675、Table 2 寫 0.673，原文自己就不一致）。'
+    slides:
+    - src: /images/omi/aslanger-slide-2025-294.webp
+      width: 1600
+      height: 1200
+      alt: 12導程心電圖，標題「50歲男性、胸痛到院」。左半I/II/III/aVR/aVL/aVF：III導程紅色向上箭頭標STE、aVL導程紅色向下箭頭標reciprocal STD，藍底文字「Inferior leads只有III有STE，合併aVL reciprocal STD change」。右半V1–V6：橘框圈住V1/V2，藍底文字「V1的ST高於V2」；V4/V5/V6各有紅色向下箭頭與綠色空心圈，藍底文字「STD in any of leads V4-V6 + upright or terminally positive T wave(V2沒有STD)」
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 294）。心電圖出處：Emre Aslanger（@AslangerE）2022-05-07 在 X（Twitter）分享的病例；圖上的箭頭、框線與中文標註是我加的。
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/d1b0e6d05c1/slide_294.png；crop=None
+    refs:
+    - label: Aslanger E, Yıldırımtürk Ö, Şimşek B, Sungur A, Türer Cabbar A, Bozbeyoğlu E, Karabay CY, Smith SW, Değertekin M. A new electrocardiographic pattern indicating inferior myocardial infarction. J Electrocardiol. 2020 Jul-Aug;61:41-46. PMID 32526537
+      url: https://pubmed.ncbi.nlm.nih.gov/32526537/
+    - label: Miyauchi E, Kuwazuru K, Arikawa R, Tokutake D, Chaen H, Oketani N, Ohishi M. Clinical Features of the Aslanger Pattern to Compensate for the Limitation of ST-Elevation Myocardial Infarction (STEMI) Criteria. Cureus. 2023 Jan;15(1):e33227. PMID 36601361
+      url: https://pubmed.ncbi.nlm.nih.gov/36601361/
+    - label: 'LITFL：Aslanger Pattern: Another OMI?（Robert Buttner、Mike Cadogan）'
+      url: https://litfl.com/aslanger-pattern/
+    - label: 'Ken Grauer. ECG Blog #529 — Should Prompt Cath be Done?（2026-05-02）'
+      url: https://www.ekgblog.com/2026/05/ecg-blog-529-should-prompt-cath-be-done.html
+    - label: 'Dr. Smith''s ECG Blog：Typical Chest Pain: Would you activate the cath lab? Would you advocate if the interventionalist was not interested?（2021-05-10）'
+      url: https://drsmithsecgblog.com/typical-chest-pain-would-you-activate/
+  - id: northern-omi
+    name: Northern OMI
+    new2025: true
+    part: Part 3（下）不相鄰導程
+    look: 這個pattern目前只有一篇單中心、回溯的研究，判準與證據等級請直接看Part 3（下）。我在這裡**不自己給定義**，免得害你記到錯的東西。
+    look_src: Zrcv2hNMj（拿掉研究人數，待查證後放回）
+    leads:
+    - aVR
+    - aVL
+    - II／III／aVF
+    leads_src: pmid:41719915（摘要修改版判準逐字）; roam:R4Dk1z3f2（原稿：核心是aVR和aVL一起STE、下壁reciprocal STD）
+    pitfall: '**判準還沒有共識**（見上），抓核心：aVR和aVL一起STE＋下壁reciprocal STD；週邊條件（V4–V6、T wave方向）各家寫法不同，不要硬背。DDx要想到**急性顱內事件**：Ni 2026收案的病人裡，就有人最後歸因於acute brainstem hemorrhage，不是OMI。LVH、BBB等會造成baseline ST-T異常的狀況，也會讓這種靠形狀認的pattern不可靠，要跟舊片比對。'
+    pitfall_src: roam:R4Dk1z3f2, roam:A3TYEasIY, roam:uIEjnK7aY, roam:vWJA4UKXX; pmid:41719915
+    points:
+    - text: Northern OMI指**ST向量朝正上方（north）**：aVR和aVL一起STE，下壁出現reciprocal STD。Dr. Smith's ECG Blog的說法是：這是跟心臟**base**（心臟最上面、心房正下方，特別可能是septum的base）subepicardial（transmural）ischemia相關的STEMI pattern。同一篇文章裡，提供病例的Amandeep Singh寫到它可能來自left main occlusion、proximal LAD occlusion，或多血管冠狀動脈疾病。
+      src: roam:o9WAIS2JO, roam:Shu4dN5Rx; url:https://drsmithsecgblog.com/what-is-this-pattern/
+    - text: ⚠️ **證據很薄，要誠實講**：Dr. Smith's ECG Blog自己稱它是「a vaguely defined pattern」。我們查到的原始研究只有Ni 2026一篇**小型回溯性病例分析**（作者群來自同一家醫院），作者也說收進來的病人「並沒有完全符合現行的Northern OMI診斷準則」，所以提出修改版。各來源寫法不同：Dr. Smith's ECG Blog（2025-12-18）列的特徵是aVR、aVL STE（often with negative T-waves）＋inferior（II、III、aVF）與lateral（V4–V6）STD（T wave positive或biphasic）；Ni 2026修改版只寫aVR、aVL STE＋至少II、III、aVF的reciprocal STD。**認得它，但不要靠它。**
+      src: roam:ZbwJzJsLS, roam:Z7FbJY3Tr, roam:of3ZvK22W, roam:-w70Z3fY4; url:https://drsmithsecgblog.com/what-is-this-pattern/; pmid:41719915
+    - text: 跟[aVR STE + multiple leads STD](/omi/#avr-ste)不一樣：Smith在2019年整理完全left main occlusion的個案（他自稱anecdotal cases）時，裡面就有Northern OMI pattern，而且他明講「LM occlusion does not present with isolated STE in aVR」。所以**看到aVR STE，第一件事去看aVL**：aVL也一起STE、下壁有reciprocal STD，就要想到Northern OMI。
+      src: roam:o4L7gjbxA, roam:6euSJrQH0, roam:sNLGMvzyZ, roam:rDIAXC9XC; url:https://drsmithsecgblog.com/how-does-acute-left-main-occlusion/
+    criteria:
+    - text: Ni 2026提出的修改版判準：aVR和aVL有STE，合併至少II、III、aVF的reciprocal STD（摘要所列判準沒有提T wave方向，也沒有要求V4–V6）。這是小型回溯性病例分析提出的建議，不是經過驗證的標準。
+      src:
+      - pmid:41719915
+      verified: 2026-09-14 eutils esummary：Ni H, Wan X, Shi T, Gao Z, Pan H. A new and modified northern occlusion myocardial infarction pattern. J Electrocardiol. 2026 Mar-Apr;95:154212（作者、標題、卷期一致；作者單位皆為 Affiliated Hospital of Jiaxing University）。efetch 摘要逐字：『This study proposes an modified diagnostic criterion characterized by ST-segment elevation in leads aVR and aVL, accompanied by reciprocal ST-segment depression (STD) in at least leads II, III, and aVF.』研究設計逐字『We conducted a retrospective analysis』；限制逐字『The current diagnostic model for Northern OMI may have limitations.』定義型判準，無數字。全文（Elsevier）未取得，所以『沒有提T wave方向／沒有要求V4–V6』只就摘要而言。拿掉的數字：18個月、9位、8位OMI、1位腦幹出血——只有這篇摘要一個來源，找不到獨立第二來源（Deng 2026 綜論、Gorgels 2026 摘要、Smith blog 都沒有寫）。
+    refs:
+    - label: Ni H, Wan X, Shi T, Gao Z, Pan H. A new and modified northern occlusion myocardial infarction pattern. J Electrocardiol. 2026 Mar-Apr;95:154212. PMID 41719915
+      url: https://pubmed.ncbi.nlm.nih.gov/41719915/
+    - label: Dr. Smith's ECG Blog：What is this pattern?（2025-12-18，case contributed by Amandeep Singh, Highland Hospital）
+      url: https://drsmithsecgblog.com/what-is-this-pattern/
+    - label: Dr. Smith's ECG Blog：How does Acute Total Left Main Coronary occlusion present on the ECG?（2019-08-09）
+      url: https://drsmithsecgblog.com/how-does-acute-left-main-occlusion/
+    slides:
+    - src: /images/omi/northern-omi-slide-2025-324.webp
+      width: 1600
+      height: 1200
+      alt: 投影片「Northern OMI」：彩色圓環分成八格，外圍標著導程（aVR、aVL、Lead I、Lead II、aVF、III）與對應區域（Subendocardial ischemia、High lateral MI、Anterolateral MI、Inferior MI(LCx)、Inferior MI(RCA)）；圓環中間是一顆卡通心臟，三個箭頭從中心出發：紅色指向 aVR、綠色指向 aVL、深藍色直指正上方。
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 324）：ST 向量朝正上方（north）。導程與區域的文字是我加的；底圖（彩色圓環＋心臟）出處待確認。
+      src_note: 'keynote-search slides/d1b0e6d05c1/slide_324.png；查核員因出處不明拿掉；Bear 2026-09-14 要求先放預覽站再確認（review: true，正式 build 不顯示）'
+      review: true
+  - id: n-wave
+    name: N wave sign
+    new2025: true
+    part: Part 3（下）不相鄰導程
+    look: '**在II／III／aVF或I／aVL**出現**QRS終末notch／deflection**、**該lead QRS變寬** ➜ N wave sign。完整criteria見Part 3（下）。'
+    look_src: BXfFfBtxb（拿掉振幅切點，待查證後放回）
+    leads:
+    - II／III／aVF
+    - I／aVL
+    artery: LCx／OM
+    artery_src: mFv0L91n6
+    pitfall: '**最大的陷阱：把良性的early repolarization當成N wave**。而且千萬不要用「哪個lead」來分：lead位置只告訴你「如果它是N wave，那culprit在哪」，不能拿來判斷「它是不是N wave」。'
+    pitfall_src: Mz7Lta9hi, kanB7Ihre（原本取自 Part 4 BXfFfBtxb 的「不是V2–V3，那裡的notch是J wave」，跟 Part 3（下）的結論衝突，改用 Part 3（下）原文）
+    points:
+    - text: N wave sign＝**QRS末端多出一個notch或deflection**。Niu 2013原始研究的定義有四條：①QRS末端有notch／deflection ②高度切點2 mm（以PR segment為基準）③24小時內notch持續變化（甚至消失或變成S wave）④這些leads的QRS duration延長。機轉是**left ventricular basal region**（LCx供應區）的delayed activation wave：「全班一起交考卷，有一個人寫太慢，最後一個交」。
+      src: roam:3SnArGclc, roam:oIL0iJx_z, roam:vGtngM2Pz, roam:fBDuI867l, roam:nVIkTzCKU, roam:e0dDhjvLZ; pmid:21663984; pmid:35198230
+    - text: 跟良性J wave（early repolarization）的分辨，**不要只看出現在哪個lead**：lead位置只能告訴你「如果它是N wave，culprit可能在哪」，不能判斷「它是不是N wave」。要看criteria本身給的條件：①高度（良性的常沒這麼大）②動態（N wave會在24小時內變化；良性early repol是靜態的，舊片就長這樣）③QRS有沒有變寬（N wave是delayed activation，會拖長QRS）；再加上臨床情境（有沒有ACS症狀）和舊片對照。
+      src: roam:kanB7Ihre, roam:mHQlJ9Z0y, roam:9bhHZmW1a, roam:Sl7laGMlw, roam:kHdWAnY3l, roam:71HZNliKi
+    - text: 抓LCx的表現：N wave出現在II、III、aVF時，sensitivity 77%、specificity 89%。⚠️這個數字的target condition是**在已確診NSTEMI、而且做過冠狀動脈攝影的病人裡，判斷culprit是不是LCx**，不是「從胸痛病人裡抓出OMI」，**不能跟前面幾個finding的數字直接並排比較**。另一個團隊的研究（Rostoff 2020）結果比較保守：culprit為LCx／OM的病人裡，最常見的finding是T-wave precordial instability，不是N wave；aVL的N wave雖然是culprit LCx／OM的獨立預測因子，但culprit在LAD／diagonal的病人也會出現下壁N wave。**N wave是指向LCx的線索，不是高敏感度的篩檢工具。**
+      src: roam:WROAlASEb, roam:TcOLCkca2, roam:6XyUXhNdj, roam:K64kJDzp1, roam:BWrUFO82e, roam:R68bhQNtW, roam:Zymwk7C81; pmid:21663984; pmid:35198230; pmid:32568742
+    criteria:
+    - text: Niu 2013原始研究的N wave定義：①QRS末端有notch或deflection；②notch／deflection高度切點2 mm（以PR segment為基準；原文寫≥2 mm，獨立來源Alsagaff 2022寫>2 mm）；③24小時內notch持續變化，甚至消失或變成S wave；④這些leads的QRS duration延長。
+      src:
+      - pmid:21663984
+      - pmid:35198230
+      verified: 2026-09-14 自行核對。①原始研究 Niu T, et al. Int J Cardiol 2013;162(2):107-11（PMID 21663984；Bear Zotero 全文 PDF）Methods 逐字：『(1) a notch or deflection in the terminal QRS complex of the surface ECG; (2) the height of notch or deflection of ≥ 2 mm (the point of deflection was measured with reference to the PR segment); (3) a continuous change of the notch (the point of deflection shifted ≥2 mm with reference to the PR segment, ≥2 leads) in 24 hours, even disappeared or come into the s wave; (4) with a prolongation of QRS duration in these leads.』②獨立作者群 Alsagaff MY, et al. Oxf Med Case Reports 2022（PMID 35198230，PMC8858395 全文）逐字：『(i) a notch or deflection in the terminal QRS complex on the surface ECG; (ii) the height of the notch or deflection of > 2 mm; (iii) a continuous change of the notch in 24 hours, even disappearance or transition into the s wave and (iv) prolongation of QRS duration in these leads』。兩者都寫 2 mm 與 24 hours，但不等號不同（≥ vs >），判準只寫『切點2 mm』並把兩種寫法都標出來。拿掉：『反折點變動≥2 mm、至少2個leads』——只有 Niu 2013 和同一團隊的 Yang 2020（Niu T、Fu P 為共同作者，同屬盛京醫院）寫到，不算獨立；有N wave者QRS 121±12 ms vs 106±11 ms（P<0.01）——只見於 Niu 2013 一份文件。草稿把 Yang 2020 當成獨立第二路徑，不成立。
+    - text: N wave出現在II、III、aVF：辨認culprit為LCx的sensitivity 77%、specificity 89%（族群是做過冠狀動脈攝影的NSTEMI病人；target condition是「culprit是不是LCx」，不是「有沒有OMI」）。
+      src:
+      - pmid:21663984
+      - pmid:35198230
+      verified: 2026-09-14。①Niu 2013 PubMed 摘要逐字：『N wave in leads II, III and aVF was associated with 77% sensitivity and 89% specificity, respectively.』族群逐字：『NSTEMI patients who presented to our institution and underwent coronary angiography within 24 hours of admission』（只取設計描述，不放人數與時間）。②Alsagaff 2022（PMC8858395）逐字：『The presence of N-wave in the lead II, III, AVF is associated with 77% sensitivity and 89% specificity of LCx lession, respectively』。拿掉：I、aVL的64%／96%（找不到獨立第二來源；Yang 2020 前言把數字寫成『77% and 96%』，本身就對不上）、218人、LCx組66（77%）／LAD 6%／RCA 18%、P<0.001（單一來源），以及草稿自行算出的『66/86』（任何來源都沒有這個分母）。
+    - text: 有N wave的NSTEMI（N-NSTEMI）：在culprit為LCx的病人中，all MACE、all-cause death、stent thrombosis、TVR、recurrent unstable angina的發生率跟STEMI相近，而且都高於沒有N wave的NSTEMI；作者結論是N-NSTEMI的風險等同急性STEMI。
+      src:
+      - pmid:32032438
+      verified: 2026-09-14 eutils：Yang T, Chen J, Liu X, Xu C, Niu T, Fu X, Fu P. Clin Cardiol. 2020 May;43(5):491-499（PMID 32032438）。摘要逐字：『The incidence rates of all MACEs, all-cause death, ST, TVR, and rUAP were similar in N-NSTEMI and STEMI groups, which were greater than non N-NSTEMI (P < .05).』『N-NSTEMI has a risk equivalent to acute STEMI.』ST＝stent thrombosis 由 PMC7244293 全文縮寫表確認（『ST, stent thrombosis』）。非數字型結論，一個原始來源即可；P 值拿掉。⚠️這篇和 Niu 2013 是同一團隊（盛京醫院），不是獨立複製。
+    refs:
+    - label: Niu T, Fu P, Jia C, Dong Y, Liang C, Cao Q, Yang Z, Fu R, Zhang X, Sun Z. The delayed activation wave in non-ST-elevation myocardial infarction. Int J Cardiol. 2013 Jan 10;162(2):107-11. PMID 21663984
+      url: https://pubmed.ncbi.nlm.nih.gov/21663984/
+    - label: 'Alsagaff MY, Wardhani LFK, Pratanu I, Kartikasari DP, Doevendans PA. NSTEMI with total left circumflex occlusion: how the N-wave might help (case report). Oxf Med Case Reports. 2022 Feb;2022(2):omac010. PMID 35198230'
+      url: https://pubmed.ncbi.nlm.nih.gov/35198230/
+    - label: Yang T, Chen J, Liu X, Xu C, Niu T, Fu X, Fu P. Non-ST-elevated myocardial infarction with "N" wave on electrocardiogram and culprit vessel in left circumflex has a risk equivalent to ST-elevated myocardial infarction. Clin Cardiol. 2020 May;43(5):491-499. PMID 32032438
+      url: https://pubmed.ncbi.nlm.nih.gov/32032438/
+    - label: 'Rostoff P, Wisniewski P, Gajos G, Konduracka E, Nessler J, Kruszelnicka O. Electrocardiographic identification of the culprit coronary artery in acute non-ST-elevation myocardial infarction: predictive value of N-wave and T-wave precordial instability. Coron Artery Dis. 2020 Nov;31(7):590-596. PMID 32568742'
+      url: https://pubmed.ncbi.nlm.nih.gov/32568742/
+- id: calc
+  name: 特別計算
+  slide: 371
+  findings:
+  - id: t-qrs-ratio
+    name: Ant.STE(出現QS pattern)，懷疑LV aneurysm with STEMI
+    short: T/QRS ratio
+    full: T/QRS ratio
+    part: Part 4 特別計算
+    look: '**有STE，而且V1–V4前面躺著well-formed Q wave / QS wave** ➜ T/QRS ratio。單一lead和總和兩種算法打架 ➜ **ED echo**。'
+    look_src: MF0-IVPRb, E6cZzeJdV（拿掉兩個切點，待查證後放回）
+    leads:
+    - V1–V4
+    pitfall: 這條rule只分「acute STEMI」和「subacute／old MI」，**不能**拿來分early repol（那是4-variable formula的地盤）；單一lead和總和兩種比值打架時不要用猜的，直接**ED echo**。另外一定要問症狀多久：**症狀拖得比較久的acute MI，T wave可能已經變小，會被這條rule誤判成LV aneurysm。**
+    pitfall_src: roam:93bDPmHow, roam:eLU3MutnX, roam:UDZQ9I8Bz, pmid:15915398
+    points:
+    - text: '**適用前提**：V1–V4的STE前面躺著well-formed Q wave，或至少一個QS wave，先確認是LVA（LV aneurysm）morphology的地盤，才用這條rule分「舊疤」還是「現在正在燒」。QS wave的精確定義請看Smith部落格原文。這條**不能**拿來分early repol，那是4-variable formula的工作，插錯孔會給錯答案。'
+      src: roam:93bDPmHow
+    - text: '**記憶口訣：T wave是火，QRS是牆。** acute MI的T wave相對QRS是大的；old MI／LV aneurysm的T wave是小的：看火有沒有燒過牆頭。'
+      src: roam:IOpwkJTlm
+    - text: '**怎麼算**：V1–V4逐一量T wave amplitude與QRS amplitude。每個lead各算一次T÷QRS，取最大的那個；再把四個T加總、四個QRS加總後相除，算一次總和比值。兩個比值各對各的切點，不能混用。'
+      src: roam:yFOxbNdoW, pmid:25862248
+    criteria:
+    - text: '**單一lead比值**：V1–V4任一lead的T/QRS ratio ≥0.36 ➜ 偏acute anterior STEMI；V1–V4全部 <0.36 ➜ 偏LV aneurysm。（Klein 2015寫「≥0.36」，LITFL寫「>0.36」，差別只在剛好等於0.36那一點。）'
+      src:
+      - pmid:25862248
+      - url:https://litfl.com/left-ventricular-aneursym-ecg-library/
+      verified: '①原始研究：Klein LR, Shroff GR, Beeman W, Smith SW. Am J Emerg Med. 2015;33(6):786-90（PMID 25862248，本次 eutils efetch 逐字）："The second rule states that if any 1 lead (V1-V4) has a T-wave amplitude to QRS amplitude ratio greater than or equal to 0.36, then acute ST-segment elevation MI is predicted."
+
+        ②獨立來源（非 Smith 作者群）：LITFL《Left Ventricular Aneurysm》（Ed Burns, Robert Buttner；本次 curl 原始 HTML 逐字）："T-wave/QRS ratio < 0.36 in all precordial leads favours LV aneurysm T-wave/QRS ratio > 0.36 in any precordial lead favours anterior STEMI"
+
+        ③補強：Rosen''s Emergency Medicine 10th ed. p.1007（本機教科書索引逐字）："if the ratio of the amplitude of the T wave to the QRS complex exceeds 0.36 in any single lead, the ECG probably reflects STEMI. If the ratio is less than 0.36 in all leads, however, the findings are likely the result of a ventricular aneurysm."'
+    - text: '**總和比值**：(V1–V4的T wave amplitude總和) ÷ (V1–V4的QRS amplitude總和) >0.22 ➜ 偏acute anterior STEMI。0.22只配總和比值，不能拿去套單一lead。'
+      src:
+      - pmid:15915398
+      - book:Electrocardiogram in Clinical Medicine (Wiley, 2021) p.415
+      verified: '①原始研究：Smith SW. Am J Emerg Med. 2005;23(3):279-87（PMID 15915398，本次 eutils efetch 逐字）："The best discriminator was T amplitude sum to QRS amplitude sum ratio V1-V4, misclassifying only 4 (6.8%) of 59 cases at a cutoff of >0.22 for AMI."
+
+        ②獨立來源（非 Smith 作者群）：Brady WJ, Lipinski MJ, Darby AE, Bond MC, Charlton NP, Hudson K, Williamson K, eds. Electrocardiogram in Clinical Medicine. Wiley; 2021. p.415（本機教科書索引逐字；全書索引中 Smith 只以被引文獻出現，不是作者或編者）："When the (Sum of the T‐wave amplitude) ÷ (Sum of the QRS amplitude) in leads V1–V4 is >0.22 or if the ratio of T‐wave amplitude to QRS amplitude in any single lead is >0.36, STEMI is favored."
+
+        註：Klein 2015 abstract 也重述 >0.22，但 Smith SW 是共同作者，不計為獨立路徑；Mattu 2e p.231 也有同一切點（OCR 把 0.22 辨識成「(22」，僅供參考）。'
+    slides:
+    - src: /images/omi/t-qrs-ratio-slide-2025-093.webp
+      width: 1600
+      height: 1200
+      alt: 投影片標題「T/QRS ratio」：上排標STEMI的12導極心電圖，V2藍框標示T/QRS=9/16=0.56；下排標LV aneurysm的12導極心電圖，V2藍框標示T/QRS=5/22=0.22，兩張心電圖上下對照
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 93）：STEMI 與 LV aneurysm 的 V2 單一 lead T/QRS 示範量測（0.56 vs. 0.22）
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/d1b0e6d05c1/slide_093.png；crop=None
+    refs:
+    - label: Smith SW. T/QRS ratio best distinguishes ventricular aneurysm from anterior myocardial infarction. Am J Emerg Med. 2005 May;23(3):279-87. PMID 15915398
+      url: https://pubmed.ncbi.nlm.nih.gov/15915398/
+    - label: Klein LR, Shroff GR, Beeman W, Smith SW. Electrocardiographic criteria to differentiate acute anterior ST-elevation myocardial infarction from left ventricular aneurysm. Am J Emerg Med. 2015 Jun;33(6):786-90. PMID 25862248
+      url: https://pubmed.ncbi.nlm.nih.gov/25862248/
+    - label: LITFL ECG Library：Left Ventricular Aneurysm
+      url: https://litfl.com/left-ventricular-aneursym-ecg-library/
+    - label: Dr. Smith's ECG Blog：Chest Pain, "Negative" Stress Tests, POCUS, & ECG Equations - A Case from Salim Rezaie (R.E.B.E.L. EM)
+      url: https://drsmithsecgblog.com/chest-pain-negative-stress-tests-pocus/
+  - id: four-variable
+    name: Subtle STE over ant.leads運用4 variable formula
+    short: 4-variable formula
+    full: 4-variable formula
+    part: Part 4 特別計算
+    look: '**有STE，沒有Q wave，V2–V4長得像early repol** ➜ 先看TQRSD；沒有TQRSD、也過了其他前提閘 ➜ 4-variable formula。記得：**公式只能往上加碼。**'
+    look_src: ZPS04RE7E, yxC-ylCFX, QsBZO0Xsj, gA_6OiJSK（拿掉公式切點，待查證後放回）
+    leads:
+    - V2–V4
+    pitfall: '**看到TQRSD不要算公式，直接當OMI處理**。算了反而可能給你一個安心的假數字。'
+    pitfall_src: 1NbaRR_tl
+    points:
+    - text: '**適用前提（一定要先過閘，沒過就不要算）**：V2–V4至少一個lead有≥1 mm STE，而且**沒有**LVH、V2–V4的Q wave／QS、inferior或precordial STD、TQRSD、precordial TWI、straight或convex的ST、>5 mm的STE。沒過閘的去向不一樣：有TQRSD或STD ➜ 已經是obvious OMI，直接Call CV；有Q wave／QS ➜ 改用[T/QRS ratio](/omi/#t-qrs-ratio)；有LVH ➜ 不要算，看baseline ECG、做echo；有precordial TWI ➜ 想Wellens；straight／convex ST或>5 mm STE ➜ 已超出subtle的範圍，不用算。'
+      src: roam:A6eJkEHZo, url:https://www.mdcalc.com/calc/10079/subtle-anterior-stemi-calculator-4-variable, pmid:28460689
+    - text: '**兩條公式的關係**：3-variable formula（Smith 2012）用STE60V3、QTc、RAV4三個變數；4-variable formula（Driver 2017）在這三個之外再加上**QRSV2**（V2整個QRS的振幅）。推導研究和土耳其的外部驗證都顯示4-variable比3-variable好，MDCalc也已經用4-variable版取代舊的3-variable版。**係數一個都不能改。**'
+      src: roam:fI5h7MD94, pmid:28460689, pmid:29938879, url:https://www.mdcalc.com/calc/10079/subtle-anterior-stemi-calculator-4-variable
+    - text: '**最重要的一句話**：這條公式只能「把懷疑升級」，不能「把懷疑取消」，算出來低於切點，不代表可以放心讓病人回家。原本就覺得像LAD occlusion，公式算出來偏低，也不該因此翻案。'
+      src: roam:IrewoDh9P
+    criteria:
+    - text: '**3-variable formula（Smith 2012）**：(1.196 × STE60V3) + (0.059 × QTc) − (0.326 × RAV4)；STE60V3與RAV4單位mm，QTc是電腦判讀的QTc（ms）。**>23.4** ➜ 偏LAD occlusion；**≤23.4** ➜ 偏early repolarization。'
+      src:
+      - pmid:22520989
+      - url:https://www.aliem.com/pv-card-early-repolarization-vs-stemi-on-ekg/
+      verified: '①原始研究：Smith SW, Khalil A, Henry TD, et al. Ann Emerg Med. 2012;60(1):45-56.e2（PMID 22520989，本次 eutils efetch 逐字）："if the value of the equation ([1.196 x ST-segment elevation 60 ms after the J point in lead V3 in mm]+[0.059 x QTc in ms]-[0.326 x R-wave amplitude in lead V4 in mm]) is greater than 23.4 predicted STEMI and if less than or equal to 23.4, it predicted early repolarization"
+
+        ②獨立來源（非 Smith 作者群）：ALiEM《PV card: Early repolarization vs STEMI on ECG》（Michelle Lin；本次 curl 原始 HTML 逐字）："(1.196 x STE60V3) + (0.059 x QTc) – (0.326 x RA V4)"、"QTc = The computer-read QTc interval"、"A result of > 23.4 is predictive of a LAD occlusion causing a STEMI, rather than early repolarization."
+
+        註：Driver 2017 abstract 把 3-variable 切點寫成「≥23.4」；Bozbeyoğlu 2018 外部驗證用「recommended cut-point of 23.5」。本條照原始研究寫 >23.4。'
+    - text: '**4-variable formula（Driver 2017）**：(1.062 × STE60V3) + (0.052 × QTc) − (0.151 × QRSV2) − (0.268 × RAV4)；STE60V3、QRSV2、RAV4單位mm，QTc是Bazett校正QT（ms）。**≥18.2** ➜ 偏LAD occlusion（anterior STEMI）；**<18.2** ➜ 偏early repolarization。'
+      src:
+      - pmid:28460689
+      - url:https://www.mdcalc.com/calc/10079/subtle-anterior-stemi-calculator-4-variable
+      - pmid:29938879
+      - pmid:37633077
+      verified: '①原始研究：Driver BE, Khalil A, Henry T, Kazmi F, Adil A, Smith SW. J Electrocardiol. 2017;50(5):561-569（PMID 28460689，本次 eutils efetch 逐字）："The derived 4-variable formula is: 0.052*QTc-B - 0.151*QRSV2 - 0.268*RV4 + 1.062*STE60V3."、"The cutpoint with the highest accuracy (92.0%) was at a cutoff value ≥18.2"
+
+        ②第二來源（交辦指定可用的 MDCalc；頁面 creator 欄列 Dr. Stephen W. Smith）：MDCalc《Subtle Anterior STEMI Calculator (4-Variable)》（本次 curl 頁面資料逐字）："Subtle Anterior STEMI 4-Variable Calculation = 0.052 x (Bazett-corrected QT interval, ms) - 0.151 x (QRS amplitude in lead V2, mm) - 0.268 x (R wave amplitude in lead V4, mm) + 1.062 x (ST segment elevation 60 ms after the J point in lead V3, mm)"、"Scores ≥18.2 are likely to be anterior STEMI"、"Scores <18.2 are likely to be benign early repolarization."
+
+        ③切點另有兩篇非 Smith 作者群論文：Bozbeyoğlu E, et al. Ann Noninvasive Electrocardiol. 2018（PMID 29938879）："The four-variable formula, with the published cut-point of 18.2"；Sert ET, Gül M, Kokulu K, Mutlu H. Am J Emerg Med. 2023（PMID 37633077）："When the cut-off value for the four-variable formula was taken as ≥18.2"'
+    slides:
+    - src: /images/omi/four-variable-slide-2025-343.webp
+      width: 1600
+      height: 1200
+      alt: 投影片左側是V2、V3、V4三段心電圖局部，綠色量尺分別標QRSV2、STEV360、RAV4；中間文字依序寫「V2的QRS振幅」「V3 J point往後1.5格的STE」「V4 R wave的高度」，右側兩欄寫「QTc」「帶入方程式」
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 343）：4-variable formula 的變數怎麼量，QRSV2、STE60V3（圖上標 STEV360）、RAV4，再加上 QTc 帶入方程式
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/d1b0e6d05c1/slide_343.png；crop=None
+    - src: /images/omi/four-variable-slide-2025-345.webp
+      width: 1600
+      height: 1200
+      alt: 投影片左側是MDCalc《Subtle Anterior STEMI Calculator (4-Variable)》計算機的輸入欄位截圖：Bazett-corrected QT interval 461 msec、QRS amplitude in lead V2 16 mm、R wave amplitude in lead V4 17 mm、ST segment elevation 60 ms after the J point in lead V3 3 mm（畫面沒有顯示計算結果）；右側淺藍底文字「從這個方程式可以知道一件事：在subtle ant.STEMI vs. Early repolarization，只使用STEMI criteria不足以協助診斷AMI」
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 345）：MDCalc《Subtle Anterior STEMI Calculator (4-Variable)》計算機的輸入畫面
+      src_note: ~/Desktop/Claude Code專用檔/keynote-search/slides/d1b0e6d05c1/slide_345.png；crop=None
+    refs:
+    - label: Smith SW, Khalil A, Henry TD, et al. Electrocardiographic differentiation of early repolarization from subtle anterior ST-segment elevation myocardial infarction. Ann Emerg Med. 2012 Jul;60(1):45-56.e2. PMID 22520989
+      url: https://pubmed.ncbi.nlm.nih.gov/22520989/
+    - label: Driver BE, Khalil A, Henry T, Kazmi F, Adil A, Smith SW. A new 4-variable formula to differentiate normal variant ST segment elevation in V2-V4 (early repolarization) from subtle left anterior descending coronary occlusion - Adding QRS amplitude of V2 improves the model. J Electrocardiol. 2017 Sep-Oct;50(5):561-569. PMID 28460689
+      url: https://pubmed.ncbi.nlm.nih.gov/28460689/
+    - label: 'Bozbeyoğlu E, Aslanger E, Yıldırımtürk Ö, et al. A tale of two formulas: Differentiation of subtle anterior MI from benign ST segment elevation. Ann Noninvasive Electrocardiol. 2018 Nov;23(6):e12568. PMID 29938879'
+      url: https://pubmed.ncbi.nlm.nih.gov/29938879/
+    - label: MDCalc：Subtle Anterior STEMI Calculator (4-Variable)
+      url: https://www.mdcalc.com/calc/10079/subtle-anterior-stemi-calculator-4-variable
+  - id: msc
+    name: LBBB/PPM with MSC(+)
+    full: Smith-Modified Sgarbossa Criteria
+    part: Part 4 特別計算
+    look: '**寬QRS（LBBB / ventricular paced）** ➜ 直接跳到MSC。三條criteria逐lead掃，paced再加掃V4–V6 concordant STD。'
+    look_src: LGDFoI5pO, eNmJFMC9P
+    pitfall: 寬QRS這裡**不要**用STEMI criteria、**不要**用4-variable formula、**也不要**用HATW score、**不要**用Precordial Swirl。**四缺一，寬QRS只剩MSC這條路**。
+    pitfall_src: e5-k1l2NZ（拿掉研究排除條件的數字）
+    leads:
+    - 任一lead（concordant STE；discordant STE比例法）
+    - V1–V3（LBBB的concordant STD）
+    - V4–V6（ventricular paced再加看concordant STD）
+    leads_src: roam:eOgVuYd61, roam:Os84bJ4E9, pmid:22939607, pmid:34172301, ECG Weekly 2021-11-22 paced literature review（會員頁）
+    points:
+    - text: '**寬QRS的世界，MSC幾乎是唯一一條有文獻撐腰的路**：LBBB或ventricular paced病人身上，STEMI criteria、4-variable formula（前提就是early repol vs. LAD occlusion的鑑別）、HATW score（推導研究本身就把QRS偏寬的病人排除）、Precordial Swirl（定義第一條就是narrow QRS without LVH）全部不能用，四缺一，只剩MSC有derivation、LBBB validation、paced validation三篇研究撐著。'
+      src: roam:dybdZi1Wc, pmid:40892623, pmid:40319770
+    - text: '**Rule of Appropriate Discordance（蹺蹺板）**：LBBB／paced心室是被不正常路徑去極化，ST-T本來就該跟QRS主要方向相反，這是正常現象。看到LBBB有STE，第一反應不該是「有STE➜STEMI」，要先問：這個STE是「本來就該翹」還是「翹過頭」？'
+      src: roam:4o7NUzhvB
+    - text: '**Smith 2012做的事一句話講完**：把原始Sgarbossa第三條的「5 mm絕對值」，換成「佔前面S wave深度的25%」。蹺蹺板有大有小，絕對值不公平：沒有coronary occlusion的LBBB病人，也可能出現≥5 mm的discordant STE；比例才公平。'
+      src: roam:eOgVuYd61, roam:8MRxgO_Xh, pmid:22939607
+    criteria:
+    - text: '**MSC三條（符合任一條就算positive，不加權、不計分；ST偏移相對PR segment量）**：① Concordant STE ≥1 mm（任一lead）② Concordant STD ≥1 mm（LBBB看V1–V3；ventricular paced擴大到V1–V6）③ Proportionally excessive discordant STE：在有≥1 mm discordant STE的lead，STE達到前面S wave深度的**25%以上**（原文寫ST/S ratio ≤−0.25，負號是因為ST和S方向相反）。'
+      src:
+      - pmid:22939607
+      - pmid:8559200
+      - url:https://litfl.com/sgarbossa-criteria-ecg-library/
+      - pmid:34172301
+      - url:https://ecgweekly.com/weekly-workout/literature-review-diagnosis-of-acute-coronary-occlusion-myocardial-infarction-in-patients-with-ventricular-paced-rhythms/
+      verified: '①原始研究：Sgarbossa 1996（PMID 8559200，本次 eutils efetch 逐字）："an ST-segment elevation of 1 mm or more that was concordant with (in the same direction as) the QRS complex; ST-segment depression of 1 mm or more in lead V1, V2, or V3"；Smith 2012（PMID 22939607，逐字）："ST segments, relative to the PR segment, were measured to the nearest 0.5 mm. The ST/S ratio was calculated for each lead that has both discordant ST deviation of greater than or equal to 1 mm and an R or S wave of opposite polarity"、"The revised rule is unweighted, requiring just 1 of 3 criteria."、"The cut point selected for relative discordant ST-segment elevation was -0.25."；Dodd 2021（PMID 34172301，逐字）："Adding concordant ST-depression in V4 to V6 to the MSC yielded 86% (95% CI 75 to 94) sensitivity."
+
+        ②獨立來源（非 Smith 作者群）：LITFL《Sgarbossa Criteria》（Mike Cadogan, Robert Buttner；本次 curl 原始 HTML 逐字）："Concordant ST elevation ≥ 1 mm in ≥ 1 lead Concordant ST depression ≥ 1 mm in ≥ 1 lead of V1-V3 Proportionally excessive discordant STE in ≥ 1 lead anywhere with ≥ 1 mm STE, as defined by ≥ 25% of the depth of the preceding S-wave"；paced 的 V1–V6：ECG Weekly（Amal Mattu）《Literature Review: diagnosis of acute coronary occlusion myocardial infarction in patients with ventricular paced rhythms》（2021-11-22；會員頁，內文取自本機 ecg-search 索引逐字，線上頁本次確認存在）："Concordant ST segment depression > 1 mm in any of V1-V6"'
+    - text: '**MSC比原始加權Sgarbossa好（LBBB驗證研究，Meyers 2015）**：MSC sensitivity 80%、specificity 99%；比原始加權Sgarbossa明顯更敏感，specificity則沒有統計差異。'
+      src:
+      - pmid:26678648
+      - book:Electrocardiogram in Clinical Medicine (Wiley, 2021) p.223
+      - book:Mattu A, Tabas JA, Brady WJ, eds. Electrocardiography in Emergency, Acute, and Critical Care, 2nd ed. p.213
+      verified: '①原始研究：Meyers HP, Limkakeng AT Jr, Jaffa EJ, et al. Am Heart J. 2015;170(6):1255-64（PMID 26678648，本次 eutils efetch 逐字）："The modified criteria were significantly more sensitive than the original weighted criteria (80% vs 49%, P < .001)"、"Specificity of the modified criteria was not statistically different from the original weighted criteria (99% vs 100%, P = .5)"
+
+        ②獨立來源（非 Smith 作者群）：Electrocardiogram in Clinical Medicine（Wiley 2021, eds. Brady WJ, et al.）p.223 表格（本機教科書索引逐字）："80% sensitive and 99% specific for STEMI"；補強：Mattu 2e p.213（本機教科書索引逐字）："In one validation study, use of the modified rule increased the sensitivity for acute MI (80% versus 49%) compared with the original weighted Sgarbossa criteria, with only a modest decrease in specificity (99% versus 100%)."
+
+        註：Smith SW 是 Meyers 2015 共同作者，Smith 部落格的同組數字不計為獨立路徑。原始加權 Sgarbossa 的 49%／100% 只有 Meyers 原文＋Mattu 2e（該書的章節作者名單不在索引內，無法排除 Smith 參與），依 fail-closed 不寫出數字。'
+    - text: '**Paced rhythm也適用（PERFECT study, Dodd 2021）**：ventricular paced rhythm裡，MSC比原始Sgarbossa敏感；MSC再加上V4–V6 concordant STD，sensitivity 86%。MSC的specificity依對照組不同落在84%–96%（對「做了導管但不是OMI」那組84%，對一般ED對照組96%）。'
+      src:
+      - pmid:34172301
+      - url:https://ecgweekly.com/weekly-workout/literature-review-diagnosis-of-acute-coronary-occlusion-myocardial-infarction-in-patients-with-ventricular-paced-rhythms/
+      verified: '①原始研究：Dodd KW, Zvosec DL, Hart MA, et al. Ann Emerg Med. 2021;78(4):517-529（PMID 34172301，本次 eutils efetch 逐字）："the MSC were more sensitive than the original Sgarbossa criteria"、"Adding concordant ST-depression in V4 to V6 to the MSC yielded 86% (95% CI 75 to 94) sensitivity."、"For the no occlusion myocardial infarction control group of ED patients, additional test characteristics of MSC and original Sgarbossa criteria, respectively, were as follows: specificity 96%"、"For the non-occlusion myocardial infarction-angio control group, additional test characteristics of MSC and original Sgarbossa criteria, respectively, were as follows: specificity 84%"
+
+        ②獨立來源（非 Smith 作者群）：ECG Weekly（Amal Mattu）《Literature Review: diagnosis of acute coronary occlusion myocardial infarction in patients with ventricular paced rhythms》（2021-11-22；會員頁，內文取自本機 ecg-search 索引逐字，線上頁本次確認存在）："The modified criteria have been shown to be more sensitive than the original criteria (Dodd et al., PMID: 34172301): The MSC were found to have high sensitivity (86%) and specificity (84-96%) for diagnosing acute coronary occlusion."'
+    - text: '**原始Sgarbossa criteria（1996）三條**：① concordant STE ≥1 mm ② concordant STD ≥1 mm（V1、V2或V3）③ discordant STE ≥5 mm。原始研究把這三條放進多變項模型做成計分系統；Smith 2012認為這套rule的診斷效用不佳，改掉的就是第③條的5 mm絕對值。'
+      src:
+      - pmid:8559200
+      - pmid:22939607
+      - url:https://litfl.com/sgarbossa-criteria-ecg-library/
+      verified: '①原始研究：Sgarbossa EB, Pinski SL, Barbagelata A, et al. N Engl J Med. 1996;334(8):481-7（PMID 8559200，本次 eutils efetch 逐字）："an ST-segment elevation of 1 mm or more that was concordant with (in the same direction as) the QRS complex; ST-segment depression of 1 mm or more in lead V1, V2, or V3; and ST-segment elevation of 5 mm or more that was disconcordant with (in the opposite direction from) the QRS complex. We used these three criteria in a multivariate model to develop a scoring system"；Smith 2012（PMID 22939607，逐字）："Sgarbossa''s rule, proposed for the diagnosis of acute myocardial infarction in the presence of left bundle branch block, has had suboptimal diagnostic utility."、"the third Sgarbossa component (excessively discordant ST-segment elevation as defined by ≥5 mm of ST-segment elevation in the setting of a negative QRS) is replaced by one defined proportionally by ST-segment elevation to S-wave depth (ST/S ratio)"
+
+        ②獨立來源（非 Smith 作者群）：LITFL《Sgarbossa Criteria》（本次 curl 原始 HTML 逐字）："Concordant ST elevation > 1mm in leads with a positive QRS complex"、"Concordant ST depression > 1 mm in V1-V3"、"Excessively discordant ST elevation > 5 mm in leads with a -ve QRS complex"（LITFL 用「>」，原始研究是「1 mm or more／5 mm or more」，本條照原始研究寫 ≥）。'
+    refs:
+    - label: Smith SW, Dodd KW, Henry TD, Dvorak DM, Pearce LA. Diagnosis of ST-elevation myocardial infarction in the presence of left bundle branch block with the ST-elevation to S-wave ratio in a modified Sgarbossa rule. Ann Emerg Med. 2012 Dec;60(6):766-76. PMID 22939607
+      url: https://pubmed.ncbi.nlm.nih.gov/22939607/
+    - label: 'Meyers HP, Limkakeng AT Jr, Jaffa EJ, et al. Validation of the modified Sgarbossa criteria for acute coronary occlusion in the setting of left bundle branch block: A retrospective case-control study. Am Heart J. 2015 Dec;170(6):1255-64. PMID 26678648'
+      url: https://pubmed.ncbi.nlm.nih.gov/26678648/
+    - label: Dodd KW, Zvosec DL, Hart MA, et al. (PERFECT study investigators). Electrocardiographic Diagnosis of Acute Coronary Occlusion Myocardial Infarction in Ventricular Paced Rhythm Using the Modified Sgarbossa Criteria. Ann Emerg Med. 2021 Oct;78(4):517-529. PMID 34172301
+      url: https://pubmed.ncbi.nlm.nih.gov/34172301/
+    - label: Sgarbossa EB, Pinski SL, Barbagelata A, et al. Electrocardiographic diagnosis of evolving acute myocardial infarction in the presence of left bundle-branch block. GUSTO-1 (Global Utilization of Streptokinase and Tissue Plasminogen Activator for Occluded Coronary Arteries) Investigators. N Engl J Med. 1996 Feb 22;334(8):481-7. PMID 8559200
+      url: https://pubmed.ncbi.nlm.nih.gov/8559200/
+    - label: LITFL ECG Library：Sgarbossa Criteria
+      url: https://litfl.com/sgarbossa-criteria-ecg-library/

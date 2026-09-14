@@ -1,0 +1,28 @@
+{{- /*
+  omi — 從文章連到 OMI圖鑑的某一個 finding（/omi/#代號）
+  用法：
+    {{< omi "hatw" >}}                 顯示 finding 名稱（HATW）
+    {{< omi "hatw" "T wave 太胖" >}}   自訂連結文字
+  代號清單在 data/omi_atlas.yaml 的 id 欄。
+  代號寫錯：本機預覽（hugo server）只印警告＋在文章裡標紅，不會把預覽站弄掛；
+  正式 build（GitHub Actions）直接失敗，死連結上不了線。
+*/ -}}
+{{- if .IsNamedParams -}}
+  {{- errorf "omi shortcode 只接受位置參數，例如 omi \"hatw\"（%s）" .Position -}}
+{{- end -}}
+{{- $id := lower (.Get 0 | default "") -}}
+{{- $atlas := index site.Data "omi_atlas" | default (dict) -}}
+{{- $hit := false -}}
+{{- range (index $atlas "groups") -}}
+  {{- range .findings -}}
+    {{- if eq .id $id -}}{{- $hit = . -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if $hit -}}
+<a class="omi-ref" href="{{ printf "/omi/#%s" $id | relURL }}" title="OMI圖鑑：{{ $hit.name }}">{{ .Get 1 | default $hit.name }}</a>
+{{- else if hugo.IsServer -}}
+  {{- warnf "omi shortcode 找不到 finding 代號 %q（%s）。代號清單在 data/omi_atlas.yaml" $id .Position -}}
+<span class="omi-ref omi-ref--broken" title="data/omi_atlas.yaml 裡沒有這個代號">omi 代號「{{ $id }}」不存在</span>
+{{- else -}}
+  {{- errorf "omi shortcode 找不到 finding 代號 %q（%s）。代號清單在 data/omi_atlas.yaml" $id .Position -}}
+{{- end -}}
