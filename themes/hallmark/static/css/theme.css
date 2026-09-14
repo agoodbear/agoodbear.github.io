@@ -643,3 +643,27 @@ article.card a:hover .image.image-stamp::before { background: var(--color-accent
 .ercw-category-promo {max-width:1240px;padding:0 var(--space-lg);margin:0 auto;}
 @media(max-width:700px){.ercw-promo{grid-template-columns:minmax(0,1fr);gap:15px;padding:22px 0;}.ercw-promo-label small{margin-top:2px;}.ercw-promo-links{flex-direction:row;align-items:center;gap:24px;}.ercw-promo-story p{font-size:14px;}.ercw-promo-links a{padding:10px 0;}}
 .ercw-promo{scroll-margin-top:110px;}
+
+/* 心電圖分類：區分定期週報與獨立專文。 */
+.ecg-articles-heading {
+  max-width:1240px;
+  margin:52px auto 22px;
+  padding:0 var(--space-lg);
+  scroll-margin-top:110px;
+}
+.ecg-articles-heading h2 {
+  margin:0 0 8px;
+  font-family:var(--font-display-zh);
+  font-size:26px;
+  font-weight:600;
+  line-height:1.4;
+  color:var(--color-ink);
+}
+.ecg-articles-heading p {
+  margin:0;
+  font-family:var(--font-body-zh);
+  font-size:14px;
+  line-height:1.7;
+  color:var(--color-ink-3);
+}
+@media(max-width:700px){.ecg-articles-heading{margin-top:36px;}.ecg-articles-heading h2{font-size:23px;}}

@@ -45,7 +45,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&text=agoodbear.com&display=swap" rel="stylesheet">
 
   {{- /* Hallmark theme.css */ -}}
-  <link rel="stylesheet" href="{{ "css/theme.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/theme.css" | relURL }}?v={{ (readFile "themes/hallmark/static/css/theme.css") | md5 }}">
 
   {{- /* Site custom CSS (timeline / image-row / tag-pill / ecg-wave-text / etc.)
          Defined in config/_default/params.toml; loads existing custom-css files. */ -}}

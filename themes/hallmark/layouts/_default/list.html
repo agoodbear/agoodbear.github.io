@@ -170,8 +170,12 @@
 
 {{ if and (eq .Kind "term") (eq .Data.Plural "categories") (eq (lower .Data.Term) "ecg") }}
 <div class="ercw-category-promo">{{ partial "ercw-latest.html" . }}</div>
+<header class="ecg-articles-heading" id="ecg-articles">
+  <h2 id="ecg-articles-title">心電圖專文</h2>
+  <p>病例判讀、觀念解析與教學筆記</p>
+</header>
 {{ end }}
-<section class="cat-grid">
+<section class="cat-grid"{{ if and (eq .Kind "term") (eq .Data.Plural "categories") (eq (lower .Data.Term) "ecg") }} aria-labelledby="ecg-articles-title"{{ end }}>
   {{ range $paginator.Pages }}
     {{ partial "article-card.html" . }}
   {{ end }}
