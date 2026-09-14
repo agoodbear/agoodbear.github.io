@@ -1,0 +1,23 @@
+/* omi-ref.css — 文章裡用 omi shortcode 連到 OMI圖鑑（/omi/#代號）的行內連結
+ * 配色跟 /omi/ 頁一樣沿用投影片：鮭魚紅點線底線，hover 時換成投影片的淺藍色帶。 */
+a.omi-ref,
+.article-body a.omi-ref {
+  color: #b53d35;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px dotted #ff968c;
+  padding: 0 .08em;
+}
+a.omi-ref:hover,
+.article-body a.omi-ref:hover {
+  color: #8f2c26;
+  background: #cdedff;
+  border-bottom-color: #c0463d;
+}
+.omi-ref--broken {
+  color: #fff;
+  background: #b22800;
+  border-radius: 3px;
+  padding: 0 .35em;
+  font-weight: 600;
+}
