@@ -206,9 +206,8 @@ groups:
       width: 1600
       height: 1200
       alt: 投影片上方並排兩段心電圖：左邊是 lead III 輕微的 ST elevation（角落印著圖號 4），右邊是明顯的 ST elevation；下方淺藍底，左欄「Subtle STE」被粉紅色虛線框住，框內大叉叉壓在「STEMI Criteria」字上，右欄「Marked STE」，粉紅色箭頭指向往下的箭頭與「診斷MI的sensitivity」。
-      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 119）：只看 STEMI criteria，subtle STE 會被漏掉，診斷 MI 的 sensitivity 就往下掉。上方兩段心電圖是期刊圖，出處待確認（投影片備註引用 Martí 2014）；虛線框、叉叉與箭頭是我加的。
-      src_note: 'keynote-search slides/d1b0e6d05c1/slide_119.png；查核員因出處不明拿掉；Bear 2026-09-14 要求先放預覽站再確認（review: true，正式 build 不顯示）'
-      review: true
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 119）：只看 STEMI criteria，subtle STE 會被漏掉，診斷 MI 的 sensitivity 就往下掉。上方兩段心電圖為教學引用（投影片備註引用 Martí 2014）。
+      src_note: keynote-search slides/d1b0e6d05c1/slide_119.png；Bear 2026-09-14 確認整張投影片是他自己製作（部分心電圖取自其他網站），同意公開
   - id: inverted-u
     name: Inverted U wave
     part: Part 1（上）T波與U波
@@ -242,9 +241,8 @@ groups:
       width: 1600
       height: 1200
       alt: 投影片「異常U wave」左右對照：左側淺藍底「Prominent U wave」，V3、V4 各有一個黑色箭頭指向 T 波後方向上的 U wave；右側米黃底「Inverted U wave」，V3、V4、V5 各有一個粉紅色箭頭指向 T 波後方向下的 U wave。
-      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 132）：Prominent U wave 與 Inverted U wave 對照。右側心電圖出自 Girish MP, et al. Indian Pacing Electrophysiol J. 2005（Figure 1A）；左側心電圖出處待確認。
-      src_note: 'keynote-search slides/d1b0e6d05c1/slide_132.png；查核員因出處不明拿掉；Bear 2026-09-14 要求先放預覽站再確認（review: true，正式 build 不顯示）'
-      review: true
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 132）：Prominent U wave 與 Inverted U wave 對照。右側心電圖出自 Girish MP, et al. Indian Pacing Electrophysiol J. 2005（Figure 1A），左側心電圖取自網路上的公開病例。
+      src_note: keynote-search slides/d1b0e6d05c1/slide_132.png；Bear 2026-09-14 確認整張投影片是他自己製作（部分心電圖取自其他網站），同意公開
     - src: /images/omi/inverted-u-slide-2025-133.webp
       width: 1600
       height: 1200
@@ -376,9 +374,8 @@ groups:
       width: 1600
       height: 1200
       alt: 投影片左右並排兩張 V2 導程示意圖：左邊標題「前壁STD」，QRS 之後 ST 段往下壓；右邊標題「後壁STE」，是同一個波形上下翻轉後的樣子，ST 段變成往上抬；中間黑色箭頭寫「垂直翻轉」，下方大字「STD也有可能是『STE』」。
-      caption: 取自我 2022 年北榮住院醫師 ECG 教學投影片（slide 83）：前壁的 STD 上下翻轉，就是後壁的 STE。兩張 V2 示意圖的出處待確認。
-      src_note: 'keynote-search slides/d58dd2025ca/slide_083.png；查核員因出處不明拿掉；Bear 2026-09-14 要求先放預覽站再確認（review: true，正式 build 不顯示）'
-      review: true
+      caption: 取自我 2022 年北榮住院醫師 ECG 教學投影片（slide 83）：前壁的 STD 上下翻轉，就是後壁的 STE。
+      src_note: keynote-search slides/d58dd2025ca/slide_083.png；Bear 2026-09-14 確認整張投影片是他自己製作（部分心電圖取自其他網站），同意公開
     refs:
     - label: Meyers HP, Bracey A, Lee D, et al. Ischemic ST-Segment Depression Maximal in V1-V4 (Versus V5-V6) of Any Amplitude Is Specific for Occlusion Myocardial Infarction (Versus Nonocclusive Ischemia). J Am Heart Assoc. 2021 Dec 7;10(23):e022866. PMID 34775811.
       url: https://pubmed.ncbi.nlm.nih.gov/34775811/
@@ -642,16 +639,14 @@ groups:
       width: 1600
       height: 1200
       alt: 投影片左側兩張 T 波示意圖：上方標 A，配文字「Biphasic T wave inversion」與粉紅色大字「Pattern A　約佔25%」；下方標 B，配文字「Deeply T wave inversion」與粉紅色大字「Pattern B　約佔75%」。
-      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 261）；比例依 Rhinehardt J, et al. Am J Emerg Med. 2002;20(7):638-643 的整理。A／B 示意圖出處待確認。
-      src_note: 'keynote-search slides/d1b0e6d05c1/slide_261.png；查核員因出處不明拿掉；Bear 2026-09-14 要求先放預覽站再確認（review: true，正式 build 不顯示）'
-      review: true
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 261）；比例依 Rhinehardt J, et al. Am J Emerg Med. 2002;20(7):638-643 的整理。
+      src_note: keynote-search slides/d1b0e6d05c1/slide_261.png；Bear 2026-09-14 確認整張投影片是他自己製作（部分心電圖取自其他網站），同意公開
     - src: /images/omi/wellens-slide-2025-262.webp
       width: 1600
       height: 1200
       alt: 投影片「診斷的定義」：左側兩張 T 波示意圖，上方標 A（先正後負的 biphasic 波形）、下方標 B（又深又對稱的倒轉）；右側藍底列出七項診斷條件：Deeply TWI or Biphasic TWI in V2~V3、Isoelectric or minimal STE(< 1 mm)、No Precordial Q wave、Preserved RWP、Recent history of angina、ECG pattern present in pain free state、Normal or slightly elevated serum cardiac markers；上方附 Rhinehardt 2002 的書目。
-      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 262）；診斷條件引自 Rhinehardt J, et al. Am J Emerg Med. 2002;20(7):638-643。A／B 示意圖出處待確認。
-      src_note: 'keynote-search slides/d1b0e6d05c1/slide_262.png；查核員因出處不明拿掉；Bear 2026-09-14 要求先放預覽站再確認（review: true，正式 build 不顯示）'
-      review: true
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 262）；診斷條件引自 Rhinehardt J, et al. Am J Emerg Med. 2002;20(7):638-643。
+      src_note: keynote-search slides/d1b0e6d05c1/slide_262.png；Bear 2026-09-14 確認整張投影片是他自己製作（部分心電圖取自其他網站），同意公開
   - id: de-winter
     name: De Winter's T wave
     part: Part 3（上）LAD的三張臉
@@ -844,9 +839,8 @@ groups:
       width: 1600
       height: 1200
       alt: 投影片「Northern OMI」：彩色圓環分成八格，外圍標著導程（aVR、aVL、Lead I、Lead II、aVF、III）與對應區域（Subendocardial ischemia、High lateral MI、Anterolateral MI、Inferior MI(LCx)、Inferior MI(RCA)）；圓環中間是一顆卡通心臟，三個箭頭從中心出發：紅色指向 aVR、綠色指向 aVL、深藍色直指正上方。
-      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 324）：ST 向量朝正上方（north）。導程與區域的文字是我加的；底圖（彩色圓環＋心臟）出處待確認。
-      src_note: 'keynote-search slides/d1b0e6d05c1/slide_324.png；查核員因出處不明拿掉；Bear 2026-09-14 要求先放預覽站再確認（review: true，正式 build 不顯示）'
-      review: true
+      caption: 取自我 2025 年奇美住院醫師 ECG 教學投影片（slide 324）：ST 向量朝正上方（north）。
+      src_note: keynote-search slides/d1b0e6d05c1/slide_324.png；Bear 2026-09-14 確認整張投影片是他自己製作（部分心電圖取自其他網站），同意公開
   - id: n-wave
     name: N wave sign
     new2025: true
