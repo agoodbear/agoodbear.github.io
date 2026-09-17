@@ -2,6 +2,8 @@
   cc-mark — Hugo 本機預覽版的「請CC修改」紅筆標記
   只在 `hugo server`（開發模式）載入，正式 build 不會輸出任何一個字元。
   用法：在文章上圈選文字 → 選 潤／接／查／議 → 寫一句指令 → 右下角 📋 打包 → 貼給 CC。
+        「刪」「重要」是一鍵：點下去就存好（刪＝紅色刪除線；重要＝正式文章的黃底 <mark>），⌥ Option ＋點才會問你原因。
+        ⚠️ 「重要」是唯一會進到正式文章的意圖——CC 收到要在 md 包 <mark></mark>，不是改稿。
   設計對齊 roam-cc-mark PROTOCOL：意圖語彙、【原文】錨點、📋 打包，全部一致。
 */}}
 {{ if hugo.IsServer }}
@@ -22,9 +24,22 @@
   .ccm-btn{cursor:pointer;border:1px solid transparent;border-radius:7px;padding:4px 11px;font-size:13px;font-weight:700;color:#fff}
   .ccm-btn[data-k="潤"]{background:#2563eb}.ccm-btn[data-k="接"]{background:#059669}
   .ccm-btn[data-k="查"]{background:#d97706}.ccm-btn[data-k="議"]{background:#7c3aed}
+  .ccm-btn[data-k="刪"]{background:#dc2626}
+  .ccm-btn[data-k="重要"]{background:#ca8a04}
   .ccm-btn:hover{filter:brightness(1.12)}
   .ccm-quote{margin:7px 0 6px;padding:6px 8px;border-left:3px solid #94a3b8;background:rgba(148,163,184,.14);border-radius:0 5px 5px 0;max-height:74px;overflow:auto;font-size:12px;opacity:.85}
   .ccm-ta{width:100%;box-sizing:border-box;min-height:62px;padding:6px 8px;border-radius:7px;border:1px solid rgba(148,163,184,.5);background:transparent;color:inherit;font:inherit;resize:vertical}
+  /* 貼上的圖：泡泡框裡的縮圖條（面板列表用 .sm 縮小版） */
+  .ccm-shots{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+  .ccm-shots[hidden]{display:none}
+  .ccm-shot{position:relative;width:56px;height:56px;border-radius:7px;overflow:hidden;border:1px solid rgba(148,163,184,.55);background:rgba(148,163,184,.12)}
+  .ccm-shot img{width:100%;height:100%;object-fit:cover;display:block}
+  .ccm-shot .rm{position:absolute;top:1px;right:1px;width:17px;height:17px;line-height:15px;text-align:center;cursor:pointer;border:none;border-radius:999px;background:rgba(15,23,42,.72);color:#fff;font-size:12px;padding:0}
+  .ccm-shot.up{display:flex;align-items:center;justify-content:center;font-size:10px;opacity:.7}
+  .ccm-shots.sm{margin:5px 0 0;gap:4px}
+  .ccm-shots.sm .ccm-shot{width:40px;height:40px;border-radius:5px}
+  .ccm-pastehint{font-size:11px;opacity:.62;margin:5px 0 0}
+  .ccm-bubble.drop{outline:2px dashed #2563eb;outline-offset:-3px}
   .ccm-act{display:flex;gap:6px;justify-content:flex-end;margin-top:7px}
   .ccm-mini{cursor:pointer;border-radius:6px;padding:4px 10px;font-size:12px;border:1px solid rgba(148,163,184,.55);background:transparent;color:inherit}
   .ccm-mini.pri{background:#0f172a;color:#fff;border-color:#0f172a}
@@ -34,6 +49,10 @@
   .ccm-panel{position:fixed;right:18px;bottom:66px;z-index:9999;width:min(348px,calc(100vw - 32px));max-height:min(66vh,560px);display:none;flex-direction:column}
   .ccm-panel.on{display:flex}
   .ccm-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;border-bottom:1px solid rgba(148,163,184,.3)}
+  /* 抬頭擠了三樣東西（標題／檔名／版本），要讓檔名自己縮，不然標題會被折成兩行 */
+  .ccm-head>strong{flex:none;white-space:nowrap}
+  .ccm-head #ccmFile{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .ccm-head .ccm-ver{flex:none;white-space:nowrap}
   .ccm-head strong{font-size:13.5px}
   .ccm-list{overflow:auto;padding:6px 12px 10px}
   .ccm-item{padding:9px 0;border-bottom:1px dashed rgba(148,163,184,.32);cursor:pointer;border-radius:6px;transition:background 120ms}
@@ -46,7 +65,7 @@
   .ccm-src{font-size:11.5px;opacity:.62;white-space:pre-wrap}
   .ccm-x{float:right;cursor:pointer;border:none;background:transparent;color:inherit;opacity:.5;font-size:15px;line-height:1}
   .ccm-x:hover{opacity:1;color:#dc2626}
-  .ccm-foot{display:flex;gap:7px;padding:9px 12px;border-top:1px solid rgba(148,163,184,.3)}
+  .ccm-foot{display:flex;flex-wrap:wrap;gap:7px;padding:9px 12px;border-top:1px solid rgba(148,163,184,.3)}
   .ccm-empty{padding:16px 4px;opacity:.6;text-align:center}
   .ccm-reply{margin:7px 0 4px;padding:7px 9px;border-radius:7px;background:rgba(148,163,184,.13);font-size:12.2px;line-height:1.6}
   .ccm-badge{display:inline-block;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;color:#fff;margin-bottom:4px}
@@ -76,6 +95,21 @@
   .ccm-figtag{font-size:11px;font-weight:700;color:#a16207;background:rgba(250,204,21,.24);border-radius:4px;padding:1px 6px;margin-left:5px}
   mark.ccm-hit{background:rgba(250,204,21,.42);border-bottom:2px solid #eab308;padding:1px 0;border-radius:2px}
   @media (prefers-color-scheme:dark){mark.ccm-hit{background:rgba(234,179,8,.3);color:inherit}}
+  /* 「刪」不用 highlight——圈到的字直接畫上紅色刪除線，看起來就是「這段會不見」 */
+  mark.ccm-hit[data-kind="刪"]{background:transparent;border-bottom:none;border-radius:0;
+    text-decoration:line-through;text-decoration-color:#dc2626;text-decoration-thickness:2px;
+    text-decoration-skip-ink:none;color:inherit;opacity:.6}
+  @media (prefers-color-scheme:dark){mark.ccm-hit[data-kind="刪"]{background:transparent;color:inherit;opacity:.55}}
+  mark.ccm-hit.done[data-kind="刪"]{background:transparent;border-bottom:none;
+    text-decoration-color:#059669;opacity:.4}
+  /* 「重要」不是改稿標記，是要寫進正式文章的 <mark>。這裡 revert 掉改稿樣式，
+     讓它在預覽頁就長成正式文章裡的樣子（本主題沒有自訂 mark 樣式 → 回到瀏覽器預設黃底）。 */
+  mark.ccm-hit[data-kind="重要"]{background:revert;color:revert;border-bottom:none;
+    border-radius:revert;padding:revert;opacity:1}
+  mark.ccm-hit.done[data-kind="重要"]{background:revert;color:revert;
+    border-bottom:2px solid #059669}
+  /* 面板列表裡「刪」那筆的原文也劃掉，跟頁面一致 */
+  .ccm-item[data-kind="刪"] .ccm-src{text-decoration:line-through;text-decoration-color:#dc2626;opacity:.7}
   /* 圖／表無法用 <mark> 包（SVG 裡塞不進 HTML），改成整塊外框標記 */
   figure.ccm-fig,table.ccm-fig{position:relative;outline:3px solid #eab308;outline-offset:5px;border-radius:4px;background:rgba(250,204,21,.09)}
   figure.ccm-fig::after,table.ccm-fig::after{content:"✎ CC 標記";position:absolute;top:-13px;left:-3px;background:#eab308;color:#3b2f00;font-size:10.5px;font-weight:700;letter-spacing:.03em;padding:2px 7px;border-radius:4px;font-family:-apple-system,BlinkMacSystemFont,"PingFang TC",sans-serif;pointer-events:none}
@@ -85,7 +119,14 @@
   .ccm-flash{animation:ccmFlash 1.5s ease-out 2;border-radius:3px}
   .ccm-toast{position:fixed;left:50%;bottom:88px;transform:translateX(-50%);z-index:10000;
     background:rgba(15,23,42,.93);color:#fff;font-size:13px;padding:9px 16px;border-radius:8px;
-    font-family:-apple-system,BlinkMacSystemFont,"PingFang TC",sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang TC",sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.25);
+    display:flex;align-items:center;gap:10px}
+  /* toast 上的一顆行動鈕（目前只有「↩ 復原」用得到）。按完就消失，不留在畫面上。 */
+  .ccm-toast button{background:transparent;border:1px solid rgba(255,255,255,.55);color:#fff;
+    font:inherit;font-size:12.5px;padding:3px 10px;border-radius:6px;cursor:pointer}
+  .ccm-toast button:hover{background:rgba(255,255,255,.14)}
+  /* 已完成那一條的「↩ 恢復」：跟「×刪除」分開，不要讓人按錯 */
+  .ccm-item.done .ccm-ok{border-color:#0f766e;color:#0f766e;opacity:1}
   @media print{.ccm-fab,.ccm-panel,.ccm-bubble{display:none!important}}
 </style>
 
@@ -109,6 +150,12 @@
 <script>
 (function(){
   if(!location.pathname.includes('/post/')) return;
+  // ⚠️ 改這個檔案一定要 bump 下面三行 —— 這是 Bear 唯一能確認「新版有沒有真的上」的訊號。
+  //    （Roam 版 2026-09-08 踩過同樣的坑：改了功能沒 bump 版本號，他 reload 後無從判斷。）
+  //    Hugo 版跟 Roam 版不同，程式碼是 hugo server 直接從磁碟讀的：存檔＋重新整理頁面就生效，
+  //    不用 push、不用重裝。版本號在「面板抬頭常駐」＋「換版跳一次 toast」＋「console 每次印」。
+  var CCM_V='v6', CCM_V_DATE='2026-09-17',
+      CCM_V_NOTE='①「確認完成」後悔救得回來（當場↩復原／事後在👁已完成裡↩恢復）②圈短詞（如「綜述」）被改掉後，標記不會再安靜亮到別的同名句子上，改標「↪ 原文已改寫」';
   // hallmark 主題用 .article-body；hugo-clarity 用 .post_body。兩個都撐住。
   var body=document.querySelector('.article-body')||document.querySelector('.post_content .post_body')
           ||document.querySelector('.post_body')||document.querySelector('article');
@@ -119,7 +166,7 @@
     var a=body.parentElement; while(a && a!==document.body && !a.contains(h)) a=a.parentElement; return (a&&a!==document.body)?a:body;})();
 
   var KEY='ccm:'+location.pathname;
-  var COLOR={'潤':'#2563eb','接':'#059669','查':'#d97706','議':'#7c3aed'};
+  var COLOR={'潤':'#2563eb','接':'#059669','查':'#d97706','議':'#7c3aed','刪':'#dc2626','重要':'#ca8a04'};
 
   var HELP=[
     '<section><h4 style="color:#2563eb">潤 — 這句照我的意思改好</h4>',
@@ -154,7 +201,23 @@
     '指令 <code>我看不懂 83 是怎麼算出來的</code><br>',
     '→ CC 給算式（2,031−1,948），再給 A／B／C 三種寫法讓你挑</div></section>',
 
-    '<section style="opacity:.78"><b>💡 記不起來就選「議」。</b>讓 CC 先給你選項，看完自然知道要哪一種。</section>'
+    '<section><h4 style="color:#dc2626">刪 — 這段不要了</h4>',
+    '圈到的字<b>整段拿掉</b>，不改寫、不留過場語。<b>按下去就直接存好了</b>——不用打字、不用再按存檔。',
+    '<div style="opacity:.75">想附一句「為什麼刪」→ 按住 <code>⌥ Option</code> 再點「刪」，就會跳出指令欄。</div>',
+    '<div><b>CC 會回：</b>刪除後前後句怎麼接（若刪掉會斷句，會一併給銜接方案）。</div>',
+    '<div class="eg"><b>例</b>　圈掉整段重複的排比<br>',
+    '指令留白，或寫 <code>跟前面那段重複了</code><br>',
+    '→ CC 刪掉該段，並確認前後銜接讀得順</div></section>',
+
+    '<section><h4 style="color:#ca8a04">重要 — 這句要 highlight 起來</h4>',
+    '跟上面五個不一樣：<b>這不是改稿指令，是文章內容</b>。CC 會把這段用 <code>&lt;mark&gt;</code> 包起來寫進 md，'+
+    '<b>發佈之後讀者也看得到這個黃底</b>。一個字都不會改。',
+    '<div><b>按下去就存好了</b>——預覽頁上立刻變成正式文章的黃底樣子，你看到的就是讀者會看到的。</div>',
+    '<div style="opacity:.75">想附一句「為什麼重要」→ 按住 <code>⌥ Option</code> 再點。</div></section>',
+
+    '<section style="opacity:.78"><b>💡 記不起來就選「議」。</b>讓 CC 先給你選項，看完自然知道要哪一種。</section>',
+    '<section style="opacity:.78"><b>📎 要換圖就直接貼。</b>泡泡框開著時按 ⌘V（或把檔案拖進來）就能附圖，'+
+      '例：圈住那張圖的說明 →「潤」→ 貼上新照片 → 寫「把 Fig 5 換成這張」。圖存在家裡 Mac，打包時會附上路徑給 CC。</section>'
   ].join('');
   var bubble=document.getElementById('ccmBubble'),fab=document.getElementById('ccmFab'),
       panel=document.getElementById('ccmPanel'),list=document.getElementById('ccmList');
@@ -318,14 +381,23 @@
     var occs=occurrencesOf(ix.norm,needle);
     if(!occs.length)return -1;
     if(occs.length===1)return occs[0];
-    if(typeof mk.occ==='number'&&occs[mk.occ]!=null)return occs[mk.occ];
+    // 🔑 段落上下文（lead）優先於「第幾次出現」（occ）。2026-09-17 Bear 踩到：
+    //    他圈的是兩個字「綜述」（全篇有 50 處），occ=0。CC 把他圈的那一句改掉之後，
+    //    occ=0 變成**另一句**的「綜述」，標記就安靜地亮到別的段落上——畫面看起來
+    //    「你根本沒改」，實際上改了，只是標記跑位。occ 是位置、lead 是身分，身分先認。
     var want=String(mk.lead||'').replace(/\s+/g,'').slice(0,20);
     if(want){
       for(var i=0;i<occs.length;i++){
         var e=ix.map[occs[i]],blk=e&&blockOf(e.n);
         if(blk&&String(blk.textContent||'').replace(/\s+/g,'').slice(0,20)===want)return occs[i];
       }
+      // lead 對不上＝原本那一段已經被改寫了。**短字串不准退回 occ**：
+      //    「綜述」這種兩個字到處都有，退回去只會亮錯地方，而亮錯比沒亮更糟
+      //    （人會以為沒改）。回 -1 交給下游：它會拿 CC 回覆的「改後整句」當錨點，
+      //    亮在改寫後的位置並標示「↪ 原文已改寫」，對不上就老實顯示「⚠︎ 未定位」。
+      if(needle.length<8)return -1;
     }
+    if(typeof mk.occ==='number'&&occs[mk.occ]!=null)return occs[mk.occ];
     return occs[0];
   }
 
@@ -337,6 +409,7 @@
     if(from>0)t=t.splitText(from);
     if(t.nodeValue.length>(to-from))t.splitText(to-from);
     var m=document.createElement('mark');m.className='ccm-hit'+(mk.done?' done':'');
+    if(mk.kind)m.dataset.kind=mk.kind;   // 「刪」靠這個屬性換成刪除線
     m.title=(mk.done?'✓ 已處理｜':'')+mk.kind+'：'+mk.cmd;
     if(idx!=null)m.dataset.ccmI=idx;
     t.parentNode.replaceChild(m,t);m.appendChild(t);
@@ -410,12 +483,17 @@
     var m=load(), open_=m.filter(function(x){return !x.done;}).length;
     fab.textContent='CC 標記 '+open_+(m.length>open_?('／'+m.length):'');
     fab.dataset.n=String(open_);
+    // 按鈕上直接寫「已完成（N）」：光是「顯示已完成」看不出來那裡到底有沒有東西，
+    // 而「有沒有東西」正是想把某條救回來時唯一想知道的事。
+    var tg=document.getElementById('ccmToggleDone'), doneN=m.length-open_;
+    if(tg)tg.textContent=(SHOW_DONE?'👁 隱藏已完成':'👁 已完成')+(doneN?('（'+doneN+'）'):'');
     if(!m.length){list.innerHTML='<div class="ccm-empty">還沒有標記。<br>在文章上圈選一段文字就會跳出選單。</div>';highlight();return;}
     list.innerHTML=m.map(function(x,i){
       if(x.done&&!SHOW_DONE)return '';
-      return '<div class="ccm-item'+(x.done?' done':'')+'" data-row="'+i+'">'+
+      return '<div class="ccm-item'+(x.done?' done':'')+'" data-row="'+i+'" data-kind="'+esc(x.kind||'')+'">'+
         '<button class="ccm-x" data-i="'+i+'" title="刪除">×</button>'+
-        '<button class="ccm-ok" data-ok="'+i+'" title="標為已處理">'+(x.done?'✓ 已處理':'標為已處理')+'</button>'+
+        '<button class="ccm-ok" data-ok="'+i+'" title="'+(x.done?'把這一條救回待處理':'標為已處理')+'">'+
+          (x.done?'↩ 恢復':'標為已處理')+'</button>'+
         '<span class="ccm-tag" style="background:'+COLOR[x.kind]+'">'+x.kind+'</span>'+
         '<span style="font-size:11.5px;opacity:.55">'+(x.head||'（未分節）')+'</span>'+
         '<span class="ccm-miss" hidden> ⚠︎ 未定位</span>'+
@@ -423,20 +501,31 @@
         '<div class="ccm-cmd">'+esc(x.cmd)+'</div>'+
         ((x.figLabels&&x.figLabels.length)?'<div class="ccm-src" style="opacity:.8">▣ '+esc(x.figLabels.join('；').slice(0,110))+'</div>':'')+
         '<div class="ccm-src">「'+esc(x.text.slice(0,90))+(x.text.length>90?'…':'')+'」</div>'+
+        ((x.imgs&&x.imgs.length)?'<div class="ccm-shots sm">'+x.imgs.map(function(g){
+            return '<span class="ccm-shot"><img data-img="'+esc(g.id)+'" alt="" title="'+esc((g.w?g.w+'×'+g.h+'　':'')+kb(g.bytes||0))+'"></span>';
+          }).join('')+'</div>':'')+
         replyHtml(x,i)+'</div>';
     }).join('');
+    hydrateThumbs(list);
     list.querySelectorAll('.ccm-x').forEach(function(b){
-      b.onclick=function(){var a=load();var gone=a.splice(+b.dataset.i,1)[0];tomb(gone);save(a);};
+      b.onclick=function(){var a=load();var gone=a.splice(+b.dataset.i,1)[0];tomb(gone);dropImgs(gone);save(a);};
     });
     list.querySelectorAll('.ccm-ok').forEach(function(b){
-      b.onclick=function(e){e.stopPropagation();var a=load(),i=+b.dataset.ok;a[i].done=!a[i].done;a[i].u=Date.now();save(a);};
+      b.onclick=function(e){e.stopPropagation();var a=load(),i=+b.dataset.ok;
+        if(a[i].done){ if(reopenByKey(mkey(a[i])))toast('↩ 已恢復，回到待處理'); return; }
+        a[i].done=true;a[i].u=Date.now();save(a);};
     });
     list.querySelectorAll('.ccm-x').forEach(function(b){
       b.addEventListener('click',function(e){e.stopPropagation();});
     });
     list.querySelectorAll('.ccm-acts .yes').forEach(function(b){
       b.onclick=function(e){e.stopPropagation();var a=load(),i=+b.dataset.yes;
-        a[i].done=true;a[i].confirmedAt=new Date().toISOString();a[i].u=Date.now();save(a);};
+        a[i].done=true;a[i].confirmedAt=new Date().toISOString();a[i].u=Date.now();
+        var key=mkey(a[i]);save(a);
+        // 按完就從清單消失 → 當場給一條回頭路，不要叫人事後去別的地方找
+        toast('✅ 已完成，收進「已完成」',{label:'↩ 復原',ms:9000,onClick:function(){
+          if(reopenByKey(key))toast('↩ 已復原，回到待處理');
+        }});};
     });
     list.querySelectorAll('.ccm-acts .no').forEach(function(b){
       b.onclick=function(e){e.stopPropagation();var a=load(),i=+b.dataset.no;
@@ -458,6 +547,31 @@
       else if(r.partial){row.textContent=' ◐ 部分定位';row.style.color='#d97706';row.hidden=false;}
     });
   }
+  // ── 恢復（2026-09-17 v5）────────────────────────────────────────────────
+  //    Bear：「一開始標記確認完成，它就會關閉並隱藏起來。後來發現還需要修改，
+  //    是不是能有一個恢復的機制？」——資料一直都在（done 只是旗標、不是刪除），
+  //    缺的是**看得到的回頭路**。兩層：按下去當場的「↩ 復原」，跟事後在「已完成」裡的「↩ 恢復」。
+  //
+  //    🔑 用 mkey 認身分，不用索引：復原鈕可能九秒後才被按，那時候的第 i 筆
+  //    已經不一定是同一條了（中間可能新增或刪掉標記）。
+  function reopenByKey(key){
+    var a=load(),i=-1;
+    for(var k=0;k<a.length;k++){ if(mkey(a[k])===key){i=k;break;} }
+    if(i<0){toast('這一條已經不在清單裡了（可能被「🗑 刪除已完成」永久清掉了）');return false;}
+    a[i].done=false; a[i].autoDone=false; a[i].reopened=true;
+    delete a[i].confirmedAt;
+    a[i].restoredAt=new Date().toISOString();
+    a[i].u=Date.now();
+    save(a);
+    // 恢復之後原文可能早就被改掉了 → 標記定位不回去。**這件事要講**，
+    // 不然畫面上看起來救回來了、實際上是一條指不到任何地方的孤兒。
+    setTimeout(function(){
+      var row=list.querySelector('.ccm-item[data-row="'+i+'"] .ccm-miss');
+      if(row&&!row.hidden&&row.textContent.indexOf('未定位')>=0)
+        toast('⚠️ 這一條在文章裡定位不到了（原文已經改過），內容還在，但要重新圈選');
+    },80);
+    return true;
+  }
   var LABEL={done:'✔ 已改',moved:'→ 已改，內容在下集',declined:'✕ 沒改',info:'ℹ 已處理'};
   function replyHtml(x,i){
     var r=replyFor(x);
@@ -475,6 +589,104 @@
     return h+'</div>';
   }
   function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+
+  // ── 貼上的圖（2026-09-17）────────────────────────────────────────────────
+  //    為什麼要有：Bear 常要下「把 Fig 5 換成這張照片」這種指令，圖必須跟指令一起交給 CC。
+  //    圖不能塞進標記本身——標記走 /__ccm/marks 的 PUT（2MB 上限）、還要在三台機器之間同步，
+  //    base64 圖片會把它撐爆。所以圖另走 /__ccm/img 存到家裡 Mac 的檔案，標記只記 id 與絕對路徑，
+  //    CC 收到 📋 打包文字後直接用 Read 工具讀那個路徑。
+  var IMGAPI=API.replace('/marks','/img');          // 跟標記同一台代理，網址規則自動對齊
+  var SHOTS=[];                                      // 這次選取已貼上的圖（換一次選取就清空）
+  var UPLOADS=[];                                    // 還在上傳的 promise：按「存標記」要等它們完成
+  function imgUrl(id){return IMGAPI+'?id='+encodeURIComponent(id);}
+  function kb(n){return n>=1048576?((n/1048576).toFixed(1)+' MB'):(Math.max(1,Math.round(n/1024))+' KB');}
+  function dimsOf(blob){                             // 量尺寸純粹是為了讓 CC 知道原圖多大（要不要縮）
+    return new Promise(function(res){
+      try{ var u=URL.createObjectURL(blob),im=new Image();
+           im.onload=function(){res({w:im.naturalWidth,h:im.naturalHeight});URL.revokeObjectURL(u)};
+           im.onerror=function(){res({});URL.revokeObjectURL(u)}; im.src=u; }catch(e){res({})}
+    });
+  }
+  // ⚠️ 縮圖不能直接寫 <img src="http://127.0.0.1:8790/__ccm/img?id=…">。
+  //    localhost:1313 的頁面對 8790 是跨來源，而瀏覽器載 <img> 時**不送 Origin**，
+  //    代理就判定「這不是本機頁面」→ 走 Basic Auth → 401 → 破圖。
+  //    用 fetch 取（script 發的跨來源請求一定帶 Origin）→ 拿 blob → objectURL，才過得了那道門。
+  var THUMBS={};
+  function hydrateThumbs(root){
+    (root||document).querySelectorAll('img[data-img]').forEach(function(im){
+      var id=im.dataset.img; if(!id||im.dataset.done)return; im.dataset.done='1';
+      if(THUMBS[id]){im.src=THUMBS[id];return;}
+      fetch(imgUrl(id)).then(function(r){return r.ok?r.blob():null}).then(function(b){
+        if(!b)return; THUMBS[id]=URL.createObjectURL(b); im.src=THUMBS[id];
+      }).catch(function(){});
+    });
+  }
+  function shotsBox(){return bubble.querySelector('#ccmShots');}
+  function renderShots(){
+    var box=shotsBox(); if(!box)return;
+    box.hidden=!SHOTS.length;
+    box.innerHTML=SHOTS.map(function(g,i){
+      return '<span class="ccm-shot"><img data-img="'+esc(g.id)+'" alt=""><button class="rm" data-rm="'+i+'" type="button" title="移除這張">×</button></span>';
+    }).join('');
+    hydrateThumbs(box);
+    box.querySelectorAll('.rm').forEach(function(b){
+      b.onclick=function(ev){ ev.stopPropagation();
+        var g=SHOTS.splice(+b.dataset.rm,1)[0];
+        if(g)fetch(imgUrl(g.id),{method:'DELETE'}).catch(function(){});   // 還沒存成標記就移除＝把檔案也收掉
+        renderShots();
+      };
+    });
+  }
+  function addImage(blob,name){
+    var box=shotsBox();
+    if(box){ box.hidden=false; box.insertAdjacentHTML('beforeend','<span class="ccm-shot up">上傳中…</span>'); }
+    var p=Promise.all([
+      dimsOf(blob),
+      fetch(IMGAPI+'?path='+encodeURIComponent(location.pathname)+'&name='+encodeURIComponent(name||''),
+            {method:'POST',headers:{'Content-Type':blob.type},body:blob}).then(function(r){
+        if(!r.ok)throw new Error(r.status); return r.json();
+      })
+    ]).then(function(a){
+      var d=a[0],j=a[1];
+      SHOTS.push({id:j.id,path:j.path,type:j.type,bytes:j.bytes,name:name||'',w:d.w||0,h:d.h||0});
+      renderShots();
+    }).catch(function(err){
+      renderShots();
+      toast('⚠️ 圖片沒存進去（'+(err&&err.message||'代理沒回應')+'）——標記照樣存得了，但 CC 看不到圖');
+    });
+    UPLOADS.push(p); return p;
+  }
+  function imagesFrom(dt){
+    var out=[],items=(dt&&dt.items)||[];
+    for(var i=0;i<items.length;i++){
+      var it=items[i];
+      if(it.kind==='file'&&/^image\//.test(it.type)){ var f=it.getAsFile(); if(f)out.push(f); }
+    }
+    if(!out.length&&dt&&dt.files){ for(var j=0;j<dt.files.length;j++){ if(/^image\//.test(dt.files[j].type))out.push(dt.files[j]); } }
+    return out;
+  }
+  // 泡泡框開著就吃 ⌘V：不必先點進輸入框（圈完字焦點還在內文，那時按 ⌘V 本來什麼都不會發生）。
+  // 只攔圖片，純文字貼上照常進 textarea。
+  document.addEventListener('paste',function(ev){
+    if(!bubble.classList.contains('on'))return;
+    var ae=document.activeElement;
+    if(ae&&/^(INPUT|TEXTAREA)$/.test(ae.tagName)&&!bubble.contains(ae))return;   // 焦點在別的輸入框＝不是要給我們的
+    var imgs=imagesFrom(ev.clipboardData);
+    if(!imgs.length)return;
+    ev.preventDefault();
+    imgs.forEach(function(f){addImage(f,f.name||'clipboard')});
+    toast(imgs.length>1?('已貼上 '+imgs.length+' 張圖'):'已貼上圖片');
+  });
+  // 從 Finder 拖檔進來也收（同一條上傳路徑）
+  bubble.addEventListener('dragover',function(ev){ev.preventDefault();bubble.classList.add('drop')});
+  bubble.addEventListener('dragleave',function(){bubble.classList.remove('drop')});
+  bubble.addEventListener('drop',function(ev){
+    var imgs=imagesFrom(ev.dataTransfer); bubble.classList.remove('drop');
+    if(!imgs.length)return; ev.preventDefault();
+    imgs.forEach(function(f){addImage(f,f.name||'file')});
+  });
+  // 標記刪掉時把它的圖一起收乾淨（留著也只是佔空間，但別讓它無限長大）
+  function dropImgs(mk){ if(mk&&mk.imgs)mk.imgs.forEach(function(g){fetch(imgUrl(g.id),{method:'DELETE'}).catch(function(){})}); }
 
   // 圈選 → 冒泡選單
   document.addEventListener('mouseup',function(e){
@@ -499,22 +711,55 @@
       });
       bubble.innerHTML='<div class="ccm-row" style="align-items:center">'+Object.keys(COLOR).map(function(k){
           return '<button class="ccm-btn" data-k="'+k+'" type="button">'+k+'</button>';}).join('')+
-          '<button class="ccm-q" id="ccmQ" type="button" title="這四個要怎麼用？">?</button></div>'+
+          '<button class="ccm-q" id="ccmQ" type="button" title="這幾個要怎麼用？">?</button></div>'+
         '<div class="ccm-help" id="ccmHelp" hidden>'+HELP+'</div>'+
         '<div class="ccm-quote">'+esc(txt.slice(0,140))+(txt.length>140?'…':'')+'</div>'+
-        '<div id="ccmStep2" hidden><textarea class="ccm-ta" id="ccmCmd" placeholder="一句話說你要怎麼改…"></textarea>'+
+        '<div class="ccm-shots" id="ccmShots" hidden></div>'+
+        '<div id="ccmStep2" hidden><textarea class="ccm-ta" id="ccmCmd" placeholder="一句話說你要怎麼改…（可直接 ⌘V 貼上圖片）"></textarea>'+
+        '<div class="ccm-pastehint">📎 ⌘V 貼上圖片或把檔案拖進來，例：「把 Fig 5 換成這張」</div>'+
         '<div class="ccm-act"><button class="ccm-mini" id="ccmCancel" type="button">取消</button>'+
         '<button class="ccm-mini pri" id="ccmSave" type="button">存標記</button></div></div>';
+      SHOTS=[];UPLOADS=[];                 // 換一次選取＝重新開始收圖（上一輪的已經存進標記了）
       bubble.style.left=Math.min(window.scrollX+r.left,window.scrollX+document.documentElement.clientWidth-360)+'px';
       bubble.style.top=(window.scrollY+r.bottom+9)+'px';
       bubble.classList.add('on');
       var kind=null;
+      // 存檔本體抽出來共用：「刪」按下去直接呼叫，其他意圖走 step2 填完指令再呼叫。
+      function commit(cmd){
+        // 記下這段文字是全文第幾次出現（0 起算），同一句話重複時還原才畫得對段
+        var occ=0;
+        try{ var ix2=buildIndex(),needle2=txt.replace(/\s+/g,''),pos=normPosOf(rng,ix2);
+             if(pos>=0){ var occs2=occurrencesOf(ix2.norm,needle2); for(var oi=0;oi<occs2.length;oi++){ if(occs2[oi]<pos)occ=oi+1; } } }catch(e){occ=0;}
+        var a=load();a.push({id:'m'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),
+                             kind:kind,cmd:cmd,text:txt,head:ctx.head,lead:ctx.lead,occ:occ,
+                             figs:figIdx,figLabels:figLabel,imgs:SHOTS.slice(),
+                             at:new Date().toISOString(),u:Date.now()});
+        save(a);SHOTS=[];UPLOADS=[];bubble.classList.remove('on');window.getSelection().removeAllRanges();
+      }
+      // 圖還在上傳就先等一下再存——不然剛貼的那張會掉在標記外面（存了也是空指令）
+      function commitWhenReady(cmd){
+        if(!UPLOADS.length)return commit(cmd);
+        var btn=bubble.querySelector('#ccmSave'),old=btn?btn.textContent:'';
+        if(btn){btn.disabled=true;btn.textContent='圖片上傳中…';}
+        Promise.all(UPLOADS).then(function(){ if(btn){btn.disabled=false;btn.textContent=old;} commit(cmd); });
+      }
       bubble.querySelectorAll('.ccm-btn').forEach(function(b){
-        b.onclick=function(){
+        b.onclick=function(ev){
           kind=b.dataset.k;
+          // 「刪」＝圈到哪就刪到哪，指令就是它自己：按下去直接存，不用再打字也不用再按一次。
+          // （真的想附一句「為什麼刪」→ 按住 ⌥／Alt 再點，就會走一般的填指令流程。）
+          if(kind==='刪' && !(ev&&ev.altKey)){ commitWhenReady('整段刪掉'); return; }
+          // 「重要」＝把這段標成正式文章要保留的 highlight，也是一鍵，不用打字。
+          if(kind==='重要' && !(ev&&ev.altKey)){ commitWhenReady('標為重要（正式文章保留 highlight）'); return; }
           bubble.querySelectorAll('.ccm-btn').forEach(function(o){o.style.opacity=o===b?'1':'.34'});
           bubble.querySelector('#ccmStep2').hidden=false;
-          bubble.querySelector('#ccmCmd').focus();
+          var ta_=bubble.querySelector('#ccmCmd');
+          ta_.placeholder = (kind==='刪') ? '為什麼要刪…（可留白）'
+                          : (kind==='重要') ? '為什麼重要…（可留白）'
+                          : '一句話說你要怎麼改…';
+          bubble.querySelector('#ccmSave').textContent =
+            (kind==='刪') ? '存刪除標記' : (kind==='重要') ? '存重要標記' : '存標記';
+          ta_.focus();
         };
       });
       var q=bubble.querySelector('#ccmQ'),hp=bubble.querySelector('#ccmHelp');
@@ -526,15 +771,15 @@
       bubble.querySelector('#ccmCancel').onclick=function(){bubble.classList.remove('on')};
       bubble.querySelector('#ccmSave').onclick=function(){
         var cmd=bubble.querySelector('#ccmCmd').value.trim();
-        if(!kind||!cmd){bubble.querySelector('#ccmCmd').focus();return;}
-        // 記下這段文字是全文第幾次出現（0 起算），同一句話重複時還原才畫得對段
-        var occ=0;
-        try{ var ix2=buildIndex(),needle2=txt.replace(/\s+/g,''),pos=normPosOf(rng,ix2);
-             if(pos>=0){ var occs2=occurrencesOf(ix2.norm,needle2); for(var oi=0;oi<occs2.length;oi++){ if(occs2[oi]<pos)occ=oi+1; } } }catch(e){occ=0;}
-        var a=load();a.push({id:'m'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),
-                             kind:kind,cmd:cmd,text:txt,head:ctx.head,lead:ctx.lead,occ:occ,
-                             figs:figIdx,figLabels:figLabel,at:new Date().toISOString(),u:Date.now()});
-        save(a);bubble.classList.remove('on');window.getSelection().removeAllRanges();
+        if(!kind){return;}
+        if(!cmd){
+          if(kind==='刪'){cmd='整段刪掉';}
+          else if(kind==='重要'){cmd='標為重要（正式文章保留 highlight）';}
+          // 貼了圖卻沒打字：不擋他，但要讓 CC 知道「指令在圖裡」而不是誤存空白
+          else if(SHOTS.length||UPLOADS.length){cmd='依附圖修改（Bear 沒另外寫指令，看圖）';}
+          else {bubble.querySelector('#ccmCmd').focus();return;}
+        }
+        commitWhenReady(cmd);
       };
       bubble.querySelector('#ccmCmd').addEventListener('keydown',function(ev){
         if((ev.metaKey||ev.ctrlKey)&&ev.key==='Enter')bubble.querySelector('#ccmSave').click();
@@ -546,9 +791,19 @@
     if(!e.target.closest('.ccm-bubble'))bubble.classList.remove('on');
   });
 
-  function toast(msg){
-    var d=document.createElement('div');d.className='ccm-toast';d.textContent=msg;
-    document.body.appendChild(d);setTimeout(function(){d.remove()},2600);
+  // toast 可以帶一顆行動鈕：toast('已完成',{label:'↩ 復原',onClick:fn,ms:9000})
+  // 為什麼要這個：按完「✅ 確認完成」那一條就從清單消失，後悔時**在原地**要有一條路回來，
+  // 而不是叫人去想起某個角落有「👁 顯示已完成」。手滑的後悔都發生在按下去的三秒內。
+  function toast(msg,act){
+    var d=document.createElement('div');d.className='ccm-toast';
+    var s=document.createElement('span');s.textContent=msg;d.appendChild(s);
+    var ms=(act&&act.ms)||2600;
+    if(act&&act.label){
+      var b=document.createElement('button');b.type='button';b.textContent=act.label;
+      b.onclick=function(){d.remove();try{act.onClick&&act.onClick()}catch(e){}};
+      d.appendChild(b);
+    }
+    document.body.appendChild(d);setTimeout(function(){d.remove()},ms);
   }
   function flash(el){
     el.classList.remove('ccm-flash');void el.offsetWidth;el.classList.add('ccm-flash');
@@ -590,24 +845,37 @@
   var SHOW_DONE=false;
   document.getElementById('ccmToggleDone').onclick=function(){
     SHOW_DONE=!SHOW_DONE;
-    this.textContent=SHOW_DONE?'👁 隱藏已完成':'👁 顯示已完成';
-    render();
+    render();                      // 文字由 render() 統一寫（它才知道有幾條已完成）
   };
   document.getElementById('ccmSweep').onclick=function(){
     var a=load(),left=a.filter(function(x){return !x.done;});
     if(a.length===left.length){alert('沒有已完成的標記');return;}
-    if(confirm('永久刪除 '+(a.length-left.length)+' 個已完成的標記？\n（不刪也沒關係——按「👁 隱藏已完成」就看不到了，紀錄還留著）')){a.filter(function(x){return x.done;}).forEach(tomb);save(left);}
+    if(confirm('永久刪除 '+(a.length-left.length)+' 個已完成的標記？\n\n'+
+               '⚠️ 刪掉就**救不回來了**——「↩ 恢復」只救得回還在「已完成」裡的。\n'+
+               '（不刪也沒關係：它們平常本來就收著不佔版面，紀錄還留著。）')){a.filter(function(x){return x.done;}).forEach(function(x){tomb(x);dropImgs(x);});save(left);}
   };
   document.getElementById('ccmCopy').onclick=function(){
     var m=load().filter(function(x){return !x.done;});
     if(!m.length){alert('沒有未處理的標記');return;}
-    var out='【請CC修改 · Hugo 草稿】\n檔案：'+srcFile()+'\n預覽：'+location.href+'\n共 '+m.length+' 處\n\n'+
+    var nImg=m.reduce(function(s,x){return s+((x.imgs&&x.imgs.length)||0)},0);
+    var out='【請CC修改 · Hugo 草稿】\n檔案：'+srcFile()+'\n預覽：'+location.href+'\n共 '+m.length+' 處'+
+      (nImg?('（含 '+nImg+' 張貼上的圖，路徑寫在各條的【附圖】，用 Read 工具直接開；那是 Bear 指令的一部分，不是參考資料）'):'')+'\n\n'+
       m.map(function(x,i){
-        return (i+1)+'. '+x.kind+'｜指令：'+x.cmd+(x.id?'　[id:'+x.id+']':'')+'\n'+
+        var head_=(x.kind==='刪')
+          ? '把下面的【原文】整段刪掉'+((x.cmd&&x.cmd!=='整段刪掉')?'（原因：'+x.cmd+'）':'')+'；刪完確認前後句接得起來'
+          : (x.kind==='重要')
+          ? '把下面的【原文】用 <mark></mark> 包起來（⚠️ 這不是改稿，是要留在正式文章裡的 highlight；一個字都不要改）'
+            +((x.cmd&&x.cmd.indexOf('標為重要')!==0)?'（Bear 註：'+x.cmd+'）':'')
+          : '指令：'+x.cmd;
+        return (i+1)+'. '+x.kind+'｜'+head_+(x.id?'　[id:'+x.id+']':'')+'\n'+
                '   【所在節】'+(x.head||'（未分節）')+'\n'+
                '   【段落開頭】'+x.lead+'\n'+
                ((x.figLabels&&x.figLabels.length)?'   【也框到圖／表】'+x.figLabels.join('；')+'\n':'')+
-               '   【原文】「'+x.text+'」';
+               '   【原文】「'+x.text+'」'+
+               ((x.imgs&&x.imgs.length)?('\n   【附圖】'+x.imgs.length+' 張（Bear 貼上的，用 Read 讀絕對路徑）：\n'+
+                  x.imgs.map(function(g){
+                    return '     - '+g.path+'　'+(g.w?(g.w+'×'+g.h+'　'):'')+kb(g.bytes||0);
+                  }).join('\n')):'');
       }).join('\n\n');
     var done=function(){var b=document.getElementById('ccmCopy');b.textContent='✅ 已複製';setTimeout(function(){b.textContent='📋 打包複製'},1600);};
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(out).then(done,fallback);}else fallback();
@@ -630,6 +898,28 @@
       }
       render();
     }).catch(function(){});
+  })();
+
+  // ── 版本訊號（2026-09-17）────────────────────────────────────────────────
+  //    ① 面板抬頭常駐版本號：隨時打開右下角就查得到現在跑的是哪一版
+  //    ② 換版才跳一次 toast：記在 localStorage，同一版不會每開一篇文章就吵一次
+  //    ③ console 每次都印：要 debug「到底載到哪一版」時看這行
+  (function(){
+    var tag=document.createElement('span');
+    tag.className='ccm-ver';
+    tag.style.cssText='font-size:11px;opacity:.5;margin-left:auto';
+    tag.textContent=CCM_V+' · '+CCM_V_DATE.slice(5);
+    tag.title='請CC修改 '+CCM_V+'（'+CCM_V_DATE+'）：'+CCM_V_NOTE;
+    var head=document.querySelector('.ccm-panel .ccm-head'); if(head)head.appendChild(tag);
+    fab.title='請CC修改 '+CCM_V+' · '+CCM_V_DATE+'　'+CCM_V_NOTE;
+    console.log('[請CC修改·Hugo] '+CCM_V+'（'+CCM_V_DATE+'）已載入 — '+CCM_V_NOTE);
+    var SEEN='ccm:ver';
+    try{
+      if(localStorage.getItem(SEEN)!==CCM_V){
+        localStorage.setItem(SEEN,CCM_V);
+        setTimeout(function(){toast('🆕 請CC修改 已更新到 '+CCM_V+'：'+CCM_V_NOTE)},900);
+      }
+    }catch(e){}
   })();
 
   render();
