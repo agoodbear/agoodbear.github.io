@@ -189,8 +189,8 @@
   //    （Roam 版 2026-09-08 踩過同樣的坑：改了功能沒 bump 版本號，他 reload 後無從判斷。）
   //    Hugo 版跟 Roam 版不同，程式碼是 hugo server 直接從磁碟讀的：存檔＋重新整理頁面就生效，
   //    不用 push、不用重裝。版本號在「面板抬頭常駐」＋「換版跳一次 toast」＋「console 每次印」。
-  var CCM_V='v15', CCM_V_DATE='2026-09-18',
-      CCM_V_NOTE='底色可以選顏色了：排版中圈字，泡泡框「黃底」旁邊有藍／綠／粉；已經上色的字再點同一色＝取消、點別色＝換色。有顏色的底色改字也不會再變回黃色（另含今天的：排版中加標記馬上顯示、記住上次排版位置、拖曳修正）';
+  var CCM_V='v16', CCM_V_DATE='2026-09-18',
+      CCM_V_NOTE='收工後直接停在你原本看的那一段，不會再從最上面滑下來；「記住上次排版位置」改成不自動跳，只在提示裡給「跳到上次位置」按鈕';
   // hallmark 主題用 .article-body；hugo-clarity 用 .post_body。兩個都撐住。
   var body=document.querySelector('.article-body')||document.querySelector('.post_content .post_body')
           ||document.querySelector('.post_body')||document.querySelector('article');
@@ -1547,14 +1547,54 @@
     try{ document.execCommand('defaultParagraphSeparator',false,'p'); }catch(_){}
     enterEdit().then(function(st){
       editOn=true; EB.contentEditable='true'; EB.classList.add('ccm-editing'); editFab.classList.add('on'); status('已存');
+      // 上次改到哪：只給按鈕，不自動跳（Bear 09-18：畫面自己動很怪，要不要跳由他決定）
       var last=st.last, lel=last&&findPos(last), act=null, pre='';
-      if(lel){ var prevY=window.scrollY, rr=lel.getBoundingClientRect(), seen=rr.top<window.innerHeight*0.9&&rr.bottom>60;   // 露出一部分就算看得到（長段落比螢幕高）
-        if(!seen && prevY<window.innerHeight*0.6){ jumpToBlock(lel); pre='已跳回上次改到的地方（'+whenStr(last.at)+'）。';
-          act={label:'回到原位',onClick:function(){ window.scrollTo({top:prevY,behavior:'instant'}); }}; }
-        else if(!seen) act={label:'跳到上次位置（'+whenStr(last.at)+'）',onClick:function(){ jumpToBlock(lel); }}; }
+      if(lel){ var rr=lel.getBoundingClientRect(), seen=rr.top<window.innerHeight*0.9&&rr.bottom>60;   // 露出一部分就算看得到（長段落比螢幕高）
+        if(!seen) act={label:'跳到上次位置（'+whenStr(last.at)+'）',onClick:function(){ jumpToBlock(lel); }}; }
       toast(pre+'排版模式：打字、注音、貼上、Enter、'+(MAC?'⌘':'Ctrl+')+'Z 都跟 Word 一樣，停手約 1 秒自動存。Tab 條列內縮、段落左邊 ↑↓ 搬動、'+(MAC?'⌘B ⌘I ⌘U ⌘⇧H':'Ctrl+B／I／U、Ctrl+Shift+H')+'。表格和圖片是鎖住的。（對到原稿 '+st.mapped+' 段'+(st.locked?'、鎖住 '+st.locked+' 塊':'')+'）', Object.assign({ms:9000}, act||{}));
     }).catch(function(err){ editFab.textContent='✏️ 排版'; toast('進不了排版模式：'+err.message,6000); });
   };
+  // ── 收工重整後停在原本那一段 ──────────────────────────────────────
+  // 不交給瀏覽器自己恢復捲動位置：網站開了 scroll-behavior:smooth，頁面慢慢載入時，
+  // 恢復位置會變成「從最上面滑下來」（Bear 09-18 回報）。改成記住段落＋偏移，載入後瞬間回去，
+  // 版面還在變（圖片載入）就跟著校正，使用者一動滾輪／觸控／按鍵就停手，不跟人搶。
+  function saveAnchor(){
+    try{
+      // 錨點只挑重整後也認得出來的段落：跳過排版時臨時包的裸文字（data-ccm-run）和沒有文字的圖／表
+      var c=posCands().filter(function(x){ return !x.hasAttribute('data-ccm-run') && posLead(x).length>=4; }), el=null, best=1e9;
+      for(var i=0;i<c.length;i++){ var r=c[i].getBoundingClientRect(); if(r.bottom>0 && r.top>=-2 && r.top<best){ best=r.top; el=c[i]; } }
+      if(!el) for(var k=0;k<c.length;k++){ if(c[k].getBoundingClientRect().bottom>0){ el=c[k]; break; } }
+      var all=posCands(), a={path:location.pathname, y:Math.round(window.scrollY), at:Date.now()};
+      if(el){ a.lead=posLead(el); a.idx=all.indexOf(el); a.off=Math.round(el.getBoundingClientRect().top); }
+      sessionStorage.setItem('ccm:anchor', JSON.stringify(a));
+      history.scrollRestoration='manual';   // 存成功才接手；存不了就留給瀏覽器
+    }catch(_){}
+  }
+  function restoreAnchor(){
+    var a=null; try{ a=JSON.parse(sessionStorage.getItem('ccm:anchor')||'null'); sessionStorage.removeItem('ccm:anchor'); }catch(_){}
+    if(!a || a.path!==location.pathname || Date.now()-a.at>60000){ try{ history.scrollRestoration='auto'; }catch(_){} return; }
+    var html=document.documentElement, prevSB=html.style.scrollBehavior, stop=false, ro=null, shown=false;
+    html.style.scrollBehavior='auto';
+    var anchorEl=a.lead? findPos({lead:a.lead, idx:a.idx}) : null;
+    function go(){ if(stop) return; var el=anchorEl&&EB.contains(anchorEl)? anchorEl : (a.lead? findPos({lead:a.lead, idx:a.idx}) : null);
+      var y=el? Math.max(0, el.getBoundingClientRect().top+window.scrollY-a.off) : a.y;   // 找不到那一段（被改寫了）就退回原本的捲動位置
+      if(Math.abs(window.scrollY-y)>1) window.scrollTo(0,y); }
+    function show(){ if(shown) return; shown=true; go(); html.style.visibility=''; }
+    function done(){ show(); stop=true; if(ro) ro.disconnect(); html.style.scrollBehavior=prevSB; try{ history.scrollRestoration='auto'; }catch(_){} }
+    ['wheel','touchstart','keydown','mousedown'].forEach(function(ev){ window.addEventListener(ev,function(){ if(!stop) done(); },{once:true,passive:true}); });
+    // 圖片是 lazy 又沒標寬高：還沒載入時高度是 0，捲到中段後上面的圖才載入、把版面撐高，同一段就被往下推
+    // （實測先跳到 11064、再被校正到 13449）。所以先把那一段「上面」的圖立刻載入（剛看過，都在快取裡），
+    // 等它們都有高度了才一次跳過去；等的這一下先把畫面藏起來，不讓人看到頂端或中途的位置（最多 1.5 秒）。
+    html.style.visibility='hidden';
+    var imgs=[].filter.call(EB.querySelectorAll('img'), function(im){ return !anchorEl || (im.compareDocumentPosition(anchorEl) & 4); });
+    imgs.forEach(function(im){ if(im.getAttribute('loading')==='lazy') im.setAttribute('loading','eager'); });
+    var waits=imgs.filter(function(im){ return !im.complete; }).map(function(im){ return new Promise(function(r){ im.addEventListener('load',r,{once:true}); im.addEventListener('error',r,{once:true}); }); });
+    Promise.race([Promise.all(waits), new Promise(function(r){ setTimeout(r,1500); })]).then(function(){ requestAnimationFrame(show); });
+    if(window.ResizeObserver){ ro=new ResizeObserver(go); ro.observe(EB); }   // 之後字型、下方的圖再動到版面，也跟著校正
+    window.addEventListener('load', go);
+    setTimeout(done, 3500);
+  }
+  restoreAnchor();
   function leaveEdit(){
     if(stopped && !confirm('存檔已經停止了（文章被別人改過）。現在收工，畫面上還沒存進檔案的修改會不見，確定嗎？')) return;
     clearTimeout(saveTimer); status('收工，最後存一次…'); hideGrip();
@@ -1563,7 +1603,7 @@
       // 光等這次存檔不夠 —— 重整太早會先看到舊頁、接著 livereload 又刷一次（Fable 第 6 條）
       return fetch(SETTLEDAPI+'?path='+encodeURIComponent(location.pathname)).then(function(r){ return r.json(); }).catch(function(){ return {}; });
     }).then(function(j){
-      setTimeout(function(){ editOn=false; location.reload(); }, (j&&j.built)? 0 : Math.max(0, 1200-(Date.now()-lastSaveAt)));
+      setTimeout(function(){ editOn=false; saveAnchor(); location.reload(); }, (j&&j.built)? 0 : Math.max(0, 1200-(Date.now()-lastSaveAt)));
     });
   }
   window.__ccmEditState=function(){ return {editOn:editOn, saving:saving, dirty:dirty, stopped:stopped, saves:window.__ccmSaves||0}; };
