@@ -1312,17 +1312,42 @@
     }); })(tp.content);
     var d=document.createElement('div'); d.appendChild(tp.content); return d.innerHTML;
   }
-  EB.addEventListener('paste', function(e){
-    if(!editOn || bubble.classList.contains('on')) return;          // 泡泡框開著＝附圖給 CC，走既有那條路
-    var cd=e.clipboardData; if(!cd) return;
+  // 貼上和拖放共用：圖片走插圖，文字一律先洗乾淨再插
+  function insertTransfer(cd){
     var imgs=imagesFrom(cd);
-    if(imgs.length){ e.preventDefault(); insertImageBlock(imgs[0]); return; }
+    if(imgs.length){ insertImageBlock(imgs[0]); return; }
     var html=cd.getData('text/html'), txt=cd.getData('text/plain');
-    e.preventDefault();
     if(html && /<(p|br|li|strong|b|em|i|u|h[1-6]|ul|ol|div)\b/i.test(html)) document.execCommand('insertHTML',false,cleanHTML(html));
     else if(txt){ var paras=txt.replace(/\r\n?/g,'\n').split(/\n{2,}/);
       if(paras.length>1) document.execCommand('insertHTML',false,paras.map(function(p){ return '<p>'+esc(p).replace(/\n/g,'<br>')+'</p>'; }).join(''));
       else document.execCommand('insertText',false,txt.replace(/\n/g,' ')); }
+  }
+  EB.addEventListener('paste', function(e){
+    if(!editOn || bubble.classList.contains('on')) return;          // 泡泡框開著＝附圖給 CC，走既有那條路
+    var cd=e.clipboardData; if(!cd) return;
+    e.preventDefault(); insertTransfer(cd);
+  }, true);
+  // 拖放（Fable 第 2 條）：不讓瀏覽器自己放 —— 會帶進 Word 的樣式、Chrome 還會替拖動的字補上
+  // 背景色（被當成黃底存進 md）、拖檔案進來會整頁跳去開那個檔。改走跟貼上同一套；
+  // 在文章裡拖動＝先刪掉原處、再放到新位置
+  var dragSrc=null;
+  EB.addEventListener('dragstart', function(){ if(!editOn) return; var s=getSelection(); dragSrc=(s.rangeCount&&!s.isCollapsed)? s.getRangeAt(0).cloneRange() : null; });
+  EB.addEventListener('dragend', function(){ dragSrc=null; });
+  EB.addEventListener('dragover', function(e){ if(editOn) e.preventDefault(); });
+  EB.addEventListener('drop', function(e){
+    if(!editOn) return;
+    e.preventDefault();
+    var dt=e.dataTransfer, src=dragSrc; dragSrc=null; if(!dt) return;
+    var at=document.caretRangeFromPoint? document.caretRangeFromPoint(e.clientX,e.clientY) : null;
+    if(!at || !EB.contains(at.startContainer) || !at.startContainer.parentElement || !at.startContainer.parentElement.closest('[contenteditable="true"]')) return;
+    var s=getSelection();
+    if(src){
+      if(src.isPointInRange(at.startContainer, at.startOffset)) return;          // 放回原處＝不動
+      var mk=document.createElement('span'); mk.setAttribute('data-ccm-dropmark',''); at.insertNode(mk);
+      s.removeAllRanges(); s.addRange(src); document.execCommand('delete');
+      var r=document.createRange(); r.setStartBefore(mk); r.collapse(true); s.removeAllRanges(); s.addRange(r); mk.remove();
+    } else { s.removeAllRanges(); s.addRange(at); }
+    insertTransfer(dt);
   }, true);
 
   // ── 自訂操作（Tab、搬段落、插圖、取消黃底）：瀏覽器原生復原管不到，自己記一份 ──
