@@ -154,6 +154,8 @@
     border-radius:6px;padding:3px 9px;font-size:12px;font-weight:700}
   .ccm-dbtn:hover{background:#0f766e;color:#fff}
   @media (prefers-color-scheme:dark){.ccm-dbtn{color:#5eead4;border-color:rgba(94,234,212,.45)}}
+  /* 排版模式裡鎖住的區塊（表格、圖片、程式碼…）：淡淡框起來，看得出來不能直接改 */
+  .ccm-editing .ccm-atom{outline:1px dashed rgba(148,163,184,.65);outline-offset:4px;cursor:default}
   .ccm-saved{animation:ccmSaved 1s ease-out}
   @keyframes ccmSaved{0%{background:rgba(16,185,129,.28)}100%{background:transparent}}
   @media print{.ccm-fab,.ccm-panel,.ccm-bubble{display:none!important}}
@@ -184,8 +186,8 @@
   //    （Roam 版 2026-09-08 踩過同樣的坑：改了功能沒 bump 版本號，他 reload 後無從判斷。）
   //    Hugo 版跟 Roam 版不同，程式碼是 hugo server 直接從磁碟讀的：存檔＋重新整理頁面就生效，
   //    不用 push、不用重裝。版本號在「面板抬頭常駐」＋「換版跳一次 toast」＋「console 每次印」。
-  var CCM_V='v13.1', CCM_V_DATE='2026-09-18',
-      CCM_V_NOTE='排版模式暫停（v13 會悄悄寫壞檔案），v14 修好前請先用 CC 標記；標記功能照常';
+  var CCM_V='v14', CCM_V_DATE='2026-09-18',
+      CCM_V_NOTE='排版模式重寫：瀏覽器當編輯器（打字、注音、貼上、復原都是原生的），停手 1 秒自動存，只存動過的段落';
   // hallmark 主題用 .article-body；hugo-clarity 用 .post_body。兩個都撐住。
   var body=document.querySelector('.article-body')||document.querySelector('.post_content .post_body')
           ||document.querySelector('.post_body')||document.querySelector('article');
@@ -449,7 +451,9 @@
   }
 
   // 回傳每個標記有沒有成功定位（給面板標「未定位」用）
-  function highlight(){
+  var HL_LAST=[];
+  function highlight(){ if(typeof editOn!=='undefined' && editOn) return HL_LAST; return (HL_LAST=highlightRaw()); }
+  function highlightRaw(){
     scope.querySelectorAll('mark.ccm-hit').forEach(function(m){
       var t=document.createTextNode(m.textContent);m.parentNode.replaceChild(t,m);
     });
@@ -783,15 +787,7 @@
         Promise.all(UPLOADS).then(function(){ if(btn){btn.disabled=false;btn.textContent=old;} commit(cmd); });
       }
       bubble.querySelectorAll('.ccm-dbtn').forEach(function(b){
-        b.onclick=function(){
-          var blk=blockOf(rng.startContainer);
-          if(!blk||blockOf(rng.endContainer)!==blk){ toast('一次只能套用在同一段裡面的字'); return; }
-          sendOp({kind:'wrap',before:blockText(blk),
-                  from:nsOffset(blk,rng.startContainer,rng.startOffset),
-                  to:nsOffset(blk,rng.endContainer,rng.endOffset),tag:b.dataset.t}, blk);
-          bubble.classList.remove('on');
-          window.getSelection().removeAllRanges();
-        };
+        b.onclick=function(){ bubble.classList.remove('on'); applyStyle(b.dataset.t, rng); };
       });
       bubble.querySelectorAll('.ccm-btn').forEach(function(b){
         b.onclick=function(ev){
@@ -980,345 +976,489 @@
   window.addEventListener('focus',refresh);
 
   // ══════════════════════════════════════════════════════════════════
-  //  P3 · 所見即所得排版（2026-09-18）
+  //  P3 v14 · 所見即所得排版（2026-09-18 重寫）
   //
-  //  真相來源永遠是 content/post/<slug>.md，不是 DOM。存 DOM patch 會生出第二份
-  //  真相、跟 md 對不上，那正是 roam-cc-mark「零位移」一直在防的事。
+  //  Bear：「我希望的是所見即所得的功能，就像我在 word or typora 編排這些文字一樣。
+  //         編排好，就是網頁的畫面。」
   //
-  //  關鍵是不要讓後端猜使用者做了什麼：beforeinput 的 inputType 已經明確告訴我們
-  //  是 insertParagraph 還是 deleteContentBackward 還是 formatBold，所以送過去的是
-  //  **明確的操作**，後端每一種都能單獨驗證、驗不過就整個拒絕。
+  //  v7–v13 把每個按鍵「翻譯」成對 md 的操作；瀏覽器有幾十種編輯動作（復原、貼上、拖曳、
+  //  Shift+Enter、選字取代…），漏翻一種，畫面就跟檔案悄悄分岔（Fable 5.1 盤點 13 條、
+  //  11 條實測，見 agoodbear-p3/V14-ACCEPTANCE.md）。
   //
-  //  位置一律用「段落內第幾個非空白字元」：渲染會把 md 的換行變成空白，兩邊的空白
-  //  永遠對不齊，但第幾個非空白字元兩邊一定一致。
+  //  v14 反過來：瀏覽器就是編輯器，編輯動作全部是原生的；停手約 1 秒存一次，存的時候
+  //  逐個「頂層元素」比對：
+  //    · 沒動過的 → md 原封不動（一個字都不碰）
+  //    · 動過的   → 從畫面反推成 md，只替換它自己那一段
+  //    · 新長出來的（Enter、貼上）→ 插在前一個有對應的元素後面
+  //    · 不見了的 → 刪掉它那一段
+  //  表格、圖、程式碼、shortcode、對不上原稿的段落鎖成不可編輯（反推回 md 容易失真）。
+  //  「元素 ↔ md 區段」只在進入排版模式時請後端算一次；之後由前端依每次修改的位移自己更新
+  //  —— 不能存完再回後端重算，否則存檔途中打的字會被當成沒改過。
   // ══════════════════════════════════════════════════════════════════
-  var EDITAPI = API.replace('/marks','/edit');
-  var editOn=false, pend=null, editFab=document.getElementById('ccmEditFab');
+  var EB = document.querySelector('.article-body') || body;   // 只有正文能改：大標題、副標寫的是 front matter（Fable 第 9 條）
+  var MAPAPI = API.replace('/marks','/map'), SAVEAPI = API.replace('/marks','/save'), SETTLEDAPI = API.replace('/marks','/settled'), ASSETAPI = API.replace('/marks','/asset');
+  var editOn=false, editFab=document.getElementById('ccmEditFab');
+  var SRC='', HASH='', BODY0=0;
+  var INFO=new Map(), SEEN=new Set(), SEENSIG=new Map();
+  var saveTimer=null, saving=false, saveAgain=false, savingP=null, composing=false, stopped=false, dirty=false, lostWarned=false, lastSaveAt=0;
+  var customStack=[], lastNativeT=0, lrOrig=null;
 
-  function blockOf(node){
-    var el = node && (node.nodeType===1 ? node : node.parentElement);
-    while(el && el!==scope){
-      if(/^(P|LI|H1|H2|H3|H4|H5|H6|BLOCKQUOTE|TD|TH|FIGCAPTION)$/.test(el.tagName)) return el;
-      el = el.parentElement;
+  // ── 文字與指紋 ──────────────────────────────────────────────────────
+  function skipForText(x){ return (x.tagName==='SUP' && x.querySelector('a.footnote-ref')) || x.matches('a.footnote-backref,[hidden],script,style,figure,figcaption,picture,img'); }
+  function normText(el){ var out=''; (function walk(x){ if(x.nodeType===3){ out+=x.nodeValue; return; } if(x.nodeType!==1||skipForText(x)) return; for(var c=x.firstChild;c;c=c.nextSibling) walk(c); })(el); return out.replace(/\s+/g,''); }
+  function sig(el){
+    var c=el.cloneNode(true);
+    [].slice.call(c.querySelectorAll('mark.ccm-hit')).forEach(function(m){ while(m.firstChild) m.parentNode.insertBefore(m.firstChild,m); m.remove(); });
+    [c].concat([].slice.call(c.querySelectorAll('*'))).forEach(function(n){
+      [].slice.call(n.attributes).forEach(function(a){ if(/^data-ccm|^contenteditable$|^title$/.test(a.name)) n.removeAttribute(a.name); });
+      [].slice.call(n.classList).forEach(function(k){ if(/^ccm-/.test(k)) n.classList.remove(k); });
+      if(n.getAttribute('class')==='') n.removeAttribute('class');
+    });
+    c.normalize();
+    return c.tagName+'|'+c.innerHTML.replace(/\s+/g,' ');
+  }
+  function topEls(){ return [].filter.call(EB.children, function(e){ return !e.classList.contains('ccm-grip'); }); }
+  function isAtom(el){ return /^(TABLE|FIGURE|PRE)$/.test(el.tagName) || (el.tagName==='DIV' && !el.hasAttribute('data-ccm-run')) || el.hidden; }
+  function itemOf(el){
+    if(el.hidden || el.matches('div.footnotes,div.endmark,script,style')) return {k:'skip'};
+    var t=normText(el);
+    if(el.tagName==='FIGURE' || (!t && el.querySelector('img'))){
+      var srcs=[]; [].forEach.call(el.querySelectorAll('img,source'), function(x){
+        if(x.getAttribute('src')) srcs.push(x.getAttribute('src'));
+        (x.getAttribute('srcset')||'').split(',').forEach(function(s){ s=s.trim().split(/\s+/)[0]; if(s) srcs.push(s); }); });
+      return {k:'img', src:srcs.concat(srcs.map(function(s){ return s.replace(/\.[a-z0-9]+(\?.*)?$/i,''); }))};
+    }
+    return {k:'text', t:t};
+  }
+  // 圖片被 hugo 渲染成 <figure> 時，瀏覽器會把包住它的段落拆開，後面那行字變成「沒有段落包著」
+  // 的裸文字（ecg-post-21 第 416 行）。用一個看不見的 span 包起來才追蹤得到，畫面不變。
+  var INLINE_TAGS=/^(STRONG|B|EM|I|U|MARK|A|SPAN|CODE|SUP|SUB|BR|S|DEL|SMALL|ABBR)$/;
+  function wrapInlineRuns(){
+    var n=EB.firstChild, run=[];
+    function flush(){ if(run.some(function(x){ return x.nodeType===1 || /\S/.test(x.nodeValue); })){ var sp=document.createElement('span'); sp.setAttribute('data-ccm-run','1'); EB.insertBefore(sp, run[0]); run.forEach(function(x){ sp.appendChild(x); }); } run=[]; }
+    while(n){ var nx=n.nextSibling;
+      if(n.nodeType===3 || (n.nodeType===1 && INLINE_TAGS.test(n.tagName) && !n.hidden && !n.hasAttribute('data-ccm-run'))) run.push(n);
+      else flush();
+      n=nx; }
+    flush();
+  }
+
+  // ── 從畫面反推 md ──────────────────────────────────────────────────
+  var PUNCT_RE=/[\p{P}\p{S}]/u;
+  function isP(c){ return !!c && PUNCT_RE.test(c); }
+  function isW(c){ return !c || /\s/.test(c); }
+  function escTxt(v){ return v.replace(/\\/g,'\\\\').replace(/([*_`\[\]])/g,'\\$1').replace(/<(?=[A-Za-z\/!?])/g,'&lt;').replace(/&(?=#?[A-Za-z0-9]+;)/g,'&amp;'); }
+  function lineStartEsc(s){ return s.replace(/^(#{1,6}(?=\s)|>|[-+*](?=\s)|(\d+)([.)])(?=\s))/, function(m,_a,d,p){ return d? d+'\\'+p : '\\'+m; }); }
+  var KIND={STRONG:'b',B:'b',EM:'i',I:'i',U:'u',S:'s',DEL:'s',STRIKE:'s',SUB:'sub'};
+  var HTMLTAG={b:'strong',i:'em',u:'u',m:'mark',s:'del',sub:'sub',sup:'sup'}, MDTOK={b:'**',i:'*',s:'~~'};
+  function kindOf(n){
+    var t=n.tagName, st=n.style||{};
+    if(KIND[t]) return KIND[t];
+    if(t==='MARK') return /(^|\s)ccm-hit(\s|$)/.test(n.className)?null:'m';   // 黃色 CC 標記是介面，不是文章的格式
+    if(t==='SUP') return 'sup';
+    if(t==='SPAN'||t==='FONT'){
+      var bg=st.backgroundColor||''; if(bg && !/transparent|rgba\(0, 0, 0, 0\)|initial|inherit/.test(bg)) return 'm';
+      if(/bold|[6-9]00/.test(st.fontWeight||'')) return 'b';
+      if(st.fontStyle==='italic') return 'i';
+      if(/underline/.test((st.textDecoration||'')+(st.textDecorationLine||''))) return 'u';
     }
     return null;
   }
-  // 要跳過的東西：註腳上標（md 裡是 [^1]，投影會拿掉）、我們自己的 UI
-  // 只略過註腳上標（md 裡是 [^1]，投影時整個拿掉）。
-  // ⚠️ 絕對不能用「class 開頭是 ccm- 就略過」—— 2026-09-18 實戰踩到兩個 bug：
-  //    ① 存檔成功會在段落上加 ccm-saved 閃一下，那 1 秒內整段被當成介面、文字變空，
-  //       人打字一定有停頓，第二個字送出去 before 是空的 → 被拒絕 → 整頁重整 → 字消失
-  //       （Bear：「當我輸入 II 就被消失了」；我的測試連打沒有停頓，所以沒抓到）。
-  //    ② 黃色 CC 標記是 <mark class="ccm-hit"> 包住「真正的文章文字」，也被丟掉了，
-  //       有標記的段落一進排版模式就對不上。
-  //    正文裡唯一會被插進去的 ccm 元素就是這個 mark（包的是真字），其餘介面都掛在 body。
-  function skipEl(x){
-    return x.nodeType===1 && (x.tagName==='SUP' || /(^|\s)footnote-ref(\s|$)/.test(x.className||''));
+  function imgMd(img, cap){ var alt=(img.getAttribute('alt')||'').replace(/[\[\]]/g,''), title=(img.getAttribute('title')||cap||'').trim(); return '!['+alt+']('+(img.getAttribute('src')||'')+(title?' "'+title.replace(/"/g,'\\"')+'"':'')+')'; }
+  function toks(node, out, open){
+    if(node.nodeType===3){ out.push({t:'txt', v:node.nodeValue.replace(/\u00a0/g,' ')}); return; }
+    if(node.nodeType!==1) return;
+    var t=node.tagName;
+    if(node.hidden || /^(SCRIPT|STYLE)$/.test(t) || node.classList.contains('ccm-grip')) return;
+    if(t==='BR'){ out.push({t:'raw', v:'<br>'}); return; }
+    if(node.getAttribute('data-ccm-md')){ out.push({t:'raw', v:'\n'+node.getAttribute('data-ccm-md')+'\n'}); return; }   // 圖：放回原稿原本的寫法
+    if(t==='FIGURE'){ var fi=node.querySelector('img'); if(fi) out.push({t:'raw', v:'\n'+imgMd(fi,(node.querySelector('figcaption')||{}).textContent)+'\n'}); return; }
+    if(t==='IMG'){ out.push({t:'raw', v:imgMd(node)}); return; }
+    if(t==='SUP' && node.querySelector('a.footnote-ref')){ var fa=node.querySelector('a.footnote-ref'); out.push({t:'raw', v:'[^'+(node.getAttribute('data-ccm-fn')||(fa.getAttribute('href')||'').replace(/^.*:/,''))+']'}); return; }
+    if(t==='A' && /footnote-backref/.test(node.className)) return;
+    if(t==='CODE'){ var tx=node.textContent, f=tx.indexOf('`')>=0?'``':'`'; out.push({t:'raw', v:f+(f.length>1?' ':'')+tx+(f.length>1?' ':'')+f}); return; }
+    if(t==='A'){ var sub=[]; for(var c=node.firstChild;c;c=c.nextSibling) toks(c,sub,{}); out.push({t:'raw', v:'['+assemble(sub).trim()+']('+(node.getAttribute('href')||'')+')'}); return; }
+    var k=kindOf(node), nest=k&&open[k];     // 同一種樣式包兩層（<b><strong>）只算一層，免得變成 ****
+    if(k&&!nest){ out.push({t:'open',k:k}); open[k]=true; }
+    for(var ch=node.firstChild; ch; ch=ch.nextSibling) toks(ch,out,open);
+    if(k&&!nest){ out.push({t:'close',k:k}); open[k]=false; }
   }
-  // 段落「顯示出來的文字」——要跟後端對 md 算出來的投影一致
-  function blockText(el){
-    var out='';
-    (function walk(x){
-      if(skipEl(x)) return;
-      if(x.nodeType===3){ out += x.nodeValue; return; }
-      for(var i=0;i<x.childNodes.length;i++) walk(x.childNodes[i]);
-    })(el);
-    return out;
-  }
-  // (node,offset) 是這段裡的第幾個非空白字元
-  function nsOffset(el,node,offset){
-    var n=0, hit=false;
-    (function walk(x){
-      if(hit||skipEl(x)) return;
-      if(x.nodeType===3){
-        if(x===node){ n += x.nodeValue.slice(0,offset).replace(/\s/g,'').length; hit=true; return; }
-        n += x.nodeValue.replace(/\s/g,'').length; return;
+  function assemble(ts){
+    var a=[];
+    ts.forEach(function(x){ if(x.t==='txt'){ var v=x.v.replace(/\s+/g,' '); if(a.length&&a[a.length-1].t==='txt') a[a.length-1].v+=v; else a.push({t:'txt',v:v}); } else a.push({t:x.t,k:x.k,v:x.v}); });
+    // 空的樣式拿掉；樣式邊緣的空白挪到外面（「**字 **」在 CommonMark 解不出來）
+    for(var guard=0, changed=true; changed && guard<5000; guard++){ changed=false;
+      for(var i=0;i<a.length-1;i++){
+        var x=a[i], y=a[i+1];
+        if(x.t==='open'&&y.t==='close'&&x.k===y.k){ a.splice(i,2); changed=true; break; }
+        if(x.t==='txt'&&y.t==='txt'){ x.v+=y.v; a.splice(i+1,1); changed=true; break; }
+        if(x.t==='txt'&&!x.v){ a.splice(i,1); changed=true; break; }
+        if(x.t==='open'&&y.t==='txt'&&/^\s/.test(y.v)){ var sp=y.v.match(/^\s+/)[0]; y.v=y.v.slice(sp.length); a.splice(i,0,{t:'txt',v:sp}); changed=true; break; }
+        if(x.t==='txt'&&y.t==='close'&&/\s$/.test(x.v)){ var sp2=x.v.match(/\s+$/)[0]; x.v=x.v.slice(0,-sp2.length); a.splice(i+2,0,{t:'txt',v:sp2}); changed=true; break; }
       }
-      for(var i=0;i<x.childNodes.length;i++){
-        if(x===node && i===offset){ hit=true; return; }
-        walk(x.childNodes[i]); if(hit) return;
+    }
+    var stack=[], pairs=[];
+    a.forEach(function(x,i){ if(x.t==='open') stack.push(i); else if(x.t==='close'){ for(var j=stack.length-1;j>=0;j--){ if(a[stack[j]].k===x.k){ pairs.push([stack[j],i]); stack.splice(j,1); break; } } } });
+    function near(i,d){ for(var j=i+d;j>=0&&j<a.length;j+=d){ var x=a[j]; if((x.t==='txt'||x.t==='raw')&&x.v) return d<0? x.v[x.v.length-1] : x.v[0]; if(x.t==='open'||x.t==='close') return '*'; } return ''; }
+    // 粗體／斜體能不能用 ** / *，要看兩邊貼著什麼字（CommonMark 的 flanking 規則）；
+    // 中文旁邊接標點時 ** 會解不出來、變成裸露星號（ecg-post-21 那 28 處就是這樣），那就用 <strong>。
+    pairs.forEach(function(p){
+      var o=a[p[0]], c=a[p[1]], tok=MDTOK[o.k], md=false;
+      if(tok){
+        var pb=near(p[0],-1), na=near(p[0],1), pc=near(p[1],-1), nc=near(p[1],1);
+        md = !isW(na) && (!isP(na) || isW(pb) || isP(pb)) && !isW(pc) && (!isP(pc) || isW(nc) || isP(nc));
       }
-      if(x===node && offset>=x.childNodes.length) hit=true;
-    })(el);
-    return n;
+      o.v = md? tok : '<'+HTMLTAG[o.k]+'>'; c.v = md? tok : '</'+HTMLTAG[o.k]+'>';
+    });
+    return a.map(function(x){ return x.t==='txt'? escTxt(x.v) : (x.v||''); }).join('');   // 沒配成對的記號直接丟掉，不留落單的
   }
-
-  function caretSide(r){
-    var nd=r.startContainer, o=r.startOffset;
-    if(nd.nodeType===3) return /\S/.test(nd.nodeValue.slice(0,o)) ? 'prev' : 'next';
-    return 'next';
-  }
-
-  // 重整後回到原位、並記得剛才開著編輯模式（hugo 偵測到 md 變更會自己 livereload）
-  function keepPlace(){
-    try{ sessionStorage.setItem('ccm:place', JSON.stringify({y:window.scrollY, edit:editOn, t:Date.now()})); }catch(e){}
-  }
-  try{
-    var pl=JSON.parse(sessionStorage.getItem('ccm:place')||'null');
-    if(pl && Date.now()-pl.t < 20000){
-      sessionStorage.removeItem('ccm:place');
-      window.addEventListener('load',function(){
-        window.scrollTo(0,pl.y||0);
-        if(pl.edit) setTimeout(function(){ if(!editOn) editFab.click(); },120);
+  function tidy(s){ return s.replace(/^\s+|\s+$/g,'').replace(/[ \t]*\n[ \t]*/g,'\n').replace(/\n{2,}/g,'\n'); }
+  function inlineMd(el){ var t=[]; for(var c=el.firstChild;c;c=c.nextSibling) toks(c,t,{}); return tidy(assemble(t)); }
+  function serList(list, ind){
+    var ord=list.tagName==='OL', n=parseInt(list.getAttribute('start')||'1',10)||1, out=[];
+    [].forEach.call(list.children, function(li){
+      if(li.tagName!=='LI') return;
+      var mk=ord?(n++)+'. ':'- ', pad=ind+new Array(mk.length+1).join(' '), t=[], subs=[];
+      [].forEach.call(li.childNodes, function(c){
+        if(c.nodeType===1 && /^(UL|OL)$/.test(c.tagName)) subs.push(serList(c,pad));
+        else if(c.nodeType===1 && /^(P|DIV)$/.test(c.tagName)){ if(t.length) t.push({t:'txt',v:' '}); for(var d=c.firstChild;d;d=d.nextSibling) toks(d,t,{}); }
+        else toks(c,t,{});
       });
-    }
-  }catch(e){}
-
-  // 瀏覽器在 contenteditable 裡會自己改好畫面的操作 —— 這些不需要重整
-  var NATIVE_OPS={replace:1,split:1,merge:1};
-  // 排版模式下暫停 hugo 的 livereload：md 一變它就整頁重整，連續打字會一直閃、游標會掉。
-  // 畫面由我們自己維護；離開排版模式時重整一次，讓畫面跟檔案對齊。
-  function pauseLiveReload(){
-    try{ var L=window.LiveReload; if(L&&L.connector&&L.connector.disconnect){ L.connector.disconnect(); return true; } }catch(e){}
-    return false;
+      var lines=tidy(assemble(t)).split('\n');
+      out.push(ind+mk+lineStartEsc(lines[0]||''));
+      for(var i=1;i<lines.length;i++) out.push(pad+lines[i]);
+      subs.forEach(function(s){ out.push(s); });
+    });
+    return out.join('\n');
   }
-
-  // ⚠️ 一定要序列化，不能讓兩個 op 同時飛出去。
-  //    op 是在 beforeinput（DOM 還沒變）當下算的，所以它的 before ＝「這次輸入之前的畫面」。
-  //    只要前一個 op 已經寫進 md，這個 before 就跟 md 對得上；但如果併發，第二個 op 會拿
-  //    新的 DOM 去對還沒更新的 md，locate 直接失敗。
-  //    2026-09-18 e2e 抓到：連打 XYZ 只進去 XY，第三個字靜靜掉了。
-  var opChain = Promise.resolve();
-  function sendOp(op,el){
-    opChain = opChain.then(function(){ return sendOpNow(op,el); }, function(){ return sendOpNow(op,el); });
-    return opChain;
+  function serBlock(el){
+    var t=el.tagName;
+    if(/^H[1-6]$/.test(t)) return new Array(+t[1]+1).join('#')+' '+inlineMd(el).replace(/\n/g,' ');
+    if(t==='UL'||t==='OL') return serList(el,'');
+    if(t==='BLOCKQUOTE'){ var kids=[].filter.call(el.children,function(c){ return /^(P|UL|OL|H[1-6]|BLOCKQUOTE|DIV)$/.test(c.tagName); });
+      var inner=kids.length? kids.map(serBlock).join('\n\n') : inlineMd(el);
+      return inner.split('\n').map(function(l){ return l?'> '+l:'>'; }).join('\n'); }
+    if(t==='HR') return '---';
+    if(t==='PRE') return '```\n'+el.textContent.replace(/\n$/,'')+'\n```';
+    if(t==='TABLE'||t==='FIGURE') return el.outerHTML;
+    return lineStartEsc(inlineMd(el));
   }
-  function sendOpNow(op,el){
-    keepPlace();
-    return fetch(EDITAPI+'?path='+encodeURIComponent(location.pathname),
-                 {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(op)})
-      .then(function(r){ return r.json().catch(function(){return {ok:false,err:'HTTP '+r.status}}); })
+  function emptyMd(md){ return !md.replace(/<br\s*\/?>|\s/g,''); }
+
+  // ── 進入排版模式：跟後端要一次「元素 ↔ md 區段」 ──────────────────────
+  function enterEdit(){
+    wrapInlineRuns();
+    var els=topEls(), items=els.map(itemOf);
+    return fetch(MAPAPI+'?path='+encodeURIComponent(location.pathname),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:items})})
+      .then(function(r){ return r.json().catch(function(){ return {ok:false,err:'HTTP '+r.status}; }); })
       .then(function(j){
-        if(j&&j.ok){
-          if(el){ el.classList.add('ccm-saved'); setTimeout(function(){el.classList.remove('ccm-saved')},1000); }
-          // 打字、Enter、Backspace 這類，瀏覽器已經自己把畫面改好了，重整只會讓游標跑掉、
-          // 一直閃（Bear：「這個就不是所見即所得了」）。只有畫面不會自己變的才重整一次。
-          if(!NATIVE_OPS[op.kind]) setTimeout(function(){ location.reload(); },120);
-          return true;
-        }
-        toast('沒存進 md：'+((j&&j.err)||'未知原因')+' — 畫面重整回檔案的內容', 4200);
-        setTimeout(function(){ location.reload(); }, 1200);
-        return false;
-      })
-      .catch(function(){ toast('連不到本機代理，這次改動沒存進 md',4200); setTimeout(function(){location.reload()},1200); return false; });
+        if(!j||!j.ok) throw new Error((j&&j.err)||'對應失敗');
+        SRC=j.md; HASH=j.hash; BODY0=j.bodyStart; INFO=new Map(); SEEN=new Set(); SEENSIG=new Map();
+        var mapped=0, locked=0;
+        els.forEach(function(el,i){
+          SEEN.add(el); SEENSIG.set(el,sig(el));
+          if(items[i].k==='skip'){ el.contentEditable='false'; return; }
+          var r=j.ranges[i], atom=isAtom(el);
+          if(r){
+            INFO.set(el,{s:r[0],e:r[1],sig:sig(el),atom:atom}); mapped++;
+            // 註腳在 md 裡原本叫什麼、圖片原本怎麼寫（例如 Typora 用的 ../../static/…）：反推時照原樣放回
+            var sups=[].filter.call(el.querySelectorAll('sup'),function(x){ return x.querySelector('a.footnote-ref'); }), lab=j.labels[i]||[];
+            if(sups.length===lab.length) sups.forEach(function(x,k){ x.setAttribute('data-ccm-fn',lab[k]); });
+            var units=[].filter.call(el.querySelectorAll('figure,img'),function(x){ return x.tagName==='FIGURE'||!x.closest('figure'); }), im=j.images[i]||[];
+            if(units.length===im.length) units.forEach(function(x,k){ x.setAttribute('data-ccm-md',im[k]); });
+          } else if(normText(el)) atom=true;     // 有內容卻對不上原稿：鎖起來，免得存檔時多出一份
+          if(atom){ el.contentEditable='false'; el.classList.add('ccm-atom'); locked++;
+                    el.setAttribute('data-ccm-title', el.getAttribute('title')||''); el.title='這一塊不能在排版模式裡改（表格、圖片、程式碼或對不上原稿的段落），要改請用 CC 標記'; }
+        });
+        [].forEach.call(EB.querySelectorAll('sup'), function(x){ if(x.querySelector('a.footnote-ref')) x.contentEditable='false'; });   // 註腳編號整顆刪、整顆留
+        return {mapped:mapped, locked:locked};
+      });
   }
 
-  scope.addEventListener('beforeinput', function(e){
-    if(!editOn) return;
-    // ⚠️ 中文輸入法（注音）選字的過程會連續發出一串「暫時的字」，那不是真的修改，
-    //    一個一個送出去會讓檔案跟畫面整個錯開。選字中的事件全部略過，
-    //    等 compositionend 拿到最後確定的字，再一次送出（見下面 composition 那兩段）。
-    if(e.isComposing || /Composition/.test(e.inputType||'')){ pend=null; return; }
-    var rs = e.getTargetRanges && e.getTargetRanges();
-    var r = (rs&&rs[0]) || (window.getSelection().rangeCount?window.getSelection().getRangeAt(0):null);
-    if(!r){ pend=null; return; }
-    var blk = blockOf(r.startContainer);
-    if(!blk){ e.preventDefault(); toast('這一塊不能直接編輯（圖、表請用 CC 標記）'); return; }
-    // 跨段落的操作先不支援：一次只改一段，才驗證得了
-    if(blockOf(r.endContainer)!==blk && !(r.collapsed)){ e.preventDefault(); toast('一次只能改一段（跨段請分兩次）'); return; }
-    // 再按一次要能取消，所以先問瀏覽器「這段現在是不是已經是粗體／斜體／底線」
-    var st=null;
-    if(/^format(Bold|Italic|Underline)$/.test(e.inputType)){
-      try{ st = document.queryCommandState(e.inputType.slice(6).toLowerCase()); }catch(_){}
-    }
-    pend = { type:e.inputType, data:e.data, blk:blk, before:blockText(blk), state:st, side:caretSide(r),
-             from:nsOffset(blk,r.startContainer,r.startOffset),
-             to:nsOffset(blk,r.endContainer,r.endOffset),
-             prev:blk.previousElementSibling };
-  });
-
-  // ── 中文輸入法：開始選字時記下「改之前」的樣子，選完字（compositionend）一次送出 ──
-  var comp=null;
-  scope.addEventListener('compositionstart', function(){
-    comp=null;
-    if(!editOn) return;
-    var sel=window.getSelection(); if(!sel.rangeCount) return;
-    var r=sel.getRangeAt(0), blk=blockOf(r.startContainer);
-    if(!blk || blockOf(r.endContainer)!==blk) return;
-    comp={ blk:blk, before:blockText(blk), side:caretSide(r),
-           from:nsOffset(blk,r.startContainer,r.startOffset), to:nsOffset(blk,r.endContainer,r.endOffset) };
-  });
-  scope.addEventListener('compositionend', function(e){
-    if(!editOn||!comp) return;
-    var c=comp; comp=null;
-    var text=e.data||'';
-    if(!text && c.from===c.to) return;          // 按 Esc 取消選字＝什麼都沒發生
-    sendOp({kind:'replace',before:c.before,from:c.from,to:c.to,text:text,side:c.side}, c.blk);
-  });
-
-  scope.addEventListener('input', function(){
-    if(!editOn||!pend) return;
-    var p=pend; pend=null; var op=null;
-    var emptyLi = p.blk.tagName==='LI' && !p.before.replace(/\s/g,'');
-    // ⚠️ 必須用 beforeinput 當下記的 p.prev，不能現在才問 p.blk.previousElementSibling：
-    //    在空 <li> 按 Enter，Chrome 的原生行為是「跳出清單」，input 事件觸發時那個 li
-    //    已經被瀏覽器從 DOM 拿掉了，這時候問它的兄弟一定是 null（2026-09-18 抓到）。
-    var prevLi = p.prev;
-    if(emptyLi && prevLi && (p.type==='insertParagraph' || /^delete.*Backward/.test(p.type))){
-      // 空的條列項沒有文字可以定位，改用前一項當錨點刪掉它（＝Word 的「空項目再按 Enter 就退出清單」）
-      op={kind:'dropEmptyItem',before:blockText(prevLi)};
-    }else if(p.type==='insertParagraph'){
-      op={kind:'split',before:p.before,at:p.from};
-    }else if(/^delete/.test(p.type) && p.from===0 && p.to===0 && p.prev && blockOf(p.prev)!==null){
-      op={kind:'merge',before:blockText(p.prev),next:p.before};
-    }else if(/^insert/.test(p.type)){
-      op={kind:'replace',before:p.before,from:p.from,to:p.to,text:(p.data||''),side:p.side};
-    }else if(/^delete/.test(p.type)){
-      var f=p.from,t=p.to;
-      if(f===t){ if(/Backward/.test(p.type)) f=Math.max(0,f-1); else t=f+1; }
-      op={kind:'replace',before:p.before,from:f,to:t,text:''};
-    }else if(/^format(Bold|Italic|Underline)$/.test(p.type)){
-      // ⚠️ 2026-09-18 修：原本 formatItalic 也被對成 bold，⌘I 會變成粗體。
-      //    Bear 的斜體是用在期刊名（*Int J Cardiol*），跟粗體是兩回事。
-      if(p.from===p.to) return;
-      var TAGMAP={formatBold:'bold',formatItalic:'italic',formatUnderline:'underline'};
-      op={kind:p.state?'unwrap':'wrap',before:p.before,from:p.from,to:p.to,tag:TAGMAP[p.type]};
-    }
-    if(op) sendOp(op,p.blk);
-  });
-
-  // ── 排版模式下貼圖＝插進文章 ────────────────────────────────────────
-  //    跟泡泡框開著時的 ⌘V 分開：那個是「附圖給 CC 看」，圖留在 repo 外面；
-  //    這裡是「這張圖要出現在文章裡」，所以落在 static/images/ipic/、會進 git。
-  var ASSETAPI = API.replace('/marks','/asset');
-
-  function insertImage(file, blk){
-    toast('圖片上傳中…');
-    return fetch(ASSETAPI+'?path='+encodeURIComponent(location.pathname)+'&name='+encodeURIComponent(file.name||''),
-                 {method:'POST',headers:{'Content-Type':file.type},body:file})
-      .then(function(r){ return r.json().catch(function(){return {ok:false,err:'HTTP '+r.status}}); })
+  // ── 存檔：比對 → 拼出新的 md → 帶指紋送出 ──────────────────────────────
+  function firstContentPos(){ var m=/\S/.exec(SRC.slice(BODY0)); return m? BODY0+m.index : SRC.length; }
+  function delStart(s){ var i=s; while(i>BODY0 && /\s/.test(SRC[i-1])) i--; return i; }
+  function strays(){ var n=EB.firstChild; while(n){ var nx=n.nextSibling; if(n.nodeType===3 && /\S/.test(n.nodeValue)){ var p=document.createElement('p'); EB.insertBefore(p,n); p.appendChild(n); } n=nx; } }
+  function buildEdits(){
+    strays();
+    var cur=topEls(), inDom=new Set(cur), edits=[], snaps=new Map(), lost=false, seq=0, anchor=null;
+    function push(x){ x.seq=seq++; edits.push(x); }
+    function insAt(md, el){ if(anchor===null){ var p=firstContentPos(); return {s:p,e:p,text:md+'\n\n',md:md,off:0,kind:'ins',el:el}; } return {s:anchor,e:anchor,text:'\n\n'+md,md:md,off:2,kind:'ins',el:el}; }
+    INFO.forEach(function(inf,el){ if(!inDom.has(el)){ if(inf.atom){ lost=true; return; } push({s:delStart(inf.s),e:inf.e,text:'',kind:'del',el:el}); } });
+    cur.forEach(function(el){
+      var inf=INFO.get(el);
+      if(inf && (anchor===null || inf.s>=anchor)){
+        if(!inf.atom){ var sg=sig(el); if(sg!==inf.sig){ var md=serBlock(el);
+          if(emptyMd(md)) push({s:delStart(inf.s),e:inf.e,text:'',kind:'del',el:el,emptied:true});
+          else push({s:inf.s,e:inf.e,text:md,md:md,off:0,kind:'rep',el:el});
+          snaps.set(el,sg); } }
+        anchor=inf.e; return;
+      }
+      if(inf){ if(inf.atom) return;                                  // 被搬到前面去了：舊位置刪掉、在這裡放一份
+        var sg2=sig(el), txt=(sg2===inf.sig)? SRC.slice(inf.s,inf.e) : serBlock(el);
+        push({s:delStart(inf.s),e:inf.e,text:'',kind:'del',el:el,moved:true});
+        if(!emptyMd(txt)) push(insAt(txt,el)); snaps.set(el,sg2); return; }
+      if(SEEN.has(el) && SEENSIG.get(el)===sig(el)) return;           // 原本就在、沒動過、也沒對應（例如圖片留下的空段落）：不碰
+      var md2=serBlock(el); if(emptyMd(md2)) return;
+      push(insAt(md2,el)); snaps.set(el,sig(el));
+    });
+    return {edits:edits, snaps:snaps, lost:lost};
+  }
+  function applyEdits(edits){
+    edits.sort(function(a,b){ return (a.s-b.s) || ((a.e-a.s)-(b.e-b.s)) || (a.seq-b.seq); });
+    var out='', pos=0;
+    edits.forEach(function(x){ if(x.s<pos) throw new Error('內部錯誤：修改的區段重疊，為了安全這次不存'); out+=SRC.slice(pos,x.s); x.newS=out.length; out+=x.text; pos=x.e; });
+    return out+SRC.slice(pos);
+  }
+  function commitMapping(b, md, hash){
+    var E=b.edits;
+    function shift(x,isEnd){ var d=0; E.forEach(function(ed){ if(isEnd? (ed.e<x||(ed.e===x&&ed.s<x)) : ed.e<=x) d+=ed.text.length-(ed.e-ed.s); }); return x+d; }
+    var placed=new Map(), gone=new Set();
+    E.forEach(function(ed){ if(ed.kind==='rep'||ed.kind==='ins') placed.set(ed.el,[ed.newS+ed.off, ed.newS+ed.off+ed.md.length]); else if(!ed.moved) gone.add(ed.el); });
+    var next=new Map();
+    INFO.forEach(function(inf,el){ if(placed.has(el)||gone.has(el)) return; next.set(el,{s:shift(inf.s,false),e:shift(inf.e,true),sig:inf.sig,atom:inf.atom}); });
+    placed.forEach(function(r,el){ next.set(el,{s:r[0],e:r[1],sig:b.snaps.get(el),atom:false}); SEEN.add(el); SEENSIG.set(el,b.snaps.get(el)); });
+    gone.forEach(function(el){ if(!placed.has(el)){ SEEN.delete(el); SEENSIG.delete(el); } });   // 之後又被 Ctrl+Z 救回來，要當成新段落寫回去
+    INFO=next; SRC=md; HASH=hash;
+  }
+  function status(t){ if(editOn) editFab.textContent='✏️ 排版中 · '+t+'（點此收工）'; }
+  function scheduleSave(ms){ if(stopped||!editOn) return; dirty=true; clearTimeout(saveTimer); saveTimer=setTimeout(function(){ saveNow(); }, ms||900); }
+  function stopSaving(msg){ stopped=true; clearTimeout(saveTimer); status('⚠️ 已停止存檔'); toast(msg,12000); }
+  function saveNow(opt){
+    opt=opt||{};
+    if(stopped) return Promise.resolve(false);
+    if(composing){ scheduleSave(500); return Promise.resolve(false); }
+    if(saving){ saveAgain=true; return savingP; }
+    var b; try{ b=buildEdits(); }catch(err){ stopSaving('整理修改時出錯，為了安全先停止存檔：'+err.message); return Promise.resolve(false); }
+    if(b.lost && !lostWarned){ lostWarned=true; toast('有表格／圖片／程式碼被刪掉了：排版模式不能刪這些，檔案裡會保留它們。要刪請先 Ctrl+Z 復原，再用 CC 標記。',8000); }
+    if(!b.edits.length){ dirty=false; status('已存'); return Promise.resolve(true); }
+    var md; try{ md=applyEdits(b.edits); }catch(err){ stopSaving(err.message); return Promise.resolve(false); }
+    saving=true; status('儲存中…');
+    savingP=fetch(SAVEAPI+'?path='+encodeURIComponent(location.pathname)+(opt.wait?'&wait=1':''),
+                  {method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({base:HASH,md:md,blocks:b.edits.length}),keepalive:!!opt.keepalive})
+      .then(function(r){ return r.json().catch(function(){ return {ok:false,err:'HTTP '+r.status}; }); })
       .then(function(j){
-        if(!j||!j.ok){ toast('圖片存不進去：'+((j&&j.err)||'未知原因'),4200); return; }
-        var alt=(file.name||'').replace(/\.[^.]+$/,'').slice(0,60) || '圖';
-        return sendOp({kind:'insertAfter',before:blockText(blk),text:'!['+alt+']('+j.src+')'}, blk)
-          .then(function(done){
-            if(done) toast('已插入 '+j.file+(j.big?'（超過 600KB，發布前記得轉 webp）':'')+'；檔名之後可以改成有意義的描述',6000);
-          });
+        saving=false;
+        if(j&&j.ok){ commitMapping(b,md,j.hash); dirty=false; lastSaveAt=Date.now(); status('已存'); window.__ccmSaves=(window.__ccmSaves||0)+1;
+          if(saveAgain){ saveAgain=false; return saveNow(opt); } return true; }
+        if(j&&j.conflict){ stopSaving('這篇文章在你排版的時候被別人改過了（可能是 CC 或另一台電腦）。為了不互相覆蓋，我先停止存檔 —— 你剛才的修改還在畫面上，請先記下來，收工重整後再改一次。'); return false; }
+        stopSaving('沒存進檔案：'+((j&&j.err)||'未知原因')+'。你的修改還在畫面上。'); return false;
       })
-      .catch(function(){ toast('連不到本機代理，圖片沒存進去',4200); });
+      .catch(function(){ saving=false; status('連不上，重試中'); setTimeout(function(){ saveNow(opt); },2000); return false; });
+    return savingP;
   }
 
-  document.addEventListener('paste', function(e){
+  // ── 原生編輯的事件 ──────────────────────────────────────────────────
+  EB.addEventListener('input', function(e){ if(!editOn) return; if(!/^history/.test(e.inputType||'')) lastNativeT=Date.now(); if(e.isComposing||composing) return; scheduleSave(900); });
+  EB.addEventListener('compositionstart', function(){ if(editOn) composing=true; });
+  EB.addEventListener('compositionend', function(){ if(!editOn) return; composing=false; lastNativeT=Date.now(); scheduleSave(600); });
+  // 鎖住的區塊（表格、圖片…）不准被一起選到刪掉或蓋掉
+  EB.addEventListener('beforeinput', function(e){
     if(!editOn) return;
-    if(bubble.classList.contains('on')) return;      // 泡泡開著＝附圖給 CC，走既有那條路
-    var imgs = imagesFrom(e.clipboardData);
-    if(!imgs.length) return;
+    // 註腳編號也算鎖住的：這些文章靠引用撐著，Backspace 刪過頭把一個引用整顆刪掉太容易了
+    var rs=e.getTargetRanges? e.getTargetRanges() : [], atoms=[].slice.call(EB.querySelectorAll('.ccm-atom')).concat([].filter.call(EB.querySelectorAll('sup'),function(x){ return x.querySelector('a.footnote-ref'); }));
+    for(var i=0;i<rs.length;i++){ var r=document.createRange();
+      try{ r.setStart(rs[i].startContainer,rs[i].startOffset); r.setEnd(rs[i].endContainer,rs[i].endOffset); }catch(_){ continue; }
+      if(r.collapsed) continue;
+      for(var j=0;j<atoms.length;j++) if(r.intersectsNode(atoms[j])){ e.preventDefault();
+        toast(atoms[j].tagName==='SUP'? '註腳編號不能在排版模式裡刪（免得一不小心刪掉引用），要刪請用 CC 標記' : '表格、圖片、程式碼這些鎖住的區塊不能在排版模式裡刪或蓋掉，要改請用 CC 標記'); return; }
+    }
+  });
+  // 貼上：把 Word／網頁帶來的樣式洗乾淨，只留文章用得到的格式；貼圖＝插進文章
+  function cleanHTML(html){
+    var tp=document.createElement('template'); tp.innerHTML=html;
+    var ALLOW={P:1,BR:1,STRONG:1,B:1,EM:1,I:1,U:1,MARK:1,A:1,CODE:1,SUP:1,SUB:1,UL:1,OL:1,LI:1,H2:1,H3:1,H4:1,BLOCKQUOTE:1,S:1,DEL:1};
+    (function walk(n){ [].slice.call(n.childNodes).forEach(function(c){
+      if(c.nodeType===8){ c.remove(); return; }
+      if(c.nodeType!==1) return;
+      walk(c);
+      var tag=c.tagName, st=c.getAttribute('style')||'', w=null;
+      if(tag==='DIV') w='p';
+      else if(tag==='SPAN'||tag==='FONT'){ if(/font-weight:\s*(bold|[6-9]00)/i.test(st)) w='strong'; else if(/font-style:\s*italic/i.test(st)) w='em'; else if(/text-decoration[^;]*underline/i.test(st)) w='u'; }
+      if(w){ var nn=document.createElement(w); while(c.firstChild) nn.appendChild(c.firstChild); c.replaceWith(nn); c=nn; tag=w.toUpperCase(); }
+      if(!ALLOW[tag]){ while(c.firstChild) c.parentNode.insertBefore(c.firstChild,c); c.remove(); return; }
+      [].slice.call(c.attributes).forEach(function(a){ if(!(tag==='A'&&a.name==='href')) c.removeAttribute(a.name); });
+    }); })(tp.content);
+    var d=document.createElement('div'); d.appendChild(tp.content); return d.innerHTML;
+  }
+  EB.addEventListener('paste', function(e){
+    if(!editOn || bubble.classList.contains('on')) return;          // 泡泡框開著＝附圖給 CC，走既有那條路
+    var cd=e.clipboardData; if(!cd) return;
+    var imgs=imagesFrom(cd);
+    if(imgs.length){ e.preventDefault(); insertImageBlock(imgs[0]); return; }
+    var html=cd.getData('text/html'), txt=cd.getData('text/plain');
     e.preventDefault();
-    var sel=window.getSelection();
-    var blk = sel.rangeCount ? blockOf(sel.getRangeAt(0).startContainer) : null;
-    if(!blk){ toast('先把游標點在要插圖的那一段裡'); return; }
-    insertImage(imgs[0], blk);
+    if(html && /<(p|br|li|strong|b|em|i|u|h[1-6]|ul|ol|div)\b/i.test(html)) document.execCommand('insertHTML',false,cleanHTML(html));
+    else if(txt){ var paras=txt.replace(/\r\n?/g,'\n').split(/\n{2,}/);
+      if(paras.length>1) document.execCommand('insertHTML',false,paras.map(function(p){ return '<p>'+esc(p).replace(/\n/g,'<br>')+'</p>'; }).join(''));
+      else document.execCommand('insertText',false,txt.replace(/\n/g,' ')); }
   }, true);
 
-  // ⌘⇧H：把圈起來的字標成 <mark> 黃底（⌘H 被 macOS 拿去隱藏視窗了，不能用）
+  // ── 自訂操作（Tab、搬段落、插圖、取消黃底）：瀏覽器原生復原管不到，自己記一份 ──
+  function pushCustom(undo){ customStack.push({t:Date.now(), undo:undo}); }
+  function afterCustom(){ scheduleSave(300); if(gripFor) placeGrip(gripFor); }
+  function curNode(){ var s=getSelection(); return s.rangeCount? s.getRangeAt(0).startContainer : null; }
+  function topOf(n){ var el=n&&(n.nodeType===1?n:n.parentElement); while(el&&el.parentElement&&el.parentElement!==EB) el=el.parentElement; return (el&&el.parentElement===EB)? el : null; }
+  function liOf(n){ var el=n&&(n.nodeType===1?n:n.parentElement), li=el&&el.closest? el.closest('li') : null; return (li&&EB.contains(li))? li : null; }
+  function keepCaret(fn){ var s=getSelection(), a=null; if(s.rangeCount){ var r=s.getRangeAt(0); a=[r.startContainer,r.startOffset,r.endContainer,r.endOffset]; }
+    fn(); if(a){ try{ var r2=document.createRange(); r2.setStart(a[0],a[1]); r2.setEnd(a[2],a[3]); s.removeAllRanges(); s.addRange(r2); }catch(_){} } }
+  function indent(){
+    var n=curNode(), li=liOf(n);
+    if(li){
+      var prev=li.previousElementSibling; if(!prev||prev.tagName!=='LI'){ toast('清單的第一項沒辦法再往內縮'); return; }
+      var list=li.parentElement, sub=prev.lastElementChild, made=false;
+      if(!sub||sub.tagName!==list.tagName){ sub=document.createElement(list.tagName); made=true; }
+      keepCaret(function(){ if(made) prev.appendChild(sub); sub.appendChild(li); });
+      pushCustom(function(){ keepCaret(function(){ list.insertBefore(li,prev.nextSibling); if(made&&!sub.children.length) sub.remove(); }); });
+      return afterCustom();
+    }
+    var blk=topOf(n);
+    if(!blk || !/^(P|DIV|SPAN)$/.test(blk.tagName) || blk.classList.contains('ccm-atom')){ toast('這裡沒辦法變成條列'); return; }
+    var pl=blk.previousElementSibling, joined=!!(pl&&/^(UL|OL)$/.test(pl.tagName)&&!pl.classList.contains('ccm-atom'));
+    var list2=joined? pl : document.createElement('ul'), li2=document.createElement('li');
+    keepCaret(function(){ while(blk.firstChild) li2.appendChild(blk.firstChild); list2.appendChild(li2); if(!joined) EB.insertBefore(list2,blk); blk.remove(); });
+    pushCustom(function(){ keepCaret(function(){ while(li2.firstChild) blk.appendChild(li2.firstChild); EB.insertBefore(blk, joined? list2.nextSibling : list2); li2.remove(); if(!joined) list2.remove(); }); });
+    afterCustom();
+  }
+  function outdent(){
+    var n=curNode(), li=liOf(n); if(!li){ toast('這段不在清單裡'); return; }
+    var list=li.parentElement, parentLi=(list.parentElement&&list.parentElement.tagName==='LI')? list.parentElement : null;
+    if(parentLi){
+      var outer=parentLi.parentElement, idx=[].indexOf.call(list.children,li);
+      keepCaret(function(){ outer.insertBefore(li,parentLi.nextSibling); if(!list.children.length) list.remove(); });
+      pushCustom(function(){ keepCaret(function(){ if(!list.parentElement) parentLi.appendChild(list); list.insertBefore(li, list.children[idx]||null); }); });
+      return afterCustom();
+    }
+    if(list.parentElement!==EB){ toast('這裡沒辦法往外退'); return; }
+    if([].some.call(li.children,function(c){ return /^(UL|OL)$/.test(c.tagName); })){ toast('這一項底下還有子項目，先把子項目往外退'); return; }
+    var p=document.createElement('p'), tail=document.createElement(list.tagName), after=[];
+    for(var x=li.nextElementSibling;x;x=x.nextElementSibling) after.push(x);
+    keepCaret(function(){ while(li.firstChild) p.appendChild(li.firstChild); li.remove(); EB.insertBefore(p,list.nextSibling);
+      if(after.length){ after.forEach(function(y){ tail.appendChild(y); }); EB.insertBefore(tail,p.nextSibling); } if(!list.children.length) list.remove(); });
+    pushCustom(function(){ keepCaret(function(){ if(!list.parentElement) EB.insertBefore(list,p); while(p.firstChild) li.appendChild(p.firstChild);
+      list.appendChild(li); after.forEach(function(y){ list.appendChild(y); }); p.remove(); tail.remove(); }); });
+    afterCustom();
+  }
+  function movable(n){ var li=liOf(n); if(li) return li; var t=topOf(n); return (t&&!t.classList.contains('ccm-atom'))? t : null; }
+  function moveEl(el, dir){
+    if(!el) return;
+    var sib=dir<0? el.previousElementSibling : el.nextElementSibling;
+    while(sib && (sib.classList.contains('ccm-grip') || (sib.tagName==='P' && !sib.childNodes.length))) sib=dir<0? sib.previousElementSibling : sib.nextElementSibling;   // 圖片留下的空段落跳過
+    if(!sib){ toast(dir<0?'已經在最上面了':'已經在最下面了'); return; }
+    if(sib.classList.contains('ccm-atom') || sib.hidden || sib.matches('div.footnotes,div.endmark')){ toast('表格、圖片這些鎖住的區塊不能跨過去，要搬請用 CC 標記'); return; }
+    var orig=el.nextSibling, parent=el.parentNode;
+    keepCaret(function(){ parent.insertBefore(el, dir<0? sib : sib.nextSibling); });
+    pushCustom(function(){ keepCaret(function(){ parent.insertBefore(el, orig); }); });
+    afterCustom();
+  }
+  function toggleMark(){
+    var s=getSelection(); if(!s.rangeCount||s.isCollapsed){ toast('先圈起要標黃底的字'); return; }
+    var n=s.getRangeAt(0).commonAncestorContainer, el=n.nodeType===1? n : n.parentElement;
+    var m=el&&el.closest('mark:not(.ccm-hit), span[style*="background"]');
+    if(m && EB.contains(m)){                              // 已經是黃底 → 取消
+      var parent=m.parentNode, kids=[].slice.call(m.childNodes), nx=m.nextSibling;
+      keepCaret(function(){ kids.forEach(function(k){ parent.insertBefore(k,m); }); m.remove(); });
+      pushCustom(function(){ keepCaret(function(){ parent.insertBefore(m, nx); kids.forEach(function(k){ m.appendChild(k); }); }); });
+      return afterCustom();
+    }
+    document.execCommand('styleWithCSS',false,true);
+    document.execCommand('hiliteColor',false,'yellow');   // 跟正式文章的 <mark> 一樣是瀏覽器預設黃
+    document.execCommand('styleWithCSS',false,false);
+  }
+  function applyStyle(t, rng){
+    EB.focus({preventScroll:true}); var s=getSelection(); if(rng){ s.removeAllRanges(); s.addRange(rng); }
+    if(t==='mark') return toggleMark();
+    document.execCommand(t==='bold'?'bold':t==='italic'?'italic':'underline');
+  }
+  function insertImageBlock(file){
+    var blk=topOf(curNode());
+    toast('圖片上傳中…');
+    fetch(ASSETAPI+'?path='+encodeURIComponent(location.pathname)+'&name='+encodeURIComponent(file.name||''),{method:'POST',headers:{'Content-Type':file.type},body:file})
+      .then(function(r){ return r.json().catch(function(){ return {ok:false,err:'HTTP '+r.status}; }); })
+      .then(function(j){
+        if(!j||!j.ok){ toast('圖片存不進去：'+((j&&j.err)||'未知原因'),4200); return; }
+        var p=document.createElement('p'), img=document.createElement('img');
+        img.src=j.src; img.alt=(file.name||'').replace(/\.[^.]+$/,'').slice(0,60)||'圖'; p.appendChild(img);
+        EB.insertBefore(p, blk? blk.nextSibling : null);
+        pushCustom(function(){ p.remove(); }); afterCustom();
+        toast('已插入 '+j.file+(j.big?'（超過 600KB，發布前記得轉 webp）':'')+'；收工重整後會套用文章的圖片樣式',6000);
+      }).catch(function(){ toast('連不到本機代理，圖片沒存進去',4200); });
+  }
+
+  // ── 鍵盤 ────────────────────────────────────────────────────────────
+  var MAC=/Mac|iPhone|iPad/.test(navigator.platform||'');
   document.addEventListener('keydown', function(e){
     if(!editOn) return;
-    if(!((e.metaKey||e.ctrlKey) && e.shiftKey && (e.key==='h'||e.key==='H'))) return;
-    e.preventDefault();
-    var sel=window.getSelection();
-    if(!sel.rangeCount||sel.isCollapsed){ toast('先圈起要標黃底的字'); return; }
-    var r=sel.getRangeAt(0), blk=blockOf(r.startContainer);
-    if(!blk||blockOf(r.endContainer)!==blk){ toast('一次只能標同一段裡面的字'); return; }
-    var host=r.startContainer.nodeType===1?r.startContainer:r.startContainer.parentElement;
-    var inMark=!!(host&&host.closest&&host.closest('mark'));   // 已經在黃底裡＝這次是取消
-    sendOp({kind:inMark?'unwrap':'wrap',before:blockText(blk),
-            from:nsOffset(blk,r.startContainer,r.startOffset),
-            to:nsOffset(blk,r.endContainer,r.endOffset),tag:'mark'}, blk);
-  });
+    var n=curNode(); if(!n || !EB.contains(n)) return;
+    var mod=e.metaKey||e.ctrlKey, k=(e.key||'').toLowerCase();
+    // 復原：最近一個動作是自訂操作就由我們倒回，否則交給瀏覽器原生的復原（打字、貼上、⌘B…都在那裡）
+    if(mod && !e.shiftKey && !e.altKey && k==='z'){ var top=customStack[customStack.length-1]; if(top && top.t>=lastNativeT){ e.preventDefault(); customStack.pop(); top.undo(); scheduleSave(300); } return; }
+    if(mod && e.shiftKey && k==='h'){ e.preventDefault(); toggleMark(); return; }
+    if(mod && !e.shiftKey && !e.altKey && k==='u'){ e.preventDefault(); document.execCommand('underline'); return; }   // Windows 的 Ctrl+U 平常是「檢視原始碼」
+    if(e.key==='Tab' && !mod && !e.altKey){ e.preventDefault(); if(e.shiftKey) outdent(); else indent(); return; }
+    // 搬段落：Mac ⌘⌥↑↓；Windows 用 Alt+Shift+↑↓（Ctrl+Alt+方向鍵會被 Intel 顯卡拿去轉螢幕，Fable 第 13 條）
+    var mv=MAC? (e.metaKey&&e.altKey&&!e.shiftKey) : (e.altKey&&e.shiftKey&&!e.ctrlKey&&!e.metaKey);
+    if(mv && (e.key==='ArrowUp'||e.key==='ArrowDown')){ e.preventDefault(); moveEl(movable(n), e.key==='ArrowUp'?-1:1); }
+  }, true);
 
-  // ── 段落上下移 ────────────────────────────────────────────────────
-  //    Bear 2026-09-18：「我要下移就下移、要上移就上移」。原本只有拆段和合段，
-  //    想搬動一段話只能用拆＋合去湊，而且拆到 **…** 中間還會把標記劈壞。
-  function moveBlk(blk,dir){
-    if(!blk) return;
-    sendOp({kind:'moveBlock',before:blockText(blk),dir:dir}, blk);
-  }
-  document.addEventListener('keydown',function(e){
-    if(!editOn) return;
-    if(!(e.metaKey||e.ctrlKey)||!e.altKey) return;
-    if(e.key!=='ArrowUp'&&e.key!=='ArrowDown') return;
-    e.preventDefault();
-    var sel=window.getSelection();
-    var blk=sel.rangeCount?blockOf(sel.getRangeAt(0).startContainer):null;
-    if(!blk){ toast('先把游標點在要移動的那一段裡'); return; }
-    moveBlk(blk, e.key==='ArrowUp'?'up':'down');
-  });
-
-  // Tab / Shift+Tab：把一段變成條列、再往內縮一層；退錯就往外退回去。
-  // 他的用法是：長段落先用 Enter 把「① ②」各自拆下來，再 Tab 內縮成 bullet。
-  // 縮排走 2 格（他既有文章 518 行巢狀清單是 2 格，4 格只有 10 行）。
-  document.addEventListener('keydown',function(e){
-    if(!editOn||e.key!=='Tab') return;
-    var sel=window.getSelection();
-    var blk=sel.rangeCount?blockOf(sel.getRangeAt(0).startContainer):null;
-    if(!blk) return;                 // 游標不在正文裡就讓 Tab 正常跳焦點
-    e.preventDefault();
-    sendOp({kind:'indent',before:blockText(blk),dir:e.shiftKey?'out':'in'}, blk);
-  });
-
-  // 滑到哪一段，左邊就浮出 ↑↓ 把手 —— 點一下就移，不用記快捷鍵
+  // ── 段落把手 ↑↓ ─────────────────────────────────────────────────────
   var grip=null, gripFor=null, gripTimer=null;
-  function hideGrip(){ clearTimeout(gripTimer); if(grip){grip.remove();grip=null;gripFor=null;} }
-  // 延遲收起：滑鼠從段落移到把手的路上一定會短暫離開正文，立刻收起就永遠按不到
+  function hideGrip(){ clearTimeout(gripTimer); if(grip){ grip.remove(); grip=null; gripFor=null; } }
   function laterHide(){ clearTimeout(gripTimer); gripTimer=setTimeout(hideGrip,420); }
   function keepGrip(){ clearTimeout(gripTimer); }
+  // 條列項的圓點／編號畫在 <li> 外面，用清單容器當基準才不會壓到編號（v11 修過的閃爍）
+  function placeGrip(blk){ if(!grip||!blk.isConnected) return; var ref=(blk.tagName==='LI'&&blk.parentElement)? blk.parentElement : blk; var rr=ref.getBoundingClientRect(), r=blk.getBoundingClientRect();
+    grip.style.left=(window.scrollX+rr.left-38)+'px'; grip.style.top=(window.scrollY+r.top)+'px'; }
   function showGrip(blk){
-    if(!editOn||!blk) return;
-    keepGrip();
-    if(blk===gripFor) return;      // 同一段就別重畫，不然滑過去的路上會閃掉
-    if(grip){grip.remove();grip=null;gripFor=null;}
-    var r=blk.getBoundingClientRect();
-    // 條列項的圓點／編號是畫在 <li> 的「外面」，拿 li 的邊界往左推會正好壓在編號上，
-    // 滑鼠一進去就變成「在把手上」、出來又變成「在段落上」，於是不停抖動
-    // （2026-09-18 Bear 回報「上下箭頭不斷地在閃」）。改用清單容器當基準避開編號。
-    var ref=(blk.tagName==='LI'&&blk.parentElement)?blk.parentElement:blk;
-    var rr=ref.getBoundingClientRect();
-    grip=document.createElement('div');
-    grip.className='ccm-grip';
-    grip.innerHTML='<button type="button" title="這段往上移（⌘⌥↑）">↑</button>'+
-                   '<button type="button" title="這段往下移（⌘⌥↓）">↓</button>';
-    // 26px 按鈕 ＋ 12px 透明橋 ＝ 38，右緣正好貼齊內容左界，不重疊也沒有縫
-    grip.style.left=(window.scrollX+rr.left-38)+'px';
-    grip.style.top=(window.scrollY+r.top)+'px';
+    if(!editOn||!blk) return; keepGrip(); if(blk===gripFor){ placeGrip(blk); return; }
+    if(grip){ grip.remove(); grip=null; }
+    grip=document.createElement('div'); grip.className='ccm-grip';
+    var up=MAC?'⌘⌥↑':'Alt+Shift+↑', dn=MAC?'⌘⌥↓':'Alt+Shift+↓';
+    grip.innerHTML='<button type="button" title="這段往上移（'+up+'）">↑</button><button type="button" title="這段往下移（'+dn+'）">↓</button>';
     var bs=grip.querySelectorAll('button');
-    bs[0].onclick=function(ev){ev.preventDefault();ev.stopPropagation();moveBlk(blk,'up');};
-    bs[1].onclick=function(ev){ev.preventDefault();ev.stopPropagation();moveBlk(blk,'down');};
-    grip.addEventListener('mouseenter',keepGrip);
-    grip.addEventListener('mouseleave',laterHide);
-    document.body.appendChild(grip);
-    gripFor=blk;
+    [].forEach.call(bs,function(b){ b.addEventListener('mousedown',function(ev){ ev.preventDefault(); }); });   // 不要搶走文章裡的游標
+    bs[0].onclick=function(ev){ ev.preventDefault(); moveEl(gripFor,-1); };
+    bs[1].onclick=function(ev){ ev.preventDefault(); moveEl(gripFor,1); };
+    grip.addEventListener('mouseenter',keepGrip); grip.addEventListener('mouseleave',laterHide);
+    document.body.appendChild(grip); gripFor=blk; placeGrip(blk);
   }
-  scope.addEventListener('mouseover',function(e){
-    if(!editOn) return;
-    if(e.target.closest&&e.target.closest('.ccm-grip')) return;
-    showGrip(blockOf(e.target));
-  });
-  scope.addEventListener('mouseleave',laterHide);
-  scope.addEventListener('mouseenter',keepGrip);
+  EB.addEventListener('mouseover', function(e){ if(!editOn) return; var li=liOf(e.target), blk=li||topOf(e.target); if(blk && !blk.classList.contains('ccm-atom') && !(blk.tagName==='P'&&!blk.childNodes.length)) showGrip(blk); });
+  EB.addEventListener('mouseleave', laterHide); EB.addEventListener('mouseenter', keepGrip);
 
-  // ⏸ 2026-09-18 暫停：Fable 5.1 風險盤點實測 v13 會在 Ctrl+Z、貼上、打英文空白、在標題打引號、
-  //    把第一段往上搬時「悄悄」寫壞 md（畫面看不出來）。逐鍵翻譯的架構補不完，改走 v14
-  //    （瀏覽器當編輯器、存檔時只把動過的段落反推回 md）。v14 通過那 13 條之前，這顆鈕只說明、不開編輯。
-  var P3_PAUSED = true;
-  if (P3_PAUSED) {
-    editFab.textContent = '✏️ 排版（暫停中）';
-    editFab.style.background = '#94a3b8';
-    editFab.title = '排版模式暫停：v13 會在復原、貼上、打英文空白時悄悄寫壞檔案，v14 修好前先關閉。改字請用 CC 標記。';
+  // ── 暫停 hugo 的自動重整 ─────────────────────────────────────────────
+  // 讓 livereload 的「重整」入口直接失效，不靠斷線：醫院經 tunnel 時 wss 握手慢，
+  // 斷線指令在連線建立之前是無效的，之後一連上每個字都整頁重整（Fable 第 4 條）。
+  function pauseLiveReload(){
+    var L=window.LiveReload;
+    if(!L){ setTimeout(pauseLiveReload,300); return; }
+    if(typeof L.performReload==='function' && !lrOrig){ lrOrig=L.performReload; L.performReload=function(){ console.log('[cc-mark] 排版中，略過 livereload 重整'); }; }
+    try{ if(L.connector&&L.connector.disconnect) L.connector.disconnect(); }catch(_){}
   }
+  window.addEventListener('beforeunload', function(e){ if(editOn && !stopped && (dirty||saving)){ try{ saveNow({keepalive:true}); }catch(_){} e.preventDefault(); e.returnValue=''; } });
+
+  // ── 進出排版模式 ─────────────────────────────────────────────────────
   editFab.onclick=function(){
-    if (P3_PAUSED) {
-      toast('排版模式暫停中：舊版會在 Ctrl+Z、貼上、打英文空白時悄悄把檔案寫錯。新版（v14）修好前先關閉，改字請先用 CC 標記。', 7000);
-      return;
-    }
-    editOn=!editOn;
-    scope.contentEditable = editOn ? 'true' : 'false';
-    scope.classList.toggle('ccm-editing',editOn);
-    editFab.classList.toggle('on',editOn);
-    editFab.textContent = editOn ? '✏️ 排版中（點此收工）' : '✏️ 排版';
-    if(editOn) pauseLiveReload();
-    if(editOn) toast('排版模式：Enter 拆段／Tab 變條列再內縮·Shift+Tab 往外退／段落左邊 ↑↓ 可搬動（或 ⌘⌥↑↓）／⌘B 粗體 ⌘I 斜體 ⌘U 底線 ⌘⇧H 黃底（再按一次取消）／⌘V 貼圖 — 全部即時存回 .md。',8200);
-    else { scope.blur(); hideGrip(); toast('已離開排版模式，重新整理對齊檔案…'); keepPlace(); setTimeout(function(){location.reload()},500); }
+    if(editOn) return leaveEdit();
+    editFab.textContent='✏️ 準備中…';
+    pauseLiveReload();
+    try{ document.execCommand('defaultParagraphSeparator',false,'p'); }catch(_){}
+    enterEdit().then(function(st){
+      editOn=true; EB.contentEditable='true'; EB.classList.add('ccm-editing'); editFab.classList.add('on'); status('已存');
+      toast('排版模式：打字、注音、貼上、Enter、'+(MAC?'⌘':'Ctrl+')+'Z 都跟 Word 一樣，停手約 1 秒自動存。Tab 條列內縮、段落左邊 ↑↓ 搬動、'+(MAC?'⌘B ⌘I ⌘U ⌘⇧H':'Ctrl+B／I／U、Ctrl+Shift+H')+'。表格和圖片是鎖住的。（對到原稿 '+st.mapped+' 段'+(st.locked?'、鎖住 '+st.locked+' 塊':'')+'）',9000);
+    }).catch(function(err){ editFab.textContent='✏️ 排版'; toast('進不了排版模式：'+err.message,6000); });
   };
+  function leaveEdit(){
+    if(stopped && !confirm('存檔已經停止了（文章被別人改過）。現在收工，畫面上還沒存進檔案的修改會不見，確定嗎？')) return;
+    clearTimeout(saveTimer); status('收工，最後存一次…'); hideGrip();
+    (stopped? Promise.resolve(true) : saveNow({wait:true})).then(function(){
+      // 問 proxy「最後一次寫進檔案的內容，hugo 重建好了沒」。收工這次常常沒有新修改（1 秒前自動存過），
+      // 光等這次存檔不夠 —— 重整太早會先看到舊頁、接著 livereload 又刷一次（Fable 第 6 條）
+      return fetch(SETTLEDAPI+'?path='+encodeURIComponent(location.pathname)).then(function(r){ return r.json(); }).catch(function(){ return {}; });
+    }).then(function(j){
+      setTimeout(function(){ editOn=false; location.reload(); }, (j&&j.built)? 0 : Math.max(0, 1200-(Date.now()-lastSaveAt)));
+    });
+  }
+  window.__ccmEditState=function(){ return {editOn:editOn, saving:saving, dirty:dirty, stopped:stopped, saves:window.__ccmSaves||0}; };
 
 })();
 </script>
