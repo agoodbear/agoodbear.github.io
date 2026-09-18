@@ -136,12 +136,24 @@
   .ccm-editing{outline:2px dashed rgba(15,118,110,.5);outline-offset:10px;border-radius:4px}
   .ccm-editing:focus{outline-color:rgba(15,118,110,.85)}
   /* 段落把手：排版模式下滑到哪一段，左邊就浮出 ↑↓ */
-  .ccm-grip{position:absolute;z-index:9998;display:flex;flex-direction:column;gap:2px}
+  /* 往右補 12px 透明區，讓把手跟段落之間沒有空隙 —— 有縫的話滑鼠移過去的瞬間
+     就離開正文，把手會在手指還沒到之前就消失（2026-09-18 Bear 回報按不到）。 */
+  .ccm-grip{position:absolute;z-index:9998;display:flex;flex-direction:column;gap:2px;
+    padding-right:12px;box-sizing:content-box}
   .ccm-grip button{cursor:pointer;border:1px solid rgba(148,163,184,.5);background:rgba(255,255,255,.96);
     color:#0f766e;border-radius:6px;width:26px;height:22px;font-size:12px;line-height:1;padding:0;
     box-shadow:0 2px 6px rgba(0,0,0,.12)}
   .ccm-grip button:hover{background:#0f766e;color:#fff;border-color:#0f766e}
   @media (prefers-color-scheme:dark){.ccm-grip button{background:rgba(30,41,59,.96);color:#5eead4}}
+  /* 泡泡框裡的「直接套用」：只在排版模式出現，跟上面那排「交辦給 CC」的意圖鈕
+     視覺上分開 —— 一個是我自己現在就改，一個是請 CC 去改，不能讓人按混。 */
+  .ccm-direct{align-items:center;gap:6px;margin-top:8px;padding-top:8px;
+    border-top:1px dashed rgba(148,163,184,.42)}
+  .ccm-direct-label{font-size:11px;opacity:.6;margin-right:2px}
+  .ccm-dbtn{cursor:pointer;border:1px solid rgba(15,118,110,.5);background:transparent;color:#0f766e;
+    border-radius:6px;padding:3px 9px;font-size:12px;font-weight:700}
+  .ccm-dbtn:hover{background:#0f766e;color:#fff}
+  @media (prefers-color-scheme:dark){.ccm-dbtn{color:#5eead4;border-color:rgba(94,234,212,.45)}}
   .ccm-saved{animation:ccmSaved 1s ease-out}
   @keyframes ccmSaved{0%{background:rgba(16,185,129,.28)}100%{background:transparent}}
   @media print{.ccm-fab,.ccm-panel,.ccm-bubble{display:none!important}}
@@ -172,8 +184,8 @@
   //    （Roam 版 2026-09-08 踩過同樣的坑：改了功能沒 bump 版本號，他 reload 後無從判斷。）
   //    Hugo 版跟 Roam 版不同，程式碼是 hugo server 直接從磁碟讀的：存檔＋重新整理頁面就生效，
   //    不用 push、不用重裝。版本號在「面板抬頭常駐」＋「換版跳一次 toast」＋「console 每次印」。
-  var CCM_V='v9', CCM_V_DATE='2026-09-18',
-      CCM_V_NOTE='段落可上下搬（滑過段落左邊的 ↑↓ 或 ⌘⌥↑/↓）；修好「拆段會把粗體劈成兩半」的問題；⌘I 斜體 ⌘U 底線';
+  var CCM_V='v11', CCM_V_DATE='2026-09-18',
+      CCM_V_NOTE='Tab 變條列並內縮/Shift+Tab 退回；段落把手修好（不再壓到編號、不再閃）；圈選後泡泡框可直接套用粗體/黃底/底線/斜體；會擋下把標記切壞的改動';
   // hallmark 主題用 .article-body；hugo-clarity 用 .post_body。兩個都撐住。
   var body=document.querySelector('.article-body')||document.querySelector('.post_content .post_body')
           ||document.querySelector('.post_body')||document.querySelector('article');
@@ -739,7 +751,13 @@
         '<div id="ccmStep2" hidden><textarea class="ccm-ta" id="ccmCmd" placeholder="一句話說你要怎麼改…（可直接 ⌘V 貼上圖片）"></textarea>'+
         '<div class="ccm-pastehint">📎 ⌘V 貼上圖片或把檔案拖進來，例：「把 Fig 5 換成這張」</div>'+
         '<div class="ccm-act"><button class="ccm-mini" id="ccmCancel" type="button">取消</button>'+
-        '<button class="ccm-mini pri" id="ccmSave" type="button">存標記</button></div></div>';
+        '<button class="ccm-mini pri" id="ccmSave" type="button">存標記</button></div></div>'+
+        // 排版模式下才給「我自己現在就改」的按鈕；沒開排版模式時泡泡框維持原樣（純交辦給 CC）
+        (editOn ? '<div class="ccm-row ccm-direct"><span class="ccm-direct-label">排版中 · 直接套用</span>'+
+          '<button class="ccm-dbtn" data-t="bold" type="button">粗體</button>'+
+          '<button class="ccm-dbtn" data-t="mark" type="button">黃底</button>'+
+          '<button class="ccm-dbtn" data-t="underline" type="button">底線</button>'+
+          '<button class="ccm-dbtn" data-t="italic" type="button">斜體</button></div>' : '');
       SHOTS=[];UPLOADS=[];                 // 換一次選取＝重新開始收圖（上一輪的已經存進標記了）
       bubble.style.left=Math.min(window.scrollX+r.left,window.scrollX+document.documentElement.clientWidth-360)+'px';
       bubble.style.top=(window.scrollY+r.bottom+9)+'px';
@@ -764,6 +782,17 @@
         if(btn){btn.disabled=true;btn.textContent='圖片上傳中…';}
         Promise.all(UPLOADS).then(function(){ if(btn){btn.disabled=false;btn.textContent=old;} commit(cmd); });
       }
+      bubble.querySelectorAll('.ccm-dbtn').forEach(function(b){
+        b.onclick=function(){
+          var blk=blockOf(rng.startContainer);
+          if(!blk||blockOf(rng.endContainer)!==blk){ toast('一次只能套用在同一段裡面的字'); return; }
+          sendOp({kind:'wrap',before:blockText(blk),
+                  from:nsOffset(blk,rng.startContainer,rng.startOffset),
+                  to:nsOffset(blk,rng.endContainer,rng.endOffset),tag:b.dataset.t}, blk);
+          bubble.classList.remove('on');
+          window.getSelection().removeAllRanges();
+        };
+      });
       bubble.querySelectorAll('.ccm-btn').forEach(function(b){
         b.onclick=function(ev){
           kind=b.dataset.k;
@@ -1155,22 +1184,47 @@
     moveBlk(blk, e.key==='ArrowUp'?'up':'down');
   });
 
+  // Tab / Shift+Tab：把一段變成條列、再往內縮一層；退錯就往外退回去。
+  // 他的用法是：長段落先用 Enter 把「① ②」各自拆下來，再 Tab 內縮成 bullet。
+  // 縮排走 2 格（他既有文章 518 行巢狀清單是 2 格，4 格只有 10 行）。
+  document.addEventListener('keydown',function(e){
+    if(!editOn||e.key!=='Tab') return;
+    var sel=window.getSelection();
+    var blk=sel.rangeCount?blockOf(sel.getRangeAt(0).startContainer):null;
+    if(!blk) return;                 // 游標不在正文裡就讓 Tab 正常跳焦點
+    e.preventDefault();
+    sendOp({kind:'indent',before:blockText(blk),dir:e.shiftKey?'out':'in'}, blk);
+  });
+
   // 滑到哪一段，左邊就浮出 ↑↓ 把手 —— 點一下就移，不用記快捷鍵
-  var grip=null, gripFor=null;
-  function hideGrip(){ if(grip){grip.remove();grip=null;gripFor=null;} }
+  var grip=null, gripFor=null, gripTimer=null;
+  function hideGrip(){ clearTimeout(gripTimer); if(grip){grip.remove();grip=null;gripFor=null;} }
+  // 延遲收起：滑鼠從段落移到把手的路上一定會短暫離開正文，立刻收起就永遠按不到
+  function laterHide(){ clearTimeout(gripTimer); gripTimer=setTimeout(hideGrip,420); }
+  function keepGrip(){ clearTimeout(gripTimer); }
   function showGrip(blk){
-    if(!editOn||!blk||blk===gripFor) return;
-    hideGrip();
+    if(!editOn||!blk) return;
+    keepGrip();
+    if(blk===gripFor) return;      // 同一段就別重畫，不然滑過去的路上會閃掉
+    if(grip){grip.remove();grip=null;gripFor=null;}
     var r=blk.getBoundingClientRect();
+    // 條列項的圓點／編號是畫在 <li> 的「外面」，拿 li 的邊界往左推會正好壓在編號上，
+    // 滑鼠一進去就變成「在把手上」、出來又變成「在段落上」，於是不停抖動
+    // （2026-09-18 Bear 回報「上下箭頭不斷地在閃」）。改用清單容器當基準避開編號。
+    var ref=(blk.tagName==='LI'&&blk.parentElement)?blk.parentElement:blk;
+    var rr=ref.getBoundingClientRect();
     grip=document.createElement('div');
     grip.className='ccm-grip';
     grip.innerHTML='<button type="button" title="這段往上移（⌘⌥↑）">↑</button>'+
                    '<button type="button" title="這段往下移（⌘⌥↓）">↓</button>';
-    grip.style.left=(window.scrollX+r.left-34)+'px';
+    // 26px 按鈕 ＋ 12px 透明橋 ＝ 38，右緣正好貼齊內容左界，不重疊也沒有縫
+    grip.style.left=(window.scrollX+rr.left-38)+'px';
     grip.style.top=(window.scrollY+r.top)+'px';
     var bs=grip.querySelectorAll('button');
     bs[0].onclick=function(ev){ev.preventDefault();ev.stopPropagation();moveBlk(blk,'up');};
     bs[1].onclick=function(ev){ev.preventDefault();ev.stopPropagation();moveBlk(blk,'down');};
+    grip.addEventListener('mouseenter',keepGrip);
+    grip.addEventListener('mouseleave',laterHide);
     document.body.appendChild(grip);
     gripFor=blk;
   }
@@ -1179,9 +1233,8 @@
     if(e.target.closest&&e.target.closest('.ccm-grip')) return;
     showGrip(blockOf(e.target));
   });
-  document.addEventListener('mouseleave',function(e){
-    if(e.target===scope) hideGrip();
-  },true);
+  scope.addEventListener('mouseleave',laterHide);
+  scope.addEventListener('mouseenter',keepGrip);
 
   editFab.onclick=function(){
     editOn=!editOn;
@@ -1189,7 +1242,7 @@
     scope.classList.toggle('ccm-editing',editOn);
     editFab.classList.toggle('on',editOn);
     editFab.textContent = editOn ? '✏️ 排版中（點此收工）' : '✏️ 排版';
-    if(editOn) toast('排版模式：滑到段落左邊有 ↑↓ 可搬動（或 ⌘⌥↑/↓）／Enter 拆段／⌘B 粗體 ⌘I 斜體 ⌘U 底線 ⌘⇧H 黃底（再按一次取消）／⌘V 貼圖 — 全部即時存回 .md。',7600);
+    if(editOn) toast('排版模式：Enter 拆段／Tab 變條列再內縮·Shift+Tab 往外退／段落左邊 ↑↓ 可搬動（或 ⌘⌥↑↓）／⌘B 粗體 ⌘I 斜體 ⌘U 底線 ⌘⇧H 黃底（再按一次取消）／⌘V 貼圖 — 全部即時存回 .md。',8200);
     else { scope.blur(); hideGrip(); toast('已離開排版模式'); }
   };
 
