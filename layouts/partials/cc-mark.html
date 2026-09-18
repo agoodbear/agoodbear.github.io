@@ -91,7 +91,10 @@
   .ccm-ok{cursor:pointer;border:1px solid rgba(148,163,184,.55);background:transparent;color:inherit;border-radius:5px;padding:1px 7px;font-size:11px;float:right;margin-right:6px;opacity:.6}
   .ccm-ok:hover{opacity:1;border-color:#059669;color:#059669}
   .ccm-item.done .ccm-ok{opacity:1;border-color:#059669;color:#059669}
-  mark.ccm-hit.done{background:rgba(5,150,105,.16);border-bottom-color:#059669}
+  mark.ccm-hit.done{background:rgba(148,163,184,.18);border-bottom-color:#94a3b8}
+  /* 待審＝CC 回覆過、等你按 ✅／↩（跟 Roam 版同一個意思：黃＝等 CC，綠＝等你） */
+  mark.ccm-hit.rv{background:rgba(16,185,129,.22);border-bottom-color:#059669}
+  mark.ccm-hit.rv[data-kind="刪"]{background:transparent;text-decoration-color:#059669}
   .ccm-figtag{font-size:11px;font-weight:700;color:#a16207;background:rgba(250,204,21,.24);border-radius:4px;padding:1px 6px;margin-left:5px}
   mark.ccm-hit{background:rgba(250,204,21,.42);border-bottom:2px solid #eab308;padding:1px 0;border-radius:2px}
   @media (prefers-color-scheme:dark){mark.ccm-hit{background:rgba(234,179,8,.3);color:inherit}}
@@ -176,6 +179,7 @@
   <div class="ccm-list" id="ccmList"></div>
   <div class="ccm-foot">
     <button class="ccm-mini pri" id="ccmCopy" type="button">📋 打包複製</button>
+    <button class="ccm-mini" id="ccmNextRv" type="button" title="依序跳到 CC 回覆過、等你審的標記">▶ 下一個待審</button>
     <button class="ccm-mini" id="ccmToggleDone" type="button">👁 顯示已完成</button>
     <button class="ccm-mini" id="ccmSweep" type="button">🗑 刪除已完成</button>
     <button class="ccm-mini" id="ccmClose" type="button" style="margin-left:auto">關閉</button>
@@ -189,8 +193,8 @@
   //    （Roam 版 2026-09-08 踩過同樣的坑：改了功能沒 bump 版本號，他 reload 後無從判斷。）
   //    Hugo 版跟 Roam 版不同，程式碼是 hugo server 直接從磁碟讀的：存檔＋重新整理頁面就生效，
   //    不用 push、不用重裝。版本號在「面板抬頭常駐」＋「換版跳一次 toast」＋「console 每次印」。
-  var CCM_V='v16', CCM_V_DATE='2026-09-18',
-      CCM_V_NOTE='收工後直接停在你原本看的那一段，不會再從最上面滑下來；「記住上次排版位置」改成不自動跳，只在提示裡給「跳到上次位置」按鈕';
+  var CCM_V='v17', CCM_V_DATE='2026-09-18',
+      CCM_V_NOTE='跟 Roam 一樣分「待處理／待審」：右下角直接顯示兩個數字，CC 回覆過、等你按 ✅ 的標記在文章裡是綠色，面板多一個「▶ 下一個待審」；📋 打包只打包待處理的（已經在等你審的不會再送給 CC）。另修：排版時連續停頓打字，收工偶爾會先看到舊內容';
   // hallmark 主題用 .article-body；hugo-clarity 用 .post_body。兩個都撐住。
   var body=document.querySelector('.article-body')||document.querySelector('.post_content .post_body')
           ||document.querySelector('.post_body')||document.querySelector('article');
@@ -265,6 +269,15 @@
 
   var REPLIES=[];                       // CC 的回覆（來自 /cc-replies.json）
   function norm(s){return String(s||'').replace(/\s+/g,'').slice(0,24);}
+  // 待處理＝還沒回覆，或回覆是在你退回之前寫的；待審＝CC 回覆的時間晚於這條標記最後一次更新（含退回）。
+  // 回覆有 at（CC 寫回覆時記的時間）就比時間；舊回覆沒有 at，就看這條有沒有被退回過。
+  function markState(x){
+    if(x.done) return 'done';
+    var r=replyFor(x); if(!r) return 'todo';
+    var ra=r.at? (Date.parse(r.at)||+r.at||0) : 0;
+    if(ra) return ra>=(x.u||0)? 'review' : 'todo';
+    return x.reopened? 'todo' : 'review';
+  }
   function replyFor(mk){
     if(!REPLIES.length)return null;
     if(mk.id){var byId=REPLIES.find(function(r){return r.id===mk.id;}); if(byId)return byId;}
@@ -446,7 +459,7 @@
     var t=node;
     if(from>0)t=t.splitText(from);
     if(t.nodeValue.length>(to-from))t.splitText(to-from);
-    var m=document.createElement('mark');m.className='ccm-hit'+(mk.done?' done':'');
+    var m=document.createElement('mark');m.className='ccm-hit'+(mk.done?' done':'')+(markState(mk)==='review'?' rv':'');
     if(mk.kind)m.dataset.kind=mk.kind;   // 「刪」靠這個屬性換成刪除線
     m.title=(mk.done?'✓ 已處理｜':'')+mk.kind+'：'+mk.cmd;
     if(idx!=null)m.dataset.ccmI=idx;
@@ -526,7 +539,7 @@
       var k=mkKey(mk,idx), ws=[].filter.call(scope.querySelectorAll('mark.ccm-hit'),function(w){ return w.dataset.ccmK===k; });
       if(ws.length || HL_RES.has(k)){
         // 已經畫過（或試過對不上）：只更新編號／完成狀態，圖表外框照樣補回
-        ws.forEach(function(w){ w.dataset.ccmI=idx; w.classList.toggle('done',!!mk.done); w.title=(mk.done?'✓ 已處理｜':'')+mk.kind+'：'+mk.cmd; });
+        ws.forEach(function(w){ w.dataset.ccmI=idx; w.classList.toggle('done',!!mk.done); w.classList.toggle('rv',markState(mk)==='review'); w.title=(mk.done?'✓ 已處理｜':'')+mk.kind+'：'+mk.cmd; });
         (mk.figs||[]).forEach(function(i){ var f=figs[i]; if(f){ f.classList.add('ccm-fig'); f.dataset.ccmI=idx; } });
         return HL_RES.get(k)||{hit:true,partial:false};
       }
@@ -552,8 +565,10 @@
 
   function render(){
     var m=load(), open_=m.filter(function(x){return !x.done;}).length;
-    fab.textContent='CC 標記 '+open_+(m.length>open_?('／'+m.length):'');
+    var nTodo=m.filter(function(x){return markState(x)==='todo';}).length, nRv=m.filter(function(x){return markState(x)==='review';}).length;
+    fab.textContent=open_? ('CC 標記 · 待處理 '+nTodo+' · 待審 '+nRv) : ('CC 標記 0'+(m.length?('／'+m.length):''));
     fab.dataset.n=String(open_);
+    var nb=document.getElementById('ccmNextRv'); if(nb){ nb.disabled=!nRv; nb.textContent='▶ 下一個待審'+(nRv?('（'+nRv+'）'):''); }
     // 按鈕上直接寫「已完成（N）」：光是「顯示已完成」看不出來那裡到底有沒有東西，
     // 而「有沒有東西」正是想把某條救回來時唯一想知道的事。
     var tg=document.getElementById('ccmToggleDone'), doneN=m.length-open_;
@@ -647,6 +662,7 @@
   function replyHtml(x,i){
     var r=replyFor(x);
     if(!r)return '<div class="ccm-reply" style="opacity:.6">CC 還沒回覆這一條</div>';
+    if(markState(x)==='todo')return '<div class="ccm-reply" style="opacity:.6">↩ 你退回了，等 CC 重改（上一次的回覆先收起來）</div>';
     var h='<div class="ccm-reply"><span class="ccm-badge '+(r.status||'info')+'">CC '+(LABEL[r.status]||'已處理')+'</span>';
     if(r.before||r.after){
       h+='<div class="ccm-diff">';
@@ -938,9 +954,16 @@
                '⚠️ 刪掉就**救不回來了**——「↩ 恢復」只救得回還在「已完成」裡的。\n'+
                '（不刪也沒關係：它們平常本來就收著不佔版面，紀錄還留著。）')){a.filter(function(x){return x.done;}).forEach(function(x){tomb(x);dropImgs(x);});save(left);}
   };
+  var RV_AT=-1;
+  document.getElementById('ccmNextRv').onclick=function(){
+    var a=load(), rows=[]; a.forEach(function(x,i){ if(markState(x)==='review') rows.push(i); });
+    if(!rows.length){ toast('沒有待審的標記'); return; }
+    var nx=rows.filter(function(i){ return i>RV_AT; })[0]; if(nx==null) nx=rows[0];
+    RV_AT=nx; jumpTo(nx);
+  };
   document.getElementById('ccmCopy').onclick=function(){
-    var m=load().filter(function(x){return !x.done;});
-    if(!m.length){alert('沒有未處理的標記');return;}
+    var all_=load(), m=all_.filter(function(x){return markState(x)==='todo';}), nRv=all_.filter(function(x){return markState(x)==='review';}).length;
+    if(!m.length){alert(nRv? ('沒有待處理的標記。'+nRv+' 條 CC 已經回覆、在等你審（按 ✅ 或 ↩）。') : '沒有未處理的標記');return;}
     var nImg=m.reduce(function(s,x){return s+((x.imgs&&x.imgs.length)||0)},0);
     var out='【請CC修改 · Hugo 草稿】\n檔案：'+srcFile()+'\n預覽：'+location.href+'\n共 '+m.length+' 處'+
       (nImg?('（含 '+nImg+' 張貼上的圖，路徑寫在各條的【附圖】，用 Read 工具直接開；那是 Bear 指令的一部分，不是參考資料）'):'')+'\n\n'+
@@ -1284,7 +1307,10 @@
     if(!b.edits.length){ dirty=false; status('已存'); return Promise.resolve(true); }
     var md; try{ md=applyEdits(b.edits); }catch(err){ stopSaving(err.message); return Promise.resolve(false); }
     saving=true; status('儲存中…');
-    savingP=fetch(SAVEAPI+'?path='+encodeURIComponent(location.pathname)+(opt.wait?'&wait=1':''),
+    // 每一次存檔都等 hugo 把這次寫入重建完才回（2026-09-18）：以前只有收工那次等，自動存檔立刻回。
+    // 兩次自動存檔隔不到一次重建（這站約 2 秒）時，收工拿到的是上一次的重建 → 重整先看到舊內容
+    // （e2e 情境 1：打 AB、Ctrl+Z、打 C，重整後顯示 AB，檔案其實是 C）。存檔本來就一次只送一筆，這樣寫入不會疊在同一次重建裡。
+    savingP=fetch(SAVEAPI+'?path='+encodeURIComponent(location.pathname)+'&wait=1',
                   {method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({base:HASH,md:md,blocks:b.edits.length,pos:curPos()}),keepalive:!!opt.keepalive})
       .then(function(r){ return r.json().catch(function(){ return {ok:false,err:'HTTP '+r.status}; }); })
       .then(function(j){
