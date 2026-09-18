@@ -153,6 +153,9 @@
   .ccm-dbtn{cursor:pointer;border:1px solid rgba(15,118,110,.5);background:transparent;color:#0f766e;
     border-radius:6px;padding:3px 9px;font-size:12px;font-weight:700}
   .ccm-dbtn:hover{background:#0f766e;color:#fff}
+  .ccm-swatches{display:inline-flex;gap:4px;white-space:nowrap}
+  .ccm-dbtn.ccm-sw{color:#1f2937;border-color:rgba(31,41,55,.25);min-width:2em}
+  .ccm-dbtn.ccm-sw:hover{filter:brightness(.9);color:#1f2937}
   @media (prefers-color-scheme:dark){.ccm-dbtn{color:#5eead4;border-color:rgba(94,234,212,.45)}}
   /* 排版模式裡鎖住的區塊（表格、圖片、程式碼…）：淡淡框起來，看得出來不能直接改 */
   .ccm-editing .ccm-atom{outline:1px dashed rgba(148,163,184,.65);outline-offset:4px;cursor:default}
@@ -186,8 +189,8 @@
   //    （Roam 版 2026-09-08 踩過同樣的坑：改了功能沒 bump 版本號，他 reload 後無從判斷。）
   //    Hugo 版跟 Roam 版不同，程式碼是 hugo server 直接從磁碟讀的：存檔＋重新整理頁面就生效，
   //    不用 push、不用重裝。版本號在「面板抬頭常駐」＋「換版跳一次 toast」＋「console 每次印」。
-  var CCM_V='v14', CCM_V_DATE='2026-09-18',
-      CCM_V_NOTE='排版模式重寫：瀏覽器當編輯器（打字、注音、貼上、復原都是原生的），停手 1 秒自動存，只存動過的段落';
+  var CCM_V='v15', CCM_V_DATE='2026-09-18',
+      CCM_V_NOTE='底色可以選顏色了：排版中圈字，泡泡框「黃底」旁邊有藍／綠／粉；已經上色的字再點同一色＝取消、點別色＝換色。有顏色的底色改字也不會再變回黃色（另含今天的：排版中加標記馬上顯示、記住上次排版位置、拖曳修正）';
   // hallmark 主題用 .article-body；hugo-clarity 用 .post_body。兩個都撐住。
   var body=document.querySelector('.article-body')||document.querySelector('.post_content .post_body')
           ||document.querySelector('.post_body')||document.querySelector('article');
@@ -790,9 +793,13 @@
         // 排版模式下才給「我自己現在就改」的按鈕；沒開排版模式時泡泡框維持原樣（純交辦給 CC）
         (editOn ? '<div class="ccm-row ccm-direct"><span class="ccm-direct-label">排版中 · 直接套用</span>'+
           '<button class="ccm-dbtn" data-t="bold" type="button">粗體</button>'+
-          '<button class="ccm-dbtn" data-t="mark" type="button">黃底</button>'+
+          '<button class="ccm-dbtn" data-t="italic" type="button">斜體</button>'+
           '<button class="ccm-dbtn" data-t="underline" type="button">底線</button>'+
-          '<button class="ccm-dbtn" data-t="italic" type="button">斜體</button></div>' : '');
+          // 底色四色排在一起（換行時也不會被拆開）；黃＝正式文章的普通 <mark>，⌘⇧H／Ctrl+Shift+H 也是黃
+          '<span class="ccm-swatches"><button class="ccm-dbtn ccm-sw" data-t="mark" type="button" title="黃底（⌘⇧H／Ctrl+Shift+H）" style="background:yellow">黃</button>'+
+          '<button class="ccm-dbtn ccm-sw" data-t="mark:lightblue" type="button" title="淺藍底" style="background:lightblue">藍</button>'+
+          '<button class="ccm-dbtn ccm-sw" data-t="mark:lightgreen" type="button" title="淺綠底" style="background:lightgreen">綠</button>'+
+          '<button class="ccm-dbtn ccm-sw" data-t="mark:pink" type="button" title="淺粉紅底" style="background:pink">粉</button></span></div>' : '');
       SHOTS=[];UPLOADS=[];                 // 換一次選取＝重新開始收圖（上一輪的已經存進標記了）
       bubble.style.left=Math.min(window.scrollX+r.left,window.scrollX+document.documentElement.clientWidth-360)+'px';
       bubble.style.top=(window.scrollY+r.bottom+9)+'px';
@@ -1082,13 +1089,25 @@
   function lineStartEsc(s){ return s.replace(/^(#{1,6}(?=\s)|>|[-+*](?=\s)|(\d+)([.)])(?=\s))/, function(m,_a,d,p){ return d? d+'\\'+p : '\\'+m; }); }
   var KIND={STRONG:'b',B:'b',EM:'i',I:'i',U:'u',S:'s',DEL:'s',STRIKE:'s',SUB:'sub'};
   var HTMLTAG={b:'strong',i:'em',u:'u',m:'mark',s:'del',sub:'sub',sup:'sup'}, MDTOK={b:'**',i:'*',s:'~~'};
+  // 底色：黃色（或沒指定顏色）＝普通 <mark>；其他顏色記成 'm|顏色'，輸出 <mark style="background-color: 顏色">。
+  // 以前一律當 'm'，排版模式改到 study-post-1 那個淺藍 <mark> 會悄悄存成黃色。
+  var HL_NAMED={'rgb(173, 216, 230)':'lightblue','rgb(144, 238, 144)':'lightgreen','rgb(255, 192, 203)':'pink'};
+  function bgKey(bg){
+    bg=String(bg||'').trim().toLowerCase();
+    if(!bg || /transparent|rgba\(0, 0, 0, 0\)|initial|inherit/.test(bg)) return null;
+    if(bg==='yellow' || bg==='rgb(255, 255, 0)') return '';
+    return HL_NAMED[bg]||bg;
+  }
+  function openTag(k){ return k.indexOf('m|')===0? '<mark style="background-color: '+k.slice(2).replace(/"/g,'')+'">' : '<'+HTMLTAG[k]+'>'; }
+  function closeTag(k){ return k.indexOf('m|')===0? '</mark>' : '</'+HTMLTAG[k]+'>'; }
   function kindOf(n){
     var t=n.tagName, st=n.style||{};
     if(KIND[t]) return KIND[t];
-    if(t==='MARK') return /(^|\s)ccm-hit(\s|$)/.test(n.className)?null:'m';   // 黃色 CC 標記是介面，不是文章的格式
+    if(t==='MARK'){ if(/(^|\s)ccm-hit(\s|$)/.test(n.className)) return null;   // 黃色 CC 標記是介面，不是文章的格式
+      var mk=bgKey(st.backgroundColor); return mk? 'm|'+mk : 'm'; }
     if(t==='SUP') return 'sup';
     if(t==='SPAN'||t==='FONT'){
-      var bg=st.backgroundColor||''; if(bg && !/transparent|rgba\(0, 0, 0, 0\)|initial|inherit/.test(bg)) return 'm';
+      var bk=bgKey(st.backgroundColor); if(bk!==null) return bk? 'm|'+bk : 'm';
       if(/bold|[6-9]00/.test(st.fontWeight||'')) return 'b';
       if(st.fontStyle==='italic') return 'i';
       if(/underline/.test((st.textDecoration||'')+(st.textDecorationLine||''))) return 'u';
@@ -1139,7 +1158,7 @@
         var pb=near(p[0],-1), na=near(p[0],1), pc=near(p[1],-1), nc=near(p[1],1);
         md = !isW(na) && (!isP(na) || isW(pb) || isP(pb)) && !isW(pc) && (!isP(pc) || isW(nc) || isP(nc));
       }
-      o.v = md? tok : '<'+HTMLTAG[o.k]+'>'; c.v = md? tok : '</'+HTMLTAG[o.k]+'>';
+      o.v = md? tok : openTag(o.k); c.v = md? tok : closeTag(o.k);
     });
     return a.map(function(x){ return x.t==='txt'? escTxt(x.v) : (x.v||''); }).join('');   // 沒配成對的記號直接丟掉，不留落單的
   }
@@ -1427,23 +1446,31 @@
     pushCustom(function(){ keepCaret(function(){ parent.insertBefore(el, orig); }); });
     afterCustom();
   }
-  function toggleMark(){
-    var s=getSelection(); if(!s.rangeCount||s.isCollapsed){ toast('先圈起要標黃底的字'); return; }
+  function toggleMark(color){   // color：'yellow'（預設）／'lightblue'／'lightgreen'／'pink'
+    color=color||'yellow';
+    var s=getSelection(); if(!s.rangeCount||s.isCollapsed){ toast('先圈起要上底色的字'); return; }
     var n=s.getRangeAt(0).commonAncestorContainer, el=n.nodeType===1? n : n.parentElement;
     var m=el&&el.closest('mark:not(.ccm-hit), span[style*="background"]');
-    if(m && EB.contains(m)){                              // 已經是黃底 → 取消
+    if(m && EB.contains(m) && (bgKey(m.style.backgroundColor)||'yellow')!==color){   // 已經有別的顏色 → 整段換色
+      var oldStyle=m.getAttribute('style');
+      keepCaret(function(){ if(color==='yellow' && m.tagName==='MARK') m.removeAttribute('style'); else m.style.backgroundColor=color; });
+      pushCustom(function(){ keepCaret(function(){ if(oldStyle==null) m.removeAttribute('style'); else m.setAttribute('style',oldStyle); }); });
+      return afterCustom();
+    }
+    if(m && EB.contains(m)){                              // 同一個顏色再點一次 → 取消
       var parent=m.parentNode, kids=[].slice.call(m.childNodes), nx=m.nextSibling;
       keepCaret(function(){ kids.forEach(function(k){ parent.insertBefore(k,m); }); m.remove(); });
       pushCustom(function(){ keepCaret(function(){ parent.insertBefore(m, nx); kids.forEach(function(k){ m.appendChild(k); }); }); });
       return afterCustom();
     }
     document.execCommand('styleWithCSS',false,true);
-    document.execCommand('hiliteColor',false,'yellow');   // 跟正式文章的 <mark> 一樣是瀏覽器預設黃
+    document.execCommand('hiliteColor',false,color);   // 黃色存成普通 <mark>（跟正式文章一樣是瀏覽器預設黃），其他顏色帶 style
     document.execCommand('styleWithCSS',false,false);
   }
   function applyStyle(t, rng){
     EB.focus({preventScroll:true}); var s=getSelection(); if(rng){ s.removeAllRanges(); s.addRange(rng); }
-    if(t==='mark') return toggleMark();
+    if(t==='mark') return toggleMark('yellow');
+    if(t.indexOf('mark:')===0) return toggleMark(t.slice(5));
     document.execCommand(t==='bold'?'bold':t==='italic'?'italic':'underline');
   }
   function insertImageBlock(file){
