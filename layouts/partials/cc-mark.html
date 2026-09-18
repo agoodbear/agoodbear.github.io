@@ -127,11 +127,22 @@
   .ccm-toast button:hover{background:rgba(255,255,255,.14)}
   /* 已完成那一條的「↩ 恢復」：跟「×刪除」分開，不要讓人按錯 */
   .ccm-item.done .ccm-ok{border-color:#0f766e;color:#0f766e;opacity:1}
+  /* ── P3 所見即所得排版 ── */
+  .ccm-edit-fab{position:fixed;right:18px;bottom:62px;z-index:9999;cursor:pointer;border:none;border-radius:999px;
+    padding:8px 14px;font-size:12.5px;font-weight:700;color:#fff;background:#475569;
+    box-shadow:0 6px 18px rgba(71,85,105,.34);font-family:-apple-system,BlinkMacSystemFont,"PingFang TC",sans-serif}
+  .ccm-edit-fab.on{background:#0f766e;box-shadow:0 6px 18px rgba(15,118,110,.42)}
+  /* 編輯模式：整個正文可改，給一個看得出來的邊界，免得忘了自己開著 */
+  .ccm-editing{outline:2px dashed rgba(15,118,110,.5);outline-offset:10px;border-radius:4px}
+  .ccm-editing:focus{outline-color:rgba(15,118,110,.85)}
+  .ccm-saved{animation:ccmSaved 1s ease-out}
+  @keyframes ccmSaved{0%{background:rgba(16,185,129,.28)}100%{background:transparent}}
   @media print{.ccm-fab,.ccm-panel,.ccm-bubble{display:none!important}}
 </style>
 
 <div class="ccm-bubble" id="ccmBubble"></div>
 <button class="ccm-fab" id="ccmFab" data-n="0" type="button">CC 標記 0</button>
+<button class="ccm-edit-fab" id="ccmEditFab" type="button" title="直接在這頁改排版，存回 .md">✏️ 排版</button>
 <div class="ccm-panel" id="ccmPanel">
   <div class="ccm-head">
     <strong>CC 標記</strong>
@@ -154,8 +165,8 @@
   //    （Roam 版 2026-09-08 踩過同樣的坑：改了功能沒 bump 版本號，他 reload 後無從判斷。）
   //    Hugo 版跟 Roam 版不同，程式碼是 hugo server 直接從磁碟讀的：存檔＋重新整理頁面就生效，
   //    不用 push、不用重裝。版本號在「面板抬頭常駐」＋「換版跳一次 toast」＋「console 每次印」。
-  var CCM_V='v6', CCM_V_DATE='2026-09-17',
-      CCM_V_NOTE='①「確認完成」後悔救得回來（當場↩復原／事後在👁已完成裡↩恢復）②圈短詞（如「綜述」）被改掉後，標記不會再安靜亮到別的同名句子上，改標「↪ 原文已改寫」';
+  var CCM_V='v7', CCM_V_DATE='2026-09-18',
+      CCM_V_NOTE='新增「✏️ 排版」：改字／拆段／加粗／黃底／貼圖插進文章，即時存回 .md（標記功能照舊）';
   // hallmark 主題用 .article-body；hugo-clarity 用 .post_body。兩個都撐住。
   var body=document.querySelector('.article-body')||document.querySelector('.post_content .post_body')
           ||document.querySelector('.post_body')||document.querySelector('article');
@@ -239,7 +250,10 @@
   }
   // ── 標記儲存：家裡 Mac 的檔案（經 8790 代理 /__ccm/marks），localhost 與 preview.agoodbear.com、醫院那台看同一份。
   //    localStorage 只當快取／離線備援。2026-09-03 Bear：換到 tunnel 網址後 localhost 的標記「不見了」→ 因為 localStorage 一個 origin 一份。
-  var API=(location.hostname==='preview.agoodbear.com')?'/__ccm/marks':'http://127.0.0.1:8790/__ccm/marks';
+  // proxy 跟 hugo server 是配對的：8790↔1313（正式）、8795↔1314（P3 開發用的 worktree）。
+  // 沒有這一行的話，開發環境的測試會打到正式 proxy、污染 Bear 正在用的那份 cc-marks.json。
+  var CCM_PROXY=(location.port==='1314')?'8795':'8790';
+  var API=(location.hostname==='preview.agoodbear.com')?'/__ccm/marks':'http://127.0.0.1:'+CCM_PROXY+'/__ccm/marks';
   var APIURL=API+'?path='+encodeURIComponent(location.pathname);
   var MARKS=null, SYNCED=false;
   // 墓碑：刪掉的標記記 key，跟著存到伺服器，別台電腦才不會把自己那份舊的又推回來
@@ -928,6 +942,194 @@
   setInterval(refresh,45000);
   document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='visible')refresh(); });
   window.addEventListener('focus',refresh);
+
+  // ══════════════════════════════════════════════════════════════════
+  //  P3 · 所見即所得排版（2026-09-18）
+  //
+  //  真相來源永遠是 content/post/<slug>.md，不是 DOM。存 DOM patch 會生出第二份
+  //  真相、跟 md 對不上，那正是 roam-cc-mark「零位移」一直在防的事。
+  //
+  //  關鍵是不要讓後端猜使用者做了什麼：beforeinput 的 inputType 已經明確告訴我們
+  //  是 insertParagraph 還是 deleteContentBackward 還是 formatBold，所以送過去的是
+  //  **明確的操作**，後端每一種都能單獨驗證、驗不過就整個拒絕。
+  //
+  //  位置一律用「段落內第幾個非空白字元」：渲染會把 md 的換行變成空白，兩邊的空白
+  //  永遠對不齊，但第幾個非空白字元兩邊一定一致。
+  // ══════════════════════════════════════════════════════════════════
+  var EDITAPI = API.replace('/marks','/edit');
+  var editOn=false, pend=null, editFab=document.getElementById('ccmEditFab');
+
+  function blockOf(node){
+    var el = node && (node.nodeType===1 ? node : node.parentElement);
+    while(el && el!==scope){
+      if(/^(P|LI|H1|H2|H3|H4|H5|H6|BLOCKQUOTE|TD|TH|FIGCAPTION)$/.test(el.tagName)) return el;
+      el = el.parentElement;
+    }
+    return null;
+  }
+  // 要跳過的東西：註腳上標（md 裡是 [^1]，投影會拿掉）、我們自己的 UI
+  function skipEl(x){
+    return x.nodeType===1 && (x.tagName==='SUP' || /(^|\s)(ccm-|footnote-ref)/.test(x.className||''));
+  }
+  // 段落「顯示出來的文字」——要跟後端對 md 算出來的投影一致
+  function blockText(el){
+    var out='';
+    (function walk(x){
+      if(skipEl(x)) return;
+      if(x.nodeType===3){ out += x.nodeValue; return; }
+      for(var i=0;i<x.childNodes.length;i++) walk(x.childNodes[i]);
+    })(el);
+    return out;
+  }
+  // (node,offset) 是這段裡的第幾個非空白字元
+  function nsOffset(el,node,offset){
+    var n=0, hit=false;
+    (function walk(x){
+      if(hit||skipEl(x)) return;
+      if(x.nodeType===3){
+        if(x===node){ n += x.nodeValue.slice(0,offset).replace(/\s/g,'').length; hit=true; return; }
+        n += x.nodeValue.replace(/\s/g,'').length; return;
+      }
+      for(var i=0;i<x.childNodes.length;i++){
+        if(x===node && i===offset){ hit=true; return; }
+        walk(x.childNodes[i]); if(hit) return;
+      }
+      if(x===node && offset>=x.childNodes.length) hit=true;
+    })(el);
+    return n;
+  }
+
+  // 重整後回到原位、並記得剛才開著編輯模式（hugo 偵測到 md 變更會自己 livereload）
+  function keepPlace(){
+    try{ sessionStorage.setItem('ccm:place', JSON.stringify({y:window.scrollY, edit:editOn, t:Date.now()})); }catch(e){}
+  }
+  try{
+    var pl=JSON.parse(sessionStorage.getItem('ccm:place')||'null');
+    if(pl && Date.now()-pl.t < 20000){
+      sessionStorage.removeItem('ccm:place');
+      window.addEventListener('load',function(){
+        window.scrollTo(0,pl.y||0);
+        if(pl.edit) setTimeout(function(){ if(!editOn) editFab.click(); },120);
+      });
+    }
+  }catch(e){}
+
+  // ⚠️ 一定要序列化，不能讓兩個 op 同時飛出去。
+  //    op 是在 beforeinput（DOM 還沒變）當下算的，所以它的 before ＝「這次輸入之前的畫面」。
+  //    只要前一個 op 已經寫進 md，這個 before 就跟 md 對得上；但如果併發，第二個 op 會拿
+  //    新的 DOM 去對還沒更新的 md，locate 直接失敗。
+  //    2026-09-18 e2e 抓到：連打 XYZ 只進去 XY，第三個字靜靜掉了。
+  var opChain = Promise.resolve();
+  function sendOp(op,el){
+    opChain = opChain.then(function(){ return sendOpNow(op,el); }, function(){ return sendOpNow(op,el); });
+    return opChain;
+  }
+  function sendOpNow(op,el){
+    keepPlace();
+    return fetch(EDITAPI+'?path='+encodeURIComponent(location.pathname),
+                 {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(op)})
+      .then(function(r){ return r.json().catch(function(){return {ok:false,err:'HTTP '+r.status}}); })
+      .then(function(j){
+        if(j&&j.ok){ if(el){ el.classList.add('ccm-saved'); setTimeout(function(){el.classList.remove('ccm-saved')},1000); } return true; }
+        toast('沒存進 md：'+((j&&j.err)||'未知原因')+' — 畫面重整回檔案的內容', 4200);
+        setTimeout(function(){ location.reload(); }, 1200);
+        return false;
+      })
+      .catch(function(){ toast('連不到本機代理，這次改動沒存進 md',4200); setTimeout(function(){location.reload()},1200); return false; });
+  }
+
+  scope.addEventListener('beforeinput', function(e){
+    if(!editOn) return;
+    var rs = e.getTargetRanges && e.getTargetRanges();
+    var r = (rs&&rs[0]) || (window.getSelection().rangeCount?window.getSelection().getRangeAt(0):null);
+    if(!r){ pend=null; return; }
+    var blk = blockOf(r.startContainer);
+    if(!blk){ e.preventDefault(); toast('這一塊不能直接編輯（圖、表請用 CC 標記）'); return; }
+    // 跨段落的操作先不支援：一次只改一段，才驗證得了
+    if(blockOf(r.endContainer)!==blk && !(r.collapsed)){ e.preventDefault(); toast('一次只能改一段（跨段請分兩次）'); return; }
+    pend = { type:e.inputType, data:e.data, blk:blk, before:blockText(blk),
+             from:nsOffset(blk,r.startContainer,r.startOffset),
+             to:nsOffset(blk,r.endContainer,r.endOffset),
+             prev:blk.previousElementSibling };
+  });
+
+  scope.addEventListener('input', function(){
+    if(!editOn||!pend) return;
+    var p=pend; pend=null; var op=null;
+    if(p.type==='insertParagraph'){
+      op={kind:'split',before:p.before,at:p.from};
+    }else if(/^delete/.test(p.type) && p.from===0 && p.to===0 && p.prev && blockOf(p.prev)!==null){
+      op={kind:'merge',before:blockText(p.prev),next:p.before};
+    }else if(/^insert/.test(p.type)){
+      op={kind:'replace',before:p.before,from:p.from,to:p.to,text:(p.data||'')};
+    }else if(/^delete/.test(p.type)){
+      var f=p.from,t=p.to;
+      if(f===t){ if(/Backward/.test(p.type)) f=Math.max(0,f-1); else t=f+1; }
+      op={kind:'replace',before:p.before,from:f,to:t,text:''};
+    }else if(p.type==='formatBold'||p.type==='formatItalic'){
+      if(p.from===p.to) return;
+      op={kind:'wrap',before:p.before,from:p.from,to:p.to,tag:'bold'};
+    }
+    if(op) sendOp(op,p.blk);
+  });
+
+  // ── 排版模式下貼圖＝插進文章 ────────────────────────────────────────
+  //    跟泡泡框開著時的 ⌘V 分開：那個是「附圖給 CC 看」，圖留在 repo 外面；
+  //    這裡是「這張圖要出現在文章裡」，所以落在 static/images/ipic/、會進 git。
+  var ASSETAPI = API.replace('/marks','/asset');
+
+  function insertImage(file, blk){
+    toast('圖片上傳中…');
+    return fetch(ASSETAPI+'?path='+encodeURIComponent(location.pathname)+'&name='+encodeURIComponent(file.name||''),
+                 {method:'POST',headers:{'Content-Type':file.type},body:file})
+      .then(function(r){ return r.json().catch(function(){return {ok:false,err:'HTTP '+r.status}}); })
+      .then(function(j){
+        if(!j||!j.ok){ toast('圖片存不進去：'+((j&&j.err)||'未知原因'),4200); return; }
+        var alt=(file.name||'').replace(/\.[^.]+$/,'').slice(0,60) || '圖';
+        return sendOp({kind:'insertAfter',before:blockText(blk),text:'!['+alt+']('+j.src+')'}, blk)
+          .then(function(done){
+            if(done) toast('已插入 '+j.file+(j.big?'（超過 600KB，發布前記得轉 webp）':'')+'；檔名之後可以改成有意義的描述',6000);
+          });
+      })
+      .catch(function(){ toast('連不到本機代理，圖片沒存進去',4200); });
+  }
+
+  document.addEventListener('paste', function(e){
+    if(!editOn) return;
+    if(bubble.classList.contains('on')) return;      // 泡泡開著＝附圖給 CC，走既有那條路
+    var imgs = imagesFrom(e.clipboardData);
+    if(!imgs.length) return;
+    e.preventDefault();
+    var sel=window.getSelection();
+    var blk = sel.rangeCount ? blockOf(sel.getRangeAt(0).startContainer) : null;
+    if(!blk){ toast('先把游標點在要插圖的那一段裡'); return; }
+    insertImage(imgs[0], blk);
+  }, true);
+
+  // ⌘⇧H：把圈起來的字標成 <mark> 黃底（⌘H 被 macOS 拿去隱藏視窗了，不能用）
+  document.addEventListener('keydown', function(e){
+    if(!editOn) return;
+    if(!((e.metaKey||e.ctrlKey) && e.shiftKey && (e.key==='h'||e.key==='H'))) return;
+    e.preventDefault();
+    var sel=window.getSelection();
+    if(!sel.rangeCount||sel.isCollapsed){ toast('先圈起要標黃底的字'); return; }
+    var r=sel.getRangeAt(0), blk=blockOf(r.startContainer);
+    if(!blk||blockOf(r.endContainer)!==blk){ toast('一次只能標同一段裡面的字'); return; }
+    sendOp({kind:'wrap',before:blockText(blk),
+            from:nsOffset(blk,r.startContainer,r.startOffset),
+            to:nsOffset(blk,r.endContainer,r.endOffset),tag:'mark'}, blk);
+  });
+
+  editFab.onclick=function(){
+    editOn=!editOn;
+    scope.contentEditable = editOn ? 'true' : 'false';
+    scope.classList.toggle('ccm-editing',editOn);
+    editFab.classList.toggle('on',editOn);
+    editFab.textContent = editOn ? '✏️ 排版中（點此收工）' : '✏️ 排版';
+    if(editOn) toast('排版模式：改字／Enter 拆段／⌘B 加粗／⌘⇧H 黃底／⌘V 貼圖直接插進文章 — 全部即時存回 .md。圈選文字仍然可以開 CC 標記。',6200);
+    else { scope.blur(); toast('已離開排版模式'); }
+  };
+
 })();
 </script>
 {{ end }}
