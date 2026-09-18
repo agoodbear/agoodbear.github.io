@@ -1202,7 +1202,7 @@
                     el.setAttribute('data-ccm-title', el.getAttribute('title')||''); el.title='這一塊不能在排版模式裡改（表格、圖片、程式碼或對不上原稿的段落），要改請用 CC 標記'; }
         });
         [].forEach.call(EB.querySelectorAll('sup'), function(x){ if(x.querySelector('a.footnote-ref')) x.contentEditable='false'; });   // 註腳編號整顆刪、整顆留
-        return {mapped:mapped, locked:locked};
+        return {mapped:mapped, locked:locked, last:j.last||null};
       });
   }
 
@@ -1266,7 +1266,7 @@
     var md; try{ md=applyEdits(b.edits); }catch(err){ stopSaving(err.message); return Promise.resolve(false); }
     saving=true; status('儲存中…');
     savingP=fetch(SAVEAPI+'?path='+encodeURIComponent(location.pathname)+(opt.wait?'&wait=1':''),
-                  {method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({base:HASH,md:md,blocks:b.edits.length}),keepalive:!!opt.keepalive})
+                  {method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({base:HASH,md:md,blocks:b.edits.length,pos:curPos()}),keepalive:!!opt.keepalive})
       .then(function(r){ return r.json().catch(function(){ return {ok:false,err:'HTTP '+r.status}; }); })
       .then(function(j){
         saving=false;
@@ -1280,7 +1280,7 @@
   }
 
   // ── 原生編輯的事件 ──────────────────────────────────────────────────
-  EB.addEventListener('input', function(e){ if(!editOn) return; if(!/^history/.test(e.inputType||'')) lastNativeT=Date.now(); if(e.isComposing||composing) return; scheduleSave(900); });
+  EB.addEventListener('input', function(e){ if(!editOn) return; try{ var s_=getSelection(), b_=s_&&s_.rangeCount&&posBlock(s_.anchorNode); if(b_) lastEditEl=b_; }catch(_){} if(!/^history/.test(e.inputType||'')) lastNativeT=Date.now(); if(e.isComposing||composing) return; scheduleSave(900); });
   EB.addEventListener('compositionstart', function(){ if(editOn) composing=true; });
   EB.addEventListener('compositionend', function(){ if(!editOn) return; composing=false; lastNativeT=Date.now(); scheduleSave(600); });
   // 鎖住的區塊（表格、圖片…）不准被一起選到刪掉或蓋掉
@@ -1331,6 +1331,26 @@
   function curNode(){ var s=getSelection(); return s.rangeCount? s.getRangeAt(0).startContainer : null; }
   function topOf(n){ var el=n&&(n.nodeType===1?n:n.parentElement); while(el&&el.parentElement&&el.parentElement!==EB) el=el.parentElement; return (el&&el.parentElement===EB)? el : null; }
   function liOf(n){ var el=n&&(n.nodeType===1?n:n.parentElement), li=el&&el.closest? el.closest('li') : null; return (li&&EB.contains(li))? li : null; }
+  // ── 上次改到哪：存檔時把「正在改的那一段」開頭文字送給 proxy 記著（家裡、醫院共用），
+  //    下次按排版時跳回去。用文字認段落不用像素：前面增刪內容也找得到
+  var lastEditEl=null;
+  function posCands(){ return [].filter.call(EB.querySelectorAll(':scope > *, li'), function(x){ return !x.classList.contains('ccm-grip'); }); }
+  function posLead(el){ return normText(el).replace(/\s+/g,'').slice(0,40); }
+  function posBlock(n){ return liOf(n)||topOf(n); }
+  function curPos(){
+    var s=getSelection(), el=(s&&s.rangeCount&&EB.contains(s.anchorNode))? posBlock(s.anchorNode) : null;
+    if(!el) el=(lastEditEl&&EB.contains(lastEditEl))? lastEditEl : null;
+    if(!el) return null;
+    var lead=posLead(el); return lead.length>=2? {lead:lead, idx:posCands().indexOf(el)} : null;
+  }
+  function findPos(p){   // 開頭文字對得上的段落裡，挑順序最接近上次的那一個；對不上就不跳（段落已經改寫了）
+    var c=posCands(), best=null, bd=1e9;
+    if(p&&p.lead&&p.lead.length>=4) c.forEach(function(el,i){ if(posLead(el).indexOf(p.lead)===0){ var d=Math.abs(i-(p.idx|0)); if(d<bd){ bd=d; best=el; } } });
+    return best;
+  }
+  function whenStr(t){ var d=new Date(t), n=new Date(), hm=('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2);
+    return (d.toDateString()===n.toDateString()? '今天 ' : (d.getMonth()+1)+'/'+d.getDate()+' ')+hm; }
+  function jumpToBlock(el){ var y=el.getBoundingClientRect().top+window.scrollY-Math.round(window.innerHeight*0.3); window.scrollTo({top:Math.max(0,y),behavior:'instant'}); flash(el); }
   function keepCaret(fn){ var s=getSelection(), a=null; if(s.rangeCount){ var r=s.getRangeAt(0); a=[r.startContainer,r.startOffset,r.endContainer,r.endOffset]; }
     fn(); if(a){ try{ var r2=document.createRange(); r2.setStart(a[0],a[1]); r2.setEnd(a[2],a[3]); s.removeAllRanges(); s.addRange(r2); }catch(_){} } }
   function indent(){
@@ -1475,7 +1495,12 @@
     try{ document.execCommand('defaultParagraphSeparator',false,'p'); }catch(_){}
     enterEdit().then(function(st){
       editOn=true; EB.contentEditable='true'; EB.classList.add('ccm-editing'); editFab.classList.add('on'); status('已存');
-      toast('排版模式：打字、注音、貼上、Enter、'+(MAC?'⌘':'Ctrl+')+'Z 都跟 Word 一樣，停手約 1 秒自動存。Tab 條列內縮、段落左邊 ↑↓ 搬動、'+(MAC?'⌘B ⌘I ⌘U ⌘⇧H':'Ctrl+B／I／U、Ctrl+Shift+H')+'。表格和圖片是鎖住的。（對到原稿 '+st.mapped+' 段'+(st.locked?'、鎖住 '+st.locked+' 塊':'')+'）',9000);
+      var last=st.last, lel=last&&findPos(last), act=null, pre='';
+      if(lel){ var prevY=window.scrollY, rr=lel.getBoundingClientRect(), seen=rr.top<window.innerHeight*0.9&&rr.bottom>60;   // 露出一部分就算看得到（長段落比螢幕高）
+        if(!seen && prevY<window.innerHeight*0.6){ jumpToBlock(lel); pre='已跳回上次改到的地方（'+whenStr(last.at)+'）。';
+          act={label:'回到原位',onClick:function(){ window.scrollTo({top:prevY,behavior:'instant'}); }}; }
+        else if(!seen) act={label:'跳到上次位置（'+whenStr(last.at)+'）',onClick:function(){ jumpToBlock(lel); }}; }
+      toast(pre+'排版模式：打字、注音、貼上、Enter、'+(MAC?'⌘':'Ctrl+')+'Z 都跟 Word 一樣，停手約 1 秒自動存。Tab 條列內縮、段落左邊 ↑↓ 搬動、'+(MAC?'⌘B ⌘I ⌘U ⌘⇧H':'Ctrl+B／I／U、Ctrl+Shift+H')+'。表格和圖片是鎖住的。（對到原稿 '+st.mapped+' 段'+(st.locked?'、鎖住 '+st.locked+' 塊':'')+'）', Object.assign({ms:9000}, act||{}));
     }).catch(function(err){ editFab.textContent='✏️ 排版'; toast('進不了排版模式：'+err.message,6000); });
   };
   function leaveEdit(){
