@@ -184,8 +184,8 @@
   //    （Roam 版 2026-09-08 踩過同樣的坑：改了功能沒 bump 版本號，他 reload 後無從判斷。）
   //    Hugo 版跟 Roam 版不同，程式碼是 hugo server 直接從磁碟讀的：存檔＋重新整理頁面就生效，
   //    不用 push、不用重裝。版本號在「面板抬頭常駐」＋「換版跳一次 toast」＋「console 每次印」。
-  var CCM_V='v11', CCM_V_DATE='2026-09-18',
-      CCM_V_NOTE='Tab 變條列並內縮/Shift+Tab 退回；段落把手修好（不再壓到編號、不再閃）；圈選後泡泡框可直接套用粗體/黃底/底線/斜體；會擋下把標記切壞的改動';
+  var CCM_V='v12', CCM_V_DATE='2026-09-18',
+      CCM_V_NOTE='條列像 Word：項目結尾 Enter 自動接下一項（1. 會變 2.）、空項目再按 Enter 退出；Tab 不再把「1.」疊成「• 1.」；打字時不再整頁閃';
   // hallmark 主題用 .article-body；hugo-clarity 用 .post_body。兩個都撐住。
   var body=document.querySelector('.article-body')||document.querySelector('.post_content .post_body')
           ||document.querySelector('.post_body')||document.querySelector('article');
@@ -1050,6 +1050,15 @@
     }
   }catch(e){}
 
+  // 瀏覽器在 contenteditable 裡會自己改好畫面的操作 —— 這些不需要重整
+  var NATIVE_OPS={replace:1,split:1,merge:1};
+  // 排版模式下暫停 hugo 的 livereload：md 一變它就整頁重整，連續打字會一直閃、游標會掉。
+  // 畫面由我們自己維護；離開排版模式時重整一次，讓畫面跟檔案對齊。
+  function pauseLiveReload(){
+    try{ var L=window.LiveReload; if(L&&L.connector&&L.connector.disconnect){ L.connector.disconnect(); return true; } }catch(e){}
+    return false;
+  }
+
   // ⚠️ 一定要序列化，不能讓兩個 op 同時飛出去。
   //    op 是在 beforeinput（DOM 還沒變）當下算的，所以它的 before ＝「這次輸入之前的畫面」。
   //    只要前一個 op 已經寫進 md，這個 before 就跟 md 對得上；但如果併發，第二個 op 會拿
@@ -1066,7 +1075,13 @@
                  {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(op)})
       .then(function(r){ return r.json().catch(function(){return {ok:false,err:'HTTP '+r.status}}); })
       .then(function(j){
-        if(j&&j.ok){ if(el){ el.classList.add('ccm-saved'); setTimeout(function(){el.classList.remove('ccm-saved')},1000); } return true; }
+        if(j&&j.ok){
+          if(el){ el.classList.add('ccm-saved'); setTimeout(function(){el.classList.remove('ccm-saved')},1000); }
+          // 打字、Enter、Backspace 這類，瀏覽器已經自己把畫面改好了，重整只會讓游標跑掉、
+          // 一直閃（Bear：「這個就不是所見即所得了」）。只有畫面不會自己變的才重整一次。
+          if(!NATIVE_OPS[op.kind]) setTimeout(function(){ location.reload(); },120);
+          return true;
+        }
         toast('沒存進 md：'+((j&&j.err)||'未知原因')+' — 畫面重整回檔案的內容', 4200);
         setTimeout(function(){ location.reload(); }, 1200);
         return false;
@@ -1097,7 +1112,15 @@
   scope.addEventListener('input', function(){
     if(!editOn||!pend) return;
     var p=pend; pend=null; var op=null;
-    if(p.type==='insertParagraph'){
+    var emptyLi = p.blk.tagName==='LI' && !p.before.replace(/\s/g,'');
+    // ⚠️ 必須用 beforeinput 當下記的 p.prev，不能現在才問 p.blk.previousElementSibling：
+    //    在空 <li> 按 Enter，Chrome 的原生行為是「跳出清單」，input 事件觸發時那個 li
+    //    已經被瀏覽器從 DOM 拿掉了，這時候問它的兄弟一定是 null（2026-09-18 抓到）。
+    var prevLi = p.prev;
+    if(emptyLi && prevLi && (p.type==='insertParagraph' || /^delete.*Backward/.test(p.type))){
+      // 空的條列項沒有文字可以定位，改用前一項當錨點刪掉它（＝Word 的「空項目再按 Enter 就退出清單」）
+      op={kind:'dropEmptyItem',before:blockText(prevLi)};
+    }else if(p.type==='insertParagraph'){
       op={kind:'split',before:p.before,at:p.from};
     }else if(/^delete/.test(p.type) && p.from===0 && p.to===0 && p.prev && blockOf(p.prev)!==null){
       op={kind:'merge',before:blockText(p.prev),next:p.before};
@@ -1242,8 +1265,9 @@
     scope.classList.toggle('ccm-editing',editOn);
     editFab.classList.toggle('on',editOn);
     editFab.textContent = editOn ? '✏️ 排版中（點此收工）' : '✏️ 排版';
+    if(editOn) pauseLiveReload();
     if(editOn) toast('排版模式：Enter 拆段／Tab 變條列再內縮·Shift+Tab 往外退／段落左邊 ↑↓ 可搬動（或 ⌘⌥↑↓）／⌘B 粗體 ⌘I 斜體 ⌘U 底線 ⌘⇧H 黃底（再按一次取消）／⌘V 貼圖 — 全部即時存回 .md。',8200);
-    else { scope.blur(); hideGrip(); toast('已離開排版模式'); }
+    else { scope.blur(); hideGrip(); toast('已離開排版模式，重新整理對齊檔案…'); keepPlace(); setTimeout(function(){location.reload()},500); }
   };
 
 })();
