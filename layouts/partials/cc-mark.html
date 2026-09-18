@@ -135,6 +135,13 @@
   /* 編輯模式：整個正文可改，給一個看得出來的邊界，免得忘了自己開著 */
   .ccm-editing{outline:2px dashed rgba(15,118,110,.5);outline-offset:10px;border-radius:4px}
   .ccm-editing:focus{outline-color:rgba(15,118,110,.85)}
+  /* 段落把手：排版模式下滑到哪一段，左邊就浮出 ↑↓ */
+  .ccm-grip{position:absolute;z-index:9998;display:flex;flex-direction:column;gap:2px}
+  .ccm-grip button{cursor:pointer;border:1px solid rgba(148,163,184,.5);background:rgba(255,255,255,.96);
+    color:#0f766e;border-radius:6px;width:26px;height:22px;font-size:12px;line-height:1;padding:0;
+    box-shadow:0 2px 6px rgba(0,0,0,.12)}
+  .ccm-grip button:hover{background:#0f766e;color:#fff;border-color:#0f766e}
+  @media (prefers-color-scheme:dark){.ccm-grip button{background:rgba(30,41,59,.96);color:#5eead4}}
   .ccm-saved{animation:ccmSaved 1s ease-out}
   @keyframes ccmSaved{0%{background:rgba(16,185,129,.28)}100%{background:transparent}}
   @media print{.ccm-fab,.ccm-panel,.ccm-bubble{display:none!important}}
@@ -165,8 +172,8 @@
   //    （Roam 版 2026-09-08 踩過同樣的坑：改了功能沒 bump 版本號，他 reload 後無從判斷。）
   //    Hugo 版跟 Roam 版不同，程式碼是 hugo server 直接從磁碟讀的：存檔＋重新整理頁面就生效，
   //    不用 push、不用重裝。版本號在「面板抬頭常駐」＋「換版跳一次 toast」＋「console 每次印」。
-  var CCM_V='v7', CCM_V_DATE='2026-09-18',
-      CCM_V_NOTE='新增「✏️ 排版」：改字／拆段／加粗／黃底／貼圖插進文章，即時存回 .md（標記功能照舊）';
+  var CCM_V='v9', CCM_V_DATE='2026-09-18',
+      CCM_V_NOTE='段落可上下搬（滑過段落左邊的 ↑↓ 或 ⌘⌥↑/↓）；修好「拆段會把粗體劈成兩半」的問題；⌘I 斜體 ⌘U 底線';
   // hallmark 主題用 .article-body；hugo-clarity 用 .post_body。兩個都撐住。
   var body=document.querySelector('.article-body')||document.querySelector('.post_content .post_body')
           ||document.querySelector('.post_body')||document.querySelector('article');
@@ -1047,7 +1054,12 @@
     if(!blk){ e.preventDefault(); toast('這一塊不能直接編輯（圖、表請用 CC 標記）'); return; }
     // 跨段落的操作先不支援：一次只改一段，才驗證得了
     if(blockOf(r.endContainer)!==blk && !(r.collapsed)){ e.preventDefault(); toast('一次只能改一段（跨段請分兩次）'); return; }
-    pend = { type:e.inputType, data:e.data, blk:blk, before:blockText(blk),
+    // 再按一次要能取消，所以先問瀏覽器「這段現在是不是已經是粗體／斜體／底線」
+    var st=null;
+    if(/^format(Bold|Italic|Underline)$/.test(e.inputType)){
+      try{ st = document.queryCommandState(e.inputType.slice(6).toLowerCase()); }catch(_){}
+    }
+    pend = { type:e.inputType, data:e.data, blk:blk, before:blockText(blk), state:st,
              from:nsOffset(blk,r.startContainer,r.startOffset),
              to:nsOffset(blk,r.endContainer,r.endOffset),
              prev:blk.previousElementSibling };
@@ -1066,9 +1078,12 @@
       var f=p.from,t=p.to;
       if(f===t){ if(/Backward/.test(p.type)) f=Math.max(0,f-1); else t=f+1; }
       op={kind:'replace',before:p.before,from:f,to:t,text:''};
-    }else if(p.type==='formatBold'||p.type==='formatItalic'){
+    }else if(/^format(Bold|Italic|Underline)$/.test(p.type)){
+      // ⚠️ 2026-09-18 修：原本 formatItalic 也被對成 bold，⌘I 會變成粗體。
+      //    Bear 的斜體是用在期刊名（*Int J Cardiol*），跟粗體是兩回事。
       if(p.from===p.to) return;
-      op={kind:'wrap',before:p.before,from:p.from,to:p.to,tag:'bold'};
+      var TAGMAP={formatBold:'bold',formatItalic:'italic',formatUnderline:'underline'};
+      op={kind:p.state?'unwrap':'wrap',before:p.before,from:p.from,to:p.to,tag:TAGMAP[p.type]};
     }
     if(op) sendOp(op,p.blk);
   });
@@ -1115,10 +1130,58 @@
     if(!sel.rangeCount||sel.isCollapsed){ toast('先圈起要標黃底的字'); return; }
     var r=sel.getRangeAt(0), blk=blockOf(r.startContainer);
     if(!blk||blockOf(r.endContainer)!==blk){ toast('一次只能標同一段裡面的字'); return; }
-    sendOp({kind:'wrap',before:blockText(blk),
+    var host=r.startContainer.nodeType===1?r.startContainer:r.startContainer.parentElement;
+    var inMark=!!(host&&host.closest&&host.closest('mark'));   // 已經在黃底裡＝這次是取消
+    sendOp({kind:inMark?'unwrap':'wrap',before:blockText(blk),
             from:nsOffset(blk,r.startContainer,r.startOffset),
             to:nsOffset(blk,r.endContainer,r.endOffset),tag:'mark'}, blk);
   });
+
+  // ── 段落上下移 ────────────────────────────────────────────────────
+  //    Bear 2026-09-18：「我要下移就下移、要上移就上移」。原本只有拆段和合段，
+  //    想搬動一段話只能用拆＋合去湊，而且拆到 **…** 中間還會把標記劈壞。
+  function moveBlk(blk,dir){
+    if(!blk) return;
+    sendOp({kind:'moveBlock',before:blockText(blk),dir:dir}, blk);
+  }
+  document.addEventListener('keydown',function(e){
+    if(!editOn) return;
+    if(!(e.metaKey||e.ctrlKey)||!e.altKey) return;
+    if(e.key!=='ArrowUp'&&e.key!=='ArrowDown') return;
+    e.preventDefault();
+    var sel=window.getSelection();
+    var blk=sel.rangeCount?blockOf(sel.getRangeAt(0).startContainer):null;
+    if(!blk){ toast('先把游標點在要移動的那一段裡'); return; }
+    moveBlk(blk, e.key==='ArrowUp'?'up':'down');
+  });
+
+  // 滑到哪一段，左邊就浮出 ↑↓ 把手 —— 點一下就移，不用記快捷鍵
+  var grip=null, gripFor=null;
+  function hideGrip(){ if(grip){grip.remove();grip=null;gripFor=null;} }
+  function showGrip(blk){
+    if(!editOn||!blk||blk===gripFor) return;
+    hideGrip();
+    var r=blk.getBoundingClientRect();
+    grip=document.createElement('div');
+    grip.className='ccm-grip';
+    grip.innerHTML='<button type="button" title="這段往上移（⌘⌥↑）">↑</button>'+
+                   '<button type="button" title="這段往下移（⌘⌥↓）">↓</button>';
+    grip.style.left=(window.scrollX+r.left-34)+'px';
+    grip.style.top=(window.scrollY+r.top)+'px';
+    var bs=grip.querySelectorAll('button');
+    bs[0].onclick=function(ev){ev.preventDefault();ev.stopPropagation();moveBlk(blk,'up');};
+    bs[1].onclick=function(ev){ev.preventDefault();ev.stopPropagation();moveBlk(blk,'down');};
+    document.body.appendChild(grip);
+    gripFor=blk;
+  }
+  scope.addEventListener('mouseover',function(e){
+    if(!editOn) return;
+    if(e.target.closest&&e.target.closest('.ccm-grip')) return;
+    showGrip(blockOf(e.target));
+  });
+  document.addEventListener('mouseleave',function(e){
+    if(e.target===scope) hideGrip();
+  },true);
 
   editFab.onclick=function(){
     editOn=!editOn;
@@ -1126,8 +1189,8 @@
     scope.classList.toggle('ccm-editing',editOn);
     editFab.classList.toggle('on',editOn);
     editFab.textContent = editOn ? '✏️ 排版中（點此收工）' : '✏️ 排版';
-    if(editOn) toast('排版模式：改字／Enter 拆段／⌘B 加粗／⌘⇧H 黃底／⌘V 貼圖直接插進文章 — 全部即時存回 .md。圈選文字仍然可以開 CC 標記。',6200);
-    else { scope.blur(); toast('已離開排版模式'); }
+    if(editOn) toast('排版模式：滑到段落左邊有 ↑↓ 可搬動（或 ⌘⌥↑/↓）／Enter 拆段／⌘B 粗體 ⌘I 斜體 ⌘U 底線 ⌘⇧H 黃底（再按一次取消）／⌘V 貼圖 — 全部即時存回 .md。',7600);
+    else { scope.blur(); hideGrip(); toast('已離開排版模式'); }
   };
 
 })();
