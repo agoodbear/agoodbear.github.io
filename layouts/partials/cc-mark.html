@@ -447,12 +447,91 @@
     if(mk.kind)m.dataset.kind=mk.kind;   // 「刪」靠這個屬性換成刪除線
     m.title=(mk.done?'✓ 已處理｜':'')+mk.kind+'：'+mk.cmd;
     if(idx!=null)m.dataset.ccmI=idx;
+    m.dataset.ccmK=mkKey(mk,idx);   // 排版中只拆／只畫單一標記時靠它認人
     t.parentNode.replaceChild(m,t);m.appendChild(t);
   }
 
   // 回傳每個標記有沒有成功定位（給面板標「未定位」用）
-  var HL_LAST=[];
-  function highlight(){ if(typeof editOn!=='undefined' && editOn) return HL_LAST; return (HL_LAST=highlightRaw()); }
+  function mkKey(mk,idx){ return String(mk.id||('u'+(mk.u||idx))); }
+  // 單一標記：上圖／表外框＋包文字。figs、ctx 由呼叫端給（ctx.healed＝有圖表索引被標題救回來，要寫回）
+  function drawMark(mk,idx,figs,ctx){
+    // 先處理「有沒有框到圖／表」
+    var gotFig=false;
+    (mk.figs||[]).forEach(function(i,k){
+      var want=(mk.figLabels||[])[k], f=null;
+      if(want){ for(var j=0;j<figs.length;j++){ if(figLabelOf(figs[j],j)===want){ f=figs[j];
+        if(j!==i){ mk.figs[k]=j; ctx.healed=true; } break; } } }
+      if(!f) f=figs[i];
+      if(f){ f.classList.add('ccm-fig'); f.dataset.ccmI=idx; gotFig=true; }
+    });
+    var needle=String(mk.text||'').replace(/\s+/g,'');   // 比對時兩邊都拿掉空白
+    if(!needle)return {hit:gotFig,partial:false};
+    var ix=buildIndex(),at=pickOccurrence(mk,ix,needle),len=needle.length,partial=false,moved=false;
+    if(at<0){
+      // 「潤」的定義就是改掉被圈的字，改得徹底一點，原文在頁面上就一個字都不剩了，
+      // 原地再怎麼找都找不到。先拿 CC 回覆裡的「改後整句」當備援錨點，把標記亮在改寫後的位置。
+      var rep_=replyFor(mk);
+      if(rep_&&rep_.after){
+        var na=String(rep_.after).replace(/\s+/g,'').slice(0,24),pa=-1;
+        if(na.length>=8){
+          pa=ix.norm.indexOf(na);
+          if(pa<0&&na.length>12){na=na.slice(0,12);pa=ix.norm.indexOf(na);}
+        }
+        if(pa>=0){at=pa;len=na.length;moved=true;}
+      }
+    }
+    if(at<0){
+      // 還是對不上就二分找「最長還能命中的前綴」——舊版存下來的標記（文字夾帶過 CSS／SVG）
+      // 才不會整條掉光，至少亮出對得上的那一段。
+      var lo=1,hi=needle.length,best=0,bestAt=-1;
+      while(lo<=hi){var mid=(lo+hi)>>1,p=ix.norm.indexOf(needle.slice(0,mid));
+        if(p>=0){best=mid;bestAt=p;lo=mid+1;}else hi=mid-1;}
+      if(best<8)return {hit:gotFig,partial:false};
+      at=bestAt;len=best;partial=true;
+    }
+    var a=ix.map[at],b=ix.map[at+len-1];
+    if(!a||!b)return {hit:gotFig,partial:false};
+    if((a.n.parentElement&&a.n.parentElement.closest('mark.ccm-hit'))||
+       (b.n.parentElement&&b.n.parentElement.closest('mark.ccm-hit')))return {hit:true,partial:partial,moved:moved};
+    // 先把要包的片段依 node 收集起來，再動 DOM（避免 split 之後位移）
+    var seen=[],cur=null;
+    for(var k=at;k<=at+len-1;k++){
+      var e=ix.map[k];
+      if(!cur||cur.node!==e.n){cur={node:e.n,from:e.o,to:e.o+1};seen.push(cur);}
+      else cur.to=e.o+1;
+    }
+    seen.forEach(function(s){wrapSeg(s.node,s.from,s.to,mk,idx);});
+    return {hit:true,partial:partial,moved:moved};
+  }
+  var HL_LAST=[], HL_RES=new Map();   // HL_RES：標記 key → 上次定位結果（排版中沿用，不重算）
+  function highlight(){
+    if(typeof editOn!=='undefined' && editOn) return (HL_LAST=highlightEditing());
+    var out=highlightRaw(); HL_RES=new Map(); load().forEach(function(mk,i){ HL_RES.set(mkKey(mk,i),out[i]); });
+    return (HL_LAST=out);
+  }
+  // 排版中不能整頁拆掉重包（會把游標、Ctrl+Z 的紀錄打亂）：只拆「已經刪掉的標記」、只畫「新加的標記」，
+  // 其他標記的 DOM 一個都不碰。標記外框不會進 md（serBlock 和 sig 都把 mark.ccm-hit 當透明）。
+  function highlightEditing(){
+    var marks=load(), keys=new Set(marks.map(mkKey));
+    scope.querySelectorAll('mark.ccm-hit').forEach(function(m){
+      if(keys.has(m.dataset.ccmK)) return;
+      var p=m.parentNode; while(m.firstChild) p.insertBefore(m.firstChild,m); p.removeChild(m);
+    });
+    scope.querySelectorAll('.ccm-fig').forEach(function(f){f.classList.remove('ccm-fig')});
+    var figs=[].slice.call(scope.querySelectorAll('figure,table')), ctx={healed:false};
+    var out=marks.map(function(mk,idx){
+      var k=mkKey(mk,idx), ws=[].filter.call(scope.querySelectorAll('mark.ccm-hit'),function(w){ return w.dataset.ccmK===k; });
+      if(ws.length || HL_RES.has(k)){
+        // 已經畫過（或試過對不上）：只更新編號／完成狀態，圖表外框照樣補回
+        ws.forEach(function(w){ w.dataset.ccmI=idx; w.classList.toggle('done',!!mk.done); w.title=(mk.done?'✓ 已處理｜':'')+mk.kind+'：'+mk.cmd; });
+        (mk.figs||[]).forEach(function(i){ var f=figs[i]; if(f){ f.classList.add('ccm-fig'); f.dataset.ccmI=idx; } });
+        return HL_RES.get(k)||{hit:true,partial:false};
+      }
+      var r=drawMark(mk,idx,figs,ctx); HL_RES.set(k,r); return r;
+    });
+    if(ctx.healed){setMarks(marks);push(marks);}
+    return out;
+  }
   function highlightRaw(){
     scope.querySelectorAll('mark.ccm-hit').forEach(function(m){
       var t=document.createTextNode(m.textContent);m.parentNode.replaceChild(t,m);
@@ -461,58 +540,10 @@
     // 圖／表的外框標記先全部清掉，稍後依標記重上
     scope.querySelectorAll('.ccm-fig').forEach(function(f){f.classList.remove('ccm-fig')});
     var figs=[].slice.call(scope.querySelectorAll('figure,table'));
-    var marks=load(), figHealed=false;
-    var out=marks.map(function(mk,idx){
-      // 先處理「有沒有框到圖／表」
-      var gotFig=false;
-      (mk.figs||[]).forEach(function(i,k){
-        var want=(mk.figLabels||[])[k], f=null;
-        if(want){ for(var j=0;j<figs.length;j++){ if(figLabelOf(figs[j],j)===want){ f=figs[j];
-          if(j!==i){ mk.figs[k]=j; figHealed=true; } break; } } }
-        if(!f) f=figs[i];
-        if(f){ f.classList.add('ccm-fig'); f.dataset.ccmI=idx; gotFig=true; }
-      });
-      var needle=String(mk.text||'').replace(/\s+/g,'');   // 比對時兩邊都拿掉空白
-      if(!needle)return {hit:gotFig,partial:false};
-      var ix=buildIndex(),at=pickOccurrence(mk,ix,needle),len=needle.length,partial=false,moved=false;
-      if(at<0){
-        // 「潤」的定義就是改掉被圈的字，改得徹底一點，原文在頁面上就一個字都不剩了，
-        // 原地再怎麼找都找不到。先拿 CC 回覆裡的「改後整句」當備援錨點，把標記亮在改寫後的位置。
-        var rep_=replyFor(mk);
-        if(rep_&&rep_.after){
-          var na=String(rep_.after).replace(/\s+/g,'').slice(0,24),pa=-1;
-          if(na.length>=8){
-            pa=ix.norm.indexOf(na);
-            if(pa<0&&na.length>12){na=na.slice(0,12);pa=ix.norm.indexOf(na);}
-          }
-          if(pa>=0){at=pa;len=na.length;moved=true;}
-        }
-      }
-      if(at<0){
-        // 還是對不上就二分找「最長還能命中的前綴」——舊版存下來的標記（文字夾帶過 CSS／SVG）
-        // 才不會整條掉光，至少亮出對得上的那一段。
-        var lo=1,hi=needle.length,best=0,bestAt=-1;
-        while(lo<=hi){var mid=(lo+hi)>>1,p=ix.norm.indexOf(needle.slice(0,mid));
-          if(p>=0){best=mid;bestAt=p;lo=mid+1;}else hi=mid-1;}
-        if(best<8)return {hit:gotFig,partial:false};
-        at=bestAt;len=best;partial=true;
-      }
-      var a=ix.map[at],b=ix.map[at+len-1];
-      if(!a||!b)return {hit:gotFig,partial:false};
-      if((a.n.parentElement&&a.n.parentElement.closest('mark.ccm-hit'))||
-         (b.n.parentElement&&b.n.parentElement.closest('mark.ccm-hit')))return {hit:true,partial:partial,moved:moved};
-      // 先把要包的片段依 node 收集起來，再動 DOM（避免 split 之後位移）
-      var seen=[],cur=null;
-      for(var k=at;k<=at+len-1;k++){
-        var e=ix.map[k];
-        if(!cur||cur.node!==e.n){cur={node:e.n,from:e.o,to:e.o+1};seen.push(cur);}
-        else cur.to=e.o+1;
-      }
-      seen.forEach(function(s){wrapSeg(s.node,s.from,s.to,mk,idx);});
-      return {hit:true,partial:partial,moved:moved};
-    });
+    var marks=load(), ctx={healed:false};
+    var out=marks.map(function(mk,idx){ return drawMark(mk,idx,figs,ctx); });
     // 索引被標題救回來的話，順手寫回去，下次就不用再猜（不呼叫 save()，避免遞迴 render）
-    if(figHealed){setMarks(marks);push(marks);}
+    if(ctx.healed){setMarks(marks);push(marks);}
     return out;
   }
 
