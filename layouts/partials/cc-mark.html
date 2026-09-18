@@ -184,8 +184,8 @@
   //    （Roam 版 2026-09-08 踩過同樣的坑：改了功能沒 bump 版本號，他 reload 後無從判斷。）
   //    Hugo 版跟 Roam 版不同，程式碼是 hugo server 直接從磁碟讀的：存檔＋重新整理頁面就生效，
   //    不用 push、不用重裝。版本號在「面板抬頭常駐」＋「換版跳一次 toast」＋「console 每次印」。
-  var CCM_V='v13', CCM_V_DATE='2026-09-18',
-      CCM_V_NOTE='修好：粗體開頭的段落打字會跑位、打的字消失；支援注音等中文輸入法（選完字才存）';
+  var CCM_V='v13.1', CCM_V_DATE='2026-09-18',
+      CCM_V_NOTE='排版模式暫停（v13 會悄悄寫壞檔案），v14 修好前請先用 CC 標記；標記功能照常';
   // hallmark 主題用 .article-body；hugo-clarity 用 .post_body。兩個都撐住。
   var body=document.querySelector('.article-body')||document.querySelector('.post_content .post_body')
           ||document.querySelector('.post_body')||document.querySelector('article');
@@ -1296,7 +1296,20 @@
   scope.addEventListener('mouseleave',laterHide);
   scope.addEventListener('mouseenter',keepGrip);
 
+  // ⏸ 2026-09-18 暫停：Fable 5.1 風險盤點實測 v13 會在 Ctrl+Z、貼上、打英文空白、在標題打引號、
+  //    把第一段往上搬時「悄悄」寫壞 md（畫面看不出來）。逐鍵翻譯的架構補不完，改走 v14
+  //    （瀏覽器當編輯器、存檔時只把動過的段落反推回 md）。v14 通過那 13 條之前，這顆鈕只說明、不開編輯。
+  var P3_PAUSED = true;
+  if (P3_PAUSED) {
+    editFab.textContent = '✏️ 排版（暫停中）';
+    editFab.style.background = '#94a3b8';
+    editFab.title = '排版模式暫停：v13 會在復原、貼上、打英文空白時悄悄寫壞檔案，v14 修好前先關閉。改字請用 CC 標記。';
+  }
   editFab.onclick=function(){
+    if (P3_PAUSED) {
+      toast('排版模式暫停中：舊版會在 Ctrl+Z、貼上、打英文空白時悄悄把檔案寫錯。新版（v14）修好前先關閉，改字請先用 CC 標記。', 7000);
+      return;
+    }
     editOn=!editOn;
     scope.contentEditable = editOn ? 'true' : 'false';
     scope.classList.toggle('ccm-editing',editOn);
