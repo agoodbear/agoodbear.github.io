@@ -184,8 +184,8 @@
   //    （Roam 版 2026-09-08 踩過同樣的坑：改了功能沒 bump 版本號，他 reload 後無從判斷。）
   //    Hugo 版跟 Roam 版不同，程式碼是 hugo server 直接從磁碟讀的：存檔＋重新整理頁面就生效，
   //    不用 push、不用重裝。版本號在「面板抬頭常駐」＋「換版跳一次 toast」＋「console 每次印」。
-  var CCM_V='v12', CCM_V_DATE='2026-09-18',
-      CCM_V_NOTE='條列像 Word：項目結尾 Enter 自動接下一項（1. 會變 2.）、空項目再按 Enter 退出；Tab 不再把「1.」疊成「• 1.」；打字時不再整頁閃';
+  var CCM_V='v13', CCM_V_DATE='2026-09-18',
+      CCM_V_NOTE='修好：粗體開頭的段落打字會跑位、打的字消失；支援注音等中文輸入法（選完字才存）';
   // hallmark 主題用 .article-body；hugo-clarity 用 .post_body。兩個都撐住。
   var body=document.querySelector('.article-body')||document.querySelector('.post_content .post_body')
           ||document.querySelector('.post_body')||document.querySelector('article');
@@ -1004,8 +1004,16 @@
     return null;
   }
   // 要跳過的東西：註腳上標（md 裡是 [^1]，投影會拿掉）、我們自己的 UI
+  // 只略過註腳上標（md 裡是 [^1]，投影時整個拿掉）。
+  // ⚠️ 絕對不能用「class 開頭是 ccm- 就略過」—— 2026-09-18 實戰踩到兩個 bug：
+  //    ① 存檔成功會在段落上加 ccm-saved 閃一下，那 1 秒內整段被當成介面、文字變空，
+  //       人打字一定有停頓，第二個字送出去 before 是空的 → 被拒絕 → 整頁重整 → 字消失
+  //       （Bear：「當我輸入 II 就被消失了」；我的測試連打沒有停頓，所以沒抓到）。
+  //    ② 黃色 CC 標記是 <mark class="ccm-hit"> 包住「真正的文章文字」，也被丟掉了，
+  //       有標記的段落一進排版模式就對不上。
+  //    正文裡唯一會被插進去的 ccm 元素就是這個 mark（包的是真字），其餘介面都掛在 body。
   function skipEl(x){
-    return x.nodeType===1 && (x.tagName==='SUP' || /(^|\s)(ccm-|footnote-ref)/.test(x.className||''));
+    return x.nodeType===1 && (x.tagName==='SUP' || /(^|\s)footnote-ref(\s|$)/.test(x.className||''));
   }
   // 段落「顯示出來的文字」——要跟後端對 md 算出來的投影一致
   function blockText(el){
@@ -1033,6 +1041,12 @@
       if(x===node && offset>=x.childNodes.length) hit=true;
     })(el);
     return n;
+  }
+
+  function caretSide(r){
+    var nd=r.startContainer, o=r.startOffset;
+    if(nd.nodeType===3) return /\S/.test(nd.nodeValue.slice(0,o)) ? 'prev' : 'next';
+    return 'next';
   }
 
   // 重整後回到原位、並記得剛才開著編輯模式（hugo 偵測到 md 變更會自己 livereload）
@@ -1091,6 +1105,10 @@
 
   scope.addEventListener('beforeinput', function(e){
     if(!editOn) return;
+    // ⚠️ 中文輸入法（注音）選字的過程會連續發出一串「暫時的字」，那不是真的修改，
+    //    一個一個送出去會讓檔案跟畫面整個錯開。選字中的事件全部略過，
+    //    等 compositionend 拿到最後確定的字，再一次送出（見下面 composition 那兩段）。
+    if(e.isComposing || /Composition/.test(e.inputType||'')){ pend=null; return; }
     var rs = e.getTargetRanges && e.getTargetRanges();
     var r = (rs&&rs[0]) || (window.getSelection().rangeCount?window.getSelection().getRangeAt(0):null);
     if(!r){ pend=null; return; }
@@ -1103,10 +1121,29 @@
     if(/^format(Bold|Italic|Underline)$/.test(e.inputType)){
       try{ st = document.queryCommandState(e.inputType.slice(6).toLowerCase()); }catch(_){}
     }
-    pend = { type:e.inputType, data:e.data, blk:blk, before:blockText(blk), state:st,
+    pend = { type:e.inputType, data:e.data, blk:blk, before:blockText(blk), state:st, side:caretSide(r),
              from:nsOffset(blk,r.startContainer,r.startOffset),
              to:nsOffset(blk,r.endContainer,r.endOffset),
              prev:blk.previousElementSibling };
+  });
+
+  // ── 中文輸入法：開始選字時記下「改之前」的樣子，選完字（compositionend）一次送出 ──
+  var comp=null;
+  scope.addEventListener('compositionstart', function(){
+    comp=null;
+    if(!editOn) return;
+    var sel=window.getSelection(); if(!sel.rangeCount) return;
+    var r=sel.getRangeAt(0), blk=blockOf(r.startContainer);
+    if(!blk || blockOf(r.endContainer)!==blk) return;
+    comp={ blk:blk, before:blockText(blk), side:caretSide(r),
+           from:nsOffset(blk,r.startContainer,r.startOffset), to:nsOffset(blk,r.endContainer,r.endOffset) };
+  });
+  scope.addEventListener('compositionend', function(e){
+    if(!editOn||!comp) return;
+    var c=comp; comp=null;
+    var text=e.data||'';
+    if(!text && c.from===c.to) return;          // 按 Esc 取消選字＝什麼都沒發生
+    sendOp({kind:'replace',before:c.before,from:c.from,to:c.to,text:text,side:c.side}, c.blk);
   });
 
   scope.addEventListener('input', function(){
@@ -1125,7 +1162,7 @@
     }else if(/^delete/.test(p.type) && p.from===0 && p.to===0 && p.prev && blockOf(p.prev)!==null){
       op={kind:'merge',before:blockText(p.prev),next:p.before};
     }else if(/^insert/.test(p.type)){
-      op={kind:'replace',before:p.before,from:p.from,to:p.to,text:(p.data||'')};
+      op={kind:'replace',before:p.before,from:p.from,to:p.to,text:(p.data||''),side:p.side};
     }else if(/^delete/.test(p.type)){
       var f=p.from,t=p.to;
       if(f===t){ if(/Backward/.test(p.type)) f=Math.max(0,f-1); else t=f+1; }
