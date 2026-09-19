@@ -21,9 +21,11 @@ from fontTools.pens.recordingPen import RecordingPen
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.boundsPen import BoundsPen
 
-# 兩顆愛心的樣子（2026-09-19 Bear 挑的：兩顆都 340，右邊那顆往右上挪開鉤尖）
+# 兩顆愛心的樣子（2026-09-19 定案）
+# ⚠️ 右邊那顆的右緣要壓在 940 以內：心的 advance 是 1000，大標 letter-spacing -0.025em
+#    等於下一個字從 975 就開始，超過就會被「聲」蓋掉（第一版 size340/dx+40 右緣到 1069，中招）。
 MID = {"size": 340, "dx": 0, "dy": 0, "angle": 0}
-RIGHT = {"size": 340, "dx": 40, "dy": 50, "angle": 0}
+RIGHT = {"size": 280, "dx": -60, "dy": 60, "angle": 0}
 
 # 心 U+5FC3 的四筆輪廓在這個字型裡的順序
 IDX_MID_DOT, IDX_HOOK, IDX_RIGHT_DOT, IDX_LEFT_DOT = 0, 1, 2, 3
