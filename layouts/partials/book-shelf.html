@@ -8,10 +8,14 @@
   <ul class="shelf__track">
     {{- range $b := . }}
     {{- $href := $b.url -}}
-    {{- with $data.amazon_tag }}{{ $href = printf "%s?tag=%s" $b.url . }}{{ end }}
+    {{- $isAmazon := strings.Contains $b.url "amazon.com" -}}
+    {{- if $isAmazon }}{{ with $data.amazon_tag }}{{ $href = printf "%s?tag=%s" $b.url . }}{{ end }}{{ end }}
     <li class="shelf__item">
-      <a class="shelf__link" href="{{ $href }}" target="_blank" rel="noopener{{ if $data.amazon_tag }} sponsored{{ end }}">
-        <span class="shelf__cover"><img src="{{ $b.cover | relURL }}" alt="{{ $b.title }}" loading="lazy" decoding="async" width="120" height="180"></span>
+      <a class="shelf__link" href="{{ $href }}" target="_blank" rel="noopener{{ if and $isAmazon $data.amazon_tag }} sponsored{{ end }}">
+        <span class="shelf__cover">
+          <img src="{{ $b.cover | relURL }}" alt="{{ $b.title }}" loading="lazy" decoding="async" width="120" height="180">
+          {{- with $b.badge }}<span class="shelf__badge">{{ . }}</span>{{ end }}
+        </span>
         <span class="shelf__title">{{ $b.title }}</span>
         <span class="shelf__author">{{ $b.author }}{{ with $b.edition }} · {{ . }}{{ end }}</span>
         {{- with $b.blurb }}<span class="shelf__blurb">{{ . }}</span>{{ end }}

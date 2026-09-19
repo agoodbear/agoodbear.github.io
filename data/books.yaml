@@ -1,11 +1,21 @@
 # 急診熊書架（首頁）：從 Bear 的 Kindle 書櫃挑出來的推薦書，只出現在首頁「Bookshelf」區。
 # 換書／調順序：改下面 books 的順序；改一句話推薦：改 blurb。封面放 static/images/books/<ASIN>.jpg。
 # ⚠️ asin 一律用 amazon.com/dp/<ASIN> 打得開的「在售」編號（紙本 ISBN-10 也可），Kindle 書櫃 API 給的舊版 Kindle ASIN 常已下架（2026-09-06 四本踩到）。
+# 非 Amazon 連結（例如作者自己公開的免費 PDF）：url 照放原始網址，版型只會對 amazon.com 的連結加 ?tag= 與 rel=sponsored。
+# badge: 封面下緣的小標（例如「免費 PDF」），留空就不顯示。
 shelf_title: "急診熊書架"
-shelf_note: "Kindle 裡翻過、值得放在桌邊的幾本。點封面到 Amazon。"
+shelf_note: "Kindle 裡翻過、值得放在桌邊的幾本。點封面到 Amazon；標「免費 PDF」的，點了直接看全書。"
 amazon_tag: "agoodbear-20"   # Amazon Associates ID（2026-09-06 核准），連結自動帶 ?tag= 並加 rel=sponsored
-shelf_disclosure: "本站為 Amazon 聯盟夥伴（Amazon Associate），透過這些連結購書，本站會獲得少量分潤，書價不變。"
+shelf_disclosure: "本站為 Amazon 聯盟夥伴（Amazon Associate），透過這些連結購書，本站會獲得少量分潤，書價不變。免費 PDF 的連結不是聯盟連結。"
 books:
+  - title: "The ECG in Acute MI"
+    edition: "2002"
+    author: "Stephen W. Smith 等"
+    blurb: "部落格裡那些再灌流演變圖的出處，Smith 公開了整本 PDF。"
+    cover: "/images/books/ecg-in-acute-mi.jpg"
+    url: "https://drive.google.com/file/d/1dqDBvDPCwPl6nxfvQVZl-xPwNrzPDdsK/view"
+    badge: "免費 PDF"
+    source: "作者公開 PDF（Dr. Smith's ECG Blog「About」頁）；紙本在 Amazon 仍買得到（ISBN 0781729033）"
   - asin: "B0FBKPDDNP"
     title: "ECGs for Acute, Critical and Emergency Care, Vol. 2"
     author: "Amal Mattu、William Brady"
