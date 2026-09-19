@@ -23,6 +23,24 @@
   font-weight: 500;
   margin-bottom: var(--space-sm);
 }
+/* 「心」字的兩點換成愛心：整顆字改用內嵌 SVG，尺寸對齊字體 em 框
+   （Noto Serif TC 的 ascent 1151 / descent 286，合計 1437 單位＝1.437em），
+   所以 baseline 與左右字距跟真的文字一模一樣。 */
+.masthead .wm-xin { display: inline-block; }
+.masthead .wm-xin svg {
+  width: 1em;
+  height: 1.437em;
+  vertical-align: -0.286em;
+  fill: currentColor;
+}
+.masthead .sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 .masthead .wordmark {
   font-family: var(--font-display-zh);
   font-weight: 900;
@@ -550,7 +568,7 @@ article.card .meta {
 
 <header class="masthead">
   <div class="kicker">An Editorial Notebook · Since 2022</div>
-  <h1 class="wordmark"><span class="wm-anchor">{{ site.Title | default "急診熊心聲部落格" }}{{ partial "domain-badge.html" . }}</span></h1>
+  <h1 class="wordmark"><span class="wm-anchor">{{ replace (site.Title | default "急診熊心聲部落格") "心" (partial "heart-xin.html" .) | safeHTML }}{{ partial "domain-badge.html" . }}</span></h1>
   <p class="tagline">{{ site.Params.tagline | default "A working physician's notes on ECG, AI workflows, and the cold reality of the emergency department — written in Taiwan, read with care." }}</p>
   {{- /* Localized weekday name (Hugo's time.Format doesn't natively output 中文) */ -}}
   {{- $weekdays := dict "Monday" "星期一" "Tuesday" "星期二" "Wednesday" "星期三" "Thursday" "星期四" "Friday" "星期五" "Saturday" "星期六" "Sunday" "星期日" -}}
