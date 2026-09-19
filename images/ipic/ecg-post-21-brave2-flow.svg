@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 690" width="820" height="690" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',-apple-system,sans-serif">
+  <title>BRAVE-2 試驗（Schömig 等人 2005）</title>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1f3a5f"/></marker></defs>
+  <rect x="0" y="0" width="820" height="690" rx="12" fill="#fbfaf6"/>
+  <text x="28" y="42" font-size="21" font-weight="700" fill="#1f3a5f">BRAVE-2 試驗（Schömig 等人 2005）</text>
+  <rect x="110" y="64" width="600" height="90" rx="8" fill="#1f3a5f" fill-opacity=".08" stroke="#1f3a5f" stroke-width="1.6"/>
+  <text x="410.0" y="92.0" text-anchor="middle" font-size="14" fill="#1f2937"><tspan font-weight="700" fill="#1f3a5f">收案</tspan>：症狀發作後 12–48 小時、已經沒有持續症狀，</text>
+  <text x="410.0" y="114.0" text-anchor="middle" font-size="14" fill="#1f2937">但 ECG 還有 STE 或新的病理性 Q 波</text>
+  <text x="410.0" y="136.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1f3a5f">共 365 人</text>
+  <line x1="410" y1="154" x2="206" y2="196" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="410" y1="154" x2="614" y2="196" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="410" y="192" text-anchor="middle" font-size="13" fill="#4b5563">隨機分兩組</text>
+  <rect x="28" y="200" width="356" height="70" rx="8" fill="#0f766e" fill-opacity=".08" stroke="#0f766e" stroke-width="1.6"/>
+  <text x="206.0" y="229.0" text-anchor="middle" font-size="14" font-weight="700" fill="#0f766e">① 立即 PCI</text>
+  <text x="206.0" y="251.0" text-anchor="middle" font-size="14" fill="#1f2937">（放支架＋abciximab）</text>
+  <rect x="436" y="200" width="356" height="70" rx="8" fill="#1f3a5f" fill-opacity=".06" stroke="#1f3a5f" stroke-width="1.6"/>
+  <text x="614.0" y="229.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1f3a5f">② 保守的抗栓藥物治療</text>
+  <text x="614.0" y="251.0" text-anchor="middle" font-size="14" fill="#1f2937">（不安排血管攝影）</text>
+  <line x1="206" y1="270" x2="360" y2="312" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="614" y1="270" x2="460" y2="312" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="160" y="316" width="500" height="60" rx="8" fill="#1f3a5f" fill-opacity=".08" stroke="#1f3a5f" stroke-width="1.6"/>
+  <text x="410.0" y="351.0" text-anchor="middle" font-size="14" fill="#1f2937">術後 5–10 天用 SPECT 量最後的梗塞面積（347 人量得到）</text>
+  <line x1="360" y1="376" x2="206" y2="416" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="460" y1="376" x2="614" y2="416" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="28" y="420" width="356" height="70" rx="8" fill="#0f766e" fill-opacity=".08" stroke="#0f766e" stroke-width="1.6"/>
+  <text x="206.0" y="449.0" text-anchor="middle" font-size="14" fill="#1f2937">梗塞面積中位數 <tspan font-weight="700" fill="#0f766e">8.0%</tspan></text>
+  <text x="206.0" y="471.0" text-anchor="middle" font-size="14" fill="#1f2937">（IQR 2.0–15.8%）</text>
+  <rect x="436" y="420" width="356" height="70" rx="8" fill="#1f3a5f" fill-opacity=".06" stroke="#1f3a5f" stroke-width="1.6"/>
+  <text x="614.0" y="449.0" text-anchor="middle" font-size="14" fill="#1f2937">梗塞面積中位數 <tspan font-weight="700" fill="#1f3a5f">13.0%</tspan></text>
+  <text x="614.0" y="471.0" text-anchor="middle" font-size="14" fill="#1f2937">（IQR 3.0–27.0%）</text>
+  <rect x="60" y="512" width="700" height="84" rx="8" fill="#c2410c" fill-opacity=".08" stroke="#c2410c" stroke-width="1.6"/>
+  <text x="410.0" y="548.0" text-anchor="middle" font-size="14" fill="#1f2937">平均差 <tspan font-weight="700" fill="#c2410c">−6.8%</tspan>（95% CI −10.2 至 −3.5，P &lt; 0.001）</text>
+  <text x="410.0" y="570.0" text-anchor="middle" font-size="14" font-weight="700" fill="#c2410c">過了 12 小時才來的人，做介入的那組，最後死掉的心肌比較少</text>
+  <text x="410" y="626" text-anchor="middle" font-size="14" fill="#c2410c">⚠️ 收案只看「時間窗＋STE 或 Q 波」，沒有看 acuteness 的高低</text>
+  <text x="28" y="668" text-anchor="start" font-size="13" fill="#6b7280">資料來源：Schömig A, et al. JAMA. 2005;293(23):2865-72（PMID: 15956631）；Helseth HC, et al. 2026。本站依原文數字自繪。</text>
+</svg>
