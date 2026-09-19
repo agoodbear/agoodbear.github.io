@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 500" width="820" height="500" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',-apple-system,sans-serif">
+  <title>STEMI 的毫米標準是怎麼來的</title>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f3a5f"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="820" height="500" rx="12" fill="#fbfaf6"/>
+
+  <text x="28" y="42" font-size="21" font-weight="700" fill="#1f3a5f">STEMI 的毫米標準是怎麼來的</text>
+
+  <!-- 左欄：Menown 2000 -->
+  <rect x="28" y="66" width="356" height="96" rx="8" fill="#0f766e" fill-opacity=".08" stroke="#0f766e" stroke-width="1.6"/>
+  <text x="206" y="95" text-anchor="middle" font-size="16" font-weight="700" fill="#0f766e">Menown 等人 2000</text>
+  <text x="206" y="121" text-anchor="middle" font-size="14" fill="#1f2937">1190 人：1041 位胸痛病人</text>
+  <text x="206" y="143" text-anchor="middle" font-size="14" fill="#1f2937">（其中 335 位確診 AMI）＋149 位無胸痛對照</text>
+
+  <line x1="206" y1="163" x2="206" y2="198" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="218" y="186" font-size="13" fill="#4b5563">比較各種 ST 上升定義</text>
+
+  <rect x="28" y="202" width="356" height="96" rx="8" fill="#0f766e" fill-opacity=".08" stroke="#0f766e" stroke-width="1.6"/>
+  <text x="206" y="231" text-anchor="middle" font-size="16" font-weight="700" fill="#0f766e">選出的「最佳模型」</text>
+  <text x="206" y="257" text-anchor="middle" font-size="14" fill="#1f2937">下壁／側壁導程任一條 ≥1 mm</text>
+  <text x="206" y="279" text-anchor="middle" font-size="14" fill="#1f2937">或前中膈導程任一條 ≥2 mm</text>
+
+  <line x1="206" y1="299" x2="206" y2="330" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="28" y="334" width="356" height="56" rx="8" fill="#1f3a5f" fill-opacity=".1" stroke="#1f3a5f" stroke-width="1.6"/>
+  <text x="206" y="368" text-anchor="middle" font-size="18" font-weight="700" fill="#1f3a5f">敏感度 55.8%｜特異度 94.0%</text>
+
+  <!-- 右欄：UDMI -->
+  <text x="614" y="104" text-anchor="middle" font-size="13" fill="#6b7280">UDMI：Universal Definition of</text>
+  <text x="614" y="124" text-anchor="middle" font-size="13" fill="#6b7280">Myocardial Infarction</text>
+  <text x="614" y="144" text-anchor="middle" font-size="13" fill="#6b7280">（心肌梗塞通用定義）</text>
+
+  <line x1="385" y1="250" x2="432" y2="250" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="409" y="240" text-anchor="middle" font-size="13" fill="#4b5563">影響了</text>
+
+  <rect x="436" y="202" width="356" height="96" rx="8" fill="#1f3a5f" fill-opacity=".06" stroke="#1f3a5f" stroke-width="1.6"/>
+  <text x="614" y="243" text-anchor="middle" font-size="16" font-weight="700" fill="#1f3a5f">第一版 UDMI（2000）</text>
+  <text x="614" y="269" text-anchor="middle" font-size="14" fill="#1f2937">的 STEMI 毫米門檻</text>
+
+  <line x1="614" y1="299" x2="614" y2="330" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="626" y="320" font-size="13" fill="#4b5563">Macfarlane 等人 2004</text>
+
+  <rect x="436" y="334" width="356" height="56" rx="8" fill="#1f3a5f" fill-opacity=".06" stroke="#1f3a5f" stroke-width="1.6"/>
+  <text x="614" y="368" text-anchor="middle" font-size="16" font-weight="700" fill="#1f3a5f">依年齡、性別修訂的毫米門檻</text>
+
+  <!-- 底部 -->
+  <rect x="28" y="416" width="764" height="64" rx="8" fill="#c2410c" fill-opacity=".08" stroke="#c2410c" stroke-width="1.6"/>
+  <text x="410" y="443" text-anchor="middle" font-size="15" font-weight="700" fill="#c2410c">兩者都沒有用血管攝影證實的阻塞當金標準，</text>
+  <text x="410" y="467" text-anchor="middle" font-size="15" font-weight="700" fill="#c2410c">也都沒有把 ST 幅度跟 QRS 振幅放在一起看。</text>
+</svg>

@@ -595,7 +595,8 @@ article.card .meta {
   {{- $catSlug := index .Params.categories 0 | default "" -}}
   {{- $catName := index $catMap $catSlug | default $catSlug -}}
   <section class="featured">
-    <a class="image" href="{{ .RelPermalink }}">
+    {{- /* 文章有設 hero_ratio（封面是寬圖）就照原比例放，不裁成 4:3（Bear 2026-09-19：ecg-post-21 封面左右被切掉）*/ -}}
+    <a class="image" href="{{ .RelPermalink }}"{{ with .Params.hero_ratio }} style="aspect-ratio: {{ . | safeCSS }};"{{ end }}>
       {{- $img := .Params.thumbnail | default .Params.featured_image | default .Params.featureImage | default .Params.image | default .Params.cover -}}
       {{ if $img }}
         <img src="{{ $img | relURL }}" alt="{{ .Title }}" fetchpriority="high">

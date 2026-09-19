@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 740" width="820" height="740" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',-apple-system,sans-serif">
+  <title>808 例怎麼分（Meyers 等人 2021）</title>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1f3a5f"/></marker></defs>
+  <rect x="0" y="0" width="820" height="740" rx="12" fill="#fbfaf6"/>
+  <text x="28" y="42" font-size="21" font-weight="700" fill="#1f3a5f">808 例怎麼分（Meyers 等人 2021）</text>
+  <rect x="260" y="64" width="300" height="52" rx="8" fill="#1f3a5f" fill-opacity=".1" stroke="#1f3a5f" stroke-width="1.6"/>
+  <text x="410.0" y="95.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1f3a5f">808 例（最後納入分析）</text>
+  <line x1="410" y1="116" x2="206" y2="150" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="410" y1="116" x2="614" y2="150" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="28" y="154" width="356" height="60" rx="8" fill="#0f766e" fill-opacity=".08" stroke="#0f766e" stroke-width="1.6"/>
+  <text x="206.0" y="189.0" text-anchor="middle" font-size="14" font-weight="700" fill="#0f766e">265 例 OMI（33%）</text>
+  <rect x="436" y="154" width="356" height="60" rx="8" fill="#1f3a5f" fill-opacity=".06" stroke="#1f3a5f" stroke-width="1.6"/>
+  <text x="614.0" y="189.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1f3a5f">543 例對照組</text>
+  <line x1="150" y1="214" x2="118" y2="250" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="262" y1="214" x2="294" y2="250" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="28" y="254" width="180" height="96" rx="8" fill="#0f766e" fill-opacity=".08" stroke="#0f766e" stroke-width="1.6"/>
+  <text x="118.0" y="285.0" text-anchor="middle" font-size="14" font-weight="700" fill="#0f766e">108 例（41%）</text>
+  <text x="118.0" y="307.0" text-anchor="middle" font-size="14" fill="#1f2937">符合 STEMI criteria</text>
+  <text x="118.0" y="329.0" text-anchor="middle" font-size="14" fill="#1f2937">＝STEMI(+) OMI</text>
+  <rect x="220" y="254" width="164" height="96" rx="8" fill="#c2410c" fill-opacity=".08" stroke="#c2410c" stroke-width="1.6"/>
+  <text x="302.0" y="285.0" text-anchor="middle" font-size="14" font-weight="700" fill="#c2410c">157 例</text>
+  <text x="302.0" y="307.0" text-anchor="middle" font-size="14" fill="#1f2937">不符合</text>
+  <text x="302.0" y="329.0" text-anchor="middle" font-size="14" fill="#1f2937">STEMI criteria</text>
+  <text x="302" y="370" text-anchor="middle" font-size="13" fill="#c2410c">STEMI 典範會漏掉的一群</text>
+  <line x1="262" y1="378" x2="210" y2="408" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="342" y1="378" x2="342" y2="408" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="28" y="412" width="236" height="76" rx="8" fill="#0f766e" fill-opacity=".08" stroke="#0f766e" stroke-width="1.6"/>
+  <text x="146.0" y="444.0" text-anchor="middle" font-size="14" font-weight="700" fill="#0f766e">120 例</text>
+  <text x="146.0" y="466.0" text-anchor="middle" font-size="14" fill="#1f2937">專家用 OMI findings 抓得到</text>
+  <rect x="276" y="412" width="108" height="76" rx="8" fill="#6b7280" fill-opacity=".08" stroke="#6b7280" stroke-width="1.6"/>
+  <text x="330.0" y="444.0" text-anchor="middle" font-size="14" font-weight="700" fill="#6b7280">37 例</text>
+  <text x="330.0" y="466.0" text-anchor="middle" font-size="14" fill="#1f2937">兩種都漏掉</text>
+  <line x1="614" y1="214" x2="614" y2="250" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="436" y="254" width="356" height="96" rx="8" fill="#1f3a5f" fill-opacity=".06" stroke="#1f3a5f" stroke-width="1.6"/>
+  <text x="614.0" y="285.0" text-anchor="middle" font-size="14" fill="#1f2937">其中 <tspan font-weight="700" fill="#1f3a5f">34 例</tspan>不是 OMI，</text>
+  <text x="614.0" y="307.0" text-anchor="middle" font-size="14" fill="#1f2937">卻在 ECG 上假陽性</text>
+  <text x="614.0" y="329.0" text-anchor="middle" font-size="14" fill="#1f2937">符合 STEMI criteria</text>
+  <text x="28" y="540" text-anchor="start" font-size="15" fill="#1f3a5f">同一群 396 例 AMI（49%），兩種分法：</text>
+  <text x="28" y="583" text-anchor="start" font-size="14" fill="#1f2937">看 ECG 有沒有</text>
+  <text x="28" y="601" text-anchor="start" font-size="14" fill="#1f2937">達到 STEMI 標準</text>
+  <rect x="172" y="560" width="169.0909090909091" height="44" fill="#0f766e" fill-opacity=".85" stroke="#fbfaf6" stroke-width="2"/>
+  <text x="256.54545454545456" y="587.0" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">STEMI 108</text>
+  <rect x="341.0909090909091" y="560" width="450.90909090909093" height="44" fill="#1f3a5f" fill-opacity=".55" stroke="#fbfaf6" stroke-width="2"/>
+  <text x="566.5454545454546" y="587.0" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">NSTEMI 288</text>
+  <text x="28" y="643" text-anchor="start" font-size="14" fill="#1f2937">看血管</text>
+  <text x="28" y="661" text-anchor="start" font-size="14" fill="#1f2937">有沒有塞住</text>
+  <rect x="172" y="620" width="169.0909090909091" height="44" fill="#0f766e" fill-opacity=".85" stroke="#fbfaf6" stroke-width="2"/>
+  <text x="256.54545454545456" y="647.0" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">OMI 108</text>
+  <rect x="341.0909090909091" y="620" width="245.80808080808083" height="44" fill="#c2410c" fill-opacity=".85" stroke="#fbfaf6" stroke-width="2"/>
+  <text x="463.99494949494954" y="647.0" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">OMI 157</text>
+  <rect x="586.8989898989898" y="620" width="205.1010101010101" height="44" fill="#6b7280" fill-opacity=".55" stroke="#fbfaf6" stroke-width="2"/>
+  <text x="689.4494949494949" y="647.0" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">NOMI 131</text>
+  <text x="463.99494949494954" y="684" text-anchor="middle" font-size="13" fill="#c2410c">↑ 這 157 例被叫成 NSTEMI，但血管其實是塞住的</text>
+  <text x="28" y="722" text-anchor="start" font-size="13" fill="#6b7280">資料來源：Meyers HP, et al. Int J Cardiol Heart Vasc. 2021;33:100767（正文與線上附錄 Table 4）。本站依原文數字自繪。</text>
+</svg>

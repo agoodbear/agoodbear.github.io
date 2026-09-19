@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 610" width="820" height="610" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',-apple-system,sans-serif">
+  <title>Anderson–Wilkins acuteness score（Corey 等人 1999）</title>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1f3a5f"/></marker></defs>
+  <rect x="0" y="0" width="820" height="610" rx="12" fill="#fbfaf6"/>
+  <text x="28" y="42" font-size="21" font-weight="700" fill="#1f3a5f">Anderson–Wilkins acuteness score（Corey 等人 1999）</text>
+  <rect x="160" y="64" width="500" height="64" rx="8" fill="#1f3a5f" fill-opacity=".08" stroke="#1f3a5f" stroke-width="1.6"/>
+  <text x="410.0" y="90.0" text-anchor="middle" font-size="14" fill="#1f2937">4 個溶栓試驗，合併 <tspan font-weight="700" fill="#1f3a5f">395 位</tspan>病人</text>
+  <text x="410.0" y="112.0" text-anchor="middle" font-size="14" fill="#1f2937">（其中 316 位打了 streptokinase 或 t-PA）</text>
+  <line x1="410" y1="128" x2="410" y2="164" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="422" y="151.0" font-size="13" fill="#4b5563">看到院的第一張 12 導程 ECG，算分數</text>
+  <rect x="28" y="168" width="356" height="104" rx="8" fill="#0f766e" fill-opacity=".08" stroke="#0f766e" stroke-width="1.6"/>
+  <text x="206.0" y="203.0" text-anchor="middle" font-size="14" fill="#1f2937">T 波又高又胖</text>
+  <text x="206.0" y="225.0" text-anchor="middle" font-size="14" fill="#1f2937">Q 波還沒長出來</text>
+  <text x="206.0" y="247.0" text-anchor="middle" font-size="14" font-weight="700" fill="#0f766e">➜ 分數高：很急，心肌還活著</text>
+  <rect x="436" y="168" width="356" height="104" rx="8" fill="#1f3a5f" fill-opacity=".06" stroke="#1f3a5f" stroke-width="1.6"/>
+  <text x="614.0" y="203.0" text-anchor="middle" font-size="14" fill="#1f2937">T 波變平</text>
+  <text x="614.0" y="225.0" text-anchor="middle" font-size="14" fill="#1f2937">Q 波已經長好</text>
+  <text x="614.0" y="247.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1f3a5f">➜ 分數低：拖很久了</text>
+  <line x1="206" y1="272" x2="360" y2="318" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="614" y1="272" x2="460" y2="318" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="160" y="322" width="500" height="60" rx="8" fill="#1f3a5f" fill-opacity=".08" stroke="#1f3a5f" stroke-width="1.6"/>
+  <text x="410.0" y="357.0" text-anchor="middle" font-size="14" fill="#1f2937">第 7 週用 thallium-201 影像，量最後的梗塞面積</text>
+  <line x1="410" y1="382" x2="410" y2="418" stroke="#1f3a5f" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="422" y="405.0" font-size="13" fill="#4b5563">結果（前壁梗塞）</text>
+  <rect x="90" y="422" width="640" height="96" rx="8" fill="#c2410c" fill-opacity=".08" stroke="#c2410c" stroke-width="1.6"/>
+  <text x="410.0" y="464.0" text-anchor="middle" font-size="14" font-weight="700" fill="#c2410c">分數高的那組，最後的梗塞面積小 50%</text>
+  <text x="410.0" y="486.0" text-anchor="middle" font-size="14" fill="#1f2937">而且他們從發作到接受治療，等得反而比較久</text>
+  <text x="28" y="560" text-anchor="start" font-size="13" fill="#6b7280">資料來源：Corey KE, et al. Am J Cardiol. 1999;83(6):826-831（PMID: 10190393）；Helseth HC, et al. Eur Heart J Acute</text>
+  <text x="28" y="582" text-anchor="start" font-size="13" fill="#6b7280">Cardiovasc Care. 2026（DOI: 10.1093/ehjacc/zuag114）。本站依原文數字自繪。</text>
+</svg>
