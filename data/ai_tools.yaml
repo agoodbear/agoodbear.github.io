@@ -13,11 +13,14 @@
   icon: "🛠️"
   image: "/images/ai-tools/trauma-record.png"
 
-- title: "Rail-Radar"
-  description: "台鐵即時列車雷達地圖"
-  url: "https://train-radar-web.pages.dev/"
-  icon: "🚆"
-  image: "/images/ai-tools/rail-radar.png"
+# 2026-09-19 下架：Bear 主要用 iOS，網頁版操作不順。工具本體還在
+# https://train-radar-web.pages.dev/ ，圖也留著（/images/ai-tools/rail-radar.png），
+# 要放回來就把下面五行的註解拿掉。
+# - title: "Rail-Radar"
+#   description: "台鐵即時列車雷達地圖"
+#   url: "https://train-radar-web.pages.dev/"
+#   icon: "🚆"
+#   image: "/images/ai-tools/rail-radar.png"
 
 - title: "ER Tools Merge"
   description: "整合版急診 AI 工具"
