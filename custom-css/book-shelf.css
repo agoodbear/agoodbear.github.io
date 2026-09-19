@@ -32,6 +32,7 @@
 .shelf__link { display: grid; gap: 0.3rem; color: inherit; text-decoration: none; border-bottom: 0; padding-bottom: 0; }
 .shelf__cover {
   display: block;
+  position: relative;
   width: 120px;
   height: 180px;
   border-radius: 3px;
@@ -42,6 +43,22 @@
   transition: transform 180ms var(--ease-out, ease), box-shadow 180ms ease;
 }
 .shelf__cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* 封面下緣小標：非 Amazon 的連結（例如作者公開的免費 PDF）用這個講清楚點下去會拿到什麼 */
+.shelf__badge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.18rem 0.3rem;
+  border-radius: 0 0 3px 3px;
+  background: var(--color-accent-ink, #b22800);
+  color: var(--color-paper, #fdfbf7);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  text-align: center;
+}
 .shelf__link:hover .shelf__cover { transform: translateY(-6px) rotate(-1.5deg); box-shadow: 0 18px 26px -10px rgba(11, 18, 26, 0.4), 0 0 0 1px rgba(11, 18, 26, 0.1); }
 .shelf__title {
   margin-top: 0.75rem;
