@@ -8,7 +8,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<link rel="preload" href="./quiz.json" as="fetch" crossorigin="anonymous">
+<script>
+/* 題庫索引先發車：下面的 supabase-js 是外部 script，會把後面的 inline script 卡住，
+   沒有這一行的話 manifest 要等它下載完才開始抓。 */
+window.__ecgManifest = fetch("./bank/manifest.json").then(r=>{
+  if(!r.ok) throw new Error("manifest HTTP "+r.status);
+  return r.json();
+});
+window.__ecgManifest.catch(()=>{});   // 先接住，避免 unhandled rejection
+</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <style>
   :root{
@@ -398,6 +406,57 @@ function placeholder(src, idx){
 const WRONG_KEY="ecgquiz_wrong_v1", DONE_KEY="ecgquiz_done_v1";
 let BANK=[], cur=-1, done=0, picked=null, revealed=false, mode="all";
 let wrongSet=new Set(), currentUser=null;
+
+/* ── 題庫載入：manifest + 20 題一塊，按需取 ──────────────────────────────
+   原本開場就抓整包 quiz.json（8.5MB、gzip 後 2.8MB）。GitHub Pages 吐這種大檔
+   實測只有 ~55KB/s（同一條線抓 CDN 有 7.9MB/s），整包要 50 秒以上才出第一題。
+   改成先拿 manifest（只有 id，gzip 後 3.8KB），再抓那一題所在的那塊（~37KB）。
+   BANK 是稀疏陣列，載到哪填到哪；chunkJobs 記已發出的請求避免重抓。 */
+const BANK_DIR="./bank/";
+let META=null, renderSeq=0, nextIdx=null;
+const idToIdx=new Map(), chunkJobs=new Map();
+
+function chunkName(no){ return BANK_DIR+"c"+String(no).padStart(3,"0")+".json?v="+META.version; }
+function loadChunk(no){
+  if(chunkJobs.has(no)) return chunkJobs.get(no);
+  const job=fetch(chunkName(no))
+    .then(r=>{ if(!r.ok) throw new Error("chunk "+no+" HTTP "+r.status); return r.json(); })
+    .then(list=>{ const base=no*META.chunkSize; list.forEach((q,i)=>{ BANK[base+i]=q; }); return list; })
+    .catch(e=>{ chunkJobs.delete(no); throw e; });   // 失敗就讓它可以重試
+  chunkJobs.set(no,job);
+  return job;
+}
+async function ensure(idx){
+  if(!BANK[idx]) await loadChunk(Math.floor(idx/META.chunkSize));
+  return BANK[idx];
+}
+function prefetch(idx){
+  if(idx==null||BANK[idx]) return;
+  loadChunk(Math.floor(idx/META.chunkSize)).catch(()=>{});
+}
+function pickIdx(){
+  const pool=(mode==="wrong")?wrongIdxs():null;
+  if(pool){ if(!pool.length) return null; if(pool.length===1) return pool[0];
+    let p; do{ p=pool[Math.floor(Math.random()*pool.length)]; }while(p===cur); return p; }
+  if(!META||!META.count) return null;
+  if(META.count===1) return 0;
+  let i; do{ i=Math.floor(Math.random()*META.count); }while(i===cur); return i;
+}
+/* 顯示某一題；那塊還沒到就先擺「載入中」。renderSeq 防連按「下一題」時舊的蓋掉新的 */
+async function show(idx){
+  const my=++renderSeq;
+  if(!BANK[idx]){
+    stem.textContent="載入中…"; optionsEl.innerHTML=""; reveal.hidden=true;
+    revealBtn.disabled=true;
+  }
+  let q;
+  try{ q=await ensure(idx); }
+  catch(e){ if(my===renderSeq){ stem.textContent="這一題載入失敗，按「下一題」再試。"; revealBtn.disabled=true; } return null; }
+  if(my!==renderSeq) return q;          // 已經有更新的一題在路上，這次就別畫了
+  cur=idx; render(q,idx);
+  nextIdx=pickIdx(); prefetch(nextIdx);  // 先把下一題那塊抓好，按「下一題」才不用等
+  return q;
+}
 try{ wrongSet=new Set(JSON.parse(localStorage.getItem(WRONG_KEY)||"[]")); }catch(e){}
 try{ done=parseInt(localStorage.getItem(DONE_KEY)||"0")||0; }catch(e){}
 
@@ -411,9 +470,10 @@ const KEYS=["A","B","C","D","E","F"];
 
 function saveWrong(){ try{ localStorage.setItem(WRONG_KEY, JSON.stringify([...wrongSet])); }catch(e){} }
 function saveDone(){ try{ localStorage.setItem(DONE_KEY, String(done)); }catch(e){} syncDone(); }
-function wrongInBank(){ return BANK.filter(q=>wrongSet.has(q.id)); }
+/* 錯題本比對只靠 manifest 的 id→序號，不需要那些題已經載進來 */
+function wrongIdxs(){ const out=[]; wrongSet.forEach(id=>{ const i=idToIdx.get(id); if(i!==undefined) out.push(i); }); return out; }
 function refreshWrongUI(){
-  const n=wrongInBank().length;
+  const n=wrongIdxs().length;
   wrongCount.textContent=n;
   wrongbook.classList.toggle("empty", n===0 && mode!=="wrong");
   modeWrongN.textContent=n;
@@ -426,7 +486,7 @@ function closeLightbox(){ $("lightbox").classList.remove("open"); $("lightboxImg
 
 const urlToId=new Map();
 function normUrl(u){ return (u||"").trim().replace(/[#?].*$/,"").replace(/\/+$/,"").toLowerCase(); }
-function jumpTo(id){ const i=BANK.findIndex(x=>x.id===id); if(i>=0){ cur=i; render(BANK[i],i); window.scrollTo({top:0,behavior:"smooth"}); } }
+function jumpTo(id){ const i=idToIdx.get(id); if(i!==undefined){ show(i); window.scrollTo({top:0,behavior:"smooth"}); } }
 
 function render(q,idx){
   picked=null; revealed=false;
@@ -490,23 +550,22 @@ function doReveal(){
 }
 
 function next(){
-  const pool = mode==="wrong" ? wrongInBank() : BANK;
-  if(mode==="wrong" && pool.length===0){ exitWrongMode(true); return; }
-  if(pool.length===1){ cur=BANK.indexOf(pool[0]); }
-  else{
-    let pick; do{ pick=pool[Math.floor(Math.random()*pool.length)]; }while(BANK.indexOf(pick)===cur);
-    cur=BANK.indexOf(pick);
-  }
-  render(BANK[cur],cur);
+  if(mode==="wrong" && wrongIdxs().length===0){ exitWrongMode(true); return; }
+  const idx = (nextIdx!=null && nextIdx!==cur) ? nextIdx : pickIdx();
+  nextIdx=null;
+  if(idx==null) return;
+  show(idx);
 }
 
 function enterWrongMode(){
-  if(wrongInBank().length===0) return;
+  if(wrongIdxs().length===0) return;
   mode="wrong"; wrongbook.classList.add("active"); modeBanner.classList.add("show");
+  nextIdx=null;   // 先前預抽的下一題是「全部」模式抽的，換模式就作廢
   refreshWrongUI(); next();
 }
 function exitWrongMode(cleared){
   mode="all"; wrongbook.classList.remove("active"); modeBanner.classList.remove("show");
+  nextIdx=null;
   refreshWrongUI();
   if(cleared){ stem.textContent="🎉 錯題本清空了！已切回全部題目。"; }
   next();
@@ -673,6 +732,8 @@ async function loadCloudWrong(){
   try{
     const localIds=[...wrongSet];
     let pushOk=true;
+    // 已練習題數跟錯題本互不相干，同時發出去不必排隊等
+    const statsJob=sb.from("ecg_quiz_stats").select("practiced").eq("user_id",currentUser.id).maybeSingle();
     if(localIds.length){
       // ignoreDuplicates:true → ON CONFLICT DO NOTHING，不需要 UPDATE policy；
       // 並檢查回傳 error（supabase-js 不會 throw），上雲失敗就不能拿雲端覆蓋本機。
@@ -687,7 +748,7 @@ async function loadCloudWrong(){
       else{ data.forEach(r=>wrongSet.add(r.question_id)); } // 合併不覆蓋，避免流失
       saveWrong(); refreshWrongUI();
     }
-    const {data:st}=await sb.from("ecg_quiz_stats").select("practiced").eq("user_id",currentUser.id).maybeSingle();
+    const {data:st}=await statsJob;
     const cloudP=st?(st.practiced||0):0;
     done=Math.max(done, cloudP); doneCount.textContent=done; try{localStorage.setItem(DONE_KEY,String(done));}catch(e){} syncDone();
   }catch(e){}
@@ -712,15 +773,41 @@ if(sb){
   sb.auth.onAuthStateChange((_e,session)=>{ const was=currentUser; currentUser=session?session.user:null; setAuthUI(); if(currentUser&&!was) loadCloudWrong(); });
 }else setAuthUI();
 
-fetch("./quiz.json").then(r=>r.json()).then(d=>{
-  BANK=d.questions||[];
-  if(!BANK.length){stem.textContent="目前尚無題目。"; return;}
-  urlToId.clear(); BANK.forEach(q=>{ if(q.sourceUrl) urlToId.set(normUrl(q.sourceUrl), q.id); });
+/* 開場：manifest（3.8KB）→ 第一題那塊（~37KB）→ 出題。urlmap 慢慢來沒關係，
+   它只影響「相關篇章」要不要變成站內跳轉，而那要按了「看解答」才看得到。 */
+function startFirst(){
   doneCount.textContent=done; refreshWrongUI();
   const want=new URLSearchParams(location.search).get("q");
-  const startIdx = want ? BANK.findIndex(q=>q.id===want) : -1;
-  if(startIdx>=0){ cur=startIdx; render(BANK[cur],cur); } else next();
-}).catch(()=>{stem.textContent="題庫載入失敗。";});
+  const wantIdx = want!=null ? idToIdx.get(want) : undefined;
+  if(wantIdx!==undefined) show(wantIdx); else next();
+}
+function loadUrlMap(){
+  fetch(BANK_DIR+"urlmap.json?v="+META.version).then(r=>r.ok?r.json():null).then(m=>{
+    if(!m) return;
+    for(const u in m) urlToId.set(normUrl(u), m[u]);
+  }).catch(()=>{});
+}
+/* 備援：bank/ 沒生出來（例如忘了跑 scripts/build-ecg-quiz-bank.py）時，退回舊的整包載入。
+   會慢，但至少能用。 */
+function bootLegacy(){
+  fetch("./quiz.json").then(r=>r.json()).then(d=>{
+    const qs=d.questions||[];
+    if(!qs.length){ stem.textContent="目前尚無題目。"; return; }
+    META={version:"legacy", count:qs.length, chunkSize:qs.length};
+    chunkJobs.set(0, Promise.resolve(qs));
+    qs.forEach((q,i)=>{ BANK[i]=q; idToIdx.set(q.id,i); if(q.sourceUrl) urlToId.set(normUrl(q.sourceUrl), q.id); });
+    startFirst();
+  }).catch(()=>{ stem.textContent="題庫載入失敗。"; });
+}
+(window.__ecgManifest || fetch(BANK_DIR+"manifest.json").then(r=>{ if(!r.ok) throw new Error("manifest HTTP "+r.status); return r.json(); }))
+  .then(m=>{
+    if(!m||!m.count||!Array.isArray(m.ids)) throw new Error("manifest 格式不對");
+    META=m;
+    m.ids.forEach((id,i)=>idToIdx.set(id,i));
+    startFirst();
+    loadUrlMap();
+  })
+  .catch(err=>{ console.warn("題庫索引載入失敗，改用整包模式：",err.message||err); bootLegacy(); });
 </script>
 </body>
 </html>

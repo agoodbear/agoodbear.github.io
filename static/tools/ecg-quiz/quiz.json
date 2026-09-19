@@ -1,5 +1,5 @@
 {
-  "_note": "題庫：真實 Dr. Smith's ECG Blog 12-lead 案例。答案與富文本詳解依 Smith 原文結論撰寫、出處連回原文、附相關篇章。圖 hotlink drsmithsecgblog.com。由 ecg_smith_articles 經多 agent 出題＋對抗式查核生成。",
+  "_note": "題庫：真實 Dr. Smith's ECG Blog 12-lead 案例。答案與富文本詳解依 Smith 原文結論撰寫、出處連回原文、附相關篇章。圖 hotlink drsmithsecgblog.com。由 ecg_smith_articles 經多 agent 出題＋對抗式查核生成。 ⚠️ 這是 SSOT，前端不直接讀它：改完務必重跑 scripts/build-ecg-quiz-bank.py 重建 bank/（前端載的是 bank/），否則站上還是舊題。",
   "questions": [
     {
       "id": "smith-1944",
