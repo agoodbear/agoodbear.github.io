@@ -76,8 +76,11 @@ window.__ecgManifest.catch(()=>{});   // 先接住，避免 unhandled rejection
   .figure{position:relative;height:248px;background:#fff;border-bottom:1px solid var(--line);overflow:hidden}
   .figure.has-img{height:auto;max-height:480px;display:flex;align-items:center;justify-content:center;background:#fbfdff}
   .figure.has-img .ecg-img{width:100%;height:auto;max-height:480px;object-fit:contain;display:block;cursor:zoom-in}
-  .zoom-hint{position:absolute;right:14px;bottom:12px;font-size:.72rem;color:#fff;font-weight:600;
-    background:rgba(15,23,42,.55);padding:5px 10px;border-radius:8px;pointer-events:none}
+  /* 出處標籤與「點圖放大」都移到圖片下方這一條，不再蓋在 ECG 上（左上角正好是 lead I） */
+  .figcap{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+    padding:9px 14px;background:#fff;border-bottom:1px solid var(--line)}
+  .figcap:empty{display:none}
+  .zoom-hint{font-size:.72rem;color:var(--ink-soft);font-weight:600;pointer-events:none;white-space:nowrap}
   .img-fail{position:absolute;right:14px;bottom:12px;font-size:.72rem;color:#fff;font-weight:600;
     background:rgba(192,57,43,.88);padding:5px 10px;border-radius:8px;pointer-events:none}
   .ecg-paper{position:absolute;inset:0;background-color:#fffafa;
@@ -89,9 +92,9 @@ window.__ecgManifest.catch(()=>{});   // 先接住，避免 unhandled rejection
     background-size:8px 8px,8px 8px,40px 40px,40px 40px;}
   .ecg-trace{position:absolute;inset:0;width:100%;height:100%}
   .ecg-trace path{stroke:#c0392b;stroke-width:2.1;fill:none;stroke-linejoin:round;stroke-linecap:round}
-  .src-chip{position:absolute;left:14px;top:14px;display:inline-flex;align-items:center;gap:6px;
-    font-size:.76rem;font-weight:700;color:#fff;padding:6px 12px;border-radius:999px;
-    background:rgba(15,126,199,.92);box-shadow:0 4px 12px rgba(0,0,0,.16)}
+  .src-chip{display:inline-flex;align-items:center;gap:6px;
+    font-size:.74rem;font-weight:700;color:#fff;padding:5px 11px;border-radius:999px;
+    background:rgba(15,126,199,.92)}
   .src-chip .dot{width:7px;height:7px;border-radius:50%;background:#fff;opacity:.9}
   .ph-tag{position:absolute;right:14px;bottom:12px;font-size:.7rem;color:#9a5b58;
     background:rgba(255,255,255,.78);padding:4px 9px;border-radius:8px;font-weight:600}
@@ -291,6 +294,7 @@ window.__ecgManifest.catch(()=>{});   // 先接住，避免 unhandled rejection
 
   <section class="card" id="card" aria-live="polite">
     <div class="figure" id="figure"></div>
+    <div class="figcap" id="figcap"></div>
     <div class="body">
       <h1 class="stem" id="stem">載入中…</h1>
       <ul class="options" id="options"></ul>
@@ -461,7 +465,7 @@ try{ wrongSet=new Set(JSON.parse(localStorage.getItem(WRONG_KEY)||"[]")); }catch
 try{ done=parseInt(localStorage.getItem(DONE_KEY)||"0")||0; }catch(e){}
 
 const $=id=>document.getElementById(id);
-const figure=$("figure"),stem=$("stem"),optionsEl=$("options"),reveal=$("reveal"),
+const figure=$("figure"),figcap=$("figcap"),stem=$("stem"),optionsEl=$("options"),reveal=$("reveal"),
   ansText=$("ansText"),explainEl=$("explain"),relatedEl=$("related"),relatedList=$("relatedList"),
   sourceEl=$("source"),tagsEl=$("tags"),revealBtn=$("revealBtn"),nextBtn=$("nextBtn"),
   doneCount=$("doneCount"),wrongCount=$("wrongCount"),wrongbook=$("wrongbook"),
@@ -492,14 +496,16 @@ function render(q,idx){
   picked=null; revealed=false;
   if(q.image){
     figure.className="figure has-img";
-    figure.innerHTML='<img class="ecg-img" src="'+q.image+'" alt="ECG 12 導程" referrerpolicy="no-referrer" tabindex="0" role="button" aria-label="放大檢視 ECG 圖（按 Enter 開啟）">'+srcChip(q)+'<span class="zoom-hint">🔍 點圖放大</span>';
+    figure.innerHTML='<img class="ecg-img" src="'+q.image+'" alt="ECG 12 導程" referrerpolicy="no-referrer" tabindex="0" role="button" aria-label="放大檢視 ECG 圖（按 Enter 開啟）">';
+    figcap.innerHTML=srcChip(q)+'<span class="zoom-hint">🔍 點圖放大</span>';
     const img=figure.querySelector(".ecg-img");
     img.addEventListener("click",()=>openLightbox(q.image));
     img.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "||e.code==="Space"){ e.preventDefault(); e.stopPropagation(); openLightbox(q.image); } });
-    img.addEventListener("error",()=>{ if(!img.isConnected) return; figure.className="figure"; figure.innerHTML=placeholder(q.source,idx)+srcChip(q)+'<span class="img-fail">⚠️ 原圖載入失敗</span>'; });
+    img.addEventListener("error",()=>{ if(!img.isConnected) return; figure.className="figure"; figure.innerHTML=placeholder(q.source,idx)+'<span class="img-fail">⚠️ 原圖載入失敗</span>'; figcap.innerHTML=srcChip(q); });
   }else{
     figure.className="figure";
-    figure.innerHTML=placeholder(q.source,idx)+srcChip(q);
+    figure.innerHTML=placeholder(q.source,idx);
+    figcap.innerHTML=srcChip(q);
   }
   stem.textContent=q.stem;
   optionsEl.innerHTML=q.options.map((o,i)=>'<button class="opt" data-i="'+i+'"><span class="key">'+KEYS[i]+'</span><span>'+o+'</span><span class="mark"></span></button>').join("");
