@@ -23,7 +23,9 @@ tags:
   - serial ECG
   - Stephen Smith
   - Amal Mattu
-# 🗂 改稿版次｜v1 · 發佈 · 2026-09-19 10:42
+# 🗂 改稿版次｜v1 · 發佈後修訂 · 2026-09-19 19:25
+#   v1 · 發佈後修訂｜2026-09-19 19:25｜Bear 指示：拿掉註腳 [^1]、[^15] 的利益揭露括號
+#   v1 · 發佈 · 2026-09-19 10:42
 #   v1 · 發佈｜2026-09-19 10:42｜Bear 指示發佈：Fig. 16 換成出處確定的 Critical Care Study Guide Figure 19-3、Smith四變量公式→Smith 4 variable formula（3 處）、「ECG描記之後」→「做完ECG之後」、拿掉 3 個 cc草稿 註解、draft→false（日期維持 09-17）
 #   v1 · 第 9 輪續｜2026-09-19 10:26｜補回排版時沒存進去的 highlight（編輯器漏洞＋CC 同時改檔）：原則四比例公式 ①–④、原則六 ①–④ 小標，淺綠 → ⏳ 待確認
 #   v1 · 第 9 輪續｜2026-09-19 10:00｜對話指示：injury current→current of injury（全文統一）、原則一開頭 **** 合併成一段粗體、註腳去掉查證旁白（[^2a] 待確認與摘要逐字、[^2] ⚠️、[^21] 見 Results），[^23] 補成完整書目 → ⏳ 待確認
@@ -792,7 +794,7 @@ Bischof那篇是2016年、Smith那篇是2006年、Raitt那篇是1995年。**這�
 
 > 本文引用之圖片，著作權均歸原作者與出版者所有，此處僅作醫學教育說明之用，並已於各圖圖說標明出處。
 
-[^1]: Helseth HC, Mansur P, El-Baba M, McLaren JTT, de Alencar JN, Smith SW. Electrocardiographic principles for the diagnosis of occlusion myocardial infarction. Eur Heart J Acute Cardiovasc Care. 2026. DOI: 10.1093/ehjacc/zuag114（利益揭露：Stephen W. Smith 為 Powerful Medical 股東，該公司即 Queen of Hearts AI 心電圖模型之開發者；作者聲明使用 Gemini 協助語言潤稿）
+[^1]: Helseth HC, Mansur P, El-Baba M, McLaren JTT, de Alencar JN, Smith SW. Electrocardiographic principles for the diagnosis of occlusion myocardial infarction. Eur Heart J Acute Cardiovasc Care. 2026. DOI: 10.1093/ehjacc/zuag114
 [^2a]: Menown IB, Mackenzie G, Adgey AA. Optimizing the initial 12-lead electrocardiographic diagnosis of acute myocardial infarction. Eur Heart J. 2000;21(4):275-283. PMID: 10653675. DOI: 10.1053/euhj.1999.1748；The Joint European Society of Cardiology/American College of Cardiology Committee. Myocardial infarction redefined—a consensus document of the Joint European Society of Cardiology/American College of Cardiology Committee for the Redefinition of Myocardial Infarction. Eur Heart J. 2000;21(18):1502-1513. PMID: 10973764／J Am Coll Cardiol. 2000;36(3):959-969. PMID: 10987628
 [^2]: Macfarlane PW, Browne D, Devine B, et al. Modification of ACC/ESC criteria for acute myocardial infarction. J Electrocardiol. 2004;37 Suppl:98-103. PMID: 15534817. DOI: 10.1016/j.jelectrocard.2004.08.032
 [^3]: de Alencar Neto JN, et al. Systematic review and meta-analysis of diagnostic test accuracy of ST-segment elevation for acute coronary occlusion. Int J Cardiol. 2024;402:131889. PMID: 38382857. DOI: 10.1016/j.ijcard.2024.131889
@@ -807,7 +809,7 @@ Bischof那篇是2016年、Smith那篇是2006年、Raitt那篇是1995年。**這�
 [^12]: Aslanger E, Yıldırımtürk Ö, Şimşek B, et al. DIagnostic accuracy oF electrocardiogram for acute coronary OCClUsion resuLTing in myocardial infarction (DIFOCCULT Study). Int J Cardiol Heart Vasc. 2020;30:100603.
 [^13]: Smith SW, Dodd KW, Henry TD, Dvorak DM, Pearce LA. Diagnosis of ST-elevation myocardial infarction in the presence of left bundle branch block with the ST-elevation to S-wave ratio in a modified Sgarbossa rule. Ann Emerg Med. 2012;60(6):766-76. PMID: 22939607. DOI: 10.1016/j.annemergmed.2012.07.119
 [^14]: Klein LR, Shroff GR, Beeman W, Smith SW. Electrocardiographic criteria to differentiate acute anterior ST-elevation myocardial infarction from left ventricular aneurysm. Am J Emerg Med. 2015;33(6):786-90. PMID: 25862248. DOI: 10.1016/j.ajem.2015.03.044
-[^15]: Meyers HP, Simančík F, Herman R, et al. Hyperacute T Waves Are Specific for Occlusion Myocardial Infarction, Even Without Diagnostic ST-Segment Elevation. JACC Adv. 2025;4(10 Pt 2):102120. PMID: 40892623. PMCID: PMC12791876. DOI: 10.1016/j.jacadv.2025.102120（利益揭露：部分由 Powerful Medical 資助）
+[^15]: Meyers HP, Simančík F, Herman R, et al. Hyperacute T Waves Are Specific for Occlusion Myocardial Infarction, Even Without Diagnostic ST-Segment Elevation. JACC Adv. 2025;4(10 Pt 2):102120. PMID: 40892623. PMCID: PMC12791876. DOI: 10.1016/j.jacadv.2025.102120
 [^16]: Moon JCC, De Arenaza DP, Elkington AG, et al. The pathologic basis of Q-wave and non-Q-wave myocardial infarction: a cardiovascular magnetic resonance study. J Am Coll Cardiol. 2004;44(3):554-560. PMID: 15358019
 [^17]: Smith SW. Upwardly concave ST segment morphology is common in acute left anterior descending coronary occlusion. J Emerg Med. 2006;31(1):69-77. PMID: 16798159. DOI: 10.1016/j.jemermed.2005.09.008
 [^18]: Stone GW, Cox D, Garcia E, et al. Normal flow (TIMI-3) before mechanical reperfusion therapy is an independent determinant of survival in acute myocardial infarction: analysis from the primary angioplasty in myocardial infarction trials. Circulation. 2001;104(6):636-41. PMID: 11489767
