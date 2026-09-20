@@ -15,6 +15,10 @@ const SUBSCRIBERS_PATH = "/subscriptions/emails";
 const SUBSCRIBERS_META_PATH = "/subscriptions/meta";
 const NOTIFIED_POSTS_PATH = "/subscriptions/notifiedPosts";
 const API_PREFIX = "/write-studio-api";
+// Notification delivery: how many subscriber mails may be in flight at once, and how
+// long one sender may hold a post before another run is allowed to take over.
+const MAIL_CONCURRENCY = 4;
+const NOTIFY_LOCK_MS = 10 * 60 * 1000;
 const MAX_BODY_BYTES = 60 * 1024 * 1024;
 const SITE_URL = "https://agoodbear.com";
 const SITE_NAME = "急診熊心聲部落格";
@@ -380,6 +384,7 @@ function buildGuidelineDocPayload(input, existingDoc, forcedId) {
 
 exports.writeStudioApi = functions
   .region("asia-east1")
+  .runWith({ timeoutSeconds: 540, memory: "512MB" })
   .https.onRequest(async (req, res) => {
     addCors(res);
     if (req.method === "OPTIONS") {
@@ -778,7 +783,50 @@ exports.writeStudioApi = functions
         return;
       }
 
+      // ── Repair the notification ledger (POST /notify-mark-sent) ──
+      // Records "this address already received this post" WITHOUT sending anything.
+      // Used to backfill deliveries that happened before the per-recipient ledger existed.
+      if (path === `${API_PREFIX}/notify-mark-sent` && method === "POST") {
+        if (!requireAuth(req, res)) return;
+
+        const body = await parseJsonBody(req);
+        const slug = sanitizeText(body.slug, "", 200);
+        const emails = Array.isArray(body.emails) ? body.emails : [];
+        if (!slug || emails.length === 0) {
+          sendJson(res, 400, { ok: false, error: "slug and emails are required." });
+          return;
+        }
+
+        const markKey = slugToKey(slug);
+        const markNow = new Date().toISOString();
+        const markUpdates = {};
+        let markedCount = 0;
+        for (const raw of emails) {
+          const email = normalizeEmail(raw);
+          if (!isValidEmail(email)) continue;
+          markUpdates[`recipients/${subscriberIdFor(email)}`] = { sentAt: markNow, backfilled: true };
+          markedCount++;
+        }
+        if (markedCount === 0) {
+          sendJson(res, 400, { ok: false, error: "No valid email addresses." });
+          return;
+        }
+
+        await rtdb.ref(`${NOTIFIED_POSTS_PATH}/${markKey}`).update(markUpdates);
+        const markSnap = await rtdb.ref(`${NOTIFIED_POSTS_PATH}/${markKey}/recipients`).get();
+        sendJson(res, 200, {
+          ok: true,
+          slug,
+          marked: markedCount,
+          recipientsInLedger: markSnap.exists() ? Object.keys(markSnap.val() || {}).length : 0,
+        });
+        return;
+      }
+
       // ── Notify new ECG posts (POST /notify-new-posts) ──
+      // Delivery is tracked per (post, subscriber). The old code only wrote the
+      // "already notified" marker after the whole send loop finished, so a run killed by
+      // the function timeout left no trace and the next deploy re-mailed everyone.
       if (path === `${API_PREFIX}/notify-new-posts` && method === "POST") {
         if (!requireAuth(req, res)) return;
 
@@ -789,69 +837,130 @@ exports.writeStudioApi = functions
           return;
         }
 
-        // Filter out already-notified posts
-        const notifiedSnap = await rtdb.ref(NOTIFIED_POSTS_PATH).get();
-        const notifiedMap = notifiedSnap.exists() ? notifiedSnap.val() : {};
-        const newPosts = ecgPosts.filter((p) => !notifiedMap[slugToKey(p.slug)]);
+        const ledgerSnap = await rtdb.ref(NOTIFIED_POSTS_PATH).get();
+        const ledger = ledgerSnap.exists() ? (ledgerSnap.val() || {}) : {};
 
-        if (newPosts.length === 0) {
+        // `notifiedAt` is the legacy marker written before per-recipient tracking existed;
+        // posts carrying it are finished and must never be re-sent.
+        const pendingPosts = ecgPosts.filter((p) => {
+          const entry = ledger[slugToKey(p.slug)];
+          return !(entry && (entry.completedAt || entry.notifiedAt));
+        });
+
+        if (pendingPosts.length === 0) {
           sendJson(res, 200, { ok: true, message: "All posts already notified.", notified: 0 });
           return;
         }
 
-        // Get all subscribers
         const subscribersSnap = await rtdb.ref(SUBSCRIBERS_PATH).get();
-        const subscribers = subscribersSnap.exists() ? subscribersSnap.val() : {};
-        const emails = Object.values(subscribers)
-          .map((s) => s.email)
-          .filter(Boolean);
+        const subscribers = subscribersSnap.exists() ? (subscribersSnap.val() || {}) : {};
+        const audience = Object.entries(subscribers)
+          .map(([id, s]) => ({ id, email: s && s.email }))
+          .filter((r) => r.email);
 
-        if (emails.length === 0) {
+        if (audience.length === 0) {
           sendJson(res, 200, { ok: true, message: "No subscribers.", notified: 0 });
           return;
         }
 
-        // Send emails
-        const transporter = createMailTransporter();
+        // One sender per post at a time: an overlapping invocation backs off instead of
+        // mailing the same post twice.
+        const claimedPosts = [];
+        const busySlugs = [];
+        for (const post of pendingPosts) {
+          const lockRef = rtdb.ref(`${NOTIFIED_POSTS_PATH}/${slugToKey(post.slug)}/lock`);
+          const tx = await lockRef.transaction((current) => {
+            const now = Date.now();
+            if (current && Number(current.expiresAt) > now) return undefined;
+            return { lockedAt: now, expiresAt: now + NOTIFY_LOCK_MS };
+          });
+          if (tx.committed) claimedPosts.push(post);
+          else busySlugs.push(post.slug);
+        }
+
+        if (claimedPosts.length === 0) {
+          sendJson(res, 200, {
+            ok: true,
+            message: "Another run is already sending these posts.",
+            notified: 0,
+            busy: busySlugs,
+          });
+          return;
+        }
+
+        // Each subscriber gets one mail listing exactly the posts they are still missing.
+        const plan = audience
+          .map((r) => ({
+            id: r.id,
+            email: r.email,
+            missing: claimedPosts.filter((p) => {
+              const recipients = (ledger[slugToKey(p.slug)] || {}).recipients || {};
+              return !recipients[r.id];
+            }),
+          }))
+          .filter((r) => r.missing.length > 0);
+
+        const transporter = createMailTransporter({ pool: true, maxConnections: MAIL_CONCURRENCY });
         let sentCount = 0;
         const errors = [];
 
-        for (const email of emails) {
+        try {
+          await runWithConcurrency(plan, MAIL_CONCURRENCY, async (r) => {
+            try {
+              const unsubLink = generateUnsubscribeLink(r.email);
+              await transporter.sendMail({
+                from: `"${SITE_NAME}" <${process.env.GMAIL_USER}>`,
+                to: r.email,
+                subject: `📝 ${SITE_NAME}｜新心電圖文章通知`,
+                html: buildNotificationEmail(r.missing, unsubLink),
+                text: buildNotificationEmailText(r.missing, unsubLink),
+                headers: {
+                  "List-Unsubscribe": `<${unsubLink}>`,
+                  "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+                },
+              });
+              // Written immediately after each send — this is what makes a retry safe.
+              const sentAt = new Date().toISOString();
+              const updates = {};
+              for (const p of r.missing) {
+                updates[`${slugToKey(p.slug)}/recipients/${r.id}`] = { sentAt };
+              }
+              await rtdb.ref(NOTIFIED_POSTS_PATH).update(updates);
+              sentCount++;
+            } catch (err) {
+              functions.logger.error(`Failed to send to ${r.email}`, err);
+              errors.push({ email: r.email.slice(0, 3) + "***", error: err.message });
+            }
+          });
+        } finally {
           try {
-            const unsubLink = generateUnsubscribeLink(email);
-            const htmlBody = buildNotificationEmail(newPosts, unsubLink);
-            const textBody = buildNotificationEmailText(newPosts, unsubLink);
-            await transporter.sendMail({
-              from: `"${SITE_NAME}" <${process.env.GMAIL_USER}>`,
-              to: email,
-              subject: `📝 ${SITE_NAME}｜新心電圖文章通知`,
-              html: htmlBody,
-              text: textBody,
-              headers: {
-                "List-Unsubscribe": `<${unsubLink}>`,
-                "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
-              },
-            });
-            sentCount++;
-          } catch (err) {
-            functions.logger.error(`Failed to send to ${email}`, err);
-            errors.push({ email: email.slice(0, 3) + "***", error: err.message });
+            transporter.close();
+          } catch (closeErr) {
+            functions.logger.warn("Mail transporter close failed", closeErr);
           }
         }
 
-        // Mark posts as notified
-        const now = new Date().toISOString();
-        const updates = {};
-        for (const p of newPosts) {
-          updates[slugToKey(p.slug)] = { notifiedAt: now, title: p.title || p.slug };
+        // A post is finished only once every current subscriber is in its recipient list.
+        const results = [];
+        for (const post of claimedPosts) {
+          const key = slugToKey(post.slug);
+          const snap = await rtdb.ref(`${NOTIFIED_POSTS_PATH}/${key}/recipients`).get();
+          const recipients = snap.exists() ? (snap.val() || {}) : {};
+          const delivered = audience.filter((r) => recipients[r.id]).length;
+          const completed = delivered >= audience.length;
+          const patch = { title: post.title || post.slug, lock: null };
+          if (completed) patch.completedAt = new Date().toISOString();
+          await rtdb.ref(`${NOTIFIED_POSTS_PATH}/${key}`).update(patch);
+          results.push({ slug: post.slug, delivered, audience: audience.length, completed });
         }
-        await rtdb.ref(NOTIFIED_POSTS_PATH).update(updates);
 
         sendJson(res, 200, {
           ok: true,
           notified: sentCount,
-          newPostsCount: newPosts.length,
-          subscriberCount: emails.length,
+          newPostsCount: claimedPosts.length,
+          subscriberCount: audience.length,
+          results,
+          busy: busySlugs.length > 0 ? busySlugs : undefined,
           errors: errors.length > 0 ? errors : undefined,
         });
         return;
@@ -870,14 +979,31 @@ function slugToKey(slug) {
   return String(slug || "").replace(/[.#$/[\]]/g, "_");
 }
 
-function createMailTransporter() {
+function createMailTransporter(options = {}) {
   return nodemailer.createTransport({
     service: "gmail",
     auth: {
       user: process.env.GMAIL_USER,
       pass: process.env.GMAIL_APP_PASSWORD,
     },
+    ...options,
   });
+}
+
+function subscriberIdFor(email) {
+  return crypto.createHash("sha256").update(normalizeEmail(email)).digest("hex");
+}
+
+// Runs `worker` over `items` with at most `limit` in flight. Keeps the whole send
+// well inside the function timeout without firing 24 SMTP connections at once.
+async function runWithConcurrency(items, limit, worker) {
+  const queue = items.slice();
+  const runners = Array.from({ length: Math.max(1, Math.min(limit, queue.length)) }, async () => {
+    while (queue.length > 0) {
+      await worker(queue.shift());
+    }
+  });
+  await Promise.all(runners);
 }
 
 function generateUnsubscribeToken(email) {

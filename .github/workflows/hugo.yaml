@@ -78,11 +78,20 @@ jobs:
           POST_COUNT=$(echo "$ECG_POSTS" | node -e "const d=require('fs').readFileSync('/dev/stdin','utf8');console.log(JSON.parse(d).length)")
           echo "Found $POST_COUNT ECG posts"
           if [ "$POST_COUNT" -gt 0 ]; then
-            curl -sf -X POST "$NOTIFY_API_URL" \
+            # --max-time must outlast a full send (the API is synchronous). The response
+            # body carries per-post delivery counts; subscriber addresses are masked by
+            # the API, so it is safe to print in a public Actions log.
+            HTTP_CODE=$(curl -s -o /tmp/notify-response.json -w '%{http_code}' -X POST "$NOTIFY_API_URL" \
               -H "Content-Type: application/json" \
               -H "X-Write-Studio-Token: $WRITE_STUDIO_TOKEN" \
               -d "{\"posts\": $ECG_POSTS}" \
-              --max-time 30 || echo "::warning::Notification API call failed (non-blocking)"
+              --max-time 300) || HTTP_CODE="000"
+            echo "Notify API HTTP $HTTP_CODE"
+            cat /tmp/notify-response.json 2>/dev/null || true
+            echo
+            if [ "$HTTP_CODE" != "200" ]; then
+              echo "::warning::Notification API call failed (HTTP $HTTP_CODE, non-blocking)"
+            fi
           fi
 
       - name: Resubmit sitemap to Google Search Console
