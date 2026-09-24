@@ -52,7 +52,9 @@ sections:
 
 **是什麼：** Smith本週宣布，PMcardio Queen of Hearts（AI心電圖模型）已取得美國FDA的De Novo授權，用途是辨識提示需緊急處置之急性冠心症的心電圖表現。[^smith-09-19] 同篇附上一位中年男性胸痛病例：心電圖被電腦與醫師判讀為正常，重複的高敏感度troponin I都在參考上限以下，病人出院；之後以心室顫動心跳停止被救護車送回，血管攝影證實急性RCA閉塞。[^smith-09-19]
 
-**為什麼要在意：** Smith引用的先前研究中，急診醫師與心臟科醫師判讀STEMI等價型與類STEMI心電圖的準確度都只有約65%，Queen of Hearts約89%（待確認）。[^shroyer-2025][^smith-09-19] 本例的教訓是**troponin只有在心電圖完全沒有缺血表現時才能信任**；原文結論是<mark>不是心電圖「無法診斷」，是醫師「無法診斷」</mark>。[^smith-09-19] {{< grade "單一病例 ＋ 法規授權 · 非前瞻驗證" "opinion" >}}
+**為什麼要在意：** Smith引用的先前研究中，急診醫師與心臟科醫師判讀STEMI等價型與類STEMI心電圖的準確度都只有約65%，Queen of Hearts約89%。[^shroyer-2025][^smith-09-19] 本例的教訓是**troponin只有在心電圖完全沒有缺血表現時才能信任**；原文結論是<mark>不是心電圖「無法診斷」，是醫師「無法診斷」</mark>。[^smith-09-19] {{< grade "單一病例 ＋ 法規授權 · 非前瞻驗證" "opinion" >}}
+
+**利益揭露：** Smith與共同作者Meyers持有Queen of Hearts開發商Powerful Medical的股份，閱讀這則宣布與上面的準確度比較時要把這點放在心上。[^shroyer-2025-coi]
 
 **所以呢：** FDA授權代表這類工具可以進入美國醫療體系，不代表它已在台灣的病人族群與機器上驗證。可以把AI當作「第二位讀者」，用來提醒自己回頭再看；但決定仍要回到症狀、連續心電圖與臨床脈絡。
 
@@ -93,6 +95,8 @@ Smith心電圖部落格本週兩則病例（9-14、9-19）主題一致，都是�
 [^smith-09-19]: Smith SW、Grauer K，〈Queen of Hearts Now FDA Approved!! What’s her take on this “Non-diagnostic” ECG?〉，Dr. Smith’s ECG Blog（Smith心電圖部落格），2026-09-19。原文：「It was interpreted as normal by the computer and by the physicians.」；「Angiography confirmed an acute RCA occlusion.」；「Troponins can only be trusted when the ECG is completely non-ischemic.」。[跳到原文](https://drsmithsecgblog.com/queen-of-hearts-now-fda-approved-whats-her-take-on-this-non-diagnostic-ecg/#:~:text=It%20was%20interpreted%20as%20normal%20by%20the%20computer)
 
 [^shroyer-2025]: Shroyer S、Mehta S、Thukral N等（含Meyers HP、Smith SW），〈Accuracy of cath lab activation decisions for STEMI-equivalent and mimic ECGs: Physicians vs. AI (Queen of Hearts by PMcardio)〉，American Journal of Emergency Medicine（美國急診醫學期刊），2025。原文：「Interpretation accuracies were similar between EPs and cardiologists」。[跳到原文](https://pubmed.ncbi.nlm.nih.gov/40763602/#:~:text=Interpretation%20accuracies%20were%20similar%20between%20EPs%20and%20cardiologists)
+
+[^shroyer-2025-coi]: Shroyer S等，American Journal of Emergency Medicine（美國急診醫學期刊），2025，利益衝突聲明。原文：「SWS reports stock ownership in Powerful Medical」；「HPM reports stock ownership in Powerful Medical」。[跳到原文](https://pubmed.ncbi.nlm.nih.gov/40763602/#:~:text=SWS%20reports%20stock%20ownership%20in%20Powerful%20Medical)
 
 [^chung-fabry]: Chung W、Tung C、Liu T等，〈Progressive Conduction System Disease Preceding Hypertrophy in IVS4 + 919G > A Fabry Variant: a Population-based Electrocardiographic Study〉，Europace（歐洲節律期刊），2026-09-22。原文：「Combining left ventricular hypertrophy with conduction abnormalities, ECG detection achieved 88% sensitivity, exceeding echocardiographic criteria alone (51.5%).」。[跳到原文](https://academic.oup.com/europace/advance-article/doi/10.1093/europace/euag258/8827717#:~:text=ECG%20detection%20achieved%2088%25%20sensitivity)
 
