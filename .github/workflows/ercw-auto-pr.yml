@@ -1,29 +1,45 @@
 name: ER Cardio Weekly auto PR
 
-# 雲端 routine 把週報草稿推到 claude/ercw-YYYY-WNN 分支 → 自動對 hugo-source 開 PR，
-# Bear 審稿後手動合併才會上線（合併進 hugo-source 才觸發 hugo.yaml 部署）。
+# 雲端 routine 把週報草稿推到 claude/ercw-YYYY-WNN 分支 → 自動對 hugo-source 開 PR。
+# 若分支最新 commit 訊息含 [ercw-verified]（routine 的獨立查核代理通過才會加）→ 自動合併並觸發部署；
+# 沒有這個標記 → PR 留著等 Bear 看。
+# 注意：GITHUB_TOKEN 合併產生的 push 不會觸發 hugo.yaml，所以合併後要用 workflow_dispatch 手動觸發部署。
 on:
   push:
     branches:
       - "claude/ercw-*"
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
+  actions: write
+
+concurrency:
+  group: ercw-${{ github.ref_name }}
+  cancel-in-progress: false
 
 jobs:
   open-pr:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      BRANCH: ${{ github.ref_name }}
+      HEAD_MSG: ${{ github.event.head_commit.message }}
     steps:
       - name: Open PR if none exists
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO: ${{ github.repository }}
-          BRANCH: ${{ github.ref_name }}
         run: |
           existing=$(gh pr list -R "$REPO" --head "$BRANCH" --state open --json number -q '.[0].number')
-          if [ -n "$existing" ]; then echo "PR #$existing already open"; exit 0; fi
-          week="${BRANCH#claude/ercw-}"
-          gh pr create -R "$REPO" --base hugo-source --head "$BRANCH" \
-            --title "ER Cardio Weekly ${week}（待審）" \
-            --body "雲端 routine 產出的週報草稿。查證表與檢查結果見 commit／routine 回報；審過再合併，合併即上線。"
+          if [ -z "$existing" ]; then
+            week="${BRANCH#claude/ercw-}"
+            gh pr create -R "$REPO" --base hugo-source --head "$BRANCH" \
+              --title "ER Cardio Weekly ${week}" \
+              --body "雲端 routine 產出的週報。帶 [ercw-verified] 標記時會自動合併上線；沒有標記代表查核未過，等 Bear 處理。"
+          fi
+
+      - name: Auto-merge and deploy when verified
+        if: contains(env.HEAD_MSG, '[ercw-verified]')
+        run: |
+          gh pr merge -R "$REPO" "$BRANCH" --merge --delete-branch
+          gh workflow run hugo.yaml -R "$REPO" --ref hugo-source
+          echo "merged $BRANCH and dispatched deploy"
