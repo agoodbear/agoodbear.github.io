@@ -30,7 +30,7 @@ jobs:
       - name: Open PR if none exists
         run: |
           existing=$(gh pr list -R "$REPO" --head "$BRANCH" --state open --json number -q '.[0].number')
-          if [ -z "$existing" ]; then
+          if [ -z "$existing" ] && [ "$(gh api "repos/$REPO/compare/hugo-source...$BRANCH" -q .ahead_by)" != "0" ]; then
             week="${BRANCH#claude/ercw-}"
             gh pr create -R "$REPO" --base hugo-source --head "$BRANCH" \
               --title "ER Cardio Weekly ${week}" \
@@ -43,3 +43,39 @@ jobs:
           gh pr merge -R "$REPO" "$BRANCH" --merge --delete-branch
           gh workflow run hugo.yaml -R "$REPO" --ref hugo-source
           echo "merged $BRANCH and dispatched deploy"
+
+      - name: Wait until live, then LINE Bear
+        if: contains(env.HEAD_MSG, '[ercw-verified]')
+        env:
+          LINE_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          LINE_TO: ${{ secrets.LINE_TO_BEAR }}
+        run: |
+          week="${BRANCH#claude/ercw-}"
+          url="https://agoodbear.com/er-cardio-weekly/$(echo "$week" | tr 'A-Z' 'a-z')/"
+          code=000
+          for i in $(seq 1 40); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$url?v=$(date +%s)")
+            [ "$code" = 200 ] && break
+            sleep 30
+          done
+          if [ "$code" = 200 ]; then
+            text="✅ ER Cardio Weekly ${week} 已上線（獨立查核通過、自動發布）\n${url}"
+          else
+            text="⚠️ ER Cardio Weekly ${week} 已合併但網頁 20 分鐘內沒上線（HTTP ${code}）\n請看部署：https://github.com/${REPO}/actions"
+          fi
+          body=$(jq -n --arg to "$LINE_TO" --arg t "$(printf "$text")" '{to:$to,messages:[{type:"text",text:$t}]}')
+          curl -sf -X POST https://api.line.me/v2/bot/message/push \
+            -H "Authorization: Bearer $LINE_TOKEN" -H 'Content-Type: application/json' -d "$body" && echo "LINE sent"
+
+      - name: LINE Bear when verification failed
+        if: ${{ !contains(env.HEAD_MSG, '[ercw-verified]') }}
+        env:
+          LINE_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          LINE_TO: ${{ secrets.LINE_TO_BEAR }}
+        run: |
+          week="${BRANCH#claude/ercw-}"
+          pr=$(gh pr list -R "$REPO" --head "$BRANCH" --state open --json url -q '.[0].url')
+          text="⚠️ ER Cardio Weekly ${week} 查核沒過，沒有上線\n卡在哪看 PR 內文：${pr:-https://github.com/${REPO}/pulls}"
+          body=$(jq -n --arg to "$LINE_TO" --arg t "$(printf "$text")" '{to:$to,messages:[{type:"text",text:$t}]}')
+          curl -sf -X POST https://api.line.me/v2/bot/message/push \
+            -H "Authorization: Bearer $LINE_TOKEN" -H 'Content-Type: application/json' -d "$body" && echo "LINE sent"
