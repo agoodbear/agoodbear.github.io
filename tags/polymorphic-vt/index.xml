@@ -6,6 +6,7 @@
 &lt;p&gt;接上了ECG monitor，發現心臟跳得很快，隨即做了一張12 lead ECG&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/5ptepv.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"
@@ -29,6 +30,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;No~~是因為T wave太明顯，機器認錯了，經過處理後，就變下圖了。T wave降下來，機器也辨識正確了。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/o3jjk4.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"
@@ -50,6 +52,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;不過這次的個案，非常快的，還沒電擊，心跳就自己降下來了&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/uoc0dz.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"

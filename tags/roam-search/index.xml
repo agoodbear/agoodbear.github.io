@@ -5,6 +5,7 @@
 &lt;p&gt;為什麼這些自認為是重要知識的文章，我最終還是會認為是垃圾呢?因為&lt;mark&gt;多到，不去整理，不用自己理解過後的語言再去描述這篇文章，那麼這篇文章，對我而言，就是沒有任何價值&lt;mark&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/8vwg0a.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"
@@ -26,6 +27,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;&lt;mark&gt;接著把這些文章精讀，提取出重點，再透過自己的語言寫入資料庫內，這就是secondary selection，也是最重要的一步驟&lt;mark&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/bqpo96.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"
@@ -43,6 +45,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;hr&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/0k43pg.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"
@@ -68,20 +71,9 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;li&gt;使用Speak to Roam&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt="Readwise手機App"
-class="image_figure image_internal image_unprocessed"
-src="https://agoodbear.com/images/ipic/jvb083.gif"
-data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
-onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
-/&gt;
-&lt;/picture&gt;
+&lt;figure&gt;
+&lt;video autoplay muted loop playsinline preload="metadata" poster="/videos/study-post-2/jvb083-poster.jpg" aria-label="Readwise手機App" style="max-width:100%;border-radius:8px"&gt;&lt;source src="https://agoodbear.com/videos/study-post-2/jvb083.mp4" type="video/mp4"&gt;&lt;/video&gt;
 &lt;/figure&gt;
-&lt;/p&gt;
 &lt;p&gt;Readwise手機App的好處是可以直接OCR看到的紙本書籍。拍照下來，把重要文字OCR出來，接著就可以Export到Roam裡面去了。&lt;/p&gt;</description></item><item><title>Roam教學:第四集-四種Roam research參考文獻資料的呈現模式</title><link>https://agoodbear.com/post/medium-6efa37de7325/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-6efa37de7325/</guid><description>
 &lt;h3 id="roam教學第四集-四種roam-research參考文獻資料的呈現模式"&gt;&lt;strong&gt;Roam教學&lt;/strong&gt;:第四集-四種Roam research參考文獻資料的呈現模式&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;

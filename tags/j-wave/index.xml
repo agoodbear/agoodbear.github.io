@@ -23,6 +23,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;這張是到院時ECG&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/86dnuj.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"
@@ -49,6 +50,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;下圖是我做電子筆記時常用的圖，讓我能快速複習J point &amp;amp; J wave &amp;amp; S wave&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/ogirrn.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"
@@ -68,6 +70,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;h4 id="所以到底prehospital-ecg有沒有ste"&gt;所以到底prehospital ECG有沒有STE?&lt;/h4&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/9y6g9s.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"

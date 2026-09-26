@@ -8,6 +8,7 @@
 &lt;p&gt;昨天同事傳給我看，問我&lt;strong&gt;是不是STEMI&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/xgqpl7.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"
@@ -46,6 +47,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;這是什麼意思?也就是&lt;strong&gt;可能有高達8成的AMI病患，無法透過STEMI criteria做出AMI的診斷&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/7h4ptc.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"
@@ -69,6 +71,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;讓我們來仔細看看，12 lead ECG，有沒有哪裡有ischemic change。先來看看Chest leads&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/sxebeu.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"
@@ -98,6 +101,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;&lt;strong&gt;病患到院約在交班前半小時&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/qgljp6.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"
@@ -141,6 +145,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;h3 id="我們先來看看limb-leads部分"&gt;我們先來看看Limb leads部分&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/7kthns.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"

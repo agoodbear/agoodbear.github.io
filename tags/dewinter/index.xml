@@ -14,6 +14,7 @@
 &lt;p&gt;&lt;strong&gt;病患到院約在交班前半小時&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/qgljp6.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"
@@ -57,6 +58,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;h3 id="我們先來看看limb-leads部分"&gt;我們先來看看Limb leads部分&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/7kthns.webp" type="image/webp"&gt;
 &lt;img
 loading="lazy"
 decoding="async"
