@@ -19,7 +19,16 @@
     {{- $img := .Params.thumbnail | default .Params.featured_image | default .Params.featureImage | default .Params.image | default .Params.cover -}}
     {{ if $img }}
       <div class="image">
+        {{- /* static 底下有同名 .webp（scripts/make_webp_sidecars.py 產生）就優先送 WebP */ -}}
+        {{- $webp := replaceRE `\.(png|jpe?g|gif)$` ".webp" $img -}}
+        {{- if and (ne $webp $img) (not (strings.HasPrefix $img "http")) (fileExists (path.Join "static" $webp)) -}}
+        <picture>
+          <source srcset="{{ $webp | relURL }}" type="image/webp">
+          <img src="{{ $img | relURL }}" alt="{{ .Title }}" loading="lazy">
+        </picture>
+        {{- else -}}
         <img src="{{ $img | relURL }}" alt="{{ .Title }}" loading="lazy">
+        {{- end -}}
       </div>
     {{ else }}
       {{- /* No thumbnail — render typographic stamp instead of blank box.

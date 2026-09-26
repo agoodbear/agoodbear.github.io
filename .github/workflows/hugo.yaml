@@ -51,6 +51,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # 大張 PNG/JPG/GIF 補同名 .webp，figure.html 會自動優先送 WebP（2026-09-27：
+      # 搬家舊文圖片未壓縮、GitHub Pages 大檔只有數十 KB/s，一篇動輒 20–38MB）。
+      # 本機已產生的會跳過；轉檔失敗不擋部署。
+      - name: Generate WebP sidecars for new images
+        continue-on-error: true
+        run: |
+          sudo apt-get install -y -qq webp >/dev/null
+          python3 scripts/make_webp_sidecars.py
+
       - name: Build with Hugo
         env:
           # For maximum compatibility with the Hugo modules

@@ -70,17 +70,23 @@ tags:
 
 ---
 
-![Readwise手機App](../../static/images/ipic/jvb083.gif)
+<figure>
+<video autoplay muted loop playsinline preload="metadata" poster="/videos/study-post-2/jvb083-poster.jpg" aria-label="Readwise手機App" style="max-width:100%;border-radius:8px"><source src="/videos/study-post-2/jvb083.mp4" type="video/mp4"></video>
+</figure>
 
 Readwise手機App的好處是可以直接OCR看到的紙本書籍。拍照下來，把重要文字OCR出來，接著就可以Export到Roam裡面去了。
 
 
 
-![Roam手機App](../../static/images/ipic/i44dqg.gif)
+<figure>
+<video autoplay muted loop playsinline preload="metadata" poster="/videos/study-post-2/i44dqg-poster.jpg" aria-label="Roam手機App" style="max-width:100%;border-radius:8px"><source src="/videos/study-post-2/i44dqg.mp4" type="video/mp4"></video>
+</figure>
 
 Roam手機App最下方的功能，有一個是Quickcapture，也就是直接打字，直接傳到Roam指定的graph裡面。
 
-![Speak to Roam](../../static/images/ipic/cps50r.gif)
+<figure>
+<video autoplay muted loop playsinline preload="metadata" poster="/videos/study-post-2/cps50r-poster.jpg" aria-label="Speak to Roam" style="max-width:100%;border-radius:8px"><source src="/videos/study-post-2/cps50r.mp4" type="video/mp4"></video>
+</figure>
 
 Speak to Roam是我覺得近期內，最讚的靈感擷取工具。這工具是由Roam開發商裡面的一位程式設計師所研發。
 
