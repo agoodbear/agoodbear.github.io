@@ -1,0 +1,7 @@
+{{- /* <picture>：static 有同名 .webp 就先給 webp。參數 dict src alt */ -}}
+{{- $webp := replaceRE `\.(png|jpe?g)$` ".webp" .src -}}
+<picture>
+  {{- if and (ne $webp .src) (fileExists (printf "static%s" $webp)) }}<source srcset="{{ $webp | relURL }}" type="image/webp">{{ end -}}
+  <img src="{{ .src | relURL }}" alt="{{ .alt }}" loading="lazy" decoding="async">
+</picture>
+{{- /**/ -}}

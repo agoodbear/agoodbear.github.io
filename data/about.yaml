@@ -1,0 +1,94 @@
+# 「關於我」頁的資料（layouts/_default/about.html 讀這份）
+# 新增講座：在 talks 最上面加一筆（新的在上），images 放 /static/images/ipic/ 的路徑。
+# 經歷時間軸仍寫在 content/about.md 本文。
+
+certs:
+  - { kind: "執照", name: "中華民國醫師" }
+  - { kind: "專科", name: "中華民國急診專科醫師" }
+  - { kind: "指導員", name: "ACLS instructor" }
+  - { kind: "課程", name: "EMC² Emergency Medicine Cardiology Course" }
+  - { kind: "工作坊", name: "超音波輔助之急性疼痛處置工作坊－基礎與進階研習證書" }
+  - { kind: "潛水", name: "SSI Open Water Diver (OWD)" }
+
+highlights:
+  - title: "斜槓熊生"
+    caption: "Hahow《Github免費架站術！輕鬆打造個人品牌》完課證明 · 2024-02-20"
+    image: "/images/ipic/l4uuce.png"
+  - title: "熊得獎紀錄"
+    caption: ""
+    image: "/images/ipic/fit1ql.jpg"
+
+pubs:
+  - title: "Non-compressibility ratio of sonography in deep venous thrombosis."
+    url: "https://pubmed.ncbi.nlm.nih.gov/21093823/"
+    authors: "Tsao JH, Tseng CY, Chuang JL, Chen YC, Huang HH, Chou YH, Tiu CM, Yen DH."
+    journal: "J Chin Med Assoc"
+    cite: "2010 Nov;73(11):563-7. PMID: 21093823"
+    year: 2010
+  - title: "Atrioventricular conduction abnormality and hyperchloremic metabolic acidosis in toluene sniffing."
+    url: "https://pubmed.ncbi.nlm.nih.gov/21982470/"
+    authors: "Tsao JH, Hu YH, How CK, Chern CH, Hung-Tsang Yen D, Huang CI."
+    journal: "J Formos Med Assoc"
+    cite: "2011 Oct;110(10):652-4. PMID: 21982470"
+    year: 2011
+  - title: "Embolic occlusion of the aorta caused by cardiac myxoma."
+    url: "https://pubmed.ncbi.nlm.nih.gov/20189704/"
+    authors: "Tsao JH, Lo HC, How CK, Yen DH, Huang CI."
+    journal: "Resuscitation"
+    cite: "2010 May;81(5):511. PMID: 20189704"
+    year: 2010
+
+omi_toolbox:
+  title: "OMI Toolbox繁體中文版"
+  note: "協助ECG大師Emre Aslanger翻譯"
+  author_url: "https://twitter.com/AslangerE"
+  android: "https://play.google.com/store/apps/details?id=com.adriva.cardio"
+  ios: "https://apps.apple.com/us/app/omi-toolbox/id6443695985?itsct=apps_box_link&itscg=30200"
+  ios_note: "台灣的Apple Store下載不到，需切換到US／UK／Türkiye"
+  image: "/images/ipic/xbwj6f.png"
+
+book:
+  title: "急診醫學（第二版）"
+  note: "撰寫胸痛章節"
+  image: "/images/ipic/ovnkkj.png"
+
+videos:
+  - { id: "HIEWV2O3iYg", title: "馬籍僑生登山遭百步蛇咬 直升機入山救援幸無礙" }
+  - { id: "nW5l2Bwy024", title: "20110619-自行車比賽OHCA" }
+  - { id: "aO9wVYo5bj4", title: "20110408-五峰鄉外傷OHCA" }
+
+press:
+  - title: "衝浪女孩落海猛刺痛 上岸手腕腫痛 兇手是水母"
+    source: "Yahoo TV（1分10秒出現XD）"
+    url: "https://tw.tv.yahoo.com/%E8%A1%9D%E6%B5%AA%E5%A5%B3%E5%AD%A9%E8%90%BD%E6%B5%B7%E7%8C%9B%E5%88%BA%E7%97%9B-%E4%B8%8A%E5%B2%B8%E6%89%8B%E8%85%95%E8%85%AB%E7%97%9B-%E5%87%B6%E6%89%8B%E6%98%AF%E6%B0%B4%E6%AF%8D-073531868.html"
+    image: "/images/ipic/276996782.jpg"
+  - title: "年假長流感暴增 開工小心傳染"
+    source: "新浪網－醒報採訪 · 2009-02-02"
+    image: "/images/ipic/vcoey6.png"
+
+# 新的在上
+talks:
+  - { date: "2026-06-30", host: "專師進階教育", title: "心電圖進階應用", images: ["/images/ipic/lecture-2026-06-30-ecg-advanced.jpg"] }
+  - { date: "2026-05-05", host: "專師進階教育", title: "心電圖基本判讀、正常與異常", images: ["/images/ipic/lecture-2026-05-05-ecg-basic.jpg"] }
+  - { date: "2026-03-16", host: "台灣專科護理師學會", title: "專科護理師考試心電圖重點指引（改版）", images: ["/images/ipic/lecture-2026-03-16-np-exam-ecg.png"] }
+  - { date: "2025-10-21", host: "台灣專科護理師學會", title: "專科護理師考試心電圖重點指引", images: ["/images/ipic/lecture-2025-10-21-np-exam-ecg.png"] }
+  - { date: "2025-06-30", host: "專師進階教育", title: "健身之路：從動機、訓練選擇到極限挑戰", images: ["/images/ipic/lecture-2025-06-30-fitness.jpg"] }
+  - { date: "2025-05-22", host: "奇美醫院住院醫師教學日", title: "什麼是OMI?", images: ["/images/ipic/lecture-2025-05-22-chimei-omi.jpg"] }
+  - { date: "2024-07-23", host: "專師進階教育", title: "手把手成為ECG拆彈專家", images: ["/images/ipic/lecture-2024-07-23-ecg-bomb.jpg"] }
+  - { date: "2024-05-31", host: "專師進階教育", title: "專師必須掌握的五大ECG重點", images: ["/images/ipic/lecture-2024-05-31-acs-ecg.jpg"] }
+  - { date: "2023-10-06", host: "", title: "EMT-P心電圖工作坊", images: ["/images/ipic/ne78d5.png", "/images/ipic/lcpf0j.png"] }
+  - { date: "2022-10-27", host: "", title: "大林慈濟ECG專題講座", images: ["/images/ipic/t5e7im.png"] }
+  - { date: "2022-10-20", host: "", title: "北榮急診住院醫師教學", images: ["/images/ipic/r76jpj.png"] }
+  - { date: "2021-11-23", host: "", title: "新光醫院演講", images: ["/images/ipic/en8jxh.png", "/images/ipic/ffohbh.jpg", "/images/ipic/qzaxlm.png"] }
+  - { date: "2021", host: "外傷進階教育", title: "外傷超音波應用", images: ["/images/ipic/8tdlmg.png"] }
+  - { date: "2020-07", host: "北區聯合住院醫師訓練", title: "醫學資訊的利用", images: ["/images/ipic/lj22vz.png"] }
+
+photos:
+  - { src: "/bloggallery/1.jpg", title: "人生第一隻寵物-跳跳" }
+  - { src: "/bloggallery/2.jpg", title: "玉里秘密景點" }
+  - { src: "/bloggallery/3.jpg", title: "IR攝影-冬山河" }
+  - { src: "/bloggallery/4.jpg", title: "冬山河鐵道" }
+  - { src: "/bloggallery/5.jpg", title: "花蓮松園" }
+  - { src: "/bloggallery/6.jpg", title: "菲律賓杜馬蓋蒂" }
+  - { src: "/bloggallery/7.jpg", title: "菲律賓杜馬蓋蒂" }
+  - { src: "/bloggallery/8.jpg", title: "西巴丹" }
