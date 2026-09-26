@@ -1,7 +1,4 @@
-{{- /* <picture>：static 有同名 .webp 就先給 webp。參數 dict src alt */ -}}
-{{- $webp := replaceRE `\.(png|jpe?g)$` ".webp" .src -}}
-<picture>
-  {{- if and (ne $webp .src) (fileExists (printf "static%s" $webp)) }}<source srcset="{{ $webp | relURL }}" type="image/webp">{{ end -}}
-  <img src="{{ .src | relURL }}" alt="{{ .alt }}" loading="lazy" decoding="async">
-</picture>
-{{- /**/ -}}
+{{- /* 卡片縮圖：優先用 static/images/about-thumbs/<檔名>.webp（720px），沒有才退回原圖。參數 dict src alt */ -}}
+{{- $name := replaceRE `^.*/([^/]+)\.[a-zA-Z]+$` "$1" .src -}}
+{{- $thumb := printf "/images/about-thumbs/%s.webp" $name -}}
+<img src="{{ cond (fileExists (printf "static%s" $thumb)) $thumb .src | relURL }}" alt="{{ .alt }}" loading="lazy" decoding="async">

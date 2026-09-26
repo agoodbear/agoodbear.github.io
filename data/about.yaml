@@ -1,5 +1,6 @@
 # 「關於我」頁的資料（layouts/_default/about.html 讀這份）
-# 新增講座：在 talks 最上面加一筆（新的在上），images 放 /static/images/ipic/ 的路徑。
+# 新增講座：在 talks 最上面加一筆（新的在上），images 放 /static/images/ipic/ 的路徑，
+# 加完跑 scripts/about-thumbs.sh 產縮圖（沒跑也能顯示，只是會載原圖、很慢）。
 # 經歷時間軸仍寫在 content/about.md 本文。
 
 certs:

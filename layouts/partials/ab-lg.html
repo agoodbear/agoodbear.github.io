@@ -1,0 +1,4 @@
+{{- /* 放大檢視用的圖：about-thumbs/<檔名>-lg.webp（1800px），沒有才用原圖 */ -}}
+{{- $name := replaceRE `^.*/([^/]+)\.[a-zA-Z]+$` "$1" . -}}
+{{- $lg := printf "/images/about-thumbs/%s-lg.webp" $name -}}
+{{- return (cond (fileExists (printf "static%s" $lg)) $lg . | relURL) -}}

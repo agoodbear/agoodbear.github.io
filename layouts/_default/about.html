@@ -229,7 +229,7 @@
     <div class="ab-duo" style="margin-top: var(--space-lg)">
       {{ range $d.highlights }}
       <figure class="ab-card">
-        <button class="ab-shot" type="button" data-lb="{{ .image | relURL }}" data-cap="{{ .title }}{{ with .caption }} · {{ . }}{{ end }}">{{ partial "ab-img.html" (dict "src" .image "alt" .title) }}</button>
+        <button class="ab-shot" type="button" data-lb="{{ partial "ab-lg.html" .image }}" data-cap="{{ .title }}{{ with .caption }} · {{ . }}{{ end }}">{{ partial "ab-img.html" (dict "src" .image "alt" .title) }}</button>
         <figcaption><b>{{ .title }}</b>{{ with .caption }}<span>{{ . }}</span>{{ end }}</figcaption>
       </figure>
       {{ end }}
@@ -250,7 +250,7 @@
     <div class="ab-works" style="margin-top: var(--space-lg)">
       {{ with $d.omi_toolbox }}
       <article class="ab-card ab-work">
-        <button class="ab-shot" type="button" data-lb="{{ .image | relURL }}" data-cap="{{ .title }}">{{ partial "ab-img.html" (dict "src" .image "alt" .title) }}</button>
+        <button class="ab-shot" type="button" data-lb="{{ partial "ab-lg.html" .image }}" data-cap="{{ .title }}">{{ partial "ab-img.html" (dict "src" .image "alt" .title) }}</button>
         <div class="body">
           <span class="tag">Translation · App</span>
           <h3>{{ .title }}</h3>
@@ -264,7 +264,7 @@
       {{ end }}
       {{ with $d.book }}
       <article class="ab-card ab-work">
-        <button class="ab-shot" type="button" data-lb="{{ .image | relURL }}" data-cap="{{ .title }}">{{ partial "ab-img.html" (dict "src" .image "alt" .title) }}</button>
+        <button class="ab-shot" type="button" data-lb="{{ partial "ab-lg.html" .image }}" data-cap="{{ .title }}">{{ partial "ab-img.html" (dict "src" .image "alt" .title) }}</button>
         <div class="body">
           <span class="tag">Book chapter</span>
           <h3>{{ .title }}</h3>
@@ -288,7 +288,7 @@
     <div class="ab-press">
       {{ range $d.press }}
       <article class="ab-card">
-        <button class="ab-shot" type="button" data-lb="{{ .image | relURL }}" data-cap="{{ .title }}">{{ partial "ab-img.html" (dict "src" .image "alt" .title) }}</button>
+        <button class="ab-shot" type="button" data-lb="{{ partial "ab-lg.html" .image }}" data-cap="{{ .title }}">{{ partial "ab-img.html" (dict "src" .image "alt" .title) }}</button>
         <div class="body">
           <span class="src">{{ .source }}</span>
           <h3>{{ .title }}</h3>
@@ -310,7 +310,7 @@
       <h3>{{ $y }}<small>{{ $n }}場</small></h3>
       <div class="ab-talks">
         {{ range $talks }}{{ if eq (substr .date 0 4) $y }}
-        {{- $imgs := slice }}{{ range .images }}{{ $imgs = $imgs | append (. | relURL) }}{{ end }}
+        {{- $imgs := slice }}{{ range .images }}{{ $imgs = $imgs | append (partial "ab-lg.html" .) }}{{ end }}
         {{- $cap := .title }}{{ with .host }}{{ $cap = printf "%s · %s" . $cap }}{{ end }}
         <article class="ab-card ab-talk">
           <button class="ab-shot" type="button" data-lb="{{ delimit $imgs "|" }}" data-cap="{{ .date }} {{ $cap }}" aria-label="放大看：{{ .title }}">
@@ -333,7 +333,7 @@
     <header class="ab-h"><span class="num">06</span><h2>攝影熊眼</h2><span class="en">Through my lens</span></header>
     <div class="ab-photos">
       {{ range $d.photos }}
-      <button class="ab-shot" type="button" data-lb="{{ .src | relURL }}" data-cap="{{ .title }}" data-group="photos">{{ partial "ab-img.html" (dict "src" .src "alt" .title) }}<span class="cap">{{ .title }}</span></button>
+      <button class="ab-shot" type="button" data-lb="{{ partial "ab-lg.html" .src }}" data-cap="{{ .title }}" data-group="photos">{{ partial "ab-img.html" (dict "src" .src "alt" .title) }}<span class="cap">{{ .title }}</span></button>
       {{ end }}
     </div>
   </section>
