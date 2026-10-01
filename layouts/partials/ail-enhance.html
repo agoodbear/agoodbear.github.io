@@ -90,7 +90,7 @@
     var d = document.createElement('details'); d.className = 'ail-group';
     if (g.h && g.h.id) d.id = g.h.id;
     var s = document.createElement('summary');
-    s.textContent = g.h ? g.h.textContent.trim() : '其他';
+    s.textContent = g.h ? g.h.textContent.trim() : (groups.length === 1 ? '全部連結' : '其他');
     var cnt = document.createElement('span'); cnt.className = 'n'; cnt.textContent = g.items.length; s.appendChild(cnt);
     d.appendChild(s);
     var list = document.createElement('ul'); list.className = 'ail-list';
