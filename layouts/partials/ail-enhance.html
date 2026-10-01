@@ -1,0 +1,136 @@
+{{- /*
+  AI 學習日誌（/ai-learning/）排版加強（2026-10-01 Bear：資源預設收合、上半部讀起來舒服一點）
+  - 只動畫面，不動原稿：21:00 run-21-workflow-v2.py 產的 markdown 與 Roam 解析都照舊。
+  - 沒有 JS 時維持原本樣子（漸進增強）。
+  - 判斷頁面：麵包屑連到 /ai-learning/ 且內文有「今日收集的資源」或「今日最有感的事」。
+*/ -}}
+<style>
+.ail .article-body h3 {
+  font-size: var(--text-xl);
+  border-top: none;
+  padding-top: 0;
+  margin: var(--space-xl) 0 var(--space-sm);
+}
+.ail .article-body h3::before { content: none; }
+.ail .article-body h3 { padding-left: 0.7em; border-left: 3px solid var(--color-accent); line-height: 1.35; }
+/* 「更直白地說…」「這代表…」這種粗體開頭的段落＝當天的重點句，做成重點框 */
+.ail .article-body p.ail-key {
+  background: var(--color-paper-2);
+  border-left: 3px solid var(--color-accent);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 2px;
+}
+/* 今日收集的資源 */
+.ail-res-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-sm); flex-wrap: wrap; }
+.ail-res-head .ail-count { font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-ink-3); font-weight: 400; }
+.ail-toggle {
+  font-family: var(--font-body); font-size: var(--text-xs); letter-spacing: 0.08em;
+  color: var(--color-accent-ink); background: transparent; border: 1px solid var(--color-rule-bold);
+  border-radius: 999px; padding: 2px 12px; cursor: pointer;
+}
+.ail-toggle:hover { border-color: var(--color-accent); }
+.ail-group { border-top: 1px solid var(--color-rule); }
+.ail-group:last-of-type { border-bottom: 1px solid var(--color-rule); }
+.ail-group > summary {
+  list-style: none; cursor: pointer; padding: var(--space-sm) 0;
+  display: flex; align-items: baseline; gap: 0.6em;
+  font-family: var(--font-display-zh); font-weight: 600; font-size: var(--text-lg); color: var(--color-ink);
+}
+.ail-group > summary::-webkit-details-marker { display: none; }
+.ail-group > summary::before {
+  content: "▸"; color: var(--color-accent); font-size: 0.9em; transition: transform 120ms var(--ease-out);
+}
+.ail-group[open] > summary::before { transform: rotate(90deg); }
+.ail-group > summary .n {
+  font-family: var(--font-body); font-size: var(--text-xs); font-weight: 600; color: var(--color-ink-3);
+  border: 1px solid var(--color-rule); border-radius: 999px; padding: 0 8px;
+}
+.ail-list { list-style: none; margin: 0 0 var(--space-md); padding: 0; }
+.ail-list li { margin: 0; padding: var(--space-xs) 0 var(--space-sm); border-top: 1px dashed var(--color-rule); line-height: 1.6; }
+.ail-list li:first-child { border-top: none; }
+.ail-list .t { font-family: var(--font-body-zh); font-weight: 600; font-size: var(--text-base); }
+.ail-list .d { display: inline-block; margin-left: 0.5em; font-family: var(--font-body); font-size: var(--text-xs); color: var(--color-ink-3); letter-spacing: 0.04em; }
+.ail-list p { margin: 2px 0 0; font-family: var(--font-body-zh); font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.65; }
+.ail .article-body .ail-list a { border-bottom-color: transparent; }
+.ail .article-body .ail-list a:hover { border-bottom-color: var(--color-accent); }
+@media print { .ail-group:not([open]) > *:not(summary) { display: block; } .ail-toggle { display: none; } }
+</style>
+<script>
+(function () {
+  var crumb = document.querySelector('.article-header .breadcrumb a[href$="/ai-learning/"]');
+  var body = document.querySelector('.article-body');
+  if (!crumb || !body) return;
+  document.documentElement.classList.add('ail');
+
+  // 1. 上半部：粗體開頭的段落（當天重點句）→ 重點框；只處理「今日收集的資源」之前的段落
+  var resH2 = Array.prototype.find.call(body.querySelectorAll('h2'), function (h) { return /今日收集的資源/.test(h.textContent); });
+  Array.prototype.forEach.call(body.children, function (el) {
+    if (resH2 && (el.compareDocumentPosition(resH2) & Node.DOCUMENT_POSITION_PRECEDING)) return;
+    if (el.tagName === 'P' && el.firstElementChild && el.firstElementChild.tagName === 'STRONG' &&
+        el.firstChild === el.firstElementChild && !el.firstElementChild.querySelector('a') &&
+        el.firstElementChild.textContent.length > 12) el.classList.add('ail-key');
+  });
+  if (!resH2) return;
+
+  // 2. 今日收集的資源：每個 h3 分類收成 <details>（預設收合），每筆改成「標題連結＋網域＋一句說明」
+  var nodes = [], n = resH2.nextElementSibling;
+  while (n && n.tagName !== 'H2' && !n.classList.contains('endmark')) { nodes.push(n); n = n.nextElementSibling; }
+  var groups = [], cur = null, total = 0;
+  nodes.forEach(function (el) {
+    if (el.tagName === 'H3') { cur = { h: el, items: [], rest: [] }; groups.push(cur); return; }
+    if (!cur) { cur = { h: null, items: [], rest: [] }; groups.push(cur); }
+    if (el.tagName === 'P' && el.querySelector('strong') && el.nextElementSibling && el.nextElementSibling.tagName === 'UL') {
+      cur.items.push({ title: el.textContent.trim(), ul: el.nextElementSibling, p: el });
+    } else if (!(el.tagName === 'UL' && el.previousElementSibling && el.previousElementSibling.tagName === 'P' && el.previousElementSibling.querySelector('strong'))) {
+      cur.rest.push(el);
+    }
+  });
+  var frag = document.createDocumentFragment(), details = [];
+  groups.forEach(function (g) {
+    var d = document.createElement('details'); d.className = 'ail-group';
+    if (g.h && g.h.id) d.id = g.h.id;
+    var s = document.createElement('summary');
+    s.textContent = g.h ? g.h.textContent.trim() : '其他';
+    var cnt = document.createElement('span'); cnt.className = 'n'; cnt.textContent = g.items.length; s.appendChild(cnt);
+    d.appendChild(s);
+    var list = document.createElement('ul'); list.className = 'ail-list';
+    g.items.forEach(function (it) {
+      var li = document.createElement('li'), link = it.ul.querySelector('a[href]'), desc = [];
+      Array.prototype.forEach.call(it.ul.children, function (x) {
+        if (!x.querySelector('a[href]') || !/^\s*連結/.test(x.textContent)) desc.push(x.innerHTML);
+      });
+      var t;
+      if (link) { t = document.createElement('a'); t.href = link.href; t.target = '_blank'; t.rel = 'noopener'; }
+      else { t = document.createElement('span'); }
+      t.className = 't'; t.textContent = it.title; li.appendChild(t);
+      if (link) { var dm = document.createElement('span'); dm.className = 'd'; try { dm.textContent = new URL(link.href).hostname.replace(/^www\./, ''); } catch (e) {} li.appendChild(dm); }
+      if (desc.length) { var p = document.createElement('p'); p.innerHTML = desc.join('<br>'); li.appendChild(p); }
+      list.appendChild(li); total++;
+      it.p.remove(); it.ul.remove();
+    });
+    d.appendChild(list);
+    g.rest.forEach(function (r) { d.appendChild(r); });
+    if (g.h) g.h.remove();
+    frag.appendChild(d); details.push(d);
+  });
+  if (!total) return;
+  resH2.after(frag);
+
+  var head = document.createElement('div'); head.className = 'ail-res-head';
+  var c = document.createElement('span'); c.className = 'ail-count'; c.textContent = total + ' 筆，依主題收合，點開再看';
+  var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'ail-toggle'; btn.textContent = '全部展開';
+  btn.addEventListener('click', function () {
+    var open = details.some(function (d) { return !d.open; });
+    details.forEach(function (d) { d.open = open; });
+    btn.textContent = open ? '全部收合' : '全部展開';
+  });
+  head.appendChild(c); head.appendChild(btn); resH2.after(head);
+
+  // 從目次或網址錨點跳到某個分類時自動展開
+  function openHash() {
+    var id = decodeURIComponent(location.hash.slice(1)); if (!id) return;
+    var el = document.getElementById(id); if (el && el.tagName === 'DETAILS') { el.open = true; el.scrollIntoView(); }
+  }
+  window.addEventListener('hashchange', openHash); openHash();
+})();
+</script>
