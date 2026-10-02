@@ -89,6 +89,8 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: var(--text-lg);
   letter-spacing: -0.01em;
   color: var(--color-ink);
+  white-space: nowrap;
+  flex: 0 0 auto;
 }
 .brandstrip .wordmark .sub {
   font-family: var(--font-display);
@@ -114,6 +116,14 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--color-ink);
   border-bottom: 2px solid var(--color-accent);
   padding-bottom: 2px;
+}
+/* Narrower desktops: drop the italic subtitle and tighten nav spacing so the
+   full nav (incl. 關於我) fits without horizontal scrolling. */
+@media (max-width: 1400px) {
+  .brandstrip .wordmark .sub { display: none; }
+}
+@media (max-width: 1120px) {
+  .brandstrip .nav-row { gap: var(--space-sm); }
 }
 
 /* ─── Page masthead (shared by all non-index pages) ───────────────────── */
