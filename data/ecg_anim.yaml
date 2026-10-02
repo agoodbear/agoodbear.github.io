@@ -317,9 +317,10 @@ items:
   video: wellens/wellens-v3b.mp4
   phone: wellens/wellens-v3b-phone.mp4
   poster: wellens/wellens-v3b-poster.webp
+  poster_at: 3.5
   facts: wellens/facts/wellens-facts.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-02'
 
 - id: de-winter
   series: omi
