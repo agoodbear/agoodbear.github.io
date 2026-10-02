@@ -1,0 +1,10 @@
+{{- /* R2 key → 公開網址。以 / 開頭的（本機測試用）走站內路徑。 */ -}}
+{{- $key := . | default "" -}}
+{{- $out := "" -}}
+{{- if hasPrefix $key "/" -}}
+  {{- $out = $key | relURL -}}
+{{- else if $key -}}
+  {{- $base := (index site.Data "ecg_anim").base_url | default "https://anim.agoodbear.com/" -}}
+  {{- $out = printf "%s%s" $base $key -}}
+{{- end -}}
+{{- return $out -}}

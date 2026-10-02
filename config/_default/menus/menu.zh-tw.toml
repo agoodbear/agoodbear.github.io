@@ -10,6 +10,11 @@
   weight = -108
 
 [[main]]
+  name = "ECG動畫館"
+  url = "ecg-anim/"
+  weight = -107.5
+
+[[main]]
   name = "急診人生"
   url = "categories/erlife"
   weight = -107

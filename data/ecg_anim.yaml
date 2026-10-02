@@ -1,0 +1,585 @@
+# ECG動畫館（/ecg-anim/）資料檔：動畫館頁、ecganim shortcode、OMI圖鑑的「▶ 動畫」連結都只看這一份。
+#
+# 上線規則：Bear 親自看過一支，才公開一支。
+#   published: false＝不出現在任何地方（動畫館頁、shortcode、圖鑑連結都看不到）。
+#   hidden: true＝永遠不顯示（就算 published 也不顯示），留著只是記錄。
+#   上架一律跑 ~/Desktop/Claude Code專用檔/animations/_workflow/publish_anim.sh <id>
+#   （抽 poster → 傳 R2 → curl 驗 → 把這裡改成 published: true、填 published_at），不要手動改 published。
+#
+# 欄位：
+#   id        網址錨點與 shortcode 代號（/ecg-anim/#hatw、ecganim "hatw"）。OMI 系列沿用 data/omi_atlas.yaml 的 id，
+#             圖鑑靠這個 id 對上。上線後就不要改。
+#   point     一句重點：取自該片片尾卡的畫面文字（片尾卡文字已對過該片事實表），不另加醫學主張或數字。
+#   duration  秒，ffprobe 量主檔（2026-10-01）。頁面顯示成 m:ss。
+#   refs      照該片事實表「片尾書目」原文抄；事實表沒有書目的，照片尾卡畫面上的「參考：」抄，來源記在 refs_src。
+#   video／phone／poster  R2 key（bucket ecg-anim，公開網域見 base_url）。key 帶版號，換版就換 key、不覆蓋舊檔。
+#   src／src_phone        本機檔（相對 ~/Desktop/Claude Code專用檔/animations/），上架腳本從這裡讀。
+#   poster_at 抽 poster 的秒數（預設 2）。
+#   facts     本機事實表（相對同一個 animations 資料夾），只記錄、不顯示。
+#   TODO      找不到可靠出處的欄位，Bear 確認前不要上架。
+
+base_url: https://anim.agoodbear.com/
+
+series:
+- id: omi
+  name: OMI系列
+  intro: OMI圖鑑20個finding，一個finding一支短片。
+- id: mechanism
+  name: 基礎機轉
+  intro: 心電圖的波從哪裡來、ST為什麼會抬高。
+- id: ddx
+  name: 鑑別診斷
+  intro: 長得像的兩個東西，放在一起比。
+
+items:
+
+# ── OMI 系列 ──────────────────────────────────────────────────────────
+- id: omi-roster
+  series: omi
+  title: OMI型態一覽
+  point: 四個跟LAD有關的型態：紅＝血管現在塞著，藍＝自己打開了但可能再塞
+  point_src: README 白話說明＋旁白第1、2句
+  duration: 43.75
+  refs: TODO
+  refs_src: TODO：片中沒有書目；內容來自 de-winter／precordial-swirl／tqrsd／wellens 四份事實表
+  version: v1
+  src: omi-roster/out/omi-overview.mp4
+  src_phone: omi-roster/out/omi-overview-phone.mp4
+  video: omi-roster/omi-roster-v1.mp4
+  phone: omi-roster/omi-roster-v1-phone.mp4
+  poster: omi-roster/omi-roster-v1-poster.webp
+  facts: omi-roster/STORYBOARD.md
+  published: false
+  published_at: ''
+
+- id: nttv1
+  series: omi
+  title: NTTV1
+  subtitle: New Tall T wave in V1
+  point: V1比V6高、又是新的：拿舊片比，再做一張ECG
+  duration: 76.875
+  refs:
+  - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+  - Mattu & Brady, ECGs for the Emergency Physician Vol 2
+  - Braunwald
+  - Critical Decisions in Emergency and Acute Care ECG
+  - Critical Cases in ECG
+  - LITFL
+  - ECG Weekly
+  - Dr. Smith's ECG Blog
+  version: v3
+  src: omi-nttv1/out/omi-nttv1-v3.mp4
+  src_phone: omi-nttv1/out/omi-nttv1-v3-phone.mp4
+  video: omi-nttv1/omi-nttv1-v3.mp4
+  phone: omi-nttv1/omi-nttv1-v3-phone.mp4
+  poster: omi-nttv1/omi-nttv1-v3-poster.webp
+  facts: omi-nttv1/facts/nttv1-facts.md
+  published: false
+  published_at: ''
+
+- id: hatw
+  series: omi
+  title: HATW
+  subtitle: Hyperacute T wave
+  point: 看T波相對QRS胖不胖，不是看多高；沒有ST抬高，也可能是阻塞
+  duration: 64.375
+  refs:
+  - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+  - Critical Decisions in Emergency and Acute Care Electrocardiography
+  - Dr. Smith's ECG Blog
+  - ECG Weekly
+  version: v1
+  src: omi-hatw/out/omi-hatw-v1.mp4
+  src_phone: omi-hatw/out/omi-hatw-v1-phone.mp4
+  video: omi-hatw/omi-hatw-v1.mp4
+  phone: omi-hatw/omi-hatw-v1-phone.mp4
+  poster: omi-hatw/omi-hatw-v1-poster.webp
+  facts: omi-hatw/facts/hatw-facts.md
+  published: false
+  published_at: ''
+
+- id: pathologic-q
+  series: omi
+  title: Pathologic Q wave
+  point: 有Q，不等於舊的梗塞：新舊看ST、T、症狀和舊的ECG
+  duration: 62.5
+  refs:
+  - Rosen's Emergency Medicine 10e
+  - ECG in Emergency Medicine
+  - LITFL
+  - ECG Weekly
+  - Dr. Smith's ECG Blog
+  version: v1
+  src: omi-pathologic-q/out/omi-pathologic-q-v1.mp4
+  src_phone: omi-pathologic-q/out/omi-pathologic-q-v1-phone.mp4
+  video: omi-pathologic-q/omi-pathologic-q-v1.mp4
+  phone: omi-pathologic-q/omi-pathologic-q-v1-phone.mp4
+  poster: omi-pathologic-q/omi-pathologic-q-v1-poster.webp
+  facts: omi-pathologic-q/facts/pathologic-q-facts.md
+  published: false
+  published_at: ''
+
+- id: subtle-ste
+  series: omi
+  title: Subtle STE
+  subtitle: 不符合STEMI criteria的細微ST抬高
+  point: 沒過線，不等於沒塞：跟QRS比、看形狀、看對側
+  duration: 66.875
+  refs:
+  - Jones, Getting Acquainted With Ischemia and Infarction
+  - Dr. Smith's ECG Blog
+  - Baltazar, Basic & Bedside Electrocardiography
+  - ABC of Clinical Electrocardiography
+  - Critical Cases in Electrocardiography
+  - ECG in Emergency Medicine
+  - ECG Weekly
+  version: v1
+  src: omi-subtle-ste/out/omi-subtle-ste-v1.mp4
+  src_phone: omi-subtle-ste/out/omi-subtle-ste-v1-phone.mp4
+  video: omi-subtle-ste/omi-subtle-ste-v1.mp4
+  phone: omi-subtle-ste/omi-subtle-ste-v1-phone.mp4
+  poster: omi-subtle-ste/omi-subtle-ste-v1-poster.webp
+  facts: omi-subtle-ste/facts/subtle-ste-facts.md
+  published: false
+  published_at: ''
+
+- id: inverted-u
+  series: omi
+  title: Inverted U wave
+  point: T波直立、後面的U波卻朝下：胸痛病人看到，當成缺血警訊
+  duration: 61.25
+  refs:
+  - Braunwald's Heart Disease
+  - Chou's Electrocardiography 6e
+  - Marriott's Practical Electrocardiography 13e
+  - LITFL「U Wave」
+  - ECG Weekly「Inverted U Waves」
+  version: v1
+  src: omi-inverted-u/out/omi-inverted-u-v1.mp4
+  src_phone: omi-inverted-u/out/omi-inverted-u-v1-phone.mp4
+  video: omi-inverted-u/omi-inverted-u-v1.mp4
+  phone: omi-inverted-u/omi-inverted-u-v1-phone.mp4
+  poster: omi-inverted-u/omi-inverted-u-v1-poster.webp
+  facts: omi-inverted-u/facts/inverted-u-facts.md
+  published: false
+  published_at: ''
+
+- id: bifascicular-block
+  series: omi
+  title: New-onset bifascicular block
+  point: 新出現的RBBB＋LAFB，要想到LAD近端阻塞
+  duration: 82.5
+  refs:
+  - Goldberger's Clinical Electrocardiography 9e
+  - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+  - LITFL
+  - Dr. Smith's ECG Blog
+  version: v1
+  src: omi-bifascicular-block/out/omi-bifascicular-block-v1.mp4
+  src_phone: omi-bifascicular-block/out/omi-bifascicular-block-v1-phone.mp4
+  video: omi-bifascicular-block/omi-bifascicular-block-v1.mp4
+  phone: omi-bifascicular-block/omi-bifascicular-block-v1-phone.mp4
+  poster: omi-bifascicular-block/omi-bifascicular-block-v1-poster.webp
+  facts: omi-bifascicular-block/facts/bifascicular-block-facts.md
+  published: false
+  published_at: ''
+
+- id: stdmax-v1-4
+  series: omi
+  title: STDmax V1–V4
+  subtitle: indicative of posterior OMI
+  point: precordial的STD最深在V1–V4，就要高度懷疑posterior OMI（specificity 97%）
+  duration: 75
+  refs:
+  - Baltazar, Basic & Bedside Electrocardiography
+  - Critical Cases in Electrocardiography
+  - Critical Decisions in Emergency and Acute Care Electrocardiography
+  - Grauer, ECG Pocket Brain
+  - Sparkson, Illustrated Guide to ECG 2e
+  - Hanna, Practical Cardiovascular Medicine
+  - Roberts & Hedges' Clinical Procedures
+  - Dr. Smith's ECG Blog
+  - ECG Weekly
+  - LITFL
+  - Meyers HP, et al. J Am Heart Assoc 2021
+  - REBEL EM
+  - AHA/ACCF/HRS 2009 Part VI
+  - Fourth UDMI 2018
+  version: v2
+  src: omi-posterior/out/omi-posterior-v2.mp4
+  src_phone: omi-posterior/out/omi-posterior-v2-phone.mp4
+  video: omi-posterior/omi-posterior-v2.mp4
+  phone: omi-posterior/omi-posterior-v2-phone.mp4
+  poster: omi-posterior/omi-posterior-v2-poster.webp
+  facts: omi-posterior/facts/posterior-facts.md
+  published: true
+  published_at: '2026-10-02'
+
+- id: avr-ste
+  series: omi
+  title: aVR STE + multiple leads STD
+  point: 高風險：先找oxygen supply/demand mismatch的原因；別的導程也抬高，就想到急性阻塞
+  duration: 78.75
+  refs:
+  - Braunwald's Heart Disease
+  - Goldberger's Clinical Electrocardiography 9e
+  - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+  - Grauer, ECG Pocket Brain
+  - LITFL
+  - ECG Weekly
+  - Dr. Smith's ECG Blog
+  version: v1
+  src: omi-avr-ste/out/omi-avr-ste-v1.mp4
+  src_phone: omi-avr-ste/out/omi-avr-ste-v1-phone.mp4
+  video: omi-avr-ste/omi-avr-ste-v1.mp4
+  phone: omi-avr-ste/omi-avr-ste-v1-phone.mp4
+  poster: omi-avr-ste/omi-avr-ste-v1-poster.webp
+  facts: omi-avr-ste/facts/avr-ste-facts.md
+  published: false
+  published_at: ''
+
+- id: reciprocal-std
+  series: omi
+  title: Reciprocal STD change and/or TWI
+  point: 看到下壁或高側壁的ST壓低，先回頭找對面的ST抬高
+  duration: 71.25
+  refs:
+  - Baltazar, Basic & Bedside Electrocardiography
+  - Grauer, ECG Pocket Brain
+  - Jones, Getting Acquainted With Ischemia and Infarction
+  - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+  - Rosen's 10th
+  - LITFL
+  - ECG Weekly
+  - Dr. Smith's ECG Blog
+  version: v1
+  src: omi-reciprocal/out/omi-reciprocal-v1.mp4
+  src_phone: omi-reciprocal/out/omi-reciprocal-v1-phone.mp4
+  video: omi-reciprocal/omi-reciprocal-v1.mp4
+  phone: omi-reciprocal/omi-reciprocal-v1-phone.mp4
+  poster: omi-reciprocal/omi-reciprocal-v1-poster.webp
+  facts: omi-reciprocal/facts/reciprocal-facts.md
+  published: false
+  published_at: ''
+
+- id: precordial-swirl
+  series: omi
+  title: Precordial Swirl
+  point: 看到swirl：先看QRS，再想到LAD近端阻塞
+  duration: 96.875
+  refs:
+  - Dr. Smith's ECG Blog（Meyers & Smith）
+  - Bayés de Luna, Clinical Electrocardiography
+  - The 12-Lead ECG in ST Elevation Myocardial Infarction
+  version: v5
+  src: precordial-swirl/deliver5/precordial-swirl-v5-v6zoom.mp4
+  src_phone: precordial-swirl/deliver5/precordial-swirl-v5-v6zoom-phone.mp4
+  video: precordial-swirl/precordial-swirl-v5.mp4
+  phone: precordial-swirl/precordial-swirl-v5-phone.mp4
+  poster: precordial-swirl/precordial-swirl-v5-poster.webp
+  facts: precordial-swirl/swirl-facts.md
+  published: false
+  published_at: ''
+
+- id: tqrsd
+  series: omi
+  title: TQRSD
+  subtitle: Terminal QRS distortion
+  point: V2或V3：沒有S波、也沒有J波。尾巴不見了，就是警訊
+  duration: 67.5
+  refs:
+  - Lee, Walsh, Smith. Am J Emerg Med 2016
+  - ECG Weekly
+  - Critical Decisions in Emergency and Acute Care Electrocardiography
+  version: v5
+  src: tqrsd/deliver5/tqrsd-v5.mp4
+  src_phone: tqrsd/deliver5/tqrsd-v5-phone.mp4
+  video: tqrsd/tqrsd-v5.mp4
+  phone: tqrsd/tqrsd-v5-phone.mp4
+  poster: tqrsd/tqrsd-v5-poster.webp
+  facts: tqrsd/tqrsd-facts.md
+  published: false
+  published_at: ''
+
+- id: wellens
+  series: omi
+  title: Wellens' syndrome
+  point: 胸痛停了，T wave還在警告
+  duration: 84.17
+  refs:
+  - Mattu, ECG in Emergency, Acute & Critical Care 2e
+  - Sparkson 2e
+  - LITFL
+  refs_src: 事實表沒有片尾書目，照片尾卡畫面「參考：」抄
+  version: v3b
+  src: wellens/deliver/wellens-A-v3b.mp4
+  src_phone: wellens/deliver/wellens-A-v3b-手機預覽.mp4
+  video: wellens/wellens-v3b.mp4
+  phone: wellens/wellens-v3b-phone.mp4
+  poster: wellens/wellens-v3b-poster.webp
+  facts: wellens/facts/wellens-facts.md
+  published: false
+  published_at: ''
+
+- id: de-winter
+  series: omi
+  title: De Winter's T wave
+  point: 看到它，不要等ST抬高
+  duration: 47.5
+  refs:
+  - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+  - LITFL
+  - ECG Weekly
+  version: v1
+  version_note: 本機只有一版 out/de-winter.mp4（檔名沒有版號），先記 v1
+  src: de-winter/out/de-winter.mp4
+  src_phone: de-winter/out/de-winter-phone.mp4
+  video: de-winter/de-winter-v1.mp4
+  phone: de-winter/de-winter-v1-phone.mp4
+  poster: de-winter/de-winter-v1-poster.webp
+  facts: de-winter/dewinter-facts.md
+  published: false
+  published_at: ''
+
+- id: south-african-flag
+  series: omi
+  title: South African Flag sign
+  point: I、aVL、V2抬高＋III壓低：想急性阻塞；不確定就重複ECG
+  duration: 73.75
+  refs:
+  - Grauer, ECG-2014 Pocket Brain
+  - Critical Decisions in Emergency and Acute Care Electrocardiography
+  - Critical Cases in Electrocardiography
+  - Baltazar, Basic & Bedside Electrocardiography
+  - Electrocardiogram in Clinical Medicine
+  - Mattu, Cardiovascular Emergencies (ACEP)
+  - LITFL
+  - ECG Weekly
+  - Ken Grauer ECG Blog
+  - Dr. Smith's ECG Blog
+  version: v1
+  src: omi-south-african-flag/out/omi-south-african-flag-v1.mp4
+  src_phone: omi-south-african-flag/out/omi-south-african-flag-v1-phone.mp4
+  video: omi-south-african-flag/omi-south-african-flag-v1.mp4
+  phone: omi-south-african-flag/omi-south-african-flag-v1-phone.mp4
+  poster: omi-south-african-flag/omi-south-african-flag-v1-poster.webp
+  facts: omi-south-african-flag/facts/south-african-flag-facts.md
+  published: false
+  published_at: ''
+
+- id: aslanger
+  series: omi
+  title: Aslanger's pattern
+  point: 只有lead III的ST抬高：想到inferior OMI，盡快考慮cath lab
+  duration: 71.875
+  refs:
+  - Jerry Jones, Getting Acquainted With Ischemia and Infarction
+  - Braunwald's Heart Disease
+  - Dr. Smith's ECG Blog
+  - Ken Grauer ECG Blog
+  - ECG Weekly
+  version: v1
+  src: omi-aslanger/out/omi-aslanger-v1.mp4
+  src_phone: omi-aslanger/out/omi-aslanger-v1-phone.mp4
+  video: omi-aslanger/omi-aslanger-v1.mp4
+  phone: omi-aslanger/omi-aslanger-v1-phone.mp4
+  poster: omi-aslanger/omi-aslanger-v1-poster.webp
+  facts: omi-aslanger/facts/aslanger-facts.md
+  published: false
+  published_at: ''
+
+- id: northern-omi
+  series: omi
+  title: Northern OMI
+  point: aVR、aVL一起抬高、下壁壓低：ST vector朝北，很近端的急性阻塞
+  duration: 76.25
+  refs:
+  - Chou's Electrocardiography 6e
+  - Grauer ECG Pocket Brain
+  - LITFL／Wellens' ECG in Emergency Decision Making
+  - Dr. Smith's ECG Blog／Baltazar Basic & Bedside Electrocardiography
+  version: v1
+  src: omi-northern-omi/out/omi-northern-omi-v1.mp4
+  src_phone: omi-northern-omi/out/omi-northern-omi-v1-phone.mp4
+  video: omi-northern-omi/omi-northern-omi-v1.mp4
+  phone: omi-northern-omi/omi-northern-omi-v1-phone.mp4
+  poster: omi-northern-omi/omi-northern-omi-v1-poster.webp
+  facts: omi-northern-omi/facts/northern-omi-facts.md
+  published: false
+  published_at: ''
+
+- id: n-wave
+  series: omi
+  title: N wave sign
+  point: 胸痛＋QRS尾端新的notch，想到LCx；常常是短暫的
+  duration: 70
+  refs:
+  - Hurst's The Heart
+  - Chou's Electrocardiography 6e
+  - Braunwald's Heart Disease
+  - Dr. Smith's ECG Blog
+  - Ken Grauer ECG Blog #354
+  version: v1
+  src: omi-n-wave/out/omi-n-wave-v1.mp4
+  src_phone: omi-n-wave/out/omi-n-wave-v1-phone.mp4
+  video: omi-n-wave/omi-n-wave-v1.mp4
+  phone: omi-n-wave/omi-n-wave-v1-phone.mp4
+  poster: omi-n-wave/omi-n-wave-v1-poster.webp
+  facts: omi-n-wave/facts/n-wave-facts.md
+  published: false
+  published_at: ''
+
+- id: t-qrs-ratio
+  series: omi
+  title: T/QRS ratio
+  subtitle: Ant.STE出現QS pattern，懷疑LV aneurysm with STEMI
+  point: 任一lead T/QRS > 0.36偏STEMI；症狀拖久T會變小，先比舊的ECG
+  duration: 78.125
+  refs:
+  - Smith, Am J Emerg Med 2005
+  - Klein et al., Am J Emerg Med 2015
+  - Rosen's Emergency Medicine 10e
+  - Electrocardiogram in Clinical Medicine
+  - LITFL
+  version: v1
+  src: omi-t-qrs-ratio/out/omi-t-qrs-ratio-v1.mp4
+  src_phone: omi-t-qrs-ratio/out/omi-t-qrs-ratio-v1-phone.mp4
+  video: omi-t-qrs-ratio/omi-t-qrs-ratio-v1.mp4
+  phone: omi-t-qrs-ratio/omi-t-qrs-ratio-v1-phone.mp4
+  poster: omi-t-qrs-ratio/omi-t-qrs-ratio-v1-poster.webp
+  facts: omi-t-qrs-ratio/facts/t-qrs-ratio-facts.md
+  published: false
+  published_at: ''
+
+- id: four-variable
+  series: omi
+  title: 4-variable formula
+  subtitle: Subtle STE over ant.leads
+  point: 高於18.2偏LAD occlusion；低於18.2，不等於放心
+  duration: 85.625
+  refs:
+  - Driver BE, et al. J Electrocardiol 2017
+  - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+  - LITFL
+  - Dr. Smith's ECG Blog
+  version: v1
+  src: omi-four-variable/out/omi-four-variable-v1.mp4
+  src_phone: omi-four-variable/out/omi-four-variable-v1-phone.mp4
+  video: omi-four-variable/omi-four-variable-v1.mp4
+  phone: omi-four-variable/omi-four-variable-v1-phone.mp4
+  poster: omi-four-variable/omi-four-variable-v1-poster.webp
+  facts: omi-four-variable/facts/four-variable-facts.md
+  published: false
+  published_at: ''
+
+- id: msc
+  series: omi
+  title: LBBB／PPM with MSC
+  subtitle: Smith-modified Sgarbossa criteria
+  point: LBBB、paced也找得到OMI：MSC任一條成立，就當OMI處理
+  duration: 80
+  refs:
+  - Sgarbossa 1996 NEJM
+  - Smith 2012 Ann Emerg Med
+  - Dodd 2021 Ann Emerg Med
+  - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+  - Rosen's 10th
+  - Dr. Smith's ECG Blog
+  - ECG Weekly
+  version: v1
+  src: omi-msc/out/omi-msc-v1.mp4
+  src_phone: omi-msc/out/omi-msc-v1-phone.mp4
+  video: omi-msc/omi-msc-v1.mp4
+  phone: omi-msc/omi-msc-v1-phone.mp4
+  poster: omi-msc/omi-msc-v1-poster.webp
+  facts: omi-msc/facts/msc-facts.md
+  published: false
+  published_at: ''
+
+# ── 基礎機轉 ──────────────────────────────────────────────────────────
+- id: conduction-journey
+  series: mechanism
+  title: 心跳的旅程
+  subtitle: 傳導公路｜第0季・第1支
+  point: 方向相反、電性也相反，所以T波通常跟QRS同方向
+  duration: 74.6
+  refs:
+  - Goldberger's Clinical Electrocardiography 9th
+  - Marriott's Practical Electrocardiography 13th
+  - Baltazar, Basic & Bedside Electrocardiography
+  - Harrison's Principles of Internal Medicine 20th
+  - Klabunde, Cardiovascular Physiology Concepts
+  - ECG Waves
+  - ECG Weekly
+  - LITFL
+  refs_src: 片尾卡「參考：」＝facts/journey-facts.md 書目一行版
+  version: v3
+  src: conduction-journey/out/conduction-journey-v3.mp4
+  src_phone: conduction-journey/out/conduction-journey-v3-phone.mp4
+  video: conduction-journey/conduction-journey-v3.mp4
+  phone: conduction-journey/conduction-journey-v3-phone.mp4
+  poster: conduction-journey/conduction-journey-v3-poster.webp
+  facts: conduction-journey/facts/journey-facts.md
+  published: false
+  published_at: ''
+
+- id: stemi-3d
+  series: mechanism
+  title: ST為什麼抬高（3D版）
+  point: ST vector指向受傷的心肌：面對它的lead抬高，對面的lead壓低
+  duration: 40
+  refs:
+  - Goldberger's Clinical Electrocardiography 9th
+  - Braunwald's Heart Disease
+  refs_src: 片尾卡畫面「參考：」（stemi-3d 資料夾沒有事實表）
+  version: v7
+  version_note: Bear 最喜歡 v7。另有 stemi-3d-v8（stemi-3d-v8/out/stemi-3d-v8.mp4），沒有列進來。
+  src: stemi-3d/stemi-3d-v7.mp4
+  src_phone: stemi-3d/stemi-3d-v7-phone.mp4
+  video: stemi-3d/stemi-3d-v7.mp4
+  phone: stemi-3d/stemi-3d-v7-phone.mp4
+  poster: stemi-3d/stemi-3d-v7-poster.webp
+  facts: TODO
+  published: false
+  published_at: ''
+
+- id: stemi-house
+  series: mechanism
+  title: ST為什麼抬高（房子版）
+  point: ST vector指向受傷的心肌
+  duration: 68.33
+  refs:
+  - Braunwald
+  - Text Atlas of Practical Electrocardiography
+  - LITFL
+  version: v1
+  src: stemi-house/deliver/stemi-house-v1.mp4
+  src_phone: stemi-house/deliver/stemi-house-v1-手機預覽.mp4
+  video: stemi-house/stemi-house-v1.mp4
+  phone: stemi-house/stemi-house-v1-phone.mp4
+  poster: stemi-house/stemi-house-v1-poster.webp
+  facts: stemi-house/facts/stemi-facts.md
+  published: false
+  published_at: ''
+
+# ── 鑑別診斷 ──────────────────────────────────────────────────────────
+- id: tqrsd-overlay
+  series: ddx
+  title: Early repol vs TQRSD（V2疊圖）
+  point: TODO
+  duration: 19.8
+  refs:
+  - Lee, Walsh, Smith. Am J Emerg Med 2016
+  - ECG Weekly
+  - Critical Decisions in Emergency and Acute Care Electrocardiography
+  version: v1
+  src: tqrsd-overlay/out/tqrsd-overlay-v1.mp4
+  src_phone: tqrsd-overlay/out/tqrsd-overlay-v1-phone.mp4
+  video: tqrsd-overlay/tqrsd-overlay-v1.mp4
+  phone: tqrsd-overlay/tqrsd-overlay-v1-phone.mp4
+  poster: tqrsd-overlay/tqrsd-overlay-v1-poster.webp
+  facts: tqrsd-overlay/facts/tqrsd-facts.md
+  hidden: true
+  hidden_note: Bear 說效果差，頁面永遠不顯示
+  published: false
+  published_at: ''

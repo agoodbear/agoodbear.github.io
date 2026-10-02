@@ -1,0 +1,9 @@
+{{- /* 動畫館樣式。
+       故意不做「一頁只輸出一次」的守門：.Store／.Scratch 在 hugo server 增量重建時不一定會清，
+       實測改過 CSS 後守門把整個 <link> 吃掉、樣式全不見。同一支 CSS 出現兩次瀏覽器只抓一次。
+       這裡不放 <script>：文章沒寫 description 時，主題會把內文前段（含 shortcode 輸出）截斷當摘要，
+       截到一半的 script 會變成 SyntaxError。「同時只播一支」的小腳本只放在動畫館頁（ecg-anim.html）。 */ -}}
+{{- with resources.Get "ecganim/ecganim.css" }}
+{{- $css := . | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{- end }}

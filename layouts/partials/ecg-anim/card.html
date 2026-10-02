@@ -1,0 +1,59 @@
+{{- /*
+  ecg-anim/card — 一支動畫的卡片（動畫館頁與 ecganim shortcode 共用）
+  參數：dict "it" <item.html 回傳的 dict> "mode" "page"｜"embed"
+  影片：原生 <video>，不自動播放、preload="none"（按下播放才開始下載）。
+        窄螢幕（≤640px）先拿 540 寬的手機版，其他拿 1080 主檔。
+*/ -}}
+{{- $it := .it -}}
+{{- $mode := .mode | default "page" -}}
+{{- $video := partial "ecg-anim/url.html" $it.video -}}
+{{- $phone := partial "ecg-anim/url.html" $it.phone -}}
+{{- $poster := partial "ecg-anim/url.html" $it.poster -}}
+{{- $dur := partial "ecg-anim/dur.html" $it.duration -}}
+{{- $hasRefs := and $it.refs (ne (printf "%v" $it.refs) "TODO") -}}
+<article class="ea-card ea-card--{{ $mode }}"{{ if eq $mode "page" }} id="{{ $it.id }}"{{ end }} data-anim="{{ $it.id }}">
+  <div class="ea-player">
+    <video controls playsinline preload="none" width="1080" height="1920"{{ with $poster }} poster="{{ . }}"{{ end }} aria-label="{{ $it.title }} 動畫（{{ $dur }}）">
+      {{- with $phone }}
+      <source src="{{ . }}" type="video/mp4" media="(max-width: 640px)">
+      {{- end }}
+      <source src="{{ $video }}" type="video/mp4">
+      <a href="{{ $video }}">下載影片（MP4）</a>
+    </video>
+  </div>
+  <div class="ea-body">
+    {{- /* 文章內嵌不用 h3：文章的 h3 會被主題加「§」、還會被抓進目錄 */ -}}
+    {{- if eq $mode "page" }}
+    <h3 class="ea-title"><a href="#{{ $it.id }}">{{ $it.title }}</a></h3>
+    {{- else }}
+    <p class="ea-title">{{ $it.title }}</p>
+    {{- end }}
+    {{- with $it.subtitle }}
+    <p class="ea-sub">{{ . }}</p>
+    {{- end }}
+    <p class="ea-point">{{ $it.point }}</p>
+    <p class="ea-meta">
+      <span class="ea-dur" title="片長">▶ {{ $dur }}</span>
+      {{- if and (eq $it.series "omi") (eq $mode "page") }}
+      {{- $inAtlas := false }}
+      {{- range (index site.Data "omi_atlas").groups }}{{ range .findings }}{{ if eq .id $it.id }}{{ $inAtlas = true }}{{ end }}{{ end }}{{ end }}
+      {{- if $inAtlas }}
+      <a class="ea-atlas" href="{{ printf "/omi/#%s" $it.id | relURL }}">OMI圖鑑</a>
+      {{- end }}
+      {{- end }}
+      {{- if eq $mode "embed" }}
+      <a class="ea-atlas" href="{{ printf "/ecg-anim/#%s" $it.id | relURL }}">ECG動畫館</a>
+      {{- end }}
+    </p>
+    {{- if $hasRefs }}
+    <details class="ea-refs">
+      <summary>參考來源</summary>
+      <ul>
+        {{- range $it.refs }}
+        <li>{{ . }}</li>
+        {{- end }}
+      </ul>
+    </details>
+    {{- end }}
+  </div>
+</article>

@@ -1,0 +1,14 @@
+{{- /* OMI圖鑑 finding 詳情頁內嵌的教學動畫（就地播放，資料在 data/ecg_anim.yaml）。
+       已公開才輸出；沒公開時正式站什麼都不輸出，本機預覽站顯示虛線提示框，方便看擺放位置。
+       卡片與動畫館、ecganim shortcode 共用 ecg-anim/card.html（embed 模式，附「ECG動畫館」連結）。 */ -}}
+{{- $it := partial "ecg-anim/item.html" . -}}
+{{- if and $it $it.visible }}
+<section class="oa-d-video" id="{{ $it.id }}-anim" aria-label="教學動畫">
+  <h3>教學動畫</h3>
+  {{ partial "ecg-anim/css.html" . }}
+  {{ partial "ecg-anim/card.html" (dict "it" $it "mode" "embed") }}
+</section>
+{{- else if and $it hugo.IsServer (not $it.hidden) }}
+{{ partial "ecg-anim/css.html" . }}
+<p class="ea-pending">預覽限定：這裡會放「{{ $it.title }}」教學動畫，還沒公開（published: false），正式站目前不會顯示。</p>
+{{- end -}}

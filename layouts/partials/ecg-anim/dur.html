@@ -1,0 +1,3 @@
+{{- /* 秒數 → m:ss（無條件捨去到秒，64.375 → 1:04） */ -}}
+{{- $s := int (math.Floor (float (. | default 0))) -}}
+{{- return printf "%d:%02d" (div $s 60) (mod $s 60) -}}

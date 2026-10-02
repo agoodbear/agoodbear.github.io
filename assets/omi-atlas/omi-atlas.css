@@ -458,6 +458,24 @@ html:not(.oa-js) .oa-detail + .oa-detail { margin-top: 4rem; }
   color: var(--oa-graphite);
 }
 .oa-d-head .oa-new { margin: .6rem 0 0; }
+/* 「▶ 動畫 1:04」：該 finding 的動畫在 ECG動畫館公開後才會出現（layouts/partials/ecg-anim/atlas-link.html） */
+.oa-d-anim { margin: .7rem 0 0; }
+.oa-d-anim a {
+  display: inline-block;
+  padding: .3rem .85rem;
+  border: 1px solid rgba(181, 61, 53, .45);
+  border-radius: 999px;
+  color: var(--oa-salmon-text);
+  font-size: .92rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-decoration: none;
+}
+.oa-d-anim a:hover,
+.oa-d-anim a:focus-visible { background: var(--oa-salmon-text); color: #fff; }
+/* 詳情頁內嵌的教學動畫（ecg-anim/atlas-embed.html）：直式片限高，不讓一支影片佔滿整個詳情 */
+.oa-d-video { margin: 1.5rem 0; scroll-margin-top: 5rem; }
+.oa-d-video .ea-player video { max-height: 70vh; max-height: 70svh; }
 
 .oa-d-body {
   display: grid;

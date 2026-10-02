@@ -1,0 +1,28 @@
+{{- /*
+  ecganim — 在文章裡嵌一支 ECG 教學動畫（資料在 data/ecg_anim.yaml）
+  用法：
+    {{< ecganim "hatw" >}}
+  代號清單在 data/ecg_anim.yaml 的 id 欄（OMI 系列＝OMI圖鑑的 id）。
+  代號寫錯：本機預覽（hugo server）只印警告＋在文章裡標紅；正式 build（GitHub Actions）直接失敗。
+  還沒公開（published: false）或 hidden 的片：正式站什麼都不輸出；本機預覽站顯示一個虛線提示框，
+  提醒「這裡會有動畫、但還沒上架」，這樣文章可以先寫好、片子公開那天自動出現，不會把沒審過的片放上線。
+*/ -}}
+{{- if .IsNamedParams -}}
+  {{- errorf "ecganim shortcode 只接受位置參數，例如 ecganim \"hatw\"（%s）" .Position -}}
+{{- end -}}
+{{- $id := lower (.Get 0 | default "") -}}
+{{- $it := partial "ecg-anim/item.html" $id -}}
+{{- if not $it -}}
+  {{- if hugo.IsServer -}}
+    {{- warnf "ecganim shortcode 找不到動畫代號 %q（%s）。代號清單在 data/ecg_anim.yaml" $id .Position -}}
+<span class="omi-ref omi-ref--broken" title="data/ecg_anim.yaml 裡沒有這個代號">ecganim 代號「{{ $id }}」不存在</span>
+  {{- else -}}
+    {{- errorf "ecganim shortcode 找不到動畫代號 %q（%s）。代號清單在 data/ecg_anim.yaml" $id .Position -}}
+  {{- end -}}
+{{- else if $it.visible -}}
+{{ partial "ecg-anim/css.html" .Page }}
+{{ partial "ecg-anim/card.html" (dict "it" $it "mode" "embed") }}
+{{- else if hugo.IsServer -}}
+{{ partial "ecg-anim/css.html" .Page }}
+<p class="ea-pending">預覽限定：這裡會嵌「{{ $it.title }}」動畫，{{ if $it.hidden }}但它設了 hidden，永遠不會顯示{{ else }}還沒公開（published: false），正式站目前不會顯示{{ end }}。</p>
+{{- end -}}

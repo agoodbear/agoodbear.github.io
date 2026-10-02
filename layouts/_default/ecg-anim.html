@@ -1,0 +1,63 @@
+{{- /*
+  ECG動畫館（/ecg-anim/）
+  資料：data/ecg_anim.yaml（series 分組＋items 每支一筆）
+  卡片：layouts/partials/ecg-anim/card.html（ecganim shortcode 共用）；樣式：assets/ecganim/ecganim.css（資料夾不叫 ecg-anim，免得跟頁面網址 /ecg-anim/ 撞路徑）
+  只顯示 published: true 且非 hidden 的片；一支都沒有時整頁只留「即將推出」。
+  （content/ecg-anim.md 目前是 draft，第一支上架時 publish_anim.sh 會把它改成 draft: false。）
+*/ -}}
+
+{{ define "head" }}
+{{- partial "ecg-anim/css.html" . }}
+<script>/* 同一時間只播一支 */if(!window.__eaPlayOne){window.__eaPlayOne=1;document.addEventListener('play',function(e){if(!e.target.closest||!e.target.closest('.ea-card'))return;document.querySelectorAll('.ea-card video').forEach(function(v){if(v!==e.target&&!v.paused)v.pause()})},true)}</script>
+{{ end }}
+
+{{ define "body-class" }}page-ecg-anim{{ end }}
+
+{{ define "main" }}
+{{- $data := index site.Data "ecg_anim" | default (dict) }}
+{{- $visible := slice }}
+{{- range $data.items }}
+  {{- $it := partial "ecg-anim/item.html" .id }}
+  {{- if $it.visible }}{{ $visible = $visible | append $it }}{{ end }}
+{{- end }}
+<main class="ea" id="ecg-anim">
+  <header class="ea-head">
+    <h1 class="ea-h1">{{ .Title }}</h1>
+    {{- with .Description }}
+    <p class="ea-lede">{{ . }}</p>
+    {{- end }}
+  </header>
+
+  {{- if not $visible }}
+  <p class="ea-soon">即將推出。</p>
+  {{- else }}
+  {{- if gt (len $data.series) 1 }}
+  <nav class="ea-toc" aria-label="系列">
+    {{- range $s := $data.series }}
+    {{- $n := len (where $visible "series" $s.id) }}
+    {{- if $n }}
+    <a href="#series-{{ $s.id }}">{{ $s.name }}<span class="ea-count">{{ $n }}</span></a>
+    {{- end }}
+    {{- end }}
+  </nav>
+  {{- end }}
+
+  {{- range $s := $data.series }}
+  {{- $its := where $visible "series" $s.id }}
+  {{- if $its }}
+  <section class="ea-series" id="series-{{ $s.id }}" aria-labelledby="series-{{ $s.id }}-h">
+    <header class="ea-series-head">
+      <h2 id="series-{{ $s.id }}-h">{{ $s.name }}</h2>
+      {{- with $s.intro }}<p>{{ . }}</p>{{ end }}
+    </header>
+    <div class="ea-grid">
+      {{- range $its }}
+      {{ partial "ecg-anim/card.html" (dict "it" . "mode" "page") }}
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+  {{- end }}
+  {{- end }}
+</main>
+{{ end }}

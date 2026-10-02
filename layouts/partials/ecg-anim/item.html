@@ -1,0 +1,27 @@
+{{- /*
+  ecg-anim/item — 依 id 找 data/ecg_anim.yaml 的一支動畫。
+  用法：{{ $it := partial "ecg-anim/item.html" "hatw" }}
+  回傳：找不到＝false；找到＝dict（原欄位＋ visible：published 且非 hidden）。
+  安全閘：已公開的片如果 point／refs 還是 TODO，正式 build 直接失敗、預覽站只警告。
+*/ -}}
+{{- $id := lower (. | default "") -}}
+{{- $data := index site.Data "ecg_anim" | default (dict) -}}
+{{- $hit := false -}}
+{{- range $data.items -}}
+  {{- if eq .id $id -}}{{- $hit = . -}}{{- end -}}
+{{- end -}}
+{{- if $hit -}}
+  {{- $visible := and $hit.published (not $hit.hidden) -}}
+  {{- if $visible -}}
+    {{- $todo := or (eq (printf "%v" $hit.point) "TODO") (eq (printf "%v" $hit.refs) "TODO") -}}
+    {{- if $todo -}}
+      {{- if hugo.IsServer -}}
+        {{- warnf "ecg_anim.yaml：%q 已設 published，但 point 或 refs 還是 TODO" $id -}}
+      {{- else -}}
+        {{- errorf "ecg_anim.yaml：%q 已設 published，但 point 或 refs 還是 TODO，不能上線" $id -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $hit = merge $hit (dict "visible" $visible) -}}
+{{- end -}}
+{{- return $hit -}}

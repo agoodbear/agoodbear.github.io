@@ -83,6 +83,8 @@
           {{- if $f.new2025 }}
           <p class="oa-new">⭐️ 2025 新增</p>
           {{- end }}
+          {{- /* 這個 finding 的教學動畫已公開才出現（資料在 data/ecg_anim.yaml） */ -}}
+          {{- partial "ecg-anim/atlas-link.html" $f.id }}
         </header>
 
         <div class="oa-d-body">
@@ -107,6 +109,8 @@
               </ul>
             </section>
             {{- end }}
+            {{- /* 教學動畫：已在 ECG動畫館公開才就地嵌入（data/ecg_anim.yaml） */ -}}
+            {{- partial "ecg-anim/atlas-embed.html" $f.id }}
             {{- /* 沒有通過查核的投影片就不放圖，也不留佔位文字。
                    review: true＝出處還沒確認的圖：只在 hugo server（預覽站）出現，正式 build 自動略過，Bear 確認後拿掉這個欄位才會上線 */ -}}
             {{- range $f.slides }}
