@@ -130,9 +130,7 @@ RVMI時，因為RV收縮力差，此時cardiac output非常仰賴足夠的preloa
 
 那麼Fig.8➜08:20的ECG發生什麼事了?
 
-<a id="aivr"></a>
-
-要講這是什麼rhythm，首先要知道**什麼是ventricular rhythm**。也就是心室放電細胞放電，因為不是走正常的conduction system，因此傳導較慢，所以心室放電細胞放電，QRS是寬的。
+要講這是什麼rhythm，首先要知道**什麼是ventricular rhythm**。<a id="aivr"></a>也就是心室放電細胞放電，因為不是走正常的conduction system，因此傳導較慢，所以心室放電細胞放電，QRS是寬的。
 
 ![Ventricular rhythm](../../static/images/ipic/tqpwkf.png)
 
