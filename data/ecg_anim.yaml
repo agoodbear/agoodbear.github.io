@@ -584,3 +584,378 @@ items:
   hidden_note: Bear 說效果差，頁面永遠不顯示
   published: false
   published_at: ''
+- id: hyperkalemia
+  series: mechanism
+  title: 高血鉀
+  subtitle: 一個變數，整張ECG都在動
+  point: 一個變數，看ECG一路怎麼變；ECG正常，不代表血鉀不高；calcium讓ECG暫時拉回，但血鉀沒降
+  duration: 56.3
+  refs:
+  - Goldberger's Clinical Electrocardiography 9th
+  - Braunwald's Heart Disease
+  - Guyton & Hall Textbook of Medical Physiology 14th
+  - Baltazar, Basic & Bedside Electrocardiography
+  - Mattu, ECG in Emergency, Acute & Critical Care 2e
+  - The Only EKG Book You'll Ever Need 7th
+  - Electrocardiogram in Clinical Medicine
+  - Critical Decisions in Emergency and Acute Care Electrocardiography
+  - Rosen's Emergency Medicine 10th
+  - LITFL
+  - Dr. Smith's ECG Blog
+  - Ken Grauer ECG Blog
+  refs_src: 片尾書目縮寫＋facts/hyperk-facts.md（calcium 段 Rosen's、Grauer）；完整版見 hyperkalemia/social_caption.txt
+  version: v3
+  src: hyperkalemia/out/hyperkalemia-v3.mp4
+  src_phone: hyperkalemia/out/hyperkalemia-v3-phone.mp4
+  video: hyperkalemia/hyperkalemia-v3.mp4
+  phone: hyperkalemia/hyperkalemia-v3-phone.mp4
+  poster: hyperkalemia/hyperkalemia-v3-poster.webp
+  facts: hyperkalemia/facts/hyperk-facts.md
+  blog_title: 還在高血鉀嗎？
+  blog_url: https://agoodbear.com/post/medium-ef858cdd6d2/
+  published: false
+  published_at: ''
+- id: mobitz2-2to1
+  series: mechanism
+  title: Mobitz II與2:1 AV block
+  subtitle: 堵在哪一層，危險差很多
+  point: 堵在His-Purkinje，可能突然全斷；2:1看QRS寬窄、拉長監視找Wenckebach
+  duration: 71.3
+  refs:
+  - AHA 2025 Adult ALS (Circulation 2025;152:S538)
+  - ERC 2025 ALS
+  - Hurst's The Heart
+  - Podrid's Real-World ECGs
+  - Wellens, ECG in Emergency Decision Making
+  - Harrison's Principles of Internal Medicine 20th
+  - Baltazar, Basic & Bedside Electrocardiography
+  - LITFL
+  refs_src: 片尾卡「依據：」＋facts/mobitz2-facts.md；完整版見 mobitz2-2to1/social_caption.txt
+  version: v1
+  src: mobitz2-2to1/out/mobitz2-2to1-v1.mp4
+  src_phone: mobitz2-2to1/out/mobitz2-2to1-v1-phone.mp4
+  video: mobitz2-2to1/mobitz2-2to1-v1.mp4
+  phone: mobitz2-2to1/mobitz2-2to1-v1-phone.mp4
+  poster: mobitz2-2to1/mobitz2-2to1-v1-poster.webp
+  facts: mobitz2-2to1/facts/mobitz2-facts.md
+  blog_title: 67歲暈厥的阿姨
+  blog_url: https://agoodbear.com/post/ecg-post-10/
+  published: false
+  published_at: ''
+- id: af-wpw
+  series: mechanism
+  title: Af＋WPW
+  subtitle: pre-excited atrial fibrillation
+  point: 又寬又快又亂的Af，先想到WPW：別關AV node這道門
+  duration: 79.2
+  refs:
+  - AHA 2025 Adult ALS (Circulation 2025)
+  - 2023 ACC/AHA/ACCP/HRS AF Guideline
+  - Goldberger's Clinical Electrocardiography 9th
+  - Mattu, ECG in Emergency, Acute & Critical Care 2e
+  - Braunwald's Heart Disease
+  - LITFL
+  - Dr. Smith's ECG Blog
+  - 心臟模型改作自BodyParts3D, © DBCLS, CC BY 4.0
+  refs_src: 片尾卡「參考：」＋facts/afwpw-facts.md
+  version: v1
+  src: af-wpw/out/af-wpw-v1.mp4
+  src_phone: af-wpw/out/af-wpw-v1-phone.mp4
+  video: af-wpw/af-wpw-v1.mp4
+  phone: af-wpw/af-wpw-v1-phone.mp4
+  poster: af-wpw/af-wpw-v1-poster.webp
+  facts: af-wpw/facts/afwpw-facts.md
+  blog_title: 這是什麼扭曲變形的ECG？
+  blog_url: https://agoodbear.com/post/medium-7bca25391302/
+  published: false
+  published_at: ''
+- id: pe-ecg
+  series: mechanism
+  title: 肺栓塞PE的ECG
+  subtitle: RAD＋rightward leads STE
+  point: 看到RAD，加上rightward leads（aVR、V1、III）ST elevation，要想到PE
+  duration: 69.9
+  refs:
+  - Mattu, ECG in Emergency, Acute & Critical Care 2e
+  - Chou's Electrocardiography 6th
+  - Goldberger's Clinical Electrocardiography 9th
+  - ABC of Clinical Electrocardiography
+  - Braunwald's Heart Disease
+  - Rosen's Emergency Medicine 10th
+  - Marriott's Practical Electrocardiography 13th
+  - ECG Weekly
+  - LITFL
+  - Dr. Smith's ECG Blog
+  - 心臟模型改作自BodyParts3D, © DBCLS, CC BY 4.0
+  refs_src: 片尾卡「參考：」＋facts/pe-facts.md
+  version: v1
+  src: pe-ecg/out/pe-ecg-v1.mp4
+  src_phone: pe-ecg/out/pe-ecg-v1-phone.mp4
+  video: pe-ecg/pe-ecg-v1.mp4
+  phone: pe-ecg/pe-ecg-v1-phone.mp4
+  poster: pe-ecg/pe-ecg-v1-poster.webp
+  facts: pe-ecg/facts/pe-facts.md
+  blog_title: 41歲女性，到院30分鐘內，IHCA
+  blog_url: https://agoodbear.com/post/ecg-post-12/
+  published: false
+  published_at: ''
+- id: mobitz1-vs-cavb
+  series: mechanism
+  title: 這個像CAVB嗎？
+  subtitle: Mobitz type I vs complete AV block
+  point: CAVB應該要有regular escape rhythm；不規則、一群一群，要想Mobitz type I
+  duration: 73.6
+  refs:
+  - Hurst's The Heart 15e
+  - Marriott's Practical Electrocardiography 13th
+  - Goldberger's Clinical Electrocardiography 9th
+  - Podrid's Real-World ECGs
+  - Atlas of Electrocardiography
+  - LITFL
+  - Ken Grauer ECG Blog
+  - ECG Weekly
+  refs_src: 片尾卡「參考：」＋facts/mobitz1-facts.md；social_caption.txt 作者欄待核
+  version: v1
+  src: mobitz1-vs-cavb/out/mobitz1-vs-cavb-v1.mp4
+  src_phone: mobitz1-vs-cavb/out/mobitz1-vs-cavb-v1-phone.mp4
+  video: mobitz1-vs-cavb/mobitz1-vs-cavb-v1.mp4
+  phone: mobitz1-vs-cavb/mobitz1-vs-cavb-v1-phone.mp4
+  poster: mobitz1-vs-cavb/mobitz1-vs-cavb-v1-poster.webp
+  facts: mobitz1-vs-cavb/facts/mobitz1-facts.md
+  blog_title: 猜猜哪一條血管阻塞？
+  blog_url: https://agoodbear.com/post/medium-b4504530acc/
+  published: false
+  published_at: ''
+- id: massive-ste-pseudo-vt
+  series: omi
+  title: Massive STE假VT
+  subtitle: shark fin
+  point: 一個lead看起來像VT，先看其他lead、畫J線、找P波和reciprocal；找不到證據，就先當VT
+  duration: 64.0
+  refs:
+  - ECG Weekly (Mattu)
+  - Dr. Smith's ECG Blog
+  - Ken Grauer ECG Blog
+  - LITFL
+  - ABC of Clinical Electrocardiography
+  - Goldberger's Clinical Electrocardiography 9th
+  - Jones, ECGs for the Emergency Physician
+  refs_src: 片尾卡「參考：」＋facts/massive-ste-facts.md；完整 16 筆見 social_caption.txt
+  version: v1
+  src: massive-ste-pseudo-vt/out/massive-ste-pseudo-vt-v1.mp4
+  src_phone: massive-ste-pseudo-vt/out/massive-ste-pseudo-vt-v1-phone.mp4
+  video: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v1.mp4
+  phone: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v1-phone.mp4
+  poster: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v1-poster.webp
+  facts: massive-ste-pseudo-vt/facts/massive-ste-facts.md
+  published: false
+  published_at: ''
+- id: wct-vt-svt
+  series: mechanism
+  title: 寬QRS心搏過速
+  subtitle: VT還是SVT with aberrancy？
+  point: 分不出來，先當VT；不穩定就電；AV dissociation、capture／fusion beat、concordance支持VT，找不到也不能排除
+  duration: 73.9
+  refs:
+  - AHA 2025 Adult ALS (Circulation 2025;152:S538)
+  - LITFL
+  - Baltazar, Basic & Bedside Electrocardiography
+  - Mattu (ECG Weekly)
+  - Dr. Smith's ECG Blog
+  - Tintinalli's Emergency Medicine
+  - Braunwald's Heart Disease
+  refs_src: 片尾卡＋facts/wct-facts.md；完整版見 wct-vt-svt/social_caption.txt
+  version: v1
+  src: wct-vt-svt/out/wct-vt-svt-v1.mp4
+  src_phone: wct-vt-svt/out/wct-vt-svt-v1-phone.mp4
+  video: wct-vt-svt/wct-vt-svt-v1.mp4
+  phone: wct-vt-svt/wct-vt-svt-v1-phone.mp4
+  poster: wct-vt-svt/wct-vt-svt-v1-poster.webp
+  facts: wct-vt-svt/facts/wct-facts.md
+  published: false
+  published_at: ''
+- id: psvt-acls2025
+  series: mechanism
+  title: 常見PSVT × ACLS 2025
+  subtitle: 要不要Valsalva、用藥、電擊
+  point: 穩定先vagal maneuver（modified Valsalva）→adenosine→CCB／β-blocker；不穩定就synchronized cardioversion；寬QRS或不規則別套這個流程
+  duration: 75.1
+  refs:
+  - AHA 2025 Adult ALS (Circulation 2025;152:S538)
+  - Hurst's The Heart
+  - Braunwald's Heart Disease
+  - Marriott's Practical Electrocardiography
+  - Goldberger's Clinical Electrocardiography 9th
+  - 心臟模型改作自BodyParts3D, © DBCLS, CC BY 4.0
+  refs_src: 片尾卡「依據：」＋facts/psvt-facts.md；劑量能量見 social_caption.txt
+  version: v1
+  src: psvt-acls2025/out/psvt-acls2025-v1.mp4
+  src_phone: psvt-acls2025/out/psvt-acls2025-v1-phone.mp4
+  video: psvt-acls2025/psvt-acls2025-v1.mp4
+  phone: psvt-acls2025/psvt-acls2025-v1-phone.mp4
+  poster: psvt-acls2025/psvt-acls2025-v1-poster.webp
+  facts: psvt-acls2025/facts/psvt-facts.md
+  blog_title: Narrow QRS tachycardia
+  blog_url: https://agoodbear.com/post/medium-962b3d4d3f0e/
+  published: false
+  published_at: ''
+- id: stemi-mimics
+  series: omi
+  title: STEMI模仿者名冊
+  subtitle: 這張要不要call cath？
+  point: 型態典型時較不像OMI的四張、要先把OMI排除的三張；模仿者不代表就安全
+  duration: 76.9
+  refs:
+  - Mattu, ECG in Emergency, Acute & Critical Care 2e
+  - Rosen's Emergency Medicine 10th
+  - Critical Decisions in Emergency and Acute Care Electrocardiography
+  - Harrison's Principles of Internal Medicine
+  - 2013 ACCF/AHA STEMI Guideline
+  - 2025 ACC/AHA ACS Guideline
+  - LITFL
+  - ECG Weekly
+  - Dr. Smith's ECG Blog
+  refs_src: 片尾卡＋facts/mimics-facts.md；完整版見 stemi-mimics/social_caption.txt
+  version: v2
+  src: stemi-mimics/out/stemi-mimics-v2.mp4
+  src_phone: stemi-mimics/out/stemi-mimics-v2-phone.mp4
+  video: stemi-mimics/stemi-mimics-v2.mp4
+  phone: stemi-mimics/stemi-mimics-v2-phone.mp4
+  poster: stemi-mimics/stemi-mimics-v2-poster.webp
+  facts: stemi-mimics/facts/mimics-facts.md
+  blog_title: How to detect OMI in 10 Steps?
+  blog_url: https://agoodbear.com/post/ecg-post-2/
+  published: false
+  published_at: ''
+- id: sodium-channel
+  series: mechanism
+  title: 鈉通道阻斷
+  subtitle: TCA等藥物中毒的ECG
+  point: 寬QRS＋aVR terminal R＋lead I寬S，想到sodium channel blocker；給sodium bicarbonate，避開procainamide；寬QRS也要想高血鉀
+  duration: 61.4
+  refs:
+  - 2025 AHA Guidelines Part 10
+  - Goldfrank's Toxicologic Emergencies 11e
+  - Tintinalli's Emergency Medicine 9e
+  - Mattu, ECG in Emergency, Acute & Critical Care 2e
+  - Electrocardiogram in Clinical Medicine
+  - LITFL
+  - ECG Weekly
+  refs_src: 片尾卡「參考：」＋facts/nab-facts.md；完整版見 sodium-channel/social_caption.txt
+  version: v1
+  src: sodium-channel/out/sodium-channel-v1.mp4
+  src_phone: sodium-channel/out/sodium-channel-v1-phone.mp4
+  video: sodium-channel/sodium-channel-v1.mp4
+  phone: sodium-channel/sodium-channel-v1-phone.mp4
+  poster: sodium-channel/sodium-channel-v1-poster.webp
+  facts: sodium-channel/facts/nab-facts.md
+  published: false
+  published_at: ''
+- id: rbbb-stemi
+  series: omi
+  title: RBBB合併STEMI
+  subtitle: RBBB不會把STE藏起來
+  point: RBBB只改QRS尾巴，ST照一般規則看：V1–V3往上不行，往下太多也不行
+  duration: 71.4
+  refs:
+  - Goldberger's Clinical Electrocardiography 9th
+  - Braunwald's Heart Disease
+  - Electrocardiogram in Clinical Medicine
+  - Baltazar, Basic & Bedside Electrocardiography
+  - Mattu, ECG in Emergency, Acute & Critical Care 2e
+  - Bayés de Luna, Clinical Electrocardiography
+  - LITFL
+  - ECG Weekly
+  - Dr. Smith's ECG Blog
+  refs_src: facts/rbbb-stemi-facts.md；完整版見 rbbb-stemi/social_caption.txt
+  version: v1
+  src: rbbb-stemi/out/rbbb-stemi-v1.mp4
+  src_phone: rbbb-stemi/out/rbbb-stemi-v1-phone.mp4
+  video: rbbb-stemi/rbbb-stemi-v1.mp4
+  phone: rbbb-stemi/rbbb-stemi-v1-phone.mp4
+  poster: rbbb-stemi/rbbb-stemi-v1-poster.webp
+  facts: rbbb-stemi/facts/rbbb-stemi-facts.md
+  blog_title: 82歲胸痛的阿公
+  blog_url: https://agoodbear.com/post/ecg-post-14/
+  published: false
+  published_at: ''
+- id: prox-rca-rvmi
+  series: omi
+  title: Proximal RCA＋RVMI
+  subtitle: inferior STEMI也可能V1–V3 STE
+  point: inferior STEMI加V1–V3 STE，先想proximal RCA＋RVMI：V1通常最高、做V4R、小心nitrate
+  duration: 79.1
+  refs:
+  - Braunwald's Heart Disease
+  - Rosen's Emergency Medicine 10th
+  - Critical Cases in Electrocardiography
+  - Mattu, ECG in Emergency, Acute & Critical Care 2e
+  - Jones, ECGs for the Emergency Physician
+  - Bayés de Luna, Clinical Electrocardiography
+  - Tintinalli's Emergency Medicine 9th
+  - 2025 ACC/AHA ACS Guideline
+  - LITFL
+  - Dr. Smith's ECG Blog
+  - Zheng 2016；Jim 2007；Walsh 2018；Bouhuijzen 2018
+  - 心臟模型改作自BodyParts3D, © DBCLS, CC BY 4.0
+  refs_src: 片尾卡「參考：」＋facts/rca-facts.md；完整版見 prox-rca-rvmi/social_caption.txt
+  version: v1
+  src: prox-rca-rvmi/out/prox-rca-rvmi-v1.mp4
+  src_phone: prox-rca-rvmi/out/prox-rca-rvmi-v1-phone.mp4
+  video: prox-rca-rvmi/prox-rca-rvmi-v1.mp4
+  phone: prox-rca-rvmi/prox-rca-rvmi-v1-phone.mp4
+  poster: prox-rca-rvmi/prox-rca-rvmi-v1-poster.webp
+  facts: prox-rca-rvmi/facts/rca-facts.md
+  blog_title: 心肌梗塞，跳這心律，發生什麼事了？該怎麼辦？
+  blog_url: https://agoodbear.com/post/ecg-post-15/
+  published: false
+  published_at: ''
+- id: lead-reversal
+  series: mechanism
+  title: 導程接錯
+  subtitle: Wilson central terminal
+  point: lead I全倒、aVR變正，或某條limb lead一條平線：先重接，再判讀；接錯也可能被當成OMI
+  duration: 75.0
+  refs:
+  - LITFL (ECG Limb Lead Reversal)
+  - Chou's Electrocardiography in Clinical Practice
+  - ECG Weekly (ECG Lead Misplacement)
+  - Dr. Smith's ECG Blog
+  - ECG Masters' Collection
+  refs_src: 片尾卡「依據：」＋facts/lead-reversal-facts.md
+  version: v1
+  src: lead-reversal/out/lead-reversal-v1.mp4
+  src_phone: lead-reversal/out/lead-reversal-v1-phone.mp4
+  video: lead-reversal/lead-reversal-v1.mp4
+  phone: lead-reversal/lead-reversal-v1-phone.mp4
+  poster: lead-reversal/lead-reversal-v1-poster.webp
+  facts: lead-reversal/facts/lead-reversal-facts.md
+  published: false
+  published_at: ''
+- id: aivr-vs-vt
+  series: mechanism
+  title: AIVR vs VT
+  subtitle: 別被搶眼的心室節律吸走
+  point: 寬QRS別急著電：先看rate，再看病人；STEMI後出現的慢寬QRS可能是AIVR（reperfusion rhythm），別當VT電
+  duration: 76.7
+  refs:
+  - LITFL
+  - Ken Grauer ECG Blog
+  - Dr. Smith's ECG Blog
+  - ECG Weekly (Mattu)
+  - Braunwald's Heart Disease
+  - Tintinalli's Emergency Medicine
+  - AHA 2025 Adult ALS (Circulation 2025;152:S538)
+  - 心臟模型改作自BodyParts3D, © DBCLS, CC BY 4.0
+  refs_src: 片尾卡「依據：」＋facts/aivr-facts.md；完整版見 aivr-vs-vt/social_caption.txt
+  version: v3
+  src: aivr-vs-vt/out/aivr-vs-vt-v3.mp4
+  src_phone: aivr-vs-vt/out/aivr-vs-vt-v3-phone.mp4
+  video: aivr-vs-vt/aivr-vs-vt-v3.mp4
+  phone: aivr-vs-vt/aivr-vs-vt-v3-phone.mp4
+  poster: aivr-vs-vt/aivr-vs-vt-v3-poster.webp
+  facts: aivr-vs-vt/facts/aivr-facts.md
+  blog_title: 心肌梗塞，跳這心律，發生什麼事了？該怎麼辦？
+  blog_url: https://agoodbear.com/post/ecg-post-15/
+  published: true
+  published_at: '2026-10-03'
