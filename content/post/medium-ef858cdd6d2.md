@@ -33,7 +33,7 @@ Fig 2是第二次追蹤心臟酵素時做的ECG。
 
 我看了之後，立刻開了，Calcium、D50W+RI、Kalimate、NaHCO3。
 
-護理師問我:請問熊醫師，確定要『**再給』一次降鉀藥物**嗎?
+護理師問我:請問熊醫師，確定要**『再給』一次降鉀藥物**嗎?
 
 ### 熊醫師:要!!!
 
@@ -47,9 +47,9 @@ Fig 2是第二次追蹤心臟酵素時做的ECG。
 
 ### 可以抓幾個重點:
 
-1. 如果ST elevation出現在Rightward lead(aVR、V1、V2、III)，要考慮Hyper-K，特別是有合併RAD狀況下**(另外需要和PE、Na channel blocker一起DDx)**
-2. 如果有看到Narrow based Peaked T wave，也需要考慮Hyper-K**(像Fig 2. V3~5尖到不行的T wave) →注意Peaked T wave的sensitive不高(意思是沒有看到Peaked T wave不代表沒有Hyper-K)**
-3. 慢的心跳，合併conduction block也要考慮**(P wave變平)**
+1. <a id="rightward"></a>如果ST elevation出現在Rightward lead(aVR、V1、V2、III)，要考慮Hyper-K，特別是有合併RAD狀況下(**另外需要和PE、Na channel blocker一起DDx**)
+2. 如果有看到Narrow based Peaked T wave，也需要考慮Hyper-K(**像Fig 2. V3~5尖到不行的T wave) →注意Peaked T wave的sensitive不高(意思是沒有看到Peaked T wave不代表沒有Hyper-K**)
+3. 慢的心跳，合併conduction block也要考慮(**P wave變平**)
 4. 如果看到Clumped beats，如果怪異沒P，也要考慮(見流程圖Fig 3)
 
 ![](https://cdn-images-1.medium.com/max/1024/1*qMtmievwzzgbZ1RkxvAqag.png)
