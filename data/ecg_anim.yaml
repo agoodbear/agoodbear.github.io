@@ -669,36 +669,37 @@ items:
   blog_url: https://agoodbear.com/post/medium-7bca25391302/
   published: false
   published_at: ''
-- id: pe-ecg
+- id: hyperk-rightward-ste
   series: mechanism
-  title: 肺栓塞PE的ECG
+  title: 高血鉀的特別長相
   subtitle: RAD＋rightward leads STE
-  point: 看到RAD，加上rightward leads（aVR、V1、III）ST elevation，要想到PE
-  duration: 69.9
+  point: 看到V1、V2、aVR的ST抬高加上RAD，心中一定要有三個DDx：Hyper-K、PE、Na channel blocker；不要先想AMI
+  duration: 61.0
   refs:
+  - ECG Weekly 2025-02-10 Inservice/Boards Exam Prep Pt. I（Classic Hyperkalemia）
   - Mattu, ECG in Emergency, Acute & Critical Care 2e
+  - Mattu & Brady, ECGs for the Emergency Physician 2
+  - Braunwald's Heart Disease
+  - Electrocardiogram in Clinical Medicine
   - Chou's Electrocardiography 6th
   - Goldberger's Clinical Electrocardiography 9th
   - ABC of Clinical Electrocardiography
-  - Braunwald's Heart Disease
   - Rosen's Emergency Medicine 10th
   - Marriott's Practical Electrocardiography 13th
-  - ECG Weekly
   - LITFL
   - Dr. Smith's ECG Blog
-  - 心臟模型改作自BodyParts3D, © DBCLS, CC BY 4.0
-  refs_src: 片尾卡「參考：」＋facts/pe-facts.md
-  version: v1
-  src: pe-ecg/out/pe-ecg-v1.mp4
-  src_phone: pe-ecg/out/pe-ecg-v1-phone.mp4
-  video: pe-ecg/pe-ecg-v1.mp4
-  phone: pe-ecg/pe-ecg-v1-phone.mp4
-  poster: pe-ecg/pe-ecg-v1-poster.webp
-  facts: pe-ecg/facts/pe-facts.md
-  blog_title: 41歲女性，到院30分鐘內，IHCA
-  blog_url: https://agoodbear.com/post/ecg-post-12/
-  published: false
-  published_at: ''
+  refs_src: 片尾卡「參考：」＋pe-ecg/README.md v2d–v5
+  version: v5
+  src: pe-ecg/out/pe-ecg-v5.mp4
+  src_phone: pe-ecg/out/pe-ecg-v5-phone.mp4
+  video: hyperk-rightward-ste/hyperk-rightward-ste-v5.mp4
+  phone: hyperk-rightward-ste/hyperk-rightward-ste-v5-phone.mp4
+  poster: hyperk-rightward-ste/hyperk-rightward-ste-v5-poster.webp
+  poster_at: 21.5
+  blog_title: 還在高血鉀嗎？
+  blog_url: https://agoodbear.com/post/medium-ef858cdd6d2/#rightward
+  published: true
+  published_at: '2026-10-04'
 - id: mobitz1-vs-cavb
   series: mechanism
   title: 這個像CAVB嗎？
