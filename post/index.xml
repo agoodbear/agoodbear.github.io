@@ -3876,7 +3876,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;em&gt;Fig 2&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Fig 2是第二次追蹤心臟酵素時做的ECG。&lt;/p&gt;
 &lt;p&gt;我看了之後，立刻開了，Calcium、D50W+RI、Kalimate、NaHCO3。&lt;/p&gt;
-&lt;p&gt;護理師問我:請問熊醫師，確定要『&lt;strong&gt;再給』一次降鉀藥物&lt;/strong&gt;嗎?&lt;/p&gt;
+&lt;p&gt;護理師問我:請問熊醫師，確定要**『再給』一次降鉀藥物**嗎?&lt;/p&gt;
 &lt;h3 id="熊醫師要"&gt;熊醫師:要!!!&lt;/h3&gt;
 &lt;h3 id="之後追蹤的鉀離子74"&gt;之後追蹤的鉀離子:&lt;strong&gt;7.4&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;後來看了一下病歷，前一班給了降鉀藥物:&lt;strong&gt;NaHCO3、Kalimate&lt;/strong&gt;&lt;/p&gt;
@@ -3884,9 +3884,9 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;可以像心肌梗塞的ST elevation，也可以是像subendocardial ischemia的ST depression。可以慢、可以快。&lt;/p&gt;
 &lt;h3 id="可以抓幾個重點"&gt;可以抓幾個重點:&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;如果ST elevation出現在Rightward lead(aVR、V1、V2、III)，要考慮Hyper-K，特別是有合併RAD狀況下**(另外需要和PE、Na channel blocker一起DDx)**&lt;/li&gt;
-&lt;li&gt;如果有看到Narrow based Peaked T wave，也需要考慮Hyper-K**(像Fig 2. V3~5尖到不行的T wave) →注意Peaked T wave的sensitive不高(意思是沒有看到Peaked T wave不代表沒有Hyper-K)**&lt;/li&gt;
-&lt;li&gt;慢的心跳，合併conduction block也要考慮**(P wave變平)**&lt;/li&gt;
+&lt;li&gt;&lt;a id="rightward"&gt;&lt;/a&gt;如果ST elevation出現在Rightward lead(aVR、V1、V2、III)，要考慮Hyper-K，特別是有合併RAD狀況下(&lt;strong&gt;另外需要和PE、Na channel blocker一起DDx&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;如果有看到Narrow based Peaked T wave，也需要考慮Hyper-K(&lt;strong&gt;像Fig 2. V3~5尖到不行的T wave) →注意Peaked T wave的sensitive不高(意思是沒有看到Peaked T wave不代表沒有Hyper-K&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;慢的心跳，合併conduction block也要考慮(&lt;strong&gt;P wave變平&lt;/strong&gt;)&lt;/li&gt;
 &lt;li&gt;如果看到Clumped beats，如果怪異沒P，也要考慮(見流程圖Fig 3)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;figure&gt;
