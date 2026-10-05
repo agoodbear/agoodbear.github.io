@@ -118,7 +118,9 @@ X 上讚數最高的解說文，是 @AnasNomanMD 的九點摘要。他開頭那�
 
 - **Considered**:acute myocardial injury + 另一個急性病況 + 至少一項（缺血症狀、新的 ischemic ECG change、pathological Q wave）。
 - **Likely**：再加上已知 CAD，或是 ECG 缺血範圍、troponin 幅度大到讓你強烈懷疑。
-- **Confirmed**：要影像。冠狀動脈 ≥70% 狹窄（或 ≥50% 但生理學檢查證實限流）且沒有急性冠狀動脈病灶；或是新的 RWMA/失去存活心肌，分布符合缺血。[^13]
+- **Confirmed**：要影像，而且下面兩條**符合任一條**就算（原文寫 one or more）：[^13]
+    1. 冠狀動脈攝影（angiography）看到 ≥70% 狹窄（或 ≥50% 但生理學檢查證實限流），而且**沒有**急性冠狀動脈病灶；有急性病灶的話，就變成 primary MI。
+    2. 心臟影像（cardiac imaging，例如 echo、CMR）看到**新的** RWMA，或出現失去存活的心肌，分布符合缺血。
 
 ![原文 Box 4：Secondary MI 的診斷準則](../../static/images/ipic/ecg-post-18-udmi5-box4.webp "Fig. 5. 原文 Box 4：secondary MI 的 considered／likely／confirmed 三層準則（原文跨兩欄，這裡上下接起來）。來源同 Table 1")
 
@@ -359,7 +361,7 @@ Unstable angina 也保留，還在 ACS 的光譜裡，而且跟 MI 一樣分層�
 [^10]: @ArisSikolas 2026-08-28 https://x.com/ArisSikolas/status/2093289918873076180 讚 90；討論串共 7 則
 [^11]: 同上 2/7 逐字：「Type 2 MI ALREADY required evidence of acute myocardial ischaemia. So requiring ischaemia is NOT new.」；Fourth UDMI「Criteria for Type 2 MI」：rise/fall cTn + supply–demand imbalance + 至少一項（症狀／新缺血 ECG／Q 波／影像）
 [^12]: 同上 3/7；Fifth UDMI Table 1 Type 2 列：「Myocardial oxygen supply–demand imbalance due to an alternative acute condition」；Fourth UDMI Type 2 定義原含「coronary spasm and spontaneous coronary dissection may be involved as well (ie, type 2 MI)」
-[^13]: Fifth UDMI Box 4「Diagnostic Criteria for Secondary Myocardial Infarction」逐字：「Obstructive coronary artery disease, defined as ≥70% stenosis in an epicardial vessel by angiography (or ≥50% stenosis in an epicardial vessel that is flow-limiting on physiological assessment) without an acute coronary pathology」「Development of a new or presumed new regional wall motion abnormality or absence of viable myocardium in a pattern consistent with an ischemic etiology」；三層 considered／likely／confirmed 同 Box 4 與 @ArisSikolas 5/7–7/7
+[^13]: Fifth UDMI Box 4「Diagnostic Criteria for Secondary Myocardial Infarction」逐字：「For patients in whom coronary and/or cardiac imaging is feasible and appropriate, the diagnosis is confirmed if one or more of the following features are present」「Obstructive coronary artery disease, defined as ≥70% stenosis in an epicardial vessel by angiography (or ≥50% stenosis in an epicardial vessel that is flow-limiting on physiological assessment) without an acute coronary pathology」「Development of a new or presumed new regional wall motion abnormality or absence of viable myocardium in a pattern consistent with an ischemic etiology」；§7.2.2 逐字：「If imaging provided evidence of an acute coronary pathology (Figure 3) then a diagnosis of primary myocardial infarction would be confirmed」；三層 considered／likely／confirmed 同 Box 4 與 @ArisSikolas 5/7–7/7
 [^14]: Fifth UDMI §7.2.2 逐字：「Therefore, it is not possible to define thresholds for any of the triggers of supply–demand imbalance that could be reliably applied to all.」「two or more triggers often coexist」
 [^15]: Fifth UDMI Table 1 rationale 欄逐字：「Prioritize specificity to differentiate myocardial infarction from acute myocardial injury in conditions resulting in oxygen supply–demand imbalance. Objective diagnostic criteria to allow consistent application in practice and identify patients in whom the diagnosis has treatment implications.」
 [^16]: @RYO_cardeccmepi 2026-08-30 https://x.com/RYO_cardeccmepi/status/2094078849692913762 讚 23，逐字如上，附四張現場投影片照片；另有「救急 ICUへの影響はでかそう」
