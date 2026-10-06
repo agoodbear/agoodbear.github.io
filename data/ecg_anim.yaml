@@ -161,8 +161,8 @@ items:
   phone: omi-inverted-u/omi-inverted-u-v1-phone.mp4
   poster: omi-inverted-u/omi-inverted-u-v1-poster.webp
   facts: omi-inverted-u/facts/inverted-u-facts.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-06'
 
 - id: bifascicular-block
   series: omi
@@ -298,8 +298,8 @@ items:
   phone: tqrsd/tqrsd-v5-phone.mp4
   poster: tqrsd/tqrsd-v5-poster.webp
   facts: tqrsd/tqrsd-facts.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-06'
 
 - id: wellens
   series: omi
