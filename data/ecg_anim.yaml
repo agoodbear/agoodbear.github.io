@@ -159,7 +159,7 @@ items:
   src_phone: omi-inverted-u/out/omi-inverted-u-v1-phone.mp4
   video: omi-inverted-u/omi-inverted-u-v1.mp4
   phone: omi-inverted-u/omi-inverted-u-v1-phone.mp4
-  poster: omi-inverted-u/omi-inverted-u-v1-poster.webp
+  poster: omi-inverted-u/omi-inverted-u-cover.webp
   facts: omi-inverted-u/facts/inverted-u-facts.md
   published: true
   published_at: '2026-10-06'
@@ -210,7 +210,7 @@ items:
   src_phone: omi-posterior/out/omi-posterior-v2-phone.mp4
   video: omi-posterior/omi-posterior-v2.mp4
   phone: omi-posterior/omi-posterior-v2-phone.mp4
-  poster: omi-posterior/omi-posterior-v2-poster.webp
+  poster: omi-posterior/omi-posterior-cover.webp
   facts: omi-posterior/facts/posterior-facts.md
   published: true
   published_at: '2026-10-02'
@@ -296,7 +296,7 @@ items:
   src_phone: tqrsd/deliver5/tqrsd-v5-phone.mp4
   video: tqrsd/tqrsd-v5.mp4
   phone: tqrsd/tqrsd-v5-phone.mp4
-  poster: tqrsd/tqrsd-v5-poster.webp
+  poster: tqrsd/tqrsd-cover.webp
   facts: tqrsd/tqrsd-facts.md
   published: true
   published_at: '2026-10-06'
@@ -316,7 +316,7 @@ items:
   src_phone: wellens/deliver/wellens-A-v3b-手機預覽.mp4
   video: wellens/wellens-v3b.mp4
   phone: wellens/wellens-v3b-phone.mp4
-  poster: wellens/wellens-v3b-poster.webp
+  poster: wellens/wellens-cover.webp
   poster_at: 3.5
   facts: wellens/facts/wellens-facts.md
   published: true
@@ -663,7 +663,7 @@ items:
   src_phone: af-wpw/out/af-wpw-v5b-phone.mp4
   video: af-wpw/af-wpw-v5b.mp4
   phone: af-wpw/af-wpw-v5b-phone.mp4
-  poster: af-wpw/af-wpw-v5b-poster.webp
+  poster: af-wpw/af-wpw-cover.webp
   poster_at: 18
   facts: af-wpw/facts/afwpw-facts.md
   blog_title: 這是什麼扭曲變形的ECG？
@@ -695,7 +695,7 @@ items:
   src_phone: pe-ecg/out/pe-ecg-v5-phone.mp4
   video: hyperk-rightward-ste/hyperk-rightward-ste-v5.mp4
   phone: hyperk-rightward-ste/hyperk-rightward-ste-v5-phone.mp4
-  poster: hyperk-rightward-ste/hyperk-rightward-ste-v5-poster.webp
+  poster: hyperk-rightward-ste/hyperk-rightward-ste-cover.webp
   poster_at: 21.5
   blog_title: 還在高血鉀嗎？
   blog_url: https://agoodbear.com/post/medium-ef858cdd6d2/#rightward
@@ -748,7 +748,7 @@ items:
   src_phone: massive-ste-pseudo-vt/out/massive-ste-v3b-phone.mp4
   video: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v3b.mp4
   phone: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v3b-phone.mp4
-  poster: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v3b-poster.webp
+  poster: massive-ste-pseudo-vt/massive-ste-pseudo-vt-cover.webp
   poster_at: 4.5
   facts: massive-ste-pseudo-vt/facts/massive-ste-facts.md
   published: true
@@ -777,7 +777,7 @@ items:
   src_phone: wct-vt-svt/out/wct-vt-svt-v3d-phone.mp4
   video: wct-vt-svt/wct-vt-svt-v3d.mp4
   phone: wct-vt-svt/wct-vt-svt-v3d-phone.mp4
-  poster: wct-vt-svt/wct-vt-svt-v3d-poster.webp
+  poster: wct-vt-svt/wct-vt-svt-cover.webp
   poster_at: 13.5
   facts: wct-vt-svt/facts/wct-facts.md
   blog_title: 回覆網友ECG提問
@@ -857,9 +857,49 @@ items:
   src_phone: sodium-channel/out/sodium-channel-v3c-phone.mp4
   video: sodium-channel/sodium-channel-v3c.mp4
   phone: sodium-channel/sodium-channel-v3c-phone.mp4
-  poster: sodium-channel/sodium-channel-v3c-poster.webp
+  poster: sodium-channel/sodium-channel-cover.webp
   poster_at: 13.5
   facts: sodium-channel/facts/nab-facts.md
+  published: true
+  published_at: '2026-10-06'
+- id: wqrs-recap
+  series: mechanism
+  title: 寬QRS四部曲・30秒總複習
+  subtitle: 四集重點一次看
+  point: 又寬、又快、又亂→先想Af＋WPW，A、B、C、D都別給；一個lead像VT，先看其他lead（massive STE）；規則的寬QRS，先當VT；吃藥過量加上SALT，先想Na channel blocker
+  duration: 30.0
+  refs:
+  - AHA 2025 Adult ALS (Circulation 2025;152(suppl 2))
+  - 2023 ACC/AHA/ACCP/HRS AF Guideline
+  - ECG Weekly (Mattu)
+  - Goldberger's Clinical Electrocardiography
+  - Braunwald's Heart Disease
+  - LITFL
+  - Dr. Smith's ECG Blog
+  - 心臟模型改作自BodyParts3D, © DBCLS, CC BY 4.0
+  - Mattu & Brady, ECGs for the Emergency Physician Vol 2
+  - Ken Grauer ECG Blog
+  - ABC of Clinical Electrocardiography
+  - Jones, Getting Acquainted With Ischemia and Infarction
+  - AHA 2025 Adult ALS (Circulation 2025;152(suppl 2):S538–S577)
+  - {'ERC Guidelines 2025': 'Adult ALS'}
+  - Tintinalli's Emergency Medicine 9e
+  - Baltazar, Basic & Bedside Electrocardiography
+  - Stewart 1986 Ann Intern Med
+  - Buxton 1987 Am J Cardiol
+  - Lester & McLaughlin, SALT, Ann Emerg Med 2008;51(2):214
+  - Liebelt 1995, Ann Emerg Med 26(2):195–201
+  - Goldfrank's Toxicologic Emergencies 11e
+  - 2025 AHA Guidelines Part 10
+  - LITFL ECG Exigency 006（doxepin過量）
+  - Dr. Smith's ECG Blog 2025-05-06（另一病例，疑cocaine）
+  refs_src: 四集各自的refs（af-wpw、massive-ste-pseudo-vt、wct-vt-svt、sodium-channel），重點句照 series-wqrs-trailer/post/series/recap_ig.txt
+  version: v4
+  src: series-wqrs-trailer/out/trailer-v4.mp4
+  src_phone: series-wqrs-trailer/out/trailer-v4-phone.mp4
+  video: series-wqrs-trailer/wqrs-recap-v4.mp4
+  phone: series-wqrs-trailer/wqrs-recap-v4-phone.mp4
+  poster: series-wqrs-trailer/wqrs-recap-cover.webp
   published: true
   published_at: '2026-10-06'
 - id: rbbb-stemi
@@ -964,7 +1004,7 @@ items:
   src_phone: aivr-vs-vt/out/aivr-vs-vt-v3-phone.mp4
   video: aivr-vs-vt/aivr-vs-vt-v3.mp4
   phone: aivr-vs-vt/aivr-vs-vt-v3-phone.mp4
-  poster: aivr-vs-vt/aivr-vs-vt-v3-poster.webp
+  poster: aivr-vs-vt/aivr-vs-vt-cover.webp
   facts: aivr-vs-vt/facts/aivr-facts.md
   blog_title: 心肌梗塞，跳這心律，發生什麼事了？該怎麼辦？
   blog_url: https://agoodbear.com/post/ecg-post-15/
