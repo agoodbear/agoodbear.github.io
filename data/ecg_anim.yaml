@@ -730,27 +730,28 @@ items:
 - id: massive-ste-pseudo-vt
   series: omi
   title: Massive STE假VT
-  subtitle: shark fin
-  point: 一個lead看起來像VT，先看其他lead、畫J線、找P波和reciprocal；找不到證據，就先當VT
-  duration: 64.0
+  subtitle: 一個lead像VT，先看其他lead
+  point: 一個lead看起來像VT，先看其他lead；有時候massive STE，會被誤認為wide QRS
+  duration: 45.9
   refs:
   - ECG Weekly (Mattu)
+  - Mattu & Brady, ECGs for the Emergency Physician Vol 2
   - Dr. Smith's ECG Blog
   - Ken Grauer ECG Blog
   - LITFL
   - ABC of Clinical Electrocardiography
-  - Goldberger's Clinical Electrocardiography 9th
-  - Jones, ECGs for the Emergency Physician
-  refs_src: 片尾卡「參考：」＋facts/massive-ste-facts.md；完整 16 筆見 social_caption.txt
-  version: v1
-  src: massive-ste-pseudo-vt/out/massive-ste-pseudo-vt-v1.mp4
-  src_phone: massive-ste-pseudo-vt/out/massive-ste-pseudo-vt-v1-phone.mp4
-  video: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v1.mp4
-  phone: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v1-phone.mp4
-  poster: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v1-poster.webp
+  - Jones, Getting Acquainted With Ischemia and Infarction
+  refs_src: v3 貼文書目（animations/massive-ste-pseudo-vt/ig_caption_v3.txt）；片中ECG＝ECG Weekly 2025-10-20 Case 564 對格重畫
+  version: v3
+  src: massive-ste-pseudo-vt/out/massive-ste-v3.mp4
+  src_phone: massive-ste-pseudo-vt/out/massive-ste-v3-phone.mp4
+  video: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v3.mp4
+  phone: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v3-phone.mp4
+  poster: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v3-poster.webp
+  poster_at: 4.5
   facts: massive-ste-pseudo-vt/facts/massive-ste-facts.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-06'
 - id: wct-vt-svt
   series: mechanism
   title: 寬QRS心搏過速
