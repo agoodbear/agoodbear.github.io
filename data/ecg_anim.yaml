@@ -646,29 +646,30 @@ items:
   series: mechanism
   title: Af＋WPW
   subtitle: pre-excited atrial fibrillation
-  point: 又寬又快又亂的Af，先想到WPW：別關AV node這道門
-  duration: 79.2
+  point: 又寬、又快、又亂：一定先想Af＋WPW，A、B、C、D都別給（adenosine／amiodarone、β-blocker、CCB、digoxin）
+  duration: 51.7
   refs:
-  - AHA 2025 Adult ALS (Circulation 2025)
+  - AHA 2025 Adult ALS (Circulation 2025;152(suppl 2))
   - 2023 ACC/AHA/ACCP/HRS AF Guideline
-  - Goldberger's Clinical Electrocardiography 9th
-  - Mattu, ECG in Emergency, Acute & Critical Care 2e
+  - ECG Weekly (Mattu)
+  - Goldberger's Clinical Electrocardiography
   - Braunwald's Heart Disease
   - LITFL
   - Dr. Smith's ECG Blog
   - 心臟模型改作自BodyParts3D, © DBCLS, CC BY 4.0
-  refs_src: 片尾卡「參考：」＋facts/afwpw-facts.md
-  version: v1
-  src: af-wpw/out/af-wpw-v1.mp4
-  src_phone: af-wpw/out/af-wpw-v1-phone.mp4
-  video: af-wpw/af-wpw-v1.mp4
-  phone: af-wpw/af-wpw-v1-phone.mp4
-  poster: af-wpw/af-wpw-v1-poster.webp
+  refs_src: 片尾卡「參考：」＋social_caption.txt（v5b）＋facts/afwpw-facts.md
+  version: v5b
+  src: af-wpw/out/af-wpw-v5b.mp4
+  src_phone: af-wpw/out/af-wpw-v5b-phone.mp4
+  video: af-wpw/af-wpw-v5b.mp4
+  phone: af-wpw/af-wpw-v5b-phone.mp4
+  poster: af-wpw/af-wpw-v5b-poster.webp
+  poster_at: 18
   facts: af-wpw/facts/afwpw-facts.md
   blog_title: 這是什麼扭曲變形的ECG？
   blog_url: https://agoodbear.com/post/medium-7bca25391302/
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-06'
 - id: hyperk-rightward-ste
   series: mechanism
   title: 高血鉀的特別長相
@@ -756,26 +757,33 @@ items:
   series: mechanism
   title: 寬QRS心搏過速
   subtitle: VT還是SVT with aberrancy？
-  point: 分不出來，先當VT；不穩定就電；AV dissociation、capture／fusion beat、concordance支持VT，找不到也不能排除
-  duration: 73.9
+  point: 規則的寬QRS，先當VT：大概8成真的是VT；SVT當VT治通常沒事，VT當SVT治（給verapamil或diltiazem）可能會死
+  duration: 55.2
   refs:
-  - AHA 2025 Adult ALS (Circulation 2025;152:S538)
+  - AHA 2025 Adult ALS (Circulation 2025;152(suppl 2):S538–S577)
+  - ERC Guidelines 2025: Adult ALS
   - LITFL
-  - Baltazar, Basic & Bedside Electrocardiography
-  - Mattu (ECG Weekly)
   - Dr. Smith's ECG Blog
-  - Tintinalli's Emergency Medicine
+  - Ken Grauer ECG Blog
+  - ECG Weekly (Mattu)
+  - Tintinalli's Emergency Medicine 9e
   - Braunwald's Heart Disease
-  refs_src: 片尾卡＋facts/wct-facts.md；完整版見 wct-vt-svt/social_caption.txt
-  version: v1
-  src: wct-vt-svt/out/wct-vt-svt-v1.mp4
-  src_phone: wct-vt-svt/out/wct-vt-svt-v1-phone.mp4
-  video: wct-vt-svt/wct-vt-svt-v1.mp4
-  phone: wct-vt-svt/wct-vt-svt-v1-phone.mp4
-  poster: wct-vt-svt/wct-vt-svt-v1-poster.webp
+  - Baltazar, Basic & Bedside Electrocardiography
+  - Stewart 1986 Ann Intern Med
+  - Buxton 1987 Am J Cardiol
+  refs_src: social_caption.txt 參考資料（v3d）＋facts/wct-facts.md；完整版見 wct-vt-svt/social_caption.txt
+  version: v3d
+  src: wct-vt-svt/out/wct-vt-svt-v3d.mp4
+  src_phone: wct-vt-svt/out/wct-vt-svt-v3d-phone.mp4
+  video: wct-vt-svt/wct-vt-svt-v3d.mp4
+  phone: wct-vt-svt/wct-vt-svt-v3d-phone.mp4
+  poster: wct-vt-svt/wct-vt-svt-v3d-poster.webp
+  poster_at: 13.5
   facts: wct-vt-svt/facts/wct-facts.md
-  published: false
-  published_at: ''
+  blog_title: 回覆網友ECG提問
+  blog_url: https://agoodbear.com/post/medium-757469a98a86/
+  published: true
+  published_at: '2026-10-06'
 - id: psvt-acls2025
   series: mechanism
   title: 常見PSVT × ACLS 2025
@@ -833,26 +841,27 @@ items:
   series: mechanism
   title: 鈉通道阻斷
   subtitle: TCA等藥物中毒的ECG
-  point: 寬QRS＋aVR terminal R＋lead I寬S，想到sodium channel blocker；給sodium bicarbonate，避開procainamide；寬QRS也要想高血鉀
-  duration: 61.4
+  point: 寬QRS先當VT；但吃藥加上SALT（Shock、Altered mental status、Long QRS、Terminal R in aVR），先想Na channel blocker，先給NaHCO3，別給amiodarone、procainamide
+  duration: 52.5
   refs:
-  - 2025 AHA Guidelines Part 10
+  - Lester & McLaughlin, SALT, Ann Emerg Med 2008;51(2):214
+  - Liebelt 1995, Ann Emerg Med 26(2):195–201
   - Goldfrank's Toxicologic Emergencies 11e
-  - Tintinalli's Emergency Medicine 9e
-  - Mattu, ECG in Emergency, Acute & Critical Care 2e
-  - Electrocardiogram in Clinical Medicine
-  - LITFL
-  - ECG Weekly
-  refs_src: 片尾卡「參考：」＋facts/nab-facts.md；完整版見 sodium-channel/social_caption.txt
-  version: v1
-  src: sodium-channel/out/sodium-channel-v1.mp4
-  src_phone: sodium-channel/out/sodium-channel-v1-phone.mp4
-  video: sodium-channel/sodium-channel-v1.mp4
-  phone: sodium-channel/sodium-channel-v1-phone.mp4
-  poster: sodium-channel/sodium-channel-v1-poster.webp
+  - 2025 AHA Guidelines Part 10
+  - LITFL ECG Exigency 006（doxepin過量）
+  - Dr. Smith's ECG Blog 2025-05-06（另一病例，疑cocaine）
+  - ECG Weekly (Mattu)
+  refs_src: social_caption.txt 參考資料與說明（v3c）＋facts/nab-facts.md
+  version: v3c
+  src: sodium-channel/out/sodium-channel-v3c.mp4
+  src_phone: sodium-channel/out/sodium-channel-v3c-phone.mp4
+  video: sodium-channel/sodium-channel-v3c.mp4
+  phone: sodium-channel/sodium-channel-v3c-phone.mp4
+  poster: sodium-channel/sodium-channel-v3c-poster.webp
+  poster_at: 13.5
   facts: sodium-channel/facts/nab-facts.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-06'
 - id: rbbb-stemi
   series: omi
   title: RBBB合併STEMI
