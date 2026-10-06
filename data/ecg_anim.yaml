@@ -742,12 +742,12 @@ items:
   - ABC of Clinical Electrocardiography
   - Jones, Getting Acquainted With Ischemia and Infarction
   refs_src: v3 貼文書目（animations/massive-ste-pseudo-vt/ig_caption_v3.txt）；片中ECG＝ECG Weekly 2025-10-20 Case 564 對格重畫
-  version: v3
-  src: massive-ste-pseudo-vt/out/massive-ste-v3.mp4
-  src_phone: massive-ste-pseudo-vt/out/massive-ste-v3-phone.mp4
-  video: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v3.mp4
-  phone: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v3-phone.mp4
-  poster: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v3-poster.webp
+  version: v3b
+  src: massive-ste-pseudo-vt/out/massive-ste-v3b.mp4
+  src_phone: massive-ste-pseudo-vt/out/massive-ste-v3b-phone.mp4
+  video: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v3b.mp4
+  phone: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v3b-phone.mp4
+  poster: massive-ste-pseudo-vt/massive-ste-pseudo-vt-v3b-poster.webp
   poster_at: 4.5
   facts: massive-ste-pseudo-vt/facts/massive-ste-facts.md
   published: true
