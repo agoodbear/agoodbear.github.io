@@ -924,8 +924,8 @@ items:
   cover_src: _workflow/reels_cover/out/12-ncq-01-ddx.png
   blog_title: Narrow QRS tachycardia
   blog_url: https://agoodbear.com/post/medium-962b3d4d3f0e/
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-07'
 - id: rbbb-stemi
   series: omi
   title: RBBB合併STEMI
