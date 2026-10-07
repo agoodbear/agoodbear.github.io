@@ -27,6 +27,9 @@ series:
 - id: mechanism
   name: 基礎機轉
   intro: 心電圖的波從哪裡來、ST為什麼會抬高。
+- id: narrow-qrs
+  name: 窄QRS三部曲
+  intro: 窄QRS又快，先看P波：一集一個鑑別重點。
 - id: ddx
   name: 鑑別診斷
   intro: 長得像的兩個東西，放在一起比。
@@ -902,6 +905,27 @@ items:
   poster: series-wqrs-trailer/wqrs-recap-cover.webp
   published: true
   published_at: '2026-10-06'
+- id: ncq-01-ddx
+  series: narrow-qrs
+  title: 窄QRS又快：先想三種
+  subtitle: 窄QRS三部曲 01／03
+  point: 窄QRS又快，先想三種狀況：sinus tachycardia、flutter 2:1、PSVT；先看V1有沒有P、有幾個P
+  duration: 53.4
+  refs:
+  - Dr. Smith's ECG Blog（sinus tachycardia、flutter 2:1 病例）
+  - Ken Grauer ECG Blog #240（PSVT／AVNRT 病例）
+  refs_src: ncq-01-ddx/social_caption.txt（IG 版）
+  version: v1
+  src: ncq-01-ddx/out/ncq-01-ddx-v1.mp4
+  src_phone: ncq-01-ddx/out/ncq-01-ddx-v1-phone.mp4
+  video: ncq-01-ddx/ncq-01-ddx-v1.mp4
+  phone: ncq-01-ddx/ncq-01-ddx-v1-phone.mp4
+  poster: ncq-01-ddx/ncq-01-ddx-v1-poster.webp
+  cover_src: _workflow/reels_cover/out/12-ncq-01-ddx.png
+  blog_title: Narrow QRS tachycardia
+  blog_url: https://agoodbear.com/post/medium-962b3d4d3f0e/
+  published: false
+  published_at: ''
 - id: rbbb-stemi
   series: omi
   title: RBBB合併STEMI
