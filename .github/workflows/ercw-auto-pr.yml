@@ -61,7 +61,7 @@ jobs:
           if [ "$code" = 200 ]; then
             text="✅ ER Cardio Weekly ${week} 已上線（獨立查核通過、自動發布）\n${url}"
           else
-            text="⚠️ ER Cardio Weekly ${week} 已合併但網頁 20 分鐘內沒上線（HTTP ${code}）\n請看部署：https://github.com/${REPO}/actions"
+            text="⚠️ ER Cardio Weekly ${week} 已合併但網頁 20 分鐘內沒上線（HTTP ${code}）\n請看部署：https://github.com/${REPO}/actions\n👉 回覆「cc 修 週報」我重新部署"
           fi
           body=$(jq -n --arg to "$LINE_TO" --arg t "$(printf "$text")" '{to:$to,messages:[{type:"text",text:$t}]}')
           curl -sf -X POST https://api.line.me/v2/bot/message/push \
@@ -75,7 +75,7 @@ jobs:
         run: |
           week="${BRANCH#claude/ercw-}"
           pr=$(gh pr list -R "$REPO" --head "$BRANCH" --state open --json url -q '.[0].url')
-          text="⚠️ ER Cardio Weekly ${week} 查核沒過，沒有上線\n卡在哪看 PR 內文：${pr:-https://github.com/${REPO}/pulls}"
+          text="⚠️ ER Cardio Weekly ${week} 查核沒過，沒有上線\n卡在哪看 PR 內文：${pr:-https://github.com/${REPO}/pulls}\n👉 這是查核故意擋的，不能遠端硬上；回電腦跟我說「看週報 PR」"
           body=$(jq -n --arg to "$LINE_TO" --arg t "$(printf "$text")" '{to:$to,messages:[{type:"text",text:$t}]}')
           curl -sf -X POST https://api.line.me/v2/bot/message/push \
             -H "Authorization: Bearer $LINE_TOKEN" -H 'Content-Type: application/json' -d "$body" && echo "LINE sent"
