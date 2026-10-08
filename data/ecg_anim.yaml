@@ -905,6 +905,27 @@ items:
   poster: series-wqrs-trailer/wqrs-recap-cover.webp
   published: true
   published_at: '2026-10-06'
+- id: ncq-recap
+  series: narrow-qrs
+  title: 窄QRS三部曲・30秒總複習
+  subtitle: 三集重點一次看
+  point: 窄QRS又快，先看V1有沒有P、有幾個P；心跳150±20先想flutter 2:1，在QRS裡找另一個P；治療先看穩不穩定：不穩定同步電擊，穩定先vagal再adenosine
+  duration: 30.0
+  refs:
+  - Dr. Smith's ECG Blog（sinus tachycardia、flutter 2:1 病例；2018-08-03 Bix rule 另一病例，Ken Grauer評論）
+  - Ken Grauer ECG Blog #240（PSVT／AVNRT 病例）
+  - AHA 2025 Electrical Cardioversion Algorithm
+  - Mattu, ECGs for the EM Physician Vol 1
+  refs_src: series-ncq-recap/post/ig_preview.txt
+  version: v2
+  src: series-ncq-recap/out/ncq-recap-v2.mp4
+  src_phone: series-ncq-recap/out/ncq-recap-v2-phone.mp4
+  video: series-ncq-recap/ncq-recap-v2.mp4
+  phone: series-ncq-recap/ncq-recap-v2-phone.mp4
+  poster: series-ncq-recap/ncq-recap-v2-poster.webp
+  cover_src: _workflow/reels_cover/out/15-ncq-recap.png
+  published: true
+  published_at: '2026-10-08'
 - id: ncq-01-ddx
   series: narrow-qrs
   title: 窄QRS又快：先想三種
