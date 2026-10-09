@@ -1,5 +1,5 @@
 {{- /* OMI圖鑑 finding 頁頭的「▶ 動畫 1:04」：該 id 的動畫已公開才輸出，跳到同一頁下方內嵌的播放器（ecg-anim/atlas-embed.html）。純錨點，不靠 JS。 */ -}}
 {{- $it := partial "ecg-anim/item.html" . -}}
 {{- if and $it $it.visible -}}
-<p class="oa-d-anim"><a href="#{{ $it.id }}-anim" title="看這個 finding 的教學動畫">▶ 動畫 {{ partial "ecg-anim/dur.html" $it.duration }}</a></p>
+<p class="oa-d-anim"><a href="#{{ $it.id }}-anim" title="{{ T "ea_link_title" }}">{{ T "ea_link" }} {{ partial "ecg-anim/dur.html" $it.duration }}</a></p>
 {{- end -}}

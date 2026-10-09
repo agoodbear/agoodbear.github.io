@@ -15,6 +15,13 @@
 
 {{ define "main" }}
 {{- $data := index site.Data "ecg_anim" | default (dict) }}
+{{- /* 英文頁：系列名稱／簡介換成 data/ecg_anim_en.yaml（每支片的文字在 ecg-anim/item.html 換） */ -}}
+{{- $seriesEN := (index site.Data "ecg_anim_en" | default dict).series | default dict }}
+{{- $series := slice }}
+{{- range $data.series }}
+  {{- $o := cond (eq site.Language.Lang "en") (index $seriesEN .id | default dict) dict }}
+  {{- $series = $series | append (merge . $o) }}
+{{- end }}
 {{- $visible := slice }}
 {{- range $data.items }}
   {{- $it := partial "ecg-anim/item.html" .id }}
@@ -29,11 +36,11 @@
   </header>
 
   {{- if not $visible }}
-  <p class="ea-soon">即將推出。</p>
+  <p class="ea-soon">{{ T "ea_soon" }}</p>
   {{- else }}
-  {{- if gt (len $data.series) 1 }}
-  <nav class="ea-toc" aria-label="系列">
-    {{- range $s := $data.series }}
+  {{- if gt (len $series) 1 }}
+  <nav class="ea-toc" aria-label="{{ T "ea_series_aria" }}">
+    {{- range $s := $series }}
     {{- $n := len (where $visible "series" $s.id) }}
     {{- if $n }}
     <a href="#series-{{ $s.id }}">{{ $s.name }}<span class="ea-count">{{ $n }}</span></a>
@@ -42,7 +49,7 @@
   </nav>
   {{- end }}
 
-  {{- range $s := $data.series }}
+  {{- range $s := $series }}
   {{- $its := where $visible "series" $s.id }}
   {{- if $its }}
   <section class="ea-series" id="series-{{ $s.id }}" aria-labelledby="series-{{ $s.id }}-h">

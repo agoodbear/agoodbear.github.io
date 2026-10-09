@@ -217,7 +217,7 @@
   }
 
   function renderCrumbs(state) {
-    const trail = [{ label: 'OMI圖鑑', href: location.pathname + location.search, isRoot: true }];
+    const trail = [{ label: root.dataset.rootLabel || 'OMI圖鑑', href: location.pathname + location.search, isRoot: true }];
     if (state.level !== 'root') trail.push({ label: groupName(state.g), href: `#${state.g}` });
     if (state.level === 'leaf') trail.push({ label: findingName(state.f), href: `#${state.f}` });
     crumbs.textContent = '';

@@ -1,0 +1,557 @@
+# ECG動畫館英文對照（/en/ecg-anim/）：只放卡片給讀者看的字，用 id 對上 data/ecg_anim.yaml。
+# published、片長、影片網址都只看中文那份；中文改字後跑 python3 scripts/i18n/data_i18n.py check（STALE＝要跟著改），改完 rehash。
+# 翻譯守則：scripts/i18n/TRANSLATION_GUIDE.md。影片本身是中文旁白。
+
+series:
+  omi:
+    name: OMI series
+    intro: The 20 findings of the OMI Atlas, one short video per finding.
+    zh_hash: '1138909a92'
+  mechanism:
+    name: Basic mechanisms
+    intro: Where the ECG waves come from, and why the ST rises.
+    zh_hash: '0531fd9092'
+  narrow-qrs:
+    name: Narrow-QRS trilogy
+    intro: 'Narrow and fast QRS, look at the P waves first: one differential key point per episode.'
+    zh_hash: '0792df6980'
+  ddx:
+    name: Differential diagnosis
+    intro: Two things that look alike, compared side by side.
+    zh_hash: '68851ff986'
+items:
+  omi-roster:
+    title: OMI patterns at a glance
+    point: 'Four LAD-related patterns: red = the artery is occluded right now; blue = it opened on its own but may occlude again'
+    zh_hash: '5d8becbcf2'
+  nttv1:
+    title: NTTV1
+    subtitle: New Tall T wave in V1
+    point: 'V1 taller than V6, and it''s new: compare with the old ECG, then get another ECG'
+    refs:
+    - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+    - Mattu & Brady, ECGs for the Emergency Physician Vol 2
+    - Braunwald
+    - Critical Decisions in Emergency and Acute Care ECG
+    - Critical Cases in ECG
+    - LITFL
+    - ECG Weekly
+    - Dr. Smith's ECG Blog
+    zh_hash: '86fc66b6b9'
+  hatw:
+    title: HATW
+    subtitle: Hyperacute T wave
+    point: Judge how fat the T wave is relative to the QRS, not how tall; even without ST elevation, it may be an occlusion
+    refs:
+    - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+    - Critical Decisions in Emergency and Acute Care Electrocardiography
+    - Dr. Smith's ECG Blog
+    - ECG Weekly
+    zh_hash: '6de8310671'
+  pathologic-q:
+    title: Pathologic Q wave
+    point: 'A Q wave doesn''t equal an old infarct: tell new from old by the ST, the T, the symptoms, and the old ECG'
+    refs:
+    - Rosen's Emergency Medicine 10e
+    - ECG in Emergency Medicine
+    - LITFL
+    - ECG Weekly
+    - Dr. Smith's ECG Blog
+    zh_hash: '7b87638c63'
+  subtle-ste:
+    title: Subtle STE
+    subtitle: Subtle ST elevation that doesn't meet STEMI criteria
+    point: 'Not crossing the line doesn''t mean it''s not occluded: compare with the QRS, look at the shape, look at the opposite side'
+    refs:
+    - Jones, Getting Acquainted With Ischemia and Infarction
+    - Dr. Smith's ECG Blog
+    - Baltazar, Basic & Bedside Electrocardiography
+    - ABC of Clinical Electrocardiography
+    - Critical Cases in Electrocardiography
+    - ECG in Emergency Medicine
+    - ECG Weekly
+    zh_hash: 'ce4e096a6d'
+  inverted-u:
+    title: Inverted U wave
+    point: 'Upright T wave, but the U wave after it points down: in a chest pain patient, treat it as an ischemia warning sign'
+    refs:
+    - Braunwald's Heart Disease
+    - Chou's Electrocardiography 6e
+    - Marriott's Practical Electrocardiography 13e
+    - LITFL "U Wave"
+    - ECG Weekly "Inverted U Waves"
+    zh_hash: '3dfcaba131'
+  bifascicular-block:
+    title: New-onset bifascicular block
+    point: New RBBB + LAFB should make you think of proximal LAD occlusion
+    refs:
+    - Goldberger's Clinical Electrocardiography 9e
+    - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+    - LITFL
+    - Dr. Smith's ECG Blog
+    zh_hash: 'e39222543f'
+  stdmax-v1-4:
+    title: STDmax V1–V4
+    subtitle: indicative of posterior OMI
+    point: Precordial STD deepest in V1–V4 should make you highly suspect posterior OMI (specificity 97%)
+    refs:
+    - Baltazar, Basic & Bedside Electrocardiography
+    - Critical Cases in Electrocardiography
+    - Critical Decisions in Emergency and Acute Care Electrocardiography
+    - Grauer, ECG Pocket Brain
+    - Sparkson, Illustrated Guide to ECG 2e
+    - Hanna, Practical Cardiovascular Medicine
+    - Roberts & Hedges' Clinical Procedures
+    - Dr. Smith's ECG Blog
+    - ECG Weekly
+    - LITFL
+    - Meyers HP, et al. J Am Heart Assoc 2021
+    - REBEL EM
+    - AHA/ACCF/HRS 2009 Part VI
+    - Fourth UDMI 2018
+    zh_hash: '7ce4f3f79d'
+  avr-ste:
+    title: aVR STE + multiple leads STD
+    point: 'High risk: first look for the cause of the oxygen supply/demand mismatch; if other leads are elevated too, think acute occlusion'
+    refs:
+    - Braunwald's Heart Disease
+    - Goldberger's Clinical Electrocardiography 9e
+    - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+    - Grauer, ECG Pocket Brain
+    - LITFL
+    - ECG Weekly
+    - Dr. Smith's ECG Blog
+    zh_hash: '63422da203'
+  reciprocal-std:
+    title: Reciprocal STD change and/or TWI
+    point: When you see ST depression in the inferior or high lateral leads, first go back and look for ST elevation on the opposite side
+    refs:
+    - Baltazar, Basic & Bedside Electrocardiography
+    - Grauer, ECG Pocket Brain
+    - Jones, Getting Acquainted With Ischemia and Infarction
+    - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+    - Rosen's 10th
+    - LITFL
+    - ECG Weekly
+    - Dr. Smith's ECG Blog
+    zh_hash: 'fb78640c15'
+  precordial-swirl:
+    title: Precordial Swirl
+    point: 'When you see a swirl: look at the QRS first, then think proximal LAD occlusion'
+    refs:
+    - Dr. Smith's ECG Blog (Meyers & Smith)
+    - Bayés de Luna, Clinical Electrocardiography
+    - The 12-Lead ECG in ST Elevation Myocardial Infarction
+    zh_hash: '11573b7dd5'
+  tqrsd:
+    title: TQRSD
+    subtitle: Terminal QRS distortion
+    point: 'V2 or V3: no S wave and no J wave. When the tail is gone, that''s the warning sign'
+    refs:
+    - Lee, Walsh, Smith. Am J Emerg Med 2016
+    - ECG Weekly
+    - Critical Decisions in Emergency and Acute Care Electrocardiography
+    zh_hash: '861fa9496c'
+  wellens:
+    title: Wellens' syndrome
+    point: The chest pain has stopped, but the T wave is still warning you
+    refs:
+    - Mattu, ECG in Emergency, Acute & Critical Care 2e
+    - Sparkson 2e
+    - LITFL
+    zh_hash: '8871bc7375'
+  de-winter:
+    title: De Winter's T wave
+    point: When you see it, don't wait for ST elevation
+    refs:
+    - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+    - LITFL
+    - ECG Weekly
+    zh_hash: 'e251f146c2'
+  south-african-flag:
+    title: South African Flag sign
+    point: 'Elevation in I, aVL, V2 + depression in III: think acute occlusion; if unsure, repeat the ECG'
+    refs:
+    - Grauer, ECG-2014 Pocket Brain
+    - Critical Decisions in Emergency and Acute Care Electrocardiography
+    - Critical Cases in Electrocardiography
+    - Baltazar, Basic & Bedside Electrocardiography
+    - Electrocardiogram in Clinical Medicine
+    - Mattu, Cardiovascular Emergencies (ACEP)
+    - LITFL
+    - ECG Weekly
+    - Ken Grauer ECG Blog
+    - Dr. Smith's ECG Blog
+    zh_hash: '5b95686f93'
+  aslanger:
+    title: Aslanger's pattern
+    point: 'ST elevation only in lead III: think inferior OMI and consider the cath lab as soon as possible'
+    refs:
+    - Jerry Jones, Getting Acquainted With Ischemia and Infarction
+    - Braunwald's Heart Disease
+    - Dr. Smith's ECG Blog
+    - Ken Grauer ECG Blog
+    - ECG Weekly
+    zh_hash: 'caa30f36b0'
+  northern-omi:
+    title: Northern OMI
+    point: 'aVR and aVL elevated together, inferior leads depressed: the ST vector points north, a very proximal acute occlusion'
+    refs:
+    - Chou's Electrocardiography 6e
+    - Grauer ECG Pocket Brain
+    - LITFL / Wellens' ECG in Emergency Decision Making
+    - Dr. Smith's ECG Blog / Baltazar Basic & Bedside Electrocardiography
+    zh_hash: '350d27eaf3'
+  n-wave:
+    title: N wave sign
+    point: Chest pain + a new notch at the end of the QRS, think LCx; it's often transient
+    refs:
+    - Hurst's The Heart
+    - Chou's Electrocardiography 6e
+    - Braunwald's Heart Disease
+    - Dr. Smith's ECG Blog
+    - Ken Grauer ECG Blog
+    zh_hash: '6d95d0a6c0'
+  t-qrs-ratio:
+    title: T/QRS ratio
+    subtitle: A QS pattern in Ant.STE, suspect LV aneurysm with STEMI
+    point: T/QRS > 0.36 in any lead favors STEMI; when symptoms drag on, the T gets smaller, so compare with the old ECG first
+    refs:
+    - Smith, Am J Emerg Med 2005
+    - Klein et al., Am J Emerg Med 2015
+    - Rosen's Emergency Medicine 10e
+    - Electrocardiogram in Clinical Medicine
+    - LITFL
+    zh_hash: '6e59fab7b5'
+  four-variable:
+    title: 4-variable formula
+    subtitle: Subtle STE over ant.leads
+    point: Above 18.2 favors LAD occlusion; below 18.2 doesn't mean you can relax
+    refs:
+    - Driver BE, et al. J Electrocardiol 2017
+    - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+    - LITFL
+    - Dr. Smith's ECG Blog
+    zh_hash: '45ea404a45'
+  msc:
+    title: LBBB/PPM with MSC
+    subtitle: Smith-modified Sgarbossa criteria
+    point: 'You can find OMI in LBBB and paced rhythms too: if any one MSC criterion is met, manage it as OMI'
+    refs:
+    - Sgarbossa 1996 NEJM
+    - Smith 2012 Ann Emerg Med
+    - Dodd 2021 Ann Emerg Med
+    - Mattu, ECG in Emergency, Acute, and Critical Care 2e
+    - Rosen's 10th
+    - Dr. Smith's ECG Blog
+    - ECG Weekly
+    zh_hash: 'e1c80e7974'
+  conduction-journey:
+    title: The heartbeat's journey
+    subtitle: Conduction Highway | Season 0, Episode 1
+    point: Opposite direction and opposite charge, so the T wave usually points the same way as the QRS
+    refs:
+    - Goldberger's Clinical Electrocardiography 9th
+    - Marriott's Practical Electrocardiography 13th
+    - Baltazar, Basic & Bedside Electrocardiography
+    - Harrison's Principles of Internal Medicine 20th
+    - Klabunde, Cardiovascular Physiology Concepts
+    - ECG Waves
+    - ECG Weekly
+    - LITFL
+    zh_hash: 'ac168b3cc6'
+  stemi-3d:
+    title: Why the ST rises (3D version)
+    point: 'The ST vector points toward the injured myocardium: leads facing it are elevated, leads opposite it are depressed'
+    refs:
+    - Goldberger's Clinical Electrocardiography 9th
+    - Braunwald's Heart Disease
+    zh_hash: '81a3e7a319'
+  stemi-house:
+    title: Why the ST rises (house version)
+    point: The ST vector points toward the injured myocardium
+    refs:
+    - Braunwald
+    - Text Atlas of Practical Electrocardiography
+    - LITFL
+    zh_hash: '9b7caf742e'
+  tqrsd-overlay:
+    title: Early repol vs TQRSD (V2 overlay)
+    refs:
+    - Lee, Walsh, Smith. Am J Emerg Med 2016
+    - ECG Weekly
+    - Critical Decisions in Emergency and Acute Care Electrocardiography
+    zh_hash: '72b99885ee'
+  hyperkalemia:
+    title: Hyperkalemia
+    subtitle: One variable, and the whole ECG moves
+    point: 'One variable: watch how the ECG changes along the way; a normal ECG doesn''t mean the potassium isn''t high; calcium pulls the ECG back temporarily, but the potassium hasn''t come down'
+    refs:
+    - Goldberger's Clinical Electrocardiography 9th
+    - Braunwald's Heart Disease
+    - Guyton & Hall Textbook of Medical Physiology 14th
+    - Baltazar, Basic & Bedside Electrocardiography
+    - Mattu, ECG in Emergency, Acute & Critical Care 2e
+    - The Only EKG Book You'll Ever Need 7th
+    - Electrocardiogram in Clinical Medicine
+    - Critical Decisions in Emergency and Acute Care Electrocardiography
+    - Rosen's Emergency Medicine 10th
+    - LITFL
+    - Dr. Smith's ECG Blog
+    - Ken Grauer ECG Blog
+    zh_hash: '06cf142c44'
+  mobitz2-2to1:
+    title: Mobitz II and 2:1 AV block
+    subtitle: The level of the block makes a big difference in how dangerous it is
+    point: A block in the His-Purkinje system may suddenly cut off conduction completely; with 2:1, look at QRS width and monitor longer to find Wenckebach
+    refs:
+    - AHA 2025 Adult ALS (Circulation 2025;152:S538)
+    - ERC 2025 ALS
+    - Hurst's The Heart
+    - Podrid's Real-World ECGs
+    - Wellens, ECG in Emergency Decision Making
+    - Harrison's Principles of Internal Medicine 20th
+    - Baltazar, Basic & Bedside Electrocardiography
+    - LITFL
+    zh_hash: '89a0e1bb3f'
+  af-wpw:
+    title: Af + WPW
+    subtitle: pre-excited atrial fibrillation
+    point: 'Wide, fast, and irregular: always think Af + WPW first, and give none of A, B, C, D (adenosine/amiodarone, β-blocker, CCB, digoxin)'
+    refs:
+    - AHA 2025 Adult ALS (Circulation 2025;152(suppl 2))
+    - 2023 ACC/AHA/ACCP/HRS AF Guideline
+    - ECG Weekly (Mattu)
+    - Goldberger's Clinical Electrocardiography
+    - Braunwald's Heart Disease
+    - LITFL
+    - Dr. Smith's ECG Blog
+    - Heart model adapted from BodyParts3D, © DBCLS, CC BY 4.0
+    zh_hash: 'f22ae22935'
+  hyperk-rightward-ste:
+    title: An unusual look for hyperkalemia
+    subtitle: RAD + rightward leads STE
+    point: 'When you see ST elevation in V1, V2, and aVR plus RAD, you must keep three DDx in mind: Hyper-K, PE, Na channel blocker; don''t think AMI first'
+    refs:
+    - ECG Weekly 2025-02-10 Inservice/Boards Exam Prep Pt. I (Classic Hyperkalemia)
+    - Mattu, ECG in Emergency, Acute & Critical Care 2e
+    - Mattu & Brady, ECGs for the Emergency Physician 2
+    - Braunwald's Heart Disease
+    - Electrocardiogram in Clinical Medicine
+    - Chou's Electrocardiography 6th
+    - Goldberger's Clinical Electrocardiography 9th
+    - ABC of Clinical Electrocardiography
+    - Rosen's Emergency Medicine 10th
+    - Marriott's Practical Electrocardiography 13th
+    - LITFL
+    - Dr. Smith's ECG Blog
+    zh_hash: 'bf29c4363a'
+  mobitz1-vs-cavb:
+    title: Does this look like CAVB?
+    subtitle: Mobitz type I vs complete AV block
+    point: CAVB should have a regular escape rhythm; if it's irregular with grouped beating, think Mobitz type I
+    refs:
+    - Hurst's The Heart 15e
+    - Marriott's Practical Electrocardiography 13th
+    - Goldberger's Clinical Electrocardiography 9th
+    - Podrid's Real-World ECGs
+    - Atlas of Electrocardiography
+    - LITFL
+    - Ken Grauer ECG Blog
+    - ECG Weekly
+    zh_hash: 'b6744e1233'
+  massive-ste-pseudo-vt:
+    title: Massive STE pseudo-VT
+    subtitle: One lead looks like VT, check the other leads first
+    point: When one lead looks like VT, check the other leads first; sometimes massive STE gets mistaken for a wide QRS
+    refs:
+    - ECG Weekly (Mattu)
+    - Mattu & Brady, ECGs for the Emergency Physician Vol 2
+    - Dr. Smith's ECG Blog
+    - Ken Grauer ECG Blog
+    - LITFL
+    - ABC of Clinical Electrocardiography
+    - Jones, Getting Acquainted With Ischemia and Infarction
+    zh_hash: 'd3683fa95e'
+  wct-vt-svt:
+    title: Wide-QRS tachycardia
+    subtitle: VT or SVT with aberrancy?
+    point: 'Regular wide QRS, treat it as VT first: about 80% really are VT; treating SVT as VT is usually fine, treating VT as SVT (giving verapamil or diltiazem) may kill the patient'
+    refs:
+    - AHA 2025 Adult ALS (Circulation 2025;152(suppl 2):S538–S577)
+    - 'ERC Guidelines 2025: Adult ALS'
+    - LITFL
+    - Dr. Smith's ECG Blog
+    - Ken Grauer ECG Blog
+    - ECG Weekly (Mattu)
+    - Tintinalli's Emergency Medicine 9e
+    - Braunwald's Heart Disease
+    - Baltazar, Basic & Bedside Electrocardiography
+    - Stewart 1986 Ann Intern Med
+    - Buxton 1987 Am J Cardiol
+    zh_hash: '5241992a79'
+  psvt-acls2025:
+    title: Common PSVT × ACLS 2025
+    subtitle: Whether to use Valsalva, drugs, or a shock
+    point: Stable, start with a vagal maneuver (modified Valsalva) → adenosine → CCB/β-blocker; unstable, go to synchronized cardioversion; don't apply this pathway to a wide or irregular QRS
+    refs:
+    - AHA 2025 Adult ALS (Circulation 2025;152:S538)
+    - Hurst's The Heart
+    - Braunwald's Heart Disease
+    - Marriott's Practical Electrocardiography
+    - Goldberger's Clinical Electrocardiography 9th
+    - Heart model adapted from BodyParts3D, © DBCLS, CC BY 4.0
+    zh_hash: '306b2204f1'
+  stemi-mimics:
+    title: STEMI mimics roster
+    subtitle: Call cath on this one or not?
+    point: Four ECGs that look less like OMI when the pattern is typical, and three where OMI has to be ruled out first; being a mimic doesn't mean it's safe
+    refs:
+    - Mattu, ECG in Emergency, Acute & Critical Care 2e
+    - Rosen's Emergency Medicine 10th
+    - Critical Decisions in Emergency and Acute Care Electrocardiography
+    - Harrison's Principles of Internal Medicine
+    - 2013 ACCF/AHA STEMI Guideline
+    - 2025 ACC/AHA ACS Guideline
+    - LITFL
+    - ECG Weekly
+    - Dr. Smith's ECG Blog
+    zh_hash: '39c0acfe14'
+  sodium-channel:
+    title: Sodium channel blockade
+    subtitle: The ECG of TCA and other drug poisonings
+    point: Treat a wide QRS as VT first; but a drug ingestion plus SALT (Shock, Altered mental status, Long QRS, Terminal R in aVR) means think Na channel blocker first, give NaHCO3 first, and don't give amiodarone or procainamide
+    refs:
+    - Lester & McLaughlin, SALT, Ann Emerg Med 2008;51(2):214
+    - Liebelt 1995, Ann Emerg Med 26(2):195–201
+    - Goldfrank's Toxicologic Emergencies 11e
+    - 2025 AHA Guidelines Part 10
+    - LITFL ECG Exigency 006 (doxepin overdose)
+    - Dr. Smith's ECG Blog 2025-05-06 (a different case, suspected cocaine)
+    - ECG Weekly (Mattu)
+    zh_hash: 'df58b51ef5'
+  wqrs-recap:
+    title: Wide-QRS quartet · 30-second recap
+    subtitle: All four episodes' key points in one go
+    point: Wide, fast, and irregular → think Af + WPW first, give none of A, B, C, D; one lead looks like VT, check the other leads first (massive STE); regular wide QRS, treat it as VT first; drug overdose plus SALT, think Na channel blocker first
+    refs:
+    - AHA 2025 Adult ALS (Circulation 2025;152(suppl 2))
+    - 2023 ACC/AHA/ACCP/HRS AF Guideline
+    - ECG Weekly (Mattu)
+    - Goldberger's Clinical Electrocardiography
+    - Braunwald's Heart Disease
+    - LITFL
+    - Dr. Smith's ECG Blog
+    - Heart model adapted from BodyParts3D, © DBCLS, CC BY 4.0
+    - Mattu & Brady, ECGs for the Emergency Physician Vol 2
+    - Ken Grauer ECG Blog
+    - ABC of Clinical Electrocardiography
+    - Jones, Getting Acquainted With Ischemia and Infarction
+    - AHA 2025 Adult ALS (Circulation 2025;152(suppl 2):S538–S577)
+    - 'ERC Guidelines 2025: Adult ALS'
+    - Tintinalli's Emergency Medicine 9e
+    - Baltazar, Basic & Bedside Electrocardiography
+    - Stewart 1986 Ann Intern Med
+    - Buxton 1987 Am J Cardiol
+    - Lester & McLaughlin, SALT, Ann Emerg Med 2008;51(2):214
+    - Liebelt 1995, Ann Emerg Med 26(2):195–201
+    - Goldfrank's Toxicologic Emergencies 11e
+    - 2025 AHA Guidelines Part 10
+    - LITFL ECG Exigency 006 (doxepin overdose)
+    - Dr. Smith's ECG Blog 2025-05-06 (a different case, suspected cocaine)
+    zh_hash: '3e338aa1e7'
+  ncq-recap:
+    title: Narrow-QRS trilogy · 30-second recap
+    subtitle: All three episodes' key points in one go
+    point: 'Narrow and fast QRS: first look at V1 for P waves and how many; heart rate 150±20, think flutter 2:1 first and look for another P inside the QRS; for treatment, check stability first: unstable, synchronized cardioversion; stable, vagal first, then adenosine'
+    refs:
+    - Dr. Smith's ECG Blog (sinus tachycardia and flutter 2:1 cases; 2018-08-03 Bix rule, a different case, with Ken Grauer's commentary)
+    - Ken Grauer ECG Blog
+    - AHA 2025 Electrical Cardioversion Algorithm
+    - Mattu, ECGs for the EM Physician Vol 1
+    zh_hash: '55cd2af045'
+  ncq-01-ddx:
+    title: 'Narrow and fast QRS: think of three things first'
+    subtitle: Narrow-QRS trilogy 01/03
+    point: 'Narrow and fast QRS, think of three conditions first: sinus tachycardia, flutter 2:1, PSVT; first look at V1 for P waves and how many'
+    refs:
+    - Dr. Smith's ECG Blog (sinus tachycardia and flutter 2:1 cases)
+    - Ken Grauer ECG Blog
+    zh_hash: '1db69f4baa'
+  ncq-02-afl21:
+    title: 'Narrow QRS at a heart rate of 150: think flutter 2:1 first'
+    subtitle: Narrow-QRS trilogy 02/03
+    point: Narrow QRS, heart rate 150±20, think flutter 2:1 first, then use the Bix rule to find another P inside the QRS
+    refs:
+    - Dr. Smith's ECG Blog (flutter 2:1 case; 2018-08-03 Ken Grauer commentary)
+    - Mattu, ECGs for the Emergency Physician Vol 1
+    - ECG in Emergency Medicine p.119
+    zh_hash: 'bfac60347a'
+  ncq-03-tx:
+    title: 'Narrow and fast QRS: check stability first'
+    subtitle: Narrow-QRS trilogy 03/03
+    point: Narrow and fast QRS, check stability first; unstable, shock; stable, vagal first, then adenosine
+    refs:
+    - AHA 2025 Adult Tachyarrhythmia With a Pulse Algorithm
+    - AHA 2025 Electrical Cardioversion Algorithm
+    - REVERT (Lancet 2015)
+    - Ken Grauer ECG Blog
+    zh_hash: '3cf865318f'
+  rbbb-stemi:
+    title: RBBB with STEMI
+    subtitle: RBBB doesn't hide STE
+    point: 'RBBB only changes the tail of the QRS, so read the ST by the usual rules: in V1–V3, up is not OK, and too far down is not OK either'
+    refs:
+    - Goldberger's Clinical Electrocardiography 9th
+    - Braunwald's Heart Disease
+    - Electrocardiogram in Clinical Medicine
+    - Baltazar, Basic & Bedside Electrocardiography
+    - Mattu, ECG in Emergency, Acute & Critical Care 2e
+    - Bayés de Luna, Clinical Electrocardiography
+    - LITFL
+    - ECG Weekly
+    - Dr. Smith's ECG Blog
+    zh_hash: 'c2f3f13f48'
+  prox-rca-rvmi:
+    title: Proximal RCA + RVMI
+    subtitle: Inferior STEMI can also come with STE in V1–V3
+    point: 'Inferior STEMI plus STE in V1–V3, think proximal RCA + RVMI first: V1 is usually the highest, get a V4R, be careful with nitrates'
+    refs:
+    - Braunwald's Heart Disease
+    - Rosen's Emergency Medicine 10th
+    - Critical Cases in Electrocardiography
+    - Mattu, ECG in Emergency, Acute & Critical Care 2e
+    - Jones, ECGs for the Emergency Physician
+    - Bayés de Luna, Clinical Electrocardiography
+    - Tintinalli's Emergency Medicine 9th
+    - 2025 ACC/AHA ACS Guideline
+    - LITFL
+    - Dr. Smith's ECG Blog
+    - Zheng 2016; Jim 2007; Walsh 2018; Bouhuijzen 2018
+    - Heart model adapted from BodyParts3D, © DBCLS, CC BY 4.0
+    zh_hash: '2ae0165725'
+  lead-reversal:
+    title: Lead reversal
+    subtitle: Wilson central terminal
+    point: 'Lead I completely inverted and aVR turned positive, or one limb lead a flat line: reconnect first, then interpret; misconnected leads can also be mistaken for OMI'
+    refs:
+    - LITFL (ECG Limb Lead Reversal)
+    - Chou's Electrocardiography in Clinical Practice
+    - ECG Weekly (ECG Lead Misplacement)
+    - Dr. Smith's ECG Blog
+    - ECG Masters' Collection
+    zh_hash: '50c5244434'
+  aivr-vs-vt:
+    title: AIVR vs VT
+    subtitle: Don't get sucked in by the eye-catching ventricular rhythm
+    point: 'Don''t rush to shock a wide QRS: look at the rate first, then the patient; a slow wide QRS after STEMI may be AIVR (reperfusion rhythm), don''t shock it as VT'
+    refs:
+    - LITFL
+    - Ken Grauer ECG Blog
+    - Dr. Smith's ECG Blog
+    - ECG Weekly (Mattu)
+    - Braunwald's Heart Disease
+    - Tintinalli's Emergency Medicine
+    - AHA 2025 Adult ALS (Circulation 2025;152:S538)
+    - Heart model adapted from BodyParts3D, © DBCLS, CC BY 4.0
+    zh_hash: '70e9e0c6bc'

@@ -3,8 +3,8 @@
        卡片與動畫館、ecganim shortcode 共用 ecg-anim/card.html（embed 模式，附「ECG動畫館」連結）。 */ -}}
 {{- $it := partial "ecg-anim/item.html" . -}}
 {{- if and $it $it.visible }}
-<section class="oa-d-video" id="{{ $it.id }}-anim" aria-label="教學動畫">
-  <h3>教學動畫</h3>
+<section class="oa-d-video" id="{{ $it.id }}-anim" aria-label="{{ T "ea_section" }}">
+  <h3>{{ T "ea_section" }}</h3>
   {{ partial "ecg-anim/css.html" . }}
   {{ partial "ecg-anim/card.html" (dict "it" $it "mode" "embed") }}
 </section>

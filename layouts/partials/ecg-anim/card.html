@@ -13,12 +13,12 @@
 {{- $hasRefs := and $it.refs (ne (printf "%v" $it.refs) "TODO") -}}
 <article class="ea-card ea-card--{{ $mode }}"{{ if eq $mode "page" }} id="{{ $it.id }}"{{ end }} data-anim="{{ $it.id }}">
   <div class="ea-player">
-    <video controls playsinline preload="none" width="1080" height="1920"{{ with $poster }} poster="{{ . }}"{{ end }} aria-label="{{ $it.title }} 動畫（{{ $dur }}）">
+    <video controls playsinline preload="none" width="1080" height="1920"{{ with $poster }} poster="{{ . }}"{{ end }} aria-label="{{ T "ea_video_aria" (dict "title" $it.title "dur" $dur) }}">
       {{- with $phone }}
       <source src="{{ . }}" type="video/mp4" media="(max-width: 640px)">
       {{- end }}
       <source src="{{ $video }}" type="video/mp4">
-      <a href="{{ $video }}">下載影片（MP4）</a>
+      <a href="{{ $video }}">{{ T "ea_download" }}</a>
     </video>
   </div>
   <div class="ea-body">
@@ -33,21 +33,21 @@
     {{- end }}
     <p class="ea-point">{{ $it.point }}</p>
     <p class="ea-meta">
-      <span class="ea-dur" title="片長">▶ {{ $dur }}</span>
+      <span class="ea-dur" title="{{ T "ea_dur_title" }}">▶ {{ $dur }}</span>
       {{- if and (eq $it.series "omi") (eq $mode "page") }}
       {{- $inAtlas := false }}
       {{- range (index site.Data "omi_atlas").groups }}{{ range .findings }}{{ if eq .id $it.id }}{{ $inAtlas = true }}{{ end }}{{ end }}{{ end }}
       {{- if $inAtlas }}
-      <a class="ea-atlas" href="{{ printf "/omi/#%s" $it.id | relURL }}">OMI圖鑑</a>
+      <a class="ea-atlas" href="{{ printf "/omi/#%s" $it.id | relLangURL }}">{{ T "omi_title" }}</a>
       {{- end }}
       {{- end }}
       {{- if eq $mode "embed" }}
-      <a class="ea-atlas" href="{{ printf "/ecg-anim/#%s" $it.id | relURL }}">ECG動畫館</a>
+      <a class="ea-atlas" href="{{ printf "/ecg-anim/#%s" $it.id | relLangURL }}">{{ T "ea_title" }}</a>
       {{- end }}
     </p>
     {{- if $hasRefs }}
     <details class="ea-refs">
-      <summary>參考來源</summary>
+      <summary>{{ T "ea_refs" }}</summary>
       <ul>
         {{- range $it.refs }}
         <li>{{ . }}</li>

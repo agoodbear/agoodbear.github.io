@@ -1,0 +1,58 @@
+{{- /*
+  omi/atlas — 回傳目前語言版本的 OMI圖鑑資料（中文頁＝data/omi_atlas.yaml 原樣）。
+  英文頁：用 data/omi_atlas_en.yaml 依 id 蓋掉「給讀者看的字」，網址、圖片尺寸、id、new2025、part_url 都只看中文那份。
+  英文對照少了某一筆就整筆沿用中文（預覽站會警告）；上線前跑 scripts/i18n/data_i18n.py check 把關。
+  用法：{{ $atlas := partialCached "omi/atlas.html" site.Language.Lang site.Language.Lang }}
+*/ -}}
+{{- $zh := index site.Data "omi_atlas" | default (dict) -}}
+{{- $out := $zh -}}
+{{- if eq site.Language.Lang "en" -}}
+{{- $en := index site.Data "omi_atlas_en" | default (dict) -}}
+{{- $gEN := $en.groups | default (dict) -}}
+{{- $fEN := $en.findings | default (dict) -}}
+{{- $groups := slice -}}
+{{- range $g := $zh.groups -}}
+  {{- $findings := slice -}}
+  {{- range $f := $g.findings -}}
+    {{- $o := index $fEN $f.id -}}
+    {{- if not $o -}}
+      {{- warnf "omi_atlas_en.yaml 沒有 %q，英文頁暫時顯示中文" $f.id -}}
+      {{- $findings = $findings | append $f -}}
+    {{- else -}}
+      {{- $m := dict -}}
+      {{- range $k := slice "name" "full" "short" "part" "look" "artery" "pitfall" "leads" -}}
+        {{- with index $o $k -}}{{- $m = merge $m (dict $k .) -}}{{- end -}}
+      {{- end -}}
+      {{- /* 清單逐項對位；英文少項（中文後來加了一條）時那一項沿用中文，不讓 index 越界把 build 弄掛 */ -}}
+      {{- $oPts := $o.points | default (slice) -}}{{- $oCri := $o.criteria | default (slice) -}}
+      {{- $oSl := $o.slides | default (slice) -}}{{- $oRefs := $o.refs | default (slice) -}}
+      {{- $pts := slice -}}
+      {{- range $i, $p := $f.points -}}
+        {{- $t := $p.text -}}{{- if lt $i (len $oPts) -}}{{- $t = index $oPts $i -}}{{- end -}}
+        {{- $pts = $pts | append (merge $p (dict "text" $t)) -}}
+      {{- end -}}
+      {{- $cri := slice -}}
+      {{- range $i, $c := $f.criteria -}}
+        {{- $t := $c.text -}}{{- if lt $i (len $oCri) -}}{{- $t = index $oCri $i -}}{{- end -}}
+        {{- $cri = $cri | append (merge $c (dict "text" $t)) -}}
+      {{- end -}}
+      {{- $sl := slice -}}
+      {{- range $i, $s := $f.slides -}}
+        {{- $t := dict -}}{{- if lt $i (len $oSl) -}}{{- $t = index $oSl $i -}}{{- end -}}
+        {{- $sl = $sl | append (merge $s (dict "alt" ($t.alt | default $s.alt) "caption" ($t.caption | default $s.caption))) -}}
+      {{- end -}}
+      {{- $refs := slice -}}
+      {{- range $i, $r := $f.refs -}}
+        {{- $t := $r.label -}}{{- if lt $i (len $oRefs) -}}{{- $t = index $oRefs $i -}}{{- end -}}
+        {{- $refs = $refs | append (merge $r (dict "label" $t)) -}}
+      {{- end -}}
+      {{- $m = merge $m (dict "points" $pts "criteria" $cri "slides" $sl "refs" $refs) -}}
+      {{- $findings = $findings | append (merge $f $m) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $gname := index (index $gEN $g.id | default dict) "name" | default $g.name -}}
+  {{- $groups = $groups | append (merge $g (dict "name" $gname "findings" $findings)) -}}
+{{- end -}}
+{{- $out = merge $zh (dict "groups" $groups) -}}
+{{- end -}}
+{{- return $out -}}

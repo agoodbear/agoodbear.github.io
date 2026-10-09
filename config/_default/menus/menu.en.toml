@@ -1,9 +1,19 @@
 # English menu — same order as menu.zh-tw.toml. Only sections that have English
-# content are listed (OMI atlas, ECG animations, AI learning and tools are Chinese-only for now).
+# content are listed (AI learning and tools are Chinese-only for now).
 [[main]]
   name = "ECG"
   url = "/en/categories/ecg/"
   weight = -109
+
+[[main]]
+  name = "OMI Atlas"
+  url = "/en/omi/"
+  weight = -108
+
+[[main]]
+  name = "ECG Animations"
+  url = "/en/ecg-anim/"
+  weight = -107.5
 
 [[main]]
   name = "ER Life"

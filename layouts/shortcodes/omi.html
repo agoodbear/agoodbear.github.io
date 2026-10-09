@@ -11,7 +11,7 @@
   {{- errorf "omi shortcode 只接受位置參數，例如 omi \"hatw\"（%s）" .Position -}}
 {{- end -}}
 {{- $id := lower (.Get 0 | default "") -}}
-{{- $atlas := index site.Data "omi_atlas" | default (dict) -}}
+{{- $atlas := partialCached "omi/atlas.html" site.Language.Lang site.Language.Lang -}}
 {{- $hit := false -}}
 {{- range (index $atlas "groups") -}}
   {{- range .findings -}}
@@ -19,7 +19,7 @@
   {{- end -}}
 {{- end -}}
 {{- if $hit -}}
-<a class="omi-ref" href="{{ printf "/omi/#%s" $id | relURL }}" title="OMI圖鑑：{{ $hit.name }}">{{ .Get 1 | default $hit.name }}</a>
+<a class="omi-ref" href="{{ printf "/omi/#%s" $id | relLangURL }}" title="{{ T "omi_title" }}{{ T "colon" }}{{ $hit.name }}">{{ .Get 1 | default $hit.name }}</a>
 {{- else if hugo.IsServer -}}
   {{- warnf "omi shortcode 找不到 finding 代號 %q（%s）。代號清單在 data/omi_atlas.yaml" $id .Position -}}
 <span class="omi-ref omi-ref--broken" title="data/omi_atlas.yaml 裡沒有這個代號">omi 代號「{{ $id }}」不存在</span>

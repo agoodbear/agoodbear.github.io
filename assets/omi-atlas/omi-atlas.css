@@ -623,3 +623,7 @@ html:not(.oa-js) .oa-detail + .oa-detail { margin-top: 4rem; }
 @media (max-width: 359px) {
   .oa-chip-label { white-space: normal; }
 }
+
+/* 英文頁：組名比中文長（Special calculations），縮成左邊色帶時允許換行、字小一號，不然會被切掉 */
+html[lang="en"].oa-js .oa[data-state="group"] .oa-group-band { white-space: normal; }
+html[lang="en"].oa-js .oa[data-state="group"] .oa-group-name { font-size: calc(1.55rem * var(--oa-fit, 1)); }

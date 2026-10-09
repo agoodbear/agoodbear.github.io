@@ -90,6 +90,10 @@ OMI / NOMI、STEMI / NSTEMI、STE (ST elevation)、STD (ST depression)、hyperac
 - 不升級角色、不加強度形容詞：長官 → the higher-up（不是 senior physician）；有煙癮 → a smoker（不是 heavy smoker）。
 - 重點清單裡的條件要留：「如果是X，影響的lead較多」→ If it's X, more leads are involved。
 
+- 「可能」在「也可能X」「都可能X」句型最常被譯成 can（OMI圖鑑 pitfall 欄一批 5 處）→ may also X／may all X，不是 can also／can all。
+- 中文「主題＋評論＋建議」的串句不要直翻成破碎片語（See a swirl:／One variable, watch…）→ 改成 When you see X: … 或 X: do Y。
+- 主詞要對：「可能突然全斷」斷的是傳導 → may suddenly cut off conduction completely（不是 the block cuts off）。有標準 ECG 術語就用（一群一群 → grouped beating）。
+
 ### 8.4 不增不減
 - 不偷修原文的醫學／物理小錯（凹透鏡照翻 concave lens）、不換成指引原文用字（作者寫心肺衰竭 = collapse，不換 SMFM 的 arrest）、不換成作者沒用的專有名詞（正常變化 ≠ normal variant）。全部照翻、回報。
 - 不補臨床細節或形容詞：有心電圖波形 → an ECG waveform（不是 organized rhythm）；TnI上升(第二次) → (second time)（不是 second draw）；病人被放掉了 → missed（不是 sent home）；看到「離開」兩個字 → the word *Exit*（不是 the Exit sign）。
@@ -282,3 +286,11 @@ OMI / NOMI、STEMI / NSTEMI、STE (ST elevation)、STD (ST depression)、hyperac
 | 雪山山脈 | Snow Mountain Range | |
 | 雷浩斯 | （保留中文） | 查無英文名 |
 | 小蜜蜂（補給車） | Little Bee (a roving support car) | |
+
+
+## 10. 資料檔（OMI圖鑑、ECG動畫館）
+- 英文不是另一份 .en.md，而是對照檔 `data/omi_atlas_en.yaml`、`data/ecg_anim_en.yaml`：只放給讀者看的字，用 id 對上中文資料檔；清單逐項對位。
+- 新 finding／新動畫：`python3 scripts/i18n/data_i18n.py skeleton omi|anim` 產骨架 → 翻好貼進對照檔 → `python3 scripts/i18n/data_i18n.py check` 必須 PASS。
+- 中文改字後 check 會報 STALE：照新中文改英文，改完 `python3 scripts/i18n/data_i18n.py rehash`。
+- 資料檔不能留中文（沒有 keep-zh）；查不到英文名的人名／院名就改寫成不帶名字。
+- YAML 單引號字串裡的撇號要寫兩個（''）。

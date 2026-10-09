@@ -16,14 +16,16 @@
 {{ define "body-class" }}page-omi-atlas{{ end }}
 
 {{ define "main" }}
-{{- $atlas := index site.Data "omi_atlas" | default (dict) }}
-<main class="oa" id="omi-atlas" data-state="root">
+{{- $atlas := partialCached "omi/atlas.html" site.Language.Lang site.Language.Lang }}
+{{- /* 資料裡 finding 互連寫成 /omi/#代號；英文頁要連回英文版 */ -}}
+{{- $omiHref := printf "href=\"%s#" ("/omi/" | relLangURL) }}
+<main class="oa" id="omi-atlas" data-state="root" data-root-label="{{ T "omi_title" }}">
   <script>document.documentElement.classList.add('oa-js');setTimeout(function(){var m=document.getElementById('omi-atlas');if(m&&!m.classList.contains('is-ready')){document.documentElement.classList.remove('oa-js')}},4000);</script>
   <header class="oa-head">
-    <nav class="oa-crumbs" aria-label="目前位置"></nav>
+    <nav class="oa-crumbs" aria-label="{{ T "omi_crumbs_aria" }}"></nav>
     <h1 class="oa-title">OMI ECG findings</h1>
     <div class="oa-intro">
-      <p class="oa-legend">⭐️＝2025 年新加進來的 finding</p>
+      <p class="oa-legend">{{ T "omi_legend" }}</p>
     </div>
   </header>
 
@@ -38,17 +40,17 @@
       <a class="oa-group" href="#{{ $g.id }}" data-group="{{ $g.id }}">
         <span class="oa-group-band">
           <span class="oa-group-name">{{ $g.name }}</span>
-          <span class="oa-group-count">{{ $n }} 個 finding</span>
+          <span class="oa-group-count">{{ T "omi_count" $n }}</span>
           <span class="oa-group-toggle" aria-hidden="true"></span>
         </span>
         <span class="oa-group-body">
           {{- partial "omi-trace.html" $g.id }}
           <span class="oa-chips" data-rows="{{ $rows }}">
             {{- range $f := $g.findings }}
-            <span class="oa-chip" data-id="{{ $f.id }}"><span class="oa-chip-label">{{ $f.short | default $f.name }}</span>{{ if $f.new2025 }}<span class="oa-chip-new" title="2025 新增">⭐️</span>{{ end }}</span>
+            <span class="oa-chip" data-id="{{ $f.id }}"><span class="oa-chip-label">{{ $f.short | default $f.name }}</span>{{ if $f.new2025 }}<span class="oa-chip-new" title="{{ T "omi_new_short" }}">⭐️</span>{{ end }}</span>
             {{- end }}
           </span>
-          <span class="oa-group-hint">{{ $n }} 個 finding，再點一次收起來</span>
+          <span class="oa-group-hint">{{ T "omi_hint" $n }}</span>
         </span>
       </a>
       {{- end }}
@@ -61,7 +63,7 @@
         <a class="oa-node" href="#{{ $f.id }}" data-id="{{ $f.id }}">
           <span class="oa-node-name">{{ $f.name }}</span>
           {{- with $f.full }}<span class="oa-node-full">{{ . }}</span>{{ end }}
-          {{- if $f.new2025 }}<span class="oa-new">⭐️ 2025 新增</span>{{ end }}
+          {{- if $f.new2025 }}<span class="oa-new">{{ T "omi_new" }}</span>{{ end }}
         </a>
       </li>
       {{- end }}
@@ -81,7 +83,7 @@
           <p class="oa-d-full">{{ . }}</p>
           {{- end }}
           {{- if $f.new2025 }}
-          <p class="oa-new">⭐️ 2025 新增</p>
+          <p class="oa-new">{{ T "omi_new" }}</p>
           {{- end }}
           {{- /* 這個 finding 的教學動畫已公開才出現（資料在 data/ecg_anim.yaml） */ -}}
           {{- partial "ecg-anim/atlas-link.html" $f.id }}
@@ -90,21 +92,21 @@
         <div class="oa-d-body">
           <div class="oa-d-main">
             {{- with $f.look }}
-            <p class="oa-d-look">{{ . | markdownify }}</p>
+            <p class="oa-d-look">{{ replace (. | markdownify) "href=\"/omi/#" $omiHref | safeHTML }}</p>
             {{- end }}
             {{- with $f.points }}
             <ul class="oa-d-points">
               {{- range . }}
-              <li>{{ .text | markdownify }}</li>
+              <li>{{ replace (.text | markdownify) "href=\"/omi/#" $omiHref | safeHTML }}</li>
               {{- end }}
             </ul>
             {{- end }}
             {{- with $f.criteria }}
             <section class="oa-d-criteria">
-              <h3>判準</h3>
+              <h3>{{ T "omi_criteria" }}</h3>
               <ul>
                 {{- range . }}
-                <li>{{ .text | markdownify }}</li>
+                <li>{{ replace (.text | markdownify) "href=\"/omi/#" $omiHref | safeHTML }}</li>
                 {{- end }}
               </ul>
             </section>
@@ -121,14 +123,14 @@
               {{- end }}
               <img src="{{ .src | relURL }}" alt="{{ .alt }}" loading="lazy" decoding="async"{{ with .width }} width="{{ . }}"{{ end }}{{ with .height }} height="{{ . }}"{{ end }}>
               {{- with .caption }}
-              <figcaption>{{ . | markdownify }}</figcaption>
+              <figcaption>{{ replace (. | markdownify) "href=\"/omi/#" $omiHref | safeHTML }}</figcaption>
               {{- end }}
             </figure>
             {{- end }}
             {{- end }}
             {{- with $f.refs }}
             <section class="oa-d-refs">
-              <h3>出處</h3>
+              <h3>{{ T "omi_refs" }}</h3>
               <ol>
                 {{- range . }}
                 <li>{{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>{{ else }}{{ .label }}{{ end }}</li>
@@ -141,36 +143,36 @@
           <aside class="oa-d-side">
             {{- with $f.leads }}
             <section class="oa-d-fact">
-              <h3>看哪裡</h3>
-              <p>{{ delimit . "、" }}</p>
+              <h3>{{ T "omi_leads" }}</h3>
+              <p>{{ delimit . (T "list_sep") }}</p>
             </section>
             {{- end }}
             {{- with $f.artery }}
             <section class="oa-d-fact">
-              <h3>想到哪條血管</h3>
-              <p>{{ . | markdownify }}</p>
+              <h3>{{ T "omi_artery" }}</h3>
+              <p>{{ replace (. | markdownify) "href=\"/omi/#" $omiHref | safeHTML }}</p>
             </section>
             {{- end }}
             {{- with $f.pitfall }}
             <section class="oa-d-fact">
-              <h3>別被騙</h3>
-              <p>{{ . | markdownify }}</p>
+              <h3>{{ T "omi_pitfall" }}</h3>
+              <p>{{ replace (. | markdownify) "href=\"/omi/#" $omiHref | safeHTML }}</p>
             </section>
             {{- end }}
             <section class="oa-d-fact">
-              <h3>完整講解</h3>
+              <h3>{{ T "omi_full" }}</h3>
               {{- $part := false }}
               {{- with $f.part_url }}{{ $part = site.GetPage . }}{{ end }}
               {{- if $part }}
-              <p><a href="{{ $part.RelPermalink }}">{{ $f.part }}：{{ $part.Title }}</a></p>
+              <p><a href="{{ $part.RelPermalink }}">{{ $f.part }}{{ T "colon" }}{{ $part.Title }}</a></p>
               {{- else }}
-              <p class="oa-muted">{{ $f.part }}（還在寫）</p>
+              <p class="oa-muted">{{ $f.part }}{{ T "omi_writing" }}</p>
               {{- end }}
             </section>
             {{- $cases := where site.RegularPages "Params.omi_findings" "intersect" (slice $f.id) }}
             {{- with $cases }}
             <section class="oa-d-fact">
-              <h3>我的 case</h3>
+              <h3>{{ T "omi_cases" }}</h3>
               <ul>
                 {{- range . }}
                 <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
@@ -181,10 +183,10 @@
           </aside>
         </div>
 
-        <nav class="oa-d-sibs" aria-label="同一組的其他 finding">
-          {{- if gt $i 0 }}{{ with index $fs (sub $i 1) }}<a class="oa-prev" href="#{{ .id }}">上一個：{{ .name }}</a>{{ end }}{{ else }}<span class="oa-prev"></span>{{ end }}
-          <a class="oa-up" href="#{{ $g.id }}">回到{{ $g.name }}</a>
-          {{- if lt $i $lastIdx }}{{ with index $fs (add $i 1) }}<a class="oa-next" href="#{{ .id }}">下一個：{{ .name }}</a>{{ end }}{{ else }}<span class="oa-next"></span>{{ end }}
+        <nav class="oa-d-sibs" aria-label="{{ T "omi_sibs_aria" }}">
+          {{- if gt $i 0 }}{{ with index $fs (sub $i 1) }}<a class="oa-prev" href="#{{ .id }}">{{ T "omi_prev" }}{{ .name }}</a>{{ end }}{{ else }}<span class="oa-prev"></span>{{ end }}
+          <a class="oa-up" href="#{{ $g.id }}">{{ T "omi_back" }}{{ $g.name }}</a>
+          {{- if lt $i $lastIdx }}{{ with index $fs (add $i 1) }}<a class="oa-next" href="#{{ .id }}">{{ T "omi_next" }}{{ .name }}</a>{{ end }}{{ else }}<span class="oa-next"></span>{{ end }}
         </nav>
       </article>
       {{- end }}

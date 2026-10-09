@@ -23,5 +23,16 @@
     {{- end -}}
   {{- end -}}
   {{- $hit = merge $hit (dict "visible" $visible) -}}
+  {{- /* 英文頁：卡片文字（title／subtitle／point／refs）換成 data/ecg_anim_en.yaml，其他欄位照中文那份 */ -}}
+  {{- if eq site.Language.Lang "en" -}}
+    {{- with index ((index site.Data "ecg_anim_en" | default dict).items | default dict) $id -}}
+      {{- $o := . -}}
+      {{- range $k := slice "title" "subtitle" "point" "refs" -}}
+        {{- with index $o $k -}}{{- $hit = merge $hit (dict $k .) -}}{{- end -}}
+      {{- end -}}
+    {{- else -}}
+      {{- if $visible -}}{{- warnf "ecg_anim_en.yaml 沒有 %q，英文頁暫時顯示中文" $id -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
 {{- end -}}
 {{- return $hit -}}
