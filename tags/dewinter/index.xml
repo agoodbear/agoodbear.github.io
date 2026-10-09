@@ -38,7 +38,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;旁邊家屬想逗他笑，覺得他是太生氣了，所以才會胸口不舒服。過一下就會好了。&lt;/p&gt;
 &lt;p&gt;他說剛剛生氣後，沒多久就開始胸口悶。且radiate to L't arm。&lt;/p&gt;
 &lt;p&gt;我和他說，心電圖看起來像心肌梗塞，可能要做心導管。&lt;/p&gt;
-&lt;h3 id="病患不用吧"&gt;&lt;strong&gt;病患:不用吧~~休息一下就會好了。應該沒有那麼嚴重吧&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id="病患不用吧休息一下就會好了應該沒有那麼嚴重吧"&gt;&lt;strong&gt;病患:不用吧~~休息一下就會好了。應該沒有那麼嚴重吧&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;我接著走去專師那，去詢問值班CV的回應。&lt;/p&gt;
 &lt;p&gt;專師說，CV回應說這應該是舊的心電圖變化&lt;/p&gt;
 &lt;p&gt;嗯，我聽到這回應。我再次傻眼喵咪。&lt;/p&gt;
@@ -87,11 +87,11 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;em&gt;From:&lt;a href="https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html"&gt;https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;最新一期的&lt;a href="https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html"&gt;ECG blog&lt;/a&gt;¹，Post了一張ECG。ECG看起來Inf.wall有STE，此外V2&lt;del&gt;V3有STD和large T wave。不過&lt;strong&gt;Ken Grauer&lt;/strong&gt;覺得V2&lt;/del&gt;V3像Post.wall MI之後有reperfusion，所以T wave高。&lt;/p&gt;
+&lt;p&gt;最新一期的&lt;a href="https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html"&gt;ECG blog&lt;/a&gt;¹，Post了一張ECG。ECG看起來Inf.wall有STE，此外V2~V3有STD和large T wave。不過&lt;strong&gt;Ken Grauer&lt;/strong&gt;覺得V2~V3像Post.wall MI之後有reperfusion，所以T wave高。&lt;/p&gt;
 &lt;h4 id="以前學ecg要診斷postwall-mi要有幾個條件"&gt;以前學ECG要診斷Post.wall MI，要有幾個條件:&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;1.R/S&amp;gt;1 in V1 or V2(也就是Tall RV1)
-2.V1&lt;del&gt;V3有STD
-3.V1&lt;/del&gt;V3有Upright T wave&lt;/strong&gt;&lt;/p&gt;
+2.V1~V3有STD
+3.V1~V3有Upright T wave&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="其實第三點v1v3有upright-t-wave不是必要條件為何"&gt;其實第三點，V1~V3有Upright T wave不是必要條件，為何?&lt;/h4&gt;
 &lt;p&gt;因為如果有Upright T wave，代表Post.wall出現了reperfusion rhythm:Terminal T wave inversion，所以在V1~V3就會出現Upright T wave(和Post. wall對稱)。當然有沒有可能Post.wall還正在myocardial infarction。當然有!!!所以這時候，當然就沒有Upright T wave。&lt;/p&gt;
 &lt;p&gt;此外&lt;strong&gt;Ken Grauer&lt;/strong&gt;的這張ECG，V2~V3有沒有可能是&lt;strong&gt;De Winter’s T wave?&lt;/strong&gt;&lt;/p&gt;

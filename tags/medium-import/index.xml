@@ -182,7 +182,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1:到院時間:10:02&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1:到院時間:10:02&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;這個Case，非常有印象主要是這病患的臨床表現。&lt;/p&gt;
 &lt;p&gt;64歲男性過去有糖尿病、高血脂，且因為CAD放過三根支架。但這幾年沒在追蹤了。&lt;/p&gt;
 &lt;p&gt;病患早上就開始不舒服了。一開始先痛上腹部之後痛到胸部與上背部和下巴。&lt;/p&gt;
@@ -212,7 +212,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.2&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;首先在2018年第四版心肌梗塞通用定義&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;就已經清楚定義，要診斷STEMI，在V2/V3的定義和其他lead是不一樣的：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;男性，&amp;lt;40 y/o要2.5 mm高&lt;/li&gt;
@@ -289,7 +289,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1 60歲男性胸痛一小時&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1 60歲男性胸痛一小時&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -303,11 +303,11 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.2 46歲男性從早上開始胸痛不舒服&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.2 46歲男性從早上開始胸痛不舒服&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;首先我們先問自己，這些ECG是否有符合STEMI criteria呢?&lt;/p&gt;
 &lt;p&gt;如果沒有，那麼我們會在第一時間就Call CV man嗎?&lt;/p&gt;
 &lt;p&gt;如果是在三更半夜，這種ECG pattern，Call CV，會不會被罵啊?&lt;/p&gt;
-&lt;p&gt;另外我們要問自己，如果沒有符合STEMI criteria的ECG，要怎麼看出有血管阻塞呢?目前有哪些的文獻，可以讓我們知道，這種的ECG pattern代表著**阻塞性心肌梗塞(Occlusion MI →OMI)**呢?&lt;/p&gt;
+&lt;p&gt;另外我們要問自己，如果沒有符合STEMI criteria的ECG，要怎麼看出有血管阻塞呢?目前有哪些的文獻，可以讓我們知道，這種的ECG pattern代表著&lt;strong&gt;阻塞性心肌梗塞(Occlusion MI →OMI)&lt;/strong&gt;呢?&lt;/p&gt;
 &lt;p&gt;哇嗚~~~~也太多問題了吧XD&lt;/p&gt;
 &lt;p&gt;我總結一下上述的問題，可以分成幾個重點。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;第一個是用STEMI criteria來診斷心肌梗塞，可靠嗎?&lt;/strong&gt;&lt;/p&gt;
@@ -359,7 +359,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Table 1. 哪些ECG pattern可能有MI-Part I&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description></item><item><title>低血壓、低血氧到院，心電圖有問題嗎?</title><link>https://agoodbear.com/post/medium-db499ddee6f9/</link><pubDate>Wed, 07 Sep 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-db499ddee6f9/</guid><description>
+&lt;strong&gt;&lt;em&gt;Table 1. 哪些ECG pattern可能有MI-Part I&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>低血壓、低血氧到院，心電圖有問題嗎?</title><link>https://agoodbear.com/post/medium-db499ddee6f9/</link><pubDate>Wed, 07 Sep 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-db499ddee6f9/</guid><description>
 &lt;h3 id="低血壓低血氧到院心電圖有問題嗎"&gt;低血壓、低血氧到院，心電圖有問題嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -374,7 +374,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1到院時ECG&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1到院時ECG&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;72歲女性，由救護車偶依～～～～偶依送到本院。&lt;/p&gt;
 &lt;p&gt;這天急診依舊是病患住不上去的待床地獄。早上07:30和夜班醫師交班後，手上就有一串病患在我手上。&lt;/p&gt;
 &lt;p&gt;上班約莫一個小時左右，外面檢傷推進來一位病患。&lt;/p&gt;
@@ -412,7 +412,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.2 Reverse Z shape&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.2 Reverse Z shape&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;這張圖代表著reverse Z shape的記憶法。也就是如果單獨在這五個leads(III/aVF/aVL/aVR/V1)發現&lt;strong&gt;Q wave and/or TWI&lt;/strong&gt;，很有可能是正常的。(&lt;strong&gt;前提:年輕人，沒有心臟問題&lt;/strong&gt;)&lt;/li&gt;
 &lt;li&gt;有些lead即使有large Q wave，也不一定是infarction →這些lead包括III/aVL/aVR/V1&lt;/li&gt;
@@ -448,7 +448,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1 Left:原始心電圖、Right:網友問題&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1 Left:原始心電圖、Right:網友問題&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;在&lt;/strong&gt;&lt;a href="https://agoodbear.medium.com/%E9%80%99%E6%98%AF%E4%BB%80%E9%BA%BC%E6%89%AD%E6%9B%B2%E8%AE%8A%E5%BD%A2%E7%9A%84ecg-7bca25391302"&gt;&lt;strong&gt;去年12/17有發一篇文章&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;，近期有網友提問一些問題。在此回答提問問題。&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id="問題可以歸納幾點"&gt;問題可以歸納幾點:&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Q1 →是否有可能Af+VT同時發生呢?&lt;/strong&gt;&lt;/p&gt;
@@ -491,7 +491,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1 入院時ECG&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1 入院時ECG&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;記得這個Case是在今年四月份的時候，武漢肺炎疫情剛起來的某天早上。&lt;/p&gt;
 &lt;p&gt;那時候每天不是在檢疫所不然就是去旅館篩檢移工，再不然就是在去急診上班的路上。&lt;/p&gt;
 &lt;p&gt;那天早上，交班了一位肺水腫的個案，突然喘不過來，胸痛，血壓剩下50多。接著來了一堆外傷病患、顏面骨骨折、又在吐血。另外一位外傷病患，超音波看到腹內出血，我大喊這位是內出血，幸好一群伶俐的護理師，把病患團團圍住，打針打針、輸血輸血。等待做動脈栓塞，把脾臟破裂的地方塞住。&lt;/p&gt;
@@ -499,10 +499,10 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;還沒結束，又來一位40歲男性，典型胸痛冒冷汗、痛到左手臂。在做ECG的時候，我說不會那麼剛好STEMI吧。&lt;/p&gt;
 &lt;p&gt;廢話不多說。我們來判讀一下這張ECG吧。&lt;/p&gt;
 &lt;h4 id="依照rate-rhythm-axis-interval-ischemia來看看有什麼finding"&gt;依照Rate-Rhythm-Axis-Interval-Ischemia來看看有什麼finding。&lt;/h4&gt;
-&lt;p&gt;**Rate:**約66 bpm&lt;/p&gt;
-&lt;p&gt;**Rhythm:**I/II/aVF的P wave是Upright，aVR的P wave是inverted，II的P wave高度&amp;gt;I的P wave，所以可以確定是從sinus來的rhythm。不是非常規則，算是sinus arrhythmia。&lt;/p&gt;
-&lt;p&gt;**Axis:**Normal axis&lt;/p&gt;
-&lt;p&gt;**Interval:**沒有明顯QT prolong&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rate:&lt;/strong&gt;約66 bpm&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rhythm:&lt;/strong&gt;I/II/aVF的P wave是Upright，aVR的P wave是inverted，II的P wave高度&amp;gt;I的P wave，所以可以確定是從sinus來的rhythm。不是非常規則，算是sinus arrhythmia。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Axis:&lt;/strong&gt;Normal axis&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Interval:&lt;/strong&gt;沒有明顯QT prolong&lt;/p&gt;
 &lt;p&gt;Ischemia:可以看到inf.leads有minimal STE，此外aVL有明顯TWI。&lt;/p&gt;
 &lt;h4 id="在這邊我們先來問問自己幾個問題藉由這些問題讓我們能夠更加有自信的說這是ami"&gt;在這邊我們先來問問自己幾個問題，藉由這些問題讓我們能夠更加有自信的說這是AMI。&lt;/h4&gt;
 &lt;p&gt;Q1:在出現STE之前有任何ECG ischemia sign會先表現出來嗎?(哪些是Early ischemia sign?)&lt;/p&gt;
@@ -555,7 +555,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;某個夜黑風高的晚上，急診室外面的緊急消防救護系統廣播著:&lt;/p&gt;
 &lt;p&gt;『這裡是宜蘭91，等等有位內科OHCA到陽大附醫』&lt;/p&gt;
 &lt;p&gt;救護車到院，一位年紀約略50歲中年婦女，臉色蒼白，面無血色。&lt;/p&gt;
@@ -563,11 +563,11 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;在急救室，裝上了ECG monitor，摸不到脈搏，但是有心電圖波形，看起來是PEA。幾輪的壓胸、給藥後。護理師表示gain pulse。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;立刻做了Fig.1的12 lead ECG。&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="來判讀一下這張ecg"&gt;來判讀一下這張ECG:&lt;/h4&gt;
-&lt;p&gt;**Rate:**150 bpm&lt;/p&gt;
-&lt;p&gt;**Rhythm:**Upright P wave in II&amp;gt;I、aVR的P wave為inverted、應該是sinus rhythm&lt;/p&gt;
-&lt;p&gt;**Axis:**Normal axis&lt;/p&gt;
-&lt;p&gt;**Interval:**QTc →507 ms&lt;/p&gt;
-&lt;p&gt;**Ischemia:**看到了Multiple leads STD + aVR and/or V1 STE(&lt;strong&gt;Fig.2&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rate:&lt;/strong&gt;150 bpm&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rhythm:&lt;/strong&gt;Upright P wave in II&amp;gt;I、aVR的P wave為inverted、應該是sinus rhythm&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Axis:&lt;/strong&gt;Normal axis&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Interval:&lt;/strong&gt;QTc →507 ms&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ischemia:&lt;/strong&gt;看到了Multiple leads STD + aVR and/or V1 STE(&lt;strong&gt;Fig.2&lt;/strong&gt;)&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -581,7 +581,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.2&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="有幾個問題需要深度考慮"&gt;有幾個問題需要深度考慮:&lt;/h4&gt;
 &lt;h4 id="q1是什麼樣的情況會造成如此的ecg變化"&gt;&lt;strong&gt;Q1:是什麼樣的情況會造成如此的ECG變化?&lt;/strong&gt;&lt;/h4&gt;
 &lt;h4 id="q2rsr-in-v1-v2有哪些狀況會如此"&gt;&lt;strong&gt;Q2:rSr’ in V1-V2有哪些狀況會如此?&lt;/strong&gt;&lt;/h4&gt;
@@ -603,18 +603,18 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1 到院時ECG&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;這個Case，是上個月某個夜班，上到早上準備下班的最後半小時。我突然被告知，等等會有一位胸痛病患到院**(敢情是VIP，病患還沒到，幫忙電話到是先到了)**。&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1 到院時ECG&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;這個Case，是上個月某個夜班，上到早上準備下班的最後半小時。我突然被告知，等等會有一位胸痛病患到院&lt;strong&gt;(敢情是VIP，病患還沒到，幫忙電話到是先到了)&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;護理師說，就靠我了~~~&lt;/p&gt;
 &lt;p&gt;心想，剩最後半小時，到底靠我要怎樣啦XD&lt;/p&gt;
 &lt;p&gt;不廢言，來看看我們可以從這個Case學到什麼吧!!!&lt;/p&gt;
 &lt;h4 id="病患到院時看起來真的是非常的痛痛到整個臉都糾結在一起了她說這12天一陣一陣的胸痛早上開始大痛痛到後背痛到冒冷汗"&gt;病患到院時，看起來真的是非常的痛，痛到整個臉都糾結在一起了。她說這1~2天一陣一陣的胸痛。早上開始大痛，痛到後背，痛到冒冷汗。&lt;/h4&gt;
 &lt;h3 id="先來判讀一下ecg"&gt;&lt;strong&gt;先來判讀一下ECG&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;**Rate: **63 bpm&lt;/p&gt;
-&lt;p&gt;**Rhythm: **SR with APC&lt;/p&gt;
-&lt;p&gt;**Axis: **Normal axis&lt;/p&gt;
-&lt;p&gt;**Interval: **No QT prolong&lt;/p&gt;
-&lt;p&gt;**Ischemia: **運用QRSTU來判讀&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rate: &lt;/strong&gt;63 bpm&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rhythm: &lt;/strong&gt;SR with APC&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Axis: &lt;/strong&gt;Normal axis&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Interval: &lt;/strong&gt;No QT prolong&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ischemia: &lt;/strong&gt;運用QRSTU來判讀&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;沒有看到明顯的pathologic Q wave&lt;/li&gt;
 &lt;li&gt;PRWP(+)&lt;/li&gt;
@@ -686,12 +686,12 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;67歲男性，中午喝了一點高粱後，開始覺得胸悶、上腹痛~~~&lt;/p&gt;
 &lt;p&gt;護理師做完ECG後，馬上和我說，熊醫師~~~~STEMI喔~~~&lt;/p&gt;
 &lt;h4 id="ecg判讀"&gt;&lt;strong&gt;ECG判讀:&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;Rate:77 bpm、sinus rhythm、Normal axis、1st degree AVB&lt;/p&gt;
-&lt;p&gt;**Ischemia ECG finding有下列:**Hyperacute T wave in inf.leads with reciprocal STD change over aVL/I、STD in V1&lt;del&gt;V6(Maximal STD at V2&lt;/del&gt;V3)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ischemia ECG finding有下列:&lt;/strong&gt;Hyperacute T wave in inf.leads with reciprocal STD change over aVL/I、STD in V1~V6(Maximal STD at V2~V3)&lt;/p&gt;
 &lt;p&gt;這邊要提一個&lt;strong&gt;downsloping STD&lt;/strong&gt;(此Case →V1~V2都有，特別是V2)&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -707,7 +707,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;Dr.Smith在其Blog中強調，在V1&lt;del&gt;V4有任何的Maximal STD，就必須考慮到Post.OMI(&lt;strong&gt;96% specificity for Post.OMI&lt;/strong&gt;)，直到證明不是。特別是downsloping STD in V2&lt;/del&gt;V3，Smith表示根據他的經驗，這就足以診斷Post.OMI&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;p&gt;Dr.Smith在其Blog中強調，在V1~V4有任何的Maximal STD，就必須考慮到Post.OMI(&lt;strong&gt;96% specificity for Post.OMI&lt;/strong&gt;)，直到證明不是。特別是downsloping STD in V2~V3，Smith表示根據他的經驗，這就足以診斷Post.OMI&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
 &lt;h4 id="延伸話題std有三種型態fig2"&gt;&lt;strong&gt;延伸話題:STD有三種型態(Fig.2)&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -722,7 +722,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.2&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;需要特別注意，雖然Upsloping STD是偏向非缺血，但是要小心De Winter’s T wave →其&lt;strong&gt;具有Upsloping STD + Hyperacute T wave&lt;/strong&gt;，這裡的Upsloping STD是偏向缺血變化的STD。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -737,7 +737,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;De Winter’s T wave&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description></item><item><title>胸痛，是Wellen嗎?</title><link>https://agoodbear.com/post/medium-cec16f0ae2f8/</link><pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-cec16f0ae2f8/</guid><description>
+&lt;strong&gt;&lt;em&gt;De Winter’s T wave&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>胸痛，是Wellen嗎?</title><link>https://agoodbear.com/post/medium-cec16f0ae2f8/</link><pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-cec16f0ae2f8/</guid><description>
 &lt;h3 id="胸痛是wellen嗎"&gt;胸痛，是Wellen嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -783,7 +783,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/a&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;首先，我們來看看&lt;strong&gt;Fig.1&lt;/strong&gt;。這張圖&lt;strong&gt;上方&lt;/strong&gt;講的是ACO(Acute coronary occlusion)會有哪些ECG變化。&lt;strong&gt;下方&lt;/strong&gt;講的是在infarction之前出現reperfusion，之後會有哪些典型的ECG變化。這個之後講。&lt;/p&gt;
 &lt;p&gt;那麼哪些狀況會導致reperfusion呢?包括spontaneous reperfusion(自己通了)、打了rTPA、或者做了PCI後通了。&lt;/p&gt;
 &lt;p&gt;在這篇文章描述了，STEMI病患在做PCI之前的spontaneous reperfusion比例大約20%左右&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。此外有一個觀念相當重要，那就是冠狀血管阻塞是『動態』的，在IRA(infarct related artery)是有可能因為內生性tPA與plasmin來溶解thrombi導致spontaneous reperfusion的產生。&lt;/p&gt;
@@ -806,7 +806,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;70多歲老阿嬤，下午開始胸痛，痛到冒冷汗。2~3小時後到院。&lt;/p&gt;
 &lt;p&gt;通常V1、II可以比較明顯看到P wave，也就是atrium在搞什麼鬼。&lt;/p&gt;
 &lt;p&gt;在V1似乎看到很多P波。&lt;/p&gt;
-&lt;p&gt;如果是AFL，其atrial rate大約250&lt;del&gt;350 bpm。如果是Af，其atrial rate大約350&lt;/del&gt;600 bpm。&lt;/p&gt;
+&lt;p&gt;如果是AFL，其atrial rate大約250~350 bpm。如果是Af，其atrial rate大約350~600 bpm。&lt;/p&gt;
 &lt;p&gt;如果是flutter wave，在inf.lead，似乎沒有出現常見的inverted P wave。&lt;/p&gt;
 &lt;p&gt;應該是Af，在V1，某些的PP interval，也只有3~4小格，超過350 bpm。&lt;strong&gt;(Fig.1)&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
@@ -888,7 +888,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;Rhythm:Sinus rhythm(Lead I、II、aVF的P wave為Upright，aVR為Inverted)&lt;/p&gt;
 &lt;p&gt;Axis:Normal axis&lt;/p&gt;
 &lt;p&gt;PR稍長、Narrow QRS、No QT prolong&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;在V1&lt;del&gt;V5有STD，Maximal STD在V3&lt;/del&gt;V4、沒有明顯的STE&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在V1~V5有STD，Maximal STD在V3~V4、沒有明顯的STE&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;WTF~~~沒有STE，你竟然說這是STEMI!!!!&lt;/p&gt;
 &lt;p&gt;對，這是後壁的STEMI，所以12 leads ECG完全看不到有STE。但確確實實是STEMI。&lt;/p&gt;
 &lt;p&gt;Post.wall MI佔所有STEMI的10~20%左右。而且通常會合併inf.wall MI、Lateral wall MI。&lt;/p&gt;
@@ -941,7 +941,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/p&gt;
 &lt;p&gt;50多歲的男性病患，因為心悸、胸悶到地區醫院就診。ECG如上，當班醫師認為是newly onset LBBB，懷疑是ACS。所以轉院過來到我們醫院就醫。&lt;/p&gt;
 &lt;p&gt;病患到院時，意識清楚，血壓70/40 mmHg。&lt;/p&gt;
-&lt;p&gt;姑且不論這是什麼心律，不管是&lt;strong&gt;2015 or 2020 ACLS guideline(Fig.1)&lt;strong&gt;也都明白表示。 Unstable tachycardia，應該要給予&lt;/strong&gt;Synchronized cardioversion&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;姑且不論這是什麼心律，不管是&lt;strong&gt;2015 or 2020 ACLS guideline(Fig.1)&lt;/strong&gt;也都明白表示。 Unstable tachycardia，應該要給予&lt;strong&gt;Synchronized cardioversion&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -955,7 +955,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig. 1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig. 1&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id="在acls教學中我們常常用昏痛喘shock低血壓的記憶法來評估病患遇到心跳過快150-bpm是否需要緊急處理"&gt;在ACLS教學中，我們常常用『&lt;strong&gt;昏、痛、喘、Shock、低血壓&lt;/strong&gt;』的記憶法，來評估病患遇到心跳過快(&amp;gt;150 bpm)，是否需要緊急處理&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;意識不清 →可能因為心跳過快引起的腦部灌流太低)&lt;/li&gt;
@@ -979,7 +979,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.2&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;我們把Long lead II(Fig.2)抓出來看，可以看到非常快、有些beat to beat速度快到300 bpm以上且沒有規則性，QRS是寬的、且形狀不固定。所以這個irregularly irregular的特性，指的就是Af。&lt;/p&gt;
 &lt;h3 id="那麼我們開始來問幾個問題"&gt;那麼我們開始來問幾個問題?&lt;/h3&gt;
 &lt;h4 id="q1不規則寬的qrs-tachycardia有哪些可能"&gt;🙋‍♂️Q&lt;strong&gt;1:不規則、寬的QRS tachycardia有哪些可能?&lt;/strong&gt;&lt;/h4&gt;
@@ -1059,7 +1059,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;em&gt;&lt;strong&gt;Table 1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;h4 id="omi組別符合timi-flow-01-or-timi-flow-23--high-peak-troponin"&gt;OMI組別:符合TIMI flow 0&lt;del&gt;1 or TIMI flow 2&lt;/del&gt;3 + High peak Troponin&lt;/h4&gt;
+&lt;h4 id="omi組別符合timi-flow-01-or-timi-flow-23--high-peak-troponin"&gt;OMI組別:符合TIMI flow 0~1 or TIMI flow 2~3 + High peak Troponin&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;31位病患是藉由Concordant STE or STD來診斷出來&lt;/li&gt;
 &lt;li&gt;2位病患是藉由Original Sgarbossa criteria的&amp;gt; 5 mm診斷出來&lt;/li&gt;
@@ -1087,7 +1087,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;讓我們來複習一下。Modified Sgarbossa criteria(MSC)可以應用在LBBB/PPM的病患。&lt;strong&gt;Criteria如下:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Concordant STE(&amp;gt; 1 mm) in any lead(任何一個lead)&lt;/li&gt;
-&lt;li&gt;Concordant STD(&amp;gt; 1 mm) in V1&lt;del&gt;V3(只要一個lead) →如果是PPM，則extend V1&lt;/del&gt;V6都適用&lt;/li&gt;
+&lt;li&gt;Concordant STD(&amp;gt; 1 mm) in V1~V3(只要一個lead) →如果是PPM，則extend V1~V6都適用&lt;/li&gt;
 &lt;li&gt;Excessive discordant in any lead(STE/S &amp;gt;0.25 or STD/R &amp;gt;0.3)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id="這邊要注意一點就是不要再用sgarbossa-criteria的criteria-c指discordant-ste-5-mm-此false-positive的機會高且不specificity所以smith才在2012在aem出了msc取代criteria-c希望修正此問題"&gt;&lt;strong&gt;這邊要注意一點就是，不要再用Sgarbossa criteria的Criteria C(指Discordant STE &amp;gt;5 mm) →此false-positive的機會高，且不specificity，所以Smith才在2012在AEM出了MSC取代Criteria C，希望修正此問題。&lt;/strong&gt;&lt;/h4&gt;
@@ -1120,7 +1120,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1 注意LBBB，只看到V1&lt;del&gt;V3、PPM看V1&lt;/del&gt;V6&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;em&gt;&lt;strong&gt;Fig.1 注意LBBB，只看到V1~V3、PPM看V1~V6&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -1148,7 +1148,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;ER arrival&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;ER arrival&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id="ihca-肺栓塞還是其他問題"&gt;IHCA →肺栓塞還是其他問題?&lt;/h3&gt;
 &lt;p&gt;來看看一位有趣的個案。&lt;/p&gt;
 &lt;p&gt;85歲女性、癌症病史。到院時喘、低血壓，意識模糊。&lt;/p&gt;
@@ -1157,7 +1157,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;Rhythm:Sinus&lt;/p&gt;
 &lt;p&gt;Axis:RAD&lt;/p&gt;
 &lt;p&gt;Newly RBBB(之前ECG沒有)、1st AVB&lt;/p&gt;
-&lt;p&gt;雖然Baseline不穩，但可以見到似乎有STD over V2&lt;del&gt;V6、I/aVL(Maximal在V3&lt;/del&gt;V4)，此處若能重做一次比較清楚，但我想病患狀況不好，這或許已經是很清楚的一張了。STE over aVR、III&lt;/p&gt;
+&lt;p&gt;雖然Baseline不穩，但可以見到似乎有STD over V2~V6、I/aVL(Maximal在V3~V4)，此處若能重做一次比較清楚，但我想病患狀況不好，這或許已經是很清楚的一張了。STE over aVR、III&lt;/p&gt;
 &lt;p&gt;V1不太清楚是STE還是STD。&lt;strong&gt;如果是STE:&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="那麼rt-precordial-leads-ste指v1v2avriii--rad需要特別考慮hyper-kpena-channel-blocker-toxicity這三個ddx"&gt;那麼&lt;strong&gt;R’t precordial leads STE(指V1、V2、aVR、±III) + RAD&lt;/strong&gt;需要特別考慮&lt;strong&gt;Hyper-K、PE、Na channel blocker toxicity這三個DDx&lt;/strong&gt;&lt;/h4&gt;
 &lt;h4 id="case繼續"&gt;⭐️Case繼續&lt;/h4&gt;
@@ -1176,10 +1176,10 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1: 50分鐘後&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;這張是50分鐘後的ECG**(Fig.1)**，幾乎沒有baseline不穩的干擾。&lt;/p&gt;
-&lt;p&gt;RAD、RBBB、STE over III、aVR、STD over V2&lt;del&gt;V6(Maximal at V3&lt;/del&gt;V4)、I/aVL。這邊可以很確定在precordial leads的Maximal lead在V3~V4，而且是&lt;strong&gt;excessive discordant&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;在RBBB pattern中，常見在V1~V3有TWI與mild STD**(如果有的話)**，但是STD不超過1 mm。所以超過了1 mm代表了，有某個力量把STD往下拉&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1: 50分鐘後&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;這張是50分鐘後的ECG&lt;strong&gt;(Fig.1)&lt;/strong&gt;，幾乎沒有baseline不穩的干擾。&lt;/p&gt;
+&lt;p&gt;RAD、RBBB、STE over III、aVR、STD over V2~V6(Maximal at V3~V4)、I/aVL。這邊可以很確定在precordial leads的Maximal lead在V3~V4，而且是&lt;strong&gt;excessive discordant&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;在RBBB pattern中，常見在V1~V3有TWI與mild STD&lt;strong&gt;(如果有的話)&lt;/strong&gt;，但是STD不超過1 mm。所以超過了1 mm代表了，有某個力量把STD往下拉&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;➡️什麼力量?Post.wall OMI(後壁血管阻塞)。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;另外&lt;strong&gt;aVR STE + Diffuse leads STD&lt;/strong&gt;的DDx非常多。&lt;/p&gt;</description></item><item><title>2小時前胸悶，有AMI嗎?</title><link>https://agoodbear.com/post/medium-3956f2cef4ca/</link><pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-3956f2cef4ca/</guid><description>
 &lt;h3 id="2小時前胸悶有ami嗎"&gt;2小時前胸悶，有AMI嗎?&lt;/h3&gt;
@@ -1221,7 +1221,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;那麼這張ECG看到什麼?&lt;/p&gt;
 &lt;p&gt;Lead I的P wave是負的、QRS是負的、T wave是負的。aVR的P wave是正。所以不是SA node往下傳?還是其他問題?&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Tips:&lt;strong&gt;如果看到&lt;/strong&gt;RAD+ Lead I的P wave是inverted&lt;/strong&gt;，要想&lt;strong&gt;兩個DDx&lt;/strong&gt; →Dextrocardia與lead misplacement&lt;/p&gt;</description></item><item><title>LVH要怎麼知道有沒有合併AMI?</title><link>https://agoodbear.com/post/medium-7406e9f73e25/</link><pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-7406e9f73e25/</guid><description>
+&lt;p&gt;&lt;strong&gt;Tips:&lt;/strong&gt;如果看到&lt;strong&gt;RAD+ Lead I的P wave是inverted&lt;/strong&gt;，要想&lt;strong&gt;兩個DDx&lt;/strong&gt; →Dextrocardia與lead misplacement&lt;/p&gt;</description></item><item><title>LVH要怎麼知道有沒有合併AMI?</title><link>https://agoodbear.com/post/medium-7406e9f73e25/</link><pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-7406e9f73e25/</guid><description>
 &lt;h3 id="lvh要怎麼知道有沒有合併ami"&gt;LVH要怎麼知道有沒有合併AMI?&lt;/h3&gt;
 &lt;p&gt;Amal上上週，在其Twitter貼出一篇推文，讓大家看看，LVH有多困難辨識出STEMI。反過來說，LVH其secondary STTC讓ST、T wave變化，更是容易讓我們把LVH的strain pattern變化誤認為STEMI。近期Amal與Smith都有不少篇幅在講LVH。結論只有一個………&lt;/p&gt;
 &lt;h4 id="lvh真是tmd有夠困難沒有準則"&gt;&lt;strong&gt;LVH真是TMD有夠困難，沒有準則!!!!!!&lt;/strong&gt;&lt;/h4&gt;
@@ -1241,7 +1241,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;既然沒有準則為什麼需要看?我自己解讀，亂中有序！總不可能每個LVH合併strain pattern有STE，我們急診上班，都要Call CV來背書幫忙看ECG吧。這真的會讓別人覺得我們急診科沒有專業，當然如果真的沒辦法排除AMI，還是要會診，畢竟這是**『病患該有的照護』**，不是急診科與心臟科在玩猜謎遊戲這麼簡單而已。&lt;/p&gt;
+&lt;p&gt;既然沒有準則為什麼需要看?我自己解讀，亂中有序！總不可能每個LVH合併strain pattern有STE，我們急診上班，都要Call CV來背書幫忙看ECG吧。這真的會讓別人覺得我們急診科沒有專業，當然如果真的沒辦法排除AMI，還是要會診，畢竟這是&lt;strong&gt;『病患該有的照護』&lt;/strong&gt;，不是急診科與心臟科在玩猜謎遊戲這麼簡單而已。&lt;/p&gt;
 &lt;p&gt;那麼我們要先知道一些通則，常見LVH該有的morphology與strain ECG pattern是長得怎麼樣~~在這些通則下，去看看是否有不太一樣的地方。若有，是不是可能有AMI的可能性，這時就可以讓我們對這病患提高警覺。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -1256,12 +1256,12 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Amal的亂中有序表格&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Amal的亂中有序表格&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="一般通則"&gt;一般通則&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;要了解LVH with strain pattern➡可能會有STE over R’t precordial leads with L’t precordial leads STD、I/aVL STD(也有可能I/aVL會STE)&lt;/li&gt;
 &lt;li&gt;Strain type pattern➡可以見到STD是asymmetry，若是ischemia則比較會是對稱的&lt;/li&gt;
-&lt;li&gt;在R’t precordial leads常見很深的S wave，所以會有STE出現**(因為appropriate discordance)**&lt;/li&gt;
+&lt;li&gt;在R’t precordial leads常見很深的S wave，所以會有STE出現&lt;strong&gt;(因為appropriate discordance)&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;High voltage的狀況下也會有appropriate discordance的情形出現&lt;/li&gt;
 &lt;li&gt;aVR STE in LVH是可以見到的狀況，並不是ischemia&lt;/li&gt;
 &lt;li&gt;LVH也可以看到Giant T wave syndrome&lt;/li&gt;
@@ -1293,7 +1293,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-*(**左圖:**左-&amp;gt;不對稱TWI(strain pattern)，右-&amp;gt;對稱TWI(偏向ischemia)、**右圖:*&lt;em&gt;在R’t precordial leads出現很深S wave，會有STE出現)&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Narrow QRS tachycardia</title><link>https://agoodbear.com/post/medium-962b3d4d3f0e/</link><pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-962b3d4d3f0e/</guid><description>
+&lt;em&gt;(&lt;strong&gt;左圖:&lt;/strong&gt;左-&amp;gt;不對稱TWI(strain pattern)，右-&amp;gt;對稱TWI(偏向ischemia)、&lt;strong&gt;右圖:&lt;/strong&gt;在R’t precordial leads出現很深S wave，會有STE出現)&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Narrow QRS tachycardia</title><link>https://agoodbear.com/post/medium-962b3d4d3f0e/</link><pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-962b3d4d3f0e/</guid><description>
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -1323,7 +1323,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig. 1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig. 1&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;簡單判讀：Rate約為150下、似乎有P，但是看起來不像典型P wave的形狀。RAD。Narrow QRS tachycardia，且有明顯的aVR STE with multiple leads STD&lt;/p&gt;
 &lt;p&gt;千萬要記得，&lt;strong&gt;要看P wave的有無，最適當的lead，不是lead II就是V1。Amal mattu特別喜歡V1&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;此外這邊要注意，這個明顯的&lt;strong&gt;aVR STE with multiple leads STD通常並不是LM、Proximal LAD、TVD問題引起的&lt;/strong&gt;(參考&lt;strong&gt;Fig.2&lt;/strong&gt;)。這是rate-dependent oxygen/demand mismatch引起的心跳缺血的ECG徵象。心跳過快就容易會出現。不只PSVT會有、AfRVR時也可以見到。只要心跳快，就可能因為心臟跳太快，導致短暫缺血，出現這樣的Pattern。&lt;/p&gt;
@@ -1345,14 +1345,14 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig. 2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig. 2&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Narrow QRS tachycardia需要鑑別的DDx包括了以下:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;ST&lt;/li&gt;
 &lt;li&gt;AFL 2:1 or 1:1&lt;/li&gt;
 &lt;li&gt;PSVT&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;**ST →**當然如果有看到明顯P wave，P wave在I/aVF/II為upright，aVR為inverted，可以說是ST。那麼ST，可以跳到多快?&lt;strong&gt;Maximal rate為220-age&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>猜猜哪一條血管阻塞?</title><link>https://agoodbear.com/post/medium-b4504530acc/</link><pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-b4504530acc/</guid><description>
+&lt;p&gt;&lt;strong&gt;ST →&lt;/strong&gt;當然如果有看到明顯P wave，P wave在I/aVF/II為upright，aVR為inverted，可以說是ST。那麼ST，可以跳到多快?&lt;strong&gt;Maximal rate為220-age&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>猜猜哪一條血管阻塞?</title><link>https://agoodbear.com/post/medium-b4504530acc/</link><pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-b4504530acc/</guid><description>
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -1390,13 +1390,13 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;要判斷AV block，要看P與QRS之間的關係。&lt;/p&gt;
 &lt;p&gt;P和QRS&lt;strong&gt;越拉越遠&lt;/strong&gt;，之後一個P沒有接QRS →Mobitz Type 1&lt;/p&gt;
 &lt;p&gt;P和QRS&lt;strong&gt;固定距離&lt;/strong&gt;，之後一個P沒有接QRS →Mobitz Type 2&lt;/p&gt;
-&lt;p&gt;P和QRS之間的&lt;strong&gt;距離沒有規則&lt;/strong&gt;→Complete heart block**(本Case)(Fig.1)**&lt;/p&gt;
+&lt;p&gt;P和QRS之間的&lt;strong&gt;距離沒有規則&lt;/strong&gt;→Complete heart block&lt;strong&gt;(本Case)(Fig.1)&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Tips:&lt;strong&gt;當看到很多P&lt;/strong&gt;(QRS和QRS之間不只一個P)&lt;/strong&gt;，先想&lt;strong&gt;AV block or block APCs兩種狀況&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tips:&lt;/strong&gt;當看到很多P&lt;strong&gt;(QRS和QRS之間不只一個P)&lt;/strong&gt;，先想&lt;strong&gt;AV block or block APCs兩種狀況&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id="再來看看postwall-mi要如何診斷"&gt;再來看看Post.wall MI要如何診斷?&lt;/h4&gt;
 &lt;p&gt;&lt;figure&gt;
@@ -1412,7 +1412,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.2&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;一般我們要診斷Post.wall MI要有三個criteria:(&lt;strong&gt;Fig.2&lt;/strong&gt;本Case的V1~V3)&lt;/p&gt;</description></item><item><title>診斷AMI in LBBB或paced rhythm補完了嗎?</title><link>https://agoodbear.com/post/medium-efdc3b9f05d5/</link><pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-efdc3b9f05d5/</guid><description>
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -1436,7 +1436,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;因此在2013年的JACC STEMI guideline¹認為，大多數的LBBB可能是舊的(無舊ECG比較是否為新的LBBB)，且就醫時新的LBBB或可能新的LBBB很少發生。因此不應當作有AMI。&lt;/p&gt;
 &lt;h4 id="重點-lbbbstemi"&gt;&lt;strong&gt;重點 →LBBB⧧STEMI&lt;/strong&gt;&lt;/h4&gt;
 &lt;h4 id="為何lbbb或paced-rhythm都不好診斷ami"&gt;為何LBBB或paced rhythm都不好診斷AMI?&lt;/h4&gt;
-&lt;p&gt;在正常的狀況下LBBB/RBBB在&lt;strong&gt;3個重要的lead(I、V1、V6)&lt;strong&gt;都要符合ST segment與T wave應該要和QRS最後反折的方向相反(secondary (2°) ST-T wave change) ，這就叫做&lt;/strong&gt;ST Opposition Rule&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在正常的狀況下LBBB/RBBB在&lt;strong&gt;3個重要的lead(I、V1、V6)&lt;/strong&gt;都要符合ST segment與T wave應該要和QRS最後反折的方向相反(secondary (2°) ST-T wave change) ，這就叫做&lt;strong&gt;ST Opposition Rule&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;因為LBBB/RBBB都改變了ventricular depolarization的順序，因此產生QRS morphology的改變➡這個conduction defect也改變了ventricular repolarization➡產生secondary (2°) ST-T wave change(為何稱作是secondary，主要是因為conduction defect產生的變化)²&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;就是這個變化，讓RBBB/LBBB的病患如果有AMI，就變得很難診斷!!!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
@@ -1457,11 +1457,11 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;總之記住，因為左/右束支阻斷，導致心室去極化順序改變了，所以RBBB/LBBB會特有&lt;strong&gt;正常appropriate discordance&lt;/strong&gt;變化(Fig 1)。&lt;/p&gt;
 &lt;h4 id="qrs若是-會有std與twi"&gt;&lt;strong&gt;QRS若是(+) →會有STD與TWI&lt;/strong&gt;&lt;/h4&gt;
 &lt;h4 id="qrs若是--會有ste與upright-t-wave"&gt;&lt;strong&gt;QRS若是(-) →會有STE與Upright T wave&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;所以&lt;strong&gt;看到Concordant STE or STD就要小心&lt;/strong&gt;，是否有AMI把正常RBBB/LBBB應有的變化**(appropriate discordance)**變不見了!!!!&lt;/p&gt;</description></item><item><title>真『心』誠意</title><link>https://agoodbear.com/post/medium-e8b80abb4274/</link><pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-e8b80abb4274/</guid><description>
+&lt;p&gt;所以&lt;strong&gt;看到Concordant STE or STD就要小心&lt;/strong&gt;，是否有AMI把正常RBBB/LBBB應有的變化&lt;strong&gt;(appropriate discordance)&lt;/strong&gt;變不見了!!!!&lt;/p&gt;</description></item><item><title>真『心』誠意</title><link>https://agoodbear.com/post/medium-e8b80abb4274/</link><pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-e8b80abb4274/</guid><description>
 &lt;h3 id="真心誠意"&gt;真『心』誠意&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://threadreaderapp.com/thread/1422425152613064708.html"&gt;Thread by @shahrukh_bakar on Thread Reader App&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;一位介入性心臟內科醫師回覆了一位推友的Case。這個個案延遲了10多個小時，之後做到了PCI。10多個小時過程當中，病患上上下下的胸痛起伏。&lt;/p&gt;
-&lt;p&gt;心內醫師把一些類似此病患**(Non-STEMI、起起伏伏胸痛、延遲做導管)**，做了一些觀念重點歸納。我覺得非常實用。&lt;/p&gt;
+&lt;p&gt;心內醫師把一些類似此病患&lt;strong&gt;(Non-STEMI、起起伏伏胸痛、延遲做導管)&lt;/strong&gt;，做了一些觀念重點歸納。我覺得非常實用。&lt;/p&gt;
 &lt;h4 id="我大概翻譯並且加入我之前念ecg的筆記"&gt;我大概翻譯並且加入我之前念ECG的筆記：&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;不管ECG長得怎麼樣，持續的胸痛是重大的&lt;strong&gt;Red flag sign&lt;/strong&gt;➡立即Cath lab不要延遲&lt;/li&gt;
@@ -1528,10 +1528,10 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;到院ECG (Fig 1)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;到院ECG (Fig 1)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id="到院前死亡案例原因為何呢"&gt;到院前死亡案例，原因為何呢?&lt;/h3&gt;
 &lt;p&gt;76歲女性。&lt;/p&gt;
-&lt;p&gt;外院到院前死亡，急救復甦後，心跳回來。轉送來我們醫院，剛到急診的第一張心電圖如上***(這時應該就快不行了)***。很快心臟就停了。大約又CPR了約莫10分鐘，心跳回來。再次做了張12導程ECG &lt;strong&gt;(Fig 2)&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;外院到院前死亡，急救復甦後，心跳回來。轉送來我們醫院，剛到急診的第一張心電圖如上&lt;strong&gt;&lt;em&gt;(這時應該就快不行了)&lt;/em&gt;&lt;/strong&gt;。很快心臟就停了。大約又CPR了約莫10分鐘，心跳回來。再次做了張12導程ECG &lt;strong&gt;(Fig 2)&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -1545,7 +1545,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;急救回來的第一張ECG (Fig 2)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;急救回來的第一張ECG (Fig 2)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id="覺得像什麼原因導致的呢"&gt;覺得像什麼原因導致的呢?&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;先看到院前，快要停止心跳前的ECG&lt;/strong&gt;。Long pause、RAD、RBBB、TWI over V1~V6、II、III。&lt;/p&gt;
 &lt;p&gt;再來看Fig 2 →Rate:90 bpm、SR、RAD、RBBB、TWI over V2~V4、II、III、aVF。&lt;/p&gt;
@@ -1592,11 +1592,11 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;em&gt;From:&lt;a href="https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html"&gt;https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;最新一期的&lt;a href="https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html"&gt;ECG blog&lt;/a&gt;¹，Post了一張ECG。ECG看起來Inf.wall有STE，此外V2&lt;del&gt;V3有STD和large T wave。不過&lt;strong&gt;Ken Grauer&lt;/strong&gt;覺得V2&lt;/del&gt;V3像Post.wall MI之後有reperfusion，所以T wave高。&lt;/p&gt;
+&lt;p&gt;最新一期的&lt;a href="https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html"&gt;ECG blog&lt;/a&gt;¹，Post了一張ECG。ECG看起來Inf.wall有STE，此外V2~V3有STD和large T wave。不過&lt;strong&gt;Ken Grauer&lt;/strong&gt;覺得V2~V3像Post.wall MI之後有reperfusion，所以T wave高。&lt;/p&gt;
 &lt;h4 id="以前學ecg要診斷postwall-mi要有幾個條件"&gt;以前學ECG要診斷Post.wall MI，要有幾個條件:&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;1.R/S&amp;gt;1 in V1 or V2(也就是Tall RV1)
-2.V1&lt;del&gt;V3有STD
-3.V1&lt;/del&gt;V3有Upright T wave&lt;/strong&gt;&lt;/p&gt;
+2.V1~V3有STD
+3.V1~V3有Upright T wave&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="其實第三點v1v3有upright-t-wave不是必要條件為何"&gt;其實第三點，V1~V3有Upright T wave不是必要條件，為何?&lt;/h4&gt;
 &lt;p&gt;因為如果有Upright T wave，代表Post.wall出現了reperfusion rhythm:Terminal T wave inversion，所以在V1~V3就會出現Upright T wave(和Post. wall對稱)。當然有沒有可能Post.wall還正在myocardial infarction。當然有!!!所以這時候，當然就沒有Upright T wave。&lt;/p&gt;
 &lt;p&gt;此外&lt;strong&gt;Ken Grauer&lt;/strong&gt;的這張ECG，V2~V3有沒有可能是&lt;strong&gt;De Winter’s T wave?&lt;/strong&gt;&lt;/p&gt;

@@ -81,7 +81,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1:到院時間:10:02&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1:到院時間:10:02&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;這個Case，非常有印象主要是這病患的臨床表現。&lt;/p&gt;
 &lt;p&gt;64歲男性過去有糖尿病、高血脂，且因為CAD放過三根支架。但這幾年沒在追蹤了。&lt;/p&gt;
 &lt;p&gt;病患早上就開始不舒服了。一開始先痛上腹部之後痛到胸部與上背部和下巴。&lt;/p&gt;
@@ -111,7 +111,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.2&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;首先在2018年第四版心肌梗塞通用定義&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;就已經清楚定義，要診斷STEMI，在V2/V3的定義和其他lead是不一樣的：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;男性，&amp;lt;40 y/o要2.5 mm高&lt;/li&gt;
@@ -134,7 +134,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1到院時ECG&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1到院時ECG&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;72歲女性，由救護車偶依～～～～偶依送到本院。&lt;/p&gt;
 &lt;p&gt;這天急診依舊是病患住不上去的待床地獄。早上07:30和夜班醫師交班後，手上就有一串病患在我手上。&lt;/p&gt;
 &lt;p&gt;上班約莫一個小時左右，外面檢傷推進來一位病患。&lt;/p&gt;
@@ -172,7 +172,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.2 Reverse Z shape&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.2 Reverse Z shape&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;這張圖代表著reverse Z shape的記憶法。也就是如果單獨在這五個leads(III/aVF/aVL/aVR/V1)發現&lt;strong&gt;Q wave and/or TWI&lt;/strong&gt;，很有可能是正常的。(&lt;strong&gt;前提:年輕人，沒有心臟問題&lt;/strong&gt;)&lt;/li&gt;
 &lt;li&gt;有些lead即使有large Q wave，也不一定是infarction →這些lead包括III/aVL/aVR/V1&lt;/li&gt;
@@ -228,7 +228,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;Rhythm:Sinus rhythm(Lead I、II、aVF的P wave為Upright，aVR為Inverted)&lt;/p&gt;
 &lt;p&gt;Axis:Normal axis&lt;/p&gt;
 &lt;p&gt;PR稍長、Narrow QRS、No QT prolong&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;在V1&lt;del&gt;V5有STD，Maximal STD在V3&lt;/del&gt;V4、沒有明顯的STE&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在V1~V5有STD，Maximal STD在V3~V4、沒有明顯的STE&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;WTF~~~沒有STE，你竟然說這是STEMI!!!!&lt;/p&gt;
 &lt;p&gt;對，這是後壁的STEMI，所以12 leads ECG完全看不到有STE。但確確實實是STEMI。&lt;/p&gt;
 &lt;p&gt;Post.wall MI佔所有STEMI的10~20%左右。而且通常會合併inf.wall MI、Lateral wall MI。&lt;/p&gt;

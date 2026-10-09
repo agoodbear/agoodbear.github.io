@@ -44,7 +44,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/a&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;首先，我們來看看&lt;strong&gt;Fig.1&lt;/strong&gt;。這張圖&lt;strong&gt;上方&lt;/strong&gt;講的是ACO(Acute coronary occlusion)會有哪些ECG變化。&lt;strong&gt;下方&lt;/strong&gt;講的是在infarction之前出現reperfusion，之後會有哪些典型的ECG變化。這個之後講。&lt;/p&gt;
 &lt;p&gt;那麼哪些狀況會導致reperfusion呢?包括spontaneous reperfusion(自己通了)、打了rTPA、或者做了PCI後通了。&lt;/p&gt;
 &lt;p&gt;在這篇文章描述了，STEMI病患在做PCI之前的spontaneous reperfusion比例大約20%左右&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。此外有一個觀念相當重要，那就是冠狀血管阻塞是『動態』的，在IRA(infarct related artery)是有可能因為內生性tPA與plasmin來溶解thrombi導致spontaneous reperfusion的產生。&lt;/p&gt;
@@ -62,10 +62,10 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;到院ECG (Fig 1)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;到院ECG (Fig 1)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id="到院前死亡案例原因為何呢"&gt;到院前死亡案例，原因為何呢?&lt;/h3&gt;
 &lt;p&gt;76歲女性。&lt;/p&gt;
-&lt;p&gt;外院到院前死亡，急救復甦後，心跳回來。轉送來我們醫院，剛到急診的第一張心電圖如上***(這時應該就快不行了)***。很快心臟就停了。大約又CPR了約莫10分鐘，心跳回來。再次做了張12導程ECG &lt;strong&gt;(Fig 2)&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;外院到院前死亡，急救復甦後，心跳回來。轉送來我們醫院，剛到急診的第一張心電圖如上&lt;strong&gt;&lt;em&gt;(這時應該就快不行了)&lt;/em&gt;&lt;/strong&gt;。很快心臟就停了。大約又CPR了約莫10分鐘，心跳回來。再次做了張12導程ECG &lt;strong&gt;(Fig 2)&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -79,7 +79,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;急救回來的第一張ECG (Fig 2)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;急救回來的第一張ECG (Fig 2)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id="覺得像什麼原因導致的呢"&gt;覺得像什麼原因導致的呢?&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;先看到院前，快要停止心跳前的ECG&lt;/strong&gt;。Long pause、RAD、RBBB、TWI over V1~V6、II、III。&lt;/p&gt;
 &lt;p&gt;再來看Fig 2 →Rate:90 bpm、SR、RAD、RBBB、TWI over V2~V4、II、III、aVF。&lt;/p&gt;
@@ -126,11 +126,11 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;em&gt;From:&lt;a href="https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html"&gt;https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;最新一期的&lt;a href="https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html"&gt;ECG blog&lt;/a&gt;¹，Post了一張ECG。ECG看起來Inf.wall有STE，此外V2&lt;del&gt;V3有STD和large T wave。不過&lt;strong&gt;Ken Grauer&lt;/strong&gt;覺得V2&lt;/del&gt;V3像Post.wall MI之後有reperfusion，所以T wave高。&lt;/p&gt;
+&lt;p&gt;最新一期的&lt;a href="https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html"&gt;ECG blog&lt;/a&gt;¹，Post了一張ECG。ECG看起來Inf.wall有STE，此外V2~V3有STD和large T wave。不過&lt;strong&gt;Ken Grauer&lt;/strong&gt;覺得V2~V3像Post.wall MI之後有reperfusion，所以T wave高。&lt;/p&gt;
 &lt;h4 id="以前學ecg要診斷postwall-mi要有幾個條件"&gt;以前學ECG要診斷Post.wall MI，要有幾個條件:&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;1.R/S&amp;gt;1 in V1 or V2(也就是Tall RV1)
-2.V1&lt;del&gt;V3有STD
-3.V1&lt;/del&gt;V3有Upright T wave&lt;/strong&gt;&lt;/p&gt;
+2.V1~V3有STD
+3.V1~V3有Upright T wave&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="其實第三點v1v3有upright-t-wave不是必要條件為何"&gt;其實第三點，V1~V3有Upright T wave不是必要條件，為何?&lt;/h4&gt;
 &lt;p&gt;因為如果有Upright T wave，代表Post.wall出現了reperfusion rhythm:Terminal T wave inversion，所以在V1~V3就會出現Upright T wave(和Post. wall對稱)。當然有沒有可能Post.wall還正在myocardial infarction。當然有!!!所以這時候，當然就沒有Upright T wave。&lt;/p&gt;
 &lt;p&gt;此外&lt;strong&gt;Ken Grauer&lt;/strong&gt;的這張ECG，V2~V3有沒有可能是&lt;strong&gt;De Winter’s T wave?&lt;/strong&gt;&lt;/p&gt;

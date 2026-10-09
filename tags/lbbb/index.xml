@@ -65,7 +65,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;em&gt;&lt;strong&gt;Table 1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;h4 id="omi組別符合timi-flow-01-or-timi-flow-23--high-peak-troponin"&gt;OMI組別:符合TIMI flow 0&lt;del&gt;1 or TIMI flow 2&lt;/del&gt;3 + High peak Troponin&lt;/h4&gt;
+&lt;h4 id="omi組別符合timi-flow-01-or-timi-flow-23--high-peak-troponin"&gt;OMI組別:符合TIMI flow 0~1 or TIMI flow 2~3 + High peak Troponin&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;31位病患是藉由Concordant STE or STD來診斷出來&lt;/li&gt;
 &lt;li&gt;2位病患是藉由Original Sgarbossa criteria的&amp;gt; 5 mm診斷出來&lt;/li&gt;
@@ -94,7 +94,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;因此在2013年的JACC STEMI guideline¹認為，大多數的LBBB可能是舊的(無舊ECG比較是否為新的LBBB)，且就醫時新的LBBB或可能新的LBBB很少發生。因此不應當作有AMI。&lt;/p&gt;
 &lt;h4 id="重點-lbbbstemi"&gt;&lt;strong&gt;重點 →LBBB⧧STEMI&lt;/strong&gt;&lt;/h4&gt;
 &lt;h4 id="為何lbbb或paced-rhythm都不好診斷ami"&gt;為何LBBB或paced rhythm都不好診斷AMI?&lt;/h4&gt;
-&lt;p&gt;在正常的狀況下LBBB/RBBB在&lt;strong&gt;3個重要的lead(I、V1、V6)&lt;strong&gt;都要符合ST segment與T wave應該要和QRS最後反折的方向相反(secondary (2°) ST-T wave change) ，這就叫做&lt;/strong&gt;ST Opposition Rule&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在正常的狀況下LBBB/RBBB在&lt;strong&gt;3個重要的lead(I、V1、V6)&lt;/strong&gt;都要符合ST segment與T wave應該要和QRS最後反折的方向相反(secondary (2°) ST-T wave change) ，這就叫做&lt;strong&gt;ST Opposition Rule&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;因為LBBB/RBBB都改變了ventricular depolarization的順序，因此產生QRS morphology的改變➡這個conduction defect也改變了ventricular repolarization➡產生secondary (2°) ST-T wave change(為何稱作是secondary，主要是因為conduction defect產生的變化)²&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;就是這個變化，讓RBBB/LBBB的病患如果有AMI，就變得很難診斷!!!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
@@ -115,4 +115,4 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;總之記住，因為左/右束支阻斷，導致心室去極化順序改變了，所以RBBB/LBBB會特有&lt;strong&gt;正常appropriate discordance&lt;/strong&gt;變化(Fig 1)。&lt;/p&gt;
 &lt;h4 id="qrs若是-會有std與twi"&gt;&lt;strong&gt;QRS若是(+) →會有STD與TWI&lt;/strong&gt;&lt;/h4&gt;
 &lt;h4 id="qrs若是--會有ste與upright-t-wave"&gt;&lt;strong&gt;QRS若是(-) →會有STE與Upright T wave&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;所以&lt;strong&gt;看到Concordant STE or STD就要小心&lt;/strong&gt;，是否有AMI把正常RBBB/LBBB應有的變化**(appropriate discordance)**變不見了!!!!&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;所以&lt;strong&gt;看到Concordant STE or STD就要小心&lt;/strong&gt;，是否有AMI把正常RBBB/LBBB應有的變化&lt;strong&gt;(appropriate discordance)&lt;/strong&gt;變不見了!!!!&lt;/p&gt;</description></item></channel></rss>

@@ -125,7 +125,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;旁邊家屬想逗他笑，覺得他是太生氣了，所以才會胸口不舒服。過一下就會好了。&lt;/p&gt;
 &lt;p&gt;他說剛剛生氣後，沒多久就開始胸口悶。且radiate to L't arm。&lt;/p&gt;
 &lt;p&gt;我和他說，心電圖看起來像心肌梗塞，可能要做心導管。&lt;/p&gt;
-&lt;h3 id="病患不用吧"&gt;&lt;strong&gt;病患:不用吧~~休息一下就會好了。應該沒有那麼嚴重吧&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id="病患不用吧休息一下就會好了應該沒有那麼嚴重吧"&gt;&lt;strong&gt;病患:不用吧~~休息一下就會好了。應該沒有那麼嚴重吧&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;我接著走去專師那，去詢問值班CV的回應。&lt;/p&gt;
 &lt;p&gt;專師說，CV回應說這應該是舊的心電圖變化&lt;/p&gt;
 &lt;p&gt;嗯，我聽到這回應。我再次傻眼喵咪。&lt;/p&gt;
@@ -342,7 +342,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1:到院時間:10:02&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1:到院時間:10:02&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;這個Case，非常有印象主要是這病患的臨床表現。&lt;/p&gt;
 &lt;p&gt;64歲男性過去有糖尿病、高血脂，且因為CAD放過三根支架。但這幾年沒在追蹤了。&lt;/p&gt;
 &lt;p&gt;病患早上就開始不舒服了。一開始先痛上腹部之後痛到胸部與上背部和下巴。&lt;/p&gt;
@@ -372,7 +372,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.2&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;首先在2018年第四版心肌梗塞通用定義&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;就已經清楚定義，要診斷STEMI，在V2/V3的定義和其他lead是不一樣的：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;男性，&amp;lt;40 y/o要2.5 mm高&lt;/li&gt;
@@ -449,7 +449,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1 60歲男性胸痛一小時&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1 60歲男性胸痛一小時&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -463,11 +463,11 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.2 46歲男性從早上開始胸痛不舒服&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.2 46歲男性從早上開始胸痛不舒服&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;首先我們先問自己，這些ECG是否有符合STEMI criteria呢?&lt;/p&gt;
 &lt;p&gt;如果沒有，那麼我們會在第一時間就Call CV man嗎?&lt;/p&gt;
 &lt;p&gt;如果是在三更半夜，這種ECG pattern，Call CV，會不會被罵啊?&lt;/p&gt;
-&lt;p&gt;另外我們要問自己，如果沒有符合STEMI criteria的ECG，要怎麼看出有血管阻塞呢?目前有哪些的文獻，可以讓我們知道，這種的ECG pattern代表著**阻塞性心肌梗塞(Occlusion MI →OMI)**呢?&lt;/p&gt;
+&lt;p&gt;另外我們要問自己，如果沒有符合STEMI criteria的ECG，要怎麼看出有血管阻塞呢?目前有哪些的文獻，可以讓我們知道，這種的ECG pattern代表著&lt;strong&gt;阻塞性心肌梗塞(Occlusion MI →OMI)&lt;/strong&gt;呢?&lt;/p&gt;
 &lt;p&gt;哇嗚~~~~也太多問題了吧XD&lt;/p&gt;
 &lt;p&gt;我總結一下上述的問題，可以分成幾個重點。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;第一個是用STEMI criteria來診斷心肌梗塞，可靠嗎?&lt;/strong&gt;&lt;/p&gt;
@@ -519,7 +519,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Table 1. 哪些ECG pattern可能有MI-Part I&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description></item><item><title>43歲男性，胸痛、盜汗，這張ECG有問題嗎?</title><link>https://agoodbear.com/post/medium-3a0024bad29f/</link><pubDate>Wed, 17 Aug 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-3a0024bad29f/</guid><description>
+&lt;strong&gt;&lt;em&gt;Table 1. 哪些ECG pattern可能有MI-Part I&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>43歲男性，胸痛、盜汗，這張ECG有問題嗎?</title><link>https://agoodbear.com/post/medium-3a0024bad29f/</link><pubDate>Wed, 17 Aug 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-3a0024bad29f/</guid><description>
 &lt;h3 id="43歲男性胸痛盜汗這張ecg有問題嗎"&gt;43歲男性，胸痛、盜汗，這張ECG有問題嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -534,7 +534,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1 入院時ECG&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1 入院時ECG&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;記得這個Case是在今年四月份的時候，武漢肺炎疫情剛起來的某天早上。&lt;/p&gt;
 &lt;p&gt;那時候每天不是在檢疫所不然就是去旅館篩檢移工，再不然就是在去急診上班的路上。&lt;/p&gt;
 &lt;p&gt;那天早上，交班了一位肺水腫的個案，突然喘不過來，胸痛，血壓剩下50多。接著來了一堆外傷病患、顏面骨骨折、又在吐血。另外一位外傷病患，超音波看到腹內出血，我大喊這位是內出血，幸好一群伶俐的護理師，把病患團團圍住，打針打針、輸血輸血。等待做動脈栓塞，把脾臟破裂的地方塞住。&lt;/p&gt;
@@ -542,10 +542,10 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;還沒結束，又來一位40歲男性，典型胸痛冒冷汗、痛到左手臂。在做ECG的時候，我說不會那麼剛好STEMI吧。&lt;/p&gt;
 &lt;p&gt;廢話不多說。我們來判讀一下這張ECG吧。&lt;/p&gt;
 &lt;h4 id="依照rate-rhythm-axis-interval-ischemia來看看有什麼finding"&gt;依照Rate-Rhythm-Axis-Interval-Ischemia來看看有什麼finding。&lt;/h4&gt;
-&lt;p&gt;**Rate:**約66 bpm&lt;/p&gt;
-&lt;p&gt;**Rhythm:**I/II/aVF的P wave是Upright，aVR的P wave是inverted，II的P wave高度&amp;gt;I的P wave，所以可以確定是從sinus來的rhythm。不是非常規則，算是sinus arrhythmia。&lt;/p&gt;
-&lt;p&gt;**Axis:**Normal axis&lt;/p&gt;
-&lt;p&gt;**Interval:**沒有明顯QT prolong&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rate:&lt;/strong&gt;約66 bpm&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rhythm:&lt;/strong&gt;I/II/aVF的P wave是Upright，aVR的P wave是inverted，II的P wave高度&amp;gt;I的P wave，所以可以確定是從sinus來的rhythm。不是非常規則，算是sinus arrhythmia。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Axis:&lt;/strong&gt;Normal axis&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Interval:&lt;/strong&gt;沒有明顯QT prolong&lt;/p&gt;
 &lt;p&gt;Ischemia:可以看到inf.leads有minimal STE，此外aVL有明顯TWI。&lt;/p&gt;
 &lt;h4 id="在這邊我們先來問問自己幾個問題藉由這些問題讓我們能夠更加有自信的說這是ami"&gt;在這邊我們先來問問自己幾個問題，藉由這些問題讓我們能夠更加有自信的說這是AMI。&lt;/h4&gt;
 &lt;p&gt;Q1:在出現STE之前有任何ECG ischemia sign會先表現出來嗎?(哪些是Early ischemia sign?)&lt;/p&gt;
@@ -598,18 +598,18 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1 到院時ECG&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;這個Case，是上個月某個夜班，上到早上準備下班的最後半小時。我突然被告知，等等會有一位胸痛病患到院**(敢情是VIP，病患還沒到，幫忙電話到是先到了)**。&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1 到院時ECG&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;這個Case，是上個月某個夜班，上到早上準備下班的最後半小時。我突然被告知，等等會有一位胸痛病患到院&lt;strong&gt;(敢情是VIP，病患還沒到，幫忙電話到是先到了)&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;護理師說，就靠我了~~~&lt;/p&gt;
 &lt;p&gt;心想，剩最後半小時，到底靠我要怎樣啦XD&lt;/p&gt;
 &lt;p&gt;不廢言，來看看我們可以從這個Case學到什麼吧!!!&lt;/p&gt;
 &lt;h4 id="病患到院時看起來真的是非常的痛痛到整個臉都糾結在一起了她說這12天一陣一陣的胸痛早上開始大痛痛到後背痛到冒冷汗"&gt;病患到院時，看起來真的是非常的痛，痛到整個臉都糾結在一起了。她說這1~2天一陣一陣的胸痛。早上開始大痛，痛到後背，痛到冒冷汗。&lt;/h4&gt;
 &lt;h3 id="先來判讀一下ecg"&gt;&lt;strong&gt;先來判讀一下ECG&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;**Rate: **63 bpm&lt;/p&gt;
-&lt;p&gt;**Rhythm: **SR with APC&lt;/p&gt;
-&lt;p&gt;**Axis: **Normal axis&lt;/p&gt;
-&lt;p&gt;**Interval: **No QT prolong&lt;/p&gt;
-&lt;p&gt;**Ischemia: **運用QRSTU來判讀&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rate: &lt;/strong&gt;63 bpm&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rhythm: &lt;/strong&gt;SR with APC&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Axis: &lt;/strong&gt;Normal axis&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Interval: &lt;/strong&gt;No QT prolong&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ischemia: &lt;/strong&gt;運用QRSTU來判讀&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;沒有看到明顯的pathologic Q wave&lt;/li&gt;
 &lt;li&gt;PRWP(+)&lt;/li&gt;
@@ -658,7 +658,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;70多歲老阿嬤，下午開始胸痛，痛到冒冷汗。2~3小時後到院。&lt;/p&gt;
 &lt;p&gt;通常V1、II可以比較明顯看到P wave，也就是atrium在搞什麼鬼。&lt;/p&gt;
 &lt;p&gt;在V1似乎看到很多P波。&lt;/p&gt;
-&lt;p&gt;如果是AFL，其atrial rate大約250&lt;del&gt;350 bpm。如果是Af，其atrial rate大約350&lt;/del&gt;600 bpm。&lt;/p&gt;
+&lt;p&gt;如果是AFL，其atrial rate大約250~350 bpm。如果是Af，其atrial rate大約350~600 bpm。&lt;/p&gt;
 &lt;p&gt;如果是flutter wave，在inf.lead，似乎沒有出現常見的inverted P wave。&lt;/p&gt;
 &lt;p&gt;應該是Af，在V1，某些的PP interval，也只有3~4小格，超過350 bpm。&lt;strong&gt;(Fig.1)&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
@@ -695,7 +695,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;h3 id="真心誠意"&gt;真『心』誠意&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://threadreaderapp.com/thread/1422425152613064708.html"&gt;Thread by @shahrukh_bakar on Thread Reader App&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;一位介入性心臟內科醫師回覆了一位推友的Case。這個個案延遲了10多個小時，之後做到了PCI。10多個小時過程當中，病患上上下下的胸痛起伏。&lt;/p&gt;
-&lt;p&gt;心內醫師把一些類似此病患**(Non-STEMI、起起伏伏胸痛、延遲做導管)**，做了一些觀念重點歸納。我覺得非常實用。&lt;/p&gt;
+&lt;p&gt;心內醫師把一些類似此病患&lt;strong&gt;(Non-STEMI、起起伏伏胸痛、延遲做導管)&lt;/strong&gt;，做了一些觀念重點歸納。我覺得非常實用。&lt;/p&gt;
 &lt;h4 id="我大概翻譯並且加入我之前念ecg的筆記"&gt;我大概翻譯並且加入我之前念ECG的筆記：&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;不管ECG長得怎麼樣，持續的胸痛是重大的&lt;strong&gt;Red flag sign&lt;/strong&gt;➡立即Cath lab不要延遲&lt;/li&gt;

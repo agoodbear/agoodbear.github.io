@@ -180,7 +180,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1 Left:原始心電圖、Right:網友問題&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1 Left:原始心電圖、Right:網友問題&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;在&lt;/strong&gt;&lt;a href="https://agoodbear.medium.com/%E9%80%99%E6%98%AF%E4%BB%80%E9%BA%BC%E6%89%AD%E6%9B%B2%E8%AE%8A%E5%BD%A2%E7%9A%84ecg-7bca25391302"&gt;&lt;strong&gt;去年12/17有發一篇文章&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;，近期有網友提問一些問題。在此回答提問問題。&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id="問題可以歸納幾點"&gt;問題可以歸納幾點:&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Q1 →是否有可能Af+VT同時發生呢?&lt;/strong&gt;&lt;/p&gt;
@@ -223,7 +223,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;某個夜黑風高的晚上，急診室外面的緊急消防救護系統廣播著:&lt;/p&gt;
 &lt;p&gt;『這裡是宜蘭91，等等有位內科OHCA到陽大附醫』&lt;/p&gt;
 &lt;p&gt;救護車到院，一位年紀約略50歲中年婦女，臉色蒼白，面無血色。&lt;/p&gt;
@@ -231,11 +231,11 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;在急救室，裝上了ECG monitor，摸不到脈搏，但是有心電圖波形，看起來是PEA。幾輪的壓胸、給藥後。護理師表示gain pulse。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;立刻做了Fig.1的12 lead ECG。&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="來判讀一下這張ecg"&gt;來判讀一下這張ECG:&lt;/h4&gt;
-&lt;p&gt;**Rate:**150 bpm&lt;/p&gt;
-&lt;p&gt;**Rhythm:**Upright P wave in II&amp;gt;I、aVR的P wave為inverted、應該是sinus rhythm&lt;/p&gt;
-&lt;p&gt;**Axis:**Normal axis&lt;/p&gt;
-&lt;p&gt;**Interval:**QTc →507 ms&lt;/p&gt;
-&lt;p&gt;**Ischemia:**看到了Multiple leads STD + aVR and/or V1 STE(&lt;strong&gt;Fig.2&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rate:&lt;/strong&gt;150 bpm&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rhythm:&lt;/strong&gt;Upright P wave in II&amp;gt;I、aVR的P wave為inverted、應該是sinus rhythm&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Axis:&lt;/strong&gt;Normal axis&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Interval:&lt;/strong&gt;QTc →507 ms&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ischemia:&lt;/strong&gt;看到了Multiple leads STD + aVR and/or V1 STE(&lt;strong&gt;Fig.2&lt;/strong&gt;)&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -249,7 +249,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.2&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="有幾個問題需要深度考慮"&gt;有幾個問題需要深度考慮:&lt;/h4&gt;
 &lt;h4 id="q1是什麼樣的情況會造成如此的ecg變化"&gt;&lt;strong&gt;Q1:是什麼樣的情況會造成如此的ECG變化?&lt;/strong&gt;&lt;/h4&gt;
 &lt;h4 id="q2rsr-in-v1-v2有哪些狀況會如此"&gt;&lt;strong&gt;Q2:rSr’ in V1-V2有哪些狀況會如此?&lt;/strong&gt;&lt;/h4&gt;
@@ -274,7 +274,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/p&gt;
 &lt;p&gt;50多歲的男性病患，因為心悸、胸悶到地區醫院就診。ECG如上，當班醫師認為是newly onset LBBB，懷疑是ACS。所以轉院過來到我們醫院就醫。&lt;/p&gt;
 &lt;p&gt;病患到院時，意識清楚，血壓70/40 mmHg。&lt;/p&gt;
-&lt;p&gt;姑且不論這是什麼心律，不管是&lt;strong&gt;2015 or 2020 ACLS guideline(Fig.1)&lt;strong&gt;也都明白表示。 Unstable tachycardia，應該要給予&lt;/strong&gt;Synchronized cardioversion&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;姑且不論這是什麼心律，不管是&lt;strong&gt;2015 or 2020 ACLS guideline(Fig.1)&lt;/strong&gt;也都明白表示。 Unstable tachycardia，應該要給予&lt;strong&gt;Synchronized cardioversion&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -288,7 +288,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig. 1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig. 1&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id="在acls教學中我們常常用昏痛喘shock低血壓的記憶法來評估病患遇到心跳過快150-bpm是否需要緊急處理"&gt;在ACLS教學中，我們常常用『&lt;strong&gt;昏、痛、喘、Shock、低血壓&lt;/strong&gt;』的記憶法，來評估病患遇到心跳過快(&amp;gt;150 bpm)，是否需要緊急處理&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;意識不清 →可能因為心跳過快引起的腦部灌流太低)&lt;/li&gt;
@@ -312,7 +312,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.2&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;我們把Long lead II(Fig.2)抓出來看，可以看到非常快、有些beat to beat速度快到300 bpm以上且沒有規則性，QRS是寬的、且形狀不固定。所以這個irregularly irregular的特性，指的就是Af。&lt;/p&gt;
 &lt;h3 id="那麼我們開始來問幾個問題"&gt;那麼我們開始來問幾個問題?&lt;/h3&gt;
 &lt;h4 id="q1不規則寬的qrs-tachycardia有哪些可能"&gt;🙋‍♂️Q&lt;strong&gt;1:不規則、寬的QRS tachycardia有哪些可能?&lt;/strong&gt;&lt;/h4&gt;
@@ -347,7 +347,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;讓我們來複習一下。Modified Sgarbossa criteria(MSC)可以應用在LBBB/PPM的病患。&lt;strong&gt;Criteria如下:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Concordant STE(&amp;gt; 1 mm) in any lead(任何一個lead)&lt;/li&gt;
-&lt;li&gt;Concordant STD(&amp;gt; 1 mm) in V1&lt;del&gt;V3(只要一個lead) →如果是PPM，則extend V1&lt;/del&gt;V6都適用&lt;/li&gt;
+&lt;li&gt;Concordant STD(&amp;gt; 1 mm) in V1~V3(只要一個lead) →如果是PPM，則extend V1~V6都適用&lt;/li&gt;
 &lt;li&gt;Excessive discordant in any lead(STE/S &amp;gt;0.25 or STD/R &amp;gt;0.3)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id="這邊要注意一點就是不要再用sgarbossa-criteria的criteria-c指discordant-ste-5-mm-此false-positive的機會高且不specificity所以smith才在2012在aem出了msc取代criteria-c希望修正此問題"&gt;&lt;strong&gt;這邊要注意一點就是，不要再用Sgarbossa criteria的Criteria C(指Discordant STE &amp;gt;5 mm) →此false-positive的機會高，且不specificity，所以Smith才在2012在AEM出了MSC取代Criteria C，希望修正此問題。&lt;/strong&gt;&lt;/h4&gt;
@@ -380,7 +380,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1 注意LBBB，只看到V1&lt;del&gt;V3、PPM看V1&lt;/del&gt;V6&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;em&gt;&lt;strong&gt;Fig.1 注意LBBB，只看到V1~V3、PPM看V1~V6&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -424,7 +424,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig. 1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig. 1&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;簡單判讀：Rate約為150下、似乎有P，但是看起來不像典型P wave的形狀。RAD。Narrow QRS tachycardia，且有明顯的aVR STE with multiple leads STD&lt;/p&gt;
 &lt;p&gt;千萬要記得，&lt;strong&gt;要看P wave的有無，最適當的lead，不是lead II就是V1。Amal mattu特別喜歡V1&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;此外這邊要注意，這個明顯的&lt;strong&gt;aVR STE with multiple leads STD通常並不是LM、Proximal LAD、TVD問題引起的&lt;/strong&gt;(參考&lt;strong&gt;Fig.2&lt;/strong&gt;)。這是rate-dependent oxygen/demand mismatch引起的心跳缺血的ECG徵象。心跳過快就容易會出現。不只PSVT會有、AfRVR時也可以見到。只要心跳快，就可能因為心臟跳太快，導致短暫缺血，出現這樣的Pattern。&lt;/p&gt;
@@ -446,14 +446,14 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig. 2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig. 2&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Narrow QRS tachycardia需要鑑別的DDx包括了以下:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;ST&lt;/li&gt;
 &lt;li&gt;AFL 2:1 or 1:1&lt;/li&gt;
 &lt;li&gt;PSVT&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;**ST →**當然如果有看到明顯P wave，P wave在I/aVF/II為upright，aVR為inverted，可以說是ST。那麼ST，可以跳到多快?&lt;strong&gt;Maximal rate為220-age&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>猜猜哪一條血管阻塞?</title><link>https://agoodbear.com/post/medium-b4504530acc/</link><pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-b4504530acc/</guid><description>
+&lt;p&gt;&lt;strong&gt;ST →&lt;/strong&gt;當然如果有看到明顯P wave，P wave在I/aVF/II為upright，aVR為inverted，可以說是ST。那麼ST，可以跳到多快?&lt;strong&gt;Maximal rate為220-age&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>猜猜哪一條血管阻塞?</title><link>https://agoodbear.com/post/medium-b4504530acc/</link><pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-b4504530acc/</guid><description>
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -491,13 +491,13 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.1&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;要判斷AV block，要看P與QRS之間的關係。&lt;/p&gt;
 &lt;p&gt;P和QRS&lt;strong&gt;越拉越遠&lt;/strong&gt;，之後一個P沒有接QRS →Mobitz Type 1&lt;/p&gt;
 &lt;p&gt;P和QRS&lt;strong&gt;固定距離&lt;/strong&gt;，之後一個P沒有接QRS →Mobitz Type 2&lt;/p&gt;
-&lt;p&gt;P和QRS之間的&lt;strong&gt;距離沒有規則&lt;/strong&gt;→Complete heart block**(本Case)(Fig.1)**&lt;/p&gt;
+&lt;p&gt;P和QRS之間的&lt;strong&gt;距離沒有規則&lt;/strong&gt;→Complete heart block&lt;strong&gt;(本Case)(Fig.1)&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Tips:&lt;strong&gt;當看到很多P&lt;/strong&gt;(QRS和QRS之間不只一個P)&lt;/strong&gt;，先想&lt;strong&gt;AV block or block APCs兩種狀況&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tips:&lt;/strong&gt;當看到很多P&lt;strong&gt;(QRS和QRS之間不只一個P)&lt;/strong&gt;，先想&lt;strong&gt;AV block or block APCs兩種狀況&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id="再來看看postwall-mi要如何診斷"&gt;再來看看Post.wall MI要如何診斷?&lt;/h4&gt;
 &lt;p&gt;&lt;figure&gt;
@@ -513,5 +513,5 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;&lt;strong&gt;Fig.2&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Fig.2&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;一般我們要診斷Post.wall MI要有三個criteria:(&lt;strong&gt;Fig.2&lt;/strong&gt;本Case的V1~V3)&lt;/p&gt;</description></item></channel></rss>
