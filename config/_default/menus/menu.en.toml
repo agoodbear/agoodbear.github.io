@@ -1,0 +1,40 @@
+# English menu — same order as menu.zh-tw.toml. Only sections that have English
+# content are listed (OMI atlas, ECG animations, AI learning and tools are Chinese-only for now).
+[[main]]
+  name = "ECG"
+  url = "/en/categories/ecg/"
+  weight = -109
+
+[[main]]
+  name = "ER Life"
+  url = "/en/categories/erlife/"
+  weight = -107
+
+[[main]]
+  name = "Doctor's Gym"
+  url = "/en/categories/workout/"
+  weight = -106
+
+[[main]]
+  name = "Study Notes"
+  url = "/en/categories/study/"
+  weight = -105
+
+[[main]]
+  name = "Travel"
+  url = "/en/categories/travel/"
+  weight = -104
+
+[[main]]
+  name = "About"
+  url = "/en/about/"
+  weight = -103
+
+[[social]]
+  name = "twitter"
+  weight = 1
+  url = "https://twitter.com/ED_Ultrasounder"
+[[social]]
+  name = "rss"
+  weight = 2
+  url = "/en/index.xml"

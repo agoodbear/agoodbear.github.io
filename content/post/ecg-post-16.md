@@ -323,9 +323,9 @@ VPC是由心室產生的。<strong>VPC就像LBBB一樣具有discordant ST segmen
 2. Concordant STD(> 1 mm) in V1-V3(只要一個lead) →如果是PPM，則extend V1-V6都適用
 3. Excessive discordant in any lead(STE/S >0.25 or STD/R >0.3)
 
-#### <strong>這邊要注意一點就是，不要再用Sgarbossa criteria的Criteria C(指Discordant STE >5 mm) →此false-positive的機會高，且不specificity，所以Smith才在2012在AEM出了MSC取代Criteria C，希望修正此問題。</strong>
+#### <strong>這邊要注意一點就是，不要再用Sgarbossa criteria的Criteria C(指Discordant STE >5 mm) →此false-positive的機會高，且不specificity，所以Smith才在2012在Ann Emerg Med出了MSC取代Criteria C，希望修正此問題。</strong>
 
-MSC如果抓0.25這個數值，可以讓sensitivity到80%，specificity到99%。如果抓0.3，則可能會讓sensitivity降到64%，反而錯過許多AMI。
+MSC如果抓0.25這個數值，可以讓sensitivity到80%，specificity到99%(這組數字出自2015年的驗證研究[^meyers2015])。如果抓0.3，則可能會讓sensitivity降到64%，反而錯過許多AMI。
 
 ![](https://cdn-images-1.medium.com/max/1024/0*dIPZ748EHjnWxIhT.png)
 
@@ -385,3 +385,4 @@ CAG報告➜ LAD:  <strong>pLAD critical lesion, plaque rupture with thrombus fo
 [^5]: Amal Mattu’s ECG Case of the Week – January 16, 2023 – ECG Weekly - [link](https://ecgweekly.com/2023/01/amal-mattus-ecg-case-of-the-week-january-16-2023/)
 [^6]: Article: VPC也可以小兵立大功嗎? | 急診熊心聲部落格 | 急診熊心聲部落格 [link](https://agoodbear.com/post/medium-6cdf5d600a1c/)
 [^7]: Dr. Smith’s ECG Blog: Hyperacute T-waves and Concordant ST Elevation seen in PVCs only — [link](http://hqmeded-ecg.blogspot.com/2018/10/hyperacute-t-waves-and-concordant-st.html) [↩︎](https://agoodbear.com/post/medium-6cdf5d600a1c/#fnref:1) [↩︎](https://agoodbear.com/post/medium-6cdf5d600a1c/#fnref1:1)
+[^meyers2015]: Meyers HP, Limkakeng AT, Jaffa EJ, Patel A, Theiling BJ, Rezaie SR, Stewart T, Zhuang C, Pera VK, Smith SW. Validation of the modified Sgarbossa criteria for acute coronary occlusion in the setting of left bundle branch block: A retrospective case-control study. *American Heart Journal*. 2015;170(6):1255-1264. PMID: 26678648. DOI: 10.1016/j.ahj.2015.09.005

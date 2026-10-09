@@ -1,0 +1,19 @@
+{{- /* 只套用在英文站的 Markdown 連結（檔名的 .en 讓中文站完全不經過這支，維持 Hugo 原生輸出）。
+       連到本站文章（/post/<slug>/ 或 https://agoodbear.com/post/<slug>/）時，
+       那篇有英文版就自動改連英文版；沒有就照連中文版，並在後面標「(in Chinese)」。
+       這樣舊文陸續翻譯後，已翻好的文章裡的連結會自己變成英文版，不用回頭改。 */ -}}
+{{- $dest := .Destination -}}
+{{- $suffix := "" -}}
+{{- $path := strings.TrimPrefix "https://agoodbear.com" $dest -}}
+{{- if hasPrefix $path "/post/" -}}
+  {{- $frag := "" -}}
+  {{- with findRESubmatch `^([^#?]*)([#?].*)?$` $path 1 -}}{{- $path = index (index . 0) 1 -}}{{- $frag = index (index . 0) 2 -}}{{- end -}}
+  {{- $slug := index (split (strings.Trim $path "/") "/") 1 | default "" -}}
+  {{- with and $slug (site.GetPage (printf "/post/%s" $slug)) -}}
+    {{- $dest = printf "%s%s" .RelPermalink $frag -}}
+  {{- else -}}
+    {{- $suffix = " (in Chinese)" -}}
+  {{- end -}}
+{{- end -}}
+<a href="{{ $dest | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text }}</a>{{ with $suffix }}<span class="lang-note">{{ . }}</span>{{ end }}
+{{- /* chomp */ -}}

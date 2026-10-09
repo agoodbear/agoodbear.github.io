@@ -53,6 +53,8 @@
   margin: 0;
   color: var(--color-ink);
 }
+/* 英文站名比中文長很多，同字級會把網域徽章擠出視窗 → 英文版縮一級 */
+html[lang="en"] .masthead .wordmark { font-size: clamp(2.25rem, 6.2vw, 5rem); }
 /* ─── 網域徽章（接在大標尾巴的手繪貼紙）──────────────────────────────── */
 /* 文字的定位錨點。徽章相對它做絕對定位，所以徽章「不佔寬度」——
    h1 置中時只會拿文字本身去算，標題維持真正的置中，不會被徽章推偏。 */
@@ -571,24 +573,25 @@ article.card .meta {
 
 <header class="masthead">
   <div class="kicker">An Editorial Notebook · Since 2022</div>
-  <h1 class="wordmark"><span class="wm-anchor">{{ replace (site.Title | default "急診熊心聲部落格") "心" (partial "heart-xin.html" .) | safeHTML }}{{ partial "domain-badge.html" . }}</span></h1>
+  <h1 class="wordmark"><span class="wm-anchor">{{ $wm := site.Title | default (T "default_title") }}{{ with and (eq site.Language.Lang "zh-tw") (T "heart_char") }}{{ replace $wm . (partial "heart-xin.html" $) | safeHTML }}{{ else }}{{ $wm }}{{ end }}{{ partial "domain-badge.html" . }}</span></h1>
   <p class="tagline">{{ site.Params.tagline | default "A working physician's notes on ECG, AI workflows, and the cold reality of the emergency department — written in Taiwan, read with care." }}</p>
   {{- /* Localized weekday name (Hugo's time.Format doesn't natively output 中文) */ -}}
   {{- $weekdays := dict "Monday" "星期一" "Tuesday" "星期二" "Wednesday" "星期三" "Thursday" "星期四" "Friday" "星期五" "Saturday" "星期六" "Sunday" "星期日" -}}
   {{- $weekday := index $weekdays (now.Format "Monday") -}}
+  {{- $isZh := eq site.Language.Lang "zh-tw" -}}
   {{- /* Real article count — excludes special pages (about/search/etc.) */ -}}
   {{- $articleCount := len (where site.RegularPages "Section" "in" (slice "post" "ai-learning" "er-cardio-weekly")) -}}
   <div class="meta-row">
-    <span>累積 {{ $articleCount }} 篇文章</span>
-    <span>{{ now.Format "2006 年 1 月 2 日" }} · {{ $weekday }}</span>
-    <span>累積讀者 · <span id="pv-counter" data-pv-display>—</span></span>
-    <span>台北 · 台灣</span>
+    {{ if $articleCount }}<span>{{ T "home_articles_count" $articleCount }}</span>{{ end }}
+    <span>{{ if $isZh }}{{ now.Format "2006 年 1 月 2 日" }} · {{ $weekday }}{{ else }}{{ now.Format "Monday, January 2, 2006" }}{{ end }}</span>
+    <span>{{ T "home_readers" }} · <span id="pv-counter" data-pv-display>—</span></span>
+    <span>{{ T "home_place" }}</span>
   </div>
 </header>
 
 <nav class="subnav" aria-label="primary">
   <div class="subnav-inner">
-    <a href="{{ "" | relURL }}" class="is-active">所有文章</a>
+    <a href="{{ "" | relLangURL }}" class="is-active">{{ T "home_all_posts" }}</a>
     {{- /* Pull category links from menu config (slug-based URLs).
            Falls back to hard-coded list if no menu defined. */ -}}
     {{ if site.Menus.main }}
@@ -612,9 +615,8 @@ article.card .meta {
 <main class="wrap">
 
   {{ with $featured }}
-  {{- $catMap := dict "ecg" "心電圖" "erlife" "急診人生" "study" "自我進修" "travel" "旅遊" "workout" "醫生 Gym" "pocus" "超音波" -}}
   {{- $catSlug := index .Params.categories 0 | default "" -}}
-  {{- $catName := index $catMap $catSlug | default $catSlug -}}
+  {{- $catName := cond (ne $catSlug "") (partial "cat-name.html" $catSlug) "" -}}
   <section class="featured">
     {{- /* 文章有設 hero_ratio（封面是寬圖）就照原比例放，不裁成 4:3（Bear 2026-09-19：ecg-post-21 封面左右被切掉）*/ -}}
     <a class="image" href="{{ .RelPermalink }}"{{ with .Params.hero_ratio }} style="aspect-ratio: {{ . | safeCSS }};"{{ end }}>
@@ -626,13 +628,13 @@ article.card .meta {
       {{ end }}
     </a>
     <div class="body">
-      <div class="label">本期頭條 · Featured</div>
+      <div class="label">{{ T "home_featured" }}</div>
       <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
       <p class="lede">{{ .Description | default (.Summary | truncate 180) }}</p>
       <div class="meta">
         <span>{{ .Date.Format "Jan 2, 2006" }}</span>
         <span> · </span>
-        <span>{{ .ReadingTime }} 分鐘</span>
+        <span>{{ T "minutes" .ReadingTime }}</span>
         {{ if $catName }}
           <span> · </span><span style="color:var(--color-accent-ink);">{{ $catName }}</span>
         {{ end }}
@@ -660,14 +662,14 @@ article.card .meta {
       {{- $rows = $rows | append (dict "id" $topic.id "name" $topic.title "sub" $topic.subtitle "n" $n "latest" $latest "icon" $topic.icon "accent" $topic.accent) -}}
     {{- end -}}
     <div class="head">
-      <p class="eyebrow-inline">Pinned · 常駐專欄</p>
-      <h2>Guideline 集散地</h2>
-      <p>急診值班時最常翻、最不想再 Google 一遍的權威指引，{{ $total }} 份全部接進站內閱讀器，依年份排成時間軸。點一個主題進去挑。</p>
-      <p class="pinned-cta"><a href="/guideline-pdfs/">打開集散地，含全文搜尋 →</a></p>
+      <p class="eyebrow-inline">{{ T "home_pinned" }}</p>
+      <h2>{{ T "home_pinned_title" }}</h2>
+      <p>{{ T "home_pinned_body" $total }}</p>
+      <p class="pinned-cta"><a href="/guideline-pdfs/">{{ T "home_pinned_cta" }}</a></p>
     </div>
-    <div class="topics" aria-label="Guideline 主題">
+    <div class="topics" aria-label="{{ T "home_pinned_aria" }}">
       {{ range $r := $rows }}
-        <a class="topic topic--{{ $r.accent | default "rose" }}" href="/guideline-pdfs/#gh-{{ $r.id }}" title="{{ $r.name }}：{{ $r.n }} 份{{ with $r.sub }}，{{ . }}{{ end }}">
+        <a class="topic topic--{{ $r.accent | default "rose" }}" href="/guideline-pdfs/#gh-{{ $r.id }}" title="{{ T "home_pinned_topic_count" (dict "Name" $r.name "Count" $r.n) }}{{ with $r.sub }}{{ if $isZh }}，{{ else }}; {{ end }}{{ . }}{{ end }}">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ partial "guideline-icon.html" $r.icon }}</svg></span>
           <span class="name">{{ $r.name }}</span>
           <span class="count" aria-hidden="true">{{ $r.n }}</span>
@@ -676,24 +678,26 @@ article.card .meta {
     </div>
   </section>
 
-  {{ partial "ercw-latest.html" . }}
+  {{ if $isZh }}{{ partial "ercw-latest.html" . }}{{ end }}
 
-  <div class="eyebrow">Most Recent · 最新文章<img class="eyebrow-icon" src="{{ "images/most-recent-divider.gif" | relURL }}" alt="" loading="lazy" decoding="async" width="16" height="16"></div>
+  {{ if $recent }}
+  <div class="eyebrow">{{ T "home_most_recent" }}<img class="eyebrow-icon" src="{{ "images/most-recent-divider.gif" | relURL }}" alt="" loading="lazy" decoding="async" width="16" height="16"></div>
   <section class="grid-4">
     {{ range $recent }}
       {{ partial "article-card.html" . }}
     {{ end }}
   </section>
+  {{ end }}
 
-  {{ partial "book-shelf.html" . }}
+  {{ if $isZh }}{{ partial "book-shelf.html" . }}{{ end }}
 
   <aside class="statement">
-    <div class="wordmark">{{ site.Title | default "急診熊心聲部落格" }}</div>
-    <p>「踩在薄冰上的科別」── 一個急診醫師對 ECG、教學、AI 工作流持續書寫的編輯室。</p>
+    <div class="wordmark">{{ site.Title | default (T "default_title") }}</div>
+    <p>{{ T "home_statement" }}</p>
   </aside>
 
   {{ if $ecgPosts }}
-  <div class="eyebrow">心電圖 · ECG Case Files</div>
+  <div class="eyebrow">{{ T "home_ecg_strip" }}</div>
   <section class="grid-3">
     {{ range first 3 $ecgPosts }}
       {{ partial "article-card.html" . }}
@@ -702,12 +706,11 @@ article.card .meta {
   {{ end }}
 
   {{ if $erlifePosts }}
-  <div class="eyebrow">急診人生 · From the Department</div>
+  <div class="eyebrow">{{ T "home_erlife_strip" }}</div>
   <section class="grid-2">
     {{ range first 2 $erlifePosts }}
-      {{- $stripCatMap := dict "ecg" "心電圖" "erlife" "急診人生" "study" "自我進修" "travel" "旅遊" "workout" "醫生 Gym" "pocus" "超音波" -}}
       {{- $stripSlug := index .Params.categories 0 | default "" -}}
-      {{- $stripName := index $stripCatMap $stripSlug | default $stripSlug -}}
+      {{- $stripName := cond (ne $stripSlug "") (partial "cat-name.html" $stripSlug) "" -}}
       <article class="strip">
         <a class="image" href="{{ .RelPermalink }}">
           {{- $sImg := .Params.thumbnail | default .Params.featured_image | default .Params.featureImage | default .Params.image | default .Params.cover -}}
@@ -722,7 +725,7 @@ article.card .meta {
             <div style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-ink);margin-bottom:var(--space-2xs);">{{ $stripName }}</div>
           {{ end }}
           <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          <div class="meta">{{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} 分鐘</div>
+          <div class="meta">{{ .Date.Format "Jan 2, 2006" }} · {{ T "minutes" .ReadingTime }}</div>
           <p class="excerpt">{{ .Summary | truncate 120 }}</p>
         </div>
       </article>
@@ -730,9 +733,10 @@ article.card .meta {
   </section>
   {{ end }}
 
+  {{ if (site.GetPage "/tags").Pages }}
   <section class="tagcloud">
     <div class="head">
-      <span class="label">Browse by Tag · 主題索引</span>
+      <span class="label">{{ T "home_tags" }}</span>
       <span class="sub">Sized by post count — bigger means more often written about.</span>
     </div>
     <div class="list">
@@ -755,6 +759,7 @@ article.card .meta {
       {{ end }}
     </div>
   </section>
+  {{ end }}
 
 </main>
 

@@ -135,7 +135,7 @@ Smith發現如果單純用discordant ST elevation上升<strong>≥5 mm(單純量
 
 #### <strong>當我們遇到LBBB/Paced rhythm，是可以透過MSC來協助判斷病患是否有AMI。若有符合MSC，儘早會診CV man進一步評估是否可做PCI，來搶救剩餘的心肌細胞。</strong>
 
-1. 2013 ACCF/AHA Guideline for the Management of ST-Elevation Myocardial Infarction. *Journal of the American College of Cardiology*, *61*(4), e78–e140. [https://doi.org/10.1016/j..2012.11.019](https://doi.org/10.1016/j.jacc.2012.11.019)
+1. 2013 ACCF/AHA Guideline for the Management of ST-Elevation Myocardial Infarction. *Journal of the American College of Cardiology*, *61*(4), e78–e140. [https://doi.org/10.1016/j.jacc.2012.11.019](https://doi.org/10.1016/j.jacc.2012.11.019)
 2. [https://www.amazon.com/ECG-2014-Pocket-Brain-Expanded-Ken-Grauer/dp/1930553250](https://www.amazon.com/ECG-2014-Pocket-Brain-Expanded-Ken-Grauer/dp/1930553250)
 3. Sgarbossa, E. B., Underwood, D. A., & Wagner, G. S. (1996). Electrocardiographic Diagnosis of Evolving Acute Myocardial Infarction in the Presence of Left Bundle-Branch Block. *The New England Journal of Medicine*, *334*(8), 7.
 4. Smith, S. W., Dodd, K. W., Henry, T. D., Dvorak, D. M., & Pearce, L. A. (2012). Diagnosis of ST-Elevation Myocardial Infarction in the Presence of Left Bundle Branch Block With the ST-Elevation to S-Wave Ratio in a Modified Sgarbossa Rule. *Annals of Emergency Medicine*, *60*(6), 766–776. [https://doi.org/10.1016/j.annemergmed.2012.07.119](https://doi.org/10.1016/j.annemergmed.2012.07.119)

@@ -67,7 +67,7 @@ ROSC後的ECG如下
 
 ⭐️Rhythm:Sinus rhythm?有點存疑，因為Lead II的P wave似乎比Lead I還小。
 
-<mark>**真正的sinus rhythm:**<mark>
+<mark>**真正的sinus rhythm:**</mark>
 
 - Lead I/II/aVF有upright P wave
 - Lead II的P wave其amplitude要大於Lead I
@@ -84,7 +84,7 @@ ROSC後的ECG如下
 
 ![LA/LL reversal](../../static/images/ipic/o589rf.png)
 
-<mark>**根據Fig.2來看➔當LA/LL reversal時，要怎麼看待limb lead呢?**<mark>
+<mark>**根據Fig.2來看➔當LA/LL reversal時，要怎麼看待limb lead呢?**</mark>
 
 - III會inverted
 - I/II會交換
@@ -93,9 +93,9 @@ ROSC後的ECG如下
 
 有點複雜齁～～
 
-<mark>**沒關係，記得當Lead I的P wave>Lead II的P wave，而且又看到Q3T3➔請務必把LA/LL reversal擺在DDx**<mark>
+<mark>**沒關係，記得當Lead I的P wave>Lead II的P wave，而且又看到Q3T3➔請務必把LA/LL reversal擺在DDx**</mark>
 
-另外要注意<mark>**S1Q3T3對於PE而言，是不specific也不sensitivity的一個ECG finding**<mark>。
+另外要注意<mark>**S1Q3T3對於PE而言，是不specific也不sensitivity的一個ECG finding**</mark>。
 
 樓上的這句話就是，不要看到S1Q3T3直接診斷PE，也不是沒有S1Q3T3就不是PE。(**請反覆唸三遍，就知道我在說什麼，還是不懂就唸到十遍**)
 
@@ -133,13 +133,13 @@ I和II對調、aVL/aVF對調、Lead III整個反過來
 
 意思就是，如果一個真正的proxmal LAD的high lateral wall出問題，在LA/LL reversal導極裝錯的狀況下，會讓我們誤判成inf.OMI，也就是可能會認為RCA出問題了。[有興趣可以參考這個類似個案](https://www.facebook.com/groups/468956816612362/permalink/2719579244883430)
 
-#### <mark>**所以再次整理一下LA/LL reversal的幾個重點:**<mark>
+#### <mark>**所以再次整理一下LA/LL reversal的幾個重點:**</mark>
 
 1. 當I的P wave>II的P wave就要考慮
 2. 有可能會有pseudo Q3T3
 3. 如果有血管阻塞，可能會讓我們判讀culprit lesion判讀錯誤(當然CV man做進去，三條血管都會看啦，ECG判讀culprit lesion錯誤乃兵家常見之事XD)
 
-<mark>**另外還有一個有趣的地方Qr wave in V1**<mark>
+<mark>**另外還有一個有趣的地方Qr wave in V1**</mark>
 
 我們先來看看Amal mattu在他的書籍Electrocardiography in Emergency, Acute, and Critical Care [^1] 裡面講到PE的ECG finding
 
@@ -176,7 +176,7 @@ I和II對調、aVL/aVF對調、Lead III整個反過來
 
 此外**Qr in V1在這篇文章研究顯示是RV dysfunction最強的獨立預測因子**。
 
-#### <mark>**小結論:**<mark>
+#### <mark>**小結論:**</mark>
 
 1. Qr in V1對於PE有很高的specificity但是sensitivity不高➔**也就是不常見，不過出現就要注意是否為PE**
 2. Qr in V1的出現對於右心室功能不良也具有獨立預測功能➔**也就是如果出現，就要小心可能有RV dysdfunction的狀況出現**
@@ -217,7 +217,7 @@ On上ECMO後，爭取了檢查的時間。
 
 - 沒有pericardial effusion、出現RV dilate、LV在第一次ROSC後其實動得不錯
 
-#### <mark>我覺得關鍵點在於決定什麼時候適合push rTPA<mark>
+#### <mark>我覺得關鍵點在於決定什麼時候適合push rTPA</mark>
 
 - 病患再度collapse，就push rTPA死馬當活馬醫了吧。情況不會更差了，因為現在就是最差的狀況了
 - 可是push了rTPA，如果等等要on ECMO怎麼辦?CVS on ECMO時，一直出血，會不會一直翻白眼啊~~~~
@@ -240,7 +240,7 @@ On上ECMO後，爭取了檢查的時間。
 
 ---
 
-**我覺得決定什麼時候適合push rTPA，要取決於CVS有多快可以到達急診XD**( <mark>**前提要建立在有足夠證據高度懷疑PE或已證實PE**<mark> )
+**我覺得決定什麼時候適合push rTPA，要取決於CVS有多快可以到達急診XD**( <mark>**前提要建立在有足夠證據高度懷疑PE或已證實PE**</mark> )
 
 當天CVS沒值班➔二話不說，就是push rTPA
 
@@ -256,7 +256,7 @@ On上ECMO後，爭取了檢查的時間。
 
 同事問我們家的CVS，我們家CVS回答:
 
-**不建議，除非無法立刻ECMO backup。<mark>CVS:考量點在病患是否有其他診斷?與on ECMO後出血問題<mark>**
+**不建議，除非無法立刻ECMO backup。<mark>CVS:考量點在病患是否有其他診斷?與on ECMO後出血問題</mark>**
 
 ![](../../static/images/ipic/1o50y7.png)
 
@@ -288,42 +288,42 @@ T+組:31名患者
 - **GUSTO 2**：代表中度出血，需要輸血。
 - **GUSTO 3**：代表其他不需要輸血或沒有引起血行動力學不穩定的出血事件。
 
-> 研究結果顯示，<mark>**兩組患者在 GUSTO ≦ 2 （包括中度至嚴重出血）的出血事件發生率沒有顯著差異**<mark> (59% vs 61%, p=1)
+> 研究結果顯示，<mark>**兩組患者在 GUSTO ≦ 2 （包括中度至嚴重出血）的出血事件發生率沒有顯著差異**</mark> (59% vs 61%, p=1)
 >
-> **<mark>兩組患者的腦出血發生率沒有顯著差異<mark>** (T-組 10% vs. T+組 3%, p=0.38)
+> **<mark>兩組患者的腦出血發生率沒有顯著差異</mark>** (T-組 10% vs. T+組 3%, p=0.38)
 >
-> **<mark>兩組在輸血需求量方面沒有顯著差異<mark>** (紅血球、血漿、血小板的輸注量均無顯著差異)
+> **<mark>兩組在輸血需求量方面沒有顯著差異</mark>** (紅血球、血漿、血小板的輸注量均無顯著差異)
 
-儘管過去有研究指出，在ECMO之前使用rTPA可能會增加出血風險，但<mark>**本研究結果顯示，對於接受ECMO治療的高風險PE患者而言，先前是否接受rTPA治療不會顯著影響嚴重出血事件的發生率**<mark>
+儘管過去有研究指出，在ECMO之前使用rTPA可能會增加出血風險，但<mark>**本研究結果顯示，對於接受ECMO治療的高風險PE患者而言，先前是否接受rTPA治療不會顯著影響嚴重出血事件的發生率**</mark>
 
 研究強調，雖然出血事件在接受VA-ECMO的高風險PE患者中仍然常見，但先前接受rTPA治療並不會顯著增加出血風險
 
 這表示，即使患者先前接受過rTPA治療，VA-ECMO仍然是一種可行的治療選項，不應因顧慮出血風險而排除
 
-總結而言，雖然接受ECMO治療的高風險PE患者仍有出血風險，但研究結果顯示，在ECMO之前接受rTPA並不會顯著增加嚴重出血事件的發生率。因此<mark>**在考慮對高風險PE患者使用VA-ECMO時，不應因擔心出血風險而排除先前接受過rTPA治療的患者**<mark>。
+總結而言，雖然接受ECMO治療的高風險PE患者仍有出血風險，但研究結果顯示，在ECMO之前接受rTPA並不會顯著增加嚴重出血事件的發生率。因此<mark>**在考慮對高風險PE患者使用VA-ECMO時，不應因擔心出血風險而排除先前接受過rTPA治療的患者**</mark>。
 
 ---
 
 ### 我們來看看Uptodate的建議如何[^5][^6]:
 
-- #### <mark>尚未確定PE診斷<mark>
+- #### <mark>尚未確定PE診斷</mark>
 
   - 在**高度懷疑PE的病患(有足夠多的證據，例如bedside echo等)，若血行不穩定➔建議使用rTPA**，而非使用empiric anticoagulant或不治療	
   - 如果中低度懷疑PE，但血行不穩定➔建議使用empiric anticoagulant agents，不建議rTPA
 
-- #### <mark>已經確立PE診斷<mark>
+- #### <mark>已經確立PE診斷</mark>
 
   - **沒有rTPA contraindication，且refractory hypotension**➔**建議rTPA，接著給予anticoagulant agents**。不建議單獨給anticoagulant agents
     - **Refractory hypotension的定義➔收縮壓<90 mmHg、需要使用血管收縮劑，或在復甦後收縮壓從baseline下降≥40 mmHg 持續 15 分鐘**
     - 建議在aPTT低於正常上限的兩倍後才開始UFH輸注，以避免增加出血風險。
   - 具有rTPA contraindication的患者，**建議進行導管或外科血栓取出術，而非觀察**
 
-- #### <mark>已經在CPR的PE或高度懷疑PE病患<mark>
+- #### <mark>已經在CPR的PE或高度懷疑PE病患</mark>
 
   - **CPR的病患 — 在cardiac arrest的患者中，不應常規施行rTPA治療。然而，對於懷疑由肺栓塞引起的cardiac arrest（或peri-cardiac arrest）的患者，是否施行治療作為潛在的救命措施可以根據具體情況考慮。**
     - **案例系列報告顯示，當cardiac arrest是由於懷疑或確認的急性肺栓塞所致時，rTPA治療在CPR過程中有一定的成功率**
     - **一項retrospective study，有 23 名因確認的大量肺栓塞而出現PEA的患者，在以減少劑量 50 mg，IV push 2分鐘 50 mg rTPA後，於 2 至 15 分鐘內恢復自主循環（ROSC）**
-  - **rTPA給的劑量**➔若病患已經CPR或快要CPR，**2分鐘IV bolus 50 mg比較實用**。若病患**非cardiac arrest病患，就100 mg給2小時**。**<mark>若50 mg bolus 2分鐘，仍未ROSC，可再15分鐘後再重複給予50 mg<mark>**
+  - **rTPA給的劑量**➔若病患已經CPR或快要CPR，**2分鐘IV bolus 50 mg比較實用**。若病患**非cardiac arrest病患，就100 mg給2小時**。**<mark>若50 mg bolus 2分鐘，仍未ROSC，可再15分鐘後再重複給予50 mg</mark>**
 
 - **V-A ECMO 可以作為單一療法或作為最終治療（例如，外科栓塞取出術或導管治療）的橋接療法(bridge)**。**VA-ECMO 也可以在rTPA治療massive PE具有contraindication的狀況下，先作為初始策略**。
 

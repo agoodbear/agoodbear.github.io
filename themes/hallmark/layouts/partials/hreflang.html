@@ -1,0 +1,9 @@
+{{- /* 告訴 Google 中英兩頁是同一篇的不同語言版（只有真的有翻譯才輸出）。 */ -}}
+{{- if .IsTranslated -}}
+  {{- range .AllTranslations }}
+  <link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}">
+  {{- end }}
+  {{- range .AllTranslations }}{{ if eq .Language.Lang "zh-tw" }}
+  <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+  {{- end }}{{ end }}
+{{- end -}}

@@ -1,9 +1,27 @@
+# 多語系（2026-10-09 加英文）：中文是預設語言、網址維持在根目錄不變；
+# 英文全部在 /en/ 底下。文章翻譯＝在原文旁放同檔名的 .en.md（例：ecg-post-17.en.md），
+# Hugo 會自動配對，右上角語言按鈕就會直接跳到對應那篇。
+# 介面文字在 i18n/zh-tw.yaml、i18n/en.yaml。
+
 [zh-tw]
 #變更可以更改title
   title = "急診熊心聲部落格"
-  LanguageName = "zh-tw"
+  LanguageName = "中文"
+  languageCode = "zh-TW"
   weight = 1
 
-
+[en]
+  title = "ER Bear's Heart Notes"
+  LanguageName = "English"
+  languageCode = "en"
+  weight = 2
+  [en.params]
+    description = "Emergency medicine, ECG, and point-of-care ultrasound (POCUS) teaching from a Taiwanese ER physician — real cases and bedside reasoning."
+    introDescription = "Emergency physician, ECG enthusiast, amateur ultrasound tech, airway guy, and former scuba diver."
+    keywords = ["emergency medicine", "ECG", "OMI", "POCUS", "chest pain", "medical education"]
+    mission = "A notebook by a Taiwanese ER physician — ECG, emergency medicine, AI workflows, and the things you only learn at 3 AM. Written slowly. Read at your own pace."
+    [en.params.author]
+      name = "ER Bear"
+      photo = "images/EDbear.jpg"
 
   # tip: assign the default language the lowest Weight

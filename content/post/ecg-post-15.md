@@ -35,7 +35,7 @@ tags:
 
 ![R't side ECG](../../static/images/ipic/ny2xid.png)
 
-Fig.1的時間為07:46，Fig.2的時間為08:02中間隔了大約6分鐘。
+Fig.1的時間為07:46，Fig.2的時間為08:02中間隔了大約16分鐘。
 
 可以看到做R't side ECG時，inf.leads的STE更明顯，對側面的aVL/I的reciprocal STD也更明顯。(Dynamic STTC+)
 
@@ -81,7 +81,7 @@ V3R、V5R、V6R的診斷表現普遍都比 V4R差，或只被當成輔助使用�
 RVMI時，因為RV收縮力差，此時cardiac output非常仰賴足夠的preload。所以在使用降低preload藥物時(morphine、lasix、NTG)就可能有嚴重hypotension出現。這一直是我們既有的概念。
 而且**長期在ACC/AHA Guideline裡面，明確指出在RVMI病患使用NTG列為contraindication，在inf.wall STEMI病患使用NTG必須小心謹慎，一定要做R't side ECG評估是否有合併RVMI** [^3] 。
 
-有時候，我們拿這樣的病生理來解釋醫學現象，但後來才發生，其實人體比我們想還還複雜許多。這樣的解釋或許太過於簡單了。
+有時候，我們拿這樣的病生理來解釋醫學現象，但後來才發現，其實人體比我們想的還複雜許多。這樣的解釋或許太過於簡單了。
 
 早期在**1989年有一個小型研究發表**，是針對40位inf.wall MI的患者做回溯性觀察研究。研究報告發現，在接受nitrate的治療的這些病患中有接近50%出現了低血壓。而這些出現低血壓的inf.wall MI患者，其心電圖有RV involved。不過**這個研究給藥劑量和途徑不一致。這樣的證據力，不高，但被寫進guideline裡面**  [^4] 。
 
@@ -152,7 +152,7 @@ rtPA打通了、做PCI通了還是自發性通了。不管是哪一種通，都�
 
 AIVR就是其中一種。
 
-此外還有出現TWI(T wave inversion)，不管是biphasic TWI or deeply TWI➜這也就是常說的Wellens' syndrome。這也是reperfusion rhythm。
+此外還有出現TWI(T wave inversion)，不管是biphasic TWI or deeply TWI➜這也就是常說的Wellens' syndrome。這也是reperfusion的表現(reperfusion TWI)。
 
 但是要注意喔，如果**在有症狀下的TWI，指的是reciprocal change喔**。
 
@@ -265,7 +265,7 @@ Ken grauer在這篇裡面就有提到，有一個<mark>**gray zone:110-130 bpm�
 
 **主要的治療策略就是不要電擊/不要用抗心律不整藥物**
 
-除非懷疑是VT或伴隨嚴重的血行不穩。那麼治療的方向是恢復較快的sinus rate(例如協助改善缺血、**給atropine提升交感 tone**等)，讓 sinus 把 ventricular focus搶回來，而不是去搞那個 ventricular rhythm 本身 [^11] 。
+除非懷疑是VT或伴隨嚴重的血行不穩。那麼治療的方向是恢復較快的sinus rate(例如協助改善缺血、**給atropine阻斷迷走（副交感）tone**等)，讓 sinus 把 ventricular focus搶回來，而不是去搞那個 ventricular rhythm 本身 [^11] 。
 
 ### ↩️**Back to case**
 

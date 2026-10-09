@@ -43,7 +43,7 @@ PR interval正常，V1~V3都有rSR’ pattern，QRS < 3小格，為ICRBBB。
 
 V1~V6的TWI是不是Wellen’s wave?要先知道什麼是Wellen’s wave，我們才能下這個診斷。
 
-一般我們說這個病患可能是Wellens’ syndrome。指的是看到V2~V3有Biphasic TWI or deeply TWI，而且是在ACS症狀的時候看到。
+一般我們說這個病患可能是Wellens’ syndrome。指的是看到V2~V3有Biphasic TWI or deeply TWI，而且是在ACS症狀緩解後看到。
 
 也就是病患一開始有ACS症狀，之後症狀緩解，在緩解期作的ECG有看到V2~V3有這兩種的TWI。我們就可以說是Wellens’ syndrome。
 
@@ -77,7 +77,7 @@ Pattern A叫做terminal TWI也就是biphasic TWI，而Pattern B為deeply TWI。A
 
 Wellens’ syndrome指的是血管有阻塞在infarction『<strong>之前</strong>』，血管突然通了 (產生spontaneous reperfusion)。所以產生了reperfusion T wave。因為是Wellen命名的syndrome，他當時是特指在V2~V3出現TWI。當然reperfusion T wave不一定要出現在V2~V3，也可以出現在lateral leads、High lateral leads、inf.leads都可以，就看支配這些區域的血管，是不是有產生reperfusion。
 
-我們來看看診斷的定義:在Rhinehart et al這篇文章中描述了其定義[^5]
+我們來看看診斷的定義:在Rhinehardt et al這篇文章中描述了其定義[^5]
 
 - <strong>Deeply inverted or biphasic T waves in V2–3 (may extend to V1–6)</strong>
 - <strong>ECG pattern present in pain-free state →在症狀緩解時出現TWI</strong>

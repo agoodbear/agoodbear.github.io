@@ -22,6 +22,8 @@
 .ab-stats dt { font-family: var(--font-body-zh); font-size: var(--text-sm); color: var(--color-ink-3); margin-top: .35rem; }
 .ab-meta { font-family: var(--font-body); font-size: var(--text-xs); letter-spacing: .12em; text-transform: uppercase; color: var(--color-ink-3); margin: var(--space-sm) 0 0; }
 
+/* 英文頁的 h2 已經是英文，旁邊那行英文小標就重複了，藏起來 */
+html[lang="en"] .ab-h .en { display: none; }
 /* ─── 目錄 ─── */
 .ab-toc { display: flex; gap: .5rem; overflow-x: auto; scrollbar-width: none; margin: var(--space-xl) auto 0; padding-bottom: 4px; }
 .ab-toc::-webkit-scrollbar { display: none; }
@@ -182,7 +184,7 @@
 
 {{ define "main" }}
 {{- $d := site.Data.about -}}
-{{- $name := .Params.author_name | default site.Params.author.name | default "急診熊" -}}
+{{- $name := .Params.author_name | default site.Params.author.name | default (T "author_name") -}}
 
 <div class="ab">
 <div class="ab-wrap">
@@ -194,50 +196,51 @@
       <figcaption>{{ .Params.station | default "Taipei, Taiwan" }}</figcaption>
     </figure>
     <div>
-      <p class="ab-kicker">{{ .Params.kicker | default "關於我 · About the editor" }}</p>
+      <p class="ab-kicker">{{ .Params.kicker | default (T "ab_kicker") }}</p>
       <h1>{{ $name }}</h1>
       <p class="ab-sig">{{ .Params.signature }}</p>
       <dl class="ab-stats">
-        <div><dd>{{ .Params.since | default "2005" }}</dd><dt>踏進急診</dt></div>
-        <div><dd>{{ len $d.talks }}<small>場</small></dd><dt>教學演講</dt></div>
-        <div><dd>{{ len $d.pubs }}<small>篇</small></dd><dt>期刊論文</dt></div>
-        <div><dd>{{ add (len $d.videos) (len $d.press) }}<small>則</small></dd><dt>媒體報導</dt></div>
+        <div><dd>{{ .Params.since | default "2005" }}</dd><dt>{{ T "ab_stat_since" }}</dt></div>
+        <div><dd>{{ len $d.talks }}{{ if eq site.Language.Lang "zh-tw" }}<small>{{ T "ab_unit_talks" }}</small>{{ end }}</dd><dt>{{ T "ab_stat_talks" }}</dt></div>
+        <div><dd>{{ len $d.pubs }}{{ if eq site.Language.Lang "zh-tw" }}<small>{{ T "ab_unit_pubs" }}</small>{{ end }}</dd><dt>{{ T "ab_stat_pubs" }}</dt></div>
+        <div><dd>{{ add (len $d.videos) (len $d.press) }}{{ if eq site.Language.Lang "zh-tw" }}<small>{{ T "ab_unit_media" }}</small>{{ end }}</dd><dt>{{ T "ab_stat_media" }}</dt></div>
       </dl>
       <p class="ab-meta">Writing here since {{ .Params.writing_since | default "2022" }}</p>
     </div>
   </section>
 
-  <nav class="ab-toc" aria-label="本頁目錄">
-    <a href="#journey"><span>01</span>行醫足跡</a>
-    <a href="#skills"><span>02</span>專長與證書</a>
-    <a href="#works"><span>03</span>創作與翻譯</a>
-    <a href="#media"><span>04</span>電視熊專輯</a>
-    <a href="#talks"><span>05</span>講師熊系列</a>
-    <a href="#photos"><span>06</span>攝影熊眼</a>
+  <nav class="ab-toc" aria-label="{{ T "ab_toc" }}">
+    <a href="#journey"><span>01</span>{{ T "ab_s1_toc" }}</a>
+    <a href="#skills"><span>02</span>{{ T "ab_s2_toc" }}</a>
+    <a href="#works"><span>03</span>{{ T "ab_s3_toc" }}</a>
+    <a href="#media"><span>04</span>{{ T "ab_s4_toc" }}</a>
+    <a href="#talks"><span>05</span>{{ T "ab_s5_toc" }}</a>
+    <a href="#photos"><span>06</span>{{ T "ab_s6_toc" }}</a>
   </nav>
 
   <section class="ab-sec" id="journey">
-    <header class="ab-h"><span class="num">01</span><h2>行醫足跡</h2><span class="en">Journey</span></header>
+    <header class="ab-h"><span class="num">01</span><h2>{{ T "ab_s1" }}</h2><span class="en">Journey</span></header>
     <div class="ab-story">{{ .Content }}</div>
   </section>
 
   <section class="ab-sec" id="skills">
-    <header class="ab-h"><span class="num">02</span><h2>熊專長與證書</h2><span class="en">Credentials</span></header>
+    <header class="ab-h"><span class="num">02</span><h2>{{ T "ab_s2" }}</h2><span class="en">Credentials</span></header>
     <ul class="ab-certs">
-      {{ range $d.certs }}<li class="ab-card"><span class="kind">{{ .kind }}</span><span class="name">{{ .name }}</span></li>{{ end }}
+      {{ range $d.certs }}<li class="ab-card"><span class="kind">{{ (partial "loc.html" (dict "it" . "f" "kind")) }}</span><span class="name">{{ (partial "loc.html" (dict "it" . "f" "name")) }}</span></li>{{ end }}
     </ul>
     <div class="ab-duo" style="margin-top: var(--space-lg)">
       {{ range $d.highlights }}
+      {{- $t := partial "loc.html" (dict "it" . "f" "title") }}{{ $c := partial "loc.html" (dict "it" . "f" "caption") }}
       <figure class="ab-card">
-        <button class="ab-shot" type="button" data-lb="{{ partial "ab-lg.html" .image }}" data-cap="{{ .title }}{{ with .caption }} · {{ . }}{{ end }}">{{ partial "ab-img.html" (dict "src" .image "alt" .title) }}</button>
-        <figcaption><b>{{ .title }}</b>{{ with .caption }}<span>{{ . }}</span>{{ end }}</figcaption>
+        <button class="ab-shot" type="button" data-lb="{{ partial "ab-lg.html" .image }}" data-cap="{{ $t }}{{ with $c }} · {{ . }}{{ end }}">{{ partial "ab-img.html" (dict "src" .image "alt" $t) }}</button>
+        <figcaption><b>{{ $t }}</b>{{ with $c }}<span>{{ . }}</span>{{ end }}</figcaption>
       </figure>
       {{ end }}
     </div>
   </section>
 
   <section class="ab-sec" id="works">
-    <header class="ab-h"><span class="num">03</span><h2>熊の創作與翻譯</h2><span class="en">Publications</span></header>
+    <header class="ab-h"><span class="num">03</span><h2>{{ T "ab_s3" }}</h2><span class="en">Publications</span></header>
     <ol class="ab-pubs">
       {{ range $d.pubs }}
       <li><div>
@@ -249,26 +252,28 @@
     </ol>
     <div class="ab-works" style="margin-top: var(--space-lg)">
       {{ with $d.omi_toolbox }}
+      {{- $t := partial "loc.html" (dict "it" . "f" "title") }}
       <article class="ab-card ab-work">
-        <button class="ab-shot" type="button" data-lb="{{ partial "ab-lg.html" .image }}" data-cap="{{ .title }}">{{ partial "ab-img.html" (dict "src" .image "alt" .title) }}</button>
+        <button class="ab-shot" type="button" data-lb="{{ partial "ab-lg.html" .image }}" data-cap="{{ $t }}">{{ partial "ab-img.html" (dict "src" .image "alt" $t) }}</button>
         <div class="body">
           <span class="tag">Translation · App</span>
-          <h3>{{ .title }}</h3>
-          <p>協助ECG大師<a href="{{ .author_url }}" target="_blank" rel="noopener">Emre Aslanger</a>翻譯。{{ .ios_note }}。</p>
+          <h3>{{ $t }}</h3>
+          <p>{{ T "ab_omi_pre" }}<a href="{{ .author_url }}" target="_blank" rel="noopener">Emre Aslanger</a>{{ T "ab_omi_post" }}{{ partial "loc.html" (dict "it" . "f" "ios_note") }}{{ T "ab_period" }}</p>
           <div class="ab-btns">
-            <a class="ab-btn" href="{{ .ios }}" target="_blank" rel="noopener">iOS下載</a>
-            <a class="ab-btn" href="{{ .android }}" target="_blank" rel="noopener">Android下載</a>
+            <a class="ab-btn" href="{{ .ios }}" target="_blank" rel="noopener">{{ T "ab_ios" }}</a>
+            <a class="ab-btn" href="{{ .android }}" target="_blank" rel="noopener">{{ T "ab_android" }}</a>
           </div>
         </div>
       </article>
       {{ end }}
       {{ with $d.book }}
+      {{- $t := partial "loc.html" (dict "it" . "f" "title") }}
       <article class="ab-card ab-work">
-        <button class="ab-shot" type="button" data-lb="{{ partial "ab-lg.html" .image }}" data-cap="{{ .title }}">{{ partial "ab-img.html" (dict "src" .image "alt" .title) }}</button>
+        <button class="ab-shot" type="button" data-lb="{{ partial "ab-lg.html" .image }}" data-cap="{{ $t }}">{{ partial "ab-img.html" (dict "src" .image "alt" $t) }}</button>
         <div class="body">
           <span class="tag">Book chapter</span>
-          <h3>{{ .title }}</h3>
-          <p>{{ .note }}</p>
+          <h3>{{ $t }}</h3>
+          <p>{{ partial "loc.html" (dict "it" . "f" "note") }}</p>
         </div>
       </article>
       {{ end }}
@@ -276,23 +281,25 @@
   </section>
 
   <section class="ab-sec" id="media">
-    <header class="ab-h"><span class="num">04</span><h2>電視熊專輯</h2><span class="en">In the media</span></header>
+    <header class="ab-h"><span class="num">04</span><h2>{{ T "ab_s4" }}</h2><span class="en">In the media</span></header>
     <div class="ab-videos">
       {{ range $d.videos }}
+      {{- $t := partial "loc.html" (dict "it" . "f" "title") }}
       <figure class="ab-card" style="margin:0">
-        <button class="ab-yt" type="button" data-yt="{{ .id }}" aria-label="播放：{{ .title }}" style="background-image:url(https://i.ytimg.com/vi/{{ .id }}/hqdefault.jpg)"><span class="play"></span></button>
-        <figcaption class="ab-vcap">{{ .title }}</figcaption>
+        <button class="ab-yt" type="button" data-yt="{{ .id }}" aria-label="{{ T "ab_play" }}{{ $t }}" style="background-image:url(https://i.ytimg.com/vi/{{ .id }}/hqdefault.jpg)"><span class="play"></span></button>
+        <figcaption class="ab-vcap">{{ $t }}</figcaption>
       </figure>
       {{ end }}
     </div>
     <div class="ab-press">
       {{ range $d.press }}
+      {{- $t := partial "loc.html" (dict "it" . "f" "title") }}
       <article class="ab-card">
-        <button class="ab-shot" type="button" data-lb="{{ partial "ab-lg.html" .image }}" data-cap="{{ .title }}">{{ partial "ab-img.html" (dict "src" .image "alt" .title) }}</button>
+        <button class="ab-shot" type="button" data-lb="{{ partial "ab-lg.html" .image }}" data-cap="{{ $t }}">{{ partial "ab-img.html" (dict "src" .image "alt" $t) }}</button>
         <div class="body">
-          <span class="src">{{ .source }}</span>
-          <h3>{{ .title }}</h3>
-          {{ with .url }}<a class="more" href="{{ . }}" target="_blank" rel="noopener">看報導 →</a>{{ end }}
+          <span class="src">{{ partial "loc.html" (dict "it" . "f" "source") }}</span>
+          <h3>{{ $t }}</h3>
+          {{ with .url }}<a class="more" href="{{ . }}" target="_blank" rel="noopener">{{ T "ab_read_press" }}</a>{{ end }}
         </div>
       </article>
       {{ end }}
@@ -300,27 +307,28 @@
   </section>
 
   <section class="ab-sec" id="talks">
-    <header class="ab-h"><span class="num">05</span><h2>講師熊系列</h2><span class="en">Teaching</span></header>
+    <header class="ab-h"><span class="num">05</span><h2>{{ T "ab_s5" }}</h2><span class="en">Teaching</span></header>
     {{- $talks := sort $d.talks "date" "desc" -}}
     {{- $years := slice -}}
     {{- range $talks }}{{ $y := substr .date 0 4 }}{{ if not (in $years $y) }}{{ $years = $years | append $y }}{{ end }}{{ end -}}
     {{ range $years }}{{ $y := . }}
     {{- $n := 0 }}{{ range $talks }}{{ if eq (substr .date 0 4) $y }}{{ $n = add $n 1 }}{{ end }}{{ end }}
     <div class="ab-year">
-      <h3>{{ $y }}<small>{{ $n }}場</small></h3>
+      <h3>{{ $y }}<small>{{ T "ab_year_talks" $n }}</small></h3>
       <div class="ab-talks">
         {{ range $talks }}{{ if eq (substr .date 0 4) $y }}
         {{- $imgs := slice }}{{ range .images }}{{ $imgs = $imgs | append (partial "ab-lg.html" .) }}{{ end }}
-        {{- $cap := .title }}{{ with .host }}{{ $cap = printf "%s · %s" . $cap }}{{ end }}
+        {{- $t := partial "loc.html" (dict "it" . "f" "title") }}{{ $h := partial "loc.html" (dict "it" . "f" "host") }}
+        {{- $cap := $t }}{{ with $h }}{{ $cap = printf "%s · %s" . $cap }}{{ end }}
         <article class="ab-card ab-talk">
-          <button class="ab-shot" type="button" data-lb="{{ delimit $imgs "|" }}" data-cap="{{ .date }} {{ $cap }}" aria-label="放大看：{{ .title }}">
-            {{ partial "ab-img.html" (dict "src" (index .images 0) "alt" .title) }}
+          <button class="ab-shot" type="button" data-lb="{{ delimit $imgs "|" }}" data-cap="{{ .date }} {{ $cap }}" aria-label="{{ T "ab_zoom" }}{{ $t }}">
+            {{ partial "ab-img.html" (dict "src" (index .images 0) "alt" $t) }}
             {{ if gt (len .images) 1 }}<span class="more">+{{ sub (len .images) 1 }}</span>{{ end }}
           </button>
           <div class="body">
             <time datetime="{{ .date }}">{{ replace .date "-" "." }}</time>
-            <h4>{{ .title }}</h4>
-            {{ with .host }}<p class="host">{{ . }}</p>{{ end }}
+            <h4>{{ $t }}</h4>
+            {{ with $h }}<p class="host">{{ . }}</p>{{ end }}
           </div>
         </article>
         {{ end }}{{ end }}
@@ -330,10 +338,11 @@
   </section>
 
   <section class="ab-sec" id="photos">
-    <header class="ab-h"><span class="num">06</span><h2>攝影熊眼</h2><span class="en">Through my lens</span></header>
+    <header class="ab-h"><span class="num">06</span><h2>{{ T "ab_s6" }}</h2><span class="en">Through my lens</span></header>
     <div class="ab-photos">
       {{ range $d.photos }}
-      <button class="ab-shot" type="button" data-lb="{{ partial "ab-lg.html" .src }}" data-cap="{{ .title }}" data-group="photos">{{ partial "ab-img.html" (dict "src" .src "alt" .title) }}<span class="cap">{{ .title }}</span></button>
+      {{- $t := partial "loc.html" (dict "it" . "f" "title") }}
+      <button class="ab-shot" type="button" data-lb="{{ partial "ab-lg.html" .src }}" data-cap="{{ $t }}" data-group="photos">{{ partial "ab-img.html" (dict "src" .src "alt" $t) }}<span class="cap">{{ $t }}</span></button>
       {{ end }}
     </div>
   </section>
@@ -341,25 +350,26 @@
   <footer class="ab-end">
     <p class="closing">{{ .Params.closing | default "Written from the desk on the second floor of the ER," }}</p>
     <p class="author">{{ $name }}</p>
-    <p class="contact">{{ with site.Params.threads }}Threads <a href="{{ . }}">@agoodbear</a> · {{ end }}不接受置入文、推銷、SEO 邀稿。</p>
+    <p class="contact">{{ with site.Params.threads }}Threads <a href="{{ . }}">@agoodbear</a> · {{ end }}{{ T "ab_no_ads" }}</p>
   </footer>
 
 </div>
 </div>
 
-<dialog class="ab-lb" aria-label="圖片檢視">
+<dialog class="ab-lb" aria-label="{{ T "ab_viewer" }}">
   <div class="stage"><img alt=""><p></p></div>
-  <button class="x" type="button" aria-label="關閉">×</button>
-  <button class="prev" type="button" aria-label="上一張">‹</button>
-  <button class="next" type="button" aria-label="下一張">›</button>
+  <button class="x" type="button" aria-label="{{ T "ab_close" }}">×</button>
+  <button class="prev" type="button" aria-label="{{ T "ab_prev" }}">‹</button>
+  <button class="next" type="button" aria-label="{{ T "ab_next" }}">›</button>
 </dialog>
 <script>
 (() => {
   const lb = document.querySelector('.ab-lb');
+  const CO = {{ T "ab_count_open" }}, CC = {{ T "ab_count_close" }};
   const img = lb.querySelector('img'), cap = lb.querySelector('p');
   let list = [], i = 0;
   const show = () => {
-    img.src = list[i].src; img.alt = list[i].cap; cap.textContent = list[i].cap + (list.length > 1 ? `（${i + 1}/${list.length}）` : '');
+    img.src = list[i].src; img.alt = list[i].cap; cap.textContent = list[i].cap + (list.length > 1 ? `${CO}${i + 1}/${list.length}${CC}` : '');
     lb.querySelector('.prev').hidden = lb.querySelector('.next').hidden = list.length < 2;
   };
   const expand = el => el.dataset.lb.split('|').map(src => ({ src, cap: el.dataset.cap }));

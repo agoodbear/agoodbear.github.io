@@ -60,8 +60,8 @@ Baseline不是很穩，不過可以看到也有low voltage(Sensitive criteria wi
 首先在2018年第四版心肌梗塞通用定義[^1]就已經清楚定義，要診斷STEMI，在V2/V3的定義和其他lead是不一樣的：
 
 - 男性，<40 y/o要2.5 mm高
-- 男性，>40 y/o要2 mm高
-- 女性，不管年齡皆要>1.5 mm高
+- 男性，≥40 y/o要2 mm高
+- 女性，不管年齡皆要≥1.5 mm高
 
 所以這個Case在V2/V3雖然皆有STE 1格，但都不符合STEMI criteria。
 
@@ -110,7 +110,7 @@ Baseline不是很穩，不過可以看到也有low voltage(Sensitive criteria wi
 
 但是……也就是這個但是
 
-這個方程式如果用在胸痛超過6小時以上，可以會有false-negative的狀況出現。也就是有AMI，但是阻塞的時間久了點，所以T wave沒有那麼高了，所以用T/QRS ratio來看，分子變小，那麼要達到>0.36的機會就會變小。
+這個方程式如果用在胸痛超過6小時以上，可能會有false-negative的狀況出現。也就是有AMI，但是阻塞的時間久了點，所以T wave沒有那麼高了，所以用T/QRS ratio來看，分子變小，那麼要達到>0.36的機會就會變小。
 
 所以超過6小時的胸痛，如果應用此rule，如果沒有>0.36，也有可能是false-negative喔~~~
 
@@ -192,9 +192,9 @@ A區留觀床躺著，就是CPU了啦(我想大部份的醫院，都沒有特定
 - 安排進行進階非侵襲性心臟影像檢查：
 
 1. 胸前心臟超音波 (2D Transthoracic Heart Echography )
-2. 心肌灌注核子造影掃描 (Myocardial Perfusion Scintigrapby：MPS)
+2. 心肌灌注核子造影掃描 (Myocardial Perfusion Scintigraphy：MPS)
 3. 電腦斷層掃描冠狀動脈血管攝影 ( Coronary CT Angiography)
-4. 心臟核磁共振掃描攝影 (Cardiae Magnetic Resonance)
+4. 心臟核磁共振掃描攝影 (Cardiac Magnetic Resonance)
 
 進階非侵襲性心臟影像檢查的2、3、4實在非常不適合在急診，至少在台灣的大多數急診。
 
@@ -212,7 +212,7 @@ A區留觀床躺著，就是CPU了啦(我想大部份的醫院，都沒有特定
 
 <strong>橘色：</strong>看到STEMI or STEMI equivalent<strong>(見Fig.6 上半部)</strong> →處置方法見2013 ACC/AHA STEMI guideline<strong>(熊:ESC有2017 STEMI guideline)</strong>
 
-<strong>黃色1：</strong>看到ECG可能有缺血變化<strong>(見Fig.6 下半部)</strong> →處置方法見2014 ACC/AHA NSTEMI-ACS guideline<strong>(熊:ESC有2020 STEMI guideline)</strong>
+<strong>黃色1：</strong>看到ECG可能有缺血變化<strong>(見Fig.6 下半部)</strong> →處置方法見2014 ACC/AHA NSTEMI-ACS guideline<strong>(熊:ESC有2020 NSTEMI guideline)</strong>
 
 <strong>黃色2：</strong>如果不是橘色或黃色1的ECG變化，但是仍懷疑缺血變化 →會診CV man、Serial F/U ECG(15–20分鐘)、Heart POCUS
 
@@ -291,7 +291,7 @@ EDACS risk score也是常用於low risk病患，進一步評估其MACE(major adv
 ![](https://cdn-images-1.medium.com/max/1024/1*9x7OevQPGm6YeFrJidCy-Q.png)
 <strong><em>Fig.14 一小時後的ECG</em></strong>
 
-一小時候的ECG(症狀加重)，此時可以發現仍適用T/QRS ratio >0.36這個rule。在V2的T wave變大，如果應用此rule，發現V2的T/QRS ratio已經超過0.36，favor OMI(Occlusion MI)。而且在inf.leads已經出現reciprocal STD changes與minimal STE over aVL。這種ECG pattern非常有可能是proximal LAD阻塞導致。
+一小時後的ECG(症狀加重)，此時可以發現仍適用T/QRS ratio >0.36這個rule。在V2的T wave變大，如果應用此rule，發現V2的T/QRS ratio已經超過0.36，favor OMI(Occlusion MI)。而且在inf.leads已經出現reciprocal STD changes與minimal STE over aVL。這種ECG pattern非常有可能是proximal LAD阻塞導致。
 
 病患的症狀是斷斷續續的，痛起來會像大猩猩一樣猛搥自己的胸口。
 

@@ -182,7 +182,7 @@ https://x.com/smithECGBlog/status/1745156040159559767?s=20
 
 [超連結 ](https://agoodbear.com/)➔ 按下CMD+K 
 
-~~刪除線 ~~➔ 按下CMD+U 
+~~刪除線 ~~➔ 按下Control+Shift+&#96; 
 
 <mark>可以塗鴉的顏色</mark> ➔ 在Typora按下CMD+Shift+H，沒有用喔，= =text= =只在html會成功將文字高亮，但是markdown要輸入< mark >text < mark >才會成功高亮文字
 

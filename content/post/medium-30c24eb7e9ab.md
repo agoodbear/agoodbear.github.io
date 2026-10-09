@@ -199,7 +199,7 @@ Dr.Smith有一篇文章關於診斷pericarditis，非常非常的經典[^4]。
 
 接著我們來再看看，這病患做了exercise stress test得到正常結果，這樣到底算不算排除了OMI。
 
-#### **不算(字體放大，強調再三。exercise stress test正常，不能排除病患血管沒有問題)**
+#### **不算(字體放大，強調再三。exercise stress test正常，不能排除病患血管有問題)**
 
 #### Why?
 

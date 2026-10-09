@@ -102,7 +102,7 @@ Step 3➔將QRS寬度，對應到我們認為有STE的lead。
 
 ##### <mark>如果我當時看到這樣的ECG，我可以辨識出來嗎?</mark>
 
-除了我剛剛說的，看到STE，要反射性先去找J point在哪裡，用已確認是否真的有STE。
+除了我剛剛說的，看到STE，要反射性先去找J point在哪裡，用以確認是否真的有STE。
 
 另外，還需要搭配病患是否有病史、ACS S/S等等，這也可以提高AMI的pretest probability。怎麼說呢?
 
@@ -150,7 +150,7 @@ Dr.Smith常說一句話: **<mark>When the QRS is wide, the J-point will hide. So
 
 這張是qR pattern的RBBB+ LAFB。出現如Fig.5的ECG長相。
 
-這種ECG pattern是最高風險OMI一➔可能伴隨cardiogenic shock與VT/Vf的高發生率
+這種ECG pattern是最高風險OMI之一➔可能伴隨cardiogenic shock與VT/Vf的高發生率
 
 - 在這篇文章中有描述到 [^2] ，在一些很嚴重的LAD occlusion或LM occlusion，是以RBBB+LAFB呈現出來➔這些個案有最高風險的Vf、cardiogenic shock和最高的in-hospital mortality(**AMI for new RBBB alone有18.8%**)
 
@@ -224,6 +224,8 @@ Dr.Smith常說一句話: **<mark>When the QRS is wide, the J-point will hide. So
 | 中度低溫(moderate) | 28 至 32°C                 | 意識水平改變。可能清醒或失去意識，有或沒有發抖。 |
 | 嚴重低溫(severe)   | <28°C                      | 無意識。不發抖。                                 |
 
+> 註：國際山地救援醫學委員會（ICAR MedCom）2021年提出修訂版瑞士分期（Revised Swiss System），野外改用意識程度（AVPU）分期，估的是「低體溫心跳停止的風險」而不是核心體溫，也不再用發抖當分期依據；能量核心體溫時仍以實測為準。[^rss]
+
 # 文章重點:
 
 1. J point到底在哪裡？
@@ -243,3 +245,4 @@ Dr.Smith常說一句話: **<mark>When the QRS is wide, the J-point will hide. So
 [^7]: Dr. [[Smith's ECG Blog]]: Patient in Single Vehicle Crash: What is this ST Elevation, with Peak Troponin of 6500 ng/L? - [link](http://hqmeded-ecg.blogspot.com/2022/11/patient-in-single-vehicle-crash-what-is.html)
 [^8]: Amazon.com: Electrocardiography in Emergency, Acute, and Critical Care: 9781732748606: Amal Mattu, MD, FACEP, Jeffrey A. Tabas, MD, FACEP, William Brady, MD, FACEP, FAAEM: 圖書 - [link](https://www.amazon.com/Electrocardiography-Emergency-Acute-Critical-Care/dp/1732748608)
 [^9]: Accidental hypothermia in adults - UpToDate - [link](https://www.uptodate.com/contents/zh-Hans/accidental-hypothermia-in-adults#H2352758494)
+[^rss]: Musi, M. E., Sheets, A., Zafren, K., Brugger, H., Paal, P., Hölzl, N., & Pasquier, M. (2021). Clinical staging of accidental hypothermia: The Revised Swiss System. __Resuscitation__, __162__, 182–187. https://doi.org/10.1016/j.resuscitation.2021.02.038

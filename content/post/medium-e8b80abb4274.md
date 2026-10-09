@@ -31,7 +31,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E7%9C%9F-%E5%BF%83-%E8%AA%A0%E6%84
 
 #### <strong>關於Early Q wave的重點</strong>
 
-#### - 在一項STEMI病患研究當中，這些病患都在12小時內接受治療，研究發現，出現Early Q wave的病患心肌搶救仍然十分重要，主要是發現病患有SETMI/Early Q wave(儘管推測已經有transmural與不可逆的心肌受損)，在給予ART後，仍然有較好的預後➡因此12小時內STE+Early Q wave的病患，不應該排除在接受PCI的行列內
+#### - 在一項STEMI病患研究當中，這些病患都在12小時內接受治療，研究發現，出現Early Q wave的病患心肌搶救仍然十分重要，主要是發現病患有STEMI/Early Q wave(儘管推測已經有transmural與不可逆的心肌受損)，在給予ART後，仍然有較好的預後➡因此12小時內STE+Early Q wave的病患，不應該排除在接受PCI的行列內
 
 #### - 在Ant.wall STEMI中有50%在1小時內會出現Q wave➡這不代表late or subacute MI
 

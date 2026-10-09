@@ -9,7 +9,7 @@
        {{< /ecg-read >}}
        視覺在 custom-css/ecg-article.css 的 .ecg-read（需先 {{< article-cards >}} 啟用 marker，但本卡自帶 class 不依賴 marker）。 */ -}}
 <div class="ecg-read">
-<div class="ecg-read__head">五宮格判讀 · Rate–Rhythm–Axis–Interval–Ischemia</div>
+<div class="ecg-read__head">{{ T "ecg_read_head" }}</div>
 {{- range (split (trim .Inner "\n") "\n") -}}
 {{- $l := trim . " " -}}
 {{- if $l -}}

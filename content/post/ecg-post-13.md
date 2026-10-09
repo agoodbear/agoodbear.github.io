@@ -114,7 +114,7 @@ Ischemia:
 
 III/aVF有明顯的TWI。
 
-aVL的ST segment是straight，<mark>**一般而言ST segment如果屬於convex或是straight會比較偏向ischemic change。如果是Concave會比較偏向正常變化**<mark>(**當然，這不是絕對**)
+aVL的ST segment是straight，<mark>**一般而言ST segment如果屬於convex或是straight會比較偏向ischemic change。如果是Concave會比較偏向正常變化**</mark>(**當然，這不是絕對**)
 
 ### 這邊要再次提到ECG大師Dr. Jerry Jones針對reciprocal STD的兩大重點：
 
@@ -129,7 +129,7 @@ aVL的ST segment是straight，<mark>**一般而言ST segment如果屬於convex�
 
 因為aVL和電傳導的路徑幾乎呈現90°，所以QRS amplitude就會不明顯，當QRS amplitude不夠大，ST elevation就會不明顯。
 
-因此<mark>**High lateral MI常常被miss掉**<mark>。
+因此<mark>**High lateral MI常常被miss掉**</mark>。
 
 既然常常被miss掉，那該怎麼辦?
 
@@ -139,7 +139,7 @@ aVL的ST segment是straight，<mark>**一般而言ST segment如果屬於convex�
 
 High lateral wall的I/aVL因為軸向和axis接近垂直，所以QRS不大，因此STE就不明顯。但是我們可以透過對側導極檢查是否出現STD or TWI等reciprocal change變化。
 
-另外一點就是reciprocal change有可能會隨著時間比STE更明顯➔這太好了，反正High laterall wall的I/aVL STE不明顯，不容易有STE > 1 mm的符合STEMI criteria出現，但是<mark>**對側的reciprocal STD會明顯，這會讓我們提高警覺**<mark>，something wrong~~
+另外一點就是reciprocal change有可能會隨著時間比STE更明顯➔這太好了，反正High laterall wall的I/aVL STE不明顯，不容易有STE > 1 mm的符合STEMI criteria出現，但是<mark>**對側的reciprocal STD會明顯，這會讓我們提高警覺**</mark>，something wrong~~
 
 **在Fig.1就可以清楚見到這樣的變化(III/aVF明顯的TWI，但是aVL幾乎看不到任何STE，唯一有問題的就是straight ECG pattern的ST segment)**
 
@@ -154,7 +154,7 @@ High lateral wall的I/aVL因為軸向和axis接近垂直，所以QRS不大，因
 
 ### **衍伸概念**
 
-<mark>**那麼還有哪些leads，也會有如此的reciprocal pairs的概念呢?**<mark>
+<mark>**那麼還有哪些leads，也會有如此的reciprocal pairs的概念呢?**</mark>
 
 ![Reciprocal pairs](../../static/images/ipic/jwvo4v.png)
 
@@ -165,8 +165,8 @@ High lateral wall的I/aVL因為軸向和axis接近垂直，所以QRS不大，因
 #### ⭐️Pair B:代表了Septal wall/ant.wall與post.leads出現MI➔互相reciprocal pairs(**裡面最明顯的lead為V2**)
 
 - 因為12導程ECG不會routine做Post.leads，因此LV的septal wall/ant.wall出現MI其reciprocal的lead在Post.wall所在位置。也就是V7-9。
-- 還記得Dr.Smith和他的團隊所做的一個超棒研究嗎?在<mark>**具有ACS症狀病患，如果在precordial leads出現最大STD，且落在V1-4。那麼有97%的specificity病患有OMI，且有96%需要進行緊急心導管處置**<mark>。 [^1] 。這個研究也是建立在當發生Post.wall MI，在V1-V4會出現reciprocal change的基礎上。
-- 小提醒，Dr.Smith在他的ECG blog，多次提醒。<mark>**在V2出現很平的ST segment或是downsloping STD或是shelf-like STD，必須考慮Post.OMI，直到證明不是**<mark>。
+- 還記得Dr.Smith和他的團隊所做的一個超棒研究嗎?在<mark>**具有ACS症狀病患，如果在precordial leads出現最大STD，且落在V1-4。那麼有97%的specificity病患有OMI，且有96%需要進行緊急心導管處置**</mark>。 [^1] 。這個研究也是建立在當發生Post.wall MI，在V1-V4會出現reciprocal change的基礎上。
+- 小提醒，Dr.Smith在他的ECG blog，多次提醒。<mark>**在V2出現很平的ST segment或是downsloping STD或是shelf-like STD，必須考慮Post.OMI，直到證明不是**</mark>。
 
 #### ➔<u>很平的V2長怎樣?</u>
 
@@ -184,9 +184,9 @@ High lateral wall的I/aVL因為軸向和axis接近垂直，所以QRS不大，因
 
 #### ⭐️Pair C: V1-2和V5-6，這就是所謂的precordial Swirl sign [^5] 。
 
-- <mark>**ECG pattern: V1-2出現STE and/or HATW + V5-6出現STD and/or TWI**<mark>
+- <mark>**ECG pattern: V1-2出現STE and/or HATW + V5-6出現STD and/or TWI**</mark>
 - V1-2和V5-6互相reciprocal change，代表著septal MI➔這代表LAD OMI，通常在第一個中隔穿通支之前(proximal to the first septal perforators） [^4]
-- 不過<mark>**這個sign需要與LVH、LBBB和subendocardial ischemia來做DDx**<mark>
+- 不過<mark>**這個sign需要與LVH、LBBB和subendocardial ischemia來做DDx**</mark>
 
 ![](../../static/images/ipic/smpmiq.png)
 
@@ -206,17 +206,17 @@ High lateral wall的I/aVL因為軸向和axis接近垂直，所以QRS不大，因
 
 可以這樣的說法，很難往下傳承教學下去。
 
-因此Amal mattu在教學HATW時強調，<mark>**如果QRS可以塞進後面的T wave，那麼這個T wave就是有異常的T wave**<mark>
+因此Amal mattu在教學HATW時強調，<mark>**如果QRS可以塞進後面的T wave，那麼這個T wave就是有異常的T wave**</mark>
 
 ![](../../static/images/ipic/gpuvf8.gif)
 
-在<mark>**2022年美國心臟學院急診急性胸痛處理的專家共識(2022 ACC Expert Consensus Decision Pathway on the Evaluation and Disposition of Acute Chest Pain in the Emergency Department)**<mark> [^6] 裡面的表格(Fig.8)強調了**HATW屬於STEMI equivalent**➡但是**表格裡面寫著要Serial ECG，並不是直接啟動Cath lab activation➡主要的原因是發現，也有不少的HATW因為其他原因(non-ischemic)導致出現HATW，如High voltage]or LVH、LBBB or young person or Hyper-K等等** [^7] 。
+在<mark>**2022年美國心臟學院急診急性胸痛處理的專家共識(2022 ACC Expert Consensus Decision Pathway on the Evaluation and Disposition of Acute Chest Pain in the Emergency Department)**</mark> [^6] 裡面的表格(Fig.8)強調了**HATW屬於STEMI equivalent**➡但是**表格裡面寫著要Serial ECG，並不是直接啟動Cath lab activation➡主要的原因是發現，也有不少的HATW因為其他原因(non-ischemic)導致出現HATW，如High voltage]or LVH、LBBB or young person or Hyper-K等等** [^7] 。
 
 ![可能缺血的ECG變化](../../static/images/ipic/kdpyb3.png)
 
 不過這病患的precordial leads不是光只有看到HATW。其實**V2、V3看起來是de Winter's T wave**。
 
-<mark>**2008年de Winter在NEJM發表了文章，有一種新的sign，可以代表病患有Proximal LAD occlusion**<mark> [^8]
+<mark>**2008年de Winter在NEJM發表了文章，有一種新的sign，可以代表病患有Proximal LAD occlusion**</mark> [^8]
 
 ![](../../static/images/ipic/6pcckf.png)
 
@@ -252,7 +252,7 @@ Fig.10是我幫病患掃的echo。很明顯ant./部分septal wall幾乎不動。
 
 最後CV man同意我的說法，病患也就去做Cath了
 
-**CAG report:** <mark>**CAD with TVD s/p PCI at LAD-P, 100% instent restenosis**<mark>
+**CAG report:** <mark>**CAD with TVD s/p PCI at LAD-P, 100% instent restenosis**</mark>
 
 ![](../../static/images/ipic/nwk7x7.png)
 

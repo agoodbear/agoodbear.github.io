@@ -1,0 +1,22 @@
+{{- /* 多語系後 Hugo 預設把 /sitemap.xml 變成「索引檔」（指向 /zh-tw/sitemap.xml、/en/sitemap.xml）。
+       這裡改成把兩種語言的網址直接合併成一份一般 sitemap，讓 /sitemap.xml 維持原本格式：
+       GSC 已登記的就是這個網址，部署 workflow 也是重送它；其他讀 <url><loc> 的腳本照常能用。
+       內容與 Hugo 內建 sitemap.xml 範本相同（含中英互指的 xhtml:link）。 */ -}}
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{- range $site := . }}
+  {{- range where $site.Pages "Sitemap.Disable" "ne" true }}
+    {{- if .Permalink }}
+  <url>
+    <loc>{{ .Permalink }}</loc>{{ if not .Lastmod.IsZero }}
+    <lastmod>{{ safeHTML (.Lastmod.Format "2006-01-02T15:04:05-07:00") }}</lastmod>{{ end }}{{ with .Sitemap.ChangeFreq }}
+    <changefreq>{{ . }}</changefreq>{{ end }}{{ if ge .Sitemap.Priority 0.0 }}
+    <priority>{{ .Sitemap.Priority }}</priority>{{ end }}{{ if .IsTranslated }}{{ range .Translations }}
+    <xhtml:link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}"/>{{ end }}
+    <xhtml:link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}"/>{{ end }}
+  </url>
+    {{- end }}
+  {{- end }}
+  {{- end }}
+</urlset>

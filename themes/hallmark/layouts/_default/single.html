@@ -350,30 +350,17 @@
 {{ end }}
 
 {{ define "main" }}
-{{- $catMap := dict
-  "ecg" "心電圖"
-  "erlife" "急診人生"
-  "study" "自我進修"
-  "travel" "旅遊"
-  "workout" "醫生 Gym"
-  "pocus" "超音波"
-  "medium" "Medium"
-  "hyperkalemia" "高鉀血症"
-  "ai-learning" "AI 學習"
-  "er-cardio-weekly" "急診心臟週報"
-  "practical-tools" "實用工具"
--}}
 {{- /* author can be a string or a map (hugo-clarity uses [author] map) */ -}}
-{{- $authorName := site.Params.author.name | default site.Params.author | default "急診熊" -}}
+{{- $authorName := site.Params.author.name | default site.Params.author | default (T "author_name") -}}
 <article>
   <header class="article-header">
     <div class="breadcrumb">
       {{- $catSlug := index .Params.categories 0 | default "" -}}
-      {{- $catName := index $catMap $catSlug | default $catSlug -}}
+      {{- $catName := cond (ne $catSlug "") (partial "cat-name.html" $catSlug) "" -}}
       {{ if $catSlug }}
-        <a href="{{ printf "/categories/%s/" $catSlug | relURL }}">{{ $catName }}</a>
+        <a href="{{ printf "/categories/%s/" $catSlug | relLangURL }}">{{ $catName }}</a>
       {{ else }}
-        <a href="{{ printf "/%s/" $.Section | relURL }}">{{ index $catMap $.Section | default ($.Section | title) }}</a>
+        <a href="{{ printf "/%s/" $.Section | relLangURL }}">{{ partial "cat-name.html" $.Section }}</a>
       {{ end }}
     </div>
 
@@ -388,11 +375,11 @@
     {{ end }}
 
     <div class="meta">
-      <span>By {{ $authorName }}</span>
+      <span>{{ T "by_author" (dict "Name" $authorName) }}</span>
       <span class="dot">·</span>
       <span>{{ .Date.Format "Jan 2, 2006" }}</span>
       <span class="dot">·</span>
-      <span>{{ .ReadingTime }} 分鐘閱讀</span>
+      <span>{{ T "minutes_read" .ReadingTime }}</span>
       {{- /* Per-post PV not tracked in Firebase pageViews/total — only site-wide
              total is. Re-enable views_month / views_total here only if a future
              counter writes per-slug paths into Firebase. */ -}}
@@ -420,6 +407,12 @@
   {{ end }}
 
   <div class="article-body">
+    {{- /* 英文版文章頂端一行：說明是從中文原文翻譯、附原文連結 */ -}}
+    {{ if and (ne site.Language.Lang "zh-tw") (T "translation_note") }}
+      {{ range .Translations }}{{ if eq .Language.Lang "zh-tw" }}
+      <p class="translation-note"><em>{{ T "translation_note" }} <a href="{{ .RelPermalink }}" hreflang="zh-TW" lang="zh-TW">{{ T "translation_link" }}</a></em></p>
+      {{ end }}{{ end }}
+    {{ end }}
     {{ .Content }}
     <div class="endmark">◆ ◆ ◆</div>
   </div>
@@ -431,16 +424,16 @@
        延伸閱讀. Honours per-post `comments: false` in front matter. */ -}}
 {{ if and (ne .Params.comments false) site.Config.Services.Disqus.Shortname }}
 <section class="comments">
-  <div class="comments-head">讀者回響 · Comments</div>
-  <p class="comments-sub">看完有什麼想法？在下面留言、按讚或給個表情，一起討論。</p>
+  <div class="comments-head">{{ T "comments_head" }}</div>
+  <p class="comments-sub">{{ T "comments_sub" }}</p>
   {{ template "_internal/disqus.html" . }}
 </section>
 {{ end }}
 
 <section class="article-end">
-  <div class="author-mark">急</div>
+  <div class="author-mark">{{ T "author_mark" }}</div>
   <div class="body">
-    <strong>{{ $authorName }}</strong>，{{ site.Params.author_bio | default "台灣急診醫師，2005 年起進急診。專注 ECG、急診醫學臨床判讀與醫學教學。本部落格的所有內容都是親身踩過的薄冰。" }}
+    <strong>{{ $authorName }}</strong>{{ T "author_sep" }}{{ site.Params.author_bio | default (T "author_bio_default") }}
   </div>
 </section>
 
@@ -454,7 +447,7 @@
   {{ $related := where (where site.RegularPages "Params.categories" "intersect" (slice $relatedCat)) "Permalink" "!=" $current.Permalink }}
   {{ if gt (len $related) 0 }}
     <section class="related">
-      <div class="eyebrow-bar">More from {{ $relatedCat }}</div>
+      <div class="eyebrow-bar">{{ T "more_from" (dict "Name" $relatedCat) }}</div>
       <div class="grid">
         {{ range first 3 $related }}
           {{ partial "article-card.html" . }}

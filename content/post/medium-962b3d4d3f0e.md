@@ -28,7 +28,7 @@ canonicalURL: "https://medium.com/@agoodbear/narrow-qrs-tachycardia-962b3d4d3f0e
 
 千萬要記得，<strong>要看P wave的有無，最適當的lead，不是lead II就是V1。Amal mattu特別喜歡V1</strong>。
 
-此外這邊要注意，這個明顯的<strong>aVR STE with multiple leads STD通常並不是LM、Proximal LAD、TVD問題引起的</strong>(參考<strong>Fig.2</strong>)。這是rate-dependent oxygen/demand mismatch引起的心跳缺血的ECG徵象。心跳過快就容易會出現。不只PSVT會有、AfRVR時也可以見到。只要心跳快，就可能因為心臟跳太快，導致短暫缺血，出現這樣的Pattern。
+此外這邊要注意，這個明顯的<strong>aVR STE with multiple leads STD通常並不是LM、Proximal LAD、TVD問題引起的</strong>(參考<strong>Fig.2</strong>)。這是rate-dependent oxygen/demand mismatch引起的心臟缺血的ECG徵象。心跳過快就容易會出現。不只PSVT會有、AfRVR時也可以見到。只要心跳快，就可能因為心臟跳太快，導致短暫缺血，出現這樣的Pattern。
 
 那麼有沒有可能真的跳快、然後又真的AMI?
 

@@ -101,7 +101,7 @@ RV血管的支配(<strong>Fig.3</strong>)，由RCA的RV branch支配(也稱作RV
 - <strong><em>STE in aVR under Inf.wall MI →應該也是提示可能是RVMI，所以作Right side ECG是個好主意，特別是每個Inf.wall MI</em></strong>
 - <strong><em>STD and TWI in aVL →> 1 mm STD in aVL有87%的sensitivity與90% PPV for acute inferior OMI with RVMI[^2]</em></strong>
 - <strong><em>STE in lead III>II，另外STE in aVF > STD in V2的程度</em></strong>
-- <strong><em>STE in V2 > 50% of STD in aVF壓低的程度[^3]</em></strong>
+- <strong><em>STD in V2 ≤ 50% of STE in aVF的程度[^3][^lew]</em></strong>
 - <strong><em>出現RBBB、2nd or 3rd degree AV block</em></strong>
 
 以上是透過標準12 leads ECG，看到inf.wall STEMI，第一眼，就可以來推估是否有RVMI。但是如果inf.wall STEMI不明顯，還是懷疑有RVMI，就作R’t side ECG，通常可以給予比較有價值的資訊。接著來<strong>回答Q2</strong>~~
@@ -110,7 +110,7 @@ RV血管的支配(<strong>Fig.3</strong>)，由RCA的RV branch支配(也稱作RV
 
 可以看一下<strong>Fig.4A</strong>，我們比較常操作R’t side ECG，是V1/V2的位置不變，然後V3~V6對應到右側胸壁。(如<strong>Fig.4A</strong>)
 
-如果V3R~V6R有<strong>任何一個lead > 0.5 mm</strong>，就算有RVMI。
+如果V3R~V6R有<strong>任何一個lead STE > 0.5 mm</strong>，就算有RVMI。
 
 如果沒有時間做Full right side ECG →那麼就只做V4R(V4R被認為是診斷RVMI最好的lead)[^4]
 
@@ -223,3 +223,4 @@ Lesion在RCA-m~~~~~~不是有RVMI嗎?Why?
 [^8]: Chhapra, D. A., Mahajan, S. K., & Thorat, S. T. (2013). A study of the clinical profile of right ventricular infarction in context to inferior wall myocardial infarction in a tertiary care centre. \_\_Journal of Cardiovascular Disease Research\_\_, \_\_4\_\_(3), 170–176. [https://doi.org/10.1016/j.jcdr.2013.04.003](https://doi.org/10.1016/j.jcdr.2013.04.003)
 [^9]: Dr. Smith’s ECG Blog: Inferolateral STEMI: is there right ventricular MI also? — [link](http://hqmeded-ecg.blogspot.com/2019/01/inferolateral-stemi-is-there-right.html)
 [^10]: Bischof, J. E., Worrall, C. I., & Smith, S. W. (2018). In inferior myocardial infarction, neither ST elevation in lead V1 nor ST depression in lead I are reliable findings for the diagnosis of right ventricular infarction. \_\_Journal of Electrocardiology\_\_, \_\_51\_\_(6), 977–980. [https://doi.org/10.1016/j.jelectrocard.2018.08.010](https://doi.org/10.1016/j.jelectrocard.2018.08.010)
+[^lew]: Lew, A. S., Laramee, P., Shah, P. K., Maddahi, J., Peter, T., & Ganz, W. (1986). Ratio of ST-segment depression in lead V2 to ST-segment elevation in lead aVF in evolving inferior acute myocardial infarction: an aid to the early recognition of right ventricular ischemia. __The American Journal of Cardiology__, __57__(13), 1047–1051. https://doi.org/10.1016/0002-9149(86)90672-7

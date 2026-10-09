@@ -1,0 +1,19 @@
+{{- /* 中／EN 切換鈕。這頁有翻譯 → 直接跳到同一篇的另一語言版；
+       沒有 → 跳到另一語言的首頁（滑過會說明這篇還沒翻）。
+       只有兩種語言，所以「另一個語言」就是 site.Languages 裡不是自己的那個。 */ -}}
+{{- $cur := site.Language.Lang -}}
+{{- $target := "" -}}
+{{- $other := "" -}}
+{{- range site.Languages -}}{{- if ne .Lang $cur -}}{{- $other = .Lang -}}{{- end -}}{{- end -}}
+{{- with $other -}}
+  {{- range $.AllTranslations -}}{{- if eq .Language.Lang $other -}}{{- $target = .RelPermalink -}}{{- end -}}{{- end -}}
+  {{- $title := T "lang_switch_title" -}}
+  {{- if not $target -}}
+    {{- $target = cond (eq $other "zh-tw") "/" (printf "/%s/" $other) -}}
+    {{- $title = T "lang_switch_missing" -}}
+  {{- end -}}
+  <a class="lang-switch" href="{{ $target }}" hreflang="{{ $other }}" lang="{{ $other }}" title="{{ $title }}" aria-label="{{ $title }}">
+    <svg class="lang-switch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg>
+    <span class="lang-switch-text">{{ T "lang_switch_label" }}</span>
+  </a>
+{{- end -}}

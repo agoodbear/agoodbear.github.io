@@ -3,17 +3,17 @@
        Suppress via .Params.no_newsletter = true in frontmatter. */ -}}
 {{ if not .Params.no_newsletter }}
 <section class="newsletter wrap" aria-label="Newsletter subscription">
-  <div class="label">Subscribe · 訂閱電子報</div>
-  <h2>每兩週收到一份急診現場的整理筆記</h2>
-  <p>ECG case、AI 工作流、和那些只有在凌晨三點的急診室才會學到的事 —— 直接寄到信箱。免費。隨時可退訂。</p>
+  <div class="label">{{ T "nl_label" }}</div>
+  <h2>{{ T "nl_title" }}</h2>
+  <p>{{ T "nl_body" }}</p>
 
   <form id="hallmark-subscribe-form" novalidate>
     <input id="hallmark-subscribe-email" type="email" name="email" placeholder="your@email.com" aria-label="Email address" required>
-    <button id="hallmark-subscribe-submit" type="submit">訂閱</button>
+    <button id="hallmark-subscribe-submit" type="submit">{{ T "nl_button" }}</button>
   </form>
 
   <p id="hallmark-subscribe-status" class="small" aria-live="polite" style="min-height: 1.2em; margin-top: var(--space-sm);"></p>
-  <div class="small">No spam, ever. Unsubscribe with one click. · 目前訂閱者：<strong id="hallmark-subscriber-count">--</strong> 人</div>
+  <div class="small">No spam, ever. Unsubscribe with one click. · {{ T "nl_count" }}<strong id="hallmark-subscriber-count">--</strong>{{ if eq site.Language.Lang "zh-tw" }}{{ T "nl_count_unit" }}{{ end }}</div>
 </section>
 
 <script type="module">
@@ -66,9 +66,9 @@
   async function handleSubmit(e) {
     e.preventDefault();
     const email = String(input.value || '').trim();
-    if (!email) { setStatus('請先輸入 Email。', 'error'); return; }
+    if (!email) { setStatus({{ T "nl_need_email" }}, 'error'); return; }
     submit.disabled = true;
-    setStatus('送出中…', 'info');
+    setStatus({{ T "nl_sending" }}, 'info');
     try {
       const r = await callApi('/subscribers', {
         method: 'POST',
@@ -76,15 +76,15 @@
         body: JSON.stringify({ email, sourcePath: window.location.pathname })
       });
       if (r.alreadySubscribed) {
-        setStatus('你已經訂閱過囉，謝謝支持！', 'info');
+        setStatus({{ T "nl_already" }}, 'info');
       } else {
-        setStatus('訂閱完成，感謝你的支持！', 'success');
+        setStatus({{ T "nl_done" }}, 'success');
         form.reset();
       }
       setCount(r.count);
     } catch (e) {
       console.error('Subscribe error:', e);
-      setStatus(e && e.message ? e.message : '訂閱失敗，請稍後再試。', 'error');
+      setStatus(e && e.message ? e.message : {{ T "nl_failed" }}, 'error');
     } finally {
       submit.disabled = false;
     }

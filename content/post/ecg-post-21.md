@@ -368,7 +368,7 @@ Wereski等人2020年:確診STEMI的病人裡，[^9]
 
 ## 原則三｜Reciprocity 對應性:每一片缺血的心肌，在對面都有一面鏡子
 
-**心肌缺血時的current of injury，會投影到對側面的lead，如同凹透鏡的鏡像一樣。**
+**心肌缺血時的current of injury，會投影到對側面的lead，如同凹面鏡的鏡像一樣。**
 
 ![reciprocal change 就像照一面會上下顛倒的凹面鏡](../../static/images/ipic/ecg-post-21-reciprocal-mirror.webp "Fig. 13. Reciprocal change 就像照一面會讓人上下顛倒的凹面鏡：同一個損傷向量，在 lead III 看起來是 ST 上升，在軸線大致相反的 aVL 就變成 ST 壓低。示意圖，本站繪製。")
 
@@ -577,7 +577,7 @@ Meyers等人2021年(J Am Heart Assoc):在急性胸痛的病人中，**只要缺�
 - <mark style="background-color: lightgreen">LAD的<strong>中膈穿通支(septal perforators)</strong>通常供應右束支與左前分支</mark>。
 - 所以:**ACS合併新發或疑似新發的RBBB＋LAFB**(常合併輕微一致性STE或HATW)，與**LAD阻塞及左主幹急性阻塞高度相關**，也與**休克及心搏停止**高度相關(Widimsky 2012)。
 - **新發RBBB＋LAFB加上急性胸痛，就算ST-T因為傳導異常而判讀不可靠，也要當成緊急評估的適應症。不要等出現明確STE才動作。**
-- ⚠️ 平衡一下:後續一項用高敏感度troponin的世代研究發現，**右束支傳導阻滯本身並不是死亡率的獨立預測因子**(Neumann 2019)。所以r**ed flag的重點在「新發」「合併LAFB」「合併胸痛」這個組合，不是RBBB三個字本身**。
+- ⚠️ 平衡一下:後續一項用高敏感度troponin的世代研究發現，**右束支傳導阻滯本身並不是死亡率的獨立預測因子**(Neumann 2019)。所以**red flag的重點在「新發」「合併LAFB」「合併胸痛」這個組合，不是RBBB這四個字母本身**。
 
 **③ Q波與R wave progression:沒看到Q波，不代表沒有梗塞**
 
@@ -697,7 +697,7 @@ ECG不是法官，是證人。而且是一個講話很快、但講得含糊、�
 - **Surrogacy** ➜ 最關鍵的一點:**這個病人在這一刻就已經有真正的冠狀動脈阻塞了。** ECG沒看出來，不代表血管沒塞。**作者的立場很明確:即使在Fig. 1這個當下，就應該啟動心導管室。理由不是ECG夠明確，而是這個病人確實有ACO。**
 - **Dynamicity** ➜ 所以你要做的是:**16分鐘後再做一張。**
 
-**第二張ECG([Fig. 2](#fig-case-ecg2)，16分鐘後):** T波變得明顯更不成比例地巨大，合併終末T波倒置。AI判讀:OMI，而且形態介於active與reperfused之間。
+**第二張ECG([Fig. 2](#fig-case-ecg2)，16分鐘後):** T波變得明顯更不成比例地巨大，合併終末T波倒置。AI判讀:OMI;作者判讀形態介於active與reperfused之間。
 
 - **Dynamicity** ➜ 兩張之間的變化本身就是診斷。
 - **Proportionality** ➜ 現在比例性可以評估了，而且是異常的。
@@ -729,9 +729,9 @@ ECG不是法官，是證人。而且是一個講話很快、但講得含糊、�
 
 另外有一項多中心美國登錄研究顯示，同一套AI方法改善了診斷準確度，並**減少偽陽性的STEMI心導管室啟動**(Herman 2026)。[^23]
 
-### AI在做的事，其實就是這六條
+### AI在做的事，其實就是這六條裡的四條
 
-文章講得很好:深度學習模型在毫秒之內量化的，正好就是這六條原則:
+文章講得很好:深度學習模型在毫秒之內量化的，正好就是這六條原則裡的四條:
 
 - 配對STD/STE向量 ➜ **reciprocity**
 - T波下面積、Q波形態 ➜ **acuteness**
@@ -787,7 +787,7 @@ Bischof那篇是2016年、Smith那篇是2006年、Raitt那篇是1995年。**這�
 4. **Reciprocity:每一片缺血的心肌在對面都有鏡子。** 下壁STE一定要看**aVL**(明確的下壁STEMI是100%;但subtle那一群只有**90.7%**);**V1–V4的缺血性STD對OMI特異度97%**。**但鏡子會互相抵銷**:多血管病灶、left dominant合併近端LCx阻塞，就是silent OMI的來源。
 5. **Proportionality:1 mm在誰身上，意義不一樣。** 三個切點記起來:LBBB／paced用**STE/S ≥ 0.25(25%)**、LV動脈瘤用**T/QRS ≥ 0.36**、前壁subtle STE用Smith 4 variable formula。**HATW只能靠比例判斷，靠毫米一個都抓不到。**
 6. **Totality:不要只盯J點。** 整體判讀把敏感度從**41%拉到86%**，特異度只從94%掉到91%。**29%的透壁梗塞沒有Q波;43%的LAD阻塞，V2–V6全部是上凹的**。上凹不能排除。**但這86%是受過訓練的人做出來的**，未受訓就亂用整體判讀，只會增加偽陽性啟動。
-7. **Surrogacy:ECG是證人，不是法官。** NSTEMI病人中<strong>25.5%</strong>罪犯血管是塞的，死亡**RR 1.67(95% CI 1.31–2.13)**;而疑似STEMI的人裡，<strong>16%</strong>在血管攝影時已經自己通了。**ECG是用來修正機率的，不是用來定義阻塞的。** **AI也一樣:演算法跟你一樣，只看得到心電圖，看不到冠狀動脈。**
+7. **Surrogacy:ECG是證人，不是法官。** NSTEMI病人中<strong>25.5%</strong>罪犯血管是塞的，死亡**RR 1.67(95% CI 1.31–2.13)**;而接受primary PTCA的AMI病人裡，<strong>16%</strong>在血管攝影時已經自己通了。**ECG是用來修正機率的，不是用來定義阻塞的。** **AI也一樣:演算法跟你一樣，只看得到心電圖，看不到冠狀動脈。**
 8. **這六條原則沒有一條是新的。新的是把它們串起來。** 招式(那20個OMI ECG finding)會一直變多，心法只有這六條。
 
 ## 參考資料:

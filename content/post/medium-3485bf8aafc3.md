@@ -164,7 +164,7 @@ Stephen Smith表示做Post.leads時，千萬不要把V1~V3改成V7~V9。因為co
 
 - A2C是看anterior、inferior可以看到Segment 4
 - PLAX可以看到Segment 5
-- PSAX是看縱切面，可以看到Segment 4、5、10、11
+- PSAX是看橫切面(短軸)，可以看到Segment 4、5、10、11
 
 **PSAX是最佳可以看到Post.wall與其附近RWMA的最好view。**
 

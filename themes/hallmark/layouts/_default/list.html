@@ -125,33 +125,17 @@
 
 {{ define "main" }}
 
-{{- $catMap := dict
-  "ecg" "心電圖"
-  "erlife" "急診人生"
-  "study" "自我進修"
-  "travel" "旅遊"
-  "workout" "醫生 Gym"
-  "pocus" "超音波"
-  "medium" "Medium"
-  "hyperkalemia" "高鉀血症"
-  "ai-learning" "AI 學習"
-  "er-cardio-weekly" "急診心臟週報"
-  "practical-tools" "實用工具"
-  "post" "文章"
-  "categories" "分類"
-  "tags" "標籤"
--}}
 {{- $rawTitle := .Title -}}
-{{- $localized := index $catMap (lower $rawTitle) | default $rawTitle -}}
+{{- $localized := partial "cat-name.html" $rawTitle -}}
 
 <header class="page-masthead">
   <div class="breadcrumb">
     {{- if eq .Kind "term" -}}
-      {{ $localized }} · {{ index $catMap .Data.Plural | default (.Data.Plural | title) }}
+      {{ $localized }} · {{ $pl := partial "cat-name.html" .Data.Plural }}{{ cond (eq $pl .Data.Plural) (.Data.Plural | title) $pl }}
     {{- else if eq .Kind "taxonomy" -}}
       {{ $localized }}
     {{- else -}}
-      {{ index $catMap .Section | default (.Section | title) }} · Section
+      {{ $sec := partial "cat-name.html" .Section }}{{ cond (eq $sec .Section) (.Section | title) $sec }} · Section
     {{- end -}}
   </div>
   <h1>{{ $localized }}</h1>
@@ -169,10 +153,10 @@
 {{ $paginator := .Paginate (where .Pages "Section" "!=" "") 24 }}
 
 {{ if and (eq .Kind "term") (eq .Data.Plural "categories") (eq (lower .Data.Term) "ecg") }}
-<div class="ercw-category-promo">{{ partial "ercw-latest.html" . }}</div>
+{{ if eq site.Language.Lang "zh-tw" }}<div class="ercw-category-promo">{{ partial "ercw-latest.html" . }}</div>{{ end }}
 <header class="ecg-articles-heading" id="ecg-articles">
-  <h2 id="ecg-articles-title">心電圖專文</h2>
-  <p>病例判讀、觀念解析與教學筆記</p>
+  <h2 id="ecg-articles-title">{{ T "ecg_articles_title" }}</h2>
+  <p>{{ T "ecg_articles_sub" }}</p>
 </header>
 {{ end }}
 <section class="cat-grid"{{ if and (eq .Kind "term") (eq .Data.Plural "categories") (eq (lower .Data.Term) "ecg") }} aria-labelledby="ecg-articles-title"{{ end }}>

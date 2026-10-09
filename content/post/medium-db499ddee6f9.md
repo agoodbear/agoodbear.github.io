@@ -216,13 +216,13 @@ Pattern A)，T wave會先上後下。Reperfusion持續，接著會從terminal TW
 2. TWI in lead III可以是正常finding，但是如果加上臨床又有right precordial leads TWI，則要高度考慮PE
 3. Q wave in lead III也有可能是正常變異或是反應局部的RV ischemia or infarction(secondary to acute pressure overload)
 
-在這邊要特別說明第二點。在2007的The American Journal of Cardiology這篇文章研究中顯示當出現R’t precordial leads TWI時，診斷如果只剩下ACS vs. PE來PK，如果在lead III出現TWI，需要高度懷疑PE →<strong>出現在88%的PE，但只出現在1%的ACS</strong>
+在這邊要特別說明第二點。在2007的The American Journal of Cardiology這篇文章研究中顯示當出現R’t precordial leads TWI時，診斷如果只剩下ACS vs. PE來PK，如果在lead III出現TWI，需要高度懷疑PE →<strong>出現在88%的PE，但只出現在1%的ACS</strong>[^8]
 
 > <strong>ECG Tips:當出現R’t precordial leads TWI + Lead III TWI →一定要把PE擺在鑑別診斷最前面</strong>
 
 <strong>➡️RV strain出現</strong>
 
-- 當出現RV strain就要小心，因為這是明顯PE影響到血行動力的重要ECG指標之一 →在R’t precordial leads(<strong>STD and/or TWI in V1~V3 ± inf.leads</strong>
+- 當出現RV strain就要小心，因為這是明顯PE影響到血行動力的重要ECG指標之一 →在R’t precordial leads(<strong>STD and/or TWI in V1~V3 ± inf.leads</strong>)
 - <strong>這個finding很容易被誤認為coronary ischemia，要非常小心</strong>
 
 <strong>➡️出現RAA(Right Atrial Abnormality)</strong>
@@ -295,6 +295,7 @@ Chest CTA看到雙側肺血管塞好塞滿…..Orz
 還記得rTPA可以用在哪些緊急狀況嗎?
 
 ![](https://cdn-images-1.medium.com/max/1024/1*oUwlfuiKSUkx_eIXGL1WGw.png)
+<strong><em>Fig.10</em></strong>
 
 #### 治療危急肺栓塞病患有哪些重點?(以下重點來自於這篇文章[^11])
 
@@ -332,7 +333,7 @@ Chest CTA看到雙側肺血管塞好塞滿…..Orz
 - 目前evidence在病患為acute PE合併RV dilate➡︎給予水份幫助不大
 - PE病患同時合併hypovolemia的機率不高➡︎但此類病患對水份有response➡︎<strong>作法:給500 c.c NS→要monitor P’t，若hemodynamic穩定或沒效就停止</strong>
 - 在達到穩定血壓之前就要提早給Norepinephrine(請降低使用升壓劑的threshold)
-- 在PE的死亡螺旋裡，當hypotension➡︎↓RV hypoperfusion and ischemia➡︎<strong>因此不要對給升壓劑有太多限制(low threshold)→↑B.P→↑RV perfusion</strong>
+- 在PE的死亡螺旋裡，當hypotension➡︎RV hypoperfusion and ischemia➡︎<strong>因此不要對給升壓劑有太多限制(low threshold)→↑B.P→↑RV perfusion</strong>
 - 如果給予Norepinephrine仍無法維持B.P➡︎考慮inhaled NO
 
 > <strong>Tips:請記得嚴重PE病患，大膽先用升壓劑，把血壓先拉起來，而不是先灌水</strong>

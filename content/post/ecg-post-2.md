@@ -54,7 +54,7 @@ OMI這個觀念是在2018年由<strong>Stephen W. Smith、 Pendell Meyers、Scot
 
 <strong>圖片解釋:</strong>
 
-- <strong>(左側)正常sinus rhythm</strong>在lead II的P wave為Upright，所以P wave的再極化波(Tp wave)會inverted(因為藏在QRS裡，所以看不到。
+- <strong>(左側)正常sinus rhythm</strong>在lead II的P wave為Upright，所以P wave的再極化波(Tp wave)會inverted(因為藏在QRS裡，所以看不到)。
 - <strong>(右側)為ectopic rhythm</strong>，接近low atrium，所以此P wave會靠近QRS，且inverted，但其Tp wave會Upright，這會讓ST上升，看起來像STEMI，可參考下圖的Lead II/Lead III(有Inverted P wave)合併STE¹
 
 ![](https://miro.medium.com/v2/resize:fit:1400/1*TuSrIyF0mbJcYzPqNx3BwQ.png)
@@ -75,7 +75,7 @@ OMI這個觀念是在2018年由<strong>Stephen W. Smith、 Pendell Meyers、Scot
 
 在<strong>LBBB的病患</strong>應該要符合<strong>ST Opposition Rule與appropriate discordant。</strong>
 
-> Tips: 可以使用Modified Sgarbossa criteria(MSC)，若有concordant STE(任何一個lead)> 1mm(即使只有0.5 mm也要小心) or concordant STD>1 mm in V1~V3→就算有ischemia。另外若STE/S > 0.25， 也要高度還疑有ischemia(<strong>Fig 3</strong>)
+> Tips: 可以使用Modified Sgarbossa criteria(MSC)，若有concordant STE(任何一個lead)> 1mm(即使只有0.5 mm也要小心) or concordant STD>1 mm in V1~V3→就算有ischemia。另外若STE/S > 0.25， 也要高度還疑有ischemia(<strong>Fig 2</strong>)
 
 在<strong>PPM的病患</strong>也可以使用MSC來評估是否有ischemia，只不過應用時要注意原本的concordant STD > 1 mm in V1-V3，可以延伸看到V1-V6。
 
@@ -141,7 +141,7 @@ WPW syndrome也會有可能STE。若有見到delta wave會比較像secondary引�
 
 > Tips: 這個流程圖只能看LVH + ant.wall STEMI，其他wall沒有辦法判斷
 
-接著我們來看具有<strong>LV aneurysm病患</strong>，大多數的病患是因為之前有MI過，導致後續aneurysm產生。而這aneurysm也會讓ST產生elevation。
+<span id="lv-aneurysm"></span>接著我們來看具有<strong>LV aneurysm病患</strong>，大多數的病患是因為之前有MI過，導致後續aneurysm產生。而這aneurysm也會讓ST產生elevation。
 
 Dr.Smith寫過非常多篇有關LV aneurysm vs. OMI要怎麼區別的文章，若大家有空可以看[這篇](http://hqmeded-ecg.blogspot.com/2021/07/chest-pain-and-st-elevation.html) [^4] 。我把重點寫在下面:
 
@@ -240,13 +240,13 @@ Dr.Smith寫過非常多篇有關LV aneurysm vs. OMI要怎麼區別的文章，�
 上面Fig. 8出自[Smith ECG的OMI teaching images](http://hqmeded-ecg.blogspot.com/p/teaching-images.html)，這張圖非常常用。圖表表示了以下基本AMI知識:
 
 - 如果病患有ACO(acute coronary occlusion)，隨著時間進展，會有的ECG changes。阻塞很初期，幾乎正常，接著開始有Hyperacute T wave(HATW)出現，然後ST開始拉高，出現明顯STE。接著Q wave出現。後續出現TWI，數週到數月後T wave變回原狀。
-- 如果病患在Q wave出現之前有spontaneous reperfusion或是接受PCI/rTPA治療，就進入reperfusion evolution。此時會發現病患出現Terminal TWI(也就是biphasic TWI →一般我們說的Wellen type A)，之後會進展到Deeply TWI(Wellen type B)。當然如果已經出現Q wave，後來才接受PCI打通，也會出現前述的reperfusion T wave。
+- 如果病患在Q wave出現之前有spontaneous reperfusion或是接受PCI/rTPA治療，就進入reperfusion evolution。此時會發現病患出現Terminal TWI(也就是biphasic TWI →一般我們說的Wellens type A)，之後會進展到Deeply TWI(Wellens type B)。當然如果已經出現Q wave，後來才接受PCI打通，也會出現前述的reperfusion T wave。
 
-> Tips:  Wellen’s T wave代表的是reperfusion T wave，可以出現在任何lead<strong>(沒症狀時做的ECG)</strong>。只是如果我們說『Wellen’s syndrome』特指LAD在梗塞壞死前出現spontaneous reperfusion，其支配的V2~V3出現Terminal TWI or Deeply TWI(做12 lead ECG時，是沒症狀的)
+> Tips:  Wellens’ T wave代表的是reperfusion T wave，可以出現在任何lead<strong>(沒症狀時做的ECG)</strong>。只是如果我們說『Wellens’ syndrome』特指LAD在梗塞壞死前出現spontaneous reperfusion，其支配的V2~V3出現Terminal TWI or Deeply TWI(做12 lead ECG時，是沒症狀的)
 
 Qwave與T wave的重要性
 
-- 較大的T wave合併沒有看到Q wave or 較小的Q wave且沒有QS wave(有QS wave出現，代表已經完全梗塞，可以[看看上述LV aneurysm部分](https://medium.com/@agoodbear/how-to-detect-omi-in-10-steps-74abf60eff91#5203))→通常代表高度急性
+- 較大的T wave合併沒有看到Q wave or 較小的Q wave且沒有QS wave(有QS wave出現，代表已經完全梗塞，可以[看看上述LV aneurysm部分](#lv-aneurysm))→通常代表高度急性
 - 較小T wave或較淺的TWI或是完整的Q wave➡通常暗示不是那麼急性
 - QS wave合併淺的TWI是典型的completed MI
 - 如果是完整的Q wave合併淺的TWI暗示completed MI➡是否urgent Cath lab activation仍沒有定論
@@ -254,7 +254,7 @@ Qwave與T wave的重要性
 
 > Tips: Large T wave不管Upright or Inverted都代表仍有很多存活的心肌細胞(Upright →代表現在正在塞，但還有很多活的細胞 →趕緊PCI、Inverted →代表現在reperfusion，目前有很多存活細胞)
 
-Wellen’s syndrome觀念
+Wellens’ syndrome觀念
 
 - 找看看有無Terminal TWI(Wellens’ pattern A) or Deeply TWI(Wellens’ pattern B):通常是A演變成B
 - 有明顯的preserved R waves暗示有不穩定的thrombotic lesion仍然在coronary artery內，但是目前已經spontaneous reperfusion
@@ -262,7 +262,7 @@ Wellen’s syndrome觀念
 - 這些病患需要urgent但不是emergent Cath lab activation
 - 直到CAG之前，應該要小心monitor是否有recurrence of chest pain，是否出現STE，是否出現Pseudonormalization of T waves➡這些暗示了再次阻塞
 
-> Tips: 沒症狀又合併出現Wellen’s T wave，不代表血管已經完全自己通了，仍有不穩定的血栓在血管內，只是還沒導致阻塞，更需要嚴密監測。如果突然出現T wave變正常合併胸痛再起 →表示又阻塞了
+> Tips: 沒症狀又合併出現Wellens’ T wave，不代表血管已經完全自己通了，仍有不穩定的血栓在血管內，只是還沒導致阻塞，更需要嚴密監測。如果突然出現T wave變正常合併胸痛再起 →表示又阻塞了
 
 ---
 > # 當沒有明顯STE時
@@ -363,7 +363,7 @@ South African Flag sign的ST current of injury向量為左上，其代表暗示�
 
 Normal variant的precordial STE(如ER、LVH等)，不會同時合併precordial STD
 
-- 如果在limbs leads都沒有看到任何ST deviation(STE or STD) or Hyperacute T wave➡看看是否有reciprocal STD in V5~V6，在Early repolarization(ER)並不會出現這樣的STD，此時若在right precordial leads出現任何STE，高度暗示有anterior OMI →前面的<strong>Fig.8</strong>有描述要如何鑑別STEMI vs. ER
+- 如果在limbs leads都沒有看到任何ST deviation(STE or STD) or Hyperacute T wave➡看看是否有reciprocal STD in V5~V6，在Early repolarization(ER)並不會出現這樣的STD，此時若在right precordial leads出現任何STE，高度暗示有anterior OMI →前面的<strong>Fig.7</strong>有描述要如何鑑別STEMI vs. ER
 
 > Tips: Dr.Smith在其Blog中強調過很多次，如果在precordial leads同時發現STE、STD →Favor LAD問題<strong>(可以用PAILS來解釋)</strong>
 
@@ -382,7 +382,7 @@ Normal variant的precordial STE(如ER、LVH等)，不會同時合併precordial S
 
 ![](https://miro.medium.com/v2/resize:fit:1016/1*DF-BIZ_2k8igmESXIenZYQ@2x.png)
 
-> Tips1: 會應用到Smith 4 variable formula的場景在於診斷分不清是STEMI or ER，用了Fig.8的圖表還是分不出，就可以用公式算看看。公式的應用，只要算多次一點，就知道QRSV2(算整個QRS amplitude)、STEV360(算J point後方1.5格的STE高度)、RAV4(算V4的R wave amplitude)，然後看ECG上方電腦算的QTc帶入MDCalc，就可以知道OMI的機率。若手邊沒有電腦，也可以下載iOS or android的MDCalc app，我自己是放在打開手機最顯眼的地方，方便我使用。
+> Tips1: 會應用到Smith 4 variable formula的場景在於診斷分不清是STEMI or ER，用了Fig.7的圖表還是分不出，就可以用公式算看看。公式的應用，只要算多次一點，就知道QRSV2(算整個QRS amplitude)、STEV360(算J point後方1.5格的STE高度)、RAV4(算V4的R wave amplitude)，然後看ECG上方電腦算的QTc帶入MDCalc，就可以知道OMI的機率。若手邊沒有電腦，也可以下載iOS or android的MDCalc app，我自己是放在打開手機最顯眼的地方，方便我使用。
 >
 > Tips2: 需要注意:這些公式可能會有false-positive狀況，例如太胖導致low QRS、有PEF、myocarditis，或是因為各種原因導致的過度long QT segment
 >

@@ -146,7 +146,7 @@ Table 1 的 rationale 欄把兩邊的取向寫得很白。Primary MI 是 priorit
 
 那要叫什麼？叫**acute myocardial injury**。
 
-Troponin rise and/or fall，至少一個值超過 99th percentile，這叫 acute myocardial injury。**要升級成 MI，要有缺血的證據，還要能排除非缺血原因。**[^17]
+Troponin rise and/or fall，至少一個值超過 sex-specific 99th percentile，這叫 acute myocardial injury。**要升級成 MI，要有缺血的證據，還要能排除非缺血原因。**[^17]
 
 ### 急診每天的日常
 
@@ -184,7 +184,7 @@ Troponin rise and/or fall，至少一個值超過 99th percentile，這叫 acute
 
 引用的文獻是誰？McLaren、de Alencar、Aslanger、Meyers、Smith，2024 年 JACC Advances 那篇「From ST-Segment Elevation MI to Occlusion MI」。就是 OMI paradigm 那群人。[^25]
 
-第四版其實也有描述這些型態，只是沒有點名。它引了 de Winter 2008 那篇，寫的是「upsloping ST-segment depression with tall symmetric T waves associated with LAD occlusion」這種描述句。第五版是直接叫名字，還畫進 Figure 9。[^26]
+第四版其實也有描述這些型態，只是沒有點名。它引了 de Winter 2008 那篇，寫的是「tall, prominent, symmetrical T waves in the precordial leads, upsloping ST-segment depression >1 mm at the J-point in the precordial leads... are associated with significant left anterior descending artery (LAD) occlusion」這種描述句。第五版是直接叫名字，還畫進 Figure 9。[^26]
 
 ![原文 Figure 9：急性冠狀動脈阻塞的 ECG 特徵](../../static/images/ipic/ecg-post-18-udmi5-figure9.webp "Fig. 8. 原文 Figure 9：急性冠狀動脈阻塞的 ECG 特徵，下半部就是「沒有 STE 也要想到阻塞」的那幾個 pattern。來源同 Table 1")
 

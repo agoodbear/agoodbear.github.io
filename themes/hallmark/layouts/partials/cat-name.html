@@ -1,0 +1,4 @@
+{{- /* 分類 slug → 目前語言的分類名稱（i18n 的 cat_<slug>）；沒翻的就原樣顯示 slug。
+       用法：{{ partial "cat-name.html" "ecg" }} */ -}}
+{{- $v := T (printf "cat_%s" (lower (string .))) -}}
+{{- return (cond (eq $v "") . $v) -}}

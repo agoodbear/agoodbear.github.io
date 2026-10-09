@@ -1,0 +1,5 @@
+{{- /* data 檔欄位的語言版本：英文頁優先取 <欄位>_en，沒填就退回中文原欄位。
+       用法：{{ partial "loc.html" (dict "it" . "f" "title") }} */ -}}
+{{- $v := index .it .f -}}
+{{- if ne site.Language.Lang "zh-tw" -}}{{- with index .it (printf "%s_en" .f) -}}{{- $v = . -}}{{- end -}}{{- end -}}
+{{- return $v -}}

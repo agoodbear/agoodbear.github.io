@@ -92,7 +92,7 @@ MSC如果抓0.25這個數值，可以讓sensitivity到80%，specificity到99%。
 
 (當然，這個方程式算出來就是和你說，這非常像Ant.wall STEMI →需要高度警覺，但你千萬別就光拿這數字去和CV說，你看算出來是STEMI，要趕快做導管。沒有人會理你的啊!!!!)
 
-Ps:使用此Smith 4 variable formula，有排除條款。其中之一就是沒有reciprocal STD change。其實這方程式在這不能用。Why?因為有reciprocal change代表是明顯MI了。所以不用使用，就可以說是MI了啊!
+Ps:使用此Smith 4 variable formula，有排除條款。其中之一就是不能有reciprocal STD change。其實這方程式在這不能用。Why?因為有reciprocal change代表是明顯MI了。所以不用使用，就可以說是MI了啊!
 
 ![](https://cdn-images-1.medium.com/max/1024/1*7teHIVQfLmaSjfpxDDTxEw.png)
 ***Fig.4***

@@ -72,9 +72,9 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%99%A4%E4%BA%86ste%E4%BB%A5%E5%A
 
 <strong>Table 1右邊</strong>來自於這篇文章[^4]，裡面描述了哪些是OMI ECG finding
 
-<strong>Table 2左邊</strong>是來自於ACC於2022/10出版的急診急性胸痛專家共識裡面的表格[^5]。 裡面提到了STEMI equivalents與哪些ECG pattern可能伴隨著acute/subacute myocardial ischemia<strong>(原始表格有幾個小錯誤，大家來找碴XD)</strong>
+<strong>Table 1 Part II左邊</strong>是來自於ACC於2022/10出版的急診急性胸痛專家共識裡面的表格[^5]。 裡面提到了STEMI equivalents與哪些ECG pattern可能伴隨著acute/subacute myocardial ischemia<strong>(原始表格有幾個小錯誤，大家來找碴XD)</strong>
 
-<strong>Table 2右邊</strong>是出自Dr.Smith的最新文章[^6]，裡面寫著哪些ECG pattern具有高風險伴隨著ATO(acute total coronary occlusion)。
+<strong>Table 1 Part II右邊</strong>是出自Dr.Smith的最新文章[^6]，裡面寫著哪些ECG pattern具有高風險伴隨著ATO(acute total coronary occlusion)。
 
 #### 有點靠北…….邊多
 

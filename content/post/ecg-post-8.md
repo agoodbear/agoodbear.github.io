@@ -50,7 +50,7 @@ CPR後心律還是心室顫動，再次電擊⚡️，繼續CPR
 
 還是沒有看到明顯P wave，但QRS很明顯是窄的。紅色的或許是JPC(junctional premature complex)。整體的rhythm應是AJR(Accelerated junctional rhythm)。
 
-但是綠色箭頭就有意思了，因為我們知道QRS不寬，所以比對過來Lead I/aVL都是STE，且Lead II/III/aVF都是STD。但起來是**High lateral MI呢!!!!!!!!**
+但是綠色箭頭就有意思了，因為我們知道QRS不寬，所以比對過來Lead I/aVL都是STE，且Lead II/III/aVF都是STD。看起來是**High lateral MI呢!!!!!!!!**
 
 ![ER Bedside echo](../../static/images/ipic/j28zai.gif)
 
@@ -74,7 +74,7 @@ CPR後心律還是心室顫動，再次電擊⚡️，繼續CPR
 
 首先DSD是拿兩台電擊器，用在病患身上，以近乎同時間放電，以其能夠中斷refractory VT/Vf。[^1]
 
-而**refractory VT/Vf也就是 electrical storm，其定義是在24小時內，發生3次或以上VT、Vf或ICD電擊的情況** [^6]
+而**refractory VT/Vf和electrical storm不一樣：refractory是三次電擊後仍是VT/Vf[^rvf]；electrical storm的定義是在24小時內，發生3次或以上VT、Vf或ICD電擊的情況** [^6][^es]
 
 那麼**DSD的原理**主要是基於以下幾個方面 [^2] : 
 
@@ -182,10 +182,10 @@ Dr.Smith在這一篇文章中的一句話 [^8] ，我覺得非常讚，分享出
 
 # Learning Points:
 
-1. 當出現refractory VT/Vf(電擊超過三次以上)，可以考慮VC貼法或DSD(**目前仍沒有強力證據支持DSD**)
+1. 當出現refractory VT/Vf(三次電擊後仍是VT/Vf)，可以考慮VC貼法或DSD(**目前仍沒有強力證據支持DSD**)
 2. DSD的原理為何?
 3. 使用DSD可能的疑慮，包括增加ACLS複雜度，可能干擾high quality CPR，與可能造成去顫器的損壞➡︎**真的考慮太多，就試試VC貼法**
-4. 當出現STE，有時導管negative，也是一種positive finding，特別是當你要OMI vs. Takosubo、OMI vs. myocarditis時，導管陰性，更可以讓診斷偏向某一邊。
+4. 當出現STE，有時導管negative，也是一種positive finding，特別是當你要OMI vs. Takotsubo、OMI vs. myocarditis時，導管陰性，更可以讓診斷偏向某一邊。
 
 # 參考資料:
 
@@ -197,3 +197,5 @@ Dr.Smith在這一篇文章中的一句話 [^8] ，我覺得非常讚，分享出
 [^6]: Electrical Storm • LITFL • CCC Cardiology - [link](https://litfl.com/electrical-storm/)
 [^7]: Cheskes, S., Dorian, P., Feldman, M., McLeod, S., Scales, D. C., Pinto, R., Turner, L., Morrison, L. J., Drennan, I. R., & Verbeek, P. R. (2020). Double sequential external defibrillation for refractory ventricular fibrillation: The DOSE VF pilot randomized controlled trial. __Resuscitation__, __150__, 178–184. https://doi.org/10.1016/j.resuscitation.2020.02.010
 [^8]: Dr. Smith's ECG Blog: What is a useful next step in the evaluation of this patient with Chest pain and this ECG? - [link](https://hqmeded-ecg.blogspot.com/2020/07/what-is-useful-next-step-in-evaluation.html)
+[^es]: Baldi E, Conte G, Zeppenfeld K, Lenarczyk R, Guerra JM, Farkowski MM, de Asmundis C, Boveda S. Contemporary management of ventricular electrical storm in Europe: results of a European Heart Rhythm Association Survey. *Europace*. 2023;25(4):1277-1283. DOI: 10.1093/europace/euac151
+[^rvf]: Nichol G, Atkins DL, Koster RW, et al. Scientific Priorities Related to the Use of Double Sequential External Defibrillation in Patients With Refractory Cardiac Arrest: Report From a Multistakeholder Thinktank. *J Am Heart Assoc*. 2025;14(21):e044130. DOI: 10.1161/JAHA.125.044130

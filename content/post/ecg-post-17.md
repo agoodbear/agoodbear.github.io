@@ -54,7 +54,7 @@ tags:
 先看 **Fig. 1**，照 Rate-Rhythm-Axis-Interval-Ischemia 一項一項看（這是 Ken Grauer 教的順序，比較不會漏東西）：
 
 {{< ecg-read >}}
-Rate: 竇性，心室率不快
+Rate: 心室率不快
 Rhythm: SR（不過等下那張 strip 就變了）
 Axis: normal axis
 Interval: QRS 窄
@@ -219,7 +219,7 @@ Case 1 就是活例：導管室高度懷疑 dissection 之後做 bedside echo，
 
 其他還有：胸痛型態怪（突然爆炸痛、遷移痛）；或者 ECG 像 STEMI，但影像 / 治療反應跟「單純一條冠狀動脈的 ACS」兜不起來，像 Case 1、Case 2 都是進了導管室、standard 處置兜不起來才翻案的。
 
-補一個客觀工具，**ADD-RS（Aortic Dissection Detection Risk Score）**：高風險病史、疼痛型態、理學三大類算分，搭配 D-dimer（AD 常升高；低風險 ADD-RS ≤1 且 D-dimer <500 可以幫忙 rule out）。也提醒一句：troponin 在 AD 通常不升或只輕升，別被「troponin 正常」安慰。
+補一個客觀工具，**ADD-RS（Aortic Dissection Detection Risk Score）**：高風險病史、疼痛型態、理學三大類算分，搭配 D-dimer（AD 常升高；低風險 ADD-RS ≤1 且 D-dimer <500 ng/mL 可以幫忙 rule out[^nazerian2018]）。也提醒一句：troponin 在 AD 通常不升或只輕升，別被「troponin 正常」安慰。
 
 ### 第二步：focused TTE 的重點不是心包膜，是主動脈根部
 
@@ -272,6 +272,7 @@ Case 1 就是活例：導管室高度懷疑 dissection 之後做 bedside echo，
 [^ohle2018]: Ohle R, et al. High risk clinical features for acute aortic dissection: a case-control study. *Acad Emerg Med* 2018;25(4):378-87. PMID 29218798.
 [^um2018]: Um SW, et al. Bilateral blood pressure differential as a clinical marker for acute aortic dissection. *Emerg Med J* 2018;35(9):556-8. PMID 30021832.
 [^muntner2019]: Muntner P, et al. Measurement of blood pressure in humans: AHA scientific statement. *Hypertension* 2019;73(5):e35-e66. PMID 30827125.
+[^nazerian2018]: Nazerian P, et al. Diagnostic accuracy of the Aortic Dissection Detection Risk Score plus D-dimer for acute aortic syndromes: the ADvISED prospective multicenter study. *Circulation* 2018;137(3):250-258. PMID 29030346. DOI: 10.1161/CIRCULATIONAHA.117.029457
 
 ---
 

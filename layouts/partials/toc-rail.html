@@ -40,11 +40,11 @@
   @media print{.tocr,.tocr-fab,.tocr-sheet{display:none!important}}
 </style>
 
-<nav class="tocr" id="tocRail" aria-label="文章目次">
-  <div class="tocr-hd"><span>目次</span><button class="tocr-tg" id="tocTg" type="button" title="收合／展開">－</button></div>
+<nav class="tocr" id="tocRail" aria-label="{{ T "toc_aria" }}">
+  <div class="tocr-hd"><span>{{ T "toc" }}</span><button class="tocr-tg" id="tocTg" type="button" title="{{ T "toc_toggle" }}">－</button></div>
   <ul class="tocr-list" id="tocList"></ul>
 </nav>
-<button class="tocr-fab" id="tocFab" type="button">☰ 目次</button>
+<button class="tocr-fab" id="tocFab" type="button">☰ {{ T "toc" }}</button>
 <div class="tocr-sheet" id="tocSheet"><div id="tocSheetList"></div></div>
 
 <script>

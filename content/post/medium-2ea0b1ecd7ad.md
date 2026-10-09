@@ -25,7 +25,7 @@ canonicalURL: "https://medium.com/@agoodbear/73%E6%AD%B2%E7%94%B7%E6%80%A7-%E8%8
 
 73歲男性，半夜來就診。因為胸痛厲害，所以當班急診醫師也做了Chest CTA去排除主動脈剝離。
 
-早上我接班後，我自己的習慣會去把交班主述胸痛的病患，再去看一眼，前一班所做的心電圖。病患一開始的TnI為0.26 mg/mL，已經是>99th percentile of URL。預計之後會在抽第二次心臟酵素。
+早上我接班後，我自己的習慣會去把交班主述胸痛的病患，再去看一眼，前一班所做的心電圖。病患一開始的TnI為0.26 ng/mL，已經是>99th percentile of URL。預計之後會在抽第二次心臟酵素。
 
 Initial ECG如上圖，我看完後，就直接去看病患，看看目前病患的胸痛狀況目前如何?
 
@@ -178,7 +178,7 @@ Fig.10應該是我的心電圖Blog，出現最多次的一張圖吧XD
 ### 文章重點:
 
 1. 如何診斷Classic STEMI(V2/V3定義不同)
-2. AMI定義(Fig.1)
+2. AMI定義(Fig.2)
 3. V2/V3如果是minimal STD or isoelectric basline有意義嗎?
 4. Ischemic pattern的STD(downsloping/Shelf-like STD)
 5. 在non-ECG-gated contrast-enhanced CT看到Myocardial perfusion defect(MPD)，可信嗎?

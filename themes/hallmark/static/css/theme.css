@@ -502,6 +502,34 @@ article.card a:hover .image.image-stamp::before { background: var(--color-accent
 }
 .search-trigger-icon { width: 14px; height: 14px; flex: 0 0 auto; }
 
+/* 中／EN 語言切換鈕（partials/lang-switch.html）——跟搜尋鈕同一種膠囊，窄螢幕也保留文字 */
+.lang-switch {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.7rem;
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule);
+  border-radius: 999px;
+  font-family: var(--font-body-zh);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-2);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color var(--dur-short) var(--ease-out),
+              color var(--dur-short) var(--ease-out),
+              background var(--dur-short) var(--ease-out);
+}
+.lang-switch:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-ink);
+  background: var(--color-paper);
+}
+.lang-switch-icon { width: 14px; height: 14px; flex: 0 0 auto; }
+
 /* Overlay */
 .site-search[hidden] { display: none; }
 .site-search {
@@ -677,3 +705,19 @@ article.card a:hover .image.image-stamp::before { background: var(--color-accent
   color:var(--color-ink-3);
 }
 @media(max-width:700px){.ecg-articles-heading{margin-top:36px;}.ecg-articles-heading h2{font-size:23px;}}
+
+/* 英文版文章：頂端「從中文原文翻譯」那行，以及連到還沒翻譯的中文文章後面的 (in Chinese) */
+.translation-note {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-3);
+  border-left: 2px solid var(--color-accent);
+  padding: 0.2rem 0 0.2rem 0.8rem;
+  margin: 0 0 var(--space-lg);
+}
+.translation-note a { color: var(--color-accent-ink); }
+.lang-note {
+  font-size: 0.82em;
+  color: var(--color-ink-3);
+  white-space: nowrap;
+}
