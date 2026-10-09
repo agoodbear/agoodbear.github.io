@@ -764,7 +764,7 @@ items:
   duration: 55.2
   refs:
   - AHA 2025 Adult ALS (Circulation 2025;152(suppl 2):S538–S577)
-  - ERC Guidelines 2025: Adult ALS
+  - "ERC Guidelines 2025: Adult ALS"
   - LITFL
   - Dr. Smith's ECG Blog
   - Ken Grauer ECG Blog
@@ -886,7 +886,7 @@ items:
   - ABC of Clinical Electrocardiography
   - Jones, Getting Acquainted With Ischemia and Infarction
   - AHA 2025 Adult ALS (Circulation 2025;152(suppl 2):S538–S577)
-  - {'ERC Guidelines 2025': 'Adult ALS'}
+  - "ERC Guidelines 2025: Adult ALS"
   - Tintinalli's Emergency Medicine 9e
   - Baltazar, Basic & Bedside Electrocardiography
   - Stewart 1986 Ann Intern Med

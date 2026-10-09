@@ -75,9 +75,11 @@ img { max-width: 100%; height: auto; display: block; }
   z-index: 10;
 }
 .brandstrip-inner {
-  max-width: 1240px;
+  /* 不設 max-width：左邊靠 padding 跟內文 1240 欄對齊，右邊的搜尋／EN 一路推到視窗右緣，
+     讓導覽列多出空間，「實用工具」「關於我」才放得下（2026-10-10 Bear） */
   margin: 0 auto;
   padding: var(--space-sm) var(--space-lg);
+  padding-left: max(var(--space-lg), calc((100vw - 1240px) / 2 + var(--space-lg)));
   display: flex;
   align-items: center;
   justify-content: space-between;
