@@ -947,6 +947,49 @@ items:
   blog_url: https://agoodbear.com/post/medium-962b3d4d3f0e/
   published: true
   published_at: '2026-10-09'
+- id: ncq-02-afl21
+  series: narrow-qrs
+  title: 心跳150的窄QRS：先想flutter 2:1
+  subtitle: 窄QRS三部曲 02／03
+  point: 窄QRS、心跳150±20，先想flutter 2:1，再用Bix rule在QRS裡找另一個P
+  duration: 56.5
+  refs:
+  - Dr. Smith's ECG Blog（flutter 2:1 病例；2018-08-03 Ken Grauer評論）
+  - Mattu, ECGs for the Emergency Physician Vol 1
+  - ECG in Emergency Medicine p.119
+  refs_src: ncq-02-afl21/social_caption.txt（IG 版）
+  version: v2
+  src: ncq-02-afl21/out/ncq-02-afl21-v2.mp4
+  src_phone: ncq-02-afl21/out/ncq-02-afl21-v2-phone.mp4
+  video: ncq-02-afl21/ncq-02-afl21-v2.mp4
+  phone: ncq-02-afl21/ncq-02-afl21-v2-phone.mp4
+  poster: ncq-02-afl21/ncq-02-afl21-v2-poster.webp
+  cover_src: _workflow/reels_cover/out/13-ncq-02-afl21.png
+  blog_title: Narrow QRS tachycardia
+  blog_url: https://agoodbear.com/post/medium-962b3d4d3f0e/
+  published: false
+- id: ncq-03-tx
+  series: narrow-qrs
+  title: 窄QRS又快：先看穩不穩定
+  subtitle: 窄QRS三部曲 03／03
+  point: 窄QRS又快，先看穩不穩定；不穩定電擊，穩定先vagal、再adenosine
+  duration: 58.3
+  refs:
+  - AHA 2025 Adult Tachyarrhythmia With a Pulse Algorithm
+  - AHA 2025 Electrical Cardioversion Algorithm
+  - REVERT（Lancet 2015）
+  - Ken Grauer ECG Blog #240（PSVT／AVNRT 病例）
+  refs_src: ncq-03-tx/social_caption.txt（IG 版）
+  version: v3
+  src: ncq-03-tx/out/ncq-03-tx-v3.mp4
+  src_phone: ncq-03-tx/out/ncq-03-tx-v3-phone.mp4
+  video: ncq-03-tx/ncq-03-tx-v3.mp4
+  phone: ncq-03-tx/ncq-03-tx-v3-phone.mp4
+  poster: ncq-03-tx/ncq-03-tx-v3-poster.webp
+  cover_src: _workflow/reels_cover/out/14-ncq-03-tx.png
+  blog_title: Narrow QRS tachycardia
+  blog_url: https://agoodbear.com/post/medium-962b3d4d3f0e/
+  published: false
 - id: rbbb-stemi
   series: omi
   title: RBBB合併STEMI
