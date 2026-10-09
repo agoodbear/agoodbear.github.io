@@ -27,17 +27,17 @@ tags:
 
 82歲男性，主述早上開始胸痛、cold sweating，微喘
 
-昨天同事傳給我看，問我**是不是STEMI**。
+昨天同事傳給我看，問我<strong>是不是STEMI</strong>。
 
 ![ER arrival ECG](../../static/images/ipic/xgqpl7.png)
 
-**我回答是。**
+<strong>我回答是。</strong>
 
-<mark>**不過更精確一點應該要說，這個病患並沒有符合STEMI criteria，但是有OMI(Occlusion MI)➔血管阻塞了。**<mark>
+<mark><strong>不過更精確一點應該要說，這個病患並沒有符合STEMI criteria，但是有OMI(Occlusion MI)➔血管阻塞了。</strong><mark>
 
 ---
 
-**可是明明沒有符合STEMI criteria啊~~為何血管阻塞了?**
+<strong>可是明明沒有符合STEMI criteria啊~~為何血管阻塞了?</strong>
 
 ### 如果從原本的ACS分類來看
 
@@ -51,7 +51,7 @@ tags:
 
 在這篇文章中 [^1]  描述到，如果利用STEMI criteria針對initial ED ECG來做任何occlusion(指發生OMI)診斷，則只有21%的sensitivity。
 
-這是什麼意思?也就是**可能有高達8成的AMI病患，無法透過STEMI criteria做出AMI的診斷**。
+這是什麼意思?也就是<strong>可能有高達8成的AMI病患，無法透過STEMI criteria做出AMI的診斷</strong>。
 
 ![](../../static/images/ipic/7h4ptc.png)
 
@@ -69,7 +69,7 @@ Axis:Extreme axis deviation
 
 Interval:No QT prolong
 
-<mark>**Ischemia:**<mark>
+<mark><strong>Ischemia:</strong><mark>
 
 讓我們來仔細看看，12 lead ECG，有沒有哪裡有ischemic change。先來看看Chest leads
 
@@ -83,43 +83,43 @@ Interval:No QT prolong
 
 ECG在有BBB(bundle branch block)的狀況下，著實不好評估是否AMI。
 
-幸好如果ECG是LBBB的話，有**Sgarbossa criteria**與**Dr.Smith所modified的Sgarbossa criteria C(MSC)**來強力支援診斷。
+幸好如果ECG是LBBB的話，有<strong>Sgarbossa criteria</strong>與<strong>Dr.Smith所modified的Sgarbossa criteria C(MSC)</strong>來強力支援診斷。
 
-### <mark>**那麼RBBB如果出現MI，該怎麼判斷呢?**<mark>
+### <mark><strong>那麼RBBB如果出現MI，該怎麼判斷呢?</strong><mark>
 
 首先我們必須要有一些基本背景知識 [^3]
 
-<u>在BBB的狀況下，因為有束支傳導阻斷，所以去極化異常，那當然爾再極化(repolarization)的ECG也會有異常變化</u>。<mark>**此異常變化分成兩類:**<mark>
+<u>在BBB的狀況下，因為有束支傳導阻斷，所以去極化異常，那當然爾再極化(repolarization)的ECG也會有異常變化</u>。<mark><strong>此異常變化分成兩類:</strong><mark>
 
-1. **Primary repolarization**:指在心肌細胞出現病理方面問題，比如缺血、缺氧、酸血症、藥物中毒，電解質異常等
-2. **Secondary repolarization**:指正常的異常變化(**中文真是博大精深，外國人肯定不懂我寫什麼鬼XD**)
+1. <strong>Primary repolarization</strong>:指在心肌細胞出現病理方面問題，比如缺血、缺氧、酸血症、藥物中毒，電解質異常等
+2. <strong>Secondary repolarization</strong>:指正常的異常變化(<strong>中文真是博大精深，外國人肯定不懂我寫什麼鬼XD</strong>)
 
 ![典型RBBB變化 in V1](../../static/images/ipic/drpfug.png)
 
-#### <mark>Fig.4是一個**典型的RBBB在V1的ECG形狀**，有幾個基本知識(<u>**典型正常變化**</u>)我們要了解<mark> [^3]
+#### <mark>Fig.4是一個<strong>典型的RBBB在V1的ECG形狀</strong>，有幾個基本知識(<u><strong>典型正常變化</strong></u>)我們要了解<mark> [^3]
 
 - repolarization始於J point這個點開始，不是J point之後
 - J point通常位於baseline或低於baseline(不超過1 mm的STD都可接受)。任何超過1 mm的STD都必須考慮出現primary repolarization的缺血變化
 - 從J point開始，baseline會立刻向下傾斜，形成inverted T wave
 - 在J point與T wave的最低點之間，會出現subtle的upward convexity。這是很重要的secondary repolarization異常變化特徵。通常都很微小，且出現頻率非常高。
 
-以上**這些secondary repolarization findings在RBBB常見於V1/aVR，偶爾在III會見到**。另外在LBBB則會在I/aVL/V5/V6見到這樣的變化，但V1不會見到，反而是在V1見到像V5、V6的secondary repolarization的誇大鏡像反應(**exaggerated reciprocal of this secondary repolarization abnormality**)，並且包括J point的上升。
+以上<strong>這些secondary repolarization findings在RBBB常見於V1/aVR，偶爾在III會見到</strong>。另外在LBBB則會在I/aVL/V5/V6見到這樣的變化，但V1不會見到，反而是在V1見到像V5、V6的secondary repolarization的誇大鏡像反應(<strong>exaggerated reciprocal of this secondary repolarization abnormality</strong>)，並且包括J point的上升。
 
-看完典型的正常變化，讓<mark>**我們來看看當出現primary repolarization(例如ischemia造成)的異常的變化，可能長成什麼樣子呢?**<mark>
+看完典型的正常變化，讓<mark><strong>我們來看看當出現primary repolarization(例如ischemia造成)的異常的變化，可能長成什麼樣子呢?</strong><mark>
 
 ![Primary repolarization異常變化](../../static/images/ipic/k4bmqh.png)
 
-<mark>**要怎麼理解這四種異常變化呢?其實只要去看正常有哪些變化就好。就可以推敲出，上圖中變化皆屬異常。**<mark>
+<mark><strong>要怎麼理解這四種異常變化呢?其實只要去看正常有哪些變化就好。就可以推敲出，上圖中變化皆屬異常。</strong><mark>
 
 ⭐️< 1mm STD叫做正常的discordant STD(appropriate discordant)，但是超過1 mm，叫做excessive discordant，這就要考慮缺血。
 
 那麼如果出現excessive discordant是什麼樣的情況呢?可能是合併出現Post.wall MI。所以才會在V1-3把J point往下拉，形成更深的STD。
 
-所以<mark>**RBBB出現Post.wall MI，在診斷上非常具有挑戰性**<mark>。因為RBBB本來就可以有正常的STD in V1-3，而要診斷Post.wall MI是要在V1-3出現STD時需要考慮的問題。兩者在STD有重疊，一者正常、一者異常。該怎麼區別？就是前面講的**出現過深的STD就需要考慮** [^4] ，下面來舉個例子。
+所以<mark><strong>RBBB出現Post.wall MI，在診斷上非常具有挑戰性</strong><mark>。因為RBBB本來就可以有正常的STD in V1-3，而要診斷Post.wall MI是要在V1-3出現STD時需要考慮的問題。兩者在STD有重疊，一者正常、一者異常。該怎麼區別？就是前面講的<strong>出現過深的STD就需要考慮</strong> [^4] ，下面來舉個例子。
 
 ![文獻範例](../../static/images/ipic/wrqjyb.png)
 
-Fig.6是舉例的這篇文章 [^4] 內的範例，可以看到這位病患開始AMI時，有inf.leads STE，另外也出現R't precordial leads STD(有Post.wall MI)。**2:48 PM**的ECG開始出現RBBB pattern，可以見到V3有明顯的excessive discordant STD。
+Fig.6是舉例的這篇文章 [^4] 內的範例，可以看到這位病患開始AMI時，有inf.leads STE，另外也出現R't precordial leads STD(有Post.wall MI)。<strong>2:48 PM</strong>的ECG開始出現RBBB pattern，可以見到V3有明顯的excessive discordant STD。
 
 ⭐️另外在該出現ST segment downsloping with TWI的R't precordial leads中，如果看到Upright T wave，也需要小心ischemia
 
@@ -127,7 +127,7 @@ Fig.6是舉例的這篇文章 [^4] 內的範例，可以看到這位病患開始
 
 ⭐️如果ST segment具有plateau形狀，而不是downsloping。之後的T wave是Symmetric而不是asymmetric也都得要小心。
 
-### <mark>**來看看文獻上，在RBBB的狀況下，怎樣的情況需要懷疑血管阻塞了?** [^2]<mark>
+### <mark><strong>來看看文獻上，在RBBB的狀況下，怎樣的情況需要懷疑血管阻塞了?</strong> [^2]<mark>
 
 ![](../../static/images/ipic/vqeqal.png)
 
@@ -135,19 +135,19 @@ Fig.6是舉例的這篇文章 [^4] 內的範例，可以看到這位病患開始
 
 這篇review article把可能有ATO(acute total occlusion)的High risk ECG patterns都寫了出來。
 
-<mark>**在RBBB的情況下，任何STE的出現都必須考慮有血管阻塞。**<mark> IRA為proximal LAD。
+<mark><strong>在RBBB的情況下，任何STE的出現都必須考慮有血管阻塞。</strong><mark> IRA為proximal LAD。
 
-**Dr.Smith**也曾說在**RBBB的狀況下，不應該有discordant ST deviation(例外:V2/V3可以有< 1 mm的discordant STD)** [^5]
+<strong>Dr.Smith</strong>也曾說在<strong>RBBB的狀況下，不應該有discordant ST deviation(例外:V2/V3可以有< 1 mm的discordant STD)</strong> [^5]
 
-心電圖大師**Amal mattu**，也在多次教學裡面提到，RBBB不能有任何ST deviation(**就算有minimal STE在V1~V3都要擔心**)，ICRBBB也是符合此規則 [^6]
+心電圖大師<strong>Amal mattu</strong>，也在多次教學裡面提到，RBBB不能有任何ST deviation(<strong>就算有minimal STE在V1~V3都要擔心</strong>)，ICRBBB也是符合此規則 [^6]
 
-此外在<mark>**2017 ESC STEMI Guideline針對病患出現RBBB，有以下建議**<mark> [^7] :
+此外在<mark><strong>2017 ESC STEMI Guideline針對病患出現RBBB，有以下建議</strong><mark> [^7] :
 
 ![](../../static/images/ipic/s3xu79.png)
 
 ### <mark><u>小小總結以上所說RBBB在哪些狀況下需要考慮缺血</u>:<mark>
 
-1. 在RBBB的情況下(特別是V1-V3)，不應該有任何discordant ST deviation➔**只要minimal STE就必須考慮缺血**
+1. 在RBBB的情況下(特別是V1-V3)，不應該有任何discordant ST deviation➔<strong>只要minimal STE就必須考慮缺血</strong>
 2. V1-V3可以出現discordant STD，但如果出現excessive discordant STD(> 1mm的STD)，就必須考慮缺血
 3. 如果在容易見到secondary repolarization ECG findings的leads(aVR/V1-3、III)，出現不同的ECG findings變化，都必須考慮缺血(見Fig.5)
 4. 不懂上述三樣ECG change，也不管ECG長怎樣(跳VT/Vf總該要電吧XD)，RBBB合併持續胸痛，必須考慮缺血
@@ -156,7 +156,7 @@ RBBB with AMI有點小複雜，不像LBBB/PPM直接應用Sgarbossa criteria與Mo
 
 但只要稍微了解BBB會有所謂的secondary repolarization ECG change，只要在常見secondary repolarization changes的leads，出現不同的變化，都要想可能是primary repolarization ECG changes(如缺血)。
 
-**再無腦一點死記硬背，就記RBBB出現任何ST deviation(除了V1-3可以有< 1mm的STD)，就要想缺血。**
+<strong>再無腦一點死記硬背，就記RBBB出現任何ST deviation(除了V1-3可以有< 1mm的STD)，就要想缺血。</strong>
 
 ## Case繼續～～
 
@@ -166,13 +166,13 @@ RBBB with AMI有點小複雜，不像LBBB/PPM直接應用Sgarbossa criteria與Mo
 
 這位病患的Limb leads，II的J point在basline上面，III/aVF有出現約1格的STD
 
-這是High lateral lead的**reciprocal STD change**。可以知道可能是比較**近端一點的LAD受到阻塞(proximal LAD)導致**。
+這是High lateral lead的<strong>reciprocal STD change</strong>。可以知道可能是比較<strong>近端一點的LAD受到阻塞(proximal LAD)導致</strong>。
 
-此外<mark>**如果是出現newly RBBB，那麼culprit lesion可以先猜LAD。為何?**<mark>
+此外<mark><strong>如果是出現newly RBBB，那麼culprit lesion可以先猜LAD。為何?</strong><mark>
 
 ![Coronary a. supply](../../static/images/ipic/5nvgoo.jpg)
 
-**RBB主要是由LAD的septal branches支配、少部分由collateral supply(從RCA or LCx)支配(看是R't dominant or L't dominant來決定)，所以RBB說實在話，其實是dual blood supply**。
+<strong>RBB主要是由LAD的septal branches支配、少部分由collateral supply(從RCA or LCx)支配(看是R't dominant or L't dominant來決定)，所以RBB說實在話，其實是dual blood supply</strong>。
 
 所以當出現RBBB，先猜LAD occlusion。
 
@@ -186,27 +186,27 @@ Pul.trunk塞住，導致RV dilate，RV dilate時就會拉扯spetum裡面的RBB�
 
 此外New RBBB in STEMI的死亡率比new LBBB in STEMI還高。而且在Bifascicular block in STEMI死亡率是最高的➡通常是RBBB+LAFB，原因是LAFB比較細，對於缺血比較不具耐受性，因此常合併受傷
 
-換句話說:<mark>**STEMI 合併 New RBBB 或 Bifascicular Block 是高危險群**，特別是 **RBBB + LAFB**<mark>，須高度懷疑廣泛前壁心肌梗塞(LAD occlusion)。
+換句話說:<mark><strong>STEMI 合併 New RBBB 或 Bifascicular Block 是高危險群</strong>，特別是 <strong>RBBB + LAFB</strong><mark>，須高度懷疑廣泛前壁心肌梗塞(LAD occlusion)。
 
-由於**LAD occlusion with RBBB+LAFB**，具有非常高的死亡風險。在這篇文章中，作者認為**至少有20-50%會在PCI之前會cardiogenic shock或cardiac arrest**  [^8] 。
+由於<strong>LAD occlusion with RBBB+LAFB</strong>，具有非常高的死亡風險。在這篇文章中，作者認為<strong>至少有20-50%會在PCI之前會cardiogenic shock或cardiac arrest</strong>  [^8] 。
 
 ## Case繼續～～
 
 ![到院4小時後的ECG](../../static/images/ipic/mtveyc.png)
 
-同事雖然覺得Fig.1的ECG怪怪的，但因為沒有明顯符合STEMI criteria，所以選擇等待TnI。後續初始的TnI為正常，於是等待第二次追蹤心臟酵素+F/U ECG(**4 hours later**)。
+同事雖然覺得Fig.1的ECG怪怪的，但因為沒有明顯符合STEMI criteria，所以選擇等待TnI。後續初始的TnI為正常，於是等待第二次追蹤心臟酵素+F/U ECG(<strong>4 hours later</strong>)。
 
-**想到前面所說的LAD occlusion with RBBB+LAFB，出現這樣的ECG pattern，在做PCI之前會有20-50%出現cardiogenic shock或cardiac arrest。好險這4小時，病患沒有發生什麼特別的事(冒冷汗🥶)**
+<strong>想到前面所說的LAD occlusion with RBBB+LAFB，出現這樣的ECG pattern，在做PCI之前會有20-50%出現cardiogenic shock或cardiac arrest。好險這4小時，病患沒有發生什麼特別的事(冒冷汗🥶)</strong>
 
 F/U的ECG，毫無懸念的Call了CV。
 
-**CAG: LAD-M total occlusion**
+<strong>CAG: LAD-M total occlusion</strong>
 
 ![](../../static/images/ipic/qf1i47.jpg)
 
 在這邊還有一個這種ECG pattern辨識的小技巧，必須要說。
 
-<mark>**RBBB+LAFB with AMI，很常見到downsloping STE➔出現機率非常非常非常高(重要說三次)，幾乎是規則而不是例外了!!!!**<mark>
+<mark><strong>RBBB+LAFB with AMI，很常見到downsloping STE➔出現機率非常非常非常高(重要說三次)，幾乎是規則而不是例外了!!!!</strong><mark>
 
 這樣pattern的ECG，有時候不是很好辨識，一但錯過，就很容易讓病患陷入危險當中(急診室collapse)。
 
@@ -214,7 +214,7 @@ F/U的ECG，毫無懸念的Call了CV。
 
 ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fagoodbear%2FOeVfMvdy5b.png?alt=media&token=a3a98afe-7f1b-4a24-bde1-7c9560cff096)
 
-有時候我們看ECG看太快，不仔細看。就容易只判讀RBBB+LAFB，殊不知**這一張是絕對的RBBB+STEMI(可以考One-film diagnosis)**。
+有時候我們看ECG看太快，不仔細看。就容易只判讀RBBB+LAFB，殊不知<strong>這一張是絕對的RBBB+STEMI(可以考One-film diagnosis)</strong>。
 
 那麼該怎麼辦呢?
 

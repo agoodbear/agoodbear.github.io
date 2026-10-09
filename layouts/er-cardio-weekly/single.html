@@ -38,7 +38,7 @@
       <div class="pc-sub">這週值得你下一個班就改的動作。想深讀往下看重點卡。</div>
       <ol>
         {{ range $i, $c := . }}
-        <li><span class="pc-n">{{ printf "%02d" (add $i 1) }}</span><span class="pc-text">{{ $c.text | safeHTML }}{{ with $c.href }}<a class="pc-src" href="{{ . }}" target="_blank" rel="noopener">{{ $c.source }} ↗</a>{{ else }}{{ with $c.source }}<span class="pc-src">{{ . }}</span>{{ end }}{{ end }}</span></li>
+        <li><span class="pc-n">{{ printf "%02d" (add $i 1) }}</span><span class="pc-text">{{ $c.text | replaceRE `\*\*(.+?)\*\*` "<strong>$1</strong>" | safeHTML }}{{ with $c.href }}<a class="pc-src" href="{{ . }}" target="_blank" rel="noopener">{{ $c.source }} ↗</a>{{ else }}{{ with $c.source }}<span class="pc-src">{{ . }}</span>{{ end }}{{ end }}</span></li>
         {{ end }}
       </ol>
     </div>

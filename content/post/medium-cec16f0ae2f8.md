@@ -54,9 +54,9 @@ V1~V6的TWI是不是Wellen’s wave?要先知道什麼是Wellen’s wave，我�
 那麼為什麼會有這兩種TWI出現呢?
 
 [![](https://cdn-images-1.medium.com/max/1024/1*imoeW1K2zblX9E2-ff6Wrw@2x.png)](http://hqmeded-ecg.blogspot.com/p/teaching-images.html)
-***Fig.1***
+<strong><em>Fig.1</em></strong>
 
-首先，我們來看看**Fig.1**。這張圖**上方**講的是ACO(Acute coronary occlusion)會有哪些ECG變化。**下方**講的是在infarction之前出現reperfusion，之後會有哪些典型的ECG變化。這個之後講。
+首先，我們來看看<strong>Fig.1</strong>。這張圖<strong>上方</strong>講的是ACO(Acute coronary occlusion)會有哪些ECG變化。<strong>下方</strong>講的是在infarction之前出現reperfusion，之後會有哪些典型的ECG變化。這個之後講。
 
 那麼哪些狀況會導致reperfusion呢?包括spontaneous reperfusion(自己通了)、打了rTPA、或者做了PCI後通了。
 
@@ -64,10 +64,10 @@ V1~V6的TWI是不是Wellen’s wave?要先知道什麼是Wellen’s wave，我�
 
 在Smith ECG Blog的這篇文章，則表示在STEMI中有19%會出現spontaneous reperfusion with TIMI flow-3[^2]。
 
-> **Tips:血管阻塞是動態的，所以有可能會有spontaneous reperfusion出現**
+> <strong>Tips:血管阻塞是動態的，所以有可能會有spontaneous reperfusion出現</strong>
 
 ![](https://cdn-images-1.medium.com/max/1024/1*GAsTylENrLZRlFheGIhZgA@2x.png)
-***Fig.2***
+<strong><em>Fig.2</em></strong>
 
 那我們開始來講reperfusion之後的典型的ECG change包括Fig.2的Pattern A與Pattern B。
 
@@ -75,21 +75,21 @@ Pattern A叫做terminal TWI也就是biphasic TWI，而Pattern B為deeply TWI。A
 
 通常都是Pattern A轉變成Pattern B。而且此Reperfusion evolution越明顯，代表有一定程度的心肌被搶救回來[^3]。也就是TWI的深度會和可存活的心肌細胞相關[^4]。
 
-Wellens’ syndrome指的是血管有阻塞在infarction『**之前**』，血管突然通了 (產生spontaneous reperfusion)。所以產生了reperfusion T wave。因為是Wellen命名的syndrome，他當時是特指在V2~V3出現TWI。當然reperfusion T wave不一定要出現在V2~V3，也可以出現在lateral leads、High lateral leads、inf.leads都可以，就看支配這些區域的血管，是不是有產生reperfusion。
+Wellens’ syndrome指的是血管有阻塞在infarction『<strong>之前</strong>』，血管突然通了 (產生spontaneous reperfusion)。所以產生了reperfusion T wave。因為是Wellen命名的syndrome，他當時是特指在V2~V3出現TWI。當然reperfusion T wave不一定要出現在V2~V3，也可以出現在lateral leads、High lateral leads、inf.leads都可以，就看支配這些區域的血管，是不是有產生reperfusion。
 
 我們來看看診斷的定義:在Rhinehart et al這篇文章中描述了其定義[^5]
 
-- **Deeply inverted or biphasic T waves in V2–3 (may extend to V1–6)**
-- **ECG pattern present in pain-free state →在症狀緩解時出現TWI**
+- <strong>Deeply inverted or biphasic T waves in V2–3 (may extend to V1–6)</strong>
+- <strong>ECG pattern present in pain-free state →在症狀緩解時出現TWI</strong>
 - Isoelectric or minimally-elevated ST segment (< 1mm)
-- No precordial Q waves →**有precordial Q wave，代表已經infarction，不符合明顯infarction之前的ECG變化定義**
-- Preserved precordial R wave progression →**有PRWP出現，可能代表已經infarction**
+- No precordial Q waves →<strong>有precordial Q wave，代表已經infarction，不符合明顯infarction之前的ECG變化定義</strong>
+- Preserved precordial R wave progression →<strong>有PRWP出現，可能代表已經infarction</strong>
 - Recent history of angina →曾經出現至少20分鐘以上的典型胸痛
 - Normal or slightly elevated serum cardiac markers
 
-這定義中有幾個**診斷**Wellens’ syndrome**的重點** →**ECG必須是症狀緩解時做的，在precordial leads不能有Q wave且要preserved R wave progression**。這些要符合才能說是Wellen’s syndrome。
+這定義中有幾個<strong>診斷</strong>Wellens’ syndrome<strong>的重點</strong> →<strong>ECG必須是症狀緩解時做的，在precordial leads不能有Q wave且要preserved R wave progression</strong>。這些要符合才能說是Wellen’s syndrome。
 
-**所以並不是看到precordial leads出現TWI就是**Wellens’ syndrome**。**
+<strong>所以並不是看到precordial leads出現TWI就是</strong>Wellens’ syndrome<strong>。</strong>
 
 所以這張ECG是在病患不舒服下做的。雖然有出現precordial leads TWI，但是並不能稱作是Wellens’ syndrome。
 
@@ -99,26 +99,26 @@ Smith ECG Blog裡面有說到，大部分的TWI是non-specific[^6]。
 
 此外RV strain有可能會在R’t precordial leads ± inf.leads出現TWI。
 
-**RV strain除了上述ECG finding外，也有可能出現下列變化:**
+<strong>RV strain除了上述ECG finding外，也有可能出現下列變化:</strong>
 
-1. Tall R wave in V1(R/S >1) →**這種情形只存在1%的normal variant，因此在ER不常見。如果出現，要細究原因**
+1. Tall R wave in V1(R/S >1) →<strong>這種情形只存在1%的normal variant，因此在ER不常見。如果出現，要細究原因</strong>
 2. RAD
 3. ST changes(特別是rightward leads有STE) →Rightward leads指的是V1/V2/aVR/III
 
-這邊先再多講第一點的Tall RV1的DDx(**Fig.3**)
+這邊先再多講第一點的Tall RV1的DDx(<strong>Fig.3</strong>)
 
 ![](https://cdn-images-1.medium.com/max/1024/1*IRz_sow2yItXh-zg96e5Xg@2x.png)
-***Fig.3***
+<strong><em>Fig.3</em></strong>
 
 我把它分為四個部分來記憶。記憶比較常見的就足以打怪了啦。
 
 只是other部分不好記。RV strain、Ventricular ectopy、Na channel pathology(高鉀、Na channel blocker toxicity與Brugada syndrome)與小兒ECG，當然也包括normal variant。
 
-另外提供另一種記憶法:**R-WAVED**
+另外提供另一種記憶法:<strong>R-WAVED</strong>
 
 ![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fabs.twimg.com%2Ferrors%2Flogo46x38.png&key=a19fcc184b9711e1b4764040d3dc5c07)
 
-這邊要提另外一個重點 →**ECG可以辨識出RV strain，但無法分辨出RV strain的原因**➡可能原因是PE、asthma/COPD、hypoxic vasoconstriction from pneumonia，pulmonary HTN。
+這邊要提另外一個重點 →<strong>ECG可以辨識出RV strain，但無法分辨出RV strain的原因</strong>➡可能原因是PE、asthma/COPD、hypoxic vasoconstriction from pneumonia，pulmonary HTN。
 
 RV strain指的是RV被拉緊、撐開的狀態。所以看到RV strain ECG pattern，是要想到是不是肺血管出現問題?阻塞了或者有肺高壓，進而引起RV strain。
 
@@ -128,21 +128,21 @@ RV strain指的是RV被拉緊、撐開的狀態。所以看到RV strain ECG patt
 
 有幾項研究的重要結果可以參考。
 
-第一篇是Kosuge et al在2007年發表的文章[^7]，這篇文章有一個**重要的結論是如果診斷只剩下ACS與PE。那麼ECG在precordial leads出現TWI且同時合併III/V1有TWI，那麼需要高度考慮這張ECG是PE。**
+第一篇是Kosuge et al在2007年發表的文章[^7]，這篇文章有一個<strong>重要的結論是如果診斷只剩下ACS與PE。那麼ECG在precordial leads出現TWI且同時合併III/V1有TWI，那麼需要高度考慮這張ECG是PE。</strong>
 
 ![](https://cdn-images-1.medium.com/max/1024/1*BYVb3J2GMmP5zyhXzwCY7w.png)
-***Fig.4***
+<strong><em>Fig.4</em></strong>
 
-Fig.4描述描述的意思是如果**同時出現III/V1**，**有88%的PE會如此，只有1%的ACS會這樣**。
+Fig.4描述描述的意思是如果<strong>同時出現III/V1</strong>，<strong>有88%的PE會如此，只有1%的ACS會這樣</strong>。
 
 另外一篇也是相同Kosuge研究團隊所寫的文章[^8]，發表在2016。是運用看看precordial leads的Peak TWI是位於哪裡來做辨識。
 
-這篇的結論 →**Peak negative TWI in V1~V2，如果用來診斷PE➡95% sensitivity、89% specificity、89% PPV、95% NPV。**
+這篇的結論 →<strong>Peak negative TWI in V1~V2，如果用來診斷PE➡95% sensitivity、89% specificity、89% PPV、95% NPV。</strong>
 
-此外也可以來看TWI的長相，來辨識是否為ACS或PE(**Fig.5**)。
+此外也可以來看TWI的長相，來辨識是否為ACS或PE(<strong>Fig.5</strong>)。
 
 ![](https://cdn-images-1.medium.com/max/1024/1*wzXCvV4VnZIKsN3nMZXAsQ@2x.png)
-***Fig.5***
+<strong><em>Fig.5</em></strong>
 
 我們來看看Fig.5上排5個case全都是PE、下排5個case全都是ACS-Wellen。
 
@@ -188,11 +188,11 @@ Chest CTA看到雙側都有pulmonary vessel filling defect，RV也有filling def
 
 ### Take-home points:
 
-1. **什麼是Wellens’ syndrome?意義為何?**
-2. **RV strain有哪些ECG finding?**
-3. **有哪些狀況可能會Tall RV1?**
-4. **ECG可以辨識出RV strain，但無法分辨出RV strain的原因**
-5. **我們是否可以透過ECG morphology來區分到底是ACS(Wellen)或是PE呢?**
+1. <strong>什麼是Wellens’ syndrome?意義為何?</strong>
+2. <strong>RV strain有哪些ECG finding?</strong>
+3. <strong>有哪些狀況可能會Tall RV1?</strong>
+4. <strong>ECG可以辨識出RV strain，但無法分辨出RV strain的原因</strong>
+5. <strong>我們是否可以透過ECG morphology來區分到底是ACS(Wellen)或是PE呢?</strong>
 
 參考資料補充：[^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8] [^9]
 

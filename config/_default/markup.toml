@@ -6,6 +6,7 @@
   [goldmark.extensions]
     footnote = true
     typographer = false
+    strikethrough = false # 「V1~V3」單波浪號會被當成刪除線；全站的 ~~ 都是語氣用法
   [goldmark.parser]
     autoHeadingID = true
     autoHeadingIDType = "github"

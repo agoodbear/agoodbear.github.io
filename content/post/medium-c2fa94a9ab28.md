@@ -21,10 +21,10 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%99%A4%E4%BA%86ste%E4%BB%A5%E5%A
 讓我們來看看幾張ECG，之後再來回答上頭的問題~~
 
 ![](https://cdn-images-1.medium.com/max/1024/1*ab1PYAHkaEQSP9nEuhy-zA.png)
-***Fig.1 60歲男性胸痛一小時***
+<strong><em>Fig.1 60歲男性胸痛一小時</em></strong>
 
 ![](https://cdn-images-1.medium.com/max/1024/1*_GHxU3OoF6zKeTq7qtk_oQ@2x.png)
-***Fig.2 46歲男性從早上開始胸痛不舒服***
+<strong><em>Fig.2 46歲男性從早上開始胸痛不舒服</em></strong>
 
 首先我們先問自己，這些ECG是否有符合STEMI criteria呢?
 
@@ -32,15 +32,15 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%99%A4%E4%BA%86ste%E4%BB%A5%E5%A
 
 如果是在三更半夜，這種ECG pattern，Call CV，會不會被罵啊?
 
-另外我們要問自己，如果沒有符合STEMI criteria的ECG，要怎麼看出有血管阻塞呢?目前有哪些的文獻，可以讓我們知道，這種的ECG pattern代表著**阻塞性心肌梗塞(Occlusion MI →OMI)**呢?
+另外我們要問自己，如果沒有符合STEMI criteria的ECG，要怎麼看出有血管阻塞呢?目前有哪些的文獻，可以讓我們知道，這種的ECG pattern代表著<strong>阻塞性心肌梗塞(Occlusion MI →OMI)</strong>呢?
 
 哇嗚~~~~也太多問題了吧XD
 
 我總結一下上述的問題，可以分成幾個重點。
 
-**第一個是用STEMI criteria來診斷心肌梗塞，可靠嗎?**
+<strong>第一個是用STEMI criteria來診斷心肌梗塞，可靠嗎?</strong>
 
-**第二個，除了用STEMI criteria可以來診斷心肌梗塞，還有哪些ECG pattern也可以協助診斷呢?**
+<strong>第二個，除了用STEMI criteria可以來診斷心肌梗塞，還有哪些ECG pattern也可以協助診斷呢?</strong>
 
 #### STEMI criteria可靠嗎?診斷心肌梗塞可靠(specificity夠高)……但是sensitivity太差了。
 
@@ -50,7 +50,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%99%A4%E4%BA%86ste%E4%BB%A5%E5%A
 
 所以如果我們堅持心肌梗塞的病患一定要符合STEMI criteria才抓去做心導管，會出現的問題就是，我們在第一時間就會錯失很多的心肌梗塞。最後病患還是有可能會去做導管，但是Time is muscle。時間拖越久，病患心肌細胞死亡就越多，之後心衰竭、心臟復健的時間就會拉長。
 
-#### **除了用STEMI criteria可以來診斷心肌梗塞，還有哪些ECG pattern也可以協助診斷呢?**
+#### <strong>除了用STEMI criteria可以來診斷心肌梗塞，還有哪些ECG pattern也可以協助診斷呢?</strong>
 
 要回答這個問題之前，我們先來看看一些文獻怎麼說。
 
@@ -59,57 +59,57 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%99%A4%E4%BA%86ste%E4%BB%A5%E5%A
 ![](https://cdn-images-1.medium.com/max/1024/1*M6JTCfILjk6-NRJvLpkZmg.png)
 
 ![](https://cdn-images-1.medium.com/max/1024/1*aCqF5yFkYQVN0023sZAwkQ@2x.png)
-***Table 1. 哪些ECG pattern可能有MI-Part I***
+<strong><em>Table 1. 哪些ECG pattern可能有MI-Part I</em></strong>
 
 ![](https://cdn-images-1.medium.com/max/1024/1*P0EzOAkMZqd83rgJBXVKzA.png)
 
 ![](https://cdn-images-1.medium.com/max/1024/1*H7Ophv8MgllPdTCaEekFsw.png)
-***Table 1. 哪些ECG pattern可能有MI-Part II***
+<strong><em>Table 1. 哪些ECG pattern可能有MI-Part II</em></strong>
 
-先來看看**Table 1左邊**，**ESC 2017 STEMI guideline**的Table，這個table描述著**有表列情況屬於心肌梗塞非典型ECG表現，應該要啟動心導管**
+先來看看<strong>Table 1左邊</strong>，<strong>ESC 2017 STEMI guideline</strong>的Table，這個table描述著<strong>有表列情況屬於心肌梗塞非典型ECG表現，應該要啟動心導管</strong>
 
-**Table 1中間**是來自於這篇文章[^3]，裡面描述了表列的情況需要考慮ACO(Acute coronary occlusion)
+<strong>Table 1中間</strong>是來自於這篇文章[^3]，裡面描述了表列的情況需要考慮ACO(Acute coronary occlusion)
 
-**Table 1右邊**來自於這篇文章[^4]，裡面描述了哪些是OMI ECG finding
+<strong>Table 1右邊</strong>來自於這篇文章[^4]，裡面描述了哪些是OMI ECG finding
 
-**Table 2左邊**是來自於ACC於2022/10出版的急診急性胸痛專家共識裡面的表格[^5]。 裡面提到了STEMI equivalents與哪些ECG pattern可能伴隨著acute/subacute myocardial ischemia**(原始表格有幾個小錯誤，大家來找碴XD)**
+<strong>Table 2左邊</strong>是來自於ACC於2022/10出版的急診急性胸痛專家共識裡面的表格[^5]。 裡面提到了STEMI equivalents與哪些ECG pattern可能伴隨著acute/subacute myocardial ischemia<strong>(原始表格有幾個小錯誤，大家來找碴XD)</strong>
 
-**Table 2右邊**是出自Dr.Smith的最新文章[^6]，裡面寫著哪些ECG pattern具有高風險伴隨著ATO(acute total coronary occlusion)。
+<strong>Table 2右邊</strong>是出自Dr.Smith的最新文章[^6]，裡面寫著哪些ECG pattern具有高風險伴隨著ATO(acute total coronary occlusion)。
 
 #### 有點靠北…….邊多
 
 對，這是事實，畢竟用STEMI criteria來診斷MI的敏感度太差了，所以只會有越來越多的ECG pattern被發表出來說這樣的狀況也可能是有MI。這就像我們的Tintinalli大枕頭越睡越高一樣XD
 
-我把這幾年Amal mattu與Dr.Smith所寫出來，可能伴隨MI的ECG pattern分成下列幾大類，稍微整理一下，讓各位比較好理解。**這部份在10/31於大林慈濟演講過(250張 slide，我要吐血了)，有興趣的，可以……..**
+我把這幾年Amal mattu與Dr.Smith所寫出來，可能伴隨MI的ECG pattern分成下列幾大類，稍微整理一下，讓各位比較好理解。<strong>這部份在10/31於大林慈濟演講過(250張 slide，我要吐血了)，有興趣的，可以……..</strong>
 
 ![](https://cdn-images-1.medium.com/max/1024/1*wE9QbKtBAbMV901KL_vuLQ@2x.png)
 
 ![](https://cdn-images-1.medium.com/max/1024/1*iJsUP2GGK_Cq8j7bZhhFCA@2x.png)
-***Fig.3 STEMI(-)/OMI(+)-Part 1***
+<strong><em>Fig.3 STEMI(-)/OMI(+)-Part 1</em></strong>
 
 ![](https://cdn-images-1.medium.com/max/1024/1*8gL11XF7cMit4AUFelpxTw@2x.png)
 
 ![](https://cdn-images-1.medium.com/max/1024/1*xWpoy9WxJXbNv_sjLHHRng@2x.png)
-***Fig.4 STEMI(-)/OMI(+)-Part 2***
+<strong><em>Fig.4 STEMI(-)/OMI(+)-Part 2</em></strong>
 
 #### 怕各位讀者還不知道什麼是Occlusion MI(OMI)，這邊稍微再解釋一下。
 
 ![](https://cdn-images-1.medium.com/max/1024/1*qQnAoih6JPnGAOoosWl4xA@2x.png)
-***Fig.5 OMI/NOMI vs. STEMI/NSTEMI***
+<strong><em>Fig.5 OMI/NOMI vs. STEMI/NSTEMI</em></strong>
 
 簡單來說，診斷STEMI/NSTEMI是用心電圖來區分，而要診斷OMI/NOMI是用血管的pathology來看，也就是血管有阻塞的MI叫做OMI。當然要評估血管是否有無可能阻塞，最終還是得看心導管的結果。只是在做心導管前，ECG的確是協助診斷MI很重要的工具之一，另外超音波、心臟酵素(Troponin-I、Troponin-T)等也可以輔助判斷。
 
 所以在Fig.5最重要的兩個就是STEMI(+)/OMI(+)與STEMI(-)/OMI(+)。這兩者都是屬於type 1 MI，都是因為plaque rupture導致thrombosis，引起血管阻塞。也是最值得進行心導管，搶救心肌細胞的兩大類。
 
 ![](https://cdn-images-1.medium.com/max/1024/1*LBe6flyrbXMX1XHmXbbI3A@2x.png)
-***Fig.6 STEMI(+)/OMI(+) vs. STEMI(-)/OMI(+)***
+<strong><em>Fig.6 STEMI(+)/OMI(+) vs. STEMI(-)/OMI(+)</em></strong>
 
 讓我們看看Fig.6，從這圖可以知道STEMI(+)/OMI(+)可以透過STEMI criteria來抓到。不知道基本的STEMI criteria定義嗎?(請看Fig.7)
 
-千萬記住12 leads中，V2-V3和其他10個lead不一樣，**V2-V3是要看年齡和性別的**。
+千萬記住12 leads中，V2-V3和其他10個lead不一樣，<strong>V2-V3是要看年齡和性別的</strong>。
 
 ![](https://cdn-images-1.medium.com/max/1024/1*A5WHplcjsnsVO4RnDDpfLw@2x.png)
-***Fig.7 STEMI criteria定義***
+<strong><em>Fig.7 STEMI criteria定義</em></strong>
 
 繼續來看看Fig.6顯示STEMI(-)/OMI(+)那格，在NSTEMI病患中，根據統計有25–30%的病患是missed掉的ACO病患。
 
@@ -123,25 +123,25 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%99%A4%E4%BA%86ste%E4%BB%A5%E5%A
 
 有人可能會問，病患最後也是做了導管啊!!!那麼為什麼我們要找出STEMI(-)/OMI(+)病患呢?有什麼差別呢?
 
-**有差~~~真的有差**。
+<strong>有差~~~真的有差</strong>。
 
-這篇文章[^7]將STEMI(+)/OMI(+)與STEMI(-)/OMI(+)兩組來比較，兩組皆具有相似的臨床表徵/實驗室報告與超音波發現。但是在STEMI(-)/OMI(+)這組明顯延遲了導管時間，且和STEMI(+)/OMI(+)組別相比較，其明顯增加mortality與morbidity(**請見Fig.8**)。
+這篇文章[^7]將STEMI(+)/OMI(+)與STEMI(-)/OMI(+)兩組來比較，兩組皆具有相似的臨床表徵/實驗室報告與超音波發現。但是在STEMI(-)/OMI(+)這組明顯延遲了導管時間，且和STEMI(+)/OMI(+)組別相比較，其明顯增加mortality與morbidity(<strong>請見Fig.8</strong>)。
 
 ![](https://cdn-images-1.medium.com/max/1024/1*cpLgUbdaMMR7ir7QpttqdQ@2x.png)
 
 ![](https://cdn-images-1.medium.com/max/1024/1*JpfhNjcM_T5vfR_83UJuEg@2x.png)
-***Fig.8 STEMI(+)/OMI(+) vs. STEMI(-)/OMI(+)***
+<strong><em>Fig.8 STEMI(+)/OMI(+) vs. STEMI(-)/OMI(+)</em></strong>
 
 另外這篇文章[^8]表示NSTEMI with ATO(acute total coronary occlusion)約34%。All-cause mortality、recurrent MI與cardiogenic shock在NSTEMI with ATO都明顯高於NSTEMI without ATO組別。
 
 我們可以想像一位NSTEMI with ATO病患，整個血管都塞住，但是……我們卻延遲了好幾天才去打通血管。光是用想的，就覺得心肌不知道死了多少。文獻研究也的確證明了NSTEMI with ATO這一個族群和沒有ATO組群相比較，明顯在CV outcome是有不良的影響。
 
-所以在OMI概念還不流行時(**現在流行了嗎?**)，ESC 2020 NSTEMI guideline也描述了，在very high risk feature的病患需要在< 2 hr內做到PCI(請看**Fig.9**)。
+所以在OMI概念還不流行時(<strong>現在流行了嗎?</strong>)，ESC 2020 NSTEMI guideline也描述了，在very high risk feature的病患需要在< 2 hr內做到PCI(請看<strong>Fig.9</strong>)。
 
 ![](https://cdn-images-1.medium.com/max/1024/0*rnX4Dx-mdxYSgY6V)
-***Fig.9 ESC 2020 NSTEMI Guideline***
+<strong><em>Fig.9 ESC 2020 NSTEMI Guideline</em></strong>
 
-Fig.9左下角說明了很多情況下建議要在2小時內做到心導管。裡面的情況除了aVR STE+ multiple leads STD以外，幾乎沒有說到ECG pattern要如何，病患才能去做導管，這也代表著，其實ESC guideline也知道STEMI criteria並不是診斷MI唯一的條件，還有不少個案血管就是明明有阻塞或是持續進展阻塞，但就是看不到符合STEMI criteria。所以才會建議有Very high risk feature的病患要去做導管。注意是Very high risk feature，不是『**Very high risk ECG feature**』。
+Fig.9左下角說明了很多情況下建議要在2小時內做到心導管。裡面的情況除了aVR STE+ multiple leads STD以外，幾乎沒有說到ECG pattern要如何，病患才能去做導管，這也代表著，其實ESC guideline也知道STEMI criteria並不是診斷MI唯一的條件，還有不少個案血管就是明明有阻塞或是持續進展阻塞，但就是看不到符合STEMI criteria。所以才會建議有Very high risk feature的病患要去做導管。注意是Very high risk feature，不是『<strong>Very high risk ECG feature</strong>』。
 
 針對2020 ESC NSTEMI guideline建議要在<2小時內做到PCI。我常在教學時會問醫學生，請各位猜猜看，在真實世界臨床操作上真正符合<2小時內做到PCI的比例有多少?
 
@@ -155,18 +155,18 @@ Fig.9左下角說明了很多情況下建議要在2小時內做到心導管。�
 
 ![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fabs.twimg.com%2Ferrors%2Flogo46x38.png&key=a19fcc184b9711e1b4764040d3dc5c07)
 
-**Cardiologists don’t follow NonSTEMI guidelines**
+<strong>Cardiologists don’t follow NonSTEMI guidelines</strong>
 
-我當初在看這篇文章時，因為NSTEMI在臨床有符合Very high risk feature的情況下，的確是很多時候並沒有立刻去做PCI。但看到真實數據時，我還是著實有點小shock。(**Fig.10**)
+我當初在看這篇文章時，因為NSTEMI在臨床有符合Very high risk feature的情況下，的確是很多時候並沒有立刻去做PCI。但看到真實數據時，我還是著實有點小shock。(<strong>Fig.10</strong>)
 
 ![](https://cdn-images-1.medium.com/max/1024/1*royild11ypTlZqn-0WH3TQ@2x.png)
-***Fig.10***
+<strong><em>Fig.10</em></strong>
 
 ### 只有6.4%…..沒看錯就是6.4%的Very high risk病患 有在<2小時做到導管
 
 當然作者也提出了一些可能的原因:
 
-#### **缺乏一致的證據顯示接受早期心導管介入可以改善結果**
+#### <strong>缺乏一致的證據顯示接受早期心導管介入可以改善結果</strong>
 
 Very high risk P’t一般在randomized controlled trial會被排除，因此這類病患被建議要立即PCI，有很大一部分是因為接受了保守性治療有不好的預後
 
@@ -174,15 +174,15 @@ Very high risk P’t一般在randomized controlled trial會被排除，因此這
 
 另外Aslanger大師(本身是心臟科醫師)，也是認為這些Guideline的建議，並不具有相當好的實證。
 
-#### **PCI team，並不是整天待命**
+#### <strong>PCI team，並不是整天待命</strong>
 
 另一個解釋是PCI team，並不是整天待命➡因此要在非上班時間立即PCI，就不是那麼ok
 
-#### **栓塞(embolization)的恐懼**
+#### <strong>栓塞(embolization)的恐懼</strong>
 
 另一個重要可能的解釋是在新指南裡嵌入了paradigm改變的概念➡在過去，NSTEMI病患會經歷好幾天的住院，來『冷卻』壞死的心肌。這個想法源自於對於非阻塞的血栓覆蓋在破裂的斑塊上(ruptured plaque)，可能導致栓塞(embolization)的恐懼，恐懼如果在此類病變中立即進行PCI，可能導致覆蓋在plaque上面的血栓往下跑，導致心導管期間的MI或隨之而來的No-Reflow Phenomenon
 
-#### **習慣在複雜與不穩定的病患，先等穩定後再做PCI**
+#### <strong>習慣在複雜與不穩定的病患，先等穩定後再做PCI</strong>
 
 另一個很重要的原因是習慣在複雜與不穩定的病患(比如年紀大有很多共病)，先等穩定後，而這會讓PCI時有較好的血行與呼吸狀況➡這些病患，偶爾CV man會傾向於將PCI延到早上有其他更多team member在場再做，以防PCI過程中出現併發症，人手不夠幫忙
 
@@ -204,9 +204,9 @@ Very high risk P’t一般在randomized controlled trial會被排除，因此這
 
 我們急診科醫師必須提供足夠的病患急診臨床狀況給心臟科醫師參考。不能光只說沒有看到ST elevation，但是troponin有高，必須提供更多的蛛絲馬跡給心臟科醫師進一步評估。
 
-#### **我們的目的是讓有血管阻塞的病患，因為我們給了足夠的證據，讓病患有機會提前做到心導管。**
+#### <strong>我們的目的是讓有血管阻塞的病患，因為我們給了足夠的證據，讓病患有機會提前做到心導管。</strong>
 
-#### **好了，準備開始要講16個OMI ECG finding~~~待續下篇文章**
+#### <strong>好了，準備開始要講16個OMI ECG finding~~~待續下篇文章</strong>
 
 ### 重點摘要:
 

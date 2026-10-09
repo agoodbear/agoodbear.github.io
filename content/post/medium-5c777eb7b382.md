@@ -20,7 +20,7 @@ canonicalURL: "https://medium.com/@agoodbear/64%E6%AD%B2%E7%94%B7%E6%80%A7-%E4%B
 ### 64歲男性，上腹痛、胸痛、上背痛
 
 ![](https://cdn-images-1.medium.com/max/1024/1*LEbcLpGiMDrL-Xu6ZSo6nw@2x.png)
-***Fig.1:到院時間:10:02***
+<strong><em>Fig.1:到院時間:10:02</em></strong>
 
 這個Case，非常有印象主要是這病患的臨床表現。
 
@@ -30,7 +30,7 @@ canonicalURL: "https://medium.com/@agoodbear/64%E6%AD%B2%E7%94%B7%E6%80%A7-%E4%B
 
 痛到冒冷汗……噁心，想吐。
 
-**我們先來判讀到院時候的ECG(Fig.1)，看看我們能看出什麼端倪?**
+<strong>我們先來判讀到院時候的ECG(Fig.1)，看看我們能看出什麼端倪?</strong>
 
 Rate →67 bpm
 
@@ -46,16 +46,16 @@ Baseline不是很穩，不過可以看到也有low voltage(Sensitive criteria wi
 
 #### 先來幾個問題問問自己:
 
-**Q1:這個Case可以使用Smith 4 variable formula嗎?**
+<strong>Q1:這個Case可以使用Smith 4 variable formula嗎?</strong>
 
-**Q2:這個Case可以使用T/QRS >0.36這個rule嗎?**
+<strong>Q2:這個Case可以使用T/QRS >0.36這個rule嗎?</strong>
 
-**Q3:如果我們initial ECG屬於non-diagnostic ECG，接下來該怎麼辦?**
+<strong>Q3:如果我們initial ECG屬於non-diagnostic ECG，接下來該怎麼辦?</strong>
 
-先來回答第一個問題，出現PRWP，有沒有可能LAD的問題呢?這個Case在V2、V3都有出現STE 1格的狀況(**Fig.2**)，是否有可能subtle STEMI due to LAD occlusion呢?
+先來回答第一個問題，出現PRWP，有沒有可能LAD的問題呢?這個Case在V2、V3都有出現STE 1格的狀況(<strong>Fig.2</strong>)，是否有可能subtle STEMI due to LAD occlusion呢?
 
 ![](https://cdn-images-1.medium.com/max/1024/1*sYlmqMIy0HgpVWurLO1mew.png)
-***Fig.2***
+<strong><em>Fig.2</em></strong>
 
 首先在2018年第四版心肌梗塞通用定義[^1]就已經清楚定義，要診斷STEMI，在V2/V3的定義和其他lead是不一樣的：
 
@@ -65,20 +65,20 @@ Baseline不是很穩，不過可以看到也有low voltage(Sensitive criteria wi
 
 所以這個Case在V2/V3雖然皆有STE 1格，但都不符合STEMI criteria。
 
-接下來是否可以使用**Smith 4 variable formula**來看看是否有subtle LAD occlusion呢?
+接下來是否可以使用<strong>Smith 4 variable formula</strong>來看看是否有subtle LAD occlusion呢?
 
-#### **要使用此公式，必須要先了解這個公式有哪些排除條件?**
+#### <strong>要使用此公式，必須要先了解這個公式有哪些排除條件?</strong>
 
-**首先要知道，若出現明顯AMI，就不能用此來計算，會出現嚴重的false-negative:**
+<strong>首先要知道，若出現明顯AMI，就不能用此來計算，會出現嚴重的false-negative:</strong>
 
-- >5 mm STE →**要排除**
-- Non-concave STE →若是straight、convex upward STE →**要排除**
-- Inferior reciprocal changes →若有reciprocal change →**要排除**
-- 看到TQRSD**要排除**
-- Q waves in any of V2 to V4 →代表可能已經AMI了 →**要排除**
-- Any T wave inversion from V2 to V6 →代表可能AMI，然後reperfusion出現 →**要排除**
-- BBB**要排除**
-- LVH or LV aneurysm**要排除**，可能會有false-positive出現
+- >5 mm STE →<strong>要排除</strong>
+- Non-concave STE →若是straight、convex upward STE →<strong>要排除</strong>
+- Inferior reciprocal changes →若有reciprocal change →<strong>要排除</strong>
+- 看到TQRSD<strong>要排除</strong>
+- Q waves in any of V2 to V4 →代表可能已經AMI了 →<strong>要排除</strong>
+- Any T wave inversion from V2 to V6 →代表可能AMI，然後reperfusion出現 →<strong>要排除</strong>
+- BBB<strong>要排除</strong>
+- LVH or LV aneurysm<strong>要排除</strong>，可能會有false-positive出現
 
 千萬要記得，公式不要亂用，可能會有false-negative or false-positive出現。要用之前先將明顯AMI，與文章內排除的人都先排除，再使用。
 
@@ -88,13 +88,13 @@ Baseline不是很穩，不過可以看到也有low voltage(Sensitive criteria wi
 
 那麼符合LV aneurysm with STE的病患，到底能不能使用Smith 4 variable formula呢?
 
-**在這篇REBEL EM Blog的文章中有寫到[^2]:**
+<strong>在這篇REBEL EM Blog的文章中有寫到[^2]:</strong>
 
 #### One HUGE CAVEAT, is that this equation should not be used in patients with LVH or LV aneurysms as this can cause false positives.
 
-翻譯成白話文也就是說，**Smith 4 variable formula不應該用在ECG有LVH morphology或LV aneurysm with STE pattern，可能會導致false positive**。
+翻譯成白話文也就是說，<strong>Smith 4 variable formula不應該用在ECG有LVH morphology或LV aneurysm with STE pattern，可能會導致false positive</strong>。
 
-如果我們還是硬是用這個公式去計算的話，算出來為21.5 →**Likely anterior STEMI(但有可能是false-positive)**
+如果我們還是硬是用這個公式去計算的話，算出來為21.5 →<strong>Likely anterior STEMI(但有可能是false-positive)</strong>
 
 接著來回答，是否可以使用T/QRS >0.36這個rule呢?
 
@@ -102,7 +102,7 @@ Baseline不是很穩，不過可以看到也有low voltage(Sensitive criteria wi
 
 此rule是當V1-V4至少有一個lead出現QS wave(指沒有任何R wave，或此r wave < 1 mm)，就可以使用。
 
-**規則應用:**
+<strong>規則應用:</strong>
 
 - 在任何V1-V4有任何一個lead的T/QRS ratio >0.36，那麼acute STEMI是比較有可能的診斷，雖然subacute STEMI也是有可能
 
@@ -116,24 +116,24 @@ Baseline不是很穩，不過可以看到也有low voltage(Sensitive criteria wi
 
 接著來回答第三個問題。如果initial ECG對我們來說是non-diagnostic ECG。我們還能做什麼?
 
-**做Echo?**
+<strong>做Echo?</strong>
 
-**等TnI?**
+<strong>等TnI?</strong>
 
-**繼續F/U ECG?**
+<strong>繼續F/U ECG?</strong>
 
 目前有什麼指引告訴我們該怎麼做?算Heart score有幫助嗎?
 
 先來看看ACLS 2020裡面的ACS流程圖
 
 ![](https://cdn-images-1.medium.com/max/1024/1*C-nqlXRwsOv0-ovswGqK6A@2x.png)
-***Fig.3 ACS flowchart(ACLS 2020)***
+<strong><em>Fig.3 ACS flowchart(ACLS 2020)</em></strong>
 
-**在ACLS 2020針對ACS流程，做了12 lead ECG後，要分兩大類:**
+<strong>在ACLS 2020針對ACS流程，做了12 lead ECG後，要分兩大類:</strong>
 
 第一大類是STEMI/Newly onset LBBB
 
-第二大類是NSTE-ACS(**UA+NSTEMI目前稱為NSTE-ACS**)
+第二大類是NSTE-ACS(<strong>UA+NSTEMI目前稱為NSTE-ACS</strong>)
 
 首先我們必須要知道一項事實。
 
@@ -143,7 +143,7 @@ Baseline不是很穩，不過可以看到也有low voltage(Sensitive criteria wi
 
 此篇相關內文在這:
 
-**New or presumably new LBBB has been considered a STEMI equivalent. Most cases of LBBB at time of presentation, however, are “not known to be old” because of prior electrocardiogram (ECG) is not available for comparison. New or presumably new LBBB at presentation occurs infrequently, may interfere with ST-elevation analysis, and should not be considered diagnostic of acute myocardial infarction (MI) in isolation**
+<strong>New or presumably new LBBB has been considered a STEMI equivalent. Most cases of LBBB at time of presentation, however, are “not known to be old” because of prior electrocardiogram (ECG) is not available for comparison. New or presumably new LBBB at presentation occurs infrequently, may interfere with ST-elevation analysis, and should not be considered diagnostic of acute myocardial infarction (MI) in isolation</strong>
 
 意思是大部份到院的病患，很多都沒有舊的心電圖可供比較。新的/推測新的LBBB發生率不高，不應該單獨被用來診斷AMI。
 
@@ -151,7 +151,7 @@ Baseline不是很穩，不過可以看到也有low voltage(Sensitive criteria wi
 
 那麼把看到LBBB就抓去做導管，false-positive的機率多高?
 
-**大概就是恨天高吧XD**
+<strong>大概就是恨天高吧XD</strong>
 
 - Larson這篇文章[^5]，有44%
 - Chang這篇文章[^6]，有80.8%
@@ -161,13 +161,13 @@ Baseline不是很穩，不過可以看到也有low voltage(Sensitive criteria wi
 
 在Fig.3如果判斷為NSTE-ACS，必須再分為高風險NSTE-ACS與低/中風險N STE-ACS
 
-#### **高風險NSTE-ACS的ECG呈現如下(Fig.3-步驟10):**
+#### <strong>高風險NSTE-ACS的ECG呈現如下(Fig.3-步驟10):</strong>
 
 - STD > 0.5 mm
 - 當疼痛不舒服時產生Dynamic STTC/TWI(出現reperfusion rhythm)
 - transient STEMI(<20 mins，STE >0.5 mm)
 
-#### **低/中風險NSTE-ACS的ECG呈現如下(Fig.3-步驟12):**
+#### <strong>低/中風險NSTE-ACS的ECG呈現如下(Fig.3-步驟12):</strong>
 
 - ST deviation < 0.5 mm
 - TWI < 2 mm
@@ -175,7 +175,7 @@ Baseline不是很穩，不過可以看到也有low voltage(Sensitive criteria wi
 
 分成這兩類，和之後處置與治療的方向有關連。
 
-當ECG呈現高風險NSTE-ACS，且Troponin(+)或具有high risk feature →考慮儘早給予侵入性治療(儘早作導管的意思)(**Fig.3的步驟11**)
+當ECG呈現高風險NSTE-ACS，且Troponin(+)或具有high risk feature →考慮儘早給予侵入性治療(儘早作導管的意思)(<strong>Fig.3的步驟11</strong>)
 
 當ECG呈現低/中風險NSTE-ACS，則考慮收治Chest pain unit(CPU)。
 
@@ -185,7 +185,7 @@ A區留觀床躺著，就是CPU了啦(我想大部份的醫院，都沒有特定
 
 那麼在Fig.3的步驟13，也就是進入CPU了，需要作哪些事呢?
 
-**在ACLS 2020的內文裡面寫要做下列事情:**
+<strong>在ACLS 2020的內文裡面寫要做下列事情:</strong>
 
 - Serial ECG
 - 持續追蹤心肌損傷生化指標 (Troponin、CK-MB)
@@ -200,70 +200,70 @@ A區留觀床躺著，就是CPU了啦(我想大部份的醫院，都沒有特定
 
 #### 所以可歸納可利用serial F/U ECG + enzyme + POCUS是在initial ECG為non-diagnostic ECG，我們可以多做的事情。
 
-那麼在去年出版的**2022美國心臟學院急診急性胸痛處理的專家共識**[^8]，裡面是怎麼講的呢(**Fig.4**)?
+那麼在去年出版的<strong>2022美國心臟學院急診急性胸痛處理的專家共識</strong>[^8]，裡面是怎麼講的呢(<strong>Fig.4</strong>)?
 
 ![](https://cdn-images-1.medium.com/max/1024/1*XQVnCbzFu1LI6DRCxrlqQg@2x.png)
-***Fig.4 流程總結***
+<strong><em>Fig.4 流程總結</em></strong>
 
-在症狀懷疑有ACS的狀況下，先做一張ECG。之後分成四條路:(**Fig.5**)
+在症狀懷疑有ACS的狀況下，先做一張ECG。之後分成四條路:(<strong>Fig.5</strong>)
 
 ![](https://cdn-images-1.medium.com/max/1024/1*Q18UlD8flRlSNRD19fkzSg.png)
-***Fig.5 做完ECG分成四條路***
+<strong><em>Fig.5 做完ECG分成四條路</em></strong>
 
-**橘色：**看到STEMI or STEMI equivalent**(見Fig.6 上半部)** →處置方法見2013 ACC/AHA STEMI guideline**(熊:ESC有2017 STEMI guideline)**
+<strong>橘色：</strong>看到STEMI or STEMI equivalent<strong>(見Fig.6 上半部)</strong> →處置方法見2013 ACC/AHA STEMI guideline<strong>(熊:ESC有2017 STEMI guideline)</strong>
 
-**黃色1：**看到ECG可能有缺血變化**(見Fig.6 下半部)** →處置方法見2014 ACC/AHA NSTEMI-ACS guideline**(熊:ESC有2020 STEMI guideline)**
+<strong>黃色1：</strong>看到ECG可能有缺血變化<strong>(見Fig.6 下半部)</strong> →處置方法見2014 ACC/AHA NSTEMI-ACS guideline<strong>(熊:ESC有2020 STEMI guideline)</strong>
 
-**黃色2：**如果不是橘色或黃色1的ECG變化，但是仍懷疑缺血變化 →會診CV man、Serial F/U ECG(15–20分鐘)、Heart POCUS
+<strong>黃色2：</strong>如果不是橘色或黃色1的ECG變化，但是仍懷疑缺血變化 →會診CV man、Serial F/U ECG(15–20分鐘)、Heart POCUS
 
-**綠色：**若是non-diagnostic ECG →進入CDP(clinical decision pathway)
+<strong>綠色：</strong>若是non-diagnostic ECG →進入CDP(clinical decision pathway)
 
 ![](https://cdn-images-1.medium.com/max/1024/1*8vNDVeHFSg4Qc5EHzPnrTA@2x.png)
-***Fig.6(此表已重新修改原文錯誤的地方)***
+<strong><em>Fig.6(此表已重新修改原文錯誤的地方)</em></strong>
 
-那麼被認定non-diagnostic ECG，有哪些路可以走路呢?(**Fig.7**)
+那麼被認定non-diagnostic ECG，有哪些路可以走路呢?(<strong>Fig.7</strong>)
 
 ![](https://cdn-images-1.medium.com/max/1024/1*WDlcSuDWOr3ieAKPHGWrvw@2x.png)
-***Fig.7 Non-diagnostic ECG***
+<strong><em>Fig.7 Non-diagnostic ECG</em></strong>
 
-此時要應用**hs-cTn-based CDPs**來做風險區分:
+此時要應用<strong>hs-cTn-based CDPs</strong>來做風險區分:
 
-**Low risk(低風險):**可排除
+<strong>Low risk(低風險):</strong>可排除
 
-**Intermediate risk(中度風險):**觀察
+<strong>Intermediate risk(中度風險):</strong>觀察
 
-**High risk(高度風險):**異常 →根據2018 UDMI區分type 1/2 MI、acute/chronic myocardial injury →按照2014 ACC/AHA NSTEMI-ACS guideline處置
+<strong>High risk(高度風險):</strong>異常 →根據2018 UDMI區分type 1/2 MI、acute/chronic myocardial injury →按照2014 ACC/AHA NSTEMI-ACS guideline處置
 
-**那麼hs-cTn-based CDPs有哪些呢?(Fig.8)**
+<strong>那麼hs-cTn-based CDPs有哪些呢?(Fig.8)</strong>
 
 ![](https://cdn-images-1.medium.com/max/1024/1*5kTTjzkdjcxGgbfLojDhJA.png)
-***Fig.8 hs-cTn-based CDPs(紅框建議使用)***
+<strong><em>Fig.8 hs-cTn-based CDPs(紅框建議使用)</em></strong>
 
-文章[^8]建議**使用ESC 0/1 h、ESC 0/2 h、與High-STEACS**，這三者比使用ESC 0/3 h更有效(更多病患被rule out)與更安全(更少病患被miss掉)。
+文章[^8]建議<strong>使用ESC 0/1 h、ESC 0/2 h、與High-STEACS</strong>，這三者比使用ESC 0/3 h更有效(更多病患被rule out)與更安全(更少病患被miss掉)。
 
 ![](https://cdn-images-1.medium.com/max/1024/1*2D_zyosMoYIZk530pLK0iw@2x.png)
-***Fig.9 應用ESC 0/1h、0/2h流程圖***
+<strong><em>Fig.9 應用ESC 0/1h、0/2h流程圖</em></strong>
 
 ![](https://cdn-images-1.medium.com/max/1024/1*AhjSPE7QIbpezYPNpIZdSw@2x.png)
-***Fig.10 ESC 0/1h、0/2h的Cut-off levels***
+<strong><em>Fig.10 ESC 0/1h、0/2h的Cut-off levels</em></strong>
 
 #### 如何應用ESC 0/1 h、ESC 0/2 h呢?(Fig.9+Fig.10一起看)
 
-Fig.9流程圖是從ESC 2020 NSTEMI guideline來的，這流程圖是合併0-hour rule out →意思是，如果『**ACS症狀≧3小時』**，在0 h的hs-cTn如果是Very low(參考Fig.10的第一行數值)，那麼**可以rule out MI(Low risk)**。
+Fig.9流程圖是從ESC 2020 NSTEMI guideline來的，這流程圖是合併0-hour rule out →意思是，如果『<strong>ACS症狀≧3小時』</strong>，在0 h的hs-cTn如果是Very low(參考Fig.10的第一行數值)，那麼<strong>可以rule out MI(Low risk)</strong>。
 
-- **0-hour rule out不適合症狀< 3 hrs的病患，千萬切記!!!!**
-- **記得問看看自己實驗室驗hs-cTn是用哪個廠牌(Fig.10)**
+- <strong>0-hour rule out不適合症狀< 3 hrs的病患，千萬切記!!!!</strong>
+- <strong>記得問看看自己實驗室驗hs-cTn是用哪個廠牌(Fig.10)</strong>
 
-若不到3小時，0 h的hs-cTn為low，『**且**』和1 h的hs-cTn其∆值(No 1h∆ →見Fig.10第三行數值) ，符合此條件也**可以rule out MI(Low risk)**。
+若不到3小時，0 h的hs-cTn為low，『<strong>且</strong>』和1 h的hs-cTn其∆值(No 1h∆ →見Fig.10第三行數值) ，符合此條件也<strong>可以rule out MI(Low risk)</strong>。
 
-如果0 h的hs-cTn符合為High 『**或**』 1h∆ ，**rule in MI(High risk)。**
+如果0 h的hs-cTn符合為High 『<strong>或</strong>』 1h∆ ，<strong>rule in MI(High risk)。</strong>
 
-如果0 h的hs-cTn既不符合rule in MI也不符合rule out MI，那麼就屬於**Intermediate risk**，需要觀察。
+如果0 h的hs-cTn既不符合rule in MI也不符合rule out MI，那麼就屬於<strong>Intermediate risk</strong>，需要觀察。
 
 ![](https://cdn-images-1.medium.com/max/1024/1*6XxH0SuvB0gcM_tY6qxoDA@2x.png)
-***Fig.11 High-STEACS early rule out CDP***
+<strong><em>Fig.11 High-STEACS early rule out CDP</em></strong>
 
-**Fig.11**是另一個推薦的CDP，有興趣參考上圖。
+<strong>Fig.11</strong>是另一個推薦的CDP，有興趣參考上圖。
 
 #### 除了Troponin測量外，還有哪些ACS病患需作風險分類?
 
@@ -277,19 +277,19 @@ Fig.9流程圖是從ESC 2020 NSTEMI guideline來的，這流程圖是合併0-hou
 
 Heart score主要設計是用於undifferentiated chest pain、low risk來做風險分類。但是已經診斷MI的人，不適用。
 
-EDACS risk score也是常用於low risk病患，進一步評估其MACE(major adverse cardiac event)(**Fig.12**)。
+EDACS risk score也是常用於low risk病患，進一步評估其MACE(major adverse cardiac event)(<strong>Fig.12</strong>)。
 
 ![](https://cdn-images-1.medium.com/max/1024/0*koUkpVS63P7S4XZI)
-***Fig.12 EDACS risk score***
+<strong><em>Fig.12 EDACS risk score</em></strong>
 
-為何這些病患，要多做risk score rules?主要是因為，這類病患仍有一定比例因為產生false-negative而被疏漏。所以配合這些score rules可以降低被誤判的機率。(**有興趣請參考這篇文章[^8]的p.17-p20**)。
+為何這些病患，要多做risk score rules?主要是因為，這類病患仍有一定比例因為產生false-negative而被疏漏。所以配合這些score rules可以降低被誤判的機率。(<strong>有興趣請參考這篇文章[^8]的p.17-p20</strong>)。
 
 ### 好~~~又講遠了，拉回來這個Case
 
 所以這個Case的initial ECG屬於non-diagnostic ECG或者是可能因為胸痛超過6小時，所以利用T/QRS ratio >0.36這個rule，已經出現false-negative現象。
 
 ![](https://cdn-images-1.medium.com/max/1024/1*9x7OevQPGm6YeFrJidCy-Q.png)
-***Fig.14 一小時後的ECG***
+<strong><em>Fig.14 一小時後的ECG</em></strong>
 
 一小時候的ECG(症狀加重)，此時可以發現仍適用T/QRS ratio >0.36這個rule。在V2的T wave變大，如果應用此rule，發現V2的T/QRS ratio已經超過0.36，favor OMI(Occlusion MI)。而且在inf.leads已經出現reciprocal STD changes與minimal STE over aVL。這種ECG pattern非常有可能是proximal LAD阻塞導致。
 
@@ -302,28 +302,28 @@ EDACS risk score也是常用於low risk病患，進一步評估其MACE(major adv
 只要符合Very high risk的feature，都需要立刻會診CV man。至於『能不能』、『需不需要』立刻做到心導管並不是我們能夠掌控的，急診能夠控制的就是儘量提供CV man所需要的資訊。包含病患現在穩不穩定、是否可能有cardiogenic shock、是否在急診有跳VT/Vf、是否有Acute pul.edema的狀況出現，是否出現AMI後的mechanical complications。當我們提供越多病患現場資訊，CV man才能夠判斷是否需要立即啟動心導管。
 
 ![](https://cdn-images-1.medium.com/max/1024/0*1D5zqCbkRKd34Y9q)
-***Fig.15 ESC 2020 NSTEMI guideline***
+<strong><em>Fig.15 ESC 2020 NSTEMI guideline</em></strong>
 
 會診完CV man後，CV man希望繼續觀察與等待biomarker。
 
 ![](https://cdn-images-1.medium.com/max/1024/1*z8DcmAc5lH4HMP2YyC0JOw.png)
-***Fig.16 2.5小時後的ECG***
+<strong><em>Fig.16 2.5小時後的ECG</em></strong>
 
-到院後2.5 hr，ECG出現**RBBB+LAFB**，在V2的J point有STE。
+到院後2.5 hr，ECG出現<strong>RBBB+LAFB</strong>，在V2的J point有STE。
 
-在RBBB morphology如果是qR pattern or rsR’ pattern，右邊R’ > 左邊r，通常會有STD with TWI or isoelectric baseline出現(**Fig.17**)。Amal mattu在其ECG weekly教學中多次強調，RBBB任何lead只要出現STE，就必須考慮OMI。這是RBBB的ST opposition rule →也就是在RBBB，ST segment的方向不應該和QRS最後一部分同方向。舉個例子，我們可以看看**Fig.18**，這病患胸痛，我們看到出現PVC，而PVC是RBBB pattern，在V2/V3、都看到了STE，而此QRS最後一部分也是向上，而這違反了ST opposition rule，必須考慮有缺血變化產生了primary STTC。
+在RBBB morphology如果是qR pattern or rsR’ pattern，右邊R’ > 左邊r，通常會有STD with TWI or isoelectric baseline出現(<strong>Fig.17</strong>)。Amal mattu在其ECG weekly教學中多次強調，RBBB任何lead只要出現STE，就必須考慮OMI。這是RBBB的ST opposition rule →也就是在RBBB，ST segment的方向不應該和QRS最後一部分同方向。舉個例子，我們可以看看<strong>Fig.18</strong>，這病患胸痛，我們看到出現PVC，而PVC是RBBB pattern，在V2/V3、都看到了STE，而此QRS最後一部分也是向上，而這違反了ST opposition rule，必須考慮有缺血變化產生了primary STTC。
 
 RBBB合併STD in V1~V3(特別是有rSR’)，其正常STD頂多Up to 1 mm(再次注意，只有在有R’-wave時適用)，只有當R’-wave非常大，比如RVH，才有可能出現 > 1 mm。如果超過1 mm，代表有ST vector力量往下拉，造成excessive discordant STD，最常見是Post.OMI[^12]。
 
 ![](https://cdn-images-1.medium.com/max/1024/0*I7Q5rNoODuj9VqUu.png)
-***Fig.17 Normal RBBB pattern***
+<strong><em>Fig.17 Normal RBBB pattern</em></strong>
 
 ![](https://cdn-images-1.medium.com/max/1024/0*MWNsJ8N-eKwLvQLi)
-***Fig.18***
+<strong><em>Fig.18</em></strong>
 
 #### 那麼出現RBBB+LAFB到底具有什麼意義呢?
 
-首先這種pattern(指RBBB+LAFB)至少可以診斷LAD occlusion(**因為LAD supply anterolateral walls、RBB、LAF**)
+首先這種pattern(指RBBB+LAFB)至少可以診斷LAD occlusion(<strong>因為LAD supply anterolateral walls、RBB、LAF</strong>)
 
 Dr.Smith ECG’s Blog，在這篇[^9]文章中有提到RBBB+LAFB(其實很多篇都有提到)。Blog裡面有提到一篇文獻[^10]，文獻中有描述到，在一些很嚴重的LAD occlusion或LM occlusion，是以RBBB+LAFB呈現出來 →這些個案有最高風險的Vf、cardiogenic shock和最高的in-hospital mortality(AMI for new RBBB alone有18.8%)。
 
@@ -331,28 +331,28 @@ Dr.Smith ECG’s Blog，在這篇[^9]文章中有提到RBBB+LAFB(其實很多篇
 
 然而通常塞在LAD是較常見的狀況，如果阻塞在LM非常少，主要原因是阻塞在LM，病患很少有活著機會做到ECG和angiogram。
 
-另外RBBB+LAFB的STE，很常會看到downsloping STE，這幾乎已經是routine而不是例外(**見Fig.19範例**)。
+另外RBBB+LAFB的STE，很常會看到downsloping STE，這幾乎已經是routine而不是例外(<strong>見Fig.19範例</strong>)。
 
 ![](https://cdn-images-1.medium.com/max/1024/1*QjU0iOAV0cptAxC2jZGX8Q.png)
-***Fig.19 RBBB+LAFB+STEMI***
+<strong><em>Fig.19 RBBB+LAFB+STEMI</em></strong>
 
-**Fig.19**垂直線是穿過J point，V2/V3都是明顯的STE，且是downsloping STE(見箭頭)。
+<strong>Fig.19</strong>垂直線是穿過J point，V2/V3都是明顯的STE，且是downsloping STE(見箭頭)。
 
 RBBB+LAFB不容易判斷出有STEMI。
 
-所以Dr.Smith在這篇文章[^11]中有寫道一段 →**當別人無法相信我們的說法時，要如何去說服別人呢?(我認為有STEMI，但你認為沒有)**
+所以Dr.Smith在這篇文章[^11]中有寫道一段 →<strong>當別人無法相信我們的說法時，要如何去說服別人呢?(我認為有STEMI，但你認為沒有)</strong>
 
-**原文如下:**
+<strong>原文如下:</strong>
 
-『**Stephen Smith:just use powers of persuasion. One is this: “the art of diplomacy is letting other people have your way” In other words, make them think it is their idea. Or make a plea for help: “I need your help on this.” People respond to being needed. If that fails, you say: “I am writing that I strongly believe this patient needs an emergent angiogram, right now. If you don’t do it, and you’re wrong, you will look very bad”**』
+『<strong>Stephen Smith:just use powers of persuasion. One is this: “the art of diplomacy is letting other people have your way” In other words, make them think it is their idea. Or make a plea for help: “I need your help on this.” People respond to being needed. If that fails, you say: “I am writing that I strongly believe this patient needs an emergent angiogram, right now. If you don’t do it, and you’re wrong, you will look very bad”</strong>』
 
-**我大致翻譯重要意思:**
+<strong>我大致翻譯重要意思:</strong>
 
-『**讓別人(CV man)認為，這是他們的想法，另外如果說我(ER Dr.)需要你(CV man)的幫助。通常人們對於被需要，會有想幫助的心態。**』
+『<strong>讓別人(CV man)認為，這是他們的想法，另外如果說我(ER Dr.)需要你(CV man)的幫助。通常人們對於被需要，會有想幫助的心態。</strong>』
 
 #### 舉個例子:
 
-**我覺得ECG的這裡可能有問題，你看J point在這，ST已經升高。似乎有STEMI。我需要你協助幫我看看。(讓我們的想法 →變成他們的想法，才有機會往下走下去)**
+<strong>我覺得ECG的這裡可能有問題，你看J point在這，ST已經升高。似乎有STEMI。我需要你協助幫我看看。(讓我們的想法 →變成他們的想法，才有機會往下走下去)</strong>
 
 這是說話的技巧，與其斬釘截鐵說這是STEMI，倒不如說出自己認為懷疑OMI的地方，讓CV man被需求滿足到，他們也會比較願意把焦點放在你認為可能是有問題的地方。
 
@@ -363,14 +363,14 @@ RBBB+LAFB不容易判斷出有STEMI。
 病患出現newly onset RBBB與之後反覆胸痛。CV man還是沒有要做緊急心導管。直到3.5小時後ECG從RBBB又變回類似1小時後的ECG + 持續症狀 + TnI上升(第二次)，才進去導管室。
 
 ![](https://cdn-images-1.medium.com/max/1024/1*WfCvWCrnrSqZlTG-iuM_Dw@2x.png)
-***Fig.20 3.5小時後ECG(有症狀)***
+<strong><em>Fig.20 3.5小時後ECG(有症狀)</em></strong>
 
-**心導管報告:LAD-p total occlusion、RCA-p CTO**
+<strong>心導管報告:LAD-p total occlusion、RCA-p CTO</strong>
 
 ![](https://cdn-images-1.medium.com/max/1024/0*52ebRYyDKUArzQDU)
 
 ![](https://cdn-images-1.medium.com/max/1024/0*6_hAFbmYZhpQR86y)
-***CAG報告***
+<strong><em>CAG報告</em></strong>
 
 #### 另外最後再講到，有哪些的ECG findings支持acute proximal LAD occlusion呢?(請參考這篇文章[^13])
 
@@ -385,7 +385,7 @@ RBBB+LAFB不容易判斷出有STEMI。
 
 1. Smith 4 variable formula要使用，需要先排除哪些ECG morphology?
 2. T/QRS ratio > 0.36比較favor STEMI是用在哪種狀況?
-3. 對於initial ECG屬於non-diagnostic ECG，我們該怎麼辦?**(ACLS 2020與2022急診急性胸痛處置分別怎麼說?)**
+3. 對於initial ECG屬於non-diagnostic ECG，我們該怎麼辦?<strong>(ACLS 2020與2022急診急性胸痛處置分別怎麼說?)</strong>
 4. ESC 2020 NSTEMI guideline的Very high risk feature有哪些?
 5. RBBB有任何STE or excessive discordant in V1–3都可能有OMI
 6. 出現RBBB+LAFB的重點 →可能是proximal LAD occlusion、此pattern是死亡率最高的OMI
