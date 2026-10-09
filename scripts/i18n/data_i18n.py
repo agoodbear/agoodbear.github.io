@@ -18,6 +18,7 @@ import collections, hashlib, json, pathlib, re, sys
 
 import yaml
 
+sys.dont_write_bytecode = True  # repo 有追蹤 __pycache__，別每跑一次就弄髒工作區
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from check_translation import numbers, CJK  # 同一把數字尺
 
