@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Study on ER Bear's Heart Notes</title><link>https://agoodbear.com/en/categories/study/</link><description>Recent content in Study on ER Bear's Heart Notes</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Fri, 28 Aug 2026 09:30:00 +0800</lastBuildDate><atom:link href="https://agoodbear.com/en/categories/study/index.xml" rel="self" type="application/rss+xml"/><item><title>Moving My Script Next to the Audience's Faces: I Built SlideCue, a G2 Glasses Plugin, and It's Live</title><link>https://agoodbear.com/en/post/study-post-10/</link><pubDate>Fri, 28 Aug 2026 09:30:00 +0800</pubDate><guid>https://agoodbear.com/en/post/study-post-10/</guid><description>
+&lt;style&gt;
+.sc-fig{margin:1.8em auto;max-width:720px;text-align:center}
+.sc-fig img{width:100%;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+.sc-fig figcaption{font-size:.9em;color:#777;margin-top:.6em;line-height:1.7}
+.sc-fig.sc-wide{max-width:900px}
+.sc-fig.sc-wide img{border-radius:8px;box-shadow:0 1px 8px rgba(0,0,0,.10)}
+.sc-flow{display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:.5em;margin:1.8em auto;max-width:760px}
+.sc-flow .box{flex:1 1 180px;border:2px solid #2f6f4f;border-radius:10px;padding:.9em 1em;background:#f5faf7}
+.sc-flow .box b{display:block;font-size:1.02em;margin-bottom:.35em;color:#2f6f4f}
+.sc-flow .box span{font-size:.88em;color:#555;line-height:1.6}
+.sc-flow .arrow{align-self:center;font-size:1.3em;color:#2f6f4f}
+@media (max-width:600px){.sc-flow{flex-direction:column}.sc-flow .arrow{transform:rotate(90deg)}}
+&lt;/style&gt;
+&lt;p&gt;I've been putting together an ACLS lecture script lately: 120 slides, nearly 30,000 characters, all of it in Keynote's speaker notes. When I teach, I keep my laptop on the lectern and turn my head to glance at what comes next after every section.&lt;/p&gt;</description></item><item><title>The Sun Can Be Computed, the Clouds Can't: Using AI to Work Out Where to Stand to See the Sun Rise Over Guishan Island</title><link>https://agoodbear.com/en/post/study-post-9/</link><pubDate>Tue, 18 Aug 2026 20:00:00 +0800</pubDate><guid>https://agoodbear.com/en/post/study-post-9/</guid><description>
+&lt;style&gt;
+.gs-fig{margin:1.6em auto;max-width:620px;text-align:center}
+.gs-fig img,.gs-fig video{width:100%;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.gs-fig figcaption{font-size:.9em;color:#777;margin-top:.5em;line-height:1.6}
+.gs-wide{max-width:860px}
+.article-body .gs-fig{margin-left:auto;margin-right:auto}
+.gs-fig iframe{width:100%;border:0;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.15);display:block}
+.article-body .gs-lab{width:min(1400px,96vw);max-width:none;margin-left:50%;transform:translateX(-50%)}
+.article-body .gs-pair{width:min(1180px,94vw);max-width:none;margin-left:50%;transform:translateX(-50%)}
+.gs-tall{max-width:420px}
+.video{max-width:900px;margin:1.9em auto;padding-bottom:0;height:auto;position:static}
+.video iframe{width:100%;aspect-ratio:16/9;height:auto;display:block;position:static;border:0;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.post-content blockquote{background:#fff8ec;border-left:4px solid #e8842b;padding:.9em 1.3em;border-radius:0 8px 8px 0;color:#2a2a2a}
+&lt;/style&gt;
+&lt;p&gt;It started with a photo I saw: the sun rising right out of Guishan Island.&lt;/p&gt;
+&lt;p&gt;My first thought was, where do you have to stand to get that shot? Guishan Island sits off the Yilan coast, so from any point on the shoreline it takes up a certain slice of sky, and the direction the sun rises changes every day. Getting those two to line up should be something you can calculate.&lt;/p&gt;</description></item><item><title>The Casino Next to the Church: Three Talks From a 2026 Value Investing Conference in Taiwan</title><link>https://agoodbear.com/en/post/study-post-8/</link><pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/study-post-8/</guid><description>
+&lt;p&gt;On July 18, 2026, the 雷浩斯 Value Investing Conference (雷浩斯 is a Taiwanese value-investing author) was held at Zhongshan Hall in Taipei: three talks in one day, from method to market to life, strung together into one complete value investing system. This post condenses the three talks into six themes, using tables wherever a table will do, so they are easy to look up and apply. &lt;!-- keep-zh --&gt;&lt;/p&gt;
+&lt;h2 id="three-talks-one-through-line"&gt;Three Talks, One Through-Line&lt;/h2&gt;
+&lt;p&gt;The three talks look separate, but the through-line is a single sentence: don't try to predict which day the market turns; identify where you are standing in the market right now.&lt;/p&gt;</description></item><item><title>If the Source Isn't Cleared, the Best Antibiotic Won't Save You: Notes from an ED Antibiotics Seminar</title><link>https://agoodbear.com/en/post/study-post-7/</link><pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/study-post-7/</guid><description>
+&lt;p&gt;I went to an ED antibiotics seminar (the ER &amp;amp; GIGS Joint Academic Symposium): four talks plus a new sedative. The whole time I was listening I had this feeling: the topics looked like they had nothing to do with each other (fever in chemo patients, cholangitis, complicated infections in the belly), but underneath they were all saying the same thing: &lt;mark&gt;&lt;strong&gt;if the source of infection isn't cleared, no matter how beautifully you pick the antibiotic, it's all for nothing&lt;/strong&gt;&lt;/mark&gt;.&lt;/p&gt;</description></item><item><title>Notes on Raising a Lobster: Building an Automated Knowledge-Management Workflow with WhatsApp + Discord + OpenClaw</title><link>https://agoodbear.com/en/post/study-post-6/</link><pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/study-post-6/</guid><description>
+&lt;h2 id="raising-a-lobster-setting-up-the-messaging-interface-is-a-lot-of-fun"&gt;Raising a lobster: setting up the messaging interface is a lot of fun&lt;/h2&gt;
+&lt;p&gt;I think that when you're raising a lobster, setting up the messaging interface is a lot of fun.&lt;/p&gt;
+&lt;p&gt;I find WhatsApp really handy, especially since its parent company is Meta. When you hit share on something you see in a lot of social apps, the first button is WhatsApp.&lt;/p&gt;
+&lt;p&gt;Tap it, and it starts analyzing the content, tags it for me, and saves it into my second brain, Roam.&lt;/p&gt;</description></item><item><title>Selfie with My Idol~~</title><link>https://agoodbear.com/en/post/study-post-4/</link><pubDate>Wed, 19 Jun 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/study-post-4/</guid><description>
+&lt;p&gt;Early on June 19, 2024, I hopped on the Kamalan bus across the street from my hospital and headed to the Taipei International Convention Center for class&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/2cyi5t.webp" type="image/webp"&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/ipic/2cyi5t.jpg"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/4suyq9.webp" type="image/webp"&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/ipic/4suyq9.jpg"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;A blazing sunny day~so hot&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/k6xza9.webp" type="image/webp"&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/ipic/k6xza9.jpg"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;The moment I stepped into the convention center, pure relief~so cool in here!!&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/esnxdq.webp" type="image/webp"&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="Course schedule"
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/ipic/esnxdq.jpeg"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Before ICEM2024 officially kicked off, I went to a pre-conference workshop, specifically on Emergency Cardiology.&lt;/p&gt;</description></item><item><title>Using a knowledge database, and how to build an inspiration-notes system</title><link>https://agoodbear.com/en/post/study-post-2/</link><pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/study-post-2/</guid><description>
+&lt;h2 id="my-note-taking-knowledge-base-second-brain"&gt;My &lt;strong&gt;note-taking knowledge base (second brain)&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;A long time ago I used Evernote as my second brain. Later I realized I was using Evernote Clip to grab web pages and save them as read it later.&lt;/p&gt;
+&lt;p&gt;But all that did was turn a bigger garbage heap (Big data) into a smaller garbage heap (Small Big data)😅. Bottom line, it was all still garbage.&lt;/p&gt;
+&lt;p&gt;Why would I end up treating these articles — ones I considered important knowledge — as garbage? Because &lt;mark&gt;there were so many of them; if I don't sort through them and don't describe the article again in my own words after understanding it, then that article has no value to me whatsoever&lt;mark&gt;.&lt;/p&gt;</description></item><item><title>Syntax for Building a Site with Hugo</title><link>https://agoodbear.com/en/post/study-post-1/</link><pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/study-post-1/</guid><description>
+&lt;h1 id="how-to-create-static-site-posts-with-hugo"&gt;How to Create Static Site Posts with Hugo&lt;/h1&gt;
+&lt;h2 id="prerequisites"&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;First, a few things need to be in place:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Install &lt;a href="https://apps.apple.com/tw/app/xcode/id497799835?mt=12"&gt;Xcode&lt;/a&gt; on your Mac (&lt;strong&gt;Windows probably doesn't need it? I don't know about that&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Use Homebrew to install Hugo from the Mac Terminal&lt;/li&gt;
+&lt;li&gt;Already have an account set up on &lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Install VS code and typora
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://code.visualstudio.com/"&gt;VS code&lt;/a&gt; lets you write markdown code directly&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://typora.io/#feature"&gt;Typora&lt;/a&gt; turns your writing straight into markdown format (&lt;strong&gt;sort of a WYSIWYG concept&lt;/strong&gt;)➔writing posts in this is way more comfortable than in VS code😌
+&lt;ul&gt;
+&lt;li&gt;When you insert an image in Typora, &lt;strong&gt;just right-click on the image to change its size&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Already picked out, from the &lt;a href="https://themes.gohugo.io/"&gt;Hugo theme&lt;/a&gt; gallery, the theme you want to use and modify
+&lt;ul&gt;
+&lt;li&gt;Download the theme so you can open and run it on your own computer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once the above is done, you're mostly there～～～&lt;/p&gt;</description></item><item><title>Medium's Various Formatting Features</title><link>https://agoodbear.com/en/post/medium-1afeaa016c60/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/medium-1afeaa016c60/</guid><description>
+&lt;h3 id="mediums-various-formatting-features"&gt;Medium's Various Formatting Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Type ` and the text after it gets a gray background&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*xXb9LHTT0K9SsQizSxzYZg@2x.png"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type : and then some English, and &lt;a href="https://www.webfx.com/tools/emoji-cheat-sheet/"&gt;emoji symbols&lt;/a&gt; pop up&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*WgW-LwzZwY03S8pq5NLycQ@2x.png"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type ``` and a gray-background block appears (you have to type it at the very start)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*iC0r-9zWy6lESpKNOUJaxw@2x.png"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Press CMD+K on an image to add a Hyperlink to it&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Press *+space or 1. → to get indented formatting&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Type &lt;strong&gt;TK in the body → marks a body paragraph that isn't finished yet (a handy marker)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;All kinds of &lt;a href="https://medium.com/@luyo/medium-%E5%BF%AB%E9%80%9F%E9%8D%B5%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA%E5%8F%8A%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97-b6e4c0203816"&gt;keyboard shortcuts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://medium.com/@luyo/medium-%E5%BF%AB%E9%80%9F%E9%8D%B5%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA%E5%8F%8A%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97-b6e4c0203816"&gt;Medium Keyboard Shortcuts: Demo and Usage Notes&lt;/a&gt; (in Chinese)&lt;/p&gt;</description></item><item><title>Roam Tutorial: Episode 4 - Four Ways to Display Reference Material in Roam research</title><link>https://agoodbear.com/en/post/medium-6efa37de7325/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/medium-6efa37de7325/</guid><description>
+&lt;h3 id="roam-tutorial-episode-4---four-ways-to-display-reference-material-in-roam-research"&gt;&lt;strong&gt;Roam Tutorial&lt;/strong&gt;: Episode 4 - Four Ways to Display Reference Material in Roam research&lt;/h3&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="embed"
+class="image_figure image_external image_unprocessed"
+src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi.ytimg.com%2Fvi%2F4-TeZrmGWSg%2Fhqdefault.jpg&amp;amp;key=a19fcc184b9711e1b4764040d3dc5c07"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;</description></item><item><title>You May Have Only Five Minutes to Catch the Reviewer's Eye!</title><link>https://agoodbear.com/en/post/study-post-3/</link><pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/study-post-3/</guid><description>
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;source srcset="https://agoodbear.com/images/ipic/v4ydr0.webp" type="image/webp"&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/ipic/v4ydr0.jpg"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;This is the write-up I did after attending InnovaRad's Figures and Figure Legends Workshop in September 2019 (&lt;a href="https://figure.innovarad.tw/jhtsao/"&gt;originally posted on their official site&lt;/a&gt;).&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;&lt;u&gt;Author: Dr. Tsao Jian-hsiung, Department of Emergency Medicine, NYCU Hospital (National Yang Ming Chiao Tung University Hospital)&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id="the-landmine-maker-tells-you-how-to-dodge-the-landmines"&gt;&lt;strong&gt;The landmine maker tells you how to dodge the landmines.&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;Whatever field you're in, there's one way to make huge leaps: follow the right teacher, walk behind someone strong. A strong person can tell you straight up about every landmine they've stepped on — whether it's square or round, how much explosive is inside, how high it can blow you — every last detail.&lt;/p&gt;</description></item></channel></rss>

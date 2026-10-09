@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on ER Bear's Heart Notes</title><link>https://agoodbear.com/en/tags/programming/</link><description>Recent content in Programming on ER Bear's Heart Notes</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Sun, 21 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.com/en/tags/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Using a knowledge database, and how to build an inspiration-notes system</title><link>https://agoodbear.com/en/post/study-post-2/</link><pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/study-post-2/</guid><description>
+&lt;h2 id="my-note-taking-knowledge-base-second-brain"&gt;My &lt;strong&gt;note-taking knowledge base (second brain)&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;A long time ago I used Evernote as my second brain. Later I realized I was using Evernote Clip to grab web pages and save them as read it later.&lt;/p&gt;
+&lt;p&gt;But all that did was turn a bigger garbage heap (Big data) into a smaller garbage heap (Small Big data)😅. Bottom line, it was all still garbage.&lt;/p&gt;
+&lt;p&gt;Why would I end up treating these articles — ones I considered important knowledge — as garbage? Because &lt;mark&gt;there were so many of them; if I don't sort through them and don't describe the article again in my own words after understanding it, then that article has no value to me whatsoever&lt;mark&gt;.&lt;/p&gt;</description></item><item><title>Syntax for Building a Site with Hugo</title><link>https://agoodbear.com/en/post/study-post-1/</link><pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/study-post-1/</guid><description>
+&lt;h1 id="how-to-create-static-site-posts-with-hugo"&gt;How to Create Static Site Posts with Hugo&lt;/h1&gt;
+&lt;h2 id="prerequisites"&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;First, a few things need to be in place:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Install &lt;a href="https://apps.apple.com/tw/app/xcode/id497799835?mt=12"&gt;Xcode&lt;/a&gt; on your Mac (&lt;strong&gt;Windows probably doesn't need it? I don't know about that&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Use Homebrew to install Hugo from the Mac Terminal&lt;/li&gt;
+&lt;li&gt;Already have an account set up on &lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Install VS code and typora
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://code.visualstudio.com/"&gt;VS code&lt;/a&gt; lets you write markdown code directly&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://typora.io/#feature"&gt;Typora&lt;/a&gt; turns your writing straight into markdown format (&lt;strong&gt;sort of a WYSIWYG concept&lt;/strong&gt;)➔writing posts in this is way more comfortable than in VS code😌
+&lt;ul&gt;
+&lt;li&gt;When you insert an image in Typora, &lt;strong&gt;just right-click on the image to change its size&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Already picked out, from the &lt;a href="https://themes.gohugo.io/"&gt;Hugo theme&lt;/a&gt; gallery, the theme you want to use and modify
+&lt;ul&gt;
+&lt;li&gt;Download the theme so you can open and run it on your own computer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once the above is done, you're mostly there～～～&lt;/p&gt;</description></item><item><title>Medium's Various Formatting Features</title><link>https://agoodbear.com/en/post/medium-1afeaa016c60/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/medium-1afeaa016c60/</guid><description>
+&lt;h3 id="mediums-various-formatting-features"&gt;Medium's Various Formatting Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Type ` and the text after it gets a gray background&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*xXb9LHTT0K9SsQizSxzYZg@2x.png"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type : and then some English, and &lt;a href="https://www.webfx.com/tools/emoji-cheat-sheet/"&gt;emoji symbols&lt;/a&gt; pop up&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*WgW-LwzZwY03S8pq5NLycQ@2x.png"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type ``` and a gray-background block appears (you have to type it at the very start)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_external image_unprocessed"
+src="https://cdn-images-1.medium.com/max/1024/1*iC0r-9zWy6lESpKNOUJaxw@2x.png"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Press CMD+K on an image to add a Hyperlink to it&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Press *+space or 1. → to get indented formatting&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Type &lt;strong&gt;TK in the body → marks a body paragraph that isn't finished yet (a handy marker)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;All kinds of &lt;a href="https://medium.com/@luyo/medium-%E5%BF%AB%E9%80%9F%E9%8D%B5%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA%E5%8F%8A%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97-b6e4c0203816"&gt;keyboard shortcuts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://medium.com/@luyo/medium-%E5%BF%AB%E9%80%9F%E9%8D%B5%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA%E5%8F%8A%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97-b6e4c0203816"&gt;Medium Keyboard Shortcuts: Demo and Usage Notes&lt;/a&gt; (in Chinese)&lt;/p&gt;</description></item></channel></rss>

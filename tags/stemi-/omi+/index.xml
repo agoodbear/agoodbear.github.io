@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>STEMI(-)/OMI(+) on 急診熊心聲部落格</title><link>https://agoodbear.com/tags/stemi-/omi+/</link><description>Recent content in STEMI(-)/OMI(+) on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.com/tags/stemi-/omi+/index.xml" rel="self" type="application/rss+xml"/><item><title>59歲男性、胸痛、劇烈背痛</title><link>https://agoodbear.com/post/ecg-post-16/</link><pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/ecg-post-16/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>STEMI(-)/OMI(+) on 急診熊心聲部落格</title><link>https://agoodbear.com/tags/stemi-/omi+/</link><description>Recent content in STEMI(-)/OMI(+) on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.com/tags/stemi-/omi+/index.xml" rel="self" type="application/rss+xml"/><item><title>59歲男性、胸痛、劇烈背痛</title><link>https://agoodbear.com/post/ecg-post-16/</link><pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/ecg-post-16/</guid><description>
 &lt;h2 class="ecg-wave-text ecg-wave-text--h2"&gt;&lt;span class="ecg-wave-text__label"&gt;&lt;span class="ecg-wave-text__copy"&gt;今天我們來看一個很有趣的個案。心電圖有很多可以學習的地方。&lt;/span&gt;&lt;/span&gt;&lt;svg class="ecg-wave-text__wave" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true"&gt;&lt;path class="ecg-wave-text__base" pathLength="100" d="M0 126 L74 126 C96 126 104 102 118 102 C132 102 143 126 157 126 L220 126 L251 126 L266 142 L284 126 L362 126 C386 126 394 94 412 94 C428 94 438 126 454 126 L507 126 L526 134 L543 18 L560 198 L579 126 L665 126 C688 126 700 104 720 104 C742 104 752 126 771 126 L832 126 L848 134 L868 34 L886 190 L904 126 L986 126 C1009 126 1020 96 1042 96 C1065 96 1076 126 1096 126 L1200 126"/&gt;&lt;path class="ecg-wave-text__scan-glow" pathLength="100" d="M0 126 L74 126 C96 126 104 102 118 102 C132 102 143 126 157 126 L220 126 L251 126 L266 142 L284 126 L362 126 C386 126 394 94 412 94 C428 94 438 126 454 126 L507 126 L526 134 L543 18 L560 198 L579 126 L665 126 C688 126 700 104 720 104 C742 104 752 126 771 126 L832 126 L848 134 L868 34 L886 190 L904 126 L986 126 C1009 126 1020 96 1042 96 C1065 96 1076 126 1096 126 L1200 126"/&gt;&lt;path class="ecg-wave-text__scan" pathLength="100" d="M0 126 L74 126 C96 126 104 102 118 102 C132 102 143 126 157 126 L220 126 L251 126 L266 142 L284 126 L362 126 C386 126 394 94 412 94 C428 94 438 126 454 126 L507 126 L526 134 L543 18 L560 198 L579 126 L665 126 C688 126 700 104 720 104 C742 104 752 126 771 126 L832 126 L848 134 L868 34 L886 190 L904 126 L986 126 C1009 126 1020 96 1042 96 C1065 96 1076 126 1096 126 L1200 126"/&gt;&lt;/svg&gt;&lt;/h2&gt;
 &lt;p&gt;59歲男性，大年初一來急診就醫。
 這病患和我說胸痛已經痛了3-4天了，偶爾痛到後背。
@@ -22,7 +22,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;我回答是。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;mark&gt;&lt;strong&gt;不過更精確一點應該要說，這個病患並沒有符合STEMI criteria，但是有OMI(Occlusion MI)➔血管阻塞了。&lt;/strong&gt;&lt;mark&gt;&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;&lt;strong&gt;不過更精確一點應該要說，這個病患並沒有符合STEMI criteria，但是有OMI(Occlusion MI)➔血管阻塞了。&lt;/strong&gt;&lt;/mark&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;可是明明沒有符合STEMI criteria啊~~為何血管阻塞了?&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id="如果從原本的acs分類來看"&gt;如果從原本的ACS分類來看&lt;/h3&gt;
@@ -42,9 +42,9 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/p&gt;
 &lt;p&gt;光是病患沒有符合STEMI criteria，但如果是NSTEMI，就代表病患的血管還是有阻塞導致NSTE『MI』&lt;/p&gt;
 &lt;p&gt;所以沒有STE，真的不代表病患沒有心肌梗塞。&lt;/p&gt;
-&lt;h4 id="那麼使用stemi-criteria的準則來抓mi病患其sensitivity有多少"&gt;&lt;mark&gt;那麼使用STEMI criteria的準則來抓MI病患，其sensitivity有多少?&lt;mark&gt;&lt;/h4&gt;
+&lt;h4 id="那麼使用stemi-criteria的準則來抓mi病患其sensitivity有多少"&gt;&lt;mark&gt;那麼使用STEMI criteria的準則來抓MI病患，其sensitivity有多少?&lt;/mark&gt;&lt;/h4&gt;
 &lt;p&gt;在這篇文章中 &lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt; 描述到，如果利用STEMI criteria針對initial ED ECG來做任何occlusion(指發生OMI)診斷，則只有21%的sensitivity。&lt;/p&gt;
-&lt;p&gt;這是什麼意思?也就是&lt;strong&gt;可能有高達8成的AMI病患，無法透過STEMI criteria做出AMI的診斷&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;這是什麼意思?也就是&lt;strong&gt;可能有高達8成的OMI病患，無法透過STEMI criteria做出OMI的診斷&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;source srcset="https://agoodbear.com/images/ipic/7h4ptc.webp" type="image/webp"&gt;
@@ -67,7 +67,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;Rhythm:irregular、RBBB(qR wave in V1-4) pattern、LAFB&lt;/p&gt;
 &lt;p&gt;Axis:Extreme axis deviation&lt;/p&gt;
 &lt;p&gt;Interval:No QT prolong&lt;/p&gt;
-&lt;p&gt;&lt;mark&gt;&lt;strong&gt;Ischemia:&lt;/strong&gt;&lt;mark&gt;&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;&lt;strong&gt;Ischemia:&lt;/strong&gt;&lt;/mark&gt;&lt;/p&gt;
 &lt;p&gt;讓我們來仔細看看，12 lead ECG，有沒有哪裡有ischemic change。先來看看Chest leads&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -176,7 +176,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/p&gt;
 &lt;p&gt;覺得這個Case非常有趣，也可以從中學到不少。特地把這個Case從眾多想寫的案例中，往前拉。&lt;/p&gt;
 &lt;p&gt;73歲男性，半夜來就診。因為胸痛厲害，所以當班急診醫師也做了Chest CTA去排除主動脈剝離。&lt;/p&gt;
-&lt;p&gt;早上我接班後，我自己的習慣會去把交班主述胸痛的病患，再去看一眼，前一班所做的心電圖。病患一開始的TnI為0.26 mg/mL，已經是&amp;gt;99th percentile of URL。預計之後會在抽第二次心臟酵素。&lt;/p&gt;
+&lt;p&gt;早上我接班後，我自己的習慣會去把交班主述胸痛的病患，再去看一眼，前一班所做的心電圖。病患一開始的TnI為0.26 ng/mL，已經是&amp;gt;99th percentile of URL。預計之後會在抽第二次心臟酵素。&lt;/p&gt;
 &lt;p&gt;Initial ECG如上圖，我看完後，就直接去看病患，看看目前病患的胸痛狀況目前如何?&lt;/p&gt;
 &lt;p&gt;各位有看到什麼嗎?&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
@@ -376,8 +376,8 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;首先在2018年第四版心肌梗塞通用定義&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;就已經清楚定義，要診斷STEMI，在V2/V3的定義和其他lead是不一樣的：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;男性，&amp;lt;40 y/o要2.5 mm高&lt;/li&gt;
-&lt;li&gt;男性，&amp;gt;40 y/o要2 mm高&lt;/li&gt;
-&lt;li&gt;女性，不管年齡皆要&amp;gt;1.5 mm高&lt;/li&gt;
+&lt;li&gt;男性，≥40 y/o要2 mm高&lt;/li&gt;
+&lt;li&gt;女性，不管年齡皆要≥1.5 mm高&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;所以這個Case在V2/V3雖然皆有STE 1格，但都不符合STEMI criteria。&lt;/p&gt;
 &lt;p&gt;接下來是否可以使用&lt;strong&gt;Smith 4 variable formula&lt;/strong&gt;來看看是否有subtle LAD occlusion呢?&lt;/p&gt;</description></item><item><title>哪個lead最有問題?</title><link>https://agoodbear.com/post/medium-f925150612af/</link><pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-f925150612af/</guid><description>
@@ -635,9 +635,9 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;V2的STE有2 mm&lt;/p&gt;
 &lt;p&gt;V3的STE有1.5 mm&lt;/p&gt;
 &lt;p&gt;V4的STE有1 mm&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;根據STEMI criteria的定義&lt;/strong&gt;，在所有的leads裡面，V2~V3如果是女性不管年紀，要&amp;gt;1.5 mm才是有意義的高，其他的10個leads只要有1 mm高就算是高。連續兩個leads有高，就是有意義。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;根據STEMI criteria的定義&lt;/strong&gt;，在所有的leads裡面，V2~V3如果是女性不管年紀，要≥1.5 mm才是有意義的高，其他的10個leads只要有1 mm高就算是高。連續兩個leads有高，就是有意義。&lt;/p&gt;
 &lt;p&gt;所以&lt;strong&gt;這個Case的的確確是符合STEMI criteria&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;如果再配合V2~V4有Hyperacute acute T wave的出現。此外出現PRWP，其實已經可以診斷，LAD occlusion了。&lt;/p&gt;
+&lt;p&gt;如果再配合V2~V4有Hyperacute T wave的出現。此外出現PRWP，其實已經可以診斷，LAD occlusion了。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;但是，這張ECG能夠讓CV man認可，啟動心導管嗎?等會兒說…….&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Fig.1這張心電圖，除了ischemic ECG change外，還有一個有趣的artifact。&lt;/p&gt;</description></item><item><title>看得出來是心肌梗塞嗎?</title><link>https://agoodbear.com/post/medium-e27169e97461/</link><pubDate>Tue, 15 Feb 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-e27169e97461/</guid><description>
 &lt;h3 id="看得出來是心肌梗塞嗎"&gt;看得出來是心肌梗塞嗎?&lt;/h3&gt;
@@ -702,7 +702,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;li&gt;Q wave並不是代表沒有存活的心肌，Q wave也可以是在ischemia時很早期的表現&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id="關於early-q-wave的重點"&gt;&lt;strong&gt;關於Early Q wave的重點&lt;/strong&gt;&lt;/h4&gt;
-&lt;h4 id="--在一項stemi病患研究當中這些病患都在12小時內接受治療研究發現出現early-q-wave的病患心肌搶救仍然十分重要主要是發現病患有setmiearly-q-wave儘管推測已經有transmural與不可逆的心肌受損在給予art後仍然有較好的預後因此12小時內steearly-q-wave的病患不應該排除在接受pci的行列內"&gt;- 在一項STEMI病患研究當中，這些病患都在12小時內接受治療，研究發現，出現Early Q wave的病患心肌搶救仍然十分重要，主要是發現病患有SETMI/Early Q wave(儘管推測已經有transmural與不可逆的心肌受損)，在給予ART後，仍然有較好的預後➡因此12小時內STE+Early Q wave的病患，不應該排除在接受PCI的行列內&lt;/h4&gt;
+&lt;h4 id="--在一項stemi病患研究當中這些病患都在12小時內接受治療研究發現出現early-q-wave的病患心肌搶救仍然十分重要主要是發現病患有stemiearly-q-wave儘管推測已經有transmural與不可逆的心肌受損在給予art後仍然有較好的預後因此12小時內steearly-q-wave的病患不應該排除在接受pci的行列內"&gt;- 在一項STEMI病患研究當中，這些病患都在12小時內接受治療，研究發現，出現Early Q wave的病患心肌搶救仍然十分重要，主要是發現病患有STEMI/Early Q wave(儘管推測已經有transmural與不可逆的心肌受損)，在給予ART後，仍然有較好的預後➡因此12小時內STE+Early Q wave的病患，不應該排除在接受PCI的行列內&lt;/h4&gt;
 &lt;h4 id="--在antwall-stemi中有50在1小時內會出現q-wave這不代表late-or-subacute-mi"&gt;- 在Ant.wall STEMI中有50%在1小時內會出現Q wave➡這不代表late or subacute MI&lt;/h4&gt;
 &lt;ol start="3"&gt;
 &lt;li&gt;

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Smart Glasses on ER Bear's Heart Notes</title><link>https://agoodbear.com/en/tags/smart-glasses/</link><description>Recent content in Smart Glasses on ER Bear's Heart Notes</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Fri, 28 Aug 2026 09:30:00 +0800</lastBuildDate><atom:link href="https://agoodbear.com/en/tags/smart-glasses/index.xml" rel="self" type="application/rss+xml"/><item><title>Moving My Script Next to the Audience's Faces: I Built SlideCue, a G2 Glasses Plugin, and It's Live</title><link>https://agoodbear.com/en/post/study-post-10/</link><pubDate>Fri, 28 Aug 2026 09:30:00 +0800</pubDate><guid>https://agoodbear.com/en/post/study-post-10/</guid><description>
+&lt;style&gt;
+.sc-fig{margin:1.8em auto;max-width:720px;text-align:center}
+.sc-fig img{width:100%;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+.sc-fig figcaption{font-size:.9em;color:#777;margin-top:.6em;line-height:1.7}
+.sc-fig.sc-wide{max-width:900px}
+.sc-fig.sc-wide img{border-radius:8px;box-shadow:0 1px 8px rgba(0,0,0,.10)}
+.sc-flow{display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:.5em;margin:1.8em auto;max-width:760px}
+.sc-flow .box{flex:1 1 180px;border:2px solid #2f6f4f;border-radius:10px;padding:.9em 1em;background:#f5faf7}
+.sc-flow .box b{display:block;font-size:1.02em;margin-bottom:.35em;color:#2f6f4f}
+.sc-flow .box span{font-size:.88em;color:#555;line-height:1.6}
+.sc-flow .arrow{align-self:center;font-size:1.3em;color:#2f6f4f}
+@media (max-width:600px){.sc-flow{flex-direction:column}.sc-flow .arrow{transform:rotate(90deg)}}
+&lt;/style&gt;
+&lt;p&gt;I've been putting together an ACLS lecture script lately: 120 slides, nearly 30,000 characters, all of it in Keynote's speaker notes. When I teach, I keep my laptop on the lectern and turn my head to glance at what comes next after every section.&lt;/p&gt;</description></item></channel></rss>

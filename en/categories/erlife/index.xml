@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Erlife on ER Bear's Heart Notes</title><link>https://agoodbear.com/en/categories/erlife/</link><description>Recent content in Erlife on ER Bear's Heart Notes</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Sun, 06 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.com/en/categories/erlife/index.xml" rel="self" type="application/rss+xml"/><item><title>Every ED Is Raising Pay, So Why Can't Anyone Find Staff? (Part 2): Patients Can't Get Admitted, and Money Can't Buy People Back</title><link>https://agoodbear.com/en/post/erlife-post-7/</link><pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/erlife-post-7/</guid><description>
+&lt;blockquote&gt;
+&lt;p&gt;This is Part 2. &lt;a href="https://agoodbear.com/en/post/erlife-post-6/"&gt;Part 1 is here&lt;/a&gt;. That post worked out three things that run against intuition: &lt;strong&gt;the number of board-certified emergency physicians who actually left the ED is not as large as the media claimed&lt;/strong&gt; (72, not 139); &lt;strong&gt;ED patient volume has not particularly grown either&lt;/strong&gt;: total visits still haven't returned to pre-pandemic levels today, and what changed is the mix inside; and &lt;strong&gt;it's not that everyone rushes to the ED with every little ailment&lt;/strong&gt;: looking at the five-level triage as a whole, the share of low-acuity patients hasn't gone up, and has actually dipped slightly.&lt;/p&gt;</description></item><item><title>Every ED Is Raising Pay, So Why Can't Anyone Find Staff? (Part 1): The Misreported Number, and a Patient Population That Got Swapped Out</title><link>https://agoodbear.com/en/post/erlife-post-6/</link><pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/erlife-post-6/</guid><description>
+&lt;blockquote&gt;
+&lt;p&gt;This is Part 1. The piece comes in two installments: &lt;strong&gt;Part 1&lt;/strong&gt; covers &amp;quot;why people are leaving&amp;quot; and &amp;quot;whether there really are more patients&amp;quot;; &lt;a href="https://agoodbear.com/en/post/erlife-post-7/"&gt;&lt;strong&gt;Part 2&lt;/strong&gt;&lt;/a&gt; covers &amp;quot;why patients can't get admitted,&amp;quot; and &amp;quot;why every hospital is raising pay and still can't find anyone.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;style&gt;
+.er-chart{margin:2em 0;overflow-x:auto}
+.er-chart svg{max-width:100%;height:auto;display:block;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC",sans-serif}
+.er-chart img{max-width:100%;height:auto;display:block;margin:0 auto;border-radius:6px}
+.er-chart figcaption{font-size:.86em;line-height:1.6;opacity:.75;margin-top:.6em;text-align:left}
+.er-g{stroke:currentColor;stroke-opacity:.14}
+.er-ax{stroke:currentColor;stroke-opacity:.45}
+.er-t{fill:currentColor;font-size:12px}
+.er-t-sm{fill:currentColor;font-size:11px;opacity:.7}
+.er-t-b{fill:currentColor;font-size:12.5px;font-weight:700}
+.cap{font-size:.9em;line-height:1.6;opacity:.85;margin:1.8em 0 .5em;padding-left:.7em;border-left:3px solid currentColor}
+.cap-t b{letter-spacing:.02em}
+.er-chart .cap-f{letter-spacing:.02em;opacity:.95}
+/* Add a separator between consecutive footnote superscripts so "3456" doesn't run together */
+.footnote-ref + .footnote-ref::before{content:",";font-weight:400}
+sup:has(&gt; .footnote-ref) + sup:has(&gt; .footnote-ref)::before{content:","}
+/* Wrap footnote superscripts in square brackets with a little spacing: the numbers in this post are dense, and "2024" followed directly by superscripts 9, 10 would read as "2024/9, 10" (September and October 2024) */
+.footnote-ref::before{content:"["}
+.footnote-ref::after{content:"]"}
+sup:has(&gt; .footnote-ref){margin-left:.12em}
+&lt;/style&gt;
+&lt;h2 id="on-the-ground-is-the-ed-broken-or-just-busy"&gt;On the ground: is the ED broken, or just busy?&lt;/h2&gt;
+&lt;p&gt;Night shift hands off, day shift takes over. The moment sign-out ends, I already have &lt;strong&gt;10 to 15 patients who are boarding or still have nowhere to go&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>SpO2 Drops to 72%. Do You Carry the Kid Off the Mountain? A High-Altitude Medicine Lesson with 21 Junior-High Students on the Jiaming Lake Trail</title><link>https://agoodbear.com/en/post/erlife-post-5/</link><pubDate>Thu, 16 Jul 2026 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/erlife-post-5/</guid><description>
+&lt;style&gt;
+/* Narrow and center portrait images; left-align long captions (site default is centered, and long centered lines are hard to read) */
+.jmh-narrow{max-width:460px;margin:0 auto}
+.article-body .md-img-row .md-img-col figcaption{text-align:left}
+&lt;/style&gt;
+&lt;p&gt;&lt;strong&gt;SpO2 drops to 72%. Do you immediately carry the kid off the mountain?&lt;/strong&gt; On this Jiaming Lake trip, real data from 21 junior-high students gave me an answer that was &lt;strong&gt;the exact opposite&lt;/strong&gt; of gut instinct.&lt;/p&gt;
+&lt;p&gt;I'm an ER doctor. On this Jiaming Lake trip, my role was team doctor: I carried a fingertip pulse oximeter/forehead thermometer and a stethoscope, a first-aid waist pack (&lt;a href="https://dsrescue.qdm.tw/product/product&amp;amp;product_id=53"&gt;DS-R7 rescue waist pack&lt;/a&gt;), and a handheld first-aid case (DS-R1 model) (packed at the very bottom of my heavy pack), and walked 4 days and 3 nights with 25 junior-high students, sleeping as high as Jiaming Lake Cabin at 3,370 m. Of the 25 kids, 4 didn't go up the mountain; 21 actually made the climb.&lt;/p&gt;</description></item><item><title>An ER doctor on the operating table too: my presbyopia + myopia laser surgery (post-op day 3 edition)</title><link>https://agoodbear.com/en/post/erlife-post-4/</link><pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/erlife-post-4/</guid><description>
+&lt;h3 id="heres-how-it-started"&gt;&lt;strong&gt;Here's how it started~~&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;After I turned 45, presbyopia finally landed squarely on me.&lt;/p&gt;
+&lt;p&gt;When it's your turn, it's worse than you imagine. Especially in three situations where I absolutely did not want it getting in my way.&lt;/p&gt;
+&lt;h4 id="1-physique-competitions-me-glaring-on-stage"&gt;&lt;strong&gt;1. Physique competitions: me, glaring on stage&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;I've been training men's physique the past few years, and &lt;strong&gt;you can't wear glasses in competition&lt;/strong&gt;, and I don't like contact lenses.&lt;/p&gt;
+&lt;p&gt;At my competitions the last two years, I'd watch the video afterward and get a shock. &lt;strong&gt;On stage my eyes were bulging wide open and my whole face looked fierce&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>My fantastical journey through the courts: accused of aggravated bodily harm</title><link>https://agoodbear.com/en/post/erlife-post-3/</link><pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/erlife-post-3/</guid><description>
+&lt;p&gt;As the saying goes, if you want to work in the kitchen, don't be afraid of the heat.&lt;/p&gt;
+&lt;p&gt;Ever since I started my ED career in October 2005, I've felt that emergency medicine is a specialty that walks on thin ice.&lt;/p&gt;
+&lt;p&gt;You don't know, and you can hardly predict, whether your next step will crack the ice and drop you into the river.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="heres-how-it-went"&gt;&lt;strong&gt;Here's how it went~~&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;One day in 2023 (ROC 112), a patient in his 30s came in with a finger that had hurt for 2-3 weeks. There was an obvious foreign body stuck under the nail. We gave a local anesthetic, removed part of the nail, cleared out the foreign body, prescribed oral antibiotics, and sent the patient home.&lt;/p&gt;</description></item><item><title>The Lie-Down Wheelchair</title><link>https://agoodbear.com/en/post/erlife-post-2/</link><pubDate>Tue, 05 Mar 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/erlife-post-2/</guid><description>
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/ipic/9zxy20.jpg"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;iframe width="1000" height="500" src="https://youtube.com/embed/CQu4uK_8I1E?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;For the past two-plus months, the wards upstairs have been short-staffed, so every day the number of patients boarding downstairs in the ED explodes — they just can't get up to a ward. Waiting for a bed in the ED to get admitted starts at two days. The ED beds are all used up. So we often have 80- and 90-plus-year-olds sitting in wheelchairs getting IV fluids, and once they sit down, you start counting at 5 or 6 hours. They can't lie down. Young people can manage, but the elderly are often utterly miserable.&lt;/p&gt;</description></item><item><title>A Cobra Came to My House, and It's for Real!!!</title><link>https://agoodbear.com/en/post/erlife-post-1/</link><pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/erlife-post-1/</guid><description>
+&lt;p&gt;&lt;figure&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt=""
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/ipic/nmp534.jpg"
+data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
+onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
+/&gt;
+&lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;In my first year out in the countryside, at Zhudong Veterans Hospital (now Taipei Veterans General Hospital, Hsinchu Branch), something truly terrifying happened.&lt;/p&gt;
+&lt;h2 id="a-cobra-came-to-my-house-xd"&gt;&lt;code&gt;A cobra came to my house XD&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;So the boss at home (my wife) cut a video to commemorate it😅😅😅&lt;/p&gt;
+&lt;p&gt;In the end, our EMT brothers caught it and sent it off to live somewhere else🥰&lt;/p&gt;
+&lt;iframe width="1000" height="600" src="https://www.youtube.com/embed/a87TfxR5vT8?si=RaXGlKItZLk8yITl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;</description></item></channel></rss>

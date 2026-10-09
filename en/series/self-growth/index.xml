@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Self-Growth on ER Bear's Heart Notes</title><link>https://agoodbear.com/en/series/self-growth/</link><description>Recent content in Self-Growth on ER Bear's Heart Notes</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Fri, 12 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.com/en/series/self-growth/index.xml" rel="self" type="application/rss+xml"/><item><title>Syntax for Building a Site with Hugo</title><link>https://agoodbear.com/en/post/study-post-1/</link><pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/study-post-1/</guid><description>
+&lt;h1 id="how-to-create-static-site-posts-with-hugo"&gt;How to Create Static Site Posts with Hugo&lt;/h1&gt;
+&lt;h2 id="prerequisites"&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;First, a few things need to be in place:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Install &lt;a href="https://apps.apple.com/tw/app/xcode/id497799835?mt=12"&gt;Xcode&lt;/a&gt; on your Mac (&lt;strong&gt;Windows probably doesn't need it? I don't know about that&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Use Homebrew to install Hugo from the Mac Terminal&lt;/li&gt;
+&lt;li&gt;Already have an account set up on &lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Install VS code and typora
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://code.visualstudio.com/"&gt;VS code&lt;/a&gt; lets you write markdown code directly&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://typora.io/#feature"&gt;Typora&lt;/a&gt; turns your writing straight into markdown format (&lt;strong&gt;sort of a WYSIWYG concept&lt;/strong&gt;)➔writing posts in this is way more comfortable than in VS code😌
+&lt;ul&gt;
+&lt;li&gt;When you insert an image in Typora, &lt;strong&gt;just right-click on the image to change its size&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Already picked out, from the &lt;a href="https://themes.gohugo.io/"&gt;Hugo theme&lt;/a&gt; gallery, the theme you want to use and modify
+&lt;ul&gt;
+&lt;li&gt;Download the theme so you can open and run it on your own computer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once the above is done, you're mostly there～～～&lt;/p&gt;</description></item></channel></rss>

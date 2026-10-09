@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Medium-Import on 急診熊心聲部落格</title><link>https://agoodbear.com/tags/medium-import/</link><description>Recent content in Medium-Import on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Mon, 08 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.com/tags/medium-import/index.xml" rel="self" type="application/rss+xml"/><item><title>73歲男性，胸痛持續。需要導管介入嗎?</title><link>https://agoodbear.com/post/medium-2ea0b1ecd7ad/</link><pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-2ea0b1ecd7ad/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Medium-Import on 急診熊心聲部落格</title><link>https://agoodbear.com/tags/medium-import/</link><description>Recent content in Medium-Import on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Mon, 08 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.com/tags/medium-import/index.xml" rel="self" type="application/rss+xml"/><item><title>73歲男性，胸痛持續。需要導管介入嗎?</title><link>https://agoodbear.com/post/medium-2ea0b1ecd7ad/</link><pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-2ea0b1ecd7ad/</guid><description>
 &lt;h3 id="73歲男性胸痛持續需要導管介入嗎"&gt;73歲男性，胸痛持續。需要導管介入嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -16,7 +16,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/p&gt;
 &lt;p&gt;覺得這個Case非常有趣，也可以從中學到不少。特地把這個Case從眾多想寫的案例中，往前拉。&lt;/p&gt;
 &lt;p&gt;73歲男性，半夜來就診。因為胸痛厲害，所以當班急診醫師也做了Chest CTA去排除主動脈剝離。&lt;/p&gt;
-&lt;p&gt;早上我接班後，我自己的習慣會去把交班主述胸痛的病患，再去看一眼，前一班所做的心電圖。病患一開始的TnI為0.26 mg/mL，已經是&amp;gt;99th percentile of URL。預計之後會在抽第二次心臟酵素。&lt;/p&gt;
+&lt;p&gt;早上我接班後，我自己的習慣會去把交班主述胸痛的病患，再去看一眼，前一班所做的心電圖。病患一開始的TnI為0.26 ng/mL，已經是&amp;gt;99th percentile of URL。預計之後會在抽第二次心臟酵素。&lt;/p&gt;
 &lt;p&gt;Initial ECG如上圖，我看完後，就直接去看病患，看看目前病患的胸痛狀況目前如何?&lt;/p&gt;
 &lt;p&gt;各位有看到什麼嗎?&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
@@ -216,8 +216,8 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;首先在2018年第四版心肌梗塞通用定義&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;就已經清楚定義，要診斷STEMI，在V2/V3的定義和其他lead是不一樣的：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;男性，&amp;lt;40 y/o要2.5 mm高&lt;/li&gt;
-&lt;li&gt;男性，&amp;gt;40 y/o要2 mm高&lt;/li&gt;
-&lt;li&gt;女性，不管年齡皆要&amp;gt;1.5 mm高&lt;/li&gt;
+&lt;li&gt;男性，≥40 y/o要2 mm高&lt;/li&gt;
+&lt;li&gt;女性，不管年齡皆要≥1.5 mm高&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;所以這個Case在V2/V3雖然皆有STE 1格，但都不符合STEMI criteria。&lt;/p&gt;
 &lt;p&gt;接下來是否可以使用&lt;strong&gt;Smith 4 variable formula&lt;/strong&gt;來看看是否有subtle LAD occlusion呢?&lt;/p&gt;</description></item><item><title>哪個lead最有問題?</title><link>https://agoodbear.com/post/medium-f925150612af/</link><pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-f925150612af/</guid><description>
@@ -640,9 +640,9 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;V2的STE有2 mm&lt;/p&gt;
 &lt;p&gt;V3的STE有1.5 mm&lt;/p&gt;
 &lt;p&gt;V4的STE有1 mm&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;根據STEMI criteria的定義&lt;/strong&gt;，在所有的leads裡面，V2~V3如果是女性不管年紀，要&amp;gt;1.5 mm才是有意義的高，其他的10個leads只要有1 mm高就算是高。連續兩個leads有高，就是有意義。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;根據STEMI criteria的定義&lt;/strong&gt;，在所有的leads裡面，V2~V3如果是女性不管年紀，要≥1.5 mm才是有意義的高，其他的10個leads只要有1 mm高就算是高。連續兩個leads有高，就是有意義。&lt;/p&gt;
 &lt;p&gt;所以&lt;strong&gt;這個Case的的確確是符合STEMI criteria&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;如果再配合V2~V4有Hyperacute acute T wave的出現。此外出現PRWP，其實已經可以診斷，LAD occlusion了。&lt;/p&gt;
+&lt;p&gt;如果再配合V2~V4有Hyperacute T wave的出現。此外出現PRWP，其實已經可以診斷，LAD occlusion了。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;但是，這張ECG能夠讓CV man認可，啟動心導管嗎?等會兒說…….&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Fig.1這張心電圖，除了ischemic ECG change外，還有一個有趣的artifact。&lt;/p&gt;</description></item><item><title>有推薦哪些實用的ECG網站或資源呢?</title><link>https://agoodbear.com/post/medium-fc136c4d6bf/</link><pubDate>Wed, 11 May 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-fc136c4d6bf/</guid><description>
 &lt;h3 id="有推薦哪些實用的ecg網站或資源呢"&gt;有推薦哪些實用的ECG網站或資源呢?&lt;/h3&gt;
@@ -764,7 +764,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;為什麼問這問題?因為我們膝蓋反射會直接想到的問題?&lt;/p&gt;
 &lt;p&gt;2️⃣➡︎如果不是Wellen’s wave?那麼還有什麼可能會有這樣的TWI呢?&lt;/p&gt;
 &lt;p&gt;V1~V6的TWI是不是Wellen’s wave?要先知道什麼是Wellen’s wave，我們才能下這個診斷。&lt;/p&gt;
-&lt;p&gt;一般我們說這個病患可能是Wellens’ syndrome。指的是看到V2~V3有Biphasic TWI or deeply TWI，而且是在ACS症狀的時候看到。&lt;/p&gt;
+&lt;p&gt;一般我們說這個病患可能是Wellens’ syndrome。指的是看到V2~V3有Biphasic TWI or deeply TWI，而且是在ACS症狀緩解後看到。&lt;/p&gt;
 &lt;p&gt;也就是病患一開始有ACS症狀，之後症狀緩解，在緩解期作的ECG有看到V2~V3有這兩種的TWI。我們就可以說是Wellens’ syndrome。&lt;/p&gt;
 &lt;p&gt;那麼Wellens’ syndrome的意義是什麼?&lt;/p&gt;
 &lt;p&gt;臨床上的意義是在未來幾天到幾個禮拜內有很高的風險會出現extensive ant.wall MI。&lt;/p&gt;
@@ -1011,7 +1011,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;74歲男性胸痛、痛到快昏倒了。到院時表示，這幾天常常如此但是一下就緩解了，今天特別難受。&lt;/p&gt;
 &lt;p&gt;通常ECG的interpretation不太可信，但是ECG machine對於偵測有pacemaker rhythm非常敏感&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;strong&gt;Fig.1&lt;/strong&gt;是病患入院10分鐘內做的ECG，可以看到最下排long lead II，有偵測到pacemaker rhythm的微小spike。&lt;/p&gt;
 &lt;h4 id="所以問題回到了裝有ppm的病患是否可以透過ecg來診斷ami"&gt;所以問題回到了，裝有PPM的病患是否可以透過ECG來診斷AMI&lt;/h4&gt;
-&lt;p&gt;那我們來看看一篇今年6月份就已經在AEM以Article in press形式看到文章，直到10月份正式刊出的一篇文章。&lt;/p&gt;
+&lt;p&gt;那我們來看看一篇今年6月份就已經在Annals of Emergency Medicine以Article in press形式看到文章，直到10月份正式刊出的一篇文章。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -1326,7 +1326,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;strong&gt;&lt;em&gt;Fig. 1&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;簡單判讀：Rate約為150下、似乎有P，但是看起來不像典型P wave的形狀。RAD。Narrow QRS tachycardia，且有明顯的aVR STE with multiple leads STD&lt;/p&gt;
 &lt;p&gt;千萬要記得，&lt;strong&gt;要看P wave的有無，最適當的lead，不是lead II就是V1。Amal mattu特別喜歡V1&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;此外這邊要注意，這個明顯的&lt;strong&gt;aVR STE with multiple leads STD通常並不是LM、Proximal LAD、TVD問題引起的&lt;/strong&gt;(參考&lt;strong&gt;Fig.2&lt;/strong&gt;)。這是rate-dependent oxygen/demand mismatch引起的心跳缺血的ECG徵象。心跳過快就容易會出現。不只PSVT會有、AfRVR時也可以見到。只要心跳快，就可能因為心臟跳太快，導致短暫缺血，出現這樣的Pattern。&lt;/p&gt;
+&lt;p&gt;此外這邊要注意，這個明顯的&lt;strong&gt;aVR STE with multiple leads STD通常並不是LM、Proximal LAD、TVD問題引起的&lt;/strong&gt;(參考&lt;strong&gt;Fig.2&lt;/strong&gt;)。這是rate-dependent oxygen/demand mismatch引起的心臟缺血的ECG徵象。心跳過快就容易會出現。不只PSVT會有、AfRVR時也可以見到。只要心跳快，就可能因為心臟跳太快，導致短暫缺血，出現這樣的Pattern。&lt;/p&gt;
 &lt;p&gt;那麼有沒有可能真的跳快、然後又真的AMI?&lt;/p&gt;
 &lt;p&gt;這是有可能的，Amal與Smith在其blog強調幾個重點，我整合一下。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;第一個重點&lt;/strong&gt;，AMI很少會心跳快。除非cardiogenic shock。&lt;/p&gt;
@@ -1468,7 +1468,7 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;li&gt;Q wave並不是代表沒有存活的心肌，Q wave也可以是在ischemia時很早期的表現&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id="關於early-q-wave的重點"&gt;&lt;strong&gt;關於Early Q wave的重點&lt;/strong&gt;&lt;/h4&gt;
-&lt;h4 id="--在一項stemi病患研究當中這些病患都在12小時內接受治療研究發現出現early-q-wave的病患心肌搶救仍然十分重要主要是發現病患有setmiearly-q-wave儘管推測已經有transmural與不可逆的心肌受損在給予art後仍然有較好的預後因此12小時內steearly-q-wave的病患不應該排除在接受pci的行列內"&gt;- 在一項STEMI病患研究當中，這些病患都在12小時內接受治療，研究發現，出現Early Q wave的病患心肌搶救仍然十分重要，主要是發現病患有SETMI/Early Q wave(儘管推測已經有transmural與不可逆的心肌受損)，在給予ART後，仍然有較好的預後➡因此12小時內STE+Early Q wave的病患，不應該排除在接受PCI的行列內&lt;/h4&gt;
+&lt;h4 id="--在一項stemi病患研究當中這些病患都在12小時內接受治療研究發現出現early-q-wave的病患心肌搶救仍然十分重要主要是發現病患有stemiearly-q-wave儘管推測已經有transmural與不可逆的心肌受損在給予art後仍然有較好的預後因此12小時內steearly-q-wave的病患不應該排除在接受pci的行列內"&gt;- 在一項STEMI病患研究當中，這些病患都在12小時內接受治療，研究發現，出現Early Q wave的病患心肌搶救仍然十分重要，主要是發現病患有STEMI/Early Q wave(儘管推測已經有transmural與不可逆的心肌受損)，在給予ART後，仍然有較好的預後➡因此12小時內STE+Early Q wave的病患，不應該排除在接受PCI的行列內&lt;/h4&gt;
 &lt;h4 id="--在antwall-stemi中有50在1小時內會出現q-wave這不代表late-or-subacute-mi"&gt;- 在Ant.wall STEMI中有50%在1小時內會出現Q wave➡這不代表late or subacute MI&lt;/h4&gt;
 &lt;ol start="3"&gt;
 &lt;li&gt;
