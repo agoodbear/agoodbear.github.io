@@ -812,6 +812,7 @@ items:
   blog_url: https://agoodbear.com/post/medium-962b3d4d3f0e/
   published: false
   published_at: ''
+  hidden: true  # 2026-10-09 Bear：跟窄QRS 03 重點重複，留窄QRS 03，這支不上架
 - id: stemi-mimics
   series: omi
   title: STEMI模仿者名冊
