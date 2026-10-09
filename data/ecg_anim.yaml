@@ -931,22 +931,22 @@ items:
   title: 窄QRS又快：先想三種
   subtitle: 窄QRS三部曲 01／03
   point: 窄QRS又快，先想三種狀況：sinus tachycardia、flutter 2:1、PSVT；先看V1有沒有P、有幾個P
-  duration: 53.4
+  duration: 53.5
   refs:
   - Dr. Smith's ECG Blog（sinus tachycardia、flutter 2:1 病例）
   - Ken Grauer ECG Blog #240（PSVT／AVNRT 病例）
   refs_src: ncq-01-ddx/social_caption.txt（IG 版）
-  version: v1
-  src: ncq-01-ddx/out/ncq-01-ddx-v1.mp4
-  src_phone: ncq-01-ddx/out/ncq-01-ddx-v1-phone.mp4
-  video: ncq-01-ddx/ncq-01-ddx-v1.mp4
-  phone: ncq-01-ddx/ncq-01-ddx-v1-phone.mp4
-  poster: ncq-01-ddx/ncq-01-ddx-v1-poster.webp
+  version: v2
+  src: ncq-01-ddx/out/ncq-01-ddx-v2.mp4
+  src_phone: ncq-01-ddx/out/ncq-01-ddx-v2-phone.mp4
+  video: ncq-01-ddx/ncq-01-ddx-v2.mp4
+  phone: ncq-01-ddx/ncq-01-ddx-v2-phone.mp4
+  poster: ncq-01-ddx/ncq-01-ddx-v2-poster.webp
   cover_src: _workflow/reels_cover/out/12-ncq-01-ddx.png
   blog_title: Narrow QRS tachycardia
   blog_url: https://agoodbear.com/post/medium-962b3d4d3f0e/
-  published: false
-  published_at: '2026-10-07'
+  published: true
+  published_at: '2026-10-09'
 - id: rbbb-stemi
   series: omi
   title: RBBB合併STEMI
