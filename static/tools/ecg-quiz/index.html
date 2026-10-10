@@ -82,7 +82,7 @@ window.__ecgManifest.catch(()=>{});   // 先接住，避免 unhandled rejection
   .figcap:empty{display:none}
   .zoom-hint{font-size:.72rem;color:var(--ink-soft);font-weight:600;pointer-events:none;white-space:nowrap}
   .img-fail{position:absolute;right:14px;bottom:12px;font-size:.72rem;color:#fff;font-weight:600;
-    background:rgba(192,57,43,.88);padding:5px 10px;border-radius:8px;pointer-events:none}
+    background:rgba(192,57,43,.88);padding:5px 10px;border-radius:8px;border:0;cursor:pointer;font-family:inherit}
   .ecg-paper{position:absolute;inset:0;background-color:#fffafa;
     background-image:
       linear-gradient(rgba(229,115,115,.20) 1px,transparent 1px),
@@ -492,8 +492,7 @@ const urlToId=new Map();
 function normUrl(u){ return (u||"").trim().replace(/[#?].*$/,"").replace(/\/+$/,"").toLowerCase(); }
 function jumpTo(id){ const i=idToIdx.get(id); if(i!==undefined){ show(i); window.scrollTo({top:0,behavior:"smooth"}); } }
 
-function render(q,idx){
-  picked=null; revealed=false;
+function setFigure(q,idx){
   if(q.image){
     figure.className="figure has-img";
     figure.innerHTML='<img class="ecg-img" src="'+q.image+'" alt="ECG 12 導程" referrerpolicy="no-referrer" tabindex="0" role="button" aria-label="放大檢視 ECG 圖（按 Enter 開啟）">';
@@ -501,12 +500,24 @@ function render(q,idx){
     const img=figure.querySelector(".ecg-img");
     img.addEventListener("click",()=>openLightbox(q.image));
     img.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "||e.code==="Space"){ e.preventDefault(); e.stopPropagation(); openLightbox(q.image); } });
-    img.addEventListener("error",()=>{ if(!img.isConnected) return; figure.className="figure"; figure.innerHTML=placeholder(q.source,idx)+'<span class="img-fail">⚠️ 原圖載入失敗</span>'; figcap.innerHTML=srcChip(q); });
+    // 原圖掛在 Smith 部落格，對方 CDN 偶爾短暫失敗：先自動重試一次，仍失敗才顯示佔位圖＋手動重試鈕
+    let retried=false;
+    img.addEventListener("error",()=>{
+      if(!img.isConnected) return;
+      if(!retried){ retried=true; setTimeout(()=>{ if(img.isConnected) img.src=q.image+(q.image.includes("?")?"&":"?")+"r="+Date.now(); },1500); return; }
+      figure.className="figure"; figure.innerHTML=placeholder(q.source,idx)+'<button type="button" class="img-fail">⚠️ 原圖載入失敗・點此重試</button>'; figcap.innerHTML=srcChip(q);
+      figure.querySelector(".img-fail").addEventListener("click",e=>{ e.stopPropagation(); setFigure(q,idx); });
+    });
   }else{
     figure.className="figure";
     figure.innerHTML=placeholder(q.source,idx);
     figcap.innerHTML=srcChip(q);
   }
+}
+
+function render(q,idx){
+  picked=null; revealed=false;
+  setFigure(q,idx);
   stem.textContent=q.stem;
   optionsEl.innerHTML=q.options.map((o,i)=>'<button class="opt" data-i="'+i+'"><span class="key">'+KEYS[i]+'</span><span>'+o+'</span><span class="mark"></span></button>').join("");
   optionsEl.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>select(+b.dataset.i)));
