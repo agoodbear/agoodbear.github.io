@@ -968,7 +968,8 @@ items:
   cover_src: _workflow/reels_cover/out/13-ncq-02-afl21.png
   blog_title: Narrow QRS tachycardia
   blog_url: https://agoodbear.com/post/medium-962b3d4d3f0e/
-  published: false
+  published: true
+  published_at: '2026-10-10'
 - id: ncq-03-tx
   series: narrow-qrs
   title: 窄QRS又快：先看穩不穩定
@@ -991,6 +992,7 @@ items:
   blog_title: Narrow QRS tachycardia
   blog_url: https://agoodbear.com/post/medium-962b3d4d3f0e/
   published: false
+  published_at: ''
 - id: rbbb-stemi
   series: omi
   title: RBBB合併STEMI
