@@ -1,5 +1,5 @@
 {{- /* Guideline 集散地：主題磚 + 搜尋 + 年份時間軸。資料來源 data/guideline_hub.yaml（結構）與 data/guideline_pdfs.yaml（PDF）。 */ -}}
-{{- $hub := site.Data.guideline_hub -}}
+{{- $hub := partialCached "guideline/hub.html" site.Language.Lang site.Language.Lang -}}
 {{- if not $hub -}}
 <section class="gh"><p class="gh__empty">尚未建立 Guideline 索引資料，請先編輯 <code>data/guideline_hub.yaml</code>。</p></section>
 {{- else -}}
@@ -80,19 +80,20 @@
 
 {{- /* 圖示改由 partials/guideline-icon.html 提供 */ -}}
 
-<section class="gh" id="guideline-hub">
+<section class="gh" id="guideline-hub" data-unit-one="{{ T "gh_count" 1 }}" data-unit-other="{{ T "gh_count" 2 }}">
   <header class="gh__hero">
-    <p class="gh__eyebrow">Guideline Hub · 共 {{ $total }} 份{{ with $hub.updated }} · 更新 {{ . }}{{ end }}</p>
+    <p class="gh__eyebrow">{{ T "gh_eyebrow" $total }}{{ with $hub.updated }} · {{ T "gh_updated" }} {{ . }}{{ end }}</p>
     {{- with $hub.intro }}<p class="gh__intro">{{ . }}</p>{{ end }}
+    {{- with T "gh_reader_note" }}<p class="gh__intro gh__intro--note">{{ . }}</p>{{ end }}
 
     <label class="gh__search">
       <svg class="gh__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input type="search" data-gh-search-input placeholder="搜尋：ESC、STEMI、tenecteplase、2025、台灣……" aria-label="搜尋 guideline" autocomplete="off" spellcheck="false">
+      <input type="search" data-gh-search-input placeholder="{{ T "gh_search_ph" }}" aria-label="{{ T "gh_search_aria" }}" autocomplete="off" spellcheck="false">
       <span class="gh__count" data-gh-count>{{ $total }} / {{ $total }}</span>
-      <button type="button" class="gh__clear" data-gh-clear hidden>清除</button>
+      <button type="button" class="gh__clear" data-gh-clear hidden>{{ T "gh_clear" }}</button>
     </label>
 
-    <nav class="gh__tiles" aria-label="Guideline 主題">
+    <nav class="gh__tiles" aria-label="{{ T "home_pinned_aria" }}">
       {{- range $topic := $hub.topics }}
       {{- $n := index $topicCount $topic.id -}}
       {{- $latest := index $topicLatest $topic.id -}}
@@ -100,14 +101,14 @@
         <span class="gh__tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ partial "guideline-icon.html" $topic.icon }}</svg></span>
         <span class="gh__tile-name">{{ $topic.title }}</span>
         {{- with $topic.subtitle }}<span class="gh__tile-sub">{{ . }}</span>{{ end }}
-        <span class="gh__tile-meta"><b>{{ $n }}</b> 份{{ with $latest }} · 最新 {{ . }}{{ end }}</span>
+        <span class="gh__tile-meta"><b>{{ $n }}</b>{{ T "gh_unit" $n }}{{ with $latest }} · {{ T "gh_latest_year" }} {{ . }}{{ end }}</span>
       </a>
       {{- end }}
     </nav>
 
     {{- with $recent }}
     <div class="gh__recent">
-      <span class="gh__recent-label">最新收錄</span>
+      <span class="gh__recent-label">{{ T "gh_recent" }}</span>
       <div class="gh__recent-list">
         {{- range . }}
         {{- $href := index $viewerMap .doc -}}
@@ -126,7 +127,7 @@
         <h3 class="gh__topic-title">{{ $topic.title }}</h3>
         {{- with $topic.subtitle }}<p class="gh__topic-sub">{{ . }}</p>{{ end }}
       </div>
-      <span class="gh__topic-count" data-gh-topic-count>{{ index $topicCount $topic.id }} 份</span>
+      <span class="gh__topic-count" data-gh-topic-count>{{ T "gh_count" (index $topicCount $topic.id) }}</span>
     </header>
 
     {{- range $group := $topic.groups }}
@@ -144,7 +145,7 @@
         <h4 class="gh__group-title">{{ $group.title }}</h4>
         {{- with $group.badge }}<span class="gh__badge">{{ . }}</span>{{ end }}
         <span class="gh__group-span">
-          {{- with $gs.Get "min" }}{{ . }}{{ if ne . ($gs.Get "max") }} – {{ $gs.Get "max" }}{{ end }} · {{ end }}{{ len $group.items }} 份</span>
+          {{- with $gs.Get "min" }}{{ . }}{{ if ne . ($gs.Get "max") }} – {{ $gs.Get "max" }}{{ end }} · {{ end }}{{ T "gh_count" (len $group.items) }}</span>
       </div>
       <ol class="gh__timeline">
         {{- range $i, $entry := $group.items }}
@@ -154,15 +155,17 @@
         {{- $admin := index $adminMap $entry.doc -}}
         {{- $isNew := index $newMap $entry.doc -}}
         {{- $isLatest := eq $i 0 -}}
-        {{- $hay := printf "%s %s %s %s %s %s %s" $entry.title ($entry.citation | default "") ($entry.note | default "") $group.title ($group.badge | default "") $topic.title $year | lower -}}
+        {{- $hay := printf "%s %s %s %s %s %s %s %s" $entry.title ($entry.citation | default "") ($entry.note | default "") $group.title ($group.badge | default "") $topic.title $year (cond (index $entry "zh_doc" | default false) "chinese taiwan" "") | lower -}}
         <li class="gh__entry{{ if $isLatest }} gh__entry--latest{{ end }}{{ if $isNew }} gh__entry--new{{ end }}" id="gh-entry-{{ $entry.doc }}" data-gh-entry data-gh-search="{{ $hay }}">
           <div class="gh__year"><span class="gh__year-num">{{ $year | default "—" }}</span></div>
           <div class="gh__body">
-            {{- if or $isLatest $isNew $entry.flag }}
+            {{- $zhDoc := index $entry "zh_doc" | default false -}}
+            {{- if or $isLatest $isNew $entry.flag $zhDoc }}
             <div class="gh__flags">
-              {{- if $isLatest }}<span class="gh__flag">最新</span>{{ end }}
+              {{- if $isLatest }}<span class="gh__flag">{{ T "gh_flag_latest" }}</span>{{ end }}
               {{- if $isNew }}<span class="gh__flag gh__flag--new">NEW</span>{{ end }}
               {{- with $entry.flag }}<span class="gh__flag gh__flag--fast">⚡ {{ . }}</span>{{ end }}
+              {{- if $zhDoc }}<span class="gh__flag">{{ T "gh_in_chinese" }}</span>{{ end }}
             </div>
             {{- end }}
             {{- if $viewer }}
@@ -176,13 +179,13 @@
             {{- with $entry.note }}<p class="gh__entry-note">{{ . }}</p>{{ end }}
             <div class="gh__actions">
               {{- if $viewer }}
-              <a class="gh__btn gh__btn--primary" href="{{ $viewer | safeURL }}">開啟 Reader</a>
+              <a class="gh__btn gh__btn--primary" href="{{ $viewer | safeURL }}">{{ T "gh_open_reader" }}</a>
               {{- with $raw }}<a class="gh__btn" href="{{ . | safeURL }}" target="_blank" rel="noopener">Raw PDF<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>{{ end }}
-              <a class="gh__btn gh__btn--admin" href="{{ $admin | safeURL }}" data-guideline-admin-link hidden>管理 PDF</a>
+              <a class="gh__btn gh__btn--admin" href="{{ $admin | safeURL }}" data-guideline-admin-link hidden>{{ T "gh_manage" }}</a>
               {{- else if $entry.link }}
-              <a class="gh__btn gh__btn--primary" href="{{ $entry.link }}" target="_blank" rel="noopener">原文連結<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+              <a class="gh__btn gh__btn--primary" href="{{ $entry.link }}" target="_blank" rel="noopener">{{ T "gh_original" }}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
               {{- else }}
-              <span class="gh__btn gh__btn--disabled">PDF 尚未接入</span>
+              <span class="gh__btn gh__btn--disabled">{{ T "gh_no_pdf" }}</span>
               {{- end }}
             </div>
           </div>
@@ -194,7 +197,7 @@
   </section>
   {{- end }}
 
-  <p class="gh__empty" data-gh-empty hidden>沒有符合「<span data-gh-empty-q></span>」的 guideline。換個關鍵字，或按「清除」。</p>
+  <p class="gh__empty" data-gh-empty hidden>{{ T "gh_empty_pre" }}<span data-gh-empty-q></span>{{ T "gh_empty_post" }}</p>
 </section>
 
 <script>
@@ -210,6 +213,8 @@
   var groups = Array.prototype.slice.call(root.querySelectorAll("[data-gh-group]"));
   var topics = Array.prototype.slice.call(root.querySelectorAll("[data-gh-topic]"));
   var total = entries.length;
+  var unitOne = root.getAttribute("data-unit-one") || "1 份";
+  var unitOther = root.getAttribute("data-unit-other") || "2 份";
   if (!input || !count) return;
 
   function apply() {
@@ -229,7 +234,7 @@
       var n = t.querySelectorAll("[data-gh-entry]:not([hidden])").length;
       t.hidden = n === 0;
       var c = t.querySelector("[data-gh-topic-count]");
-      if (c) c.textContent = n + " 份";
+      if (c) c.textContent = n === 1 ? unitOne : (unitOther.replace(/\d+/, n));
     });
     count.textContent = shown + " / " + total;
     if (clear) clear.hidden = !q;

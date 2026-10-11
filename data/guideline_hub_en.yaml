@@ -1,0 +1,244 @@
+# Guideline集散地 英文對照檔（英文頁 /en/guideline-pdfs/ 與英文首頁「Pinned」區塊用）
+#
+# 中文 data/guideline_hub.yaml 是唯一正本：份數、年份、doc、連結、PDF 都只看中文那份。
+# 這裡只放「含中文、要翻給英文讀者看」的字，用 id 對上：
+#   page.hub        頁首標題與導言
+#   topics.<id>     主題（標題本來就是英文的不用翻，只翻 subtitle）
+#   badges.<中文>   群組旁邊的地區小標（美國、歐洲……）
+#   groups.<中文>   中文群組名
+#   entries.<doc>   每份 guideline 的 note、flag；標題或 citation 含中文才翻
+#
+# 新增／改了中文 guideline 之後：
+#   python3 scripts/i18n/data_i18n.py check hub     # FAIL/STALE 要修到 0
+#   python3 scripts/i18n/data_i18n.py skeleton hub  # 產生骨架，挑新的那幾筆貼進來翻
+#   英文改好跑 python3 scripts/i18n/data_i18n.py rehash hub 更新 zh_hash
+# 台灣學會中文 guideline 的英文標題與作者英文名，一律照 PDF 英文摘要頁印的，不自己翻譯或拼音。
+
+page:
+  hub:
+    title: "Guideline Hub"
+    intro: "Guidelines I use in the ED: AMI/ACS, the universal definition of MI, ischemic stroke, ACLS/PALS, trauma, sepsis, POCUS and the difficult airway. Documents with a PDF open in the in-site Reader; the rest link to the original. Newest first, and the latest document in each group is flagged."
+    zh_hash: '13dc4386e1'
+
+topics:
+  ami:
+    subtitle: "STEMI, NSTE-ACS, chest pain evaluation, revascularization"
+    zh_hash: '1e9db2b8ce'
+  mi-definition:
+    title: "Definition of MI"
+    subtitle: "How the Universal Definition of MI has evolved"
+    zh_hash: 'e55fc48854'
+  stroke:
+    subtitle: "IVT, EVT, antiplatelets, prehospital and ED care"
+    zh_hash: '6cb3becaf5'
+  acls:
+    subtitle: "Adult resuscitation algorithms and drugs"
+    zh_hash: '7157c25d06'
+  pals:
+    title: "PALS / Pediatric Resuscitation"
+    subtitle: "Pediatric BLS and ALS: AHA/AAP and ERC versions"
+    zh_hash: '413eff554f'
+  trauma:
+    subtitle: "Initial trauma care and massive bleeding"
+    zh_hash: 'ef39c853d4'
+  sepsis:
+    subtitle: "Surviving Sepsis Campaign, definitions and diagnostic criteria"
+    zh_hash: 'a9ffce66c8'
+  pocus:
+    subtitle: "Society guidelines for emergency and critical care point-of-care ultrasound"
+    zh_hash: 'b61e44568c'
+  airway:
+    title: "Difficult Airway"
+    subtitle: "Difficult intubation, intubating the critically ill, preventing unrecognized oesophageal intubation"
+    zh_hash: '84a0f315e0'
+
+badges:
+  "美國":
+    name: "US"
+    zh_hash: '832445121e'
+  "歐洲":
+    name: "Europe"
+    zh_hash: '3b5fd4b458'
+  "台灣":
+    name: "Taiwan"
+    zh_hash: '30e64c4c23'
+  "國際共識":
+    name: "International consensus"
+    zh_hash: '5a4339ce0d'
+  "國際":
+    name: "International"
+    zh_hash: '64549c1393'
+  "重症":
+    name: "Critical care"
+    zh_hash: '762dba97f7'
+  "兒童":
+    name: "Pediatrics"
+    zh_hash: '4784895b3c'
+  "英國":
+    name: "UK"
+    zh_hash: '3a86a6b311'
+  "加拿大":
+    name: "Canada"
+    zh_hash: '820a7b2a05'
+
+groups:
+  "台灣腦中風學會":
+    title: "Taiwan Stroke Society"
+    zh_hash: '9a322937b2'
+  "定義與診斷標準":
+    title: "Definitions and diagnostic criteria"
+    zh_hash: '9b1cca88e3'
+
+entries:
+  ami-2025-acc-aha-acs-guideline:
+    note: "Replaces the 2013 STEMI and 2014 NSTE-ACS guidelines; STEMI and NSTEMI are now in one document."
+    zh_hash: '8a326f995c'
+  ami-2022-acc-expert-consensus-acute-chest-pain-ed:
+    note: "Expert consensus on managing and dispositioning acute chest pain in the ED."
+    zh_hash: '495a4e63ec'
+  ami-2023-esc-acs-guideline:
+    note: "The European all-in-one ACS guideline; STEMI and NSTE-ACS combined."
+    zh_hash: '9875b9db70'
+  ami-2020-tsoc-stemi-guideline:
+    title: "2020 Focused Update of the 2012 Guidelines of the Taiwan Society of Cardiology for the Management of ST-Segment Elevation Myocardial Infarction"
+    zh_hash: '39ea9163a0'
+  ami-2018-tsoc-nste-acs-guideline:
+    note: "Joint version from three societies: cardiology, emergency medicine and cardiovascular intervention."
+    zh_hash: 'ad9f61ba66'
+  ami-2026-5th-universal-definition-mi:
+    note: "Fifth edition: Types 1–5 become three categories (primary / secondary / procedure-related), with sex-specific troponin thresholds. See my post on the fifth UDMI."
+    zh_hash: '8446439d45'
+  ami-2018-4th-universal-definition-mi:
+    note: "The last edition with the Type 1–5 classification."
+    zh_hash: '4ea771ef6e'
+  stroke-2026-tw-tnk-ivt-consensus:
+    title: "2026 Consensus on Intravenous Thrombolysis With Tenecteplase in Acute Ischemic Stroke (unofficial English title)"
+    citation: "Taiwan Stroke Society TNK Consensus Group (2026)"
+    note: "Taiwanese consensus on single-bolus IV TNK, based on the 2026 AHA/ASA guideline, FDA approval and the TFDA label."
+    zh_hash: '284b41b349'
+  stroke-2026-tw-acute-ischemic-stroke-management-recommendations:
+    title: "2026 Practical Recommendations in Acute Ischemic Stroke Management (PRISM)"
+    citation: "Chih-Hao Chen et al."
+    note: "Taiwan Stroke Society practice consensus, a 13-page concise version. Year to be confirmed: the PDF's DOI says 2026;8(1), the society's website lists it under 2025."
+    zh_hash: 'f1a8ccc82d'
+  stroke-2025-tw-ivt-guideline-update:
+    title: "2025 Taiwan Stroke Society Guideline for the Intravenous Thrombolysis in Acute Ischemic Stroke"
+    citation: "Chun-Min Wang et al. (2025)"
+    note: "Published 2025;7(1):1-57. Standard treatment within 4.5 hours, extended time windows, minor stroke, patients on DOACs, and TNK as an alternative."
+    zh_hash: '215519468d'
+  stroke-2023-tw-acute-ischemic-stroke-evt-update:
+    title: "2023 Update to the Taiwan Stroke Society Guidelines for Endovascular Thrombectomy in Acute Ischemic Stroke Patients"
+    citation: "Chun-Jen Lin et al. (2023)"
+    note: "Updated EVT guideline."
+    zh_hash: 'd578b01c55'
+  stroke-2022-tw-dapt-minor-stroke-tia-consensus:
+    title: "2022 Dual Antiplatelet Therapy in the Management of Acute Minor Ischemic Stroke and High-Risk Transient Ischemic Attack: An Expert Consensus Statement from Taiwan Stroke Society and Taiwan Society of Emergency Medicine"
+    note: "Consensus on DAPT for minor stroke / high-risk TIA."
+    zh_hash: '73e531337c'
+  stroke-2022-tw-antiplatelet-update-ischemic-stroke:
+    title: "2022 Focus Update of the 2020 Taiwan Stroke Society Guideline on Antiplatelet Therapy for Noncardioembolic Acute Ischemic Stroke"
+    zh_hash: 'a9ec2c1b24'
+  stroke-2020-tw-prehospital-emergency-ischemic-stroke-guideline:
+    title: "2020 Guideline for Prehospital Stroke Management, Emergency Evaluation and Treatment of Patients with Acute Ischemic Stroke"
+    note: "Joint version from the Taiwan Stroke Society and the Taiwan Society of Emergency Medicine."
+    zh_hash: '8a0963e255'
+  stroke-2019-tw-acute-ischemic-stroke-evt-guideline:
+    title: "2019 Taiwan Stroke Society Guideline for Endovascular Thrombectomy in Acute Ischemic Stroke Patients"
+    zh_hash: '64a1a445c4'
+  stroke-2026-aha-asa-acute-ischemic-stroke-guideline:
+    note: "Replaces the 2018 guideline and its 2019 update. IVT now includes tenecteplase; EVT indications extend to basilar artery occlusion and large ischemic cores."
+    zh_hash: 'a509041bf1'
+  acls-2025-aha-adult-als-part9:
+    title: "2025 AHA Adult Advanced Life Support (Part 9 extract)"
+    note: "Just Part 9 of the full 489-page set — 40 pages. Open this one for adult ALS in the ED."
+    flag: "Opens instantly"
+    zh_hash: '6703509c89'
+  acls-2025-acc-aha:
+    note: "Circulation 2025;152(suppl 2), the full set, including Adult ALS (Part 9)."
+    zh_hash: 'f38a6b76c5'
+  acls-2023-aha-als-focused-update:
+    note: "Circulation 2024 (online 2023-12). The adult ALS focused update between 2020 and 2025: drugs, temperature control, coronary angiography, ECPR, seizures."
+    zh_hash: '3c1a2ca111'
+  acls-2023-aha-poisoning-focused-update:
+    note: "Circulation 2023;148:e149–e184. Managing poisoning-related cardiac arrest and life-threatening toxicity."
+    zh_hash: 'c7f2fc5340'
+  acls-2020-aha-part1-exec:
+    note: "Circulation 2020;142(suppl 2):S337–S357. The baseline before the 2025 guidelines; executive summary only."
+    zh_hash: 'bcebd7bac2'
+  acls-2025-erc-adult-als:
+    title: "2025 ERC Adult Advanced Life Support (chapter extract)"
+    note: "The Adult ALS chapter from the full 541-page ERC set — 63 pages."
+    flag: "Opens instantly"
+    zh_hash: 'ef8e47ad40'
+  acls-2025-erc:
+    note: "Resuscitation 2025;215(suppl 1), the full set, including Adult ALS."
+    zh_hash: '7770bdb7fd'
+  acls-2023-ilcor-costr:
+    note: "Circulation 2023;148:e187–e280. Summary of the scientific consensus from each ILCOR task force — the shared upstream source for the AHA and ERC guidelines."
+    zh_hash: 'e677c446f2'
+  pals-2025-aha-aap-part8:
+    title: "2025 AHA/AAP Part 8: Pediatric Advanced Life Support (extract)"
+    note: "Part 8 extracted from the full 2025 AHA CPR/ECC set, 59 pages."
+    flag: "Opens instantly"
+    zh_hash: 'c4072a3b70'
+  pals-2025-aha-aap-pbls-part6:
+    title: "2025 AHA/AAP Part 6: Pediatric Basic Life Support (extract)"
+    note: "Part 6, pediatric BLS, 24 pages."
+    flag: "Opens instantly"
+    zh_hash: 'a5e93b83fa'
+  pals-2025-erc-pls:
+    title: "2025 European Resuscitation Council Guidelines: Paediatric Life Support (chapter extract)"
+    note: "Resuscitation 2025;215(suppl 1):110767, 67 pages. Covers pediatric BLS/ALS and post-resuscitation care."
+    flag: "Opens instantly"
+    zh_hash: '731473b5e3'
+  trauma-2025-atls-11:
+    note: "The course manual is copyrighted, so there is no PDF here; this links to the official ACS page. The 11th edition moves to xABCDE (control exsanguinating hemorrhage first), balanced transfusion and restricted crystalloids."
+    zh_hash: '99c0d30a86'
+  trauma-2023-european-bleeding-guideline-6th:
+    note: "Critical Care 2023;27:80. Sixth edition of the European guideline on major bleeding and coagulopathy after trauma."
+    zh_hash: 'b7e5491b17'
+  sepsis-2026-ssc-adult:
+    note: "Published simultaneously in Intensive Care Med 2026;52:863–936 and Crit Care Med 2026;54(4):725–812. Replaces the 2021 guidelines."
+    zh_hash: '70ecaf94db'
+  sepsis-2021-ssc-adult:
+    note: "Intensive Care Med 2021;47:1181–1247."
+    zh_hash: 'bb46c009c4'
+  sepsis-2020-ssc-pediatric:
+    note: "Intensive Care Med 2020;46(Suppl 1):S10–S67. Pediatric version."
+    zh_hash: 'b8ec6b65cb'
+  sepsis-2024-phoenix-criteria:
+    note: "JAMA 2024. The SCCM task force's definition of pediatric sepsis and septic shock. No PDF here; links to the original."
+    zh_hash: '2c4e7bef8a'
+  sepsis-2016-sepsis-3:
+    note: "JAMA 2016. The adult sepsis definition, using SOFA to define organ dysfunction. No PDF here; links to the original."
+    zh_hash: '266a185abd'
+  pocus-2023-acep-ultrasound-guidelines:
+    note: "Ann Emerg Med 2023;82(3). The 2023 revision of the ACEP policy statement: core applications, training and credentialing. The PDF needs an ACEP member login, so this links to the original for now."
+    zh_hash: 'a23ebf6c5a'
+  pocus-2024-sccm-focused-update:
+    note: "Crit Care Med 2025;53(2). Five scenarios: cardiac arrest, sepsis, respiratory failure, fluids and cardiogenic shock. No PDF here; links to the original."
+    zh_hash: '40c57f2a30'
+  pocus-2015-aap-pem-policy:
+    note: "Pediatrics 2015;135(4). No PDF here; links to the original."
+    zh_hash: 'deb7d59eef'
+  airway-2022-asa-difficult-airway:
+    note: "Anesthesiology 2022;136:31–81. Replaces the 2013 guideline. Emphasizes a pre-procedure time-out, fewer attempts and video laryngoscopy, and adds ECMO as an option after failure."
+    zh_hash: '963117d6af'
+  airway-2025-das-unanticipated-difficult-intubation:
+    note: "Br J Anaesth 2026;136:283–307 (online 2025-11-07). Update of the 2015 guideline; 65 recommendations. Keeps the linear Plan A (intubation) → B (supraglottic device) → C (face mask) → D (emergency front-of-neck access) pathway; oxygenation throughout, waveform capnography to confirm ventilation, and making the first attempt count."
+    zh_hash: 'dd516ae033'
+  airway-2018-das-critically-ill-intubation:
+    note: "Br J Anaesth 2018;120:323–352. Joint DAS/ICS/FICM/RCoA guideline written in response to NAP4; the closest match to intubation in the ED and ICU."
+    zh_hash: '2e8771c9b1'
+  airway-2015-das-unanticipated-difficult-intubation:
+    note: "Br J Anaesth 2015;115:827–848. The original source of Plans A–D; superseded by the 2025 update and kept for comparison."
+    zh_hash: '2d5cdc99c2'
+  airway-2021-cafg-part1:
+    note: "Can J Anesth 2021;68:1373–1404."
+    zh_hash: '34851165c6'
+  airway-2021-cafg-part2:
+    note: "Can J Anesth 2021;68:1405–1436."
+    zh_hash: 'e922d6c9c6'
+  airway-2022-puma-oesophageal-intubation:
+    note: "Anaesthesia 2022;77:1395–1415. Sustained exhaled CO2 waveform is the cornerstone for excluding oesophageal intubation."
+    zh_hash: '8b207b1dba'

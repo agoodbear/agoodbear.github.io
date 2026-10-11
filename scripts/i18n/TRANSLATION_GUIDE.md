@@ -288,9 +288,10 @@ OMI / NOMI、STEMI / NSTEMI、STE (ST elevation)、STD (ST depression)、hyperac
 | 小蜜蜂（補給車） | Little Bee (a roving support car) | |
 
 
-## 10. 資料檔（OMI圖鑑、ECG動畫館）
-- 英文不是另一份 .en.md，而是對照檔 `data/omi_atlas_en.yaml`、`data/ecg_anim_en.yaml`：只放給讀者看的字，用 id 對上中文資料檔；清單逐項對位。
-- 新 finding／新動畫：`python3 scripts/i18n/data_i18n.py skeleton omi|anim` 產骨架 → 翻好貼進對照檔 → `python3 scripts/i18n/data_i18n.py check` 必須 PASS。
+## 10. 資料檔（OMI圖鑑、ECG動畫館、Guideline集散地）
+- 英文不是另一份 .en.md，而是對照檔 `data/omi_atlas_en.yaml`、`data/ecg_anim_en.yaml`、`data/guideline_hub_en.yaml`：只放給讀者看的字，用 id 對上中文資料檔；清單逐項對位。
+- Guideline集散地只翻「含中文」的欄位＋每一個 note、flag；台灣學會中文 guideline 的英文標題、作者英文名照 PDF 英文摘要頁逐字抄，PDF 沒有英文標題才自己翻並在標題後註明 my translation；英文頁自動標「In Chinese」。
+- 新 finding／新動畫／新 guideline：`python3 scripts/i18n/data_i18n.py skeleton omi|anim|hub` 產骨架 → 翻好貼進對照檔 → `python3 scripts/i18n/data_i18n.py check` 必須 PASS。
 - 中文改字後 check 會報 STALE：照新中文改英文，改完 `python3 scripts/i18n/data_i18n.py rehash`。
 - 資料檔不能留中文（沒有 keep-zh）；查不到英文名的人名／院名就改寫成不帶名字。
 - YAML 單引號字串裡的撇號要寫兩個（''）。

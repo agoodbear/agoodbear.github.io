@@ -1,0 +1,48 @@
+{{- /* Guideline集散地資料：中文 data/guideline_hub.yaml 是正本；英文頁把 data/guideline_hub_en.yaml 的字疊上去。
+     用法：partialCached "guideline/hub.html" site.Language.Lang site.Language.Lang
+     英文頁每份多一個 zh_doc（原文是中文的 guideline），版型拿來標「In Chinese」。 */ -}}
+{{- $zh := site.Data.guideline_hub -}}
+{{- $out := $zh -}}
+{{- if and $zh (eq site.Language.Lang "en") -}}
+  {{- $en := site.Data.guideline_hub_en | default dict -}}
+  {{- $badges := $en.badges | default dict -}}
+  {{- $gnames := $en.groups | default dict -}}
+  {{- $tmap := $en.topics | default dict -}}
+  {{- $emap := $en.entries | default dict -}}
+  {{- $topics := slice -}}
+  {{- range $t := $zh.topics -}}
+    {{- $groups := slice -}}
+    {{- range $g := $t.groups -}}
+      {{- $items := slice -}}
+      {{- range $e := $g.items -}}
+        {{- $x := $e -}}
+        {{- $o := index $emap $e.doc -}}
+        {{- if $o -}}
+          {{- range $k := slice "title" "citation" "note" "flag" -}}
+            {{- with index $o $k -}}{{- $x = merge $x (dict $k .) -}}{{- end -}}
+          {{- end -}}
+        {{- else if or $e.note $e.flag (findRE `\p{Han}` $e.title) -}}
+          {{- warnf "guideline_hub_en.yaml 缺 entries.%s（跑 scripts/i18n/data_i18n.py check hub）" $e.doc -}}
+        {{- end -}}
+        {{- if findRE `\p{Han}` $e.title -}}{{- $x = merge $x (dict "zh_doc" true) -}}{{- end -}}
+        {{- $x = merge $x (dict "title" (replace (replace $x.title "（" " (") "）" ")")) -}}
+        {{- $items = $items | append $x -}}
+      {{- end -}}
+      {{- $gx := merge $g (dict "items" $items) -}}
+      {{- with $g.badge -}}{{- with index $badges . -}}{{- $gx = merge $gx (dict "badge" .name) -}}{{- end -}}{{- end -}}
+      {{- with $g.title -}}{{- with index $gnames . -}}{{- $gx = merge $gx (dict "title" .title) -}}{{- end -}}{{- end -}}
+      {{- /* 中文全形括號（「ATLS（ACS …）」）在英文頁換成半形 */ -}}
+      {{- $gx = merge $gx (dict "title" (replace (replace $gx.title "（" " (") "）" ")")) -}}
+      {{- $groups = $groups | append $gx -}}
+    {{- end -}}
+    {{- $tx := merge $t (dict "groups" $groups) -}}
+    {{- with index $tmap $t.id -}}
+      {{- with .title -}}{{- $tx = merge $tx (dict "title" .) -}}{{- end -}}
+      {{- with .subtitle -}}{{- $tx = merge $tx (dict "subtitle" .) -}}{{- end -}}
+    {{- end -}}
+    {{- $topics = $topics | append $tx -}}
+  {{- end -}}
+  {{- $out = merge $zh (dict "topics" $topics) -}}
+  {{- with $en.page.hub -}}{{- $out = merge $out (dict "title" .title "intro" .intro) -}}{{- end -}}
+{{- end -}}
+{{- return $out -}}

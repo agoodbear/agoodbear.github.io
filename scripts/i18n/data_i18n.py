@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
-"""OMI圖鑑／ECG動畫館的英文對照檔：產生骨架＋上線前檢查。
+"""OMI圖鑑／ECG動畫館／Guideline集散地的英文對照檔：產生骨架＋上線前檢查。
 
-中文資料檔是唯一正本（data/omi_atlas.yaml、data/ecg_anim.yaml）；英文只放「給讀者看的字」，
-另存 data/omi_atlas_en.yaml、data/ecg_anim_en.yaml，用 id 對上，網址、圖片、published、片長都只看中文那份。
-版型在英文頁把兩份合起來（layouts/partials/omi/atlas.html、layouts/partials/ecg-anim/item.html）。
+中文資料檔是唯一正本（data/omi_atlas.yaml、data/ecg_anim.yaml、data/guideline_hub.yaml）；英文只放「給讀者看的字」，
+另存 data/*_en.yaml，用 id 對上，網址、圖片、published、片長、年份都只看中文那份。
+版型在英文頁把兩份合起來（layouts/partials/omi/atlas.html、layouts/partials/ecg-anim/item.html、layouts/partials/guideline/hub.html）。
+Guideline集散地：本來就是英文的欄位（多數標題、citation）不用翻，只有含中文的欄位才進對照檔。
 
 用法：
   python3 scripts/i18n/data_i18n.py check              # 兩份都檢查，FAIL 要修到 0 才能上線
   python3 scripts/i18n/data_i18n.py skeleton omi > x.yaml   # 新 finding／新動畫：產生只有中文的骨架給譯者填
   python3 scripts/i18n/data_i18n.py skeleton anim > x.yaml
+  python3 scripts/i18n/data_i18n.py skeleton hub > x.yaml   # Guideline集散地新增一份 guideline 後
   python3 scripts/i18n/data_i18n.py check-file omi x.yaml   # 只檢查分批翻譯檔裡有的那幾筆
 
 每一筆英文都帶 zh_hash（中文那幾個欄位的指紋）：中文改了字、英文沒跟著改 → check 報 STALE。
@@ -76,9 +78,40 @@ def anim_units(zh):
         yield ('item', it['id']), anim_fields(it)
 
 
+def has_cjk(v):
+    return isinstance(v, str) and bool(CJK.search(v))
+
+
+def hub_units(zh):
+    yield ('page', 'hub'), {k: zh[k] for k in ('title', 'intro') if zh.get(k)}
+    badges, groups = {}, {}
+    for t in zh['topics']:
+        f = {'title': t['title']} if has_cjk(t['title']) else {}
+        if t.get('subtitle'):
+            f['subtitle'] = t['subtitle']
+        yield ('topic', t['id']), f
+        for g in t['groups']:
+            if has_cjk(g.get('badge')):
+                badges[g['badge']] = {'name': g['badge']}
+            if has_cjk(g.get('title')):
+                groups[g['title']] = {'title': g['title']}
+            for e in g['items']:
+                # 英文標題、英文作者名本來就能用；note、flag 一律要翻
+                f = {k: e[k] for k in ('title', 'citation') if has_cjk(e.get(k))}
+                f.update({k: e[k] for k in ('note', 'flag') if e.get(k)})
+                if f:
+                    yield ('entry', e['doc']), f
+    for k, v in badges.items():
+        yield ('badge', k), v
+    for k, v in groups.items():
+        yield ('group', k), v
+
+
 SPECS = {
     'omi': ('omi_atlas.yaml', 'omi_atlas_en.yaml', omi_units, {'group': 'groups', 'finding': 'findings'}),
     'anim': ('ecg_anim.yaml', 'ecg_anim_en.yaml', anim_units, {'series': 'series', 'item': 'items'}),
+    'hub': ('guideline_hub.yaml', 'guideline_hub_en.yaml', hub_units,
+            {'page': 'page', 'topic': 'topics', 'badge': 'badges', 'group': 'groups', 'entry': 'entries'}),
 }
 
 
@@ -165,7 +198,7 @@ def rehash(kind):
     text = path.read_text()
     for (sec, id_), fields in units(zh):
         # 只換指紋那一行，不重寫整份 YAML（保留註解與排版）
-        text = re.sub(r'(?m)^(  %s:\n(?:    .*\n|\s*\n)*?    zh_hash: )\S+' % re.escape(id_), r"\g<1>'" + zh_hash(fields) + "'", text, count=1)   # 一律加引號：全數字的指紋不加會被 YAML 讀成整數
+        text = re.sub(r'(?m)^(  "?%s"?:\n(?:    .*\n|\s*\n)*?    zh_hash: )\S+' % re.escape(id_), r"\g<1>'" + zh_hash(fields) + "'", text, count=1)   # 一律加引號：全數字的指紋不加會被 YAML 讀成整數
     path.write_text(text)
 
 

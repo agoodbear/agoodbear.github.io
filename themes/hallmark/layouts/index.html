@@ -645,7 +645,7 @@ article.card .meta {
 
   <section class="pinned">
     {{- /* 常駐專欄：直接讀 data/guideline_hub.yaml，主題數與份數跟集散地同步，不再手寫 */ -}}
-    {{- $hub := site.Data.guideline_hub -}}
+    {{- $hub := partialCached "guideline/hub.html" site.Language.Lang site.Language.Lang -}}
     {{- $total := 0 -}}
     {{- $rows := slice -}}
     {{- range $topic := $hub.topics -}}
@@ -665,11 +665,11 @@ article.card .meta {
       <p class="eyebrow-inline">{{ T "home_pinned" }}</p>
       <h2>{{ T "home_pinned_title" }}</h2>
       <p>{{ T "home_pinned_body" $total }}</p>
-      <p class="pinned-cta"><a href="/guideline-pdfs/">{{ T "home_pinned_cta" }}</a></p>
+      <p class="pinned-cta"><a href="{{ "/guideline-pdfs/" | relLangURL }}">{{ T "home_pinned_cta" }}</a></p>
     </div>
     <div class="topics" aria-label="{{ T "home_pinned_aria" }}">
       {{ range $r := $rows }}
-        <a class="topic topic--{{ $r.accent | default "rose" }}" href="/guideline-pdfs/#gh-{{ $r.id }}" title="{{ T "home_pinned_topic_count" (dict "Name" $r.name "Count" $r.n) }}{{ with $r.sub }}{{ if $isZh }}，{{ else }}; {{ end }}{{ . }}{{ end }}">
+        <a class="topic topic--{{ $r.accent | default "rose" }}" href="{{ "/guideline-pdfs/" | relLangURL }}#gh-{{ $r.id }}" title="{{ T "home_pinned_topic_count" (dict "Name" $r.name "Count" $r.n) }}{{ with $r.sub }}{{ if $isZh }}，{{ else }}; {{ end }}{{ . }}{{ end }}">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ partial "guideline-icon.html" $r.icon }}</svg></span>
           <span class="name">{{ $r.name }}</span>
           <span class="count" aria-hidden="true">{{ $r.n }}</span>
