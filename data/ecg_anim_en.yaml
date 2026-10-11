@@ -555,3 +555,26 @@ items:
     - AHA 2025 Adult ALS (Circulation 2025;152:S538)
     - Heart model adapted from BodyParts3D, © DBCLS, CC BY 4.0
     zh_hash: '70e9e0c6bc'
+  wpw-02-syndrome:
+    title: WPW pattern ≠ WPW syndrome
+    subtitle: WPW series 02
+    point: 'Pattern + arrhythmia episodes = syndrome. When you see all three (short PR, delta wave, wide QRS), first ask whether the patient has ever had palpitations'
+    refs:
+    - Goldberger's Clinical Electrocardiography 9th
+    - Chou's Electrocardiography 6th
+    - Netter's Cardiology 3rd
+    - ESC Textbook of Cardiovascular Medicine
+    - Tintinalli's Emergency Medicine 9th
+    - Dr. Smith's ECG Blog
+    zh_hash: '29cdca1b06'
+  mimics-03-hyperca:
+    title: The STE of hypercalcemia
+    subtitle: 'STEMI mimics: the ST segment disappears'
+    point: 'In hypercalcemia, the "STE" is not the ST segment being elevated; the ST segment is gone'
+    refs:
+    - Marriott's Practical Electrocardiography 13th
+    - Basic & Bedside Electrocardiography (Baltazar)
+    - Goldberger's Clinical Electrocardiography 9th
+    - Mattu, ECG in Emergency, Acute & Critical Care 2e
+    - Dr. Smith's ECG Blog
+    zh_hash: '809e19b372'
