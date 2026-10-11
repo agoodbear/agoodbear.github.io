@@ -50850,6 +50850,812 @@
           "url": "https://drsmithsecgblog.com/chest-pain-shortness-of-breath-t-wave/"
         }
       ]
+    },
+    {
+      "id": "smith-9377",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/even-if-you-are-not-impressed-use-the-queen-of-hearts-she-may-surprise-you/",
+      "tags": [
+        "high lateral OMI",
+        "雙束支阻斷",
+        "RBBB 合併 OMI",
+        "Queen of Hearts"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/08/From-FM-used-the-Queen-1024x451.png",
+      "stem": "一名中年女性，有冠狀動脈疾病病史並曾接受 CABG，因胸痛至急診就診，此為就診時的 12-lead ECG。主治醫師看了覺得「沒什麼特別」。關於這張 ECG 最適當的判讀與處置為何？",
+      "options": [
+        "急性 high lateral（合併 posterior 範圍）OMI 疊加於 RBBB＋LPFB，應立即啟動心導管室",
+        "瀰漫性 subendocardial ischemia（left main／多支病變型態），非 OMI，先給藥物治療",
+        "RBBB＋LPFB 雙束支阻斷所造成的繼發性 ST-T 變化，無急性 OMI 證據，可觀察追蹤",
+        "新發 RBBB＋LAFB 合併 proximal LAD 閉塞，屬 anterior STEMI，應立即啟動心導管室"
+      ],
+      "answer": 0,
+      "explain": "<p><span class='lead'>判讀</span>Smith 先辨認傳導異常：<strong>RBBB</strong>，加上下壁導程小 q 波接大 R 波、aVL 小 r 波接大 S 波，為 <strong>LPFB</strong>，合起來是 <strong>bifascicular block</strong>（無法確定新舊）。重點在於 <strong>I、aVL 明顯 ST elevation</strong>，並有 <strong>V2–V6 深度 ST depression，以 V3 最大</strong>。V2 的 STD 與 RBBB 的 S 波同向（concordant），屬異常；V3 的 STD 雖與 R′ 波呈 discordant，但<mark>幅度不成比例（out of proportion）</mark>。因此 Smith 判斷為 <mark>high lateral 合併 posterior OMI</mark>，推測為 circumflex 閉塞，但也指出其他血管同樣可能造成此區梗塞。</p><p><span class='lead'>病程結果</span>主治醫師對這張 ECG 不以為意，但他的同事（Smith 以前的住院醫師）認為很危險，將 ECG 交由 PMCardio Queen of Hearts 判讀，其結果說服對方啟動心導管室。心導管顯示：<strong>first diagonal 完全閉塞、TIMI-0 flow</strong>；LAD 近端有 50% 偏心性狹窄，在第二對角支之後漸狹為 80–95% 狹窄。Grauer 認為多處碎裂的 rSR′S′ QRS 可能是陳舊梗塞的 Q-wave equivalent，RBBB/LPHB 也可能是舊有變化；然而在新發胸痛下，如此程度的 STE 與 STD 必須視為進行中的急性 OMI，直到證明並非如此，這張 ECG 足以支持立即啟動心導管室。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「RBBB＋LPFB 雙束支阻斷所造成的繼發性 ST-T 變化」</strong>：V2 的 STD 與 S 波 concordant，V3 的 STD 雖 discordant 但不成比例，I、aVL 更有 3–4 mm 的 STE，無法單以傳導阻斷解釋；這正是主治醫師「not impressed」的盲點。</li><li><strong>「瀰漫性 subendocardial ischemia，非 OMI」</strong>：本例 I、aVL 有明確 STE，Smith 判讀為 high lateral 與 posterior OMI；導管也證實 first diagonal 完全閉塞（TIMI-0），需要立即再灌流而非僅藥物治療。</li><li><strong>「新發 RBBB＋LAFB 合併 proximal LAD 閉塞」</strong>：本例 I 呈 rS（深 S 波）、III 呈 qR，屬 LPHB 而非 LAHB；胸前導程是 ST depression 而非 anterior STE。Grauer 指出 RBBB/LAHB 合併前壁 STE 才提示 proximal LAD 閉塞，與本例不同。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>RBBB 不會掩蓋 OMI</strong>：留意與終末 QRS concordant 的 ST 偏移，以及雖然 discordant 但幅度不成比例的 STD。</li><li><strong>I／aVL STE＋胸前導程 STD</strong>：屬 high lateral（可合併 posterior）OMI 型態，culprit 可能是 circumflex，也可能是其他血管（本例為 first diagonal）。</li><li><strong>South African Flag Sign</strong>：I、aVL STE、III reciprocal STD，加上 V2 STE（其餘胸前導程不上升），提示 D1/D2 閉塞。本例 V2 的 STD 相對較少，Grauer 認為是 V2 原本該有的 STE 被 RBBB 與嚴重瀰漫性缺血造成的 STD 所抵消。</li><li><strong>真正的 LPHB 代表廣泛結構性病變</strong>：左後分支較粗大，真正的 LPHB 少見，出現時幾乎都合併 RBBB。</li><li><strong>即使自己不覺得異常，也可善用 AI 工具</strong>：本例正是 Queen of Hearts 的結果說服醫師啟動心導管室。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>新胸痛病人的 ECG 若無法區分「新」、「舊」或「新疊加於舊」，只要 STE 與 STD 的程度夠大，就應當作進行中的急性 OMI 處理；此時判定確切 culprit 只是學術問題，及時啟動心導管室才是重點。high lateral STE 合併 V2 異常時想到 diagonal 閉塞（South African Flag）；RBBB/LAHB 合併前壁 STE 則想到 proximal LAD 閉塞。</p>",
+      "related": [
+        {
+          "title": "測驗：哪些是 OMI？認識 South African Flag Sign",
+          "url": "https://drsmithsecgblog.com/quiz-post-which-of-these-if-any-are-omi/"
+        },
+        {
+          "title": "測驗：兩病人有 high lateral OMI／South African Flag？",
+          "url": "https://drsmithsecgblog.com/quiz-post-do-either-or-both-of-these/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9330",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/12-mg-of-adenosine-x-2-did-not-work-and-neither-did-electrical-cardioversion-at-200j-x-2/",
+      "tags": [
+        "寬QRS心搏過速",
+        "SVT合併束支阻滯",
+        "Fascicular VT鑑別",
+        "舊ECG比對"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/08/Fast-RBBB-LAFB-1024x504.png",
+      "stem": "60 多歲男性，因 dyspnea 至急診，血壓穩定，ECG 如圖：regular wide-complex tachycardia，約 180/min，看不到明確 P 波。依序給予 adenosine 12 mg ×2，監視器上沒有停頓或變化；再以 200 J 電擊 ×2，仍無效。床邊 echo 顯示 LV 功能良好。之後改給 metoprolol，成功轉回竇性心律。事後調閱病歷，發現多份竇性心律下的舊 ECG，其 QRS 形態與本圖幾乎相同。綜合以上資料，本次心律最可能的診斷為何？",
+      "options": [
+        "Posterior fascicular VT（idiopathic，verapamil-sensitive）",
+        "Reentry SVT（最可能 AVNRT）合併原有 RBBB/LAFB",
+        "Scar-related VT，合併缺血性心肌病變",
+        "SVT 合併 rate-related aberrancy（基線 QRS 正常）"
+      ],
+      "answer": 1,
+      "explain": "<p><span class='lead'>判讀</span>這是 regular <strong>WCT</strong>，速率約 180/min，看不到明確心房活動。60 多歲病人出現這種心律，統計上 VT 機率接近 90%，所以應先當作「VT until proven otherwise」。QRS 呈 <strong>RBBB＋LAFB</strong>（bifascicular）形態，Smith 與 Grauer 起初都判為 <strong>posterior fascicular VT</strong>。Grauer 指出幾個不典型、偏向 VT 的細節：V1 是 qR 而非 rsR'；V3 的 RBBB 形態不明顯；V4–V6 三個導程幾乎一樣，都是 tiny r/deep S；下壁導程 r 波極小、S 波很深；lead I 小而近乎等電位，電軸約 -90°。然而 Smith 事後翻出病歷，<mark>竇性心律時的舊 ECG 就已經是 RBBB/LAFB，且形態與發作時相同</mark>。這證明本次並非 fascicular VT，而是 <strong>SVT 合併原有 RBBB/LAFB</strong>。以 180/min 的速率來看，幾乎可確定是 reentry SVT，最可能為 AVNRT。</p><p><span class='lead'>病程結果</span>Adenosine 12 mg ×2 與 200 J 電擊 ×2 都被描述為「無效」，最後是 metoprolol 成功轉換。Smith 指出，metoprolol 對 posterior fascicular VT 有效並不常見。調閱舊 ECG 後，證實這是 SVT 合併既有的 bifascicular block。Grauer 認為所謂的「無效」很可能其實有短暫轉換，只是又迅速回到 AVNRT；直到給予作用較久的 metoprolol，才得以維持。病人基線有 RBBB/LAFB，又反覆因 AVNRT 就診，需要追蹤原因，並考慮轉介 EP 評估 ablation。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「Posterior fascicular VT（idiopathic，verapamil-sensitive）」</strong>：這是單看本圖最合理的第一印象，Smith 起初也這樣判讀。但竇性心律時的舊 ECG 已有相同的 RBBB/LAFB 形態，Smith 明言這證明「not posterior fascicular VT」。</li><li><strong>「Scar-related VT，合併缺血性心肌病變」</strong>：年長者出現 WCT 確實應優先考慮 VT，但床邊 echo 顯示 LV 功能良好。更關鍵的是，發作時的 QRS 與竇性心律基線完全吻合，表示是經原有傳導阻滯下傳的上心室心律。</li><li><strong>「SVT 合併 rate-related aberrancy（基線 QRS 正常）」</strong>：方向對了一半，確實是 SVT。但寬 QRS 並非心跳快才出現的 rate-related aberrancy；病人竇性心律時本來就有 RBBB/LAFB，屬於 preexisting bundle branch block。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>WCT 一定要找舊 ECG</strong>：竇性心律時就存在的異常 QRS 形態，在 SVT 發作時也會出現；若形態完全吻合，就能推翻 VT。</li><li><strong>Fascicular VT 的形態特徵</strong>：形似 RBBB＋LAFB 或 RBBB＋LPFB 的 bifascicular block，多為 idiopathic，對 IV verapamil 反應極佳。</li><li><strong>「Adenosine／電擊無效」要存疑</strong>：AVNRT 幾乎都會至少短暫反應，但常迅速復發。給藥後應連續記錄 rhythm strip 60–90 秒，事後回頭檢視。</li><li><strong>Adenosine 劑量可再加</strong>：Smith 建議 12 mg 無效時，先試更高劑量，至少 18 mg；若電擊與 adenosine 都不成功，verapamil 仍是好選擇。</li><li><strong>Not all patients read the textbook</strong>：QRS 形態分析雖然準確度高，仍會有病人的基線 ECG 本身就呈現「偏 VT」的不典型形態。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>面對 regular WCT，鑑別重點是 VT 與「SVT 合併 preexisting BBB 或 rate-related aberrancy」。在形態看似典型 bifascicular block 的情況下，要想到 fascicular VT 等 idiopathic VT 症候群（例如 RVOT VT）。而調閱基線 ECG 往往是最有力的鑑別工具：形態相同支持 SVT，形態不同則支持 VT。</p>",
+      "related": [
+        {
+          "title": "12 歲兒童的 Wide Complex Tachycardia",
+          "url": "https://drsmithsecgblog.com/a-12-year-old-with-wide-complex/"
+        },
+        {
+          "title": "36 歲患者的 Wide Complex Tachycardia",
+          "url": "https://drsmithsecgblog.com/wide-complex-tachycardia-in-36-year-old/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9296",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/a-man-in-his-50s-with-acute-chest-pain-see-what-happens-when-it-is-not-a-stemi/",
+      "tags": [
+        "OMI",
+        "前壁心肌梗塞",
+        "STEMI-equivalent",
+        "心室顫動"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/07/ed1-0658x-1024x396.jpg",
+      "stem": "50 多歲男性，清晨遛狗時突發急性胸痛，到急診後於 0658 記錄此 12-lead ECG。到院時胸痛已較發作時改善，初次 troponin 尚未回報。依此 ECG，最正確的判讀與處置為何？",
+      "options": [
+        "Diffuse subendocardial ischemia（aVR STE 合併多導程 STD），非冠狀動脈完全阻塞，依 NSTE-ACS 給藥並追蹤 troponin",
+        "Wellens syndrome（LAD 已自發再灌流），因胸痛已緩解，可住院安排非緊急心導管",
+        "Acute proximal LAD occlusion（precordial swirl 合併 South African Flag sign），需緊急再灌流治療",
+        "未達 STEMI 標準之非特異性 ST-T 變化，先給 aspirin、等待序列 troponin 再決定"
+      ],
+      "answer": 2,
+      "explain": "<p><span class='lead'>判讀</span>竇性心律、QRS 大致正常，但有急性 LAD 阻塞的診斷性表現：<strong>precordial swirl</strong>——V1-V2 STE、V2 <strong>hyperacute T wave</strong>（相對於很小的 S 波顯得過於「厚實」），並有 V5-V6 ST depression；同時 <strong>aVL hyperacute T wave</strong> 合併 inferior（III、aVF）reciprocal ST depression，即 <strong>South African Flag sign</strong>。<mark>Swirl 與 South African Flag 兩者合併，皆指向 proximal LAD occlusion</mark>；也可描述為 LAD 阻塞形態疊加在 subendocardial ischemia 形態上。雖不符傳統 STEMI 標準，但對 LAD 阻塞非常特異。Queen of Hearts AI 判為 <strong>STEMI equivalent</strong>，標示 aVL、V2、III、aVF。</p><p><span class='lead'>病程結果</span>此 ECG 被判為「not STEMI」，僅給 aspirin，未安排緊急再灌流，且紀錄提到胸痛已改善。約 45 分鐘後病人發生 <strong>ventricular fibrillation 心跳停止</strong>，電擊後 ROSC；約 10 分鐘後 ECG 出現寬 QRS（RBBB/LAFB 樣形態，Grauer 認為可能為 ischemic-induced QRS widening），此時才被認定為「STEMI」送導管室：<strong>proximal LAD 完全阻塞</strong>並打通。初次 troponin 僅 50 ng/L，第二次約 7000 ng/L；之後 EF 35% 伴前壁運動異常。病人存活出院，長期預後不明；Smith 認為如此延遲再灌流很可能導致永久性 HFrEF。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「Diffuse subendocardial ischemia，非完全阻塞，依 NSTE-ACS 處理」</strong>：雖有 aVR STE 與多導程 STD 的 DSI 成分，但 V1-V2 STE、V2 hyperacute T、aVL hyperacute T 合併 inferior reciprocal STD 是阻塞性表現；Queen of Hearts 不標 V4-6 STD 正是因為那部分可能只是 subendocardial ischemia，真正有診斷意義的是 aVL 與 V2。</li><li><strong>「Wellens syndrome，胸痛緩解可安排非緊急心導管」</strong>：Wellens 是再灌流後的 T 波形態且應無 hyperacute T 與 reciprocal STD；此圖 V2、aVL 為 hyperacute T，是進行中的阻塞，病人 45 分鐘後即 VF 心跳停止，證實 LAD 仍完全阻塞。</li><li><strong>「未達 STEMI 標準之非特異性變化，等待序列 troponin」</strong>：這正是本案錯誤的實際處置。NSTEMI 是無用的診斷；初次 troponin 50 ng/L 甚至低於 ESC 52 ng/L 切點，首次 troponin 不可靠，等待只會延誤再灌流。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>Swirl＋South African Flag＝proximal LAD</strong>：V1-V2 STE/hyperacute T 合併 V5-6 STD，加上 aVL STE 與 inferior reciprocal STD，即使不符 STEMI 標準也要緊急 cath。</li><li><strong>首次 troponin 不可靠</strong>：即使是急性冠狀動脈阻塞，第一次 troponin 也可能偏低（本案 50 → 約 7000 ng/L）。</li><li><strong>RBBB＋LAFB 是極高風險徵象</strong>：在急性 OMI 出現時，病人往往即將心跳停止、剛被急救或處於心因性休克，代表 left main 或 proximal LAD 大範圍缺血。</li><li><strong>至少 10-15 分鐘內重複 ECG</strong>：Grauer 指出若重做 ECG 很可能看到動態變化而提早送導管，或許可避免 VF。</li><li><strong>時間就是心肌</strong>：胸痛發作 4 小時後，再灌流治療 80% 的好處已流失。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>OMI 判讀的關鍵在 T 波「相對於 QRS 振幅」是否過大與 reciprocal 變化，而非 ST 抬高的毫米數；胸痛改善不等於血管已通。再灌流後 ECG 若缺血性 QRS 增寬迅速恢復窄 QRS（如本案 post-cath ECG），也支持寬 QRS 源自急性缺血。熟悉 de Winter、Swirl、South African Flag 等 STEMI-equivalent 形態，或善用準確的 AI ECG 模型，可避免「not STEMI」造成的延誤。</p>",
+      "related": [
+        {
+          "title": "Precordial Swirl：20 例 Swirl 與類似圖形",
+          "url": "https://drsmithsecgblog.com/precordial-swirl-20-cases-of-swirl-or/"
+        },
+        {
+          "title": "60 多歲男性急性胸痛：這是 precordial swirl 嗎？",
+          "url": "https://drsmithsecgblog.com/a-man-in-his-60s-with-acute-chest-pain-is-this-precordial-swirl/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9305",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/lookssmallbutcouldhavebeendisaster/",
+      "tags": [
+        "下壁 OMI",
+        "細微 ST 上升",
+        "對應性 ST 下降",
+        "Wraparound LAD"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/07/50-something-male-w-cp-on-and-off-for-few-hours-1024x460.png",
+      "stem": "50 多歲男性，無心臟病史但有癲癇病史，此次出門忘了帶抗癲癇藥。至檢傷時主訴胸悶、胸口壓迫感數小時（5/10），轉移至左手臂；病人自己懷疑是癲癇發作所致。心臟科電腦判讀為「NONSPECIFIC ST ELEVATION, BORDERLINE ECG」。依這張就診時的 12-lead ECG，最適當的判讀為何？",
+      "options": [
+        "非特異性 ST 上升（borderline ECG），可先候診並追蹤",
+        "良性早期再極化（benign early repolarization）",
+        "癲癇發作後之非缺血性 ST-T 變化",
+        "下壁 OMI：極細微 STE 合併 aVL 對應性 STD"
+      ],
+      "answer": 3,
+      "explain": "<p><span class='lead'>判讀</span>Smith 指出下壁導程有 <strong>&lt; 1 mm 的 STE</strong>，以 lead III 最明顯；<strong>aVL 有輕微的對應性（reciprocal）ST depression</strong>；此外 <strong>lead III 與 aVF 沒有 S 波</strong>，這在 V2-3 稱為 terminal QRS distortion（可診斷 LAD 阻塞），在其他導程也高度提示 OMI。因此 <mark>這張 ECG 幾乎可以確診為下壁 OMI</mark>。PMCardio Queen of Hearts AI 的 raw score 為 0.72，約相當於 98% specificity，代表它相當確定此診斷。Grauer 也注意到 V2-V3 的 ST 段變平（V2、V3 正常應有輕微上斜的 ST 段）與 V4 ST 段變直，認為整體在 7/12 導程有異常 ST-T。</p><p><span class='lead'>病程結果</span>第一位醫師未辨識出這些變化，病人被安排到候診區。30 分鐘後重複 ECG 有相同但更細微的變化（Queen 未判出 OMI），但 Smith 強調這種 <mark>dynamic 變化反而讓第一張更具診斷性</mark>。到院 1.5 小時 hs troponin I 為 48 ng/L（輕微上升）。2 小時後一位 G3 住院醫師一看第一張 ECG 就知道是下壁 OMI，並以 Queen 確認，啟動心導管室。Angiogram：ostial/proximal LAD 90% 狹窄合併新鮮血栓，IVUS 顯示斑塊破裂；此 LAD 為繞過心尖到下壁的 wraparound LAD，解釋了下壁變化。成功以 drug-eluting stent 完成 PCI；測得最高 troponin I 1882 ng/L（非峰值），echo EF 50-55%、無 wall motion abnormality。2 天後出現細微的 LAD 再灌流變化。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「非特異性 ST 上升（borderline ECG），可先候診並追蹤」</strong>：這正是心臟科電腦判讀與第一位醫師的錯誤決策；STE 雖 &lt; 1 mm，但 Smith 依 aVL 對應性 STD 與 III/aVF 無 S 波判定為 OMI，最後證實為近端 LAD 血栓，Smith 稱此案原本可能是一場災難。</li><li><strong>「良性早期再極化（benign early repolarization）」</strong>：Smith 並未將這些下壁 STE 視為正常變異，而是以 aVL 對應性 STD 與 III/aVF S 波消失判為 OMI；30 分鐘後的 ECG 出現 dynamic 變化、troponin 上升、導管證實 LAD 血栓，都與良性診斷不符。</li><li><strong>「癲癇發作後之非缺血性 ST-T 變化」</strong>：病人自己懷疑癲癇，但症狀是轉移至左臂的胸悶壓迫感，ECG 有對應性變化與動態演變，導管證實為斑塊破裂合併血栓，屬急性冠心症。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>OMI 可以極其細微</strong>：&lt; 1 mm 的下壁 STE 若合併 aVL 對應性 STD，不該當成 borderline 放著候診。</li><li><strong>對應性變化與 S 波消失</strong>：aVL reciprocal STD 及 III/aVF 無 S 波（類似 terminal QRS distortion）強烈支持 OMI。</li><li><strong>連續 ECG 的動態變化具診斷力</strong>：30 分鐘內的變化讓第一張更具診斷意義；Grauer 強調 side-by-side 比較是最省時的方法。</li><li><strong>胸痛＋troponin 上升即應考慮導管</strong>：無心臟病史的急性胸痛病人，troponin 上升即使 ECG 正常也有很高的 MI 陽性預測值；持續胸痛且 troponin 上升而無合理解釋是導管適應症。</li><li><strong>下壁 OMI 可能源自 LAD</strong>：wraparound LAD 繞過心尖供應下壁時，LAD 血栓也可呈現下壁變化。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>Grauer 提醒仍停留在 STEMI paradigm 的臨床醫師很容易漏掉此類病例；判讀細微下壁 STE 時應同時找 aVL 對應性 STD、QRS 末端 S 波是否消失，以及 V2-V3 是否喪失正常的上斜 ST 段。Queen of Hearts 不會比較連續 ECG，因此 AI 判讀之外仍需人工並排比較前後 ECG。</p>",
+      "related": [
+        {
+          "title": "病人臨床表現很重要，R 波振幅也是",
+          "url": "https://drsmithsecgblog.com/patient-presentation-is-important-and/"
+        },
+        {
+          "title": "若無對應性 ST depression 或 hyperacute T，下側壁 MI 與心肌炎／心包膜炎無法區分",
+          "url": "https://drsmithsecgblog.com/without-reciprocal-st-depression/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9288",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/this-was-interpreted-as-no-ischemia-kg/",
+      "tags": [
+        "下壁OMI",
+        "傳導障礙",
+        "左迴旋支",
+        "NSTEMI迷思"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2025/08/ACS-symptoms-at-triage-1024x465.jpg",
+      "stem": "50 多歲女性，有 non-ischemic cardiomyopathy（EF 20–25%），數天來雙腿、雙臂沉重無力，爬樓梯時明顯喘；當天出現噁心嘔吐、上背痛、胸悶及左肩痛而至急診。檢傷後約 90 分鐘才完成這張 12-lead ECG（電腦判讀僅為 IVCD 與 PVC）。依此 ECG，最適當的判讀為何？",
+      "options": [
+        "急性 inferior OMI：III 導程 hyperacute T 合併 aVL 對應性改變，應緊急再灌流",
+        "急性心衰竭惡化造成之 demand ischemia（瀰漫性 subendocardial 缺血），非冠狀動脈阻塞",
+        "LA-LL 導線反接造成假性下壁變化，應重貼導線再做一張",
+        "原有 IVCD 合併 PVC，ST-T 為傳導異常所致之 secondary 變化，無急性缺血"
+      ],
+      "answer": 0,
+      "explain": "<p><span class='lead'>判讀</span>這張 ECG 有 <strong>RBBB-like intraventricular conduction delay</strong>，下壁與 V2–V6 有寬 S 波，QRS 嚴重 fragmentation。但 Smith 指出：III 有細微 <strong>STE</strong>，aVL 有細微對應性 <strong>STD</strong>；III 的 T 波非常膨大（<strong>hyperacute T-wave</strong>，曲線下面積大），aVL 的倒置 T 波同樣是對應性的 hyperacute T；V4–6 另有缺血性 STD。Smith 判定這<mark>幾乎可診斷為急性 inferior OMI</mark>。PMCardio Queen of Hearts AI 也判為 OMI（STEMI/STEMI equivalent，score 0.90）；與 3 個月前舊 ECG 比較，這些變化確為新發。</p><p><span class='lead'>病程結果</span>電腦僅判 IVCD 與 PVC，急診醫師亦未察覺。第一套 hs troponin I 為 29 ng/L（接近她慢性心衰竭的基線），無人在意；床邊超音波見瀰漫 B lines、胸部 X 光為肺水腫。2.5 小時的 ECG 缺血變化全部消失，證明第一張確為缺血（<mark>OMI 已自行再灌流</mark>），但沒人注意到。troponin 隨後升至 247、2945 ng/L，心臟科仍認為胸痛「可重現」、臨床不像 ACS。住院後氧氣需求升至 10 L，troponin 上升到 28,000，16 小時後發生 VF arrest，峰值 troponin >60,000。急診心導管發現 culprit 為 <strong>distal LCX 100% 血栓性阻塞</strong>，放置 DES，並因 cardiogenic shock 放置 balloon pump；echo EF 10–15%。經漫長住院後病人死亡，最終診斷卻被寫成「NSTEMI」。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「原有 IVCD 合併 PVC，secondary ST-T 變化，無急性缺血」</strong>：這正是電腦與急診醫師的錯誤判讀。與 3 個月前舊 ECG 相比，III 的 hyperacute T、aVL 的對應性改變與 V4–6 的 STD 都是新發；2.5 小時後的 ECG 這些變化消失，證明它們是動態的缺血，不是固定的傳導異常。</li><li><strong>「急性心衰竭惡化造成之 demand ischemia，非冠狀動脈阻塞」</strong>：病人雖有肺水腫、NT-proBNP 上升，但 ECG 呈下壁 hyperacute T 合併 aVL 對應性變化的區域性 OMI 型態，且變化會出現又消失，並非瀰漫性 subendocardial 缺血。心導管證實 distal LCX 完全血栓性阻塞。</li><li><strong>「LA-LL 導線反接造成假性下壁變化」</strong>：Grauer 指出，lead I 的 P 波大於 lead II，雖常提示非竇性節律或 LA-LL reversal，但此案不符合反接的判斷參數。全導程 P 波有 notching，代表 intra-atrial conduction defect，而且所有後續 ECG 都一致呈現此 P 波型態。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>傳導異常下仍可診斷 OMI</strong>：要看 ST-T 是否與 QRS 不成比例，例如 T 波面積膨大、出現對應導程的 mirror-image 改變。</li><li><strong>一定要比較舊 ECG</strong>：雖然麻煩，但比較後變化可能一目了然，甚至可能救回一命。</li><li><strong>動態變化＝缺血</strong>：ST-T 變化自行消失，代表 OMI 已再灌流，此時再阻塞風險極高，不可當作「沒事」。</li><li><strong>troponin 上升即可診斷 MI</strong>：troponin 從 29 升到 247 時，若仍有胸痛、喘或肺水腫，不論 ECG 如何都應進心導管室。</li><li><strong>NSTEMI 是無用的診斷</strong>：沒有達標的 STE，無法說明是否有急性冠狀動脈阻塞。「不穩定的 NSTEMI」往往就是已出現併發症的 missed OMI。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>症狀以喘、無力、心衰竭惡化為主而非典型胸痛時，仍要想到 silent MI。Grauer 引用 Framingham 資料，指出無胸痛的 MI 可高達約 3 成，新出現的喘最常見。LCX 阻塞在 ECG 上常不明顯，可能只表現為下壁 hyperacute T、aVL 對應性改變或 V4–6 的 STD。若 ST-T 變化反覆出現又消失，代表血管可能時通時塞，應積極處置，而不是等待 STE 達標。</p>",
+      "related": [
+        {
+          "title": "自我測驗：6 張胸痛 ECG 中哪些是 inferior OMI？",
+          "url": "https://drsmithsecgblog.com/test-yourself-which-of-following-6-ecgs/"
+        },
+        {
+          "title": "連續 ECG 高度懷疑 inferior OMI：轉院 PCI 前是否先給血栓溶解劑？",
+          "url": "https://drsmithsecgblog.com/serial-ecgs-highly-suspicious-for/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9378",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/translation-of-interventionalist-lets-wait-until-the-myocardium-is-dead-then-we-will-be-certain-that-it-is-an-acute-mi-then-we-can-treat-it-after-the-damage-is-done/",
+      "tags": [
+        "前壁 OMI",
+        "Precordial swirl",
+        "STEMI 標準陷阱",
+        "再灌流"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/09/Initial-ECG-with-pain-1024x471.jpg",
+      "stem": "58 歲男性，有高血壓與抽菸史。胸痛間歇發作一週，今日呈壓迫感／壓碎感並持續在高峰，疼痛放射至雙臂與背部，吸氣及活動時加劇，合併呼吸困難。生命徵象正常，無舊 ECG 可比較。此圖為到院後約 5 分鐘、病人仍在胸痛中所記錄的 ECG。下列判讀與處置何者最正確？",
+      "options": [
+        "未達 STEMI 毫米標準，屬 NSTE-ACS；依 ACS protocol 給藥，追蹤 troponin 與 serial ECG",
+        "Precordial swirl 型態，診斷為 proximal LAD 區域急性 OMI，應立即啟動心導管室",
+        "胸痛隨吸氣加劇且多導程 ST 改變，較符合急性心包膜炎，應給 NSAID 並安排心臟超音波",
+        "Wellens 症候群型態，代表 LAD 已自發再灌流，可先藥物治療並安排次緊急心導管"
+      ],
+      "answer": 1,
+      "explain": "<p><span class='lead'>判讀</span>Smith 指出此圖<strong>未達 STEMI 毫米標準</strong>，但屬典型的 <strong>precordial swirl</strong>：V2 有 <strong>hyperacute T-wave</strong>、V1-2 有 STE，同時 V5-6 有 ST depression。他強調<mark>只要 V2-4 有任何 STE，且 aVR 以外任何導程有 ST depression，就屬缺血性變化</mark>。此外，inferior 導程全數 ST depression，aVL 則有非常細微的 coved STE。因此他的結論是：此 ECG 為<mark>proximal LAD occlusion 的診斷性 ECG</mark>。Grauer 另外補充三點：V1 的 ST 段變直並有輕微 STE；V2 的 T 波相對於小 S 波顯得過度「bulky」；V3 的 T 波不成比例地高。II、III、aVF 明顯 ST depression 合併 aVR STE，符合 DSI（diffuse subendocardial ischemia）。</p><p><span class='lead'>病程結果</span>急診端會診 PCI 中心的心臟科醫師。對方將 ECG 描述為「subtle」變化、「不符合 STEMI 標準」，指示依 ACS protocol 處理，並追蹤 troponin 與 serial ECG。病人接受 heparin 5000 單位與 ticagrelor 180 mg；因已在服用 aspirin，未再給 ASA。第一次 troponin T 低於 URL（11.3 ng/L）。之後給予 magnesium、guaifenesin、diclofenac，疼痛仍未緩解。首張 ECG 後 4 小時，疼痛自行緩解，複查 ECG 呈 <strong>reperfusion</strong> 型態（Queen of Hearts 亦判為 reperfusion pattern）。再灌流前抽的第二次 troponin T 升至 172 ng/L。心臟科此時才同意介入，PCI 發現 <strong>Ramus Intermedius 阻塞</strong>，置放兩支 DES。病人總共等了約 5 小時才進導管室，期間損失了最多 4 小時的心肌。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「未達 STEMI 毫米標準，屬 NSTE-ACS；依 ACS protocol 給藥，追蹤 troponin 與 serial ECG」</strong>：這正是本案心臟科的決定。Smith 諷刺此作法等於「等心肌壞死、確定是 MI 之後才治療」。未達毫米標準不等於沒有 OMI，precordial swirl 本身即具診斷性。</li><li><strong>「胸痛隨吸氣加劇且多導程 ST 改變，較符合急性心包膜炎，應給 NSAID 並安排心臟超音波」</strong>：病史雖有隨吸氣加劇，但 ECG 在 V5-6 與 inferior 導程有 ST depression。依 Smith 的原則，合併 V1-2 STE 應視為缺血性。本案給予 diclofenac 後疼痛也未緩解，最終證實冠狀動脈阻塞。</li><li><strong>「Wellens 症候群型態，代表 LAD 已自發再灌流，可先藥物治療並安排次緊急心導管」</strong>：本案的 reperfusion 型態要到 4 小時後疼痛緩解時才出現。此圖記錄於持續疼痛中，呈現 hyperacute T 與 STE，屬 active occlusion。Smith 也指出，典型 Wellens 症候群並沒有疼痛當下的 ECG。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>Precordial swirl</strong>：V1-2 STE 合併 V5-6 ST depression，加上 V2 hyperacute T，Smith 視為 proximal LAD occlusion 的診斷性表現，不需符合 STEMI 毫米標準。</li><li><strong>V2-4 STE ＋ 他處 STD</strong>：只要 aVR 以外任何導程有 ST depression，V2-4 的任何 STE 都屬缺血性。</li><li><strong>高 pretest probability</strong>：Smith 指出，以此病人的臨床表現，即使 ECG 正常，送導管室也是合理的。</li><li><strong>諷刺的決策時機</strong>：介入醫師在 active occlusion 時不處置，反而在 reperfusion 後、心肌相對受到保護時才認定為急症。</li><li><strong>聽從急診端與 AI</strong>：Smith 認為，若介入醫師採納急診臨床人員與 Queen of Hearts 的判讀，血管能更早打通、救回部分心肌，而且還能在上班時間完成。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>同一病人在疼痛中呈 hyperacute T／STE，疼痛緩解後轉為 reperfusion 型態，兩者是同一 OMI 的動態演變；疼痛與 ECG 的同步變化本身就是重要線索。冠狀動脈攝影上的「occluded」通常指 TIMI 0-1 血流；若同時出現 reperfusion 波形，Smith 認為意味著心肌是經由 collaterals 再灌流。</p>",
+      "related": [
+        {
+          "title": "Precordial Swirl：20 例 Swirl 或類似型態",
+          "url": "https://drsmithsecgblog.com/precordial-swirl-20-cases-of-swirl-or/"
+        },
+        {
+          "title": "60 多歲男性急性胸痛：這是 precordial swirl 嗎？",
+          "url": "https://drsmithsecgblog.com/a-man-in-his-60s-with-acute-chest-pain-is-this-precordial-swirl/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9376",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/50-year-old-with-chest-pain-serial-ecg-stemi-negative-but-does-the-patient-have-occlusion-mi/",
+      "tags": [
+        "OMI",
+        "LAD occlusion",
+        "STEMI-negative OMI",
+        "reciprocal change"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/09/m1-1024x481.png",
+      "stem": "50 歲男性，抽菸 40 pack-years，約 6 小時前突發胸骨後胸痛，痛感放射至下顎，合併喘、頭暈、冒冷汗，並曾目擊暈厥。到院前未服用 aspirin。胸痛從在家時的 10/10 降至到院時的 6/10，檢傷時仍有 2/10 胸痛。生命徵象：BP 126/85 mmHg，HR 67/min，SpO2 96%，心音正常，肺音清晰，雙側橈動脈脈搏對稱。上圖為檢傷時的第一張 12-lead ECG。依此 ECG 與臨床情境，下列何者是最適當的判讀與處置？",
+      "options": [
+        "LVH 合併 repolarization abnormality，屬非缺血性變化，可先追蹤 hs-troponin",
+        "STEMI-negative NSTE-ACS（NSTEMI），收治住院並於 24 小時內安排 angiography",
+        "前壁／高側壁 OMI（LAD occlusion），應立即啟動 cath lab 進行再灌流",
+        "良性 early repolarization，且胸痛已改善，可觀察後安排門診評估"
+      ],
+      "answer": 2,
+      "explain": "<p><span class='lead'>判讀</span>這張 ECG 為竇性心律，intervals、axis 與 R-wave progression 皆正常，但左側導程 voltage 偏高，使前壁導程較難判讀，因此被判為 <strong>STEMI negative</strong>。Smith 指出關鍵在 <mark>lead III 的 down/up T wave</mark>，可視為對 high lateral 的早期 <strong>reciprocal change</strong>，他認為這使此 ECG 足以診斷 OMI。Grauer 另外指出：V2、V3 的 <strong>hyperacute T wave</strong> 與其小 QRS 不成比例，V3 有少量不應出現的 ST elevation，V4 的 STE 更明顯；aVL 的 T wave 也不成比例地增大，III、aVF 則有 ST segment straightening。V1 正向 T wave 陡降成終末負向，配合胸痛已減輕，提示可能已有部分<mark>自發性再灌流</mark>。病人胸痛減輕，所以可能看不到符合 STEMI criteria 的 STE，但仍應視為 OMI，直到證實並非如此。</p><p><span class='lead'>病程結果</span>此 ECG 被判為 STEMI negative 後，病人在候診區等待 hs-troponin，結果為 1,665 ng/L。到院 2 小時後，急診醫師才看診，此時胸痛為 1/10。重複的 ECG 顯示下壁 down/up T wave 呈 dynamic 變化且更明顯；疼痛雖改善，ECG 看起來卻更加缺血。床邊 POCUS 顯示心尖及前壁、側壁、中隔中遠段 akinetic，高度懷疑 LAD 區域缺血。急診醫師依據病史、ECG、troponin 與 POCUS 建議緊急 angiography，但心臟科因 ECG 為「STEMI negative」，仍以 NSTEMI 收治。troponin 隨後升至 6,557 ng/L，隔天達 21,018 ng/L，才在到院約 19 小時後進行 angiography，發現 <strong>99% proximal LAD occlusion、TIMI 1 flow</strong>，並接受 PCI。PCI 後的 ECG 在 proximal LAD 分布出現 reperfusion T wave inversion，涵蓋 V1–V4、aVL、III、aVF，證實第一張 ECG 的發現是真的。正式心臟超音波顯示 LVEF 35–40%，心尖及前壁、側壁、中隔中遠段 akinesis。Queen of Hearts AI 對兩張 ECG 都判為 OMI，第二張的信心更高。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「LVH 合併 repolarization abnormality，屬非缺血性變化」</strong>：左側導程高電壓確實讓前壁導程較難判讀，但 V2–V3 的 T wave 與 QRS 不成比例，aVL 有 hyperacute T，III 有 reciprocal down/up T wave。這些都是 OMI 的表現，不能以 LVH 解釋，而且 PCI 後出現的 reperfusion T wave 已證實這些變化是缺血性的。</li><li><strong>「STEMI-negative NSTE-ACS（NSTEMI），24 小時內安排 angiography」</strong>：這正是此案實際走的錯誤路徑。依 STEMI 典範，19 小時做 angiography 符合指引，所以此案不會被列為品質缺失，但結果是 TIMI-1 的 proximal LAD occlusion 延遲再灌流，EF 降至 35–40%。此外，病人仍有殘餘胸痛，即使依 NSTEMI 指引，refractory pain 也應立即做 angiography。</li><li><strong>「良性 early repolarization，胸痛已改善可觀察」</strong>：胸痛改善不等於緩解，1/10 仍是持續疼痛。高風險病史合併 dynamic ECG 變化，代表的是 OMI 合併部分自發再灌流，而不是良性變異。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>OMI 是多項資料共同支持的臨床診斷</strong>：病史決定 pretest probability，ECG、serial ECG、troponin 與影像再逐步更新機率。</li><li><strong>細微且 dynamic 的 ECG 變化很重要</strong>：reciprocal change 可能比 STE 更早、也更明顯，例如此案 lead III 的 down/up T wave。</li><li><strong>疼痛改善 ≠ 疼痛緩解</strong>：1/10 仍屬持續疼痛；ACS 合併 refractory pain 需立即做 angiography。</li><li><strong>Troponin 反映心肌損傷，而非冠狀動脈是否通暢</strong>：不要等 troponin 大幅上升或貼上 NSTEMI 標籤才決定再灌流，只有 ECG 能告訴你是否仍有持續阻塞。</li><li><strong>POCUS 可改變機率</strong>：高風險病人合併細微 ECG 變化時，新的 regional wall-motion abnormality 強力支持 OMI。缺血性胸痛加上 dynamic ECG 變化與 RWMA，應視為 OMI，直到證實並非如此。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>高電壓 QRS 會掩蓋前壁的 hyperacute T wave，此時應比較 T wave 與 QRS 的比例，並找下壁的 reciprocal 變化。若懷疑 high lateral 或 LAD OMI，lead III、aVF 的 down/up T wave 或 ST straightening 往往是最早的線索。胸痛起伏時，應連續記錄 ECG 並與前一張並排比較，才看得出細微的 dynamic 變化。</p>",
+      "related": [
+        {
+          "title": "這是 hyperacute T-waves 嗎？兩案例處置建議",
+          "url": "https://drsmithsecgblog.com/are-these-hyperacute-t-waves-what-is/"
+        },
+        {
+          "title": "沒認出 Hyperacute T-waves 會怎樣？",
+          "url": "https://drsmithsecgblog.com/what-happens-if-you-dont-recognize/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9307",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/syncope-with-st-elevation-and-t-wave-inversion/",
+      "tags": [
+        "良性T波倒置",
+        "Wellens mimic",
+        "暈厥",
+        "正常變異"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/07/First-ECG-BTWI-from-BG-better-1024x426.jpeg",
+      "stem": "20 多歲非裔美籍男性，打籃球時（運動中）突然頭暈、眼前發黑，隨後撞上圍欄跌倒並撞到頭部，意識喪失約 2–3 分鐘，無抽搐。全程無胸痛、呼吸困難或心悸，到急診時已無症狀，無慢性病、無用藥、無藥物或酒精使用。急診 12-lead ECG 如圖（前胸導程可見 STE 合併深 T-wave inversion）。依 Dr. Smith 的判讀，這張 ECG 最可能代表什麼？",
+      "options": [
+        "Wellens pattern（LAD 再灌流 T 波），應安排緊急心導管",
+        "急性肺栓塞造成之 RV strain，應立即安排 CT 肺動脈攝影",
+        "急性 LAD 閉塞之前壁 OMI，應立即啟動心導管室",
+        "Benign T-wave inversion（正常變異），無缺血證據，仍應做 echo 排除 HCM"
+      ],
+      "answer": 3,
+      "explain": "<p><span class='lead'>判讀</span>Smith 一眼認出這是他稱為 <strong>benign T-wave inversion（BTWI）</strong> 的正常變異，是 <strong>Wellens' pattern 的 mimic</strong>，主要見於年輕、瘦、運動型的非裔男性。Grauer 依 Wang/Smith 準則逐項比對：<strong>QTc 相對短</strong>（看來僅約 400 msec）、T 波倒置的導程有<strong>明顯 J-point notching</strong>、倒置 T 波的 V2–V4 伴隨 <strong>ST elevation</strong>、<strong>voltage 充足且胸前導程 R 波沒有消失</strong>（早期 transition、高 R 波），下壁導程也有低振幅 ST-T 與 J-point notching，V2–V4 深倒 T 波後可見正向 U 波。雖然本例最深的 T 波倒置位置（V2–V4）比典型 BTWI 更偏前，但 <mark>整體「看起來就是 BTWI」，ECG 沒有缺血證據</mark>。Smith 同時提醒 <strong>HCM 是可能的</strong>，因此需做 echo（即使良好的床邊 POC echo 也足夠）。</p><p><span class='lead'>病程結果</span>Smith 說他從未見過 Queen of Hearts 把這種 pattern 判為 OMI，但此例它判了。一年前的舊 ECG <strong>表現相同</strong>，重複 ECG <strong>沒有演變</strong>。hs troponin I 初值 9 ng/L，高峰 41 ng/L，之後降至 29 ng/L（Smith 認為 URL 為 34 ng/L）。由於屬<mark>運動中暈厥、無前驅症狀、合併外傷</mark>的高風險暈厥，測 troponin 並收住院是合理的。正式 echo 顯示 LV 正常、EF 60–65%、無室壁運動異常、壁厚略增（concentric remodeling），RV hyperdynamic。心臟科診斷為 type 2 MI，鑑別診斷為 HCM 或其他遺傳異常，低血容性暈厥列為排除性診斷，計畫日後安排 MRI。Smith 認為 type 1 MI 有可能，但機率非常低。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「Wellens pattern（LAD 再灌流 T 波），應安排緊急心導管」</strong>：BTWI 正是 Wellens 的 mimic。Wellens 的 T 波倒置一定會演變，BTWI 則穩定不變。本例舊 ECG 相同、重複 ECG 無演變，QTc 短、J-point notching 明顯、R 波沒有消失，病人也從未有胸痛。</li><li><strong>「急性肺栓塞造成之 RV strain，應立即安排 CT 肺動脈攝影」</strong>：原文對這張 ECG 的判讀是穩定的正常變異，且一年前即已存在、追蹤不演變。echo 僅見 RV hyperdynamic，原文沒有任何指向 PE 的證據。</li><li><strong>「急性 LAD 閉塞之前壁 OMI，應立即啟動心導管室」</strong>：只有暈厥、沒有其他症狀時，ACS 前測機率很低，ECG 必須對 OMI 非常特異才能下診斷。本例 pattern 屬良性變異且一年前就有，echo 無室壁運動異常。Queen of Hearts 雖判為 OMI，Smith 並不認同。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>BTWI 的辨識要點</strong>：QTc 相對短、明顯 J-wave、倒置 T 波的導程伴 ST elevation、高 R 波且 S 波小、T 波倒置不演變；Wang 的研究顯示幾乎都見於黑人。</li><li><strong>與 Wellens 鑑別</strong>：BTWI 多在 V3–V6，Wellens 多在 V2–V4；Wellens 必定演變，BTWI 則穩定，比對舊 ECG 極有價值。</li><li><strong>Bayesian 思維</strong>：症狀使前測機率很低時（如單純暈厥），需要非常特異的 ECG 才能診斷 OMI。</li><li><strong>高風險暈厥特徵</strong>：運動中發作、無前驅症狀、合併外傷，不論 troponin 結果都屬高風險暈厥，echo 可評估 HCM。</li><li><strong>Troponin 輕度升降不等於 type 1 MI</strong>：依 Universal Definition，若不把暈厥視為 ACS 症狀，應歸類為非 MI 的急性心肌損傷；也可能是低灌流造成的 type 2 MI。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>年輕人出現前胸 T 波倒置合併 ST elevation 時，先想 BTWI 這類 early repolarization 相關的正常變異，再以 echo 評估 HCM 等結構性心臟病。Grauer 強調要區分運動「中」與運動「後」暈厥：前者風險較高，後者常為血管迷走反應。此外應追問猝死家族史，必要時進一步安排 cardiac MRI 或運動測試。</p>",
+      "related": [
+        {
+          "title": "急性胸痛合併異常 ECG：前胸導程是 benign T-wave inversion 還是缺血？",
+          "url": "https://drsmithsecgblog.com/acute-chest-pain-and-abnormal-ecg-do/"
+        },
+        {
+          "title": "Benign T-wave Inversion：影片與文字解說",
+          "url": "https://drsmithsecgblog.com/benign-t-wave-inversion/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9326",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/4-patients-with-st-elevation-infection-and-elevated-troponin-which-is-occlusion-mi-and-which-is-myocarditis/",
+      "tags": [
+        "心肌心包膜炎",
+        "STEMI偽陽性",
+        "下壁ST上升",
+        "aVL對應性變化"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/08/Screenshot-2026-08-13-at-3.07.04-PM-1024x408.png",
+      "stem": "70 歲病人，正在接受化療，因發燒、噁心嘔吐就診，hs-troponin I 為 7,000 ng/L。這張 ECG 符合 STEMI criteria。根據這張 ECG，下列哪一項判讀最恰當？",
+      "options": [
+        "不像 inferior OMI：STE 輕微、II>III、aVL 無 reciprocal STD，較符合心肌心包膜炎",
+        "Inferior OMI（RCA 閉塞）：下壁導程 STE，aVR 的變化即可視為對應性變化",
+        "Inferolateral OMI（LCx 閉塞）：下壁與側壁導程皆有 STE，應立即啟動導管室",
+        "Wraparound LAD 閉塞：下壁與側胸導程同時 STE，屬 hyperacute T wave 型 OMI"
+      ],
+      "answer": 0,
+      "explain": "<p><span class='lead'>判讀</span>作者描述這張 ECG 只有<strong>輕微的 infero-lateral STE</strong>，且 <strong>II>III</strong>。<mark>aVL 沒有 reciprocal STD，這讓 inferior OMI 變得非常不可能</mark>，對應性變化只出現在 <strong>aVR</strong>。雖然符合 STEMI criteria，<strong>Queen of Hearts（QoH）</strong>判讀看不到 OMI 的徵象。Grauer 也指出，這張 ECG 完全不像特定 culprit artery 閉塞應有的解剖表現，是初始 ECG 上降低 OMI 可能性的<mark>最佳線索</mark>。</p><p><span class='lead'>病程結果</span>因為符合 STEMI criteria，加上 troponin 升高，導管室仍被啟動。結果<strong>冠狀動脈正常</strong>，troponin 最高到 9,000。Echo 顯示 inferolateral wall hypokinesis，cardiac MR 看到 pericardial edema 與 effusion，最後診斷為 <strong>perimyocarditis</strong>。出院時 ECG 已恢復正常。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「Inferolateral OMI（LCx 閉塞），應立即啟動導管室」</strong>：STE 只是輕微，aVL 也沒有 reciprocal STD，QoH 看不到 OMI 徵象，攝影亦證實冠狀動脈正常。依原文架構，這類「STEMI positive 卻沒有 OMI 徵象」的情況屬於可避免的 false positive。</li><li><strong>「Inferior OMI（RCA 閉塞），aVR 的變化即可視為對應性變化」</strong>：原文明言，aVL 沒有 reciprocal STD 會讓 inferior OMI 非常不可能。本例只有 aVR 出現 reciprocal change，不能支持 inferior OMI。</li><li><strong>「Wraparound LAD 閉塞，屬 hyperacute T wave 型 OMI」</strong>：原文對此 ECG 只描述輕微 STE，並未描述 hyperacute T wave，且冠狀動脈正常。Smith 在本文 Patient 2（mid LAD 閉塞）才以 hyperacute T wave 作為 OMI 的關鍵。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>aVL 是 inferior STE 的試金石</strong>：有 inferior STE 卻沒有 aVL reciprocal STD 時，inferior OMI 非常不可能。</li><li><strong>看是否符合 culprit artery 解剖</strong>：初始 ECG 不像任何特定 culprit artery 閉塞時，常可避免 false positive 的導管室啟動。此時仍需 serial ECG、serial troponin 與 bedside echo 評估。</li><li><strong>QoH 可增加信心</strong>：QoH 也判讀「No OMI」時，臨床醫師可以更有信心不立即啟動導管室。</li><li><strong>Hyperacute T wave 是 OMI 的警訊</strong>：Smith 指出 myocarditis 會有 STE，但不會有 hyperacute T wave。看到 hyperacute T wave 時，要視為 OMI，直到證明不是。</li><li><strong>病史很重要，但不能用來排除 OMI</strong>：化療、發燒、病毒症狀會提高對 myopericarditis 的警覺。然而年輕、沒有危險因子或有病毒前驅症狀，都不能排除 acute coronary occlusion。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>原文把「STEMI positive」的發炎性心肌心包膜症候群分成兩類。第一類是沒有 OMI 徵象的 (myo)pericarditis，屬可避免的 false positive STEMI。第二類是 ECG 模仿 OMI 的 (peri)myocarditis，仍是以血管攝影排除的診斷。例如 Patient 3 有 inferior STE 合併 aVL reciprocal STD，啟動導管室是適當的，攝影排除閉塞後，cardiac MR 才確診 myocarditis。</p>",
+      "related": [
+        {
+          "title": "ST Elevation 合併 troponin 上升：是 myopericarditis 還是 STEMI？",
+          "url": "https://drsmithsecgblog.com/st-elevation-and-positive-troponin-is/"
+        },
+        {
+          "title": "50 多歲男性 COVID 肺炎致低血氧呼吸衰竭後出現胸痛",
+          "url": "https://drsmithsecgblog.com/a-man-in-his-50s-who-is-covid-positive/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9366",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/what-you-tell-a-patient-matters-especially-if-it-is-incorrect/",
+      "tags": [
+        "下壁 OMI",
+        "後壁 OMI",
+        "Hyperacute T 波",
+        "Reciprocal 變化"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/09/Subtle-case-sent-by-AM-1024x711.jpg",
+      "stem": "45 歲男性，有抽菸習慣，無已知病史，因突發劇烈胸骨後「壓碎感」胸痛、放射至左肩，伴隨冒冷汗與噁心，發作不到 1 小時即到鄉間醫院急診。生命徵象正常。此為到院時的 12-lead ECG（受限於當時情況，這已是能取得的最佳品質）。依此 ECG 與臨床表現，最正確的判讀與處置為何？",
+      "options": [
+        "正常 ECG，可先給止痛藥，再依 troponin 結果決定處置",
+        "急性 inferior＋posterior OMI，應立即啟動心導管室",
+        "前壁 OMI（LAD occlusion），以 V2–V3 為主要缺血區域",
+        "瀰漫性 subendocardial ischemia，屬 NSTE-ACS，可安排延遲導管"
+      ],
+      "answer": 1,
+      "explain": "<p><span class='lead'>判讀</span>這張 ECG 乍看「正常」，但 Smith 指出它<strong>可診斷 inferior OMI</strong>：lead III 的 T 波絕對值不大，但相對於極小的 QRS 顯得「大、粗、膨脹」，是 <mark>hyperacute T-wave</mark>；aVL 有 <strong>reciprocal ST depression 與 T-wave inversion</strong>；V2、V3 的 <strong>ST depression</strong> 強烈支持 OMI。Grauer 補充：圖形明顯傾斜、有 baseline wander，肢導程也有 artifact，他以 baseline 較水平的第 5 拍判斷 aVF 有輕微但真實的 ST 拉直與上升，與 lead III 一致；而 V2 失去正常應有的輕度上斜 STE，且 V2 已出現優勢 R 波（posterior OMI 的 Q 波等價物），提示 posterior 受累。Smith 將此 ECG 匿名傳給 EKG Nerdz 群組，大家立刻判讀為 <mark>infero-posterior OMI</mark>。</p><p><span class='lead'>病程結果</span>治療團隊將此 ECG 判為正常，但因臨床高度懷疑 ACS，給予 clopidogrel、皮下 LMWH 與 tramadol 止痛。胸痛隨後緩解（Smith：在決定去導管室前不要用止痛藥處理 ACS）。第二張 ECG 被判為「與第一張相似」。約一小時後，定性 troponin I 回報陰性。此時病人已不痛，又被告知 ECG 正常，因此不顧醫師勸阻，堅持簽字離院。約一小時後，他以心跳停止返回急診，急救無效死亡。Smith 認為應不必等 troponin，直接啟動心導管室。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「正常 ECG，可先給止痛藥，再依 troponin 結果決定處置」</strong>：這正是本案出錯之處。ECG 並不正常；止痛藥使胸痛緩解，帶來假性安全感；而初始 troponin 在急性冠狀動脈阻塞時可能為陰性，不能用來排除 OMI。</li><li><strong>「前壁 OMI（LAD occlusion），以 V2–V3 為主要缺血區域」</strong>：V2–V3 呈 ST depression，加上 V2 優勢 R 波，Grauer 解讀為 posterior OMI 的表現，並非前壁 ST elevation。hyperacute T 與 reciprocal 變化則位於 inferior（III、aVF）與 aVL。</li><li><strong>「瀰漫性 subendocardial ischemia，屬 NSTE-ACS，可安排延遲導管」</strong>：本例的 ST depression 並非瀰漫分布。aVL 的 STD 是對 inferior 的 reciprocal 變化，V2–V3 的 STD 則支持 OMI，屬急性阻塞，應立即導管再灌流。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>Hyperacute T 要和 QRS 比例相比</strong>：T 波絕對值不大，但相對於極小的 QRS 顯得粗大、膨脹，就該警覺。</li><li><strong>懷疑 inferior OMI 時也要找 posterior 證據</strong>：aVL reciprocal STD 是關鍵線索；V2 失去正常上斜 STE、V2 出現優勢 R 波，則提示 posterior 受累。</li><li><strong>高風險病人要降低判定 ECG「異常」的門檻</strong>：初始 troponin 陰性在急性阻塞中比多數人想像的常見。</li><li><strong>告訴病人「ECG 正常」可能致命</strong>：再加上止痛藥帶來的假性安全感，病人可能拒絕留院。</li><li><strong>品質不佳就立即重做 ECG</strong>：每張 ECG 都要詢問疼痛程度，並把當下的疼痛分數寫在 ECG 上。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>Grauer 指出，急性冠狀動脈阻塞時 ECG「看似正常」有三種可能：一是有時就是會這樣；二是判讀者眼中的「正常」不等於專家眼中的正常；三是處於初始 STE 與再灌流之間的 pseudo-normalization 期。若記錄 ECG 時胸痛已減輕或緩解，就是處於這段時期的臨床線索，不應據此排除 OMI。</p>",
+      "related": [
+        {
+          "title": "65 歲急性腹痛：沒有胸痛能排除 STEMI/OMI 嗎？",
+          "url": "https://drsmithsecgblog.com/65-year-old-with-acute-abdominal-pain-does-lack-of-chest-pain-exclude-stemi-omi/"
+        },
+        {
+          "title": "從阻塞到再灌流（或反之）途中，ECG 可能正常或近乎正常",
+          "url": "https://drsmithsecgblog.com/on-its-way-from-occlusion-to/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9323",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/80-year-old-female-with-epigastric-burning-and-previously-diagnosed-lbbb/",
+      "tags": [
+        "LBBB",
+        "Sgarbossa",
+        "下壁心肌梗塞",
+        "無胸痛ACS"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/08/lbbbOMIinf1-1024x476.png",
+      "stem": "80 歲女性，有糖尿病及 CABG 病史，因上腹灼熱感 2 小時、含 nitro 後未緩解而呼叫救護車，否認胸痛。BP 130/60，HR 50。病歷記載先前已有 LBBB。床邊 POCUS 未見明顯區域性室壁運動異常。依此張到院 12-lead ECG，最恰當的判讀與處置為何？",
+      "options": [
+        "已知 LBBB、無胸痛且 POCUS 無 RWMA，屬低懷疑度，收 CCU 監測並追蹤 serial troponin",
+        "慢性 LBBB 合併 LVH 所致的繼發性 ST-T 變化，無急性缺血證據，可安排門診追蹤",
+        "LBBB 合併 modified Sgarbossa 陽性，符合 inferior OMI，應緊急心導管再灌流",
+        "V1–V3 出現過度的 discordant STE，提示 LAD 阻塞之 anterior OMI，應緊急心導管"
+      ],
+      "answer": 2,
+      "explain": "<p><span class='lead'>判讀</span>心律為<strong>異位心房性心搏過緩</strong>（下壁導程 P 波倒置）合併 <strong>LBBB</strong>。但 lead III 有 <strong>concordant STE</strong>，aVL 有對應性 STD，lead I 有<strong>過度的 discordant STD</strong>：<mark>共三個導程符合 modified Sgarbossa criteria，指向 inferior OMI</mark>，並可解釋心搏過緩（RCA 或 LCX 阻塞）。Modified Sgarbossa 敏感度約 80%、特異度約 99%，且只需一個導程即成立。Grauer 另指出 II、aVF 的直立 T 波、V3 完全平直的 ST 段（提示合併 posterior OMI）、V5–V6 直立 T 波，在 LBBB 下都不應出現，<mark>共 9/12 導程有可能的急性 ST-T 變化</mark>。LBBB 是否為舊有，與 OMI 判讀無關。</p><p><span class='lead'>病程結果</span>導管室因血管通路取得困難而重新評估，以「無胸痛、舊 LBBB、寬 QRS 下僅單一導程輕微 STE、POCUS 無 RWMA」判為 STEMI 低懷疑度，轉 CCU 監測。hs-troponin I 由 130 升至 280 ng/L；重複 ECG 顯示下壁 STE 改善、lead III 出現 terminal T 波倒置，證實為動態缺血，QOH 仍判為 OMI。之後 troponin 升至 2,100，重複 echo 出現下壁 RWMA，並發生竇性停頓與異位心搏交替、心搏過緩惡化。再次送導管室：<strong>RCA 100% 阻塞</strong>，peak hs-troponin I 達 47,000 ng/L。出院 ECG 原發性缺血變化消失，恢復適當的 discordance。若依事前機率與 ECG 判讀，本可提早數小時再灌流。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「已知 LBBB、無胸痛且 POCUS 無 RWMA，屬低懷疑度，收 CCU 監測並追蹤 serial troponin」</strong>：這正是本案延誤的決策。老年糖尿病女性無胸痛的 ACS 很典型；POCUS 在曾 CABG 加上 LBBB 的病人易漏掉細微 RWMA；troponin 是「後照鏡」，急性期會給人錯誤的安心感。</li><li><strong>「慢性 LBBB 合併 LVH 所致的繼發性 ST-T 變化，無急性缺血證據，可安排門診追蹤」</strong>：V3 深 S 波雖符合 LVH，但 LBBB 下 lead III 不應有任何 concordant STE。I、aVL 的 STD 明顯不成比例，屬原發性 ST-T 變化。出院 ECG 才呈現真正的基準：下壁 ST-T 下降、V6 恢復反向。</li><li><strong>「V1–V3 出現過度的 discordant STE，提示 LAD 阻塞之 anterior OMI，應緊急心導管」</strong>：本案陽性導程為 III（concordant STE）及 I、aVL（STD），屬下壁型態。V2–V3 的 ST 段反而偏平直，Grauer 解讀為合併 posterior OMI，而非前壁 STE；最終病灶為 RCA 阻塞。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>LBBB 新舊無關</strong>：重點是是否符合 modified Sgarbossa criteria，一個導程即具高特異度。</li><li><strong>無胸痛不代表非典型</strong>：約 1/3 inferior OMI 以上腹不適表現；老年、糖尿病、女性以上腹灼熱就診是典型 ACS。</li><li><strong>troponin 與 POCUS 的陷阱</strong>：初始 troponin 會給人錯誤的安心感；POCUS 可能漏掉細微 RWMA。</li><li><strong>心搏過緩加下壁變化</strong>：可由 RCA 或 LCX 阻塞解釋，應整合判讀。</li><li><strong>先找確定異常的導程</strong>：找到後再看其他導程，更容易辨識細微的 ST-T 異常，如 V3 平直 ST 段提示 posterior 受累。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>在 LBBB 或 paced rhythm 下，ST-T 應與 QRS 主波反向（appropriate discordance）。凡出現 concordant STE、concordant STD（V1–V3），或 discordant ST 與 QRS 比例過大，都應視為 OMI 直到證明不是。取得舊 ECG 比對，可協助確認細微的 T 波異常。</p>",
+      "related": [
+        {
+          "title": "LBBB：用 Smith Modified Sgarbossa 準則本可救他一命",
+          "url": "https://drsmithsecgblog.com/lbbb-using-smith-modified-sgarbossa/"
+        },
+        {
+          "title": "胸痛＋troponin 1600＋LBBB＋6mm STE＝OMI？",
+          "url": "https://drsmithsecgblog.com/chest-pain-troponin-of-1600-lbbb-6mm-st/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9321",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/this-was-sent-to-me-what-is-the-diagnosis/",
+      "tags": [
+        "低血鉀",
+        "U波",
+        "QT延長",
+        "電解質異常"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/08/From-ARF-guess-the-K-1024x685.png",
+      "stem": "一張 12-lead ECG 被傳來會診，沒有附任何病史。ECG 有明顯 artifact 與 baseline wander，為 sinus rhythm 約 90/min、QRS 窄，但多個導程呈現怪異的「波浪狀」ST-T，多導程有深倒 T 波，QT 看起來長得不可思議。依此 ECG，最可能的診斷為何？",
+      "options": [
+        "Takotsubo cardiomyopathy 造成極長 QT 與廣泛深倒 T 波",
+        "廣泛嚴重心肌缺血（severe diffuse ischemia）",
+        "Arterial pulse tapping artifact（APTA）造成的假性 ST-T 異常",
+        "嚴重低血鉀（severe hypokalemia）合併巨大 U 波"
+      ],
+      "answer": 3,
+      "explain": "<p><span class='lead'>判讀</span>Smith 一看到這種他稱為<strong>「wavy」pattern</strong> 的波浪狀 ST-T，就想到 <strong>hypoK</strong>；此例非常誇張，所以他猜是極低的 K。另一個關鍵原則：<mark>當 QT 看起來長得不可能時，幾乎一定是 U 波</mark>，而 V3 有巨大 U 波，這正是 wavy pattern 的來源。Grauer 以系統化判讀確認：lead II 有固定 PR 的 sinus P 波，速率約 90/min，PR 正常、QRS 窄、axis 約 +50 度；V2 的雙峰被解讀為 U 波結尾與下一個 P 波的交界，往下畫時間線後，他認為 <strong>V3 最能看清巨大 U 波</strong>，QTc（或 <strong>Q-U interval</strong>）約佔 R-R 間距的 3/4；另有多導程深倒 T 波，V3 R 波 >25 mm。印象：sinus rhythm、極長 QTc、大 U 波、多導程深倒 T 波。</p><p><span class='lead'>病程結果</span>Smith 的回應段落中寫到 <strong>K = 1.2 mEq/L</strong>，同段落的 Answer 又寫 K = 1.6 mEq/L；Grauer 的評論則引用為血清 K+ = 1.2 mEq/L，總之為極度低鉀，與極長 QU 及 V3 巨大 U 波相符。Grauer 提醒需同時追蹤 Mg++ 與 Ca++，因電解質異常常為多重而非單一；至於廣泛 T 倒是否純粹由低鉀造成，需視病史、臨床病程，以及矯正電解質後 ST-T 是否恢復較正常外觀而定。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「Takotsubo cardiomyopathy 造成極長 QT 與廣泛深倒 T 波」</strong>：Takotsubo 確實以 QTc 延長合併廣泛 ST-T 異常著稱，也是 Smith 列出的鑑別之一；但此例「看起來極長的 QT」其實是巨大 U 波，加上 wavy pattern，實為嚴重低鉀。</li><li><strong>「Arterial pulse tapping artifact（APTA）造成的假性 ST-T 異常」</strong>：此圖 artifact 雖多，但 Smith 明言不是 APTA，因為 lead I、II、III 沒有任何一個看起來完全正常。</li><li><strong>「廣泛嚴重心肌缺血（severe diffuse ischemia）」</strong>：嚴重缺血是 Smith 列出的鑑別之一，但本圖核心特徵是 wavy pattern 與 V3 巨大 U 波，抽血證實為極低 K+。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>Wavy pattern → 想到 hypoK</strong>：Smith 看到波浪狀圖形就想到低鉀，此例非常誇張，因此猜是極低的 K。</li><li><strong>QT 長得不可能 → 幾乎都是 U 波</strong>：本例的巨大 U 波在 V3 最清楚，實際延長的是 Q-U interval。</li><li><strong>系統化判讀避免漏看</strong>：在大量 artifact 下仍依 Rate/Rhythm/Intervals/Axis/Chamber/QRST 順序判讀，才不會漏掉極長 QTc 與大 U 波。</li><li><strong>QTc 延長的鑑別</strong>：先考慮傳導異常（RBBB、LBBB、IVCD）與缺血/梗塞（含 Takotsubo），排除後想 DRUGS、LYTES（低 K/Mg/Ca）、CNS catastrophe。</li><li><strong>電解質常合併異常</strong>：低鉀時要一併追蹤 Mg++ 與 Ca++。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>遇到「怪異、QT 極長」的 ECG，可像 Grauer 一樣先找出 P 波位置，再用垂直時間線區分 ST 段與 T/U 波；QRS 窄、無傳導異常且無缺血/梗塞病史時，藥物、電解質（低 K/Mg/Ca）與 CNS 事件是延長 QTc 的三大必查方向，並應盡早取得病史與基本檢驗。</p>",
+      "related": [
+        {
+          "title": "STEMI 合併致命性低血鉀與持續性 Torsades de Pointes",
+          "url": "https://drsmithsecgblog.com/stemi-with-life-threatening-hypokalemia/"
+        },
+        {
+          "title": "低血鉀的多種 ECG 面貌（續）",
+          "url": "https://drsmithsecgblog.com/adding-to-many-faces-of-hypokalemia/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9383",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/increasing-st-elevation-mi-ruled-out-must-be-pericarditis-right/",
+      "tags": [
+        "正常變異",
+        "早期再極化",
+        "心包膜炎鑑別",
+        "認知偏誤"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/07/Screenshot-2026-07-29-at-2.14.14-PM-1024x503.png",
+      "stem": "30 歲男性，有高血壓病史，在公車站等車時突發左側胸痛，被發現時臉色蒼白、冒冷汗。EMS 給予 aspirin 與舌下 nitroglycerin 後，血壓由 160/100 降至 130/80 mmHg，胸痛稍有改善。運送途中連續記錄多張 ECG，臨床醫師認為 ST 段有「動態變化」。上圖為 EMS 記錄的第一張 12-lead ECG。依此 ECG 及整體臨床脈絡，最可能的判讀為何？",
+      "options": [
+        "正常變異（early repolarization／benign T-wave inversion）",
+        "左心室肥大合併 strain 型再極化異常",
+        "急性心包膜炎（diffuse STE 合併 PR depression）",
+        "急性 OMI，應啟動緊急心導管"
+      ],
+      "answer": 0,
+      "explain": "<p><span class='lead'>判讀</span>這是一張<strong>正常變異</strong>的 ECG，屬於 Smith 部落格反覆介紹的「<strong>benign T-wave inversion</strong>」，而這本身就是 <strong>early repolarization</strong> 的一種型態。Grauer 分析第一張 ECG 時指出：QRS 振幅明顯增大，多個導程的 R 波與 S 波互相重疊，因此相對於如此大的 QRS，<strong>ST elevation 並不算過度</strong>；R wave progression 正常；QTc 偏短；多個導程可見 <strong>terminal QRS slurring</strong>，這是 repolarization variant 的特徵。後續幾張 ECG 出現的 T 波倒置，總是與高 QRS 振幅、terminal slurring 以及<strong>同一導程的 STE</strong> 一起出現。Grauer 也指出，序列 ECG 之間的差異主要來自<strong>心率不同</strong>與<strong>胸前導程貼片位置不一致</strong>（例如 V4 的 R 波從 5 mm 到 40 mm 不等），並不是真正的動態變化。PMCardio AI 判讀此圖為 76.6% early repolarization；QOH 對所有 ECG 都判為 not OMI。Smith 的結論是：<mark>此 ECG 不是缺血、不是心包膜炎、也不是 LVH</mark>。</p><p><span class='lead'>病程結果</span>到院後，心臟科以 diffuse STE、部分 PR depression、沒有 reciprocal change，加上後來問到的姿勢性胸痛（平躺加重、前傾改善）為依據，懷疑心包膜炎，建議使用 aspirin＋colchicine，並安排心臟超音波與發炎指數檢查。結果如下：5 次 hs-troponin I 皆測不到；NT-proBNP 測不到；ESR 6、CRP 0.7，皆正常；心臟超音波顯示 LVEF 與室壁運動正常，心包膜正常、沒有積液。調閱過去 9 年（2017–2023）的舊 ECG，型態大致相同。即使如此，治療團隊最後仍診斷心包膜炎，讓病人帶 3 個月 colchicine 與短期 ibuprofen 出院。Smith 認為這是 STEMI 思維與<mark>錨定偏誤（anchoring bias）</mark>造成的誤診：胸痛原因不明，但與心臟及 ECG 無關。Grauer 推測胸痛可能是肌肉骨骼性或心理社會因素，並建議以 cardiac MRI（LGE）來確認或排除心包膜炎。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「急性心包膜炎（diffuse STE 合併 PR depression）」</strong>：心包膜炎是臨床診斷。此案有多項不支持的證據：發炎指數正常、沒有心包膜積液、沒有 friction rub、胸痛為壓迫感（心包膜炎應為銳痛），而且 ECG 在 9 年間大致穩定。Grauer 另指出，心包膜炎在仍有 STE 的時期通常不會同時出現 T 波倒置；它的 ECG 演變也不會在幾分鐘內發生。此外，terminal QRS slurring 與較低的 ST/T ratio 都不符合心包膜炎。</li><li><strong>「左心室肥大合併 strain 型再極化異常」</strong>：病人有高血壓，QRS 電壓又很高，機器也判讀為 LVH，因此容易混淆。但 Smith 明確表示此 ECG「does NOT represent LVH」。高電壓之下出現的是 STE 與 terminal slurring，屬於 repolarization variant，而非 LVH strain。</li><li><strong>「急性 OMI，應啟動緊急心導管」</strong>：胸痛合併冒汗、NTG 後改善，加上「動態」STE，很容易被當成 STEMI。然而 5 次 hs-troponin I 皆測不到，心臟超音波室壁運動正常，QOH 對全部 ECG 也都判為 not OMI。Smith 強調，early repolarization 本身就可以是動態的，並非所有增加的 STE 都代表缺血演變。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>認識 benign T-wave inversion</strong>：它是 early repolarization 的一種正常變異，可同時出現高 QRS 電壓、terminal slurring、STE 與 T 波倒置。</li><li><strong>Early repolarization 也會「動態」變化</strong>：並非所有持續增加的 STE 都是缺血演變；有 STE、有動態變化，仍可能沒有任何急性心臟病變。</li><li><strong>病史也是一種不完美的檢查</strong>：盡量用開放式問題（「有什麼會讓疼痛變嚴重嗎？」），避免誘導式問題（「躺下會比較痛嗎？」），以免問出符合自己預設的答案。</li><li><strong>資料累積後要回頭檢視鑑別診斷</strong>：troponin、發炎指數、超音波都正常，舊 ECG 也一樣時，應反思原本的診斷哪裡不符。</li><li><strong>比較序列 ECG 要「蘋果比蘋果」</strong>：先確認心率、frontal axis 與胸前導程位置（R wave progression、QRS 振幅）是否一致，再判斷是否真有動態變化。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>年輕、高電壓、有 terminal slurring 的 STE 合併 T 波倒置時，第一步是<strong>調閱舊 ECG</strong>。心包膜炎與 OMI 都是臨床診斷，不能只看 ECG 下定論。心包膜炎盛行率低，模稜兩可的 ECG 多半是偽陽性；若診斷仍不確定，cardiac MRI（LGE）是確診心包膜炎的關鍵工具。同樣的思路也適用於區分 OMI 與 dynamic early repolarization。</p>",
+      "related": [
+        {
+          "title": "ST elevation 漸增：STEMI、動態 early repolarization 或心包膜炎？",
+          "url": "https://drsmithsecgblog.com/increasing-st-elevation-stemi-vs/"
+        },
+        {
+          "title": "急性 OMI 還是「良性」early repolarization？",
+          "url": "https://drsmithsecgblog.com/acute-omi-or-benign-early-repolarization/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9364",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/reverse-precordial-swirl-an-ecg-pattern-for-lateral-omi/",
+      "tags": [
+        "Lateral OMI",
+        "Reverse precordial swirl",
+        "RBBB",
+        "STEMI 標準陷阱"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/09/ECG-1024x457.png",
+      "stem": "60 歲病人凌晨 3 點因胸口壓榨性疼痛合併冒冷汗 1 小時，由 EMS 送至無 PCI 能力的醫院（EMS ECG 判為「STEMI negative」）。途中已給 aspirin、多次 nitroglycerin 與 morphine，仍持續 8/10 劇痛。ED 初始 ECG 如圖，機器判讀為「Sinus rhythm、RBBB、Borderline ST elevation, lateral leads」。15-lead ECG 後壁導程無 ST elevation。下列何者是對此 ECG 最正確的判讀？",
+      "options": [
+        "RBBB 伴隨 secondary repolarization 變化，未達 STEMI 標準，安排連續 ECG 與 troponin 追蹤",
+        "Lateral OMI：V4-V6 convex STE 合併 V1-V2 reciprocal STD（reverse precordial swirl）",
+        "Septal/anterior OMI（LAD）呈 precordial swirl，V5-V6 的變化為其 reciprocal 表現",
+        "High-lateral OMI：I、aVL 出現新的病理性 Q waves，懷疑 diagonal 分支阻塞"
+      ],
+      "answer": 1,
+      "explain": "<p><span class='lead'>判讀</span>此圖有 <strong>RBBB</strong>（Grauer 指出形態並不典型：V1 的 R' 小而圓鈍、缺乏典型 triphasic rsR'）。關鍵在 <strong>V4-V6</strong>：連續、<strong>convex（coved）ST elevation</strong> 鼓脹成寬大、基底寬的 T waves，雖然是小於 1 mm 的 concordant STE，並在 <strong>V1-V2 出現 reciprocal ST depression</strong>。RBBB 本來在 V1 就會有與高大 R' discordant 的 ST depression，但此例 R' 振幅很小，原本不該預期有多少 STD。McArthur 稱之為 <mark>reverse precordial swirl：lateral wall 缺血（V4-V6）造成 septum（V1-V2）的 reciprocal STD</mark>，與典型 precordial swirl（septal 缺血 → V5-V6 reciprocal STD）方向相反。Queen of Hearts 對 Occlusion MI 的診斷及 culprit artery 也毫無疑問。兩位作者觀點略有差異：McArthur 把 V1-V2 STD 視為 lateral 缺血的 reciprocal 變化（15-lead 後壁導程無 STE）；Grauer 則認為 V2 的 downsloping STD 與其說是單純 reciprocal，不如歸因於 posterior OMI，因此解讀為 postero-lateral OMI。兩者都認定這是 OMI，culprit 指向 LCx 的 OM 分支。</p><p><span class='lead'>病程結果</span>15-lead ECG 後壁導程無 STE。調出數年前的舊 ECG 比較，確認 <mark>lateral STE/HATW 與 reciprocal 變化都是新的</mark>；而 I、aVL 的 Q waves 與 RBBB 樣型在舊 ECG 上已存在，V2 的 ST 平坦化在舊圖則沒有。作者聯絡 on-call STEMI 醫師，病人被接受緊急轉送做 primary PCI，心導管發現 culprit 為 <strong>obtuse marginal artery 近端 99% 阻塞</strong>，PCI 順利完成。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「RBBB 伴隨 secondary repolarization 變化，未達 STEMI 標準，安排連續 ECG 與 troponin 追蹤」</strong>：RBBB 的 secondary 變化是 V1 與 R' discordant 的 STD，此例 R' 很小，STD 不成比例；V4-V6 為 concordant convex STE 合併寬大 T waves，且與舊 ECG 比較證實是新變化，屬於 OMI，最終證實 OM 近端 99% 阻塞。</li><li><strong>「Septal/anterior OMI（LAD）呈 precordial swirl，V5-V6 的變化為其 reciprocal 表現」</strong>：方向弄反了。precordial swirl 是 septal（V1-V2）缺血造成 V5-V6 reciprocal STD；此例是 V4-V6 STE、V1-V2 STD，屬於 reverse swirl，culprit 是 OM 而非 LAD。</li><li><strong>「High-lateral OMI：I、aVL 出現新的病理性 Q waves，懷疑 diagonal 分支阻塞」</strong>：Grauer 起初也曾懷疑 I、aVL 的 Q waves，但舊 ECG 上已有相似的 Q waves，並非新發現；limb leads 的 ST-T 不具診斷性，真正的急性變化在 V4-V6。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>別過度依賴 STEMI 毫米標準與機器判讀</strong>：機器只寫「borderline STE」，EMS 也判為 STEMI negative，實際上卻是 OM 近端 99% 阻塞。</li><li><strong>RBBB 中的 STE 可能被高估或低估</strong>：因為有 secondary repolarization 變化，要看 STD 與 R' 大小是否相稱。</li><li><strong>形態的整體組合</strong>：連續、concordant、小於 1 mm 的 convex STE，鼓脹成寬大 T waves，加上 reciprocal STD，共同描繪出 OMI。</li><li><strong>一定要調舊 ECG</strong>：舊圖可立即確認 lateral STE 是新的，也能排除 I、aVL Q waves 這類既有變化的干擾。</li><li><strong>臨床優先</strong>：60 歲壓榨性胸痛、多次 nitro 與 morphine 仍不緩解，不論 ECG 如何都應送往最近的 PCI 中心。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>precordial swirl 與 reverse precordial swirl 是一組鏡像：septal（V1-V2）缺血可在 V5-V6 造成 reciprocal STD；lateral（V4-V6）缺血則可在 V1-V2 造成 reciprocal STD。看到 V1-V2 STD 時，可同時思考它是 lateral 缺血的 reciprocal，還是如 Grauer 所說的 posterior 受累，兩者都指向 OMI。</p>",
+      "related": [
+        {
+          "title": "Precordial Swirl：20 例 Swirl 或類似型態",
+          "url": "https://drsmithsecgblog.com/precordial-swirl-20-cases-of-swirl-or/"
+        },
+        {
+          "title": "60 多歲男性急性胸痛：這是 precordial swirl 嗎？",
+          "url": "https://drsmithsecgblog.com/a-man-in-his-60s-with-acute-chest-pain-is-this-precordial-swirl/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9370",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/a-post-rosc-patient-with-an-unusual-ecg-pattern/",
+      "tags": [
+        "LBBB",
+        "de Winter T waves",
+        "LAD occlusion",
+        "心跳停止後"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/09/indexECGdewinterlbbb-1024x684.jpg",
+      "stem": "52 歲男性，EMS 到場時見其冒冷汗、意識混亂，隨即倒下，呈 pulseless VT。經插管、電擊後恢復灌流心律。此為 ROSC 後立即記錄的 12-lead ECG：sinus tachycardia 約 126 bpm，QRS 134 ms，呈 LBBB 形態。下列何者是對這張 ECG 最正確的判讀？",
+      "options": [
+        "單純 LBBB 合併 post-ROSC 全面性 subendocardial ischemia，ST-T 屬繼發變化，非 OMI",
+        "LBBB 合併 V1–V3 concordant STD，最可能為 LCx 閉塞所致 posterior OMI",
+        "LBBB 合併 de Winter T waves，代表 acute proximal LAD occlusion",
+        "Hyperkalemia 造成 QRS 增寬與高尖 T 波，應先矯正電解質再評估"
+      ],
+      "answer": 2,
+      "explain": "<p><span class='lead'>判讀</span>Sinus tachycardia 約 126 bpm，QRS 134 ms，呈 <strong>LBBB</strong>。但這不是單純的 LBBB：V1–V3 的 J-point 與 ST 段呈 <strong>concordant ST depression</strong>（LBBB 此處應為 discordant STE）；側壁導程則 J point 不當地呈 isoelectric，並有明顯 <strong>hyperacute T waves</strong>（應為 discordant STD）。Grauer 另指出 lead I、aVL 出現 Q 波（LBBB 下側壁不應有 Q 波，提示 septal infarction），且 T 波甚至延伸至 V6 呈正向。<mark>J-point depression＋hyperacute T waves 即 de Winter T waves，疊加在 LBBB 上，診斷 acute LAD occlusion</mark>。Queen of Hearts 亦判為 OMI/STEMI equivalent（0.96），並認為是 anterior（LAD）而非 posterior OMI。</p><p><span class='lead'>病程結果</span>因心跳停止後存活及 cardiogenic shock 進行緊急 PCI。Angiogram：<strong>proximal LAD 100% acute occlusion</strong>，另有一條大的 D2 慢性閉塞；LAD culprit 成功處置。Troponin-I 由 43 ng/L 上升至 3600 ng/L（未測到峰值）。PCI 後隔天 ECG 胸前導程 R 波全失、出現 reperfusion T wave inversion，LBBB 消失。出院診斷 STEMI（雖然 ECG 未達 STE 診斷標準），LVEF 45%，開始 GDMT；廣泛 Q 波顯示大面積前壁梗塞，日後 LV remodeling 風險高。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「單純 LBBB 合併 post-ROSC 全面性 subendocardial ischemia」</strong>：LBBB 應呈 discordant ST-T，本例前壁呈 concordant STD、側壁呈 hyperacute T 而非 discordant STD，屬 primary 而非 secondary 變化；angiogram 證實 LAD 急性完全閉塞。</li><li><strong>「LCx 閉塞所致 posterior OMI」</strong>：Smith 指出 V1–V3 concordant STD 符合 Smith Modified Sgarbossa，且通常代表 posterior OMI；但本例 STD 後接 hyperacute T waves（de Winter 形態）且延伸至側壁，Queen 判為 LAD 而非 posterior，culprit 確為 proximal LAD。</li><li><strong>「Hyperkalemia 造成 QRS 增寬與高尖 T 波」</strong>：本例為典型 LBBB 形態並有清楚 sinus P 波，T 波前有 J-point depression 的 de Winter 形態及側壁 Q 波，PCI 後 LBBB 消失、R 波喪失，證實為缺血而非電解質異常。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>OMI 的 ECG 形態多樣</strong>：未達 STEMI millimeter criteria 不代表不是 OMI，需靠判讀專業或 AI（Queen of Hearts）辨識。</li><li><strong>de Winter T waves 可出現在 LBBB</strong>：J-point depression＋hyperacute T waves 是 LAD occlusion 的表現，約見於 2% 急性 LAD 閉塞，通常見於窄 QRS，偶見 RBBB，本例為罕見 LBBB 組合。</li><li><strong>LBBB 看 proportionality 與 discordance</strong>：V1–V3 任一導程 concordant STD 即符合 Smith Modified Sgarbossa criteria。</li><li><strong>LBBB 側壁出現 Q 波</strong>：LBBB 使 septal 去極化方向反轉，I、aVL 出現 Q 波提示 septal infarction。</li><li><strong>若無休克是否仍會被緊急導管？</strong>本例因臨床不穩而做 PCI；若僅胸痛且血行動力穩定，此 ECG 可能被忽略。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>在任何寬 QRS（LBBB、RBBB、paced rhythm）中，都要檢查 ST-T 是否與 QRS 不成比例或方向異常（concordance）；de Winter 形態、hyperacute T waves 等窄 QRS 的 OMI 徵象也可能「疊加」在傳導阻滯上，PCI 後的 reperfusion T waves 與 Q 波則可回頭證實原始判讀。</p>",
+      "related": [
+        {
+          "title": "de Winter T 波不穩定；Posterior OMI 直立 T 波有別",
+          "url": "https://drsmithsecgblog.com/de-winters-t-waves-are-not-stable-ecg/"
+        },
+        {
+          "title": "出現 de Winter T 波時 LAD 真的完全閉塞嗎？",
+          "url": "https://drsmithsecgblog.com/is-lad-really-completely-occluded-when/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9283",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/65-year-old-with-acute-abdominal-pain-does-lack-of-chest-pain-exclude-stemi-omi/",
+      "tags": [
+        "下後壁 OMI",
+        "雙束支阻斷",
+        "無胸痛 ACS",
+        "RCA 阻塞"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/06/abdo1-1024x396.png",
+      "stem": "65 歲男性，過去健康，突發一小時嚴重、不放射的中腹痛，合併噁心與冒冷汗，無胸痛。BP 190/100，HR 60，呼吸與血氧正常。就診時 12-lead ECG 如圖。下列哪一項是對這張 ECG 最適當的判讀與處置方向？",
+      "options": [
+        "RBBB+LAFB 造成的繼發性 ST-T 變化，無急性缺血證據，應優先找腹部病因",
+        "近端 LAD 阻塞導致新發 RBBB+LAFB，屬 anterior OMI，應啟動導管室",
+        "疑 aortic dissection 合併繼發性 STE，應先做 CT 排除後再決定是否 cath",
+        "急性 infero-posterior OMI（合併 RBBB+LAFB），應儘速安排緊急再灌流"
+      ],
+      "answer": 3,
+      "explain": "<p><span class='lead'>判讀</span>竇性心律合併 <strong>RBBB + LAFB</strong>（雙束支阻斷），電壓正常。下壁導程 II、III、aVF 有<strong>符合 STEMI criteria 的 STE</strong>，且 T 波 hyperacute（更高、更胖、ST 段變直、T 波底部明顯變寬），aVL 與 I 有<strong>reciprocal STD/TWI</strong> → inferior OMI。RBBB 時前胸導程的 STD 通常以 V1 最明顯、往後遞減，但本例 <mark>V2 的 STD/TWI 過度 discordant</mark>，提示 <strong>posterior OMI</strong>。McLaren 指出 RBBB/LAFB 雖可能是近端 LAD 阻塞的急性併發症，但 infero-posterior OMI 多由 RCA 阻塞造成、不會影響右束支或左分支，Smith 認為 RBBB/LAFB 可能是原本就有的。<mark>腹痛加冒冷汗本身就是 ACS 的懷疑症狀</mark>，並非無症狀 MI；Queen of Hearts 也判讀為 STEMI equivalent。</p><p><span class='lead'>病程結果</span>急診醫師注意到下壁 STE 與 aVL reciprocal change，理學檢查上腹壓痛無 guarding，POCUS 無 AAA 或膽囊炎；給予止痛後 20 分鐘做 15-lead ECG，仍是 infero-posterior OMI（posterior leads 偽陰性），且 <strong>V4R STE</strong> 幾乎可診斷 RV infarct。照會心臟科，但心臟科認為病史不符 STEMI：POCUS 對 wall motion 結論不明、首次 hs-troponin I 8 ng/L 正常，於是先做胸腹骨盆 CT 排除 dissection 及腹部病因，結果正常。之後 troponin 16 → 180 ng/L，病人持續上腹痛並出現心搏過緩，ECG 出現 STE 消退、T 波倒置的再灌流變化，但症狀未解除。因持續疼痛、動態 ECG 變化、短暫心搏過緩與上升的 troponin，終於啟動導管室：door-to-cath 6 小時，血管攝影為 <strong>mid RCA 100% 阻塞</strong>並置放支架；EF 降至 44%（下壁 akinesis），troponin 峰值高達 100,000 ng/L，代表梗塞範圍很大。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「RBBB+LAFB 造成的繼發性 ST-T 變化，無急性缺血證據」</strong>：RBBB 的繼發性 STD 以 V1 最大並遞減，本例 V2 STD 過度 discordant；且下壁有 hyperacute T 波與 STE、aVL 有 reciprocal 變化，這些都不是束支阻斷可解釋的，屬 OMI 表現。</li><li><strong>「近端 LAD 阻塞導致新發 RBBB+LAFB，屬 anterior OMI」</strong>：雖然 RBBB/LAFB 可能是近端 LAD 阻塞的併發症，但本例 STE 在下壁、V2 為 STD（posterior），V4R STE 指向 RCA；導管證實為 mid RCA 阻塞，RBBB/LAFB 可能是原本就有的。</li><li><strong>「疑 aortic dissection 合併繼發性 STE，應先 CT 排除」</strong>：ECG 有 STEMI 時由 dissection 引起的機率只有 0.5%；POCUS 無 dissection 徵象時，CT 會延誤絕大多數 OMI 的再灌流，本例 CT 也確實正常而白白耽誤。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>沒有胸痛不能排除 STEMI/OMI</strong>：無胸痛的 ACS 常見，且與延遲治療及較高死亡率相關。</li><li><strong>早期 troponin 不可靠</strong>：症狀一小時的首次 troponin 沒有幫助，初期上升幅度也無法預測峰值（本例由 8 到 100,000 ng/L）。</li><li><strong>STEMI 由 aortic dissection 引起極罕見</strong>：不應因此常規延遲再灌流去做 CT。</li><li><strong>再灌流需症狀與 ECG 同時緩解</strong>：ECG 出現再灌流變化但仍持續上腹痛，表示缺血仍在，應啟動導管室。</li><li><strong>未確診前不宜先給止痛</strong>：否則後續 ECG 改善無法區分是自發再灌流還是止痛效果。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>Canto 等人的大型研究顯示約 1/3 的 STEMI 與 NSTEMI 就診時無胸痛；Culic 研究中上腹痛可為最多 16% 下壁 MI 的表現。判讀 RBBB 時，若 V2–V4 的 STD 超過 V1 或不成比例，應想到 posterior OMI；下壁 OMI 時加做 V4R，若有 STE 支持近端 RCA 合併 RV infarct。採用 Bayesian 思維：pre-test（含 anginal equivalent）＋ ECG 的 OMI 徵象，共同決定處置。</p>",
+      "related": [
+        {
+          "title": "ST depression 不到 1 mm，能診斷 posterior OMI 嗎？",
+          "url": "https://drsmithsecgblog.com/when-there-is-less-than-1-mm-of-st/"
+        },
+        {
+          "title": "De Winter T 波並不穩定：posterior OMI 的直立 T 波與 de Winter 不同",
+          "url": "https://drsmithsecgblog.com/de-winters-t-waves-are-not-stable-ecg/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9290",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/what-is-the-critical-finding-for-establishing-the-diagnosis-of-this-wide-complex-tachycardia/",
+      "tags": [
+        "寬QRS心搏過速",
+        "心室頻脈",
+        "逆行P波",
+        "束支型VT"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/07/KJ-case-WCT-1024x512.jpg",
+      "stem": "38 歲病人，有高血壓與肥胖病史，近一週頭暈、腹脹、腿抽筋。檢傷時低血壓且心搏過速，記錄到如圖 ECG：規則 wide complex tachycardia，心率約 174/min，呈 RBBB + LAFB 形態，lead II 與 V1 的 QRS 前似乎有類似 P 波的波形。依此 ECG 最關鍵的判讀線索，最可能的診斷為何？",
+      "options": [
+        "VT：下壁導程 retrograde P 波每隔一跳才出現，心室節律仍規則",
+        "Reentry SVT 合併 aberrancy：下壁導程每跳後皆有 retrograde P 波",
+        "Sinus tachycardia 合併 RBBB + LAFB：QRS 前的波形為竇性 P 波",
+        "SVT 合併 aberrancy：lead III 的交替變化為 pure electrical alternans"
+      ],
+      "answer": 0,
+      "explain": "<p><span class='lead'>判讀</span>這是規則的 WCT，心率約 174，呈 <strong>RBBB + LAFB</strong> 形態。Grauer 估計 QRS 約 0.16 秒，且多導程有 fragmentation。Smith 列出兩面的特徵：<ul><li>不利 VT：可能有 P 波、多導程 RS 間期 < 100 ms。</li><li>支持 VT：aVR 寬 Q 波 >40 ms、V2 的 R'>R、V1 起始無小 r 波。</li></ul>Grauer 指出 lead II 沒有清楚直立、PR 固定的 sinus P 波。其他導程看似 P 波者，可能是 T 波末端的假象。決定性線索是 <mark>lead III（以及 II、aVF）每隔一跳在 QRS 後出現小的負向 retrograde P 波</mark>，Frick 稱之為 <strong>2:1 ventriculoatrial conduction</strong>。這表示心室數多於心房數。逆傳間歇中斷時，心室節律仍維持規則，代表心室活化獨立於心房，因此診斷為 <strong>VT</strong>。RBBB + LAFB 形態也符合 posterior fascicular VT。</p><p><span class='lead'>病程結果</span><ul><li><strong>處置</strong>：團隊起初以為是 SVT，給予 adenosine 無效。之後改以 360 J 電擊 3 次，第 3 次轉回 sinus rhythm；節律能被轉換，排除了 sinus tach。</li><li><strong>整流後 ECG</strong>：QRS 明顯變窄、fragmentation 消失，與 WCT 時的 QRS 完全不同，進一步支持 VT。下壁與側壁出現 T 波倒置；AI 判讀認為是 reperfused OMI，但 Smith 懷疑。Frick 與 Grauer 認為這是 <strong>memory T waves</strong>。</li><li><strong>檢查</strong>：床邊超音波 EF 中度下降，冠狀動脈攝影正常。</li><li><strong>結局</strong>：EP 認為是 <strong>posterior fascicular VT</strong>，計劃 ablation，EF 後來為 45%。Smith 認為 EF 下降可能來自長時間快速心律所致的 tachycardia-induced cardiomyopathy。</li></ul></p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「Sinus tachycardia 合併 RBBB + LAFB」</strong>：lead II 沒有清楚直立、PR 固定的 sinus P 波。Grauer 指出其他導程類似 P 波的波形不符合 sinus P 波應有的相對大小，較像 T 波末端。而且電擊後節律成功轉換，Smith 明言這排除了 sinus tach。</li><li><strong>「Reentry SVT 合併 aberrancy：每跳後皆有 retrograde P 波」</strong>：此例 retrograde P 波只每隔一跳出現。reentry SVT 依賴持續逆傳，逆傳一旦中斷就會終止；此例逆傳中斷而 WCT 仍規則，幾乎可確定是 VT。整流後的窄 QRS 與 WCT 形態完全不同，也不支持原本就有束支阻斷。</li><li><strong>「SVT 合併 aberrancy：lead III 為 pure electrical alternans」</strong>：Frick 承認 lead III 的交替模式「could be」pure electrical alternans，但認為更可能是 2:1 VA conduction。Grauer 也將其判讀為每隔一跳出現的 retrograde P 波，並以此確認為 VT。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>間歇性逆傳 + 規則心室率 ≈ VT</strong>：無論是 2:1 VA 還是 retrograde Wenckebach，只要逆傳中斷而 WCT 仍規則，就證明心室活化獨立於心房。罕見例外是逆傳的 wide junctional tachycardia。</li><li><strong>RBBB + LAFB 形態的 WCT 要想到 posterior fascicular VT</strong>：這類 VT 通常 LV 功能良好；EF 下降可能來自 tachycardia-induced cardiomyopathy。</li><li><strong>EF 不正常時不要給 verapamil</strong>：一來一般 VT 的可能性更高，二來 verapamil 會強烈抑制收縮力，可能導致休克。電擊是最佳治療。</li><li><strong>整流後 T 波倒置可能是 memory T waves</strong>：不必然代表 OMI，此例冠狀動脈攝影正常。</li><li><strong>When in doubt, assume VT</strong>：此例血行動力學不穩定，無論 VT 或 SVT 都需要電擊整流。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>判讀 WCT 時，要在下壁導程找 QRS 後持續出現的小負向波（retrograde P），並注意它是否每跳都有。任何「心室數多於心房數」的證據都指向 VT。若仍懷疑 sinus tach，Smith 建議：<ul><li>觀察心率在不同分鐘間是否有變異。</li><li>以超音波評估容積狀態。</li><li>若容積低或正常且無 B-lines，可試給輸液，觀察心率變化。</li></ul></p>",
+      "related": [
+        {
+          "title": "50 歲心悸病人：你會如何處置？",
+          "url": "https://drsmithsecgblog.com/a-50-year-old-with-palpitations-how-will-you-treat/"
+        },
+        {
+          "title": "年輕女性的規則 wide complex tachycardia",
+          "url": "https://drsmithsecgblog.com/a-young-woman-with-wide-complex-regular/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9369",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/queen-of-hearts-now-fda-approved-whats-her-take-on-this-non-diagnostic-ecg/",
+      "tags": [
+        "下壁 OMI",
+        "右心室梗塞",
+        "錯失 OMI",
+        "AI ECG"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/09/GJA-case-first-ECG-1024x407.jpg",
+      "stem": "45 歲男性因新發胸痛至急診，記錄到這張 12-lead ECG。電腦自動判讀為 normal，兩次 high-sensitivity troponin I 皆為 24 ng/L（低於 URL）。依此 ECG，最適當的判讀與處置為何？",
+      "options": [
+        "ECG 屬 non-diagnostic 且兩次 troponin 正常，可安排門診追蹤",
+        "下壁 OMI（推測 proximal RCA 阻塞合併 RV infarct），應緊急心導管",
+        "V1-V3 T 波偏高，為 benign early repolarization 之正常變異",
+        "V1-V3 hyperacute T 波，推測 LAD 阻塞之前壁 OMI，應緊急心導管"
+      ],
+      "answer": 1,
+      "explain": "<p><span class='lead'>判讀</span>Smith 在完全不知病史的情況下，直接判定為<mark>「Diagnostic of inferior OMI」</mark>：<strong>lead III、aVF</strong> 有 ST 變化，並在 <strong>aVL 出現 reciprocal ST depression</strong>（Grauer 也指出 aVL 有細微但真實的 T 波倒置）。此外 <strong>V1-V3 有 hyperacute T waves</strong>，代表右心室受累，因此推斷為 <strong>proximal RCA occlusion（位於 RV marginal branch 近端）合併 RV infarct</strong>。Grauer 補充：III、aVF 有 ST 段變直，T 波相對於小小的 R 波不成比例；V2、V3 的 ST 段也變直，而不是正常那種緩緩上斜的輕微 ST 上升；V1 的 T 波相對於很小的 S 波明顯過高，並出現 <mark>precordial T 波「imbalance」（T in V1 > V6）</mark>。</p><p><span class='lead'>病程結果</span>這張 ECG 被電腦和醫師都判讀為 normal。兩次 hs-troponin I 皆為 24 ng/L（低於 URL），之後沒有再追蹤 ECG，病人就出院了。一段時間後，病人因 <strong>VF 心跳停止</strong>由救護車送回，經過長時間急救才 ROSC。angiography 證實為<strong>急性 RCA 阻塞</strong>。事後的病例討論會上，心臟科與急診醫師都認為這張 ECG「non-diagnostic」。之後將此 ECG 輸入 Queen of Hearts AI，結果判為 STEMI equivalent，數值 0.73；0.67-0.83 區間的 specificity 為 98%。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「ECG 屬 non-diagnostic 且兩次 troponin 正常，可安排門診追蹤」</strong>：這正是本案的致命錯誤。Smith 強調，只有在 ECG 完全沒有缺血表現時，troponin 才可信。這張 ECG 已可診斷 inferior injury，病人出院後發生 VF arrest。</li><li><strong>「V1-V3 T 波偏高，為 benign early repolarization 之正常變異」</strong>：Grauer 承認，單獨出現的高 V1 T 波在無症狀者可能是正常變異。但本案是新發胸痛，又合併下壁 ST 變直、aVL reciprocal 變化、V2-V3 ST 變直，以及 T V1 > V6，必須視為急性事件，直到證明不是為止。</li><li><strong>「V1-V3 hyperacute T 波，推測 LAD 阻塞之前壁 OMI，應緊急心導管」</strong>：Smith 把 V1-V3 的 hyperacute T 解讀為 RV infarct，而不是 LAD 病灶。下壁導程的變化加上 aVL 的 reciprocal ST depression 指向 RCA，angiography 也證實是 RCA 阻塞。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>不是 ECG non-diagnostic，是判讀者 non-diagnostic</strong>：你看不出來，不代表 ECG 沒有診斷價值。</li><li><strong>Troponin 是不完美的後照鏡</strong>：急性 OMI 的前兩次 hs-troponin 都可能尚未升高。新發胸痛至少應做 2 張 ECG、3 次 troponin。</li><li><strong>注意 shape 與 proportionality</strong>：ST 段變直、T 波相對於 QRS 振幅過大，是細微 OMI 的線索。aVL 的 T 倒置可能是下壁 OMI 的 reciprocal change。</li><li><strong>重複 ECG 與第二意見</strong>：10-20 分鐘內複查 ECG 很可能就會看到動態變化。Queen of Hearts 可立即提供專家等級的第二意見。</li><li><strong>看起來正常的 ECG 最需要 AI 輔助</strong>：研究中 EP 與心臟科醫師的平均準確率皆為 65%，Queen 為 89%。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>下壁 OMI 合併 V1（甚至 V1-V3）T 波高聳或 ST 上升時，要想到 proximal RCA 合併 RV infarct。可加做右側導程，並留意前負荷依賴的問題。另外，T 波在 V1 明顯高於 V6 的 precordial T imbalance，在適當臨床情境下也可能是 LCx 或其他 ACS 的早期線索。</p>",
+      "related": [
+        {
+          "title": "專家證人以 Queen of Hearts 重審胸痛醫療糾紛案",
+          "url": "https://drsmithsecgblog.com/the-expert-witness-re-visits-chest-pain/"
+        },
+        {
+          "title": "看 Queen of Hearts AI 如何持續進步",
+          "url": "https://drsmithsecgblog.com/see-how-queen-of-hearts-ai-is/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9294",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/ventricular-fibrillation-in-a-young-patient-during-exertion/",
+      "tags": [
+        "心肌病變",
+        "心臟停止",
+        "OMI 偽裝",
+        "右心室"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/07/image-1-1024x446.png",
+      "stem": "20 多歲男性踢足球時突然倒地，事前無前驅症狀。現場為 ventricular fibrillation，經 CPR 與 5 次電擊，約在倒地後 20 分鐘恢復自發循環（ROSC）。上圖為 ROSC 後約 20 分鐘的 12-lead ECG。綜合此 ECG 及後續檢查，造成這次 VF 心臟停止最可能的根本原因為何？",
+      "options": [
+        "急性冠狀動脈阻塞（OMI），V4–V5 hyperacute T 為前壁閉塞的證據",
+        "Hypertrophic cardiomyopathy 合併左心室流出道阻塞所誘發的 VF",
+        "雙心室 arrhythmogenic cardiomyopathy，以疤痕為基質的 re-entry 誘發 VF",
+        "大量 pulmonary embolism 造成急性右心衰竭，進而惡化為 VF"
+      ],
+      "answer": 2,
+      "explain": "<p><span class='lead'>判讀</span>Smith 認為這是一張明顯的<strong>「pulmonic ECG」</strong>，包括 <strong>P-pulmonale</strong>、<strong>reduced voltage</strong>、<strong>V1 dominant R</strong>，並合併 V1–4 淺 T-wave inversion。lead I 也有 <strong>Schamroth's Sign</strong>，即電壓極低。下壁與側壁導程雖有 Qr complex 與放大的 ST-T，<strong>V4、V5 的 T 波也呈 hyperacute</strong>，但 Smith 指出這只是在<mark>模仿 infarction pattern</mark>，Queen of Hearts 也判定為 not OMI。Grauer 補充三點：一、高尖 P 波代表明顯 RAA，幾乎都伴隨嚴重 RVH；二、Schamroth's Sign 加上明顯 RAA，提示長期而嚴重的肺部疾病；三、多導程 QRS fragmentation 與深寬下壁 Q 波，提示長期疾病造成的疤痕。整體圖像指向<mark>結構性心肌病變</mark>，而不是急性冠狀動脈阻塞。</p><p><span class='lead'>病程結果</span>病人轉入 ICU 接受 post-cardiac arrest care，予插管、呼吸器與神經保護處置。需要 Noradrenaline 0.29 mcg/kg/min 才能維持 MAP 約 65 mmHg，且脈壓窄，符合心停後 myocardial stunning 疊加潛在心肌病變。CT head 無特殊發現。ICU 期間的 ECG 仍可見 Schamroth's Sign、P-pulmonale、V1 dominant R 與 reverse R wave progression，以及 V1–3 TWI，並有頻繁 <strong>RVOT 型 PVC</strong>。病人穩定後轉至心臟加護單位，並安排評估 subcutaneous ICD。Cardiac MRI 證實為<strong>非缺血性</strong>病因：雙心室擴大且收縮功能不良，心外膜與中層心肌有廣泛非缺血性疤痕，分布於 lateral、inferoseptal、apical 與 RV free wall，其中 RV free wall 呈 akinetic。MRI 也沒有發炎證據，瓣膜正常。最終診斷為<strong>雙心室 arrhythmogenic cardiomyopathy</strong>，本例沒有 epsilon wave。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「急性冠狀動脈阻塞（OMI），V4–V5 hyperacute T 為前壁閉塞的證據」</strong>：VF 最常見的原因確實是缺血，Smith 也說送 cath lab 並不算錯。但 V4–V5 的 hyperacute T 只是模仿梗塞；P-pulmonale、low voltage、Schamroth's Sign 與 V1 dominant R 構成的整體圖像不是 OMI，Queen 也判讀為 not OMI。MRI 最終確認病因為非缺血性。</li><li><strong>「Hypertrophic cardiomyopathy 合併左心室流出道阻塞所誘發的 VF」</strong>：這是年輕人運動中猝死時會被考慮的心肌病變，但本例 ECG 的特點是 QRS 電壓顯著降低，並帶有右心表現。MRI 呈現雙心室擴大、收縮不良與廣泛非缺血性纖維化，瓣膜正常，符合 ACM 而非 HCM。</li><li><strong>「大量 pulmonary embolism 造成急性右心衰竭，進而惡化為 VF」</strong>：右心與肺性 ECG 表現容易讓人聯想到 PE。但 Grauer 指出，Schamroth's Sign 合併明顯 RAA 代表長期的變化，QRS fragmentation 也提示長期疾病造成的疤痕。MRI 顯示雙心室廣泛非缺血性疤痕且 RV free wall akinetic，屬於心肌本身的疾病，而非急性負荷過重。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>VF arrest 先想缺血</strong>：VF 心臟停止最常見的原因是急性心肌缺血，懷疑 OMI 時應以低門檻送 cath lab。</li><li><strong>Post-ROSC ECG 會模仿 OMI</strong>：心停後的 ECG 可能出現類似梗塞的變化，應做 serial ECG 觀察是否有動態演變。</li><li><strong>心肌病變是心停的基質</strong>：各種 cardiomyopathy 都可能造成心臟停止，初始評估就要納入考量，而 ECG 是其中的核心工具。</li><li><strong>ACM 可侵犯雙心室</strong>：ACM 舊稱 ARVC/ARVD，但可侵犯單側或雙側心室，判讀 ECG 要看整體。epsilon wave 很特異但不敏感，可能完全看不到。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>年輕人在運動中發生 VF 時，除了 OMI，也要從 ECG 線索思考結構性心肌病變。下列線索出現時，應想到 arrhythmogenic cardiomyopathy：右胸導程 TWI、RVOT 型 PVC（V1 呈 rS、下壁導程正向）、low voltage 與 QRS fragmentation。即使沒有 epsilon wave 也不能排除，需以 cardiac MRI 的 LGE 確認疤痕分布。這類疤痕基質合併 PVC 觸發，可形成 re-entry VT 並惡化為 VF。</p>",
+      "related": [
+        {
+          "title": "年輕男性騎腳踏車時暈厥：ARVD",
+          "url": "https://drsmithsecgblog.com/young-man-with-syncope-while-riding/"
+        },
+        {
+          "title": "年輕女性 wide complex tachycardia：首次在急診親自診斷",
+          "url": "https://drsmithsecgblog.com/a-young-lady-with-wide-complex/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9317",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/can-a-patient-be-lucky-if-he-goes-into-ventricular-fibrillation-yes-but-accurate-ecg-interpretation-prevents-it/",
+      "tags": [
+        "前壁OMI",
+        "心包膜炎鑑別",
+        "Terminal QRS distortion",
+        "心室纖維顫動"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/08/From-Ahmed-Adel-in-FB-messenger-1024x385.png",
+      "stem": "55 歲男性，過去無特殊病史，因胸痛至急診。心臟科資深醫師看過這張 ECG 後，認為是心包膜炎，打算給予藥物治療。依此 ECG，最適當的判讀與處置為何？",
+      "options": [
+        "急性心包膜炎：給予 indomethacin 與 colchicine 治療",
+        "陳舊性下壁 MI 合併 LV aneurysm 型態殘留 STE，非急性變化",
+        "良性早期再極化（normal variant STE）：可觀察後出院",
+        "急性 LAD occlusion（OMI）：應立即啟動心導管"
+      ],
+      "answer": 3,
+      "explain": "<p><span class='lead'>判讀</span>Smith 直接下結論：這張 ECG 即可<strong>診斷 LAD OMI</strong>。V2-V4 以後都有 <strong>ST elevation</strong>，關鍵在於是否為 normal variant。答案是否定的，因為有 <mark>Terminal QRS distortion（TQRSD）</mark>：V2 與 V3 <strong>兩個導程都沒有 S-wave，也沒有 J-wave</strong>。TQRSD 一旦出現，就排除 normal variant，必須視為急性 LAD occlusion，直到證明不是為止。Grauer 補充了其他支持 OMI 的特徵：<br>・多導程 STE 外觀呈 <strong>hyperacute</strong>。<br>・下壁導程有可能具意義的 Q waves，且同時有 STE。<br>・aVL ST 段變平、帶輕微 ST depression，提示 <strong>reciprocal change</strong>，這在心包膜炎不應出現。<br>・以 T-P 段為基準時，ST/T ratio &lt;0.25。<br>・lead II 的 ST-T 較像 lead III，而不像 lead I。<br>・缺乏明顯的 PR depression。<br>Queen of Hearts 的數值輸出為 0.81，約有 98% 的 OMI 特異度。</p><p><span class='lead'>病程結果</span>資深心臟科醫師判為心包膜炎，打算給 indomethacin 與 colchicine。首診的同事不放心，請 Ahmed 提供第二意見。Ahmed 指出：<br>・lead II 的基線飄移，造成假的 PR depression 與 Spodick sign。<br>・V3 有 TQRSD，是 LAD occlusion 的重大警訊。<br>因此他建議暫緩 NSAID，複做 ECG 並追蹤 troponin。約 20 分鐘後，病人發生 <strong>VF，電擊兩次</strong>才恢復竇性節律。電擊後的 ECG 更加明確符合 OMI。Smith 認為這位病人「幸運地」發生 VF，否則可能在診間坐上數小時，心肌持續壞死。Grauer 指出，病人急救成功後，才使 OMI 受到重視，需緊急 cath 與 PCI。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「急性心包膜炎：給予 indomethacin 與 colchicine 治療」</strong>：這正是資深醫師的誤判。多導程 STE 雖然像心包膜炎，但 TQRSD 基本上排除心包膜炎；aVL 的 reciprocal STD 也不符合。Smith 指出心包膜炎很罕見，「診斷心包膜炎是在試圖否認 OMI」。</li><li><strong>「良性早期再極化（normal variant STE）：可觀察後出院」</strong>：V2 與 V3 都缺 S-wave 且沒有 J-wave，構成 TQRSD，可排除 normal variant/repolarization variant。</li><li><strong>「陳舊性下壁 MI 合併 LV aneurysm 型態殘留 STE，非急性變化」</strong>：病人過去無病史、為新發胸痛。STE 呈 hyperacute 外觀，前胸導程又有 TQRSD，指向急性 LAD occlusion。隨後發生 VF，也證實是急性病程。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>TQRSD 的定義</strong>：在 V2-V4 有 STE 的前提下，V2 或 V3 缺少 S-wave，且沒有明顯 J-wave。出現即排除 normal variant 與心包膜炎。</li><li><strong>TQRSD 可能很細微</strong>：本例只有 V3 三個心跳都清楚可見，V2、V4 只有中間那個心跳有。要逐導程、逐心跳仔細看。</li><li><strong>心包膜炎很罕見</strong>：中年、過去健康的男性新發胸痛，應先假設 OMI，直到證明不是為止。漏診心包膜炎不致命，漏診 OMI 幾乎致命。</li><li><strong>舉證責任在臨床醫師</strong>：要排除 OMI，可在 10-20 分鐘內複做 ECG、做床邊 echo 看局部室壁運動異常，並追蹤 serial troponin。</li><li><strong>注意基線飄移</strong>：wandering baseline 可能造成假的 PR depression 與 Spodick sign。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>面對「多導程 STE＝心包膜炎？」的情境，先找 OMI 的線索：<br>・reciprocal STD（尤其 aVL）<br>・hyperacute T waves<br>・下壁 Q waves<br>・TQRSD<br>・lead II 的 ST-T 較像 III 而不像 I<br>心包膜炎在床邊最可靠的確診依據，大概只有 pericardial friction rub 與明顯的心包膜積液。</p>",
+      "related": [
+        {
+          "title": "TQRSD 診斷 LAD Occlusion，還是心包膜炎？",
+          "url": "https://drsmithsecgblog.com/terminal-qrs-distortion-diagnostic-of/"
+        },
+        {
+          "title": "「心包膜炎」又來了",
+          "url": "https://drsmithsecgblog.com/pericarditis-strikes-again/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9303",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/recurrent-seizures-in-a-40-something-woman/",
+      "tags": [
+        "Long QT",
+        "Torsades de Pointes",
+        "Methadone",
+        "暈厥與癲癇鑑別"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/03/image.png",
+      "stem": "40 多歲女性，深夜在家突然失去意識約 3 分鐘，伴侶目擊她眼睛上吊、抽搐數下、口吐白沫、臉色蒼白並出現 agonal respiration，EMS 抵達前已自行清醒，GCS 15、生命徵象正常。病人有 fentanyl 使用史，當晚有吸食，並長期服用高劑量 methadone 與 hydromorphone 治療 Opioid Use Disorder。過去兩週有約 10 次類似短暫發作，10 天前曾以「疑似藥物相關意識改變」自他院急診出院。到院 ECG 如圖，下列判讀與處置何者最恰當？",
+      "options": [
+        "Sinus rhythm 合併 ventricular bigeminy、long QT 與 R on T，高風險 TdP；給 IV Mg、上 telemetry 與電擊貼片",
+        "PVC 後方巨大 T wave 代表 hyperacute T wave，屬急性 OMI，應啟動 cath lab",
+        "藥物相關 seizure 或中毒性意識改變，PVC 屬良性異位搏動，觀察清醒後可出院",
+        "巨大且對稱的 T wave 提示 hyperkalemia，應先給 IV calcium 並降鉀"
+      ],
+      "answer": 0,
+      "explain": "<p><span class='lead'>判讀</span>這張 ECG 為 <strong>sinus rhythm 合併 PVC/bigeminy</strong>，且 <strong>QT 明顯延長</strong>。仔細看竇性搏動後的 T wave，會被下一個 PVC <mark>突然打斷（R on T phenomenon）</mark>，作者指出這是 <strong>即將發生 Torsades de Pointes</strong> 的高風險表現。Smith 補充這些 PVC 形態怪異、帶有誇張的巨大 T wave，正是此類病理常見的特徵。配合病史（高劑量 methadone、hydromorphone 加上 fentanyl，反覆短暫意識喪失），作者 <mark>經驗性給予 IV magnesium sulfate</mark>，並上 telemetry、貼好去顫貼片。</p><p><span class='lead'>病程結果</span>回顧病歷：10 天前他院 ECG 電腦判 QTc 438 ms，但 T wave 低平且雙相（V4-V5 最明顯），實際 QT 遠超過 3 大格（600 ms），被電腦誤判且醫師未察覺；6 個月前另一次暈厥就診時電腦已正確判讀 long QT，醫師仍未注意，兩次皆被歸因於藥物使用而出院。本次在急診又發生 <20 秒的暈厥，telemetry 證實為 <strong>Torsades de Pointes</strong>，自行終止。之後 ECG 顯示雙相 T wave 與 long QT 更清楚。Mg 正常、K 3.1 偏低，給予 Mg 與 KCl。轉至心臟中心 CCU 後不久發生 TdP arrest，電擊一次成功；置入 transvenous pacer 做 overdrive pacing。逐步停用 methadone 後數天內 QT 恢復正常，移除 pacer 後出院。作者事後表示，若重來會在急診就先以 isoproterenol 做 overdrive pacing。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「藥物相關 seizure 或中毒性意識改變，PVC 屬良性」</strong>：這正是前兩次急診的錯誤，將意識喪失歸因於藥物而漏掉 long QT；此病人實際上反覆發生 TdP，最後還有 TdP arrest。抽搐、失禁在暈厥中也很常見，不能據此排除心律不整。</li><li><strong>「PVC 巨大 T wave 為 hyperacute T，屬急性 OMI」</strong>：Grauer 雖提到有時 PVC 的 ST-T 可診斷 OMI，但本案 PVC 的巨大 T wave 被認為反映顯著延長的復極（long QT），而非冠狀動脈阻塞；病程也與 OMI 無關。</li><li><strong>「巨大 T wave 提示 hyperkalemia」</strong>：本案鉀離子實為偏低（3.1），低鉀反而與 QT 延長協同增加 TdP 風險；給 calcium 降鉀方向完全相反。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>不明原因意識喪失務必細看 ECG</strong>：若有 long QT，經驗性給 IV magnesium，並準備 overdrive pacing。</li><li><strong>Methadone 是 long QT 的重要原因</strong>：多種 opioid、低血鉀與心搏過緩共同促成 TdP，誘因常是多重因素。</li><li><strong>電腦常量錯 QTc</strong>：低平、雙相 T wave 會讓電腦低估；一定要自己量 QT，並翻閱過去的 ECG。</li><li><strong>心率 <60 不宜做 QT 校正</strong>：校正會使 QTc 變短；且心搏過緩更易發生 pause-dependent TdP。</li><li><strong>別輕易把 LOC 歸因於物質使用</strong>：暈厥常見 tonic posturing 與 myoclonic jerks，失禁也無法區分 seizure 與 syncope。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>遇到「年輕人反覆 seizure／暈厥」且服用 QT 延長藥物（methadone、抗精神病藥等）或有低鉀低鎂時，應主動測量 QT，並注意 short-long-short 序列與 R on T 的 PVC；預防 TdP 復發的急性處置包括 Mg、補鉀，以及以 isoproterenol 或 transvenous pacing 提高心率以縮短 QT。</p>",
+      "related": [
+        {
+          "title": "STEMI 合併致命性低血鉀與持續性 Torsades de Pointes",
+          "url": "https://drsmithsecgblog.com/stemi-with-life-threatening-hypokalemia/"
+        },
+        {
+          "title": "Polymorphic VT：多形性心室頻脈",
+          "url": "https://drsmithsecgblog.com/polymorphic-ventricular-tachycardia/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9335",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/the-fire-department-does-not-say-we-cant-try-to-put-the-fire-out-until-the-burning-house-is-stable-lets-wait/",
+      "tags": [
+        "de Winter T 波",
+        "LAD OMI",
+        "RBBB",
+        "心因性休克"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/07/b0cf65fe-1024x465.png",
+      "stem": "97 歲男性，數日來倦怠嗜睡，由家屬叫 EMS 送醫，途中 EMS 已啟動 code STEMI。到急診後因呼吸道保護插管並使用 norepinephrine，床邊心臟超音波顯示 ejection fraction 下降；隨後發生 wide complex tachycardia，以 200 J 電擊後記錄此張 ECG。血壓 88/40 mmHg（使用升壓劑下），心跳 110/min。值班心臟科判讀為「diffuse ischemic change but no STEMI」。對這張 ECG 最正確的判讀與處置為何？",
+      "options": [
+        "瀰漫性缺血變化的 NSTEMI，先給 heparin drip，待血行動力學穩定後再安排心導管",
+        "RBBB 合併 de Winter T 波，代表急性 LAD OMI，應立即心導管再灌流",
+        "Wellens 症候群（再灌流型 T 波），LAD 已自發再通，可於 24 小時內安排早期侵入性治療",
+        "電擊後心肌 stunning 合併 RBBB 繼發性 ST-T 變化，並非急性冠狀動脈阻塞"
+      ],
+      "answer": 1,
+      "explain": "<p><span class='lead'>判讀</span>這張是電擊後在急診記錄的 12-lead。Grauer 指出判讀困難主因是 12 導程中至少 8 導程呈<strong>極度低電壓</strong>，在此臨床情境下應首先想到<strong>大面積急性梗塞後的心肌 stunning、可能進展為 cardiogenic shock</strong>。V1 呈全部向上的 R 波、I 與 V6 有終末寬 S 波，仍為 <strong>RBBB</strong>（可能合併 LPHB）。最關鍵的是從 V2 開始的 <strong>J-point ST depression</strong>，隨後陡升成與 QRS 不成比例、高大直立的 T 波（V3 最明顯），即 <mark>RBBB 合併 de Winter T 波＝急性 LAD 阻塞</mark>。Frick 的朋友在不知病史下立即判為 LAD OMI，Queen of Hearts AI 也以最大可能性判定 OMI。Frick 強調 <mark>ECG 2 對熟練判讀者仍可診斷急性 LAD occlusion</mark>。</p><p><span class='lead'>病程結果</span>EMS 的 ECG 1 已是明顯前側壁 STEMI（RBBB＋V1-V3 顯著 STE，V2 超過 10 mm），但心臟科病歷寫「not consistent with STEMI」，僅以「concern for NSTEMI」開始 heparin。hsTnI 由 66、100 升至 10000。隔日病歷改為「consistent with anterolateral MI」，並寫「待病人較穩定後」再與家屬討論心導管。追蹤 ECG 顯示幾乎已完成的廣泛前側壁及下壁梗塞（可能為包繞下壁的 distal LAD），RBBB 消失。病人最終存活出院，但<strong>從未接受冠狀動脈攝影</strong>。Frick 指出：即便依 NSTE-ACS 指引，此病人有電氣不穩定、新發 LV 收縮功能不全、cardiogenic shock，GRACE 分數極高，本就屬於應在 2 小時內進行的 <strong>immediate invasive strategy</strong>。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「瀰漫性缺血變化的 NSTEMI，先給 heparin drip，待血行動力學穩定後再安排心導管」</strong>：這正是本案實際發生的錯誤決策。ECG 2 是 de Winter 型態的 LAD OMI；且即使貼上 NSTEMI 標籤，血行動力學與電氣不穩定依指引也應立即導管，「等穩定」等於讓心肌壞死完成。</li><li><strong>「Wellens 症候群（再灌流型 T 波），LAD 已自發再通，可於 24 小時內安排早期侵入性治療」</strong>：Wellens 是再灌流後的 biphasic 或倒置 T 波，且通常發生在無症狀、穩定的病人；本例是 J-point ST depression 接高大直立 T 波（de Winter），代表動脈仍阻塞，且病人處於休克。</li><li><strong>「電擊後心肌 stunning 合併 RBBB 繼發性 ST-T 變化，並非急性冠狀動脈阻塞」</strong>：RBBB 的繼發性 ST-T 改變不會在 V2-V6 產生 J-point ST depression 與不成比例的高大 T 波；低電壓與 stunning 在此反而是大面積急性梗塞的後果。EMS ECG 早已顯示顯著前壁 STE，troponin 也飆升至 10000。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>打開血管才是最好的穩定方法</strong>：Nothing stabilizes acute coronary occlusion quite like opening up the artery；等「穩定」再介入對誰都沒有好處。</li><li><strong>RBBB＋de Winter T 波＝LAD OMI</strong>：在 RBBB 底下仍要看 V2-V6 的 J-point ST depression 與不成比例的高大 T 波。</li><li><strong>瀰漫低電壓要想到大面積梗塞</strong>：在休克病人身上，突發低電壓可能是大範圍急性 MI 造成的 stunning。</li><li><strong>NSTEMI 標籤讓安全網失靈</strong>：指引雖有不穩定病人立即導管的條款，但貼上 NSTEMI 標籤後實務上很少被執行。</li><li><strong>用 ECG 在 troponin 證實心肌死亡前診斷</strong>：靠 troponin 診斷 MI 等於火燒完才救火；EMS 的 ECG 必須整合進決策。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>NSTE-ACS 中只要出現 refractory angina、血行動力學不穩定或電氣不穩定（VT/VF、需電擊），不論 ECG 是否符合 STEMI 標準，都屬 immediate invasive（2 小時內）。同理，hyperacute T 波、de Winter、posterior OMI 等「STEMI-negative OMI」都應以 OMI 思維即時處理；同時要回頭比對先前的 EMS ECG，不要只看最新一張。</p>",
+      "related": [
+        {
+          "title": "de Winter T 波並非穩定狀態；Posterior OMI 直立 T 波與之不同",
+          "url": "https://drsmithsecgblog.com/de-winters-t-waves-are-not-stable-ecg/"
+        },
+        {
+          "title": "出現 de Winter T 波時，LAD 真的完全阻塞嗎？",
+          "url": "https://drsmithsecgblog.com/is-lad-really-completely-occluded-when/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9279",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/50-something-with-vf-arrest-why-is-there-diffuse-st-depression-with-st-elevation-in-lead-iii/",
+      "tags": [
+        "Aslanger pattern",
+        "心內膜下缺血",
+        "Inferior OMI",
+        "心跳停止復甦後"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/06/After-resuscitation-1024x480.jpg",
+      "stem": "50 多歲男性，無過去病史，胸痛後發生心跳停止（VF），多次電擊後恢復自發循環，之後再次 VF、再度復甦並給予 amiodarone 300 mg。下圖為復甦後第一張 12-lead ECG：sinus tachycardia（約 135/min）合併 IVCD，I、II、aVL、aVF 與 V2-V6 呈 STD，aVR 有 STE，lead III 有輕微 STE。依 Dr. Smith 的判讀，這張 ECG 最可能代表什麼？",
+      "options": [
+        "復甦後短暫低灌流造成的 diffuse SEI，無 OMI 證據，先等 15 分鐘再複查",
+        "單純 posterior OMI，STD 最深在 V2-V4，為後壁 STE 的鏡像變化",
+        "Aslanger pattern：diffuse SEI 合併 inferior OMI，多為 circumflex 閉塞",
+        "Left main 急性閉塞，aVR STE 加上廣泛 STD 代表左主幹病灶"
+      ],
+      "answer": 2,
+      "explain": "<p><span class='lead'>判讀</span>Smith 指出這是 sinus tach 合併不符合任一 BBB 的 <strong>IVCD</strong>，I、II、aVL、aVF 與 V2-V6 有 STD，aVR 的 STE 是對應心尖導程 STD 的鏡像。關鍵在於：若只是 <strong>diffuse subendocardial ischemia（SEI）</strong>，STD 最深應在 II 與 V5，而且 lead III 也應該要有 STD；但這張圖的 <mark>lead III 反而出現輕微 STE</mark>，這就是 <strong>Aslanger pattern</strong>。向量上，SEI 的 STE 向量指向 aVR，inferior OMI 的 STE 向量指向 lead III，兩者相加後 STE 向量直接指向右方，因此只有 III 與 aVR 出現 STE，II、aVF 反而是 STD。原始定義雖排除 V2 有 STD 的情形（目的是避免與 inferior-posterior OMI 混淆），也未描述於 IVCD/BBB 情境，但 Smith 認為此案仍然適用。其意義是 <mark>3 vessel disease 造成的 SEI 加上 inferior OMI（通常來自 circumflex）</mark>。</p><p><span class='lead'>病程結果</span>Queen of Hearts 判為 posterior OMI（STEMI equivalent），cath lab 啟動。等待期間的第二張 ECG 看起來更像 posterior OMI。給予 heparin、aspirin，因高血壓使用靜脈血管擴張劑。Angiogram 顯示 <strong>3 vessel disease 合併 circumflex 閉塞</strong>：LCx ostial 80-90% 狹窄且中段閉塞，RCA 遠端為 chronic total occlusion，LAD 近端有 60% 與 90% 串聯狹窄，與 Aslanger 研究中多數病人的冠狀動脈攝影結果相同。當時未做介入治療，改安排 CABG。Echo 顯示 EF 5-10%，下壁有明顯壁動異常；hs trop I 由 1,029 ng/L 在 9 小時內升到 >60,000。13 小時後的 ECG 出現下壁 Q 波，缺血暫時緩解。MRI 顯示 EF 31%、各區域仍有存活心肌。之後病人反覆出現胸痛與 flash pulmonary edema，ECG 缺血加重，troponin 再升至 21,654 ng/L。數天後才接受 3 條血管 bypass，病人恢復尚可。Grauer 回顧認為，應在 CABG 前數天就先做 PCI。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「復甦後短暫低灌流造成的 diffuse SEI，無 OMI 證據，先等 15 分鐘再複查」</strong>：復甦後複查 ECG 確實是常用原則，Grauer 一開始也把 ECG #1 讀成 DSI。但單純 SEI 時 lead III 應為 STD；這裡 lead III 出現 STE，表示合併 inferior OMI。後續 angiogram 也證實 circumflex 閉塞。</li><li><strong>「單純 posterior OMI，STD 最深在 V2-V4，為後壁 STE 的鏡像變化」</strong>：這是 Queen of Hearts 的判讀。但它無法解釋 I、II、aVL、aVF、V5-V6 的廣泛 STD 與 aVR 的 STE（即 diffuse SEI），也無法解釋孤立的 lead III STE。本案實際上是 3 vessel disease 加上 circumflex OMI。</li><li><strong>「Left main 急性閉塞，aVR STE 加上廣泛 STD 代表左主幹病灶」</strong>：Smith 認為 aVR 的 STE 只是心尖導程 STD 的鏡像，屬於 SEI 表現。Angiogram 上 left main 僅有輕微 plaque，真正的病灶是 3 vessel disease 與 circumflex 閉塞。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>SEI 時 lead III 不該有 STE</strong>：diffuse SEI 的 STD 最深在 II 與 V5，lead III 也應下壓；若 lead III 反而上抬，要想到 Aslanger pattern。</li><li><strong>用向量相加理解 Aslanger pattern</strong>：SEI 的 STE 向量指向 aVR，inferior OMI 的向量指向 III，相加後指向右方，所以只有 III 與 aVR 出現 STE。</li><li><strong>Aslanger pattern 的意義</strong>：代表 3 vessel disease 造成的 SEI 加上 inferior OMI，通常是 circumflex 閉塞，需要儘速 cath。</li><li><strong>連續 ECG 與反覆缺血必須處理</strong>：已知有急性閉塞又反覆出現 flash pulmonary edema、troponin 持續上升時，延後再灌流（等 CABG）可能造成更多梗塞。</li><li><strong>復甦後 ECG 的解讀</strong>：ROSC 後的 diffuse STD 可等約 15 分鐘複查；但若有 lead III 孤立 STE 等 OMI 線索，就不能只當成低灌流。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>遇到「diffuse STD 加上 aVR STE」時，不要直接判定為 left main 或單純 SEI，應逐一檢查 inferior 三導程是否不一致：只有 III 上抬、II 與 aVF 下壓，就是 SEI 與 inferior OMI 向量疊加的結果。同理，若 STD 最深在 V2-V4 而非 V5-V6，則要考慮合併 posterior OMI（Aslanger 與 inferior-posterior OMI 的鑑別）。即使在 IVCD 或 BBB 的背景下，向量疊加的邏輯依然適用。</p>",
+      "related": [
+        {
+          "title": "Aslanger pattern 與 CT 顯示 LAD 中膈透壁缺血並不矛盾",
+          "url": "https://drsmithsecgblog.com/ecg-with-aslangers-pattern-ct-pulmonary/"
+        },
+        {
+          "title": "50 歲胸痛病人：發生了什麼事？（Emre Aslanger）",
+          "url": "https://drsmithsecgblog.com/the-pathophysiology-based-term-omi/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9333",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/severe-chest-pain-and-sinus-tachycardia/",
+      "tags": [
+        "LV aneurysm",
+        "偽 STEMI",
+        "心搏過速",
+        "高血鉀"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2010/10/vomitingtachyrenalfailure1.jpg",
+      "stem": "54 歲男性，有腎臟移植病史且移植腎功能不佳，整天反覆嘔吐，晚上 10 點出現劇烈胸骨後壓榨性胸痛。到院血壓 111/66 mmHg，心跳 117 次/分。住院醫師以 STEMI 為診斷，已啟動 cath lab，並把這張 ECG 交給你。依 ECG 並結合臨床情境，下列哪一個判斷最恰當？",
+      "options": [
+        "急性 inferolateral OMI（STE 伴 I、aVL reciprocal STD），應立即 PCI",
+        "急性 pericarditis：廣泛 STE 合併心搏過速，應給予 NSAID 治療",
+        "急性 PE 致右心負荷，inferior STE 為 RV strain 表現，應安排 CTPA",
+        "舊 inferior MI 之 LV aneurysm 形態 STE，心搏過速源於脫水等非 ACS 病因"
+      ],
+      "answer": 3,
+      "explain": "<p><span class='lead'>判讀</span>這張 ECG 為 <strong>sinus tachycardia</strong>，II、III、aVF 及 V3-V6 有 STE，I、aVL 有 reciprocal STD，乍看像 STEMI。不過 Smith 強調：<mark>ACS/OMI 除非合併 cardiogenic shock，通常不會造成心搏過速</mark>。心搏過速合併 ST 異常，較常源於潛在疾病（PE、sepsis、出血、脫水、缺氧、呼吸衰竭等），必須先排除。另外，inferior 導程已有<strong>成形良好的 Q 波</strong>，應懷疑是<strong>舊 MI 伴持續 STE（LV aneurysm morphology）</strong>。Inferior aneurysm 常呈 QR 波，因此比 anterior aneurysm（QS 波）更難辨識。Grauer 另外指出，這張圖有明顯的 <strong>low voltage</strong>，III、aVF、V1、V2 的 T 波尖銳，I、aVL 則是<mark>尖銳的倒置 T 波</mark>，並不是典型的 reciprocal change，提示可能有 hyperkalemia。</p><p><span class='lead'>病程結果</span>Bedside echo 沒有看到明顯的 wall motion abnormality，反而呈 <strong>hyperdynamic function</strong>。這與 cardiogenic shock 不符，較符合 sepsis 或容積不足。病人接受大量輸液，檢驗結果為 K 6.9 mEq/L、HCO3 8、Cr 13.4；輸液 3 公升後 CVP 仍很低。Troponin（4th generation，非 hs）最高 0.275 ng/ml，屬於 myocardial injury；即使算 MI，也很小，且較可能是供需失衡造成的 type 2 MI。由於 cath lab 已啟動，病人仍做了 angiogram，結果沒有急性冠狀動脈病灶。最終診斷為<strong>嚴重脫水，可能合併 sepsis</strong>。Queen of Hearts 只判讀 ECG，以低信心度（57%）判為 OMI。之後找到的舊 ECG 顯示 old inferior MI 伴持續 STE（LV aneurysm morphology），舊 echo 則有 diastolic dyskinesis。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「急性 inferolateral OMI，應立即 PCI」</strong>：病人心搏過速，但沒有 cardiogenic shock 的證據；inferior 已有成形 Q 波，提示舊 MI。Echo 呈 hyperdynamic、沒有 WMA，angiogram 也沒有急性病灶。I、aVL 的尖銳倒置 T 波也不像典型的 reciprocal change。</li><li><strong>「急性 pericarditis，應給予 NSAID」</strong>：此例 I、aVL 有 reciprocal STD，並非廣泛 STE。原文的最終診斷是嚴重脫水，ST 變化來自舊 inferior MI 的 aneurysm 形態，與 pericarditis 無關。</li><li><strong>「急性 PE 致 RV strain，應安排 CTPA」</strong>：PE 確實是心搏過速合併 ST 異常需鑑別的病因之一。但此例 echo 呈 hyperdynamic，輸液後 CVP 仍很低，符合容積不足，並非右心負荷；最終診斷為脫水（可能合併 sepsis）。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>評估與治療的是病人，不是 ECG</strong>：判讀 ECG 必須結合病人的病史與臨床脈絡。</li><li><strong>ACS 通常不造成心搏過速</strong>：胸痛合併心搏過速卻沒有休克時，應積極尋找 ACS 以外的原因。</li><li><strong>Inferior Q 波伴 STE 可能是舊 MI 合併 LV aneurysm</strong>：inferior aneurysm 常呈 QR 波，比 anterior 的 QS 型更難辨識；找舊 ECG 比對非常有價值。</li><li><strong>Bedside echo 快速分流</strong>：hyperdynamic、沒有 WMA，代表要往 ACS 以外的診斷思考。不過 echo 無法區分 demand ischemia 與 ACS。</li><li><strong>Hyperkalemia 不一定有典型高尖 T 波</strong>：ECG 呈現的是疊加在 baseline 上的淨效應，有時表現為尖銳的倒置 T 波。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>low voltage 合併心搏過速時，一定要找出原因；STE 在快心率下也可能看起來更嚴重。遇到「新」STE 時，應確認舊 ECG 確實是真正的 baseline，再區分哪些是新的、哪些是舊的、哪些是新疊加在舊之上。Anterior LV aneurysm 則以 QS 波、輕度 STE、T 波輕度直立或微倒為特徵。</p>",
+      "related": [
+        {
+          "title": "Subtle anterior STEMI 疊加於 anterior LV aneurysm 形態",
+          "url": "https://drsmithsecgblog.com/subtle-anterior-stemi-superimposed-on/"
+        },
+        {
+          "title": "ST 上升：舊 MI（LV aneurysm）還是急性 STEMI？",
+          "url": "https://drsmithsecgblog.com/st-elevation-is-it-due-to-old-mi-lv/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9314",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/if-you-cant-listen-to-a-good-student-your-patient-might-be-in-trouble/",
+      "tags": [
+        "Aslanger pattern",
+        "後壁 OMI",
+        "NSTEMI 陷阱",
+        "止痛藥掩蓋缺血"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/07/AM-ECG-1-614x1024.jpeg",
+      "stem": "70 歲男性，有高血壓、缺血性心臟病、心衰竭病史，仍在抽菸。因持續約 6 小時的胸骨後胸痛合併喘來到急診，2 個月前曾有類似胸痛。到院立即做了這張 12-lead ECG（首次 troponin 尚未回報）。下列何者是最正確的判讀與處置？",
+      "options": [
+        "急性 OMI：Aslanger pattern（inferior OMI）合併 posterior OMI，應緊急心導管再灌流",
+        "左心室肥大合併 strain pattern，加上心衰竭造成的繼發性 ST-T 變化，需安排心臟超音波",
+        "Diffuse subendocardial ischemia 合併 aVR STE，屬非閉塞性 NSTEMI，先內科治療，排定延遲性心導管",
+        "未達 STEMI 標準之 NSTE-ACS，先給止痛與抗心絞痛藥物，依 serial troponin 再決定"
+      ],
+      "answer": 0,
+      "explain": "<p><span class='lead'>判讀</span>Smith 認為這張 ECG <strong>diagnostic of OMI（acute coronary occlusion）</strong>，是兩種型態的混合：(1) <mark><strong>Aslanger's pattern</strong>：單一肢導程 <strong>lead III STE</strong>，同時合併 V5-6 明顯 ST depression（subendocardial ischemia）</mark>，代表 inferior OMI；(2) <strong>posterior OMI</strong>：V2 深度 ST depression。Grauer 補充：竇性心律、窄 QRS、無 chamber enlargement、下壁導程有略寬的 Q 波、早期 R wave transition；III、aVR、V1 有 STE，且至少 7/12 導程有 <mark>明顯 downsloping ST depression</mark>，絕不可能漏看。Smith 也提到 PMCardio Queen of Hearts 有看出 inferior/posterior 的部分，但另一個 SEI 模型只給 SEI 24.6%，且未標示 V5-6。</p><p><span class='lead'>病程結果</span>首次 troponin I（69 分鐘）為 0.030 ng/mL，病人被當作「NSTEMI」處理。120 分鐘重做 ECG，病人仍胸痛、型態依舊驚人；4.5 小時第二次 troponin 為 717 ng/L。5 小時 20 分轉入 CCU，因劇痛給予 Tramadol，疼痛僅稍減、未完全緩解，被排定 2 天後延遲心導管。醫學生 Omer 辨識出 Aslanger's + posterior OMI 並向醫師建議立即再灌流，卻沒人採信（「這只是 Non-STEMI」）。隔天第三次 troponin 已 >15,000 ng/L（檢驗上限），病人持續胸痛，最後在預定心導管當天早上、進導管室前死亡。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「Diffuse subendocardial ischemia 合併 aVR STE，屬非閉塞性 NSTEMI，排定延遲性心導管」</strong>：前半描述本身與 Grauer 判讀一致（≥6-7 導程 ST depression 合併 aVR STE），錯在後半結論。Smith 指出 III STE 加上 V5-6 SEI 為 Aslanger's pattern、V2 深 STD 為 posterior OMI，是急性冠狀動脈閉塞，不是可等待的 NSTEMI；本案正是因此延誤而死亡。</li><li><strong>「左心室肥大合併 strain pattern」</strong>：Grauer 判讀明確寫無 chamber enlargement；且病人為新發、持續 6 小時胸痛，III/aVR/V1 STE 合併廣泛 downsloping STD 應視為急性缺血。</li><li><strong>「先給止痛與抗心絞痛藥物，依 serial troponin 再決定」</strong>：本案首次 troponin 正常，卻是 OMI；Smith 強調以止痛藥處理缺血性疼痛會掩蓋缺血、與高死亡率相關，止痛藥只應在決定進導管室後才使用。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>NSTEMI 診斷會殺人</strong>：Smith：「NSTEMI is a worthless diagnosis. NSTEMI diagnosis kills. Millimeters kill」。</li><li><strong>Aslanger's pattern</strong>：inferior OMI 只在 lead III 有 STE，同時合併 V5-6 SEI 的 ST depression。</li><li><strong>未決定上導管前勿給鴉片類止痛</strong>：止痛只緩解疼痛，不解除缺血，會讓人誤以為內科治療有效。</li><li><strong>善用 AI 與重複 ECG</strong>：判讀能力不足時用 Queen of Hearts 把關；有疑慮時應在 10-20 分鐘內重做 ECG，而非等 120 分鐘。</li><li><strong>放下權威</strong>：學生、paramedic、ECG 技術員常比醫師更會辨識 OMI。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>看到「單一 lead III STE＋V5-6 STD」要想到 Aslanger's pattern；V2 等前胸導程的明顯 ST depression 則要想到 posterior OMI。Grauer 強調：高風險、新發持續胸痛病人出現廣泛明顯 ST depression，不論病歷寫什麼診斷，都應盡速心導管釐清解剖。</p>",
+      "related": [
+        {
+          "title": "50 歲胸痛病人：到底怎麼了？（Emre Aslanger）",
+          "url": "https://drsmithsecgblog.com/the-pathophysiology-based-term-omi/"
+        },
+        {
+          "title": "Aslanger pattern：CTPA 見 LAD 缺血不矛盾",
+          "url": "https://drsmithsecgblog.com/ecg-with-aslangers-pattern-ct-pulmonary/"
+        }
+      ]
+    },
+    {
+      "id": "smith-9374",
+      "source": "smith",
+      "sourceUrl": "https://drsmithsecgblog.com/do-you-understand-this-pattern-what-happens-next/",
+      "tags": [
+        "再灌流型態",
+        "下後壁OMI",
+        "再阻塞",
+        "院前ECG"
+      ],
+      "image": "https://drsmithsecgblog.com/wp-content/uploads/2026/09/ems1-1024x310.png",
+      "stem": "40 多歲男性，起身時突發「背痛」而呼叫 EMS。BLS 抵達時生命徵象正常，疼痛已減輕或緩解。EMS 監視器的電腦判讀並未顯示「STEMI」或「acute MI」。下圖為現場記錄的 12-lead ECG。依此 ECG，最適當的判讀為何？",
+      "options": [
+        "急性 inferoposterior OMI，冠狀動脈仍持續阻塞中（active occlusion pattern）",
+        "Inferoposterior reperfused OMI：梗塞血管近期阻塞後已再灌流，隨時可能再阻塞",
+        "陳舊性下壁心肌梗塞合併持續 STE（LV aneurysm morphology），無急性變化",
+        "下壁 T 波倒置屬非特異性變化，V2-V3 高 T 波為正常變異，可安排門診追蹤"
+      ],
+      "answer": 1,
+      "explain": "<p><span class='lead'>判讀</span>Pendell Meyers 判讀為 <strong>Inferoposterior reperfused OMI</strong>：下壁導程仍有<strong>小幅殘餘 STE</strong>，並描述 I、aVL 有對應性 STD；下壁導程出現 <strong>reperfusion T wave inversion</strong>，V1-V3 則出現 <strong>posterior reperfusion T waves</strong>（比正常前壁直立 T 波更高）。<mark>代表供應下壁與後壁的血管近期曾阻塞，但在此 ECG 之前已稍微打開（或建立側枝循環）</mark>，因此 active OMI pattern 消退、進入 reperfusion pattern。Grauer 補充：II、III、aVF 有 ST coving 與殘餘 STE，並有深 Q 波（QS complexes），提示梗塞可能數小時（或更久）前已開始；他對 aVL 的描述略有不同，認為 aVL 是明顯的 <strong>ST flattening</strong> 而非 ST depression，並以此支持急性事件應已開始一段時間。兩人對整體結論（近期 infero-postero OMI、目前呈再灌流型態）一致。PMcardio Queen of Hearts 也以高信心判讀正確，預測 culprit 為 RCA。</p><p><span class='lead'>病程結果</span>EMS 因電腦未判 STEMI、主訴為「背痛」而非胸痛、且疼痛已改善，未將 ECG 傳給醫師判讀；病人拒絕送醫，EMS 囑咐疼痛復發要再打電話。約 90 分鐘後疼痛復發再次呼叫 EMS，重做 ECG 顯示<mark>再阻塞（reocclusion）</mark>：下壁 hyperacute ST-T 合併 STE、aVL 對應性 STD。到急診時疼痛持續，下壁 STE 進一步增加，啟動 cath lab 並給予最大藥物治療；抵達導管室時症狀又緩解。導管發現 RCA 病灶 99% 狹窄、TIMI 3 flow，接受 PCI；術後 ECG 回到 reperfusion 型態。hs-troponin I（URL &lt;20 ng/L）為 2,552，之後 &gt;25,000。</p><div class='wo'><span class='wo-title'>✗ 為何其他選項不對</span><ul><li><strong>「急性 inferoposterior OMI，冠狀動脈仍持續阻塞中」</strong>：此圖下壁僅剩小幅 STE、T 波已倒置，V1-V3 為高聳的後壁再灌流 T 波，屬 reperfusion pattern；真正的 active occlusion（hyperacute ST-T、STE）出現在約 90 分鐘後再阻塞時的 ECG。</li><li><strong>「陳舊性下壁心肌梗塞合併持續 STE（LV aneurysm morphology）」</strong>：病人為急性症狀，T 波倒置與後壁高 T 是近期再灌流的動態變化；隨後迅速再阻塞、troponin 大幅上升，證實為急性事件。Grauer 也指出這些 QS 波之後竟然退化成小 q 波，並非永久性的陳舊疤痕。</li><li><strong>「非特異性變化／正常變異，可門診追蹤」</strong>：這正是本案 EMS 因電腦未判 STEMI 而低估的情況；作者認為此 ECG 極具診斷性，再灌流型態代表高再阻塞風險，需立即積極處置。</li></ul></div><div class='lp'><span class='lp-title'>💡 值得學習的重點</span><ul><li><strong>Reperfusion pattern 可見於所有血管分布</strong>：下壁與後壁同樣會出現，且代表若無積極立即治療則再阻塞風險高。</li><li><strong>暫時再灌流隨時可能再阻塞</strong>：優良藥物治療理論上可降低風險，但無法保證；本案約 90 分鐘即再阻塞。</li><li><strong>ACS 是動態的</strong>：導管當下的 TIMI flow 無法代表病程其他時間點的血流狀態。</li><li><strong>99% 狹窄不等於無血流</strong>：決定缺血的是血流（尤其微血管血流），狹窄程度本身不代表缺血。</li><li><strong>勿因症狀暫時改善而降低優先順序</strong>：這樣做風險很大、好處很少。</li></ul></div><p class='extend'><strong>觸類旁通：</strong>Grauer 強調症狀與 ECG 會隨 culprit 血管的阻塞／再灌流而起伏（stuttering course）：疼痛緩解時對應 reperfusion T waves，疼痛復發時對應 hyperacute ST-T 與 STE，且這些變化可能很快出現。他也指出下壁 OMI 時 V1 缺乏 STD，可能是同時存在的急性 RV MI 所造成的 V1 STE 抵銷了後壁 OMI 的 STD，此時應考慮做 right-sided leads，並懷疑 proximal RCA 為 culprit。</p>",
+      "related": [
+        {
+          "title": "微血管再灌流不良（No Reflow）：ECG 最能診斷",
+          "url": "https://drsmithsecgblog.com/poor-microvascular-reperfusion-no/"
+        },
+        {
+          "title": "轉院來的病人現已無症狀，你會怎麼處置？",
+          "url": "https://drsmithsecgblog.com/what-will-you-do-for-this-patient/"
+        }
+      ]
     }
   ]
 }
