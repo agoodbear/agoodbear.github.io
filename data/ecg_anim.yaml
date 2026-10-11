@@ -673,6 +673,32 @@ items:
   blog_url: https://agoodbear.com/post/medium-7bca25391302/
   published: true
   published_at: '2026-10-06'
+- id: wpw-02-syndrome
+  series: mechanism
+  title: WPW pattern ≠ WPW syndrome
+  subtitle: WPW系列 02
+  point: pattern＋心律不整發作＝syndrome；看到三件事，先問有沒有心悸過
+  duration: 49.75
+  refs:
+  - Goldberger's Clinical Electrocardiography 9th
+  - Chou's Electrocardiography 6th
+  - Netter's Cardiology 3rd
+  - ESC Textbook of Cardiovascular Medicine
+  - Tintinalli's Emergency Medicine 9th
+  - Dr. Smith's ECG Blog
+  refs_src: wpw-02-syndrome/social_caption.txt（IG 版「出處」）＋facts/wpw02-facts.md
+  version: v1
+  src: wpw-02-syndrome/out/wpw-02-syndrome-v1.mp4
+  src_phone: wpw-02-syndrome/out/wpw-02-syndrome-v1-phone.mp4
+  video: wpw-02-syndrome/wpw-02-syndrome-v1.mp4
+  phone: wpw-02-syndrome/wpw-02-syndrome-v1-phone.mp4
+  poster: wpw-02-syndrome/wpw-02-syndrome-v1-poster.webp
+  cover_src: wpw-02-syndrome/out/cover/wpw-02-syndrome.png
+  facts: wpw-02-syndrome/facts/wpw02-facts.md
+  blog_title: 這是什麼扭曲變形的ECG？
+  blog_url: https://agoodbear.com/post/medium-7bca25391302/
+  published: false
+  published_at: ''
 - id: hyperk-rightward-ste
   series: mechanism
   title: 高血鉀的特別長相
@@ -704,6 +730,32 @@ items:
   blog_url: https://agoodbear.com/post/medium-ef858cdd6d2/#rightward
   published: true
   published_at: '2026-10-04'
+- id: mimics-03-hyperca
+  series: mechanism
+  title: 高血鈣的STE
+  subtitle: STEMI mimics：ST段不見了
+  point: 高血鈣的STE，不是ST段被抬高，是ST段不見了
+  point_src: 片尾大字卡（第9句）
+  duration: 53.2
+  refs:
+  - Marriott's Practical Electrocardiography 13th
+  - Basic & Bedside Electrocardiography (Baltazar)
+  - Goldberger's Clinical Electrocardiography 9th
+  - Mattu, ECG in Emergency, Acute & Critical Care 2e
+  - Dr. Smith's ECG Blog
+  refs_src: mimics-03-hyperca/social_caption.txt（IG 版「出處」）＋facts/hyperca-facts.md
+  version: v1
+  src: mimics-03-hyperca/out/mimics-03-hyperca-v1.mp4
+  src_phone: mimics-03-hyperca/out/mimics-03-hyperca-v1-phone.mp4
+  video: mimics-03-hyperca/mimics-03-hyperca-v1.mp4
+  phone: mimics-03-hyperca/mimics-03-hyperca-v1-phone.mp4
+  poster: mimics-03-hyperca/mimics-03-hyperca-v1-poster.webp
+  cover_src: mimics-03-hyperca/cover/13-mimics-03-hyperca.png
+  facts: mimics-03-hyperca/facts/hyperca-facts.md
+  blog_title: 意識不清的中年婦女
+  blog_url: https://agoodbear.com/post/ecg-post-4/
+  published: false
+  published_at: ''
 - id: mobitz1-vs-cavb
   series: mechanism
   title: 這個像CAVB嗎？
@@ -991,8 +1043,8 @@ items:
   cover_src: _workflow/reels_cover/out/14-ncq-03-tx.png
   blog_title: Narrow QRS tachycardia
   blog_url: https://agoodbear.com/post/medium-962b3d4d3f0e/
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-11'
 - id: rbbb-stemi
   series: omi
   title: RBBB合併STEMI
