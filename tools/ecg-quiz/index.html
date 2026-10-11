@@ -483,7 +483,7 @@ function refreshWrongUI(){
   modeWrongN.textContent=n;
 }
 
-function srcChip(q){ const s=SOURCES[q.source]||SOURCES.own; return '<span class="src-chip" style="background:'+s.color+'e8"><span class="dot"></span>'+s.name+'</span>'; }
+function srcChip(q){ const s=SOURCES[q.source]||SOURCES.own; return '<span class="src-chip" style="background:'+s.color+'e8"><span class="dot"></span>'+(q.image&&q.source!=="own"?"圖片來源：":"")+s.name+'</span>'; }
 
 function openLightbox(url){ $("lightboxImg").src=url; $("lightbox").classList.add("open"); document.body.style.overflow="hidden"; $("caliper").style.left=Math.round(window.innerWidth/2)+"px"; const c=$("lightboxClose"); if(c) c.focus(); }
 function closeLightbox(){ $("lightbox").classList.remove("open"); $("lightboxImg").src=""; document.body.style.overflow=""; if(window.__resetLbTools)window.__resetLbTools(); }
@@ -495,15 +495,18 @@ function jumpTo(id){ const i=idToIdx.get(id); if(i!==undefined){ show(i); window
 function setFigure(q,idx){
   if(q.image){
     figure.className="figure has-img";
-    figure.innerHTML='<img class="ecg-img" src="'+q.image+'" alt="ECG 12 導程" referrerpolicy="no-referrer" tabindex="0" role="button" aria-label="放大檢視 ECG 圖（按 Enter 開啟）">';
+    // 先讀自己 R2 的備份（ecgimg.agoodbear.com），讀不到再退回原站圖
+    let src=q.imageMirror||q.image;
+    figure.innerHTML='<img class="ecg-img" src="'+src+'" alt="ECG 12 導程" referrerpolicy="no-referrer" tabindex="0" role="button" aria-label="放大檢視 ECG 圖（按 Enter 開啟）">';
     figcap.innerHTML=srcChip(q)+'<span class="zoom-hint">🔍 點圖放大</span>';
     const img=figure.querySelector(".ecg-img");
-    img.addEventListener("click",()=>openLightbox(q.image));
-    img.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "||e.code==="Space"){ e.preventDefault(); e.stopPropagation(); openLightbox(q.image); } });
-    // 原圖掛在 Smith 部落格，對方 CDN 偶爾短暫失敗：先自動重試一次，仍失敗才顯示佔位圖＋手動重試鈕
+    img.addEventListener("click",()=>openLightbox(src));
+    img.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "||e.code==="Space"){ e.preventDefault(); e.stopPropagation(); openLightbox(src); } });
+    // 備份讀不到→改讀原站；原站 CDN 偶爾短暫失敗→再自動重試一次；都不行才顯示佔位圖＋手動重試鈕
     let retried=false;
     img.addEventListener("error",()=>{
       if(!img.isConnected) return;
+      if(src!==q.image){ src=q.image; img.src=src; return; }
       if(!retried){ retried=true; setTimeout(()=>{ if(img.isConnected) img.src=q.image+(q.image.includes("?")?"&":"?")+"r="+Date.now(); },1500); return; }
       figure.className="figure"; figure.innerHTML=placeholder(q.source,idx)+'<button type="button" class="img-fail">⚠️ 原圖載入失敗・點此重試</button>'; figcap.innerHTML=srcChip(q);
       figure.querySelector(".img-fail").addEventListener("click",e=>{ e.stopPropagation(); setFigure(q,idx); });
