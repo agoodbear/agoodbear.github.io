@@ -673,6 +673,32 @@ items:
   blog_url: https://agoodbear.com/post/medium-7bca25391302/
   published: true
   published_at: '2026-10-06'
+- id: wpw-01-delta
+  series: mechanism
+  title: 認WPW，要同時看到三件事
+  subtitle: WPW系列 01
+  point: 短PR、寬QRS、delta wave三件事一起看；三件事來自同一條旁路
+  duration: 59.52
+  refs:
+  - Tintinalli's Emergency Medicine 9th
+  - Goldberger's Clinical Electrocardiography 9th
+  - Harrison's Principles of Internal Medicine 20th
+  - Chou's Electrocardiography 6th
+  - ECG in Emergency Medicine and Acute Care (Chan, Brady, et al.)
+  - Dr. Smith's ECG Blog
+  refs_src: wpw-01-delta/social_caption.txt（IG 版「出處」）＋facts/wpw01-facts.md
+  version: v2
+  src: wpw-01-delta/out/wpw-01-delta-v2.mp4
+  src_phone: wpw-01-delta/out/wpw-01-delta-v2-phone.mp4
+  video: wpw-01-delta/wpw-01-delta-v2.mp4
+  phone: wpw-01-delta/wpw-01-delta-v2-phone.mp4
+  poster: wpw-01-delta/wpw-01-delta-v2-poster.webp
+  cover_src: wpw-01-delta/out/cover/wpw-01-triad.png
+  facts: wpw-01-delta/facts/wpw01-facts.md
+  blog_title: 67歲暈厥的阿姨
+  blog_url: https://agoodbear.com/post/ecg-post-10/
+  published: false
+  published_at: ''
 - id: wpw-02-syndrome
   series: mechanism
   title: WPW pattern ≠ WPW syndrome
@@ -695,6 +721,58 @@ items:
   poster: wpw-02-syndrome/wpw-02-syndrome-v1-poster.webp
   cover_src: wpw-02-syndrome/out/cover/wpw-02-syndrome.png
   facts: wpw-02-syndrome/facts/wpw02-facts.md
+  blog_title: 這是什麼扭曲變形的ECG？
+  blog_url: https://agoodbear.com/post/medium-7bca25391302/
+  published: false
+  published_at: ''
+- id: wpw-03-ortho
+  series: mechanism
+  title: WPW跳快，QRS一定寬嗎？
+  subtitle: WPW系列 03
+  point: WPW跳快，看電流怎麼繞：下去走AV node，QRS窄；下去走旁路，QRS寬
+  duration: 52.41
+  refs:
+  - Goldberger's Clinical Electrocardiography 9th
+  - Mattu, Electrocardiography in Emergency, Acute, and Critical Care
+  - Rosen's Emergency Medicine
+  - Chou's Electrocardiography 6th
+  - Tintinalli's Emergency Medicine 9th
+  - ESC Textbook of Cardiovascular Medicine
+  - Atlas of Electrocardiography
+  - Josephson, Clinical Cardiac Electrophysiology
+  - Dr. Smith's ECG Blog
+  refs_src: wpw-03-ortho/social_caption.txt（IG 版「出處」）＋facts/wpw03-facts.md
+  version: v5B
+  src: wpw-03-ortho/out/wpw-03-ortho-v5B.mp4
+  src_phone: wpw-03-ortho/out/wpw-03-ortho-v5B-phone.mp4
+  video: wpw-03-ortho/wpw-03-ortho-v5B.mp4
+  phone: wpw-03-ortho/wpw-03-ortho-v5B-phone.mp4
+  poster: wpw-03-ortho/wpw-03-ortho-v5B-poster.webp
+  cover_src: wpw-03-ortho/out/cover/wpw-03-ortho-v2.png
+  facts: wpw-03-ortho/facts/wpw03-facts.md
+  blog_title: 這是什麼扭曲變形的ECG？
+  blog_url: https://agoodbear.com/post/medium-7bca25391302/
+  published: false
+  published_at: ''
+- id: wpw-trailer
+  series: mechanism
+  title: WPW系列預告
+  subtitle: 三支片的重點一次看
+  point: WPW三件事：短PR、寬QRS、delta wave｜WPW pattern＋心律不整發作＝WPW syndrome｜WPW跳快：可能寬、也可能窄，看電流怎麼繞
+  duration: 32.0
+  refs:
+  - Dr. Smith's ECG Blog 2024-05-08（同一位病人：隔天竇性、發作當下）
+  - Goldberger's Clinical Electrocardiography 9th
+  - Chou's Electrocardiography 6th
+  - Tintinalli's Emergency Medicine 9th
+  refs_src: 三支各自的refs（wpw-01-delta、wpw-02-syndrome、wpw-03-ortho），重點句照各片片尾字卡
+  version: v7
+  src: series-wpw-trailer/out/series-wpw-trailer-v7.mp4
+  src_phone: series-wpw-trailer/out/series-wpw-trailer-v7-phone.mp4
+  video: series-wpw-trailer/series-wpw-trailer-v7.mp4
+  phone: series-wpw-trailer/series-wpw-trailer-v7-phone.mp4
+  poster: series-wpw-trailer/series-wpw-trailer-v7-poster.webp
+  cover_src: series-wpw-trailer/out/cover/series-wpw-trailer.png
   blog_title: 這是什麼扭曲變形的ECG？
   blog_url: https://agoodbear.com/post/medium-7bca25391302/
   published: false
@@ -754,8 +832,8 @@ items:
   facts: mimics-03-hyperca/facts/hyperca-facts.md
   blog_title: 意識不清的中年婦女
   blog_url: https://agoodbear.com/post/ecg-post-4/
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-12'
 - id: mobitz1-vs-cavb
   series: mechanism
   title: 這個像CAVB嗎？

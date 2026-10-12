@@ -555,6 +555,18 @@ items:
     - AHA 2025 Adult ALS (Circulation 2025;152:S538)
     - Heart model adapted from BodyParts3D, © DBCLS, CC BY 4.0
     zh_hash: '70e9e0c6bc'
+  wpw-01-delta:
+    title: 'Spotting WPW: look for all three'
+    subtitle: WPW series 01
+    point: 'Look for all three together: short PR, wide QRS, delta wave. All three come from the same accessory pathway'
+    refs:
+    - Tintinalli's Emergency Medicine 9th
+    - Goldberger's Clinical Electrocardiography 9th
+    - Harrison's Principles of Internal Medicine 20th
+    - Chou's Electrocardiography 6th
+    - ECG in Emergency Medicine and Acute Care (Chan, Brady, et al.)
+    - Dr. Smith's ECG Blog
+    zh_hash: 'e90aac2c78'
   wpw-02-syndrome:
     title: WPW pattern ≠ WPW syndrome
     subtitle: WPW series 02
@@ -567,6 +579,31 @@ items:
     - Tintinalli's Emergency Medicine 9th
     - Dr. Smith's ECG Blog
     zh_hash: '29cdca1b06'
+  wpw-03-ortho:
+    title: 'Fast WPW: is the QRS always wide?'
+    subtitle: WPW series 03
+    point: 'Fast WPW: it depends on which way the impulse loops. Down the AV node, narrow QRS; down the accessory pathway, wide QRS'
+    refs:
+    - Goldberger's Clinical Electrocardiography 9th
+    - Mattu, Electrocardiography in Emergency, Acute, and Critical Care
+    - Rosen's Emergency Medicine
+    - Chou's Electrocardiography 6th
+    - Tintinalli's Emergency Medicine 9th
+    - ESC Textbook of Cardiovascular Medicine
+    - Atlas of Electrocardiography
+    - Josephson, Clinical Cardiac Electrophysiology
+    - Dr. Smith's ECG Blog
+    zh_hash: 'e82a4b6868'
+  wpw-trailer:
+    title: 'WPW series: trailer'
+    subtitle: The key points of all three videos at once
+    point: 'The three things of WPW: short PR, wide QRS, delta wave | WPW pattern + arrhythmia episodes = WPW syndrome | Fast WPW: the QRS can be narrow or wide, depending on which way the impulse loops'
+    refs:
+    - Dr. Smith's ECG Blog 2024-05-08 (same patient: the next day in sinus rhythm, and during the episode)
+    - Goldberger's Clinical Electrocardiography 9th
+    - Chou's Electrocardiography 6th
+    - Tintinalli's Emergency Medicine 9th
+    zh_hash: 'dc550b6a53'
   mimics-03-hyperca:
     title: The STE of hypercalcemia
     subtitle: 'STEMI mimics: the ST segment disappears'
