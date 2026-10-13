@@ -697,8 +697,8 @@ items:
   facts: wpw-01-delta/facts/wpw01-facts.md
   blog_title: 67歲暈厥的阿姨
   blog_url: https://agoodbear.com/post/ecg-post-10/
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-14'
 - id: wpw-02-syndrome
   series: mechanism
   title: WPW pattern ≠ WPW syndrome
