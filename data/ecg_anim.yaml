@@ -775,8 +775,8 @@ items:
   cover_src: series-wpw-trailer/out/cover/series-wpw-trailer.png
   blog_title: 這是什麼扭曲變形的ECG？
   blog_url: https://agoodbear.com/post/medium-7bca25391302/
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-13'
 - id: hyperk-rightward-ste
   series: mechanism
   title: 高血鉀的特別長相
