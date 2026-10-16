@@ -19,6 +19,10 @@ series:
     name: Differential diagnosis
     intro: Two things that look alike, compared side by side.
     zh_hash: '68851ff986'
+  airway:
+    name: Airway
+    intro: 'Intubation and airway management: one concept per video.'
+    zh_hash: '79d4a4eb13'
 items:
   omi-roster:
     title: OMI patterns at a glance
@@ -615,3 +619,14 @@ items:
     - Mattu, ECG in Emergency, Acute & Critical Care 2e
     - Dr. Smith's ECG Blog
     zh_hash: '809e19b372'
+  airway-01-safe-apnea:
+    title: SpO₂ is already 100%. Why not intubate yet?
+    subtitle: Airway series 01
+    point: 'Denitrogenation extends the safe apnea time, so the patient is safer: if intubation does not go smoothly, there is still extra safe time'
+    refs:
+    - ATLS 11th
+    - Weingart & Levitan, Ann Emerg Med 2012
+    - Tintinalli 9th
+    - Tanoubi, Can J Anaesth 2009
+    - Walls Manual 2017
+    zh_hash: 'e8f120d212'

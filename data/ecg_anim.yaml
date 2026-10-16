@@ -33,6 +33,9 @@ series:
 - id: ddx
   name: 鑑別診斷
   intro: 長得像的兩個東西，放在一起比。
+- id: airway
+  name: 呼吸道
+  intro: 插管與呼吸道處置：一支一個觀念。
 
 items:
 
@@ -752,8 +755,8 @@ items:
   facts: wpw-03-ortho/facts/wpw03-facts.md
   blog_title: 這是什麼扭曲變形的ECG？
   blog_url: https://agoodbear.com/post/medium-7bca25391302/
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-16'
 - id: wpw-trailer
   series: mechanism
   title: WPW系列預告
@@ -1231,3 +1234,29 @@ items:
   blog_url: https://agoodbear.com/post/ecg-post-15/
   published: true
   published_at: '2026-10-03'
+
+# ── 呼吸道系列 ────────────────────────────────────────────────────────
+- id: airway-01-safe-apnea
+  series: airway
+  title: SpO₂已經100%，為什麼還不插管？
+  subtitle: 呼吸道系列 01
+  point: 去氮化拉長safe apnea time，病人更安全；插管不順時，也多一段安全時間
+  point_src: 片尾卡畫面文字（v4）
+  duration: 63.41
+  refs:
+  - ATLS 11th
+  - Weingart & Levitan, Ann Emerg Med 2012
+  - Tintinalli 9th
+  - Tanoubi, Can J Anaesth 2009
+  - Walls Manual 2017
+  refs_src: 片尾卡畫面「參考：」（v4）＋safe-apnea-time/facts/facts.md
+  version: v4
+  src: safe-apnea-time/out/safe-apnea-time-v4.mp4
+  src_phone: safe-apnea-time/out/safe-apnea-time-v4-phone.mp4
+  video: safe-apnea-time/safe-apnea-time-v4.mp4
+  phone: safe-apnea-time/safe-apnea-time-v4-phone.mp4
+  poster: safe-apnea-time/safe-apnea-time-v4-poster.webp
+  cover_src: _workflow/reels_cover/out/01-airway-01-safe-apnea.png
+  facts: safe-apnea-time/facts/facts.md
+  published: false
+  published_at: ''
