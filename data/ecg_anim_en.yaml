@@ -23,6 +23,10 @@ series:
     name: Airway
     intro: 'Intubation and airway management: one concept per video.'
     zh_hash: '79d4a4eb13'
+  mattu-5step:
+    name: Amal Mattu's five-step ECG reading
+    intro: 'Rate, Rhythm, Axis, Intervals, Ischemia/Infarction: one step per episode.'
+    zh_hash: 'a60d30503d'
 items:
   omi-roster:
     title: OMI patterns at a glance
@@ -630,3 +634,15 @@ items:
     - Tanoubi, Can J Anaesth 2009
     - Walls Manual 2017
     zh_hash: 'e8f120d212'
+  mattu-1-1-rate:
+    title: 'Rate: check regularity first, then decide how to count'
+    subtitle: Amal Mattu's five-step ECG reading | 1-1 Rate
+    point: 'Regular: count the large boxes (300÷); irregular or very slow: count the QRS complexes in 10 seconds, ×6'
+    refs:
+    - ECG Weekly (Amal Mattu)
+    - Goldberger's Clinical Electrocardiography 9th
+    - Podrid's Real-World ECGs Vol 1
+    - Baltazar, Basic & Bedside Electrocardiography
+    - AHA 2025 Part 9 (Circulation 2025;152(suppl 2):S538–S577)
+    - Dr. Smith's ECG Blog
+    zh_hash: 'e7bcc1ad0e'

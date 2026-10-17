@@ -36,6 +36,9 @@ series:
 - id: airway
   name: 呼吸道
   intro: 插管與呼吸道處置：一支一個觀念。
+- id: mattu-5step
+  name: Amal Mattu ECG判讀五步驟
+  intro: Rate、Rhythm、Axis、Intervals、Ischemia/Infarction：一集一步。
 
 items:
 
@@ -1260,3 +1263,30 @@ items:
   facts: safe-apnea-time/facts/facts.md
   published: false
   published_at: ''
+
+# ── Amal Mattu ECG判讀五步驟 ──────────────────────────────────────────
+- id: mattu-1-1-rate
+  series: mattu-5step
+  title: Rate：先看規不規則，再決定怎麼算
+  subtitle: Amal Mattu ECG判讀五步驟｜1-1 Rate
+  point: 規則：數大格（300÷）；不規則或很慢：10秒QRS×6
+  point_src: 片尾卡畫面文字（final）＋STORYBOARD.md §9 說明欄第一行
+  duration: 62.19
+  refs:
+  - ECG Weekly (Amal Mattu)
+  - Goldberger's Clinical Electrocardiography 9th
+  - Podrid's Real-World ECGs Vol 1
+  - Baltazar, Basic & Bedside Electrocardiography
+  - AHA 2025 Part 9 (Circulation 2025;152(suppl 2):S538–S577)
+  - Dr. Smith's ECG Blog
+  refs_src: mattu-1-1-rate/STORYBOARD.md §9（說明欄「出處」＋「ECG」）＋facts/facts.md 作者群表
+  version: final
+  src: mattu-1-1-rate/out/mattu-1-1-rate-final.mp4
+  src_phone: mattu-1-1-rate/out/mattu-1-1-rate-final-phone.mp4
+  video: mattu-1-1-rate/mattu-1-1-rate-final.mp4
+  phone: mattu-1-1-rate/mattu-1-1-rate-final-phone.mp4
+  poster: mattu-1-1-rate/mattu-1-1-rate-final-poster.webp
+  cover_src: mattu-1-1-rate/cover/mattu-1-1-rate-cover.png
+  facts: mattu-1-1-rate/facts/facts.md
+  published: true
+  published_at: '2026-10-17'
