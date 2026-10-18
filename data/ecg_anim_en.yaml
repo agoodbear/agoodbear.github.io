@@ -672,3 +672,26 @@ items:
     - Ken Grauer ECG-2014 Pocket Brain
     - Dr. Smith's ECG Blog
     zh_hash: '0e88334443'
+  mattu-3-intervals:
+    title: 'Intervals: if the T wave ends past halfway, stop and measure the QTc'
+    subtitle: Amal Mattu's five-step ECG reading | 3 Intervals
+    point: If the T wave ends past halfway, stop and measure the QTc
+    refs:
+    - ECG Weekly (Amal Mattu)
+    - Goldberger's Clinical Electrocardiography 9th
+    - Marriott's Practical Electrocardiography 13th
+    - Tintinalli's Emergency Medicine 9th
+    - Rosen's Emergency Medicine 10th
+    - LITFL
+    - Dr. Smith's ECG Blog
+    zh_hash: 'f577c85378'
+  mattu-4-enlargement:
+    title: 'Enlargement: S + R of 35 or more, then look for strain'
+    subtitle: Amal Mattu's five-step ECG reading | 4 Enlargement
+    point: S + R of 35 or more, age over 35, then look for strain
+    refs:
+    - ECG Weekly (Amal Mattu)
+    - Ken Grauer ECG-2014 Pocket Brain
+    - Ken Grauer ECG Blog
+    - Dr. Smith's ECG Blog
+    zh_hash: 'edf2dc0eaa'

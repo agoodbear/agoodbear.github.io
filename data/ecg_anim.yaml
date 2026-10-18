@@ -1342,3 +1342,52 @@ items:
   facts: mattu-2-axis/facts/facts.md
   published: false
   published_at: ''
+- id: mattu-3-intervals
+  series: mattu-5step
+  title: Intervals：T波過半，停下來量QTc
+  subtitle: Amal Mattu ECG判讀五步驟｜3 Intervals
+  point: T波過半，停下來量QTc
+  point_src: 片尾卡畫面文字（final）＋STORYBOARD.md §1／§9 說明欄第一行
+  duration: 52.93
+  refs:
+  - ECG Weekly (Amal Mattu)
+  - Goldberger's Clinical Electrocardiography 9th
+  - Marriott's Practical Electrocardiography 13th
+  - Tintinalli's Emergency Medicine 9th
+  - Rosen's Emergency Medicine 10th
+  - LITFL
+  - Dr. Smith's ECG Blog
+  refs_src: mattu-3-intervals/out/caption_ig.txt「出處」＋facts/facts.md
+  version: final
+  src: mattu-3-intervals/out/mattu-3-intervals-final.mp4
+  src_phone: mattu-3-intervals/out/mattu-3-intervals-final-phone.mp4
+  video: mattu-3-intervals/mattu-3-intervals-final.mp4
+  phone: mattu-3-intervals/mattu-3-intervals-final-phone.mp4
+  poster: mattu-3-intervals/mattu-3-intervals-final-poster.webp
+  cover_src: mattu-3-intervals/cover/mattu-3-intervals-cover.png
+  facts: mattu-3-intervals/facts/facts.md
+  published: false
+  published_at: ''
+- id: mattu-4-enlargement
+  series: mattu-5step
+  title: Enlargement：S＋R 35以上，再看strain
+  subtitle: Amal Mattu ECG判讀五步驟｜4 Enlargement
+  point: S＋R 35以上，超過35歲，再看strain
+  point_src: 片尾卡畫面文字（v3＝final）＋IG說明欄第一行
+  duration: 59.7
+  refs:
+  - ECG Weekly (Amal Mattu)
+  - Ken Grauer ECG-2014 Pocket Brain
+  - Ken Grauer ECG Blog
+  - Dr. Smith's ECG Blog
+  refs_src: ~/scripts/ncq-publish/mattu-4-enlargement.ig.txt「出處」＋facts/facts.lvh.md
+  version: final
+  src: mattu-4-enlargement/out/mattu-4-enlargement-final.mp4
+  src_phone: mattu-4-enlargement/out/mattu-4-enlargement-final-phone.mp4
+  video: mattu-4-enlargement/mattu-4-enlargement-final.mp4
+  phone: mattu-4-enlargement/mattu-4-enlargement-final-phone.mp4
+  poster: mattu-4-enlargement/mattu-4-enlargement-final-poster.webp
+  cover_src: mattu-4-enlargement/cover/mattu-4-enlargement-cover.png
+  facts: mattu-4-enlargement/facts/facts.lvh.md
+  published: false
+  published_at: ''
