@@ -1290,3 +1290,55 @@ items:
   facts: mattu-1-1-rate/facts/facts.md
   published: true
   published_at: '2026-10-17'
+- id: mattu-1-2-rhythm
+  series: mattu-5step
+  title: Rhythm：叫名字之前，先問三句
+  subtitle: Amal Mattu ECG判讀五步驟｜1-2 Rhythm
+  point: 叫名字之前先問三句：①心房：去V1找 ②心室：規則？寬窄？ ③關係：數數看，2:1
+  point_src: 片尾卡畫面文字（final2）＋STORYBOARD.md §9 說明欄第一行
+  duration: 57.18
+  refs:
+  - ECG Weekly (Amal Mattu)
+  - Goldberger's Clinical Electrocardiography 9th
+  - Chou's Electrocardiography 6th
+  - Marriott's Practical Electrocardiography 13th
+  - Atlas of Electrocardiography
+  - Dr. Smith's ECG Blog
+  refs_src: mattu-1-2-rhythm/STORYBOARD.md §9（說明欄「出處」＋「ECG」）＋facts/facts.md 作者群表
+  version: final
+  src: mattu-1-2-rhythm/out/mattu-1-2-rhythm-final.mp4
+  src_phone: mattu-1-2-rhythm/out/mattu-1-2-rhythm-final-phone.mp4
+  video: mattu-1-2-rhythm/mattu-1-2-rhythm-final.mp4
+  phone: mattu-1-2-rhythm/mattu-1-2-rhythm-final-phone.mp4
+  poster: mattu-1-2-rhythm/mattu-1-2-rhythm-final-poster.webp
+  cover_src: mattu-1-2-rhythm/cover/mattu-1-2-rhythm-cover.png
+  facts: mattu-1-2-rhythm/facts/facts.md
+  published: true
+  published_at: '2026-10-18'
+- id: mattu-2-axis
+  series: mattu-5step
+  title: Axis：I正aVF負，再看II
+  subtitle: Amal Mattu ECG判讀五步驟｜2 Axis
+  point: 先看I，再看aVF；I正aVF負，再看II
+  point_src: 片尾卡畫面文字（final）＋STORYBOARD.md §11 說明欄第一行
+  duration: 86.2
+  refs:
+  - ECG Weekly (Amal Mattu)
+  - Goldberger's Clinical Electrocardiography 9th
+  - Marriott's Practical Electrocardiography 13th
+  - 'Podrid''s Real-World ECGs Vol 1: The Basics'
+  - The Only EKG Book You'll Ever Need 7th
+  - Pocket Emergency Medicine 4th
+  - Ken Grauer ECG-2014 Pocket Brain
+  - Dr. Smith's ECG Blog
+  refs_src: mattu-2-axis/STORYBOARD.md §11（說明欄「出處」＋「ECG」）＋facts/facts.md 作者群表
+  version: final
+  src: mattu-2-axis/out/mattu-2-axis-final.mp4
+  src_phone: mattu-2-axis/out/mattu-2-axis-final-phone.mp4
+  video: mattu-2-axis/mattu-2-axis-final.mp4
+  phone: mattu-2-axis/mattu-2-axis-final-phone.mp4
+  poster: mattu-2-axis/mattu-2-axis-final-poster.webp
+  cover_src: mattu-2-axis/cover/mattu-2-axis-cover.png
+  facts: mattu-2-axis/facts/facts.md
+  published: false
+  published_at: ''

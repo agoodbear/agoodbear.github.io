@@ -646,3 +646,29 @@ items:
     - AHA 2025 Part 9 (Circulation 2025;152(suppl 2):S538–S577)
     - Dr. Smith's ECG Blog
     zh_hash: 'e7bcc1ad0e'
+  mattu-1-2-rhythm:
+    title: 'Rhythm: ask three questions before naming it'
+    subtitle: Amal Mattu's five-step ECG reading | 1-2 Rhythm
+    point: 'Ask three questions before naming the rhythm: ① atria: look in V1 ② ventricles: regular? wide or narrow? ③ relationship: count them, 2:1'
+    refs:
+    - ECG Weekly (Amal Mattu)
+    - Goldberger's Clinical Electrocardiography 9th
+    - Chou's Electrocardiography 6th
+    - Marriott's Practical Electrocardiography 13th
+    - Atlas of Electrocardiography
+    - Dr. Smith's ECG Blog
+    zh_hash: 'e4c10dfe9e'
+  mattu-2-axis:
+    title: 'Axis: lead I positive, aVF negative, then check lead II'
+    subtitle: Amal Mattu's five-step ECG reading | 2 Axis
+    point: 'Look at lead I, then aVF; if I is positive and aVF negative, check lead II'
+    refs:
+    - ECG Weekly (Amal Mattu)
+    - Goldberger's Clinical Electrocardiography 9th
+    - Marriott's Practical Electrocardiography 13th
+    - 'Podrid''s Real-World ECGs Vol 1: The Basics'
+    - The Only EKG Book You'll Ever Need 7th
+    - Pocket Emergency Medicine 4th
+    - Ken Grauer ECG-2014 Pocket Brain
+    - Dr. Smith's ECG Blog
+    zh_hash: '0e88334443'
