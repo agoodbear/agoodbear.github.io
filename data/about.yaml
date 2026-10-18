@@ -81,6 +81,10 @@ press:
 
 # 新的在上
 talks:
+  - { date: "2026-10-17", host: "Yilan Claude Meetup", title: "一個急診醫師，怎麼走進Claude Code", title_en: "How an emergency physician walked into Claude Code", images: ["/images/ipic/lecture-2026-10-17-claude-meetup.jpg"] }
+  - { date: "2026-10-15", host: "陽明交大附醫第十六期基礎急重症護理訓練班", title: "五官科急症：ICU的我們為什麼要認識它們", host_en: "NYCU Hospital, 16th basic critical care nursing course", title_en: "Eye and ENT emergencies: why ICU teams need to know them", images: ["/images/ipic/lecture-2026-10-15-icu-ent-eye.jpg"] }
+  - { date: "2026-10-12", host: "臺北榮總員山分院", title: "ECG哪些你應該要知道？", host_en: "Taipei Veterans General Hospital, Yuanshan Branch", title_en: "ECG: what you should know", images: ["/images/ipic/lecture-2026-10-12-ecg-must-know.jpg"] }
+  - { date: "2026-10-12", host: "臺北榮總員山分院", title: "ACLS 2025更新指南", host_en: "Taipei Veterans General Hospital, Yuanshan Branch", title_en: "ACLS 2025 guideline update", images: ["/images/ipic/lecture-2026-10-12-acls-2025.jpg"] }
   - { date: "2026-06-30", host: "專師進階教育", title: "心電圖進階應用", host_en: "Nurse practitioner continuing education", title_en: "Advanced ECG applications", images: ["/images/ipic/lecture-2026-06-30-ecg-advanced.jpg"] }
   - { date: "2026-05-05", host: "專師進階教育", title: "心電圖基本判讀、正常與異常", host_en: "Nurse practitioner continuing education", title_en: "Basic ECG interpretation: normal and abnormal", images: ["/images/ipic/lecture-2026-05-05-ecg-basic.jpg"] }
   - { date: "2026-03-16", host: "台灣專科護理師學會", title: "專科護理師考試心電圖重點指引（改版）", host_en: "Taiwan Association of Nurse Practitioners", title_en: "ECG essentials for the nurse practitioner board exam (revised)", images: ["/images/ipic/lecture-2026-03-16-np-exam-ecg.png"] }
