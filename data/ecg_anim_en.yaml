@@ -695,3 +695,15 @@ items:
     - Ken Grauer ECG Blog
     - Dr. Smith's ECG Blog
     zh_hash: 'edf2dc0eaa'
+  mattu-5-1-qrst:
+    title: 'Ischemia: watch how the QRST changes'
+    subtitle: Amal Mattu's five-step ECG reading | 5-1 Ischemia
+    point: 'Step five: watch how the QRST changes'
+    refs:
+    - ECG Weekly (Amal Mattu)
+    - Braunwald's Heart Disease
+    - Goldberger's Clinical Electrocardiography
+    - Rosen's Emergency Medicine
+    - Basic & Bedside Electrocardiography (Baltazar)
+    - Dr. Smith's ECG Blog
+    zh_hash: 'b8ad026821'

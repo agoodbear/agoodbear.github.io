@@ -1391,3 +1391,28 @@ items:
   facts: mattu-4-enlargement/facts/facts.lvh.md
   published: false
   published_at: ''
+- id: mattu-5-1-qrst
+  series: mattu-5step
+  title: Ischemia：看QRST怎麼變
+  subtitle: Amal Mattu ECG判讀五步驟｜5-1 Ischemia
+  point: 第五步：看QRST怎麼變
+  point_src: 片尾卡畫面文字（final2）＋IG說明欄第一行
+  duration: 72.9
+  refs:
+  - ECG Weekly (Amal Mattu)
+  - Braunwald's Heart Disease
+  - Goldberger's Clinical Electrocardiography
+  - Rosen's Emergency Medicine
+  - Basic & Bedside Electrocardiography (Baltazar)
+  - Dr. Smith's ECG Blog
+  refs_src: ~/scripts/ncq-publish/mattu-5-1-qrst.ig.txt「出處」＋facts/facts.md
+  version: final2
+  src: mattu-5-1-qrst/out/mattu-5-1-qrst-final2.mp4
+  src_phone: mattu-5-1-qrst/out/mattu-5-1-qrst-final2-phone.mp4
+  video: mattu-5-1-qrst/mattu-5-1-qrst-final2.mp4
+  phone: mattu-5-1-qrst/mattu-5-1-qrst-final2-phone.mp4
+  poster: mattu-5-1-qrst/mattu-5-1-qrst-final2-poster.webp
+  cover_src: mattu-5-1-qrst/cover/mattu-5-1-qrst-cover.png
+  facts: mattu-5-1-qrst/facts/facts.md
+  published: false
+  published_at: ''
