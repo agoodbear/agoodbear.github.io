@@ -1340,8 +1340,8 @@ items:
   poster: mattu-2-axis/mattu-2-axis-final-poster.webp
   cover_src: mattu-2-axis/cover/mattu-2-axis-cover.png
   facts: mattu-2-axis/facts/facts.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-19'
 - id: mattu-3-intervals
   series: mattu-5step
   title: Intervals：T波過半，停下來量QTc
