@@ -1366,8 +1366,8 @@ items:
   poster: mattu-3-intervals/mattu-3-intervals-final-poster.webp
   cover_src: mattu-3-intervals/cover/mattu-3-intervals-cover.png
   facts: mattu-3-intervals/facts/facts.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-20'
 - id: mattu-4-enlargement
   series: mattu-5step
   title: Enlargement：S＋R 35以上，再看strain
