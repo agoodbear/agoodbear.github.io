@@ -707,3 +707,17 @@ items:
     - Basic & Bedside Electrocardiography (Baltazar)
     - Dr. Smith's ECG Blog
     zh_hash: 'b8ad026821'
+  mattu-5-2-st:
+    title: 'ST: look for the mirror image on the opposite side'
+    subtitle: Amal Mattu's five-step ECG reading | 5-2 ST
+    point: 'ST elevation? First look for the mirror image in the opposite lead'
+    refs:
+    - ECG Weekly (Amal Mattu)
+    - Basic & Bedside Electrocardiography (Baltazar)
+    - Goldberger's Clinical Electrocardiography
+    - Braunwald's Heart Disease
+    - Hurst's the Heart
+    - Chou's Electrocardiography in Clinical Practice
+    - Atlas of Electrocardiography
+    - Dr. Smith's ECG Blog
+    zh_hash: '65c771b79d'

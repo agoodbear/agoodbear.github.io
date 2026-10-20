@@ -1416,3 +1416,30 @@ items:
   facts: mattu-5-1-qrst/facts/facts.md
   published: false
   published_at: ''
+- id: mattu-5-2-st
+  series: mattu-5step
+  title: ST：去對面找鏡像
+  subtitle: Amal Mattu ECG判讀五步驟｜5-2 ST
+  point: ST抬高，先去對面找鏡像
+  point_src: 片尾卡畫面文字（final2）＋IG說明欄第一行
+  duration: 59.0
+  refs:
+  - ECG Weekly (Amal Mattu)
+  - Basic & Bedside Electrocardiography (Baltazar)
+  - Goldberger's Clinical Electrocardiography
+  - Braunwald's Heart Disease
+  - Hurst's the Heart
+  - Chou's Electrocardiography in Clinical Practice
+  - Atlas of Electrocardiography
+  - Dr. Smith's ECG Blog
+  refs_src: ~/scripts/ncq-publish/mattu-5-2-st.ig.txt「出處」＋facts/facts.md
+  version: final2
+  src: mattu-5-2-st/out/mattu-5-2-st-final2.mp4
+  src_phone: mattu-5-2-st/out/mattu-5-2-st-final2-phone.mp4
+  video: mattu-5-2-st/mattu-5-2-st-final2.mp4
+  phone: mattu-5-2-st/mattu-5-2-st-final2-phone.mp4
+  poster: mattu-5-2-st/mattu-5-2-st-final2-poster.webp
+  cover_src: mattu-5-2-st/cover/mattu-5-2-st-cover.png
+  facts: mattu-5-2-st/facts/facts.md
+  published: false
+  published_at: ''
