@@ -1406,12 +1406,12 @@ items:
   - Basic & Bedside Electrocardiography (Baltazar)
   - Dr. Smith's ECG Blog
   refs_src: ~/scripts/ncq-publish/mattu-5-1-qrst.ig.txt「出處」＋facts/facts.md
-  version: final4
-  src: mattu-5-1-qrst/out/mattu-5-1-qrst-final4.mp4
-  src_phone: mattu-5-1-qrst/out/mattu-5-1-qrst-final4-phone.mp4
-  video: mattu-5-1-qrst/mattu-5-1-qrst-final4.mp4
-  phone: mattu-5-1-qrst/mattu-5-1-qrst-final4-phone.mp4
-  poster: mattu-5-1-qrst/mattu-5-1-qrst-final4-poster.webp
+  version: final5
+  src: mattu-5-1-qrst/out/mattu-5-1-qrst-final5.mp4
+  src_phone: mattu-5-1-qrst/out/mattu-5-1-qrst-final5-phone.mp4
+  video: mattu-5-1-qrst/mattu-5-1-qrst-final5.mp4
+  phone: mattu-5-1-qrst/mattu-5-1-qrst-final5-phone.mp4
+  poster: mattu-5-1-qrst/mattu-5-1-qrst-final5-poster.webp
   cover_src: mattu-5-1-qrst/cover/mattu-5-1-qrst-cover.png
   facts: mattu-5-1-qrst/facts/facts.md
   published: false
