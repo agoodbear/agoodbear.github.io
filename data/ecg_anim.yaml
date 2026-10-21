@@ -1433,12 +1433,12 @@ items:
   - Atlas of Electrocardiography
   - Dr. Smith's ECG Blog
   refs_src: ~/scripts/ncq-publish/mattu-5-2-st.ig.txt「出處」＋facts/facts.md
-  version: final2
-  src: mattu-5-2-st/out/mattu-5-2-st-final2.mp4
-  src_phone: mattu-5-2-st/out/mattu-5-2-st-final2-phone.mp4
-  video: mattu-5-2-st/mattu-5-2-st-final2.mp4
-  phone: mattu-5-2-st/mattu-5-2-st-final2-phone.mp4
-  poster: mattu-5-2-st/mattu-5-2-st-final2-poster.webp
+  version: final3
+  src: mattu-5-2-st/out/mattu-5-2-st-final3.mp4
+  src_phone: mattu-5-2-st/out/mattu-5-2-st-final3-phone.mp4
+  video: mattu-5-2-st/mattu-5-2-st-final3.mp4
+  phone: mattu-5-2-st/mattu-5-2-st-final3-phone.mp4
+  poster: mattu-5-2-st/mattu-5-2-st-final3-poster.webp
   cover_src: mattu-5-2-st/cover/mattu-5-2-st-cover.png
   facts: mattu-5-2-st/facts/facts.md
   published: false
