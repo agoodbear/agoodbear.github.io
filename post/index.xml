@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 急診熊心聲部落格</title><link>https://agoodbear.com/post/</link><description>Recent content in Posts on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Thu, 17 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://agoodbear.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>沒有STE，你憑什麼說它塞住了?（OMI心電圖判讀的六個原則）</title><link>https://agoodbear.com/post/ecg-post-21/</link><pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/ecg-post-21/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 急診熊心聲部落格</title><link>https://agoodbear.com/post/</link><description>Recent content in Posts on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Mon, 19 Oct 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://agoodbear.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>一個急診醫師，怎麼走進Claude Code</title><link>https://agoodbear.com/post/study-post-11/</link><pubDate>Mon, 19 Oct 2026 20:00:00 +0800</pubDate><guid>https://agoodbear.com/post/study-post-11/</guid><description>
+&lt;style&gt;
+.mt-fig{margin:1.8em auto;max-width:720px;text-align:center}
+.mt-fig img,.mt-fig video{width:100%;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+.mt-fig.mt-tall{max-width:480px}
+.mt-fig figcaption{font-size:.9em;color:#777;margin-top:.6em;line-height:1.7}
+.mt-pair{display:flex;gap:.8em;justify-content:center;margin:1.8em auto;max-width:720px}
+.mt-pair figure{flex:1;margin:0;text-align:center}
+.mt-pair img{width:100%;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+.mt-pair figcaption{font-size:.9em;color:#777;margin-top:.6em}
+.mt-box{border-left:5px solid #fe6a01;background:#fff6ee;padding:1em 1.2em;margin:1.6em 0;border-radius:6px;font-size:1.08em}
+.mt-box.blue{border-left-color:#2f6fa8;background:#f1f6fb}
+.mt-big{color:#b22800}
+.mt-speed{background:#fffaf5;border-radius:10px;padding:1.2em 1.2em .8em}
+.mt-row{display:flex;align-items:center;gap:.8em;margin:.6em 0;text-align:left}
+.mt-lab{flex:0 0 8.5em;font-size:.95em}
+.mt-track{flex:1}
+.mt-bar{display:block;color:#fff;font-weight:700;padding:.35em .6em;border-radius:6px;text-align:right;box-sizing:border-box}
+.mt-bar.kb{background:#8a8f98}
+.mt-bar.sp{background:#fe6a01}
+.mt-x{font-size:1.15em;margin-top:.6em;color:#b22800}
+.mt-x b{font-size:1.6em}
+@media (max-width:600px){.mt-pair{flex-direction:column}}
+&lt;/style&gt;
+&lt;p&gt;10月17日下午，我在宜蘭的Claude Meetup講了15分鐘，題目是〈一個急診醫師，怎麼走進Claude Code〉。急診醫師做了20年，沒有寫程式的底子。&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;準備這場的時候，我請Claude Code把各國89場Claude Code相關演講整理了一遍，醫療背景的講者幾乎沒有。所以那天台下的人，大概是第一次在Claude Code Meetup聽急診醫師講話。&lt;/p&gt;
+&lt;p&gt;這篇把那天講的內容重新整理一次，順便記下一點現場的感覺。&lt;/p&gt;
+&lt;h2 id="很早就用過講了幾句就沒有下文"&gt;很早就用過，講了幾句就沒有下文&lt;/h2&gt;
+&lt;p&gt;Claude我其實很早就用過。2023年10月第一次打開，第一句問它「Who are you」，問完就沒有下文了。之後斷斷續續，2024年9月我拿來問我太太附卡到底消費什麼，得不到答案問完，又消失了490天。&lt;/p&gt;
+&lt;p&gt;真正讓我開始每天用AI做事的，是龍蝦（OpenClaw）。它今年1月底才紅起來，我2月中就跳進去養了，比台灣搜尋的最高峰還早三個禮拜。&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;strong&gt;我就是這種個性，看到新東西，會想先跳進去玩玩看。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;用OpenClaw當殼、Discord當介面，那7個禮拜，龍蝦幫我讀了147篇文獻、寫了26篇每日ECG深思。然後4/5凌晨，就被斷了。我有點heartbroken，因為已經習慣這個工作流了。&lt;/p&gt;
+&lt;p&gt;之後我把龍蝦的大腦換成ChatGPT，發現它常常達不到我的要求。我要A，它可能給A-、A--，甚至給B。&lt;strong class="mt-big"&gt;問A答B，要A給B。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;於是乎，就硬著頭皮進了Claude Code的世界。&lt;/p&gt;
+&lt;h2 id="卡住我的不是cli是我自己的心"&gt;卡住我的，不是CLI，是我自己的心&lt;/h2&gt;
+&lt;p&gt;當時我一直在想：我到底在害怕什麼？CLI介面、自己又不是資訊背景，不知道會不會太難。&lt;/p&gt;
+&lt;p&gt;4/9第一天，我在Claude Code裡打的是「你好，你能做什麼」，還有「我要怎麼在mac上找到，我找不到」。&lt;/p&gt;
+&lt;p&gt;後來才發現，很多都是自己的心魔。日本Meetup有位講者大森翔吾，原本也不是工程師，他說：「心才是最重要的。」&lt;sup id="fnref:3"&gt;&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description></item><item><title>沒有STE，你憑什麼說它塞住了?（OMI心電圖判讀的六個原則）</title><link>https://agoodbear.com/post/ecg-post-21/</link><pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/ecg-post-21/</guid><description>
 &lt;span class="uses-article-cards" hidden aria-hidden="true"&gt;&lt;/span&gt;
 &lt;p&gt;本篇以 Helseth HC, Mansur P, El-Baba M, McLaren JTT, de Alencar JN, Smith SW. &lt;em&gt;&lt;mark style="background-color: lightgreen"&gt;Electrocardiographic principles for the diagnosis of occlusion myocardial infarction&lt;/mark&gt;.&lt;/em&gt; Eur Heart J Acute Cardiovasc Care. 2026. DOI: 10.1093/ehjacc/zuag114 為主體。&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;這個月讀到一篇文章，我覺得應該讓每個ED man都讀過。&lt;/p&gt;
