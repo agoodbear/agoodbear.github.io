@@ -1389,8 +1389,8 @@ items:
   poster: mattu-4-enlargement/mattu-4-enlargement-final-poster.webp
   cover_src: mattu-4-enlargement/cover/mattu-4-enlargement-cover.png
   facts: mattu-4-enlargement/facts/facts.lvh.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-21'
 - id: mattu-5-1-qrst
   series: mattu-5step
   title: Ischemia：看QRST怎麼變
