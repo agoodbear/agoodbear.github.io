@@ -721,3 +721,16 @@ items:
     - Atlas of Electrocardiography
     - Dr. Smith's ECG Blog
     zh_hash: '65c771b79d'
+  mattu-5-3-t:
+    title: 'T: compare it with its own QRS'
+    subtitle: Amal Mattu's five-step ECG reading | 5-3 T
+    point: 'Is the T wave big? Compare it with its own QRS'
+    refs:
+    - ECG Weekly (Amal Mattu)
+    - Critical Decisions in Emergency and Acute Care Electrocardiography
+    - Marriott's Practical Electrocardiography
+    - Getting Acquainted With Ischemia and Infarction (Jerry Jones)
+    - Basic & Bedside Electrocardiography (Baltazar)
+    - Dubin's Rapid Interpretation of EKGs
+    - Dr. Smith's ECG Blog
+    zh_hash: '9bbccc4eb3'

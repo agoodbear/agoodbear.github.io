@@ -1443,3 +1443,29 @@ items:
   facts: mattu-5-2-st/facts/facts.md
   published: false
   published_at: ''
+- id: mattu-5-3-t
+  series: mattu-5step
+  title: T：跟自己的QRS比
+  subtitle: Amal Mattu ECG判讀五步驟｜5-3 T
+  point: T波大不大，跟它自己的QRS比
+  point_src: 片尾卡畫面文字（final）＋IG說明欄第一行
+  duration: 73.8
+  refs:
+  - ECG Weekly (Amal Mattu)
+  - Critical Decisions in Emergency and Acute Care Electrocardiography
+  - Marriott's Practical Electrocardiography
+  - Getting Acquainted With Ischemia and Infarction (Jerry Jones)
+  - Basic & Bedside Electrocardiography (Baltazar)
+  - Dubin's Rapid Interpretation of EKGs
+  - Dr. Smith's ECG Blog
+  refs_src: ~/scripts/ncq-publish/mattu-5-3-t.ig.txt「出處」＋facts/facts.md
+  version: final
+  src: mattu-5-3-t/out/mattu-5-3-t-final.mp4
+  src_phone: mattu-5-3-t/out/mattu-5-3-t-final-phone.mp4
+  video: mattu-5-3-t/mattu-5-3-t-final.mp4
+  phone: mattu-5-3-t/mattu-5-3-t-final-phone.mp4
+  poster: mattu-5-3-t/mattu-5-3-t-final-poster.webp
+  cover_src: mattu-5-3-t/cover/mattu-5-3-t-cover.png
+  facts: mattu-5-3-t/facts/facts.md
+  published: false
+  published_at: ''
