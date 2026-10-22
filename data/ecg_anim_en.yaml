@@ -745,3 +745,14 @@ items:
     - ABC of Clinical Electrocardiography
     - Dr. Smith's ECG Blog
     zh_hash: '9e966121d2'
+  mattu-5-5-r:
+    title: 'R wave progression: check the electrodes first'
+    subtitle: Amal Mattu's five-step ECG reading | 5-5 R wave progression
+    point: 'Poor R wave progression? Check the electrodes first, then think anterior MI'
+    refs:
+    - ECG Weekly (Amal Mattu)
+    - LITFL
+    - Goldberger's Clinical Electrocardiography
+    - Emergency Medicine Cases (Jesse McLaren)
+    - Dr. Smith's ECG Blog
+    zh_hash: '4df7add9f9'

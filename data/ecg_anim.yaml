@@ -1493,3 +1493,27 @@ items:
   facts: mattu-5-4-q/facts/facts.md
   published: false
   published_at: ''
+- id: mattu-5-5-r
+  series: mattu-5step
+  title: R波進展：先查電極
+  subtitle: Amal Mattu ECG判讀五步驟｜5-5 R波進展
+  point: R波長不起來，先查電極，再想前壁梗塞
+  point_src: 片尾卡畫面文字（final）＋IG說明欄第一行
+  duration: 81.18
+  refs:
+  - ECG Weekly (Amal Mattu)
+  - LITFL
+  - Goldberger's Clinical Electrocardiography
+  - Emergency Medicine Cases (Jesse McLaren)
+  - Dr. Smith's ECG Blog
+  refs_src: ~/scripts/ncq-publish/mattu-5-5-r.ig.txt「出處」＋facts/facts.md
+  version: final
+  src: mattu-5-5-r/out/mattu-5-5-r-final.mp4
+  src_phone: mattu-5-5-r/out/mattu-5-5-r-final-phone.mp4
+  video: mattu-5-5-r/mattu-5-5-r-final.mp4
+  phone: mattu-5-5-r/mattu-5-5-r-final-phone.mp4
+  poster: mattu-5-5-r/mattu-5-5-r-final-poster.webp
+  cover_src: mattu-5-5-r/cover/mattu-5-5-r-cover.png
+  facts: mattu-5-5-r/facts/facts.md
+  published: false
+  published_at: ''
