@@ -734,3 +734,14 @@ items:
     - Dubin's Rapid Interpretation of EKGs
     - Dr. Smith's ECG Blog
     zh_hash: '9bbccc4eb3'
+  mattu-5-4-q:
+    title: 'Q: a Q wave does not mean it is old'
+    subtitle: Amal Mattu's five-step ECG reading | 5-4 Q
+    point: 'A Q wave does not mean the infarct is old'
+    refs:
+    - The ECG in Acute MI (Smith et al.)
+    - ECG Weekly (Amal Mattu)
+    - Rosen's Emergency Medicine
+    - ABC of Clinical Electrocardiography
+    - Dr. Smith's ECG Blog
+    zh_hash: '9e966121d2'

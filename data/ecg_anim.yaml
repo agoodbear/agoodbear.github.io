@@ -1469,3 +1469,27 @@ items:
   facts: mattu-5-3-t/facts/facts.md
   published: false
   published_at: ''
+- id: mattu-5-4-q
+  series: mattu-5step
+  title: Q：有Q波，不代表是舊的
+  subtitle: Amal Mattu ECG判讀五步驟｜5-4 Q
+  point: 有Q波，不代表梗塞是舊的
+  point_src: 片尾卡畫面文字（final）＋IG說明欄第一行
+  duration: 51.0
+  refs:
+  - The ECG in Acute MI (Smith et al.)
+  - ECG Weekly (Amal Mattu)
+  - Rosen's Emergency Medicine
+  - ABC of Clinical Electrocardiography
+  - Dr. Smith's ECG Blog
+  refs_src: ~/scripts/ncq-publish/mattu-5-4-q.ig.txt「出處」＋facts/facts.md
+  version: final
+  src: mattu-5-4-q/out/mattu-5-4-q-final.mp4
+  src_phone: mattu-5-4-q/out/mattu-5-4-q-final-phone.mp4
+  video: mattu-5-4-q/mattu-5-4-q-final.mp4
+  phone: mattu-5-4-q/mattu-5-4-q-final-phone.mp4
+  poster: mattu-5-4-q/mattu-5-4-q-final-poster.webp
+  cover_src: mattu-5-4-q/cover/mattu-5-4-q-cover.png
+  facts: mattu-5-4-q/facts/facts.md
+  published: false
+  published_at: ''
