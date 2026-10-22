@@ -1414,8 +1414,8 @@ items:
   poster: mattu-5-1-qrst/mattu-5-1-qrst-final5-poster.webp
   cover_src: mattu-5-1-qrst/cover/mattu-5-1-qrst-cover.png
   facts: mattu-5-1-qrst/facts/facts.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-22'
 - id: mattu-5-2-st
   series: mattu-5step
   title: ST：去對面找鏡像
