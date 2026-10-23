@@ -1517,3 +1517,27 @@ items:
   facts: mattu-5-5-r/facts/facts.md
   published: false
   published_at: ''
+- id: mattu-6-cath
+  series: mattu-5step
+  title: 誰要立即心導管
+  subtitle: Amal Mattu ECG判讀五步驟｜最後一集 誰要立即心導管
+  point: 導管室有三扇門：ECG塞住了，病人不穩，或是心跳停過又救回來
+  point_src: 片尾卡畫面文字（final v2）＋IG說明欄第一行
+  duration: 76.97
+  refs:
+  - 2025 ACC/AHA ACS指引
+  - 2023 ESC ACS指引
+  - 2025 AHA心跳停止後照護指引
+  - ECG Weekly (Amal Mattu)
+  - Dr. Smith's ECG Blog
+  refs_src: ~/scripts/ncq-publish/mattu-6-cath.ig.txt「出處」＋facts/facts.md
+  version: final
+  src: mattu-6-cath/out/mattu-6-cath-final.mp4
+  src_phone: mattu-6-cath/out/mattu-6-cath-final-phone.mp4
+  video: mattu-6-cath/mattu-6-cath-final.mp4
+  phone: mattu-6-cath/mattu-6-cath-final-phone.mp4
+  poster: mattu-6-cath/mattu-6-cath-final-poster.webp
+  cover_src: mattu-6-cath/cover/mattu-6-cath-cover.png
+  facts: mattu-6-cath/facts/facts.md
+  published: false
+  published_at: ''

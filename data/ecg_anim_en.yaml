@@ -756,3 +756,14 @@ items:
     - Emergency Medicine Cases (Jesse McLaren)
     - Dr. Smith's ECG Blog
     zh_hash: '4df7add9f9'
+  mattu-6-cath:
+    title: 'Who needs the cath lab now?'
+    subtitle: Amal Mattu's five-step ECG reading | Final episode
+    point: 'The cath lab has three doors: the ECG shows occlusion, the patient is unstable, or the heart stopped and came back'
+    refs:
+    - 2025 ACC/AHA ACS Guideline
+    - 2023 ESC ACS Guidelines
+    - 2025 AHA Post-Cardiac Arrest Care Guidelines
+    - ECG Weekly (Amal Mattu)
+    - Dr. Smith's ECG Blog
+    zh_hash: '2418d8301b'
