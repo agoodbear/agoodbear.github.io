@@ -198,7 +198,7 @@ html[lang="en"] .ab-h .en { display: none; }
     <div>
       <p class="ab-kicker">{{ .Params.kicker | default (T "ab_kicker") }}</p>
       <h1>{{ $name }}</h1>
-      <p class="ab-sig">{{ .Params.signature }}</p>
+      <p class="ab-sig">{{ .Params.signature }}{{ with .Params.signature_zh }}<br>{{ . }}{{ end }}</p>
       <dl class="ab-stats">
         <div><dd>{{ .Params.since | default "2005" }}</dd><dt>{{ T "ab_stat_since" }}</dt></div>
         <div><dd>{{ len $d.talks }}{{ if eq site.Language.Lang "zh-tw" }}<small>{{ T "ab_unit_talks" }}</small>{{ end }}</dd><dt>{{ T "ab_stat_talks" }}</dt></div>
