@@ -767,3 +767,14 @@ items:
     - ECG Weekly (Amal Mattu)
     - Dr. Smith's ECG Blog
     zh_hash: '2418d8301b'
+  mattu-7-summary:
+    title: 'Summary: read every ECG in the same five steps'
+    subtitle: Five-step ECG reading | Summary
+    point: 'Every ECG: the same five steps, in the same order'
+    refs:
+    - Goldberger's Clinical Electrocardiography 9th
+    - ECG Weekly (Amal Mattu)
+    - Chou's Electrocardiography 6e
+    - Ken Grauer ECG-2014 Pocket Brain
+    - Dr. Smith's ECG Blog
+    zh_hash: '8acdeb1274'
