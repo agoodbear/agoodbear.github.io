@@ -1441,8 +1441,8 @@ items:
   poster: mattu-5-2-st/mattu-5-2-st-final3-poster.webp
   cover_src: mattu-5-2-st/cover/mattu-5-2-st-cover.png
   facts: mattu-5-2-st/facts/facts.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-23'
 - id: mattu-5-3-t
   series: mattu-5step
   title: T：跟自己的QRS比
