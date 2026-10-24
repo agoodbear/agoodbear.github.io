@@ -1,8 +1,11 @@
 ---
 title: "Roam Tutorial: Episode 4 - Four Ways to Display Reference Material in Roam research"
 date: "2021-06-10"
+description: "A walkthrough of four ways to display reference material in Roam research."
 draft: false
 toc: false
+thumbnail: "https://i.ytimg.com/vi/4-TeZrmGWSg/maxresdefault.jpg"
+hide_hero: true
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "study"
@@ -17,6 +20,9 @@ canonicalURL: "https://medium.com/@agoodbear/roam%E6%95%99%E5%AD%B8-%E7%AC%AC%E5
 translated_from: "medium-6efa37de7325.md"
 translation_date: "2026-10-09"
 ---
-### **Roam Tutorial**: Episode 4 - Four Ways to Display Reference Material in Roam research
+{{< youtube 4-TeZrmGWSg >}}
 
-![embed](https://i.embed.ly/1/image?url=http%3A%2F%2Fi.ytimg.com%2Fvi%2F4-TeZrmGWSg%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+### Links
+
+- [Tooltips css code](https://roamresearch.com/#/app/Bear_share/page/77txtj6dk)
+- [Footnote css code](https://roamresearch.com/#/app/Bear_share/page/3xYjT5xzV)

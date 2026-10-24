@@ -397,7 +397,7 @@
   </header>
 
   {{- $heroImg := .Params.thumbnail | default .Params.featured_image | default .Params.featureImage | default .Params.image | default .Params.cover -}}
-  {{ if $heroImg }}
+  {{ if and $heroImg (not .Params.hide_hero) }}{{/* hide_hero: true＝只當列表封面、文章頁不放（影片文用，2026-10-24） */}}
     <figure class="hero-figure">
       <img src="{{ $heroImg | relURL }}" alt="{{ .Title }}"{{ with .Params.hero_ratio }} style="aspect-ratio: {{ . | safeCSS }};"{{ end }}>{{/* front matter hero_ratio: "3/2" 可覆寫預設 16/9 裁切（2026-09-03，Codex 3:2 封面下緣被切） */}}
       {{ with .Params.featured_caption }}
