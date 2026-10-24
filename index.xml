@@ -3864,21 +3864,14 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;em&gt;Left sdie:K →6.1、Right side:K →7.4&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Roam教學:第四集-四種Roam research參考文獻資料的呈現模式</title><link>https://agoodbear.com/post/medium-6efa37de7325/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-6efa37de7325/</guid><description>
-&lt;h3 id="roam教學第四集-四種roam-research參考文獻資料的呈現模式"&gt;&lt;strong&gt;Roam教學&lt;/strong&gt;:第四集-四種Roam research參考文獻資料的呈現模式&lt;/h3&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt="embed"
-class="image_figure image_external image_unprocessed"
-src="https://i.embed.ly/1/image?url=http%3A%2F%2Fi.ytimg.com%2Fvi%2F4-TeZrmGWSg%2Fhqdefault.jpg&amp;amp;key=a19fcc184b9711e1b4764040d3dc5c07"
-data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
-onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
-/&gt;
-&lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;</description></item><item><title>還在高血鉀嗎?</title><link>https://agoodbear.com/post/medium-ef858cdd6d2/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-ef858cdd6d2/</guid><description>
+&lt;div class="video" style="position:relative;width:100%;aspect-ratio:16/9;margin:1.5rem 0;"&gt;
+&lt;iframe src="https://www.youtube.com/embed/4-TeZrmGWSg?controls=1&amp;rel=0" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;h3 id="相關連結"&gt;相關連結&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://roamresearch.com/#/app/Bear_share/page/77txtj6dk"&gt;Tooltips css code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://roamresearch.com/#/app/Bear_share/page/3xYjT5xzV"&gt;Footnote css code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>還在高血鉀嗎?</title><link>https://agoodbear.com/post/medium-ef858cdd6d2/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-ef858cdd6d2/</guid><description>
 &lt;h3 id="還在高血鉀嗎"&gt;還在高血鉀嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -3954,7 +3947,44 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;h4 id="70歲男性主訴全身無力無任何胸部不適"&gt;70歲男性，主訴&lt;strong&gt;全身無力&lt;/strong&gt;。無任何胸部不適。&lt;/h4&gt;</description></item><item><title>抓住審閱者的目光，你可能只有五分鐘！</title><link>https://agoodbear.com/post/study-post-3/</link><pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/study-post-3/</guid><description>
+&lt;h4 id="70歲男性主訴全身無力無任何胸部不適"&gt;70歲男性，主訴&lt;strong&gt;全身無力&lt;/strong&gt;。無任何胸部不適。&lt;/h4&gt;</description></item><item><title>Roam教學:第三集-PDF Highlight extension教學(文獻workflow)</title><link>https://agoodbear.com/post/roam-tutorial-ep3/</link><pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/roam-tutorial-ep3/</guid><description>
+&lt;div class="video" style="position:relative;width:100%;aspect-ratio:16/9;margin:1.5rem 0;"&gt;
+&lt;iframe src="https://www.youtube.com/embed/kHfTBGrpg8E?controls=1&amp;rel=0" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;h3 id="相關連結"&gt;相關連結&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/c3founder/Roam-Enhancement"&gt;PDF Highlight for Roam research&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="影片段落"&gt;影片段落&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=kHfTBGrpg8E&amp;amp;t=59s"&gt;00:59&lt;/a&gt; 安裝roam/js與roam/css&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=kHfTBGrpg8E&amp;amp;t=338s"&gt;05:38&lt;/a&gt; 使用roam/template&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=kHfTBGrpg8E&amp;amp;t=409s"&gt;06:49&lt;/a&gt; 口誤：開啟roam/template是輸入 ;; 不是 ::&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=kHfTBGrpg8E&amp;amp;t=541s"&gt;09:01&lt;/a&gt; 使用Double-Double bracket設置文獻&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=kHfTBGrpg8E&amp;amp;t=614s"&gt;10:14&lt;/a&gt; PDF Highlight annotation的workflow&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=kHfTBGrpg8E&amp;amp;t=718s"&gt;11:58&lt;/a&gt; 導入文獻示範&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=kHfTBGrpg8E&amp;amp;t=759s"&gt;12:39&lt;/a&gt; 將ReadCube formatted summary抓入&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=kHfTBGrpg8E&amp;amp;t=906s"&gt;15:06&lt;/a&gt; 開始示範如何annotation&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=kHfTBGrpg8E&amp;amp;t=1128s"&gt;18:48&lt;/a&gt; 更改顏色的小技巧(運用filter)&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Roam教學:第二集-學習英語的好工具(YouGlish、Merriam dic)</title><link>https://agoodbear.com/post/roam-tutorial-ep2/</link><pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/roam-tutorial-ep2/</guid><description>
+&lt;div class="video" style="position:relative;width:100%;aspect-ratio:16/9;margin:1.5rem 0;"&gt;
+&lt;iframe src="https://www.youtube.com/embed/zcDMjZdv4Vw?controls=1&amp;rel=0" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;h3 id="相關連結"&gt;相關連結&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://roamresearch.com/#/app/roamhacker/page/-1s5kPhyX"&gt;Roam42&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/roamhacker/SmartBlocks/issues/114"&gt;YouGlish SmartBlock&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/roamhacker/SmartBlocks/issues/51"&gt;Merriam Dic SmartBlock&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://dictionaryapi.com/register/index"&gt;Merriam API key&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Roam教學:第一集-Otter.ai與otter2roam的運用</title><link>https://agoodbear.com/post/roam-tutorial-ep1/</link><pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/roam-tutorial-ep1/</guid><description>
+&lt;div class="video" style="position:relative;width:100%;aspect-ratio:16/9;margin:1.5rem 0;"&gt;
+&lt;iframe src="https://www.youtube.com/embed/W2CkfWkxluo?controls=1&amp;rel=0" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;h3 id="相關連結"&gt;相關連結&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://serizawa-jp.github.io/roamkit/"&gt;Otter2roam&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/serizawa-jp/roamkit/tree/main/audio-timestamper"&gt;Audio timestamper&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>抓住審閱者的目光，你可能只有五分鐘！</title><link>https://agoodbear.com/post/study-post-3/</link><pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/study-post-3/</guid><description>
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;source srcset="https://agoodbear.com/images/ipic/v4ydr0.webp" type="image/webp"&gt;
