@@ -202,7 +202,7 @@ I don't know the reason either.
 
 In a YouTube conversation between Smith and Tom Bouthillet, I saw a case with a similar situation.
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FmbNDT1JJv0E%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube mbNDT1JJv0E >}}
 
 At 7:10 in the video, Smith explains that it's also possible the thrombus was originally in the proximal RCA, but when the PCI went in, the thrombus turned into emboli and lodged in RCA-m.
 

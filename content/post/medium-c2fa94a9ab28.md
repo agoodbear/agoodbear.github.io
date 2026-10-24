@@ -153,7 +153,7 @@ Fig.9左下角說明了很多情況下建議要在2小時內做到心導管。�
 
 讓我們看看Dr.Smith在今年發表的一篇Twitter寫些什麼?
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fabs.twimg.com%2Ferrors%2Flogo46x38.png&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< tweet-embed "https://twitter.com/smithecgblog/status/1524368898988072961" >}}
 
 <strong>Cardiologists don’t follow NonSTEMI guidelines</strong>
 
@@ -170,7 +170,7 @@ Fig.9左下角說明了很多情況下建議要在2小時內做到心導管。�
 
 Very high risk P’t一般在randomized controlled trial會被排除，因此這類病患被建議要立即PCI，有很大一部分是因為接受了保守性治療有不好的預後
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fabs.twimg.com%2Ferrors%2Flogo46x38.png&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< tweet-embed "https://twitter.com/aslangere/status/1524716908880224256" >}}
 
 另外Aslanger大師(本身是心臟科醫師)，也是認為這些Guideline的建議，並不具有相當好的實證。
 

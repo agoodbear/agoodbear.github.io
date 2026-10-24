@@ -132,7 +132,7 @@ In this podcast, the host Tom Bouthillet asks Dr. Smith <strong>(start listening
 
 Look at <strong>Fig.3</strong>: the heart rate has already slowed, and there is maximal STD in V1~V4. So either way, going by Dr. Smith's latest research paper <strong>(coming out soon in the Journal of the AHA)</strong>:
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fabs.twimg.com%2Ferrors%2Flogo46x38.png&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< tweet-embed "https://twitter.com/alialhajahmed/status/1454121666250936330" >}}
 
 Either way, you must think posterior OMI first, until proven otherwise. The point here is that whenever you see maximal STD over V1~V4, no matter how small the amplitude, just guess posterior OMI first and you'll be right (highly specific).
 

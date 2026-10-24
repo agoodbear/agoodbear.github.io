@@ -200,7 +200,7 @@ Lesion在RCA-m~~~~~~不是有RVMI嗎?Why?
 
 我在一個Smith與Tom Bouthillet的Youtube對談中，看到一個case有類似狀況。
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FmbNDT1JJv0E%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube mbNDT1JJv0E >}}
 
 在影片7:10的時候，Smith說明也有可能是本來thrombus在proximal RCA，但是PCI作進去時，thrombus變成emboli塞到RCA-m。
 

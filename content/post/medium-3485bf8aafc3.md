@@ -143,11 +143,11 @@ Stephen Smith表示做Post.leads時，千萬不要把V1~V3改成V7~V9。因為co
 
 #### 當時我用了自己Lumify做了Echo，大家會希望在哪個地方看出什麼問題呢?
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fax9lLtGc_iw%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube ax9lLtGc_iw >}}
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FfZxIUI5M8Hw%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube fZxIUI5M8Hw >}}
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FvnWim4omtKY%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube vnWim4omtKY >}}
 
 根據17 segment的區分法，把LV分成17個區塊。Post.leads的位置在Basal-inferior area(Segment 4)。
 

@@ -145,11 +145,11 @@ Stephen Smith says that when doing Post.leads, never change V1~V3 into V7~V9. Be
 
 #### At the time I did an Echo with my own Lumify. Where would you look, and what problem would you hope to see?
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fax9lLtGc_iw%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube ax9lLtGc_iw >}}
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FfZxIUI5M8Hw%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube fZxIUI5M8Hw >}}
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FvnWim4omtKY%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube vnWim4omtKY >}}
 
 Under the 17 segment model, the LV is divided into 17 segments. The Post.leads location corresponds to the Basal-inferior area (Segment 4).
 

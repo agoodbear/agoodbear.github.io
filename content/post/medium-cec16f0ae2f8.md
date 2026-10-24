@@ -116,7 +116,7 @@ Smith ECG Blog裡面有說到，大部分的TWI是non-specific[^6]。
 
 另外提供另一種記憶法:<strong>R-WAVED</strong>
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fabs.twimg.com%2Ferrors%2Flogo46x38.png&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< tweet-embed "https://twitter.com/paetalehn/status/1462176550611087360" >}}
 
 這邊要提另外一個重點 →<strong>ECG可以辨識出RV strain，但無法分辨出RV strain的原因</strong>➡可能原因是PE、asthma/COPD、hypoxic vasoconstriction from pneumonia，pulmonary HTN。
 
@@ -174,15 +174,15 @@ Chest CTA看到雙側都有pulmonary vessel filling defect，RV也有filling def
 
 當時，在Bedside也有幫病患做echo。
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FCMv-ZuFe7tw%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube CMv-ZuFe7tw >}}
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FEP-bmYHaxV8%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube EP-bmYHaxV8 >}}
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FUGEnBD8qYPs%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube UGEnBD8qYPs >}}
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FtHuPTdgWChE%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube tHuPTdgWChE >}}
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2F-7qug1FUNcY%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube -7qug1FUNcY >}}
 
 可以清楚看到RV整團mass lesion，在PLAX打開color flow，在RV也沒有明顯flow。在PSAX view可清楚看到RV dilate with D-sign。A4C view更是清楚看到RV塞滿東西。不管是tumor還是thrombus，基本上已經造成RV strain(RV明顯dilate)。進而看到ECG上面的變化。
 

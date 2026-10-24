@@ -118,7 +118,7 @@ Only the "other" group is hard to remember: RV strain, ventricular ectopy, Na ch
 
 Here's another mnemonic: <strong>R-WAVED</strong>
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fabs.twimg.com%2Ferrors%2Flogo46x38.png&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< tweet-embed "https://twitter.com/paetalehn/status/1462176550611087360" >}}
 
 Another key point here →<strong>the ECG can identify RV strain, but it can't tell you the cause of the RV strain</strong>➡ possible causes are PE, asthma/COPD, hypoxic vasoconstriction from pneumonia, pulmonary HTN.
 
@@ -176,15 +176,15 @@ Chest CTA showed bilateral pulmonary vessel filling defects, and a filling defec
 
 At the time I also did a bedside echo on the patient.
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FCMv-ZuFe7tw%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube CMv-ZuFe7tw >}}
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FEP-bmYHaxV8%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube EP-bmYHaxV8 >}}
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FUGEnBD8qYPs%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube UGEnBD8qYPs >}}
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FtHuPTdgWChE%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube tHuPTdgWChE >}}
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2F-7qug1FUNcY%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< youtube -7qug1FUNcY >}}
 
 You can clearly see a whole mass lesion in the RV. Turning on color flow in PLAX, there's no obvious flow in the RV either. In the PSAX view you can clearly see RV dilation with a D-sign. The A4C view shows even more clearly that the RV is packed with something. Whether it's tumor or thrombus, it has basically already caused RV strain (obvious RV dilation). Which in turn produced the changes on the ECG.
 

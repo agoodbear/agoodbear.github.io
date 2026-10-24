@@ -130,7 +130,7 @@ CV man到現場on了PCPS來support生命徵象，以利後續檢查。PCPS中，
 
 我們可以看到<strong>Fig.3</strong>，心跳已經慢下來了，其有maximal STD在V1~V4。所以不管如何，照Dr.Smith最新研究的文章。<strong>(近期會出在Journal of AHA)</strong>
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fabs.twimg.com%2Ferrors%2Flogo46x38.png&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< tweet-embed "https://twitter.com/alialhajahmed/status/1454121666250936330" >}}
 
 不管如何一定要先想Posterior OMI，直到證明不是為止。這邊表示只要看到Maximal STD over V1~V4，不管amplitude多小。先猜Posterior OMI就對了(Highly specific)。
 

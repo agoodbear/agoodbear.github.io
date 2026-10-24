@@ -155,7 +155,7 @@ All wrong~~~~ in actual clinical practice, it's not high.
 
 Let's see what Dr. Smith wrote in a Twitter post this year.
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fabs.twimg.com%2Ferrors%2Flogo46x38.png&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< tweet-embed "https://twitter.com/smithecgblog/status/1524368898988072961" >}}
 
 <strong>Cardiologists don’t follow NonSTEMI guidelines</strong>
 
@@ -172,7 +172,7 @@ Of course, the authors also offered some possible reasons:
 
 Very high risk P’t are generally excluded from randomized controlled trials, so the recommendation for immediate PCI in these patients comes largely from the poor prognosis seen with conservative treatment
 
-![embed](https://i.embed.ly/1/image?url=https%3A%2F%2Fabs.twimg.com%2Ferrors%2Flogo46x38.png&key=a19fcc184b9711e1b4764040d3dc5c07)
+{{< tweet-embed "https://twitter.com/aslangere/status/1524716908880224256" >}}
 
 The master Aslanger (a cardiologist himself) also thinks these Guideline recommendations aren't backed by especially good evidence.
 
