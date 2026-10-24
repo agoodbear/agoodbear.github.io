@@ -195,20 +195,13 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;反而是Af+junction escape rhythm or ventricular escape rhythm比較有可能會出現。&lt;/p&gt;
 &lt;p&gt;也就是出現atrium有pacemaker跳(Af)、ventricle也有pacemaker跳(JER or VER)。&lt;/p&gt;
 &lt;p&gt;來看看一個例子:&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-&lt;picture&gt;
-&lt;img
-loading="lazy"
-decoding="async"
-alt="Fig.2 Tweet example"
-class="image_figure image_external image_unprocessed"
-src="https://i.embed.ly/1/image?url=https%3A%2F%2Fabs.twimg.com%2Ferrors%2Flogo46x38.png&amp;amp;key=a19fcc184b9711e1b4764040d3dc5c07"
-data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
-onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
-/&gt;
-&lt;/picture&gt;
+&lt;figure class="tweet-card" style="margin:1.75rem 0;padding:1rem 1.25rem;border:1px solid var(--color-rule,#ddd);border-left:3px solid var(--color-accent,#c2410c);border-radius:6px;max-width:560px;"&gt;
+&lt;figcaption style="font-size:.9rem;margin-bottom:.5rem;"&gt;&lt;strong&gt;CORE IM&lt;/strong&gt; &lt;span style="opacity:.65;"&gt;@COREIMpodcast&lt;/span&gt;&lt;/figcaption&gt;
+&lt;blockquote style="margin:0;padding:0;border:0;white-space:pre-line;font-size:.95rem;line-height:1.6;"&gt;1/ Good morning, #MedTwitter, and happy (belated) #12LeadThursday!
+Let’s dive right in. Remember to use your system. What do you see here? With the little bit of history we’ve given you, what do you think is going on?&lt;/blockquote&gt;&lt;img src="https://pbs.twimg.com/media/EvtvhQCWEAU9hQD.jpg" alt="" loading="lazy" style="margin-top:.75rem;max-width:100%;border-radius:4px;"&gt;
+&lt;div style="margin-top:.6rem;font-size:.8rem;opacity:.75;"&gt;2021-03-05 · &lt;a href="https://x.com/COREIMpodcast/status/1367809533138059264" target="_blank" rel="noopener"&gt;在 X 上查看原推文&lt;/a&gt;&lt;/div&gt;
 &lt;/figure&gt;
-&lt;/p&gt;</description></item><item><title>OHCA到院，啟動心導管嗎?</title><link>https://agoodbear.com/post/medium-3ec1599ca9bb/</link><pubDate>Sat, 16 Jul 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-3ec1599ca9bb/</guid><description>
+&lt;p&gt;在這張ECG可以在V1看到fibrillation wave(Af其atrial rate:350–600 bpm)。&lt;/p&gt;</description></item><item><title>OHCA到院，啟動心導管嗎?</title><link>https://agoodbear.com/post/medium-3ec1599ca9bb/</link><pubDate>Sat, 16 Jul 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-3ec1599ca9bb/</guid><description>
 &lt;h3 id="ohca到院啟動心導管嗎"&gt;OHCA到院，啟動心導管嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
