@@ -1467,8 +1467,8 @@ items:
   poster: mattu-5-3-t/mattu-5-3-t-final-poster.webp
   cover_src: mattu-5-3-t/cover/mattu-5-3-t-cover.png
   facts: mattu-5-3-t/facts/facts.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-24'
 - id: mattu-5-4-q
   series: mattu-5step
   title: Q：有Q波，不代表是舊的
