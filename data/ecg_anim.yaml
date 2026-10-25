@@ -1491,8 +1491,8 @@ items:
   poster: mattu-5-4-q/mattu-5-4-q-final-poster.webp
   cover_src: mattu-5-4-q/cover/mattu-5-4-q-cover.png
   facts: mattu-5-4-q/facts/facts.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-25'
 - id: mattu-5-5-r
   series: mattu-5step
   title: R波進展：先查電極
