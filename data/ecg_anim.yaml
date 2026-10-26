@@ -1515,8 +1515,8 @@ items:
   poster: mattu-5-5-r/mattu-5-5-r-final-poster.webp
   cover_src: mattu-5-5-r/cover/mattu-5-5-r-cover.png
   facts: mattu-5-5-r/facts/facts.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-26'
 - id: mattu-6-cath
   series: mattu-5step
   title: 誰要立即心導管
