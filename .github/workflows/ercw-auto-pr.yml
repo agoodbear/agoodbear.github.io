@@ -29,19 +29,38 @@ jobs:
     steps:
       - name: Define LINE helper
         run: |
-          # LINE 失敗不再無聲：印出 HTTP 狀態與回應、在 PR 留言、job summary 標紅，並讓 job 失敗
+          # LINE 失敗要留下 HTTP 狀態與回應，但不得讓 job 失敗。開 PR（與查核通過時的合併）才是這份工作。
           cat > "$RUNNER_TEMP/line.sh" <<'SH'
           line_send() {
             body=$(jq -n --arg to "$LINE_TO" --arg t "$1" '{to:$to,messages:[{type:"text",text:$t}]}')
-            code=$(curl -s -o "$RUNNER_TEMP/line_resp.txt" -w '%{http_code}' -X POST https://api.line.me/v2/bot/message/push \
-              -H "Authorization: Bearer $LINE_TOKEN" -H 'Content-Type: application/json' -d "$body")
+            code=$(curl -sS -o "$RUNNER_TEMP/line_resp.txt" -w '%{http_code}' -X POST https://api.line.me/v2/bot/message/push \
+              -H "Authorization: Bearer $LINE_TOKEN" -H 'Content-Type: application/json' -d "$body") || code="000"
+            if [ -z "$code" ]; then code="000"; fi
             if [ "$code" = 200 ]; then echo "LINE sent"; return 0; fi
-            resp=$(head -c 500 "$RUNNER_TEMP/line_resp.txt")
-            echo "::error::LINE 推播失敗 HTTP ${code}：${resp}"
-            printf '## ⚠️ LINE 推播失敗\nHTTP %s\n```\n%s\n```\n原本要送的訊息：\n\n%s\n' "$code" "$resp" "$1" >> "$GITHUB_STEP_SUMMARY"
-            gh pr comment -R "$REPO" "$BRANCH" --body "⚠️ LINE 推播失敗（HTTP ${code}：${resp}），Bear 沒收到通知。原本要送的訊息：
-          $1" || true
-            return 1
+            resp=$(head -c 500 "$RUNNER_TEMP/line_resp.txt" 2>/dev/null || true)
+            echo "LINE push failed: HTTP ${code}"
+            echo "LINE response body:"
+            printf '%s\n' "$resp"
+            # workflow command 不能含未跳脫的 %、CR、LF
+            safe=$(printf '%s' "$resp" | tr '\r\n' '  ' | sed 's/%/%25/g')
+            echo "::warning::LINE 推播失敗 HTTP ${code}：${safe}"
+            {
+              echo "## ⚠️ LINE 推播失敗（不影響本 job）"
+              echo
+              echo "HTTP ${code}"
+              echo
+              echo '```'
+              printf '%s\n' "$resp"
+              echo '```'
+              echo
+              echo "原本要送的訊息："
+              echo
+              printf '%s\n' "$1"
+            } >> "$GITHUB_STEP_SUMMARY"
+            printf '⚠️ LINE 推播失敗（HTTP %s），Bear 沒收到通知。這不影響 PR。\n\n回應：\n\n```\n%s\n```\n\n原本要送的訊息：\n\n%s\n' \
+              "$code" "$resp" "$1" > "$RUNNER_TEMP/line_comment.txt"
+            gh pr comment -R "$REPO" "$BRANCH" --body-file "$RUNNER_TEMP/line_comment.txt" || true
+            return 0
           }
           SH
 
