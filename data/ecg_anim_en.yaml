@@ -27,6 +27,10 @@ series:
     name: Amal Mattu's five-step ECG reading
     intro: 'Rate, Rhythm, Axis, Intervals, Ischemia/Infarction: one step per episode.'
     zh_hash: 'a60d30503d'
+  habits:
+    name: ECG reading habits
+    intro: 'Small habits worth building when you read ECGs: one per episode.'
+    zh_hash: 'af40e6a190'
 items:
   omi-roster:
     title: OMI patterns at a glance
@@ -778,3 +782,33 @@ items:
     - Ken Grauer ECG-2014 Pocket Brain
     - Dr. Smith's ECG Blog
     zh_hash: '8acdeb1274'
+  habits-03-artifact:
+    title: 'Shock it? Regular QRS complexes marching straight through'
+    subtitle: ECG reading habits | 03
+    point: 'Regular QRS complexes marching straight through: this is not VT'
+    refs:
+    - Dr. Smith's ECG Blog
+    - Ken Grauer
+    - ECG Weekly
+    - LITFL
+    zh_hash: 'bcb2b15333'
+  habits-01-intrinsic:
+    title: 'Call the cath lab? The answer is in the quietest beat'
+    subtitle: ECG reading habits | 01
+    point: 'When the ECG is chaotic, the answer is often in the quietest beat'
+    refs:
+    - LITFL
+    - ECG Weekly
+    - Dr. Smith's ECG Blog
+    zh_hash: '0eb8cea309'
+  habits-02-neighbors:
+    title: 'ST elevation in II. Where do you look next?'
+    subtitle: ECG reading habits | 02
+    point: 'Real ischemia changes the neighboring leads too'
+    refs:
+    - Ken Grauer ECG Blog
+    - LITFL
+    - Dr. Smith's ECG Blog
+    - ECG Weekly
+    - ecgwaves
+    zh_hash: '3d08c6354b'

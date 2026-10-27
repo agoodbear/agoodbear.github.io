@@ -39,6 +39,9 @@ series:
 - id: mattu-5step
   name: Amal Mattu ECG判讀五步驟
   intro: Rate、Rhythm、Axis、Intervals、Ischemia/Infarction：一集一步。
+- id: habits
+  name: ECG判讀習慣
+  intro: 判讀ECG時值得養成的小習慣：一集一個。
 
 items:
 
@@ -1546,7 +1549,7 @@ items:
   title: 總整理：每張ECG，同一個順序走五步
   subtitle: ECG判讀五步驟｜總整理
   point: 每張ECG，同一個順序走五步
-  point_src: 片尾卡畫面文字（final3）＋IG說明欄第一行
+  point_src: 片尾卡畫面文字（final4）＋IG說明欄第一行
   duration: 75.12
   refs:
   - Goldberger's Clinical Electrocardiography 9th
@@ -1555,13 +1558,84 @@ items:
   - Ken Grauer ECG-2014 Pocket Brain
   - Dr. Smith's ECG Blog
   refs_src: ~/scripts/ncq-publish/mattu-7-summary.ig.txt「出處」（Goldberger、Mattu、Chou、Grauer、Smith）
-  version: final3
-  src: mattu-7-summary/out/mattu-7-summary-final3.mp4
-  src_phone: mattu-7-summary/out/mattu-7-summary-final3-phone.mp4
-  video: mattu-7-summary/mattu-7-summary-final3.mp4
-  phone: mattu-7-summary/mattu-7-summary-final3-phone.mp4
+  version: final4
+  src: mattu-7-summary/out/mattu-7-summary-final4.mp4
+  src_phone: mattu-7-summary/out/mattu-7-summary-final4-phone.mp4
+  video: mattu-7-summary/mattu-7-summary-final4.mp4
+  phone: mattu-7-summary/mattu-7-summary-final4-phone.mp4
   poster: mattu-7-summary/mattu-7-summary-final-poster.webp
   cover_src: mattu-7-summary/cover/mattu-7-summary-cover.png
   facts: mattu-7-summary/A0-candidates.md
+  published: false
+  published_at: ''
+
+# ── ECG判讀習慣 ───────────────────────────────────────────────────────
+- id: habits-03-artifact
+  series: habits
+  title: 要電嗎？規則的QRS一路穿過去
+  subtitle: ECG判讀習慣｜03
+  point: 規則的QRS一路穿過去，這就不是VT
+  point_src: 片尾卡畫面文字（final-v5）
+  duration: 52.72
+  refs:
+  - Dr. Smith's ECG Blog
+  - Ken Grauer
+  - ECG Weekly
+  - LITFL
+  refs_src: ~/scripts/ncq-publish/habits-03-artifact.ig.txt「出處」（Dr. Smith's ECG Blog、Ken Grauer、ECG Weekly、LITFL）
+  version: final-v5
+  src: habits-03-artifact/out/habits-03-artifact-final-v5.mp4
+  src_phone: habits-03-artifact/out/habits-03-artifact-final-v5-phone.mp4
+  video: habits-03-artifact/habits-03-artifact-final-v5.mp4
+  phone: habits-03-artifact/habits-03-artifact-final-v5-phone.mp4
+  poster: habits-03-artifact/habits-03-artifact-final-v5-poster.webp
+  cover_src: habits-03-artifact/cover/habits-03-artifact-cover.png
+  facts: habits-03-artifact/facts/facts.md
+  published: false
+  published_at: ''
+- id: habits-01-intrinsic
+  series: habits
+  title: 要叫導管室嗎？答案在最安靜的那一跳
+  subtitle: ECG判讀習慣｜01
+  point: 很亂的時候，答案常在最安靜的那一跳
+  point_src: 片尾卡畫面文字（final）
+  duration: 43.37
+  refs:
+  - LITFL
+  - ECG Weekly
+  - Dr. Smith's ECG Blog
+  refs_src: ~/scripts/ncq-publish/habits-01-intrinsic.ig.txt「出處」（LITFL、ECG Weekly、Dr. Smith's ECG Blog）
+  version: final
+  src: habits-01-intrinsic/out/habits-01-intrinsic-final.mp4
+  src_phone: habits-01-intrinsic/out/habits-01-intrinsic-final-phone.mp4
+  video: habits-01-intrinsic/habits-01-intrinsic-final.mp4
+  phone: habits-01-intrinsic/habits-01-intrinsic-final-phone.mp4
+  poster: habits-01-intrinsic/habits-01-intrinsic-final-poster.webp
+  cover_src: habits-01-intrinsic/cover/habits-01-intrinsic-cover.png
+  facts: habits-01-intrinsic/facts/facts_litfl089.md
+  published: false
+  published_at: ''
+- id: habits-02-neighbors
+  series: habits
+  title: II的ST抬起來了，下一眼看哪裡？
+  subtitle: ECG判讀習慣｜02
+  point: 真的缺血，鄰居也會跟著變
+  point_src: 片尾卡畫面文字（final）
+  duration: 58.77
+  refs:
+  - Ken Grauer ECG Blog
+  - LITFL
+  - Dr. Smith's ECG Blog
+  - ECG Weekly
+  - ecgwaves
+  refs_src: ~/scripts/ncq-publish/habits-02-neighbors.ig.txt「出處」（Ken Grauer ECG Blog、LITFL、Dr. Smith's ECG Blog、ECG Weekly、ecgwaves）
+  version: final
+  src: habits-02-neighbors/out/habits-02-neighbors-final.mp4
+  src_phone: habits-02-neighbors/out/habits-02-neighbors-final-phone.mp4
+  video: habits-02-neighbors/habits-02-neighbors-final.mp4
+  phone: habits-02-neighbors/habits-02-neighbors-final-phone.mp4
+  poster: habits-02-neighbors/habits-02-neighbors-final-poster.webp
+  cover_src: habits-02-neighbors/cover/habits-02-neighbors-cover.png
+  facts: habits-02-neighbors/facts/facts_draft.md
   published: false
   published_at: ''
