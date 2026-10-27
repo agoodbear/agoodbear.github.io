@@ -27,6 +27,24 @@ jobs:
       BRANCH: ${{ github.ref_name }}
       HEAD_MSG: ${{ github.event.head_commit.message }}
     steps:
+      - name: Define LINE helper
+        run: |
+          # LINE 失敗不再無聲：印出 HTTP 狀態與回應、在 PR 留言、job summary 標紅，並讓 job 失敗
+          cat > "$RUNNER_TEMP/line.sh" <<'SH'
+          line_send() {
+            body=$(jq -n --arg to "$LINE_TO" --arg t "$1" '{to:$to,messages:[{type:"text",text:$t}]}')
+            code=$(curl -s -o "$RUNNER_TEMP/line_resp.txt" -w '%{http_code}' -X POST https://api.line.me/v2/bot/message/push \
+              -H "Authorization: Bearer $LINE_TOKEN" -H 'Content-Type: application/json' -d "$body")
+            if [ "$code" = 200 ]; then echo "LINE sent"; return 0; fi
+            resp=$(head -c 500 "$RUNNER_TEMP/line_resp.txt")
+            echo "::error::LINE 推播失敗 HTTP ${code}：${resp}"
+            printf '## ⚠️ LINE 推播失敗\nHTTP %s\n```\n%s\n```\n原本要送的訊息：\n\n%s\n' "$code" "$resp" "$1" >> "$GITHUB_STEP_SUMMARY"
+            gh pr comment -R "$REPO" "$BRANCH" --body "⚠️ LINE 推播失敗（HTTP ${code}：${resp}），Bear 沒收到通知。原本要送的訊息：
+          $1" || true
+            return 1
+          }
+          SH
+
       - name: Open PR if none exists
         run: |
           existing=$(gh pr list -R "$REPO" --head "$BRANCH" --state open --json number -q '.[0].number')
@@ -50,6 +68,7 @@ jobs:
           LINE_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
           LINE_TO: ${{ secrets.LINE_TO_BEAR }}
         run: |
+          . "$RUNNER_TEMP/line.sh"
           week="${BRANCH#claude/ercw-}"
           url="https://agoodbear.com/er-cardio-weekly/$(echo "$week" | tr 'A-Z' 'a-z')/"
           code=000
@@ -63,9 +82,7 @@ jobs:
           else
             text="⚠️ ER Cardio Weekly ${week} 已合併但網頁 20 分鐘內沒上線（HTTP ${code}）\n請看部署：https://github.com/${REPO}/actions\n👉 回覆「cc 修 週報」我重新部署"
           fi
-          body=$(jq -n --arg to "$LINE_TO" --arg t "$(printf "$text")" '{to:$to,messages:[{type:"text",text:$t}]}')
-          curl -sf -X POST https://api.line.me/v2/bot/message/push \
-            -H "Authorization: Bearer $LINE_TOKEN" -H 'Content-Type: application/json' -d "$body" && echo "LINE sent"
+          line_send "$(printf "$text")"
 
       - name: LINE Bear when verification failed
         if: ${{ !contains(env.HEAD_MSG, '[ercw-verified]') }}
@@ -73,9 +90,8 @@ jobs:
           LINE_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
           LINE_TO: ${{ secrets.LINE_TO_BEAR }}
         run: |
+          . "$RUNNER_TEMP/line.sh"
           week="${BRANCH#claude/ercw-}"
           pr=$(gh pr list -R "$REPO" --head "$BRANCH" --state open --json url -q '.[0].url')
           text="⚠️ ER Cardio Weekly ${week} 查核沒過，沒有上線\n卡在哪看 PR 內文：${pr:-https://github.com/${REPO}/pulls}\n👉 這是查核故意擋的，不能遠端硬上；回電腦跟我說「看週報 PR」"
-          body=$(jq -n --arg to "$LINE_TO" --arg t "$(printf "$text")" '{to:$to,messages:[{type:"text",text:$t}]}')
-          curl -sf -X POST https://api.line.me/v2/bot/message/push \
-            -H "Authorization: Bearer $LINE_TOKEN" -H 'Content-Type: application/json' -d "$body" && echo "LINE sent"
+          line_send "$(printf "$text")"
