@@ -1539,8 +1539,8 @@ items:
   poster: mattu-6-cath/mattu-6-cath-final-poster.webp
   cover_src: mattu-6-cath/cover/mattu-6-cath-cover.png
   facts: mattu-6-cath/facts/facts.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-27'
 - id: mattu-7-summary
   series: mattu-5step
   title: 總整理：每張ECG，同一個順序走五步
