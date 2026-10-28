@@ -1639,3 +1639,28 @@ items:
   facts: habits-02-neighbors/facts/facts_draft.md
   published: false
   published_at: ''
+- id: habits-04-lead-high
+  series: habits
+  title: 電腦說septal MI，你信嗎？先看V1、V2的P波
+  subtitle: ECG判讀習慣｜04
+  point: V1、V2的P波都倒置，先重貼，再判讀
+  point_src: 片尾卡畫面文字（final）
+  duration: 73.74
+  refs:
+  - Dr. Smith's ECG Blog
+  - Dr. Ken Grauer ECG Blog
+  - LITFL
+  - Walsh, Am J Emerg Med 2018
+  - Chung, J Electrocardiol 2014
+  - Hurst's the Heart
+  refs_src: ~/scripts/ncq-publish/habits-04-lead-high.ig.txt「出處」（Dr. Smith's ECG Blog、Dr. Ken Grauer ECG Blog、LITFL、Walsh, Am J Emerg Med 2018、Chung, J Electrocardiol 2014、Hurst's the Heart）
+  version: final
+  src: habits-04-lead-high/out/habits-04-lead-high-final.mp4
+  src_phone: habits-04-lead-high/out/habits-04-lead-high-final-phone.mp4
+  video: habits-04-lead-high/habits-04-lead-high-final.mp4
+  phone: habits-04-lead-high/habits-04-lead-high-final-phone.mp4
+  poster: habits-04-lead-high/habits-04-lead-high-final-poster.webp
+  cover_src: habits-04-lead-high/cover/habits-04-lead-high-cover.png
+  facts: habits-04-lead-high/facts/facts_draft.md
+  published: false
+  published_at: ''

@@ -812,3 +812,15 @@ items:
     - ECG Weekly
     - ecgwaves
     zh_hash: '3d08c6354b'
+  habits-04-lead-high:
+    title: 'The computer says septal MI. Do you believe it? Look at the P waves in V1 and V2'
+    subtitle: ECG reading habits | 04
+    point: 'P waves inverted in both V1 and V2: reposition the leads first, then interpret'
+    refs:
+    - Dr. Smith's ECG Blog
+    - Dr. Ken Grauer ECG Blog
+    - LITFL
+    - Walsh, Am J Emerg Med 2018
+    - Chung, J Electrocardiol 2014
+    - Hurst's the Heart
+    zh_hash: '06c7f6cc65'
