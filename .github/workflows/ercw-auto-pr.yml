@@ -5,7 +5,9 @@ name: ER Cardio Weekly auto PR
 # 沒有這個標記 → PR 留著等 Bear 看。
 # 注意：GITHUB_TOKEN 合併產生的 push 不會觸發 hugo.yaml，所以合併後要用 workflow_dispatch 手動觸發部署。
 # 失敗與異常不再推 LINE：run 以 exit 1 轉紅，並寫 ::error:: 與 step summary，交給每小時掃紅 run 的 monitor。
-# 「已上線」仍推 LINE（推播失敗不讓 job 失敗），同一段文字也寫進 step summary。
+# 「已上線」不再推 LINE。此 repo 的 workflow 沒有 Supabase service-role secret，
+# 所以不寫 public.grokbot_notifications；同一段文字寫進 step summary，並送
+# ::notice title=GROKBOT ercw-live::（這則通知不會讓 job 失敗）。
 on:
   push:
     branches:
@@ -29,42 +31,10 @@ jobs:
       BRANCH: ${{ github.ref_name }}
       HEAD_MSG: ${{ github.event.head_commit.message }}
     steps:
-      - name: Define LINE helper
+      - name: Define report helper
         run: |
-          # line_send 只給「已上線」。推播失敗留下 HTTP 狀態與回應，但不得讓 job 失敗。
           # report_problem 給沒上線與查核沒過：不推 LINE，寫 error annotation 與 step summary 後 exit 1。
           cat > "$RUNNER_TEMP/line.sh" <<'SH'
-          line_send() {
-            body=$(jq -n --arg to "$LINE_TO" --arg t "$1" '{to:$to,messages:[{type:"text",text:$t}]}')
-            code=$(curl -sS -o "$RUNNER_TEMP/line_resp.txt" -w '%{http_code}' -X POST https://api.line.me/v2/bot/message/push \
-              -H "Authorization: Bearer $LINE_TOKEN" -H 'Content-Type: application/json' -d "$body") || code="000"
-            if [ -z "$code" ]; then code="000"; fi
-            if [ "$code" = 200 ]; then echo "LINE sent"; return 0; fi
-            resp=$(head -c 500 "$RUNNER_TEMP/line_resp.txt" 2>/dev/null || true)
-            echo "LINE push failed: HTTP ${code}"
-            echo "LINE response body:"
-            printf '%s\n' "$resp"
-            # workflow command 不能含未跳脫的 %、CR、LF
-            safe=$(printf '%s' "$resp" | tr '\r\n' '  ' | sed 's/%/%25/g')
-            echo "::warning::LINE 推播失敗 HTTP ${code}：${safe}"
-            {
-              echo "## ⚠️ LINE 推播失敗（不影響本 job）"
-              echo
-              echo "HTTP ${code}"
-              echo
-              echo '```'
-              printf '%s\n' "$resp"
-              echo '```'
-              echo
-              echo "原本要送的訊息："
-              echo
-              printf '%s\n' "$1"
-            } >> "$GITHUB_STEP_SUMMARY"
-            printf '⚠️ LINE 推播失敗（HTTP %s），Bear 沒收到通知。這不影響 PR。\n\n回應：\n\n```\n%s\n```\n\n原本要送的訊息：\n\n%s\n' \
-              "$code" "$resp" "$1" > "$RUNNER_TEMP/line_comment.txt"
-            gh pr comment -R "$REPO" "$BRANCH" --body-file "$RUNNER_TEMP/line_comment.txt" || true
-            return 0
-          }
           report_problem() {
             local msg="$1"
             local safe="$1"
@@ -96,11 +66,8 @@ jobs:
           gh workflow run hugo.yaml -R "$REPO" --ref hugo-source
           echo "merged $BRANCH and dispatched deploy"
 
-      - name: Wait until live, then LINE Bear
+      - name: Wait until live, then notify
         if: contains(env.HEAD_MSG, '[ercw-verified]')
-        env:
-          LINE_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
-          LINE_TO: ${{ secrets.LINE_TO_BEAR }}
         run: |
           . "$RUNNER_TEMP/line.sh"
           week="${BRANCH#claude/ercw-}"
@@ -112,10 +79,23 @@ jobs:
             sleep 30
           done
           if [ "$code" = 200 ]; then
+            # 已上線。workflow 沒有 Supabase service-role secret，不新增 secret、不寫 grokbot_notifications。
             text="✅ ER Cardio Weekly ${week} 已上線（獨立查核通過、自動發布）\n${url}"
             msg=$(printf '%b' "$text")
-            printf '%s\n' "$msg" >> "$GITHUB_STEP_SUMMARY"
-            line_send "$msg"
+            {
+              echo "## ER Cardio Weekly 已上線"
+              echo
+              printf '%s\n' "$msg"
+              echo
+              echo "沒有寫入 public.grokbot_notifications：此 repo 的 workflow 沒有 Supabase service-role secret。"
+              echo "已改送 ::notice title=GROKBOT ercw-live::。"
+            } >> "$GITHUB_STEP_SUMMARY"
+            notice=$(printf '✅ ER Cardio Weekly %s 已上線（獨立查核通過、自動發布） %s' "$week" "$url")
+            # workflow command 不能含未跳脫的 %、CR、LF
+            notice=${notice//'%'/'%25'}
+            notice=${notice//$'\r'/'%0D'}
+            notice=${notice//$'\n'/'%0A'}
+            echo "::notice title=GROKBOT ercw-live::${notice}"
           else
             text="⚠️ ER Cardio Weekly ${week} 已合併但網頁 20 分鐘內沒上線（HTTP ${code}）\n請看部署：https://github.com/${REPO}/actions\n👉 回覆「cc 修 週報」我重新部署"
             msg=$(printf '%b' "$text")
