@@ -4,6 +4,8 @@ name: ER Cardio Weekly auto PR
 # 若分支最新 commit 訊息含 [ercw-verified]（routine 的獨立查核代理通過才會加）→ 自動合併並觸發部署；
 # 沒有這個標記 → PR 留著等 Bear 看。
 # 注意：GITHUB_TOKEN 合併產生的 push 不會觸發 hugo.yaml，所以合併後要用 workflow_dispatch 手動觸發部署。
+# 失敗與異常不再推 LINE：run 以 exit 1 轉紅，並寫 ::error:: 與 step summary，交給每小時掃紅 run 的 monitor。
+# 「已上線」仍推 LINE（推播失敗不讓 job 失敗），同一段文字也寫進 step summary。
 on:
   push:
     branches:
@@ -29,7 +31,8 @@ jobs:
     steps:
       - name: Define LINE helper
         run: |
-          # LINE 失敗要留下 HTTP 狀態與回應，但不得讓 job 失敗。開 PR（與查核通過時的合併）才是這份工作。
+          # line_send 只給「已上線」。推播失敗留下 HTTP 狀態與回應，但不得讓 job 失敗。
+          # report_problem 給沒上線與查核沒過：不推 LINE，寫 error annotation 與 step summary 後 exit 1。
           cat > "$RUNNER_TEMP/line.sh" <<'SH'
           line_send() {
             body=$(jq -n --arg to "$LINE_TO" --arg t "$1" '{to:$to,messages:[{type:"text",text:$t}]}')
@@ -61,6 +64,18 @@ jobs:
               "$code" "$resp" "$1" > "$RUNNER_TEMP/line_comment.txt"
             gh pr comment -R "$REPO" "$BRANCH" --body-file "$RUNNER_TEMP/line_comment.txt" || true
             return 0
+          }
+          report_problem() {
+            local msg="$1"
+            local safe="$1"
+            # workflow command 不能含未跳脫的 %、CR、LF。先跳脫 %，避免後面的 %0A 被再跳一次。
+            safe=${safe//'%'/'%25'}
+            safe=${safe//$'\r'/'%0D'}
+            safe=${safe//$'\n'/'%0A'}
+            printf '%s\n' "$msg"
+            echo "::error::${safe}"
+            printf '%s\n' "$msg" >> "$GITHUB_STEP_SUMMARY"
+            exit 1
           }
           SH
 
@@ -98,19 +113,26 @@ jobs:
           done
           if [ "$code" = 200 ]; then
             text="✅ ER Cardio Weekly ${week} 已上線（獨立查核通過、自動發布）\n${url}"
+            msg=$(printf '%b' "$text")
+            printf '%s\n' "$msg" >> "$GITHUB_STEP_SUMMARY"
+            line_send "$msg"
           else
             text="⚠️ ER Cardio Weekly ${week} 已合併但網頁 20 分鐘內沒上線（HTTP ${code}）\n請看部署：https://github.com/${REPO}/actions\n👉 回覆「cc 修 週報」我重新部署"
+            msg=$(printf '%b' "$text")
+            report_problem "$msg"
           fi
-          line_send "$(printf "$text")"
 
-      - name: LINE Bear when verification failed
+      - name: Fail run when verification did not pass
         if: ${{ !contains(env.HEAD_MSG, '[ercw-verified]') }}
-        env:
-          LINE_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
-          LINE_TO: ${{ secrets.LINE_TO_BEAR }}
         run: |
           . "$RUNNER_TEMP/line.sh"
           week="${BRANCH#claude/ercw-}"
           pr=$(gh pr list -R "$REPO" --head "$BRANCH" --state open --json url -q '.[0].url')
           text="⚠️ ER Cardio Weekly ${week} 查核沒過，沒有上線\n卡在哪看 PR 內文：${pr:-https://github.com/${REPO}/pulls}\n👉 這是查核故意擋的，不能遠端硬上；回電腦跟我說「看週報 PR」"
-          line_send "$(printf "$text")"
+          msg=$(printf '%b' "$text")
+          # 查核沒過仍把同一段說明留在 PR，不再推 LINE。
+          if [ -n "$pr" ]; then
+            printf '%s\n' "$msg" > "$RUNNER_TEMP/verify_comment.txt"
+            gh pr comment -R "$REPO" "$BRANCH" --body-file "$RUNNER_TEMP/verify_comment.txt" || true
+          fi
+          report_problem "$msg"
