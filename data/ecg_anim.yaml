@@ -1566,8 +1566,8 @@ items:
   poster: mattu-7-summary/mattu-7-summary-final-poster.webp
   cover_src: mattu-7-summary/cover/mattu-7-summary-cover.png
   facts: mattu-7-summary/A0-candidates.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-28'
 
 # ── ECG判讀習慣 ───────────────────────────────────────────────────────
 - id: habits-03-artifact
