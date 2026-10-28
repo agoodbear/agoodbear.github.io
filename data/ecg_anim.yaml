@@ -1549,7 +1549,7 @@ items:
   title: 總整理：每張ECG，同一個順序走五步
   subtitle: ECG判讀五步驟｜總整理
   point: 每張ECG，同一個順序走五步
-  point_src: 片尾卡畫面文字（final4）＋IG說明欄第一行
+  point_src: 片尾卡畫面文字（final5）＋IG說明欄第一行
   duration: 75.12
   refs:
   - Goldberger's Clinical Electrocardiography 9th
@@ -1558,11 +1558,11 @@ items:
   - Ken Grauer ECG-2014 Pocket Brain
   - Dr. Smith's ECG Blog
   refs_src: ~/scripts/ncq-publish/mattu-7-summary.ig.txt「出處」（Goldberger、Mattu、Chou、Grauer、Smith）
-  version: final4
-  src: mattu-7-summary/out/mattu-7-summary-final4.mp4
-  src_phone: mattu-7-summary/out/mattu-7-summary-final4-phone.mp4
-  video: mattu-7-summary/mattu-7-summary-final4.mp4
-  phone: mattu-7-summary/mattu-7-summary-final4-phone.mp4
+  version: final5
+  src: mattu-7-summary/out/mattu-7-summary-final5.mp4
+  src_phone: mattu-7-summary/out/mattu-7-summary-final5-phone.mp4
+  video: mattu-7-summary/mattu-7-summary-final5.mp4
+  phone: mattu-7-summary/mattu-7-summary-final5-phone.mp4
   poster: mattu-7-summary/mattu-7-summary-final-poster.webp
   cover_src: mattu-7-summary/cover/mattu-7-summary-cover.png
   facts: mattu-7-summary/A0-candidates.md
