@@ -824,3 +824,14 @@ items:
     - Chung, J Electrocardiol 2014
     - Hurst's the Heart
     zh_hash: '06c7f6cc65'
+  habits-05-all-leads:
+    title: 'The small wave after the T wave in lead II: U wave or P wave? The answer is in V1'
+    subtitle: ECG reading habits | 05
+    point: 'When one lead is unclear, the answer is often in another lead'
+    refs:
+    - Dr. Smith's ECG Blog
+    - ECG Weekly
+    - LITFL
+    - ABC of Clinical Electrocardiography
+    - Braunwald's Heart Disease
+    zh_hash: 'd12a5f604f'

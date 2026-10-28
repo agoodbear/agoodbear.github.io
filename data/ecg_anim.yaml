@@ -1664,3 +1664,27 @@ items:
   facts: habits-04-lead-high/facts/facts_draft.md
   published: false
   published_at: ''
+- id: habits-05-all-leads
+  series: habits
+  title: II的T波後面那個小波，是U波還是P波？答案在V1
+  subtitle: ECG判讀習慣｜05
+  point: 一個導程看不清楚，答案常在另一個導程
+  point_src: 片尾卡畫面文字（final）
+  duration: 69.36
+  refs:
+  - Dr. Smith's ECG Blog
+  - ECG Weekly
+  - LITFL
+  - ABC of Clinical Electrocardiography
+  - Braunwald's Heart Disease
+  refs_src: ~/scripts/ncq-publish/habits-05-all-leads.ig.txt「出處」（Dr. Smith's ECG Blog、ECG Weekly、LITFL、ABC of Clinical Electrocardiography、Braunwald's Heart Disease）
+  version: final
+  src: habits-05-all-leads/out/habits-05-all-leads-final.mp4
+  src_phone: habits-05-all-leads/out/habits-05-all-leads-final-phone.mp4
+  video: habits-05-all-leads/habits-05-all-leads-final.mp4
+  phone: habits-05-all-leads/habits-05-all-leads-final-phone.mp4
+  poster: habits-05-all-leads/habits-05-all-leads-final-poster.webp
+  cover_src: habits-05-all-leads/cover/habits-05-all-leads-cover.png
+  facts: habits-05-all-leads/facts/facts_draft.md
+  published: false
+  published_at: ''
