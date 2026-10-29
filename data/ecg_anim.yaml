@@ -1591,8 +1591,8 @@ items:
   poster: habits-03-artifact/habits-03-artifact-final-v5-poster.webp
   cover_src: habits-03-artifact/cover/habits-03-artifact-cover.png
   facts: habits-03-artifact/facts/facts.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-29'
 - id: habits-01-intrinsic
   series: habits
   title: 要叫導管室嗎？答案在最安靜的那一跳
