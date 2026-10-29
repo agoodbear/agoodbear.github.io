@@ -835,3 +835,13 @@ items:
     - ABC of Clinical Electrocardiography
     - Braunwald's Heart Disease
     zh_hash: 'd12a5f604f'
+  habits-summary:
+    title: 'Five ECG reading habits: how many do you have?'
+    subtitle: ECG reading habits | Recap
+    point: 'Reading an ECG: five habits worth building'
+    refs:
+    - Dr. Smith's ECG Blog
+    - Dr. Ken Grauer ECG Blog
+    - ECG Weekly
+    - LITFL
+    zh_hash: '29ab47deb0'

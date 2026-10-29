@@ -1688,3 +1688,26 @@ items:
   facts: habits-05-all-leads/facts/facts_draft.md
   published: false
   published_at: ''
+- id: habits-summary
+  series: habits
+  title: 判讀ECG的五個習慣：你有幾個？
+  subtitle: ECG判讀習慣｜總整理
+  point: 判讀ECG，五個值得養成的習慣
+  point_src: 封面主標＋片頭第1句（片尾卡＝五條金色重點句）
+  duration: 53.31
+  refs:
+  - Dr. Smith's ECG Blog
+  - Dr. Ken Grauer ECG Blog
+  - ECG Weekly
+  - LITFL
+  refs_src: ~/scripts/ncq-publish/habits-summary.ig.txt「出處」（Dr. Smith's ECG Blog、Dr. Ken Grauer ECG Blog、ECG Weekly、LITFL）
+  version: final
+  src: habits-summary/out/habits-summary-final.mp4
+  src_phone: habits-summary/out/habits-summary-final-phone.mp4
+  video: habits-summary/habits-summary-final.mp4
+  phone: habits-summary/habits-summary-final-phone.mp4
+  poster: habits-summary/habits-summary-final-poster.webp
+  cover_src: habits-summary/cover/habits-summary-cover.png
+  facts: habits-summary/caption_draft.md
+  published: false
+  published_at: ''
