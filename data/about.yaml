@@ -8,7 +8,7 @@ certs:
   - { kind: "執照", name: "中華民國醫師", kind_en: "License", name_en: "Physician, Republic of China (Taiwan)" }
   - { kind: "專科", name: "中華民國急診專科醫師", kind_en: "Board", name_en: "Board-certified Emergency Physician, Taiwan" }
   - { kind: "指導員", name: "ACLS instructor", kind_en: "Instructor" }
-  - { kind: "課程", name: "EMC² Emergency Medicine Cardiology Course", kind_en: "Course" }
+  - { kind: "課程", name: "EMC² Emergency Medicine Cardiology Course", kind_en: "Course", note: "Toronto · 2020/11/10–11", image: "/images/certs/emc2-2020.png" }
   - { kind: "工作坊", name: "超音波輔助之急性疼痛處置工作坊－基礎與進階研習證書", kind_en: "Workshop", name_en: "Ultrasound-guided acute pain management workshop — basic & advanced certificate" }
   - { kind: "潛水", name: "SSI Open Water Diver (OWD)", kind_en: "Diving" }
 

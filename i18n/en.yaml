@@ -116,6 +116,7 @@ ab_year_talks:
   one: "{{ .Count }} talk"
   other: "{{ .Count }} talks"
 ab_zoom: "Enlarge: "
+ab_view_cert: "View certificate"
 ab_no_ads: "No sponsored posts, sales pitches, or SEO guest-post requests."
 ab_viewer: "Image viewer"
 ab_close: "Close"

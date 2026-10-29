@@ -57,6 +57,12 @@ html[lang="en"] .ab-h .en { display: none; }
 .ab-certs li { padding: var(--space-md); display: flex; flex-direction: column; gap: .5rem; }
 .ab-certs .kind { align-self: flex-start; font-family: var(--font-body-zh); font-size: var(--text-xs); letter-spacing: .08em; color: var(--color-accent-ink); background: color-mix(in srgb, var(--color-accent) 12%, transparent); padding: .15rem .55rem; border-radius: 3px; }
 .ab-certs .name { font-family: var(--font-display-zh); font-weight: 600; font-size: var(--text-lg); line-height: 1.45; color: var(--color-ink); }
+.ab-certs li.ab-cert-has { padding: 0; }
+.ab-certs li.ab-cert-has button { all: unset; box-sizing: border-box; cursor: zoom-in; width: 100%; height: 100%; padding: var(--space-md); display: flex; flex-direction: column; gap: .5rem; }
+.ab-certs li.ab-cert-has button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.ab-certs .note { font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-ink-3); }
+.ab-certs .view { margin-top: auto; font-family: var(--font-body-zh); font-size: var(--text-sm); color: var(--color-accent-ink); }
+.ab-certs li.ab-cert-has:hover .view { text-decoration: underline; }
 .ab-duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); }
 .ab-duo figure { margin: 0; }
 .ab-duo .ab-shot { aspect-ratio: 3 / 2; }
@@ -226,7 +232,14 @@ html[lang="en"] .ab-h .en { display: none; }
   <section class="ab-sec" id="skills">
     <header class="ab-h"><span class="num">02</span><h2>{{ T "ab_s2" }}</h2><span class="en">Credentials</span></header>
     <ul class="ab-certs">
-      {{ range $d.certs }}<li class="ab-card"><span class="kind">{{ (partial "loc.html" (dict "it" . "f" "kind")) }}</span><span class="name">{{ (partial "loc.html" (dict "it" . "f" "name")) }}</span></li>{{ end }}
+      {{ range $d.certs }}
+      {{- $n := partial "loc.html" (dict "it" . "f" "name") }}
+      {{- if .image }}
+      <li class="ab-card ab-cert-has"><button type="button" data-lb="{{ partial "ab-lg.html" .image }}" data-cap="{{ $n }}{{ with .note }} · {{ . }}{{ end }}" aria-label="{{ T "ab_zoom" }}{{ $n }}"><span class="kind">{{ (partial "loc.html" (dict "it" . "f" "kind")) }}</span><span class="name">{{ $n }}</span>{{ with .note }}<span class="note">{{ . }}</span>{{ end }}<span class="view">{{ T "ab_view_cert" }} →</span></button></li>
+      {{- else }}
+      <li class="ab-card"><span class="kind">{{ (partial "loc.html" (dict "it" . "f" "kind")) }}</span><span class="name">{{ $n }}</span></li>
+      {{- end }}
+      {{ end }}
     </ul>
     <div class="ab-duo" style="margin-top: var(--space-lg)">
       {{ range $d.highlights }}
