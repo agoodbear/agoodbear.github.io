@@ -627,6 +627,18 @@ items:
     - Mattu, ECG in Emergency, Acute & Critical Care 2e
     - Dr. Smith's ECG Blog
     zh_hash: '809e19b372'
+  mimics-04-pericarditis:
+    title: Injured myocardium, but no blocked artery
+    subtitle: 'STEMI mimics: pericarditis vs inferior OMI'
+    point: 'Inferior ST elevation? Check aVL first: if it is depressed, think OMI first'
+    refs:
+    - Braunwald's Heart Disease
+    - Goldberger's Clinical Electrocardiography
+    - Rosen's Emergency Medicine
+    - ECG Weekly (Amal Mattu)
+    - LITFL
+    - Dr. Smith's ECG Blog
+    zh_hash: '867e6e4b57'
   airway-01-safe-apnea:
     title: SpO₂ is already 100%. Why not intubate yet?
     subtitle: Airway series 01

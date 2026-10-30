@@ -843,6 +843,33 @@ items:
   blog_url: https://agoodbear.com/post/ecg-post-4/
   published: true
   published_at: '2026-10-12'
+- id: mimics-04-pericarditis
+  series: mechanism
+  title: 心肌受傷，但血管沒塞
+  subtitle: STEMI mimics：心包膜炎vs下壁OMI
+  point: 下壁抬高，先看aVL：壓低，先想OMI
+  point_src: 說明欄📌（片尾字卡「壓低→先想OMI」）
+  duration: 67.95
+  refs:
+  - Braunwald's Heart Disease
+  - Goldberger's Clinical Electrocardiography
+  - Rosen's Emergency Medicine
+  - ECG Weekly (Amal Mattu)
+  - LITFL
+  - Dr. Smith's ECG Blog
+  refs_src: mimics-04-pericarditis/social_caption.txt（IG 版「出處」）＋facts/facts.md
+  version: final
+  src: mimics-04-pericarditis/out/mimics-04-pericarditis-final.mp4
+  src_phone: mimics-04-pericarditis/out/mimics-04-pericarditis-final-phone.mp4
+  video: mimics-04-pericarditis/mimics-04-pericarditis-final.mp4
+  phone: mimics-04-pericarditis/mimics-04-pericarditis-final-phone.mp4
+  poster: mimics-04-pericarditis/mimics-04-pericarditis-final-poster.webp
+  cover_src: mimics-04-pericarditis/cover/14-mimics-04-pericarditis-B.png
+  facts: mimics-04-pericarditis/facts/facts.md
+  blog_title: 意識不清的中年婦女
+  blog_url: https://agoodbear.com/post/ecg-post-4/
+  published: false
+  published_at: ''
 - id: mobitz1-vs-cavb
   series: mechanism
   title: 這個像CAVB嗎？
