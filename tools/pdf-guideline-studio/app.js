@@ -205,10 +205,16 @@ function renderShell() {
         </div>
 
         <div class="pdf-guideline-studio__topbar-actions">
-          <a class="pdf-guideline-studio__button--ghost" id="backToArticleButton" href="#" data-tip="回文章" title="回文章" hidden>
-            ${iconSvg("arrowLeft")}
-            <span>回文章</span>
-          </a>
+          ${
+            isEmbed
+              ? `
+                <a class="pdf-guideline-studio__button--ghost" id="backToArticleButton" href="#" data-tip="回文章" title="回文章" hidden>
+                  ${iconSvg("arrowLeft")}
+                  <span>回文章</span>
+                </a>
+              `
+              : ""
+          }
           <a class="pdf-guideline-studio__button--ghost" id="openPdfButton" href="#" target="_blank" rel="noopener" data-tip="原始 PDF（新分頁）" title="原始 PDF" hidden>
             ${iconSvg("external")}
             <span>原始 PDF</span>
@@ -328,6 +334,11 @@ function renderShell() {
         </section>
 
         <aside class="pdf-guideline-studio__panel pdf-guideline-studio__panel--sidebar">
+          ${
+            isEmbed
+              ? ""
+              : `<a class="pdf-guideline-studio__back-bar" id="backToArticleButton" href="/guideline-pdfs/">${iconSvg("arrowLeft")}<span id="backToArticleLabel">回 Guideline 列表</span></a>`
+          }
           ${isEmbed ? "" : `<div class="pdf-guideline-studio__doc-head${docHeadOpen ? "" : " is-collapsed"}" id="docHead"><button type="button" class="pdf-guideline-studio__doc-head-toggle" id="docHeadToggle" data-tip="${docHeadOpen ? "收合文件資訊" : "展開文件資訊"}" aria-expanded="${docHeadOpen ? "true" : "false"}">${iconSvg("chevronDown")}</button>${headerBlock}</div>`}
           <div class="pdf-guideline-studio__sidebar-head">
             <div class="pdf-guideline-studio__sidebar-head-row">
@@ -940,8 +951,35 @@ function updateTopbar() {
   const safeArticlePath = sanitizeLinkUrl(doc.articlePath);
   refs.openPdfButton.hidden = !safePdfUrl;
   refs.openPdfButton.href = safePdfUrl || "#";
-  refs.backToArticleButton.hidden = !safeArticlePath;
-  refs.backToArticleButton.href = safeArticlePath || "#";
+  if (state.viewMode === "embed") {
+    refs.backToArticleButton.hidden = !safeArticlePath;
+    refs.backToArticleButton.href = safeArticlePath || "#";
+  } else {
+    // 完整模式：右欄頂端常駐一條大的返回鈕；沒帶 article 參數就回 Guideline 集散地
+    const backPath = safeArticlePath || "/guideline-pdfs/";
+    refs.backToArticleButton.href = backPath;
+    const backLabel = document.getElementById("backToArticleLabel");
+    if (backLabel) {
+      backLabel.textContent = /guideline-pdfs/.test(backPath) ? "回 Guideline 列表" : "回原文章";
+    }
+    if (!refs.backToArticleButton.dataset.bound) {
+      refs.backToArticleButton.dataset.bound = "1";
+      // 從列表點進來的就用上一頁，回到原本捲到的位置
+      refs.backToArticleButton.addEventListener("click", (event) => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+        try {
+          const ref = document.referrer ? new URL(document.referrer) : null;
+          const target = new URL(refs.backToArticleButton.href, window.location.origin);
+          if (ref && ref.origin === window.location.origin && ref.pathname === target.pathname && window.history.length > 1) {
+            event.preventDefault();
+            window.history.back();
+          }
+        } catch (error) {
+          /* 照一般連結走 */
+        }
+      });
+    }
+  }
 
   if (refs.openFullReaderButton) {
     refs.openFullReaderButton.href = buildReaderUrl({ embed: false });
