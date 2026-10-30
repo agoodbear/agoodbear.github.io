@@ -587,28 +587,7 @@ article.card .meta {
   </div>
 </header>
 
-<nav class="subnav" aria-label="primary">
-  <div class="subnav-inner">
-    <a href="{{ "" | relLangURL }}" class="is-active">{{ T "home_all_posts" }}</a>
-    {{- /* Pull category links from menu config (slug-based URLs).
-           Falls back to hard-coded list if no menu defined. */ -}}
-    {{ if site.Menus.main }}
-      {{ range site.Menus.main }}
-        <a href="{{ .URL | relURL }}">{{ .Name }}</a>
-      {{ end }}
-    {{ else }}
-      <a href="{{ "/categories/ecg/" | relURL }}">心電圖</a>
-      <a href="{{ "/categories/pocus/" | relURL }}">超音波</a>
-      <a href="{{ "/categories/erlife/" | relURL }}">急診人生</a>
-      <a href="{{ "/categories/workout/" | relURL }}">醫生 Gym</a>
-      <a href="{{ "/categories/study/" | relURL }}">自我進修</a>
-      <a href="{{ "/ai-learning/" | relURL }}">AI 學習</a>
-      <a href="{{ "/categories/travel/" | relURL }}">旅遊</a>
-      <a href="{{ "/practical-tools/" | relURL }}">實用工具</a>
-      <a href="{{ "/about/" | relURL }}">關於我</a>
-    {{ end }}
-  </div>
-</nav>
+{{- /* 原本這裡有一排分類 subnav（所有文章／心電圖／…），跟最上面固定的導覽列完全重複，2026-10-30 Bear 要求拿掉 */ -}}
 
 <main class="wrap">
 
