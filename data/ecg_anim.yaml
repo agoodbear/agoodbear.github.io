@@ -1613,8 +1613,8 @@ items:
   poster: habits-01-intrinsic/habits-01-intrinsic-final-poster.webp
   cover_src: habits-01-intrinsic/cover/habits-01-intrinsic-cover.png
   facts: habits-01-intrinsic/facts/facts_litfl089.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-30'
 - id: habits-02-neighbors
   series: habits
   title: II的ST抬起來了，下一眼看哪裡？
