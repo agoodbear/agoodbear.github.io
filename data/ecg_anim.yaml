@@ -1664,8 +1664,8 @@ items:
   poster: habits-02-neighbors/habits-02-neighbors-final-poster.webp
   cover_src: habits-02-neighbors/cover/habits-02-neighbors-cover.png
   facts: habits-02-neighbors/facts/facts_draft.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-10-31'
 - id: habits-04-lead-high
   series: habits
   title: 電腦說septal MI，你信嗎？先看V1、V2的P波
