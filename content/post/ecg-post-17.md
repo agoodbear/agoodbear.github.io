@@ -205,7 +205,7 @@ Case 1 就是活例：導管室高度懷疑 dissection 之後做 bedside echo，
 
 **特異度低、但要提高警覺的：** shock、syncope、VT 或電氣不穩。這些在真正的 ACS 也很常見，不能單憑它們就衝去 CTA（會延誤真正的 STEMI）。它們的角色是「把 AD 保留在鑑別診斷裡」。
 
-**特異度高很多的：** 新出現的 AR murmur、神經學症狀（dissection 可以跨區塊、影響腦或脊髓灌流；focal neurologic deficit 的 LR+ 可達 6.6–33）。至於四肢或兩臂血壓差，要小心別高估它。關鍵是分清楚 pulse deficit（摸不到脈搏）和單純的血壓差：
+**特異度高很多的：** 神經學症狀（dissection 可以跨區塊、影響腦或脊髓灌流；focal neurologic deficit 的 LR+ 可達 6.6–33）。新出現的 AR murmur 也是警訊，但各研究的特異度差很多，不能單靠它。至於四肢或兩臂血壓差，要小心別高估它。關鍵是分清楚 pulse deficit（摸不到脈搏）和單純的血壓差：
 
 | 徵象 | 診斷價值 | 出處 |
 |---|---|---|

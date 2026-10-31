@@ -207,7 +207,7 @@ Before you give the full load of antiplatelets / anticoagulation, spend 60–90 
 
 **Low specificity, but should raise your guard:** shock, syncope, VT or electrical instability. These are also very common in true ACS; you can't rush to CTA on them alone (that would delay the real STEMI). Their role is to "keep AD in the differential."
 
-**Much higher specificity:** a new AR murmur, neurological symptoms (dissection can cross territories and affect brain or spinal cord perfusion; the LR+ of a focal neurologic deficit can reach 6.6–33). As for differences in pressure between the limbs or the two arms, be careful not to overestimate them. The key is to distinguish a pulse deficit (no palpable pulse) from a simple blood pressure difference:
+**Much higher specificity:** neurological symptoms (dissection can cross territories and affect brain or spinal cord perfusion; the LR+ of a focal neurologic deficit can reach 6.6–33). A new AR murmur is also a warning sign, but its specificity varies widely across studies, so don't rely on it alone. As for differences in pressure between the limbs or the two arms, be careful not to overestimate them. The key is to distinguish a pulse deficit (no palpable pulse) from a simple blood pressure difference:
 
 | Sign | Diagnostic value | Source |
 |---|---|---|
