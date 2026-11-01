@@ -639,6 +639,21 @@ items:
     - LITFL
     - Dr. Smith's ECG Blog
     zh_hash: '867e6e4b57'
+  mimics-05-dissection:
+    title: The artery is truly blocked, but not by plaque
+    subtitle: 'STEMI mimics: aortic dissection vs thrombus'
+    point: 'Inferior STEMI with red flags: take sixty seconds to check the aortic root with echo'
+    refs:
+    - Rosen's Emergency Medicine
+    - Tintinalli's Emergency Medicine
+    - Braunwald's Heart Disease
+    - Goldberger's Clinical Electrocardiography
+    - Cardiovascular Critical Care
+    - Emergency Echocardiography
+    - Dr. Smith's ECG Blog
+    - ECG Weekly (Amal Mattu)
+    - LITFL
+    zh_hash: 'eda693eb58'
   airway-01-safe-apnea:
     title: SpO₂ is already 100%. Why not intubate yet?
     subtitle: Airway series 01

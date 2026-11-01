@@ -870,6 +870,36 @@ items:
   blog_url: https://agoodbear.com/post/ecg-post-4/
   published: false
   published_at: ''
+- id: mimics-05-dissection
+  series: mechanism
+  title: 血管真的不通，但不是斑塊
+  subtitle: STEMI mimics：主動脈剝離vs血栓
+  point: 下壁STEMI有警訊，多花六十秒用echo看一眼主動脈根部
+  point_src: 說明欄📌
+  duration: 80.5
+  refs:
+  - Rosen's Emergency Medicine
+  - Tintinalli's Emergency Medicine
+  - Braunwald's Heart Disease
+  - Goldberger's Clinical Electrocardiography
+  - Cardiovascular Critical Care
+  - Emergency Echocardiography
+  - Dr. Smith's ECG Blog
+  - ECG Weekly (Amal Mattu)
+  - LITFL
+  refs_src: mimics-05-dissection/social_caption.txt（IG 版「出處」）＋facts/facts.md
+  version: final
+  src: mimics-05-dissection/out/mimics-05-dissection-final.mp4
+  src_phone: mimics-05-dissection/out/mimics-05-dissection-final-phone.mp4
+  video: mimics-05-dissection/mimics-05-dissection-final.mp4
+  phone: mimics-05-dissection/mimics-05-dissection-final-phone.mp4
+  poster: mimics-05-dissection/mimics-05-dissection-final-poster.webp
+  cover_src: mimics-05-dissection/cover/15-mimics-05-dissection-A.png
+  facts: mimics-05-dissection/facts/facts.md
+  blog_title: 明明在救ACS，怎麼會是主動脈剝離？
+  blog_url: https://agoodbear.com/post/ecg-post-17/
+  published: false
+  published_at: ''
 - id: mobitz1-vs-cavb
   series: mechanism
   title: 這個像CAVB嗎？
