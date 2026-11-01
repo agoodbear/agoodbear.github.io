@@ -1689,8 +1689,8 @@ items:
   poster: habits-04-lead-high/habits-04-lead-high-final-poster.webp
   cover_src: habits-04-lead-high/cover/habits-04-lead-high-cover.png
   facts: habits-04-lead-high/facts/facts_draft.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-11-01'
 - id: habits-05-all-leads
   series: habits
   title: II的T波後面那個小波，是U波還是P波？答案在V1
