@@ -859,11 +859,11 @@ items:
   - Dr. Smith's ECG Blog
   refs_src: mimics-04-pericarditis/social_caption.txt（IG 版「出處」）＋facts/facts.md
   version: final
-  src: mimics-04-pericarditis/out/mimics-04-pericarditis-final.mp4
-  src_phone: mimics-04-pericarditis/out/mimics-04-pericarditis-final-phone.mp4
-  video: mimics-04-pericarditis/mimics-04-pericarditis-final.mp4
-  phone: mimics-04-pericarditis/mimics-04-pericarditis-final-phone.mp4
-  poster: mimics-04-pericarditis/mimics-04-pericarditis-final-poster.webp
+  src: mimics-04-pericarditis/out/mimics-04-pericarditis-final2.mp4
+  src_phone: mimics-04-pericarditis/out/mimics-04-pericarditis-final2-phone.mp4
+  video: mimics-04-pericarditis/mimics-04-pericarditis-final2.mp4
+  phone: mimics-04-pericarditis/mimics-04-pericarditis-final2-phone.mp4
+  poster: mimics-04-pericarditis/mimics-04-pericarditis-final2-poster.webp
   cover_src: mimics-04-pericarditis/cover/14-mimics-04-pericarditis-B.png
   facts: mimics-04-pericarditis/facts/facts.md
   blog_title: 意識不清的中年婦女
@@ -889,11 +889,11 @@ items:
   - LITFL
   refs_src: mimics-05-dissection/social_caption.txt（IG 版「出處」）＋facts/facts.md
   version: final
-  src: mimics-05-dissection/out/mimics-05-dissection-final.mp4
-  src_phone: mimics-05-dissection/out/mimics-05-dissection-final-phone.mp4
-  video: mimics-05-dissection/mimics-05-dissection-final.mp4
-  phone: mimics-05-dissection/mimics-05-dissection-final-phone.mp4
-  poster: mimics-05-dissection/mimics-05-dissection-final-poster.webp
+  src: mimics-05-dissection/out/mimics-05-dissection-final2.mp4
+  src_phone: mimics-05-dissection/out/mimics-05-dissection-final2-phone.mp4
+  video: mimics-05-dissection/mimics-05-dissection-final2.mp4
+  phone: mimics-05-dissection/mimics-05-dissection-final2-phone.mp4
+  poster: mimics-05-dissection/mimics-05-dissection-final2-poster.webp
   cover_src: mimics-05-dissection/cover/15-mimics-05-dissection-A.png
   facts: mimics-05-dissection/facts/facts.md
   blog_title: 明明在救ACS，怎麼會是主動脈剝離？
@@ -921,11 +921,11 @@ items:
   - Dr. Smith's ECG Blog
   refs_src: mimics-02-j-point/social_caption.txt（IG 版「出處」）＋facts/facts.md
   version: final
-  src: mimics-02-j-point/out/mimics-02-j-point-final.mp4
-  src_phone: mimics-02-j-point/out/mimics-02-j-point-final-phone.mp4
-  video: mimics-02-j-point/mimics-02-j-point-final.mp4
-  phone: mimics-02-j-point/mimics-02-j-point-final-phone.mp4
-  poster: mimics-02-j-point/mimics-02-j-point-final-poster.webp
+  src: mimics-02-j-point/out/mimics-02-j-point-final2.mp4
+  src_phone: mimics-02-j-point/out/mimics-02-j-point-final2-phone.mp4
+  video: mimics-02-j-point/mimics-02-j-point-final2.mp4
+  phone: mimics-02-j-point/mimics-02-j-point-final2-phone.mp4
+  poster: mimics-02-j-point/mimics-02-j-point-final2-poster.webp
   cover_src: mimics-02-j-point/cover/16-mimics-02-j-point-A.png
   facts: mimics-02-j-point/facts/facts.md
   blog_title: 意識不清的中年婦女
