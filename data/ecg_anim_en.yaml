@@ -654,6 +654,23 @@ items:
     - ECG Weekly (Amal Mattu)
     - LITFL
     zh_hash: 'eda693eb58'
+  mimics-02-j-point:
+    title: The J point pulled upward
+    subtitle: 'STEMI mimics: J wave, hypothermic Osborn wave, early repol'
+    point: 'See ST elevation? Find the J point first, and check for an extra wave at the end of the QRS'
+    refs:
+    - ECG Interpretation: The Self-Assessment Approach
+    - Sparkson's Illustrated Guide to ECG Interpretation
+    - ECG Simplified: Facts You Will Never Forget
+    - New Concepts in ECG Interpretation
+    - Mattu Electrocardiography in Emergency, Acute, and Critical Care
+    - Rosen's Emergency Medicine
+    - Tintinalli's Emergency Medicine
+    - ECGs for the Emergency Physician
+    - Critical Care Medicine
+    - J-Wave syndromes expert consensus (2016)
+    - Dr. Smith's ECG Blog
+    zh_hash: '513f3efdb1'
   airway-01-safe-apnea:
     title: SpO₂ is already 100%. Why not intubate yet?
     subtitle: Airway series 01
