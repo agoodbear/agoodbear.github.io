@@ -10,16 +10,17 @@
      the trailing comments). Switched off oklch() because Disqus' embed.js samples
      the page's computed colours to auto-theme its widget and its parser throws on
      oklch(), which aborts the entire comment thread. Visually identical. */
-  --color-paper:      #fbf8f3;  /* oklch(98% 0.008 80)  */
-  --color-paper-2:    #f3eee6;  /* oklch(95% 0.012 80)  */
-  --color-paper-3:    #e7e0d6;  /* oklch(91% 0.016 80)  */
-  --color-ink:        #0b121a;  /* oklch(18% 0.020 250) */
-  --color-ink-2:      #353b42;  /* oklch(35% 0.015 250) */
-  --color-ink-3:      #6c7278;  /* oklch(55% 0.012 250) */
-  --color-rule:       #d1cdc7;  /* oklch(85% 0.010 80)  */
-  --color-rule-bold:  #a39e94;  /* oklch(70% 0.015 80)  */
-  --color-accent:     #fe6a01;  /* oklch(70% 0.200 45)  */
-  --color-accent-ink: #b22800;  /* oklch(50% 0.180 35)  */
+  --color-paper:      #fffaf5;  /* oklch(98% 0.008 80)  */
+  --color-paper-2:    #fff1e6;  /* oklch(95% 0.012 80)  */
+  --color-paper-3:    #ffe3cf;  /* oklch(91% 0.016 80)  */
+  --color-ink:        #111111;  /* oklch(18% 0.020 250) */
+  --color-ink-2:      #3a3633;  /* oklch(35% 0.015 250) */
+  --color-ink-3:      #6b625b;  /* oklch(55% 0.012 250) */
+  --color-rule:       #eadfd5;  /* oklch(85% 0.010 80)  */
+  --color-rule-bold:  #111111;  /* oklch(70% 0.015 80)  */
+  --color-accent:     #fc5a00;  /* oklch(70% 0.200 45)  */
+  --color-accent-ink: #b83a00;  /* oklch(50% 0.180 35)  */
+  --color-heart:      #fc5a00;  /* 洋流淡版 2026-11-02：橘只當重點，色碼由新聞照片取色估算 */
 
   --font-display:    "Fraunces", "Noto Serif TC", ui-serif, Georgia, serif;
   --font-display-zh: "Noto Serif TC", "Fraunces", ui-serif, serif;
@@ -726,3 +727,14 @@ article.card a:hover .image.image-stamp::before { background: var(--color-accent
   color: var(--color-ink-3);
   white-space: nowrap;
 }
+
+/* 洋流淡版（2026-11-02）：橘只當重點，不鋪滿 */
+.brandstrip { border-top: 5px solid var(--color-accent); }
+.masthead .kicker {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-ink) !important;
+  padding: 0.35em 0.9em;
+  border-radius: 2px;
+}
+.masthead .meta-row { border-top: 2px solid var(--color-accent) !important; }
