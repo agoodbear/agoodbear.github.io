@@ -1743,8 +1743,8 @@ items:
   poster: habits-05-all-leads/habits-05-all-leads-final-poster.webp
   cover_src: habits-05-all-leads/cover/habits-05-all-leads-cover.png
   facts: habits-05-all-leads/facts/facts_draft.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-11-02'
 - id: habits-summary
   series: habits
   title: 判讀ECG的五個習慣：你有幾個？
