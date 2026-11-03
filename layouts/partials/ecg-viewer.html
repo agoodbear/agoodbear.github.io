@@ -127,6 +127,8 @@
     std: "（以標準 25 mm/s、10 mm/mV 換算）", of: " / ", open: "點開可用垂直線、水平線量測"
   };
 
+  // 預覽站（hugo server）寫稿時：清單外的圖右上角多一顆「📐 量測」，正式站沒有
+  var PREVIEW = {{ hugo.IsServer }};
   var LIST = {{ (site.Data.ecg_images.images | default slice) | jsonify | safeJS }};
   function norm(u) {
     try { u = new URL(u, location.href).pathname; } catch (_) {}
@@ -141,7 +143,7 @@
     return !!ECG[norm(img.getAttribute("src") || "")];
   }
   var imgs = [].slice.call(body.querySelectorAll("img")).filter(eligible);
-  if (!imgs.length) return;
+  if (!imgs.length && !PREVIEW) return;
   imgs.forEach(function (img) { img.classList.add("ev-able"); if (!img.title) img.title = T.open; });
 
   // ── 建 DOM ───────────────────────────────────────────
@@ -364,6 +366,36 @@
     else if (e.key === "+" || e.key === "=") setZoom(zoom * 1.5);
     else if (e.key === "-") setZoom(zoom / 1.5);
   }, true);
+
+
+  // ── 預覽限定：清單外的圖也能開量測工具 ───────────────
+  if (PREVIEW) {
+    var st = document.createElement("style");
+    st.textContent = ".ev-chipwrap{position:relative}.ev-chip{position:absolute;top:8px;right:8px;z-index:5;border:0;border-radius:999px;background:#fc5a00;color:#111;font:700 12px/1 system-ui,sans-serif;padding:7px 11px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.28);opacity:.92}.ev-chip:hover{opacity:1}";
+    document.head.appendChild(st);
+    [].slice.call(body.querySelectorAll("img")).forEach(function (img) {
+      if (img.classList.contains("ev-able") || img.closest("a, svg, video, .ecg-anim, .no-ecg-viewer")) return;
+      function add() {
+        if (img.naturalWidth && img.naturalWidth < 320) return;
+        var host = img.closest("figure") || img.closest("p") || img.parentElement;
+        if (!host || host.querySelector(":scope > .ev-chip")) return;
+        host.classList.add("ev-chipwrap");
+        var b = document.createElement("button");
+        b.type = "button"; b.className = "ev-chip"; b.textContent = EN ? "📐 Measure" : "📐 量測";
+        b.title = EN ? "Preview only" : "預覽限定：這張不在心電圖清單裡，也能用量測工具";
+        b.addEventListener("click", function (e) {
+          e.preventDefault(); e.stopPropagation();
+          if (imgs.indexOf(img) < 0) {
+            imgs.push(img);
+            imgs.sort(function (a, c) { return (a.compareDocumentPosition(c) & 4) ? -1 : 1; });
+          }
+          open(img);
+        });
+        host.appendChild(b);
+      }
+      if (img.complete) add(); else img.addEventListener("load", add, { once: true });
+    });
+  }
 
   // capture 階段搶在 site-motion 與 .md-img-row 燈箱前面
   document.addEventListener("click", function (e) {

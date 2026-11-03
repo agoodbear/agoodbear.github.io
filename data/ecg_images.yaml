@@ -220,3 +220,6 @@ images:
   # medium-f925150612af
   - "https://cdn-images-1.medium.com/max/1024/1*DqTVLEhhjVNmKZEeycGr5w@2x.png"
   - "https://cdn-images-1.medium.com/max/1024/1*ThOGJDlX6sk840tJqQqXYw.png"
+  # ecg-post-22（草稿）
+  - "/images/ipic/ecg-post-22-er-arrival.png"
+  - "/images/ipic/ecg-post-22-sicu.png"
