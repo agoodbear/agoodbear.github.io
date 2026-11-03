@@ -129,7 +129,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Once the above is done, you're mostly there～～～&lt;/p&gt;</description></item><item><title>Medium's Various Formatting Features</title><link>https://agoodbear.com/en/post/medium-1afeaa016c60/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/medium-1afeaa016c60/</guid><description>
-&lt;h3 id="mediums-various-formatting-features"&gt;Medium's Various Formatting Features&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Type ` and the text after it gets a gray background&lt;/li&gt;
 &lt;/ul&gt;

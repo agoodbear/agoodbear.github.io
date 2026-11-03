@@ -148,7 +148,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;22&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;-&lt;/span&gt; Hugo架站
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;23&lt;/span&gt;&lt;span class="cl"&gt;---
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之後就在下方進行書寫文章內容。&lt;/p&gt;</description></item><item><title>Medium各種排版功能</title><link>https://agoodbear.com/post/medium-1afeaa016c60/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-1afeaa016c60/</guid><description>
-&lt;h3 id="medium各種排版功能"&gt;Medium各種排版功能&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;打入 ` 之後的文字就會灰底&lt;/li&gt;
 &lt;/ul&gt;

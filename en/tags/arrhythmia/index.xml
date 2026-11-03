@@ -39,7 +39,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Hmm, the rate on this one is a real problem.&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Answering a reader's ECG questions</title><link>https://agoodbear.com/en/post/medium-757469a98a86/</link><pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/medium-757469a98a86/</guid><description>
-&lt;h3 id="answering-a-readers-ecg-questions"&gt;Answering a reader's ECG questions&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -72,7 +71,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;h3 id="the-questions-boil-down-to-a-few-points"&gt;The questions boil down to a few points:&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Q1 → Could Af+VT be happening at the same time?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Q2 → I thought WPW driven by A-fib goes down the Accessory pathway. If it takes the same path, shouldn't the QRS complexes be more stable — shouldn't the beat to beat QRS difference be smaller than this?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>OHCA arrives at the ED: do we activate the cath lab?</title><link>https://agoodbear.com/en/post/medium-3ec1599ca9bb/</link><pubDate>Sat, 16 Jul 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/medium-3ec1599ca9bb/</guid><description>
-&lt;h3 id="ohca-arrives-at-the-ed-do-we-activate-the-cath-lab"&gt;OHCA arrives at the ED: do we activate the cath lab?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -89,7 +87,8 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;strong&gt;&lt;em&gt;Fig.1&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;On one dark and stormy night, the fire department EMS radio outside the ED crackled:&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;This is Yilan 91, we're bringing in a medical OHCA to NYCU Hospital (National Yang Ming Chiao Tung University Hospital) shortly.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;The ambulance arrived: a middle-aged woman, roughly 50 years old, pale, with no color in her face at all.&lt;/p&gt;</description></item><item><title>What Is This Twisted, Distorted ECG?</title><link>https://agoodbear.com/en/post/medium-7bca25391302/</link><pubDate>Fri, 17 Dec 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/medium-7bca25391302/</guid><description>
+&lt;p&gt;The ambulance arrived: a middle-aged woman, roughly 50 years old, pale, with no color in her face at all.&lt;/p&gt;
+&lt;p&gt;The 91 crew told us the AED on scene advised no shock, and they had kept doing CPR.&lt;/p&gt;</description></item><item><title>What Is This Twisted, Distorted ECG?</title><link>https://agoodbear.com/en/post/medium-7bca25391302/</link><pubDate>Fri, 17 Dec 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/medium-7bca25391302/</guid><description>
 &lt;h3 id="so-what-is-this-twisted-distorted-ecg"&gt;So what is this twisted, distorted ECG?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -108,7 +107,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;A man in his 50s went to a local hospital with palpitations and chest tightness. ECG above. The doctor on shift read it as newly onset LBBB and suspected ACS, so he was transferred to our hospital.&lt;/p&gt;
 &lt;p&gt;On arrival he was alert, BP 70/40 mmHg.&lt;/p&gt;
 &lt;p&gt;Never mind what rhythm this is for now — whether you look at the &lt;strong&gt;2015 or 2020 ACLS guideline(Fig.1)&lt;/strong&gt;, it's spelled out clearly: unstable tachycardia should get &lt;strong&gt;Synchronized cardioversion&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Can a VPC be the little soldier who wins the battle?</title><link>https://agoodbear.com/en/post/medium-6cdf5d600a1c/</link><pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/medium-6cdf5d600a1c/</guid><description>
-&lt;h3 id="can-a-vpc-be-the-little-soldier-who-wins-the-battle"&gt;Can a VPC be the little soldier who wins the battle?&lt;/h3&gt;
 &lt;h4 id="lets-see-why-a-vpc-can-be-the-little-soldier-who-wins-the-battle"&gt;Let's see why a VPC can be the little soldier who wins the battle&lt;/h4&gt;
 &lt;p&gt;A VPC originates in the ventricle. Like LBBB, a VPC has discordant ST segments, so when there's excessive discordant STE or concordant STE, you need to be careful. There's no evidence that the MSC applies to VPCs the way it applies to LBBB. But in Stephen Smith's experience, the rule works for VPCs very much the way it does for LBBB, though it's a bit less specific&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;</description></item><item><title>Guess Which Vessel Is Occluded?</title><link>https://agoodbear.com/en/post/medium-b4504530acc/</link><pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/medium-b4504530acc/</guid><description>
 &lt;p&gt;&lt;figure&gt;
@@ -125,7 +123,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;h3 id="guess-which-vessel-is-occluded"&gt;&lt;strong&gt;Guess Which Vessel Is Occluded?&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;A case from a while back: a middle-aged man in his 40s. He suddenly collapsed at work.&lt;/p&gt;
 &lt;p&gt;He was altered on arrival. Vital signs:&lt;/p&gt;
 &lt;p&gt;Temp: 34.7, HR: 73, RR: 12, BP: 59/34 mmHg, SaO2: 94%&lt;/p&gt;
@@ -145,7 +142,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;h3 id="narrow-qrs-tachycardia"&gt;Narrow QRS tachycardia&lt;/h3&gt;
 &lt;p&gt;50-year-old man with prior Aortic valve surgery. Chief complaint: palpitations (&lt;strong&gt;the ER ECG is the top image of this blog post&lt;/strong&gt;).&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;

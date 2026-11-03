@@ -13,7 +13,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;strong&gt;&lt;em&gt;ER arrival&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id="ihca--pulmonary-embolism-or-something-else"&gt;IHCA → Pulmonary embolism, or something else?&lt;/h3&gt;
 &lt;p&gt;Let's look at an interesting case.&lt;/p&gt;
 &lt;p&gt;85-year-old woman with a history of cancer. On arrival: dyspneic, hypotensive, confused.&lt;/p&gt;
 &lt;p&gt;ECG interpretation (&lt;strong&gt;see the image above&lt;/strong&gt;): unstable baseline&lt;/p&gt;
@@ -22,7 +21,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;Axis: RAD&lt;/p&gt;
 &lt;p&gt;New RBBB (not on her prior ECG), 1st AVB&lt;/p&gt;
 &lt;p&gt;The baseline is unstable, but there seems to be STD over V2~V6 and I/aVL (maximal in V3~V4). It would be clearer if we could repeat it, but given how sick she was, this may already be as clean as it gets. STE over aVR and III.&lt;/p&gt;</description></item><item><title>Still Hyperkalemic?</title><link>https://agoodbear.com/en/post/medium-ef858cdd6d2/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/medium-ef858cdd6d2/</guid><description>
-&lt;h3 id="still-hyperkalemic"&gt;Still Hyperkalemic?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -52,4 +50,5 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
-&lt;em&gt;Fig 2&lt;/em&gt;&lt;/p&gt;</description></item></channel></rss>
+&lt;em&gt;Fig 2&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Fig 2 is the ECG done at the time of the second cardiac enzyme draw.&lt;/p&gt;</description></item></channel></rss>

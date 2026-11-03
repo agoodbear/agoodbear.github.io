@@ -152,7 +152,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;li&gt;看ECG機器數值😆&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;應用rule of 300，就是先算RR interval有幾大格，算好後，直接300/幾大格(&lt;strong&gt;Fig.4&lt;/strong&gt;)。不過有一個前提，那就是12 lead ECG的Speed要設在 &lt;strong&gt;25 mm/sec&lt;/strong&gt;。理論上，一般都是設25 mm/sec，沒事不會去做變更啦。&lt;/p&gt;</description></item><item><title>回覆網友ECG提問</title><link>https://agoodbear.com/post/medium-757469a98a86/</link><pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-757469a98a86/</guid><description>
-&lt;h3 id="回覆網友ecg提問"&gt;回覆網友ECG提問&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -202,7 +201,6 @@ Let’s dive right in. Remember to use your system. What do you see here? With t
 &lt;div style="margin-top:.6rem;font-size:.8rem;opacity:.75;"&gt;2021-03-05 · &lt;a href="https://x.com/COREIMpodcast/status/1367809533138059264" target="_blank" rel="noopener"&gt;在 X 上查看原推文&lt;/a&gt;&lt;/div&gt;
 &lt;/figure&gt;
 &lt;p&gt;在這張ECG可以在V1看到fibrillation wave(Af其atrial rate:350–600 bpm)。&lt;/p&gt;</description></item><item><title>OHCA到院，啟動心導管嗎?</title><link>https://agoodbear.com/post/medium-3ec1599ca9bb/</link><pubDate>Sat, 16 Jul 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-3ec1599ca9bb/</guid><description>
-&lt;h3 id="ohca到院啟動心導管嗎"&gt;OHCA到院，啟動心導管嗎?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -250,7 +248,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;h4 id="q4ohca病患rosc之後要注意哪些重點"&gt;&lt;strong&gt;Q4:OHCA病患ROSC之後要注意哪些重點?&lt;/strong&gt;&lt;/h4&gt;
 &lt;h4 id="q5如果病患懷疑acs要衝導管嗎衝導管之前需要排除什麼問題呢"&gt;&lt;strong&gt;Q5:如果病患懷疑ACS要衝導管嗎?衝導管之前，需要排除什麼問題呢?&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;首先看到&lt;strong&gt;diffuse STD + aVR and/or V1 STE&lt;/strong&gt;最常見的問題是發生了，oxygen demand and supply mismatch造成了subendocardial ischemia。這種的STD有一個特點那就是沒辦法localized the ischemia territory。拿Fig.2來舉例，我們看到了II/III/aVF、V3~V6有STD，我們不能說病患的inf.wall、ant./lateral wall有ischemia，因為通常subendocardial ischemia並無法localize缺血位置。&lt;/p&gt;</description></item><item><title>這是什麼扭曲變形的ECG?</title><link>https://agoodbear.com/post/medium-7bca25391302/</link><pubDate>Fri, 17 Dec 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-7bca25391302/</guid><description>
-&lt;h3 id="這是什麼扭曲變形的ecg呢"&gt;這是什麼扭曲變形的ECG呢?&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
 &lt;img
@@ -319,7 +316,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;li&gt;&lt;strong&gt;首先先來看Af+BBB(bundle branch block)是什麼?&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;意思就是Af+LBBB or RBBB。也就是病患本身就有RBBB or LBBB，所以ECG的QRS本來就因為BBB而會變寬，這時候加上Af，就會變成irregularly irregular特性且QRS是寬的。&lt;/p&gt;</description></item><item><title>VPC也可以小兵立大功嗎?</title><link>https://agoodbear.com/post/medium-6cdf5d600a1c/</link><pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-6cdf5d600a1c/</guid><description>
-&lt;h3 id="vpc也可以小兵立大功嗎"&gt;VPC也可以小兵立大功嗎?&lt;/h3&gt;
 &lt;h4 id="我們來看看為何vpc也可以小兵立大功"&gt;我們來看看為何VPC也可以小兵立大功&lt;/h4&gt;
 &lt;p&gt;VPC是由心室產生的。VPC就像LBBB一樣具有discordant ST segments，所以當excessive discordant STE或concordant STE時，就要小心。雖然沒有證據顯示MSC可以適用VPC就像LBBB一樣。但是根據Stephen Smith的經驗，這rule用在VPC和用在LBBB非常類似，雖然specific少一點&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://hqmeded-ecg.blogspot.com/2014/01/look-at-pvcs.html"&gt;&lt;figure&gt;
@@ -402,7 +398,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;h3 id="narrow-qrs-tachycardia"&gt;Narrow QRS tachycardia&lt;/h3&gt;
 &lt;p&gt;50歲男性，過去Aortic valve開過刀。主述心悸(&lt;strong&gt;ER ECG為blog最上圖&lt;/strong&gt;)。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
 &lt;picture&gt;
@@ -461,7 +456,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;h3 id="猜猜哪一條血管阻塞"&gt;&lt;strong&gt;猜猜哪一條血管阻塞?&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;前一陣子的個案，約莫40多歲的中年男性。工作時突然昏倒。&lt;/p&gt;
 &lt;p&gt;到院時意識不清，生命徵象:&lt;/p&gt;
 &lt;p&gt;體溫:34.7、心跳:73、呼吸:12、血壓:59/34 mmHg、SaO2:94%&lt;/p&gt;

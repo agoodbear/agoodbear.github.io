@@ -196,7 +196,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;a href="https://agoodbear.com/bloggallery/14.jpeg" data-ngThumb="/bloggallery/14.jpeg"&gt;遠觀101&lt;/a&gt;
 &lt;a href="https://agoodbear.com/bloggallery/15.jpeg" data-ngThumb="/bloggallery/15.jpeg"&gt;簽名書&lt;/a&gt;
 &lt;/div&gt;</description></item><item><title>有推薦哪些實用的ECG網站或資源呢?</title><link>https://agoodbear.com/post/medium-fc136c4d6bf/</link><pubDate>Wed, 11 May 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-fc136c4d6bf/</guid><description>
-&lt;h3 id="有推薦哪些實用的ecg網站或資源呢"&gt;有推薦哪些實用的ECG網站或資源呢?&lt;/h3&gt;
 &lt;h3 id="前言廢話"&gt;前言廢話&lt;/h3&gt;
 &lt;p&gt;以前在醫院的老師在臨床指導我的時候，常常會說，在醫院裡面有兩個科別的醫師要很會看ECG。首先當然是心臟科，第二個科別是急診科醫師。&lt;/p&gt;
 &lt;p&gt;急診科要會的東西很多、內外婦兒五官科、大傷、EMS、毒物、POCUS。或許不是專精，但至少都要打到擦邊球。畢竟我們沒辦法掌控病患的來源，就是靜靜等待病患的到來，幫病患解除痛苦，找出原因。&lt;/p&gt;
@@ -223,7 +222,6 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 &lt;p&gt;上面兩本都是Amal mattu寫的，透過Case by Case講授重要的觀念。&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.amazon.com/-/zh_TW/Stephen-Smith-ebook-dp-B01LDT7CIY/dp/B01LDT7CIY/ref=mt_other?_encoding=UTF8&amp;amp;me=&amp;amp;qid=1652240667"&gt;The ECG in Acute MI: An Evidence-Based Manual of Reperfusion Therapy&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;上面這一本是Dr.Smith寫的書，關於MI會有哪一些ECG morphology變化。這本書寫的真的是非常棒，可以加深自己對於OMI(Occlusion MI)的觀念。&lt;/p&gt;</description></item><item><title>Medium各種排版功能</title><link>https://agoodbear.com/post/medium-1afeaa016c60/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://agoodbear.com/post/medium-1afeaa016c60/</guid><description>
-&lt;h3 id="medium各種排版功能"&gt;Medium各種排版功能&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;打入 ` 之後的文字就會灰底&lt;/li&gt;
 &lt;/ul&gt;
