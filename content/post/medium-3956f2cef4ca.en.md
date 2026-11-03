@@ -18,8 +18,6 @@ canonicalURL: "https://medium.com/@agoodbear/2%E5%B0%8F%E6%99%82%E5%89%8D%E8%83%
 translated_from: "medium-3956f2cef4ca.md"
 translation_date: "2026-10-09"
 ---
-### Chest Tightness That Started 2 Hours Ago: Is It AMI?
-
 ![](https://cdn-images-1.medium.com/max/1024/1*jG5jZ9QX0uBhanaXQF6ZCg.jpeg)
 
 A 56-year-old man with no significant past history. In the small hours of the night he had chest tightness and discomfort, radiating to both arms.

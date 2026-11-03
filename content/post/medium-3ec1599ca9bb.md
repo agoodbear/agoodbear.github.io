@@ -16,8 +16,6 @@ medium_id: "3ec1599ca9bb"
 medium_url: "https://medium.com/@agoodbear/ohca%E5%88%B0%E9%99%A2-%E5%95%9F%E5%8B%95%E5%BF%83%E5%B0%8E%E7%AE%A1%E5%97%8E-3ec1599ca9bb"
 canonicalURL: "https://medium.com/@agoodbear/ohca%E5%88%B0%E9%99%A2-%E5%95%9F%E5%8B%95%E5%BF%83%E5%B0%8E%E7%AE%A1%E5%97%8E-3ec1599ca9bb"
 ---
-### OHCA到院，啟動心導管嗎?
-
 ![](https://cdn-images-1.medium.com/max/1024/1*7sfT-6ZdvaJFT_ZI_X_8Hg@2x.png)
 <strong><em>Fig.1</em></strong>
 
@@ -266,5 +264,5 @@ CV man到達現場後，覺得ECG無法排除LM/TVD/Proximal LAD問題(ACS sick 
 參考資料補充：[^1] [^2] [^3]
 
 [^1]: Dr. Smith’s ECG Blog: Chest Pain and Q-waves in V1 and V2. Is there previous septal MI? — [link](https://hqmeded-ecg.blogspot.com/2018/11/chest-pain-and-q-waves-in-v1-and-v2-is.html)
-[^2]: Baranchuk, A., Enriquez, A., García-Niebla, J., Bayés-Genís, A., Villuendas, R., & Bayés de Luna, A. (2015). Differential Diagnosis of rSr’ Pattern in Leads V1-V2. Comprehensive Review and Proposed Algorithm. \_\_Annals of Noninvasive Electrocardiology\_\_, \_\_20\_\_(1), 7–17. [https://doi.org/10.1111/anec.12241](https://doi.org/10.1111/anec.12241)
-[^3]: Yannopoulos, D., Bartos, J. A., Aufderheide, T. P., Callaway, C. W., Deo, R., Garcia, S., Halperin, H. R., Kern, K. B., Kudenchuk, P. J., Neumar, R. W., Raveendran, G., & null, null. (2019). The Evolving Role of the Cardiac Catheterization Laboratory in the Management of Patients With Out-of-Hospital Cardiac Arrest: A Scientific Statement From the American Heart Association. \_\_Circulation\_\_, \_\_139\_\_(12), e530–e552. [https://doi.org/10.1161/CIR.0000000000000630](https://doi.org/10.1161/CIR.0000000000000630)
+[^2]: Baranchuk, A., Enriquez, A., García-Niebla, J., Bayés-Genís, A., Villuendas, R., & Bayés de Luna, A. (2015). Differential Diagnosis of rSr’ Pattern in Leads V1-V2. Comprehensive Review and Proposed Algorithm. *Annals of Noninvasive Electrocardiology*, *20*(1), 7–17. [https://doi.org/10.1111/anec.12241](https://doi.org/10.1111/anec.12241)
+[^3]: Yannopoulos, D., Bartos, J. A., Aufderheide, T. P., Callaway, C. W., Deo, R., Garcia, S., Halperin, H. R., Kern, K. B., Kudenchuk, P. J., Neumar, R. W., Raveendran, G., & null, null. (2019). The Evolving Role of the Cardiac Catheterization Laboratory in the Management of Patients With Out-of-Hospital Cardiac Arrest: A Scientific Statement From the American Heart Association. *Circulation*, *139*(12), e530–e552. [https://doi.org/10.1161/CIR.0000000000000630](https://doi.org/10.1161/CIR.0000000000000630)

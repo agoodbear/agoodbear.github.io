@@ -19,8 +19,6 @@ canonicalURL: "https://medium.com/@agoodbear/%E5%BF%83%E8%87%9F%E8%AD%A6%E8%A8%8
 translated_from: "medium-30c24eb7e9ab.md"
 translation_date: "2026-10-09"
 ---
-### Heart Warning: Pericarditis vs. OMI — Readmitted
-
 ![](https://cdn-images-1.medium.com/max/1024/1*tprAYzfatLfq__U6OEglhw.png)
 ***Fig.1 The ECG from the first ED visit***
 

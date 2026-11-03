@@ -18,8 +18,6 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFstemi-%E4%BD%A0%E
 translated_from: "medium-3485bf8aafc3.md"
 translation_date: "2026-10-09"
 ---
-### This Is a STEMI. Do You Believe It?
-
 ![](https://cdn-images-1.medium.com/max/1024/1*BZYaEyrDghAJY-2Uxgz7cA@2x.png)
 
 Let's look at a case from my night shift yesterday. A 50-year-old man who worked catching glass eels (baby eels).

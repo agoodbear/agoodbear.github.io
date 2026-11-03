@@ -90,7 +90,7 @@ Brugada syndrome
 #### <strong>⭐️怎麼樣的V2~V3 ECG morphology偏向RV strain(如果ECG形成RBBB，以下morphology不適用)</strong>
 
 - 通常bigger S wave than R wave
-- 通常J point isoelectric 或 J point elevated，接著凸向上STE然後TWI➜指PE的TWI和[[Wellens' wave]]的TWI長得不一樣(<strong>看Fig.2的ECG morphology</strong>)
+- 通常J point isoelectric 或 J point elevated，接著凸向上STE然後TWI➜指PE的TWI和Wellens' wave的TWI長得不一樣(<strong>看Fig.2的ECG morphology</strong>)
   - <strong>PE的TWI</strong>是convex STE，然後像雲霄飛車彎向下
   - <strong>ACS-Wellen的TWI</strong>是陡降，比較sharp
 - 通常some STD in V4~6和inf.lead也會TWI

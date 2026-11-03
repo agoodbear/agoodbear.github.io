@@ -17,8 +17,6 @@ medium_id: "30c24eb7e9ab"
 medium_url: "https://medium.com/@agoodbear/%E5%BF%83%E8%87%9F%E8%AD%A6%E8%A8%8A-pericarditis-vs-omi-%E5%86%8D%E6%AC%A1%E5%85%A5%E9%99%A2-30c24eb7e9ab"
 canonicalURL: "https://medium.com/@agoodbear/%E5%BF%83%E8%87%9F%E8%AD%A6%E8%A8%8A-pericarditis-vs-omi-%E5%86%8D%E6%AC%A1%E5%85%A5%E9%99%A2-30c24eb7e9ab"
 ---
-### 心臟警訊：Pericarditis vs. OMI— 再次入院
-
 ![](https://cdn-images-1.medium.com/max/1024/1*tprAYzfatLfq__U6OEglhw.png)
 ***Fig.1 第一次急診就醫的ECG***
 

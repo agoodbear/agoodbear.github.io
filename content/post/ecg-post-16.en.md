@@ -92,7 +92,7 @@ I've written about this before. I'll go over it again in more detail anyway, par
 #### <strong>⭐️What kind of V2~V3 ECG morphology leans toward RV strain (if the ECG has an RBBB pattern, the morphology below doesn't apply)</strong>
 
 - Usually bigger S wave than R wave
-- Usually J point isoelectric or J point elevated, followed by upwardly convex STE and then TWI ➜ meaning PE's TWI looks different from the TWI of [[Wellens' wave]] (<strong>look at the ECG morphology in Fig.2</strong>)
+- Usually J point isoelectric or J point elevated, followed by upwardly convex STE and then TWI ➜ meaning PE's TWI looks different from the TWI of Wellens' wave (<strong>look at the ECG morphology in Fig.2</strong>)
   - <strong>The TWI of PE</strong> is convex STE that then curves down like a roller coaster
   - <strong>The TWI of ACS-Wellens</strong> drops off steeply, sharper
 - Usually some STD in V4~6, and the inf. leads will also have TWI

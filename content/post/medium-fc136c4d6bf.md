@@ -16,8 +16,6 @@ medium_id: "fc136c4d6bf"
 medium_url: "https://medium.com/@agoodbear/%E6%9C%89%E6%8E%A8%E8%96%A6%E5%93%AA%E4%BA%9B%E5%AF%A6%E7%94%A8%E7%9A%84ecg%E7%B6%B2%E7%AB%99%E6%88%96%E8%B3%87%E6%BA%90%E5%91%A2-fc136c4d6bf"
 canonicalURL: "https://medium.com/@agoodbear/%E6%9C%89%E6%8E%A8%E8%96%A6%E5%93%AA%E4%BA%9B%E5%AF%A6%E7%94%A8%E7%9A%84ecg%E7%B6%B2%E7%AB%99%E6%88%96%E8%B3%87%E6%BA%90%E5%91%A2-fc136c4d6bf"
 ---
-### 有推薦哪些實用的ECG網站或資源呢?
-
 ### 前言廢話
 
 以前在醫院的老師在臨床指導我的時候，常常會說，在醫院裡面有兩個科別的醫師要很會看ECG。首先當然是心臟科，第二個科別是急診科醫師。

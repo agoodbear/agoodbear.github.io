@@ -16,8 +16,6 @@ medium_id: "6cdf5d600a1c"
 medium_url: "https://medium.com/@agoodbear/vpc%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%B0%8F%E5%85%B5%E7%AB%8B%E5%A4%A7%E5%8A%9F%E5%97%8E-6cdf5d600a1c"
 canonicalURL: "https://medium.com/@agoodbear/vpc%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%B0%8F%E5%85%B5%E7%AB%8B%E5%A4%A7%E5%8A%9F%E5%97%8E-6cdf5d600a1c"
 ---
-### VPC也可以小兵立大功嗎?
-
 #### 我們來看看為何VPC也可以小兵立大功
 
 VPC是由心室產生的。VPC就像LBBB一樣具有discordant ST segments，所以當excessive discordant STE或concordant STE時，就要小心。雖然沒有證據顯示MSC可以適用VPC就像LBBB一樣。但是根據Stephen Smith的經驗，這rule用在VPC和用在LBBB非常類似，雖然specific少一點[^3]。
@@ -132,5 +130,5 @@ Fig.5為QT interval nomogram[^2]，在H.R<60以下，只要QT interval > 485 ms�
 參考資料補充：[^1] [^2] [^3]
 
 [^1]: Dr. Smith’s ECG Blog: An elderly man who dies 12 hours later — could he have been saved? — [link](http://hqmeded-ecg.blogspot.com/2021/10/an-elderly-man-who-dies-12-hours-later.html)
-[^2]: Chan, A., Isbister, G. K., Kirkpatrick, C. M. J., & Dufful, S. B. (2007). Drug-induced QT prolongation and torsades de pointes: evaluation of a QT nomogram. \_\_QJM: Monthly Journal of the Association of Physicians\_\_, \_\_100\_\_(10), 609–615. [https://doi.org/10.1093/qjmed/hcm072](https://doi.org/10.1093/qjmed/hcm072)
+[^2]: Chan, A., Isbister, G. K., Kirkpatrick, C. M. J., & Dufful, S. B. (2007). Drug-induced QT prolongation and torsades de pointes: evaluation of a QT nomogram. *QJM: Monthly Journal of the Association of Physicians*, *100*(10), 609–615. [https://doi.org/10.1093/qjmed/hcm072](https://doi.org/10.1093/qjmed/hcm072)
 [^3]: Dr. Smith’s ECG Blog: Hyperacute T-waves and Concordant ST Elevation seen in PVCs only — [link](http://hqmeded-ecg.blogspot.com/2018/10/hyperacute-t-waves-and-concordant-st.html)

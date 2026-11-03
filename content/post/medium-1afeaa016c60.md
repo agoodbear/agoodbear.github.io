@@ -16,8 +16,6 @@ medium_id: "1afeaa016c60"
 medium_url: "https://medium.com/@agoodbear/medium%E5%90%84%E7%A8%AE%E6%8E%92%E7%89%88%E5%8A%9F%E8%83%BD-1afeaa016c60"
 canonicalURL: "https://medium.com/@agoodbear/medium%E5%90%84%E7%A8%AE%E6%8E%92%E7%89%88%E5%8A%9F%E8%83%BD-1afeaa016c60"
 ---
-### Medium各種排版功能
-
 - 打入 \` 之後的文字就會灰底
 
 ![](https://cdn-images-1.medium.com/max/1024/1*xXb9LHTT0K9SsQizSxzYZg@2x.png)

@@ -17,8 +17,6 @@ medium_id: "2ea0b1ecd7ad"
 medium_url: "https://medium.com/@agoodbear/73%E6%AD%B2%E7%94%B7%E6%80%A7-%E8%83%B8%E7%97%9B%E6%8C%81%E7%BA%8C-%E9%9C%80%E8%A6%81%E5%B0%8E%E7%AE%A1%E4%BB%8B%E5%85%A5%E5%97%8E-2ea0b1ecd7ad"
 canonicalURL: "https://medium.com/@agoodbear/73%E6%AD%B2%E7%94%B7%E6%80%A7-%E8%83%B8%E7%97%9B%E6%8C%81%E7%BA%8C-%E9%9C%80%E8%A6%81%E5%B0%8E%E7%AE%A1%E4%BB%8B%E5%85%A5%E5%97%8E-2ea0b1ecd7ad"
 ---
-### 73歲男性，胸痛持續。需要導管介入嗎?
-
 ![](https://cdn-images-1.medium.com/max/1024/1*WPqDirWKj_yqdGzdBAZqnw.png)
 
 覺得這個Case非常有趣，也可以從中學到不少。特地把這個Case從眾多想寫的案例中，往前拉。

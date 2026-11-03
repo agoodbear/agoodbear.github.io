@@ -18,8 +18,6 @@ canonicalURL: "https://medium.com/@agoodbear/%E6%9C%89%E6%8E%A8%E8%96%A6%E5%93%A
 translated_from: "medium-fc136c4d6bf.md"
 translation_date: "2026-10-09"
 ---
-### Which practical ECG websites and resources do I recommend?
-
 ### Preamble (rambling)
 
 Back when my attendings were teaching me on the floor, they'd often say there are two specialties in the hospital whose doctors need to be really good at reading ECGs. Cardiology, of course. The second is emergency medicine.

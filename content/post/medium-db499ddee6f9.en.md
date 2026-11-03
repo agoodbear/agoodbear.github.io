@@ -19,8 +19,6 @@ canonicalURL: "https://medium.com/@agoodbear/%E4%BD%8E%E8%A1%80%E5%A3%93-%E4%BD%
 translated_from: "medium-db499ddee6f9.md"
 translation_date: "2026-10-09"
 ---
-### Arriving hypotensive and hypoxic: is there something wrong with the ECG?
-
 ![](https://cdn-images-1.medium.com/max/1024/1*NXKy7gSDorREfnBDMYGt6w@2x.png)
 <strong><em>Fig.1 ECG on arrival</em></strong>
 
@@ -378,7 +376,7 @@ Additional references: [^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8] [^9] [^10] [^11]
 [^3]: Amal Mattu’s ECG Case of the Week — June 27, 2022 — ECG Weekly — [link](https://ecgweekly.com/2022/06/amal-mattus-ecg-case-of-the-week-june-27-2022/)
 [^4]: Amal Mattu’s ECG Case of the Week — April 11, 2022 — ECG Weekly — [link](https://ecgweekly.com/2022/04/amal-mattus-ecg-case-of-the-week-april-11-2022/)
 [^5]: Digby, G. C., Kukla, P., Zhan, Z.-Q., Pastore, C. A., Piotrowicz, R., Schapachnik, E., Zareba, W., Bayés de Luna, A., Pruszczyk, P., & Baranchuk, A. M. (2015). The Value of Electrocardiographic Abnormalities in the Prognosis of Pulmonary Embolism: A Consensus Paper. Annals of Noninvasive Electrocardiology, 20(3), 207–223. [https://doi.org/10.1111/anec.12278](https://doi.org/10.1111/anec.12278)
-[^6]: Co, I., Eilbert, W., & Chiganos, T. (2017). New Electrocardiographic Changes in Patients Diagnosed with Pulmonary Embolism. \_\_The Journal of Emergency Medicine\_\_, \_\_52\_\_(3), 280–285. [https://doi.org/10.1016/j.jemermed.2016.09.009](https://doi.org/10.1016/j.jemermed.2016.09.009)
+[^6]: Co, I., Eilbert, W., & Chiganos, T. (2017). New Electrocardiographic Changes in Patients Diagnosed with Pulmonary Embolism. *The Journal of Emergency Medicine*, *52*(3), 280–285. [https://doi.org/10.1016/j.jemermed.2016.09.009](https://doi.org/10.1016/j.jemermed.2016.09.009)
 [^7]: ECG Case 123 • LITFL • ECG Top 100 Self-Assessment Quiz — [link](https://litfl.com/ecg-case-123/)
 [^8]: Kosuge, M., Kimura, K., Ishikawa, T., Ebina, T., Hibi, K., Kusama, I., Nakachi, T., Endo, M., Komura, N., & Umemura, S. (2007). Electrocardiographic differentiation between acute pulmonary embolism and acute coronary syndromes on the basis of negative T waves. The American Journal of Cardiology, 99(6), 817–821. [https://doi.org/10.1016/j.amjcard.2006.10.043](https://doi.org/10.1016/j.amjcard.2006.10.043)
 [^9]: Raunio, H., Rissanen, V., & Lampainen, E. (1976). Significance of a prominent S wave in leads I and V6 in the electrocardiograms of middle-aged and elderly hospital patients. Annals of Clinical Research, 8(6), 347–358.

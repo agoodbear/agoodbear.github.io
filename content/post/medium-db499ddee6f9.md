@@ -17,8 +17,6 @@ medium_id: "db499ddee6f9"
 medium_url: "https://medium.com/@agoodbear/%E4%BD%8E%E8%A1%80%E5%A3%93-%E4%BD%8E%E8%A1%80%E6%B0%A7%E5%88%B0%E9%99%A2-%E5%BF%83%E9%9B%BB%E5%9C%96%E6%9C%89%E5%95%8F%E9%A1%8C%E5%97%8E-db499ddee6f9"
 canonicalURL: "https://medium.com/@agoodbear/%E4%BD%8E%E8%A1%80%E5%A3%93-%E4%BD%8E%E8%A1%80%E6%B0%A7%E5%88%B0%E9%99%A2-%E5%BF%83%E9%9B%BB%E5%9C%96%E6%9C%89%E5%95%8F%E9%A1%8C%E5%97%8E-db499ddee6f9"
 ---
-### 低血壓、低血氧到院，心電圖有問題嗎?
-
 ![](https://cdn-images-1.medium.com/max/1024/1*NXKy7gSDorREfnBDMYGt6w@2x.png)
 <strong><em>Fig.1到院時ECG</em></strong>
 
@@ -376,7 +374,7 @@ Fig.13是在病患滴完2小時的rTPA後，我再次做的Heart POCUS。左側�
 [^3]: Amal Mattu’s ECG Case of the Week — June 27, 2022 — ECG Weekly — [link](https://ecgweekly.com/2022/06/amal-mattus-ecg-case-of-the-week-june-27-2022/)
 [^4]: Amal Mattu’s ECG Case of the Week — April 11, 2022 — ECG Weekly — [link](https://ecgweekly.com/2022/04/amal-mattus-ecg-case-of-the-week-april-11-2022/)
 [^5]: Digby, G. C., Kukla, P., Zhan, Z.-Q., Pastore, C. A., Piotrowicz, R., Schapachnik, E., Zareba, W., Bayés de Luna, A., Pruszczyk, P., & Baranchuk, A. M. (2015). The Value of Electrocardiographic Abnormalities in the Prognosis of Pulmonary Embolism: A Consensus Paper. Annals of Noninvasive Electrocardiology, 20(3), 207–223. [https://doi.org/10.1111/anec.12278](https://doi.org/10.1111/anec.12278)
-[^6]: Co, I., Eilbert, W., & Chiganos, T. (2017). New Electrocardiographic Changes in Patients Diagnosed with Pulmonary Embolism. \_\_The Journal of Emergency Medicine\_\_, \_\_52\_\_(3), 280–285. [https://doi.org/10.1016/j.jemermed.2016.09.009](https://doi.org/10.1016/j.jemermed.2016.09.009)
+[^6]: Co, I., Eilbert, W., & Chiganos, T. (2017). New Electrocardiographic Changes in Patients Diagnosed with Pulmonary Embolism. *The Journal of Emergency Medicine*, *52*(3), 280–285. [https://doi.org/10.1016/j.jemermed.2016.09.009](https://doi.org/10.1016/j.jemermed.2016.09.009)
 [^7]: ECG Case 123 • LITFL • ECG Top 100 Self-Assessment Quiz — [link](https://litfl.com/ecg-case-123/)
 [^8]: Kosuge, M., Kimura, K., Ishikawa, T., Ebina, T., Hibi, K., Kusama, I., Nakachi, T., Endo, M., Komura, N., & Umemura, S. (2007). Electrocardiographic differentiation between acute pulmonary embolism and acute coronary syndromes on the basis of negative T waves. The American Journal of Cardiology, 99(6), 817–821. [https://doi.org/10.1016/j.amjcard.2006.10.043](https://doi.org/10.1016/j.amjcard.2006.10.043)
 [^9]: Raunio, H., Rissanen, V., & Lampainen, E. (1976). Significance of a prominent S wave in leads I and V6 in the electrocardiograms of middle-aged and elderly hospital patients. Annals of Clinical Research, 8(6), 347–358.

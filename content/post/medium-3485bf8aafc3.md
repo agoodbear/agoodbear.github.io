@@ -16,8 +16,6 @@ medium_id: "3485bf8aafc3"
 medium_url: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFstemi-%E4%BD%A0%E7%9B%B8%E4%BF%A1%E5%97%8E-3485bf8aafc3"
 canonicalURL: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFstemi-%E4%BD%A0%E7%9B%B8%E4%BF%A1%E5%97%8E-3485bf8aafc3"
 ---
-### 這是STEMI，你相信嗎?
-
 ![](https://cdn-images-1.medium.com/max/1024/1*BZYaEyrDghAJY-2Uxgz7cA@2x.png)
 
 來看看昨天夜班上班的一位個案。50歲男性，本來從事捕鰻苗的工作。

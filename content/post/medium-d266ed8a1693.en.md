@@ -23,8 +23,6 @@ translation_date: "2026-10-09"
 ![](https://cdn-images-1.medium.com/max/1024/1*f2GmaCa9hR-VLoQKEGX0vw@2x.png)
 <strong><em>ER arrival</em></strong>
 
-### IHCA → Pulmonary embolism, or something else?
-
 Let's look at an interesting case.
 
 85-year-old woman with a history of cancer. On arrival: dyspneic, hypotensive, confused.
@@ -176,8 +174,8 @@ V1~V4 will show bigger, upright T waves (which, mirrored onto the posterior wall
 
 Additional references: [^1] [^2] [^3] [^4] [^5]
 
-[^1]: Kasper, W., Konstantinides, S., Geibel, A., Olschewski, M., Heinrich, F., Grosser, K. D., Rauber, K., Iversen, S., Redecker, M., & Kienast, J. (1997). Management Strategies and Determinants of Outcome in Acute Major Pulmonary Embolism: Results of a Multicenter Registry. \_\_Journal of the American College of Cardiology\_\_, \_\_30\_\_(5), 1165–1171. [https://doi.org/10.1016/S0735-1097(97)00319-7](https://doi.org/10.1016/S0735-1097(97)00319-7)
+[^1]: Kasper, W., Konstantinides, S., Geibel, A., Olschewski, M., Heinrich, F., Grosser, K. D., Rauber, K., Iversen, S., Redecker, M., & Kienast, J. (1997). Management Strategies and Determinants of Outcome in Acute Major Pulmonary Embolism: Results of a Multicenter Registry. *Journal of the American College of Cardiology*, *30*(5), 1165–1171. [https://doi.org/10.1016/S0735-1097(97)00319-7](https://doi.org/10.1016/S0735-1097(97)00319-7)
 [^2]: Dr. Smith’s ECG Blog: Posterior ST Elevation MI in the Setting of Right Bundle Branch Block, with Posterior Leads V7-V9 — [link](http://hqmeded-ecg.blogspot.com/2009/12/posterior-st-elevation-mi-in-setting-of.html)
-[^3]: Bayés de Luna, A., Wagner, G., Birnbaum, Y., Nikus, K., Fiol, M., Gorgels, A., Cinca, J., Clemmensen, P. M., Pahlm, O., Sclarovsky, S., Stern, S., Wellens, H., & Zareba, W. (2006). A New Terminology for Left Ventricular Walls and Location of Myocardial Infarcts That Present Q Wave Based on the Standard of Cardiac Magnetic Resonance Imaging: A Statement for Healthcare Professionals From a Committee Appointed by the International Society for Holter and Noninvasive Electrocardiography. \_\_Circulation\_\_, \_\_114\_\_(16), 1755–1760. [https://doi.org/10/d4gnjk](https://doi.org/10/d4gnjk)
+[^3]: Bayés de Luna, A., Wagner, G., Birnbaum, Y., Nikus, K., Fiol, M., Gorgels, A., Cinca, J., Clemmensen, P. M., Pahlm, O., Sclarovsky, S., Stern, S., Wellens, H., & Zareba, W. (2006). A New Terminology for Left Ventricular Walls and Location of Myocardial Infarcts That Present Q Wave Based on the Standard of Cardiac Magnetic Resonance Imaging: A Statement for Healthcare Professionals From a Committee Appointed by the International Society for Holter and Noninvasive Electrocardiography. *Circulation*, *114*(16), 1755–1760. [https://doi.org/10/d4gnjk](https://doi.org/10/d4gnjk)
 [^4]: Dr. Smith’s ECG Blog: A man in his early sixties with palpitations — [link](http://hqmeded-ecg.blogspot.com/2020/01/a-man-in-his-early-sixties-with.html)
 [^5]: [Is This Posterior Wellens' Syndrome or De Winter?] (in Chinese) — Tsao Jian-hsiung — Medium — [link](https://agoodbear.medium.com/%E9%80%99%E6%98%AFpost-wellen-syndrome%E9%82%84%E6%98%AFde-winter-391b08ca389f)

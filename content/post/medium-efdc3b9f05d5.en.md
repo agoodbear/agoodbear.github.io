@@ -20,8 +20,6 @@ translation_date: "2026-10-09"
 ---
 ![](https://cdn-images-1.medium.com/max/1024/1*RiODz6_7wUuQe3rCyrTHEQ@2x.png)
 
-### Diagnosing AMI in LBBB or paced rhythm: have you filled in all the gaps?
-
 ### First, a question
 
 #### Can LBBB be treated as AMI?

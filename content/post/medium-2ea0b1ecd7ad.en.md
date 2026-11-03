@@ -19,8 +19,6 @@ canonicalURL: "https://medium.com/@agoodbear/73%E6%AD%B2%E7%94%B7%E6%80%A7-%E8%8
 translated_from: "medium-2ea0b1ecd7ad.md"
 translation_date: "2026-10-09"
 ---
-### 73-year-old man, ongoing chest pain. Does he need cath intervention?
-
 ![](https://cdn-images-1.medium.com/max/1024/1*WPqDirWKj_yqdGzdBAZqnw.png)
 
 I found this case really interesting, and there's a lot to learn from it. So I pulled it ahead of the many other cases I want to write about.

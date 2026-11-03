@@ -19,8 +19,6 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFpost-wellen-syndr
 translated_from: "medium-391b08ca389f.md"
 translation_date: "2026-10-09"
 ---
-### Is this Post. Wellens syndrome or De Winter?
-
 ![](https://cdn-images-1.medium.com/max/1024/1*G-3NxJGciSjISLUr0SbOOw.png)
 *From:[https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html](https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html)*
 

@@ -22,8 +22,6 @@ translation_date: "2026-10-09"
 ![](https://cdn-images-1.medium.com/max/1024/1*658U47yADmFl43Vh8lxIhw@2x.png)
 <strong><em>ECG on arrival (Fig 1)</em></strong>
 
-### A case of out-of-hospital cardiac arrest — what was the cause?
-
 76-year-old woman.
 
 Arrived at an outside hospital in out-of-hospital cardiac arrest; after resuscitation, she got ROSC. She was transferred to our hospital, and the first ECG on arrival in our ED is shown above <strong><em>(at this point she was about to crash)</em></strong>. Her heart stopped very soon after. After roughly another 10 minutes of CPR, she got ROSC again. We did another 12-lead ECG <strong>(Fig 2)</strong>.

@@ -19,8 +19,6 @@ canonicalURL: "https://medium.com/@agoodbear/%E8%83%B8%E7%97%9B-%E6%98%AFwellen%
 translated_from: "medium-cec16f0ae2f8.md"
 translation_date: "2026-10-09"
 ---
-### Chest pain: is it Wellen?
-
 ![](https://cdn-images-1.medium.com/max/1024/1*yRFGZRBFf8mrOR-6YJog9Q@2x.png)
 
 A 70-year-old man with chest pain for three days. At night it hurt so much he couldn't sleep. Past history of HCC treated with transarterial embolization, still under treatment.
@@ -198,12 +196,12 @@ You can clearly see a whole mass lesion in the RV. Turning on color flow in PLAX
 
 Additional references: [^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8] [^9]
 
-[^1]: Fefer, P., Hod, H., Hammerman, H., Boyko, V., Behar, S., Matetzky, S., & Acute Coronary Syndrome Israeli Survey (ACSIS) 2006 Study Group. (2009). Relation of clinically defined spontaneous reperfusion to outcome in ST-elevation myocardial infarction. \_\_The American Journal of Cardiology\_\_, \_\_103\_\_(2), 149–153. [https://doi.org/10.1016/j.amjcard.2008.08.050](https://doi.org/10.1016/j.amjcard.2008.08.050)
+[^1]: Fefer, P., Hod, H., Hammerman, H., Boyko, V., Behar, S., Matetzky, S., & Acute Coronary Syndrome Israeli Survey (ACSIS) 2006 Study Group. (2009). Relation of clinically defined spontaneous reperfusion to outcome in ST-elevation myocardial infarction. *The American Journal of Cardiology*, *103*(2), 149–153. [https://doi.org/10.1016/j.amjcard.2008.08.050](https://doi.org/10.1016/j.amjcard.2008.08.050)
 [^2]: Dr. Smith’s ECG Blog: ST Depression Maximal in V1-V4 and Angio shows 3 Vessel Disease. Is it posterior? Which is the culprit? — [link](https://hqmeded-ecg.blogspot.com/2020/12/st-depression-maximal-in-v1-v4-and.html)
 [^3]: Dr. Smith’s ECG Blog: A man in his 30s with greater than 12 hours of chest pain — [link](http://hqmeded-ecg.blogspot.com/2021/05/a-man-in-his-30s-with-greater-than-12.html)
 [^4]: Dr. Smith’s ECG Blog: Is the LAD really completely occluded when there are de Winter’s waves? — [link](https://hqmeded-ecg.blogspot.com/2014/07/is-lad-really-completely-occluded-when.html)
-[^5]: Rhinehardt, J., Brady, W. J., Perron, A. D., & Mattu, A. (2002). Electrocardiographic manifestations of Wellens’ syndrome. \_\_The American Journal of Emergency Medicine\_\_, \_\_20\_\_(7), 638–643. [https://doi.org/10.1053/ajem.2002.34800](https://doi.org/10.1053/ajem.2002.34800)
+[^5]: Rhinehardt, J., Brady, W. J., Perron, A. D., & Mattu, A. (2002). Electrocardiographic manifestations of Wellens’ syndrome. *The American Journal of Emergency Medicine*, *20*(7), 638–643. [https://doi.org/10.1053/ajem.2002.34800](https://doi.org/10.1053/ajem.2002.34800)
 [^6]: Dr. Smith’s ECG Blog: Why we need continuous 12-lead ST segment monitoring in Wellens’ syndrome — [link](http://hqmeded-ecg.blogspot.com/2013/11/why-we-need-12-lead-st-segment.html)
-[^7]: Kosuge, M., Kimura, K., Ishikawa, T., Ebina, T., Hibi, K., Kusama, I., Nakachi, T., Endo, M., Komura, N., & Umemura, S. (2007). Electrocardiographic differentiation between acute pulmonary embolism and acute coronary syndromes on the basis of negative T waves. \_\_The American Journal of Cardiology\_\_, \_\_99\_\_(6), 817–821. [https://doi.org/10.1016/j.amjcard.2006.10.043](https://doi.org/10.1016/j.amjcard.2006.10.043)
-[^8]: Kosuge, M., Ebina, T., Hibi, K., Tsukahara, K., Iwahashi, N., Maejima, N., Akiyama, E., Umemura, S., & Kimura, K. (2016). Simple electrocardiographic criteria for discriminating between acute pulmonary embolism and acute coronary syndrome. \_\_Journal of the American College of Cardiology\_\_, \_\_67\_\_(13\_Supplement), 528–528. [https://doi.org/10.1016/S0735-1097(16)30529-0](https://doi.org/10.1016/S0735-1097(16)30529-0)
+[^7]: Kosuge, M., Kimura, K., Ishikawa, T., Ebina, T., Hibi, K., Kusama, I., Nakachi, T., Endo, M., Komura, N., & Umemura, S. (2007). Electrocardiographic differentiation between acute pulmonary embolism and acute coronary syndromes on the basis of negative T waves. *The American Journal of Cardiology*, *99*(6), 817–821. [https://doi.org/10.1016/j.amjcard.2006.10.043](https://doi.org/10.1016/j.amjcard.2006.10.043)
+[^8]: Kosuge, M., Ebina, T., Hibi, K., Tsukahara, K., Iwahashi, N., Maejima, N., Akiyama, E., Umemura, S., & Kimura, K. (2016). Simple electrocardiographic criteria for discriminating between acute pulmonary embolism and acute coronary syndrome. *Journal of the American College of Cardiology*, *67*(13\_Supplement), 528–528. [https://doi.org/10.1016/S0735-1097(16)30529-0](https://doi.org/10.1016/S0735-1097(16)30529-0)
 [^9]: Dr. Smith’s ECG Blog: Are these Wellens’ waves? — [link](http://hqmeded-ecg.blogspot.com/2020/02/are-these-wellens-waves.html)

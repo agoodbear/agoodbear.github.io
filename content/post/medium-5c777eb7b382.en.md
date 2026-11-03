@@ -19,8 +19,6 @@ canonicalURL: "https://medium.com/@agoodbear/64%E6%AD%B2%E7%94%B7%E6%80%A7-%E4%B
 translated_from: "medium-5c777eb7b382.md"
 translation_date: "2026-10-09"
 ---
-### 64-year-old man with epigastric pain, chest pain, and upper back pain
-
 ![](https://cdn-images-1.medium.com/max/1024/1*LEbcLpGiMDrL-Xu6ZSo6nw@2x.png)
 <strong><em>Fig.1: Arrival time: 10:02</em></strong>
 
@@ -73,7 +71,7 @@ Next, can we use the <strong>Smith 4 variable formula</strong> to see whether th
 
 <strong>First, know that if there's an obvious AMI, you can't use this to calculate; it will give a serious false-negative:</strong>
 
-- >5 mm STE →<strong>exclude</strong>
+- \>5 mm STE →<strong>exclude</strong>
 - Non-concave STE → if straight or convex upward STE →<strong>exclude</strong>
 - Inferior reciprocal changes → if there's reciprocal change →<strong>exclude</strong>
 - TQRSD seen →<strong>exclude</strong>
@@ -401,7 +399,7 @@ Additional references: [^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8] [^9] [^10] [^11] 
 [^4]: Khawaja, M., Thakker, J., Kherallah, R., Ye, Y., Smith, S. W., & Birnbaum, Y. (2021). Diagnosis of Occlusion Myocardial Infarction in Patients with Left Bundle Branch Block and Paced Rhythms. Current Cardiology Reports, 23(12), 187. [https://doi.org/10.1007/s11886-021-01613-0](https://doi.org/10.1007/s11886-021-01613-0)
 [^5]: Larson, D. M., Menssen, K. M., Sharkey, S. W., Duval, S., Schwartz, R. S., Harris, J., Meland, J. T., Unger, B. T., & Henry, T. D. (2007). “False-positive” cardiac catheterization laboratory activation among patients with suspected ST-segment elevation myocardial infarction. JAMA, 298(23), 2754–2760. [https://doi.org/10.1001/jama.298.23.2754](https://doi.org/10.1001/jama.298.23.2754)
 [^6]: Chang, A. M., Shofer, F. S., Tabas, J. A., Magid, D. J., McCusker, C. M., & Hollander, J. E. (2009). Lack of association between left bundle-branch block and acute myocardial infarction in symptomatic ED patients. The American Journal of Emergency Medicine, 27(8), 916–921. [https://doi.org/10.1016/j.ajem.2008.07.007](https://doi.org/10.1016/j.ajem.2008.07.007)
-[^7]: Jain, S., Ting, H. T., Bell, M., Bjerke, C. M., Lennon, R. J., Gersh, B. J., Rihal, C. S., & Prasad, A. (2011). Utility of left bundle branch block as a diagnostic criterion for acute myocardial infarction. \_\_The American Journal of Cardiology, 107(8), 1111–1116. [https://doi.org/10.1016/j.amjcard.2010.12.007](https://doi.org/10.1016/j.amjcard.2010.12.007)
+[^7]: Jain, S., Ting, H. T., Bell, M., Bjerke, C. M., Lennon, R. J., Gersh, B. J., Rihal, C. S., & Prasad, A. (2011). Utility of left bundle branch block as a diagnostic criterion for acute myocardial infarction. *The American Journal of Cardiology*, *107*(8), 1111–1116. [https://doi.org/10.1016/j.amjcard.2010.12.007](https://doi.org/10.1016/j.amjcard.2010.12.007)
 [^8]: Kontos, M. C., de Lemos, J. A., Deitelzweig, S. B., Diercks, D. B., Gore, M. O., Hess, E. P., McCarthy, C. P., McCord, J. K., Musey, P. I., Villines, T. C., & Wright, L. J. (2022). 2022 ACC Expert Consensus Decision Pathway on the Evaluation and Disposition of Acute Chest Pain in the Emergency Department. Journal of the American College of Cardiology, S0735109722066189. [https://doi.org/10.1016/j.jacc.2022.08.750](https://doi.org/10.1016/j.jacc.2022.08.750)
 [^9]: Dr. Smith’s ECG Blog: Cardiac Arrest at the airport, with an easy but important ECG for everyone to recognize — [link](https://hqmeded-ecg.blogspot.com/2021/09/arrest-at-airport-with-easy-but.html)
 [^10]: Widimsky, P., Rohac, F., Stasek, J., Kala, P., Rokyta, R., Kuzmanov, B., Jakl, M., Poloczek, M., Kanovsky, J., Bernat, I., Hlinomaz, O., Belohlavek, J., Kral, A., Mrazek, V., Grigorov, V., Djambazov, S., Petr, R., Knot, J., Bilkova, D., … Lorencova, A. (2012). Primary angioplasty in acute myocardial infarction with right bundle branch block: should new onset right bundle branch block be added to future guidelines as an indication for reperfusion therapy? European Heart Journal, 33(1), 86–95. [https://doi.org/10.1093/eurheartj/ehr291](https://doi.org/10.1093/eurheartj/ehr291)

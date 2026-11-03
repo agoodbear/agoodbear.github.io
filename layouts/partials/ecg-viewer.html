@@ -1,0 +1,378 @@
+{{- /* ECG 量測檢視器（2026-11-03）
+   心電圖文章裡點圖 → 全螢幕檢視，附：
+   - 紅色垂直線：對齊時間軸（一定會出現）
+   - 藍色水平基準線：抓 baseline（PR / TP 段）
+   - 卡尺：青色 A、B 兩條垂直線，可固定間距左右平移（march out）
+   - ST 線：綠色第二條水平線，跟基準線比高低
+   - 校準：A、B 對齊一大格後按「校準」，之後間距換算成 ms／心率、ST 換算成 mm
+     （假設標準 25 mm/s、10 mm/mV，方格長寬相同）
+   - 放大鏡、縮放、上一張／下一張
+   線的位置用「圖片百分比」記，縮放、捲動都不會跑掉。
+   哪些圖會啟用：只有真的心電圖（12 導程或節律條）——
+   ① 列在 data/ecg_images.yaml 的圖（逐張看過分類，全站共用，新文章的心電圖要補進去），或
+   ② 圖片本身或外層有 class="ecg-viewer"（手動指定）。
+   流程圖、X 光、超音波、表格都不啟用。清單裡某張不要時加 class="no-ecg-viewer"。
+   body-end 是 partialCached（全站只算一次），所以頁面判斷都放在 JS。
+   點擊在 capture 階段攔下並 preventDefault，site-motion 的放大與 .md-img-row 燈箱都會讓路。 */ -}}
+<style>
+  .article-body img.ev-able { cursor: zoom-in; }
+  .ev {
+    position: fixed; inset: 0; z-index: 300; display: none;
+    background: #0b0f15; color: #fff;
+    font-family: var(--font-body-zh, "Noto Sans TC", system-ui, sans-serif);
+    -webkit-user-select: none; user-select: none;
+  }
+  .ev.open { display: block; }
+  body.ev-open { overflow: hidden; }
+  .ev-bar {
+    position: absolute; left: 0; right: 0; top: 0; z-index: 4;
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center;
+    padding: 10px 56px 8px; background: #0b0f15;
+  }
+  .ev-btn {
+    border: 0; background: rgba(255, 255, 255, 0.14); color: #fff; font: inherit;
+    font-size: 13px; font-weight: 700; line-height: 1; padding: 8px 11px; border-radius: 999px;
+    cursor: pointer; white-space: nowrap;
+  }
+  .ev-btn:hover { background: rgba(255, 255, 255, 0.26); }
+  .ev-btn.on { background: #fc5a00; color: #111; }
+  .ev-btn:disabled { opacity: 0.35; cursor: default; }
+  .ev-sep { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.2); margin: 0 2px; }
+  .ev-close {
+    position: absolute; top: 8px; right: 10px; z-index: 5; width: 40px; height: 40px;
+    border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.16); color: #fff;
+    font-size: 24px; line-height: 1; cursor: pointer;
+  }
+  .ev-read {
+    position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); z-index: 4;
+    max-width: 94vw; padding: 8px 14px; border-radius: 12px; background: rgba(8, 12, 18, 0.86);
+    font-size: 13px; line-height: 1.55; text-align: center;
+  }
+  .ev-read b { color: #ffb37f; font-weight: 700; }
+  .ev-scroll {
+    position: absolute; left: 0; right: 0; bottom: 0; overflow: auto;
+    display: flex; touch-action: pan-x pan-y;
+  }
+  .ev-stage { position: relative; margin: auto; flex: none; }
+  .ev-stage img {
+    display: block; width: 100%; height: auto; background: #fff;
+    border-radius: 3px; box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
+    -webkit-user-drag: none; pointer-events: none;
+  }
+  .ev-nav {
+    position: absolute; top: 50%; z-index: 4; transform: translateY(-50%);
+    width: 40px; height: 64px; border: 0; border-radius: 10px;
+    background: rgba(255, 255, 255, 0.14); color: #fff; font-size: 28px; cursor: pointer;
+  }
+  .ev-nav.prev { left: 8px; } .ev-nav.next { right: 8px; }
+  .ev-nav[hidden] { display: none; }
+
+  /* 線：外層是寬的透明觸控區，::before 才是看得到的細線 */
+  .ev-v, .ev-h { position: absolute; z-index: 2; touch-action: none; }
+  .ev-v { top: 0; bottom: 0; width: 30px; margin-left: -15px; cursor: ew-resize; }
+  .ev-h { left: 0; right: 0; height: 30px; margin-top: -15px; cursor: ns-resize; }
+  .ev-v::before, .ev-h::before { content: ""; position: absolute; background: var(--ev-c); }
+  .ev-v::before { left: 14px; top: 0; bottom: 0; width: 2px; box-shadow: 0 0 0 1px rgba(255,255,255,.7), 0 0 8px var(--ev-c); }
+  .ev-h::before { top: 14px; left: 0; right: 0; height: 2px; box-shadow: 0 0 0 1px rgba(255,255,255,.7), 0 0 8px var(--ev-c); }
+  .ev-v[hidden], .ev-h[hidden] { display: none; }
+  .ev-tag {
+    position: absolute; background: var(--ev-c); color: #fff; font-size: 12px; font-weight: 700;
+    line-height: 1; padding: 5px 8px; border-radius: 6px; white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  }
+  .ev-v .ev-tag { top: 6px; left: 50%; transform: translateX(-50%); }
+  .ev-v.cal .ev-tag { top: 34px; }
+  .ev-h .ev-tag { left: 6px; top: 50%; transform: translateY(-50%); }
+  .ev-h.st .ev-tag { left: auto; right: 6px; }
+  .ev-red  { --ev-c: #e11d2a; }
+  .ev-cal  { --ev-c: #0891b2; }
+  .ev-base { --ev-c: #2563eb; }
+  .ev-st   { --ev-c: #15803d; }
+  .ev-dragging, .ev-dragging * { cursor: grabbing !important; }
+
+  .ev-loupe {
+    position: fixed; z-index: 6; width: 190px; height: 190px; border-radius: 50%;
+    border: 3px solid #fff; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+    background-color: #fff; background-repeat: no-repeat; pointer-events: none; display: none;
+  }
+  @media (max-width: 640px) {
+    .ev-bar { padding: 8px 52px 6px 8px; gap: 5px; justify-content: flex-start; }
+    .ev-btn { font-size: 12px; padding: 7px 9px; }
+    .ev-sep { display: none; }
+    .ev-nav { width: 32px; height: 52px; font-size: 22px; }
+    .ev-read { font-size: 12px; bottom: 8px; }
+  }
+</style>
+
+<script>
+(function () {
+  var body = document.querySelector(".article-body");
+  if (!body) return;
+  var EN = (document.documentElement.lang || "").toLowerCase().indexOf("en") === 0;
+  var T = EN ? {
+    red: "Time line", base: "Baseline", st: "ST line", cal: "Calipers", lock: "Lock gap", unlock: "Unlock",
+    calib: "Calibrate", mag: "Magnifier", fit: "Fit", stBtn: "ST line", calibrated: "Calibrated",
+    hintStart: "Drag the <b>red line</b> to line up beats, the <b>blue line</b> to the baseline (PR/TP).",
+    needCal: "Turn on calipers, set A–B to one large box (5 small boxes), then press Calibrate.",
+    calAsk: "Set A and B exactly one large box apart, then press Calibrate again.",
+    gap: "A↔B", px: "px", rate: "HR", above: "above", below: "below", stRead: "ST vs baseline",
+    std: "(assumes 25 mm/s, 10 mm/mV)", of: " / ", open: "Click to measure with guide lines"
+  } : {
+    red: "時間軸", base: "基準線", st: "ST", cal: "卡尺", lock: "固定間距", unlock: "解除固定",
+    calib: "校準", mag: "放大鏡", fit: "符合畫面", stBtn: "ST線", calibrated: "已校準",
+    hintStart: "拖<b>紅線</b>對齊時間軸，拖<b>藍線</b>貼在基準線（PR／TP段）。",
+    needCal: "要換算 ms：開卡尺，把 A、B 拉開剛好一大格（5小格），再按「校準」。",
+    calAsk: "把 A、B 對齊剛好一大格（5小格），再按一次「校準」。",
+    gap: "A↔B", px: "px", rate: "心率", above: "高於", below: "低於", stRead: "ST線比基準線",
+    std: "（以標準 25 mm/s、10 mm/mV 換算）", of: " / ", open: "點開可用垂直線、水平線量測"
+  };
+
+  var LIST = {{ (site.Data.ecg_images.images | default slice) | jsonify | safeJS }};
+  function norm(u) {
+    try { u = new URL(u, location.href).pathname; } catch (_) {}
+    try { u = decodeURIComponent(u); } catch (_) {}
+    return u.toLowerCase().replace(/\.webp$/, "");
+  }
+  var ECG = {};
+  LIST.forEach(function (u) { ECG[norm(u)] = true; });
+  function eligible(img) {
+    if (img.closest("a, svg, video, .ecg-anim, .no-ecg-viewer") || img.classList.contains("no-ecg-viewer")) return false;
+    if (img.closest(".ecg-viewer")) return true;
+    return !!ECG[norm(img.getAttribute("src") || "")];
+  }
+  var imgs = [].slice.call(body.querySelectorAll("img")).filter(eligible);
+  if (!imgs.length) return;
+  imgs.forEach(function (img) { img.classList.add("ev-able"); if (!img.title) img.title = T.open; });
+
+  // ── 建 DOM ───────────────────────────────────────────
+  var ev = document.createElement("div");
+  ev.className = "ev";
+  ev.setAttribute("role", "dialog");
+  ev.setAttribute("aria-modal", "true");
+  ev.setAttribute("aria-label", "ECG viewer");
+  ev.innerHTML =
+    '<div class="ev-bar">' +
+      '<button class="ev-btn on" data-t="base">— ' + T.base + '</button>' +
+      '<button class="ev-btn" data-t="st">＝ ' + T.stBtn + '</button>' +
+      '<span class="ev-sep"></span>' +
+      '<button class="ev-btn" data-t="cal">📏 ' + T.cal + '</button>' +
+      '<button class="ev-btn" data-t="lock">🔒 ' + T.lock + '</button>' +
+      '<button class="ev-btn" data-t="calib">🎯 ' + T.calib + '</button>' +
+      '<span class="ev-sep"></span>' +
+      '<button class="ev-btn" data-t="mag">🔍 ' + T.mag + '</button>' +
+      '<button class="ev-btn" data-t="out" aria-label="zoom out">－</button>' +
+      '<button class="ev-btn" data-t="fit">' + T.fit + '</button>' +
+      '<button class="ev-btn" data-t="in" aria-label="zoom in">＋</button>' +
+      '<span class="ev-btn" data-t="count" style="background:none;cursor:default"></span>' +
+    '</div>' +
+    '<button class="ev-close" aria-label="close">×</button>' +
+    '<div class="ev-scroll"><div class="ev-stage"><img alt="">' +
+      '<div class="ev-v ev-red" data-k="red"><span class="ev-tag">⇄ ' + T.red + '</span></div>' +
+      '<div class="ev-v ev-cal cal" data-k="a" hidden><span class="ev-tag">A</span></div>' +
+      '<div class="ev-v ev-cal cal" data-k="b" hidden><span class="ev-tag">B</span></div>' +
+      '<div class="ev-h ev-base" data-k="base"><span class="ev-tag">⇅ ' + T.base + '</span></div>' +
+      '<div class="ev-h ev-st st" data-k="st" hidden><span class="ev-tag">' + T.st + '</span></div>' +
+    '</div></div>' +
+    '<button class="ev-nav prev" aria-label="previous">‹</button>' +
+    '<button class="ev-nav next" aria-label="next">›</button>' +
+    '<div class="ev-read"></div>' +
+    '<div class="ev-loupe"></div>';
+  document.body.appendChild(ev);
+
+  var $ = function (s) { return ev.querySelector(s); };
+  var bar = $(".ev-bar"), scroll = $(".ev-scroll"), stage = $(".ev-stage"), big = $(".ev-stage img");
+  var read = $(".ev-read"), loupe = $(".ev-loupe"), prevB = $(".ev-nav.prev"), nextB = $(".ev-nav.next");
+  var L = {}; [].forEach.call(ev.querySelectorAll("[data-k]"), function (el) { L[el.dataset.k] = el; });
+  var B = {}; [].forEach.call(ev.querySelectorAll("[data-t]"), function (el) { B[el.dataset.t] = el; });
+
+  // 位置以圖片百分比記
+  var P = {}, show = {}, zoom = 1, fitW = 0, idx = -1, locked = false, lockGap = 0, magOn = false, calibArmed = false;
+  var calib = {}; // src → 一大格的原圖 px 數
+
+  function place() {
+    L.red.style.left = P.red + "%"; L.a.style.left = P.a + "%"; L.b.style.left = P.b + "%";
+    L.base.style.top = P.base + "%"; L.st.style.top = P.st + "%";
+  }
+  function setShow(k, on) { show[k] = on; if (L[k]) L[k].hidden = !on; }
+  function resetLines() {
+    P = { red: 50, a: 42, b: 58, base: 60, st: 50 };
+    setShow("a", false); setShow("b", false); setShow("st", false); setShow("base", true);
+    locked = false; calibArmed = false; syncButtons(); place();
+  }
+  function syncButtons() {
+    B.base.classList.toggle("on", !!show.base);
+    B.st.classList.toggle("on", !!show.st);
+    B.cal.classList.toggle("on", !!show.a);
+    B.lock.classList.toggle("on", locked);
+    B.lock.textContent = (locked ? "🔓 " + T.unlock : "🔒 " + T.lock);
+    B.mag.classList.toggle("on", magOn);
+    var key = big.getAttribute("src");
+    B.calib.classList.toggle("on", calibArmed || !!calib[key]);
+    B.calib.textContent = "🎯 " + (calib[key] && !calibArmed ? T.calibrated : T.calib);
+  }
+
+  function nat() { return { w: big.naturalWidth || 1, h: big.naturalHeight || 1 }; }
+  function fmt(n, d) { return (Math.round(n * Math.pow(10, d)) / Math.pow(10, d)).toFixed(d); }
+  function readout() {
+    var n = nat(), box = calib[big.getAttribute("src")], parts = [];
+    if (calibArmed) { read.innerHTML = T.calAsk; return; }
+    if (show.a) {
+      var dx = Math.abs(P.a - P.b) / 100 * n.w;
+      if (box) {
+        var ms = dx / box * 200;
+        parts.push(T.gap + " <b>" + Math.round(ms) + " ms</b>" + (ms > 0 ? "（" + T.rate + " " + Math.round(60000 / ms) + "/min）" : ""));
+      } else parts.push(T.gap + " " + Math.round(dx) + " " + T.px);
+    }
+    if (show.base && show.st) {
+      var dy = (P.base - P.st) / 100 * n.h; // 正值＝ST 線在基準線上方
+      if (box) {
+        var mm = Math.abs(dy) / box * 5;
+        parts.push(T.stRead + " <b>" + (dy >= 0 ? T.above : T.below) + " " + fmt(mm, 1) + " mm</b>（≈" + fmt(mm / 10, 2) + " mV）");
+      } else parts.push(T.stRead + " " + (dy >= 0 ? T.above : T.below) + " " + Math.round(Math.abs(dy)) + " " + T.px);
+    }
+    if (!parts.length) { read.innerHTML = T.hintStart; return; }
+    read.innerHTML = parts.join("　·　") + (box ? "<br><small>" + T.std + "</small>" : (show.a || show.st ? "<br><small>" + T.needCal + "</small>" : ""));
+  }
+
+  function layout() {
+    var top = bar.offsetHeight;
+    scroll.style.top = top + "px";
+    var n = nat(), aw = window.innerWidth - (window.innerWidth < 640 ? 16 : 110), ah = window.innerHeight - top - 70;
+    fitW = Math.max(120, Math.min(n.w * 2, aw, ah * n.w / n.h));
+    stage.style.width = Math.round(fitW * zoom) + "px";
+  }
+  function setZoom(z, cx, cy) {
+    var old = zoom; zoom = Math.max(1, Math.min(6, z));
+    var r = scroll.getBoundingClientRect();
+    cx = cx == null ? r.width / 2 : cx; cy = cy == null ? r.height / 2 : cy;
+    var sx = (scroll.scrollLeft + cx) / old, sy = (scroll.scrollTop + cy) / old;
+    layout();
+    scroll.scrollLeft = sx * zoom - cx; scroll.scrollTop = sy * zoom - cy;
+    B.out.disabled = zoom <= 1; B.in.disabled = zoom >= 6;
+  }
+
+  function openAt(i) {
+    idx = i;
+    var img = imgs[i];
+    big.alt = img.alt || "";
+    big.onload = function () { zoom = 1; layout(); setZoom(1); place(); syncButtons(); readout(); };
+    big.src = img.currentSrc || img.src;
+    if (big.complete && big.naturalWidth) big.onload();
+    prevB.hidden = i <= 0; nextB.hidden = i >= imgs.length - 1;
+    B.count.textContent = imgs.length > 1 ? (i + 1) + T.of + imgs.length : "";
+  }
+  function open(img) {
+    resetLines(); magOn = false; loupe.style.display = "none";
+    ev.classList.add("open"); document.body.classList.add("ev-open");
+    openAt(imgs.indexOf(img));
+    $(".ev-close").focus();
+  }
+  function close() {
+    ev.classList.remove("open"); document.body.classList.remove("ev-open");
+    big.removeAttribute("src"); loupe.style.display = "none";
+    var img = imgs[idx]; if (img && img.focus) { img.setAttribute("tabindex", "-1"); img.focus({ preventScroll: true }); }
+  }
+
+  // ── 拖線 ─────────────────────────────────────────────
+  var drag = null;
+  function pct(e, axis) {
+    var r = stage.getBoundingClientRect();
+    var v = axis === "x" ? (e.clientX - r.left) / r.width : (e.clientY - r.top) / r.height;
+    return Math.max(0, Math.min(100, v * 100));
+  }
+  Object.keys(L).forEach(function (k) {
+    var el = L[k], axis = el.classList.contains("ev-v") ? "x" : "y";
+    el.addEventListener("pointerdown", function (e) {
+      e.preventDefault(); e.stopPropagation();
+      drag = { k: k, axis: axis, id: e.pointerId };
+      try { el.setPointerCapture(e.pointerId); } catch (_) {}
+      ev.classList.add("ev-dragging");
+    });
+    el.addEventListener("pointermove", function (e) {
+      if (!drag || drag.k !== k) return;
+      var v = pct(e, axis);
+      if ((k === "a" || k === "b") && locked) {
+        var other = k === "a" ? "b" : "a", sign = k === "a" ? 1 : -1;
+        var ov = v + sign * lockGap;
+        if (ov < 0 || ov > 100) return;
+        P[other] = ov;
+      }
+      P[k] = v; place(); readout();
+      if (magOn) moveLoupe(e);
+    });
+    function end() { drag = null; ev.classList.remove("ev-dragging"); }
+    el.addEventListener("pointerup", end);
+    el.addEventListener("pointercancel", end);
+  });
+
+  // ── 放大鏡 ───────────────────────────────────────────
+  function moveLoupe(e) {
+    var r = big.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+    if (x < 0 || y < 0 || x > r.width || y > r.height) { loupe.style.display = "none"; return; }
+    var Z = 2.6, S = 190;
+    loupe.style.display = "block";
+    loupe.style.backgroundImage = "url('" + big.src.replace(/'/g, "%27") + "')";
+    loupe.style.backgroundSize = (r.width * Z) + "px " + (r.height * Z) + "px";
+    loupe.style.backgroundPosition = (S / 2 - x * Z) + "px " + (S / 2 - y * Z) + "px";
+    // 手指會擋住，觸控時把放大鏡放在手指上方
+    var up = e.pointerType === "touch" ? S * 0.85 : 0;
+    loupe.style.left = (e.clientX - S / 2) + "px"; loupe.style.top = (e.clientY - S / 2 - up) + "px";
+  }
+  scroll.addEventListener("pointermove", function (e) { if (magOn) moveLoupe(e); });
+  scroll.addEventListener("pointerleave", function () { loupe.style.display = "none"; });
+
+  // ── 工具列 ───────────────────────────────────────────
+  bar.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-t]"); if (!b) return;
+    var t = b.dataset.t;
+    if (t === "base") { setShow("base", !show.base); if (!show.base) setShow("st", false); }
+    else if (t === "st") { var on = !show.st; setShow("st", on); if (on) { setShow("base", true); P.st = Math.max(2, P.base - 8); } }
+    else if (t === "cal") { var c = !show.a; setShow("a", c); setShow("b", c); if (!c) { locked = false; calibArmed = false; } }
+    else if (t === "lock") { if (!show.a) { setShow("a", true); setShow("b", true); } locked = !locked; lockGap = P.b - P.a; }
+    else if (t === "calib") {
+      var key = big.getAttribute("src");
+      if (!show.a) { setShow("a", true); setShow("b", true); calibArmed = true; }
+      else if (calibArmed || !calib[key]) {
+        var dx = Math.abs(P.a - P.b) / 100 * nat().w;
+        if (dx > 2) { calib[key] = dx; calibArmed = false; } else calibArmed = true;
+      } else { delete calib[key]; calibArmed = true; }
+    }
+    else if (t === "mag") { magOn = !magOn; if (!magOn) loupe.style.display = "none"; }
+    else if (t === "in") setZoom(zoom * 1.5);
+    else if (t === "out") setZoom(zoom / 1.5);
+    else if (t === "fit") setZoom(1);
+    place(); syncButtons(); readout();
+  });
+  $(".ev-close").addEventListener("click", close);
+  prevB.addEventListener("click", function () { if (idx > 0) openAt(idx - 1); });
+  nextB.addEventListener("click", function () { if (idx < imgs.length - 1) openAt(idx + 1); });
+  // 點圖外面的暗處才關（拖線、點圖都不會誤關）
+  scroll.addEventListener("click", function (e) { if (e.target === scroll && !drag) close(); });
+  // 觸控板／Ctrl+滾輪縮放
+  scroll.addEventListener("wheel", function (e) {
+    if (!e.ctrlKey) return;
+    e.preventDefault();
+    var r = scroll.getBoundingClientRect();
+    setZoom(zoom * (e.deltaY < 0 ? 1.12 : 1 / 1.12), e.clientX - r.left, e.clientY - r.top);
+  }, { passive: false });
+  window.addEventListener("resize", function () { if (ev.classList.contains("open")) { layout(); } });
+  document.addEventListener("keydown", function (e) {
+    if (!ev.classList.contains("open")) return;
+    if (e.key === "Escape") { e.stopImmediatePropagation(); close(); }
+    else if (e.key === "ArrowLeft" && idx > 0) { e.preventDefault(); e.stopImmediatePropagation(); openAt(idx - 1); }
+    else if (e.key === "ArrowRight" && idx < imgs.length - 1) { e.preventDefault(); e.stopImmediatePropagation(); openAt(idx + 1); }
+    else if (e.key === "+" || e.key === "=") setZoom(zoom * 1.5);
+    else if (e.key === "-") setZoom(zoom / 1.5);
+  }, true);
+
+  // capture 階段搶在 site-motion 與 .md-img-row 燈箱前面
+  document.addEventListener("click", function (e) {
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var img = e.target.closest && e.target.closest("img.ev-able");
+    if (!img || !body.contains(img)) return;
+    if (img.naturalWidth && img.naturalWidth < 320) return; // 小圖示不開
+    e.preventDefault(); e.stopPropagation();
+    open(img);
+  }, true);
+})();
+</script>

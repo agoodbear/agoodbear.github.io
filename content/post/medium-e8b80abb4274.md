@@ -16,8 +16,6 @@ medium_id: "e8b80abb4274"
 medium_url: "https://medium.com/@agoodbear/%E7%9C%9F-%E5%BF%83-%E8%AA%A0%E6%84%8F-e8b80abb4274"
 canonicalURL: "https://medium.com/@agoodbear/%E7%9C%9F-%E5%BF%83-%E8%AA%A0%E6%84%8F-e8b80abb4274"
 ---
-### 真『心』誠意
-
 [Thread by @shahrukh\_bakar on Thread Reader App](https://threadreaderapp.com/thread/1422425152613064708.html)
 
 一位介入性心臟內科醫師回覆了一位推友的Case。這個個案延遲了10多個小時，之後做到了PCI。10多個小時過程當中，病患上上下下的胸痛起伏。
@@ -31,9 +29,9 @@ canonicalURL: "https://medium.com/@agoodbear/%E7%9C%9F-%E5%BF%83-%E8%AA%A0%E6%84
 
 #### <strong>關於Early Q wave的重點</strong>
 
-#### - 在一項STEMI病患研究當中，這些病患都在12小時內接受治療，研究發現，出現Early Q wave的病患心肌搶救仍然十分重要，主要是發現病患有STEMI/Early Q wave(儘管推測已經有transmural與不可逆的心肌受損)，在給予ART後，仍然有較好的預後➡因此12小時內STE+Early Q wave的病患，不應該排除在接受PCI的行列內
+- 在一項STEMI病患研究當中，這些病患都在12小時內接受治療，研究發現，出現Early Q wave的病患心肌搶救仍然十分重要，主要是發現病患有STEMI/Early Q wave(儘管推測已經有transmural與不可逆的心肌受損)，在給予ART後，仍然有較好的預後➡因此12小時內STE+Early Q wave的病患，不應該排除在接受PCI的行列內
 
-#### - 在Ant.wall STEMI中有50%在1小時內會出現Q wave➡這不代表late or subacute MI
+- 在Ant.wall STEMI中有50%在1小時內會出現Q wave➡這不代表late or subacute MI
 
 3. Hypokinesis/akinesis並不是代表心肌沒有存活➡也可能是處在myocardial stunning當中
 
@@ -55,19 +53,19 @@ canonicalURL: "https://medium.com/@agoodbear/%E7%9C%9F-%E5%BF%83-%E8%AA%A0%E6%84
 
 #### 有看到Fig 1(From ESC 2020 NonSTEMI guideline)左下角深紅的區塊嗎?
 
-#### - 血行不穩
+- 血行不穩
 
-#### - 心因性休克
+- 心因性休克
 
-#### - 給了內科療法持續胸痛
+- 給了內科療法持續胸痛
 
-#### - 跳致命性心律不整(VT/Vf)
+- 跳致命性心律不整(VT/Vf)
 
-#### - MI後的mechanical complications
+- MI後的mechanical complications
 
-#### - AMI引起的acute HF
+- AMI引起的acute HF
 
-#### - aVR and/or V1 STE + Multiple leads STD
+- aVR and/or V1 STE + Multiple leads STD
 
 ![](https://cdn-images-1.medium.com/max/1024/1*PJhve0r0hwAoJO1Arnxi7w.png)
 *Fig 1 from ESC 2020 NonSTEMI Guideline*

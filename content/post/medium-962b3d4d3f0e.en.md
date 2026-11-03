@@ -19,8 +19,6 @@ translation_date: "2026-10-09"
 ---
 ![](https://cdn-images-1.medium.com/max/1024/1*-_JeNAGKVV67vXegvesyZA@2x.png)
 
-### Narrow QRS tachycardia
-
 50-year-old man with prior Aortic valve surgery. Chief complaint: palpitations (<strong>the ER ECG is the top image of this blog post</strong>).
 
 ![](https://cdn-images-1.medium.com/max/1024/1*k_WjnewcbB8zt7dk2q9cCg.png)

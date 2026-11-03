@@ -17,8 +17,6 @@ medium_id: "ef858cdd6d2"
 medium_url: "https://medium.com/@agoodbear/%E9%82%84%E5%9C%A8%E9%AB%98%E8%A1%80%E9%89%80%E5%97%8E-ef858cdd6d2"
 canonicalURL: "https://medium.com/@agoodbear/%E9%82%84%E5%9C%A8%E9%AB%98%E8%A1%80%E9%89%80%E5%97%8E-ef858cdd6d2"
 ---
-### 還在高血鉀嗎?
-
 ![](https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png)
 *Fig 1: K:6.1*
 

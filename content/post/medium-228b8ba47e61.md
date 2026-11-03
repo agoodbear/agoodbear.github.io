@@ -20,8 +20,6 @@ canonicalURL: "https://medium.com/@agoodbear/%E5%88%B0%E9%99%A2%E5%89%8D%E6%AD%B
 ![](https://cdn-images-1.medium.com/max/1024/1*658U47yADmFl43Vh8lxIhw@2x.png)
 <strong><em>到院ECG (Fig 1)</em></strong>
 
-### 到院前死亡案例，原因為何呢?
-
 76歲女性。
 
 外院到院前死亡，急救復甦後，心跳回來。轉送來我們醫院，剛到急診的第一張心電圖如上<strong><em>(這時應該就快不行了)</em></strong>。很快心臟就停了。大約又CPR了約莫10分鐘，心跳回來。再次做了張12導程ECG <strong>(Fig 2)</strong>。

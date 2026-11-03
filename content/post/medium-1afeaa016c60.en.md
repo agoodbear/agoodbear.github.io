@@ -18,8 +18,6 @@ canonicalURL: "https://medium.com/@agoodbear/medium%E5%90%84%E7%A8%AE%E6%8E%92%E
 translated_from: "medium-1afeaa016c60.md"
 translation_date: "2026-10-09"
 ---
-### Medium's Various Formatting Features
-
 - Type \` and the text after it gets a gray background
 
 ![](https://cdn-images-1.medium.com/max/1024/1*xXb9LHTT0K9SsQizSxzYZg@2x.png)

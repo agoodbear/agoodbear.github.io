@@ -18,8 +18,6 @@ canonicalURL: "https://medium.com/@agoodbear/vpc%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%B
 translated_from: "medium-6cdf5d600a1c.md"
 translation_date: "2026-10-09"
 ---
-### Can a VPC be the little soldier who wins the battle?
-
 #### Let's see why a VPC can be the little soldier who wins the battle
 
 A VPC originates in the ventricle. Like LBBB, a VPC has discordant ST segments, so when there's excessive discordant STE or concordant STE, you need to be careful. There's no evidence that the MSC applies to VPCs the way it applies to LBBB. But in Stephen Smith's experience, the rule works for VPCs very much the way it does for LBBB, though it's a bit less specific[^3].
@@ -134,5 +132,5 @@ So a QT interval of 560 ms really means **TdP is very likely coming next**. So c
 Additional references: [^1] [^2] [^3]
 
 [^1]: Dr. Smith’s ECG Blog: An elderly man who dies 12 hours later — could he have been saved? — [link](http://hqmeded-ecg.blogspot.com/2021/10/an-elderly-man-who-dies-12-hours-later.html)
-[^2]: Chan, A., Isbister, G. K., Kirkpatrick, C. M. J., & Dufful, S. B. (2007). Drug-induced QT prolongation and torsades de pointes: evaluation of a QT nomogram. \_\_QJM: Monthly Journal of the Association of Physicians\_\_, \_\_100\_\_(10), 609–615. [https://doi.org/10.1093/qjmed/hcm072](https://doi.org/10.1093/qjmed/hcm072)
+[^2]: Chan, A., Isbister, G. K., Kirkpatrick, C. M. J., & Dufful, S. B. (2007). Drug-induced QT prolongation and torsades de pointes: evaluation of a QT nomogram. *QJM: Monthly Journal of the Association of Physicians*, *100*(10), 609–615. [https://doi.org/10.1093/qjmed/hcm072](https://doi.org/10.1093/qjmed/hcm072)
 [^3]: Dr. Smith’s ECG Blog: Hyperacute T-waves and Concordant ST Elevation seen in PVCs only — [link](http://hqmeded-ecg.blogspot.com/2018/10/hyperacute-t-waves-and-concordant-st.html)

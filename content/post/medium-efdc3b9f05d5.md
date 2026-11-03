@@ -18,8 +18,6 @@ canonicalURL: "https://medium.com/@agoodbear/%E8%A8%BA%E6%96%B7ami-in-lbbb%E6%88
 ---
 ![](https://cdn-images-1.medium.com/max/1024/1*RiODz6_7wUuQe3rCyrTHEQ@2x.png)
 
-### 診斷AMI in LBBB或paced rhythm補完了嗎?
-
 ### 先來問個問題?
 
 #### LBBB能當作AMI嗎?

@@ -16,8 +16,6 @@ medium_id: "3956f2cef4ca"
 medium_url: "https://medium.com/@agoodbear/2%E5%B0%8F%E6%99%82%E5%89%8D%E8%83%B8%E6%82%B6-%E6%9C%89ami%E5%97%8E-3956f2cef4ca"
 canonicalURL: "https://medium.com/@agoodbear/2%E5%B0%8F%E6%99%82%E5%89%8D%E8%83%B8%E6%82%B6-%E6%9C%89ami%E5%97%8E-3956f2cef4ca"
 ---
-### 2小時前胸悶，有AMI嗎?
-
 ![](https://cdn-images-1.medium.com/max/1024/1*jG5jZ9QX0uBhanaXQF6ZCg.jpeg)
 
 56歲男性，過去沒有特別病史。半夜凌晨胸口悶不舒服，悶到兩側的手臂。

@@ -17,8 +17,6 @@ canonicalURL: "https://medium.com/@agoodbear/narrow-qrs-tachycardia-962b3d4d3f0e
 ---
 ![](https://cdn-images-1.medium.com/max/1024/1*-_JeNAGKVV67vXegvesyZA@2x.png)
 
-### Narrow QRS tachycardia
-
 50歲男性，過去Aortic valve開過刀。主述心悸(<strong>ER ECG為blog最上圖</strong>)。
 
 ![](https://cdn-images-1.medium.com/max/1024/1*k_WjnewcbB8zt7dk2q9cCg.png)

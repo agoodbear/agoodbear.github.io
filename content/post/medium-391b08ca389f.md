@@ -17,8 +17,6 @@ medium_id: "391b08ca389f"
 medium_url: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFpost-wellen-syndrome%E9%82%84%E6%98%AFde-winter-391b08ca389f"
 canonicalURL: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFpost-wellen-syndrome%E9%82%84%E6%98%AFde-winter-391b08ca389f"
 ---
-### 這是Post.Wellen syndrome還是De Winter?
-
 ![](https://cdn-images-1.medium.com/max/1024/1*G-3NxJGciSjISLUr0SbOOw.png)
 *From:[https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html](https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html)*
 

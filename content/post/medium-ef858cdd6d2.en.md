@@ -19,8 +19,6 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%82%84%E5%9C%A8%E9%AB%98%E8%A1%8
 translated_from: "medium-ef858cdd6d2.md"
 translation_date: "2026-10-09"
 ---
-### Still Hyperkalemic?
-
 ![](https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png)
 *Fig 1: K:6.1*
 

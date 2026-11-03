@@ -20,8 +20,6 @@ translation_date: "2026-10-09"
 ---
 ![](https://cdn-images-1.medium.com/max/1024/1*DImVcrqqnClukvho9mhMAA@2x.png)
 
-### <strong>Guess Which Vessel Is Occluded?</strong>
-
 A case from a while back: a middle-aged man in his 40s. He suddenly collapsed at work.
 
 He was altered on arrival. Vital signs:
@@ -152,7 +150,7 @@ Here I'll mention an ECG challenge published in Circulation in July this year[^4
 
 Additional references: [^1] [^2] [^3] [^4]
 
-[^1]: Robichaud, L., Ross, D., Proulx, M.-H., Légaré, S., Vacon, C., Xue, X., & Segal, E. (2016). Prehospital Nitroglycerin Safety in Inferior ST Elevation Myocardial Infarction. \_\_Prehospital Emergency Care\_\_, \_\_20\_\_(1), 76–81. [https://doi.org/10/gmsvrq](https://doi.org/10/gmsvrq)
+[^1]: Robichaud, L., Ross, D., Proulx, M.-H., Légaré, S., Vacon, C., Xue, X., & Segal, E. (2016). Prehospital Nitroglycerin Safety in Inferior ST Elevation Myocardial Infarction. *Prehospital Emergency Care*, *20*(1), 76–81. [https://doi.org/10/gmsvrq](https://doi.org/10/gmsvrq)
 [^2]: [You have two hours to save this patient’s life](http://hqmeded-ecg.blogspot.com/2018/03/you-have-two-hours-to-save-this.html)
-[^3]: Lip, G. Y. H., Ray, K. K., & Shiu, M. F. (1998). Coronary spasm in acute myocardial infarction. \_\_Heart\_\_, \_\_80\_\_(2), 197–199. [https://doi.org/10/gmvd2v](https://doi.org/10/gmvd2v)
-[^4]: Real, C., Morales, T., & Viana-Tejedor, A. (2021). An Unusual Call From the Urology Ward. \_\_Circulation\_\_, \_\_144\_\_(4), 324–327. [https://doi.org/10.1161/CIRCULATIONAHA.121.055185](https://doi.org/10.1161/CIRCULATIONAHA.121.055185)
+[^3]: Lip, G. Y. H., Ray, K. K., & Shiu, M. F. (1998). Coronary spasm in acute myocardial infarction. *Heart*, *80*(2), 197–199. [https://doi.org/10/gmvd2v](https://doi.org/10/gmvd2v)
+[^4]: Real, C., Morales, T., & Viana-Tejedor, A. (2021). An Unusual Call From the Urology Ward. *Circulation*, *144*(4), 324–327. [https://doi.org/10.1161/CIRCULATIONAHA.121.055185](https://doi.org/10.1161/CIRCULATIONAHA.121.055185)

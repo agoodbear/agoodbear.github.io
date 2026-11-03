@@ -18,8 +18,6 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%99%A4%E4%BA%86ste%E4%BB%A5%E5%A
 translated_from: "medium-c2fa94a9ab28.md"
 translation_date: "2026-10-09"
 ---
-### Besides STE, Which Other ECG Signs Can Mean an Occluded Artery? (Introduction)
-
 Let's look at a few ECGs first, then come back to the question above~~
 
 ![](https://cdn-images-1.medium.com/max/1024/1*ab1PYAHkaEQSP9nEuhy-zA.png)
