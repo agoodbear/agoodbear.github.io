@@ -1798,5 +1798,5 @@ items:
   poster: habits-summary/habits-summary-final-poster.webp
   cover_src: habits-summary/cover/habits-summary-cover.png
   facts: habits-summary/caption_draft.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-11-03'
