@@ -1,0 +1,145 @@
+{
+  "summary": {
+    "date": "2026-11-04",
+    "branch_base": "hugo-source",
+    "question_count": 1690,
+    "structure": {
+      "missing_field": 0,
+      "options_not_4": 0,
+      "answer_out_of_range": 0,
+      "duplicate_id": 0,
+      "duplicate_stem_exact": 0,
+      "near_duplicate_pairs": 2,
+      "explain_incomplete_or_malformed": 3,
+      "empty_string_fields": 13,
+      "duplicate_options": 0
+    },
+    "quiz_json_format_ok": true,
+    "bank_in_sync": true,
+    "bank_version": "80c309503339",
+    "bank_chunks": 85,
+    "images": {
+      "head_check_status": "not_run_network_blocked",
+      "attempted": 1690,
+      "http_200": null,
+      "non_200": null,
+      "blocked_reason": "sandbox proxy 對 ecgimg.agoodbear.com:443 的 CONNECT 回 403（環境網路政策），全部請求未送達",
+      "no_imageMirror": 0,
+      "mirror_prefix_ok": 1690
+    },
+    "answer_distribution": {
+      "A": 427,
+      "B": 443,
+      "C": 413,
+      "D": 407
+    },
+    "answer_chi2_df3": 1.825,
+    "answer_chi2_p_gt_0_05": true,
+    "longest_option_is_answer": {
+      "count": 1127,
+      "ratio": 0.667,
+      "expected_ratio": 0.25
+    },
+    "urlmap": {
+      "entries": 1690,
+      "values_not_in_manifest": 0,
+      "normUrl_collisions": 0,
+      "related_links": 3325,
+      "related_resolved_internal": 3098,
+      "related_self_links": 0,
+      "site_internal_links_to_content": 0
+    },
+    "fixes_applied": []
+  },
+  "explain_issues": [
+    {
+      "id": "smith-654",
+      "detail": "「病程結果」段完全缺漏（只有判讀、wo、lp、extend 四段）。需補寫內容，屬詳解內容，未修改。"
+    },
+    {
+      "id": "smith-559",
+      "detail": "病程結果標籤寫成 <span class='病程結果'>（class 名稱錯誤），應為 <span class='lead'>；前端不會套用 lead 樣式。屬詳解標記，依規則未修改。"
+    },
+    {
+      "id": "smith-1051",
+      "detail": "判讀與病程結果之間多出一個空段落 <p><span class='病程結果' class='lead'></span></p>，前端會顯示一個空的灰色標籤。建議刪除該空段落；屬詳解標記，依規則未修改。"
+    }
+  ],
+  "empty_string_fields": [
+    {
+      "id": "smith-217",
+      "detail": "options_note"
+    },
+    {
+      "id": "smith-807",
+      "detail": "options_note"
+    },
+    {
+      "id": "smith-1216",
+      "detail": "options_note"
+    },
+    {
+      "id": "smith-1252",
+      "detail": "options_note"
+    },
+    {
+      "id": "smith-238",
+      "detail": "options_note"
+    },
+    {
+      "id": "smith-1458",
+      "detail": "options_note"
+    },
+    {
+      "id": "smith-1681",
+      "detail": "options_note"
+    },
+    {
+      "id": "smith-1788",
+      "detail": "options_note"
+    },
+    {
+      "id": "smith-1172",
+      "detail": "options_note"
+    },
+    {
+      "id": "smith-1164",
+      "detail": "options_note"
+    },
+    {
+      "id": "smith-1168",
+      "detail": "options_note"
+    },
+    {
+      "id": "smith-1672",
+      "detail": "options_note"
+    },
+    {
+      "id": "smith-1159",
+      "detail": "options_note"
+    }
+  ],
+  "near_duplicates": [
+    {
+      "ids": [
+        "smith-430",
+        "smith-431"
+      ],
+      "reason": "題幹相似度 0.69（3-gram Jaccard），同一院前節律條、正解文字相同；兩篇 Smith 原文為同文重貼（URL 結尾 -2）。"
+    },
+    {
+      "ids": [
+        "smith-66",
+        "smith-9333"
+      ],
+      "reason": "同一張圖（vomitingtachyrenalfailure1.jpg）、同一病例（54 歲腎移植、嘔吐、BP 111/66、HR 117），來自兩篇不同原文；正解分別為 C 與 D。"
+    }
+  ],
+  "images_non_200": null,
+  "no_imageMirror": [],
+  "other_notes": [
+    "19 題有 options_note 欄位：13 題為空字串、6 題為 null；前端未使用此欄位，不影響顯示。",
+    "有 imageOrig（6 題）與 sourceUrl_unused（4 題）等非標準欄位，前端未使用。",
+    "content/post/ecg-post-21.md／.en.md 文中寫「1649題」，目前題庫為 1690 題（文案，未修改）。"
+  ]
+}
