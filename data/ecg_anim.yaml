@@ -868,8 +868,8 @@ items:
   facts: mimics-04-pericarditis/facts/facts.md
   blog_title: 意識不清的中年婦女
   blog_url: https://agoodbear.com/post/ecg-post-4/
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-11-04'
 - id: mimics-05-dissection
   series: mechanism
   title: 血管真的不通，但不是斑塊
