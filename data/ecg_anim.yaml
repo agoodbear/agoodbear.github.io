@@ -898,8 +898,8 @@ items:
   facts: mimics-05-dissection/facts/facts.md
   blog_title: 明明在救ACS，怎麼會是主動脈剝離？
   blog_url: https://agoodbear.com/post/ecg-post-17/
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-11-05'
 - id: mimics-02-j-point
   series: mechanism
   title: J點被往上拉
