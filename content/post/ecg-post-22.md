@@ -19,7 +19,9 @@ tags:
   - Heart POCUS
   - anti-impulse therapy
   - ADD-RS
-# 🗂 改稿版次｜發佈 · 2026-11-05（Bear說上傳）
+# 🗂 改稿版次｜上線後小修 · 2026-11-05
+#   上線後小修｜2026-11-05｜雙腳麻算1分→ADD-RS 2分
+#   發佈｜2026-11-05（Bear說上傳）
 #   發佈｜2026-11-05｜清cc草稿7處、TODO 2處（機轉句補Rosen's出處）、draft:false、date改發佈日
 #   第 23 輪｜2026-11-05｜事後回顧三點潤字→⏳ 待確認
 #   第 23 輪｜2026-11-05｜事後回顧三點潤字（H.R→心跳、vaso dilator→血管擴張劑、第2點補β-blocker前提）→⏳ 待確認
@@ -140,7 +142,7 @@ Rosen's在主動脈剝離那章寫到，急性Type A或Type B的剝離，也可�
 
 確診的人裡，0分的還有這4.3%。這是敏感度漏掉的部分：Rogers算出來敏感度95.7%，漏掉4.3%，跟specificity無關；所以0分還不能排除，要接D-dimer或影像，才走到後面的排除。
 
-這個病人：疼痛那一類就拿1分。雙腳麻如果算focal neurologic deficit，再加1分，**ADD-RS≥2，高風險。** 雙腳麻算不算？
+這個病人：疼痛那一類拿1分；雙腳麻算focal neurologic deficit，再加1分，**ADD-RS 2分，高風險。**
 
 高風險的病人，不要靠D-dimer排除，直接安排影像；<mark>風險分數2–3分，不建議驗D-dimer</mark>[^braunwald-ddimer]。<mark>和PE的病人一樣，D-dimer只適用在風險不高的病人，用來排除</mark>[^tintinalli-dd][^rosen-dd]。
 
