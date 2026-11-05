@@ -1,0 +1,47 @@
+{{- /* ecg-post-22 Fig.2：ADD-RS＋D-dimer 流程（inline SVG；外框樣式沿用 custom-css/algorithm-card.css）
+       來源：ADvISED（Nazerian 2018）、2022 ACC/AHA ADD-RS分級、Braunwald（2–3分不驗D-dimer）。 */ -}}
+<figure class="algo-fig">
+  <figcaption>
+    <div class="algo-fig__title">Fig.2 疑似急性主動脈症候群：ADD-RS加D-dimer怎麼走</div>
+    <div class="algo-fig__sub">依本文引用的ADvISED研究、2022 ACC/AHA與Braunwald整理；D-dimer陰性也不是零。</div>
+  </figcaption>
+  <svg viewBox="0 0 680 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ADD-RS加D-dimer的流程圖" font-family="'Noto Sans TC','PingFang TC',sans-serif">
+    <title>Fig.2 疑似急性主動脈症候群：ADD-RS加D-dimer怎麼走</title>
+    <defs><marker id="e22a" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#4a4640"/></marker></defs>
+    <g fill="none" stroke="#4a4640" stroke-width="1.5">
+      <path d="M340,66 V98" marker-end="url(#e22a)"/>
+      <path d="M340,160 V184" marker-end="url(#e22a)"/>
+      <path d="M230,232 H170 V306" marker-end="url(#e22a)"/>
+      <path d="M450,232 H520 V306" marker-end="url(#e22a)"/>
+      <path d="M170,360 V384" marker-end="url(#e22a)"/>
+      <path d="M170,474 V500" marker-end="url(#e22a)"/>
+      <path d="M272,429 H520 V412" marker-end="url(#e22a)"/>
+    </g>
+    <g font-size="16" fill="#4a4f55" font-weight="600">
+      <rect x="168" y="212" width="54" height="22" fill="#fbf8f3"/><text x="195" y="229" text-anchor="middle">0–1分</text>
+      <rect x="458" y="212" width="54" height="22" fill="#fbf8f3"/><text x="485" y="229" text-anchor="middle">2–3分</text>
+      <rect x="112" y="478" width="54" height="22" fill="#fbf8f3"/><text x="139" y="495" text-anchor="middle">陰性</text>
+      <rect x="360" y="418" width="96" height="22" fill="#fbf8f3"/><text x="408" y="435" text-anchor="middle">≥500 ng/mL</text>
+    </g>
+    <rect x="190" y="18" width="300" height="48" rx="24" fill="#eef1f4" stroke="#4a5560" stroke-width="1.5"/>
+    <text x="340" y="48" text-anchor="middle" font-size="18" fill="#2b3540">疑似急性主動脈症候群</text>
+    <rect x="170" y="100" width="340" height="60" rx="3" fill="#fbf3e6" stroke="#b8863f" stroke-width="1.4"/>
+    <text x="340" y="126" text-anchor="middle" font-size="18" fill="#3a3020" font-weight="700">算ADD-RS</text>
+    <text x="340" y="149" text-anchor="middle" font-size="15" fill="#6b5a3d">三類（狀況、疼痛、理學檢查）各1分，0–3分</text>
+    <polygon points="340,186 450,232 340,278 230,232" fill="#e6eef5" stroke="#35607e" stroke-width="1.5"/>
+    <text x="340" y="238" text-anchor="middle" font-size="18" fill="#1c3d52">幾分？</text>
+    <rect x="70" y="308" width="200" height="52" rx="3" fill="#fbf3e6" stroke="#b8863f" stroke-width="1.4"/>
+    <text x="170" y="340" text-anchor="middle" font-size="18" fill="#3a3020" font-weight="700">驗D-dimer</text>
+    <polygon points="170,386 272,429 170,472 68,429" fill="#e6eef5" stroke="#35607e" stroke-width="1.5"/>
+    <text x="170" y="424" text-anchor="middle" font-size="16" fill="#1c3d52">&lt;500</text>
+    <text x="170" y="444" text-anchor="middle" font-size="16" fill="#1c3d52">ng/mL？</text>
+    <rect x="420" y="308" width="200" height="102" rx="3" fill="#fbe9e6" stroke="#c0392b" stroke-width="1.7"/>
+    <text x="520" y="342" text-anchor="middle" font-size="19" fill="#8f2318" font-weight="700">直接CTA</text>
+    <text x="520" y="366" text-anchor="middle" font-size="15" fill="#8f2318">2–3分不驗D-dimer</text>
+    <text x="520" y="392" text-anchor="middle" font-size="13.5" fill="#8f2318">不穩、推不去CT：TEE</text>
+    <rect x="30" y="502" width="300" height="84" rx="3" fill="#e8f3ec" stroke="#2e7d52" stroke-width="1.4"/>
+    <text x="180" y="532" text-anchor="middle" font-size="18" fill="#1f5a3a" font-weight="700">可考慮排除，往其他原因找</text>
+    <text x="180" y="556" text-anchor="middle" font-size="15" fill="#4a7a5f">ADvISED：924位裡</text>
+    <text x="180" y="576" text-anchor="middle" font-size="15" fill="#4a7a5f">還是有3位是（failure rate 0.3%）</text>
+  </svg>
+</figure>

@@ -1,0 +1,47 @@
+{{- /* ecg-post-22 Fig.6：填塞邊緣的三招代償 vs 剝離標準治療一招一招拿掉（inline SVG；外框沿用 algorithm-card.css）
+       內容對應正文Q5：靜脈壓、心跳、血管收縮（Tintinalli、Textbook of Critical Care、Braunwald）。 */ -}}
+<figure class="algo-fig">
+  <figcaption>
+    <div class="algo-fig__title">Fig.6 填塞邊緣靠三招撐住，剝離的標準治療剛好一招一招拿掉</div>
+    <div class="algo-fig__sub">左邊是病人的代償，右邊是我們給的藥；每一條線代表一招被拿掉。</div>
+  </figcaption>
+  <svg viewBox="0 0 680 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三招代償與剝離治療的對應關係圖" font-family="'Noto Sans TC','PingFang TC',sans-serif">
+    <title>Fig.6 填塞邊緣靠三招撐住，剝離的標準治療剛好一招一招拿掉</title>
+    <defs><marker id="e22c" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#c0392b"/></marker>
+      <marker id="e22d" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#4a4640"/></marker></defs>
+    <text x="150" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f5a3a">病人的三招代償</text>
+    <text x="530" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#8f2318">剝離的標準治療</text>
+    <g font-size="17">
+      <rect x="20" y="50" width="260" height="70" rx="6" fill="#e8f3ec" stroke="#2e7d52" stroke-width="1.5"/>
+      <text x="150" y="80" text-anchor="middle" fill="#1f5a3a" font-weight="700">① 靜脈壓升高</text>
+      <text x="150" y="104" text-anchor="middle" font-size="14.5" fill="#4a7a5f">前負荷夠，右心才裝得進血</text>
+      <rect x="20" y="150" width="260" height="70" rx="6" fill="#e8f3ec" stroke="#2e7d52" stroke-width="1.5"/>
+      <text x="150" y="180" text-anchor="middle" fill="#1f5a3a" font-weight="700">② 心跳變快</text>
+      <text x="150" y="204" text-anchor="middle" font-size="14.5" fill="#4a7a5f">每下打得少，就多打幾下</text>
+      <rect x="20" y="250" width="260" height="70" rx="6" fill="#e8f3ec" stroke="#2e7d52" stroke-width="1.5"/>
+      <text x="150" y="280" text-anchor="middle" fill="#1f5a3a" font-weight="700">③ 血管收縮</text>
+      <text x="150" y="304" text-anchor="middle" font-size="14.5" fill="#4a7a5f">交感拉高血管阻力，撐住血壓</text>
+      <rect x="400" y="50" width="260" height="70" rx="6" fill="#fbe9e6" stroke="#c0392b" stroke-width="1.5"/>
+      <text x="530" y="80" text-anchor="middle" fill="#8f2318" font-weight="700">NTG、morphine</text>
+      <text x="530" y="104" text-anchor="middle" font-size="14.5" fill="#8f2318">擴張靜脈，降前負荷</text>
+      <rect x="400" y="150" width="260" height="70" rx="6" fill="#fbe9e6" stroke="#c0392b" stroke-width="1.5"/>
+      <text x="530" y="180" text-anchor="middle" fill="#8f2318" font-weight="700">β-blocker</text>
+      <text x="530" y="204" text-anchor="middle" font-size="14.5" fill="#8f2318">壓掉心跳</text>
+      <rect x="400" y="250" width="260" height="70" rx="6" fill="#fbe9e6" stroke="#c0392b" stroke-width="1.5"/>
+      <text x="530" y="280" text-anchor="middle" fill="#8f2318" font-weight="700">morphine</text>
+      <text x="530" y="304" text-anchor="middle" font-size="14.5" fill="#8f2318">降交感</text>
+    </g>
+    <g stroke="#c0392b" stroke-width="2.2" fill="none">
+      <path d="M398,85 H284" marker-end="url(#e22c)"/>
+      <path d="M398,185 H284" marker-end="url(#e22c)"/>
+      <path d="M398,285 H284" marker-end="url(#e22c)"/>
+    </g>
+    <g font-size="22" font-weight="700" fill="#c0392b" text-anchor="middle">
+      <text x="340" y="78">✕</text><text x="340" y="178">✕</text><text x="340" y="278">✕</text>
+    </g>
+    <path d="M340,330 V364" stroke="#4a4640" stroke-width="1.5" marker-end="url(#e22d)"/>
+    <rect x="90" y="368" width="500" height="84" rx="42" fill="#fbe9e6" stroke="#c0392b" stroke-width="1.8"/>
+    <text x="340" y="402" text-anchor="middle" font-size="18" fill="#8f2318" font-weight="700">三招都被拿掉：心臟裝不進血</text>
+    <text x="340" y="430" text-anchor="middle" font-size="16" fill="#8f2318">血壓可能突然掉，甚至PEA</text>
+  </svg>
+</figure>

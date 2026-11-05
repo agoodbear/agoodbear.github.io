@@ -721,5 +721,8 @@
 {{/* 全站低調特效：刊頭心跳線、閱讀進度、卡片浮現、文章圖片放大 */}}
 {{ partial "site-motion.html" . }}
 
+{{/* 註腳浮框：滑到上標數字顯示原文段落與出處 */}}
+{{ partial "footnote-popover.html" . }}
+
 {{/* 本機預覽用的「請CC修改」紅筆標記，只在 hugo server 時載入 */}}
 {{ partial "cc-mark.html" . }}
