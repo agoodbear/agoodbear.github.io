@@ -20,7 +20,7 @@ tags:
   - anti-impulse therapy
   - ADD-RS
 # 🗂 改稿版次｜上線後小修 · 2026-11-05
-#   上線後小修｜2026-11-05｜雙腳麻算1分→ADD-RS 2分
+#   上線後小修｜2026-11-05｜雙腳麻算1分→ADD-RS 2分；1st AVB不算heart block；false lumen血栓改「疑似」
 #   發佈｜2026-11-05（Bear說上傳）
 #   發佈｜2026-11-05｜清cc草稿7處、TODO 2處（機轉句補Rosen's出處）、draft:false、date改發佈日
 #   第 23 輪｜2026-11-05｜事後回顧三點潤字→⏳ 待確認
@@ -178,7 +178,7 @@ Rosen's在主動脈剝離那章寫到，急性Type A或Type B的剝離，也可�
 
 vein本來就會被壓扁，artery本來就不容易被壓扁[^ma-compress]，所以internal jugular vein一壓就扁了，這很正常。
 
-可是這條common carotid artery，我用力往下壓，<strong>連一點點扁的跡象都沒有。</strong>裡面有很明顯的血栓，代表false lumen裡面充滿了血栓。
+可是這條common carotid artery，我用力往下壓，<strong>連一點點扁的跡象都沒有。</strong>裡面有很明顯的血栓，疑似false lumen裡面充滿了血栓。
 
 <div class="ec-videos">
 <figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/videos/ecg-post-22/cca-compression-poster.jpg" aria-label="Video 7｜探頭往下壓：internal jugular vein壓扁，common carotid artery壓不下去"><source src="/videos/ecg-post-22/cca-compression.mp4" type="video/mp4"></video><figcaption>Video 7｜探頭往下壓：internal jugular vein壓扁，common carotid artery壓不下去</figcaption></figure>
@@ -353,7 +353,7 @@ ESC也建議放動脈導管、進ICU監測[^esc-monitor]。
 
 </div>
 
-**有急性AR、heart block、心搏過緩時，β-blocker要小心；不耐受的病人，通常改用diltiazem或verapamil**[^acc-bb]。
+**有急性AR、heart block、心搏過緩時，β-blocker要小心；不耐受的病人，通常改用diltiazem或verapamil**[^acc-bb]。這個病人的1st AVB，我認為不算這裡講的heart block。
 
 急性AR時，心臟是靠心跳變快來維持心輸出量；β-blocker把這個代償擋掉，舒張期拉長，逆流反而更多[^tintinalli-ar][^hurst-ar]。
 
