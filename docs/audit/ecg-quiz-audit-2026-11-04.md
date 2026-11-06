@@ -76,3 +76,11 @@
 ## 本次修改
 
 無資料修改；quiz.json、bank/ 均未變更。僅新增本報告（.md＋.json）。
+
+
+## 圖片 HEAD 補驗（2026-11-06 台北）
+
+先前 sandbox proxy 擋 `ecgimg.agoodbear.com`，本次由 Grok Bot box 對 1690 支 `imageMirror` 做 HTTP HEAD（並行 32）。
+
+- **結果：1690/1690 回 HTTP 200**；non-200 = 0
+- 檢查時間：2026-11-06 08:08（Asia/Taipei）
