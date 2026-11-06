@@ -135,11 +135,25 @@
       "reason": "同一張圖（vomitingtachyrenalfailure1.jpg）、同一病例（54 歲腎移植、嘔吐、BP 111/66、HR 117），來自兩篇不同原文；正解分別為 C 與 D。"
     }
   ],
-  "images_non_200": null,
+  "images_non_200": [],
   "no_imageMirror": [],
   "other_notes": [
     "19 題有 options_note 欄位：13 題為空字串、6 題為 null；前端未使用此欄位，不影響顯示。",
     "有 imageOrig（6 題）與 sourceUrl_unused（4 題）等非標準欄位，前端未使用。",
     "content/post/ecg-post-21.md／.en.md 文中寫「1649題」，目前題庫為 1690 題（文案，未修改）。"
-  ]
+  ],
+  "images": {
+    "head_check_status": "completed",
+    "checked_at": "2026-11-06T08:08:00+08:00",
+    "checked_from": "grok-bot-box",
+    "attempted": 1690,
+    "http_200": 1690,
+    "non_200": 0,
+    "status_counts": {
+      "200": 1690
+    },
+    "blocked_reason": null,
+    "no_imageMirror": 0,
+    "mirror_prefix_ok": 1690
+  }
 }
