@@ -930,6 +930,33 @@ items:
   facts: mimics-02-j-point/facts/facts.md
   blog_title: 意識不清的中年婦女
   blog_url: https://agoodbear.com/post/ecg-post-4/
+  published: true
+  published_at: '2026-11-06'
+- id: mimics-06-brugada
+  series: mechanism
+  title: 像STEMI的Brugada
+  subtitle: STEMI mimics：Type 1 coved、發燒、V1和V2往上移
+  point: 懷疑Brugada，V1、V2往上移；看到coved才算數
+  point_src: 說明欄📌
+  duration: 95.8
+  refs:
+  - Tintinalli's Emergency Medicine
+  - Hurst's The Heart
+  - Mattu Electrocardiography in Emergency, Acute, and Critical Care
+  - Dr. Smith's ECG Blog
+  - ECG Weekly（Amal Mattu）
+  - LITFL
+  refs_src: mimics-06-brugada/social_caption.txt（IG 版「出處」）＋facts/facts.md
+  version: final
+  src: mimics-06-brugada/out/mimics-06-brugada-final-v3.mp4
+  src_phone: mimics-06-brugada/out/mimics-06-brugada-final-v3-phone.mp4
+  video: mimics-06-brugada/mimics-06-brugada-final-v3.mp4
+  phone: mimics-06-brugada/mimics-06-brugada-final-v3-phone.mp4
+  poster: mimics-06-brugada/mimics-06-brugada-final-v3-poster.webp
+  cover_src: mimics-06-brugada/cover/17-mimics-06-brugada-A.png
+  facts: mimics-06-brugada/facts/facts.md
+  blog_title: 意識不清的中年婦女
+  blog_url: https://agoodbear.com/post/ecg-post-4/
   published: false
   published_at: ''
 - id: mobitz1-vs-cavb

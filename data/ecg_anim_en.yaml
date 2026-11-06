@@ -671,6 +671,18 @@ items:
     - J-Wave syndromes expert consensus (2016)
     - Dr. Smith's ECG Blog
     zh_hash: '513f3efdb1'
+  mimics-06-brugada:
+    title: Brugada that looks like STEMI
+    subtitle: 'STEMI mimics: Type 1 coved, fever, moving V1 and V2 up'
+    point: 'Suspect Brugada? Move V1 and V2 up; only a coved pattern counts'
+    refs:
+    - Tintinalli's Emergency Medicine
+    - Hurst's The Heart
+    - Mattu Electrocardiography in Emergency, Acute, and Critical Care
+    - Dr. Smith's ECG Blog
+    - ECG Weekly (Amal Mattu)
+    - LITFL
+    zh_hash: 'ea3069e0be'
   airway-01-safe-apnea:
     title: SpO₂ is already 100%. Why not intubate yet?
     subtitle: Airway series 01
