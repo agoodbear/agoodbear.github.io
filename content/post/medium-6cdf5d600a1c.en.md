@@ -3,7 +3,7 @@ title: "Can a VPC be the little soldier who wins the battle?"
 date: "2021-11-04"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/0*QsTk0Pc3I5gPz8dc"
+thumbnail: "/images/medium/0_QsTk0Pc3I5gPz8dc.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -22,7 +22,7 @@ translation_date: "2026-10-09"
 
 A VPC originates in the ventricle. Like LBBB, a VPC has discordant ST segments, so when there's excessive discordant STE or concordant STE, you need to be careful. There's no evidence that the MSC applies to VPCs the way it applies to LBBB. But in Stephen Smith's experience, the rule works for VPCs very much the way it does for LBBB, though it's a bit less specific[^3].
 
-[![](https://cdn-images-1.medium.com/max/1024/0*QsTk0Pc3I5gPz8dc)](http://hqmeded-ecg.blogspot.com/2014/01/look-at-pvcs.html)
+[![](/images/medium/0_QsTk0Pc3I5gPz8dc.webp)](http://hqmeded-ecg.blogspot.com/2014/01/look-at-pvcs.html)
 *From Smith ECG Blog*
 
 Let's review. The Modified Sgarbossa criteria (MSC) can be applied to patients with LBBB/PPM. **The criteria are:**
@@ -35,14 +35,14 @@ Let's review. The Modified Sgarbossa criteria (MSC) can be applied to patients w
 
 If you use 0.25 as the MSC cutoff, sensitivity gets to 80% and specificity to 99%. If you use 0.3, sensitivity may drop to 64%, and you'd actually miss a lot of AMIs.
 
-![](https://cdn-images-1.medium.com/max/1024/0*dIPZ748EHjnWxIhT.png)
+![](/images/medium/0_dIPZ748EHjnWxIhT.webp)
 
 The figures (**Fig.1 & 2**) make it a bit clearer.
 
-![](https://cdn-images-1.medium.com/max/1024/0*B2iJDLJNTOuty4q9)
+![](/images/medium/0_B2iJDLJNTOuty4q9.webp)
 ***Fig.1 Note: for LBBB, look only at V1~V3; for PPM, look at V1~V6***
 
-![](https://cdn-images-1.medium.com/max/1024/0*TIEHVgbJaZgYTSjX)
+![](/images/medium/0_TIEHVgbJaZgYTSjX.webp)
 ***Fig.2***
 
 #### I've drifted off topic a bit
@@ -51,7 +51,7 @@ The main point of all that is: MSC Criteria C is important and can help us asses
 
 **Let's look at a few more examples.**
 
-[![](https://cdn-images-1.medium.com/max/1024/0*zOHkUzVH7VNOw9G0)](http://hqmeded-ecg.blogspot.com/2018/10/hyperacute-t-waves-and-concordant-st.html)
+[![](/images/medium/0_zOHkUzVH7VNOw9G0.webp)](http://hqmeded-ecg.blogspot.com/2018/10/hyperacute-t-waves-and-concordant-st.html)
 *From Smith ECG Blog*
 
 In this tracing you can see obvious hyperacute T waves in the VPCs. V2 also shows Concordant STE in the VPC. This is another case of spotting an ischemic change through the VPC.
@@ -60,7 +60,7 @@ In Stephen Smith's experience, OMI used to be diagnosed from the ST-T wave morph
 
 **Here's another one**
 
-[![](https://cdn-images-1.medium.com/max/1024/0*Xvg4qb7X7-_6X6Fg)](http://hqmeded-ecg.blogspot.com/2013/06/stemi-seen-best-in-pvc-diagnosed-by.html)
+[![](/images/medium/0_Xvg4qb7X7-_6X6Fg.webp)](http://hqmeded-ecg.blogspot.com/2013/06/stemi-seen-best-in-pvc-diagnosed-by.html)
 *From Smith ECG Blog*
 
 Here too, **Concordant STE is seen in the VPCs** in V1~V3, while the sinus-conducted beats show no obvious STE (maybe Large T waves → comparing with a prior ECG would be more accurate).
@@ -69,7 +69,7 @@ Here too, **Concordant STE is seen in the VPCs** in V1~V3, while the sinus-condu
 
 52-year-old man, chest pain with cold sweats starting in the afternoon (**Fig.3**)
 
-![](https://cdn-images-1.medium.com/max/1024/1*HE96TrHbZeejP5Y4BygTFQ.png)
+![](/images/medium/1_HE96TrHbZeejP5Y4BygTFQ.webp)
 ***Fig.3***
 
 Breaking this ECG down further: sinus tachycardia, about 120 bpm. In the long lead II you can see group beats in the red box. Setting the group beats aside, there's STE over V2~V4, leaning concave, with minimal STD in lead II and aVF.
@@ -78,7 +78,7 @@ In a 52-year-old man, 2 mm of STE in V2~V3 counts as STE. This Case has about 3 
 
 If this much elevation still doesn't move you to Call CV man, let's run the **Smith 4 variable formula** for Subtle LAD occlusion.
 
-![](https://cdn-images-1.medium.com/max/1024/1*vuG7O-XdGmoASOrOKsuMRA.jpeg)
+![](/images/medium/1_vuG7O-XdGmoASOrOKsuMRA.webp)
 
 **QTc:469**
 
@@ -94,14 +94,14 @@ If this much elevation still doesn't move you to Call CV man, let's run the **Sm
 
 Ps: the Smith 4 variable formula has exclusion criteria. One of them is that there must be no reciprocal STD change. So actually the formula can't be used here. Why? Because reciprocal change means it's an obvious MI. So you don't need the formula — you can already call it an MI!
 
-![](https://cdn-images-1.medium.com/max/1024/1*7teHIVQfLmaSjfpxDDTxEw.png)
+![](/images/medium/1_7teHIVQfLmaSjfpxDDTxEw.webp)
 ***Fig.4***
 
 Say the STEMI criteria can't get you to Call CV man, and you don't know how to use the Smith 4 variable formula either. Then let's look at what's going on in these group beats.
 
 The first beat of the group beats seems to have a P wave (trace it over to V1~V2) and leans toward an RBBB pattern. The second beat looks wide with no obvious P wave, probably a VPC beat, and V2~V3 show obvious concordant STE — concordant STE that appears because there's ischemia. This is evidence of OMI too.
 
-![](https://cdn-images-1.medium.com/max/1024/0*XLamn84k9PmkFazJ)
+![](/images/medium/0_XLamn84k9PmkFazJ.webp)
 
 **The patient underwent PCI, which showed LAD total occlusion.**
 
@@ -112,12 +112,12 @@ The first beat of the group beats seems to have a P wave (trace it over to V1~V2
 
 #### Next, let's look at one where a VPC can warn you that a fatal arrhythmia may be coming.
 
-[![](https://cdn-images-1.medium.com/max/1024/1*vmWn0XYQgM7nFNAn1NKnSA.png)](https://hqmeded-ecg.blogspot.com/2021/11/what-are-these-bizarre-bigeminal-pvcs.html)
+[![](/images/medium/1_vmWn0XYQgM7nFNAn1NKnSA.webp)](https://hqmeded-ecg.blogspot.com/2021/11/what-are-these-bizarre-bigeminal-pvcs.html)
 *From Smith ECG Blog*
 
 The ECG above shows a bigeminy pattern. But note: look at the QT interval of the VPC beats — about 560 ms
 
-![](https://cdn-images-1.medium.com/max/1024/1*l5jt0R2_LRq1RtDUh3TmLw@2x.png)
+![](/images/medium/1_l5jt0R2_LRq1RtDUh3TmLw_2x.webp)
 ***Fig.5***
 
 Fig.5 is the QT interval nomogram[^2]. At H.R<60, any QT interval > 485 ms carries a risk of TdP; at H.R>60, as H.R rises, the QT interval at which TdP risk appears falls accordingly. **In other words, above the line, watch out for TdP**.

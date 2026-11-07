@@ -1,9 +1,11 @@
 ---
 title: "猜猜哪一條血管阻塞?"
 date: "2021-09-19"
+description: "約40多歲男性工作時突然昏倒，到院時血壓59/34 mmHg，ECG是3rd degree AVB合併下壁導程STE。這篇從ECG判讀談到Right side ECG與冠狀動脈痙攣。"
 draft: false
-toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*DImVcrqqnClukvho9mhMAA@2x.png"
+toc: true
+hide_hero: true
+thumbnail: "/images/medium/1_DImVcrqqnClukvho9mhMAA_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -15,8 +17,16 @@ tags:
 medium_id: "b4504530acc"
 medium_url: "https://medium.com/@agoodbear/%E7%8C%9C%E7%8C%9C%E5%93%AA%E4%B8%80%E6%A2%9D%E8%A1%80%E7%AE%A1%E9%98%BB%E5%A1%9E-b4504530acc"
 canonicalURL: "https://medium.com/@agoodbear/%E7%8C%9C%E7%8C%9C%E5%93%AA%E4%B8%80%E6%A2%9D%E8%A1%80%E7%AE%A1%E9%98%BB%E5%A1%9E-b4504530acc"
+# 🗂 改稿版次
+#   重新排版｜2026-11-07｜比照ecg-post-22：卡片風、圖號、參考資料收合（正文字句不動）→⏳ 待確認
+#   第 0 版｜自 Medium 匯入
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*DImVcrqqnClukvho9mhMAA@2x.png)
+
+{{< article-cards >}}
+
+## ❤️Case：工作時突然昏倒，血壓59/34
+
+![Fig.1 到院ECG](/images/medium/1_DImVcrqqnClukvho9mhMAA_2x.webp "Fig.1 到院ECG")
 
 前一陣子的個案，約莫40多歲的中年男性。工作時突然昏倒。
 
@@ -28,16 +38,15 @@ canonicalURL: "https://medium.com/@agoodbear/%E7%8C%9C%E7%8C%9C%E5%93%AA%E4%B8%8
 
 <strong>到院ECG為Blog開頭的圖</strong>
 
-#### <strong>先來判讀ECG:</strong>
+## ❤️先來判讀ECG
 
 Rate:48、SR with 3rd degree AVB、normal axis、 junctional escape rhythm、STE over Inf.lead with reciprocal change over I/aVL、Lateral leads STE、STD over V1~V3
 
 必需要考慮<strong>Inf.-Post-lateral wall STEMI</strong>
 
-#### <strong>先來看看如何判斷3rd degree AVB?</strong>
+### ❤️先來看看如何判斷3rd degree AVB?
 
-![](https://cdn-images-1.medium.com/max/1024/1*lb7JibPdXW54B7THqRtXRw.png)
-<strong><em>Fig.1</em></strong>
+![Fig.2 3rd degree AVB：Lead II標出P wave](/images/medium/1_lb7JibPdXW54B7THqRtXRw.webp "Fig.2 3rd degree AVB：Lead II標出P wave")
 
 要判斷AV block，要看P與QRS之間的關係。
 
@@ -45,20 +54,19 @@ P和QRS<strong>越拉越遠</strong>，之後一個P沒有接QRS →Mobitz Type 
 
 P和QRS<strong>固定距離</strong>，之後一個P沒有接QRS →Mobitz Type 2
 
-P和QRS之間的<strong>距離沒有規則</strong>→Complete heart block<strong>(本Case)(Fig.1)</strong>
+P和QRS之間的<strong>距離沒有規則</strong>→Complete heart block<strong>(本Case)(Fig.2)</strong>
 
 > <strong>Tips:</strong>當看到很多P<strong>(QRS和QRS之間不只一個P)</strong>，先想<strong>AV block or block APCs兩種狀況</strong>
 
-#### 再來看看Post.wall MI要如何診斷?
+### ❤️再來看看Post.wall MI要如何診斷?
 
-![](https://cdn-images-1.medium.com/max/1024/1*ziHV3GUukSIgeynYFMP2uw@2x.png)
-<strong><em>Fig.2</em></strong>
+![Fig.3 本Case的V1~V3](/images/medium/1_ziHV3GUukSIgeynYFMP2uw_2x.webp "Fig.3 本Case的V1~V3")
 
-一般我們要診斷Post.wall MI要有三個criteria:(<strong>Fig.2</strong>本Case的V1~V3)
+一般我們要診斷Post.wall MI要有三個criteria:(<strong>Fig.3</strong>本Case的V1~V3)
 
-#### <strong>1.R/S>1 in V1 or V2(也就是Tall RV1) 2.V1~V3有STD 3.V1~V3有Upright T wave</strong>
+<mark><strong>1.R/S>1 in V1 or V2(也就是Tall RV1) 2.V1~V3有STD 3.V1~V3有Upright T wave</strong></mark>
 
-我在[這邊文章有提過](https://agoodbear.medium.com/%E9%80%99%E6%98%AFpost-wellen-syndrome%E9%82%84%E6%98%AFde-winter-391b08ca389f)，第一點與第三點並不是必要的，Why?
+我在[這邊文章有提過](/post/medium-391b08ca389f/)，第一點與第三點並不是必要的，Why?
 
 第一點出現在Post.wall有Q wave產生，對應到V1~V3是Tall R wave出現
 
@@ -68,16 +76,15 @@ P和QRS之間的<strong>距離沒有規則</strong>→Complete heart block<stron
 
 Smith ECG Blog強調過好幾次，如果V2~V4有Maximal STD，一定要先考慮Post.wall OMI。
 
-#### Inf.wall STEMI為何要做Right side ECG?
+### ❤️Inf.wall STEMI為何要做Right side ECG?
 
-首先要先知道為何要做Right side ECG?做了Right side ECG可以知道是否有合併RVMI，有合併RVMI，我們在處置上不會給會降低preload的藥物(如NTG)。因為給了如NTG，會讓水分留在周邊，回心血變少，又因為RVMI，讓RV dilate，spetum往LV壓，導致cardiac output變少。回RV血少，到LV血就少，因此cardiac output變更少，病患就可能休克、低血壓。(<strong>Fig.3</strong>)
+首先要先知道為何要做Right side ECG?做了Right side ECG可以知道是否有合併RVMI，有合併RVMI，我們在處置上不會給會降低preload的藥物(如NTG)。因為給了如NTG，會讓水分留在周邊，回心血變少，又因為RVMI，讓RV dilate，spetum往LV壓，導致cardiac output變少。回RV血少，到LV血就少，因此cardiac output變更少，病患就可能休克、低血壓。(<strong>Fig.4</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*xRLVfI3jPxrN5I1oUt5VsQ.png)
-<strong><em>Fig.3</em></strong>
+![Fig.4 RVMI：RV擴大、septum壓向LV](/images/medium/1_xRLVfI3jPxrN5I1oUt5VsQ.webp "Fig.4 RVMI：RV擴大、septum壓向LV")
 
-#### <strong>基本知識:</strong>Inf.OMI合併RVMI的比例約30~50%
+### ❤️基本知識：Inf.OMI合併RVMI的比例約30~50%
 
-#### <strong>用了NTG真的會掉血壓嗎?</strong>
+### ❤️用了NTG真的會掉血壓嗎?
 
 [Podcast 128 - Who Gets A Right-Sided ECG? w/ Dr. Stephen Smith & Tom Bouthillet](https://www.foamfratblog.com/post/podcast-128-who-gets-a-right-sided-ecg-w-dr-stephen-smith-tom-bouthillet)
 
@@ -89,7 +96,7 @@ Smith ECG Blog強調過好幾次，如果V2~V4有Maximal STD，一定要先考�
 
 由這篇研究可以知道，根據學理用了NTG會狂掉血壓影響cardiac output?還是本來用了NTG就會掉血壓?
 
-#### 如何不做Right side ECG可以知道有RVMI?
+### ❤️如何不做Right side ECG可以知道有RVMI?
 
 利用原本的ECG來判讀(ECG clues)，透過下列方式:
 
@@ -104,31 +111,29 @@ Smith ECG Blog強調過好幾次，如果V2~V4有Maximal STD，一定要先考�
 
 4. STE in V1>V2(或者說有<strong>Flattened V2</strong>)
 
-#### <strong>如何解釋➡</strong>因為通常正常ECG，V2/V3通常一些程度的STE，所以正常狀況下V2的ST應該要高於V1，但是如果V2的ST低於V1，那麼有可能是因為合併RVMI，所以V1的ST要上提，相對就會造成V2的ST相對於V1較平)(要注意，因為可能合併posterior OMI，所以RVMI的V1，並不總是會出現STE)
+<strong>如何解釋➡</strong>因為通常正常ECG，V2/V3通常一些程度的STE，所以正常狀況下V2的ST應該要高於V1，但是如果V2的ST低於V1，那麼有可能是因為合併RVMI，所以V1的ST要上提，相對就會造成V2的ST相對於V1較平)(要注意，因為可能合併posterior OMI，所以RVMI的V1，並不總是會出現STE)
 
 5. STE in aVR under Inf.wall MI➡也是提示可能是RVMI，所以作Right side ECG是個好主意，特別是每個Inf.wall MI <strong>(From Smith ECG[^2])</strong>
 
-#### <strong>如何解釋➡</strong>aVR也是算rightward leads ECG，所以也可以看RV
+<strong>如何解釋➡</strong>aVR也是算rightward leads ECG，所以也可以看RV
 
-#### 講了那麼多，到底這個Case塞住了哪條血管?
+## ❤️講了那麼多，到底這個Case塞住了哪條血管?
 
-![](https://cdn-images-1.medium.com/max/1024/1*Q4SO8VgcQxNvacdm3aJPYw.jpeg)
+![Fig.5 CAG：RCA AP cranial view](/images/medium/1_Q4SO8VgcQxNvacdm3aJPYw.webp "Fig.5 CAG：RCA AP cranial view")
 
-![](https://cdn-images-1.medium.com/max/1024/1*M-JTKlUwaPGw6DhJD5oF_g.jpeg)
-<strong><em>Fig.4</em></strong>
+![Fig.6 CAG：LM、LAD、LCx RAO caudal view](/images/medium/1_M-JTKlUwaPGw6DhJD5oF_g.webp "Fig.6 CAG：LM、LAD、LCx RAO caudal view")
 
-上圖為CAG(<strong>Fig.4</strong>)。三條血管一整個通暢到不行～～～
+上圖為CAG(<strong>Fig.5、Fig.6</strong>)。三條血管一整個通暢到不行～～～
 
-<strong>CAG報告:CAG:Insignificant CAD with marked coronary spasm over LAD-M and RCA-D</strong>
+<mark><strong>CAG報告:CAG:Insignificant CAD with marked coronary spasm over LAD-M and RCA-D</strong></mark>
 
 Amazing~~~
 
-這邊我們看一張paper上的圖[^3](<strong>Fig.5</strong>)比較明顯，圖中的下圖在coronary artery打了nitrate，發現LAD塞住的地方就通了。
+這邊我們看一張paper上的圖[^3](<strong>Fig.7</strong>)比較明顯，圖中的下圖在coronary artery打了nitrate，發現LAD塞住的地方就通了。
 
-![](https://cdn-images-1.medium.com/max/1024/1*0wSXY9V-_Fu1HZz3v3Tz0A@2x.png)
-<strong><em>Fig.5</em></strong>
+![Fig.7 文獻圖：LAD阻塞處打nitrate後恢復通暢](/images/medium/1_0wSXY9V-_Fu1HZz3v3Tz0A_2x.webp "Fig.7 文獻圖：LAD阻塞處打nitrate後恢復通暢")
 
-<strong>Coronary artery spasm又叫做Prinzmetal (vasospastic) angina</strong>，因為血管收縮導致缺血，引起STEMI ECG pattern。
+<mark><strong>Coronary artery spasm又叫做Prinzmetal (vasospastic) angina</strong></mark>，因為血管收縮導致缺血，引起STEMI ECG pattern。
 
 這邊提一篇在今年7月發表在Circulation的一篇ECG challenge[^4]。內容重點如下:
 
@@ -137,16 +142,30 @@ Amazing~~~
 - Coronary artery spasm伴隨著arrhythmia包括SB、sinus arrest、advanced AV block、Vf、asystole
 - 在一個observation study，CAVB是在明顯CAD，但沒有血行不穩的狀況下，最常出現的arrhythmia
 
-#### 要如何區分STE是由Coronary artery spasm還是epicardial artery occlusion(AMI)導致的呢? (Fig.6) →A/B是Coronary a. spasm、C/D是AMI
+### ❤️要如何區分STE是由Coronary artery spasm還是epicardial artery occlusion(AMI)導致的呢? (Fig.8) →A/B是Coronary a. spasm、C/D是AMI
 
-- STE伴隨相同lead的<strong>R wave增加高度與寬度(duration)，有點像在peak處出現monophasic curve一樣</strong>(在peak處出現curve➡因為R wave duration變長)➡<strong>QRS-T monophasic curve(Fig.6的圖A)</strong>
+- STE伴隨相同lead的<strong>R wave增加高度與寬度(duration)，有點像在peak處出現monophasic curve一樣</strong>(在peak處出現curve➡因為R wave duration變長)➡<strong>QRS-T monophasic curve(Fig.8的圖A)</strong>
 - 這種QRS-T monophasic curve通常不會見於AMI，而是數次的coronary spasm導致主要的coronary a.近端塞住引起
 - 此外若有病理性Q wave和T wave改變出現(Terminal TWI or Deeply TWI等Wellens’ wave出現)會比較是典型的AMI表現
 
-![](https://cdn-images-1.medium.com/max/1024/1*k_oGslBAnfl-t9ihQlCH1A@2x.png)
-<strong><em>Fig.6</em></strong>
+![Fig.8 文獻圖：coronary spasm（A/B）與AMI（C/D）的ECG變化](/images/medium/1_k_oGslBAnfl-t9ihQlCH1A_2x.webp "Fig.8 文獻圖：coronary spasm（A/B）與AMI（C/D）的ECG變化")
 
-參考資料補充：[^1] [^2] [^3] [^4]
+## 參考資料
+
+內文每個上標數字，滑過去（手機點一下）就看得到出處。整理起來是這4份：
+
+<div class="ec-stack ec-cols refs-sources">
+
+- **研究**
+  - Robichaud L, et al. *Prehosp Emerg Care* 2016（到院前給予nitroglycerin於下壁STEMI的安全性）
+  - Lip GYH, et al. *Heart* 1998（急性心肌梗塞中的冠狀動脈痙攣）
+  - Real C, et al. *Circulation* 2021（ECG challenge：An Unusual Call From the Urology Ward）
+- **部落格**
+  - Dr. Smith's ECG Blog（You have two hours to save this patient's life）
+
+</div>
+
+<div class="refs-slot"></div>
 
 [^1]: Robichaud, L., Ross, D., Proulx, M.-H., Légaré, S., Vacon, C., Xue, X., & Segal, E. (2016). Prehospital Nitroglycerin Safety in Inferior ST Elevation Myocardial Infarction. *Prehospital Emergency Care*, *20*(1), 76–81. [https://doi.org/10/gmsvrq](https://doi.org/10/gmsvrq)
 [^2]: [You have two hours to save this patient’s life](http://hqmeded-ecg.blogspot.com/2018/03/you-have-two-hours-to-save-this.html)

@@ -1,9 +1,11 @@
 ---
 title: "OHCA到院，啟動心導管嗎?"
 date: "2022-07-16"
+description: "一位50歲左右的婦女OHCA到院，gain pulse後做12 lead ECG，Rate 150 bpm、QTc 507 ms。從ECG判讀、QT interval到ROSC後處置，討論這個個案適不適合啟動心導管。"
 draft: false
-toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*7sfT-6ZdvaJFT_ZI_X_8Hg@2x.png"
+toc: true
+hide_hero: true
+thumbnail: "/images/medium/1_7sfT-6ZdvaJFT_ZI_X_8Hg_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -15,9 +17,14 @@ tags:
 medium_id: "3ec1599ca9bb"
 medium_url: "https://medium.com/@agoodbear/ohca%E5%88%B0%E9%99%A2-%E5%95%9F%E5%8B%95%E5%BF%83%E5%B0%8E%E7%AE%A1%E5%97%8E-3ec1599ca9bb"
 canonicalURL: "https://medium.com/@agoodbear/ohca%E5%88%B0%E9%99%A2-%E5%95%9F%E5%8B%95%E5%BF%83%E5%B0%8E%E7%AE%A1%E5%97%8E-3ec1599ca9bb"
+# 🗂 改稿版次
+#   重新排版｜2026-11-07｜比照ecg-post-22：卡片風、問題清單、圖號、學習重點、參考資料收合（正文字句不動）→⏳ 待確認
+#   第 0 版｜自 Medium 匯入
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*7sfT-6ZdvaJFT_ZI_X_8Hg@2x.png)
-<strong><em>Fig.1</em></strong>
+
+{{< article-cards >}}
+
+## ❤️Case：50歲婦女OHCA，gain pulse
 
 某個夜黑風高的晚上，急診室外面的緊急消防救護系統廣播著:
 
@@ -31,7 +38,9 @@ canonicalURL: "https://medium.com/@agoodbear/ohca%E5%88%B0%E9%99%A2-%E5%95%9F%E5
 
 <strong>立刻做了Fig.1的12 lead ECG。</strong>
 
-#### 來判讀一下這張ECG:
+![Fig.1 ROSC後的12 lead ECG](/images/medium/1_7sfT-6ZdvaJFT_ZI_X_8Hg_2x.webp "Fig.1 ROSC後的12 lead ECG")
+
+### ❤️來判讀一下這張ECG
 
 <strong>Rate:</strong>150 bpm
 
@@ -43,24 +52,21 @@ canonicalURL: "https://medium.com/@agoodbear/ohca%E5%88%B0%E9%99%A2-%E5%95%9F%E5
 
 <strong>Ischemia:</strong>看到了Multiple leads STD + aVR and/or V1 STE(<strong>Fig.2</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*h-7A7r5_DB39MPcazvXdGQ.jpeg)
-<strong><em>Fig.2</em></strong>
+![Fig.2 ECG標註：STD與aVR、V1 STE](/images/medium/1_h-7A7r5_DB39MPcazvXdGQ.webp "Fig.2 ECG標註：STD與aVR、V1 STE")
 
-#### 有幾個問題需要深度考慮:
+有幾個問題需要深度考慮:
 
-#### <strong>Q1:是什麼樣的情況會造成如此的ECG變化?</strong>
-
-#### <strong>Q2:rSr’ in V1-V2有哪些狀況會如此?</strong>
-
-#### <strong>Q3:QTc這個數值有問題嗎?</strong>
-
-#### <strong>Q4:OHCA病患ROSC之後要注意哪些重點?</strong>
-
-#### <strong>Q5:如果病患懷疑ACS要衝導管嗎?衝導管之前，需要排除什麼問題呢?</strong>
+{{< ecg-qlist >}}
+- **Q1**：是什麼樣的情況會造成如此的ECG變化?
+- **Q2**：rSr’ in V1-V2有哪些狀況會如此?
+- **Q3**：QTc這個數值有問題嗎?
+- **Q4**：OHCA病患ROSC之後要注意哪些重點?
+- **Q5**：如果病患懷疑ACS要衝導管嗎?衝導管之前，需要排除什麼問題呢?
+{{< /ecg-qlist >}}
 
 首先看到<strong>diffuse STD + aVR and/or V1 STE</strong>最常見的問題是發生了，oxygen demand and supply mismatch造成了subendocardial ischemia。這種的STD有一個特點那就是沒辦法localized the ischemia territory。拿Fig.2來舉例，我們看到了II/III/aVF、V3~V6有STD，我們不能說病患的inf.wall、ant./lateral wall有ischemia，因為通常subendocardial ischemia並無法localize缺血位置。
 
-反過來說，怎樣的STD可以localize缺血的位置呢?當STD發生在血管支配的相對位置，不是明顯的diffuse STD，那麼可以反應心臟缺血的位置。<strong>而且是反應STD出現的對側lead有缺血(這裡的STD指的是reciprocal change →這非常非常重要)。</strong>
+反過來說，怎樣的STD可以localize缺血的位置呢?當STD發生在血管支配的相對位置，不是明顯的diffuse STD，那麼可以反應心臟缺血的位置。<mark><strong>而且是反應STD出現的對側lead有缺血(這裡的STD指的是reciprocal change →這非常非常重要)。</strong></mark>
 
 <strong>👉V1~V4和V7~V9互相對側面:</strong>
 
@@ -75,22 +81,19 @@ canonicalURL: "https://medium.com/@agoodbear/ohca%E5%88%B0%E9%99%A2-%E5%95%9F%E5
 
 - 我們看到V1出現STE、<strong>V5–6有STD</strong>，會想到Septal wall缺血了
 
-![](https://cdn-images-1.medium.com/max/1024/1*yOMzZJXCBvX6W8JuzMoKNQ@2x.png)
-<strong><em>Fig.3</em></strong>
+![Fig.3 區別STD來源：reciprocal change與subendocardial ischemia](/images/medium/1_yOMzZJXCBvX6W8JuzMoKNQ_2x.webp "Fig.3 區別STD來源：reciprocal change與subendocardial ischemia")
 
 > <strong>ECG Tips:</strong>我們要如何區別STD是subendocardial ischemia還是reciprocal change呢?請參考Fig.3，如果Maxiaml STD在V4–6/II with aVR STE先想subendocardial ischemia，如果STD侷限在血管支配範圍，先考慮reciprocal change
 
 但是有太多原因會導致Oxygen demand and supply mismatch引起的subendocardial ischemia ECG pattern了，見<strong>Table 1</strong>。這張表格貼過很多次了，除了ACS sick P’t可能是LMCA、TVD、Proximal LAD，有更多的Non-ACS sick P’t也都會有此ECG pattern。所以我們看到subendocardial ischemia的ECG pattern，唯一的訣竅就是好好的理學檢查，看看有沒有更多的線索出現，而不是一股腦兒的認為病患就是ACS sick P’t。
 
-![](https://cdn-images-1.medium.com/max/1024/1*BsDsmf2oyC1deq19A9k3eg@2x.png)
-<strong><em>Table.1</em></strong>
+![Fig.4 Table 1：subendocardial ischemia ECG pattern的原因](/images/medium/1_BsDsmf2oyC1deq19A9k3eg_2x.webp "Fig.4 Table 1：subendocardial ischemia ECG pattern的原因")
 
 > <strong>ECG Tips:</strong>不要看到subendocardial ischemia ECG pattern就像撿到槍，射向ACS，因為有更多的原因也會導致此pattern
 
 接著我們來看看第二個問題，也就是什麼樣的狀況會出現rSr’ pattern in V1-V2?
 
-![](https://cdn-images-1.medium.com/max/1024/1*RA5QV7z033tUsKA4rppvHw@2x.png)
-<strong><em>Fig.4</em></strong>
+![Fig.5 V1、V2長得像aVR的ECG](/images/medium/1_RA5QV7z033tUsKA4rppvHw_2x.webp "Fig.5 V1、V2長得像aVR的ECG")
 
 一般來說，在V1的P wave大部分是upright or biphasic(inverted部分不明顯)，當看到有明顯inverted P wave，要考慮V1–2放的位置過高了。
 
@@ -110,32 +113,29 @@ Ken Grauer大師在這篇文章裡，提到了，如果看到以下線索，要�
 
 <strong>👉如</strong>果V1/V2看起來很像aVR，也要考慮放太高
 
-另外在這篇文章，也有討論如果V1-V2出現rSr’有哪些DDx可以進一步考慮(<strong>Fig.5</strong>)[^2]。
+另外在這篇文章，也有討論如果V1-V2出現rSr’有哪些DDx可以進一步考慮(<strong>Fig.6</strong>)[^2]。
 
-![](https://cdn-images-1.medium.com/max/1024/1*HQ3lJDHM0dtTXOPKqPQWOA.png)
-<strong><em>Fig.5</em></strong>
+![Fig.6 Baranchuk：rSr' in V1-V2的DDx表](/images/medium/1_HQ3lJDHM0dtTXOPKqPQWOA.webp "Fig.6 Baranchuk：rSr' in V1-V2的DDx表")
 
-判讀原本的ECG(<strong>Fig.4</strong>)，可見到ICRBBB、rSr’ over V1、V1長得和aVR很像，判斷應該是V1/V2 misplacement，放太高所導致。
+判讀原本的ECG(<strong>Fig.5</strong>)，可見到ICRBBB、rSr’ over V1、V1長得和aVR很像，判斷應該是V1/V2 misplacement，放太高所導致。
 
 接下來另一個問題，H.R:150下，要判斷QT interval著實不容易。
 
-![](https://cdn-images-1.medium.com/max/1024/1*70RDIRGmirYKzALBIp_xbQ.png)
-<strong><em>Fig.6</em></strong>
+![Fig.7 V3：QT interval的測量](/images/medium/1_70RDIRGmirYKzALBIp_xbQ.webp "Fig.7 V3：QT interval的測量")
 
-如果要計算QT interval，要選12 leads中最長的，通常是V2~V3(<strong>Fig.6</strong>)
+如果要計算QT interval，要選12 leads中最長的，通常是V2~V3(<strong>Fig.7</strong>)
 
-將Fig.6的QT interval約320 ms帶入公式計算，可以<strong>算出QTc:508 ms</strong>
+將Fig.7的QT interval約320 ms帶入公式計算，可以<strong>算出QTc:508 ms</strong>
 
 [Corrected QT Interval (QTc) - MDCalc](https://www.mdcalc.com/calc/48/corrected-qt-interval-qtc)
 
 其實我們會要看QT interval，無非是怕QT prolong會跳TdP。如果不想算QTc
 
-可以參考QT nomogram(<strong>Fig.7</strong>)
+可以參考QT nomogram(<strong>Fig.8</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*fjzJ4lzMEz8Z3XKJw8_AHg.png)
-<strong><em>Fig.7</em></strong>
+![Fig.8 QT interval nomogram](/images/medium/1_fjzJ4lzMEz8Z3XKJw8_AHg.webp "Fig.8 QT interval nomogram")
 
-Fig.7表示的是在<strong>藍線以上的QT interval就有跳TdP的可能性:</strong>
+Fig.8表示的是在<strong>藍線以上的QT interval就有跳TdP的可能性:</strong>
 
 - H.R<60 →抓485 ms(12小格)
 - H.R>100 →抓400 ms(10小格)
@@ -146,23 +146,21 @@ Fig.7表示的是在<strong>藍線以上的QT interval就有跳TdP的可能性:<
 
 <strong>QTc>500 ms要小心兩大類病生理出問題引起的QT prolong:</strong>
 
-- <strong>T wave變大</strong>引起的QT prolong與<strong>ST segment變長</strong>引起的QT prolong(請看<strong>Fig.8</strong>)
+- <strong>T wave變大</strong>引起的QT prolong與<strong>ST segment變長</strong>引起的QT prolong(請看<strong>Fig.9</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*ZnQOLreswcsCtYmdXgBijA@2x.png)
-<strong><em>Fig.8</em></strong>
+![Fig.9 QT prolong：T wave變大與ST segment變長](/images/medium/1_ZnQOLreswcsCtYmdXgBijA_2x.webp "Fig.9 QT prolong：T wave變大與ST segment變長")
 
 > <strong>ECG Tips:</strong>QTc>500 ms有問題、H.R<60 →QT interval>12小格、H.R>100 →QT interval>10小格都可能有問題
 
 接下來我們來看看OHCA病患ROSC後，要注意哪些重點。
 
-先來看看ACLS 2020裡面，Post-cardiac arrest的照護有哪些?(<strong>Fig.9</strong>)
+先來看看ACLS 2020裡面，Post-cardiac arrest的照護有哪些?(<strong>Fig.10</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*hEH4-nVlRT9IoFO-FZfMRQ@2x.png)
-<strong><em>Fig.9</em></strong>
+![Fig.10 ACLS 2020：Post-cardiac arrest照護流程](/images/medium/1_hEH4-nVlRT9IoFO-FZfMRQ_2x.webp "Fig.10 ACLS 2020：Post-cardiac arrest照護流程")
 
-### ROSC後的處置分成兩部分:
+## ❤️ROSC後的處置分成兩部分
 
-#### <strong>👉初</strong>期穩定階段
+### ❤️初期穩定階段
 
 <strong>1.Manage airway </strong>(A)
 
@@ -180,7 +178,7 @@ Fig.7表示的是在<strong>藍線以上的QT interval就有跳TdP的可能性:<
 
 <strong>穩定A、B、C後做12 lead ECG</strong>
 
-#### <strong>👉持</strong>續治療與額外緊急處理(PCI/TTM/其他治療)
+### ❤️持續治療與額外緊急處理(PCI/TTM/其他治療)
 
 <strong>1.如果有下列情況，考慮做PCI</strong>
 
@@ -218,19 +216,17 @@ Fig.7表示的是在<strong>藍線以上的QT interval就有跳TdP的可能性:<
 - 如果ROSC的ECG顯示有STE，CAD的prevalence可以高達96%➡立即Cath lab activation有較好的survival to hospital discharge
 - ROSC後沒有出現STE的病患其CAD的prevalence仍有25~50%，在如此的病患，Cath lab activation仍有一定的益處
 
-![](https://cdn-images-1.medium.com/max/1024/1*FECiI1lCiNvcV6IewqXTZw@2x.png)
-<strong><em>Fig.10</em></strong>
+![Fig.11 AHA 2019：Recommendations for PCI After Cardiac Arrest](/images/medium/1_FECiI1lCiNvcV6IewqXTZw_2x.webp "Fig.11 AHA 2019：Recommendations for PCI After Cardiac Arrest")
 
-<strong>Fig.10描述了在cardiac arrest建議要PCI的情況:</strong>
+<strong>Fig.11描述了在cardiac arrest建議要PCI的情況:</strong>
 
 - 在懷疑心因性collapse病患與ROSC後ECG顯示有STE的這兩類病患都<strong>應該</strong>要立刻執行CAG➡<strong>Class I</strong>
 - 懷疑心因性OHCA with ROSC病患呈現coma且心電圖沒有看到STE，在一些病患諸如hemodynamic instability與跳VT/Vf病患(電性不穩)這類病患➡這些病患去做CAG也是<strong>合理</strong>的➡<strong>Class IIa</strong>
 - 當ROSC符合做CAG條件➡不用管意識狀態➡<strong>Class IIa</strong>
 
-此外在OHCA with ROSC後如果病患呈現coma，有證據顯示進行CAG就像病患是清醒一樣有益處的➡因此<strong>是否要進行CAG，和病患的神經學狀態無關(也就是是否要做CAG，和病患有沒有醒一點關係都沒有，只要符合indication就可做)</strong>。
+此外在OHCA with ROSC後如果病患呈現coma，有證據顯示進行CAG就像病患是清醒一樣有益處的➡因此<mark><strong>是否要進行CAG，和病患的神經學狀態無關(也就是是否要做CAG，和病患有沒有醒一點關係都沒有，只要符合indication就可做)</strong></mark>。
 
-![](https://cdn-images-1.medium.com/max/1024/1*5S2WUO8_PRcNZsp6S7No0Q@2x.png)
-<strong><em>Fig.11</em></strong>
+![Fig.12 2015與2020 ACLS Post-cardiac arrest流程比較](/images/medium/1_5S2WUO8_PRcNZsp6S7No0Q_2x.webp "Fig.12 2015與2020 ACLS Post-cardiac arrest流程比較")
 
 在這張圖可以看到2015 ACLS和2020 ACLS在Post-cardiac arrest流程圖針對是否做心導管的重點。
 
@@ -239,21 +235,23 @@ Fig.7表示的是在<strong>藍線以上的QT interval就有跳TdP的可能性:<
 
 > <strong>ECG Tips:</strong>ROSC後出現STE、懷疑是心因性collpase、Initial shockable rhythm➡啟動心導管有較高機率能夠幫助到病患
 
-#### 個案病程:
+## ❤️個案病程
 
 ROSC後過沒多久，病患跳了一次VT(Pulse VT)，給予電擊。Call了CV man評估是否安排心導管。
 
 CV man到達現場後，覺得ECG無法排除LM/TVD/Proximal LAD問題(ACS sick P’t)，建議要做心導管。但希望我們先安排個Brain CT。
 
-![](https://cdn-images-1.medium.com/max/1024/1*-RbOgWwnh5oQm8mtoGO02A.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_-RbOgWwnh5oQm8mtoGO02A-poster.jpg" aria-label="Fig.13 Brain CT"><source src="/images/medium/1_-RbOgWwnh5oQm8mtoGO02A.mp4" type="video/mp4"></video><figcaption>Fig.13 Brain CT</figcaption></figure>
 
-#### 綜合檢討:
+## ❤️綜合檢討
 
 - 病患OHCA到院，急救完後看到Diffuse STD with aVR and/or V1 STE，的確是有一部分原因可能是ACS引起的collapse，但是前面已說過，有更多的狀況也會顯示如此subendocardial ischemia ECG pattern。Table 1在Non-ACS sick P’t裡面，如果有ICH，就有可能會有此pattern➡血壓過高，血管收縮，導致global ischemia，產生subendocardial ischemia。
-- QTc>500 ms，在其DDx裡面(Fig.8)也有顱內壓上升這個DDx
-- 此外如果真的要衝心導管，按照Guideline(Fig.9)，在coma病患，要先去做Brain CT，排除腦部問題，畢竟腦袋瓜出血，心電圖的確可能出現STEMI mimics。
+- QTc>500 ms，在其DDx裡面(Fig.9)也有顱內壓上升這個DDx
+- 此外如果真的要衝心導管，按照Guideline(Fig.10)，在coma病患，要先去做Brain CT，排除腦部問題，畢竟腦袋瓜出血，心電圖的確可能出現STEMI mimics。
 
-#### 學習重點:
+<div class="ec-takeaways">
+
+## 學習重點
 
 1. 我們要如何區別STD是subendocardial ischemia還是reciprocal change呢?請參考Fig.3，如果Maxiaml STD在V4–6/II with aVR STE先想subendocardial ischemia，如果STD侷限在血管支配範圍，先考慮reciprocal change
 2. 不要看到subendocardial ischemia ECG pattern就像撿到槍，射向ACS，因為有更多的原因也會導致此pattern
@@ -261,7 +259,25 @@ CV man到達現場後，覺得ECG無法排除LM/TVD/Proximal LAD問題(ACS sick 
 4. ROSC後根據Airway、Breathing、Circulation一步步矯正異常，接著做12 leads ECG評估是否需要衝導管，然後根據病患意識狀況做進一步額外緊急處理
 5. ROSC後出現STE、懷疑是心因性collpase、Initial shockable rhythm➡啟動心導管有較高機率能夠幫助到病患
 
-參考資料補充：[^1] [^2] [^3]
+</div>
+
+## 參考資料
+
+內文每個上標數字，滑過去（手機點一下）就看得到出處。整理起來是這3份：
+
+<div class="ec-stack ec-cols refs-sources">
+
+- **研究**
+  - Baranchuk A, et al. *Ann Noninvasive Electrocardiol* 2015（V1-V2 rSr' pattern的鑑別診斷與建議演算法）
+- **指引**
+  - Yannopoulos D, et al. *Circulation* 2019（AHA科學聲明：心導管室在OHCA病患處置中的角色）
+- **部落格**
+  - Dr. Smith's ECG Blog（Chest Pain and Q-waves in V1 and V2. Is there previous septal MI?）
+
+</div>
+
+<div class="refs-slot"></div>
+
 
 [^1]: Dr. Smith’s ECG Blog: Chest Pain and Q-waves in V1 and V2. Is there previous septal MI? — [link](https://hqmeded-ecg.blogspot.com/2018/11/chest-pain-and-q-waves-in-v1-and-v2-is.html)
 [^2]: Baranchuk, A., Enriquez, A., García-Niebla, J., Bayés-Genís, A., Villuendas, R., & Bayés de Luna, A. (2015). Differential Diagnosis of rSr’ Pattern in Leads V1-V2. Comprehensive Review and Proposed Algorithm. *Annals of Noninvasive Electrocardiology*, *20*(1), 7–17. [https://doi.org/10.1111/anec.12241](https://doi.org/10.1111/anec.12241)

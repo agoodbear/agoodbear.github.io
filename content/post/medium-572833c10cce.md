@@ -1,9 +1,11 @@
 ---
 title: "酒後腹痛、胸悶~~"
 date: "2022-03-30"
+description: "67歲男性喝了一點高粱後胸悶、上腹痛，ECG有下壁hyperacute T wave與V1~V6的STD。從這張ECG談downsloping STD、RVMI的診斷與右側心電圖。"
 draft: false
-toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*0EzGXjZbZmoZf7NkvzP6nA.png"
+toc: true
+hide_hero: true
+thumbnail: "/images/medium/1_0EzGXjZbZmoZf7NkvzP6nA.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -14,15 +16,22 @@ tags:
 medium_id: "572833c10cce"
 medium_url: "https://medium.com/@agoodbear/%E9%85%92%E5%BE%8C%E8%85%B9%E7%97%9B-%E8%83%B8%E6%82%B6-572833c10cce"
 canonicalURL: "https://medium.com/@agoodbear/%E9%85%92%E5%BE%8C%E8%85%B9%E7%97%9B-%E8%83%B8%E6%82%B6-572833c10cce"
+# 🗂 改稿版次
+#   重新排版｜2026-11-07｜比照ecg-post-22：卡片風、問題清單、圖號、學習重點、參考資料收合（正文字句不動）→⏳ 待確認
+#   第 0 版｜自 Medium 匯入
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*0EzGXjZbZmoZf7NkvzP6nA.png)
-<strong><em>Fig.1</em></strong>
+
+{{< article-cards >}}
+
+## ❤️Case：中午喝高粱後胸悶、上腹痛
+
+![Fig.1 到院ECG](/images/medium/1_0EzGXjZbZmoZf7NkvzP6nA.webp "Fig.1 到院ECG")
 
 67歲男性，中午喝了一點高粱後，開始覺得胸悶、上腹痛~~~
 
 護理師做完ECG後，馬上和我說，熊醫師~~~~STEMI喔~~~
 
-#### <strong>ECG判讀:</strong>
+### ❤️ECG判讀
 
 Rate:77 bpm、sinus rhythm、Normal axis、1st degree AVB
 
@@ -30,42 +39,38 @@ Rate:77 bpm、sinus rhythm、Normal axis、1st degree AVB
 
 這邊要提一個<strong>downsloping STD</strong>(此Case →V1~V2都有，特別是V2)
 
-![](https://cdn-images-1.medium.com/max/1024/1*47oUbjm5P6Du7jfSV7Pt-g.png)
+![Fig.2 V2的downsloping STD](/images/medium/1_47oUbjm5P6Du7jfSV7Pt-g.webp "Fig.2 V2的downsloping STD")
 
 Dr.Smith在其Blog中強調，在V1~V4有任何的Maximal STD，就必須考慮到Post.OMI(<strong>96% specificity for Post.OMI</strong>)，直到證明不是。特別是downsloping STD in V2~V3，Smith表示根據他的經驗，這就足以診斷Post.OMI[^1]。
 
-#### <strong>延伸話題:STD有三種型態(Fig.2)</strong>
+### ❤️延伸話題:STD有三種型態(Fig.3)
 
-![](https://cdn-images-1.medium.com/max/1024/0*IW_KWoZiSRq3_VsZ)
-<strong><em>Fig.2</em></strong>
+![Fig.3 STD三種型態：Downsloping、Horizontal、Upsloping](/images/medium/0_IW_KWoZiSRq3_VsZ.webp "Fig.3 STD三種型態：Downsloping、Horizontal、Upsloping")
 
 需要特別注意，雖然Upsloping STD是偏向非缺血，但是要小心De Winter’s T wave →其<strong>具有Upsloping STD + Hyperacute T wave</strong>，這裡的Upsloping STD是偏向缺血變化的STD。
 
-![](https://cdn-images-1.medium.com/max/1024/1*KVjyaxBdTy-dAT5PfuNIBw.png)
-<strong><em>De Winter’s T wave</em></strong>
+![Fig.4 De Winter’s T wave](/images/medium/1_KVjyaxBdTy-dAT5PfuNIBw.webp "Fig.4 De Winter’s T wave")
 
 所以這個Case有Inf.-Post.wall MI，沒有看到明顯有lateral wall involved。
 
-### 我列出幾個好玩的問題:
+我列出幾個好玩的問題:
 
-Q1:什麼時候要考慮有RVMI?如何診斷?血管支配為何?
-
-Q2:做了Right side ECG，要如何判斷?
-
-Q3:判斷出RVMI的重要性在哪?(Culprit lesion在哪?臨床處置?)
-
-Q4:在RVMI的情況下，給了NTG真的不行嗎?
+{{< ecg-qlist >}}
+- **Q1**：什麼時候要考慮有RVMI?如何診斷?血管支配為何?
+- **Q2**：做了Right side ECG，要如何判斷?
+- **Q3**：判斷出RVMI的重要性在哪?(Culprit lesion在哪?臨床處置?)
+- **Q4**：在RVMI的情況下，給了NTG真的不行嗎?
+{{< /ecg-qlist >}}
 
 針對以上問題，我們分別來解釋~~
 
-#### Q1:什麼時候要考慮有RVMI?如何診斷?
+## ❤️Q1:什麼時候要考慮有RVMI?如何診斷?
 
 當有合併inf.wall MI時，要考慮是否有無RVMI。
 
-RV血管的支配(<strong>Fig.3</strong>)，由RCA的RV branch支配(也稱作RV marginal branches)。我們常說如果有RVMI，大部分有Proximal RCA的阻塞指的就是在RV branch之前的血管阻塞。也就是如果有看到RVMI，那麼推測RV branch支配RV受到影響，也就是Proximal RCA出問題，導致血液無法到達RV。
+RV血管的支配(<strong>Fig.5</strong>)，由RCA的RV branch支配(也稱作RV marginal branches)。我們常說如果有RVMI，大部分有Proximal RCA的阻塞指的就是在RV branch之前的血管阻塞。也就是如果有看到RVMI，那麼推測RV branch支配RV受到影響，也就是Proximal RCA出問題，導致血液無法到達RV。
 
-![](https://cdn-images-1.medium.com/max/1024/1*Ah9J_VyAH1ZCo7c5UEKcNg.png)
-<strong><em>Fig.3</em></strong>
+![Fig.5 RCA的臨床分段與RV branch](/images/medium/1_Ah9J_VyAH1ZCo7c5UEKcNg.webp "Fig.5 RCA的臨床分段與RV branch")
 
 要如何透過ECG來協助診斷呢?
 
@@ -73,10 +78,9 @@ RV血管的支配(<strong>Fig.3</strong>)，由RCA的RV branch支配(也稱作RV
 
 比較容易理解的，就是做R’t side ECG。就可協助診斷。
 
-![](https://cdn-images-1.medium.com/max/1024/0*_0Fkkf_e6-y-9XJE)
-<strong><em>Fig.4</em></strong>
+![Fig.6 R’t side ECG的導程位置(A)與V1最接近RV(B)](/images/medium/0__0Fkkf_e6-y-9XJE.webp "Fig.6 R’t side ECG的導程位置(A)與V1最接近RV(B)")
 
-在標準的12 leads ECG中，V1是最接近RV的leads(<strong>Fig.4B</strong>)，也是比較能反應出，RV有ischemia的變化。但整體而言，標準的12 leads ECG對於診斷RVMI的sensitivity不夠好。
+在標準的12 leads ECG中，V1是最接近RV的leads(<strong>Fig.6B</strong>)，也是比較能反應出，RV有ischemia的變化。但整體而言，標準的12 leads ECG對於診斷RVMI的sensitivity不夠好。
 
 這也意味著，我們無法透過12 leads ECG來排除RVMI →由於V1是最接近RV的lead，所以當V1 STE(但是其他ant.leads沒出現STE)，又合併Chest pain with Inf.wall STEMI →這種臨床情境就要高度懷疑有RVMI
 
@@ -104,9 +108,9 @@ RV血管的支配(<strong>Fig.3</strong>)，由RCA的RV branch支配(也稱作RV
 
 以上是透過標準12 leads ECG，看到inf.wall STEMI，第一眼，就可以來推估是否有RVMI。但是如果inf.wall STEMI不明顯，還是懷疑有RVMI，就作R’t side ECG，通常可以給予比較有價值的資訊。接著來<strong>回答Q2</strong>~~
 
-#### Q2:做了Right side ECG，要如何判斷?
+## ❤️Q2:做了Right side ECG，要如何判斷?
 
-可以看一下<strong>Fig.4A</strong>，我們比較常操作R’t side ECG，是V1/V2的位置不變，然後V3~V6對應到右側胸壁。(如<strong>Fig.4A</strong>)
+可以看一下<strong>Fig.6A</strong>，我們比較常操作R’t side ECG，是V1/V2的位置不變，然後V3~V6對應到右側胸壁。(如<strong>Fig.6A</strong>)
 
 如果V3R~V6R有<strong>任何一個lead STE > 0.5 mm</strong>，就算有RVMI。
 
@@ -114,14 +118,13 @@ RV血管的支配(<strong>Fig.3</strong>)，由RCA的RV branch支配(也稱作RV
 
 如果STE ≧ 1 mm in V4R有88% sensitivity、78% specificity for RVMI[^5]
 
-此外Right side ECG判讀和STEMI criteria的V2～V3一樣，需要注意性別/年齡。統一整理如下表格:(<strong>Fig.5 →STEMI定義、Post.leads定義、R’t side ECG定義</strong>)
+此外Right side ECG判讀和STEMI criteria的V2～V3一樣，需要注意性別/年齡。統一整理如下表格:(<strong>Fig.7、Fig.8、Fig.9 →STEMI定義、Post.leads定義、R’t side ECG定義</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*o4JUs7JqGuGfYGnk-jk8vg@2x.png)
+![Fig.7 STEMI定義](/images/medium/1_o4JUs7JqGuGfYGnk-jk8vg_2x.webp "Fig.7 STEMI定義")
 
-![](https://cdn-images-1.medium.com/max/1024/1*s-Rfu88qM4PueMf-o8i8SQ@2x.png)
+![Fig.8 Post.leads定義](/images/medium/1_s-Rfu88qM4PueMf-o8i8SQ_2x.webp "Fig.8 Post.leads定義")
 
-![](https://cdn-images-1.medium.com/max/1024/1*aGP2rIeF00R8RHvuLn1Egg@2x.png)
-<strong><em>Fig.5</em></strong>
+![Fig.9 R’t side ECG定義](/images/medium/1_aGP2rIeF00R8RHvuLn1Egg_2x.webp "Fig.9 R’t side ECG定義")
 
 也不用想得太困難，記得這種額外的leads(<strong>Post.leads/R’t side ECG</strong>)，STE cutoff都是抓0.5 mm，當年紀比較輕，STE cutoff抓1 mm。
 
@@ -135,9 +138,9 @@ RV血管的支配(<strong>Fig.3</strong>)，由RCA的RV branch支配(也稱作RV
 2. V3R與V4R是向右、向內的向量，如果case有合併lateral wall extension的MI，也會互相抵銷，而讓V3R/V4R的STE不明顯
 3. STE暗示transmural ischemia而不是infarction
 
-#### Q3:判斷出RVMI的重要性在哪?(Culprit lesion在哪?臨床處置?)
+## ❤️Q3:判斷出RVMI的重要性在哪?(Culprit lesion在哪?臨床處置?)
 
-Inf.wall MI大約有25%會合併RVMI。藉由<strong>Fig.3</strong>可以知道RV的血液支配是來至proximal RCA的RV branch分支(LCx不會支配RV)。所以當看到有RVMI時，就會猜測Culprit lesion在proximal RCA。
+Inf.wall MI大約有25%會合併RVMI。藉由<strong>Fig.5</strong>可以知道RV的血液支配是來至proximal RCA的RV branch分支(LCx不會支配RV)。所以當看到有RVMI時，就會猜測Culprit lesion在proximal RCA。
 
 診斷出RVMI會和臨床處置相關。因為臨床病程、預後、血行治療在acute RVMI與LVMI明顯不同(如低血壓、相對hypovolemia、對於NTG為hypersensitivity)[^7]
 
@@ -155,7 +158,7 @@ Inf.wall MI大約有25%會合併RVMI。藉由<strong>Fig.3</strong>可以知道R
 
 2️⃣如果沒有ECG evidence for RVMI➡不可以說沒有proximal RCA阻塞(因為有可能有LAD的collateral circulation來支配，所以不會導致RVMI)
 
-#### Q4:在RVMI的情況下，給了NTG真的不行嗎?
+## ❤️Q4:在RVMI的情況下，給了NTG真的不行嗎?
 
 首先再次強調，<strong>RVMI主要是因為在RV branch近端的proximal RCA阻塞。導致RV ischemia。這種情況特別是在沒有側枝循環從LAD來供應RV的狀況下。</strong>
 
@@ -163,11 +166,11 @@ Inf.wall MI大約有25%會合併RVMI。藉由<strong>Fig.3</strong>可以知道R
 
 但是….也就是這個但是……
 
-<strong>只有少數的RVMI會有如此的血行不穩</strong>，甚至更少的proximal RCA才有可能會如此，因為大部分都有LAD來的側枝循環保護著RV。所以不是看到RVMI就一定會RV dilate with failure，用了NTG會加重惡化此狀況的情形出現。除非側枝循環不給力[^9]。
+<mark><strong>只有少數的RVMI會有如此的血行不穩</strong></mark>，甚至更少的proximal RCA才有可能會如此，因為大部分都有LAD來的側枝循環保護著RV。所以不是看到RVMI就一定會RV dilate with failure，用了NTG會加重惡化此狀況的情形出現。除非側枝循環不給力[^9]。
 
 所以在有血行不穩定的狀況下，診斷RVMI，就會比較重要了。
 
-### Case繼續
+## ❤️Case繼續
 
 講了那麼多，我們看看Fig.1的<strong>電腦判讀 →Acute STEMI、RV involved in inf.MI</strong>
 
@@ -179,18 +182,17 @@ Inf.wall MI大約有25%會合併RVMI。藉由<strong>Fig.3</strong>可以知道R
 
 此外STE in III >>>II、另外也有STE in aVR
 
-這位病患立刻做了R’t side ECG(<strong>Fig.6</strong>)。
+這位病患立刻做了R’t side ECG(<strong>Fig.10</strong>)。
 
-![](https://cdn-images-1.medium.com/max/1024/1*saEa3St-Y4j511PF07IlcA.png)
-<strong><em>Fig.6</em></strong>
+![Fig.10 R’t side ECG](/images/medium/1_saEa3St-Y4j511PF07IlcA.webp "Fig.10 R’t side ECG")
 
 R’t side ECG沒有看到V3R、V4R有STE，但是V6R有STE(>1 mm)
 
 所以此Case有Inf.-Post wall MI且合併RVMI。
 
-<strong>CAG:Culprit lesion at RCA-m stenosis</strong>
+<mark><strong>CAG:Culprit lesion at RCA-m stenosis</strong></mark>
 
-![](https://cdn-images-1.medium.com/max/1024/0*nEpgvjdWgw2AZKxO)
+![Fig.11 CAG：RCA-m stenosis](/images/medium/0_nEpgvjdWgw2AZKxO.webp "Fig.11 CAG：RCA-m stenosis")
 
 Lesion在RCA-m~~~~~~不是有RVMI嗎?Why?
 
@@ -202,14 +204,40 @@ Lesion在RCA-m~~~~~~不是有RVMI嗎?Why?
 
 在影片7:10的時候，Smith說明也有可能是本來thrombus在proximal RCA，但是PCI作進去時，thrombus變成emboli塞到RCA-m。
 
-### Keypoints:
+<div class="ec-takeaways">
+
+## 學習重點
 
 1. Downsloping STD出現，要小心缺血！！！
 2. STD的三種型態
 3. RVMI如何透過正常12 leads ECG來做診斷、如何透過R’t side ECG來做診斷
 4. RVMI的重要性
 
-參考資料補充：[^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8] [^9] [^10]
+</div>
+
+## 參考資料
+
+內文每個上標數字，滑過去（手機點一下）就看得到出處。整理起來是這11份：
+
+<div class="ec-stack ec-cols refs-sources">
+
+- **研究**
+  - Turhan H, et al. *Ann Noninvasive Electrocardiol* 2003（aVL導程對急性下壁心肌梗塞合併右心室侵犯的診斷價值）
+  - Somers MP, et al. *Am J Emerg Med* 2003（急診胸痛病人的額外導程：右心室與後壁導程）
+  - Carley SD. *Emerg Med Australas* 2003（額外導程用於AMI早期心電圖診斷的回顧）
+  - Zehender M, et al. *N Engl J Med* 1993（右心室梗塞是急性下壁心肌梗塞預後的獨立預測因子）
+  - Levis J. *Perm J* 2016（ECG Diagnosis：右心室心肌梗塞）
+  - Chhapra DA, et al. *J Cardiovasc Dis Res* 2013（下壁心肌梗塞中右心室梗塞的臨床特徵研究）
+  - Bischof JE, et al. *J Electrocardiol* 2018（下壁心肌梗塞中V1 ST上升與I導程ST下降，對診斷右心室梗塞都不可靠）
+  - Lew AS, et al. *Am J Cardiol* 1986（V2 ST下降與aVF ST上升的比值，用於早期辨識右心室缺血）
+- **部落格**
+  - Dr. Smith's ECG Blog（2021-11，V2、V3任何ST depression都先當posterior OMI，尤其是downsloping）
+  - Dr. Smith's ECG Blog（2020-07，胸痛病人與這張ECG，評估的下一步是什麼）
+  - Dr. Smith's ECG Blog（2019-01，下側壁STEMI，是否也合併右心室MI）
+
+</div>
+
+<div class="refs-slot"></div>
 
 [^1]: Dr. Smith’s ECG Blog: Any ST depression in V2 and V3 is posterior OMI until proven otherwise, especially if downsloping — [link](http://hqmeded-ecg.blogspot.com/2021/11/any-st-depression-in-v2-and-v3-is.html)
 [^2]: Turhan, H., Yilmaz, M. B., Yetkin, E., Atak, R., Biyikoglu, S. F., Senen, K., Ileri, M., Cehreli, S., Korkmaz, S., & Kutuk, E. (2003). Diagnostic Value of aVL Derivation for Right Ventricular Involvement in Patients with Acute Inferior Myocardial Infarction. *Annals of Noninvasive Electrocardiology*, *8*(3), 185–188. [https://doi.org/10.1046/j.1542-474X.2003.08303.x](https://doi.org/10.1046/j.1542-474X.2003.08303.x)

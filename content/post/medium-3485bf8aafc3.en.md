@@ -3,7 +3,7 @@ title: "This Is a STEMI. Do You Believe It?"
 date: "2021-12-28"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*BZYaEyrDghAJY-2Uxgz7cA@2x.png"
+thumbnail: "/images/medium/1_BZYaEyrDghAJY-2Uxgz7cA_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -18,7 +18,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFstemi-%E4%BD%A0%E
 translated_from: "medium-3485bf8aafc3.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*BZYaEyrDghAJY-2Uxgz7cA@2x.png)
+![](/images/medium/1_BZYaEyrDghAJY-2Uxgz7cA_2x.webp)
 
 Let's look at a case from my night shift yesterday. A 50-year-old man who worked catching glass eels (baby eels).
 
@@ -42,7 +42,7 @@ When the nurse finished the ECG, my first reaction was: **this is a STEMI**. Qui
 
 I immediately wrote on the ECG: **Post.MI**
 
-![](https://cdn-images-1.medium.com/max/1024/1*iCF76zQarG9ig0wCsx8sEw.jpeg)
+![](/images/medium/1_iCF76zQarG9ig0wCsx8sEw.webp)
 
 I asked the nurse practitioner to send it right away to the on-call CV man.
 
@@ -68,11 +68,11 @@ Of all MIs that involve the Post.wall, 90% come with inf.wall and lateral wall i
 
 Only 4~10% are isolated Post.wall MI.
 
-![](https://cdn-images-1.medium.com/max/1024/0*2yN5ESIMXzkJ0V-I)
+![](/images/medium/0_2yN5ESIMXzkJ0V-I.webp)
 
 **Let me use an example to explain the sentences above; it'll make this clearer.**
 
-[![](https://cdn-images-1.medium.com/max/1024/0*nolKXEHS4FR8X6Cm.jpg)](https://litfl.com/inferior-stemi-ecg-library/)
+[![](/images/medium/0_nolKXEHS4FR8X6Cm.webp)](https://litfl.com/inferior-stemi-ecg-library/)
 ***Fig.1***
 
 When a patient clinically has chest pain and diaphoresis and gets an ECG like Fig.1, we'd never miss it. STE in the Inf.leads as tall as mountains will definitely make us itch to consult the CV man. But what if this patient had no STE at all in the limb leads (left side of Fig.1), and only the precordial leads showed changes like Fig.1? Would you be able to say right away that this patient has an MI?
@@ -105,7 +105,7 @@ So you might misread it as no STE, when actually, if you apply proportionality a
 
 So if you want to use Post.leads to help diagnose Post.wall MI, one very important concept is: if you see STE, the probability of Post.wall MI is high (high Specificity), but if you don't see STE in V7~V9, that doesn't mean there's no Post.wall MI, because the low voltage makes visible STE in the Post.leads hard to see (Sensitivity isn't high).
 
-![](https://cdn-images-1.medium.com/max/1024/1*66d79qCKR8782Ll71G8lIQ@2x.png)
+![](/images/medium/1_66d79qCKR8782Ll71G8lIQ_2x.webp)
 ***Fig.2 (red circle marks the Post.wall)***
 
 #### So how high does visible STE have to be to count as meaningful?
@@ -123,12 +123,12 @@ When the Maximal STD is in V1~V4, you should strongly suspect it. Once there's *
 
 ### Case continue
 
-![](https://cdn-images-1.medium.com/max/1024/1*rhX2dczQsW14Yw5HEkg5TA.png)
+![](/images/medium/1_rhX2dczQsW14Yw5HEkg5TA.webp)
 ***Fig.3***
 
 Fig.3 is the Post.leads ECG done in the ED. Let's blow up V9 for a closer look (Fig.4)
 
-![](https://cdn-images-1.medium.com/max/1024/1*jJ2jLIrkfJqK6_aniqyjUQ.png)
+![](/images/medium/1_jJ2jLIrkfJqK6_aniqyjUQ.webp)
 ***Fig.4***
 
 You can see at least 0.5 mm of STE in V9, which confirms this is a Post.wall MI
@@ -151,9 +151,9 @@ Stephen Smith says that when doing Post.leads, never change V1~V3 into V7~V9. Be
 
 Under the 17 segment model, the LV is divided into 17 segments. The Post.leads location corresponds to the Basal-inferior area (Segment 4).
 
-![](https://cdn-images-1.medium.com/max/1024/1*UZYMEQQVbdc7EMj961_uTA.png)
+![](/images/medium/1_UZYMEQQVbdc7EMj961_uTA.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*AT1wRGIiTQefnliJeAFh0A.png)
+![](/images/medium/1_AT1wRGIiTQefnliJeAFh0A.webp)
 ***Fig.5***
 
 First let's look at the right side of Fig.5, where you can clearly see the 17 segment layout.
@@ -184,7 +184,7 @@ Seeing Isolated Post.wall MI➡**it's more commonly LCx occlusion than RCA occlu
 
 **CAG finding: LCx-P total occlusion**
 
-![](https://cdn-images-1.medium.com/max/1024/0*Amlc_FHo7kYoPHXj)
+![](/images/medium/0_Amlc_FHo7kYoPHXj.webp)
 ***Fig.6***
 
 ### Learning Points:

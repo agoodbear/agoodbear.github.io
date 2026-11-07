@@ -3,7 +3,7 @@ title: "Whole-'Heart'-ed"
 date: "2021-08-03"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*PJhve0r0hwAoJO1Arnxi7w.png"
+thumbnail: "/images/medium/1_PJhve0r0hwAoJO1Arnxi7w.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -69,7 +69,7 @@ The cardiologist pulled together some key concepts for patients like this one <s
 
 - aVR and/or V1 STE + Multiple leads STD
 
-![](https://cdn-images-1.medium.com/max/1024/1*PJhve0r0hwAoJO1Arnxi7w.png)
+![](/images/medium/1_PJhve0r0hwAoJO1Arnxi7w.webp)
 *Fig 1 from ESC 2020 NonSTEMI Guideline*
 
 8. When a patient with ongoing chest pain doesn't get an early call to the CV man and only gets a delayed PCI later, we really need to do a systematic review of which link in the chain broke

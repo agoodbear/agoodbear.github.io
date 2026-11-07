@@ -4,7 +4,7 @@ date: "2022-05-11"
 draft: false
 featured: true
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*SrTIfwjCtaRlYzolijoMMA.png"
+thumbnail: "/images/medium/1_SrTIfwjCtaRlYzolijoMMA.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -96,7 +96,7 @@ The content on Smith’s ECG Blog is mainly about recognizing OMI, though of cou
 
 A new post comes out about every 2~3 days. My own habit: there's a search box at the top left of the site. If I want to see how Dr. Smith explains a certain topic, I type the keyword into search, say Brugada syndrome, and a list pops up of the posts tagged with Brugada syndrome. Then I read through them at my own pace.
 
-![](https://cdn-images-1.medium.com/max/1024/1*SrTIfwjCtaRlYzolijoMMA.png)
+![](/images/medium/1_SrTIfwjCtaRlYzolijoMMA.webp)
 
 [ECG Interpretation](https://ecg-interpretation.blogspot.com/)
 
@@ -146,13 +146,13 @@ Master Emre Aslanger is currently planning an educational app to help identify O
 
 Then, besides teaching every week on ECG weekly, Amal Mattu also has a monthly column on **EMCast**. [Column link](https://journals.lww.com/em-news/pages/podcastepisodes.aspx?podcastid=6) here. Click in and you'll see the image below; the content is in podcast form. The column isn't limited to ECGs, though — all kinds of topics come up. After all, Amal Mattu is an emergency physician too.
 
-![](https://cdn-images-1.medium.com/max/1024/1*VgQCfvdHAn89OJ65dRiTvg.png)
+![](/images/medium/1_VgQCfvdHAn89OJ65dRiTvg.webp)
 
 [ECG STAT!](https://sites.google.com/view/ecg-stat/ecg-stat-home)
 
 Last, **ECG STAT**, a companion site to ECG weekly. When it first came out I saved the URL, but later the site location was taken down and I couldn't get in.
 
-![](https://cdn-images-1.medium.com/max/1024/1*as1WFK72814EOqR_d70MnA.png)
+![](/images/medium/1_as1WFK72814EOqR_d70MnA.webp)
 
 But with [this URL](https://sites.google.com/view/ecg-stat/ecg-stat-home) you can still get in XD (bookmark it now!!!!!)
 
@@ -166,7 +166,7 @@ I use Twitter to follow specific people — people who share my passion for ECGs
 
 Or type #ECG into Twitter's search bar and you'll get the posts tagged ECG that day. Trust me, you'll never get through them all~~~~
 
-![](https://cdn-images-1.medium.com/max/1024/1*gE3WpGevxjm6KqMSBuTW2Q.png)
+![](/images/medium/1_gE3WpGevxjm6KqMSBuTW2Q.webp)
 
 Which raises a problem: too much information and you don't even want to look XD
 
@@ -176,13 +176,13 @@ So when following on Twitter, **if you want high-value posts, the first requirem
 
 Using **Tag** for posts you're interested in is **the most basic opening move on Twitter**.
 
-![](https://cdn-images-1.medium.com/max/1024/1*VVYUacGqyXU41ehdx9DwIw@2x.png)
+![](/images/medium/1_VVYUacGqyXU41ehdx9DwIw_2x.webp)
 
 We can use STEMI "or" ECG → that searches for posts containing STEMI or ECG (**there may be a LOT**)
 
 Then add advanced search on top
 
-![](https://cdn-images-1.medium.com/max/1024/1*8WBDWYMofGZiq8wtSOHxYA@2x.png)
+![](/images/medium/1_8WBDWYMofGZiq8wtSOHxYA_2x.webp)
 
 Advanced search is usually the key step for value. Because only good posts get retweeted, get replies, get likes.
 
@@ -198,7 +198,7 @@ Our time is precious; don't waste it weeding out garbage.
 
 You can of course also use TweetDeck to help filter. Below is **my TweetDeck screen**. I've set up my keywords and filled numbers into the advanced search filters, and it filters out cleaner, higher-value posts on its own. I taught a session on this at the Northern Region Emergency Medicine Residents Joint Training the year before last. If people are interested, I'll write another post about it next time.
 
-![](https://cdn-images-1.medium.com/max/1024/1*AcG6HYvAMuKp-ZMYGZiMPQ@2x.png)
+![](/images/medium/1_AcG6HYvAMuKp-ZMYGZiMPQ_2x.webp)
 
 ### Recommended courses:
 
@@ -212,7 +212,7 @@ The fee is 550 US dollars — that's the only downside. But I strongly recommend
 
 EM:RAP holds a themed conference every year; last year's theme was Emergency Cardiology
 
-![](https://cdn-images-1.medium.com/max/1024/1*-K4aVUliu0Pq3XSP9OkrFw@2x.png)
+![](/images/medium/1_-K4aVUliu0Pq3XSP9OkrFw_2x.webp)
 
 I also think it's very much worth taking. The content is all about emergency cardiology. For those of us roaming the ED trenches, it's genuinely helpful. The course list is in the video below:
 

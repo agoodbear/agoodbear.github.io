@@ -3,7 +3,7 @@ title: "Abdominal pain and chest tightness after drinking~~"
 date: "2022-03-30"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*0EzGXjZbZmoZf7NkvzP6nA.png"
+thumbnail: "/images/medium/1_0EzGXjZbZmoZf7NkvzP6nA.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -17,7 +17,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%85%92%E5%BE%8C%E8%85%B9%E7%97%9
 translated_from: "medium-572833c10cce.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*0EzGXjZbZmoZf7NkvzP6nA.png)
+![](/images/medium/1_0EzGXjZbZmoZf7NkvzP6nA.webp)
 <strong><em>Fig.1</em></strong>
 
 A 67-year-old man had a little kaoliang (Taiwanese sorghum liquor) at lunch, then started feeling chest tightness and epigastric pain~~~
@@ -32,18 +32,18 @@ Rate:77 bpm, sinus rhythm, Normal axis, 1st degree AVB
 
 I want to point out a <strong>downsloping STD</strong> here (in this case → present in V1~V2, especially V2)
 
-![](https://cdn-images-1.medium.com/max/1024/1*47oUbjm5P6Du7jfSV7Pt-g.png)
+![](/images/medium/1_47oUbjm5P6Du7jfSV7Pt-g.webp)
 
 Dr.Smith stresses on his blog that any maximal STD in V1~V4 has to be considered post. OMI (<strong>96% specificity for Post.OMI</strong>) until proven otherwise. Especially downsloping STD in V2~V3: Smith says that in his experience, that alone is enough to diagnose post. OMI[^1].
 
 #### <strong>Side topic: STD comes in three shapes (Fig.2)</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/0*IW_KWoZiSRq3_VsZ)
+![](/images/medium/0_IW_KWoZiSRq3_VsZ.webp)
 <strong><em>Fig.2</em></strong>
 
 Pay special attention: although upsloping STD leans non-ischemic, watch out for De Winter’s T wave → it <strong>has upsloping STD + hyperacute T wave</strong>, and the upsloping STD here is an STD that leans toward ischemic change.
 
-![](https://cdn-images-1.medium.com/max/1024/1*KVjyaxBdTy-dAT5PfuNIBw.png)
+![](/images/medium/1_KVjyaxBdTy-dAT5PfuNIBw.webp)
 <strong><em>De Winter’s T wave</em></strong>
 
 So this case has an inf.-post. wall MI, with no obvious lateral wall involvement.
@@ -66,7 +66,7 @@ When there's an accompanying inf. wall MI, consider whether there's also an RVMI
 
 The RV's blood supply (<strong>Fig.3</strong>) comes from the RV branch of the RCA (also called the RV marginal branches). When we say most RVMI involves proximal RCA occlusion, we mean occlusion of the vessel before the RV branch. In other words, if you see RVMI, you infer that the RV supplied by the RV branch is affected, meaning the proximal RCA has a problem and blood can't reach the RV.
 
-![](https://cdn-images-1.medium.com/max/1024/1*Ah9J_VyAH1ZCo7c5UEKcNg.png)
+![](/images/medium/1_Ah9J_VyAH1ZCo7c5UEKcNg.webp)
 <strong><em>Fig.3</em></strong>
 
 How can the ECG help with the diagnosis?
@@ -75,7 +75,7 @@ Either the regular 12-lead ECG or an R’t side ECG can help.
 
 The easier one to understand is doing an R’t side ECG. That helps with the diagnosis.
 
-![](https://cdn-images-1.medium.com/max/1024/0*_0Fkkf_e6-y-9XJE)
+![](/images/medium/0__0Fkkf_e6-y-9XJE.webp)
 <strong><em>Fig.4</em></strong>
 
 On the standard 12-lead ECG, V1 is the lead closest to the RV (<strong>Fig.4B</strong>), and it's the one better able to reflect ischemic changes in the RV. But overall, the standard 12-lead ECG isn't sensitive enough for diagnosing RVMI.
@@ -118,11 +118,11 @@ STE ≧ 1 mm in V4R has 88% sensitivity and 78% specificity for RVMI[^5]
 
 Also, reading a right side ECG is like V2～V3 in the STEMI criteria: you need to pay attention to sex/age. Here it is all in one table: (<strong>Fig.5 → STEMI definition, post. leads definition, R’t side ECG definition</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*o4JUs7JqGuGfYGnk-jk8vg@2x.png)
+![](/images/medium/1_o4JUs7JqGuGfYGnk-jk8vg_2x.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*s-Rfu88qM4PueMf-o8i8SQ@2x.png)
+![](/images/medium/1_s-Rfu88qM4PueMf-o8i8SQ_2x.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*aGP2rIeF00R8RHvuLn1Egg@2x.png)
+![](/images/medium/1_aGP2rIeF00R8RHvuLn1Egg_2x.webp)
 <strong><em>Fig.5</em></strong>
 
 Don't overthink it. Just remember that for these extra leads (<strong>post. leads/R’t side ECG</strong>), the STE cutoff is 0.5 mm, and in younger patients the STE cutoff is 1 mm.
@@ -183,7 +183,7 @@ Also STE in III >>>II, and there's also STE in aVR
 
 This patient got an R’t side ECG right away (<strong>Fig.6</strong>).
 
-![](https://cdn-images-1.medium.com/max/1024/1*saEa3St-Y4j511PF07IlcA.png)
+![](/images/medium/1_saEa3St-Y4j511PF07IlcA.webp)
 <strong><em>Fig.6</em></strong>
 
 The R’t side ECG showed no STE in V3R or V4R, but V6R had STE (>1 mm)
@@ -192,7 +192,7 @@ So this case has an inf.-post. wall MI with an accompanying RVMI.
 
 <strong>CAG:Culprit lesion at RCA-m stenosis</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/0*nEpgvjdWgw2AZKxO)
+![](/images/medium/0_nEpgvjdWgw2AZKxO.webp)
 
 The lesion was at RCA-m~~~~~~ but wasn't there an RVMI? Why?
 

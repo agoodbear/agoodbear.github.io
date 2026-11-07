@@ -3,7 +3,7 @@ title: "Chest Tightness That Started 2 Hours Ago: Is It AMI?"
 date: "2021-10-11"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*jG5jZ9QX0uBhanaXQF6ZCg.jpeg"
+thumbnail: "/images/medium/1_jG5jZ9QX0uBhanaXQF6ZCg.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -18,7 +18,7 @@ canonicalURL: "https://medium.com/@agoodbear/2%E5%B0%8F%E6%99%82%E5%89%8D%E8%83%
 translated_from: "medium-3956f2cef4ca.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*jG5jZ9QX0uBhanaXQF6ZCg.jpeg)
+![](/images/medium/1_jG5jZ9QX0uBhanaXQF6ZCg.webp)
 
 A 56-year-old man with no significant past history. In the small hours of the night he had chest tightness and discomfort, radiating to both arms.
 
@@ -58,7 +58,7 @@ In Lead I the P wave is negative, the QRS is negative, and the T wave is negativ
 
 > <strong>Tips:</strong> If you see <strong>RAD + an inverted P wave in Lead I</strong>, think of <strong>two DDx</strong> →Dextrocardia and lead misplacement
 
-![](https://cdn-images-1.medium.com/max/1024/1*KdAF57eTp9UjCN3S1FGN2g.png)
+![](/images/medium/1_KdAF57eTp9UjCN3S1FGN2g.webp)
 
 #### So how do you tell the two apart?
 
@@ -68,7 +68,7 @@ Also, with lead misplacement, there's still R wave progression in the precordial
 
 So <strong>let's look at the patient's arrival ECG again:</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*0hwYq1fnisHC0viJF9n3fw.jpeg)
+![](/images/medium/1_0hwYq1fnisHC0viJF9n3fw.webp)
 
 In the Precordial leads <strong>the R wave does gradually increase (at least it isn't gradually decreasing)</strong>
 
@@ -110,7 +110,7 @@ You can use the QRS-T angle to assess further. The QRS-T Angle helps distinguish
 
 I've simplified the above into the flowchart below (<strong>Fig 1</strong>).
 
-![](https://cdn-images-1.medium.com/max/1024/1*sSEMHYh56d4Jb1bysGvKCQ.png)
+![](/images/medium/1_sSEMHYh56d4Jb1bysGvKCQ.webp)
 <strong><em>Fig. 1</em></strong>
 
 #### On with the case!!!!
@@ -119,14 +119,14 @@ In this case, the QRS in the real aVL was actually (-), and that really did lowe
 
 But the patient's symptoms persisted. 20 minutes later, I repeated the ECG (Fig.2)~~
 
-![](https://cdn-images-1.medium.com/max/1024/1*xXRm6fffPMFLVozfrUPWaw@2x.png)
+![](/images/medium/1_xXRm6fffPMFLVozfrUPWaw_2x.webp)
 <strong><em>Fig.2</em></strong>
 
 On this ECG, the electrodes are in the right places. You can see the STD in aVL is more obvious. And the STD originally in V1~V2 now extends to V3. There's definitely Post.wall involvement. The Hyperacute T wave in Lead III has become obvious. At that point you can diagnose inf.STEMI with post.wall involvement outright.
 
 So 20 minutes after arrival, I called CV, and CV agreed with my diagnosis. The patient went straight to the cath lab. <strong>CAG report: RCA-PL total occlusion</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*R9ghKTNaUOgUn5OvCN6ZAQ.jpeg)
+![](/images/medium/1_R9ghKTNaUOgUn5OvCN6ZAQ.webp)
 
 #### Postscript:
 

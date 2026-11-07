@@ -3,7 +3,7 @@ title: "64-year-old man with epigastric pain, chest pain, and upper back pain"
 date: "2023-02-07"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*LEbcLpGiMDrL-Xu6ZSo6nw@2x.png"
+thumbnail: "/images/medium/1_LEbcLpGiMDrL-Xu6ZSo6nw_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -19,7 +19,7 @@ canonicalURL: "https://medium.com/@agoodbear/64%E6%AD%B2%E7%94%B7%E6%80%A7-%E4%B
 translated_from: "medium-5c777eb7b382.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*LEbcLpGiMDrL-Xu6ZSo6nw@2x.png)
+![](/images/medium/1_LEbcLpGiMDrL-Xu6ZSo6nw_2x.webp)
 <strong><em>Fig.1: Arrival time: 10:02</em></strong>
 
 This Case stuck with me, mainly because of how the patient presented.
@@ -54,7 +54,7 @@ The baseline isn't very stable, but you can also see low voltage (Sensitive crit
 
 Let's answer the first question first. There's PRWP; could this be an LAD problem? This Case has 1 small box of STE in both V2 and V3 (<strong>Fig.2</strong>). Could this be a subtle STEMI due to LAD occlusion?
 
-![](https://cdn-images-1.medium.com/max/1024/1*sYlmqMIy0HgpVWurLO1mew.png)
+![](/images/medium/1_sYlmqMIy0HgpVWurLO1mew.webp)
 <strong><em>Fig.2</em></strong>
 
 First of all, the Fourth Universal Definition of Myocardial Infarction in 2018[^1] already clearly defined that, to diagnose STEMI, the criteria in V2/V3 differ from the other leads:
@@ -82,7 +82,7 @@ Next, can we use the <strong>Smith 4 variable formula</strong> to see whether th
 
 Never forget: don't use the formula indiscriminately; false-negatives or false-positives can occur. Before using it, first exclude obvious AMI and everyone the article excludes, then use it.
 
-![](https://cdn-images-1.medium.com/max/1024/1*X7311AXMQlSDyy7XxoTp8A@2x.png)
+![](/images/medium/1_X7311AXMQlSDyy7XxoTp8A_2x.webp)
 
 In this Case, although none of V1-V4 is a QS wave, V1 is an rS wave (r wave <1 mm). If you really want to use a formula, it should be the LV aneurysm with STE vs. STEMI one, T/QRS.
 
@@ -126,7 +126,7 @@ What guidelines currently tell us what to do? Does calculating a Heart score hel
 
 Let's first look at the ACS algorithm in ACLS 2020
 
-![](https://cdn-images-1.medium.com/max/1024/1*C-nqlXRwsOv0-ovswGqK6A@2x.png)
+![](/images/medium/1_C-nqlXRwsOv0-ovswGqK6A_2x.webp)
 <strong><em>Fig.3 ACS flowchart(ACLS 2020)</em></strong>
 
 <strong>In the ACLS 2020 ACS algorithm, after the 12 lead ECG, patients are split into two big groups:</strong>
@@ -202,12 +202,12 @@ Items 2, 3, and 4 of the advanced non-invasive cardiac imaging are really not su
 
 So what does last year's <strong>2022 ACC expert consensus on managing acute chest pain in the ED</strong>[^8] say (<strong>Fig.4</strong>)?
 
-![](https://cdn-images-1.medium.com/max/1024/1*XQVnCbzFu1LI6DRCxrlqQg@2x.png)
+![](/images/medium/1_XQVnCbzFu1LI6DRCxrlqQg_2x.webp)
 <strong><em>Fig.4 Summary of the pathway</em></strong>
 
 When symptoms suggest ACS, first get an ECG. After that, it splits into four paths: (<strong>Fig.5</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*Q18UlD8flRlSNRD19fkzSg.png)
+![](/images/medium/1_Q18UlD8flRlSNRD19fkzSg.webp)
 <strong><em>Fig.5 Four paths after the ECG</em></strong>
 
 <strong>Orange:</strong> STEMI or STEMI equivalent seen <strong>(see the top half of Fig.6)</strong> → management per the 2013 ACC/AHA STEMI guideline <strong>(Bear: ESC has a 2017 STEMI guideline)</strong>
@@ -218,12 +218,12 @@ When symptoms suggest ACS, first get an ECG. After that, it splits into four pat
 
 <strong>Green:</strong> If non-diagnostic ECG → enter the CDP (clinical decision pathway)
 
-![](https://cdn-images-1.medium.com/max/1024/1*8vNDVeHFSg4Qc5EHzPnrTA@2x.png)
+![](/images/medium/1_8vNDVeHFSg4Qc5EHzPnrTA_2x.webp)
 <strong><em>Fig.6 (this table has been revised to correct errors in the original)</em></strong>
 
 So once it's deemed a non-diagnostic ECG, which paths can you take? (<strong>Fig.7</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*WDlcSuDWOr3ieAKPHGWrvw@2x.png)
+![](/images/medium/1_WDlcSuDWOr3ieAKPHGWrvw_2x.webp)
 <strong><em>Fig.7 Non-diagnostic ECG</em></strong>
 
 At this point, apply <strong>hs-cTn-based CDPs</strong> for risk stratification:
@@ -236,15 +236,15 @@ At this point, apply <strong>hs-cTn-based CDPs</strong> for risk stratification:
 
 <strong>So what hs-cTn-based CDPs are there? (Fig.8)</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*5kTTjzkdjcxGgbfLojDhJA.png)
+![](/images/medium/1_5kTTjzkdjcxGgbfLojDhJA.webp)
 <strong><em>Fig.8 hs-cTn-based CDPs (red boxes recommended)</em></strong>
 
 The paper[^8] recommends <strong>using ESC 0/1 h, ESC 0/2 h, and High-STEACS</strong>; these three are more effective (more patients ruled out) and safer (fewer patients missed) than ESC 0/3 h.
 
-![](https://cdn-images-1.medium.com/max/1024/1*2D_zyosMoYIZk530pLK0iw@2x.png)
+![](/images/medium/1_2D_zyosMoYIZk530pLK0iw_2x.webp)
 <strong><em>Fig.9 Flowchart for applying ESC 0/1h, 0/2h</em></strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*AhjSPE7QIbpezYPNpIZdSw@2x.png)
+![](/images/medium/1_AhjSPE7QIbpezYPNpIZdSw_2x.webp)
 <strong><em>Fig.10 Cut-off levels for ESC 0/1h, 0/2h</em></strong>
 
 #### How do you apply ESC 0/1 h and ESC 0/2 h? (Read Fig.9 + Fig.10 together)
@@ -260,7 +260,7 @@ If the 0 h hs-cTn meets High "<strong>or</strong>" 1h∆, <strong>rule in MI (Hi
 
 If the 0 h hs-cTn meets neither rule in MI nor rule out MI, it falls into <strong>Intermediate risk</strong> and needs observation.
 
-![](https://cdn-images-1.medium.com/max/1024/1*6XxH0SuvB0gcM_tY6qxoDA@2x.png)
+![](/images/medium/1_6XxH0SuvB0gcM_tY6qxoDA_2x.webp)
 <strong><em>Fig.11 High-STEACS early rule out CDP</em></strong>
 
 <strong>Fig.11</strong> is another recommended CDP; if you're interested, see the figure above.
@@ -279,7 +279,7 @@ The Heart score was mainly designed for risk stratification in undifferentiated 
 
 The EDACS risk score is also commonly used in low risk patients to further assess their MACE (major adverse cardiac event) (<strong>Fig.12</strong>).
 
-![](https://cdn-images-1.medium.com/max/1024/0*koUkpVS63P7S4XZI)
+![](/images/medium/0_koUkpVS63P7S4XZI.webp)
 <strong><em>Fig.12 EDACS risk score</em></strong>
 
 Why run additional risk score rules on these patients? Mainly because a certain proportion of these patients still get missed due to false-negatives. Pairing them with these score rules lowers the chance of misjudgment. (<strong>If you're interested, see p.17-p20 of this paper[^8]</strong>).
@@ -288,7 +288,7 @@ Why run additional risk score rules on these patients? Mainly because a certain 
 
 So this Case's initial ECG was either a non-diagnostic ECG, or, possibly because the chest pain had lasted more than 6 hours, the T/QRS ratio > 0.36 rule was already giving a false-negative.
 
-![](https://cdn-images-1.medium.com/max/1024/1*9x7OevQPGm6YeFrJidCy-Q.png)
+![](/images/medium/1_9x7OevQPGm6YeFrJidCy-Q.webp)
 <strong><em>Fig.14 ECG one hour later</em></strong>
 
 On the ECG one hour later (symptoms worse), you can see the T/QRS ratio > 0.36 rule still applies. The T wave in V2 got bigger; applying this rule, the T/QRS ratio in V2 now exceeds 0.36, favor OMI (Occlusion MI). And the inf.leads now show reciprocal STD changes, with minimal STE over aVL. This ECG pattern is very likely due to a proximal LAD occlusion.
@@ -301,12 +301,12 @@ Remember the features of a very high risk P’t in the ESC 2020 NSTEMI guideline
 
 Anyone who meets a Very high risk feature needs an immediate CV man consult. As for whether they "can" or "need to" go straight to the cath lab, that's not something we control. What the ED can control is giving the CV man as much of the information they need as possible: whether the patient is stable right now, whether there might be cardiogenic shock, whether they've gone into VT/Vf in the ED, whether there's Acute pul.edema, whether there are post-AMI mechanical complications. The more on-scene patient information we provide, the better the CV man can judge whether to activate the cath lab immediately.
 
-![](https://cdn-images-1.medium.com/max/1024/0*1D5zqCbkRKd34Y9q)
+![](/images/medium/0_1D5zqCbkRKd34Y9q.webp)
 <strong><em>Fig.15 ESC 2020 NSTEMI guideline</em></strong>
 
 After the consult, the CV man wanted to keep observing and wait for the biomarkers.
 
-![](https://cdn-images-1.medium.com/max/1024/1*z8DcmAc5lH4HMP2YyC0JOw.png)
+![](/images/medium/1_z8DcmAc5lH4HMP2YyC0JOw.webp)
 <strong><em>Fig.16 ECG 2.5 hours later</em></strong>
 
 2.5 hr after arrival, the ECG showed <strong>RBBB+LAFB</strong>, with STE at the J point in V2.
@@ -315,10 +315,10 @@ In RBBB morphology with a qR pattern or rsR’ pattern, where the right R’ > t
 
 In RBBB with STD in V1~V3 (especially with rSR’), the normal STD is at most Up to 1 mm (again, this only applies when there's an R’-wave); only when the R’-wave is very large, e.g. RVH, can it be > 1 mm. If it's more than 1 mm, an ST vector force is pulling it down, causing excessive discordant STD; the most common cause is Post.OMI[^12].
 
-![](https://cdn-images-1.medium.com/max/1024/0*I7Q5rNoODuj9VqUu.png)
+![](/images/medium/0_I7Q5rNoODuj9VqUu.webp)
 <strong><em>Fig.17 Normal RBBB pattern</em></strong>
 
-![](https://cdn-images-1.medium.com/max/1024/0*MWNsJ8N-eKwLvQLi)
+![](/images/medium/0_MWNsJ8N-eKwLvQLi.webp)
 <strong><em>Fig.18</em></strong>
 
 #### So what does RBBB+LAFB showing up actually mean?
@@ -333,7 +333,7 @@ That said, occlusion in the LAD is the more common situation; occlusion in the L
 
 Also, the STE in RBBB+LAFB is very often downsloping STE; this is almost routine rather than the exception (<strong>see the example in Fig.19</strong>).
 
-![](https://cdn-images-1.medium.com/max/1024/1*QjU0iOAV0cptAxC2jZGX8Q.png)
+![](/images/medium/1_QjU0iOAV0cptAxC2jZGX8Q.webp)
 <strong><em>Fig.19 RBBB+LAFB+STEMI</em></strong>
 
 In <strong>Fig.19</strong> the vertical line passes through the J point; V2/V3 both have obvious STE, and it's downsloping STE (see arrows).
@@ -362,14 +362,14 @@ When I teach medical students ECG, I often say ECG reading, like POCUS, is opera
 
 The patient had newly onset RBBB and then recurrent chest pain. The CV man still didn't want to do an emergent cath. Only after 3.5 hours, when the ECG went from RBBB back to something like the 1-hour ECG + ongoing symptoms + rising TnI (second time), did he go to the cath lab.
 
-![](https://cdn-images-1.medium.com/max/1024/1*WfCvWCrnrSqZlTG-iuM_Dw@2x.png)
+![](/images/medium/1_WfCvWCrnrSqZlTG-iuM_Dw_2x.webp)
 <strong><em>Fig.20 ECG 3.5 hours later (symptomatic)</em></strong>
 
 <strong>Cath report: LAD-p total occlusion, RCA-p CTO</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/0*52ebRYyDKUArzQDU)
+![](/images/medium/0_52ebRYyDKUArzQDU.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/0*6_hAFbmYZhpQR86y)
+![](/images/medium/0_6_hAFbmYZhpQR86y.webp)
 <strong><em>CAG report</em></strong>
 
 #### One last thing: which ECG findings support acute proximal LAD occlusion? (See this post[^13])

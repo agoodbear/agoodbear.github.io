@@ -1,9 +1,11 @@
 ---
 title: "診斷AMI in LBBB或paced rhythm補完了嗎?"
 date: "2021-09-10"
+description: "LBBB或paced rhythm的心電圖該怎麼診斷AMI？整理Sgarbossa criteria、Modified Sgarbossa criteria與BARCELONA criteria，以及2021年把MSC用在paced rhythm的研究。"
 draft: false
-toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*RiODz6_7wUuQe3rCyrTHEQ@2x.png"
+toc: true
+hide_hero: true
+thumbnail: "/images/medium/1_RiODz6_7wUuQe3rCyrTHEQ_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -15,12 +17,18 @@ tags:
 medium_id: "efdc3b9f05d5"
 medium_url: "https://medium.com/@agoodbear/%E8%A8%BA%E6%96%B7ami-in-lbbb%E6%88%96paced-rhythm%E8%A3%9C%E5%AE%8C%E4%BA%86%E5%97%8E-efdc3b9f05d5"
 canonicalURL: "https://medium.com/@agoodbear/%E8%A8%BA%E6%96%B7ami-in-lbbb%E6%88%96paced-rhythm%E8%A3%9C%E5%AE%8C%E4%BA%86%E5%97%8E-efdc3b9f05d5"
+# 🗂 改稿版次
+#   重新排版｜2026-11-07｜比照ecg-post-22：卡片風、圖號、參考資料（正文字句不動）→⏳ 待確認
+#   第 0 版｜自 Medium 匯入
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*RiODz6_7wUuQe3rCyrTHEQ@2x.png)
 
-### 先來問個問題?
+{{< article-cards >}}
 
-#### LBBB能當作AMI嗎?
+![Fig.1 Sgarbossa、MSC、BARCELONA的發表時間軸](/images/medium/1_RiODz6_7wUuQe3rCyrTHEQ_2x.webp "Fig.1 Sgarbossa、MSC、BARCELONA的發表時間軸")
+
+## ❤️先來問個問題?
+
+### ❤️LBBB能當作AMI嗎?
 
 古早以前我們被教導，看到新的LBBB要當作STEMI一樣看待，趕快Call CV man衝導管!!!
 
@@ -28,9 +36,9 @@ canonicalURL: "https://medium.com/@agoodbear/%E8%A8%BA%E6%96%B7ami-in-lbbb%E6%88
 
 因此在2013年的JACC STEMI guideline¹認為，大多數的LBBB可能是舊的(無舊ECG比較是否為新的LBBB)，且就醫時新的LBBB或可能新的LBBB很少發生。因此不應當作有AMI。
 
-#### <strong>重點 →LBBB⧧STEMI</strong>
+<mark><strong>重點 →LBBB⧧STEMI</strong></mark>
 
-#### 為何LBBB或paced rhythm都不好診斷AMI?
+### ❤️為何LBBB或paced rhythm都不好診斷AMI?
 
 在正常的狀況下LBBB/RBBB在<strong>3個重要的lead(I、V1、V6)</strong>都要符合ST segment與T wave應該要和QRS最後反折的方向相反(secondary (2°) ST-T wave change) ，這就叫做<strong>ST Opposition Rule</strong>
 
@@ -38,16 +46,15 @@ canonicalURL: "https://medium.com/@agoodbear/%E8%A8%BA%E6%96%B7ami-in-lbbb%E6%88
 
 <strong>就是這個變化，讓RBBB/LBBB的病患如果有AMI，就變得很難診斷!!!</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*tvhtDWiXrKOUyidkc5k-eA.png)
-*From ECG 2014 Pocket brain — Fig 1*
+![Fig.2 From ECG 2014 Pocket brain：RBBB/LBBB的2° ST-T wave changes](/images/medium/1_tvhtDWiXrKOUyidkc5k-eA.webp "Fig.2 From ECG 2014 Pocket brain：RBBB/LBBB的2° ST-T wave changes")
 
 <strong>不好懂!!!</strong>
 
-總之記住，因為左/右束支阻斷，導致心室去極化順序改變了，所以RBBB/LBBB會特有<strong>正常appropriate discordance</strong>變化(Fig 1)。
+總之記住，因為左/右束支阻斷，導致心室去極化順序改變了，所以RBBB/LBBB會特有<strong>正常appropriate discordance</strong>變化(Fig.2)。
 
-#### <strong>QRS若是(+) →會有STD與TWI</strong>
+<strong>QRS若是(+) →會有STD與TWI</strong>
 
-#### <strong>QRS若是(-) →會有STE與Upright T wave</strong>
+<strong>QRS若是(-) →會有STE與Upright T wave</strong>
 
 所以<strong>看到Concordant STE or STD就要小心</strong>，是否有AMI把正常RBBB/LBBB應有的變化<strong>(appropriate discordance)</strong>變不見了!!!!
 
@@ -55,83 +62,77 @@ canonicalURL: "https://medium.com/@agoodbear/%E8%A8%BA%E6%96%B7ami-in-lbbb%E6%88
 
 因此在1996年Sgarbossa在NEJM提出了Sgarbossa criteria³
 
-![](https://cdn-images-1.medium.com/max/1024/1*JKmTZTUCb8wU36AvhojU1Q.png)
+![Fig.3 Original Sgarbossa criteria（A、B、C）](/images/medium/1_JKmTZTUCb8wU36AvhojU1Q.webp "Fig.3 Original Sgarbossa criteria（A、B、C）")
 
 在A、B當中就是上述所說的concordant STE(A)、STD(B)
 
-#### <strong>若符合A →5分</strong>
+<strong>若符合A →5分</strong>
 
-#### <strong>若符合B →3分</strong>
+<strong>若符合B →3分</strong>
 
-#### <strong>若符合C →2分</strong>
+<strong>若符合C →2分</strong>
 
-<strong>當≥3分，就要高度考慮有AMI →也就是有A or B就要小心囉!!!</strong>
+<mark><strong>當≥3分，就要高度考慮有AMI →也就是有A or B就要小心囉!!!</strong></mark>
 
 有鑑於Sgarbossa criteria的criteria C不夠力。為何?請看下圖
 
-[![](https://cdn-images-1.medium.com/max/1024/1*SOX3NKPmduprb7-ydo-Kxg.png)](http://hqmeded-ecg.blogspot.com/2019/09/a-50-something-woman-with-chest-pain-bp.html)
+[![Fig.4 LBBB的ECG：V2~V4符合criteria C，最後沒有血管阻塞](/images/medium/1_SOX3NKPmduprb7-ydo-Kxg.webp "Fig.4 LBBB的ECG：V2~V4符合criteria C，最後沒有血管阻塞")](http://hqmeded-ecg.blogspot.com/2019/09/a-50-something-woman-with-chest-pain-bp.html)
 
 上面這張ECG為LBBB，沒有符合Sgarbossa criteria A or B，但是V2~4都符合criteria C →也就是<strong>有discordant STE≥5 mm </strong>，所以這有AMI嗎?很遺憾，最終結果並沒有血管阻塞。
 
 也因為有這樣容易假陽性的finding，所以Smith在2012年於AEM發表了Modified Sgarbossa criteria(MSC)⁴。
 
-![](https://cdn-images-1.medium.com/max/1024/1*dVpaH8s2EROWq6SOLMX0nA.jpeg)
-<strong><em>Fig 2</em></strong>
+![Fig.5 Modified Sgarbossa criteria：STE/S ratio>0.25](/images/medium/1_dVpaH8s2EROWq6SOLMX0nA.webp "Fig.5 Modified Sgarbossa criteria：STE/S ratio>0.25")
 
-Modified Sgarbossa criteria把不夠力的<strong>Sgarbossa criteria C</strong>換成上面Fig 2。為何換成上面?因為我們前面是不是有說，RBBB/LBBB會有<strong>appropriate discordance</strong>變化，但是當discordant過頭了，也不行。
+Modified Sgarbossa criteria把不夠力的<strong>Sgarbossa criteria C</strong>換成上面Fig.5。為何換成上面?因為我們前面是不是有說，RBBB/LBBB會有<strong>appropriate discordance</strong>變化，但是當discordant過頭了，也不行。
 
 <strong>過頭有兩種含義。一種是單純量測數值，一種是看比例。</strong>
 
 Smith發現如果單純用discordant ST elevation上升<strong>≥5 mm(單純量測數值)，容易會有假陽性，但是如果改成看比例，就可以抓出更多真正的AMI。</strong>
 
-<strong>一般LBBB在V1~V4的STE/S ratio為0.11</strong>⁴，如果<strong>STE/S ratio >0.2就要小心有AMI</strong>⁵。下圖(Fig 3)是2015年Smith的夥伴Meyers在AHJ發表的文章，文章是針對Smith的MSC所做的validation study。圖中可以知道weighted Sgarbossa他的sensitivity不高，但是specificity很高<strong>(也就是沒有看到，不代表沒有AMI，但是若有看到，幾乎可以診斷是AMI)。</strong>
+<strong>一般LBBB在V1~V4的STE/S ratio為0.11</strong>⁴，如果<strong>STE/S ratio >0.2就要小心有AMI</strong>⁵。下圖(Fig.6)是2015年Smith的夥伴Meyers在AHJ發表的文章，文章是針對Smith的MSC所做的validation study。圖中可以知道weighted Sgarbossa他的sensitivity不高，但是specificity很高<strong>(也就是沒有看到，不代表沒有AMI，但是若有看到，幾乎可以診斷是AMI)。</strong>
 
 若是使用了MSC，取STE/S ratio抓0.2，可以將sensitivity提高到84%，但是specificity只降一點到94%。若ratio抓0.25，sensitivity降到80%，但是specificity可以提高到99%。如果ratio抓0.3，則可能會漏抓許多AMI病患。
 
-![](https://cdn-images-1.medium.com/max/1024/1*UZjD5_vc1At7I1D7Tpagsg.png)
-<strong><em>Fig 3</em></strong>
+![Fig.6 MSC validation study：各criteria的sensitivity與specificity](/images/medium/1_UZjD5_vc1At7I1D7Tpagsg.webp "Fig.6 MSC validation study：各criteria的sensitivity與specificity")
 
-#### <strong>重點 →MSC rule C: STE/S ratio>0.25要想AMI(>0.2就要小心了)</strong>
+<mark><strong>重點 →MSC rule C: STE/S ratio>0.25要想AMI(>0.2就要小心了)</strong></mark>
 
 去年在AHA有一篇文章提到了一個新的在LBBB病患上評估是否AMI的文章(BARCELONA criteria)⁶。
 
-![](https://cdn-images-1.medium.com/max/1024/1*s47ly3MLBNTPi3tt6YJfcw.jpeg)
-<strong><em>Fig 4</em></strong>
+![Fig.7 BARCELONA algorithm](/images/medium/1_s47ly3MLBNTPi3tt6YJfcw.webp "Fig.7 BARCELONA algorithm")
 
 在BARCELONA criteria<strong>(任何lead)</strong>只要病患符合以下兩點之一，就認為可能有AMI
 
-#### <strong>A. Corcordant ST deviation(STE or STD) ≥ 1 mm(也就是Sgarbossa criteria A與B，但是Sgarbossa criteria B限於V1~V3，在BARCELONA criteria任何lead皆可)</strong>
+<strong>A. Corcordant ST deviation(STE or STD) ≥ 1 mm(也就是Sgarbossa criteria A與B，但是Sgarbossa criteria B限於V1~V3，在BARCELONA criteria任何lead皆可)</strong>
 
-#### <strong>B. Discordant ST deviation(STE or STD) ≥ 1 mm with max (R|S)≤6 mm(也就是在R+S≤6 mm的狀況下，出現discordant ST deviation ≥ 1 mm就達標)</strong>
+<strong>B. Discordant ST deviation(STE or STD) ≥ 1 mm with max (R|S)≤6 mm(也就是在R+S≤6 mm的狀況下，出現discordant ST deviation ≥ 1 mm就達標)</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*8F8EkohE4oC_hlgFkNokpQ.png)
-<strong><em>MSC和BARCELONA criteria不同處</em></strong>
+![Fig.8 MSC和BARCELONA criteria不同處](/images/medium/1_8F8EkohE4oC_hlgFkNokpQ.webp "Fig.8 MSC和BARCELONA criteria不同處")
 
-在[Amal Mattu ECG weekly](https://ecgweekly.com/2021/02/amal-mattus-ecg-case-of-the-week-february-22-2021/)有一集講到這個<strong>BARCELONA criteria</strong>，授課中有一張表格(Fig 5)是這篇文章做的比較⁶。前一個數字是derivation cohort、後一個數字是validation corhort所做的數字。可以看到驗證Smith的MSC其sensitivity/specificity都下降了。Amal認為這些數字(BARCELONA criteria的sensitivity/specificity)看起來漂亮，但是仍需要external validation studty來佐證。
+在[Amal Mattu ECG weekly](https://ecgweekly.com/2021/02/amal-mattus-ecg-case-of-the-week-february-22-2021/)有一集講到這個<strong>BARCELONA criteria</strong>，授課中有一張表格(Fig.9)是這篇文章做的比較⁶。前一個數字是derivation cohort、後一個數字是validation corhort所做的數字。可以看到驗證Smith的MSC其sensitivity/specificity都下降了。Amal認為這些數字(BARCELONA criteria的sensitivity/specificity)看起來漂亮，但是仍需要external validation studty來佐證。
 
 當然Smith也不是省油的燈，看到自己的辛苦結晶，被貶了。當然也是要還擊的啊。想看怎麼還擊嗎?[<strong>請看這裡</strong>](https://hqmeded-ecg.blogspot.com/2020/11/barcelona-rule-on-left-bundle-branch.html)
 
-![](https://cdn-images-1.medium.com/max/1024/1*CAlVVCvgqJPBEVJa01_pBA.jpeg)
-<strong><em>Fig 5</em></strong>
+![Fig.9 Amal Mattu ECG Weekly：三套criteria的sensitivity與specificity](/images/medium/1_CAlVVCvgqJPBEVJa01_pBA.webp "Fig.9 Amal Mattu ECG Weekly：三套criteria的sensitivity與specificity")
 
-### 終於講到最後了。
+## ❤️終於講到最後了
 
 這個月，6/22日Smith團隊在AEM出了一篇文章。這是關於paced rhythm的病患是否可以應用MSC來診斷AMI⁷。這是因為paced rhythm的病患和RBBB/LBBB一樣，其放電傳導的路徑改變了，所以不好診斷AMI。但是有越來越多的case發現其實paced rhythm的病患，可以運用MSC，就像LBBB運用MSC診斷AMI一樣。
 
-![](https://cdn-images-1.medium.com/max/1024/1*KIlLSnJMFq2cguBk4Q-QDg.png)
-<strong><em>Fig 6</em></strong>
+![Fig.10 Paced rhythm的Modified Sgarbossa criteria（D、E、F）](/images/medium/1_KIlLSnJMFq2cguBk4Q-QDg.webp "Fig.10 Paced rhythm的Modified Sgarbossa criteria（D、E、F）")
 
-這篇文章運用原本MSC來評估paced rhythm病患是否有AMI，但是<strong>將Criteria B的V1~V3擴展到V1~V6，發現可以提升sensitivity從81%到86%</strong>(Fig 7)，但是specificity差不多。<strong>經過此一研究發現，確實在有裝心臟調節器病患身上，也可以使用MSC(注意V1 to V3改成V1 to V6可以增加敏感度)來看是否有AMI。</strong>
+這篇文章運用原本MSC來評估paced rhythm病患是否有AMI，但是<strong>將Criteria B的V1~V3擴展到V1~V6，發現可以提升sensitivity從81%到86%</strong>(Fig.11)，但是specificity差不多。<strong>經過此一研究發現，確實在有裝心臟調節器病患身上，也可以使用MSC(注意V1 to V3改成V1 to V6可以增加敏感度)來看是否有AMI。</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*U7chQ2n-OdNSkF3zk7Ry8Q@2x.png)
-<strong><em>Fig 7</em></strong>
+![Fig.11 Paced rhythm研究Table 2：MSC的sensitivity與specificity](/images/medium/1_U7chQ2n-OdNSkF3zk7Ry8Q_2x.webp "Fig.11 Paced rhythm研究Table 2：MSC的sensitivity與specificity")
 
-![](https://cdn-images-1.medium.com/max/1024/1*KjAStFrDbnyykSNKYKxXhg@2x.png)
-<strong><em>Fig 8</em></strong>
+![Fig.12 Paced rhythm或LBBB疑似AMI的處置流程圖](/images/medium/1_KjAStFrDbnyykSNKYKxXhg_2x.webp "Fig.12 Paced rhythm或LBBB疑似AMI的處置流程圖")
 
-最後用文章中⁷所附的一個流程圖(Fig 8)來當作結尾。
+最後用文章中⁷所附的一個流程圖(Fig.12)來當作結尾。
 
-#### <strong>當我們遇到LBBB/Paced rhythm，是可以透過MSC來協助判斷病患是否有AMI。若有符合MSC，儘早會診CV man進一步評估是否可做PCI，來搶救剩餘的心肌細胞。</strong>
+<mark><strong>當我們遇到LBBB/Paced rhythm，是可以透過MSC來協助判斷病患是否有AMI。若有符合MSC，儘早會診CV man進一步評估是否可做PCI，來搶救剩餘的心肌細胞。</strong></mark>
+
+## 參考資料
 
 1. 2013 ACCF/AHA Guideline for the Management of ST-Elevation Myocardial Infarction. *Journal of the American College of Cardiology*, *61*(4), e78–e140. [https://doi.org/10.1016/j.jacc.2012.11.019](https://doi.org/10.1016/j.jacc.2012.11.019)
 2. [https://www.amazon.com/ECG-2014-Pocket-Brain-Expanded-Ken-Grauer/dp/1930553250](https://www.amazon.com/ECG-2014-Pocket-Brain-Expanded-Ken-Grauer/dp/1930553250)

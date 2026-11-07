@@ -3,7 +3,7 @@ title: "Narrow QRS tachycardia"
 date: "2021-09-19"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*-_JeNAGKVV67vXegvesyZA@2x.png"
+thumbnail: "/images/medium/1_-_JeNAGKVV67vXegvesyZA_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -17,11 +17,11 @@ canonicalURL: "https://medium.com/@agoodbear/narrow-qrs-tachycardia-962b3d4d3f0e
 translated_from: "medium-962b3d4d3f0e.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*-_JeNAGKVV67vXegvesyZA@2x.png)
+![](/images/medium/1_-_JeNAGKVV67vXegvesyZA_2x.webp)
 
 50-year-old man with prior Aortic valve surgery. Chief complaint: palpitations (<strong>the ER ECG is the top image of this blog post</strong>).
 
-![](https://cdn-images-1.medium.com/max/1024/1*k_WjnewcbB8zt7dk2q9cCg.png)
+![](/images/medium/1_k_WjnewcbB8zt7dk2q9cCg.webp)
 <strong><em>Fig. 1</em></strong>
 
 Quick read: Rate about 150, there seems to be a P, but it doesn't look like a typical P wave shape. RAD. Narrow QRS tachycardia, with obvious aVR STE with multiple leads STD
@@ -40,7 +40,7 @@ It's possible. Amal and Smith have emphasized a few key points on their blogs; l
 
 <strong>Key point three</strong>: when you see an ECG pattern like this, you must match it to the patient's clinical context. Because there are many more situations (Non-ACS sick P’t) that show this pattern.
 
-![](https://cdn-images-1.medium.com/max/1024/1*39AgqmVqJlA-H6mymxXL0Q@2x.png)
+![](/images/medium/1_39AgqmVqJlA-H6mymxXL0Q_2x.webp)
 <strong><em>Fig. 2</em></strong>
 
 The DDx for Narrow QRS tachycardia includes the following:
@@ -55,7 +55,7 @@ The DDx for Narrow QRS tachycardia includes the following:
 
 <strong>AFL →</strong> when we clinically see a tachycardia at 150 bpm ± 20, we have to consider AFL with 2:1 conduction. One concept here: we should say 2:1 conduction, not 2:1 block. Why? Because the AVN (AV node) here is just doing its job — its job is to keep too high an atrial rate from conducting down — so it's <strong>"conduction"</strong>, letting one out of every 2 (2:1 conduction) or 3 (3:1 conduction) P waves through to the ventricle. If the AVN crashes and can't conduct, leading to a very slow ventricular rate <strong>(one P doesn't get through, the next P doesn't get through, and only the one after that gets through)</strong>, that situation is called <strong>"block"</strong>; for example, 3:1 or higher is called High grade block (≥ 3:1 AVB) (<strong>Fig.3</strong>), not 3:1 conduction. And of course it's not called AFL with 3:1 block either (Flutter waves aren't that slow). This was a concept my brain somehow got tangled up on back then, so I emailed Amal Mattu, and this is the concept he wrote back to me.
 
-![](https://cdn-images-1.medium.com/max/1024/1*I4boUOGz1j1ZO2HQKPOoNA.png)
+![](/images/medium/1_I4boUOGz1j1ZO2HQKPOoNA.webp)
 <strong><em>Fig.3</em></strong>
 
 I've drifted off topic a bit. Back on track~~~
@@ -64,7 +64,7 @@ Besides AFL 2:1, AFL with 1:1 conduction also needs to be considered. Of course,
 
 Here's an example of AFL with 1:1 conduction (Fig.4), from the [Smith ECG blog](http://hqmeded-ecg.blogspot.com/2021/09/narrow-complex-tachycardia-at-rate-of.html), describing a patient whose regular medications were Flecainide and diltiazem to control an arrhythmia.
 
-[![](https://cdn-images-1.medium.com/max/1024/1*mDW8rVBYIO2pdEPiNO4fEQ.png)](http://hqmeded-ecg.blogspot.com/2021/09/narrow-complex-tachycardia-at-rate-of.html)
+[![](/images/medium/1_mDW8rVBYIO2pdEPiNO4fEQ.webp)](http://hqmeded-ecg.blogspot.com/2021/09/narrow-complex-tachycardia-at-rate-of.html)
 <strong><em>Fig.4 From Smith ECG Blog</em></strong>
 
 One thing to note here, which quite a few ECG blogs have mentioned: when we use a Class I antiarrhythmic to control AFL (to maintain sinus rhythm), we must add an AVN blocker. Why? Because the Class I antiarrhythmic slows the flutter waves, but once they're slow enough, the AVN lets them through 1:1 (still very fast at that point). If there's no AVN blocker to reinforce the AVN so it can block 1:1 conduction, and everything comes through 1:1, Vf can easily follow.

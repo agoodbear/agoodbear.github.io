@@ -1,9 +1,11 @@
 ---
 title: "Narrow QRS tachycardia"
 date: "2021-09-19"
+description: "50歲男性過去開過Aortic valve，因心悸到院。ECG是rate約150的narrow QRS tachycardia，並有aVR STE合併多導程STD，文中整理DDx、AFL的2:1 conduction與block的差別。"
 draft: false
-toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*-_JeNAGKVV67vXegvesyZA@2x.png"
+toc: true
+hide_hero: true
+thumbnail: "/images/medium/1_-_JeNAGKVV67vXegvesyZA_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -14,19 +16,26 @@ tags:
 medium_id: "962b3d4d3f0e"
 medium_url: "https://medium.com/@agoodbear/narrow-qrs-tachycardia-962b3d4d3f0e"
 canonicalURL: "https://medium.com/@agoodbear/narrow-qrs-tachycardia-962b3d4d3f0e"
+# 🗂 改稿版次
+#   重新排版｜2026-11-07｜比照ecg-post-22：卡片風、圖號、學習重點（正文字句不動）→⏳ 待確認
+#   第 0 版｜自 Medium 匯入
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*-_JeNAGKVV67vXegvesyZA@2x.png)
+
+{{< article-cards >}}
+
+## ❤️Case：50歲男性、主述心悸
+
+![Fig.1 ER ECG](/images/medium/1_-_JeNAGKVV67vXegvesyZA_2x.webp "Fig.1 ER ECG")
 
 50歲男性，過去Aortic valve開過刀。主述心悸(<strong>ER ECG為blog最上圖</strong>)。
 
-![](https://cdn-images-1.medium.com/max/1024/1*k_WjnewcbB8zt7dk2q9cCg.png)
-<strong><em>Fig. 1</em></strong>
+![Fig.2 V1放大：箭頭處似乎有P](/images/medium/1_k_WjnewcbB8zt7dk2q9cCg.webp "Fig.2 V1放大：箭頭處似乎有P")
 
 簡單判讀：Rate約為150下、似乎有P，但是看起來不像典型P wave的形狀。RAD。Narrow QRS tachycardia，且有明顯的aVR STE with multiple leads STD
 
-千萬要記得，<strong>要看P wave的有無，最適當的lead，不是lead II就是V1。Amal mattu特別喜歡V1</strong>。
+千萬要記得，<mark><strong>要看P wave的有無，最適當的lead，不是lead II就是V1。Amal mattu特別喜歡V1</strong></mark>。
 
-此外這邊要注意，這個明顯的<strong>aVR STE with multiple leads STD通常並不是LM、Proximal LAD、TVD問題引起的</strong>(參考<strong>Fig.2</strong>)。這是rate-dependent oxygen/demand mismatch引起的心臟缺血的ECG徵象。心跳過快就容易會出現。不只PSVT會有、AfRVR時也可以見到。只要心跳快，就可能因為心臟跳太快，導致短暫缺血，出現這樣的Pattern。
+此外這邊要注意，這個明顯的<mark><strong>aVR STE with multiple leads STD通常並不是LM、Proximal LAD、TVD問題引起的</strong></mark>(參考<strong>Fig.3</strong>)。這是rate-dependent oxygen/demand mismatch引起的心臟缺血的ECG徵象。心跳過快就容易會出現。不只PSVT會有、AfRVR時也可以見到。只要心跳快，就可能因為心臟跳太快，導致短暫缺血，出現這樣的Pattern。
 
 那麼有沒有可能真的跳快、然後又真的AMI?
 
@@ -34,12 +43,11 @@ canonicalURL: "https://medium.com/@agoodbear/narrow-qrs-tachycardia-962b3d4d3f0e
 
 <strong>第一個重點</strong>，AMI很少會心跳快。除非cardiogenic shock。
 
-<strong>第二個重點</strong>，如果真的遇到心跳快、又胸痛/冒冷汗/血壓低。這時真的沒辦法排除心肌梗塞存在於心跳快的狀況下。當然這種狀況，我們在ACLS教學時，也講過。這種狀況是unstable tachycardia，先把rate控制下來。如果rate控制，這種ECG pattern還存在，主述仍存在。的確要考慮ACS sick P’t的DDx(<strong>Fig.2</strong>)。
+<strong>第二個重點</strong>，如果真的遇到心跳快、又胸痛/冒冷汗/血壓低。這時真的沒辦法排除心肌梗塞存在於心跳快的狀況下。當然這種狀況，我們在ACLS教學時，也講過。這種狀況是unstable tachycardia，先把rate控制下來。如果rate控制，這種ECG pattern還存在，主述仍存在。的確要考慮ACS sick P’t的DDx(<strong>Fig.3</strong>)。
 
 <strong>第三個重點</strong>，遇到如此的ECG pattern一定要和病患的臨床情境來配合。因為有更多的狀況(Non-ACS sick P’t)呈現如此的pattern。
 
-![](https://cdn-images-1.medium.com/max/1024/1*39AgqmVqJlA-H6mymxXL0Q@2x.png)
-<strong><em>Fig. 2</em></strong>
+![Fig.3 aVR STE合併多導程STD的DDx](/images/medium/1_39AgqmVqJlA-H6mymxXL0Q_2x.webp "Fig.3 aVR STE合併多導程STD的DDx")
 
 Narrow QRS tachycardia需要鑑別的DDx包括了以下:
 
@@ -51,28 +59,28 @@ Narrow QRS tachycardia需要鑑別的DDx包括了以下:
 
 <strong>PSVT →</strong>沒看到明顯的P wave，可以歸類PSVT。可以是<strong>AVNRT</strong> or <strong>Orthdromic AVRT</strong>其ECG pattern都會是narrow QRS tachycardia
 
-<strong>AFL →</strong> 當我們臨床上遇到150 bpm ± 20的tachycardia。就必須把AFL 2:1 conduction列入考慮。這邊有一個觀念是，我們要稱2:1 conduction，不是2:1 block，Why?因為AVN(AV node)在這邊是做它份內的工作，他的工作內容是不會讓過多的atrial rate往下傳，所以是<strong>『conduction』</strong>，讓2個(2:1 conduction)、3個(3:1 conduction)P wave往下傳一個到心室。如果AVN當機了，傳不下去，導致很慢的ventricular rate出現<strong>(一個P傳不下去、下一個P也傳不下去、下下一個P才傳下去)</strong>，這種狀況叫做<strong>『block』</strong>，如3:1以上的block叫做High grade block(≥ 3:1 AVB)(<strong>Fig.3</strong>)，而不是稱3:1 conduction。當然更不是稱AFL with 3:1 block(Flutter wave不會那麼慢)。這個觀念，是以前我腦袋不知道怎麼打結了，寫信去問Amal mattu，他寫給我的觀念。
+<strong>AFL →</strong> 當我們臨床上遇到150 bpm ± 20的tachycardia。就必須把AFL 2:1 conduction列入考慮。這邊有一個觀念是，我們要稱2:1 conduction，不是2:1 block，Why?因為AVN(AV node)在這邊是做它份內的工作，他的工作內容是不會讓過多的atrial rate往下傳，所以是<strong>『conduction』</strong>，讓2個(2:1 conduction)、3個(3:1 conduction)P wave往下傳一個到心室。如果AVN當機了，傳不下去，導致很慢的ventricular rate出現<strong>(一個P傳不下去、下一個P也傳不下去、下下一個P才傳下去)</strong>，這種狀況叫做<strong>『block』</strong>，如3:1以上的block叫做High grade block(≥ 3:1 AVB)(<strong>Fig.4</strong>)，而不是稱3:1 conduction。當然更不是稱AFL with 3:1 block(Flutter wave不會那麼慢)。這個觀念，是以前我腦袋不知道怎麼打結了，寫信去問Amal mattu，他寫給我的觀念。
 
-![](https://cdn-images-1.medium.com/max/1024/1*I4boUOGz1j1ZO2HQKPOoNA.png)
-<strong><em>Fig.3</em></strong>
+![Fig.4 High grade block(≥3:1 AVB)](/images/medium/1_I4boUOGz1j1ZO2HQKPOoNA.webp "Fig.4 High grade block(≥3:1 AVB)")
 
 有點離題了。趕緊拉回來~~~
 
 除了AFL 2:1需要考慮到，AFL 1:1 conduction也需要考慮到。當然這種狀況的rate一定不是150 bpm ± 20而是>200 bpm以上。Flutter wave約250~350 bpm(指atrial rate)，所以當1:1 conduction傳下來，心室可能會受不了，而有機會跳Vf(心室顫動)。
 
-這邊有個例子是跳AFL with 1:1 conduction(Fig.4)，來自於[Smith ECG blog](http://hqmeded-ecg.blogspot.com/2021/09/narrow-complex-tachycardia-at-rate-of.html)，描述一位患者平常用藥Flecainide與diltiazem來控制心律不整。
+這邊有個例子是跳AFL with 1:1 conduction(Fig.5)，來自於[Smith ECG blog](http://hqmeded-ecg.blogspot.com/2021/09/narrow-complex-tachycardia-at-rate-of.html)，描述一位患者平常用藥Flecainide與diltiazem來控制心律不整。
 
-[![](https://cdn-images-1.medium.com/max/1024/1*mDW8rVBYIO2pdEPiNO4fEQ.png)](http://hqmeded-ecg.blogspot.com/2021/09/narrow-complex-tachycardia-at-rate-of.html)
-<strong><em>Fig.4 From Smith ECG Blog</em></strong>
+[![Fig.5 AFL with 1:1 conduction，來自Smith ECG Blog](/images/medium/1_mDW8rVBYIO2pdEPiNO4fEQ.webp "Fig.5 AFL with 1:1 conduction，來自Smith ECG Blog")](http://hqmeded-ecg.blogspot.com/2021/09/narrow-complex-tachycardia-at-rate-of.html)
 
 這邊要注意一點事情，不少ECG blog都有提到過，當我們使用Class I抗心律不整藥物去控制AFL(維持sinus rhythm)，一定要加上AVN blocker。為何?因為使用Class I抗心律不整藥物讓flutter wave變慢，但慢到一定程度，AVN允許讓它1:1傳下去(此時還是非常快)，此時如果沒有AVN blocker強化AVN的功能，讓它能夠阻斷1:1的傳導，而造成完全1:1傳下來，就很容易Vf產生。
 
-#### <strong>Tip1:</strong>看P wave有無，請看V1 or II
+<div class="ec-takeaways">
 
-#### <strong>Tip2:</strong>DDx with aVR STE with multiple leads STD
+## 學習重點
 
-> <strong>Tips3:</strong>Narrow QRS tachycardia的DDx
+1. 看P wave有無，請看V1 or II
+2. DDx with aVR STE with multiple leads STD
+3. Narrow QRS tachycardia的DDx
+4. 什麼時候叫conduction、什麼時候叫block
+5. 若要使用Class I控制AFL，一定要配合AVN blocker
 
-> <strong>Tips4:</strong>什麼時候叫conduction、什麼時候叫block
-
-> <strong>Tips5:</strong>若要使用Class I控制AFL，一定要配合AVN blocker
+</div>

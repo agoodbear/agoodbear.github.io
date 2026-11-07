@@ -3,7 +3,7 @@ title: "Heart Warning: Pericarditis vs. OMI — Readmitted"
 date: "2023-03-25"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*tprAYzfatLfq__U6OEglhw.png"
+thumbnail: "/images/medium/1_tprAYzfatLfq__U6OEglhw.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -19,12 +19,12 @@ canonicalURL: "https://medium.com/@agoodbear/%E5%BF%83%E8%87%9F%E8%AD%A6%E8%A8%8
 translated_from: "medium-30c24eb7e9ab.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*tprAYzfatLfq__U6OEglhw.png)
+![](/images/medium/1_tprAYzfatLfq__U6OEglhw.webp)
 ***Fig.1 The ECG from the first ED visit***
 
 #### Let me tell you about a case a colleague ran into recently. I think there's a ton to learn from it. Let's go panning for gold in this one together~~~
 
-![](https://cdn-images-1.medium.com/max/1024/1*7uZfr7ftD9OVd3BKPzzkaQ.png)
+![](/images/medium/1_7uZfr7ftD9OVd3BKPzzkaQ.webp)
 
 The patient is a 39-year-old man with a history of hypertension, hyperlipidemia, and spontaneous intracerebral hemorrhage.
 
@@ -36,7 +36,7 @@ Fig.1 is the ECG from that first visit.
 
 The baseline in II/III is unstable. That's because the LL electrode is shaking.
 
-![](https://cdn-images-1.medium.com/max/1024/1*yll2nGUvdkL-QG8ulM664Q.jpeg)
+![](/images/medium/1_yll2nGUvdkL-QG8ulM664Q.webp)
 ***Fig.2***
 
 How do you tell within 5 seconds of looking at an ECG that it's a baseline artifact from a shaking left leg?
@@ -59,15 +59,15 @@ Interval: No QT prolong
 
 Ischemia: The first goal is to look for **any OMI ECG findings (currently 18 of them… and the list is only going to get longer XD)**
 
-![](https://cdn-images-1.medium.com/max/1024/1*G2QwkE0DPnULRuC0psCX3A.png)
+![](/images/medium/1_G2QwkE0DPnULRuC0psCX3A.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*2gSPaVcRJw9P3SqzOPJJCw.png)
+![](/images/medium/1_2gSPaVcRJw9P3SqzOPJJCw.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*qkWpIWHGP_lVUNMz-42Iig.png)
+![](/images/medium/1_qkWpIWHGP_lVUNMz-42Iig.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*LhHja5QM_5Nw144hVZRwWg.png)
+![](/images/medium/1_LhHja5QM_5Nw144hVZRwWg.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*2NSeEeAzOLBFJz_k3HAR9A.png)
+![](/images/medium/1_2NSeEeAzOLBFJz_k3HAR9A.webp)
 
 #### OMI(Occlusion MI)
 
@@ -79,7 +79,7 @@ Of all the patients who come through the ED every day, a certain proportion alwa
 
 #### If we don't catch it….. this is how the story usually goes.
 
-![](https://cdn-images-1.medium.com/max/1024/1*3hhNNLZzMH2-y8AUe76G_g.png)
+![](/images/medium/1_3hhNNLZzMH2-y8AUe76G_g.webp)
 *Made by Midjourney*
 
 **An in-hospital call from a colleague…….**
@@ -92,7 +92,7 @@ Before they even finish the sentence, I think anyone who works in the ED, hearin
 
 **First let's look at what it actually means to catch an OMI patient. I think this is pretty important.**
 
-![](https://cdn-images-1.medium.com/max/1024/1*yIpVpxmAMcDVD24H1Zpn_A.png)
+![](/images/medium/1_yIpVpxmAMcDVD24H1Zpn_A.webp)
 ***Fig.3***
 
 So what kind of OMI patients are we trying to catch?
@@ -140,9 +140,9 @@ Here I recommend a paper McLaren published in AJEM in 2021[^2].
 
 The paper compares one year pre-intervention with one year post-intervention:
 
-![](https://cdn-images-1.medium.com/max/1024/1*pgRxwBSmfSC3qPIT780luQ.png)
+![](/images/medium/1_pgRxwBSmfSC3qPIT780luQ.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*d49jJzd0TtZbQRtHVbmGfw.png)
+![](/images/medium/1_d49jJzd0TtZbQRtHVbmGfw.webp)
 ***Fig.4***
 
 Fig.4 shows that the intervention shortened the ETA time.
@@ -161,7 +161,7 @@ The paper's appendix gives 10 cases of ECGs that look like they might be normal 
 
 Without giving away yet what Fig.1 shows, the patient was later admitted to the cardiology ward, and troponins were drawn along the way.
 
-![](https://cdn-images-1.medium.com/max/1024/1*afZ50XjC1uQd9bR6j7eGag.png)
+![](/images/medium/1_afZ50XjC1uQd9bR6j7eGag.webp)
 
 During the admission, the patient had an Exercise stress test and an Echo.
 
@@ -189,7 +189,7 @@ In the comments on another post, the master, Ken Grauer, stresses one point even
 
 **So what exactly does "You diagnose acute pericarditis at your peril!" mean? I asked ChatGPT to translate it, and I think it nailed it.**
 
-![](https://cdn-images-1.medium.com/max/1024/0*4k0fIDolonxtHjkr)
+![](/images/medium/0_4k0fIDolonxtHjkr.webp)
 
 #### **A wrong diagnosis can have serious consequences for the patient.**
 
@@ -239,7 +239,7 @@ Whether a plaque is vulnerable depends on three key factors:
 - Smaller plaques are more likely to be unstable and rupture
 - These small plaques can still rupture and cause complete occlusion → studies have shown that before the rupture that causes AMI, the IRA (infarct related arteries) usually had no occlusive plaque (because the plaque was small, it wasn't occluding)
 
-![](https://cdn-images-1.medium.com/max/1024/0*JQiiaJCryLJQWQv2)
+![](/images/medium/0_JQiiaJCryLJQWQv2.webp)
 ***Fig.5***
 
 Fig.5 shows that **not all plaques are the same**
@@ -252,12 +252,12 @@ Fig.5 shows that **not all plaques are the same**
 - It can't tell stable vs. unstable plaque composition apart → because Cath can't tell how much fibrous cap and lipid core there is
 - It can't detect "coronary artery remodeling"
 
-![](https://cdn-images-1.medium.com/max/1024/0*PNleVhu3rWOTRaXh)
+![](/images/medium/0_PNleVhu3rWOTRaXh.webp)
 ***Fig.6***
 
 - Fig.6 shows the Plaque growing into the vessel wall (outward bulging) > growing into the lumen → so on CAG the artery may look patent, but in fact significant CAD is already there → which is how you get false-negative angiography
 
-![](https://cdn-images-1.medium.com/max/1024/0*QAe8hsCq6ofBdJA3)
+![](/images/medium/0_QAe8hsCq6ofBdJA3.webp)
 ***Fig.7***
 
 - Fig.7 shows that on CAG, A and B both look almost entirely open (about the same luminal diameter), but when you actually look with intravascular US (IVUS), there's a large plaque at B. Because of remodeling the lumen still looks big enough, but the rupture risk is actually high.
@@ -269,11 +269,11 @@ Putting all of this together: even if **a recent stress test or CAG was Negative
 
 ### Back to Case, Again
 
-![](https://cdn-images-1.medium.com/max/1024/1*7uZfr7ftD9OVd3BKPzzkaQ.png)
+![](/images/medium/1_7uZfr7ftD9OVd3BKPzzkaQ.webp)
 
 On the morning of day 4 after being discharged with a diagnosis of pericarditis, the patient suddenly felt waves of tight, bloated pain in the left chest, with pain in the left upper back too. He said he'd been fine since discharge, the pain only started today, and it felt the same as during his last admission.
 
-![](https://cdn-images-1.medium.com/max/1024/1*jwIsjSB0QRkbTfjtHSwo5Q.png)
+![](/images/medium/1_jwIsjSB0QRkbTfjtHSwo5Q.webp)
 ***Fig.8 Initial ECG on the return visit***
 
 What ischemic ECG morphology do you see in the Fig.8 ECG?
@@ -286,7 +286,7 @@ Putting it all together, we can infer the problem is probably in the proximal LA
 
 If we go back to Fig.1 (the initial ECG from the first ED visit), we can see V1-V4 also fit the LV aneurysm pattern, so T/QRS > 0.36 applies, and if any one lead meets it, you can diagnose STEMI → **V4 in Fig.1 is absolutely >0.36**
 
-![](https://cdn-images-1.medium.com/max/1024/1*WjoHV4N8M-wE19EvVvy2rg.png)
+![](/images/medium/1_WjoHV4N8M-wE19EvVvy2rg.webp)
 
 Later that same day, the patient's troponin came back sky-high…….
 
@@ -294,12 +294,12 @@ But the CV man still didn't schedule a CAG that day (**even though it was a week
 
 Hmm…….. this is exactly what I meant about segment 4 in Fig.3: there's nothing we ED men can change about it. Because it depends on the CV man's attitude toward this Case.
 
-![](https://cdn-images-1.medium.com/max/1024/1*yIpVpxmAMcDVD24H1Zpn_A.png)
+![](/images/medium/1_yIpVpxmAMcDVD24H1Zpn_A.webp)
 ***Fig.3***
 
 #### **CAG final result: Acute D1 total occlusion**
 
-![](https://cdn-images-1.medium.com/max/1024/0*Lc2ETQOv7bvgj2Sr)
+![](/images/medium/0_Lc2ETQOv7bvgj2Sr.webp)
 
 #### Quick wrap-up of this case
 

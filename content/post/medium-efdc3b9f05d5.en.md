@@ -3,7 +3,7 @@ title: "Diagnosing AMI in LBBB or paced rhythm: have you filled in all the gaps?
 date: "2021-09-10"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*RiODz6_7wUuQe3rCyrTHEQ@2x.png"
+thumbnail: "/images/medium/1_RiODz6_7wUuQe3rCyrTHEQ_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -18,7 +18,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E8%A8%BA%E6%96%B7ami-in-lbbb%E6%88
 translated_from: "medium-efdc3b9f05d5.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*RiODz6_7wUuQe3rCyrTHEQ@2x.png)
+![](/images/medium/1_RiODz6_7wUuQe3rCyrTHEQ_2x.webp)
 
 ### First, a question
 
@@ -40,7 +40,7 @@ Because LBBB/RBBB both change the sequence of ventricular depolarization, the QR
 
 <strong>It's exactly this change that makes AMI so hard to diagnose in patients with RBBB/LBBB!!!</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*tvhtDWiXrKOUyidkc5k-eA.png)
+![](/images/medium/1_tvhtDWiXrKOUyidkc5k-eA.webp)
 *From ECG 2014 Pocket brain — Fig 1*
 
 <strong>Not easy to understand!!!</strong>
@@ -57,7 +57,7 @@ Using the possible changes above:
 
 So in 1996, Sgarbossa proposed the Sgarbossa criteria in NEJM³
 
-![](https://cdn-images-1.medium.com/max/1024/1*JKmTZTUCb8wU36AvhojU1Q.png)
+![](/images/medium/1_JKmTZTUCb8wU36AvhojU1Q.webp)
 
 A and B are the concordant STE (A) and STD (B) described above
 
@@ -71,13 +71,13 @@ A and B are the concordant STE (A) and STD (B) described above
 
 Criterion C of the Sgarbossa criteria isn't strong enough. Why? Look at the figure below
 
-[![](https://cdn-images-1.medium.com/max/1024/1*SOX3NKPmduprb7-ydo-Kxg.png)](http://hqmeded-ecg.blogspot.com/2019/09/a-50-something-woman-with-chest-pain-bp.html)
+[![](/images/medium/1_SOX3NKPmduprb7-ydo-Kxg.webp)](http://hqmeded-ecg.blogspot.com/2019/09/a-50-something-woman-with-chest-pain-bp.html)
 
 The ECG above is LBBB. It doesn't meet Sgarbossa criteria A or B, but V2~4 all meet criterion C → that is, <strong>there's discordant STE ≥5 mm </strong>. So is this an AMI? Unfortunately, in the end there was no occluded vessel.
 
 Because this finding gives false positives so easily, Smith published the Modified Sgarbossa criteria (MSC) in AEM in 2012⁴.
 
-![](https://cdn-images-1.medium.com/max/1024/1*dVpaH8s2EROWq6SOLMX0nA.jpeg)
+![](/images/medium/1_dVpaH8s2EROWq6SOLMX0nA.webp)
 <strong><em>Fig 2</em></strong>
 
 The Modified Sgarbossa criteria replaced the weak <strong>Sgarbossa criterion C</strong> with Fig 2 above. Why replace it with that? Because, as we said earlier, RBBB/LBBB has <strong>appropriate discordance</strong>, but when it's too discordant, that's not OK either.
@@ -90,14 +90,14 @@ Smith found that using discordant ST elevation <strong>≥5 mm (plain measured v
 
 With the MSC, setting the STE/S ratio cutoff at 0.2 raises the sensitivity to 84%, while the specificity drops only a little, to 94%. With a cutoff of 0.25, sensitivity drops to 80%, but specificity can go up to 99%. With a cutoff of 0.3, you may miss many AMI patients.
 
-![](https://cdn-images-1.medium.com/max/1024/1*UZjD5_vc1At7I1D7Tpagsg.png)
+![](/images/medium/1_UZjD5_vc1At7I1D7Tpagsg.webp)
 <strong><em>Fig 3</em></strong>
 
 #### <strong>Key point → MSC rule C: STE/S ratio >0.25, think AMI (>0.2, already be careful)</strong>
 
 Last year an AHA paper described a new way to assess for AMI in LBBB patients (the BARCELONA criteria)⁶.
 
-![](https://cdn-images-1.medium.com/max/1024/1*s47ly3MLBNTPi3tt6YJfcw.jpeg)
+![](/images/medium/1_s47ly3MLBNTPi3tt6YJfcw.webp)
 <strong><em>Fig 4</em></strong>
 
 Under the BARCELONA criteria <strong>(any lead)</strong>, if the patient meets either of the following two, AMI is considered possible
@@ -106,29 +106,29 @@ Under the BARCELONA criteria <strong>(any lead)</strong>, if the patient meets e
 
 #### <strong>B. Discordant ST deviation (STE or STD) ≥ 1 mm with max (R|S) ≤6 mm (i.e., when R+S ≤6 mm, discordant ST deviation ≥ 1 mm meets the criterion)</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*8F8EkohE4oC_hlgFkNokpQ.png)
+![](/images/medium/1_8F8EkohE4oC_hlgFkNokpQ.webp)
 <strong><em>Differences between the MSC and the BARCELONA criteria</em></strong>
 
 An episode of [Amal Mattu ECG weekly](https://ecgweekly.com/2021/02/amal-mattus-ecg-case-of-the-week-february-22-2021/) covered the <strong>BARCELONA criteria</strong>, and the lecture included a table (Fig 5) with the comparison from this paper⁶. The first number is from the derivation cohort and the second from the validation cohort. You can see that when they validated Smith's MSC, both its sensitivity and specificity came down. Amal thinks these numbers (the sensitivity/specificity of the BARCELONA criteria) look pretty, but still need an external validation study to back them up.
 
 Of course, Smith is no pushover either. Seeing the fruit of his hard work get knocked down, of course he had to hit back. Want to see how? [<strong>Look here</strong>](https://hqmeded-ecg.blogspot.com/2020/11/barcelona-rule-on-left-bundle-branch.html)
 
-![](https://cdn-images-1.medium.com/max/1024/1*CAlVVCvgqJPBEVJa01_pBA.jpeg)
+![](/images/medium/1_CAlVVCvgqJPBEVJa01_pBA.webp)
 <strong><em>Fig 5</em></strong>
 
 ### Finally, the last part.
 
 This month, on June 22, Smith's team published a paper in AEM. It's about whether the MSC can be applied to diagnose AMI in patients with a paced rhythm⁷. This is because, just like RBBB/LBBB, patients with a paced rhythm have an altered conduction pathway, so AMI is hard to diagnose. But more and more cases have shown that the MSC can actually be used in paced-rhythm patients, just as the MSC is used to diagnose AMI in LBBB.
 
-![](https://cdn-images-1.medium.com/max/1024/1*KIlLSnJMFq2cguBk4Q-QDg.png)
+![](/images/medium/1_KIlLSnJMFq2cguBk4Q-QDg.webp)
 <strong><em>Fig 6</em></strong>
 
 This paper used the original MSC to assess for AMI in paced-rhythm patients, but <strong>extending criterion B from V1~V3 to V1~V6 was found to raise sensitivity from 81% to 86%</strong> (Fig 7), with about the same specificity. <strong>This study shows that in patients with a pacemaker, the MSC (note: changing V1 to V3 into V1 to V6 increases sensitivity) can indeed be used to look for AMI as well.</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*U7chQ2n-OdNSkF3zk7Ry8Q@2x.png)
+![](/images/medium/1_U7chQ2n-OdNSkF3zk7Ry8Q_2x.webp)
 <strong><em>Fig 7</em></strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*KjAStFrDbnyykSNKYKxXhg@2x.png)
+![](/images/medium/1_KjAStFrDbnyykSNKYKxXhg_2x.webp)
 <strong><em>Fig 8</em></strong>
 
 I'll close with a flowchart (Fig 8) from the paper⁷.

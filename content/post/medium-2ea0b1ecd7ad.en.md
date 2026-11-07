@@ -3,7 +3,7 @@ title: "73-year-old man, ongoing chest pain. Does he need cath intervention?"
 date: "2023-05-08"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*WPqDirWKj_yqdGzdBAZqnw.png"
+thumbnail: "/images/medium/1_WPqDirWKj_yqdGzdBAZqnw.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -19,7 +19,7 @@ canonicalURL: "https://medium.com/@agoodbear/73%E6%AD%B2%E7%94%B7%E6%80%A7-%E8%8
 translated_from: "medium-2ea0b1ecd7ad.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*WPqDirWKj_yqdGzdBAZqnw.png)
+![](/images/medium/1_WPqDirWKj_yqdGzdBAZqnw.webp)
 
 I found this case really interesting, and there's a lot to learn from it. So I pulled it ahead of the many other cases I want to write about.
 
@@ -31,21 +31,21 @@ The initial ECG is shown above. After looking at it, I went straight to see the 
 
 Do you all see anything?
 
-![](https://cdn-images-1.medium.com/max/1024/1*T52E6q5yGpWZPMwfY9lqAw.png)
+![](/images/medium/1_T52E6q5yGpWZPMwfY9lqAw.webp)
 ***Fig.1 Initial ECG***
 
 The vertical blue line is drawn at the J point. The J point is where you assess for STE or STD. The J point is the end of the QRS and the start of the ST segment. Above the baseline is STE; below the baseline is STD.
 
 Using STEMI criteria means judging whether there's STE based on where the J point is, and only then can you diagnose STEMI. The most recent 2018 4th Universal Definition of Myocardial Infarction lays out clearly what an AMI is, and what can be called a STEMI.
 
-![](https://cdn-images-1.medium.com/max/1024/1*8NJSL_CXDZJ7zDIbUOXGSw.png)
+![](/images/medium/1_8NJSL_CXDZJ7zDIbUOXGSw.webp)
 ***Fig.2 AMI Definition***
 
 An AMI is **evidence of myocardial injury (rising biomarker) + evidence of myocardial ischemia (symptoms or ECG or imaging abnormality). (Fig.2)**
 
 And to diagnose STEMI, you have to meet the STEMI criteria. (**Fig.3**)
 
-![](https://cdn-images-1.medium.com/max/1024/1*Sp7uErs0kp0vKimzbzqcRQ.png)
+![](/images/medium/1_Sp7uErs0kp0vKimzbzqcRQ.webp)
 ***Fig.3 STEMI criteria***
 
 I have to stress this again and again: STE in V2/V3 is defined differently from the other leads. For V2/V3 you have to factor in sex/age together.
@@ -64,7 +64,7 @@ The masters Ken Grauer and Smith have stressed the ECG morphology of V2 or V3 ma
 
 In a post I wrote before this one, I went into more detail on how to diagnose Post.OMI[^2]. In short: **STDmaxV1–4(+) → points straight to a Post. wall MI until ruled out (in plain words: if there's STD in the precordial leads and the maximal STD is in one of V1-V4, consider a posterior MI).**
 
-![](https://cdn-images-1.medium.com/max/1024/0*M00QyDT0XGK9XLe0)
+![](/images/medium/0_M00QyDT0XGK9XLe0.webp)
 ***Fig.4 Downsloping STD vs. Shelf-like STD***
 
 ### Back to Case
@@ -75,14 +75,14 @@ Also, aVL had TWI and the ST segments in III/aVF were straight. Amal Mattu, when
 
 Also, the T waves in Lead II/III, relative to the QRS in front of them, count as HATW.
 
-[![](https://cdn-images-1.medium.com/max/1024/1*dosDfg6w8Pe-zSs6HSgmqg.png)](https://ecgwaves.com/topic/ecg-st-elevation-segment-ischemia-myocardial-infarction-stemi/)
+[![](/images/medium/1_dosDfg6w8Pe-zSs6HSgmqg.webp)](https://ecgwaves.com/topic/ecg-st-elevation-segment-ischemia-myocardial-infarction-stemi/)
 ***Fig.5 ischemic pattern STE***
 
 After that handoff, having seen this ECG, I thought all these leads showed ischemic ECG morphology, so I strongly suspected the patient had an OMI. But because the ECG didn't meet any STEMI criteria, it's very easy for this to get missed.
 
 At the bedside, the patient said he still had chest pain. So I immediately got another ECG (**Fig.6**)
 
-![](https://cdn-images-1.medium.com/max/1024/1*_H64Mr6oD-FGA0tX2tJUuA.png)
+![](/images/medium/1__H64Mr6oD-FGA0tX2tJUuA.webp)
 *Fig.6*
 
 Fig.6 is the patient's second ECG, about three hours after arrival. The downsloping STD pattern in V2 or V3 was no longer there. But in Lead III/aVF the ST segments were still straight and the T waves were still HATW. The T wave in aVL was TWI. This ECG still didn't meet STEMI criteria, but it was absolutely an OMI.
@@ -91,14 +91,14 @@ To get more evidence of myocardial ischemia, I pulled out the Lumify again.
 
 The PSAX papillary muscle view shows the lateral wall and inferior wall both moving poorly (**RWMA+**). (Fig.7)
 
-![](https://cdn-images-1.medium.com/max/1024/1*kD6wqCZCbFd224Z2bUTpRQ.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_kD6wqCZCbFd224Z2bUTpRQ-poster.jpg" aria-label=""><source src="/images/medium/1_kD6wqCZCbFd224Z2bUTpRQ.mp4" type="video/mp4"></video></figure>
 ***Fig.7 PSAX papillary muscle view***
 
 This echo finding matched the ischemic territory on the ECG.
 
 The patient had also had a Chest CTA on the previous shift to rule out aortic dissection.
 
-![](https://cdn-images-1.medium.com/max/1024/1*OIBfO5McKY5eL0_NMCw_5A.png)
+![](/images/medium/1_OIBfO5McKY5eL0_NMCw_5A.webp)
 ***Fig.8 Static image of Chest CTA***
 
 In Fig.8 you can see on the Chest CTA that the lateral wall of the LV, toward the more lateral part, has hypoperfusion (this is the **myocardial perfusion defect** we'll talk about below) (the darker red area). This also matched the ECG and echo findings.
@@ -114,7 +114,7 @@ If you're interested, take a look at this paper[^3]. Here's my summary of a few 
 5. A myocardial perfusion defect without myocardial ischemia is mainly due to cardiac motion artifacts (**false positive**), and the frequency of this is only 15–20%, which isn't high.
 6. Also, in ACS cases, because the AMI reduces regional myocardial wall motion, it also reduces cardiac motion artifacts and makes the myocardial border clearer (**that's a bad thing and a good thing XD**)
 
-![](https://cdn-images-1.medium.com/max/1024/1*cgC7WdAdHJmtorghnSo80g.png)
+![](/images/medium/1_cgC7WdAdHJmtorghnSo80g.webp)
 ***Fig.9***
 
 According to Fig.9, **a myocardial perfusion defect (MPD) seen on non-gated-ECG contrast-enhanced CT has decent sensitivity and specificity for diagnosing ACS**.
@@ -135,7 +135,7 @@ On top of that, the patient still had ongoing chest pain after medical therapy. 
 
 If we couldn't recognize that this patient had an OMI, then under the current STEMI/NSTEMI paradigm he should have been classified as NSTEMI (TnI⬆︎ plus evidence of myocardial ischemia). As I just said, refractory ischemic chest pain counts as a very high risk feature, so this patient should be scheduled for PCI within 2 hours to see whether the vessel is occluded (see Fig.10).
 
-![](https://cdn-images-1.medium.com/max/1024/0*VWSqJBY7zSpOJffz)
+![](/images/medium/0_VWSqJBY7zSpOJffz.webp)
 ***Fig.10***
 
 Fig.10 is probably the figure that shows up most often on my ECG blog XD
@@ -162,7 +162,7 @@ Although we know that the proportion of NSTEMI patients with a very high risk fe
 
 #### **But don't get discouraged; there will always be times you manage to help the patient**
 
-![](https://cdn-images-1.medium.com/max/1024/1*xDoqNXGiiR85-4HbXo9w3g.png)
+![](/images/medium/1_xDoqNXGiiR85-4HbXo9w3g.webp)
 ***Fig.11***
 
 #### Back to this case~~
@@ -171,7 +171,7 @@ So I called the CV man myself and told them my concerns. The CV man agreed with 
 
 I typed the last words into the electronic chart, and right after that the patient went up for cath.
 
-![](https://cdn-images-1.medium.com/max/1024/0*9gbBZMC0EcdSE4pi)
+![](/images/medium/0_9gbBZMC0EcdSE4pi.webp)
 
 #### CAG report: **LCx total occlusion**➡CAD with TVD s/p CAG, with LAD 50–60% occlusion, RCA: CTO, LCX total occlusion, DES\*1 over LCX
 
@@ -189,7 +189,7 @@ I typed the last words into the electronic chart, and right after that the patie
 Additional references: [^1] [^2] [^3] [^4] [^5]
 
 [^1]: Dr. Smith’s ECG Blog: Any ST depression in V2 and V3 is posterior OMI until proven otherwise, especially if downsloping — [link](http://hqmeded-ecg.blogspot.com/2021/11/any-st-depression-in-v2-and-v3-is.html)
-[^2]: [This is a STEMI, do you believe it? A case from my night shift yesterday: a 50-year-old man who used to catch glass eels.] (in Chinese) | by Tsao Jian-hsiung | Medium — [link](https://medium.com/@agoodbear/%E9%80%99%E6%98%AFstemi-%E4%BD%A0%E7%9B%B8%E4%BF%A1%E5%97%8E-3485bf8aafc3)
+[^2]: [This is a STEMI, do you believe it? A case from my night shift yesterday: a 50-year-old man who used to catch glass eels.] (in Chinese) | by Tsao Jian-hsiung | Medium — [link](/en/post/medium-3485bf8aafc3/)
 [^3]: Yoshihara, S. (2022). Acute coronary syndrome on non-electrocardiogram-gated contrast-enhanced computed tomography. World Journal of Radiology, 14(2), 30–46. [https://doi.org/10.4329/wjr.v14.i2.30](https://doi.org/10.4329/wjr.v14.i2.30)
 [^4]: Collet, J.-P., Thiele, H., Barbato, E., Barthélémy, O., Bauersachs, J., Bhatt, D. L., Dendale, P., Dorobantu, M., Edvardsen, T., Folliguet, T., Gale, C. P., Gilard, M., Jobs, A., Jüni, P., Lambrinou, E., Lewis, B. S., Mehilli, J., Meliga, E., Merkely, B., … ESC Scientific Document Group. (2021). 2020 ESC Guidelines for the management of acute coronary syndromes in patients presenting without persistent ST-segment elevation. European Heart Journal, 42(14), 1289–1367. [https://doi.org/10.1093/eurheartj/ehaa575](https://doi.org/10.1093/eurheartj/ehaa575)
 [^5]: Dr. Smith’s ECG Blog: 50 year old with acute chest pain, with ‘normal’ ECG and falling troponin — [link](http://hqmeded-ecg.blogspot.com/2023/04/50-year-old-with-acute-chest-pain-with.html)

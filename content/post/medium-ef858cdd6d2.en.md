@@ -3,7 +3,7 @@ title: "Still Hyperkalemic?"
 date: "2021-06-10"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png"
+thumbnail: "/images/medium/1_DlM6nIyfrxr_OUR18MpoTA_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -19,14 +19,14 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%82%84%E5%9C%A8%E9%AB%98%E8%A1%8
 translated_from: "medium-ef858cdd6d2.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png)
+![](/images/medium/1_DlM6nIyfrxr_OUR18MpoTA_2x.webp)
 *Fig 1: K:6.1*
 
 A dialysis patient came to the ED short of breath. The X-ray looked like pulmonary edema — probably fluid overloaded. Fig 1 is the ECG on arrival. Potassium: 6.1
 
 When the patient was handed over to me, it was right when the second cardiac enzymes and potassium were due to be followed up.
 
-![](https://cdn-images-1.medium.com/max/1024/1*pEVYam7Maa6UqptWqzpH2g@2x.png)
+![](/images/medium/1_pEVYam7Maa6UqptWqzpH2g_2x.webp)
 *Fig 2*
 
 Fig 2 is the ECG done at the time of the second cardiac enzyme draw.
@@ -52,5 +52,5 @@ It can look like the ST elevation of an MI, or like the ST depression of subendo
 3. A slow heart rate with a conduction block should also make you think of it (**P waves flattening**)
 4. If you see Clumped beats, and they look bizarre with no P, think of it too (see the flowchart in Fig 3)
 
-![](https://cdn-images-1.medium.com/max/1024/1*qMtmievwzzgbZ1RkxvAqag.png)
+![](/images/medium/1_qMtmievwzzgbZ1RkxvAqag.webp)
 *Fig 3*

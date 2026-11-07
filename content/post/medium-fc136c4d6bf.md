@@ -1,10 +1,12 @@
 ---
 title: "有推薦哪些實用的ECG網站或資源呢?"
 date: "2022-05-11"
+description: "整理這幾年自學ECG用過的工具書、網站、Twitter人物與課程，以及哪幾個最值得推薦。"
 draft: false
 featured: true
-toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*SrTIfwjCtaRlYzolijoMMA.png"
+toc: true
+hide_hero: true
+thumbnail: "/images/medium/1_SrTIfwjCtaRlYzolijoMMA.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -15,8 +17,14 @@ tags:
 medium_id: "fc136c4d6bf"
 medium_url: "https://medium.com/@agoodbear/%E6%9C%89%E6%8E%A8%E8%96%A6%E5%93%AA%E4%BA%9B%E5%AF%A6%E7%94%A8%E7%9A%84ecg%E7%B6%B2%E7%AB%99%E6%88%96%E8%B3%87%E6%BA%90%E5%91%A2-fc136c4d6bf"
 canonicalURL: "https://medium.com/@agoodbear/%E6%9C%89%E6%8E%A8%E8%96%A6%E5%93%AA%E4%BA%9B%E5%AF%A6%E7%94%A8%E7%9A%84ecg%E7%B6%B2%E7%AB%99%E6%88%96%E8%B3%87%E6%BA%90%E5%91%A2-fc136c4d6bf"
+# 🗂 改稿版次
+#   重新排版｜2026-11-07｜比照ecg-post-22：卡片風、圖號（正文字句不動）→⏳ 待確認
+#   第 0 版｜自 Medium 匯入
 ---
-### 前言廢話
+
+{{< article-cards >}}
+
+## ❤️前言廢話
 
 以前在醫院的老師在臨床指導我的時候，常常會說，在醫院裡面有兩個科別的醫師要很會看ECG。首先當然是心臟科，第二個科別是急診科醫師。
 
@@ -48,7 +56,7 @@ ECG就會是我們很好的工具。因為隨處可做(君不見現在COVID造�
 
 廢話結束~~~來看看我介紹一些我在學習ECG之路有哪些不錯的工具書/網站吧~~
 
-### 實用工具書:
+## ❤️實用工具書
 
 [Electrocardiography in Emergency, Acute, and Critical Care](https://www.amazon.com/-/zh_TW/MD-FACEP-Amal-Mattu/dp/1732748608/ref=sr_1_2?crid=3HQ2J9CDYRHEL&keywords=amal+mattu&qid=1652239315&sprefix=amal+matt%2Caps%2C355&sr=8-2)
 
@@ -72,7 +80,7 @@ Ken Grauer所寫的ECG工具書，我也是買Kindle版本，可以查閱。很�
 
 我自己是把PDF檔案拿去給影印店，幫我印成一本書。茶餘飯後，翻翻個幾頁閱讀，句句都是重點。強烈推薦這本書。
 
-### 推薦網站:
+## ❤️推薦網站
 
 [ECG Weekly - Learn ECGs One Week at a Time](https://ecgweekly.com/)
 
@@ -94,7 +102,7 @@ Smith’s ECG Blog裡面講的內容，主要會以辨識OMI為主，當然偶�
 
 大約2~3天就會出產一篇。我自己習慣閱讀方式是網站左上角有一個search，如果想看看某個Topic的內容，Dr.Smith是怎麼講解的，就把關鍵字打在search裡面，比如Brugada syndrome，之後就會跳一排，文章中有被Tag到Brugada syndrome的文章。之後再慢慢閱讀。
 
-![](https://cdn-images-1.medium.com/max/1024/1*SrTIfwjCtaRlYzolijoMMA.png)
+![Fig.1 Dr. Smith的ECG Blog搜尋功能](/images/medium/1_SrTIfwjCtaRlYzolijoMMA.webp "Fig.1 Dr. Smith的ECG Blog搜尋功能")
 
 [ECG Interpretation](https://ecg-interpretation.blogspot.com/)
 
@@ -144,19 +152,19 @@ LITFL的ECG內容是由澳洲的急診醫師Robert Buttner與土耳其的一位�
 
 再來是Amal mattu除了在ECG weekly有每個禮拜上課以外，在**EMCast**也有每個月的他的專欄。[專欄網址](https://journals.lww.com/em-news/pages/podcastepisodes.aspx?podcastid=6)在這裡。點進去，可以看到下方的圖，內容以Podcast方式呈現。不過這裡的專欄就不限於ECG，各式各樣的Topic都有可能，畢竟Amal mattu也是一位急診科醫師啊。
 
-![](https://cdn-images-1.medium.com/max/1024/1*VgQCfvdHAn89OJ65dRiTvg.png)
+![Fig.2 EMCast專欄頁面](/images/medium/1_VgQCfvdHAn89OJ65dRiTvg.webp "Fig.2 EMCast專欄頁面")
 
 [ECG STAT!](https://sites.google.com/view/ecg-stat/ecg-stat-home)
 
 最後介紹**ECG STAT**，這是ECG weekly的附屬網站。在一開始出來的時候，我就把網站位址存下來了，可是之後網站位置被撤掉，無法點入。
 
-![](https://cdn-images-1.medium.com/max/1024/1*as1WFK72814EOqR_d70MnA.png)
+![Fig.3 ECG STAT網站頁面](/images/medium/1_as1WFK72814EOqR_d70MnA.webp "Fig.3 ECG STAT網站頁面")
 
 但是使用[這個網址](https://sites.google.com/view/ecg-stat/ecg-stat-home)還是可以進入XD(快收藏啊!!!!!)
 
 這個附屬網站，把Amal mattu講授的課程，很多DDx都分門別類出來。根本是一個ECG小字典一樣。個人認為非常實用。
 
-### 推薦Twitter人物:
+## ❤️推薦Twitter人物
 
 我會使用Twitter追蹤特定人物，而這些人也是和我一樣對於ECG有熱情的人，會上傳ECG讓大家判讀、討論。以下提供一些我有追蹤的人物，有點多，所以不會每個都填寫上來。
 
@@ -164,7 +172,7 @@ LITFL的ECG內容是由澳洲的急診醫師Robert Buttner與土耳其的一位�
 
 或者在Twitter的搜尋欄打上#ECG，那麼就會出現當天有Tag ECG的文章出來。相信我，絕對看不完~~~~
 
-![](https://cdn-images-1.medium.com/max/1024/1*gE3WpGevxjm6KqMSBuTW2Q.png)
+![Fig.4 Twitter搜尋#ECG的結果](/images/medium/1_gE3WpGevxjm6KqMSBuTW2Q.webp "Fig.4 Twitter搜尋#ECG的結果")
 
 所以這時候就會有一個問題，資訊太多反而不會想看XD
 
@@ -174,13 +182,13 @@ LITFL的ECG內容是由澳洲的急診醫師Robert Buttner與土耳其的一位�
 
 用**Tag**有興趣的文章，是在**Twitter裡面最基本的起手式**。
 
-![](https://cdn-images-1.medium.com/max/1024/1*VVYUacGqyXU41ehdx9DwIw@2x.png)
+![Fig.5 Twitter用Tag搜尋STEMI or ECG](/images/medium/1_VVYUacGqyXU41ehdx9DwIw_2x.webp "Fig.5 Twitter用Tag搜尋STEMI or ECG")
 
 我們可以用STEMI『or』ECG →如此就可以搜尋內容有STEMI or ECG的文章(**可能會非常多**)
 
 此外再加上進階搜尋
 
-![](https://cdn-images-1.medium.com/max/1024/1*8WBDWYMofGZiq8wtSOHxYA@2x.png)
+![Fig.6 Twitter進階搜尋：設定回應與轉推次數](/images/medium/1_8WBDWYMofGZiq8wtSOHxYA_2x.webp "Fig.6 Twitter進階搜尋：設定回應與轉推次數")
 
 進階搜尋通常是含金量非常關鍵的步驟。因為只有好文章，才會被轉推、才會被回應、才會被點讚。
 
@@ -196,9 +204,9 @@ LITFL的ECG內容是由澳洲的急診醫師Robert Buttner與土耳其的一位�
 
 當然也可以使用TweetDeck來協助幫忙過濾。以下是**我的TweetDeck畫面**，我自己設好了關鍵字，接著把進階搜尋的過濾器填上數字，就會自己幫忙過濾出比較乾淨、含金量較高的文章了。這部分，我在前年北區急診住院醫師聯合訓練的時候有上過課。有興趣的人，下次再寫一篇文章講講。
 
-![](https://cdn-images-1.medium.com/max/1024/1*AcG6HYvAMuKp-ZMYGZiMPQ@2x.png)
+![Fig.7 我的TweetDeck畫面](/images/medium/1_AcG6HYvAMuKp-ZMYGZiMPQ_2x.webp "Fig.7 我的TweetDeck畫面")
 
-### 推薦課程:
+## ❤️推薦課程
 
 [Home | emc2](https://conferences1.wixsite.com/emc2)
 
@@ -210,7 +218,7 @@ LITFL的ECG內容是由澳洲的急診醫師Robert Buttner與土耳其的一位�
 
 EM:RAP每年都會有專題會議，去年的專題會議是關於Emergency Cardiology
 
-![](https://cdn-images-1.medium.com/max/1024/1*-K4aVUliu0Pq3XSP9OkrFw@2x.png)
+![Fig.8 EM:RAP Conferences：Emergency Cardiology](/images/medium/1_-K4aVUliu0Pq3XSP9OkrFw_2x.webp "Fig.8 EM:RAP Conferences：Emergency Cardiology")
 
 我也覺得非常值得上課。上課的內容都和急診心臟醫學有關。對於我們這些在急診走江湖的人，真的是非常有幫助。課程List如下面影片:
 
@@ -218,17 +226,17 @@ EM:RAP每年都會有專題會議，去年的專題會議是關於Emergency Card
 
 一樣，唯一的缺點就是貴。要加入EM:RAP的會員，才能看到。有點忘了實際價格，大概是10(ㄨˇㄅㄞˇ)美元吧(**和家裡的管錢總管，一定要說這個數字😅)**
 
-### 含金量爆棚推薦:⭐️⭐️⭐️⭐️⭐️
+## ❤️含金量爆棚推薦⭐️⭐️⭐️⭐️⭐️
 
-#### **書籍:**
+### ❤️書籍
 
 [**Smith的The ECG in acute MI**](https://drive.google.com/file/d/1dqDBvDPCwPl6nxfvQVZl-xPwNrzPDdsK/view)
 
-#### **網站:**
+### ❤️網站
 
 **The ECG weekly和Smith’s ECG Blog**
 
-#### **Twitter人物:**
+### ❤️Twitter人物
 
 [@AslangerE](https://twitter.com/AslangerE)
 
@@ -236,11 +244,11 @@ EM:RAP每年都會有專題會議，去年的專題會議是關於Emergency Card
 
 [@EM\_RESUS](https://twitter.com/EM_RESUS)
 
-#### **推薦課程:**
+### ❤️推薦課程
 
 EMC2與Key Topics in Emergency Cardiology都非常推薦
 
-### 最後廢言:
+## 最後廢言
 
 上那麼多ECG課，主要還是充實自己的ECG知識，一切都還是用在病患身上。讓病患能夠獲得即時的治療。
 

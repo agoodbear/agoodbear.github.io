@@ -1,9 +1,11 @@
 ---
 title: "胸痛，是Wellen嗎?"
 date: "2022-03-01"
+description: "70歲男性胸痛三天，ECG在V1~V6與下壁導程有TWI。這是Wellens' wave嗎？從RV strain的ECG表現與TWI形態區分ACS和PE，最後Chest CTA看到雙側肺血管filling defect。"
 draft: false
-toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*yRFGZRBFf8mrOR-6YJog9Q@2x.png"
+toc: true
+hide_hero: true
+thumbnail: "/images/medium/1_yRFGZRBFf8mrOR-6YJog9Q_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -16,8 +18,15 @@ tags:
 medium_id: "cec16f0ae2f8"
 medium_url: "https://medium.com/@agoodbear/%E8%83%B8%E7%97%9B-%E6%98%AFwellen%E5%97%8E-cec16f0ae2f8"
 canonicalURL: "https://medium.com/@agoodbear/%E8%83%B8%E7%97%9B-%E6%98%AFwellen%E5%97%8E-cec16f0ae2f8"
+# 🗂 改稿版次
+#   重新排版｜2026-11-07｜比照ecg-post-22：卡片風、圖號、學習重點、參考資料收合（正文字句不動）→⏳ 待確認
+#   第 0 版｜自 Medium 匯入
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*yRFGZRBFf8mrOR-6YJog9Q@2x.png)
+{{< article-cards >}}
+
+## ❤️Case：70歲男性，胸痛三天
+
+![Fig.1 本案的ECG](/images/medium/1_yRFGZRBFf8mrOR-6YJog9Q_2x.webp "Fig.1 本案的ECG")
 
 70歲男性，胸痛三天。晚上痛到睡不著覺。過去病史有HCC做過血管動脈栓塞，目前仍在治療中。
 
@@ -31,7 +40,7 @@ PR interval正常，V1~V3都有rSR’ pattern，QRS < 3小格，為ICRBBB。
 
 比較明顯異常的是在precordial leads有TWI(V1~V6)、此外inf.leads也有TWI。Q wave in III。
 
-### ECG解讀完畢。讓我們來看看幾個問題~~~
+## ❤️ECG解讀完畢。讓我們來看看幾個問題~~~
 
 1️⃣ ➡︎Precordial leads的TWI是Wellen’s wave嗎?
 
@@ -51,10 +60,9 @@ V1~V6的TWI是不是Wellen’s wave?要先知道什麼是Wellen’s wave，我�
 
 那麼為什麼會有這兩種TWI出現呢?
 
-[![](https://cdn-images-1.medium.com/max/1024/1*imoeW1K2zblX9E2-ff6Wrw@2x.png)](http://hqmeded-ecg.blogspot.com/p/teaching-images.html)
-<strong><em>Fig.1</em></strong>
+[![Fig.2 ACO與reperfusion後的ECG變化](/images/medium/1_imoeW1K2zblX9E2-ff6Wrw_2x.webp "Fig.2 ACO與reperfusion後的ECG變化")](http://hqmeded-ecg.blogspot.com/p/teaching-images.html)
 
-首先，我們來看看<strong>Fig.1</strong>。這張圖<strong>上方</strong>講的是ACO(Acute coronary occlusion)會有哪些ECG變化。<strong>下方</strong>講的是在infarction之前出現reperfusion，之後會有哪些典型的ECG變化。這個之後講。
+首先，我們來看看<strong>Fig.2</strong>。這張圖<strong>上方</strong>講的是ACO(Acute coronary occlusion)會有哪些ECG變化。<strong>下方</strong>講的是在infarction之前出現reperfusion，之後會有哪些典型的ECG變化。這個之後講。
 
 那麼哪些狀況會導致reperfusion呢?包括spontaneous reperfusion(自己通了)、打了rTPA、或者做了PCI後通了。
 
@@ -64,10 +72,9 @@ V1~V6的TWI是不是Wellen’s wave?要先知道什麼是Wellen’s wave，我�
 
 > <strong>Tips:血管阻塞是動態的，所以有可能會有spontaneous reperfusion出現</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*GAsTylENrLZRlFheGIhZgA@2x.png)
-<strong><em>Fig.2</em></strong>
+![Fig.3 Wellens’ syndrome：reperfusion T wave的Pattern A與B](/images/medium/1_GAsTylENrLZRlFheGIhZgA_2x.webp "Fig.3 Wellens’ syndrome：reperfusion T wave的Pattern A與B")
 
-那我們開始來講reperfusion之後的典型的ECG change包括Fig.2的Pattern A與Pattern B。
+那我們開始來講reperfusion之後的典型的ECG change包括Fig.3的Pattern A與Pattern B。
 
 Pattern A叫做terminal TWI也就是biphasic TWI，而Pattern B為deeply TWI。A、B都是reperfusion T wave。
 
@@ -87,7 +94,7 @@ Wellens’ syndrome指的是血管有阻塞在infarction『<strong>之前</stron
 
 這定義中有幾個<strong>診斷</strong>Wellens’ syndrome<strong>的重點</strong> →<strong>ECG必須是症狀緩解時做的，在precordial leads不能有Q wave且要preserved R wave progression</strong>。這些要符合才能說是Wellen’s syndrome。
 
-<strong>所以並不是看到precordial leads出現TWI就是</strong>Wellens’ syndrome<strong>。</strong>
+<mark><strong>所以並不是看到precordial leads出現TWI就是</strong>Wellens’ syndrome<strong>。</strong></mark>
 
 所以這張ECG是在病患不舒服下做的。雖然有出現precordial leads TWI，但是並不能稱作是Wellens’ syndrome。
 
@@ -103,10 +110,9 @@ Smith ECG Blog裡面有說到，大部分的TWI是non-specific[^6]。
 2. RAD
 3. ST changes(特別是rightward leads有STE) →Rightward leads指的是V1/V2/aVR/III
 
-這邊先再多講第一點的Tall RV1的DDx(<strong>Fig.3</strong>)
+這邊先再多講第一點的Tall RV1的DDx(<strong>Fig.4</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*IRz_sow2yItXh-zg96e5Xg@2x.png)
-<strong><em>Fig.3</em></strong>
+![Fig.4 Tall R wave in V1的DDx](/images/medium/1_IRz_sow2yItXh-zg96e5Xg_2x.webp "Fig.4 Tall R wave in V1的DDx")
 
 我把它分為四個部分來記憶。記憶比較常見的就足以打怪了啦。
 
@@ -116,33 +122,31 @@ Smith ECG Blog裡面有說到，大部分的TWI是non-specific[^6]。
 
 {{< tweet-embed "https://twitter.com/paetalehn/status/1462176550611087360" >}}
 
-這邊要提另外一個重點 →<strong>ECG可以辨識出RV strain，但無法分辨出RV strain的原因</strong>➡可能原因是PE、asthma/COPD、hypoxic vasoconstriction from pneumonia，pulmonary HTN。
+這邊要提另外一個重點 →<mark><strong>ECG可以辨識出RV strain，但無法分辨出RV strain的原因</strong></mark>➡可能原因是PE、asthma/COPD、hypoxic vasoconstriction from pneumonia，pulmonary HTN。
 
 RV strain指的是RV被拉緊、撐開的狀態。所以看到RV strain ECG pattern，是要想到是不是肺血管出現問題?阻塞了或者有肺高壓，進而引起RV strain。
 
 所以這個個案看到有RAD、R’t precordial leads/III/aVF有TWI。的確必須考慮到是否有RV strain的狀況。
 
-#### 如果光看ECG，看到有TWI in precordial leads，那麼我們是否可以透過ECG morphology來區分到底是ACS(Wellen)或是PE呢?
+## ❤️如果光看ECG，看到有TWI in precordial leads，那麼我們是否可以透過ECG morphology來區分到底是ACS(Wellen)或是PE呢?
 
 有幾項研究的重要結果可以參考。
 
-第一篇是Kosuge et al在2007年發表的文章[^7]，這篇文章有一個<strong>重要的結論是如果診斷只剩下ACS與PE。那麼ECG在precordial leads出現TWI且同時合併III/V1有TWI，那麼需要高度考慮這張ECG是PE。</strong>
+第一篇是Kosuge et al在2007年發表的文章[^7]，這篇文章有一個<mark><strong>重要的結論是如果診斷只剩下ACS與PE。那麼ECG在precordial leads出現TWI且同時合併III/V1有TWI，那麼需要高度考慮這張ECG是PE。</strong></mark>
 
-![](https://cdn-images-1.medium.com/max/1024/1*BYVb3J2GMmP5zyhXzwCY7w.png)
-<strong><em>Fig.4</em></strong>
+![Fig.5 Kosuge 2007：III與V1同時TWI的敏感度與特異度](/images/medium/1_BYVb3J2GMmP5zyhXzwCY7w.webp "Fig.5 Kosuge 2007：III與V1同時TWI的敏感度與特異度")
 
-Fig.4描述描述的意思是如果<strong>同時出現III/V1</strong>，<strong>有88%的PE會如此，只有1%的ACS會這樣</strong>。
+Fig.5描述描述的意思是如果<strong>同時出現III/V1</strong>，<strong>有88%的PE會如此，只有1%的ACS會這樣</strong>。
 
 另外一篇也是相同Kosuge研究團隊所寫的文章[^8]，發表在2016。是運用看看precordial leads的Peak TWI是位於哪裡來做辨識。
 
 這篇的結論 →<strong>Peak negative TWI in V1~V2，如果用來診斷PE➡95% sensitivity、89% specificity、89% PPV、95% NPV。</strong>
 
-此外也可以來看TWI的長相，來辨識是否為ACS或PE(<strong>Fig.5</strong>)。
+此外也可以來看TWI的長相，來辨識是否為ACS或PE(<strong>Fig.6</strong>)。
 
-![](https://cdn-images-1.medium.com/max/1024/1*wzXCvV4VnZIKsN3nMZXAsQ@2x.png)
-<strong><em>Fig.5</em></strong>
+![Fig.6 PE與ACS-Wellen的V2 TWI比較](/images/medium/1_wzXCvV4VnZIKsN3nMZXAsQ_2x.webp "Fig.6 PE與ACS-Wellen的V2 TWI比較")
 
-我們來看看Fig.5上排5個case全都是PE、下排5個case全都是ACS-Wellen。
+我們來看看Fig.6上排5個case全都是PE、下排5個case全都是ACS-Wellen。
 
 到底有沒有差別?有!!!!!!
 
@@ -150,7 +154,7 @@ Fig.4描述描述的意思是如果<strong>同時出現III/V1</strong>，<strong
 
 PE的這種TWI，Dr.Smith在其Blog描述，叫做Domed TWI(圓頂形態的TWI)[^9]。
 
-當看到，但是很沒有感覺時，請把上面Fig.5印入腦簾。三不五時膜拜觀看。肯定會有feeling～～～～
+當看到，但是很沒有感覺時，請把上面Fig.6印入腦簾。三不五時膜拜觀看。肯定會有feeling～～～～
 
 所以假設運用上述三個辨識ACS vs. PE的TWI方法，套用在我遇到的這個case上，有幾項符合呢?
 
@@ -158,15 +162,15 @@ PE的這種TWI，Dr.Smith在其Blog描述，叫做Domed TWI(圓頂形態的TWI)[
 2. Peak TWI in V1~V2 →(X)(此Case的Peal TWI在V4~V5)
 3. TWI morphology →(O)(此Case的TWI為Domed TWI)
 
-#### 來吧~~~醜媳婦總要見公婆~~~
+## ❤️來吧~~~醜媳婦總要見公婆~~~
 
-![](https://cdn-images-1.medium.com/max/1024/1*d8u-_of3RPTLspg5OikCHQ.png)
+![Fig.7 ECG判讀紙條：寫下Suspect P.E](/images/medium/1_d8u-_of3RPTLspg5OikCHQ.webp "Fig.7 ECG判讀紙條：寫下Suspect P.E")
 
 看到ECG後，我直接寫下懷疑PE。也安排了Chest CTA。
 
-![](https://cdn-images-1.medium.com/max/1024/1*53i8kxza3-NUet-dDOlXhw.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_53i8kxza3-NUet-dDOlXhw-poster.jpg" aria-label="Fig.8 Chest CTA（動圖一）"><source src="/images/medium/1_53i8kxza3-NUet-dDOlXhw.mp4" type="video/mp4"></video><figcaption>Fig.8 Chest CTA（動圖一）</figcaption></figure>
 
-![](https://cdn-images-1.medium.com/max/1024/1*X2FsSQS5TSr_XLAo4V3K1A.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_X2FsSQS5TSr_XLAo4V3K1A-poster.jpg" aria-label="Fig.9 Chest CTA（動圖二）"><source src="/images/medium/1_X2FsSQS5TSr_XLAo4V3K1A.mp4" type="video/mp4"></video><figcaption>Fig.9 Chest CTA（動圖二）</figcaption></figure>
 
 Chest CTA看到雙側都有pulmonary vessel filling defect，RV也有filling defect。雙側都有Pulmonary infarction~~~~
 
@@ -184,7 +188,9 @@ Chest CTA看到雙側都有pulmonary vessel filling defect，RV也有filling def
 
 可以清楚看到RV整團mass lesion，在PLAX打開color flow，在RV也沒有明顯flow。在PSAX view可清楚看到RV dilate with D-sign。A4C view更是清楚看到RV塞滿東西。不管是tumor還是thrombus，基本上已經造成RV strain(RV明顯dilate)。進而看到ECG上面的變化。
 
-### Take-home points:
+<div class="ec-takeaways">
+
+## 學習重點
 
 1. <strong>什麼是Wellens’ syndrome?意義為何?</strong>
 2. <strong>RV strain有哪些ECG finding?</strong>
@@ -192,7 +198,29 @@ Chest CTA看到雙側都有pulmonary vessel filling defect，RV也有filling def
 4. <strong>ECG可以辨識出RV strain，但無法分辨出RV strain的原因</strong>
 5. <strong>我們是否可以透過ECG morphology來區分到底是ACS(Wellen)或是PE呢?</strong>
 
-參考資料補充：[^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8] [^9]
+</div>
+
+## 參考資料
+
+內文每個上標數字，滑過去（手機點一下）就看得到出處。整理起來是這9份：
+
+<div class="ec-stack ec-cols refs-sources">
+
+- **研究**
+  - Fefer P, et al. *Am J Cardiol* 2009（STEMI中臨床定義的spontaneous reperfusion與預後的關係）
+  - Rhinehardt J, et al. *Am J Emerg Med* 2002（Wellens’ syndrome的ECG表現）
+  - Kosuge M, et al. *Am J Cardiol* 2007（以negative T waves區分急性肺栓塞與急性冠心症）
+  - Kosuge M, et al. *J Am Coll Cardiol* 2016（區分急性肺栓塞與急性冠心症的簡單ECG標準）
+- **部落格**
+  - Dr. Smith’s ECG Blog（2020-12，ST depression maximal in V1-V4，angio為三條血管病變）
+  - Dr. Smith’s ECG Blog（2021-05，30多歲男性胸痛超過12小時）
+  - Dr. Smith’s ECG Blog（2014-07，有de Winter’s waves時LAD真的完全阻塞嗎）
+  - Dr. Smith’s ECG Blog（2013-11，Wellens’ syndrome為何需要連續12導程ST segment監測）
+  - Dr. Smith’s ECG Blog（2020-02，Are these Wellens’ waves?）
+
+</div>
+
+<div class="refs-slot"></div>
 
 [^1]: Fefer, P., Hod, H., Hammerman, H., Boyko, V., Behar, S., Matetzky, S., & Acute Coronary Syndrome Israeli Survey (ACSIS) 2006 Study Group. (2009). Relation of clinically defined spontaneous reperfusion to outcome in ST-elevation myocardial infarction. *The American Journal of Cardiology*, *103*(2), 149–153. [https://doi.org/10.1016/j.amjcard.2008.08.050](https://doi.org/10.1016/j.amjcard.2008.08.050)
 [^2]: Dr. Smith’s ECG Blog: ST Depression Maximal in V1-V4 and Angio shows 3 Vessel Disease. Is it posterior? Which is the culprit? — [link](https://hqmeded-ecg.blogspot.com/2020/12/st-depression-maximal-in-v1-v4-and.html)

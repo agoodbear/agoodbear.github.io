@@ -1,9 +1,11 @@
 ---
 title: "IHCA →肺栓塞還是其他問題?"
 date: "2021-10-31"
+description: "85歲女性有癌症病史，到院時喘、低血壓、意識模糊，ECG有newly RBBB與V2~V6的STD。先想肺栓塞，最後CAG顯示LCx critical stenosis。文中談RBBB下的posterior OMI、心跳過快時的aVR STE與reperfusion的T wave。"
 draft: false
-toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*f2GmaCa9hR-VLoQKEGX0vw@2x.png"
+toc: true
+hide_hero: true
+thumbnail: "/images/medium/1_f2GmaCa9hR-VLoQKEGX0vw_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -17,9 +19,16 @@ tags:
 medium_id: "d266ed8a1693"
 medium_url: "https://medium.com/@agoodbear/ihca-%E8%82%BA%E6%A0%93%E5%A1%9E%E9%82%84%E6%98%AF%E5%85%B6%E4%BB%96%E5%95%8F%E9%A1%8C-d266ed8a1693"
 canonicalURL: "https://medium.com/@agoodbear/ihca-%E8%82%BA%E6%A0%93%E5%A1%9E%E9%82%84%E6%98%AF%E5%85%B6%E4%BB%96%E5%95%8F%E9%A1%8C-d266ed8a1693"
+# 🗂 改稿版次
+#   重新排版｜2026-11-07｜比照ecg-post-22：卡片風、圖號、學習重點、參考資料收合（正文字句不動）→⏳ 待確認
+#   第 0 版｜自 Medium 匯入
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*f2GmaCa9hR-VLoQKEGX0vw@2x.png)
-<strong><em>ER arrival</em></strong>
+
+{{< article-cards >}}
+
+## ❤️Case：85歲女性到院喘、低血壓
+
+![Fig.1 到院ECG](/images/medium/1_f2GmaCa9hR-VLoQKEGX0vw_2x.webp "Fig.1 到院ECG")
 
 來看看一位有趣的個案。
 
@@ -39,44 +48,41 @@ Newly RBBB(之前ECG沒有)、1st AVB
 
 V1不太清楚是STE還是STD。<strong>如果是STE:</strong>
 
-#### 那麼<strong>R’t precordial leads STE(指V1、V2、aVR、±III) + RAD</strong>需要特別考慮<strong>Hyper-K、PE、Na channel blocker toxicity這三個DDx</strong>
+### ❤️那麼<strong>R’t precordial leads STE(指V1、V2、aVR、±III) + RAD</strong>需要特別考慮<strong>Hyper-K、PE、Na channel blocker toxicity這三個DDx</strong>
 
-#### ⭐️Case繼續
+## ❤️Case繼續
 
 後續病患因為呼吸不好、血壓又低，已經快要collapse。
 
 檢查中，PE仍為首要需要排除的診斷。<strong>(臨床症狀、ECG:RAD、newly RBBB、POCUS:似乎見到有RV dilate但無D-sign)</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*Bf0nYFkHXhsipj1wc8kqXw@2x.png)
-<strong><em>Fig.1: 50分鐘後</em></strong>
+![Fig.2 50分鐘後的ECG](/images/medium/1_Bf0nYFkHXhsipj1wc8kqXw_2x.webp "Fig.2 50分鐘後的ECG")
 
-這張是50分鐘後的ECG<strong>(Fig.1)</strong>，幾乎沒有baseline不穩的干擾。
+這張是50分鐘後的ECG<strong>(Fig.2)</strong>，幾乎沒有baseline不穩的干擾。
 
 RAD、RBBB、STE over III、aVR、STD over V2~V6(Maximal at V3~V4)、I/aVL。這邊可以很確定在precordial leads的Maximal lead在V3~V4，而且是<strong>excessive discordant</strong>。
 
 在RBBB pattern中，常見在V1~V3有TWI與mild STD<strong>(如果有的話)</strong>，但是STD不超過1 mm。所以超過了1 mm代表了，有某個力量把STD往下拉[^2]。
 
-<strong>➡️什麼力量?Post.wall OMI(後壁血管阻塞)。</strong>
+<mark><strong>➡️什麼力量?Post.wall OMI(後壁血管阻塞)。</strong></mark>
 
 另外<strong>aVR STE + Diffuse leads STD</strong>的DDx非常多。
 
 有血管的問題，也有不是血管的問題。
 
-![](https://cdn-images-1.medium.com/max/1024/1*zL-rA_XVZ8v3YJCxUmd3rQ@2x.png)
-<strong><em>aVR STE的DDx</em></strong>
+![Fig.3 aVR STE的DDx](/images/medium/1_zL-rA_XVZ8v3YJCxUmd3rQ_2x.webp "Fig.3 aVR STE的DDx")
 
 總之看到aVR STE，就像看到了一個垃圾桶。很多診斷都在裡面。如果病患有ACS的症狀合併aVR STE的確要考慮，LM、TVD、Proximal LAD問題。
 
 但是有更多情況是沒有ACS症狀，只有光看到aVR STE，這時候千萬不要spinal reflex就說病患是上述血管問題。應該仔細想想可能的原因。
 
-另外要注意的是，在ESC 2020 NSTE-ACS guideline裡面有提到，<strong>Very High risk的Non-STEMI病患</strong>建議在<strong>2小時內</strong>做到<strong>Emergent PCI(Fig.2-左下表格)</strong>
+另外要注意的是，在ESC 2020 NSTE-ACS guideline裡面有提到，<strong>Very High risk的Non-STEMI病患</strong>建議在<strong>2小時內</strong>做到<strong>Emergent PCI(Fig.4-左下表格)</strong>
 
 表格中可以見到，除了我們熟悉的血行不穩、跳VT/Vf、ischemic related HF、refractory ischemic pain、cardiogenic shock，另外就是出現至少6個lead有STD > 1 mm + aVR STE也算是Very high risk病患。
 
 <strong>當然前提是這位病患是Non-STEMI病患才能用此表格!至於這位病患是不是，接著往下看~~~~</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/0*KHmmo3oONQAnq6M2)
-<strong><em>Fig.2</em></strong>
+![Fig.4 ESC 2020 NSTE-ACS guideline：Very high risk表格](/images/medium/0_KHmmo3oONQAnq6M2.webp "Fig.4 ESC 2020 NSTE-ACS guideline：Very high risk表格")
 
 CV man到現場on了PCPS來support生命徵象，以利後續檢查。PCPS中，病患整個collapse，開始了CPR。
 
@@ -84,18 +90,17 @@ CV man到現場on了PCPS來support生命徵象，以利後續檢查。PCPS中，
 
 - PE with collapse若給予積極CPR+<strong>立即rTPA(用50 mg push)</strong>→有研究顯示35%可以survival to discharge(<strong>MAPPET study</strong>)[^1]
 
-#### ⭐️Case再度繼續
+## ❤️Case再度繼續
 
 病患On上小型葉醫師(PCPS)後，ROSC，慢慢變穩。之後去做了Chest CTA，並沒有看到任何肺部血管阻塞。
 
 後續在急診的TnI報告出來約30 ng/ml。
 
-病患先上去加護病房。<strong>Fig.3</strong>為入加護病房後的ECG(大約4.5 hrs from ER)。
+病患先上去加護病房。<strong>Fig.5</strong>為入加護病房後的ECG(大約4.5 hrs from ER)。
 
 一樣可見到STD over V1~V6(Maximal at V3~V4)、RBBB，但是<strong>速度變慢了</strong>。
 
-![](https://cdn-images-1.medium.com/max/1024/1*ERJdAYJS484y8umvp3aOcA@2x.png)
-<strong><em>Fig.3</em></strong>
+![Fig.5 入加護病房後的ECG(約到院4.5小時)](/images/medium/1_ERJdAYJS484y8umvp3aOcA_2x.webp "Fig.5 入加護病房後的ECG(約到院4.5小時)")
 
 這邊有一個小小的重點。有看到上面aVR STE的DDx表格處，normal variant有SVT、AfRVR嗎?
 
@@ -115,10 +120,9 @@ CV man到現場on了PCPS來support生命徵象，以利後續檢查。PCPS中，
 
 [A man in his early sixties with palpitations](http://hqmeded-ecg.blogspot.com/2020/01/a-man-in-his-early-sixties-with.html)
 
-#### <strong>事實上Paper是寫Segment 4才是所謂的Post.wall(Fig.4)[^3]</strong>
+### ❤️事實上Paper是寫Segment 4才是所謂的Post.wall(Fig.6)[^3]
 
-![](https://cdn-images-1.medium.com/max/1024/1*lZyXYQNuMYtGVHAODdedZQ@2x.png)
-<strong><em>Fig.4</em></strong>
+![Fig.6 共識原文：segment 4改稱inferobasal，不再叫posterior](/images/medium/1_lZyXYQNuMYtGVHAODdedZQ_2x.webp "Fig.6 共識原文：segment 4改稱inferobasal，不再叫posterior")
 
 > <strong>Tips:</strong>如果H.R過快引起multiple leads STD+aVR →<strong>先降H.R</strong>(若H.R下降仍可見Maximal STD over V1~V4 →想Posterior OMI)
 
@@ -126,43 +130,42 @@ CV man到現場on了PCPS來support生命徵象，以利後續檢查。PCPS中，
 
 #### ⭐️Case繼續
 
-我們可以看到<strong>Fig.3</strong>，心跳已經慢下來了，其有maximal STD在V1~V4。所以不管如何，照Dr.Smith最新研究的文章。<strong>(近期會出在Journal of AHA)</strong>
+我們可以看到<strong>Fig.5</strong>，心跳已經慢下來了，其有maximal STD在V1~V4。所以不管如何，照Dr.Smith最新研究的文章。<strong>(近期會出在Journal of AHA)</strong>
 
 {{< tweet-embed "https://twitter.com/alialhajahmed/status/1454121666250936330" >}}
 
 不管如何一定要先想Posterior OMI，直到證明不是為止。這邊表示只要看到Maximal STD over V1~V4，不管amplitude多小。先猜Posterior OMI就對了(Highly specific)。
 
-病患4小時後的TnI飆到250 ng/ml(Large myocardial infarction)。之後在5小時後進入導管室去做PCI。CAG如下<strong>Fig.5，顯示了LCx critical stenosis與RCA CTO</strong>
+病患4小時後的TnI飆到250 ng/ml(Large myocardial infarction)。之後在5小時後進入導管室去做PCI。CAG如下<mark><strong>Fig.7，顯示了LCx critical stenosis與RCA CTO</strong></mark>
 
-![](https://cdn-images-1.medium.com/max/1024/0*IrcOc95F4_jb5f-e)
-<strong><em>Fig.5</em></strong>
+![Fig.7 CAG：LCx critical stenosis與RCA CTO](/images/medium/0_IrcOc95F4_jb5f-e.webp "Fig.7 CAG：LCx critical stenosis與RCA CTO")
 
 所以這個Case是因為LCx critical stenosis引起的large myocardial infarction導致collapse，並不是因為肺栓塞引起。
 
-我們來看一下PCI後的ECG(<strong>Fig.6</strong>)，就可以知道LCx確確實實就是culprit lesion並不是隨便說說的。
+我們來看一下PCI後的ECG(<strong>Fig.8</strong>)，就可以知道LCx確確實實就是culprit lesion並不是隨便說說的。
 
-![](https://cdn-images-1.medium.com/max/1024/1*cjpdpc0_PzZyGR5Y_g-mmw@2x.png)
-<strong><em>Fig.6</em></strong>
+![Fig.8 PCI後的ECG](/images/medium/1_cjpdpc0_PzZyGR5Y_g-mmw_2x.webp "Fig.8 PCI後的ECG")
 
 上面這張是Post-PCI的ECG。我們可以看到什麼 →T wave變大、Upright在precordial leads。
 
-首先我們要知道<strong>出現Reperfusion rhythm有兩種狀況</strong>:<strong>請看Fig.7下方reperfusion的ECG change</strong>
+首先我們要知道<strong>出現Reperfusion rhythm有兩種狀況</strong>:<strong>請看Fig.9下方reperfusion的ECG change</strong>
 
 1. 血管自己通了
 2. 別人幫忙通了(使用PCI or thrombolytics agents)
 
 正常Reperfusion rhythm會先出現Biphasic TWI之後變成Deeply TWI →還記得Wellen’s syndrome嗎?Wellen’s syndrome就是出現Reperfusion rhythm的ECG pattern。
 
-![](https://cdn-images-1.medium.com/max/1024/0*-46SeXBN7JFPXgXd)
-<strong><em>Fig.7</em></strong>
+![Fig.9 Reperfusion的ECG change](/images/medium/0_-46SeXBN7JFPXgXd.webp "Fig.9 Reperfusion的ECG change")
 
 > 那麼Posterior OMI出現Reperfusion rhythm會出現什麼狀況?
 
 在V1~V4會出現變大且Upright T wave(對應到Post.wall就是出現Deeply TWI這種reperfusion rhythm)。所以有看到V2~V4是不是出現超大T wave →這又叫做Posterior Wellen’s syndrome。
 
-<strong>這邊要注意，別和De-Winter’s T wave搞混了。可以</strong>[<strong>參考這篇</strong>](https://agoodbear.medium.com/%E9%80%99%E6%98%AFpost-wellen-syndrome%E9%82%84%E6%98%AFde-winter-391b08ca389f)<strong>，我寫的文章來做區分[^5]。</strong>
+<strong>這邊要注意，別和De-Winter’s T wave搞混了。可以</strong>[<strong>參考這篇</strong>](/post/medium-391b08ca389f/)<strong>，我寫的文章來做區分[^5]。</strong>
 
-#### ⭐️統整一下這篇重點:
+<div class="ec-takeaways">
+
+## 學習重點
 
 1. 在RBBB的morphology下要看是否有無ischemia →訣竅:不應有任何ST deviation(除了V1~V3可能會有mild STD與TWI)，且STD不應超過1 mm
 2. RBBB+Posterior OMI要如何診斷出來 →在V1~V4有excessive discordant STD(也就是超過1 mm的STD)，就要考慮
@@ -170,10 +173,29 @@ CV man到現場on了PCPS來support生命徵象，以利後續檢查。PCPS中，
 4. 若在Precordial leads看到multiple leads STD，分不清楚是否是subendocardial ischemia or Posterior OMI →可以做Bedside echo與Post.leads來協助區分。不過Post.leads有可能會有false-negative可能(也就是確實有Posterior OMI，但因為low voltage，導致Post.leads STE不明顯，所以被誤判為沒有)。
 5. 最後我仍然覺得，這個case，我實在很難在第一時間去區別這個Case到底是PE還是AMI。幸好，CV man強力支持PCPS，才有後續的檢查、診斷出現。不過這個Case的ECG著實讓我學了不少。
 
-參考資料補充：[^1] [^2] [^3] [^4] [^5]
+</div>
+
+## 參考資料
+
+內文每個上標數字，滑過去（手機點一下）就看得到出處。整理起來是這5份：
+
+<div class="ec-stack ec-cols refs-sources">
+
+- **研究**
+  - Kasper W, et al. *J Am Coll Cardiol* 1997（急性大面積肺栓塞的處置策略與預後決定因子，多中心登錄研究結果）
+- **指引**
+  - Bayés de Luna A, et al. *Circulation* 2006（以心臟MRI為基準的左心室壁與Q波心肌梗塞位置新術語，專業人員聲明）
+- **部落格**
+  - Dr. Smith's ECG Blog（2009-12，RBBB背景下的後壁STEMI，合併V7-V9後壁導程）
+  - Dr. Smith's ECG Blog（2020-01，一位六十出頭歲男性心悸）
+  - Tsao Jian-hsiung, Medium（這是Post.Wellen syndrome還是De Winter?）
+
+</div>
+
+<div class="refs-slot"></div>
 
 [^1]: Kasper, W., Konstantinides, S., Geibel, A., Olschewski, M., Heinrich, F., Grosser, K. D., Rauber, K., Iversen, S., Redecker, M., & Kienast, J. (1997). Management Strategies and Determinants of Outcome in Acute Major Pulmonary Embolism: Results of a Multicenter Registry. *Journal of the American College of Cardiology*, *30*(5), 1165–1171. [https://doi.org/10.1016/S0735-1097(97)00319-7](https://doi.org/10.1016/S0735-1097(97)00319-7)
 [^2]: Dr. Smith’s ECG Blog: Posterior ST Elevation MI in the Setting of Right Bundle Branch Block, with Posterior Leads V7-V9 — [link](http://hqmeded-ecg.blogspot.com/2009/12/posterior-st-elevation-mi-in-setting-of.html)
 [^3]: Bayés de Luna, A., Wagner, G., Birnbaum, Y., Nikus, K., Fiol, M., Gorgels, A., Cinca, J., Clemmensen, P. M., Pahlm, O., Sclarovsky, S., Stern, S., Wellens, H., & Zareba, W. (2006). A New Terminology for Left Ventricular Walls and Location of Myocardial Infarcts That Present Q Wave Based on the Standard of Cardiac Magnetic Resonance Imaging: A Statement for Healthcare Professionals From a Committee Appointed by the International Society for Holter and Noninvasive Electrocardiography. *Circulation*, *114*(16), 1755–1760. [https://doi.org/10/d4gnjk](https://doi.org/10/d4gnjk)
 [^4]: Dr. Smith’s ECG Blog: A man in his early sixties with palpitations — [link](http://hqmeded-ecg.blogspot.com/2020/01/a-man-in-his-early-sixties-with.html)
-[^5]: 這是Post.Wellen syndrome還是De Winter? — Tsao Jian-hsiung — Medium — [link](https://agoodbear.medium.com/%E9%80%99%E6%98%AFpost-wellen-syndrome%E9%82%84%E6%98%AFde-winter-391b08ca389f)
+[^5]: 這是Post.Wellen syndrome還是De Winter? — Tsao Jian-hsiung — Medium — [link](/post/medium-391b08ca389f/)

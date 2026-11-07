@@ -3,7 +3,7 @@ title: "43-year-old man, chest pain and diaphoresis. Is something wrong with thi
 date: "2022-08-17"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*j_dZY1RQ8S521jbC_KH1JA@2x.png"
+thumbnail: "/images/medium/1_j_dZY1RQ8S521jbC_KH1JA_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -18,7 +18,7 @@ canonicalURL: "https://medium.com/@agoodbear/43%E6%AD%B2%E7%94%B7%E6%80%A7-%E8%8
 translated_from: "medium-3a0024bad29f.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*j_dZY1RQ8S521jbC_KH1JA@2x.png)
+![](/images/medium/1_j_dZY1RQ8S521jbC_KH1JA_2x.webp)
 <strong><em>Fig.1 ECG on arrival</em></strong>
 
 I remember this case was in April this year, one morning just as the COVID (Wuhan pneumonia, as it's often called in Taiwan) outbreak was taking off.
@@ -57,19 +57,19 @@ We've always said that if you see a hyperacute T wave on the ECG, watch out, bec
 
 There's currently no firm definition of HATW. The great Smith describes the features of HATW → not tall, and usually not tall, but bulky and broad-based; the shape of the T wave has to be assessed together with the QRS height and the AUC.
 
-[![](https://cdn-images-1.medium.com/max/1024/0*n2TFIR0wc4R76u0o.jpg)](https://press.ikidane-nippon.com/tw/a00062/)
+[![](/images/medium/0_n2TFIR0wc4R76u0o.webp)](https://press.ikidane-nippon.com/tw/a00062/)
 
 The shape of Mount Fuji is a good way to describe HATW. Broad, bulky. [<strong>And now I want to go to Japan again (click here)</strong>](https://www.flypeach.com/tw)
 
 Amal Mattu also often says that if you can fit the QRS inside the T wave, that T wave is abnormal.
 
-![](https://cdn-images-1.medium.com/max/1024/1*xwV7M-H6W4tVFagTyPmi_A@2x.png)
+![](/images/medium/1_xwV7M-H6W4tVFagTyPmi_A_2x.webp)
 
 So what exactly is the difference between the peaked T wave of hyper-K and the HATW of ACS?
 
 Fig.2 is from the teaching images on Smith's ECG Blog: [source here](http://hqmeded-ecg.blogspot.com/p/teaching-images.html)
 
-![](https://cdn-images-1.medium.com/max/1024/0*ftKdaPQyRh3qZjgH.png)
+![](/images/medium/0_ftKdaPQyRh3qZjgH.webp)
 <strong><em>Fig.2</em></strong>
 
 In Fig.2 you can see that the HATW T wave looks fat and bulky, and the AUC is increased (red area). The peaked T wave of hyper-K, on the other hand, has no increase in AUC but an increase in height, with a pointed tip, whereas the tip of an HATW is more blunt.
@@ -80,14 +80,14 @@ Another key point is that this case has TWI in aVL. This has been emphasized in 
 
 In Aslanger's paper Ten steps to or away from cath lab[^1], step seven says to pay attention to subtle ECG findings (<strong>Fig.3</strong>) and look for any subtle reciprocal change.
 
-![](https://cdn-images-1.medium.com/max/1024/0*s-Noi3qmrNR52SEI)
+![](/images/medium/0_s-Noi3qmrNR52SEI.webp)
 <strong><em>Fig.3</em></strong>
 
 TWI in aVL (or STD in aVL) is the reciprocal change of ischemic changes in the inf.leads (especially Lead III).
 
 Why does aVL mirror III? From <strong>Fig.4</strong> you can see that I/II/III/aVR/aVL/aVF all sit on the frontal plane. III and aVL aren't exactly 180 degrees opposite, but they're still 150 degrees apart. So III/aVL are the pair of leads that best reflect each other's ischemic changes.
 
-![](https://cdn-images-1.medium.com/max/1024/1*Mp6vPNP0afthmJi3VCbX7g.png)
+![](/images/medium/1_Mp6vPNP0afthmJi3VCbX7g.webp)
 <strong><em>Fig.4</em></strong>
 
 There's a key point to understand here: reciprocal change only appears in leads that face each other on the same plane.
@@ -100,7 +100,7 @@ Fig.5 is an obvious ant. wall STEMI with reciprocal STD in the inf.leads. So thi
 
 The reciprocal STD in the inf.leads doesn't come from the STE in the ant. leads; it comes from the STE in the high lateral leads (I/aVL). I/aVL and the inf.leads belong to the same frontal plane. So the inf. lead STD here reflects that the high lateral leads are also involved in the AMI, which indirectly tells you the culprit lesion is highly suspected to be the proximal LAD.
 
-[![](https://cdn-images-1.medium.com/max/1024/0*YErTRgE5gJFcY_Pu.jpg)](https://litfl.com/wp-content/uploads/2018/08/ECG-Anterolateral-AMI-STEMI-2.jpg)
+[![](/images/medium/0_YErTRgE5gJFcY_Pu.webp)](https://litfl.com/wp-content/uploads/2018/08/ECG-Anterolateral-AMI-STEMI-2.jpg)
 <strong><em>Fig.5</em></strong>
 
 Taking it further: which other leads on the ECG face each other like this and can reflect each other's ischemic changes?
@@ -112,7 +112,7 @@ OK, I've wandered way off topic again. Back to the point: HATW and TWI in aVL ca
 
 Another ECG master, [Jerry W. Jones](https://www.linkedin.com/in/jerry-w-jones-md-facep-faaem-6b677337/), talked about the concept of reciprocal change in one of his lectures; I've put a screenshot of the slide below (<strong>Fig.6</strong>):
 
-![](https://cdn-images-1.medium.com/max/1024/0*k6jNTCrvTGVyO3-W)
+![](/images/medium/0_k6jNTCrvTGVyO3-W.webp)
 <strong><em>Fig.6</em></strong>
 
 This slide (<strong>Fig.6</strong>) says that if the STD you see falls within a coronary artery territory, you must first think of this STD as the reciprocal change of STE on the opposite side, and quickly turn your eyes to the opposite side to see whether STE is there (be careful with any subtle STE)
@@ -152,12 +152,12 @@ I had originally expected that with ongoing chest pain, the inf.leads would star
 
 About 13 minutes later the patient felt a bit better, but still had pain (<strong>Fig.7</strong>).
 
-![](https://cdn-images-1.medium.com/max/1024/1*FuMnQC25tuUld-03EotRxQ@2x.png)
+![](/images/medium/1_FuMnQC25tuUld-03EotRxQ_2x.webp)
 <strong><em>Fig.7</em></strong>
 
 After 40 minutes the patient felt much better (<strong>Fig.8</strong>).
 
-![](https://cdn-images-1.medium.com/max/1024/1*8TRG4vk6cCEGRVGtkwVAFg@2x.png)
+![](/images/medium/1_8TRG4vk6cCEGRVGtkwVAFg_2x.webp)
 <strong><em>Fig.8</em></strong>
 
 In Fig.8 you can see that as the symptoms resolved, a reperfusion rhythm appeared. Terminal TWI in II/aVF, and TWI in III. Because the patient had spontaneous reperfusion (the clot dissolved on its own and the vessel opened), you see these reperfusion T waves in the inf.leads, and the TWI in aVL flipped back upright. So this ECG means the vessel supplying the inf.leads had a problem, but it's open for now.

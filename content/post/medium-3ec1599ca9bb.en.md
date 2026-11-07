@@ -3,7 +3,7 @@ title: "OHCA arrives at the ED: do we activate the cath lab?"
 date: "2022-07-16"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*7sfT-6ZdvaJFT_ZI_X_8Hg@2x.png"
+thumbnail: "/images/medium/1_7sfT-6ZdvaJFT_ZI_X_8Hg_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -18,7 +18,7 @@ canonicalURL: "https://medium.com/@agoodbear/ohca%E5%88%B0%E9%99%A2-%E5%95%9F%E5
 translated_from: "medium-3ec1599ca9bb.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*7sfT-6ZdvaJFT_ZI_X_8Hg@2x.png)
+![](/images/medium/1_7sfT-6ZdvaJFT_ZI_X_8Hg_2x.webp)
 <strong><em>Fig.1</em></strong>
 
 On one dark and stormy night, the fire department EMS radio outside the ED crackled:
@@ -45,7 +45,7 @@ In the resus room we put her on the ECG monitor. No palpable pulse, but there wa
 
 <strong>Ischemia:</strong>We see multiple-lead STD + aVR and/or V1 STE (<strong>Fig.2</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*h-7A7r5_DB39MPcazvXdGQ.jpeg)
+![](/images/medium/1_h-7A7r5_DB39MPcazvXdGQ.webp)
 <strong><em>Fig.2</em></strong>
 
 #### A few questions worth thinking through:
@@ -77,21 +77,21 @@ Flip it around: what kind of STD can localize the ischemia? When the STD appears
 
 - If we see STE in V1 with <strong>STD in V5–6</strong>, think of septal wall ischemia
 
-![](https://cdn-images-1.medium.com/max/1024/1*yOMzZJXCBvX6W8JuzMoKNQ@2x.png)
+![](/images/medium/1_yOMzZJXCBvX6W8JuzMoKNQ_2x.webp)
 <strong><em>Fig.3</em></strong>
 
 > <strong>ECG Tips:</strong>How do we tell whether STD is subendocardial ischemia or reciprocal change? See Fig.3. If the maximal STD is in V4–6/II with aVR STE, think subendocardial ischemia first; if the STD is confined to a vascular territory, consider reciprocal change first
 
 But there are way too many causes of oxygen demand and supply mismatch that produce the subendocardial ischemia ECG pattern; see <strong>Table 1</strong>. I've posted this table many times. Besides ACS sick P’t, where it could be LMCA, TVD, or proximal LAD, there are even more non-ACS sick P’t who also show this ECG pattern. So when we see the subendocardial ischemia ECG pattern, the only trick is a good physical exam to look for more clues, not blindly deciding the patient is an ACS sick P’t.
 
-![](https://cdn-images-1.medium.com/max/1024/1*BsDsmf2oyC1deq19A9k3eg@2x.png)
+![](/images/medium/1_BsDsmf2oyC1deq19A9k3eg_2x.webp)
 <strong><em>Table.1</em></strong>
 
 > <strong>ECG Tips:</strong>Don't treat a subendocardial ischemia ECG pattern like you just found a loaded gun and fire it straight at ACS, because many more causes can produce this pattern
 
 Next, the second question: what situations produce an rSr’ pattern in V1-V2?
 
-![](https://cdn-images-1.medium.com/max/1024/1*RA5QV7z033tUsKA4rppvHw@2x.png)
+![](/images/medium/1_RA5QV7z033tUsKA4rppvHw_2x.webp)
 <strong><em>Fig.4</em></strong>
 
 In general, the P wave in V1 is mostly upright or biphasic (with the inverted part not prominent). When you see an obviously inverted P wave, consider that V1–2 were placed too high.
@@ -114,14 +114,14 @@ In this post, the master Ken Grauer notes that if you see the following clues, y
 
 This article also discusses which DDx to consider further when V1-V2 show rSr’ (<strong>Fig.5</strong>)[^2].
 
-![](https://cdn-images-1.medium.com/max/1024/1*HQ3lJDHM0dtTXOPKqPQWOA.png)
+![](/images/medium/1_HQ3lJDHM0dtTXOPKqPQWOA.webp)
 <strong><em>Fig.5</em></strong>
 
 Reading the original ECG (<strong>Fig.4</strong>), we see ICRBBB, rSr’ over V1, and V1 looking a lot like aVR, so we judged this to be V1/V2 misplacement, from the leads being placed too high.
 
 The next question: at an H.R of 150, judging the QT interval is genuinely not easy.
 
-![](https://cdn-images-1.medium.com/max/1024/1*70RDIRGmirYKzALBIp_xbQ.png)
+![](/images/medium/1_70RDIRGmirYKzALBIp_xbQ.webp)
 <strong><em>Fig.6</em></strong>
 
 If you want to measure the QT interval, pick the longest one among the 12 leads, usually V2~V3 (<strong>Fig.6</strong>)
@@ -134,7 +134,7 @@ Honestly, the whole reason we look at the QT interval is the fear that QT prolon
 
 you can use the QT nomogram (<strong>Fig.7</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*fjzJ4lzMEz8Z3XKJw8_AHg.png)
+![](/images/medium/1_fjzJ4lzMEz8Z3XKJw8_AHg.webp)
 <strong><em>Fig.7</em></strong>
 
 What Fig.7 shows is that <strong>a QT interval above the blue line carries a possibility of going into TdP:</strong>
@@ -150,7 +150,7 @@ Of course, nowadays nearly every 12-lead ECG machine calculates the QTc for you.
 
 - QT prolongation from a <strong>bigger T wave</strong> and QT prolongation from a <strong>longer ST segment</strong> (see <strong>Fig.8</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*ZnQOLreswcsCtYmdXgBijA@2x.png)
+![](/images/medium/1_ZnQOLreswcsCtYmdXgBijA_2x.webp)
 <strong><em>Fig.8</em></strong>
 
 > <strong>ECG Tips:</strong>QTc>500 ms is a problem; H.R<60 → QT interval>12 small boxes, and H.R>100 → QT interval>10 small boxes, may both be a problem
@@ -159,7 +159,7 @@ Next, let's look at the key points to watch after ROSC in an OHCA patient.
 
 First, what does post-cardiac arrest care look like in ACLS 2020? (<strong>Fig.9</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*hEH4-nVlRT9IoFO-FZfMRQ@2x.png)
+![](/images/medium/1_hEH4-nVlRT9IoFO-FZfMRQ_2x.webp)
 <strong><em>Fig.9</em></strong>
 
 ### Management after ROSC comes in two parts:
@@ -220,7 +220,7 @@ In OHCA with ROSC, the role of CAG is still under discussion. When should we act
 - If the post-ROSC ECG shows STE, the prevalence of CAD can be as high as 96% ➡ immediate cath lab activation gives better survival to hospital discharge
 - In patients without STE after ROSC, the prevalence of CAD is still 25~50%, and in these patients cath lab activation still offers some benefit
 
-![](https://cdn-images-1.medium.com/max/1024/1*FECiI1lCiNvcV6IewqXTZw@2x.png)
+![](/images/medium/1_FECiI1lCiNvcV6IewqXTZw_2x.webp)
 <strong><em>Fig.10</em></strong>
 
 <strong>Fig.10 describes when PCI is recommended in cardiac arrest:</strong>
@@ -231,7 +231,7 @@ In OHCA with ROSC, the role of CAG is still under discussion. When should we act
 
 In addition, if the patient is comatose after OHCA with ROSC, there's evidence that CAG is as beneficial as it is in patients who are awake ➡ so <strong>whether to do CAG has nothing to do with the patient's neurologic status (in other words, whether to do CAG has nothing at all to do with whether the patient is awake or not; if they meet the indication, you can go)</strong>.
 
-![](https://cdn-images-1.medium.com/max/1024/1*5S2WUO8_PRcNZsp6S7No0Q@2x.png)
+![](/images/medium/1_5S2WUO8_PRcNZsp6S7No0Q_2x.webp)
 <strong><em>Fig.11</em></strong>
 
 This figure shows the key points in the 2015 ACLS and 2020 ACLS post-cardiac arrest algorithms about whether to do a cath.
@@ -247,7 +247,7 @@ Not long after ROSC, the patient went into VT once (pulse VT) and we shocked her
 
 When the CV man arrived, the take was that the ECG couldn't rule out an LM/TVD/proximal LAD problem (ACS sick P’t), and the recommendation was a cath. But they wanted us to get a brain CT first.
 
-![](https://cdn-images-1.medium.com/max/1024/1*-RbOgWwnh5oQm8mtoGO02A.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_-RbOgWwnh5oQm8mtoGO02A-poster.jpg" aria-label=""><source src="/images/medium/1_-RbOgWwnh5oQm8mtoGO02A.mp4" type="video/mp4"></video></figure>
 
 #### Debrief:
 

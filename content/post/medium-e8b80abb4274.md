@@ -1,9 +1,11 @@
 ---
 title: "真『心』誠意"
 date: "2021-08-03"
+description: "介入性心臟內科醫師回覆推友的Case，歸納了Non-STEMI、起起伏伏胸痛、延遲做導管這類病患的觀念重點。作者翻譯並加入自己的ECG筆記。"
 draft: false
-toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*PJhve0r0hwAoJO1Arnxi7w.png"
+toc: true
+hide_hero: true
+thumbnail: "/images/medium/1_PJhve0r0hwAoJO1Arnxi7w.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -15,19 +17,25 @@ tags:
 medium_id: "e8b80abb4274"
 medium_url: "https://medium.com/@agoodbear/%E7%9C%9F-%E5%BF%83-%E8%AA%A0%E6%84%8F-e8b80abb4274"
 canonicalURL: "https://medium.com/@agoodbear/%E7%9C%9F-%E5%BF%83-%E8%AA%A0%E6%84%8F-e8b80abb4274"
+# 🗂 改稿版次
+#   重新排版｜2026-11-07｜比照ecg-post-22：卡片風、圖號（正文字句不動）→⏳ 待確認
+#   第 0 版｜自 Medium 匯入
 ---
+
+{{< article-cards >}}
+
 [Thread by @shahrukh\_bakar on Thread Reader App](https://threadreaderapp.com/thread/1422425152613064708.html)
 
 一位介入性心臟內科醫師回覆了一位推友的Case。這個個案延遲了10多個小時，之後做到了PCI。10多個小時過程當中，病患上上下下的胸痛起伏。
 
 心內醫師把一些類似此病患<strong>(Non-STEMI、起起伏伏胸痛、延遲做導管)</strong>，做了一些觀念重點歸納。我覺得非常實用。
 
-#### 我大概翻譯並且加入我之前念ECG的筆記：
+## ❤️我大概翻譯並且加入我之前念ECG的筆記
 
 1. 不管ECG長得怎麼樣，持續的胸痛是重大的<strong>Red flag sign</strong>➡立即Cath lab不要延遲
 2. Q wave並不是代表沒有存活的心肌，Q wave也可以是在ischemia時很早期的表現
 
-#### <strong>關於Early Q wave的重點</strong>
+### ❤️關於Early Q wave的重點
 
 - 在一項STEMI病患研究當中，這些病患都在12小時內接受治療，研究發現，出現Early Q wave的病患心肌搶救仍然十分重要，主要是發現病患有STEMI/Early Q wave(儘管推測已經有transmural與不可逆的心肌受損)，在給予ART後，仍然有較好的預後➡因此12小時內STE+Early Q wave的病患，不應該排除在接受PCI的行列內
 
@@ -41,17 +49,17 @@ canonicalURL: "https://medium.com/@agoodbear/%E7%9C%9F-%E5%BF%83-%E8%AA%A0%E6%84
 
 6. 在ongoing chest pain的病患給予Opioid藥物，有可能會掩蓋持續胸痛➡先用NTG
 
-#### <strong>關於Morphine的使用</strong>
+### ❤️關於Morphine的使用
 
-#### 在Smith ECG的[這篇文章](http://hqmeded-ecg.blogspot.com/2021/06/ischemic-st-depression-maximal-in-v1-v4.html)中也有提到
+### ❤️在Smith ECG的[這篇文章](http://hqmeded-ecg.blogspot.com/2021/06/ischemic-st-depression-maximal-in-v1-v4.html)中也有提到
 
 > 注意在NonSTEMI病患不要給morphine，因為會mask住ongoing chest pain，而延長去做PCI的時間。除非這個病患，在CV man已經答應要去做PCI(如STEMI)，才給Opioid藥物
 
 7. 如果使用NTG沒有辦法改善疼痛，若出現very high risk的狀況➡立即PCI
 
-#### <strong>什麼叫做very high risk狀況</strong>➡<strong>對2個小時內要做到PCI</strong>
+### ❤️什麼叫做very high risk狀況➡對2個小時內要做到PCI
 
-#### 有看到Fig 1(From ESC 2020 NonSTEMI guideline)左下角深紅的區塊嗎?
+### ❤️有看到Fig.1(From ESC 2020 NonSTEMI guideline)左下角深紅的區塊嗎?
 
 - 血行不穩
 
@@ -67,8 +75,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E7%9C%9F-%E5%BF%83-%E8%AA%A0%E6%84
 
 - aVR and/or V1 STE + Multiple leads STD
 
-![](https://cdn-images-1.medium.com/max/1024/1*PJhve0r0hwAoJO1Arnxi7w.png)
-*Fig 1 from ESC 2020 NonSTEMI Guideline*
+![Fig.1 ESC 2020 NSTE-ACS指引：風險分層與侵入策略流程圖](/images/medium/1_PJhve0r0hwAoJO1Arnxi7w.webp "Fig.1 ESC 2020 NSTE-ACS指引：風險分層與侵入策略流程圖")
 
 8. 在持續胸痛的病患，沒有及早Call CV man，直到後來才做了延遲的PCI，這真的需要系統性去review哪個環節出了問題
 

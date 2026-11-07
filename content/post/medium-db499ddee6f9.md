@@ -1,9 +1,11 @@
 ---
 title: "低血壓、低血氧到院，心電圖有問題嗎?"
 date: "2022-09-07"
+description: "72歲女性由救護車送到急診，低血氧、低血壓、意識不清，ECG在III與aVF有Q wave、V1到V4與III有TWI。整理Q wave、big S wave、胸前導程TWI的判讀，以及急性肺栓塞的ECG表現與處置。"
 draft: false
-toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*NXKy7gSDorREfnBDMYGt6w@2x.png"
+toc: true
+hide_hero: true
+thumbnail: "/images/medium/1_NXKy7gSDorREfnBDMYGt6w_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -16,9 +18,14 @@ tags:
 medium_id: "db499ddee6f9"
 medium_url: "https://medium.com/@agoodbear/%E4%BD%8E%E8%A1%80%E5%A3%93-%E4%BD%8E%E8%A1%80%E6%B0%A7%E5%88%B0%E9%99%A2-%E5%BF%83%E9%9B%BB%E5%9C%96%E6%9C%89%E5%95%8F%E9%A1%8C%E5%97%8E-db499ddee6f9"
 canonicalURL: "https://medium.com/@agoodbear/%E4%BD%8E%E8%A1%80%E5%A3%93-%E4%BD%8E%E8%A1%80%E6%B0%A7%E5%88%B0%E9%99%A2-%E5%BF%83%E9%9B%BB%E5%9C%96%E6%9C%89%E5%95%8F%E9%A1%8C%E5%97%8E-db499ddee6f9"
+# 🗂 改稿版次
+#   重新排版｜2026-11-07｜比照ecg-post-22：卡片風、問題清單、圖號、學習重點、參考資料收合（正文字句不動）→⏳ 待確認
+#   第 0 版｜自 Medium 匯入
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*NXKy7gSDorREfnBDMYGt6w@2x.png)
-<strong><em>Fig.1到院時ECG</em></strong>
+
+{{< article-cards >}}
+
+## ❤️Case：72歲女性，低血氧、低血壓
 
 72歲女性，由救護車偶依～～～～偶依送到本院。
 
@@ -38,7 +45,9 @@ canonicalURL: "https://medium.com/@agoodbear/%E4%BD%8E%E8%A1%80%E5%A3%93-%E4%BD%
 
 立馬和家屬解釋病危，告知狀況很不好，隨時都會有生命危險的變化。
 
-#### 心電圖快速做好。讓我們來判讀一下吧~~
+### ❤️心電圖快速做好。讓我們來判讀一下吧~~
+
+![Fig.1 到院ECG](/images/medium/1_NXKy7gSDorREfnBDMYGt6w_2x.webp "Fig.1 到院ECG")
 
 Rate:99 bpm
 
@@ -50,19 +59,20 @@ Interval:No QT prolong
 
 Ischemia:Q in III/aVF、TWI in V1–4、III
 
-#### 先問自己幾個問題:
+先問自己幾個問題:
 
-1. 哪些leads出現Q wave是正常的？何謂Pathologic Q wave?
-2. Lead I的S wave是正常的嗎?
-3. 要怎麼看Fig.1的V1-V4是TWI?
-4. V1-V4的TWI有可能是什麼狀況?
+{{< ecg-qlist >}}
+- **Q1**：哪些leads出現Q wave是正常的？何謂Pathologic Q wave?
+- **Q2**：Lead I的S wave是正常的嗎?
+- **Q3**：要怎麼看Fig.1的V1-V4是TWI?
+- **Q4**：V1-V4的TWI有可能是什麼狀況?
+{{< /ecg-qlist >}}
 
-#### 哪些leads出現Q wave是正常的？何謂Pathologic Q wave?
+## ❤️Q1：哪些leads出現Q wave是正常的？何謂Pathologic Q wave?
 
 <strong>先看看一張ECG大師Ken Grauer的圖片(Fig.2)</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/0*OrHTEsrACw43bk_D)
-<strong><em>Fig.2 Reverse Z shape</em></strong>
+![Fig.2 Ken Grauer：reverse Z shape](/images/medium/0_OrHTEsrACw43bk_D.webp "Fig.2 Ken Grauer：reverse Z shape")
 
 - 這張圖代表著reverse Z shape的記憶法。也就是如果單獨在這五個leads(III/aVF/aVL/aVR/V1)發現<strong>Q wave and/or TWI</strong>，很有可能是正常的。(<strong>前提:年輕人，沒有心臟問題</strong>)
 - 有些lead即使有large Q wave，也不一定是infarction →這些lead包括III/aVL/aVR/V1
@@ -71,8 +81,7 @@ Ischemia:Q in III/aVF、TWI in V1–4、III
 
 <strong>綜合以上reverse Z shape位置的leads + 可能septal q wave位置的leads →都有可能是正常的Q wave。</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*awP1h7G6O7afwbW0SYa0qA@2x.png)
-<strong><em>Fig.3</em></strong>
+![Fig.3 Pathologic Q wave與septal q wave的定義](/images/medium/1_awP1h7G6O7afwbW0SYa0qA_2x.webp "Fig.3 Pathologic Q wave與septal q wave的定義")
 
 <strong>那麼pathologic Q wave和septal q wave在定義上差在哪裡?(Fig.3)</strong>
 
@@ -81,20 +90,19 @@ Ischemia:Q in III/aVF、TWI in V1–4、III
 
 這個Case很明顯的III/aVF的Q wave是異常的。
 
-#### 接下來我們來看Lead I的S wave是正常的嗎?
+## ❤️Q2：接下來我們來看Lead I的S wave是正常的嗎?
 
 一般正常的12 lead ECG在Lead I只會看到小的S wave，或是見不到S wave。但是如果出現big S wave(<strong>注意 →這個就是不正常的ECG finding</strong>)，就要考慮到有RV strain的可能[^2]。
 
 在Axis deviation的DDx裡面(<strong>Fig.4</strong>)，我們會很習慣透過是否有RAD(Lead I的S wave > R wave)，來讓我們思考是否有肺栓塞的可能性
 
-![](https://cdn-images-1.medium.com/max/1024/1*y8KXcJlhz_xQiTz-AvtU7g@2x.png)
-<strong><em>Fig.4 Axis deviation的DDx</em></strong>
+![Fig.4 Axis deviation的DDx](/images/medium/1_y8KXcJlhz_xQiTz-AvtU7g_2x.webp "Fig.4 Axis deviation的DDx")
 
 但是<strong>技巧就出現在ECG判斷細節中，千千萬萬要小心Big S wave</strong>。不要沒看到RAD，就把PE給先排除在外了。
 
 > <strong>ECG Tips:小心big S wave有可能是RV strain造成的</strong>
 
-#### 要怎麼看Fig.1的V1-V4是TWI?
+## ❤️Q3：要怎麼看Fig.1的V1-V4是TWI?
 
 為什麼我看完到院ECG(<strong>Fig.5</strong>)，可以馬上寫下TWI in V1–4。
 
@@ -102,13 +110,11 @@ Ischemia:Q in III/aVF、TWI in V1–4、III
 
 我覺得這個判讀的技巧非常重要。不管是應用在這裡，或是應用在其他方面，比如有時RBBB病患，並不容易判斷否有STE出現。
 
-![](https://cdn-images-1.medium.com/max/1024/1*BLIMvy4B0Hn8qn3crQ6b6Q.png)
-<strong><em>Fig.5</em></strong>
+![Fig.5 到院ECG：手寫TWI in V1-4](/images/medium/1_BLIMvy4B0Hn8qn3crQ6b6Q.webp "Fig.5 到院ECG：手寫TWI in V1-4")
 
 Fig.5的precordial leads的TWI不是非常明顯，例如V2–3。主因為baseline沒有那麼穩(抖動)，且TWI往下的波形小，造成不容易判斷出有TWI。
 
-![](https://cdn-images-1.medium.com/max/1024/1*oXhpNA4qrAGplI0j0dB25g.png)
-<strong><em>Fig.6</em></strong>
+![Fig.6 ECG畫上藍線與綠線標出TWI](/images/medium/1_oXhpNA4qrAGplI0j0dB25g.webp "Fig.6 ECG畫上藍線與綠線標出TWI")
 
 我把原始ECG畫上重點，跟著我的解說，讓我們一步步來破解，到底有沒有TWI出現。
 
@@ -134,7 +140,7 @@ Fig.5的precordial leads的TWI不是非常明顯，例如V2–3。主因為basel
 
 歡迎購買阿嬤腫的Caliper →[網址](https://www.amazon.com/-/zh_TW/EKG-Caliper-BLACK-Airgoesin-ECG-%E9%BB%91%E8%89%B2%E5%8D%A1%E9%89%97%E6%A8%99%E5%B0%BA%E7%B9%AA%E5%9C%96%E5%BF%83%E9%9B%BB%E5%9C%96%E5%88%86%E9%9A%94%E5%99%A8/dp/B011NT5HIQ/ref=sr_1_3?crid=25CAO5PT4ATND&keywords=caliper+ECG&qid=1662277211&sprefix=caliper+ecg%2Caps%2C298&sr=8-3)
 
-#### V1-V4的TWI有可能是什麼狀況?
+## ❤️Q4：V1-V4的TWI有可能是什麼狀況?
 
 首先我們要把問題再次轉換一下。這邊的意思是要問，在R’t precordial leads出現TWI，會有哪些狀況呢?
 
@@ -168,8 +174,7 @@ Amal mattu的ECG教學中，在近期的4/11[^4]和6/27[^3]教學有提到如果
 
 先來看看Wellens’ syndrome。Wellens’s syndrome的產生是因為有短暫時間的血管阻塞，但是非常快的在還沒造成大片的infarction之前，就已經自行spontaneous reperfusion。此reperfusion在ECG上就會形成Wellens’ wave。
 
-[![](https://cdn-images-1.medium.com/max/1024/0*Zr-f29b8f2YqnaCU.png)](http://hqmeded-ecg.blogspot.com/p/teaching-images.html)
-<strong><em>Fig.7</em></strong>
+[![Fig.7 Smith ECG Blog：ACO與reperfusion T wave](/images/medium/0_Zr-f29b8f2YqnaCU.webp "Fig.7 Smith ECG Blog：ACO與reperfusion T wave")](http://hqmeded-ecg.blogspot.com/p/teaching-images.html)
 
 Fig.7這張圖來自於Smith ECG Blog的teaching image。
 
@@ -187,7 +192,7 @@ Pattern A)，T wave會先上後下。Reperfusion持續，接著會從terminal TW
 
 至於為什麼會在precordial leads出現TWI?這被認為是因為在RV dilate和RV strain下引起low cardiac output導致的缺血現象，但真正的的病生理尚未完全理解。各位可以參考看看這篇文章[^5]。
 
-#### 有哪些ECG features可能代表有acute pulmonary embolism?
+## ❤️有哪些ECG features可能代表有acute pulmonary embolism?
 
 接下來這邊就是整篇文章的重點所在了[^10](我該不會打了整篇的廢文了吧XD)
 
@@ -197,10 +202,9 @@ Pattern A)，T wave會先上後下。Reperfusion持續，接著會從terminal TW
 
 - S1Q3T3的sensitivity到底有多低呢?(<strong>表格資訊</strong>[^6])
 
-![](https://cdn-images-1.medium.com/max/1024/1*oweWf_uSp3Ti5KeNpzZhuw@2x.png)
-<strong><em>Fig.8 PE的常見ECG finding</em></strong>
+![Fig.8 PE的常見ECG finding](/images/medium/1_oweWf_uSp3Ti5KeNpzZhuw_2x.webp "Fig.8 PE的常見ECG finding")
 
-<strong>S1Q3T3的Sensitivity只有4%</strong>…….ㄜ，千萬不要指望看到S1Q3T3來診斷PE，除非命中帶屎，看了1000個PE案例(<strong>這樣沒有人想和你一起上班啦</strong>)，你就會有足夠的S1Q3T3來說嘴了。
+<mark><strong>S1Q3T3的Sensitivity只有4%</strong></mark>…….ㄜ，千萬不要指望看到S1Q3T3來診斷PE，除非命中帶屎，看了1000個PE案例(<strong>這樣沒有人想和你一起上班啦</strong>)，你就會有足夠的S1Q3T3來說嘴了。
 
 - 所以根據Fig.8什麼是在PE中常出現的ECG findings呢? →請把第一項和第二項加起來:那就是T wave出現變化(<strong>變倒或變平</strong>)，<strong>約佔了60%</strong>
 
@@ -214,7 +218,7 @@ Pattern A)，T wave會先上後下。Reperfusion持續，接著會從terminal TW
 2. TWI in lead III可以是正常finding，但是如果加上臨床又有right precordial leads TWI，則要高度考慮PE
 3. Q wave in lead III也有可能是正常變異或是反應局部的RV ischemia or infarction(secondary to acute pressure overload)
 
-在這邊要特別說明第二點。在2007的The American Journal of Cardiology這篇文章研究中顯示當出現R’t precordial leads TWI時，診斷如果只剩下ACS vs. PE來PK，如果在lead III出現TWI，需要高度懷疑PE →<strong>出現在88%的PE，但只出現在1%的ACS</strong>[^8]
+在這邊要特別說明第二點。在2007的The American Journal of Cardiology這篇文章研究中顯示當出現R’t precordial leads TWI時，診斷如果只剩下ACS vs. PE來PK，如果在lead III出現TWI，需要高度懷疑PE →<mark><strong>出現在88%的PE，但只出現在1%的ACS</strong></mark>[^8]
 
 > <strong>ECG Tips:當出現R’t precordial leads TWI + Lead III TWI →一定要把PE擺在鑑別診斷最前面</strong>
 
@@ -245,24 +249,23 @@ Pattern A)，T wave會先上後下。Reperfusion持續，接著會從terminal TW
 
 > <strong>ECG Tips:之前Amal mattu常常說到當出現rightward leads STE + RAD一定要想三個DDx:PE、Na channel blocker、Hyper-K</strong>
 
-#### 個案病程:
+## ❤️個案病程
 
 看到病患ECG出現V1–4 TWI + S1Q3T3、Rate接近99 bpm。腦中立即浮現是否RV strain引起的呢?
 
 如果是因為RV strain引起的ECG findings，病患又休克、呼吸喘。我們有什麼工具可以輔助鑑別診斷呢?病患看起來已經快被閻王拉走了~~~
 
-![](https://cdn-images-1.medium.com/max/1024/1*vdnzaEPFTqkuz7TW8a4YaA.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_vdnzaEPFTqkuz7TW8a4YaA-poster.jpg" aria-label="Fig.9 Heart POCUS：PLAX，RV dilate"><source src="/images/medium/1_vdnzaEPFTqkuz7TW8a4YaA.mp4" type="video/mp4"></video><figcaption>Fig.9 Heart POCUS：PLAX，RV dilate</figcaption></figure>
 
-![](https://cdn-images-1.medium.com/max/1024/1*dB3marUPtCdOsPdcnq_tZA.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_dB3marUPtCdOsPdcnq_tZA-poster.jpg" aria-label="Fig.10 Heart POCUS：PSAX，D sign"><source src="/images/medium/1_dB3marUPtCdOsPdcnq_tZA.mp4" type="video/mp4"></video><figcaption>Fig.10 Heart POCUS：PSAX，D sign</figcaption></figure>
 
-![](https://cdn-images-1.medium.com/max/1024/1*hs6gM2pZIw74AmTV5K3qUQ.gif)
-<strong><em>Fig.9 Heart POCUS</em></strong>
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_hs6gM2pZIw74AmTV5K3qUQ-poster.jpg" aria-label="Fig.11 Heart POCUS：A4C，McConnell's sign"><source src="/images/medium/1_hs6gM2pZIw74AmTV5K3qUQ.mp4" type="video/mp4"></video><figcaption>Fig.11 Heart POCUS：A4C，McConnell's sign</figcaption></figure>
 
 當看到ECG明顯RV strain pattern時，立馬把我的貴桑桑Lumify放到病患胸前。看完超音波後，自己心中已經有了明確答案。
 
 X-ray也不用照了，直接把病患推到CT room作Chest CTA。
 
-![](https://cdn-images-1.medium.com/max/1024/1*J1QXGkk6Jtk_oIAFqsYM6A.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_J1QXGkk6Jtk_oIAFqsYM6A-poster.jpg" aria-label="Fig.12 Chest CTA"><source src="/images/medium/1_J1QXGkk6Jtk_oIAFqsYM6A.mp4" type="video/mp4"></video><figcaption>Fig.12 Chest CTA</figcaption></figure>
 
 這邊可以看Chest CTA的[Coronal view](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2FTsao-Jian-hsiung%2FR7Xz5RZx3v.gif?alt=media&token=aefe99a4-f7a5-4194-a036-90127546d8c0)
 
@@ -270,7 +273,7 @@ Chest CTA看到雙側肺血管塞好塞滿…..Orz
 
 做完Chest CTA大概是病患到院後的30分鐘內。
 
-#### 該怎麼治療病患?
+## ❤️該怎麼治療病患?
 
 作為醫師很怕一種狀況，那就是診斷出來，但是無能為力。
 
@@ -292,15 +295,13 @@ Chest CTA看到雙側肺血管塞好塞滿…..Orz
 
 還記得rTPA可以用在哪些緊急狀況嗎?
 
-![](https://cdn-images-1.medium.com/max/1024/1*oUwlfuiKSUkx_eIXGL1WGw.png)
-<strong><em>Fig.10</em></strong>
+![Fig.13 rTPA用於Stroke、AMI、PE的給藥方式](/images/medium/1_oUwlfuiKSUkx_eIXGL1WGw.webp "Fig.13 rTPA用於Stroke、AMI、PE的給藥方式")
 
-#### 治療危急肺栓塞病患有哪些重點?(以下重點來自於這篇文章[^11])
+## ❤️治療危急肺栓塞病患有哪些重點?(以下重點來自於這篇文章[^11])
 
-要救PE的病患，就要先了解PE的死亡螺旋是什麼?講重點前，需要先看一張圖(Fig.11)
+要救PE的病患，就要先了解PE的死亡螺旋是什麼?講重點前，需要先看一張圖(Fig.14)
 
-![](https://cdn-images-1.medium.com/max/1024/1*VhIOlsR3CAh7LgGfsTHNPA@2x.png)
-<strong><em>Fig.11 PE的死亡螺旋圖</em></strong>
+![Fig.14 PE的死亡螺旋圖](/images/medium/1_VhIOlsR3CAh7LgGfsTHNPA_2x.webp "Fig.14 PE的死亡螺旋圖")
 
 ⭐️肺栓塞➡︎增加PVR➡︎<strong>導致RV dilate</strong>
 
@@ -312,12 +313,12 @@ Chest CTA看到雙側肺血管塞好塞滿…..Orz
 
 ② 因為hypotension，導致醫師給予更多的輸液➡︎<strong>RV更加dilate</strong>
 
-#### 所以治療的重點➡︎<strong>當Right side heart failure時:忘掉ABC</strong>
+### ❤️所以治療的重點➡︎當Right side heart failure時:忘掉ABC
 
 <strong>➡️ A(Airway):需要Intubation嗎?</strong>
 
 - 盡可能避免插管或延遲插管
-- <strong>PE的病患通常死於circulatory failure not respiratory failure➡︎插管解決不了PE本質的問題，更有可能讓hemodynamic不stable</strong>
+- <mark><strong>PE的病患通常死於circulatory failure not respiratory failure➡︎插管解決不了PE本質的問題，更有可能讓hemodynamic不stable</strong></mark>
 - 如果真的要插管➡︎把norepinephrine往上調，建立hemodynamic safety margin
 - 若是rTPA candidate，先趕快給藥(此時先delayed intubation)，有機會thrombolysis後oxygenation就逐漸↑
 
@@ -336,19 +337,17 @@ Chest CTA看到雙側肺血管塞好塞滿…..Orz
 
 > <strong>Tips:請記得嚴重PE病患，大膽先用升壓劑，把血壓先拉起來，而不是先灌水</strong>
 
-若考慮打rTPA，請記得要先看<strong>rTPA check list</strong>(Fig.12)，有無contraindication
+若考慮打rTPA，請記得要先看<strong>rTPA check list</strong>(Fig.15)，有無contraindication
 
-![](https://cdn-images-1.medium.com/max/1024/1*b31hiO4ynbDLRrXWEFF4aQ.png)
-<strong><em>Fig.12 rTPA check list</em></strong>
+![Fig.15 rTPA check list](/images/medium/1_b31hiO4ynbDLRrXWEFF4aQ.webp "Fig.15 rTPA check list")
 
-#### 個案病程:繼續看這個案例
+## ❤️個案病程:繼續看這個案例
 
 病患當時診斷出來後，在使用NRM 15 L/min氧氣下，病患的SaO2約96%，血壓偏低，呈現休克狀態。
 
 大概給了250 c.c左右的水，血壓仍偏低，我請護理師直上Norepinephrine pump，先把血壓拉起來，不再灌水。因為持續灌水，會讓RV dilate更厲害，進而RV ischemia更嚴重，休克會更明顯。唯有血壓拉起來，RV hypoperfusion改善，RV ischemia才會改善。
 
-![](https://cdn-images-1.medium.com/max/1024/1*fiuX6syDvFKOmmj9sKuSIQ.gif)
-<strong><em>Fig.13 Pre & After rTPA</em></strong>
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_fiuX6syDvFKOmmj9sKuSIQ-poster.jpg" aria-label="Fig.16 rTPA前後的A4C"><source src="/images/medium/1_fiuX6syDvFKOmmj9sKuSIQ.mp4" type="video/mp4"></video><figcaption>Fig.16 rTPA前後的A4C</figcaption></figure>
 
 病患到院後，大約一個小時內，我們就打了rTPA。
 
@@ -356,9 +355,11 @@ Chest CTA看到雙側肺血管塞好塞滿…..Orz
 
 開始打rTPA後，病患呼吸型態逐漸改善，氧氣從NRM 15 L/min，最後降到N/C 3L/min、Norepinephrine pump從頂天立地劑量，最後off pump。
 
-Fig.13是在病患滴完2小時的rTPA後，我再次做的Heart POCUS。左側是打前，明顯的McConnell’s sign，右側是施打完rTPA的A4C，可以看到Apex的過動改善，RV free wall也動得好多了。
+Fig.16是在病患滴完2小時的rTPA後，我再次做的Heart POCUS。左側是打前，明顯的McConnell’s sign，右側是施打完rTPA的A4C，可以看到Apex的過動改善，RV free wall也動得好多了。
 
-#### 學習重點:
+<div class="ec-takeaways">
+
+## 學習重點
 
 1. <strong>何謂Pathologic Q wave與septal q wave?</strong>
 2. <strong>小心Lead I的big S wave有可能是RV strain造成的</strong>
@@ -367,7 +368,33 @@ Fig.13是在病患滴完2小時的rTPA後，我再次做的Heart POCUS。左側�
 5. <strong>治療危急肺栓塞病患有哪些重點?</strong>
 6. <strong>好好運用12 lead ECG的同步性(垂直線)與regular rhythm的一致性(水平線)，往往可以解決很多困難問題(記得買鐵尺和Caliper)</strong>
 
-參考資料補充：[^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8] [^9] [^10] [^11]
+</div>
+
+## 參考資料
+
+內文每個上標數字，滑過去（手機點一下）就看得到出處。整理起來是這11份：
+
+<div class="ec-stack ec-cols refs-sources">
+
+- **研究**
+  - Digby GC, et al. *Ann Noninvasive Electrocardiol* 2015（肺栓塞預後與ECG異常的共識文件）
+  - Co I, et al. *J Emerg Med* 2017（診斷為肺栓塞病患的新ECG變化）
+  - Kosuge M, et al. *Am J Cardiol* 2007（用倒置T wave區分急性肺栓塞與ACS）
+  - Raunio H, et al. *Ann Clin Res* 1976（中老年住院病患I與V6導程明顯S wave的意義）
+- **部落格**
+  - Dr. Smith's ECG Blog（A woman in her 50s with shortness of breath）
+  - EMCrit PulmCrit（Eight pearls for the crashing patient with massive PE）
+- **網站**
+  - LITFL ECG Library（Q Wave）
+  - LITFL ECG Top 100（ECG Case 123）
+  - ECG Weekly（Amal Mattu's ECG Case of the Week，2020-12-21）
+  - ECG Weekly（Amal Mattu's ECG Case of the Week，2022-06-27）
+  - ECG Weekly（Amal Mattu's ECG Case of the Week，2022-04-11）
+
+</div>
+
+<div class="refs-slot"></div>
+
 
 [^1]: Q Wave • LITFL • ECG Library Basics — [link](https://litfl.com/q-wave-ecg-library/)
 [^2]: Amal Mattu’s ECG Case of the Week — December 21, 2020 — ECG Weekly — [link](https://ecgweekly.com/2020/12/amal-mattus-ecg-case-of-the-week-december-21-2020/)

@@ -1,9 +1,11 @@
 ---
 title: "43歲男性，胸痛、盜汗，這張ECG有問題嗎?"
 date: "2022-08-17"
+description: "胸痛、盜汗的男性，入院ECG在inf.leads有minimal STE、aVL有明顯TWI。之後的ECG出現reperfusion T wave，回頭看入院ECG已經是OMI。"
 draft: false
-toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*j_dZY1RQ8S521jbC_KH1JA@2x.png"
+toc: true
+hide_hero: true
+thumbnail: "/images/medium/1_j_dZY1RQ8S521jbC_KH1JA_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -15,9 +17,14 @@ tags:
 medium_id: "3a0024bad29f"
 medium_url: "https://medium.com/@agoodbear/43%E6%AD%B2%E7%94%B7%E6%80%A7-%E8%83%B8%E7%97%9B-%E7%9B%9C%E6%B1%97-%E9%80%99%E5%BC%B5ecg%E6%9C%89%E5%95%8F%E9%A1%8C%E5%97%8E-3a0024bad29f"
 canonicalURL: "https://medium.com/@agoodbear/43%E6%AD%B2%E7%94%B7%E6%80%A7-%E8%83%B8%E7%97%9B-%E7%9B%9C%E6%B1%97-%E9%80%99%E5%BC%B5ecg%E6%9C%89%E5%95%8F%E9%A1%8C%E5%97%8E-3a0024bad29f"
+# 🗂 改稿版次
+#   重新排版｜2026-11-07｜比照ecg-post-22：卡片風、問題清單、圖號、學習重點、參考資料收合（正文字句不動）→⏳ 待確認
+#   第 0 版｜自 Medium 匯入
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*j_dZY1RQ8S521jbC_KH1JA@2x.png)
-<strong><em>Fig.1 入院時ECG</em></strong>
+
+{{< article-cards >}}
+
+## ❤️Case：典型胸痛冒冷汗，痛到左手臂
 
 記得這個Case是在今年四月份的時候，武漢肺炎疫情剛起來的某天早上。
 
@@ -31,7 +38,9 @@ canonicalURL: "https://medium.com/@agoodbear/43%E6%AD%B2%E7%94%B7%E6%80%A7-%E8%8
 
 廢話不多說。我們來判讀一下這張ECG吧。
 
-#### 依照Rate-Rhythm-Axis-Interval-Ischemia來看看有什麼finding。
+![Fig.1 入院ECG](/images/medium/1_j_dZY1RQ8S521jbC_KH1JA_2x.webp "Fig.1 入院ECG")
+
+### ❤️依照Rate-Rhythm-Axis-Interval-Ischemia來看看有什麼finding
 
 <strong>Rate:</strong>約66 bpm
 
@@ -43,63 +52,59 @@ canonicalURL: "https://medium.com/@agoodbear/43%E6%AD%B2%E7%94%B7%E6%80%A7-%E8%8
 
 Ischemia:可以看到inf.leads有minimal STE，此外aVL有明顯TWI。
 
-#### 在這邊我們先來問問自己幾個問題，藉由這些問題讓我們能夠更加有自信的說這是AMI。
+在這邊我們先來問問自己幾個問題，藉由這些問題讓我們能夠更加有自信的說這是AMI。
 
-Q1:在出現STE之前有任何ECG ischemia sign會先表現出來嗎?(哪些是Early ischemia sign?)
-
-Q2:怎樣的TWI in aVL可能是正常的?
-
-Q3: Fig.1是入院的ECG，預期之後如果繼續胸痛，會出現怎樣的ECG變化?如果病患不痛了，會出現怎樣的變化呢?
+{{< ecg-qlist >}}
+- **Q1**：在出現STE之前有任何ECG ischemia sign會先表現出來嗎?(哪些是Early ischemia sign?)
+- **Q2**：怎樣的TWI in aVL可能是正常的?
+- **Q3**：Fig.1是入院的ECG，預期之後如果繼續胸痛，會出現怎樣的ECG變化?如果病患不痛了，會出現怎樣的變化呢?
+{{< /ecg-qlist >}}
 
 以往我們常常說，如果心電圖看到hyperacute T wave，要小心，之後會開始出現ST segment上升的表現。也就是說，hyperacute T wave(HATW)可能是比STE更早出現的ischemia sign。
 
 目前HATW並沒有確定的定義。Smith ECG大師描述HATW的特性 →不是高，而且通常不高，但是巨大(bulky)且寬(broad base)，這個T wave的shape要和QRS高度與AUC一起評估看。
 
-[![](https://cdn-images-1.medium.com/max/1024/0*n2TFIR0wc4R76u0o.jpg)](https://press.ikidane-nippon.com/tw/a00062/)
+[![Fig.2 富士山：HATW寬、巨大的形狀](/images/medium/0_n2TFIR0wc4R76u0o.webp "Fig.2 富士山：HATW寬、巨大的形狀")](https://press.ikidane-nippon.com/tw/a00062/)
 
 富士山的形狀，就可以用來描述HATW。寬、巨大。[<strong>又開始想去日本了（請點入)</strong>](https://www.flypeach.com/tw)
 
 另外Amal mattu也常說，如果QRS可以塞進去T wave，代表這個T wave是異常的。
 
-![](https://cdn-images-1.medium.com/max/1024/1*xwV7M-H6W4tVFagTyPmi_A@2x.png)
+![Fig.3 V3：QRS可以塞進T wave](/images/medium/1_xwV7M-H6W4tVFagTyPmi_A_2x.webp "Fig.3 V3：QRS可以塞進T wave")
 
 那麼Hyper-K的Peaked T wave和ACS的HATW到底差在哪裡?
 
-Fig.2是在Smith ECG Blog上面的教學圖片的內容:[來源在這](http://hqmeded-ecg.blogspot.com/p/teaching-images.html)
+Fig.4是在Smith ECG Blog上面的教學圖片的內容:[來源在這](http://hqmeded-ecg.blogspot.com/p/teaching-images.html)
 
-![](https://cdn-images-1.medium.com/max/1024/0*ftKdaPQyRh3qZjgH.png)
-<strong><em>Fig.2</em></strong>
+![Fig.4 Smith ECG Blog：Hyper-K與HATW的T wave比較](/images/medium/0_ftKdaPQyRh3qZjgH.webp "Fig.4 Smith ECG Blog：Hyper-K與HATW的T wave比較")
 
-Fig.2可以看到HATW的T wave表現是胖胖笨重的感覺，而且看AUC是增加的(紅色範圍)。但是Hyper-K的Peaked T wave的表現是AUC沒有增加，但是高度增加，且頂端是尖的，但是HATW的頂端是偏鈍的。
+Fig.4可以看到HATW的T wave表現是胖胖笨重的感覺，而且看AUC是增加的(紅色範圍)。但是Hyper-K的Peaked T wave的表現是AUC沒有增加，但是高度增加，且頂端是尖的，但是HATW的頂端是偏鈍的。
 
 所以這個Case在inf.leads其實它的T wave是相對偏大的，符合HATW。
 
 此外還有一個重點是，這個Case具有TWI in aVL。這個是近年來所被強調，可能是inf.wall STEMI的early ischemia sign。
 
-在Aslanger的Ten steps to or away from cath lab這篇文章中[^1]，第七個步驟寫到要注意subtle ECG finding(<strong>Fig.3</strong>)，看看有無細微的reciprocal change。
+在Aslanger的Ten steps to or away from cath lab這篇文章中[^1]，第七個步驟寫到要注意subtle ECG finding(<strong>Fig.5</strong>)，看看有無細微的reciprocal change。
 
-![](https://cdn-images-1.medium.com/max/1024/0*s-Noi3qmrNR52SEI)
-<strong><em>Fig.3</em></strong>
+![Fig.5 Aslanger：Ten steps的十個步驟](/images/medium/0_s-Noi3qmrNR52SEI.webp "Fig.5 Aslanger：Ten steps的十個步驟")
 
 TWI in aVL(或是STD in aVL)就是inf.leads出現缺血變化(特別是Lead III)的reciprocal change。
 
-aVL為何對應III?由<strong>Fig.4</strong>就可以知道I/II/III/aVR/aVL/aVF都在frontal plane上面III和aVL不是完全180度對立面，但是也有150度。所以III/aVL這兩個lead是最能互相反應彼此是否出現缺血變化的對應leads。
+aVL為何對應III?由<strong>Fig.6</strong>就可以知道I/II/III/aVR/aVL/aVF都在frontal plane上面III和aVL不是完全180度對立面，但是也有150度。所以III/aVL這兩個lead是最能互相反應彼此是否出現缺血變化的對應leads。
 
-![](https://cdn-images-1.medium.com/max/1024/1*Mp6vPNP0afthmJi3VCbX7g.png)
-<strong><em>Fig.4</em></strong>
+![Fig.6 frontal plane：aVL與III的位置](/images/medium/1_Mp6vPNP0afthmJi3VCbX7g.webp "Fig.6 frontal plane：aVL與III的位置")
 
 這邊有一個重點需要了解，那就是只有在同一個plane的對立面，才會有reciprocal change出現。
 
-為何要特別強調這個呢?因為這邊會有一個誤解那就是如果出現ant.wall STEMI，合併看到inf.leads出現STD，我們會很習慣把inf.leads的STD當作是ant.leads STE的reciprocal change，<strong>這是不對的</strong>!!!!!
+為何要特別強調這個呢?因為這邊會有一個誤解那就是如果出現ant.wall STEMI，合併看到inf.leads出現STD，我們會很習慣把inf.leads的STD當作是ant.leads STE的reciprocal change，<mark><strong>這是不對的</strong>!!!!!</mark>
 
-拿個例子來解說會比較清楚。請看<strong>Fig.5。</strong>
+拿個例子來解說會比較清楚。請看<strong>Fig.7。</strong>
 
-Fig.5是一個很明顯的Ant.wall STEMI有合併inf.leads reciprocal STD change。所以這是一個真真正正的AMI。
+Fig.7是一個很明顯的Ant.wall STEMI有合併inf.leads reciprocal STD change。所以這是一個真真正正的AMI。
 
 Inf.leads的STD reciprocal change並不是來自於ant.leads的STE，而是來自於high lateral leads(I/aVL)的STE。I/aVL和inf.leads是屬於同一個frontal plane。所以在這裡的inf.leads STD，反應了high lateral leads也有involved AMI，所以也間接表示culprit lesion，高度懷疑是proximal LAD造成。
 
-[![](https://cdn-images-1.medium.com/max/1024/0*YErTRgE5gJFcY_Pu.jpg)](https://litfl.com/wp-content/uploads/2018/08/ECG-Anterolateral-AMI-STEMI-2.jpg)
-<strong><em>Fig.5</em></strong>
+[![Fig.7 LITFL：前側壁STEMI，inf.leads有reciprocal STD](/images/medium/0_YErTRgE5gJFcY_Pu.webp "Fig.7 LITFL：前側壁STEMI，inf.leads有reciprocal STD")](https://litfl.com/wp-content/uploads/2018/08/ECG-Anterolateral-AMI-STEMI-2.jpg)
 
 延伸想想，ECG還有哪些leads也是處在這種對立面，可以反應彼此是否有缺血變化的呢?
 
@@ -108,16 +113,15 @@ Inf.leads的STD reciprocal change並不是來自於ant.leads的STE，而是來�
 
 好的，又講到偏離主題過遠了。拉回來正題，HATW和TWI in aVL都可以視為early ischemia sign。也就是在STE出現之前，就可能先行出現的sign。
 
-另一位心電圖大師[Jerry W. Jones](https://www.linkedin.com/in/jerry-w-jones-md-facep-faaem-6b677337/)，在一次的演講講到reciprocal change的概念，我把slide截圖如下(<strong>Fig.6</strong>):
+另一位心電圖大師[Jerry W. Jones](https://www.linkedin.com/in/jerry-w-jones-md-facep-faaem-6b677337/)，在一次的演講講到reciprocal change的概念，我把slide截圖如下(<strong>Fig.8</strong>):
 
-![](https://cdn-images-1.medium.com/max/1024/0*k6jNTCrvTGVyO3-W)
-<strong><em>Fig.6</em></strong>
+![Fig.8 Jerry W. Jones：Two Important Pearls](/images/medium/0_k6jNTCrvTGVyO3-W.webp "Fig.8 Jerry W. Jones：Two Important Pearls")
 
-這張slide(<strong>Fig.6</strong>)講到，如果看到STD是落在coronary a.分佈區域，一定要先想這個STD是對側面出現STE的reciprocal change，趕緊把目光放到對側面，看看是否有STE出現(任何細微STE都需要小心)
+這張slide(<strong>Fig.8</strong>)講到，如果看到STD是落在coronary a.分佈區域，一定要先想這個STD是對側面出現STE的reciprocal change，趕緊把目光放到對側面，看看是否有STE出現(任何細微STE都需要小心)
 
 此外slide中講到這個reciprocal change可能會在任何STE出現之前就先出現。另外如果對側面出現STE，這個reciprocal STD change可能會變成更加明顯。
 
-所以看到early ischemia sign出現了，記得別把病患擺離自己遠到天邊的位置。把病患放到頭一抬起來，眼睛就看得到的位置，如果順便on上ECG monitor，那麼這就是<strong>急診老鳥必備標準起手式</strong>。因為可能轉瞬之間，ST segment就要起飛了。
+所以看到early ischemia sign出現了，記得別把病患擺離自己遠到天邊的位置。把病患放到頭一抬起來，眼睛就看得到的位置，如果順便on上ECG monitor，那麼這就是<mark><strong>急診老鳥必備標準起手式</strong></mark>。因為可能轉瞬之間，ST segment就要起飛了。
 
 那麼有多少比例的inf.wall STEMI(OMI)與ant.wall STEMI(OMI)會出現此reciprocal change呢?
 
@@ -140,7 +144,7 @@ Amal mattu在多次的心電圖教學中表示，要判別TWI in aVL是否有問
 
 另外在之前所講到的Aslanger文章[^1]，裡面有提到我們綜觀整個12 leads ECG在尋找reciprocal change時要特別注意，LBBB、LVH、WPW、inferior LV aneurysm、PPM通常baseline會有reciprocal STD而沒有缺血狀況。
 
-### Case continue:
+## ❤️Case continue
 
 病患症狀典型(胸痛、盜汗)，ECG出現minimal STE over inf.leads與明顯TWI in aVL。此TWI in aVL的T-QRS angle是寬的(QRS是正的、T wave是負的)，所以這個TWI in aVL是有意義的，且病患沒有看到LBBB or LVH。
 
@@ -148,17 +152,15 @@ Amal mattu在多次的心電圖教學中表示，要判別TWI in aVL是否有問
 
 我本來預期病患持續胸痛，等等inf.leads就要開始STE了。(注意:TWI in aVL是inf.wall STEMI的early sign)
 
-病患約莫過了13分鐘，覺得好一點，但還是痛(<strong>Fig.7</strong>)。
+病患約莫過了13分鐘，覺得好一點，但還是痛(<strong>Fig.9</strong>)。
 
-![](https://cdn-images-1.medium.com/max/1024/1*FuMnQC25tuUld-03EotRxQ@2x.png)
-<strong><em>Fig.7</em></strong>
+![Fig.9 約13分鐘後的ECG](/images/medium/1_FuMnQC25tuUld-03EotRxQ_2x.webp "Fig.9 約13分鐘後的ECG")
 
-過了40分鐘，病患覺得好很多了(<strong>Fig.8</strong>)。
+過了40分鐘，病患覺得好很多了(<strong>Fig.10</strong>)。
 
-![](https://cdn-images-1.medium.com/max/1024/1*8TRG4vk6cCEGRVGtkwVAFg@2x.png)
-<strong><em>Fig.8</em></strong>
+![Fig.10 約40分鐘後的ECG，出現reperfusion T wave](/images/medium/1_8TRG4vk6cCEGRVGtkwVAFg_2x.webp "Fig.10 約40分鐘後的ECG，出現reperfusion T wave")
 
-Fig.8可以看到病患症狀緩解，出現了reperfusion rhythm。在II/aVF有terminal TWI、在III為TWI。因為病患spontaneous reperfusion(血栓自行溶解，血管通了)，所以可以看到在inf.leads出現這樣的reperfusion T wave，aVL原本的TWI也回正。所以這張ECG意味著支配inf.leads的血管出了問題，但是目前通了。
+Fig.10可以看到病患症狀緩解，出現了reperfusion rhythm。在II/aVF有terminal TWI、在III為TWI。因為病患spontaneous reperfusion(血栓自行溶解，血管通了)，所以可以看到在inf.leads出現這樣的reperfusion T wave，aVL原本的TWI也回正。所以這張ECG意味著支配inf.leads的血管出了問題，但是目前通了。
 
 <strong>有沒有覺得上面這段話好像在哪裡看過?</strong>
 
@@ -172,7 +174,9 @@ CAD with SVD s/p PTCA+Stent
 
 - Proximal RCA 90% stenosis
 
-### 學習重點:
+<div class="ec-takeaways">
+
+## 學習重點
 
 1. 12 leads ECG有哪些leads可能會有相對應的reciprocal change變化
 2. ACO(acute coronary occlusion)引起的reciprocal change(例如:TWI in aVL)可能會在對側面出現STE之前就已經先出現。
@@ -180,7 +184,24 @@ CAD with SVD s/p PTCA+Stent
 4. 怎樣的TWI in aVL是有意義的?需要排除哪些normal variants?
 5. Wellens’ wave的意義為何?
 
-參考資料補充：[^1] [^2] [^3]
+</div>
+
+## 參考資料
+
+內文每個上標數字，滑過去（手機點一下）就看得到出處。整理起來是這3份：
+
+<div class="ec-stack ec-cols refs-sources">
+
+- **研究**
+  - Aslanger EK, et al. *Turk Kardiyol Dern Ars* 2021（辨識細微的occlusion MI並與mimics區分：進或不進心導管室的十個步驟）
+  - Bischof JE, et al. *Am J Emerg Med* 2016（aVL ST depression分辨inferior STEMI與pericarditis）
+- **部落格**
+  - Dr. Smith's ECG Blog（You Diagnose Pericarditis at your Peril）
+
+</div>
+
+<div class="refs-slot"></div>
+
 
 [^1]: Department of Cardiology, Marmara University Pendik Training and Research Hospital, Istanbul, Turkey, Aslanger, E. K., Meyers, H. P., Department of Emergency Medicine, Carolinas Medical Center, Charlotte, North Carolina, USA, Smith, S. W., & Department of Emergency Medicine, University of Minnesota Hennepin Healthcare, Minneapolis, Minnesota, USA. (2021). Recognizing electrocardiographically subtle occlusion myocardial infarction and differentiating it from mimics: Ten steps to or away from cath lab. *Turk Kardiyoloji Dernegi Arsivi-Archives of the Turkish Society of Cardiology*, *49*(6), 488–500. [https://doi.org/10.5543/tkda.2021.21026](https://doi.org/10.5543/tkda.2021.21026)
 [^2]: Bischof, J. E., Worrall, C., Thompson, P., Marti, D., & Smith, S. W. (2016). ST depression in lead aVL differentiates inferior ST-elevation myocardial infarction from pericarditis. *The American Journal of Emergency Medicine*, *34*(2), 149–154. [https://doi.org/10.1016/j.ajem.2015.09.035](https://doi.org/10.1016/j.ajem.2015.09.035)

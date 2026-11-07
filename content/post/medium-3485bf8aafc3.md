@@ -1,9 +1,11 @@
 ---
 title: "這是STEMI，你相信嗎?"
 date: "2021-12-28"
+description: "50歲男性捕鰻苗時突然呼吸喘、胸口悶、雙手發麻，12導程ECG在V1到V5有ST depression、沒有明顯STE。整理後壁心肌梗塞的ECG、posterior leads與POCUS的判讀重點。"
 draft: false
-toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*BZYaEyrDghAJY-2Uxgz7cA@2x.png"
+toc: true
+hide_hero: true
+thumbnail: "/images/medium/1_BZYaEyrDghAJY-2Uxgz7cA_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -15,8 +17,14 @@ tags:
 medium_id: "3485bf8aafc3"
 medium_url: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFstemi-%E4%BD%A0%E7%9B%B8%E4%BF%A1%E5%97%8E-3485bf8aafc3"
 canonicalURL: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFstemi-%E4%BD%A0%E7%9B%B8%E4%BF%A1%E5%97%8E-3485bf8aafc3"
+# 🗂 改稿版次
+#   重新排版｜2026-11-07｜比照ecg-post-22：卡片風、圖號、學習重點、參考資料收合（正文字句不動）→⏳ 待確認
+#   第 0 版｜自 Medium 匯入
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*BZYaEyrDghAJY-2Uxgz7cA@2x.png)
+
+{{< article-cards >}}
+
+## ❤️Case：50歲男性，捕鰻苗時喘、胸悶
 
 來看看昨天夜班上班的一位個案。50歲男性，本來從事捕鰻苗的工作。
 
@@ -34,13 +42,15 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFstemi-%E4%BD%A0%E
 
 > **Tips:通常過度換氣是果，什麼是因需要詳查。腸胃炎、情緒起伏過大、疼痛等等都可能是誘發的因子。我還遇過主動脈剝離引起的過度換氣。當超音波掃到flap在主動脈裡面飄時，我和病患一樣在冒冷汗。(好險沒把病患當Psy發作XD)**
 
-### Case continue
+## ❤️Case continue
 
 護理師做完ECG時，我的第一個反應是，**這是STEMI**。快，動作快~~~~
 
+![Fig.1 到院ECG](/images/medium/1_BZYaEyrDghAJY-2Uxgz7cA_2x.webp "Fig.1 到院ECG")
+
 我在ECG上面立刻寫下了，**Post.MI**
 
-![](https://cdn-images-1.medium.com/max/1024/1*iCF76zQarG9ig0wCsx8sEw.jpeg)
+![Fig.2 ECG報告上手寫的Post.MI](/images/medium/1_iCF76zQarG9ig0wCsx8sEw.webp "Fig.2 ECG報告上手寫的Post.MI")
 
 請專師趕快傳給，值班的CV man。
 
@@ -54,7 +64,7 @@ Axis:Normal axis
 
 PR稍長、Narrow QRS、No QT prolong
 
-**在V1~V5有STD，Maximal STD在V3~V4、沒有明顯的STE**
+<mark><strong>在V1~V5有STD，Maximal STD在V3~V4、沒有明顯的STE</strong></mark>
 
 WTF~~~沒有STE，你竟然說這是STEMI!!!!
 
@@ -66,14 +76,13 @@ Post.wall MI佔所有STEMI的10~20%左右。而且通常會合併inf.wall MI、L
 
 只有4~10%為isolated Post.wall MI。
 
-![](https://cdn-images-1.medium.com/max/1024/0*2yN5ESIMXzkJ0V-I)
+![Fig.3 後壁心肌梗塞的基礎知識：90%合併下壁與外壁、4~10%單獨後壁](/images/medium/0_2yN5ESIMXzkJ0V-I.webp "Fig.3 後壁心肌梗塞的基礎知識：90%合併下壁與外壁、4~10%單獨後壁")
 
 **舉個例子，來解說上面這幾句話，會讓大家更了解。**
 
-[![](https://cdn-images-1.medium.com/max/1024/0*nolKXEHS4FR8X6Cm.jpg)](https://litfl.com/inferior-stemi-ecg-library/)
-***Fig.1***
+[![Fig.4 LITFL：inferior STEMI的ECG](/images/medium/0_nolKXEHS4FR8X6Cm.webp "Fig.4 LITFL：inferior STEMI的ECG")](https://litfl.com/inferior-stemi-ecg-library/)
 
-當臨床上病患有胸痛、盜汗，做了如Fig.1的ECG。這樣的ECG，我們絕對不會miss掉。Inf.leads高到像山一樣高的STE，肯定會讓我們有衝動去會診CV man。但是如果這個病患limb leads(Fig.1左側)完全沒有STE，只有precordial leads有如Fig.1的變化。你能第一時間，也說這病患有MI嗎?
+當臨床上病患有胸痛、盜汗，做了如Fig.4的ECG。這樣的ECG，我們絕對不會miss掉。Inf.leads高到像山一樣高的STE，肯定會讓我們有衝動去會診CV man。但是如果這個病患limb leads(Fig.4左側)完全沒有STE，只有precordial leads有如Fig.4的變化。你能第一時間，也說這病患有MI嗎?
 
 我想應該有超過一半以上的人，寧願選擇等待biomarker報告，如果有高，在會診CV man。
 
@@ -85,7 +94,7 @@ Post.wall MI只有30%的病患能夠達到D2B<90分鐘，原因就在於，因�
 
 > **Tips:我們很容易將Post.wall MI誤診為NSTEMI，主要是我們被STEMI criteria的觀念給綁住了**
 
-### Case continue
+## ❤️Case continue
 
 ECG傳給CV man看過後，CV man請我們做一張Post.leads。
 
@@ -93,9 +102,9 @@ ECG傳給CV man看過後，CV man請我們做一張Post.leads。
 
 讓我來和各位讀者解釋一番，就知道為何不推崇做Post.leads，因為這延遲了做PCI的時間。
 
-來看Fig.2，先來看Precordial leads在身體上相對應心臟的相對位置在哪兒?這些Precordial leads幾乎是貼著心臟表面。但是Post.leads呢?Post.leads指的是做V7~V9，也就是把V4~V6改成V7~V9，貼在後背。
+來看Fig.5，先來看Precordial leads在身體上相對應心臟的相對位置在哪兒?這些Precordial leads幾乎是貼著心臟表面。但是Post.leads呢?Post.leads指的是做V7~V9，也就是把V4~V6改成V7~V9，貼在後背。
 
-在Fig.2可以看到如果心臟impluse沿著axis傳導，如果要傳到V7~V9，就會遇到大片的肺部組織。我們學習ECG時，也知道如果遇到low voltage，我們也會把COPD，肺部擴張的狀況列入鑑別診斷。因為空氣把導極與心臟分隔開來。因此會造成QRS complex amplitude變小。當QRS voltage變小，伴隨的ST segment deviation與T wave也會同等變小。
+在Fig.5可以看到如果心臟impluse沿著axis傳導，如果要傳到V7~V9，就會遇到大片的肺部組織。我們學習ECG時，也知道如果遇到low voltage，我們也會把COPD，肺部擴張的狀況列入鑑別診斷。因為空氣把導極與心臟分隔開來。因此會造成QRS complex amplitude變小。當QRS voltage變小，伴隨的ST segment deviation與T wave也會同等變小。
 
 翻成白話一點就是，如果有Post.wall MI，大部分都可以看到Post.lead STE。但是，也就是這個但是，Post.leads的voltage通常不大，因此STE會不明顯。
 
@@ -103,43 +112,40 @@ ECG傳給CV man看過後，CV man請我們做一張Post.leads。
 
 所以如果要應用Post.leads來協助診斷Post.wall MI，有一個很重要的觀念是，如果看到有STE，則Post.wall MI的機率很高(Specificity很高)，但是如果V7~V9沒有看到STE，不代表沒有Post.wall MI，因為low voltage的關係，導致Post.leads會出現可看得出來的STE，不容易見到(Sensitivity不高)。
 
-![](https://cdn-images-1.medium.com/max/1024/1*66d79qCKR8782Ll71G8lIQ@2x.png)
-***Fig.2(紅圈為Post.wall的地方)***
+![Fig.5 V1~V9導極位置與肺部組織（紅圈為Post.wall）](/images/medium/1_66d79qCKR8782Ll71G8lIQ_2x.webp "Fig.5 V1~V9導極位置與肺部組織（紅圈為Post.wall）")
 
-#### 那麼可見的STE要多高才算有意義呢?
+### ❤️那麼可見的STE要多高才算有意義呢?
 
 - 不管男女，V7~V9若有≧0.5 mm(任一lead)的STE就算有意義的高。
 - 如果在男性<40歲，且看到V7~V9(任一lead)有>1 mm的STE，則會增加特異度。
 
 > **Tips:Post.leads沒有看到STE，不代表病患沒有Post.wall MI**
 
-#### 那到底怎麼樣才要懷疑Post.wall MI?
+### ❤️那到底怎麼樣才要懷疑Post.wall MI?
 
-在V1~V4有出現最大Maximal STD就要高度懷疑，只要出現**STDmaxV1–4就有96%的specificity，也就是不管怎麼樣，一定要想盡辦法排除，不然這個STD就是Post.wall MI。**
+在V1~V4有出現最大Maximal STD就要高度懷疑，只要出現<mark><strong>STDmaxV1–4就有96%的specificity，也就是不管怎麼樣，一定要想盡辦法排除，不然這個STD就是Post.wall MI。</strong></mark>
 
 > **Tips:STDmaxV1–4(+) →直指Post.wall MI**
 
-### Case continue
+## ❤️Case continue
 
-![](https://cdn-images-1.medium.com/max/1024/1*rhX2dczQsW14Yw5HEkg5TA.png)
-***Fig.3***
+![Fig.6 Post.leads的ECG：V4~V6改貼成V7~V9](/images/medium/1_rhX2dczQsW14Yw5HEkg5TA.webp "Fig.6 Post.leads的ECG：V4~V6改貼成V7~V9")
 
-Fig.3是在急診做的Post.leads，我們把V9拉大來看(Fig.4)
+Fig.6是在急診做的Post.leads，我們把V9拉大來看(Fig.7)
 
-![](https://cdn-images-1.medium.com/max/1024/1*jJ2jLIrkfJqK6_aniqyjUQ.png)
-***Fig.4***
+![Fig.7 V9放大：至少0.5 mm的STE](/images/medium/1_jJ2jLIrkfJqK6_aniqyjUQ.webp "Fig.7 V9放大：至少0.5 mm的STE")
 
 可以看到V9至少有0.5 mm的STE，可以確定這是Post.wall MI
 
 在這邊有一個很重要的觀念，在最新一期的Smith ECG blog也有提到[^1]。那就是，如果我們要做Post.leads，千萬不要把V1~V3的導極，貼到後背形成V7~V9。
 
-#### 為何?
+### ❤️為何?
 
 Stephen Smith表示做Post.leads時，千萬不要把V1~V3改成V7~V9。因為coronary thrombus是動態的、可能會spontaneous reperfusion，如果剛好遇到reperfusion時做post.leads，這時當然在V7~V9就不會看到STE，所以V1~V3要留著對照使用。
 
 > **Tips:做Post.leads不要把V1~V3貼成V7~V9**
 
-#### 當時我用了自己Lumify做了Echo，大家會希望在哪個地方看出什麼問題呢?
+### ❤️當時我用了自己Lumify做了Echo，大家會希望在哪個地方看出什麼問題呢?
 
 {{< youtube ax9lLtGc_iw >}}
 
@@ -149,22 +155,21 @@ Stephen Smith表示做Post.leads時，千萬不要把V1~V3改成V7~V9。因為co
 
 根據17 segment的區分法，把LV分成17個區塊。Post.leads的位置在Basal-inferior area(Segment 4)。
 
-![](https://cdn-images-1.medium.com/max/1024/1*UZYMEQQVbdc7EMj961_uTA.png)
+![Fig.8 17 segment與A4C、A2C、長軸切面](/images/medium/1_UZYMEQQVbdc7EMj961_uTA.webp "Fig.8 17 segment與A4C、A2C、長軸切面")
 
-![](https://cdn-images-1.medium.com/max/1024/1*AT1wRGIiTQefnliJeAFh0A.png)
-***Fig.5***
+![Fig.9 17 segment與冠狀動脈供應區（LAD、RCA、LCX）](/images/medium/1_AT1wRGIiTQefnliJeAFh0A.webp "Fig.9 17 segment與冠狀動脈供應區（LAD、RCA、LCX）")
 
-首先我們來看Fig.5右側，可以清楚看到17 segment的分區位置。
+首先我們來看Fig.9右側，可以清楚看到17 segment的分區位置。
 
 所以我們在ECG看到懷疑是Post.wall MI，當然我們超音波的目光就要放到Post.wall的附近(**Segment 4、5、10、11都要看**)，是否有明顯RWMA。如果有，那麼超音波的發現就和ECG的發現完全吻合，就更可證明這確實就是Post.wall MI。
 
-看Fig.5左側，可以知道A4C其實不容易看到Post.wall。A2C與PSAX可以看到。
+看Fig.8左側，可以知道A4C其實不容易看到Post.wall。A2C與PSAX可以看到。
 
 - A2C是看anterior、inferior可以看到Segment 4
 - PLAX可以看到Segment 5
 - PSAX是看橫切面(短軸)，可以看到Segment 4、5、10、11
 
-**PSAX是最佳可以看到Post.wall與其附近RWMA的最好view。**
+<mark><strong>PSAX是最佳可以看到Post.wall與其附近RWMA的最好view。</strong></mark>
 
 回頭看看上面的POCUS Clip(PSAX view)，把一根手指頭放在LV中間，有沒有發現Segment 4、5附近是不是不太動。
 
@@ -174,7 +179,7 @@ POCUS finding is compatible with ECG finding.
 
 > **Tips:如果懷疑Post.wall MI →PSAX view就最好eyeballing觀看的view**
 
-### Case continue
+## ❤️Case continue
 
 當然病患在種種急診提供的Post.wall MI證據下，啟動了緊急心導管。
 
@@ -182,18 +187,33 @@ POCUS finding is compatible with ECG finding.
 
 **CAG finding:LCx-P total occlsuion**
 
-![](https://cdn-images-1.medium.com/max/1024/0*Amlc_FHo7kYoPHXj)
-***Fig.6***
+![Fig.10 CAG：LCx-P total occlusion](/images/medium/0_Amlc_FHo7kYoPHXj.webp "Fig.10 CAG：LCx-P total occlusion")
 
-### Learning Points:
+<div class="ec-takeaways">
 
-1. **通常過度換氣是果，什麼是因需要詳查。腸胃炎、情緒起伏過大、疼痛等等都可能是誘發的因子。我還遇過主動脈剝離引起的過度換氣。當超音波掃到flap在主動脈裡面飄時，我和病患一樣在冒冷汗。(好險沒把病患當Psy發作XD)**
-2. **我們很容易將Post.wall MI誤診為NSTEMI，主要是我們被STEMI criteria的觀念給綁住了**
-3. **Post.leads沒有看到STE，不代表病患沒有Post.wall MI，不要浪費時間去做Post.leads了**
-4. **STDmaxV1–4(+) →直指Post.wall MI，直到排除為止**
-5. **做Post.leads不要把V1~V3貼成V7~V9**
-6. **如果懷疑Post.wall MI →PSAX view就最好eyeballing觀看的view**
+## 學習重點
 
-參考資料補充：[^1]
+1. <strong>通常過度換氣是果，什麼是因需要詳查。腸胃炎、情緒起伏過大、疼痛等等都可能是誘發的因子。我還遇過主動脈剝離引起的過度換氣。當超音波掃到flap在主動脈裡面飄時，我和病患一樣在冒冷汗。(好險沒把病患當Psy發作XD)</strong>
+2. <strong>我們很容易將Post.wall MI誤診為NSTEMI，主要是我們被STEMI criteria的觀念給綁住了</strong>
+3. <strong>Post.leads沒有看到STE，不代表病患沒有Post.wall MI，不要浪費時間去做Post.leads了</strong>
+4. <strong>STDmaxV1–4(+) →直指Post.wall MI，直到排除為止</strong>
+5. <strong>做Post.leads不要把V1~V3貼成V7~V9</strong>
+6. <strong>如果懷疑Post.wall MI →PSAX view就最好eyeballing觀看的view</strong>
+
+</div>
+
+## 參考資料
+
+內文每個上標數字，滑過去（手機點一下）就看得到出處。整理起來是這1份：
+
+<div class="ec-stack ec-cols refs-sources">
+
+- **部落格**
+  - Dr. Smith's ECG Blog（Did the posterior leads help here? Why not just get good at STDmaxV1-V4?）
+
+</div>
+
+<div class="refs-slot"></div>
+
 
 [^1]: Dr. Smith’s ECG Blog: Did the posterior leads help here? Why not just get good at STDmaxV1-V4? — [link](http://hqmeded-ecg.blogspot.com/2021/12/did-posterior-leads-help-here-why-not.html)

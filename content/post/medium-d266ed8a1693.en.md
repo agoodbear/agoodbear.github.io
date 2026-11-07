@@ -3,7 +3,7 @@ title: "IHCA → Pulmonary embolism, or something else?"
 date: "2021-10-31"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*f2GmaCa9hR-VLoQKEGX0vw@2x.png"
+thumbnail: "/images/medium/1_f2GmaCa9hR-VLoQKEGX0vw_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -20,7 +20,7 @@ canonicalURL: "https://medium.com/@agoodbear/ihca-%E8%82%BA%E6%A0%93%E5%A1%9E%E9
 translated_from: "medium-d266ed8a1693.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*f2GmaCa9hR-VLoQKEGX0vw@2x.png)
+![](/images/medium/1_f2GmaCa9hR-VLoQKEGX0vw_2x.webp)
 <strong><em>ER arrival</em></strong>
 
 Let's look at an interesting case.
@@ -49,7 +49,7 @@ After that, because her breathing was poor and her blood pressure was low, she w
 
 During the workup, PE was still the top diagnosis to rule out. <strong>(Clinical picture; ECG: RAD, new RBBB; POCUS: what looked like RV dilation but no D-sign)</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*Bf0nYFkHXhsipj1wc8kqXw@2x.png)
+![](/images/medium/1_Bf0nYFkHXhsipj1wc8kqXw_2x.webp)
 <strong><em>Fig.1: 50 minutes later</em></strong>
 
 This is the ECG 50 minutes later <strong>(Fig.1)</strong>, with almost no baseline wander.
@@ -64,7 +64,7 @@ Also, the DDx for <strong>aVR STE + diffuse STD</strong> is very long.
 
 Some of it is vascular, some of it isn't.
 
-![](https://cdn-images-1.medium.com/max/1024/1*zL-rA_XVZ8v3YJCxUmd3rQ@2x.png)
+![](/images/medium/1_zL-rA_XVZ8v3YJCxUmd3rQ_2x.webp)
 <strong><em>DDx of aVR STE</em></strong>
 
 Bottom line: seeing aVR STE is like looking into a wastebasket. Lots of diagnoses live in there. If the patient has ACS symptoms plus aVR STE, then yes, you do need to consider LM, TVD, or proximal LAD disease.
@@ -77,7 +77,7 @@ In the table you can see that, besides the ones we all know (hemodynamic instabi
 
 <strong>Of course, this table only applies if the patient actually is a non-STEMI patient! As for whether this one is, read on~~~~</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/0*KHmmo3oONQAnq6M2)
+![](/images/medium/0_KHmmo3oONQAnq6M2.webp)
 <strong><em>Fig.2</em></strong>
 
 The CV man came down and put her on PCPS to support her vital signs so we could continue the workup. While on PCPS, she completely collapsed and CPR was started.
@@ -96,7 +96,7 @@ She went up to the ICU first. <strong>Fig.3</strong> is the ECG after ICU admiss
 
 Same STD over V1~V6 (maximal at V3~V4) and RBBB, but <strong>the rate has slowed down</strong>.
 
-![](https://cdn-images-1.medium.com/max/1024/1*ERJdAYJS484y8umvp3aOcA@2x.png)
+![](/images/medium/1_ERJdAYJS484y8umvp3aOcA_2x.webp)
 <strong><em>Fig.3</em></strong>
 
 Here's one small but important point. Look back at the aVR STE DDx table above: did you notice SVT and AfRVR listed among the normal variants?
@@ -119,7 +119,7 @@ In this podcast, the host Tom Bouthillet asks Dr. Smith <strong>(start listening
 
 #### <strong>Actually, the paper says it's Segment 4 that is the so-called posterior wall (Fig.4)[^3]</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*lZyXYQNuMYtGVHAODdedZQ@2x.png)
+![](/images/medium/1_lZyXYQNuMYtGVHAODdedZQ_2x.webp)
 <strong><em>Fig.4</em></strong>
 
 > <strong>Tips:</strong> if a fast H.R is causing multiple-lead STD + aVR → <strong>bring the H.R down first</strong> (if you still see maximal STD over V1~V4 after the H.R comes down → think posterior OMI)
@@ -136,14 +136,14 @@ Either way, you must think posterior OMI first, until proven otherwise. The poin
 
 Her TnI 4 hours later shot up to 250 ng/ml (large myocardial infarction). She then went to the cath lab for PCI 5 hours later. The CAG is shown below in <strong>Fig.5, showing LCx critical stenosis and an RCA CTO</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/0*IrcOc95F4_jb5f-e)
+![](/images/medium/0_IrcOc95F4_jb5f-e.webp)
 <strong><em>Fig.5</em></strong>
 
 So in this case the collapse was caused by a large myocardial infarction from LCx critical stenosis, not by a pulmonary embolism.
 
 Let's look at the post-PCI ECG (<strong>Fig.6</strong>), and you'll see that the LCx really was the culprit lesion; we're not just saying that.
 
-![](https://cdn-images-1.medium.com/max/1024/1*cjpdpc0_PzZyGR5Y_g-mmw@2x.png)
+![](/images/medium/1_cjpdpc0_PzZyGR5Y_g-mmw_2x.webp)
 <strong><em>Fig.6</em></strong>
 
 The one above is the post-PCI ECG. What do we see → the T waves got bigger and upright in the precordial leads.
@@ -155,14 +155,14 @@ First we need to know that <strong>a reperfusion rhythm shows up in two situatio
 
 A normal reperfusion rhythm first shows biphasic TWI, which then becomes deep TWI → remember Wellens' syndrome? Wellens' syndrome is exactly the ECG pattern of a reperfusion rhythm.
 
-![](https://cdn-images-1.medium.com/max/1024/0*-46SeXBN7JFPXgXd)
+![](/images/medium/0_-46SeXBN7JFPXgXd.webp)
 <strong><em>Fig.7</em></strong>
 
 > So what does a reperfusion rhythm look like in a posterior OMI?
 
 V1~V4 will show bigger, upright T waves (which, mirrored onto the posterior wall, is that deep-TWI reperfusion rhythm). So, do you see the huge T waves in V2~V4 → this is also called posterior Wellens' syndrome.
 
-<strong>Be careful here not to confuse it with De Winter's T waves. You can</strong>[<strong>refer to this post</strong>](https://agoodbear.medium.com/%E9%80%99%E6%98%AFpost-wellen-syndrome%E9%82%84%E6%98%AFde-winter-391b08ca389f)<strong>, an article I wrote on telling them apart[^5].</strong>
+<strong>Be careful here not to confuse it with De Winter's T waves. You can</strong>[<strong>refer to this post</strong>](/en/post/medium-391b08ca389f/)<strong>, an article I wrote on telling them apart[^5].</strong>
 
 #### ⭐️Key points of this post:
 
@@ -178,4 +178,4 @@ Additional references: [^1] [^2] [^3] [^4] [^5]
 [^2]: Dr. Smith’s ECG Blog: Posterior ST Elevation MI in the Setting of Right Bundle Branch Block, with Posterior Leads V7-V9 — [link](http://hqmeded-ecg.blogspot.com/2009/12/posterior-st-elevation-mi-in-setting-of.html)
 [^3]: Bayés de Luna, A., Wagner, G., Birnbaum, Y., Nikus, K., Fiol, M., Gorgels, A., Cinca, J., Clemmensen, P. M., Pahlm, O., Sclarovsky, S., Stern, S., Wellens, H., & Zareba, W. (2006). A New Terminology for Left Ventricular Walls and Location of Myocardial Infarcts That Present Q Wave Based on the Standard of Cardiac Magnetic Resonance Imaging: A Statement for Healthcare Professionals From a Committee Appointed by the International Society for Holter and Noninvasive Electrocardiography. *Circulation*, *114*(16), 1755–1760. [https://doi.org/10/d4gnjk](https://doi.org/10/d4gnjk)
 [^4]: Dr. Smith’s ECG Blog: A man in his early sixties with palpitations — [link](http://hqmeded-ecg.blogspot.com/2020/01/a-man-in-his-early-sixties-with.html)
-[^5]: [Is This Posterior Wellens' Syndrome or De Winter?] (in Chinese) — Tsao Jian-hsiung — Medium — [link](https://agoodbear.medium.com/%E9%80%99%E6%98%AFpost-wellen-syndrome%E9%82%84%E6%98%AFde-winter-391b08ca389f)
+[^5]: [Is This Posterior Wellens' Syndrome or De Winter?] (in Chinese) — Tsao Jian-hsiung — Medium — [link](/en/post/medium-391b08ca389f/)

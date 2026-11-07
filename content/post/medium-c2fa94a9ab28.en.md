@@ -3,7 +3,7 @@ title: "Besides STE, Which Other ECG Signs Can Mean an Occluded Artery? (Introdu
 date: "2022-11-18"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*ab1PYAHkaEQSP9nEuhy-zA.png"
+thumbnail: "/images/medium/1_ab1PYAHkaEQSP9nEuhy-zA.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -20,10 +20,10 @@ translation_date: "2026-10-09"
 ---
 Let's look at a few ECGs first, then come back to the question above~~
 
-![](https://cdn-images-1.medium.com/max/1024/1*ab1PYAHkaEQSP9nEuhy-zA.png)
+![](/images/medium/1_ab1PYAHkaEQSP9nEuhy-zA.webp)
 <strong><em>Fig.1 60-year-old man, chest pain for one hour</em></strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*_GHxU3OoF6zKeTq7qtk_oQ@2x.png)
+![](/images/medium/1__GHxU3OoF6zKeTq7qtk_oQ_2x.webp)
 <strong><em>Fig.2 46-year-old man, chest pain and discomfort since this morning</em></strong>
 
 First, let's ask ourselves: do these ECGs meet STEMI criteria?
@@ -54,16 +54,16 @@ So if we insist that an MI patient must meet STEMI criteria before we send them 
 
 Before answering that, let's look at what some of the literature says.
 
-![](https://cdn-images-1.medium.com/max/1024/1*K6sEg8DiWhvQxwaHkUyDew.png)
+![](/images/medium/1_K6sEg8DiWhvQxwaHkUyDew.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*M6JTCfILjk6-NRJvLpkZmg.png)
+![](/images/medium/1_M6JTCfILjk6-NRJvLpkZmg.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*aCqF5yFkYQVN0023sZAwkQ@2x.png)
+![](/images/medium/1_aCqF5yFkYQVN0023sZAwkQ_2x.webp)
 <strong><em>Table 1. Which ECG patterns may mean MI - Part I</em></strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*P0EzOAkMZqd83rgJBXVKzA.png)
+![](/images/medium/1_P0EzOAkMZqd83rgJBXVKzA.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*H7Ophv8MgllPdTCaEekFsw.png)
+![](/images/medium/1_H7Ophv8MgllPdTCaEekFsw.webp)
 <strong><em>Table 1. Which ECG patterns may mean MI - Part II</em></strong>
 
 Let's start with the <strong>left side of Table 1</strong>, the table from the <strong>ESC 2017 STEMI guideline</strong>. It describes <strong>the listed situations as atypical ECG presentations of myocardial infarction for which the cath lab should be activated</strong>
@@ -82,33 +82,33 @@ Yep, that's the reality. Since STEMI criteria are so insensitive for diagnosing 
 
 I've taken the ECG patterns that Amal mattu and Dr. Smith have written about in recent years as possibly coming with MI, sorted them into the following major categories, and tidied them up a bit so they're easier to follow. <strong>I gave a talk on this at Dalin Tzu Chi Hospital on October 31 (250 slides, I nearly coughed up blood). If you're interested, you can……..</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*wE9QbKtBAbMV901KL_vuLQ@2x.png)
+![](/images/medium/1_wE9QbKtBAbMV901KL_vuLQ_2x.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*iJsUP2GGK_Cq8j7bZhhFCA@2x.png)
+![](/images/medium/1_iJsUP2GGK_Cq8j7bZhhFCA_2x.webp)
 <strong><em>Fig.3 STEMI(-)/OMI(+)-Part 1</em></strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*8gL11XF7cMit4AUFelpxTw@2x.png)
+![](/images/medium/1_8gL11XF7cMit4AUFelpxTw_2x.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*xWpoy9WxJXbNv_sjLHHRng@2x.png)
+![](/images/medium/1_xWpoy9WxJXbNv_sjLHHRng_2x.webp)
 <strong><em>Fig.4 STEMI(-)/OMI(+)-Part 2</em></strong>
 
 #### In case some readers still don't know what Occlusion MI (OMI) is, here's a quick explanation.
 
-![](https://cdn-images-1.medium.com/max/1024/1*qQnAoih6JPnGAOoosWl4xA@2x.png)
+![](/images/medium/1_qQnAoih6JPnGAOoosWl4xA_2x.webp)
 <strong><em>Fig.5 OMI/NOMI vs. STEMI/NSTEMI</em></strong>
 
 Simply put, STEMI/NSTEMI is distinguished by the ECG, while OMI/NOMI is diagnosed by the pathology of the artery. In other words, an MI with an occluded artery is called OMI. Of course, assessing whether the artery may be occluded ultimately comes down to the cath result. But before cath, the ECG really is one of the most important tools for diagnosing MI, and echo and cardiac enzymes (Troponin-I, Troponin-T) can also help.
 
 So the two most important boxes in Fig.5 are STEMI(+)/OMI(+) and STEMI(-)/OMI(+). Both are type 1 MI, both caused by plaque rupture leading to thrombosis and an occluded artery. They're also the two groups most worth taking to cath to save myocardial cells.
 
-![](https://cdn-images-1.medium.com/max/1024/1*LBe6flyrbXMX1XHmXbbI3A@2x.png)
+![](/images/medium/1_LBe6flyrbXMX1XHmXbbI3A_2x.webp)
 <strong><em>Fig.6 STEMI(+)/OMI(+) vs. STEMI(-)/OMI(+)</em></strong>
 
 Let's look at Fig.6. It shows that STEMI(+)/OMI(+) can be caught with STEMI criteria. Don't know the basic definition of STEMI criteria? (See Fig.7)
 
 Whatever you do, remember that of the 12 leads, V2-V3 are different from the other 10 leads: <strong>for V2-V3 you have to look at age and sex</strong>.
 
-![](https://cdn-images-1.medium.com/max/1024/1*A5WHplcjsnsVO4RnDDpfLw@2x.png)
+![](/images/medium/1_A5WHplcjsnsVO4RnDDpfLw_2x.webp)
 <strong><em>Fig.7 Definition of STEMI criteria</em></strong>
 
 Now on to the STEMI(-)/OMI(+) box in Fig.6. Among NSTEMI patients, statistically 25–30% are missed ACO patients.
@@ -127,9 +127,9 @@ Someone might ask: the patient got the cath in the end anyway!!! So why do we ne
 
 This paper[^7] compared the STEMI(+)/OMI(+) and STEMI(-)/OMI(+) groups. Both had similar clinical presentation/lab results and echo findings. But in the STEMI(-)/OMI(+) group, cath was clearly delayed, and compared with the STEMI(+)/OMI(+) group, mortality and morbidity were clearly higher (<strong>see Fig.8</strong>).
 
-![](https://cdn-images-1.medium.com/max/1024/1*cpLgUbdaMMR7ir7QpttqdQ@2x.png)
+![](/images/medium/1_cpLgUbdaMMR7ir7QpttqdQ_2x.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*JpfhNjcM_T5vfR_83UJuEg@2x.png)
+![](/images/medium/1_JpfhNjcM_T5vfR_83UJuEg_2x.webp)
 <strong><em>Fig.8 STEMI(+)/OMI(+) vs. STEMI(-)/OMI(+)</em></strong>
 
 Another paper[^8] reports NSTEMI with ATO (acute total coronary occlusion) at about 34%. All-cause mortality, recurrent MI, and cardiogenic shock were all clearly higher in the NSTEMI with ATO group than in the NSTEMI without ATO group.
@@ -138,7 +138,7 @@ Picture an NSTEMI with ATO patient: the whole artery is occluded, but…… we w
 
 So back when the OMI concept hadn't caught on yet (<strong>has it caught on now?</strong>), the ESC 2020 NSTEMI guideline also said patients with very high risk features need PCI within < 2 hr (see <strong>Fig.9</strong>).
 
-![](https://cdn-images-1.medium.com/max/1024/0*rnX4Dx-mdxYSgY6V)
+![](/images/medium/0_rnX4Dx-mdxYSgY6V.webp)
 <strong><em>Fig.9 ESC 2020 NSTEMI Guideline</em></strong>
 
 The lower left corner of Fig.9 lists many situations in which cath is recommended within 2 hours. Apart from aVR STE + multiple leads STD, it says almost nothing about what the ECG pattern has to look like before the patient can go to cath. That means the ESC guideline also knows STEMI criteria aren't the only criterion for diagnosing MI: there are plenty of cases where the artery clearly is occluded, or is progressively occluding, but you just don't see anything that meets STEMI criteria. That's why it recommends cath for patients with a Very high risk feature. Note that it's Very high risk feature, not "<strong>Very high risk ECG feature</strong>".
@@ -159,7 +159,7 @@ Let's see what Dr. Smith wrote in a Twitter post this year.
 
 When I first read this paper, I knew that in clinical practice NSTEMI patients who meet a Very high risk feature often really don't go straight to PCI. But when I saw the actual numbers, I was still honestly a bit shocked. (<strong>Fig.10</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*royild11ypTlZqn-0WH3TQ@2x.png)
+![](/images/medium/1_royild11ypTlZqn-0WH3TQ_2x.webp)
 <strong><em>Fig.10</em></strong>
 
 ### Only 6.4%….. you read that right, 6.4% of Very high risk patients got cath within <2 hours

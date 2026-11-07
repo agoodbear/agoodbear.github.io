@@ -3,7 +3,7 @@ title: "Is this Post. Wellens syndrome or De Winter?"
 date: "2021-06-11"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*G-3NxJGciSjISLUr0SbOOw.png"
+thumbnail: "/images/medium/1_G-3NxJGciSjISLUr0SbOOw.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -19,7 +19,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E9%80%99%E6%98%AFpost-wellen-syndr
 translated_from: "medium-391b08ca389f.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*G-3NxJGciSjISLUr0SbOOw.png)
+![](/images/medium/1_G-3NxJGciSjISLUr0SbOOw.webp)
 *From:[https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html](https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html)*
 
 The latest [ECG blog](https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html)¹ posted an ECG. The ECG seems to show STE in the Inf. wall, plus STD and large T waves in V2~V3. But **Ken Grauer** felt V2~V3 looked like reperfusion after a Post.wall MI, which is why the T waves are tall.
@@ -47,9 +47,9 @@ So I wrote an email to **Ken Grauer** to ask. He said he felt the STD in V2 was 
 **1.How to tell De winter's T waves from Post. Wellens' syndrome ➡ De winter's T waves may evolve from Hyperacute T waves, so the T waves are broad and fat, whereas the Tall T waves from the reperfusion rhythm of a Post.wall MI are the Post.wall's Terminal TWI, so they're narrower
 2.If it's De winter's T waves, more Precordial leads are involved**
 
-![](https://cdn-images-1.medium.com/max/1024/1*G-3NxJGciSjISLUr0SbOOw.png)
+![](/images/medium/1_G-3NxJGciSjISLUr0SbOOw.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*KskSuTVyWBZvAE0KseYnCQ.png)
+![](/images/medium/1_KskSuTVyWBZvAE0KseYnCQ.webp)
 *Left image: Ken Grauer's example; Right image: Smith's example. **Compare V2~V3 (which is fat/broad, and which is narrow?)***
 
 1. ECG Interpretation: ECG Blog #232 (47) — What is Bigeminy? — [link](https://ecg-interpretation.blogspot.com/2021/06/ecg-blog-232-47-what-is-bigeminy.html)

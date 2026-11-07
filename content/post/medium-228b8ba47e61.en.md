@@ -3,7 +3,7 @@ title: "A case of out-of-hospital cardiac arrest — what was the cause?"
 date: "2021-06-17"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*658U47yADmFl43Vh8lxIhw@2x.png"
+thumbnail: "/images/medium/1_658U47yADmFl43Vh8lxIhw_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -19,14 +19,14 @@ canonicalURL: "https://medium.com/@agoodbear/%E5%88%B0%E9%99%A2%E5%89%8D%E6%AD%B
 translated_from: "medium-228b8ba47e61.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*658U47yADmFl43Vh8lxIhw@2x.png)
+![](/images/medium/1_658U47yADmFl43Vh8lxIhw_2x.webp)
 <strong><em>ECG on arrival (Fig 1)</em></strong>
 
 76-year-old woman.
 
 Arrived at an outside hospital in out-of-hospital cardiac arrest; after resuscitation, she got ROSC. She was transferred to our hospital, and the first ECG on arrival in our ED is shown above <strong><em>(at this point she was about to crash)</em></strong>. Her heart stopped very soon after. After roughly another 10 minutes of CPR, she got ROSC again. We did another 12-lead ECG <strong>(Fig 2)</strong>.
 
-![](https://cdn-images-1.medium.com/max/1024/1*TCibxgW2jlITY8MXP9cA0A@2x.png)
+![](/images/medium/1_TCibxgW2jlITY8MXP9cA0A_2x.webp)
 <strong><em>First ECG after resuscitation (Fig 2)</em></strong>
 
 ### What do you think caused this?
@@ -49,10 +49,10 @@ Then look at Fig 2 → Rate: 90 bpm, SR, RAD, RBBB, TWI over V2~V4, II, III, aVF
 
 #### RBBB/ICRBBB appears → because the RBB runs along the septal wall next to the RV, and the RV wall isn't thick, RV strain causes RV wall ischemia, which in turn produces RBBB/ICRBBB
 
-[![](https://cdn-images-1.medium.com/max/1024/1*Emykvthp7Q5kwZpdqPh1yA.png)](https://pubmed.ncbi.nlm.nih.gov/27742402/)
+[![](/images/medium/1_Emykvthp7Q5kwZpdqPh1yA.webp)](https://pubmed.ncbi.nlm.nih.gov/27742402/)
 *New Electrocardiographic Changes in Patients Diagnosed with Pulmonary Embolism*
 
-[![](https://cdn-images-1.medium.com/max/1024/1*IOGE0l_IOO_9paPd0nZJvA.png)](https://www.amazon.com/Electrocardiography-Emergency-Acute-Critical-Care/dp/1732748608)
+[![](/images/medium/1_IOGE0l_IOO_9paPd0nZJvA.webp)](https://www.amazon.com/Electrocardiography-Emergency-Acute-Critical-Care/dp/1732748608)
 *From Amal mattu*
 
 - <strong>Wellens' syndrome</strong> also belongs on the differential. It's defined as Biphasic T waves or Deeply TWI in V2/V3 (sometimes it can extend to V1~V6). With Wellens, you need to pay attention to its definition — pay attention to what? I'll cover that next time when I have time~
@@ -71,7 +71,7 @@ First, we need to know that PE causes Pul.HTN, which in turn causes <strong>RV s
 
 - Tall R wave in V1(R/S >1) → only present as a normal variant in 1%, so it's not common in the ED — memorize the table below!
 
-![](https://cdn-images-1.medium.com/max/1024/1*8eNLSXiwE1oGomFrl8AwfQ@2x.png)
+![](/images/medium/1_8eNLSXiwE1oGomFrl8AwfQ_2x.webp)
 *DDx for Tall R wave in V1*
 
 - RAD
@@ -86,7 +86,7 @@ First, we need to know that PE causes Pul.HTN, which in turn causes <strong>RV s
 2. ACS, or especially reperfusion (Wellens), rarely has tachycardia
 3. Wellens' T waves and PE's T waves look different <strong>(sounds kind of mystical LOL)</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*XB-IPb_o4ivRO18ifc0XiQ.jpeg)
+![](/images/medium/1_XB-IPb_o4ivRO18ifc0XiQ.webp)
 *PE’s T wave vs. Wellens’ T wave*
 
 Look closely: the top row is all different PE cases, and the bottom row is all different Wellens cases. Notice anything different?
@@ -108,9 +108,9 @@ We then did a Chest CTA, which showed the right upper pulmonary vessels complete
 
 The patient went home to heaven that afternoon………
 
-![](https://cdn-images-1.medium.com/max/1024/1*R_Ty12GIOLH3BxgbtsIs-Q.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_R_Ty12GIOLH3BxgbtsIs-Q-poster.jpg" aria-label=""><source src="/images/medium/1_R_Ty12GIOLH3BxgbtsIs-Q.mp4" type="video/mp4"></video></figure>
 
-![](https://cdn-images-1.medium.com/max/1024/1*Cw2vg4X6CZ0nQ_jPvne5Ww.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_Cw2vg4X6CZ0nQ_jPvne5Ww-poster.jpg" aria-label=""><source src="/images/medium/1_Cw2vg4X6CZ0nQ_jPvne5Ww.mp4" type="video/mp4"></video></figure>
 
 1. Dr. Smith’s ECG Blog: A crashing patient with an abnormal ECG that you must recognize — [link](http://hqmeded-ecg.blogspot.com/2018/03/a-crashing-patient-with-abnormal-ecg.html)
 2. [Electrocardiographic differentiation between acute pulmonary embolism and acute coronary syndromes on the basis of negative T waves](https://pubmed.ncbi.nlm.nih.gov/17350373/)

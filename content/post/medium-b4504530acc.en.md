@@ -3,7 +3,7 @@ title: "Guess Which Vessel Is Occluded?"
 date: "2021-09-19"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*DImVcrqqnClukvho9mhMAA@2x.png"
+thumbnail: "/images/medium/1_DImVcrqqnClukvho9mhMAA_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -18,7 +18,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E7%8C%9C%E7%8C%9C%E5%93%AA%E4%B8%8
 translated_from: "medium-b4504530acc.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*DImVcrqqnClukvho9mhMAA@2x.png)
+![](/images/medium/1_DImVcrqqnClukvho9mhMAA_2x.webp)
 
 A case from a while back: a middle-aged man in his 40s. He suddenly collapsed at work.
 
@@ -38,7 +38,7 @@ You have to consider <strong>Inf.-Post-lateral wall STEMI</strong>
 
 #### <strong>First, how do you identify 3rd degree AVB?</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*lb7JibPdXW54B7THqRtXRw.png)
+![](/images/medium/1_lb7JibPdXW54B7THqRtXRw.webp)
 <strong><em>Fig.1</em></strong>
 
 To identify an AV block, look at the relationship between the P and the QRS.
@@ -53,14 +53,14 @@ P and QRS at a <strong>fixed distance</strong>, then a P isn't followed by a QRS
 
 #### Next, how do you diagnose Post.wall MI?
 
-![](https://cdn-images-1.medium.com/max/1024/1*ziHV3GUukSIgeynYFMP2uw@2x.png)
+![](/images/medium/1_ziHV3GUukSIgeynYFMP2uw_2x.webp)
 <strong><em>Fig.2</em></strong>
 
 Generally, diagnosing Post.wall MI takes three criteria: (<strong>Fig.2</strong> is V1~V3 from this Case)
 
 #### <strong>1.R/S>1 in V1 or V2 (i.e., Tall RV1) 2.STD in V1~V3 3.Upright T wave in V1~V3</strong>
 
-As [I mentioned in this post](https://agoodbear.medium.com/%E9%80%99%E6%98%AFpost-wellen-syndrome%E9%82%84%E6%98%AFde-winter-391b08ca389f), points one and three aren't actually required. Why?
+As [I mentioned in this post](/en/post/medium-391b08ca389f/), points one and three aren't actually required. Why?
 
 Point one shows up when a Q wave has formed in the Post.wall, which corresponds to a Tall R wave in V1~V3
 
@@ -74,7 +74,7 @@ The Smith ECG Blog has stressed many times: if the Maximal STD is in V2~V4, you 
 
 First you need to know why you'd do a Right side ECG at all. A Right side ECG tells you whether there's an associated RVMI. If there's RVMI, in management we won't give drugs that lower preload (such as NTG). Because giving something like NTG keeps fluid in the periphery, so less blood returns to the heart; and because of the RVMI, the RV dilates and the septum pushes into the LV, reducing cardiac output. Less blood back to the RV means less blood to the LV, so cardiac output drops even more, and the patient may go into shock and hypotension. (<strong>Fig.3</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*xRLVfI3jPxrN5I1oUt5VsQ.png)
+![](/images/medium/1_xRLVfI3jPxrN5I1oUt5VsQ.webp)
 <strong><em>Fig.3</em></strong>
 
 #### <strong>Basics:</strong> About 30~50% of Inf.OMI comes with RVMI
@@ -114,9 +114,9 @@ Read the original ECG (ECG clues), using the following:
 
 #### After all that, which vessel was occluded in this Case?
 
-![](https://cdn-images-1.medium.com/max/1024/1*Q4SO8VgcQxNvacdm3aJPYw.jpeg)
+![](/images/medium/1_Q4SO8VgcQxNvacdm3aJPYw.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*M-JTKlUwaPGw6DhJD5oF_g.jpeg)
+![](/images/medium/1_M-JTKlUwaPGw6DhJD5oF_g.webp)
 <strong><em>Fig.4</em></strong>
 
 Above is the CAG (<strong>Fig.4</strong>). All three vessels wide open, as patent as can be～～～
@@ -127,7 +127,7 @@ Amazing~~~
 
 Here let's look at a figure from a paper[^3] (<strong>Fig.5</strong>), where it's more obvious. In the lower panel, after nitrate was given into the coronary artery, the occluded spot in the LAD opened up.
 
-![](https://cdn-images-1.medium.com/max/1024/1*0wSXY9V-_Fu1HZz3v3Tz0A@2x.png)
+![](/images/medium/1_0wSXY9V-_Fu1HZz3v3Tz0A_2x.webp)
 <strong><em>Fig.5</em></strong>
 
 <strong>Coronary artery spasm is also called Prinzmetal (vasospastic) angina</strong>: vasoconstriction causes ischemia, producing a STEMI ECG pattern.
@@ -145,7 +145,7 @@ Here I'll mention an ECG challenge published in Circulation in July this year[^4
 - This QRS-T monophasic curve isn't usually seen in AMI; rather, it's caused by repeated coronary spasm occluding the proximal portion of a main coronary artery
 - Also, if pathological Q waves and T wave changes appear (Terminal TWI or Deeply TWI, i.e., Wellens’ waves), that's more of a typical AMI presentation
 
-![](https://cdn-images-1.medium.com/max/1024/1*k_oGslBAnfl-t9ihQlCH1A@2x.png)
+![](/images/medium/1_k_oGslBAnfl-t9ihQlCH1A_2x.webp)
 <strong><em>Fig.6</em></strong>
 
 Additional references: [^1] [^2] [^3] [^4]

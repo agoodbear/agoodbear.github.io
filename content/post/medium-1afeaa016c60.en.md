@@ -3,7 +3,7 @@ title: "Medium's Various Formatting Features"
 date: "2021-06-10"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*xXb9LHTT0K9SsQizSxzYZg@2x.png"
+thumbnail: "/images/medium/1_xXb9LHTT0K9SsQizSxzYZg_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "study"
@@ -20,15 +20,15 @@ translation_date: "2026-10-09"
 ---
 - Type \` and the text after it gets a gray background
 
-![](https://cdn-images-1.medium.com/max/1024/1*xXb9LHTT0K9SsQizSxzYZg@2x.png)
+![](/images/medium/1_xXb9LHTT0K9SsQizSxzYZg_2x.webp)
 
 - Type : and then some English, and [emoji symbols](https://www.webfx.com/tools/emoji-cheat-sheet/) pop up
 
-![](https://cdn-images-1.medium.com/max/1024/1*WgW-LwzZwY03S8pq5NLycQ@2x.png)
+![](/images/medium/1_WgW-LwzZwY03S8pq5NLycQ_2x.webp)
 
 - Type \`\`\` and a gray-background block appears (you have to type it at the very start)
 
-![](https://cdn-images-1.medium.com/max/1024/1*iC0r-9zWy6lESpKNOUJaxw@2x.png)
+![](/images/medium/1_iC0r-9zWy6lESpKNOUJaxw_2x.webp)
 
 - Press CMD+K on an image to add a Hyperlink to it
 - **Press \*+space or 1. → to get indented formatting**
@@ -39,10 +39,10 @@ translation_date: "2026-10-09"
 
 - Image Grids (hold CMD when selecting images to pick several at once)
 
-![](https://cdn-images-1.medium.com/max/1024/1*jhZIIfIN__Rcb30dwecWAA@2x.png)
+![](/images/medium/1_jhZIIfIN__Rcb30dwecWAA_2x.webp)
 *Previous ECG*
 
-![](https://cdn-images-1.medium.com/max/1024/1*DlM6nIyfrxr_OUR18MpoTA@2x.png)
+![](/images/medium/1_DlM6nIyfrxr_OUR18MpoTA_2x.webp)
 
-![](https://cdn-images-1.medium.com/max/1024/1*pEVYam7Maa6UqptWqzpH2g@2x.png)
+![](/images/medium/1_pEVYam7Maa6UqptWqzpH2g_2x.webp)
 *Left side: K →6.1; Right side: K →7.4*

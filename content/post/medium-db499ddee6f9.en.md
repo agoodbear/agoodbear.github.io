@@ -3,7 +3,7 @@ title: "Arriving hypotensive and hypoxic: is there something wrong with the ECG?
 date: "2022-09-07"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*NXKy7gSDorREfnBDMYGt6w@2x.png"
+thumbnail: "/images/medium/1_NXKy7gSDorREfnBDMYGt6w_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -19,7 +19,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E4%BD%8E%E8%A1%80%E5%A3%93-%E4%BD%
 translated_from: "medium-db499ddee6f9.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*NXKy7gSDorREfnBDMYGt6w@2x.png)
+![](/images/medium/1_NXKy7gSDorREfnBDMYGt6w_2x.webp)
 <strong><em>Fig.1 ECG on arrival</em></strong>
 
 72-year-old woman, brought to our hospital by ambulance, wee-woo~~~~wee-woo.
@@ -63,7 +63,7 @@ Ischemia:Q in III/aVF, TWI in V1–4, III
 
 <strong>First, take a look at a figure from ECG master Ken Grauer (Fig.2)</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/0*OrHTEsrACw43bk_D)
+![](/images/medium/0_OrHTEsrACw43bk_D.webp)
 <strong><em>Fig.2 Reverse Z shape</em></strong>
 
 - This figure is the reverse Z shape mnemonic. That is, if you find a <strong>Q wave and/or TWI</strong> in just these five leads (III/aVF/aVL/aVR/V1) on their own, it's very likely normal. (<strong>Caveat: young person, no heart problems</strong>)
@@ -73,7 +73,7 @@ Ischemia:Q in III/aVF, TWI in V1–4, III
 
 <strong>Putting it together: the leads in the reverse Z shape + the leads where septal q waves can appear → all of these can have normal Q waves.</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*awP1h7G6O7afwbW0SYa0qA@2x.png)
+![](/images/medium/1_awP1h7G6O7afwbW0SYa0qA_2x.webp)
 <strong><em>Fig.3</em></strong>
 
 <strong>So how do pathologic Q waves and septal q waves differ by definition? (Fig.3)</strong>
@@ -89,7 +89,7 @@ On a normal 12 lead ECG you generally see only a small S wave in lead I, or no S
 
 In the DDx of axis deviation (<strong>Fig.4</strong>), we're very used to letting the presence of RAD (S wave > R wave in lead I) prompt us to think about possible pulmonary embolism
 
-![](https://cdn-images-1.medium.com/max/1024/1*y8KXcJlhz_xQiTz-AvtU7g@2x.png)
+![](/images/medium/1_y8KXcJlhz_xQiTz-AvtU7g_2x.webp)
 <strong><em>Fig.4 DDx of axis deviation</em></strong>
 
 But <strong>the skill is in the details of the ECG read: be very, very careful with a big S wave</strong>. Don't rule PE out just because you don't see RAD.
@@ -104,12 +104,12 @@ Once you pick up TWI in the precordial leads, in this battle with the King of He
 
 I think this reading technique is really important. Whether it's applied here or elsewhere: for example, sometimes in an RBBB patient it isn't easy to tell whether there's STE.
 
-![](https://cdn-images-1.medium.com/max/1024/1*BLIMvy4B0Hn8qn3crQ6b6Q.png)
+![](/images/medium/1_BLIMvy4B0Hn8qn3crQ6b6Q.webp)
 <strong><em>Fig.5</em></strong>
 
 In Fig.5 the TWI in the precordial leads isn't very obvious, e.g., V2–3. That's mainly because the baseline isn't that steady (it wanders), and the downward deflection of the TWI is small, so it's hard to tell there's TWI.
 
-![](https://cdn-images-1.medium.com/max/1024/1*oXhpNA4qrAGplI0j0dB25g.png)
+![](/images/medium/1_oXhpNA4qrAGplI0j0dB25g.webp)
 <strong><em>Fig.6</em></strong>
 
 I've marked up the original ECG. Follow my explanation and let's crack it step by step: is there TWI or not?
@@ -170,7 +170,7 @@ First, for the PE vs. ACS showdown, we have to understand why TWI shows up in ea
 
 Let's look at Wellens’ syndrome first. Wellens’s syndrome comes about because there's a brief period of vessel occlusion, but it very quickly undergoes spontaneous reperfusion on its own before a large infarction has formed. This reperfusion is what produces the Wellens’ wave on the ECG.
 
-[![](https://cdn-images-1.medium.com/max/1024/0*Zr-f29b8f2YqnaCU.png)](http://hqmeded-ecg.blogspot.com/p/teaching-images.html)
+[![](/images/medium/0_Zr-f29b8f2YqnaCU.webp)](http://hqmeded-ecg.blogspot.com/p/teaching-images.html)
 <strong><em>Fig.7</em></strong>
 
 Fig.7 is from the teaching images on Smith's ECG Blog.
@@ -199,7 +199,7 @@ Now here's the real point of the whole post[^10] (please tell me I didn't just t
 
 - Just how low is the sensitivity of S1Q3T3? (<strong>table data</strong>[^6])
 
-![](https://cdn-images-1.medium.com/max/1024/1*oweWf_uSp3Ti5KeNpzZhuw@2x.png)
+![](/images/medium/1_oweWf_uSp3Ti5KeNpzZhuw_2x.webp)
 <strong><em>Fig.8 Common ECG findings in PE</em></strong>
 
 <strong>The sensitivity of S1Q3T3 is only 4%</strong>…….uh, don't count on seeing S1Q3T3 to diagnose PE. Only if you're cursed with crap luck and see 1000 PE cases (<strong>then nobody will want to work a shift with you</strong>) will you have enough S1Q3T3s to brag about.
@@ -253,18 +253,18 @@ Seeing V1–4 TWI + S1Q3T3 on her ECG, rate close to 99 bpm, the first thing tha
 
 If these ECG findings were from RV strain, and the patient was also in shock and short of breath, what tools did we have to help with the differential? She looked like the King of Hell was about to drag her off~~~
 
-![](https://cdn-images-1.medium.com/max/1024/1*vdnzaEPFTqkuz7TW8a4YaA.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_vdnzaEPFTqkuz7TW8a4YaA-poster.jpg" aria-label=""><source src="/images/medium/1_vdnzaEPFTqkuz7TW8a4YaA.mp4" type="video/mp4"></video></figure>
 
-![](https://cdn-images-1.medium.com/max/1024/1*dB3marUPtCdOsPdcnq_tZA.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_dB3marUPtCdOsPdcnq_tZA-poster.jpg" aria-label=""><source src="/images/medium/1_dB3marUPtCdOsPdcnq_tZA.mp4" type="video/mp4"></video></figure>
 
-![](https://cdn-images-1.medium.com/max/1024/1*hs6gM2pZIw74AmTV5K3qUQ.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_hs6gM2pZIw74AmTV5K3qUQ-poster.jpg" aria-label=""><source src="/images/medium/1_hs6gM2pZIw74AmTV5K3qUQ.mp4" type="video/mp4"></video></figure>
 <strong><em>Fig.9 Heart POCUS</em></strong>
 
 The moment I saw an obvious RV strain pattern on the ECG, I put my pricey Lumify right on her chest. After the ultrasound, I already had a clear answer in my head.
 
 Skip the X-ray. I pushed her straight to the CT room for a chest CTA.
 
-![](https://cdn-images-1.medium.com/max/1024/1*J1QXGkk6Jtk_oIAFqsYM6A.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_J1QXGkk6Jtk_oIAFqsYM6A-poster.jpg" aria-label=""><source src="/images/medium/1_J1QXGkk6Jtk_oIAFqsYM6A.mp4" type="video/mp4"></video></figure>
 
 You can see the [coronal view](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2FTsao-Jian-hsiung%2FR7Xz5RZx3v.gif?alt=media&token=aefe99a4-f7a5-4194-a036-90127546d8c0) of the chest CTA here
 
@@ -294,14 +294,14 @@ I had the nurse go get rTPA right away. We were going to give rTPA to dissolve t
 
 Remember which emergencies rTPA can be used for?
 
-![](https://cdn-images-1.medium.com/max/1024/1*oUwlfuiKSUkx_eIXGL1WGw.png)
+![](/images/medium/1_oUwlfuiKSUkx_eIXGL1WGw.webp)
 <strong><em>Fig.10</em></strong>
 
 #### What are the key points in treating the crashing pulmonary embolism patient? (The points below come from this article[^11])
 
 To save a PE patient, you first need to understand what the PE death spiral is. Before the key points, take a look at a figure (Fig.11)
 
-![](https://cdn-images-1.medium.com/max/1024/1*VhIOlsR3CAh7LgGfsTHNPA@2x.png)
+![](/images/medium/1_VhIOlsR3CAh7LgGfsTHNPA_2x.webp)
 <strong><em>Fig.11 The PE death spiral</em></strong>
 
 ⭐️Pulmonary embolism➡︎increased PVR➡︎<strong>leads to RV dilation</strong>
@@ -340,7 +340,7 @@ To save a PE patient, you first need to understand what the PE death spiral is. 
 
 If you're considering rTPA, remember to go through the <strong>rTPA check list</strong> (Fig.12) first for any contraindications
 
-![](https://cdn-images-1.medium.com/max/1024/1*b31hiO4ynbDLRrXWEFF4aQ.png)
+![](/images/medium/1_b31hiO4ynbDLRrXWEFF4aQ.webp)
 <strong><em>Fig.12 rTPA check list</em></strong>
 
 #### Case course: continuing with this case
@@ -349,7 +349,7 @@ When she was diagnosed, on NRM 15 L/min oxygen, her SaO2 was about 96%, her bloo
 
 We gave about 250 c.c of fluid, the blood pressure was still low, and I had the nurse go straight to a norepinephrine pump to get the pressure up first, no more fluid. Because keeping on pouring in fluid makes the RV dilate even more, which makes the RV ischemia worse and the shock more pronounced. Only by getting the pressure up does the RV hypoperfusion improve, and only then does the RV ischemia improve.
 
-![](https://cdn-images-1.medium.com/max/1024/1*fiuX6syDvFKOmmj9sKuSIQ.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_fiuX6syDvFKOmmj9sKuSIQ-poster.jpg" aria-label=""><source src="/images/medium/1_fiuX6syDvFKOmmj9sKuSIQ.mp4" type="video/mp4"></video></figure>
 <strong><em>Fig.13 Pre & After rTPA</em></strong>
 
 We gave the rTPA within about an hour of her arrival.

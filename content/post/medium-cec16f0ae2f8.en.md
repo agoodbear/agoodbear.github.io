@@ -3,7 +3,7 @@ title: "Chest pain: is it Wellen?"
 date: "2022-03-01"
 draft: false
 toc: false
-thumbnail: "https://cdn-images-1.medium.com/max/1024/1*yRFGZRBFf8mrOR-6YJog9Q@2x.png"
+thumbnail: "/images/medium/1_yRFGZRBFf8mrOR-6YJog9Q_2x.webp"
 typora-copy-images-to: "../../static/images/ipic"
 categories:
   - "ecg"
@@ -19,7 +19,7 @@ canonicalURL: "https://medium.com/@agoodbear/%E8%83%B8%E7%97%9B-%E6%98%AFwellen%
 translated_from: "medium-cec16f0ae2f8.md"
 translation_date: "2026-10-09"
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*yRFGZRBFf8mrOR-6YJog9Q@2x.png)
+![](/images/medium/1_yRFGZRBFf8mrOR-6YJog9Q_2x.webp)
 
 A 70-year-old man with chest pain for three days. At night it hurt so much he couldn't sleep. Past history of HCC treated with transarterial embolization, still under treatment.
 
@@ -53,7 +53,7 @@ Clinically, it means a high risk of an extensive ant.wall MI within the next few
 
 So why do these two kinds of TWI appear?
 
-[![](https://cdn-images-1.medium.com/max/1024/1*imoeW1K2zblX9E2-ff6Wrw@2x.png)](http://hqmeded-ecg.blogspot.com/p/teaching-images.html)
+[![](/images/medium/1_imoeW1K2zblX9E2-ff6Wrw_2x.webp)](http://hqmeded-ecg.blogspot.com/p/teaching-images.html)
 <strong><em>Fig.1</em></strong>
 
 First, let's look at <strong>Fig.1</strong>. The <strong>top</strong> of this figure covers the ECG changes of ACO (Acute coronary occlusion). The <strong>bottom</strong> covers the typical ECG changes when reperfusion happens before infarction. We'll get to that later.
@@ -66,7 +66,7 @@ This post on Smith's ECG Blog says that 19% of STEMIs have spontaneous reperfusi
 
 > <strong>Tips: Vessel occlusion is dynamic, so spontaneous reperfusion can happen</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*GAsTylENrLZRlFheGIhZgA@2x.png)
+![](/images/medium/1_GAsTylENrLZRlFheGIhZgA_2x.webp)
 <strong><em>Fig.2</em></strong>
 
 Now let's talk about the typical ECG changes after reperfusion, which include Pattern A and Pattern B in Fig.2.
@@ -107,7 +107,7 @@ Also, RV strain can cause TWI in the R't precordial leads ± inf. leads.
 
 Let me say a bit more about the DDx of the first point, tall RV1 (<strong>Fig.3</strong>)
 
-![](https://cdn-images-1.medium.com/max/1024/1*IRz_sow2yItXh-zg96e5Xg@2x.png)
+![](/images/medium/1_IRz_sow2yItXh-zg96e5Xg_2x.webp)
 <strong><em>Fig.3</em></strong>
 
 I split it into four parts to remember. Remembering the more common ones is enough to fight the monsters.
@@ -130,7 +130,7 @@ There are key results from a few studies we can draw on.
 
 The first is a paper by Kosuge et al published in 2007[^7]. It has an <strong>important conclusion: if the diagnosis comes down to ACS vs. PE, then an ECG with TWI in the precordial leads together with TWI in III/V1 should make you strongly consider PE.</strong>
 
-![](https://cdn-images-1.medium.com/max/1024/1*BYVb3J2GMmP5zyhXzwCY7w.png)
+![](/images/medium/1_BYVb3J2GMmP5zyhXzwCY7w.webp)
 <strong><em>Fig.4</em></strong>
 
 What Fig.4 is saying is that when it shows up <strong>in both III/V1</strong>, <strong>88% of PE look like this, and only 1% of ACS do</strong>.
@@ -141,7 +141,7 @@ Its conclusion →<strong>Peak negative TWI in V1~V2, when used to diagnose PE �
 
 You can also look at the shape of the TWI to tell ACS from PE (<strong>Fig.5</strong>).
 
-![](https://cdn-images-1.medium.com/max/1024/1*wzXCvV4VnZIKsN3nMZXAsQ@2x.png)
+![](/images/medium/1_wzXCvV4VnZIKsN3nMZXAsQ_2x.webp)
 <strong><em>Fig.5</em></strong>
 
 Look at Fig.5: the 5 cases in the top row are all PE, and the 5 cases in the bottom row are all ACS-Wellen.
@@ -162,13 +162,13 @@ So if we apply the three methods above for telling ACS vs. PE TWI apart to the c
 
 #### Here goes~~~ the moment of truth~~~
 
-![](https://cdn-images-1.medium.com/max/1024/1*d8u-_of3RPTLspg5OikCHQ.png)
+![](/images/medium/1_d8u-_of3RPTLspg5OikCHQ.webp)
 
 After seeing the ECG, I wrote down suspected PE right away. And ordered a Chest CTA.
 
-![](https://cdn-images-1.medium.com/max/1024/1*53i8kxza3-NUet-dDOlXhw.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_53i8kxza3-NUet-dDOlXhw-poster.jpg" aria-label=""><source src="/images/medium/1_53i8kxza3-NUet-dDOlXhw.mp4" type="video/mp4"></video></figure>
 
-![](https://cdn-images-1.medium.com/max/1024/1*X2FsSQS5TSr_XLAo4V3K1A.gif)
+<figure class="ec-video-wide"><video autoplay muted loop playsinline preload="metadata" poster="/images/medium/1_X2FsSQS5TSr_XLAo4V3K1A-poster.jpg" aria-label=""><source src="/images/medium/1_X2FsSQS5TSr_XLAo4V3K1A.mp4" type="video/mp4"></video></figure>
 
 Chest CTA showed bilateral pulmonary vessel filling defects, and a filling defect in the RV too. Bilateral pulmonary infarction~~~~
 
