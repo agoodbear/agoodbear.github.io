@@ -12,8 +12,8 @@
 loading="lazy"
 decoding="async"
 alt=""
-class="image_figure image_external image_unprocessed"
-src="https://cdn-images-1.medium.com/max/1024/1*7sfT-6ZdvaJFT_ZI_X_8Hg@2x.png"
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/medium/1_7sfT-6ZdvaJFT_ZI_X_8Hg_2x.webp"
 data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
@@ -30,8 +30,8 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 loading="lazy"
 decoding="async"
 alt=""
-class="image_figure image_external image_unprocessed"
-src="https://cdn-images-1.medium.com/max/1024/1*f2GmaCa9hR-VLoQKEGX0vw@2x.png"
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/medium/1_f2GmaCa9hR-VLoQKEGX0vw_2x.webp"
 data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
@@ -52,8 +52,8 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 loading="lazy"
 decoding="async"
 alt=""
-class="image_figure image_external image_unprocessed"
-src="https://cdn-images-1.medium.com/max/1024/1*658U47yADmFl43Vh8lxIhw@2x.png"
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/medium/1_658U47yADmFl43Vh8lxIhw_2x.webp"
 data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;

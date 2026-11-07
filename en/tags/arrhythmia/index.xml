@@ -45,8 +45,8 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 loading="lazy"
 decoding="async"
 alt=""
-class="image_figure image_external image_unprocessed"
-src="https://cdn-images-1.medium.com/max/1024/0*xfVlrYpJj48KVejF.jpeg"
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/medium/0_xfVlrYpJj48KVejF.webp"
 data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
@@ -59,15 +59,15 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 loading="lazy"
 decoding="async"
 alt=""
-class="image_figure image_external image_unprocessed"
-src="https://cdn-images-1.medium.com/max/1024/1*85WjOJ7-VX02DUqk8PX3RQ@2x.png"
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/medium/1_85WjOJ7-VX02DUqk8PX3RQ_2x.webp"
 data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
 &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;strong&gt;&lt;em&gt;Fig.1 Left: the original ECG, Right: the reader's questions&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;On&lt;/strong&gt;&lt;a href="https://agoodbear.medium.com/%E9%80%99%E6%98%AF%E4%BB%80%E9%BA%BC%E6%89%AD%E6%9B%B2%E8%AE%8A%E5%BD%A2%E7%9A%84ecg-7bca25391302"&gt;&lt;strong&gt;December 17 last year I published a post&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;, and recently a reader asked some questions about it. I'll answer them here.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;On&lt;/strong&gt;&lt;a href="https://agoodbear.com/en/post/medium-7bca25391302/"&gt;&lt;strong&gt;December 17 last year I published a post&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;, and recently a reader asked some questions about it. I'll answer them here.&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id="the-questions-boil-down-to-a-few-points"&gt;The questions boil down to a few points:&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Q1 → Could Af+VT be happening at the same time?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Q2 → I thought WPW driven by A-fib goes down the Accessory pathway. If it takes the same path, shouldn't the QRS complexes be more stable — shouldn't the beat to beat QRS difference be smaller than this?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>OHCA arrives at the ED: do we activate the cath lab?</title><link>https://agoodbear.com/en/post/medium-3ec1599ca9bb/</link><pubDate>Sat, 16 Jul 2022 00:00:00 +0000</pubDate><guid>https://agoodbear.com/en/post/medium-3ec1599ca9bb/</guid><description>
@@ -77,8 +77,8 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 loading="lazy"
 decoding="async"
 alt=""
-class="image_figure image_external image_unprocessed"
-src="https://cdn-images-1.medium.com/max/1024/1*7sfT-6ZdvaJFT_ZI_X_8Hg@2x.png"
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/medium/1_7sfT-6ZdvaJFT_ZI_X_8Hg_2x.webp"
 data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
@@ -96,8 +96,8 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 loading="lazy"
 decoding="async"
 alt=""
-class="image_figure image_external image_unprocessed"
-src="https://cdn-images-1.medium.com/max/1024/1*IYXFaAl0xjDKnMhNLZ3FPw@2x.jpeg"
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/medium/1_IYXFaAl0xjDKnMhNLZ3FPw_2x.webp"
 data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
@@ -115,8 +115,8 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 loading="lazy"
 decoding="async"
 alt=""
-class="image_figure image_external image_unprocessed"
-src="https://cdn-images-1.medium.com/max/1024/1*DImVcrqqnClukvho9mhMAA@2x.png"
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/medium/1_DImVcrqqnClukvho9mhMAA_2x.webp"
 data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
@@ -134,8 +134,8 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 loading="lazy"
 decoding="async"
 alt=""
-class="image_figure image_external image_unprocessed"
-src="https://cdn-images-1.medium.com/max/1024/1*-_JeNAGKVV67vXegvesyZA@2x.png"
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/medium/1_-_JeNAGKVV67vXegvesyZA_2x.webp"
 data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
@@ -149,8 +149,8 @@ onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this
 loading="lazy"
 decoding="async"
 alt=""
-class="image_figure image_external image_unprocessed"
-src="https://cdn-images-1.medium.com/max/1024/1*k_WjnewcbB8zt7dk2q9cCg.png"
+class="image_figure image_internal image_unprocessed"
+src="https://agoodbear.com/images/medium/1_k_WjnewcbB8zt7dk2q9cCg.webp"
 data-fallback-src="https://agoodbear.com/images/EDbear.jpg"
 onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallbackSrc;this.srcset='';}"
 /&gt;
