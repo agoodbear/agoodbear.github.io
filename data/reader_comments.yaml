@@ -1,0 +1,18 @@
+# 自建留言區（免登入、先審後刊）開放的文章；後端 Cloudflare Worker blog-comments（~/Developer/blog-comments）
+# all_posts: true＝全站文章都用新留言區（2026-11-08起取代Disqus）；posts清單只在 all_posts 關掉時才有作用。
+# 投票 {{< ecg-guess >}} 不受清單限制；圖上釘判讀看下面 pins。
+all_posts: true
+api: "https://blog-comments.agoodbear-youtube.workers.dev"
+posts:
+  - /post/ecg-post-17/
+  - /en/post/ecg-post-17/
+# 圖上釘判讀：文章路徑 → 開放標記的圖（檔名去副檔名）；圖下會出現「📍 在這張ECG上標你的判讀」
+pins:
+  /post/ecg-post-17/:
+    - ecg-post-17-er-arrival
+    - ecg-post-17-case2-er
+  /en/post/ecg-post-17/:
+    - ecg-post-17-er-arrival
+    - ecg-post-17-case2-er
+# Cloudflare Turnstile 人機驗證 sitekey（公開值；secret 在 Worker 的 TURNSTILE_SECRET）
+turnstile: "0x4AAAAAAF4uA_WdeRW5K5JU"

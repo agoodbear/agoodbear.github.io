@@ -724,5 +724,8 @@
 {{/* 註腳浮框：滑到上標數字顯示原文段落與出處 */}}
 {{ partial "footnote-popover.html" . }}
 
+{{/* 自建留言區（免登入）＋先猜再看投票卡：開放篇章見 data/reader_comments.yaml */}}
+{{ partial "reader-comments.html" . }}
+
 {{/* 本機預覽用的「請CC修改」紅筆標記，只在 hugo server 時載入 */}}
 {{ partial "cc-mark.html" . }}

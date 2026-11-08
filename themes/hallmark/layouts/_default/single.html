@@ -418,15 +418,14 @@
   </div>
 </article>
 
-{{- /* Reader comments — Disqus (likes / reactions / threaded comments).
-       Placed right after the article body (before the author byline and
-       「More from」related grid) so readers see it without scrolling past
-       延伸閱讀. Honours per-post `comments: false` in front matter. */ -}}
-{{ if and (ne .Params.comments false) site.Config.Services.Disqus.Shortname }}
-<section class="comments">
+{{- /* Reader comments — 自建免登入留言區（2026-11-08 取代 Disqus；舊的3則讀者留言已搬進新系統）。
+       留言 UI 由 layouts/partials/reader-comments.html 掛進 #reader-comments；
+       後端 Cloudflare Worker blog-comments（~/Developer/blog-comments）。
+       只在 post 區塊出現；front matter `comments: false` 可關。 */ -}}
+{{ if and (ne .Params.comments false) (eq .Section "post") }}
+<section class="comments" id="comments">
   <div class="comments-head">{{ T "comments_head" }}</div>
   <p class="comments-sub">{{ T "comments_sub" }}</p>
-  {{ template "_internal/disqus.html" . }}
 </section>
 {{ end }}
 

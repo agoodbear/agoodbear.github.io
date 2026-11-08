@@ -22,6 +22,8 @@ tags:
   - 3rd degree AV block
   - aortic regurgitation
   - coronary malperfusion
+# 🗂 改稿版次
+#   上線｜2026-11-08｜Fig.1後加「先猜再看」投票卡（題目與選項CC擬、Bear看過說上線）＋圖上釘判讀＋自建留言區
 ---
 
 {{< article-cards >}}
@@ -50,6 +52,15 @@ tags:
 中年男性，今天一早開始胸痛、冒冷汗，人是清醒的，會跟你描述哪裡痛。到院第一張 ECG 就來了。各位先看看，看到什麼？
 
 ![到院 ECG](../../static/images/ipic/ecg-post-17-er-arrival.png "Fig. 1. Case 1 到院第一張 12 導程 ECG")
+
+{{< ecg-guess id="ecg17-case1" q="看完**Fig. 1**，你下一步會怎麼做？" >}}
+A|Inferior STEMI，加做右側導程，啟動導管室
+B|先給aspirin、heparin，再進導管室
+C|先做bedside echo看主動脈根部，再決定
+D|先安排chest CTA，排除aortic dissection
+---
+記住你的選擇。往下讀，看這個病人在導管檯上發生了什麼事。
+{{< /ecg-guess >}}
 
 先看 **Fig. 1**，照 Rate-Rhythm-Axis-Interval-Ischemia 一項一項看（這是 Ken Grauer 教的順序，比較不會漏東西）：
 

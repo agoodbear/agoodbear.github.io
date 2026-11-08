@@ -1,0 +1,28 @@
+{{- /* 先猜再看答案：讀者先投票，投完才看到大家的分布＋揭曉文字。
+用法：
+{{< ecg-guess id="ecg17-case1" q="看完Fig.1，你的第一個判斷是？" >}}
+A|選項一
+B|選項二
+---
+投完票才出現的文字（可用markdown）
+{{< /ecg-guess >}}
+id：全站唯一、小寫英數與連字號；選項代號只能A–F。後端 blog-comments /api/poll。 */ -}}
+{{- $parts := split (trim .Inner "\n") "\n---\n" -}}
+{{- $opts := split (trim (index $parts 0) "\n") "\n" -}}
+<div class="ec-guess" data-poll="{{ .Get "id" }}" data-api="{{ site.Data.reader_comments.api }}">
+  <div class="ec-guess-tag">先猜再看</div>
+  <p class="ec-guess-q">{{ .Get "q" | markdownify }}</p>
+  <div class="ec-guess-opts">
+  {{- range $opts -}}
+    {{- $kv := split . "|" -}}
+    {{- if ge (len $kv) 2 -}}
+    <button type="button" class="ec-guess-opt" data-k="{{ trim (index $kv 0) " " }}">
+      <span class="k">{{ trim (index $kv 0) " " }}</span><span class="t">{{ trim (delimit (after 1 $kv) "|") " " | markdownify }}</span>
+      <span class="bar" aria-hidden="true"></span><span class="pct"></span>
+    </button>
+    {{- end -}}
+  {{- end -}}
+  </div>
+  <p class="ec-guess-foot">投下你的判斷，就能看到其他讀者怎麼選。不用登入。</p>
+  {{- with index $parts 1 }}<div class="ec-guess-reveal" hidden>{{ . | markdownify }}</div>{{ end }}
+</div>
