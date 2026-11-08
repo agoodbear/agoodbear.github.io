@@ -55,6 +55,45 @@
 .rc-send{font:inherit;font-weight:700;color:#fff;background:var(--color-ink,#111);border:0;border-radius:10px;padding:.6em 1.4em;cursor:pointer}
 .rc-send:disabled{opacity:.5;cursor:wait}
 .rc-msg{font-size:.88em;margin:0;color:var(--color-accent-ink,#b83a00)}
+/* ── 活潑版 ── */
+.rc-react{margin:0 0 1.6em;padding:1em 1.1em;border-radius:16px;background:linear-gradient(135deg,#fff4ec,#fffaf5 60%,#f1fbf8);border:1px solid var(--color-rule,#eadfd5)}
+.rc-react-t{margin:0 0 .7em;font-weight:700;font-size:.95em}
+.rc-react-row{display:flex;flex-wrap:wrap;gap:.5em}
+.rc-rk,.rc-heart{position:relative;display:inline-flex;align-items:center;gap:.35em;font:inherit;color:var(--color-ink,#111);background:#fff;border:1.5px solid var(--color-rule,#eadfd5);border-radius:99px;padding:.4em .85em;cursor:pointer;transition:transform .15s,border-color .15s,background .15s}
+.rc-rk:hover,.rc-heart:hover{border-color:var(--color-accent,#fc5a00);transform:translateY(-1px)}
+.rc-rk .e{font-size:1.15em;line-height:1}
+.rc-rk .t{font-size:.9em}
+.rc-rk .n,.rc-heart .n{font-weight:700;font-variant-numeric:tabular-nums;font-size:.88em;color:var(--color-accent-ink,#b83a00)}
+.rc-rk.on,.rc-heart.on{background:#fde7d9;border-color:var(--color-accent-ink,#b83a00)}
+.rc-rk.bump .e,.rc-heart.bump .e{animation:rcbump .45s cubic-bezier(.3,1.6,.5,1)}
+@keyframes rcbump{40%{transform:scale(1.55) rotate(-8deg)}}
+.rc-pop{position:absolute;left:50%;top:0;pointer-events:none;font-size:1.2em;animation:rcpop .9s ease-out forwards}
+@keyframes rcpop{from{transform:translate(-50%,0) scale(.6);opacity:1}to{transform:translate(-50%,-2.4em) scale(1.3);opacity:0}}
+.rc-head{display:flex;align-items:center;gap:.65em;margin-bottom:.35em}
+.rc-head .rc-meta{margin:0}
+.rc-av{flex:none;width:2.3em;height:2.3em;border-radius:50%;display:grid;place-items:center;font-size:1.15em;line-height:1;box-shadow:inset 0 0 0 2px #fff,0 1px 3px rgba(0,0,0,.08)}
+.rc-av.bear{box-shadow:inset 0 0 0 2px var(--color-accent,#fc5a00)}
+.rc-item.author>.rc-body{background:#fff4ec;border-radius:0 12px 12px 12px;padding:.6em .8em}
+.rc-chip{font-size:.78em;padding:.12em .55em;border-radius:99px;background:#e6f4f1;color:#0f5f58;font-weight:600}
+.rc-acts{display:flex;align-items:center;gap:1em;margin-top:.45em}
+.rc-heart{padding:.2em .65em;font-size:.88em}
+.rc-acts .rc-reply-btn{margin:0}
+.rc-who{display:flex;align-items:center;gap:.6em}
+.rc-who .rc-name-in{flex:1}
+.rc-roles{display:flex;flex-wrap:wrap;align-items:center;gap:.4em}
+.rc-roles-t{font-size:.82em;color:var(--color-ink-3,#6b625b);margin-right:.2em}
+.rc-role{font:inherit;font-size:.82em;background:var(--color-paper,#fffaf5);border:1px solid var(--color-rule,#eadfd5);border-radius:99px;padding:.25em .75em;cursor:pointer;color:var(--color-ink-2,#3a3633)}
+.rc-role.on{background:#0f766e;border-color:#0f766e;color:#fff}
+.rc-send{position:relative;overflow:hidden}
+.rc-ecg{position:absolute;inset:auto 0 0 0;width:100%;height:60%;opacity:0;pointer-events:none}
+.rc-ecg path{fill:none;stroke:#fc5a00;stroke-width:2.2;stroke-linejoin:round;stroke-dasharray:180;stroke-dashoffset:180}
+.rc-send.beat .lbl{opacity:.25}
+.rc-send.beat .rc-ecg{opacity:1}
+.rc-send.beat .rc-ecg path{animation:rcecg 1s linear infinite}
+@keyframes rcecg{to{stroke-dashoffset:-180}}
+.rc-form.sent{animation:rcsent 1.2s ease}
+@keyframes rcsent{20%{box-shadow:0 0 0 6px rgba(252,90,0,.18)}100%{box-shadow:0 0 0 0 rgba(252,90,0,0)}}
+@media (prefers-reduced-motion:reduce){.rc-rk.bump .e,.rc-heart.bump .e,.rc-pop,.rc-send.beat .rc-ecg path,.rc-form.sent{animation:none}}
 .rc-ts:empty,.ec-ts:empty{display:none}
 .rc-old{margin-top:2em}
 .rc-old>summary{cursor:pointer;font-size:.88em;color:var(--color-ink-3,#6b625b)}
@@ -108,7 +147,10 @@
     pinBtn:'📍 Mark your read on this ECG', pinN:function(n){return n?n+' reader mark'+(n>1?'s':''):'No marks yet'},
     pinTitle:'Tap where you see the finding', pinSub:'e.g. "ST elevation in III" — scroll sideways on phones',
     hide:'Hide marks', show:'Show marks', close:'✕ Close', pinPh:'What do you see here? (max 80 chars)', pinGo:'Pin it', pinNo:'Cancel',
-    pinNote:'No sign-in. Marks appear after the author reviews them.', captcha:'Human check failed — reload the page and try again.', pinOk:'Pinned! Others will see it after review.'
+    pinNote:'No sign-in. Marks appear after the author reviews them.',
+    reactTitle:'One tap — how did this post land?', rk:{learned:'Learned something',wow:'Never thought of that',seen:'Seen a case like this',q:'I have a question'},
+    roleAsk:'You are… (optional)', roles:{ms:'Med student',rn:'Nurse',er:'EM',cv:'Cardiology',hcp:'Other HCP',pub:'Public'},
+    you:'You', heart:'Like', phs:['Thoughts, questions, or a similar patient?','What would you have done next?','Which lead caught your eye first?','Seen a mimic like this before?'], captcha:'Human check failed — reload the page and try again.', pinOk:'Pinned! Others will see it after review.'
   }:{
     voted:function(n,k){return '已有 '+n+' 位讀者作答，你選了 '+k+'。'},
     net:'網路好像不太順，再按一次試試。', empty:'還沒有人留言，來當第一個吧。', loadFail:'留言暫時載入不了，稍後再試。',
@@ -121,7 +163,10 @@
     pinBtn:'📍 在這張ECG上標你的判讀', pinN:function(n){return n?'已有 '+n+' 個讀者標記':'還沒有人標記'},
     pinTitle:'點你看到異常的地方', pinSub:'例如「III的ST抬高」；手機可以左右滑動看整張',
     hide:'隱藏標記', show:'顯示標記', close:'✕ 關閉', pinPh:'你在這裡看到什麼？（80字內）', pinGo:'標上去', pinNo:'取消',
-    pinNote:'不用登入。標記經作者看過後公開。', captcha:'人機驗證沒通過，重新整理頁面再試一次。', pinOk:'標好了！作者看過後其他人就看得到。'
+    pinNote:'不用登入。標記經作者看過後公開。',
+    reactTitle:'看完按一下，讓熊知道你的感覺', rk:{learned:'學到了',wow:'沒想過',seen:'遇過類似',q:'有疑問'},
+    roleAsk:'你是…（可不選）', roles:{ms:'醫學生',rn:'護理師',er:'急診',cv:'心內',hcp:'其他醫療',pub:'民眾'},
+    you:'你', heart:'按讚', phs:['看完有什麼想法、疑問，或你遇過類似的病人？','如果是你，下一步會怎麼做？','這張ECG你第一眼看哪裡？','你也被類似的mimic騙過嗎？說來聽聽'], captcha:'人機驗證沒通過，重新整理頁面再試一次。', pinOk:'標好了！作者看過後其他人就看得到。'
   };
   function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
   var dev=store('rh:device');
@@ -197,7 +242,7 @@
   var ITEMS=[];
   function load(){
     return req('GET','/api/c?post='+encodeURIComponent(path)+'&device='+dev)
-      .then(function(d){ITEMS=d.items||[];listeners.forEach(function(f){f(ITEMS)})})
+      .then(function(d){ITEMS=d.items||[];listeners.forEach(function(f){f(ITEMS,d)})})
       .catch(function(){listeners.forEach(function(f){f(null)})});
   }
   function when(ms){
@@ -292,43 +337,103 @@
     });
   });
 
-  /* ── 留言區 ── */
+  /* ── 留言區（活潑版）── */
+  var ANIMALS=['🦊','🐼','🐨','🐯','🦁','🐸','🐵','🐧','🐰','🐹','🦉','🐙','🦄','🐢','🦔','🐳','🐶','🐱','🐷','🦦'];
+  var HUES=[12,28,45,95,150,175,195,215,250,285,320,345];
+  function avatar(c,meAv){
+    var a=el('span','rc-av');
+    if(c&&c.is_author){a.textContent='🐻';a.style.background='#fde7d9';a.classList.add('bear');return a}
+    var n=c?c.av:meAv; n=(n|0);
+    a.textContent=ANIMALS[n%ANIMALS.length];a.style.background='hsl('+HUES[(n>>3)%HUES.length]+' 70% 90%)';
+    return a;
+  }
+  function pop(btn,emo){
+    var f=el('span','rc-pop',emo);btn.appendChild(f);setTimeout(function(){f.remove()},900);
+    btn.classList.remove('bump');void btn.offsetWidth;btn.classList.add('bump');
+  }
+  function react(target,kind,btn,emo,cntEl){
+    var on=!btn.classList.contains('on');
+    btn.classList.toggle('on',on);btn.setAttribute('aria-pressed',on);
+    cntEl.textContent=Math.max(0,(parseInt(cntEl.textContent,10)||0)+(on?1:-1))||'';
+    if(on)pop(btn,emo);
+    req('POST','/api/react',{post:path,target:String(target),kind:kind,device:dev})
+      .then(function(r){btn.classList.toggle('on',r.on);btn.setAttribute('aria-pressed',r.on);cntEl.textContent=r.n||''})
+      .catch(function(){btn.classList.toggle('on',!on);cntEl.textContent=Math.max(0,(parseInt(cntEl.textContent,10)||0)+(on?-1:1))||''});
+  }
   var sec=document.querySelector('section.comments');
   if(sec){
     var wrap=el('div','rc');wrap.id='reader-comments';
+    /* 一鍵反應列 */
+    var KINDS=[['learned','💡'],['wow','🤯'],['seen','🫀'],['q','🤔']];
+    var rbar=el('div','rc-react'), rbt=el('p','rc-react-t',L.reactTitle), rrow=el('div','rc-react-row'), rbtn={};
+    KINDS.forEach(function(k){
+      var b=el('button','rc-rk');b.type='button';b.setAttribute('aria-pressed','false');
+      b.appendChild(el('span','e',k[1]));b.appendChild(el('span','t',L.rk[k[0]]));var n=el('span','n','');b.appendChild(n);
+      b.addEventListener('click',function(){react('post',k[0],b,k[1],n)});
+      rbtn[k[0]]={b:b,n:n};rrow.appendChild(b);
+    });
+    rbar.appendChild(rbt);rbar.appendChild(rrow);
     var list=el('ul','rc-list'), empty=el('p','rc-empty',L.empty);
     var form=el('form','rc-form');
     form.innerHTML='<div class="rc-to" hidden><span></span><button type="button"></button></div>'+
-      '<input class="rc-name-in" maxlength="20" autocomplete="nickname">'+
+      '<div class="rc-who"><span class="rc-me"></span><input class="rc-name-in" maxlength="20" autocomplete="nickname"></div>'+
+      '<div class="rc-roles" role="radiogroup"><span class="rc-roles-t"></span></div>'+
       '<textarea maxlength="1000" required></textarea>'+
       '<input class="rc-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">'+
-      '<div class="rc-ts"></div><div class="rc-row"><p class="rc-note"></p><button class="rc-send" type="submit"></button></div>'+
+      '<div class="rc-ts"></div><div class="rc-row"><p class="rc-note"></p><button class="rc-send" type="submit"><span class="lbl"></span>'+
+      '<svg class="rc-ecg" viewBox="0 0 120 24" aria-hidden="true"><path d="M0 12 H38 L44 12 L48 4 L52 20 L57 2 L62 22 L66 12 H120"/></svg></button></div>'+
       '<p class="rc-msg" hidden></p>';
     var nameIn=form.querySelector('.rc-name-in'), ta=form.querySelector('textarea'), hp=form.querySelector('.rc-hp'),
-        send=form.querySelector('.rc-send'), msg=form.querySelector('.rc-msg'), to=form.querySelector('.rc-to');
-    to.querySelector('button').textContent=L.cancel;nameIn.placeholder=L.name;ta.placeholder=L.ph;
-    form.querySelector('.rc-note').textContent=L.note;send.textContent=L.send;
+        send=form.querySelector('.rc-send'), msg=form.querySelector('.rc-msg'), to=form.querySelector('.rc-to'),
+        meBox=form.querySelector('.rc-me'), roleBox=form.querySelector('.rc-roles');
+    to.querySelector('button').textContent=L.cancel;nameIn.placeholder=L.name;ta.placeholder=L.phs[0];
+    form.querySelector('.rc-note').textContent=L.note;send.querySelector('.lbl').textContent=L.send;
+    form.querySelector('.rc-roles-t').textContent=L.roleAsk;
     nameIn.value=store('rc:name')||'';
+    var role=store('rc:role')||'';
+    Object.keys(L.roles).forEach(function(k){
+      var b=el('button','rc-role'+(k===role?' on':''),L.roles[k]);b.type='button';b.dataset.k=k;b.setAttribute('role','radio');b.setAttribute('aria-checked',k===role);
+      b.onclick=function(){role=(role===k)?'':k;store('rc:role',role);roleBox.querySelectorAll('.rc-role').forEach(function(x){x.classList.toggle('on',x.dataset.k===role);x.setAttribute('aria-checked',x.dataset.k===role)})};
+      roleBox.appendChild(b);
+    });
+    var phi=0, phT=setInterval(function(){if(document.activeElement===ta||ta.value)return;phi=(phi+1)%L.phs.length;ta.placeholder=L.phs[phi]},4500);
     var cts=tsWidget(form.querySelector('.rc-ts'));
     form.addEventListener('focusin',cts.start);
     var replyTo=null;
     to.querySelector('button').onclick=function(){replyTo=null;to.hidden=true};
+    var RX={}, MINE={};
     var item=function(c){
-      var li=el('li','rc-item'+(c.pending?' pending':'')), meta=el('div','rc-meta');
+      var li=el('li','rc-item'+(c.pending?' pending':'')+(c.is_author?' author':''));
+      var head=el('div','rc-head');head.appendChild(avatar(c));
+      var meta=el('div','rc-meta');
       meta.appendChild(el('span','rc-name',c.name));
       if(c.is_author)meta.appendChild(el('span','rc-badge',L.author));
+      if(c.role&&L.roles[c.role])meta.appendChild(el('span','rc-chip',L.roles[c.role]));
       if(c.pending)meta.appendChild(el('span','rc-badge wait',L.wait));
-      meta.appendChild(el('span','',when(c.created)));
-      li.appendChild(meta);li.appendChild(el('p','rc-body',c.body));
-      if(!c.pending&&!c.parent_id){
-        var rb=el('button','rc-reply-btn',L.reply);rb.type='button';
-        rb.onclick=function(){replyTo=c.id;to.hidden=false;to.querySelector('span').textContent=L.replyTo+c.name;ta.focus()};
-        li.appendChild(rb);
+      meta.appendChild(el('span','rc-time',when(c.created)));
+      head.appendChild(meta);li.appendChild(head);
+      li.appendChild(el('p','rc-body',c.body));
+      if(!c.pending){
+        var acts=el('div','rc-acts');
+        var hb=el('button','rc-heart'+(MINE[c.id+':heart']?' on':''));hb.type='button';hb.setAttribute('aria-label',L.heart);
+        hb.setAttribute('aria-pressed',!!MINE[c.id+':heart']);
+        hb.appendChild(el('span','e','❤️'));var hn=el('span','n',((RX[c.id]||{}).heart)||'');hb.appendChild(hn);
+        hb.addEventListener('click',function(){react(c.id,'heart',hb,'❤️',hn)});
+        acts.appendChild(hb);
+        if(!c.parent_id){
+          var rb=el('button','rc-reply-btn',L.reply);rb.type='button';
+          rb.onclick=function(){replyTo=c.id;to.hidden=false;to.querySelector('span').textContent=L.replyTo+c.name;ta.focus()};
+          acts.appendChild(rb);
+        }
+        li.appendChild(acts);
       }
       return li;
     };
-    listeners.push(function(items){
+    listeners.push(function(items,d){
       if(!items){empty.textContent=L.loadFail;empty.hidden=false;return}
+      RX=d.reactions||{};MINE={};(d.mine||[]).forEach(function(k){MINE[k]=1});
+      KINDS.forEach(function(k){var o=rbtn[k[0]],on=!!MINE['post:'+k[0]];o.b.classList.toggle('on',on);o.b.setAttribute('aria-pressed',on);o.n.textContent=((RX.post||{})[k[0]])||''});
+      meBox.innerHTML='';meBox.appendChild(avatar(null,d.me));
       items=items.filter(function(c){return !c.img});
       list.innerHTML='';
       var top=items.filter(function(c){return !c.parent_id}), kids={};
@@ -343,15 +448,15 @@
     form.addEventListener('submit',function(e){
       e.preventDefault();
       var body=ta.value.trim();if(body.length<2)return;
-      send.disabled=true;msg.hidden=true;store('rc:name',nameIn.value.trim());
+      send.disabled=true;send.classList.add('beat');msg.hidden=true;store('rc:name',nameIn.value.trim());
       cts.get().then(function(tok){
-        return req('POST','/api/c',{post:path,name:nameIn.value.trim(),body:body,device:dev,parent:replyTo,hp:hp.value,ms:Date.now()-t0,ts:tok});
+        return req('POST','/api/c',{post:path,name:nameIn.value.trim(),body:body,device:dev,parent:replyTo,role:role||undefined,hp:hp.value,ms:Date.now()-t0,ts:tok});
       })
-        .then(function(){ta.value='';replyTo=null;to.hidden=true;msg.textContent=L.ok;msg.hidden=false;load()})
+        .then(function(){ta.value='';replyTo=null;to.hidden=true;msg.textContent=L.ok;msg.hidden=false;form.classList.add('sent');setTimeout(function(){form.classList.remove('sent')},1600);load()})
         .catch(function(err){msg.textContent=(err&&err.error==='rate limited')?L.fast:(err&&err.error==='captcha')?L.captcha:L.fail;msg.hidden=false})
-        .then(function(){send.disabled=false;cts.reset()});
+        .then(function(){send.disabled=false;setTimeout(function(){send.classList.remove('beat')},400);cts.reset()});
     });
-    wrap.appendChild(list);wrap.appendChild(empty);wrap.appendChild(form);
+    wrap.appendChild(rbar);wrap.appendChild(list);wrap.appendChild(empty);wrap.appendChild(form);
     sec.appendChild(wrap);
   }
   load();
