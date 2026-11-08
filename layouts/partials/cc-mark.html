@@ -74,6 +74,9 @@
   .ccm-diff{font-size:11.8px;line-height:1.55;margin-top:3px;white-space:pre-wrap;word-break:break-word}
   .ccm-diff .d-b{display:block;padding:3px 6px;border-radius:4px;background:rgba(220,38,38,.13);text-decoration:line-through;opacity:.75;margin-bottom:3px}
   .ccm-diff .d-a{display:block;padding:3px 6px;border-radius:4px;background:rgba(5,150,105,.16)}
+  .ccm-diff .d-same{display:block;padding:3px 6px;line-height:1.7}
+  .ccm-diff .d-same del.d-b,.ccm-diff .d-same ins.d-a{display:inline;padding:1px 3px;margin:0;opacity:1;text-decoration-thickness:2px}
+  .ccm-diff .d-same ins.d-a{text-decoration:none}
   .ccm-rnote{margin-top:4px;opacity:.8;font-size:11.5px}
   .ccm-acts{display:flex;gap:6px;margin-top:6px}
   .ccm-acts button{cursor:pointer;border-radius:5px;padding:3px 10px;font-size:11.5px;border:1px solid rgba(148,163,184,.55);background:transparent;color:inherit}
@@ -247,8 +250,8 @@
   //    （Roam 版 2026-09-08 踩過同樣的坑：改了功能沒 bump 版本號，他 reload 後無從判斷。）
   //    Hugo 版跟 Roam 版不同，程式碼是 hugo server 直接從磁碟讀的：存檔＋重新整理頁面就生效，
   //    不用 push、不用重裝。版本號在「面板抬頭常駐」＋「換版跳一次 toast」＋「console 每次印」。
-  var CCM_V='v20', CCM_V_DATE='2026-09-19',
-      CCM_V_NOTE='排版的時候 CC 同時在改這篇，你的修改照樣存得進去（只要不是同一段）：伺服器會把兩邊合在一起，CC 改過的段落用綠色虛線框鎖住，收工重整就看到新版。真的撞到同一段，只有那一段不存、用紅框標出來，內容留在這台電腦，頁面上方的提醒不會自己消失。（v19：排版模式選字跳出的泡泡框：工具排成整齊的兩列，上排「排版工具・粗體・斜體・底線」，下排「黃・藍・綠・粉」，上下對齊。）';
+  var CCM_V='v23', CCM_V_DATE='2026-11-08',
+      CCM_V_NOTE='排版模式選字後按粗體、斜體、底線或底色，泡泡框不會再消失，可以接著按黃、藍、綠、粉或其他排版，不用重新圈字。（v22：審稿面板的改前改後只標出真的改掉的字（前後相同的字照常顯示），只刪幾個字不會再看起來像整段被刪；「刪」只圈一段裡的幾個字時，打包給CC的指令改成「只刪圈到的這幾個字，同一段其他字保留」，不會再被當成整段刪。（v21：在編修框裡選自己打的字，就算滑到框外才放開，框也不會消失，打的字都還在。（v20：排版的時候 CC 同時在改這篇，你的修改照樣存得進去（只要不是同一段）：伺服器會把兩邊合在一起，CC 改過的段落用綠色虛線框鎖住，收工重整就看到新版。真的撞到同一段，只有那一段不存、用紅框標出來，內容留在這台電腦，頁面上方的提醒不會自己消失。（v19：排版模式選字跳出的泡泡框：工具排成整齊的兩列，上排「排版工具・粗體・斜體・底線」，下排「黃・藍・綠・粉」，上下對齊。））';
   // hallmark 主題用 .article-body；hugo-clarity 用 .post_body。兩個都撐住。
   var body=document.querySelector('.article-body')||document.querySelector('.post_content .post_body')
           ||document.querySelector('.post_body')||document.querySelector('article');
@@ -295,7 +298,7 @@
     '→ CC 給算式（2,031−1,948），再給 A／B／C 三種寫法讓你挑</div></section>',
 
     '<section><h4 style="color:#dc2626">刪 — 這段不要了</h4>',
-    '圈到的字<b>整段拿掉</b>，不改寫、不留過場語。<b>按下去就直接存好了</b>——不用打字、不用再按存檔。',
+    '<b>圈到哪就刪到哪</b>：只刪圈到的字，同一段其他字保留；圈一整段才整段刪。不改寫、不留過場語。<b>按下去就直接存好了</b>——不用打字、不用再按存檔。',
     '<div style="opacity:.75">想附一句「為什麼刪」→ 按住 <code>⌥ Option</code> 再點「刪」，就會跳出指令欄。</div>',
     '<div><b>CC 會回：</b>刪除後前後句怎麼接（若刪掉會斷句，會一併給銜接方案）。</div>',
     '<div class="eg"><b>例</b>　圈掉整段重複的排比<br>',
@@ -642,6 +645,8 @@
     var needle=String(mk.text||'').replace(/\s+/g,'');   // 比對時兩邊都拿掉空白
     if(!needle)return {hit:gotFig,partial:false};
     var ix=buildIndex(),at=pickOccurrence(mk,ix,needle),len=needle.length,partial=false,moved=false;
+    // v22：「刪」的原文找不到＝已經刪掉了，不要再拿改後句或前綴去對（會把留下來的字畫成刪除線）
+    if(at<0&&mk.kind==='刪')return {hit:gotFig,partial:false};
     if(at<0){
       // 「潤」的定義就是改掉被圈的字，改得徹底一點，原文在頁面上就一個字都不剩了，
       // 原地再怎麼找都找不到。先拿 CC 回覆裡的「改後整句」當備援錨點，把標記亮在改寫後的位置。
@@ -851,8 +856,18 @@
     var h='<div class="ccm-reply"><span class="ccm-badge '+(r.status||'info')+'">CC '+(LABEL[r.status]||'已處理')+'</span>';
     if(r.before||r.after){
       h+='<div class="ccm-diff">';
-      if(r.before)h+='<span class="d-b">'+esc(r.before)+'</span>';
-      if(r.after)h+='<span class="d-a">'+esc(r.after)+'</span>';
+      // v22：只標出真的改掉的那幾個字。前後相同的部分照常顯示，
+      // 不再把整句畫紅刪除線（只刪一段後面幾個字時，舊版看起來像整段被刪）。
+      var B=r.before||'', A=r.after||'', p0=0, s0=0;
+      while(p0<B.length&&p0<A.length&&B[p0]===A[p0])p0++;
+      while(s0<B.length-p0&&s0<A.length-p0&&B[B.length-1-s0]===A[A.length-1-s0])s0++;
+      if(B&&A&&(p0+s0)>=6){
+        var mb=B.slice(p0,B.length-s0), ma=A.slice(p0,A.length-s0);
+        h+='<span class="d-same">'+esc(B.slice(0,p0))+(mb?'<del class="d-b">'+esc(mb)+'</del>':'')+(ma?'<ins class="d-a">'+esc(ma)+'</ins>':'')+esc(B.slice(B.length-s0))+'</span>';
+      } else {
+        if(B)h+='<span class="d-b">'+esc(B)+'</span>';
+        if(A)h+='<span class="d-a">'+esc(A)+'</span>';
+      }
       h+='</div>';
     }
     if(r.note)h+='<div class="ccm-rnote">'+esc(r.note)+'</div>';
@@ -961,7 +976,11 @@
   function dropImgs(mk){ if(mk&&mk.imgs)mk.imgs.forEach(function(g){fetch(imgUrl(g.id),{method:'DELETE'}).catch(function(){})}); }
 
   // 圈選 → 冒泡選單
+  // 拖曳是從工具裡面開始的（例如在泡泡框選自己打的字，滑到框外才放開）：放開的位置不算數，不能當成在文章上圈選
+  var dragFromTool=false;
+  document.addEventListener('mousedown',function(e){ dragFromTool=!!e.target.closest('.ccm-bubble,.ccm-panel,.ccm-fab'); },true);
   document.addEventListener('mouseup',function(e){
+    if(dragFromTool){ dragFromTool=false; return; }
     if(e.target.closest('.ccm-bubble,.ccm-panel,.ccm-fab'))return;
     setTimeout(function(){
       var sel=window.getSelection();
@@ -1026,14 +1045,21 @@
         Promise.all(UPLOADS).then(function(){ if(btn){btn.disabled=false;btn.textContent=old;} commit(cmd); });
       }
       bubble.querySelectorAll('.ccm-dbtn').forEach(function(b){
-        b.onclick=function(){ bubble.classList.remove('on'); applyStyle(b.dataset.t, rng); };
+        // v23（2026-11-08 Bear）：按完粗體／斜體／底線／底色，泡泡框留著，可以接著按別的（不用再圈一次）。
+        // 套用後 DOM 變了，舊的 rng 可能失效 → 改抓套用後瀏覽器留下的選取，下一顆按鈕用新的。
+        b.addEventListener('mousedown',function(ev){ ev.preventDefault(); });   // 按下去不要把文章裡的選取吃掉
+        b.onclick=function(){
+          applyStyle(b.dataset.t, rng);
+          var s_=getSelection();
+          if(s_&&s_.rangeCount&&!s_.isCollapsed) rng=s_.getRangeAt(0).cloneRange();
+        };
       });
       bubble.querySelectorAll('.ccm-btn').forEach(function(b){
         b.onclick=function(ev){
           kind=b.dataset.k;
           // 「刪」＝圈到哪就刪到哪，指令就是它自己：按下去直接存，不用再打字也不用再按一次。
           // （真的想附一句「為什麼刪」→ 按住 ⌥／Alt 再點，就會走一般的填指令流程。）
-          if(kind==='刪' && !(ev&&ev.altKey)){ commitWhenReady('整段刪掉'); return; }
+          if(kind==='刪' && !(ev&&ev.altKey)){ commitWhenReady('只刪圈到的字'); return; }
           // 「重要」＝把這段標成正式文章要保留的 highlight，也是一鍵，不用打字。
           if(kind==='重要' && !(ev&&ev.altKey)){ commitWhenReady('標為重要（正式文章保留 highlight）'); return; }
           bubble.querySelectorAll('.ccm-btn').forEach(function(o){o.style.opacity=o===b?'1':'.34'});
@@ -1058,7 +1084,7 @@
         var cmd=bubble.querySelector('#ccmCmd').value.trim();
         if(!kind){return;}
         if(!cmd){
-          if(kind==='刪'){cmd='整段刪掉';}
+          if(kind==='刪'){cmd='只刪圈到的字';}
           else if(kind==='重要'){cmd='標為重要（正式文章保留 highlight）';}
           // 貼了圖卻沒打字：不擋他，但要讓 CC 知道「指令在圖裡」而不是誤存空白
           else if(SHOTS.length||UPLOADS.length){cmd='依附圖修改（Bear 沒另外寫指令，看圖）';}
@@ -1179,7 +1205,7 @@
       (nImg?('（含 '+nImg+' 張貼上的圖，路徑寫在各條的【附圖】，用 Read 工具直接開；那是 Bear 指令的一部分，不是參考資料）'):'')+'\n\n'+
       m.map(function(x,i){
         var head_=(x.kind==='刪')
-          ? '把下面的【原文】整段刪掉'+((x.cmd&&x.cmd!=='整段刪掉')?'（原因：'+x.cmd+'）':'')+'；刪完確認前後句接得起來'
+          ? '只刪下面【原文】圈到的這幾個字（同一段其他字保留，不是整段刪；若【原文】剛好是一整段才整段刪）'+((x.cmd&&x.cmd!=='整段刪掉'&&x.cmd!=='只刪圈到的字')?'（原因：'+x.cmd+'）':'')+'；刪完確認前後句接得起來'
           : (x.kind==='重要')
           ? '把下面的【原文】用 <mark></mark> 包起來（⚠️ 這不是改稿，是要留在正式文章裡的 highlight；一個字都不要改）'
             +((x.cmd&&x.cmd.indexOf('標為重要')!==0)?'（Bear 註：'+x.cmd+'）':'')
