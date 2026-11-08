@@ -75,9 +75,15 @@
 .rc-av.bear{box-shadow:inset 0 0 0 2px var(--color-accent,#fc5a00)}
 .rc-item.author>.rc-body{background:#fff4ec;border-radius:0 12px 12px 12px;padding:.6em .8em}
 .rc-chip{font-size:.78em;padding:.12em .55em;border-radius:99px;background:#e6f4f1;color:#0f5f58;font-weight:600}
-.rc-acts{display:flex;align-items:center;gap:1em;margin-top:.45em}
+.rc-acts{position:relative;display:flex;align-items:center;flex-wrap:wrap;gap:.45em;margin-top:.45em}
+.rc-more{font:inherit;font-size:.85em;background:none;border:1.5px dashed var(--color-rule,#eadfd5);border-radius:99px;padding:.2em .6em;cursor:pointer;color:var(--color-ink-3,#6b625b)}
+.rc-more:hover{border-color:var(--color-accent,#fc5a00)}
+.rc-picker{position:absolute;z-index:5;left:0;bottom:calc(100% + 6px);display:flex;gap:.15em;padding:.35em .45em;background:#fff;border:1px solid var(--color-rule,#eadfd5);border-radius:99px;box-shadow:0 8px 24px rgba(0,0,0,.14);animation:rcpk .18s ease-out}
+.rc-picker button{font-size:1.35em;line-height:1;background:none;border:0;padding:.2em;border-radius:50%;cursor:pointer;transition:transform .12s}
+.rc-picker button:hover{transform:scale(1.35) translateY(-2px)}
+@keyframes rcpk{from{transform:translateY(6px) scale(.9);opacity:0}}
 .rc-heart{padding:.2em .65em;font-size:.88em}
-.rc-acts .rc-reply-btn{margin:0}
+.rc-acts .rc-reply-btn{margin:0 0 0 .4em}
 .rc-who{display:flex;align-items:center;gap:.6em}
 .rc-who .rc-name-in{flex:1}
 .rc-roles{display:flex;flex-wrap:wrap;align-items:center;gap:.4em}
@@ -148,7 +154,7 @@
     pinTitle:'Tap where you see the finding', pinSub:'e.g. "ST elevation in III" — scroll sideways on phones',
     hide:'Hide marks', show:'Show marks', close:'✕ Close', pinPh:'What do you see here? (max 80 chars)', pinGo:'Pin it', pinNo:'Cancel',
     pinNote:'No sign-in. Marks appear after the author reviews them.',
-    reactTitle:'One tap — how did this post land?', rk:{learned:'Learned something',wow:'Never thought of that',seen:'Seen a case like this',q:'I have a question'},
+    reactTitle:'One tap — how did this post land?', rk:{like:'Like',heart:'Love',learned:'Learned something',wow:'Never thought of that',seen:'Seen a case like this',q:'I have a question'}, more:'More reactions',
     roleAsk:'You are… (optional)', roles:{ms:'Med student',rn:'Nurse',er:'EM',cv:'Cardiology',hcp:'Other HCP',pub:'Public'},
     you:'You', heart:'Like', phs:['Thoughts, questions, or a similar patient?','What would you have done next?','Which lead caught your eye first?','Seen a mimic like this before?'], captcha:'Human check failed — reload the page and try again.', pinOk:'Pinned! Others will see it after review.'
   }:{
@@ -164,7 +170,7 @@
     pinTitle:'點你看到異常的地方', pinSub:'例如「III的ST抬高」；手機可以左右滑動看整張',
     hide:'隱藏標記', show:'顯示標記', close:'✕ 關閉', pinPh:'你在這裡看到什麼？（80字內）', pinGo:'標上去', pinNo:'取消',
     pinNote:'不用登入。標記經作者看過後公開。',
-    reactTitle:'看完按一下，讓熊知道你的感覺', rk:{learned:'學到了',wow:'沒想過',seen:'遇過類似',q:'有疑問'},
+    reactTitle:'看完按一下，讓熊知道你的感覺', rk:{like:'讚',heart:'愛心',learned:'學到了',wow:'沒想過',seen:'遇過類似',q:'有疑問'}, more:'更多表情',
     roleAsk:'你是…（可不選）', roles:{ms:'醫學生',rn:'護理師',er:'急診',cv:'心內',hcp:'其他醫療',pub:'民眾'},
     you:'你', heart:'按讚', phs:['看完有什麼想法、疑問，或你遇過類似的病人？','如果是你，下一步會怎麼做？','這張ECG你第一眼看哪裡？','你也被類似的mimic騙過嗎？說來聽聽'], captcha:'人機驗證沒通過，重新整理頁面再試一次。', pinOk:'標好了！作者看過後其他人就看得到。'
   };
@@ -364,7 +370,7 @@
   if(sec){
     var wrap=el('div','rc');wrap.id='reader-comments';
     /* 一鍵反應列 */
-    var KINDS=[['learned','💡'],['wow','🤯'],['seen','🫀'],['q','🤔']];
+    var KINDS=[['like','👍'],['heart','❤️'],['learned','💡'],['wow','🤯'],['seen','🫀'],['q','🤔']];
     var rbar=el('div','rc-react'), rbt=el('p','rc-react-t',L.reactTitle), rrow=el('div','rc-react-row'), rbtn={};
     KINDS.forEach(function(k){
       var b=el('button','rc-rk');b.type='button';b.setAttribute('aria-pressed','false');
@@ -402,6 +408,9 @@
     var replyTo=null;
     to.querySelector('button').onclick=function(){replyTo=null;to.hidden=true};
     var RX={}, MINE={};
+    var CE=EN?{like:['👍','Like'],heart:['❤️','Love'],lol:['😂','Haha'],wow:['🤯','Mind blown'],clap:['👏','Applause'],pray:['🙏','Thanks'],beat:['🫀','Been there'],idea:['💡','Insightful'],sad:['😢','Sad'],fire:['🔥','Fire']}
+             :{like:['👍','讚'],heart:['❤️','愛心'],lol:['😂','好笑'],wow:['🤯','沒想過'],clap:['👏','拍手'],pray:['🙏','感謝'],beat:['🫀','遇過'],idea:['💡','學到了'],sad:['😢','難過'],fire:['🔥','太強了']};
+    document.addEventListener('click',function(){document.querySelectorAll('.rc-picker').forEach(function(x){x.remove()})});
     var item=function(c){
       var li=el('li','rc-item'+(c.pending?' pending':'')+(c.is_author?' author':''));
       var head=el('div','rc-head');head.appendChild(avatar(c));
@@ -415,11 +424,37 @@
       li.appendChild(el('p','rc-body',c.body));
       if(!c.pending){
         var acts=el('div','rc-acts');
-        var hb=el('button','rc-heart'+(MINE[c.id+':heart']?' on':''));hb.type='button';hb.setAttribute('aria-label',L.heart);
-        hb.setAttribute('aria-pressed',!!MINE[c.id+':heart']);
-        hb.appendChild(el('span','e','❤️'));var hn=el('span','n',((RX[c.id]||{}).heart)||'');hb.appendChild(hn);
-        hb.addEventListener('click',function(){react(c.id,'heart',hb,'❤️',hn)});
-        acts.appendChild(hb);
+        var mk=function(kind){
+          var on=!!MINE[c.id+':'+kind], n=((RX[c.id]||{})[kind])||'';
+          var b=el('button','rc-heart'+(on?' on':''));b.type='button';b.dataset.kind=kind;
+          b.setAttribute('aria-label',CE[kind][1]);b.setAttribute('aria-pressed',on);b.title=CE[kind][1];
+          b.appendChild(el('span','e',CE[kind][0]));var nn=el('span','n',n);b.appendChild(nn);
+          b.addEventListener('click',function(){react(c.id,kind,b,CE[kind][0],nn)});
+          return b;
+        };
+        acts.appendChild(mk('like'));acts.appendChild(mk('heart'));
+        // 其他被按過的特別表情，排在後面
+        Object.keys(CE).forEach(function(k){if(k!=='like'&&k!=='heart'&&((RX[c.id]||{})[k]||MINE[c.id+':'+k]))acts.appendChild(mk(k))});
+        var more=el('button','rc-more','😀＋');more.type='button';more.setAttribute('aria-label',L.more);more.title=L.more;
+        more.addEventListener('click',function(ev){
+          ev.stopPropagation();
+          var open=acts.querySelector('.rc-picker');if(open){open.remove();return}
+          document.querySelectorAll('.rc-picker').forEach(function(x){x.remove()});
+          var pk=el('div','rc-picker');
+          Object.keys(CE).forEach(function(k){
+            if(k==='like'||k==='heart')return;
+            var o=el('button','',CE[k][0]);o.type='button';o.title=CE[k][1];o.setAttribute('aria-label',CE[k][1]);
+            o.addEventListener('click',function(e2){
+              e2.stopPropagation();pk.remove();
+              var ex=acts.querySelector('.rc-heart[data-kind="'+k+'"]');
+              if(!ex){ex=mk(k);acts.insertBefore(ex,more)}
+              ex.click();
+            });
+            pk.appendChild(o);
+          });
+          acts.appendChild(pk);
+        });
+        acts.appendChild(more);
         if(!c.parent_id){
           var rb=el('button','rc-reply-btn',L.reply);rb.type='button';
           rb.onclick=function(){replyTo=c.id;to.hidden=false;to.querySelector('span').textContent=L.replyTo+c.name;ta.focus()};
