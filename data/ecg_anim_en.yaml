@@ -31,6 +31,10 @@ series:
     name: ECG reading habits
     intro: 'Small habits worth building when you read ECGs: one per episode.'
     zh_hash: 'af40e6a190'
+  ed-edu:
+    name: ER patient education
+    intro: 'For patients and families: things worth knowing before and after coming to the ER.'
+    zh_hash: 'd6a5865258'
 items:
   omi-roster:
     title: OMI patterns at a glance
@@ -901,3 +905,8 @@ items:
     - ECG Weekly
     - LITFL
     zh_hash: '29ab47deb0'
+  ed-why-today:
+    title: 'At the ER, start with this: what is different today?'
+    subtitle: ER patient education
+    point: 'At the ER, start with what is different today: When did it change? How did it change? Any new symptoms?'
+    zh_hash: '6320be16cf'

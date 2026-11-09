@@ -42,6 +42,9 @@ series:
 - id: habits
   name: ECG判讀習慣
   intro: 判讀ECG時值得養成的小習慣：一集一個。
+- id: ed-edu
+  name: 急診衛教
+  intro: 給病人與家屬：來急診前後可以先知道的事。
 
 items:
 
@@ -957,8 +960,8 @@ items:
   facts: mimics-06-brugada/facts/facts.md
   blog_title: 意識不清的中年婦女
   blog_url: https://agoodbear.com/post/ecg-post-4/
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-11-09'
 - id: mobitz1-vs-cavb
   series: mechanism
   title: 這個像CAVB嗎？
@@ -1363,21 +1366,21 @@ items:
   title: SpO₂已經100%，為什麼還不插管？
   subtitle: 呼吸道系列 01
   point: 去氮化拉長safe apnea time，病人更安全；插管不順時，也多一段安全時間
-  point_src: 片尾卡畫面文字（v4）
-  duration: 63.41
+  point_src: 片尾卡畫面文字（v5）
+  duration: 63.42
   refs:
   - ATLS 11th
   - Weingart & Levitan, Ann Emerg Med 2012
   - Tintinalli 9th
   - Tanoubi, Can J Anaesth 2009
   - Walls Manual 2017
-  refs_src: 片尾卡畫面「參考：」（v4）＋safe-apnea-time/facts/facts.md
-  version: v4
-  src: safe-apnea-time/out/safe-apnea-time-v4.mp4
-  src_phone: safe-apnea-time/out/safe-apnea-time-v4-phone.mp4
-  video: safe-apnea-time/safe-apnea-time-v4.mp4
-  phone: safe-apnea-time/safe-apnea-time-v4-phone.mp4
-  poster: safe-apnea-time/safe-apnea-time-v4-poster.webp
+  refs_src: 片尾卡畫面「參考：」（v5）＋safe-apnea-time/facts/facts.md
+  version: v5
+  src: safe-apnea-time/out/safe-apnea-time-v5.mp4
+  src_phone: safe-apnea-time/out/safe-apnea-time-v5-phone.mp4
+  video: safe-apnea-time/safe-apnea-time-v5.mp4
+  phone: safe-apnea-time/safe-apnea-time-v5-phone.mp4
+  poster: safe-apnea-time/safe-apnea-time-v5-poster.webp
   cover_src: _workflow/reels_cover/out/01-airway-01-safe-apnea.png
   facts: safe-apnea-time/facts/facts.md
   published: false
@@ -1827,3 +1830,24 @@ items:
   facts: habits-summary/caption_draft.md
   published: true
   published_at: '2026-11-03'
+
+# ── 急診衛教 ──────────────────────────────────────────────────────────
+- id: ed-why-today
+  series: ed-edu
+  title: 來急診，先說：今天哪裡不一樣？
+  subtitle: 急診衛教
+  point: 來急診，先說：今天哪裡不一樣？什麼時候開始變？變成怎樣？有沒有新症狀？
+  point_src: 片尾旁白（vo/lines.txt第6、7句）
+  duration: 46.9
+  refs: []
+  refs_src: 衛教片，無醫學數字與文獻主張；內容＝Bear急診看診經驗
+  version: v5
+  src: ed-why-today/out/ed-why-today-v5.mp4
+  src_phone: ed-why-today/out/ed-why-today-v5-phone.mp4
+  video: ed-why-today/ed-why-today-v5.mp4
+  phone: ed-why-today/ed-why-today-v5-phone.mp4
+  poster: ed-why-today/ed-why-today-v5-poster.webp
+  cover_src: ed-why-today/cover/01-ed-why-today.png
+  facts: ed-why-today/lines.txt
+  published: false
+  published_at: ''
