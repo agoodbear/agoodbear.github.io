@@ -1,0 +1,512 @@
+{
+ "/post/ecg-post-23/": [
+  {
+   "fn": 1,
+   "near": "避免一電再電",
+   "keys": [
+    "first shock in VF zone at the maximum energy in order to reduce the risk of multiple shocks"
+   ]
+  },
+  {
+   "fn": 1,
+   "near": "不會耽誤時間",
+   "keys": [
+    "avoid significant delays in the delivery of shock therapy",
+    "ATP sequences during or before capacitor charging",
+    "this strategy has been subsequently clinically validated as safe and effective"
+   ]
+  },
+  {
+   "fn": 2,
+   "near": "只能電擊",
+   "keys": [
+    "The subcutaneous implantable cardioverter-defibrillator is incapable of bradycardia pacing, biventricular pacing, or antitachycardia pacing"
+   ]
+  },
+  {
+   "fn": 1,
+   "near": "死亡率有關",
+   "keys": [
+    "shock therapy is associated with a higher risk of mortality compared to ATP sequences only"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "TdP的高風險來看",
+   "keys": [
+    "QTc >500 ms is associated with a 2- to 3-fold higher risk for TdP"
+   ]
+  },
+  {
+   "fn": 4,
+   "near": "TdP的高風險來看",
+   "keys": [
+    "risk factors, which include heart rate–corrected QT interval (QTc) >500 milliseconds"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "T波峰附近，點燃TdP",
+   "keys": [
+    "usually start with a short-long-short pattern of R-R cycles",
+    "short-coupled premature ventricular complex (PVC) followed by a compensatory pause and then another PVC that typically falls close to the peak of the T wave"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "（EAD）變大",
+   "keys": [
+    "A long preceding pause increases the amplitude of early afterdepolarizations",
+    "which makes them more likely to reach the threshold necessary to produce a PVC or ventricular couplet"
+   ]
+  },
+  {
+   "fn": 5,
+   "near": "aberrant conduction",
+   "keys": [
+    "usually of RBBB morphology",
+    "the subsequent refractory period will be relatively long",
+    "follows a short R-R interval and preceding relatively prolonged R-R interval",
+    "The refractory period of the His-Purkinje system is proportional to the RR interval of the preceding beat"
+   ]
+  },
+  {
+   "fn": 6,
+   "near": "更容易發生）",
+   "keys": [
+    "Typically follows a long-short cycle, and is especially likely to occur with a short-long-short cycle"
+   ]
+  },
+  {
+   "fn": 6,
+   "near": "Fisch criteria）",
+   "keys": [
+    "A relatively long cycle immediately ahead of the cycle terminated by the aberrant QRS complex",
+    "RBBB from aberrancy",
+    "Irregular coupling of aberrant QRS complexes",
+    "Absence of a full compensatory pause"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "變成一個PVC，就可能點燃TdP",
+   "keys": [
+    "The trigger for TdP is thought to be a PVC that results from an early afterdepolarization",
+    "during the abnormally prolonged repolarization phase"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "風險高了2到3倍",
+   "keys": [
+    "QTc >500 ms is associated with a 2- to 3-fold higher risk for TdP"
+   ]
+  },
+  {
+   "fn": 7,
+   "near": "風險高了2到3倍",
+   "keys": [
+    "greater than 500 milliseconds and accompanied by bradycardia",
+    "The risk for developing torsades increases when the corrected QT interval is greater than 500 milliseconds and accompanied by bradycardia"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "要先處理的誘發因素",
+   "keys": [
+    "manage concomitant provocative conditions (eg, hypokalemia, bradyarrhythmias)"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "卻很少引起TdP",
+   "keys": [
+    "amiodarone markedly prolongs the QT interval, yet it is very rarely associated with TdP"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "特別慢",
+   "keys": [
+    "amiodarone uniformly delays repolarization in all layers of the myocardial wall",
+    "selectively prolong repolarization in myocytes located in the mid myocardium (M cells)"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "short-long-short）",
+   "keys": [
+    "A long preceding pause increases the amplitude of early afterdepolarizations",
+    "usually start with a short-long-short pattern"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "誘發TdP的停頓",
+   "keys": [
+    "temporary transvenous atrial or ventricular pacing at rates >70 beats per minute",
+    "An increase in heart rate to prevent pauses that may trigger TdP"
+   ]
+  },
+  {
+   "fn": 8,
+   "near": "以為是VT而放電",
+   "keys": [
+    "Inappropriate ICD therapies can be for arrhythmias such as nonsustained VT or supraventricular tachycardia (e.g., atrial fibrillation with rapid ventricular rate)",
+    "T wave oversensing or lead noise (e.g., lead fracture)"
+   ]
+  },
+  {
+   "fn": 8,
+   "near": "24小時內發作3次以上",
+   "keys": [
+    "3 or more ventricular arrhythmia episodes within 24 hours",
+    "life-threatening cardiac electrical instability"
+   ]
+  },
+  {
+   "fn": 9,
+   "near": "沒有放電",
+   "keys": [
+    "defined as a reported shock lacking objective evidence"
+   ]
+  },
+  {
+   "fn": 8,
+   "near": "變成惡性循環",
+   "keys": [
+    "provoking pain and emotional distress",
+    "vicious cycle of VA and recurrent ICD therapies",
+    "anxiety, depression, phantom shocks, and post-traumatic stress disorder",
+    "further stimulate sympathetic drive and increase the risk of subsequent VA episodes"
+   ]
+  },
+  {
+   "fn": 10,
+   "near": "（91–164 mA）",
+   "keys": [
+    "Rescuer current from S-ICDs was significantly higher than those from T-ICDs (S-ICD: Median RMS 135 mA range 91 mA-164 mA, T-ICD: Median RMS 31 mA, range 9 mA-75 mA"
+   ]
+  },
+  {
+   "fn": 10,
+   "near": "比較安全",
+   "keys": [
+    "Chest compressions should be performed from the opposite side to the ICD to reduce rescuer risk"
+   ]
+  },
+  {
+   "fn": 10,
+   "near": "離體表比較近",
+   "keys": [
+    "utilise a higher energy and more superficial electrodes",
+    "compared with transvenous ICDs (T-ICD)"
+   ]
+  },
+  {
+   "fn": 10,
+   "near": "127 V vs 67 V）",
+   "keys": [
+    "higher when performing chest compressions from the patient's left side compared with the right (127 V vs 67 V"
+   ]
+  },
+  {
+   "fn": 11,
+   "near": "抓得到capture",
+   "keys": [
+    "Typical threshold currents are usually between 40 and 80 mA"
+   ]
+  },
+  {
+   "fn": 12,
+   "near": "抓得到capture",
+   "keys": [
+    "between 50-100mA in adults"
+   ]
+  },
+  {
+   "fn": 11,
+   "near": "輕微電擊感",
+   "keys": [
+    "Avoid touching the gelled area of the electrode while pacing. A minor electrical shock hazard exists."
+   ]
+  },
+  {
+   "fn": 13,
+   "near": "戴醫療手套也一樣",
+   "keys": [
+    "Do not defibrillate during manual chest compressions (even when wearing clinical gloves)"
+   ]
+  },
+  {
+   "fn": 13,
+   "near": "S-ICD約80 J",
+   "keys": [
+    "approximately 40 J (approximately 80 J for subcutaneous devices)"
+   ]
+  },
+  {
+   "fn": 13,
+   "near": "第一下至少150 J",
+   "keys": [
+    "the first shock is at least 150 J",
+    "For biphasic waveforms"
+   ]
+  },
+  {
+   "fn": 14,
+   "near": "約77 Ω",
+   "keys": [
+    "average TTI of 76.7 Ω"
+   ]
+  },
+  {
+   "fn": 15,
+   "near": "一起打斷",
+   "keys": [
+    "Pacing requires a potential gradient of approximately 1 V/cm only in a small liminal volume of tissue immediately adjacent to the electrode",
+    "electric field of approximately 1 V/cm in the extracellular space to stimulate myocardium",
+    "The defibrillation threshold in terms of current is typically thousands of times greater than the diastolic pacing threshold"
+   ]
+  },
+  {
+   "fn": 15,
+   "near": "幾千倍",
+   "keys": [
+    "Pacing requires a potential gradient of approximately 1 V/cm only in a small liminal volume of tissue",
+    "approximately 6 V/cm throughout all or almost all of the ventricular myocardium",
+    "more than 10 cm away from the defibrillation electrodes",
+    "thousands of times greater than the pacing threshold"
+   ]
+  },
+  {
+   "fn": 16,
+   "near": "（包括昏倒）之後",
+   "keys": [
+    "Secondary prophylaxis is defined as implantation after resuscitated cardiac arrest, or after spontaneous arrhythmias with hemodynamic compromise, including, but not limited to syncope"
+   ]
+  },
+  {
+   "fn": 16,
+   "near": "停2週",
+   "keys": [
+    "ICD implantation for primary prevention｜driving must cease for 2 weeks",
+    "Primary prophylaxis is implantation for all other reasons"
+   ]
+  },
+  {
+   "fn": 16,
+   "near": "停3個月",
+   "keys": [
+    "ICD implantation for secondary prevention｜driving must cease for 3 months"
+   ]
+  },
+  {
+   "fn": 17,
+   "near": "至少停1週",
+   "keys": [
+    "restricted from driving a private automobile for at least 1 week"
+   ]
+  },
+  {
+   "fn": 18,
+   "near": "停6個月",
+   "keys": [
+    "recommend driving restrictions for 6 months among recipients of secondary-prevention ICDs"
+   ]
+  },
+  {
+   "fn": 16,
+   "near": "再停3個月",
+   "keys": [
+    "restriction from driving of three months after appropriate ICD therapy, for patients implanted for primary and for secondary prevention",
+    "especially if the patient experienced symptoms of impaired consciousness"
+   ]
+  },
+  {
+   "fn": 18,
+   "near": "比照secondary",
+   "keys": [
+    "among recipients of primary-prevention ICDs who subsequently receive an appropriate ICD shock"
+   ]
+  },
+  {
+   "fn": 16,
+   "near": "永久禁止",
+   "keys": [
+    "permanent driving ban"
+   ]
+  },
+  {
+   "fn": 16,
+   "near": "再算3個月",
+   "keys": [
+    "restriction from driving of three months after appropriate ICD therapy",
+    "ICD implantation for secondary prevention｜driving must cease for 3 months"
+   ]
+  },
+  {
+   "fn": 16,
+   "near": "都低於2%",
+   "keys": [
+    "1.9% in the first month, 3.3% in the second month and 3.7% in the third month",
+    "remained below 2% per month",
+    "2162 patients implanted for secondary prevention of sudden cardiac death"
+   ]
+  },
+  {
+   "fn": 18,
+   "near": "6個月是28.7%",
+   "keys": [
+    "73 503 ICD recipients who underwent remote monitoring",
+    "14.5% (IQR, 13.9%-15.1%) at 1 month and 28.7% (IQR, 27.9%-29.5%) at 6 months",
+    "experienced at least 1 ICD shock",
+    "cumulative incidence of receiving a second shock"
+   ]
+  },
+  {
+   "fn": 13,
+   "near": "（前側、前後）",
+   "keys": [
+    "Place the pad away from the device (at least 8 cm) or use an alternative pad position (antero-lateral, anteroposterior)",
+    "Implantable medical devices may be damaged during defibrillation if current is discharged through defibrillation pads placed directly over the device"
+   ]
+  },
+  {
+   "fn": 13,
+   "near": "離機殼8 cm以上",
+   "keys": [
+    "If an ICD fails to terminate a shockable rhythm, conventional external shocks should be delivered, placing any defibrillation pad/paddle more than 8 cm from the defibrillator box"
+   ]
+  },
+  {
+   "fn": 13,
+   "near": "都要重新檢查",
+   "keys": [
+    "Cardioverter and pacing function should always be re-evaluated following external defibrillation",
+    "both to check the device itself and to check pacing/defibrillation thresholds of the device leads"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "要做QT監測的情況裡",
+   "keys": [
+    "indications for QT-interval monitoring",
+    "severe hypokalemia or hypomagnesemia"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "要做QT監測的四種情況",
+   "keys": [
+    "indications for QT-interval monitoring include the following: (1) Initiation of a drug known to cause TdP; (2) overdose from potentially proarrhythmic agents; (3) new-onset bradyarrhythmias; and (4) severe hypokalemia or hypomagnesemia"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "當第一線藥物",
+   "keys": [
+    "Magnesium sulfate 2 g can be infused intravenously as a first-line agent to terminate TdP irrespective of the serum magnesium level"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "不論血中鎂濃度",
+   "keys": [
+    "Magnesium sulfate 2 g can be infused intravenously as a first-line agent to terminate TdP irrespective of the serum magnesium level"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "證據不多",
+   "keys": [
+    "Repletion of potassium to supratherapeutic levels of 4.5 to 5 mmol/L may also be considered, although there is little evidence to support this practice"
+   ]
+  },
+  {
+   "fn": 7,
+   "near": "也就是TdP",
+   "keys": [
+    "Magnesium may be considered for treatment of adults with recurrences of polymorphic ventricular tachycardia associated with a long QT interval (torsades de pointes)"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "可以再給2 g",
+   "keys": [
+    "If episodes of TdP persist, it may be necessary to repeat infusions of magnesium sulfate 2 g"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "找專家討論",
+   "keys": [
+    "isoproterenol infusion or overdrive pacing can suppress TdP"
+   ]
+  },
+  {
+   "fn": 7,
+   "near": "找專家討論",
+   "keys": [
+    "In patients with bradycardia or pause-precipitated torsades, expert consultation is best sought for additional measures such as overdrive pacing or isoproterenol"
+   ]
+  },
+  {
+   "fn": 20,
+   "near": "備好靜脈鈣",
+   "keys": [
+    "may lead to magnesium intoxication",
+    "removed from the body solely by the kidneys",
+    "presence of the patellar reflex (knee jerk) and absence of respiratory depression",
+    "An injectable calcium salt should be immediately available",
+    "Parenteral use in the presence of renal insufficiency",
+    "should be used with caution in patients with renal impairment",
+    "approximately 16 breaths or more/minute"
+   ]
+  },
+  {
+   "fn": 7,
+   "near": "No Benefit）",
+   "keys": [
+    "Routine use of magnesium is not recommended for the treatment of polymorphic VT in adults with a normal QT interval"
+   ]
+  },
+  {
+   "fn": 8,
+   "near": "每一下都會痛",
+   "keys": [
+    "ICD shocks can further exacerbate ES by provoking pain and emotional distress",
+    "recurrent ICD therapies"
+   ]
+  },
+  {
+   "fn": 11,
+   "near": "每下40 ms",
+   "keys": [
+    "Pulse Duration: 40 milliseconds"
+   ]
+  },
+  {
+   "fn": 4,
+   "near": "藥物引起的TdP很少見",
+   "keys": [
+    "Drug-induced TdP is rare in patients without risk factors",
+    "(QTc) >500 milliseconds"
+   ]
+  },
+  {
+   "fn": 19,
+   "near": "還可能致命",
+   "keys": [
+    "Class IA and Class III agents are not only ineffective but may be fatal"
+   ]
+  },
+  {
+   "fn": 7,
+   "near": "考慮overdrive pacing或isoproterenol",
+   "keys": [
+    "expert consultation is best sought for additional measures such as overdrive pacing or isoproterenol"
+   ]
+  }
+ ]
+}

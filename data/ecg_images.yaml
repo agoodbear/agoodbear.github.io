@@ -223,3 +223,8 @@ images:
   # ecg-post-22（草稿）
   - "/images/ipic/ecg-post-22-er-arrival.png"
   - "/images/ipic/ecg-post-22-sicu.png"
+  # ecg-post-23
+  - "/images/ipic/ecg-post-23-case1-arrival.png"
+  - "/images/ipic/ecg-post-23-case2-arrival.png"
+  - "/images/ipic/ecg-post-23-case2-tdp-1820.webp"
+  - "/images/ipic/ecg-post-23-case2-tdp-1839.webp"

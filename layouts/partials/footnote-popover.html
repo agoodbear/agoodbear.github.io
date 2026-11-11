@@ -11,6 +11,8 @@
   .fn-pop[hidden] { display: none; }
   .fn-pop__quote { margin: 0 0 10px; padding: 8px 12px; background: #e8f1f7; border-left: 3px solid #274a63; border-radius: 0 4px 4px 0; }
   .fn-pop__label { display: block; margin-bottom: 2px; font-size: 12px; font-weight: 700; color: #274a63; }
+  /* 跟這句話相關的原文重點（data/fn_focus.json 依引用位置指定）：粗體＋底線 */
+  .fn-pop__key { font-weight: 700; color: #1b3447; text-decoration: underline; text-decoration-color: #b22800; text-decoration-thickness: 1.5px; text-underline-offset: 3px; text-decoration-skip-ink: none; }
   .fn-pop__source { margin: 0; font-size: 13px; color: #4a5a66; }
   .fn-pop__source a { color: #b22800; }
   .fn-pop__jump { display: inline-block; margin-top: 8px; font-size: 13px; color: #b22800; }
@@ -58,6 +60,47 @@
   document.body.appendChild(pop);
   var current = null, hideTimer = null, showTimer = null;
 
+  // 每一處引用各自的重點：{路徑: [{fn, near: 上標前面那句的結尾, keys: [原文裡要標的片語]}]}
+  var FOCUS = ({{ site.Data.fn_focus }} || {})[decodeURI(location.pathname)] || [];
+  function norm(s) { return s.replace(/[\u2018\u2019]/g, "'").replace(/[\u201c\u201d]/g, '"').replace(/\u00a0/g, ' '); }
+  function keysFor(a) {
+    var m = (a.getAttribute('href') || '').match(/(\d+)$/);
+    if (!m || !FOCUS.length) return null;
+    var list = FOCUS.filter(function (e) { return String(e.fn) === m[1]; });
+    if (!list.length) return null;
+    var blk = a.closest('p, li, td, th, dd, figcaption, blockquote') || a.parentNode;
+    var r = document.createRange(); r.setStart(blk, 0); r.setEndBefore(a.closest('sup') || a);
+    var pre = norm(r.toString()).replace(/\s+$/, '');
+    var best = null, bestEnd = -1;
+    list.forEach(function (e) {
+      var i = pre.lastIndexOf(norm(e.near));
+      if (i < 0) return;
+      var end = i + e.near.length;
+      if (pre.length - end > 12) return;          // 要緊貼在上標前面，才算是這一句
+      if (end > bestEnd || (end === bestEnd && e.near.length > best.near.length)) { best = e; bestEnd = end; }
+    });
+    return best && best.keys;
+  }
+  function emphasize(el, keys) {
+    var nodes = [], pos = 0, w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), n;
+    while ((n = w.nextNode())) { nodes.push({ n: n, s: pos }); pos += n.data.length; }
+    var full = norm(nodes.map(function (x) { return x.n.data; }).join('')), segs = [];
+    keys.forEach(function (k) { k = norm(k); var i = -1; while ((i = full.indexOf(k, i + 1)) >= 0) segs.push([i, i + k.length]); });
+    if (!segs.length) return;
+    segs.sort(function (x, y) { return x[0] - y[0]; });
+    var merged = [segs[0]];
+    segs.slice(1).forEach(function (g) { var t = merged[merged.length - 1]; if (g[0] <= t[1]) t[1] = Math.max(t[1], g[1]); else merged.push(g); });
+    for (var j = nodes.length - 1; j >= 0; j--) {
+      var nd = nodes[j], a0 = nd.s, a1 = nd.s + nd.n.data.length;
+      for (var k = merged.length - 1; k >= 0; k--) {
+        var st = Math.max(merged[k][0], a0), en = Math.min(merged[k][1], a1);
+        if (st >= en) continue;
+        var rg = document.createRange(); rg.setStart(nd.n, st - a0); rg.setEnd(nd.n, en - a0);
+        var b = document.createElement('strong'); b.className = 'fn-pop__key'; rg.surroundContents(b);
+      }
+    }
+  }
+
   function content(hash) {
     var li = document.getElementById(decodeURIComponent(hash.slice(1)));
     if (!li) return '';
@@ -90,8 +133,13 @@
     clearTimeout(hideTimer);
     var html = content(a.getAttribute('href'));
     if (!html) return;
-    pop.innerHTML = html; pop.hidden = false; pop.scrollTop = 0;
+    pop.innerHTML = html;
+    var keys = keysFor(a), q = pop.querySelector('.fn-pop__quote');
+    if (keys && q) emphasize(q, keys);
+    pop.hidden = false; pop.scrollTop = 0;
     current = a; place(a);
+    var first = pop.querySelector('.fn-pop__key');   // 長的原文：捲到第一個重點
+    if (first && first.offsetTop > pop.clientHeight * 0.6) pop.scrollTop = first.offsetTop - 40;
   }
   function hide() { clearTimeout(showTimer); pop.hidden = true; current = null; }
   function hideSoon() { clearTimeout(showTimer); clearTimeout(hideTimer); hideTimer = setTimeout(hide, 220); }

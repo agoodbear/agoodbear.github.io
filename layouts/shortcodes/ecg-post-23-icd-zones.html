@@ -1,0 +1,60 @@
+{{- /* ecg-post-23 Fig.1：ICD怎麼決定用ATP還是電擊（inline SVG；外框沿用 algorithm-card.css）
+       內容對應正文「那ICD什麼時候用ATP、什麼時候電擊？」（De Maria 2017 World J Cardiol）。不寫bpm切點：依病人與機型設定。 */ -}}
+<figure class="algo-fig">
+  <figcaption>
+    <div class="algo-fig__title">Fig.1 ICD怎麼決定用ATP還是電擊</div>
+    <div class="algo-fig__sub">ICD主要看心跳有多快，落在哪一區就照那一區的順序出手；區間的界線由醫師依病人與機型設定（示意）。</div>
+  </figcaption>
+  <svg viewBox="0 0 680 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ICD依心跳快慢分區治療示意圖" font-family="'Noto Sans TC','PingFang TC',sans-serif">
+    <title>Fig.1 ICD怎麼決定用ATP還是電擊</title>
+    <defs>
+      <marker id="e23a" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#274a63"/></marker>
+      <marker id="e23b" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#b22800"/></marker>
+    </defs>
+    <!-- 心跳軸 -->
+    <path d="M20,40 H660" stroke="#274a63" stroke-width="2" marker-end="url(#e23a)"/>
+    <text x="340" y="26" text-anchor="middle" font-size="15" fill="#274a63">心跳越來越快 →</text>
+    <!-- 三區 -->
+    <g font-size="17" font-weight="700" text-anchor="middle">
+      <rect x="20" y="58" width="190" height="44" rx="6" fill="#eff4f7" stroke="#274a63" stroke-width="1.3"/>
+      <text x="115" y="86" fill="#274a63">一般心跳</text>
+      <rect x="235" y="58" width="210" height="44" rx="6" fill="#e8f1f7" stroke="#274a63" stroke-width="1.3"/>
+      <text x="340" y="86" fill="#274a63">VT區</text>
+      <rect x="470" y="58" width="190" height="44" rx="6" fill="#fff1e4" stroke="#b22800" stroke-width="1.3"/>
+      <text x="565" y="86" fill="#b22800">VF區（最快）</text>
+    </g>
+    <!-- 一般心跳 -->
+    <g font-size="15" text-anchor="middle" fill="#2b3a45">
+      <rect x="30" y="130" width="170" height="64" rx="6" fill="#ffffff" stroke="#c9d6df"/>
+      <text x="115" y="157">不治療</text>
+      <text x="115" y="181" font-size="13.5" fill="#5b6b78">心跳太慢時才pacing</text>
+    </g>
+    <!-- VT區 階梯 -->
+    <g font-size="15" text-anchor="middle">
+      <rect x="250" y="122" width="180" height="50" rx="6" fill="#e8f1f7" stroke="#274a63"/>
+      <text x="340" y="152" fill="#274a63" font-weight="700">① 先試ATP</text>
+      <path d="M340,174 V196" stroke="#274a63" stroke-width="1.6" marker-end="url(#e23a)"/>
+      <text x="388" y="191" font-size="12.5" fill="#5b6b78">打不斷</text>
+      <rect x="250" y="200" width="180" height="50" rx="6" fill="#e8f1f7" stroke="#274a63"/>
+      <text x="340" y="230" fill="#274a63" font-weight="700">② 再試幾次ATP</text>
+      <path d="M340,252 V274" stroke="#b22800" stroke-width="1.6" marker-end="url(#e23b)"/>
+      <text x="388" y="269" font-size="12.5" fill="#5b6b78">還是打不斷</text>
+      <rect x="250" y="278" width="180" height="50" rx="6" fill="#fff1e4" stroke="#b22800"/>
+      <text x="340" y="308" fill="#b22800" font-weight="700">③ 才電擊</text>
+    </g>
+    <!-- VF區 -->
+    <g font-size="15" text-anchor="middle">
+      <rect x="480" y="122" width="170" height="64" rx="6" fill="#ffffff" stroke="#c9d6df" stroke-dasharray="5 4"/>
+      <text x="565" y="148" fill="#2b3a45">有些機型：</text>
+      <text x="565" y="172" font-size="13.5" fill="#5b6b78">充電的同時先打一次ATP</text>
+      <path d="M565,188 V230" stroke="#b22800" stroke-width="1.6" marker-end="url(#e23b)"/>
+      <rect x="480" y="234" width="170" height="70" rx="6" fill="#fff1e4" stroke="#b22800"/>
+      <text x="565" y="264" fill="#b22800" font-weight="700">直接電擊</text>
+      <text x="565" y="288" font-size="13.5" fill="#b22800">第一下就用最大能量</text>
+    </g>
+    <!-- 底部說明 -->
+    <rect x="20" y="350" width="640" height="62" rx="8" fill="#eff4f7"/>
+    <text x="340" y="376" text-anchor="middle" font-size="15" fill="#274a63">ATP不痛、電擊會痛；能用ATP打斷的，就盡量不電</text>
+    <text x="340" y="400" text-anchor="middle" font-size="13.5" fill="#5b6b78">Case 1在7/27：ATP做了好幾次打不斷，7/28才電一次</text>
+  </svg>
+</figure>

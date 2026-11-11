@@ -246,3 +246,33 @@
   font-size: 1.04em;
   line-height: 1.8;
 }
+
+/* ── 病程時間軸（shortcode {{< case-timeline >}}，2026-11-06 ecg-post-23） ──
+   主色 #274a63 圓點、心跳停止紅 #a93a2e／#fbecea、電擊橘 #b22800／#fff1e4；對比皆 ≥5.4:1 */
+.case-tl { position: relative; margin: 1rem 0 1.6rem; }
+.case-tl::before { content: ""; position: absolute; left: 7.6rem; top: .3rem; bottom: .3rem; width: 2px; background: #d5e2eb; }
+.case-tl-year { position: relative; width: 6.8rem; text-align: right; margin: 1.1rem 0 .3rem; font-weight: 700; font-size: 1.05rem; color: #274a63; }
+.case-tl-year:first-child { margin-top: 0; }
+.case-tl-item { position: relative; display: grid; grid-template-columns: 6.8rem 1fr; column-gap: 1.6rem; padding: .3rem 0; }
+.case-tl-item::before { content: ""; position: absolute; left: calc(7.6rem - 5px); top: .8rem; width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 2px solid #274a63; box-sizing: border-box; }
+.case-tl-date { text-align: right; color: #5b6b78; font-size: .92rem; font-variant-numeric: tabular-nums; padding-top: .35rem; }
+.case-tl-body { color: #2b3a45; line-height: 1.65; padding: .3rem .7rem; border-radius: 8px; }
+.case-tl-body p { margin: 0; }
+.case-tl-tag { display: inline-block; font-size: .8rem; font-weight: 700; margin-right: .45rem; }
+.case-tl-item.k-shock::before { background: #b22800; border-color: #b22800; }
+.case-tl-item.k-shock .case-tl-body { background: #fff1e4; }
+.case-tl-item.k-shock .case-tl-tag { color: #b22800; }
+.case-tl-item.k-arrest::before, .case-tl-item.k-va::before { background: #a93a2e; border-color: #a93a2e; }
+.case-tl-item.k-arrest .case-tl-body, .case-tl-item.k-va .case-tl-body { background: #fbecea; }
+.case-tl-item.k-arrest .case-tl-tag, .case-tl-item.k-va .case-tl-tag { color: #a93a2e; }
+@media (max-width: 640px) {
+  .case-tl::before { left: 5.3rem; }
+  .case-tl-year { width: 4.6rem; }
+  .case-tl-item { grid-template-columns: 4.6rem 1fr; column-gap: 1.4rem; }
+  .case-tl-item::before { left: calc(5.3rem - 5px); }
+  .case-tl-date { font-size: .85rem; }
+}
+
+/* ── Mg給法色卡（ecg-post-23）：一般＝藍灰、要小心／不要給＝紅；字色對比皆≥5.4:1 ── */
+.article-body .ec-mg > ul > li:nth-child(4),
+.article-body .ec-mg > ul > li:nth-child(5) { --ec-c: #a93a2e; --ec-t: #fbecea; }

@@ -1,0 +1,65 @@
+{{- /* ecg-post-23 Fig.8：TCP（pacing）vs ICD、AED（去顫）比較（inline SVG）
+       出處：ERC 2025 ALS（ICD約40 J、S-ICD約80 J；雙相波第一下≥150 J；電擊時不要壓胸）、Petley 2019（31 mA）、ZOLL PD 1200手冊（40–80 mA、40 ms、別碰凝膠區）。TCP焦耳數為本文估算。 */ -}}
+<figure class="algo-fig">
+  <figcaption>
+    <div class="algo-fig__title">Fig.8 TCP（pacing）和ICD、AED（去顫）：電量差多少？旁邊的人能不能碰？</div>
+    <div class="algo-fig__sub">TCP的焦耳數是本文估算：E＝I²×R×t，阻抗用成人平均約77 Ω、每下40 ms。</div>
+  </figcaption>
+  <svg viewBox="0 0 680 476" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TCP與ICD、AED電量與能否觸碰病人比較圖" font-family="'Noto Sans TC','PingFang TC',sans-serif">
+    <title>Fig.8 TCP（pacing）和ICD、AED（去顫）：電量差多少？旁邊的人能不能碰？</title>
+    <!-- 分組標題 -->
+    <text x="115" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#274a63">Pacing</text>
+    <text x="458" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#b22800">去顫</text>
+    <line x1="255" y1="38" x2="660" y2="38" stroke="#f0c9b5"/>
+    <line x1="20" y1="38" x2="210" y2="38" stroke="#c9d6df"/>
+    <!-- 垂直虛線 -->
+    <line x1="232" y1="14" x2="232" y2="396" stroke="#9aaab6" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <g text-anchor="middle">
+      <!-- 欄標題 -->
+      <rect x="20" y="50" width="190" height="46" rx="6" fill="#e8f1f7" stroke="#274a63"/>
+      <text x="115" y="80" font-size="18" font-weight="700" fill="#274a63">TCP</text>
+      <rect x="255" y="50" width="190" height="46" rx="6" fill="#fff1e4" stroke="#b22800"/>
+      <text x="350" y="80" font-size="18" font-weight="700" fill="#b22800">ICD放電</text>
+      <rect x="470" y="50" width="190" height="46" rx="6" fill="#fff1e4" stroke="#b22800"/>
+      <text x="565" y="80" font-size="18" font-weight="700" fill="#b22800">AED／去顫器</text>
+      <!-- 電從哪裡走 -->
+      <text x="115" y="124" font-size="12.5" fill="#5b6b78">電從哪裡走</text>
+      <text x="458" y="124" font-size="12.5" fill="#5b6b78">電從哪裡走</text>
+      <text x="115" y="150" font-size="14.5" fill="#2b3a45">胸前貼片 ↔ 背後貼片</text>
+      <text x="350" y="150" font-size="14.5" fill="#2b3a45">機殼 ↔ 心臟裡的導線</text>
+      <text x="565" y="150" font-size="14.5" fill="#2b3a45">兩片貼片，穿過胸腔</text>
+      <line x1="20" y1="168" x2="210" y2="168" stroke="#d5e2eb"/>
+      <line x1="255" y1="168" x2="660" y2="168" stroke="#d5e2eb"/>
+      <!-- 電量 -->
+      <text x="115" y="194" font-size="12.5" fill="#5b6b78">一下有多大</text>
+      <text x="458" y="194" font-size="12.5" fill="#5b6b78">一下有多大</text>
+      <text x="115" y="224" font-size="20" font-weight="700" fill="#274a63">40–100 mA</text>
+      <text x="115" y="246" font-size="12.5" fill="#5b6b78">每下40 ms ≈ 0.005–0.03 J（估算）</text>
+      <text x="350" y="224" font-size="20" font-weight="700" fill="#b22800">約40 J</text>
+      <text x="350" y="246" font-size="13" fill="#5b6b78">S-ICD約80 J</text>
+      <text x="565" y="224" font-size="20" font-weight="700" fill="#b22800">≥150 J</text>
+      <text x="565" y="246" font-size="13" fill="#5b6b78">雙相波第一下</text>
+      <line x1="20" y1="266" x2="210" y2="266" stroke="#d5e2eb"/>
+      <line x1="255" y1="266" x2="660" y2="266" stroke="#d5e2eb"/>
+      <!-- 能不能碰 -->
+      <text x="115" y="292" font-size="12.5" fill="#5b6b78">旁邊的人能不能碰病人</text>
+      <text x="458" y="292" font-size="12.5" fill="#5b6b78">旁邊的人能不能碰病人</text>
+      <rect x="30" y="304" width="170" height="80" rx="8" fill="#edf6f1"/>
+      <text x="115" y="331" font-size="15.5" font-weight="700" fill="#2f7557">可以碰</text>
+      <text x="115" y="353" font-size="13" fill="#2f7557">不要碰貼片凝膠區</text>
+      <text x="115" y="372" font-size="13" fill="#2f7557">（會有輕微電擊感）</text>
+      <rect x="265" y="304" width="170" height="80" rx="8" fill="#fbf4e2"/>
+      <text x="350" y="331" font-size="15.5" font-weight="700" fill="#94660f">會麻一下</text>
+      <text x="350" y="353" font-size="13" fill="#94660f">漏電流中位數31 mA</text>
+      <text x="350" y="372" font-size="13" fill="#94660f">壓胸站ICD對側</text>
+      <rect x="480" y="304" width="170" height="80" rx="8" fill="#fbecea"/>
+      <text x="565" y="331" font-size="15.5" font-weight="700" fill="#a93a2e">電擊時不能碰</text>
+      <text x="565" y="353" font-size="13" fill="#a93a2e">戴手套也不行</text>
+      <text x="565" y="372" font-size="13" fill="#a93a2e">電完立刻接著壓</text>
+    </g>
+    <!-- 換算 -->
+    <rect x="20" y="410" width="640" height="52" rx="8" fill="#eff4f7"/>
+    <text x="340" y="433" text-anchor="middle" font-size="14.5" fill="#274a63">換算：能量（J）＝電流²（A）× 阻抗（Ω）× 時間（s）</text>
+    <text x="340" y="453" text-anchor="middle" font-size="13" fill="#5b6b78">例：0.1 A × 0.1 A × 77 Ω × 0.04 s ≈ 0.03 J；mA是電流，J是一下總共給的能量</text>
+  </svg>
+</figure>

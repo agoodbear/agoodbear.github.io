@@ -1,0 +1,28 @@
+{{- /* case-timeline.html — 病程時間軸（垂直軸線＋圓點，依年份分組）
+       用法（paired）：每行一件事「日期 | 類型 | 內容」，類型可空白
+       {{< case-timeline >}}
+       2023/12/20 | arrest | 逛街時OHCA…
+       2023/12/27 | proc | 放了一顆ICD
+       {{< /case-timeline >}}
+       類型：arrest（心跳停止，紅）、va（VT／TdP等心室心律不整，紅）、shock（電擊，橘）、proc／med／check（一般，主色圓點）
+       日期以4位數年份開頭會自動分年；視覺在 custom-css/ecg-article.css 的 .case-tl。 */ -}}
+{{- $labels := dict "arrest" "心跳停止" "va" "心室心律不整" "shock" "⚡ 電擊" -}}
+{{- $prevY := "" -}}
+<div class="case-tl">
+{{- range split (trim .Inner "\n ") "\n" -}}
+{{- $l := trim . " \t" -}}
+{{- if $l -}}
+{{- $p := split $l "|" -}}
+{{- $d := trim (index $p 0) " " -}}
+{{- $k := trim (index $p 1) " " -}}
+{{- $t := trim (index $p 2) " " -}}
+{{- $y := "" -}}{{- $md := $d -}}
+{{- with findRE `^\d{4}` $d -}}{{- $y = index . 0 -}}{{- $md = strings.TrimPrefix "/" (strings.TrimPrefix $y $d) -}}{{- end -}}
+{{- if findRE `^\d{1,2}$` $md }}{{ $md = printf "%s月" $md }}{{ end -}}
+{{- if and $y (ne $y $prevY) }}
+<div class="case-tl-year">{{ $y }}</div>
+{{- $prevY = $y -}}{{- end }}
+<div class="case-tl-item{{ with $k }} k-{{ . }}{{ end }}"><div class="case-tl-date">{{ $md }}</div><div class="case-tl-body">{{ with index $labels $k }}<span class="case-tl-tag">{{ . }}</span>{{ end }}{{ $t | markdownify }}</div></div>
+{{- end -}}
+{{- end }}
+</div>
