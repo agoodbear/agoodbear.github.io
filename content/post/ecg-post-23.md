@@ -38,7 +38,7 @@ tags:
 #   第 5 輪｜2026-11-06｜加Fig.1 ICD分區治療圖解、Fig.6 R on T圖解（inline SVG）；圖號順延（原Fig.1–4→Fig.2–5）；補寫Q3–Q8→⏳ 待確認
 #   第 4 輪補｜2026-11-06｜Fig.3換成Bear給的18:20:16 strip、Fig.4換成18:39從正常接TdP那張（舊兩張不再引用）→⏳ 待確認
 #   第 4 輪｜2026-11-06｜ATP vs 電擊解釋（cc草稿）；刪QTc打折段、改寫成QTc>500 ms高風險；加Fig.3–4 TdP strip；刪【待interrogation】；開始寫Q1、Q2（cc草稿），Q3–Q8待寫；註腳換成De Maria 2017、Drew 2010、Tisdale 2020→⏳ 待確認
-#   第 3 輪｜2026-11-06｜Case 2標題修回H2；QTc可信度回答（cc草稿＋3條註腳、新增參考資料區）；Case 2第一次住院與9/26急診改直式時間軸（Table 2–3，原Table 3改Table 4）→⏳ 待確認
+#   第 3 輪｜2026-11-06｜Case 2標題修回H2；QTc可信度回答（cc草稿＋3條註腳、新增參考資料區）；Case 2第一次住院與急診改直式時間軸（Table 2–3，原Table 3改Table 4）→⏳ 待確認
 #   第 2 輪｜2026-11-06｜Case 1時間軸從表格改成直式軸線（新shortcode case-timeline，紅＝心跳停止、橘＝電擊）→⏳ 待確認
 #   第 1 輪｜2026-11-06｜請CC修改 8 處：前言（cc草稿）、Case 1／Case 2時間軸表（Table 1–2，原Table 1改Table 3）、兩張ECG判讀、EGM白話、表格心律、誘因補amiodarone→⏳ 待確認
 #   第 0 版｜2026-11-06｜自 Roam 原稿 NgP87bd-o 轉入（只有v1開場：兩個case＋Table 1＋問題清單；v0骨架未轉）；醫院名稱去識別化、病歷號移除→⏳ 待確認
