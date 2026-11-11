@@ -30,7 +30,7 @@
 
 /* ── 留言區 ── */
 .rc{font-family:var(--font-body-zh,system-ui)}
-.rc-list{list-style:none;margin:0 0 1.6em;padding:0}
+.rc-list{list-style:none;margin:0 0 1em;padding:0}
 .rc-item{padding:1em 0;border-bottom:1px solid var(--color-rule,#eadfd5)}
 .rc-item .rc-replies{list-style:none;margin:.8em 0 0 1.1em;padding:0 0 0 1em;border-left:2px solid var(--color-rule,#eadfd5)}
 .rc-item .rc-replies .rc-item{border-bottom:0;padding:.6em 0}
@@ -41,24 +41,33 @@
 .rc-body{white-space:pre-wrap;word-break:break-word;line-height:1.75;margin:0}
 .rc-item.pending>.rc-body{color:var(--color-ink-3,#6b625b)}
 .rc-reply-btn{background:none;border:0;padding:0;margin-top:.35em;font:inherit;font-size:.85em;color:var(--color-accent-ink,#b83a00);cursor:pointer}
-.rc-empty{color:var(--color-ink-3,#6b625b);font-style:italic;margin:0 0 1.4em}
-.rc-form{display:grid;gap:.6em;padding:1em;border:1.5px solid var(--color-ink,#111);border-radius:14px;background:#fff}
+.rc-empty{color:var(--color-ink-3,#6b625b);font-style:italic;margin:0 0 .8em;font-size:.92em}
+.rc-lhead{display:flex;align-items:baseline;justify-content:space-between;margin:2em 0 .2em;padding-bottom:.5em;border-bottom:1px solid var(--color-rule,#eadfd5);font-size:.92em;font-weight:700}
+.rc-lhead small{font-weight:400;color:var(--color-ink-3,#6b625b)}
+.rc-lhead[hidden],.rc-older[hidden]{display:none}
+.rc-older{display:block;width:100%;margin:.2em 0 1em;font:inherit;font-size:.9em;color:var(--color-accent-ink,#b83a00);background:var(--color-paper,#fffaf5);border:1px dashed var(--color-rule,#eadfd5);border-radius:12px;padding:.7em;cursor:pointer}
+.rc-older:hover{border-color:var(--color-accent,#fc5a00)}
+.rc-list>.rc-item.rc-fold{display:none}
+.rc-form{display:grid;gap:.7em;padding:1em 1.1em;border:1px solid var(--color-rule,#eadfd5);border-radius:16px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.03);transition:border-color .15s,box-shadow .15s}
+.rc-form:focus-within{border-color:var(--color-accent,#fc5a00);box-shadow:0 4px 18px rgba(252,90,0,.10)}
 .rc-form .rc-to{font-size:.85em;color:var(--color-ink-2,#3a3633);display:flex;gap:.5em;align-items:center}
 .rc-form .rc-to[hidden]{display:none}
 .rc-form .rc-to button{background:none;border:0;color:var(--color-ink-3,#6b625b);cursor:pointer;font:inherit}
 .rc-form input,.rc-form textarea{font:inherit;font-size:16px;color:inherit;background:var(--color-paper,#fffaf5);border:1px solid var(--color-rule,#eadfd5);border-radius:10px;padding:.6em .75em;width:100%;box-sizing:border-box}
-.rc-form textarea{min-height:6.5em;resize:vertical;line-height:1.6}
+.rc-form textarea{min-height:5em;resize:vertical;line-height:1.6}
 .rc-form input:focus,.rc-form textarea:focus{outline:2px solid var(--color-accent,#fc5a00);outline-offset:1px;border-color:transparent}
 .rc-form .rc-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .rc-row{display:flex;justify-content:space-between;align-items:center;gap:.8em;flex-wrap:wrap}
 .rc-note{font-size:.82em;color:var(--color-ink-3,#6b625b);margin:0}
-.rc-send{font:inherit;font-weight:700;color:#fff;background:var(--color-ink,#111);border:0;border-radius:10px;padding:.6em 1.4em;cursor:pointer}
+.rc-send{font:inherit;font-weight:700;font-size:.95em;color:#fff;background:var(--color-ink,#111);border:0;border-radius:99px;padding:.55em 1.5em;cursor:pointer}
 .rc-send:disabled{opacity:.5;cursor:wait}
 .rc-msg{font-size:.88em;margin:0;color:var(--color-accent-ink,#b83a00)}
 /* ── 活潑版 ── */
-.rc-react{margin:0 0 1.6em;padding:1em 1.1em;border-radius:16px;background:linear-gradient(135deg,#fff4ec,#fffaf5 60%,#f1fbf8);border:1px solid var(--color-rule,#eadfd5)}
-.rc-react-t{margin:0 0 .7em;font-weight:700;font-size:.95em}
-.rc-react-row{display:flex;flex-wrap:wrap;gap:.5em}
+.rc-react{margin:0 0 1.4em;padding:.9em 1em;border-radius:16px;background:linear-gradient(135deg,#fff4ec,#fffaf5 60%,#f1fbf8);border:1px solid var(--color-rule,#eadfd5)}
+.rc-react-t{margin:0 0 .6em;font-weight:600;font-size:.88em;color:var(--color-ink-2,#3a3633)}
+.rc-react-row{display:flex;flex-wrap:wrap;gap:.4em}
+.rc-react-sep{width:1px;align-self:stretch;margin:.2em .25em;background:var(--color-rule,#eadfd5)}
+@media (max-width:600px){.rc-react-sep{display:none}.rc-rk{padding:.35em .7em}.rc-rk .t{font-size:.85em}}
 .rc-rk,.rc-heart{position:relative;display:inline-flex;align-items:center;gap:.35em;font:inherit;color:var(--color-ink,#111);background:#fff;border:1.5px solid var(--color-rule,#eadfd5);border-radius:99px;padding:.4em .85em;cursor:pointer;transition:transform .15s,border-color .15s,background .15s}
 .rc-rk:hover,.rc-heart:hover{border-color:var(--color-accent,#fc5a00);transform:translateY(-1px)}
 .rc-rk .e{font-size:1.15em;line-height:1}
@@ -145,7 +154,7 @@
     voted:function(n,k){return n+(n===1?' reader has':' readers have')+' answered. You picked '+k+'.'},
     net:'Network hiccup — tap again.', empty:'No comments yet. Be the first.', loadFail:'Comments failed to load. Try again later.',
     cancel:'✕ Cancel', name:'Name (optional)', ph:'Thoughts, questions, or a similar patient you have seen?',
-    note:'No sign-in needed. Comments appear after the author reviews them.', send:'Post comment', anon:'Anonymous reader',
+    note:'No sign-in needed. Comments appear after the author reviews them.', cnt:function(n){return n+' comment'+(n>1?'s':'')}, newest:'Newest first', older:function(n){return 'Show '+n+' earlier comment'+(n>1?'s':'')}, send:'Post comment', anon:'Anonymous reader',
     author:'Author', wait:'Awaiting review · only you can see this', reply:'Reply', replyTo:'Replying to ',
     ok:'Got it! It will appear once the author has reviewed it.', fast:'Slow down a little and try again.', fail:'Not sent — please try again.',
     sub:'Thoughts, questions, or a similar patient? No sign-in — just comment below.', old:'Older comments (Disqus)',
@@ -161,7 +170,7 @@
     voted:function(n,k){return '已有 '+n+' 位讀者作答，你選了 '+k+'。'},
     net:'網路好像不太順，再按一次試試。', empty:'還沒有人留言，來當第一個吧。', loadFail:'留言暫時載入不了，稍後再試。',
     cancel:'✕ 取消', name:'暱稱（可不填）', ph:'看完有什麼想法、疑問，或你遇過類似的病人？',
-    note:'不用登入。留言經作者看過後公開。', send:'送出留言', anon:'匿名讀者',
+    note:'不用登入。留言經作者看過後公開。', cnt:function(n){return n+' 則留言'}, newest:'最新的在上面', older:function(n){return '再看 '+n+' 則較早的留言'}, send:'送出留言', anon:'匿名讀者',
     author:'作者', wait:'等待作者審核・只有你看得到', reply:'回覆', replyTo:'回覆 ',
     ok:'收到了！作者看過後就會公開。', fast:'留言有點太快了，休息一下再送。', fail:'沒送出去，再試一次。',
     sub:'看完有什麼想法、疑問，或遇過類似的病人？不用登入，直接留言一起討論。', old:'看舊留言（Disqus）',
@@ -377,9 +386,14 @@
       b.appendChild(el('span','e',k[1]));b.appendChild(el('span','t',L.rk[k[0]]));var n=el('span','n','');b.appendChild(n);
       b.addEventListener('click',function(){react('post',k[0],b,k[1],n)});
       rbtn[k[0]]={b:b,n:n};rrow.appendChild(b);
+      if(k[0]==='heart')rrow.appendChild(el('span','rc-react-sep'));
     });
     rbar.appendChild(rbt);rbar.appendChild(rrow);
     var list=el('ul','rc-list'), empty=el('p','rc-empty',L.empty);
+    var lhead=el('div','rc-lhead');lhead.hidden=true;var lcnt=el('span','');lhead.appendChild(lcnt);lhead.appendChild(el('small','',L.newest));
+    var older=el('button','rc-older');older.type='button';older.hidden=true;
+    var SHOW=5, expanded=false;
+    older.onclick=function(){expanded=true;list.querySelectorAll('.rc-fold').forEach(function(x){x.classList.remove('rc-fold')});older.hidden=true};
     var form=el('form','rc-form');
     form.innerHTML='<div class="rc-to" hidden><span></span><button type="button"></button></div>'+
       '<div class="rc-who"><span class="rc-me"></span><input class="rc-name-in" maxlength="20" autocomplete="nickname"></div>'+
@@ -457,7 +471,7 @@
         acts.appendChild(more);
         if(!c.parent_id){
           var rb=el('button','rc-reply-btn',L.reply);rb.type='button';
-          rb.onclick=function(){replyTo=c.id;to.hidden=false;to.querySelector('span').textContent=L.replyTo+c.name;ta.focus()};
+          rb.onclick=function(){replyTo=c.id;to.hidden=false;to.querySelector('span').textContent=L.replyTo+c.name;form.scrollIntoView({behavior:'smooth',block:'center'});ta.focus({preventScroll:true})};
           acts.appendChild(rb);
         }
         li.appendChild(acts);
@@ -473,11 +487,19 @@
       list.innerHTML='';
       var top=items.filter(function(c){return !c.parent_id}), kids={};
       items.forEach(function(c){if(c.parent_id)(kids[c.parent_id]=kids[c.parent_id]||[]).push(c)});
-      top.forEach(function(c){
+      // 最新的在上面（自己待審那則也在最上面）；超過5則先摺起來
+      top.sort(function(a,b){return b.created-a.created});
+      top.forEach(function(c,i){
         var li=item(c);
         if(kids[c.id]){var ul=el('ul','rc-replies');kids[c.id].forEach(function(k){ul.appendChild(item(k))});li.appendChild(ul)}
+        if(!expanded&&i>=SHOW)li.classList.add('rc-fold');
         list.appendChild(li);
       });
+      var nApproved=top.filter(function(c){return !c.pending}).length;
+      lcnt.textContent=L.cnt(nApproved||top.length);
+      lhead.hidden=top.length===0;
+      var hid=expanded?0:Math.max(0,top.length-SHOW);
+      older.textContent=L.older(hid);older.hidden=hid===0;
       empty.hidden=top.length>0;
     });
     form.addEventListener('submit',function(e){
@@ -491,7 +513,7 @@
         .catch(function(err){msg.textContent=(err&&err.error==='rate limited')?L.fast:(err&&err.error==='captcha')?L.captcha:L.fail;msg.hidden=false})
         .then(function(){send.disabled=false;setTimeout(function(){send.classList.remove('beat')},400);cts.reset()});
     });
-    wrap.appendChild(rbar);wrap.appendChild(list);wrap.appendChild(empty);wrap.appendChild(form);
+    wrap.appendChild(rbar);wrap.appendChild(empty);wrap.appendChild(form);wrap.appendChild(lhead);wrap.appendChild(list);wrap.appendChild(older);
     sec.appendChild(wrap);
   }
   load();
