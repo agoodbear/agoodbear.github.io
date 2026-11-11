@@ -1,6 +1,6 @@
 ---
 title: "ICD是救命符還是不定時炸彈？兩個急診case看ICD的好處、危害與處置"
-date: "2026-11-06"
+date: "2026-11-11"
 description: "一位年輕女性放ICD將近3年、被電了很多次；一位60多歲男性放ICD才5週，騎車昏倒、在急診跳TdP。兩個身上有ICD的病人，看ICD能做什麼、做不到什麼。"
 draft: false
 featured: false
