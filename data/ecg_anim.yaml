@@ -1849,5 +1849,5 @@ items:
   poster: ed-why-today/ed-why-today-v5-poster.webp
   cover_src: ed-why-today/cover/01-ed-why-today.png
   facts: ed-why-today/lines.txt
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-11-16'
