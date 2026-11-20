@@ -100,6 +100,28 @@
 @media (max-width: 720px) {
   .article-body .ec-cols > ul { grid-template-columns: 1fr; }
 }
+/* 嚴重度遞減（第一張最危險）：DDx 表這種「會死人的往前排」（ecg-post-25 Table 1） */
+.article-body .ec-sev > ul > li { border-left: 4px solid var(--ec-c); border-radius: 0 10px 10px 0; }
+.article-body .ec-sev > ul > li:nth-child(1) { --ec-c: #a93a2e; --ec-t: #fbecea; }
+.article-body .ec-sev > ul > li:nth-child(2) { --ec-c: #94660f; --ec-t: #fbf4e2; }
+.article-body .ec-sev > ul > li:nth-child(3) { --ec-c: #2f7557; --ec-t: #edf6f1; }
+/* 條列變成一顆一顆的膠囊（短詞並列時用） */
+.article-body .ec-chips ul ul { display: flex; flex-wrap: wrap; gap: .45rem .5rem; margin-top: .6rem; }
+.article-body .ec-chips ul ul li {
+  margin: 0; padding: .2rem .7rem;
+  background: #ffffff; border: 1px solid rgba(43, 58, 69, .14); border-radius: 999px;
+  font-size: .92em; line-height: 1.55;
+}
+
+/* ── 兩欄對照表：<div class="ec-vs"> 包 markdown 表格；第2欄藍、第3欄橘 ── */
+.article-body .ec-vs table { table-layout: fixed; }
+.article-body .ec-vs thead th:first-child { width: 5.5em; background: transparent; }
+.article-body .ec-vs thead th:nth-child(2) { background: #e3eef6; color: #1f4e6e; font-size: .95em; }
+.article-body .ec-vs thead th:nth-child(3) { background: #fdebdc; color: #a24a12; font-size: .95em; }
+.article-body:has(.uses-article-cards) .ec-vs tbody td:nth-child(2) { background: #f4f8fb; }
+.article-body:has(.uses-article-cards) .ec-vs tbody td:nth-child(3) { background: #fff7f0; }
+.article-body .ec-vs thead th:nth-child(2), .article-body .ec-vs tbody td:nth-child(2) { border-left: 3px solid #3d7bab; }
+.article-body .ec-vs thead th:nth-child(3), .article-body .ec-vs tbody td:nth-child(3) { border-left: 3px solid #e07a2e; }
 
 /* ── 學習重點：互補色配色。頁面暖米底＋站色橘 #fe6a01 → 面板用橘的互補色（淡藍），編號與重點回到橘 ── */
 .article-body .ec-takeaways {
