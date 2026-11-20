@@ -508,5 +508,546 @@
     "expert consultation is best sought for additional measures such as overdrive pacing or isoproterenol"
    ]
   }
+ ],
+ "/post/ecg-post-25/": [
+  {
+   "fn": 1,
+   "near": "不是STE",
+   "keys": [
+    "The rate-related depression may not represent acute coronary ischemia",
+    "Downsloping ST segment depression may be seen in patients with supraventricular tachycardias"
+   ]
+  },
+  {
+   "fn": 2,
+   "near": "不是STE",
+   "keys": [
+    "ST segment depression may also be seen with tachycardia of supraventricular origin",
+    "the ST segment depression does not necessarily indicate ischemia"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "diffuse STD的鏡像",
+   "keys": [
+    "simply a reciprocal change to ST depression"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "對面的aVR會抬高",
+   "keys": [
+    "ST elevation in aVR seen in subendocardial ischaemia is simply a reciprocal change"
+   ]
+  },
+  {
+   "fn": 4,
+   "near": "很少讓心跳快到這種程度",
+   "keys": [
+    "Extreme tachycardia can greatly exaggerate ST Elevation",
+    "STEMI only causes tachycardia to this degree when there is cardiogenic shock"
+   ]
+  },
+  {
+   "fn": 5,
+   "near": "對面的aVR會抬高",
+   "keys": [
+    "does not localize to the leads which show ST depression",
+    "ST depression vector towards the apex of the heart (leads II and V5, V6)",
+    "reciprocal STE in aVR"
+   ]
+  },
+  {
+   "fn": 6,
+   "near": "subendocardial ischemia",
+   "keys": [
+    "Localization of peak ST-segment depression to leads V2 or V3 was 96% specific"
+   ]
+  },
+  {
+   "fn": 7,
+   "near": "subendocardial ischemia",
+   "keys": [
+    "the STD of subendocardial ischemia (in contrast to posterior OMI) is maximal in V5 and V6"
+   ]
+  },
+  {
+   "fn": 8,
+   "near": "還不到1 mm",
+   "keys": [
+    "Among 808 patients",
+    "Suspected ischemic STDmaxV1-4 had 97% specificity",
+    "34% had <1 mm ST-segment depression"
+   ]
+  },
+  {
+   "fn": 8,
+   "near": "STD不到1 mm",
+   "keys": [
+    "34% had <1 mm ST-segment depression"
+   ]
+  },
+  {
+   "fn": 9,
+   "near": "subendocardial ischemia",
+   "keys": [
+    "STD Max V1-V4 can be due to subendocardial ischemia (not OMI) when there is tachycardia, especially if due to atrial fibrillation with RVR"
+   ]
+  },
+  {
+   "fn": 9,
+   "near": "先電擊，再重新評估",
+   "keys": [
+    "the correct management is to first cardiovert, then re-assess"
+   ]
+  },
+  {
+   "fn": 10,
+   "near": "列成一串",
+   "keys": [
+    "Heart rate related: tachyarrhythmia",
+    "Tall voltages: LVH with secondary ST-depression",
+    "Demand ischemia, from shock-like state",
+    "Primary coronary plaque"
+   ]
+  },
+  {
+   "fn": 11,
+   "near": "轉回sinus rhythm就會消失",
+   "keys": [
+    "SVT can also cause electrical alternans that disappears when sinus rhythm is restored"
+   ]
+  },
+  {
+   "fn": 12,
+   "near": "一高一低",
+   "keys": [
+    "associated with pericardial effusion/ tamponade is seen with sinus rhythm, and usually with sinus tachycardia",
+    "other forms of electrical alternans have nothing to do with pericardial disease"
+   ]
+  },
+  {
+   "fn": 13,
+   "near": "一高一低",
+   "keys": [
+    "this is caused by the periodic swinging motion of the heart in a large pericardial effusion"
+   ]
+  },
+  {
+   "fn": 14,
+   "near": "不必往tamponade想",
+   "keys": [
+    "SVT frequently has electrical alternans",
+    "unlike in sinus tach, it is not correlated with effusion or tamponade"
+   ]
+  },
+  {
+   "fn": 15,
+   "near": "不必往tamponade想",
+   "keys": [
+    "Electrical alternans during sinus rhythm; specific for cardiac tamponade",
+    "Electrical alternans during SVT; does not reflect pericardial problems"
+   ]
+  },
+  {
+   "fn": 16,
+   "near": "global ischemic changes",
+   "keys": [
+    "these electrocardiographic findings are not specific to myocardial infarction"
+   ]
+  },
+  {
+   "fn": 16,
+   "near": "直接寫進ECG章",
+   "keys": [
+    "do not resolve rapidly with treatment of the underlying cause",
+    "reconsideration as to whether the diagnosis is primary myocardial infarction"
+   ]
+  },
+  {
+   "fn": 17,
+   "near": "甚至更深",
+   "keys": [
+    "the STD may be objectively maximal in V4, but still persists from V4 to V6",
+    "In posterior OMI, the STD in V4 improves significantly or resolves completely from V4 to V6; whereas, in subendocardial ischemia, the STD persists in severity or worsens from V4 to V6"
+   ]
+  },
+  {
+   "fn": 17,
+   "near": "type A aortic dissection",
+   "keys": [
+    "So this is a difficult one"
+   ]
+  },
+  {
+   "fn": 18,
+   "near": "假裝STE",
+   "keys": [
+    "repolarization wave of an inverted P wave or flutter waves",
+    "may be superimposed on the ST-segment and mimic STE"
+   ]
+  },
+  {
+   "fn": 18,
+   "near": "也會假裝STE",
+   "keys": [
+    "flutter waves",
+    "may be superimposed on the ST-segment and mimic STE"
+   ]
+  },
+  {
+   "fn": 18,
+   "near": "方向剛好跟這個Case相反",
+   "keys": [
+    "nonischemic inferior ST elevation with reciprocal STD in aVL"
+   ]
+  },
+  {
+   "fn": 19,
+   "near": "整段ST都可能被它影響",
+   "keys": [
+    "a polarity always opposite of the p-wave",
+    "It is not finished until up to 180 ms after the J-point"
+   ]
+  },
+  {
+   "fn": 19,
+   "near": "看起來像STD",
+   "keys": [
+    "the PR segment is downsloping",
+    "The wave is still negative at the J-point, and thus depresses the J-point"
+   ]
+  },
+  {
+   "fn": 20,
+   "near": "影響越大",
+   "keys": [
+    "the size of the Ta [atrial repolarization] wave is proportional to the size of its P wave",
+    "the PR interval for the negative P wave is not overly short"
+   ]
+  },
+  {
+   "fn": 21,
+   "near": "Emery phenomenon",
+   "keys": [
+    "large negative P waves in the inferior leads with a short PR interval",
+    "may simulate the ST elevation of acute infarction"
+   ]
+  },
+  {
+   "fn": 22,
+   "near": "見下面的清單）",
+   "keys": [
+    "The reciprocal ST depression is in lead III only",
+    "distinct J-waves",
+    "highly suggestive of early repolarization"
+   ]
+  },
+  {
+   "fn": 22,
+   "near": "給了一張檢查清單",
+   "keys": [
+    "1. Look for: a. J-waves b. Other ST depression c. Large T-waves d. Symmetric T-waves e. Down-Up T-waves 2. Compare with an old ECG 3. Use ED Echo if available 4. Use formal Echo 5. A positive troponin is helpful (a negative one is not)"
+   ]
+  },
+  {
+   "fn": 22,
+   "near": "同一個病灶造成的",
+   "keys": [
+    "circumflex (or obtuse marginal branch) or diagonal artery occlusion"
+   ]
+  },
+  {
+   "fn": 23,
+   "near": "不該有的深Q",
+   "keys": [
+    "Whenever you see an overly large initial negative deflection in lead I — Think of LA-RA Lead Reversal!",
+    "STE in I and aVL with reciprocal STD in inferior leads"
+   ]
+  },
+  {
+   "fn": 23,
+   "near": "ST抬高就不見了",
+   "keys": [
+    "Whenever you see an overly large initial negative deflection in lead I",
+    "there would be no ST elevation in leads I and aVL"
+   ]
+  },
+  {
+   "fn": 24,
+   "near": "aVF不變",
+   "keys": [
+    "Lead I is completely inverted (P wave, QRS complex and T wave)",
+    "Leads II and III switch places",
+    "Leads aVL and aVR switch places",
+    "Lead aVF remains unchanged"
+   ]
+  },
+  {
+   "fn": 25,
+   "near": "通常不會心跳快",
+   "keys": [
+    "STEMI generally does not cause tachycardia unless there is cardiogenic shock",
+    "compensation for low stroke volume"
+   ]
+  },
+  {
+   "fn": 26,
+   "near": "寫得很清楚",
+   "keys": [
+    "does not apply to patients who have an arrhythmia which bypasses the normal physiologic determiners of heart rate, such as atrial fibrillation or flutter"
+   ]
+  },
+  {
+   "fn": 26,
+   "near": "開口100%阻塞",
+   "keys": [
+    "atrial fibrillation with rapid ventricular response at about 150bpm",
+    "was not in cardiogenic shock",
+    "a LCX which is 100% occluded at the ostium"
+   ]
+  },
+  {
+   "fn": 26,
+   "near": "這條就不適用",
+   "keys": [
+    "does not apply to patients who have an arrhythmia which bypasses the normal physiologic determiners of heart rate, such as atrial fibrillation or flutter"
+   ]
+  },
+  {
+   "fn": 27,
+   "near": "circumflex ischemia",
+   "keys": [
+    "most typically occurs in the first 24 hours and is usually transient",
+    "sinus node or left circumflex ischemia"
+   ]
+  },
+  {
+   "fn": 28,
+   "near": "再判讀",
+   "keys": [
+    "it is very useful to cardiovert if possible, or slow AV conduction, before assuming that the ST depression is a result of ACS"
+   ]
+  },
+  {
+   "fn": 29,
+   "near": "digoxin",
+   "keys": [
+    "rate control may be achieved by a number of pharmacologic means, particularly short‐acting calcium channel blockers and beta blockers"
+   ]
+  },
+  {
+   "fn": 29,
+   "near": "cardioversion",
+   "keys": [
+    "Rhythm control is accomplished via chemical or electrical cardioversion"
+   ]
+  },
+  {
+   "fn": 30,
+   "near": "可以用digoxin",
+   "keys": [
+    "digoxin can be considered for acute rate control",
+    "cardiac glycosides (like digoxin)"
+   ]
+  },
+  {
+   "fn": 31,
+   "near": "cardioversion",
+   "keys": [
+    "chemical cardioversion and electrical cardioversion"
+   ]
+  },
+  {
+   "fn": 32,
+   "near": "cardioversion",
+   "keys": [
+    "Hemodynamically unstable patients require immediate synchronized direct current cardioversion"
+   ]
+  },
+  {
+   "fn": 33,
+   "near": "cardioversion",
+   "keys": [
+    "synchronized electrical cardioversion should be attempted"
+   ]
+  },
+  {
+   "fn": 34,
+   "near": "aVR沒有寫",
+   "keys": [
+    "ST-segment depression >1 mm in ≥6 leads additional to ST-segment elevation in aVR and/or V1"
+   ]
+  },
+  {
+   "fn": 34,
+   "near": "Level C）",
+   "keys": [
+    "An immediate invasive strategy (<2 h) is recommended",
+    "Presence of ST-segment depression >1 mm in ≥6 leads additional to ST-segment elevation in aVR and/or V1"
+   ]
+  },
+  {
+   "fn": 35,
+   "near": "aVR沒有寫",
+   "keys": [
+    "ST depression ≥1 mm in ≥6 surface leads (inferolateral ST depression), coupled with ST-segment elevation in aVR and/or V1"
+   ]
+  },
+  {
+   "fn": 35,
+   "near": "血行動力不穩時」",
+   "keys": [
+    "suggestive of ongoing coronary artery occlusion (or severe ischaemia)",
+    "prompt triage for immediate reperfusion therapy is indicated",
+    "suggests multivessel ischaemia or left main coronary artery obstruction, particularly if the patient presents with haemodynamic compromise"
+   ]
+  },
+  {
+   "fn": 36,
+   "near": "也有≥1 mm",
+   "keys": [
+    "STE of aVR (≥0.5 mm)",
+    "aVR elevation ≥1 mm"
+   ]
+  },
+  {
+   "fn": 37,
+   "near": "最常拿來用的是≥1 mm",
+   "keys": [
+    "ST elevation in aVR ≥ 1mm"
+   ]
+  },
+  {
+   "fn": 37,
+   "near": "aVR比V1高",
+   "keys": [
+    "ST elevation in aVR ≥ V1"
+   ]
+  },
+  {
+   "fn": 38,
+   "near": "最常拿來用的是≥1 mm",
+   "keys": [
+    "ST elevation in aVR (≥1 mm)"
+   ]
+  },
+  {
+   "fn": 39,
+   "near": "aVR比V1高",
+   "keys": [
+    "In severe LM/3VD the ST elevation in VR it is usually >1mm (ST elevation VR > ST elevation V1)"
+   ]
+  },
+  {
+   "fn": 40,
+   "near": "V1抬得比aVR多",
+   "keys": [
+    "ST elevation in lead aVR is generally more than any ST elevation that might be seen in lead V1",
+    "the opposite is seen with precordial Swirl"
+   ]
+  },
+  {
+   "fn": 41,
+   "near": "做緊急導管的結果",
+   "keys": [
+    "Among 847 STEMI activations, 99 patients (12%) were identified with STE-aVR with multi-lead ST depression"
+   ]
+  },
+  {
+   "fn": 41,
+   "near": "只有6.2%",
+   "keys": [
+    "Emergent angiography was performed in 80% (79/99) of patients",
+    "identified in only 8 patients (10%), and none of those lesions were left main or left anterior descending occlusions",
+    "47 patients (59%) were found to have severe coronary disease, but most had intact distal flow",
+    "31% in-hospital mortality compared with only 6.2% in a subgroup of 190 patients"
+   ]
+  },
+  {
+   "fn": 42,
+   "near": "tachyarrhythmia",
+   "keys": [
+    "the most common being tachyarrhythmia",
+    "(previously type 2)"
+   ]
+  },
+  {
+   "fn": 43,
+   "near": "（UDMI第五版Box 4）",
+   "keys": [
+    "acute myocardial injury identified through the measurement of cardiac troponin",
+    "≥70% stenosis in an epicardial vessel by angiography",
+    "without an acute coronary pathology",
+    "new or presumed new regional wall motion abnormality"
+   ]
+  },
+  {
+   "fn": 44,
+   "near": "新的局部LV wall motion異常",
+   "keys": [
+    "The diagnosis is likely in patients with acute myocardial injury",
+    "The diagnosis is confirmed with one or more additional features on imaging"
+   ]
+  },
+  {
+   "fn": 45,
+   "near": "甚至PE",
+   "keys": [
+    "working diagnosis",
+    "no stenosis ≥50%",
+    "most patients are subsequently found to have a non-coronary cardiac"
+   ]
+  },
+  {
+   "fn": 46,
+   "near": "追甲狀腺功能",
+   "keys": [
+    "amiodarone may still be used as long as levothyroxine therapy is provided and the thyroid function is closely monitored"
+   ]
+  },
+  {
+   "fn": 47,
+   "near": "都有案例",
+   "keys": [
+    "fatal outcome",
+    "even following a single intravenous amiodarone dose"
+   ]
+  },
+  {
+   "fn": 48,
+   "near": "跟英國仿單一樣",
+   "keys": [
+    "甲狀腺功能不良之患者"
+   ]
+  },
+  {
+   "fn": 49,
+   "near": "跟英國仿單一樣",
+   "keys": [
+    "Evidence or history of thyroid dysfunction"
+   ]
+  },
+  {
+   "fn": 50,
+   "near": "結果都正常",
+   "keys": [
+    "iatrogenic excess thyroxine"
+   ]
+  },
+  {
+   "fn": 51,
+   "near": "結果都正常",
+   "keys": [
+    "close surveillance for atrial fibrillation"
+   ]
+  },
+  {
+   "fn": 52,
+   "near": "結果都正常",
+   "keys": [
+    "Patients with hyperthyroidism have a high incidence of atrial arrhythmias"
+   ]
+  }
  ]
 }

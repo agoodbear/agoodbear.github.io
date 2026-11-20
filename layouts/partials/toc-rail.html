@@ -16,7 +16,8 @@
     border-left:2px solid rgba(148,163,184,.3)}
   .tocr-list::-webkit-scrollbar{width:0}
   .tocr a{display:block;padding:5px 8px 5px 10px;color:inherit;text-decoration:none;opacity:.62;
-    border-left:2px solid transparent;margin-left:-2px;transition:opacity .15s,border-color .15s}
+    border-left:2px solid transparent;margin-left:-2px;border-radius:0 6px 6px 0;
+    transition:opacity .2s,border-color .2s,background-color .25s,color .2s,transform .25s}
   .tocr a:hover{opacity:1}
   .tocr-list a{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .tocr-list a.h2{color:var(--color-accent-ink,#9a3412);opacity:.8;font-weight:600}
@@ -24,8 +25,17 @@
   .tocr-list a.h3{display:none;padding-left:20px;font-size:11.6px;opacity:.55;color:inherit;font-weight:400}
   .tocr-list a.h3.open{display:block}
   .tocr-sheet a.h3{padding-left:20px;font-size:.92em;opacity:.75}
-  .tocr a.now{opacity:1;font-weight:700;border-left-color:#dc2626}
+  /* 正在讀的那一節：底色＋粗色條＋往右推一點（Bear 2026-11-20：只加粗看不出來） */
+  .tocr a.now,.tocr-list a.h2.now{opacity:1;font-weight:700;color:#c2410c;background:rgba(234,88,12,.13);
+    border-left:4px solid #ea580c;margin-left:-3px;transform:translateX(3px)}
+  .tocr-list a.h3.now{color:#c2410c}
+  .tocr-sheet a.now{border-left:4px solid #ea580c;padding-left:10px;background:rgba(234,88,12,.1);transform:none}
+  @media (prefers-color-scheme:dark){.tocr a.now,.tocr-list a.h3.now{color:#fdba74;background:rgba(251,146,60,.16);border-left-color:#fb923c}}
+  @media (prefers-reduced-motion:reduce){.tocr a{transition:none}.tocr a.now{transform:none}}
   .tocr.mini .tocr-list{display:none}
+  /* 文章結束後比較寬的區塊（MORE FROM、頁尾）捲上來會壓到側欄：碰到就淡出（Bear 2026-11-20） */
+  .tocr{transition:opacity .25s,visibility .25s}
+  .tocr.away,#ecgReadProgress.tocr-away{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s,visibility .25s}
   .tocr-fab{position:fixed;left:16px;bottom:18px;z-index:56;display:none;cursor:pointer;border:none;
     border-radius:999px;padding:9px 15px;font-size:12.5px;font-weight:700;color:#fff;background:#334155;
     box-shadow:0 8px 22px rgba(15,23,42,.28);
@@ -109,6 +119,15 @@
       rail.style.width=Math.min(MAXW, avail)+'px';
       rail.style.top=top+'px';
       rail.classList.add('on'); fab.classList.remove('on');
+      // 寬區塊（文章外面的 MORE FROM、頁尾）跟側欄或閱讀進度卡疊到就淡出
+      var rr=rail.getBoundingClientRect(), right=M+Math.min(MAXW, avail), hit=false;
+      var boxTop=Math.min(rr.top, ecg&&!ecg.hidden? ecg.getBoundingClientRect().top : rr.top);
+      [].forEach.call(document.querySelectorAll('section.related, footer'), function(w){
+        var wr=w.getBoundingClientRect();
+        if(wr.height && wr.left < right+24 && wr.top < Math.max(rr.bottom, top+40) && wr.bottom > boxTop) hit=true;
+      });
+      rail.classList.toggle('away', hit);
+      if(ecg) ecg.classList.toggle('tocr-away', hit);
     }else{
       rail.classList.remove('on'); fab.classList.add('on');
     }
@@ -125,7 +144,13 @@
     var ag=null;   // 目前章節的群組編號 → 只展開這一組的 H3，其他章節收起來（Bear 2026-09-03：字太多）
     if(best){ var cur=links.filter(function(a){return a.dataset.t===best.id;})[0]; if(cur)ag=cur.dataset.g; }
     links.forEach(function(a){
-      a.classList.toggle('now', !!best && a.dataset.t===best.id);
+      var on=!!best && a.dataset.t===best.id, was=a.classList.contains('now');
+      a.classList.toggle('now', on);
+      // 目次比視窗長時，讓正在讀的那條自動捲進目次可視範圍（只捲目次本身，不動頁面）
+      if(on && !was){ var L=a.closest('.tocr-list'); if(L && L.scrollHeight>L.clientHeight){
+        var r=a.getBoundingClientRect(), lr=L.getBoundingClientRect();
+        if(r.top<lr.top||r.bottom>lr.bottom)
+          L.scrollTo({top:Math.max(0,L.scrollTop+(r.top-lr.top)-L.clientHeight/3),behavior:'smooth'}); } }
       if(a.classList.contains('h3')) a.classList.toggle('open', ag!==null && a.dataset.g===ag);
       if(a.classList.contains('h2')) a.classList.toggle('cur', ag!==null && a.dataset.g===ag);
     });

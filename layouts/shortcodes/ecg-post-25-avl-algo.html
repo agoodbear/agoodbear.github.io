@@ -1,0 +1,51 @@
+{{- /* ecg-post-25：aVL STE合併lead III reciprocal STD的檢查流程（inline SVG；外框沿用 custom-css/algorithm-card.css）
+       依據：Dr. Smith's ECG Blog〈True Positive ST elevation in aVL vs. False Positive ST elevation in aVL〉（2014-05-12）的五步清單，
+       偽陽性例子＝reciprocal STD只在lead III＋aVL有J wave（early repolarization）。橘色路線＝本文病例。 */ -}}
+<figure class="algo-fig">
+  <figcaption>
+    <div class="algo-fig__title">{{ .Get "title" | default "aVL STE合併lead III reciprocal STD，怎麼走" }}</div>
+    <div class="algo-fig__sub">依Dr. Smith的五步檢查清單整理；橘色粗線是這個病人走的路線。</div>
+  </figcaption>
+  <svg viewBox="0 0 680 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="aVL STE合併lead III reciprocal STD的檢查流程" font-family="'Noto Sans TC','PingFang TC',sans-serif">
+    <title>aVL STE合併lead III reciprocal STD，怎麼走</title>
+    <defs>
+      <marker id="e25a" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#4a4640"/></marker>
+      <marker id="e25o" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#e07a2e"/></marker>
+    </defs>
+    <rect x="160" y="16" width="360" height="48" rx="24" fill="#eef1f4" stroke="#4a5560" stroke-width="1.5"/>
+    <text x="340" y="46" text-anchor="middle" font-size="17" fill="#2b3540">aVL STE＋lead III reciprocal STD</text>
+    <path d="M340,64 V92" stroke="#e07a2e" stroke-width="4" fill="none" marker-end="url(#e25o)"/>
+    <rect x="110" y="96" width="460" height="84" rx="4" fill="#fbf3e6" stroke="#b8863f" stroke-width="1.4"/>
+    <text x="340" y="124" text-anchor="middle" font-size="17" font-weight="700" fill="#3a3020">① 先看ECG本身</text>
+    <text x="340" y="148" text-anchor="middle" font-size="14.5" fill="#6b5a3d">有沒有J wave？其他導程有沒有STD？</text>
+    <text x="340" y="168" text-anchor="middle" font-size="14.5" fill="#6b5a3d">T wave大不大、對不對稱、有沒有Down-Up T wave？</text>
+    <g fill="none" stroke="#4a4640" stroke-width="1.5">
+      <path d="M200,180 V214 H120 V240" marker-end="url(#e25a)"/>
+      <path d="M340,180 V240" marker-end="url(#e25a)"/>
+    </g>
+    <path d="M480,180 V214 H560 V240" stroke="#e07a2e" stroke-width="4" fill="none" marker-end="url(#e25o)"/>
+    <rect x="16" y="244" width="208" height="122" rx="4" fill="#e8f3ec" stroke="#2e7d52" stroke-width="1.4"/>
+    <text x="120" y="272" text-anchor="middle" font-size="15" font-weight="700" fill="#1f5a3a">reciprocal STD只在III</text>
+    <text x="120" y="294" text-anchor="middle" font-size="14" fill="#2f5e45">aVL有J wave</text>
+    <text x="120" y="314" text-anchor="middle" font-size="14" fill="#2f5e45">其他導程正常</text>
+    <text x="120" y="346" text-anchor="middle" font-size="15" font-weight="700" fill="#1f5a3a">偏early repolarization</text>
+    <rect x="236" y="244" width="208" height="122" rx="4" fill="#eef1f4" stroke="#4a5560" stroke-width="1.4"/>
+    <text x="340" y="282" text-anchor="middle" font-size="15" font-weight="700" fill="#2b3540">兩邊都不像</text>
+    <text x="340" y="306" text-anchor="middle" font-size="14" fill="#4a5560">還分不出來</text>
+    <text x="340" y="342" text-anchor="middle" font-size="14" fill="#4a5560">往下走②～⑤</text>
+    <rect x="456" y="244" width="208" height="122" rx="4" fill="#fbe9e6" stroke="#c0392b" stroke-width="2.6"/>
+    <text x="560" y="272" text-anchor="middle" font-size="15" font-weight="700" fill="#8f2318">reciprocal STD不只III</text>
+    <text x="560" y="294" text-anchor="middle" font-size="14" fill="#8f2318">其他導程也有STD</text>
+    <text x="560" y="314" text-anchor="middle" font-size="14" fill="#8f2318">大T、對稱T、Down-Up T</text>
+    <text x="560" y="346" text-anchor="middle" font-size="15" font-weight="700" fill="#8f2318">偏OMI，當OMI處理</text>
+    <rect x="596" y="226" width="62" height="26" rx="13" fill="#e07a2e"/>
+    <text x="627" y="244" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">本案</text>
+    <path d="M340,366 V398" stroke="#4a4640" stroke-width="1.5" fill="none" marker-end="url(#e25a)"/>
+    <rect x="150" y="402" width="380" height="170" rx="4" fill="#f6f8fa" stroke="#4a5560" stroke-width="1.4"/>
+    <text x="180" y="436" font-size="15.5" fill="#2b3540">② 跟舊ECG比</text>
+    <text x="180" y="468" font-size="15.5" fill="#2b3540">③ 有床邊echo就做</text>
+    <text x="180" y="500" font-size="15.5" fill="#2b3540">④ 做正式echo</text>
+    <text x="180" y="532" font-size="15.5" fill="#2b3540">⑤ troponin：<tspan font-weight="700" fill="#8f2318">陽性有幫助，陰性沒有</tspan></text>
+    <text x="340" y="600" text-anchor="middle" font-size="12.5" fill="#6c7278">本案：II、III、aVF都是reciprocal STD，其他導程也有ST壓低 → 站在真陽性那一邊</text>
+  </svg>
+</figure>

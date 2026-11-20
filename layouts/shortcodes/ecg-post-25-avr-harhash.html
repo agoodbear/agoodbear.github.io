@@ -1,0 +1,40 @@
+{{- /* ecg-post-25：亞利桑那大學 aVR STE＋multilead STD 的導管結果（inline SVG；外框沿用 custom-css/algorithm-card.css）
+       數字全部取自 Harhash AA, et al. Am J Med 2019;132(5):622–630（PMID 30639554）摘要原文，見本文註腳 harhash。 */ -}}
+<figure class="algo-fig">
+  <figcaption>
+    <div class="algo-fig__title">{{ .Get "title" | default "aVR STE＋multilead STD啟動導管室，結果是什麼" }}</div>
+    <div class="algo-fig__sub">Harhash等人2019，亞利桑那大學回溯847次STEMI activation。</div>
+  </figcaption>
+  <svg viewBox="0 0 680 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="aVR STE加multilead STD啟動導管室的結果流程" font-family="'Noto Sans TC','PingFang TC',sans-serif">
+    <title>aVR STE＋multilead STD啟動導管室，結果是什麼</title>
+    <defs><marker id="e25h" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#4a4640"/></marker></defs>
+    <g fill="none" stroke="#4a4640" stroke-width="1.5">
+      <path d="M340,64 V92" marker-end="url(#e25h)"/>
+      <path d="M340,156 V184" marker-end="url(#e25h)"/>
+      <path d="M260,248 V270 H170 V296" marker-end="url(#e25h)"/>
+      <path d="M420,248 V270 H510 V296" marker-end="url(#e25h)"/>
+    </g>
+    <rect x="190" y="16" width="300" height="48" rx="24" fill="#eef1f4" stroke="#4a5560" stroke-width="1.5"/>
+    <text x="340" y="46" text-anchor="middle" font-size="18" fill="#2b3540">847次STEMI activation</text>
+    <rect x="140" y="96" width="400" height="60" rx="4" fill="#fbf3e6" stroke="#b8863f" stroke-width="1.4"/>
+    <text x="340" y="122" text-anchor="middle" font-size="18" font-weight="700" fill="#3a3020">99人（12%）</text>
+    <text x="340" y="145" text-anchor="middle" font-size="15" fill="#6b5a3d">aVR STE＋multilead STD</text>
+    <rect x="140" y="188" width="400" height="60" rx="4" fill="#e6eef5" stroke="#35607e" stroke-width="1.5"/>
+    <text x="340" y="214" text-anchor="middle" font-size="18" font-weight="700" fill="#1c3d52">79人（80%）做了緊急導管</text>
+    <text x="340" y="237" text-anchor="middle" font-size="15" fill="#35607e">79／99</text>
+    <rect x="40" y="300" width="260" height="104" rx="4" fill="#fbe9e6" stroke="#c0392b" stroke-width="1.7"/>
+    <text x="170" y="332" text-anchor="middle" font-size="19" font-weight="700" fill="#8f2318">8人（10%）</text>
+    <text x="170" y="357" text-anchor="middle" font-size="15" fill="#8f2318">找到阻塞的culprit</text>
+    <text x="170" y="382" text-anchor="middle" font-size="15" fill="#8f2318">沒有一個是LM或LAD</text>
+    <rect x="380" y="300" width="260" height="104" rx="4" fill="#fbf3e6" stroke="#b8863f" stroke-width="1.4"/>
+    <text x="510" y="332" text-anchor="middle" font-size="19" font-weight="700" fill="#3a3020">47人（59%）</text>
+    <text x="510" y="357" text-anchor="middle" font-size="15" fill="#6b5a3d">嚴重的冠狀動脈疾病</text>
+    <text x="510" y="382" text-anchor="middle" font-size="15" fill="#6b5a3d">遠端多半還有血流</text>
+    <rect x="40" y="436" width="600" height="104" rx="6" fill="#f6f8fa" stroke="#4a5560" stroke-width="1.2"/>
+    <text x="340" y="466" text-anchor="middle" font-size="15.5" fill="#2b3540">住院死亡率</text>
+    <text x="200" y="508" text-anchor="middle" font-size="30" font-weight="700" fill="#c0392b">31%</text>
+    <text x="200" y="530" text-anchor="middle" font-size="13" fill="#4a5560">aVR STE＋multilead STD這群人</text>
+    <text x="480" y="508" text-anchor="middle" font-size="30" font-weight="700" fill="#35607e">6.2%</text>
+    <text x="480" y="530" text-anchor="middle" font-size="13" fill="#4a5560">190位沒有aVR抬高的STEMI</text>
+  </svg>
+</figure>

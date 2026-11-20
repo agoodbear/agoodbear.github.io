@@ -1,0 +1,47 @@
+{{- /* ecg-post-25：Ta wave 三種情況示意圖（inline SVG；外框沿用 custom-css/algorithm-card.css）
+       依據：Smith 2011（Ta 與 P 反向、可延續到 J point 後 180 ms、PR segment 往下斜）、
+       McLaren 2022（P 倒立 → Ta 正向，延續到 QRS 之後會像 STE）、Grauer（PR 不夠短就比較不會把 Ta 推到 ST 上；Emery phenomenon＝倒立 P＋短 PR）。
+       振幅刻意放大，示意用。 */ -}}
+<figure class="algo-fig">
+  <figcaption>
+    <div class="algo-fig__title">{{ .Get "title" | default "Ta wave什麼時候會假裝ST變化" }}</div>
+    <div class="algo-fig__sub">示意圖，振幅放大。黑線＝ECG上看到的樣子，橘色虛線＝藏在底下的Ta wave。</div>
+  </figcaption>
+  <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ta wave三種情況示意圖" font-family="'Noto Sans TC','PingFang TC',sans-serif">
+    <title>Ta wave什麼時候會假裝ST變化</title>
+    <g id="ta-a">
+      <rect x="4" y="8" width="228" height="258" rx="8" fill="#f6f8fa"/>
+      <text x="118" y="34" text-anchor="middle" font-size="16" font-weight="700" fill="#274a63">A｜P正立</text>
+      <line x1="14" y1="150" x2="222" y2="150" stroke="#9aa5ae" stroke-width="1" stroke-dasharray="4 4"/>
+      <path d="M60,150 C70,158 90,160 106,158 C125,156 135,151 145,150" fill="none" stroke="#e07a2e" stroke-width="2.4" stroke-dasharray="6 4"/>
+      <path d="M14,150 L30,150 C35,150 38,136 45,136 C52,136 55,150 60,150 L82,155 L86,160 L94,80 L102,172 L106,158 C120,156 130,151 140,150 C150,150 155,128 168,128 C181,128 186,150 196,150 L222,150" fill="none" stroke="#1b2733" stroke-width="2.2" stroke-linejoin="round"/>
+      <circle cx="106" cy="158" r="4" fill="#c0392b"/>
+      <text x="112" y="182" font-size="12" fill="#c0392b">J point被拉低</text>
+      <text x="118" y="226" text-anchor="middle" font-size="13.5" fill="#2b3a45">Ta往下：PR segment往下斜</text>
+      <text x="118" y="246" text-anchor="middle" font-size="13.5" fill="#2b3a45">J point被拉低，像STD</text>
+    </g>
+    <g id="ta-b">
+      <rect x="246" y="8" width="228" height="258" rx="8" fill="#f6f8fa"/>
+      <text x="360" y="34" text-anchor="middle" font-size="16" font-weight="700" fill="#274a63">B｜P倒立、PR長</text>
+      <line x1="256" y1="150" x2="464" y2="150" stroke="#9aa5ae" stroke-width="1" stroke-dasharray="4 4"/>
+      <path d="M292,150 C302,143 318,143 338,150" fill="none" stroke="#e07a2e" stroke-width="2.4" stroke-dasharray="6 4"/>
+      <path d="M256,150 L262,150 C267,150 270,164 277,164 C284,164 287,150 292,150 C302,146 318,146 332,150 L346,150 L350,155 L358,75 L366,168 L370,150 L396,150 C404,150 409,128 422,128 C435,128 440,150 450,150 L464,150" fill="none" stroke="#1b2733" stroke-width="2.2" stroke-linejoin="round"/>
+      <circle cx="370" cy="150" r="4" fill="#2e7d52"/>
+      <text x="376" y="174" font-size="12" fill="#2e7d52">J point在基線</text>
+      <text x="360" y="226" text-anchor="middle" font-size="13.5" fill="#2b3a45">Ta往上，但大多在QRS前</text>
+      <text x="360" y="246" text-anchor="middle" font-size="13.5" fill="#2b3a45">就結束，比較不會影響ST</text>
+    </g>
+    <g id="ta-c">
+      <rect x="488" y="8" width="228" height="258" rx="8" fill="#fbf1ea"/>
+      <text x="602" y="34" text-anchor="middle" font-size="16" font-weight="700" fill="#a24a12">C｜P倒立、PR短</text>
+      <line x1="498" y1="150" x2="706" y2="150" stroke="#9aa5ae" stroke-width="1" stroke-dasharray="4 4"/>
+      <path d="M553,150 C560,144 578,142 586,143 C600,144 613,148 628,150" fill="none" stroke="#e07a2e" stroke-width="2.4" stroke-dasharray="6 4"/>
+      <path d="M498,150 L523,150 C528,150 531,164 538,164 C545,164 548,150 553,150 L562,146 L566,140 L574,72 L582,165 L586,143 C598,143 613,147 628,150 C638,150 643,126 656,126 C669,126 674,150 684,150 L706,150" fill="none" stroke="#1b2733" stroke-width="2.2" stroke-linejoin="round"/>
+      <circle cx="586" cy="143" r="4" fill="#c0392b"/>
+      <text x="592" y="132" font-size="12" fill="#c0392b">J point被抬高</text>
+      <text x="602" y="226" text-anchor="middle" font-size="13.5" fill="#2b3a45">Ta往上，剛好落在</text>
+      <text x="602" y="246" text-anchor="middle" font-size="13.5" fill="#2b3a45">J point和ST上，像STE</text>
+    </g>
+    <text x="360" y="286" text-anchor="middle" font-size="11.5" fill="#6c7278">Ta可以延續到J point之後180 ms，PR正常時也可能影響ST；PR越短、P越大，影響越明顯。</text>
+  </svg>
+</figure>
