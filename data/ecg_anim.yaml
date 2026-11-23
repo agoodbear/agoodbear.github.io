@@ -1383,8 +1383,8 @@ items:
   poster: safe-apnea-time/safe-apnea-time-v5-poster.webp
   cover_src: _workflow/reels_cover/out/01-airway-01-safe-apnea.png
   facts: safe-apnea-time/facts/facts.md
-  published: false
-  published_at: ''
+  published: true
+  published_at: '2026-11-23'
 
 # ── Amal Mattu ECG判讀五步驟 ──────────────────────────────────────────
 - id: mattu-1-1-rate
