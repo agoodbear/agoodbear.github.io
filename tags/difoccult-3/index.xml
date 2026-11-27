@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DIFOCCULT-3 on 急診熊心聲部落格</title><link>https://agoodbear.com/tags/difoccult-3/</link><description>Recent content in DIFOCCULT-3 on 急診熊心聲部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>Copyright © 2022-2024, Modified by ER Bear</copyright><lastBuildDate>Sat, 21 Nov 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://agoodbear.com/tags/difoccult-3/index.xml" rel="self" type="application/rss+xml"/><item><title>沒有STE，要等到病人不穩定才進導管嗎?(DIFOCCULT-3次研究)</title><link>https://agoodbear.com/post/ecg-post-26/</link><pubDate>Sat, 21 Nov 2026 20:00:00 +0800</pubDate><guid>https://agoodbear.com/post/ecg-post-26/</guid><description>
+&lt;span class="uses-article-cards" hidden aria-hidden="true"&gt;&lt;/span&gt;
+&lt;style&gt;
+.d3-fig{margin:2em 0;overflow-x:auto}
+.d3-fig svg{max-width:100%;height:auto;display:block;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC",sans-serif}
+.d3-fig figcaption{font-size:.86em;line-height:1.6;opacity:.75;margin-top:.6em;text-align:left}
+.d3-fig .cap-f{letter-spacing:.02em;opacity:.95}
+.d3-box{fill:currentColor;fill-opacity:.04;stroke:currentColor;stroke-opacity:.35}
+.d3-blue{fill:#2563eb;fill-opacity:.08;stroke:#2563eb;stroke-opacity:.7}
+.d3-red{fill:#dc2626;fill-opacity:.08;stroke:#dc2626;stroke-opacity:.7}
+.d3-ln{stroke:currentColor;stroke-opacity:.5;stroke-width:1.5}
+.d3-b{font-size:14px;font-weight:700}
+.d3-b:not([fill]){fill:currentColor}
+.d3-s{fill:currentColor;font-size:12.5px;opacity:.8}
+&lt;/style&gt;
+&lt;p&gt;跟心臟科討論沒有STE的OMI，常聽到一句話：「NSTEMI指引本來就有very-high-risk，符合就2小時內做導管，為什麼要換一套OMI/NOMI?」有時還會補一句：「研究也說NSTEMI早做導管沒有比較好。」&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;但指引真的有被照做嗎?Dr. Smith常引用一篇以色列全國調查(ACSIS 2016、2018)：做了PCI、有記錄door-to-balloon時間的1,078位NSTEMI病人中，156位符合very-high-risk，真正在2小時內做導管的只有10位(6.4%)&lt;sup id="fnref:3"&gt;&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref"&gt;3&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;figure class="d3-fig"&gt;
+&lt;img src="https://agoodbear.com/images/ipic/ecg-post-26-lupu2022-fig1-arrow.jpg" alt="Lupu 2022 Figure 1：very-high-risk與high-risk NSTEMI病人做PCI的時機" width="337" height="430" style="max-width:337px;width:100%;height:auto;display:block;margin:0 auto"&gt;
+&lt;figcaption&gt;&lt;b class="cap-f"&gt;Figure 1&lt;/b&gt;｜原文Figure 1(Lupu 2022)：NSTEMI病人做PCI的時機。(A)very-high-risk：2小時內6.4%、2–24小時32.1%、超過24小時61.5%(紅色箭頭是2小時內的6.4%)；(B)high-risk：2小時內3.6%、2–24小時40.3%、超過24小時56.1%。分母是有記錄door-to-balloon時間的病人(very-high-risk 156人、high-risk 922人)。&lt;br&gt;來源：Lupu L, et al. &lt;i&gt;Clin Cardiol&lt;/i&gt; 2022;45(4):359–369，CC BY開放取用。&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;這個質疑很合理。如果把very-high-risk NSTEMI準則執行好，就能把該緊急打通的人抓出來，那OMI/NOMI就只是換個名字而已。&lt;/p&gt;
+&lt;p&gt;2026年10月JACC: Cardiovascular Interventions這篇DIFOCCULT-3次研究，就是針對這個質疑設計的。作者是Aslanger、Meyers、Smith這群心電圖大師們&lt;sup id="fnref:4"&gt;&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref"&gt;4&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;p&gt;為什麼要在意血管有沒有塞住?作者在Discussion寫：&lt;strong&gt;&lt;mark style="background-color: pink"&gt;過去的meta-analysis顯示，NSTEMI病人culprit血管是不是塞住，比Killip class這些傳統高風險指標，更能預測不良預後&lt;/mark&gt;&lt;/strong&gt;&lt;sup id="fnref:5"&gt;&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref"&gt;5&lt;/a&gt;&lt;/sup&gt;。作者這句引了三篇文獻，其中真正的meta-analysis是Khan 2017&lt;sup id="fnref:6"&gt;&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref"&gt;6&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+&lt;figure class="d3-fig"&gt;
+&lt;svg viewBox="0 0 800 300" role="img" aria-labelledby="d3e-t"&gt;
+&lt;title id="d3e-t"&gt;Khan 2017：culprit血管完全阻塞vs沒阻塞，四項結果的RR都在1的右邊&lt;/title&gt;
+&lt;text class="d3-b" x="20" y="30"&gt;7篇研究、40,777位NSTEMI，10,415位(25.5%)culprit血管完全阻塞&lt;/text&gt;
+&lt;text class="d3-s" x="640" y="58"&gt;RR(95% CI)&lt;/text&gt;
+&lt;line class="d3-ln" x1="280" y1="62" x2="280" y2="240" stroke-dasharray="4 4"/&gt;
+&lt;line class="d3-ln" x1="220" y1="240" x2="700" y2="240"/&gt;
+&lt;text class="d3-s" x="280" y="262" text-anchor="middle"&gt;1.0&lt;/text&gt;
+&lt;text class="d3-s" x="430" y="262" text-anchor="middle"&gt;1.5&lt;/text&gt;
+&lt;text class="d3-s" x="580" y="262" text-anchor="middle"&gt;2.0&lt;/text&gt;
+&lt;text class="d3-b" x="20" y="91"&gt;短期全死因死亡&lt;/text&gt;
+&lt;line x1="373" y1="86" x2="619" y2="86" stroke="#dc2626" stroke-width="2.5"/&gt;
+&lt;rect x="474" y="79" width="14" height="14" fill="#dc2626"/&gt;
+&lt;text class="d3-s" x="640" y="91"&gt;1.67(1.31–2.13)&lt;/text&gt;
+&lt;text class="d3-b" x="20" y="131"&gt;短期MACE&lt;/text&gt;
+&lt;line x1="331" y1="126" x2="490" y2="126" stroke="#dc2626" stroke-width="2.5"/&gt;
+&lt;rect x="396" y="119" width="14" height="14" fill="#dc2626"/&gt;
+&lt;text class="d3-s" x="640" y="131"&gt;1.41(1.17–1.70)&lt;/text&gt;
+&lt;text class="d3-b" x="20" y="171"&gt;中長期全死因死亡&lt;/text&gt;
+&lt;line x1="304" y1="166" x2="538" y2="166" stroke="#dc2626" stroke-width="2.5"/&gt;
+&lt;rect x="399" y="159" width="14" height="14" fill="#dc2626"/&gt;
+&lt;text class="d3-s" x="640" y="171"&gt;1.42(1.08–1.86)&lt;/text&gt;
+&lt;text class="d3-b" x="20" y="211"&gt;中長期MACE&lt;/text&gt;
+&lt;line x1="313" y1="206" x2="448" y2="206" stroke="#dc2626" stroke-width="2.5"/&gt;
+&lt;rect x="369" y="199" width="14" height="14" fill="#dc2626"/&gt;
+&lt;text class="d3-s" x="640" y="211"&gt;1.32(1.11–1.56)&lt;/text&gt;
+&lt;text class="d3-s" x="272" y="286" text-anchor="end"&gt;← 兩組一樣(RR＝1)&lt;/text&gt;
+&lt;text class="d3-s" x="288" y="286"&gt;完全阻塞那組比較差 →&lt;/text&gt;
+&lt;/svg&gt;
+&lt;figcaption&gt;&lt;b class="cap-f"&gt;Figure 2&lt;/b&gt;｜Khan 2017 meta-analysis：&lt;strong&gt;&lt;mark style="background-color: lightgreen"&gt;NSTEMI culprit血管完全阻塞vs沒阻塞&lt;/mark&gt;&lt;/strong&gt;。方塊是RR，橫線是95% CI；虛線是RR＝1(兩組一樣)，四條橫線都在虛線右邊，代表完全阻塞那組都比較差。&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;也就是說，&lt;strong&gt;&lt;mark&gt;四個NSTEMI裡大約就有一個血管其實是塞住的，這群人的短期死亡風險是沒阻塞者的1.67倍&lt;/mark&gt;&lt;/strong&gt;。&lt;/p&gt;</description></item></channel></rss>
