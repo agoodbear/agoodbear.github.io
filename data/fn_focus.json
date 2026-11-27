@@ -1049,5 +1049,480 @@
     "Patients with hyperthyroidism have a high incidence of atrial arrhythmias"
    ]
   }
+ ],
+ "/post/ecg-post-26/": [
+  {
+   "fn": 1,
+   "near": "住院時間減少",
+   "keys": [
+    "Seventeen RCTs with outcome data from 10 209 patients",
+    "all-cause mortality [RR: 0.90",
+    "MI (RR: 0.86",
+    "Recurrent ischaemia (RR: 0.57"
+   ]
+  },
+  {
+   "fn": 1,
+   "near": "早做導管沒有比較好。」",
+   "keys": [
+    "Seventeen RCTs with outcome data from 10 209 patients were included",
+    "No significant differences in risk for all-cause mortality"
+   ]
+  },
+  {
+   "fn": 2,
+   "near": "交互作用檢定沒有定論",
+   "keys": [
+    "eight trials (n=5324 patients)",
+    "HR 0·81, 95% CI 0·64-1·03",
+    "although tests for interaction were inconclusive"
+   ]
+  },
+  {
+   "fn": 2,
+   "near": "早做導管沒有比較好。」",
+   "keys": [
+    "We included eight trials (n=5324 patients)",
+    "Overall, there was no significant mortality reduction in the early invasive"
+   ]
+  },
+  {
+   "fn": 3,
+   "near": "有10位(6.4%)",
+   "keys": [
+    "door to balloon time was documented in 1078 of them",
+    "One hundred and fifty-six (14.5%) patients",
+    "only 10 (6.4%) underwent immediate coronary angiography"
+   ]
+  },
+  {
+   "fn": 4,
+   "near": "ith這群心電圖大師",
+   "keys": [
+    "improved implementation of very-high-risk NSTEMI criteria could address the same clinical needs"
+   ]
+  },
+  {
+   "fn": 5,
+   "near": "標，更能預測不良預後",
+   "keys": [
+    "ACO of the culprit artery in NSTEMI is a stronger determinant of adverse outcomes than traditional high-risk markers, such as Killip class"
+   ]
+  },
+  {
+   "fn": 6,
+   "near": "Khan 2017",
+   "keys": [
+    "seven studies with 40 777 patients",
+    "10 415 (25.5%) patients had an occluded culprit artery",
+    "short-term RR: 1.41",
+    "short-term RR: 1.67"
+   ]
+  },
+  {
+   "fn": 7,
+   "near": "OR 1.72",
+   "keys": [
+    "Among the 60,898 patients with NSTEMI enrolled in 25 studies, 17,212 were found to have OCA",
+    "The average proportion of OCA in NSTEMI was 34% (95% CI 30-37%)",
+    "Death rate (OR 1.72, 95% CI 1.49-1.98, p < 0.001)"
+   ]
+  },
+  {
+   "fn": 8,
+   "near": "HR 1.72",
+   "keys": [
+    "The culprit artery was occluded in 528 (27%) patients",
+    "higher risk-adjusted 6-month mortality (hazard ratio 1.72, 95% CI 1.07-2.79)"
+   ]
+  },
+  {
+   "fn": 9,
+   "near": "共病有關",
+   "keys": [
+    "954 (14%) had TOCCA",
+    "independent predictor of 30-day MACE (HR = 1.93; 95%CI: 1.4-2.6), but not long-term mortality"
+   ]
+  },
+  {
+   "fn": 10,
+   "near": "母試驗預定的1年結果",
+   "keys": [
+    "awaits the planned 1-year outcome analysis of the parent DIFOCCULT-3 trial"
+   ]
+  },
+  {
+   "fn": 10,
+   "near": "1年結果",
+   "keys": [
+    "awaits the planned 1-year outcome analysis of the parent DIFOCCULT-3 trial"
+   ]
+  },
+  {
+   "fn": 11,
+   "near": "不是所有胸痛病人",
+   "keys": [
+    "ECG and/or clinical diagnosis of acute myocardial infarction"
+   ]
+  },
+  {
+   "fn": 12,
+   "near": "OMI日2,195人",
+   "keys": [
+    "diagnostic STE on the admission ECG were excluded",
+    "1287 STEMI on admission ECG",
+    "18 centers in Türkiye",
+    "rotating duty-day basis",
+    "4,398 patients",
+    "2,203 patients",
+    "2,195 under the OMI/NOMI paradigm"
+   ]
+  },
+  {
+   "fn": 13,
+   "near": "oponin明顯上升",
+   "keys": [
+    "angiographic TIMI flow grade 0 to 1, or TIMI flow grade 2 with angiographic features"
+   ]
+  },
+  {
+   "fn": 14,
+   "near": "部分或自己通了",
+   "keys": [
+    "partially or spontaneously recanalize before angiography",
+    "at least 2 experienced interventional cardiologists",
+    "adjudication by a third reviewer in cases of disagreement"
+   ]
+  },
+  {
+   "fn": 15,
+   "near": "I日AI app關閉",
+   "keys": [
+    "displayed “OMI” or “Not OMI.”",
+    "notify the interventional cardiologist if “OMI” was indicated",
+    "the application was deactivated"
+   ]
+  },
+  {
+   "fn": 16,
+   "near": "troponin正常也不能",
+   "keys": [
+    "OMI is a clinical diagnosis",
+    "A normal troponin does not rule out OMI"
+   ]
+  },
+  {
+   "fn": 17,
+   "near": "床邊心臟超音波",
+   "keys": [
+    "ECG is not the only diagnostic information to clue you into the possibility OMI",
+    "There is history, physical, troponin, and bedside echo"
+   ]
+  },
+  {
+   "fn": 18,
+   "near": "isk NSTEMI",
+   "keys": [
+    "defined according to the European Society of Cardiology guidelines"
+   ]
+  },
+  {
+   "fn": 19,
+   "near": "98人(54.1%)",
+   "keys": [
+    "181 of 2,203 patients (8.2%)",
+    "98 of 181 (54.1%) underwent immediate invasive management"
+   ]
+  },
+  {
+   "fn": 20,
+   "near": "cations都很少",
+   "keys": [
+    "Refractory chest pain 82 (45.3)",
+    "Hemodynamic instability or cardiogenic shock 13 (7.1)",
+    "Ventricular arrhythmias 10 (5.5)",
+    "Mechanical complications 0 (0)"
+   ]
+  },
+  {
+   "fn": 21,
+   "near": "胸痛壓不住，不是休克",
+   "keys": [
+    "intrinsically rare",
+    "particularly vulnerable to under-recognition within the STEMI/NSTEMI framework"
+   ]
+  },
+  {
+   "fn": 22,
+   "near": "人)裡，這兩項都是0",
+   "keys": [
+    "already classified as OMI under the OMI/NOMI paradigm",
+    "OMI/NOMI (n = 25)"
+   ]
+  },
+  {
+   "fn": 23,
+   "near": "緊急再灌流的適應症",
+   "keys": [
+    "according to the OMI paradigm the patient had diagnostic ECGs and refractory chest pain, two indications for emergent reperfusion"
+   ]
+  },
+  {
+   "fn": 24,
+   "near": "假說，還要等預後資料",
+   "keys": [
+    "downstream clinical instability vs upstream occlusive pathology",
+    "this hypothesis requires confirmation in clinical outcome analyses"
+   ]
+  },
+  {
+   "fn": 25,
+   "near": "omplement)",
+   "keys": [
+    "very-high-risk NSTEMI criteria remain important for identifying clinically unstable patients",
+    "may complement existing risk-based strategies"
+   ]
+  },
+  {
+   "fn": 26,
+   "near": "%)在2小時內進導管",
+   "keys": [
+    "997 of 2,195 patients (45.4%) were classified as having OMI",
+    "820 of 997 (82.2%) underwent immediate invasive management"
+   ]
+  },
+  {
+   "fn": 27,
+   "near": "22(2.2%)",
+   "keys": [
+    "AI-assisted ECG interpretation in 817 patients (81.9%)",
+    "serial ECG changes in 29 patients (2.9%)",
+    "clinical gestalt including highly typical ischemic symptoms in 101 patients (10.1%)",
+    "very high first troponin in 22 patients (2.2%)",
+    "adjunctive modalities in 28 patients (2.8%), all of which were bedside echocardiography"
+   ]
+  },
+  {
+   "fn": 28,
+   "near": "更容易推廣到其他醫院",
+   "keys": [
+    "effect of a combined occlusion-focused strategy rather than AI alone",
+    "Similar results may be achievable without AI in expert ECG environments",
+    "AI support likely improved reproducibility and scalability"
+   ]
+  },
+  {
+   "fn": 29,
+   "near": "P=0.024",
+   "keys": [
+    "472 of 2,203 patients (21.4%)",
+    "960 of 2,195 patients (43.7%)",
+    "adjusted OR: 2.37",
+    "355 of 2,128 patients (16.7%)",
+    "751 of 2,138 patients (35.1%)",
+    "54.7% vs 58.1%, respectively; P = 0.024"
+   ]
+  },
+  {
+   "fn": 29,
+   "near": "%，P=0.024)",
+   "keys": [
+    "472 of 2,203 patients (21.4%)",
+    "960 of 2,195 patients (43.7%)",
+    "adjusted OR: 2.37",
+    "355 of 2,128 patients (16.7%)",
+    "751 of 2,138 patients (35.1%)",
+    "54.7% vs 58.1%, respectively; P = 0.024"
+   ]
+  },
+  {
+   "fn": 29,
+   "near": "正常的MI也沒有增加",
+   "keys": [
+    "472 of 2,203 patients (21.4%)",
+    "960 of 2,195 patients (43.7%)",
+    "adjusted OR: 2.37",
+    "355 of 2,128 patients (16.7%)",
+    "751 of 2,138 patients (35.1%)",
+    "54.7% vs 58.1%, respectively; P = 0.024"
+   ]
+  },
+  {
+   "fn": 30,
+   "near": "原文沒有細分",
+   "keys": [
+    "472 of 2,203 patients (21.4%)",
+    "98 of 181 (54.1%)",
+    "236 of 276 (85.5%)"
+   ]
+  },
+  {
+   "fn": 31,
+   "near": "人，大部分真的有阻塞",
+   "keys": [
+    "approximately 223 additional immediate invasive procedures",
+    "184 additional adjudicated ACOs detected within 2 hours",
+    "approximately 1.2 additional immediate invasive procedures per additional early ACO detected"
+   ]
+  },
+  {
+   "fn": 31,
+   "near": "約82%)",
+   "keys": [
+    "approximately 223 additional immediate invasive procedures",
+    "184 additional adjudicated ACOs detected within 2 hours",
+    "1.2 additional immediate invasive procedures per additional early ACO detected"
+   ]
+  },
+  {
+   "fn": 32,
+   "near": "–1定義，也是約兩倍",
+   "keys": [
+    "270 of 2,081 patients (13.0%)",
+    "576 of 2,071 patients (27.8%)"
+   ]
+  },
+  {
+   "fn": 33,
+   "near": "也是這樣整理",
+   "keys": [
+    "None of these studies observed superiority of early invasive strategies",
+    "17 RCTs >10 000 patients"
+   ]
+  },
+  {
+   "fn": 34,
+   "near": "灌流需要進一步研究」",
+   "keys": [
+    "only 60% (67 of 108) meeting STEMI criteria",
+    "437 min (IQR 85-1590 min) for STEMI(-) OMI",
+    "adverse outcomes more similar to STEMI(+) OMI than those with no occlusion",
+    "importance of further research into emergent reperfusion for STEMI(-) OMI"
+   ]
+  },
+  {
+   "fn": 35,
+   "near": "較有好處，但那是猜測",
+   "keys": [
+    "the authors do not provide us with data on outcomes differences",
+    "would be that these patients would have proven to have more benefit"
+   ]
+  },
+  {
+   "fn": 36,
+   "near": "% vs 43.7%",
+   "keys": [
+    "(45.4% vs 13.6%; P < 0.001)",
+    "997 of 2,195 [45.4%] vs 276 of 2,022 [13.6%]"
+   ]
+  },
+  {
+   "fn": 37,
+   "near": "0.497",
+   "keys": [
+    "355 of 472 [75.2%] vs 751 of 960 [78.2%]; P = 0.201",
+    "270 of 444 [60.8%] vs 576 of 916 [62.9%], respectively; P = 0.497"
+   ]
+  },
+  {
+   "fn": 37,
+   "near": "正常的MI也沒有增加",
+   "keys": [
+    "355 of 472 [75.2%] vs 751 of 960 [78.2%]; P = 0.201",
+    "270 of 444 [60.8%] vs 576 of 916 [62.9%], respectively; P = 0.497"
+   ]
+  },
+  {
+   "fn": 38,
+   "near": "0.355，沒有增加",
+   "keys": [
+    "MI with normal coronary arteries was uncommon and similar between arms",
+    "89 of 2,203 [4.0%] vs 77 of 2,195 [3.5%]; P = 0.355"
+   ]
+  },
+  {
+   "fn": 38,
+   "near": "正常的MI也沒有增加",
+   "keys": [
+    "MI with normal coronary arteries was uncommon and similar between arms",
+    "89 of 2,203 [4.0%] vs 77 of 2,195 [3.5%]; P = 0.355"
+   ]
+  },
+  {
+   "fn": 39,
+   "near": "，觀念上跟OMI重疊",
+   "keys": [
+    "276 of 2,022 patients (13.6%)",
+    "despite not meeting formal millimeter-based STE criteria",
+    "conceptual overlap with ECG-based OMI classification"
+   ]
+  },
+  {
+   "fn": 40,
+   "near": "276人的ECG診斷",
+   "keys": [
+    "Lateral (formerly posterior) MI 44 (15.9)",
+    "Subtle STE 120 (43.4)",
+    "Hyperacute T waves 17 (6.2)",
+    "Specific patterns showing no or single-lead STE (de Winter, Aslanger’s, etc) 66 (23.9)",
+    "Abnormal ST contour without any deviation 12 (4.3)",
+    "T-wave inversion 15 (5.4)",
+    "Benign variant STE 2 (0.7)"
+   ]
+  },
+  {
+   "fn": 40,
+   "near": "沒有各自的ACO比例",
+   "keys": [
+    "Lateral (formerly posterior) MI 44 (15.9)",
+    "Subtle STE 120 (43.4)",
+    "Hyperacute T waves 17 (6.2)",
+    "Specific patterns showing no or single-lead STE (de Winter, Aslanger’s, etc) 66 (23.9)",
+    "Abnormal ST contour without any deviation 12 (4.3)",
+    "T-wave inversion 15 (5.4)",
+    "Benign variant STE 2 (0.7)"
+   ]
+  },
+  {
+   "fn": 41,
+   "near": "套到急診所有胸痛病人",
+   "keys": [
+    "attributed to a non-MI diagnosis before angiography were also excluded"
+   ]
+  },
+  {
+   "fn": 42,
+   "near": "能延誤其他高優先病人",
+   "keys": [
+    "conducted exclusively in Türkiye",
+    "faster access to invasive management for NSTEMI",
+    "consider local catheter laboratory capacity and safeguards against delaying other high-priority cases"
+   ]
+  },
+  {
+   "fn": 43,
+   "near": "兩組之間無法完全隔開",
+   "keys": [
+    "cross-contamination across study arms was unavoidable because of shared institutional workflows"
+   ]
+  },
+  {
+   "fn": 44,
+   "near": "即時發現、即時處理",
+   "keys": [
+    "intermittent or recently reperfused occlusive disease",
+    "the culprit lesion has demonstrated occlusive potential",
+    "may not be recognized or treated instantaneously",
+    "Although such patients may not require the same immediacy as those with persistent ACO"
+   ]
+  },
+  {
+   "fn": 45,
+   "near": "灌流能多救的心肌有限",
+   "keys": [
+    "may improve diagnostic specificity for ACO but may also reflect more completed infarction",
+    "potentially limiting the incremental benefit of reperfusion"
+   ]
+  }
  ]
 }
